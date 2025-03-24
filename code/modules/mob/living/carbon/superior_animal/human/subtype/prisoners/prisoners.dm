@@ -18,12 +18,12 @@
 	comfy_range = 7
 	rapid = FALSE
 	ranged_cooldown = 2
-	projectiletype = /obj/item/projectile/bullet/rifle_75
+	projectiletype = /obj/item/projectile/bullet/rifle_762
 	projectilesound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 20
-	mag_type = /obj/item/ammo_magazine/rifle_75/empty
+	mag_type = /obj/item/ammo_magazine/rifle_762/empty
 	mags_left = 3 //1+3
 	delay_for_range = 1.0 SECONDS
 

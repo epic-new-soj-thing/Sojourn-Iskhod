@@ -5,7 +5,7 @@
 	icon_state = "silvereye"
 	item_state = "silvereye"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = CAL_50
+	caliber = CAL_HEAVY_PISTOL
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_SILVER = 6, MATERIAL_WOOD = 6, MATERIAL_STEEL = 6)

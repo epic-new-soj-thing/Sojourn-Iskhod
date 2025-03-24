@@ -108,7 +108,7 @@
 			ranged = TRUE
 		if(TOOL_GUN)
 			drop1 = /obj/item/gun/projectile/spring
-			possible_ranged_attack.Add(/obj/item/projectile/bullet/pistol_35)
+			possible_ranged_attack.Add(/obj/item/projectile/bullet/pistol_9mm)
 			ranged = TRUE
 		if(TOOL_BOMB)
 			drop1 = /obj/item/plastique // Plastic Explosives.

@@ -162,14 +162,14 @@
 	desc = "A crate containing two Pulemyot Kalashnikova light machine guns, and 640 rounds of 7.62mm ammunition."
 	icon_state = "serbcrate_deferred_green"
 	initial_contents = list(/obj/item/gun/projectile/automatic/lmg/pk = 2,
-	/obj/item/ammo_magazine/rifle_75_linked_box = 8)
+	/obj/item/ammo_magazine/rifle_762_linked_box = 8)
 
 /obj/item/storage/deferred/crate/ak
 	name = "rifleman crate"
 	desc = "A crate containing six AKM rifles, and plenty of magazines."
 	icon_state = "serbcrate_deferred_green"
 	initial_contents = list(/obj/item/gun/projectile/automatic/ak47/sa  = 6,
-	/obj/item/ammo_magazine/rifle_75 = 18)
+	/obj/item/ammo_magazine/rifle_762 = 18)
 
 /obj/item/storage/deferred/crate/grenadier
 	name = "grenadier crate"
@@ -212,7 +212,7 @@
 	desc = "A crate containing six Makarov 9mm pistols, 200 rounds of ammunition, and six fixed-blade combat knives."
 	icon_state = "serbcrate_deferred_green"
 	initial_contents = list(/obj/item/gun/projectile/makarov = 6,
-	/obj/item/ammo_magazine/highcap_pistol_35  = 20,
+	/obj/item/ammo_magazine/highcap_pistol_9mm  = 20,
 	/obj/item/tool/knife/boot = 6)
 
 /obj/item/storage/deferred/crate/cells
@@ -329,7 +329,7 @@
 	desc = "A crate containing everything you need for the revolution."
 	icon_state = "exc_deferred"
 	initial_contents = list(/obj/item/gun/projectile/makarov = 2,
-	/obj/item/ammo_magazine/highcap_pistol_35  = 4,
+	/obj/item/ammo_magazine/highcap_pistol_9mm  = 4,
 	/obj/item/tool/knife/boot = 1,
 	/obj/item/circuitboard/excelsior_teleporter = 1,
 	/obj/item/circuitboard/excelsiorautolathe = 1,

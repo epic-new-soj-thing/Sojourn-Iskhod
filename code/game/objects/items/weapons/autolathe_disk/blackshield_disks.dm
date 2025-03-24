@@ -43,10 +43,10 @@
 		/datum/design/autolathe/ammo/pistol_lethal,
 		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/pistol_practice = 0,
-		/datum/design/autolathe/ammo/pistol_35_drum,
-		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
-		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
-		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
+		/datum/design/autolathe/ammo/pistol_9mm_drum,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/lethal,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/empty = 0,
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg_practice = 0,
@@ -150,10 +150,10 @@
 
 	designs = list(
 		/datum/design/autolathe/gun/ppv = 3,
-		/datum/design/autolathe/ammo/pistol_35_drum,
-		/datum/design/autolathe/ammo/pistol_35_drum/empty = 0,
-		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
-		/datum/design/autolathe/ammo/pistol_35_drum/lethal = 2
+		/datum/design/autolathe/ammo/pistol_9mm_drum,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/empty = 0,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/lethal = 2
 		)
 
 /obj/item/pc_part/drive/disk/design/blackshield/triage
@@ -164,10 +164,10 @@
 	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/triage = 4,
-		/datum/design/autolathe/ammo/smg_magnum_40 = 2,
-		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 1,
-		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 3,
-		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
+		/datum/design/autolathe/ammo/smg_10mm = 2,
+		/datum/design/autolathe/ammo/smg_10mm_rubber = 1,
+		/datum/design/autolathe/ammo/smg_10mm_lethal = 3,
+		/datum/design/autolathe/ammo/smg_10mm_practice = 0
 		)
 
 /obj/item/pc_part/drive/disk/design/blackshield/watchtower

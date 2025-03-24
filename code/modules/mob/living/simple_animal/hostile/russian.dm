@@ -42,7 +42,7 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/bullet
 	projectilesound = 'sound/weapons/Gunshot.ogg'
-	casingtype = /obj/item/ammo_casing/magnum_40
+	casingtype = /obj/item/ammo_casing/pistol_10mm
 
 
 /mob/living/simple/hostile/russian/death()

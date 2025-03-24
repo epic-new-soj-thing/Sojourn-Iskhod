@@ -16,12 +16,12 @@
 	rapid = 1
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
-	projectiletype = /obj/item/projectile/bullet/pistol_35
+	projectiletype = /obj/item/projectile/bullet/pistol_9mm
 	projectilesound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 16
-	mag_type = /obj/item/ammo_magazine/highcap_pistol_35/empty
+	mag_type = /obj/item/ammo_magazine/highcap_pistol_9mm/empty
 	mags_left = 2 //2+1
 
 	melee_damage_lower = 10
@@ -65,39 +65,39 @@
 
 /mob/living/carbon/superior/human/excelsior/excel_ppsh
 	icon_state = "excel_ppsh"
-	projectiletype = /obj/item/projectile/bullet/pistol_35
+	projectiletype = /obj/item/projectile/bullet/pistol_9mm
 	drop_items = list(/obj/item/gun/projectile/automatic/ppsh)
 	projectilesound = 'sound/weapons/guns/fire/grease_fire.ogg'
 	rounds_left = 71
-	mag_type = /obj/item/ammo_magazine/highcap_pistol_35/drum/empty
+	mag_type = /obj/item/ammo_magazine/highcap_pistol_9mm/drum/empty
 	mags_left = 2 //2+1
 
 /mob/living/carbon/superior/human/excelsior/excel_ak
 	icon_state = "excel_ak"
-	projectiletype = /obj/item/projectile/bullet/rifle_75
+	projectiletype = /obj/item/projectile/bullet/rifle_762
 	drop_items = list(/obj/item/gun/projectile/automatic/ak47)
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 20
-	mag_type = /obj/item/ammo_magazine/rifle_75/empty
+	mag_type = /obj/item/ammo_magazine/rifle_762/empty
 	mags_left = 2 //2+1
 
 /mob/living/carbon/superior/human/excelsior/excel_vintorez
 	icon_state = "excel_vintorez"
 	rapid = 0 //The gun cant rapid fire...
-	projectiletype = /obj/item/projectile/bullet/rifle_75
+	projectiletype = /obj/item/projectile/bullet/rifle_762
 	drop_items = list(/obj/item/gun/projectile/automatic/vintorez)
 	projectilesound = 'sound/weapons/guns/fire/ltrifle_fire.ogg'
 	rounds_left = 10
-	mag_type = /obj/item/ammo_magazine/rifle_75_short/empty
+	mag_type = /obj/item/ammo_magazine/rifle_762_short/empty
 	mags_left = 2 //2+1
 
 /mob/living/carbon/superior/human/excelsior/excel_drozd
 	icon_state = "excel_drozd"
-	projectiletype = /obj/item/projectile/bullet/magnum_40
+	projectiletype = /obj/item/projectile/bullet/pistol_10mm
 	drop_items = list(/obj/item/gun/projectile/automatic/drozd)
 	projectilesound = 'sound/weapons/guns/fire/smg_fire.ogg'
 	rounds_left = 32
-	mag_type = /obj/item/ammo_magazine/smg_magnum_40/empty
+	mag_type = /obj/item/ammo_magazine/smg_10mm/empty
 	mags_left = 2 //2+1
 
 /mob/living/carbon/superior/human/excelsior/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")

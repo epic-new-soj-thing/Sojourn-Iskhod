@@ -33,7 +33,7 @@
 	uniform = /obj/item/clothing/under/excelsior/mixed
 	suit = /obj/item/clothing/suit/sling
 	back = /obj/item/gun/projectile/boltgun
-	r_pocket = /obj/item/ammo_magazine/speed_loader_rifle_75
+	r_pocket = /obj/item/ammo_magazine/speed_loader_rifle_762
 
 /decl/hierarchy/outfit/antagonist/mercenary/excelsior/equipped
 	name = "excelsior combat gear"

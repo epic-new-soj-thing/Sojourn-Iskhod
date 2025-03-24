@@ -21,7 +21,7 @@
 
 /datum/craft_recipe/gun/stripper1
 	name = "handmade 6.5mm carbine stripper clip"
-	result = /obj/item/ammo_magazine/speed_loader_light_rifle_257/empty
+	result = /obj/item/ammo_magazine/speed_loader_light_rifle_65/empty
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 30),
 		list(QUALITY_SAWING, 10, "time" = 30), // Cut the unneeded corners...
@@ -30,7 +30,7 @@
 
 /datum/craft_recipe/gun/stripper2
 	name = "handmade 7.62mm rifle stripper clip"
-	result = /obj/item/ammo_magazine/speed_loader_rifle_75/empty
+	result = /obj/item/ammo_magazine/speed_loader_rifle_762/empty
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 30),
 		list(QUALITY_SAWING, 10, "time" = 30),
@@ -39,7 +39,7 @@
 
 /datum/craft_recipe/gun/stripper3
 	name = "handmade 8.6mm heavy rifle stripper clip"
-	result = /obj/item/ammo_magazine/speed_loader_heavy_rifle_408/empty
+	result = /obj/item/ammo_magazine/speed_loader_heavy_rifle_86/empty
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 30),
 		list(QUALITY_SAWING, 10, "time" = 30),

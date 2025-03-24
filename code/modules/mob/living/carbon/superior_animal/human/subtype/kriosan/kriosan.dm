@@ -17,12 +17,12 @@
 	comfy_range = 7
 	rapid = 0
 	ranged_cooldown = 2
-	projectiletype = /obj/item/projectile/bullet/rifle_75
+	projectiletype = /obj/item/projectile/bullet/rifle_762
 	projectilesound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 10
-	mag_type = /obj/item/ammo_magazine/rifle_75/empty
+	mag_type = /obj/item/ammo_magazine/rifle_762/empty
 	mags_left = 2 //1+2
 
 
@@ -61,12 +61,12 @@
 	comfy_range = 4
 	rapid_fire_shooting_amount = 3
 	ranged_cooldown = 3
-	projectiletype = /obj/item/projectile/bullet/pistol_35
+	projectiletype = /obj/item/projectile/bullet/pistol_9mm
 	projectilesound = 'sound/weapons/guns/fire/9mm_pistol.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 32
-	mag_type = /obj/item/ammo_magazine/smg_35/empty
+	mag_type = /obj/item/ammo_magazine/smg_9mm/empty
 	mags_left = 1 //1+1
 
 	melee_damage_lower = 15
@@ -85,7 +85,7 @@
 	comfy_range = 6
 	rapid_fire_shooting_amount = 4
 	ranged_cooldown = 5
-	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408
+	projectiletype = /obj/item/projectile/bullet/heavy_rifle_86
 	projectilesound = 'sound/weapons/guns/fire/chaingun_fire.ogg'
 	limited_ammo = FALSE
 	mag_drop = FALSE

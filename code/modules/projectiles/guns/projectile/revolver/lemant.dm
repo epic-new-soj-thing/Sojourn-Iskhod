@@ -74,7 +74,7 @@
 	icon = 'icons/obj/guns/projectile/lemant_hero.dmi'
 	icon_state = "lemant_hero"
 	item_state = "lemant_hero"
-	caliber = CAL_50
+	caliber = CAL_HEAVY_PISTOL
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	max_shells = 6
@@ -176,7 +176,7 @@
 	icon_state = "lemant_blue"
 	item_state = "lemant_blue"
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
-	caliber = CAL_50
+	caliber = CAL_HEAVY_PISTOL
 	drawChargeMeter = FALSE
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	max_shells = 9

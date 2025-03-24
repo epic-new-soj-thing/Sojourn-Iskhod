@@ -49,11 +49,11 @@
 	if(populated_contents)
 		return
 	populated_contents = TRUE
-	new /obj/item/ammo_magazine/smg_35(src)
-	new /obj/item/ammo_magazine/smg_35(src)
-	new /obj/item/ammo_magazine/smg_35(src)
-	new /obj/item/ammo_magazine/smg_35(src)
-	new /obj/item/ammo_magazine/smg_35(src)
+	new /obj/item/ammo_magazine/smg_9mm(src)
+	new /obj/item/ammo_magazine/smg_9mm(src)
+	new /obj/item/ammo_magazine/smg_9mm(src)
+	new /obj/item/ammo_magazine/smg_9mm(src)
+	new /obj/item/ammo_magazine/smg_9mm(src)
 	new /obj/item/storage/box/handcuffs(src)
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/gun/energy/gun(src)

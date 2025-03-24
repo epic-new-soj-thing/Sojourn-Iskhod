@@ -200,7 +200,7 @@
 	possible_colors = list("rainbow")
 	damage_multiplier = 1
 	penetration_multiplier = 0.8
-	magazine_type = /obj/item/ammo_magazine/smg_35/bluecross
+	magazine_type = /obj/item/ammo_magazine/smg_9mm/bluecross
 	gun_tags = list(GUN_PROJECTILE)
 	init_recoil = EMBEDDED_RECOIL(0.2)
 	serial_type = "BlueCross"
@@ -242,15 +242,15 @@
 				playsound(src.loc, 'sound/weapons/tablehit1.ogg', 100, 1)
 				crack()
 
-/obj/item/projectile/bullet/pistol_35/blue
+/obj/item/projectile/bullet/pistol_9mm/blue
 	color = "#5234ff" //its blue
 
-/obj/item/ammo_casing/pistol_35/blue
-	projectile_type = /obj/item/projectile/bullet/pistol_35/blue
+/obj/item/ammo_casing/pistol_9mm/blue
+	projectile_type = /obj/item/projectile/bullet/pistol_9mm/blue
 	is_caseless = TRUE
 
-/obj/item/ammo_magazine/smg_35/bluecross
-	ammo_type = /obj/item/ammo_casing/pistol_35/blue
+/obj/item/ammo_magazine/smg_9mm/bluecross
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/blue
 	matter = list()
 
 /obj/item/clothing/accessory/holster/bluecross
@@ -440,7 +440,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "blue_cane"
 	item_state = "stick"
-	caliber = CAL_50 //Cant be caseless do to bugs oh well
+	caliber = CAL_HEAVY_PISTOL //Cant be caseless do to bugs oh well
 	matter = list(MATERIAL_PLASTEEL = 10, MATERIAL_SILVER = 5, MATERIAL_PLATINUM = 3)
 	price_tag = 1980
 	gun_parts = null
@@ -468,7 +468,7 @@
 	origin_tech = list(TECH_ILLEGAL = 5)
 	matter = list(MATERIAL_PLASTEEL = 6, MATERIAL_STEEL = 25)
 	price_tag = 2500
-	projectile_type = /obj/item/projectile/beam/weak/pistol_35
+	projectile_type = /obj/item/projectile/beam/weak/pistol_9mm
 	charge_cost = 1000000000000000000000000000000000000
 	suitable_cell = null
 	fire_sound = 'sound/weapons/guns/fire/grease_fire.ogg'

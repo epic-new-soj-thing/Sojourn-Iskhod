@@ -15,7 +15,7 @@
 	load_method = MAGAZINE
 	mag_well = MAG_WELL_SMG
 	auto_eject = FALSE
-	magazine_type = /obj/item/ammo_magazine/smg_35
+	magazine_type = /obj/item/ammo_magazine/smg_9mm
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 9)
 	price_tag = 10
 	serial_type = "H&S"

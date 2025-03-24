@@ -38,10 +38,10 @@
 	charge_meter = TRUE
 	serial_type = "NM"
 	init_firemodes = list(
-		list(mode_name="Rubbers Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/rubber, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 ,fire_delay = 10, icon="burst"),
-		list(mode_name="Standard Burst", projectile_type=/obj/item/projectile/bullet/rifle_75, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 ,fire_delay = 10, icon="burst"),
-		list(mode_name="Hollowpoint Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/lethal, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 , fire_delay = 10,  icon="burst"),
-		list(mode_name="Incendiary Burst", projectile_type=/obj/item/projectile/bullet/rifle_75/incend, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2, fire_delay = 20, icon="burst"),
+		list(mode_name="Rubbers Burst", projectile_type=/obj/item/projectile/bullet/rifle_762/rubber, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 ,fire_delay = 10, icon="burst"),
+		list(mode_name="Standard Burst", projectile_type=/obj/item/projectile/bullet/rifle_762, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 ,fire_delay = 10, icon="burst"),
+		list(mode_name="Hollowpoint Burst", projectile_type=/obj/item/projectile/bullet/rifle_762/lethal, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2 , fire_delay = 10,  icon="burst"),
+		list(mode_name="Incendiary Burst", projectile_type=/obj/item/projectile/bullet/rifle_762/incend, fire_sound = 'sound/weapons/guns/fire/NM_PARA.ogg', burst = 2, fire_delay = 20, icon="burst"),
 		)
 
 /obj/item/gun/energy/dazzlation //the last gun you'll ever need.
@@ -74,9 +74,9 @@
 	charge_cost = 100
 	self_recharge = 1
 	init_firemodes = list(
-		list(mode_name="rubber bullet", projectile_type=/obj/item/projectile/bullet/pistol_35/rubber, fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=10
+		list(mode_name="rubber bullet", projectile_type=/obj/item/projectile/bullet/pistol_9mm/rubber, fire_sound = 'sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=10
 		, icon="stun"),
-		list(mode_name="Hollowpoint round", projectile_type=/obj/item/projectile/bullet/pistol_35/lethal, fire_sound='sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=5, icon="kill"),
+		list(mode_name="Hollowpoint round", projectile_type=/obj/item/projectile/bullet/pistol_9mm/lethal, fire_sound='sound/weapons/guns/fire/9mm_pistol.ogg', fire_delay=5, icon="kill"),
 		)
 	charge_meter = FALSE
 
@@ -90,7 +90,7 @@
 	charge_cost = 25
 	self_recharge = 1
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
-	projectile_type = /obj/item/projectile/bullet/pistol_35/lethal //self defense gun, great for bugs less good for a "real fight" against anyone with anything resembling armor
+	projectile_type = /obj/item/projectile/bullet/pistol_9mm/lethal //self defense gun, great for bugs less good for a "real fight" against anyone with anything resembling armor
 	damage_multiplier = 0.7
 	penetration_multiplier = 0.7
 	init_recoil = HANDGUN_RECOIL(0.4) //Hard to control accurately in most cases.

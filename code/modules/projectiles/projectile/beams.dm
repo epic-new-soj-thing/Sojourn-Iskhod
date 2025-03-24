@@ -88,32 +88,32 @@ In pvp they also have more lasting damages, such as infections, pain form burns,
 	wounding_mult = WOUNDING_WIDE
 */
 
-/obj/item/projectile/beam/weak/pistol_35
+/obj/item/projectile/beam/weak/pistol_9mm
 	damage_types = list(BURN = 15)
 	armor_divisor = 2
 	recoil = 2.5
 
-/obj/item/projectile/beam/weak/light_rifle_257
+/obj/item/projectile/beam/weak/light_rifle_65
 	damage_types = list(BURN = 14)
 	armor_divisor = 3
 	recoil = 3.5
 
-/obj/item/projectile/beam/weak/rifle_75
+/obj/item/projectile/beam/weak/rifle_762
 	damage_types = list(BURN = 15.5)
 	armor_divisor = 3
 	recoil = 5
 
-/obj/item/projectile/beam/weak/heavy_rifle_408
+/obj/item/projectile/beam/weak/heavy_rifle_86
 	damage_types = list(BURN = 20)
 	armor_divisor = 4
 	recoil = 10
 
-/obj/item/projectile/beam/weak/magnum_40
+/obj/item/projectile/beam/weak/pistol_10mm
 	damage_types = list(BURN = 19)
 	armor_divisor = 3
 	recoil = 4.5
 
-/obj/item/projectile/beam/weak/kurtz_50
+/obj/item/projectile/beam/weak/kurtz_12
 	damage_types = list(BURN = 23.5)
 	armor_divisor = 3
 	recoil = 8

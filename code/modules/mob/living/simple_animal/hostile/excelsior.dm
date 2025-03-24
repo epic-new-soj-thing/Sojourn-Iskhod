@@ -34,7 +34,7 @@
 
 	wander = FALSE //No more sleepwalking
 
-	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408/hv
+	projectiletype = /obj/item/projectile/bullet/heavy_rifle_86/hv
 
 	needs_environment = FALSE
 

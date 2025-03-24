@@ -39,7 +39,7 @@
 
 /obj/item/gun/projectile/clarissa/preloaded/New()
 	. = ..()
-	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
+	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_9mm/rubber(src)
 
 /obj/item/gun/projectile/clarissa/update_icon()
 	..()
@@ -100,7 +100,7 @@
 
 /obj/item/gun/projectile/makarov/preloaded/New()
 	. = ..()
-	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
+	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_9mm/rubber(src)
 
 /obj/item/gun/projectile/makarov/update_icon()
 	..()
@@ -142,13 +142,13 @@
 
 /obj/item/gun/projectile/makarov/moebius/preloaded_cbo/New()
 	. = ..()
-	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/drum/soporific_cbo(src)
+	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_9mm/drum/soporific_cbo(src)
 
 /obj/item/gun/projectile/makarov/moebius/preloaded
 
 /obj/item/gun/projectile/makarov/moebius/preloaded/New()
 	. = ..()
-	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/rubber(src)
+	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_9mm/rubber(src)
 
 /obj/item/gun/projectile/makarov/moebius/update_icon()
 	..()

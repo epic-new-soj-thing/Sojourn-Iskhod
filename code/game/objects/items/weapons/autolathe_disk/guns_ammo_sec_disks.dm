@@ -19,7 +19,7 @@
 		/datum/design/autolathe/ammo/slkurtz_rubber,
 		//smg mags
 		/datum/design/autolathe/ammo/smg_rubber,
-		/datum/design/autolathe/ammo/smg_magnum_40_rubber,
+		/datum/design/autolathe/ammo/smg_10mm_rubber,
 		// rifles
 		/datum/design/autolathe/ammo/lrifle_short_rubber,
 		/datum/design/autolathe/ammo/rifle_short_rubber,
@@ -51,8 +51,8 @@
 		//smg mags
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_lethal,
-		/datum/design/autolathe/ammo/smg_magnum_40,
-		/datum/design/autolathe/ammo/smg_magnum_40_lethal, //Marshals got weapons for this, probably shouldn't be tied up only to 2 disks
+		/datum/design/autolathe/ammo/smg_10mm,
+		/datum/design/autolathe/ammo/smg_10mm_lethal, //Marshals got weapons for this, probably shouldn't be tied up only to 2 disks
 		/datum/design/autolathe/ammo/mag_10x24, // The specific model of the Spec Ops.
 		// rifles
 		/datum/design/autolathe/ammo/lrifle_short,
@@ -125,7 +125,7 @@
 	license = 20
 
 	designs = list(
-		/datum/design/autolathe/ammo/smg_magnum_40_empty,
+		/datum/design/autolathe/ammo/smg_10mm_empty,
 		/datum/design/autolathe/ammo/c10x24 = 3,
 		/datum/design/autolathe/ammo/mag_10x24 = 1,
 		/datum/design/autolathe/ammo/box_10x24 = 5,
@@ -321,12 +321,12 @@
 	license = 16
 	designs = list(
 		/datum/design/autolathe/gun/vector = 0, //The gun is free as this is the only way to get it
-		/datum/design/autolathe/ammo/smg_magnum_40 = 3,
-		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 2,
+		/datum/design/autolathe/ammo/smg_10mm = 3,
+		/datum/design/autolathe/ammo/smg_10mm_rubber = 2,
 		//Free as well do to being the only way to get these mags
-		/datum/design/autolathe/ammo/smg_magnum_40_empty = 0,
-		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0,
-		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 4
+		/datum/design/autolathe/ammo/smg_10mm_empty = 0,
+		/datum/design/autolathe/ammo/smg_10mm_practice = 0,
+		/datum/design/autolathe/ammo/smg_10mm_lethal = 4
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/thompson
@@ -336,10 +336,10 @@
 	license = 12
 	designs = list(
 		/datum/design/autolathe/gun/thompson = 4,
-		/datum/design/autolathe/ammo/smg_magnum_40 = 2,
-		/datum/design/autolathe/ammo/smg_magnum_40_rubber = 1,
-		/datum/design/autolathe/ammo/smg_magnum_40_lethal = 3,
-		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
+		/datum/design/autolathe/ammo/smg_10mm = 2,
+		/datum/design/autolathe/ammo/smg_10mm_rubber = 1,
+		/datum/design/autolathe/ammo/smg_10mm_lethal = 3,
+		/datum/design/autolathe/ammo/smg_10mm_practice = 0
 		)
 
 // 12mm PISTOLS

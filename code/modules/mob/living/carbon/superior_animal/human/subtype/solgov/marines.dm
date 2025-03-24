@@ -11,7 +11,7 @@
 
 	armor = list(melee = 12, bullet = 12, energy = 11, bomb = 50, bio = 100, rad = 100)
 
-	casingtype = /obj/item/ammo_casing/heavy_rifle_408/spent
+	casingtype = /obj/item/ammo_casing/heavy_rifle_86/spent
 
     //range/ammo stuff
 	ranged = TRUE
@@ -19,12 +19,12 @@
 	comfy_range = 7
 	rapid = FALSE
 	ranged_cooldown = 2
-	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408
+	projectiletype = /obj/item/projectile/bullet/heavy_rifle_86
 	projectilesound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 20
-	mag_type = /obj/item/ammo_magazine/heavy_rifle_408/empty
+	mag_type = /obj/item/ammo_magazine/heavy_rifle_86/empty
 	mags_left = 6 //1+6
 	delay_for_range = 1.0 SECONDS
 
@@ -77,19 +77,19 @@
 
 	armor = list(melee = 15, bullet = 17, energy = 12, bomb = 40, bio = 100, rad = 100)
 
-	casingtype = /obj/item/ammo_casing/magnum_40/spent
+	casingtype = /obj/item/ammo_casing/pistol_10mm/spent
 
 	//range/ammo stuff
 	rapid = TRUE
 	rapid_fire_shooting_amount = 3
 	comfy_range = 4
 	ranged_cooldown = 2
-	projectiletype = /obj/item/projectile/bullet/magnum_40
+	projectiletype = /obj/item/projectile/bullet/pistol_10mm
 	projectilesound = 'sound/weapons/guns/fire/vector_fire.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 30
-	mag_type = /obj/item/ammo_magazine/smg_magnum_40/empty
+	mag_type = /obj/item/ammo_magazine/smg_10mm/empty
 	mags_left = 5 //1+5
 
 	melee_damage_lower = 15
@@ -168,7 +168,7 @@
 	rapid = TRUE
 	rapid_fire_shooting_amount = 5
 	ranged_cooldown = 3
-	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408
+	projectiletype = /obj/item/projectile/bullet/heavy_rifle_86
 	projectilesound = 'sound/weapons/guns/fire/lmg_fire.ogg'
 	limited_ammo = FALSE
 	mag_drop = FALSE
@@ -189,12 +189,12 @@
 
 	armor = list(melee = 6, bullet = 10, energy = 8, bomb = 20, bio = 100, rad = 100)
 
-	casingtype = /obj/item/ammo_casing/heavy_rifle_408/hv/spent
+	casingtype = /obj/item/ammo_casing/heavy_rifle_86/hv/spent
 
 	viewRange = 14
 	comfy_range = 12
 	ranged_cooldown = 4
-	projectiletype = /obj/item/projectile/bullet/heavy_rifle_408/hv
+	projectiletype = /obj/item/projectile/bullet/heavy_rifle_86/hv
 	projectilesound = 'sound/weapons/guns/fire/heavy_fire.ogg'
 
 /mob/living/carbon/superior/human/marine/sniper/doTargetMessage()

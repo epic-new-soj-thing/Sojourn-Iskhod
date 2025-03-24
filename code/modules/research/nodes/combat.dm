@@ -228,8 +228,8 @@
 							//datum/design/research/item/ammo/laser/box/lethal,
 							/datum/design/research/item/weapon/starstriker,
 							/datum/design/research/item/weapon/katana,
-							/datum/design/research/item/ammo/rifle_75,
-							/datum/design/research/item/ammo/light_rifle_257,
+							/datum/design/research/item/ammo/rifle_762,
+							/datum/design/research/item/ammo/light_rifle_65,
 							/datum/design/research/item/ammo/kurtz_laser)
 
 /datum/technology/exotic_gunmods
@@ -271,7 +271,7 @@
 
 	unlocks_designs = list(/datum/design/research/item/weapon/nuclear_gun,
 							/datum/design/research/item/weapon/lasercannon,
-							/datum/design/research/item/ammo/heavy_rifle_408,
+							/datum/design/research/item/ammo/heavy_rifle_86,
 							/datum/design/research/item/ammo/laser_mag,
 							/datum/design/research/item/weapon/laser_ak,
 							/datum/design/research/item/weapon/centauri

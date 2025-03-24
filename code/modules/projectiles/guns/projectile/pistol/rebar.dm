@@ -5,7 +5,7 @@
 	icon_state = "type_90"
 	item_state = "type_90"
 	w_class = ITEM_SIZE_NORMAL
-	caliber = CAL_50
+	caliber = CAL_HEAVY_PISTOL
 	can_dual = TRUE
 	origin_tech = list(TECH_COMBAT = 2, TECH_MATERIAL = 2)
 	matter = list(MATERIAL_PLASTEEL = 28, MATERIAL_PLASTIC = 6, MATERIAL_PLATINUM = 18)

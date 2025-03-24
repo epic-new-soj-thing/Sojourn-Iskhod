@@ -6,7 +6,7 @@
 	icon_state = "hornet"
 	item_state = "hornet"
 	force = WEAPON_FORCE_PAINFUL
-	caliber = CAL_50
+	caliber = CAL_HEAVY_PISTOL
 	max_shells = 5
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
 	price_tag = 1200

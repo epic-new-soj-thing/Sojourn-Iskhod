@@ -444,7 +444,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 		/obj/item/device/lighting/glowstick,
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/ammo_casing/rocket,
-		/obj/item/ammo_magazine/smg_35,
+		/obj/item/ammo_magazine/smg_9mm,
 		/obj/item/reagent_containers/syringe,
 		/obj/item/reagent_containers/glass/beaker/vial,
 		/obj/item/reagent_containers/hypospray,

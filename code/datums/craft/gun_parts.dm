@@ -425,7 +425,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 12mm."
 	icon_state = "barrel_12mm"
 	price_tag = 150
-	caliber = CAL_50
+	caliber = CAL_HEAVY_PISTOL
 	refence_for_legal = "kurtz"
 
 /obj/item/part/gun/barrel/srifle

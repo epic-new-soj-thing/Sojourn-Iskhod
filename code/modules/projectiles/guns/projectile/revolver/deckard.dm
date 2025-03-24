@@ -3,7 +3,7 @@
 	desc = "A rare, custom-built revolver formerly used within Sol by the early Turing Police, gifted by the Mar'qua Technocracy. Use when there is no time for the Voight-Kampff test. Uses 12mm."
 	icon = 'icons/obj/guns/projectile/deckard.dmi'
 	icon_state = "deckard"
-	caliber = CAL_50
+	caliber = CAL_HEAVY_PISTOL
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	max_shells = 5 // Standardizing speedloaders //Absolutely not. Stop powercreeping up the mag-capacities of weapons that have anemic performance, just make the damage more menaningful - CDB
 	matter = list(MATERIAL_PLASTEEL = 12, MATERIAL_WOOD = 6)

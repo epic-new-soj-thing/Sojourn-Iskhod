@@ -158,11 +158,11 @@
 		/datum/design/autolathe/ammo/rifle,						//AK ammo
 		/datum/design/autolathe/ammo/rifle_short_rubber,
 		/datum/design/autolathe/ammo/rifle_ammobox,
-		/datum/design/autolathe/ammo/pistol_35_drum,				//ppsh
-		/datum/design/autolathe/ammo/pistol_35_drum/empty,
-		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
-		/datum/design/autolathe/ammo/pistol_35_drum/hv,
-		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
+		/datum/design/autolathe/ammo/pistol_9mm_drum,				//ppsh
+		/datum/design/autolathe/ammo/pistol_9mm_drum/empty,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/hv,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/lethal,
 		/datum/design/autolathe/ammo/sbaw_slug,						//saiga ammo
 		/datum/design/autolathe/ammo/sbaw_pellet,
 		/datum/design/autolathe/ammo/maxim,							//maxim ammo
@@ -230,18 +230,18 @@
 		/datum/design/autolathe/ammo/pistol_ammobox_rubber,
 		/datum/design/autolathe/ammo/smg,							//ppsh ammo
 		/datum/design/autolathe/ammo/smg_rubber,
-		/datum/design/autolathe/ammo/smg_magnum_40,					//drozd ammo
+		/datum/design/autolathe/ammo/smg_10mm,					//drozd ammo
 		/datum/design/autolathe/ammo/sl_rifle,						//boltgun ammo
 		/datum/design/autolathe/ammo/rifle,						//AK ammo
 		/datum/design/autolathe/ammo/rifle_rubber,
 		/datum/design/autolathe/ammo/rifle_ammobox,
 		/datum/design/autolathe/ammo/rifle,							//vintorez ammo
 		/datum/design/autolathe/ammo/rifle_short_hv,
-		/datum/design/autolathe/ammo/pistol_35_drum,				//ppsh
-		/datum/design/autolathe/ammo/pistol_35_drum/empty,
-		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
-		/datum/design/autolathe/ammo/pistol_35_drum/hv,
-		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
+		/datum/design/autolathe/ammo/pistol_9mm_drum,				//ppsh
+		/datum/design/autolathe/ammo/pistol_9mm_drum/empty,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/hv,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/lethal,
 		/datum/design/autolathe/ammo/sbaw_slug,						//saiga ammo
 		/datum/design/autolathe/ammo/sbaw_pellet,
 		/datum/design/autolathe/ammo/maxim, 						//maxim
@@ -383,10 +383,10 @@
 	license = -1
 	designs = list(
 		/datum/design/autolathe/gun/ppsh,
-		/datum/design/autolathe/ammo/pistol_35_drum,
-		/datum/design/autolathe/ammo/pistol_35_drum/empty,
-		/datum/design/autolathe/ammo/pistol_35_drum/rubber,
-		/datum/design/autolathe/ammo/pistol_35_drum/hv,
-		/datum/design/autolathe/ammo/pistol_35_drum/lethal,
+		/datum/design/autolathe/ammo/pistol_9mm_drum,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/empty,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/rubber,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/hv,
+		/datum/design/autolathe/ammo/pistol_9mm_drum/lethal,
 		/datum/design/autolathe/container/ammocan_excel
 		)

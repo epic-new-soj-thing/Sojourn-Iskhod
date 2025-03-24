@@ -18,12 +18,12 @@
 	comfy_range = 7
 	rapid = FALSE
 	ranged_cooldown = 2
-	projectiletype = /obj/item/projectile/beam/weak/rifle_75
+	projectiletype = /obj/item/projectile/beam/weak/rifle_762
 	projectilesound = 'sound/weapons/energy/laser_rifle.ogg'
 	limited_ammo = TRUE
 	mag_drop = TRUE
 	rounds_left = 20
-	mag_type = /obj/item/ammo_magazine/rifle_75/empty
+	mag_type = /obj/item/ammo_magazine/rifle_762/empty
 	mags_left = 6 //1+6
 	delay_for_range = 1.0 SECONDS
 

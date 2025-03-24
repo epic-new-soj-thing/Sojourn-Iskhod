@@ -6,7 +6,7 @@
 	icon_state = "longRevolver"
 	fire_sound = 'sound/weapons/guns/fire/12mm_revolver.ogg'
 	w_class = ITEM_SIZE_NORMAL
-	caliber = CAL_50
+	caliber = CAL_HEAVY_PISTOL
 	slot_flags = SLOT_BACK|SLOT_BELT	//Can't fit a holster due to length
 	origin_tech = list(TECH_COMBAT = 3, TECH_MATERIAL = 3)
 	max_shells = 5

@@ -102,42 +102,42 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 /datum/recipe_crafting_station/ammo/nine_mm/scrap_ammo_pile
 	name = "Scrap 9mm ammo pile"
 	point_cost = 5
-	result = /obj/item/ammo_casing/pistol_35/scrap/prespawned
+	result = /obj/item/ammo_casing/pistol_9mm/scrap/prespawned
 
 /datum/recipe_crafting_station/ammo/nine_mm/scrap_speedloader
 	name = "Scrap 9mm speedloader"
 	point_cost = 3
-	result = /obj/item/ammo_magazine/speed_loader_pistol_35/scrap
+	result = /obj/item/ammo_magazine/speed_loader_pistol_9mm/scrap
 
 /datum/recipe_crafting_station/ammo/nine_mm/scrap_packet
 	name = "Scrap 9mm ammo packet"
 	point_cost = 12
-	result = /obj/item/ammo_magazine/ammobox/pistol_35/scrap
+	result = /obj/item/ammo_magazine/ammobox/pistol_9mm/scrap
 
 /datum/recipe_crafting_station/ammo/nine_mm/ammo_pile
 	name = "9mm ammo pile"
 	point_cost = 8
-	result = /obj/item/ammo_casing/pistol_35/prespawned
+	result = /obj/item/ammo_casing/pistol_9mm/prespawned
 
 /datum/recipe_crafting_station/ammo/nine_mm/ammo_packet
 	name = "9mm ammo packet"
 	point_cost = 18
-	result = /obj/item/ammo_magazine/ammobox/pistol_35
+	result = /obj/item/ammo_magazine/ammobox/pistol_9mm
 
 /datum/recipe_crafting_station/ammo/nine_mm/pistol_mag
 	name = "EMPTY 9mm pistol magazine"
 	point_cost = 5
-	result = /obj/item/ammo_magazine/pistol_35/empty
+	result = /obj/item/ammo_magazine/pistol_9mm/empty
 
 /datum/recipe_crafting_station/ammo/nine_mm/extended_mag
 	name = "EMPTY 9mm extended magazine"
 	point_cost = 7
-	result = /obj/item/ammo_magazine/highcap_pistol_35/empty
+	result = /obj/item/ammo_magazine/highcap_pistol_9mm/empty
 
 /datum/recipe_crafting_station/ammo/nine_mm/smg_mag
 	name = "EMPTY 9mm SMG magazine"
 	point_cost = 12
-	result = /obj/item/ammo_magazine/smg_35/empty
+	result = /obj/item/ammo_magazine/smg_9mm/empty
 
 // 10mm
 /datum/recipe_crafting_station/ammo/ten_mm
@@ -147,57 +147,57 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 /datum/recipe_crafting_station/ammo/ten_mm/scrap_ammo_pile
 	name = "Scrap 10mm ammo pile"
 	point_cost = 3
-	result = /obj/item/ammo_casing/magnum_40/scrap/prespawned
+	result = /obj/item/ammo_casing/pistol_10mm/scrap/prespawned
 
 /datum/recipe_crafting_station/ammo/ten_mm/scrap_speedloader
 	name = "Scrap 10mm speedloader"
 	point_cost = 5
-	result = /obj/item/ammo_magazine/speed_loader_magnum_40/scrap
+	result = /obj/item/ammo_magazine/speed_loader_pistol_10mm/scrap
 
 /datum/recipe_crafting_station/ammo/ten_mm/scrap_ammo_packet
 	name = "Scrap 10mm ammo packet"
 	point_cost = 15
-	result = /obj/item/ammo_magazine/ammobox/magnum_40/scrap
+	result = /obj/item/ammo_magazine/ammobox/pistol_10mm/scrap
 
 /datum/recipe_crafting_station/ammo/ten_mm/ammo_pile
 	name = "10mm magnum ammo pile"
 	point_cost = 7
-	result = /obj/item/ammo_casing/magnum_40/prespawned
+	result = /obj/item/ammo_casing/pistol_10mm/prespawned
 
 /datum/recipe_crafting_station/ammo/ten_mm/ammo_packet
 	name = "10mm ammo packet"
 	point_cost = 26
-	result = /obj/item/ammo_magazine/ammobox/magnum_40
+	result = /obj/item/ammo_magazine/ammobox/pistol_10mm
 
 /datum/recipe_crafting_station/ammo/ten_mm/pistol_mag
 	name = "EMPTY 10mm pistol magazine"
 	point_cost = 7
-	result = /obj/item/ammo_magazine/magnum_40/empty
+	result = /obj/item/ammo_magazine/pistol_10mm/empty
 
 // 12mm
 /datum/recipe_crafting_station/ammo/twelve_mm
 	category = "Small Arms Ammo"
-	subcategory = CAL_50
+	subcategory = CAL_HEAVY_PISTOL
 
 /datum/recipe_crafting_station/ammo/twelve_mm/ammo_pile
 	name = "12mm ammo pile"
 	point_cost = 8
-	result = /obj/item/ammo_casing/kurtz_50/prespawned
+	result = /obj/item/ammo_casing/kurtz_12/prespawned
 
 /datum/recipe_crafting_station/ammo/twelve_mm/speed_loader
 	name = "12mm speedloader"
 	point_cost = 10
-	result = /obj/item/ammo_magazine/speed_loader_kurtz_50
+	result = /obj/item/ammo_magazine/speed_loader_kurtz_12
 
 /datum/recipe_crafting_station/ammo/twelve_mm/ammo_box
 	name = "12mm ammo box"
 	point_cost = 26
-	result = /obj/item/ammo_magazine/ammobox/kurtz_50
+	result = /obj/item/ammo_magazine/ammobox/kurtz_12
 
 /datum/recipe_crafting_station/ammo/twelve_mm/mag
 	name = "EMPTY 12mm heavy pistol magazine"
 	point_cost = 8
-	result = /obj/item/ammo_magazine/kurtz_50/empty
+	result = /obj/item/ammo_magazine/kurtz_12/empty
 
 // shotgun
 /datum/recipe_crafting_station/ammo/shotgun
@@ -292,52 +292,52 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 /datum/recipe_crafting_station/ammo/lrifle/scrap_pile
 	name = "Scrap carbine ammo pile"
 	point_cost = 3
-	result = /obj/item/ammo_casing/light_rifle_257/scrap/prespawned
+	result = /obj/item/ammo_casing/light_rifle_65/scrap/prespawned
 
 /datum/recipe_crafting_station/ammo/lrifle/scrap_packet
 	name = "Scrap carbine ammo packet"
 	point_cost = 10
-	result = /obj/item/ammo_magazine/ammobox/light_rifle_257/scrap
+	result = /obj/item/ammo_magazine/ammobox/light_rifle_65/scrap
 
 /datum/recipe_crafting_station/ammo/lrifle/pile
 	name = "Carbine ammo pile"
 	point_cost = 8
-	result = /obj/item/ammo_casing/light_rifle_257/prespawned
+	result = /obj/item/ammo_casing/light_rifle_65/prespawned
 
 /datum/recipe_crafting_station/ammo/lrifle/packet
 	name = "Carbine ammo packet"
 	point_cost = 26
-	result = /obj/item/ammo_magazine/ammobox/light_rifle_257_small
+	result = /obj/item/ammo_magazine/ammobox/light_rifle_65_small
 
 /datum/recipe_crafting_station/ammo/lrifle/incendiary_pile
 	name = "Incendiary carbine ammo pile"
 	point_cost = 8
-	result = /obj/item/ammo_casing/light_rifle_257/incend/prespawned
+	result = /obj/item/ammo_casing/light_rifle_65/incend/prespawned
 
 /datum/recipe_crafting_station/ammo/lrifle/incendiary_packet
 	name = "Incendiary carbine ammo packet"
 	point_cost = 26
-	result = /obj/item/ammo_magazine/ammobox/light_rifle_257_small/incend
+	result = /obj/item/ammo_magazine/ammobox/light_rifle_65_small/incend
 
 /datum/recipe_crafting_station/ammo/lrifle/mag
 	name = "EMPTY carbine standard magazine"
 	point_cost = 5
-	result = /obj/item/ammo_magazine/light_rifle_257_short/empty
+	result = /obj/item/ammo_magazine/light_rifle_65_short/empty
 
 /datum/recipe_crafting_station/ammo/lrifle/extended_mag
 	name = "EMPTY carbine extended magazine"
 	point_cost = 10
-	result = /obj/item/ammo_magazine/light_rifle_257/scrap/empty
+	result = /obj/item/ammo_magazine/light_rifle_65/scrap/empty
 
 /datum/recipe_crafting_station/ammo/lrifle/drum_mag
 	name = "EMPTY carbine drum magazine"
 	point_cost = 30
-	result = /obj/item/ammo_magazine/light_rifle_257_drum/empty
+	result = /obj/item/ammo_magazine/light_rifle_65_drum/empty
 
 /datum/recipe_crafting_station/ammo/lrifle/box_mag
 	name = "EMPTY carbine linked box"
 	point_cost = 20
-	result = /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty
+	result = /obj/item/ammo_magazine/rifle_762_linked_box/light_rifle_65/empty
 
 // 7.62mm
 /datum/recipe_crafting_station/ammo/rifle
@@ -347,52 +347,52 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 /datum/recipe_crafting_station/ammo/rifle/scrap_pile
 	name = "Scrap ammo pile"
 	point_cost = 3
-	result = /obj/item/ammo_casing/rifle_75/scrap/prespawned
+	result = /obj/item/ammo_casing/rifle_762/scrap/prespawned
 
 /datum/recipe_crafting_station/ammo/rifle/scrap_packet
 	name = "Scrap rifle ammo packet"
 	point_cost = 15
-	result = /obj/item/ammo_magazine/ammobox/rifle_75_small/scrap
+	result = /obj/item/ammo_magazine/ammobox/rifle_762_small/scrap
 
 /datum/recipe_crafting_station/ammo/rifle/pile
 	name = "Rifle ammo pile"
 	point_cost = 8
-	result = /obj/item/ammo_casing/rifle_75/prespawned
+	result = /obj/item/ammo_casing/rifle_762/prespawned
 
 /datum/recipe_crafting_station/ammo/rifle/packet
 	name = "Rifle ammo packet"
 	point_cost = 26
-	result = /obj/item/ammo_magazine/ammobox/rifle_75_small
+	result = /obj/item/ammo_magazine/ammobox/rifle_762_small
 
 /datum/recipe_crafting_station/ammo/rifle/incendiary_pile
 	name = "Incendiary rifle ammo pile"
 	point_cost = 8
-	result = /obj/item/ammo_casing/rifle_75/incend/prespawned
+	result = /obj/item/ammo_casing/rifle_762/incend/prespawned
 
 /datum/recipe_crafting_station/ammo/rifle/incendiary_packet
 	name = "Incendiary rifle ammo packet"
 	point_cost = 26
-	result = /obj/item/ammo_magazine/ammobox/rifle_75_small/incend
+	result = /obj/item/ammo_magazine/ammobox/rifle_762_small/incend
 
 /datum/recipe_crafting_station/ammo/rifle/mag
 	name = "EMPTY Rifle short magazine"
 	point_cost = 5
-	result = /obj/item/ammo_magazine/rifle_75_short/scrap/empty
+	result = /obj/item/ammo_magazine/rifle_762_short/scrap/empty
 
 /datum/recipe_crafting_station/ammo/rifle/extended_mag
 	name = "EMPTY Rifle extended magazine"
 	point_cost = 10
-	result = /obj/item/ammo_magazine/rifle_75/empty
+	result = /obj/item/ammo_magazine/rifle_762/empty
 
 /datum/recipe_crafting_station/ammo/rifle/drum_mag
 	name = "EMPTY Rifle drum magazine"
 	point_cost = 30
-	result = /obj/item/ammo_magazine/rifle_75_drum/empty
+	result = /obj/item/ammo_magazine/rifle_762_drum/empty
 
 /datum/recipe_crafting_station/ammo/rifle/box_mag
 	name = "EMPTY Rifle linked box"
 	point_cost = 20
-	result = /obj/item/ammo_magazine/rifle_75_linked_box/empty
+	result = /obj/item/ammo_magazine/rifle_762_linked_box/empty
 
 // 8.6mm
 /datum/recipe_crafting_station/ammo/hrifle
@@ -402,42 +402,42 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 /datum/recipe_crafting_station/ammo/hrifle/scrap_pile
 	name = "Scrap heavy rifle ammo pile"
 	point_cost = 3
-	result = /obj/item/ammo_casing/heavy_rifle_408/scrap/prespawned
+	result = /obj/item/ammo_casing/heavy_rifle_86/scrap/prespawned
 
 /datum/recipe_crafting_station/ammo/hrifle/scrap_packet
 	name = "Scrap heavy rifle ammo packet"
 	point_cost = 15
-	result = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap
+	result = /obj/item/ammo_magazine/ammobox/heavy_rifle_86_small/scrap
 
 /datum/recipe_crafting_station/ammo/hrifle/pile
 	name = "Heavy rifle ammo pile"
 	point_cost = 8
-	result = /obj/item/ammo_casing/heavy_rifle_408/prespawned
+	result = /obj/item/ammo_casing/heavy_rifle_86/prespawned
 
 /datum/recipe_crafting_station/ammo/hrifle/packet
 	name = "Heavy rifle ammo packet"
 	point_cost = 26
-	result = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small
+	result = /obj/item/ammo_magazine/ammobox/heavy_rifle_86_small
 
 /datum/recipe_crafting_station/ammo/hrifle/incendiary_pile
 	name = "Incendiary heavy rifle ammo pile"
 	point_cost = 8
-	result = /obj/item/ammo_casing/heavy_rifle_408/incend/prespawned
+	result = /obj/item/ammo_casing/heavy_rifle_86/incend/prespawned
 
 /datum/recipe_crafting_station/ammo/hrifle/incendiary_packet
 	name = "Incendiary heavy rifle ammo packet"
 	point_cost = 26
-	result = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/incend
+	result = /obj/item/ammo_magazine/ammobox/heavy_rifle_86_small/incend
 
 /datum/recipe_crafting_station/ammo/hrifle/mag
 	name = "EMPTY heavy rifle magazine"
 	point_cost = 5
-	result = /obj/item/ammo_magazine/heavy_rifle_408/scrap/empty
+	result = /obj/item/ammo_magazine/heavy_rifle_86/scrap/empty
 
 /datum/recipe_crafting_station/ammo/hrifle/drum_mag
 	name = "EMPTY heavy rifle drum magazine"
 	point_cost = 30
-	result = /obj/item/ammo_magazine/heavy_rifle_408_drum/empty
+	result = /obj/item/ammo_magazine/heavy_rifle_86_drum/empty
 
 // 14.5mm
 /datum/recipe_crafting_station/ammo/antim

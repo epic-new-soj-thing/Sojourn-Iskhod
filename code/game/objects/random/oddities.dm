@@ -108,15 +108,15 @@
 
 		//The gimmic of the of the revolver is that it has a lot of ammo it *can* store, so we give starting ammo
 		if(istype(picked_spawn, /obj/item/gun/projectile/revolver/mistral/elite))
-			new /obj/item/ammo_magazine/ammobox/magnum_40/large(src.loc)
+			new /obj/item/ammo_magazine/ammobox/pistol_10mm/large(src.loc)
 
 		//The gimmic of the maxim was that its non-exl and powerful, do to powercreep of non-exl maxims we give starting ammo
 		if(istype(picked_spawn, /obj/item/gun/projectile/automatic/maxim/replica))
-			new /obj/item/ammo_magazine/maxim_75(src.loc)
+			new /obj/item/ammo_magazine/maxim_762(src.loc)
 
 		//Just one of the weakest of the spawns, so we give extra ammo
 		if(istype(picked_spawn, /obj/item/gun/projectile/that_gun))
-			new /obj/item/ammo_magazine/highcap_pistol_35/drum(src.loc)
+			new /obj/item/ammo_magazine/highcap_pistol_9mm/drum(src.loc)
 	return
 
 /obj/random/oddity_guns/proc/random_grabber()

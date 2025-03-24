@@ -19,7 +19,7 @@
 	init_recoil = CARBINE_RECOIL(1)
 	can_dual = TRUE
 	damage_multiplier = 1.2
-	projectile_type=/obj/item/projectile/bullet/pistol_35/rubber/soporific
+	projectile_type=/obj/item/projectile/bullet/pistol_9mm/rubber/soporific
 	price_tag = 1750
 	serial_type = "SI"
 	blacklist_upgrades = list(/obj/item/gun_upgrade/mechanism/greyson_master_catalyst = TRUE) // I can't believe I have to do this. Don't turn NL weapons into literal war crimes.
@@ -47,7 +47,7 @@
 	can_dual = TRUE
 	damage_multiplier = 1.3
 	w_class = ITEM_SIZE_NORMAL
-	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/soporific
+	projectile_type = /obj/item/projectile/bullet/pistol_10mm/rubber/soporific
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_STEEL = 10,  MATERIAL_SILVER = 12, MATERIAL_PLATINUM = 0.2)
 	price_tag = 1600
 
@@ -104,7 +104,7 @@
 	item_state = "system_cost"
 	fire_sound = 'sound/weapons/guns/fire/system_cost.ogg'  // Sky Driver sound from Eris
 	wielded_item_state = "_doble"
-	projectile_type=/obj/item/projectile/bullet/rifle_75/rubber/soporific
+	projectile_type=/obj/item/projectile/bullet/rifle_762/rubber/soporific
 	can_dual = FALSE
 	price_tag = 3200
 	charge_meter = FALSE

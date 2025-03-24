@@ -3751,7 +3751,7 @@
 /area/nadezhda/rnd/xenobiology)
 "aMd" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/ammo_magazine/ammobox/rifle_75/practice,
+/obj/item/ammo_magazine/ammobox/rifle_762/practice,
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
@@ -8197,16 +8197,16 @@
 /obj/structure/closet/crate/secure/weapon{
 	name = "6.5mm ammo crate"
 	},
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
-/obj/item/ammo_magazine/ammobox/rifle_75_small,
-/obj/item/ammo_magazine/ammobox/rifle_75_small,
-/obj/item/ammo_magazine/light_rifle_257,
-/obj/item/ammo_magazine/light_rifle_257,
-/obj/item/ammo_magazine/light_rifle_257,
-/obj/item/ammo_magazine/rifle_75,
-/obj/item/ammo_magazine/rifle_75,
-/obj/item/ammo_magazine/rifle_75,
+/obj/item/ammo_magazine/ammobox/light_rifle_65_small,
+/obj/item/ammo_magazine/ammobox/light_rifle_65_small,
+/obj/item/ammo_magazine/ammobox/rifle_762_small,
+/obj/item/ammo_magazine/ammobox/rifle_762_small,
+/obj/item/ammo_magazine/light_rifle_65,
+/obj/item/ammo_magazine/light_rifle_65,
+/obj/item/ammo_magazine/light_rifle_65,
+/obj/item/ammo_magazine/rifle_762,
+/obj/item/ammo_magazine/rifle_762,
+/obj/item/ammo_magazine/rifle_762,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "bFA" = (
@@ -12905,25 +12905,25 @@
 /area/nadezhda/quartermaster/office)
 "cCd" = (
 /obj/structure/table/rack/shelf,
-/obj/item/ammo_magazine/rifle_75/rubber{
+/obj/item/ammo_magazine/rifle_762/rubber{
 	pixel_x = 7;
 	pixel_y = -5
 	},
-/obj/item/ammo_magazine/rifle_75/rubber{
+/obj/item/ammo_magazine/rifle_762/rubber{
 	pixel_x = 7;
 	pixel_y = -5
 	},
-/obj/item/ammo_magazine/rifle_75/lethal{
+/obj/item/ammo_magazine/rifle_762/lethal{
 	pixel_y = -5
 	},
-/obj/item/ammo_magazine/rifle_75/lethal{
+/obj/item/ammo_magazine/rifle_762/lethal{
 	pixel_y = -5
 	},
-/obj/item/ammo_magazine/rifle_75{
+/obj/item/ammo_magazine/rifle_762{
 	pixel_x = -7;
 	pixel_y = -5
 	},
-/obj/item/ammo_magazine/rifle_75{
+/obj/item/ammo_magazine/rifle_762{
 	pixel_x = -7;
 	pixel_y = -5
 	},
@@ -14185,9 +14185,9 @@
 /area/nadezhda/medical/genetics)
 "cOJ" = (
 /obj/structure/table/rack/shelf,
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv,
-/obj/item/ammo_magazine/heavy_rifle_408/hv,
-/obj/item/ammo_magazine/heavy_rifle_408/hv,
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/hv,
+/obj/item/ammo_magazine/heavy_rifle_86/hv,
+/obj/item/ammo_magazine/heavy_rifle_86/hv,
 /obj/machinery/light{
 	dir = 4
 	},
@@ -26351,9 +26351,9 @@
 "fhu" = (
 /obj/structure/table/rack/shelf,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_magazine/ammobox/light_rifle_257,
-/obj/item/ammo_magazine/light_rifle_257,
-/obj/item/ammo_magazine/light_rifle_257,
+/obj/item/ammo_magazine/ammobox/light_rifle_65,
+/obj/item/ammo_magazine/light_rifle_65,
+/obj/item/ammo_magazine/light_rifle_65,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "fhz" = (
@@ -31460,15 +31460,15 @@
 /obj/item/cell/medium/high{
 	pixel_y = -4
 	},
-/obj/item/ammo_magazine/magnum_40,
-/obj/item/ammo_magazine/magnum_40,
-/obj/item/ammo_magazine/magnum_40,
-/obj/item/ammo_magazine/magnum_40,
-/obj/item/ammo_magazine/magnum_40,
-/obj/item/ammo_magazine/magnum_40,
-/obj/item/ammo_magazine/magnum_40,
-/obj/item/ammo_magazine/magnum_40,
-/obj/item/ammo_magazine/magnum_40,
+/obj/item/ammo_magazine/pistol_10mm,
+/obj/item/ammo_magazine/pistol_10mm,
+/obj/item/ammo_magazine/pistol_10mm,
+/obj/item/ammo_magazine/pistol_10mm,
+/obj/item/ammo_magazine/pistol_10mm,
+/obj/item/ammo_magazine/pistol_10mm,
+/obj/item/ammo_magazine/pistol_10mm,
+/obj/item/ammo_magazine/pistol_10mm,
+/obj/item/ammo_magazine/pistol_10mm,
 /obj/item/pc_part/drive/disk/design/nt_new_guns,
 /obj/item/pc_part/drive/disk/design/nt_old_guns,
 /obj/item/pc_part/drive/disk/design/guns/dominion,
@@ -44830,7 +44830,7 @@
 /obj/structure/table/woodentable,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_magazine/ammobox/rifle_75/practice,
+/obj/item/ammo_magazine/ammobox/rifle_762/practice,
 /turf/simulated/floor/carpet,
 /area/nadezhda/security/range{
 	name = "\improper Blackshield - Firing Range"
@@ -49865,7 +49865,7 @@
 	})
 "jGZ" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/ammo_magazine/ammobox/magnum_40/practice,
+/obj/item/ammo_magazine/ammobox/pistol_10mm/practice,
 /obj/item/clothing/ears/earmuffs,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -54401,7 +54401,7 @@
 /area/nadezhda/command/cro)
 "kzg" = (
 /obj/structure/table/rack/shelf,
-/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber,
+/obj/item/ammo_magazine/ammobox/light_rifle_65/rubber,
 /obj/item/gun/projectile/automatic/lmg/tk,
 /obj/machinery/door/window/eastleft{
 	name = "Light Machineguns";
@@ -57754,7 +57754,7 @@
 /obj/structure/table/woodentable,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice,
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/practice,
 /turf/simulated/floor/carpet,
 /area/nadezhda/security/range{
 	name = "\improper Blackshield - Firing Range"
@@ -59979,10 +59979,10 @@
 /area/nadezhda/crew_quarters/hydroponics/garden)
 "lBM" = (
 /obj/structure/table/rack/shelf,
-/obj/item/ammo_magazine/ammobox/rifle_75,
-/obj/item/ammo_magazine/rifle_75/highvelocity,
-/obj/item/ammo_magazine/rifle_75/highvelocity,
-/obj/item/ammo_magazine/rifle_75_linked_box,
+/obj/item/ammo_magazine/ammobox/rifle_762,
+/obj/item/ammo_magazine/rifle_762/highvelocity,
+/obj/item/ammo_magazine/rifle_762/highvelocity,
+/obj/item/ammo_magazine/rifle_762_linked_box,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "lBQ" = (
@@ -74792,7 +74792,7 @@
 /obj/item/gun/projectile/mk58/wood,
 /obj/item/gun/projectile/mk58/wood,
 /obj/item/gun/projectile/mk58/wood,
-/obj/item/ammo_magazine/ammobox/magnum_40/biomatter,
+/obj/item/ammo_magazine/ammobox/pistol_10mm/biomatter,
 /turf/simulated/floor/tiled/dark/golden,
 /area/nadezhda/command/prime)
 "ouw" = (
@@ -79040,7 +79040,7 @@
 /area/nadezhda/hallway/side/f2section1)
 "pnJ" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/ammo_magazine/ammobox/light_rifle_257/practice,
+/obj/item/ammo_magazine/ammobox/light_rifle_65/practice,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
@@ -85718,12 +85718,12 @@
 	},
 /obj/item/gun/projectile/revolver/tacticool_revolver,
 /obj/item/gun/projectile/revolver/rev10/mateba,
-/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
-/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal,
-/obj/item/ammo_magazine/speed_loader_magnum_40,
-/obj/item/ammo_magazine/speed_loader_magnum_40,
-/obj/item/ammo_magazine/ammobox/kurtz_50,
-/obj/item/ammo_magazine/ammobox/magnum_40,
+/obj/item/ammo_magazine/speed_loader_kurtz_12/lethal,
+/obj/item/ammo_magazine/speed_loader_kurtz_12/lethal,
+/obj/item/ammo_magazine/speed_loader_pistol_10mm,
+/obj/item/ammo_magazine/speed_loader_pistol_10mm,
+/obj/item/ammo_magazine/ammobox/kurtz_12,
+/obj/item/ammo_magazine/ammobox/pistol_10mm,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/nadezhda/command/armory)
 "qEA" = (
@@ -96608,7 +96608,7 @@
 /area/nadezhda/crew_quarters)
 "sLa" = (
 /obj/structure/table/steel_reinforced,
-/obj/item/ammo_magazine/ammobox/pistol_35/practice,
+/obj/item/ammo_magazine/ammobox/pistol_9mm/practice,
 /obj/item/clothing/ears/earmuffs,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -97854,9 +97854,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/item/ammo_magazine/ammobox/magnum_40/large,
-/obj/item/ammo_magazine/magnum_40,
-/obj/item/ammo_magazine/magnum_40,
+/obj/item/ammo_magazine/ammobox/pistol_10mm/large,
+/obj/item/ammo_magazine/pistol_10mm,
+/obj/item/ammo_magazine/pistol_10mm,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/nadezhda/security/armory_blackshield)
 "sXy" = (
@@ -105755,10 +105755,10 @@
 "uAW" = (
 /obj/structure/table/rack,
 /obj/item/storage/pouch/ammo,
-/obj/item/ammo_magazine/smg_35,
-/obj/item/ammo_magazine/smg_35,
-/obj/item/ammo_magazine/smg_35,
-/obj/item/ammo_magazine/smg_35,
+/obj/item/ammo_magazine/smg_9mm,
+/obj/item/ammo_magazine/smg_9mm,
+/obj/item/ammo_magazine/smg_9mm,
+/obj/item/ammo_magazine/smg_9mm,
 /obj/random/pouch/low_chance,
 /obj/machinery/light_switch{
 	pixel_y = 30

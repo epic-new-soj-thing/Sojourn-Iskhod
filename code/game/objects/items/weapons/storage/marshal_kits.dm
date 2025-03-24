@@ -12,9 +12,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/freedom(src)
-		new /obj/item/ammo_magazine/smg_magnum_40/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/smg_magnum_40(src)
-		new /obj/item/ammo_magazine/smg_magnum_40(src)
+		new /obj/item/ammo_magazine/smg_10mm/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/smg_10mm(src)
+		new /obj/item/ammo_magazine/smg_10mm(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/breacher
@@ -31,9 +31,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/mamba(src)
-		new /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/light_rifle_257(src)
-		new /obj/item/ammo_magazine/light_rifle_257(src)
+		new /obj/item/ammo_magazine/light_rifle_65/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/light_rifle_65(src)
+		new /obj/item/ammo_magazine/light_rifle_65(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/gear_lasgun
@@ -89,9 +89,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/mamba/copperhead(src)
-		new /obj/item/ammo_magazine/rifle_75/rubber(src)
-		new /obj/item/ammo_magazine/rifle_75(src)
-		new /obj/item/ammo_magazine/rifle_75(src)
+		new /obj/item/ammo_magazine/rifle_762/rubber(src)
+		new /obj/item/ammo_magazine/rifle_762(src)
+		new /obj/item/ammo_magazine/rifle_762(src)
 		new /obj/item/ammo_casing/grenade(src)	//One flash, one baton shell for actual use on the copperhead.
 		new /obj/item/ammo_casing/grenade/flash(src)
 		new /obj/item/storage/pouch/ammo(src)
@@ -103,9 +103,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/boltgun/lever/custer(src)
-		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_408(src)
-		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_408(src)
-		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_408(src) //Still a full packet this way
+		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_86(src)
+		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_86(src)
+		new /obj/item/ammo_magazine/speed_loader_heavy_rifle_86(src) //Still a full packet this way
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/viper
@@ -114,9 +114,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/mamba/viper(src)
-		new /obj/item/ammo_magazine/rifle_75/rubber(src)
-		new /obj/item/ammo_magazine/rifle_75(src)
-		new /obj/item/ammo_magazine/rifle_75(src)
+		new /obj/item/ammo_magazine/rifle_762/rubber(src)
+		new /obj/item/ammo_magazine/rifle_762(src)
+		new /obj/item/ammo_magazine/rifle_762(src)
 		new /obj/item/storage/pouch/ammo(src)
 
 /obj/item/storage/box/m_kit/specop
@@ -156,9 +156,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/colt/liberty(src)
-		new /obj/item/ammo_magazine/magnum_40/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/magnum_40/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/magnum_40(src)
+		new /obj/item/ammo_magazine/pistol_10mm/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/pistol_10mm/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/pistol_10mm(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/mistral
@@ -168,9 +168,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/mistral(src) //BS has 2 revolvers meanwhile cops get none ? (Outside of rangers)
-		new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_magnum_40/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_magnum_40(src)
+		new /obj/item/ammo_magazine/speed_loader_pistol_10mm/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_pistol_10mm/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_pistol_10mm(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/judiciary
@@ -180,9 +180,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/judiciary(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/highcap_pistol_35(src)
+		new /obj/item/ammo_magazine/highcap_pistol_9mm/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/highcap_pistol_9mm/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/highcap_pistol_9mm(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 // Ranger secondary kits
@@ -192,10 +192,10 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/deckard(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_12/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_12/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_12(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_12(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/zwang
@@ -214,9 +214,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/judge(src)
-		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
-		new /obj/item/ammo_magazine/speed_loader_rifle_75(src)
-		new /obj/item/ammo_magazine/speed_loader_rifle_75(src) //Still a full box
+		new /obj/item/ammo_magazine/speed_loader_rifle_762(src)
+		new /obj/item/ammo_magazine/speed_loader_rifle_762(src)
+		new /obj/item/ammo_magazine/speed_loader_rifle_762(src) //Still a full box
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 // Warrant Officer secondaries (from voucher)
@@ -226,9 +226,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_12/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_12(src)
+		new /obj/item/ammo_magazine/speed_loader_kurtz_12(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/galaxy
@@ -247,8 +247,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/lamia/amnesty(src)
-		new /obj/item/ammo_magazine/kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/kurtz_50(src)
+		new /obj/item/ammo_magazine/kurtz_12/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/kurtz_12(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 // Armor Kits

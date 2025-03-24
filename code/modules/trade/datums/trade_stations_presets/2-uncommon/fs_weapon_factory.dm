@@ -28,18 +28,18 @@
 		"Ammunition" = list(
 			/obj/item/ammo_magazine/c10x24 = custom_good_amount_range(list(1, 10)),
 			//obj/item/ammo_magazine/a75 = custom_good_amount_range(list(1, 10)),
-			/obj/item/ammo_magazine/heavy_rifle_408_drum = custom_good_amount_range(list(1, 10)),
+			/obj/item/ammo_magazine/heavy_rifle_86_drum = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_magazine/m12/pellet = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_casing/antim/lethal/prespawned = custom_good_amount_range(list(1, 10)),
 			/obj/item/ammo_casing/antim/incend/prespawned = custom_good_amount_range(list(1, 10)),
 
-			/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small,
-			/obj/item/ammo_magazine/ammobox/rifle_75_small,
-			/obj/item/ammo_magazine/ammobox/light_rifle_257_small,
+			/obj/item/ammo_magazine/ammobox/heavy_rifle_86_small,
+			/obj/item/ammo_magazine/ammobox/rifle_762_small,
+			/obj/item/ammo_magazine/ammobox/light_rifle_65_small,
 			/obj/item/ammo_magazine/ammobox/shotgun,
-			/obj/item/ammo_magazine/ammobox/kurtz_50,
-			/obj/item/ammo_magazine/ammobox/magnum_40,
-			/obj/item/ammo_magazine/ammobox/pistol_35
+			/obj/item/ammo_magazine/ammobox/kurtz_12,
+			/obj/item/ammo_magazine/ammobox/pistol_10mm,
+			/obj/item/ammo_magazine/ammobox/pistol_9mm
 		),
 		"Energy Weapons" = list(
 			/obj/item/gun/energy/gun,

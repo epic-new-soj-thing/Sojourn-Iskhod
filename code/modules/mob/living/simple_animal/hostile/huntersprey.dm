@@ -57,8 +57,8 @@
 		return
 	if(chancedrop == 2)
 		new /obj/item/gun/projectile/boltgun/sa (src.loc)
-		new	/obj/item/ammo_magazine/rifle_75 (src.loc)
-		new /obj/item/ammo_magazine/ammobox/rifle_75 (src.loc)
+		new	/obj/item/ammo_magazine/rifle_762 (src.loc)
+		new /obj/item/ammo_magazine/ammobox/rifle_762 (src.loc)
 		new /obj/item/clothing/suit/space/void/SCAF/blackshield (src.loc)
 		qdel(src)
 		return
@@ -362,7 +362,7 @@
 	var/zoomeye = 7
 	see_invisible = 15
 	old_y = 0
-	projectiletype = /obj/item/projectile/bullet/pistol_35
+	projectiletype = /obj/item/projectile/bullet/pistol_9mm
 	default_pixel_x = -16
 	pixel_x = -16
 	pixel_y = 0
@@ -394,12 +394,12 @@
 		to_chat(src, "You gun isnt ready to fire!.")
 		return
 	if(loaded_ammo == 1)
-		projectiletype = /obj/item/projectile/bullet/rifle_75/hv
+		projectiletype = /obj/item/projectile/bullet/rifle_762/hv
 		rapid = 0
 		shooter.OpenFire(targetDD)
 		visible_emote("fires an armor piercing shot!")
 		playsound(src, 'sound/weapons/guns/fire/sniper_fire.ogg', 30, 1, -3)
-		projectiletype = /obj/item/projectile/bullet/pistol_35
+		projectiletype = /obj/item/projectile/bullet/pistol_9mm
 		rapid = 1
 		loaded_ammo = 0
 		icon_state = "excelatomiton_unpowered"
@@ -414,7 +414,7 @@
 		visible_emote("fires a spout of fire!")
 		playsound(src, 'sound/items/Welder2.ogg', 30, 1, -3)
 		rapid = 1
-		projectiletype = /obj/item/projectile/bullet/pistol_35
+		projectiletype = /obj/item/projectile/bullet/pistol_9mm
 		loaded_ammo = 0
 		icon_state = "excelatomiton_unpowered"
 		icon_living = "excelatomiton_unpowered"
@@ -438,7 +438,7 @@
 		animate(src, alpha = 255, color = "#fffffc", transform = matrix()*1.3, time = 2)
 		sleep(3)
 		animate(src, alpha = 255, color = initial(color), transform = matrix()*1, time = 2)
-		projectiletype = /obj/item/projectile/bullet/light_rifle_257
+		projectiletype = /obj/item/projectile/bullet/light_rifle_65
 		playsound(src, 'sound/weapons/guns/fire/chaingun_fire.ogg', 30, 1, -3)
 		shooter.OpenFire(targetDD)
 		shooter.OpenFire(get_step_rand(targetDD))
@@ -448,7 +448,7 @@
 		shooter.OpenFire(get_step_rand(targetDD))
 		shooter.OpenFire(get_step_rand(targetDD))
 		shooter.OpenFire(get_step_rand(targetDD))
-		projectiletype = /obj/item/projectile/bullet/pistol_35
+		projectiletype = /obj/item/projectile/bullet/pistol_9mm
 		loaded_ammo = 0
 		speed = setspeed
 		icon_state = "excelatomiton_unpowered"

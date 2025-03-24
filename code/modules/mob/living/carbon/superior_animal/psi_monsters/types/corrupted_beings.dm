@@ -311,8 +311,8 @@ They are soully made and reflavoured to be for PVE.
 	ranged = TRUE
 	rapid = TRUE
 	comfy_range = 6
-	projectiletype = /obj/item/projectile/bullet/pistol_35/scrap
-	mag_type = /obj/item/ammo_magazine/smg_35/empty
+	projectiletype = /obj/item/projectile/bullet/pistol_9mm/scrap
+	mag_type = /obj/item/ammo_magazine/smg_9mm/empty
 
 	armor_divisor = 1
 
@@ -320,7 +320,7 @@ They are soully made and reflavoured to be for PVE.
 	. = ..()
 	//Proj Upgrade
 	if(GLOB.chaos_level >= 5)
-		projectiletype = /obj/item/projectile/bullet/pistol_35
+		projectiletype = /obj/item/projectile/bullet/pistol_9mm
 
 /mob/living/carbon/superior/psi/daskvey_follower/smg/deepmaints_bound
 	name = "Wild Daskveyian Assaulter"
@@ -358,8 +358,8 @@ They are soully made and reflavoured to be for PVE.
 	ranged = TRUE
 	rapid = TRUE
 	comfy_range = 6
-	projectiletype = /obj/item/projectile/bullet/rifle_75/scrap
-	mag_type = /obj/item/ammo_magazine/rifle_75/empty
+	projectiletype = /obj/item/projectile/bullet/rifle_762/scrap
+	mag_type = /obj/item/ammo_magazine/rifle_762/empty
 
 	armor_divisor = 1
 
@@ -367,7 +367,7 @@ They are soully made and reflavoured to be for PVE.
 	. = ..()
 	//Proj Upgrade
 	if(GLOB.chaos_level >= 5)
-		projectiletype = /obj/item/projectile/bullet/rifle_75
+		projectiletype = /obj/item/projectile/bullet/rifle_762
 
 /mob/living/carbon/superior/psi/daskvey_follower/rifle/deepmaints_bound
 	name = "Wild Daskveyian Rifleperson"

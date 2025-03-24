@@ -108,12 +108,12 @@
 			/obj/item/gun/projectile/giskard,
 			/obj/item/gun/energy/gun/martin,
 			/obj/item/gun/energy/gun,
-			/obj/item/ammo_magazine/pistol_35,
-			/obj/item/ammo_magazine/pistol_35/rubber,
-			/obj/item/ammo_magazine/magnum_40 = custom_good_amount_range(list(-1, 3)),
-			/obj/item/ammo_magazine/magnum_40/rubber = custom_good_amount_range(list(-1, 5)),
-			/obj/item/ammo_magazine/ammobox/pistol_35,
-			/obj/item/ammo_magazine/ammobox/pistol_35/rubber
+			/obj/item/ammo_magazine/pistol_9mm,
+			/obj/item/ammo_magazine/pistol_9mm/rubber,
+			/obj/item/ammo_magazine/pistol_10mm = custom_good_amount_range(list(-1, 3)),
+			/obj/item/ammo_magazine/pistol_10mm/rubber = custom_good_amount_range(list(-1, 5)),
+			/obj/item/ammo_magazine/ammobox/pistol_9mm,
+			/obj/item/ammo_magazine/ammobox/pistol_9mm/rubber
 		),
 		"Solnishko 'Guns-from-Home' Parts" = list(
 			/obj/item/pc_part/drive/disk/design/gun_parts/bootleg = good_data("Solnishko Distrubtion - Homemade Parts", list(1, 1), 600),

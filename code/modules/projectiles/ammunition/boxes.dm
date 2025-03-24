@@ -38,62 +38,62 @@
 
 //// 9mm ////
 
-/obj/item/ammo_magazine/ammobox/pistol_35
+/obj/item/ammo_magazine/ammobox/pistol_9mm
 	name = "ammunition packet (9mm)"
 	icon_state = "pistol"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_PISTOL
-	ammo_type = /obj/item/ammo_casing/pistol_35
+	ammo_type = /obj/item/ammo_casing/pistol_9mm
 	max_ammo = 30
 
-/obj/item/ammo_magazine/ammobox/pistol_35/scrap
+/obj/item/ammo_magazine/ammobox/pistol_9mm/scrap
 	name = "ammunition packet (old 9mm)"
 	icon_state = "pistol_s"
-	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/scrap
 
-/obj/item/ammo_magazine/ammobox/pistol_35/practice
+/obj/item/ammo_magazine/ammobox/pistol_9mm/practice
 	name = "ammunition packet (9mm practice)"
 	icon_state = "pistol_p"
-	ammo_type = /obj/item/ammo_casing/pistol_35/practice
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/practice
 
-/obj/item/ammo_magazine/ammobox/pistol_35/hv
+/obj/item/ammo_magazine/ammobox/pistol_9mm/hv
 	name = "ammunition packet (9mm high-velocity)"
 	icon_state = "pistol_hv"
-	ammo_type = /obj/item/ammo_casing/pistol_35/hv
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/hv
 
-/obj/item/ammo_magazine/ammobox/pistol_35/rubber
+/obj/item/ammo_magazine/ammobox/pistol_9mm/rubber
 	name = "ammunition packet (9mm rubber)"
 	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. Has a proper less-than-lethal certification. Still some light warnings about trauma inflicted on targets. "
 	icon_state = "pistol_r"
-	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/rubber
 
-/obj/item/ammo_magazine/ammobox/pistol_35/rubber/pepperball
+/obj/item/ammo_magazine/ammobox/pistol_9mm/rubber/pepperball
 	name = "ammunition packet (9mm pepperball)"
 	desc = "A box of police grade 9mm pepperball type rounds; complete with CO2 cartriage casings."
 	icon_state = "pistol_pepper"
-	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/rubber/pepperball
 
-/obj/item/ammo_magazine/ammobox/pistol_35/lethal
+/obj/item/ammo_magazine/ammobox/pistol_9mm/lethal
 	name = "ammunition packet (9mm hollow-point)"
 	desc = "A box of self-defense grade 9mm hollow-points."
 	icon_state = "pistol_l"
-	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/lethal
 
-/obj/item/ammo_magazine/ammobox/pistol_35/laser
+/obj/item/ammo_magazine/ammobox/pistol_9mm/laser
 	name = "ammunition packet (9mm laser)"
 	icon_state = "pistol_si"
-	ammo_type = /obj/item/ammo_casing/pistol_35/laser
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/laser
 	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 90
 
-/obj/item/ammo_magazine/ammobox/pistol_35/biomatter
+/obj/item/ammo_magazine/ammobox/pistol_9mm/biomatter
 	name = "ammunition packet (9mm Caustic)"
 	desc = "A box of caustic caseless 9mm."
 	icon_state = "pistol_bio"
-	ammo_type = /obj/item/ammo_casing/pistol_35/biomatter
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/biomatter
 
 // 9mm BIG BAWKS
-/obj/item/ammo_magazine/ammobox/pistol_35/large
+/obj/item/ammo_magazine/ammobox/pistol_9mm/large
 	name = "ammunition box (9mm)"
 	desc = "A large box of police grade 9mm."
 	matter = list(MATERIAL_STEEL = 15)
@@ -101,110 +101,110 @@
 	max_ammo = 200
 	icon_state = "pistol_large"
 
-/obj/item/ammo_magazine/ammobox/pistol_35/large/lethal
+/obj/item/ammo_magazine/ammobox/pistol_9mm/large/lethal
 	name = "ammunition box (9mm hollow-point)"
 	desc = "A large box of self defense grade 9mm hollow-point rounds."
-	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/lethal
 	icon_state = "pistol_large_hp"
 
-/obj/item/ammo_magazine/ammobox/pistol_35/large/rubber
+/obj/item/ammo_magazine/ammobox/pistol_9mm/large/rubber
 	name = "ammunition box (9mm rubber)"
 	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. Has a proper less-than-lethal certification. Still some light warnings about trauma inflicted on targets."
-	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/rubber
 	icon_state = "pistol_large_rubber"
 
-/obj/item/ammo_magazine/ammobox/pistol_35/large/hv
+/obj/item/ammo_magazine/ammobox/pistol_9mm/large/hv
 	name = "ammunition box (9mm high-velocity)"
 	desc = "A large box of high velocity 9mm rounds"
-	ammo_type = /obj/item/ammo_casing/pistol_35/hv
+	ammo_type = /obj/item/ammo_casing/pistol_9mm/hv
 	icon_state = "pistol_large_hv"
 
 //// 10mm ////
 
-/obj/item/ammo_magazine/ammobox/magnum_40
+/obj/item/ammo_magazine/ammobox/pistol_10mm
 	name = "ammunition packet (10mm Magnum)"
 	icon_state = "magnum"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_MAGNUM
-	ammo_type = /obj/item/ammo_casing/magnum_40
+	ammo_type = /obj/item/ammo_casing/pistol_10mm
 	max_ammo = 30
 
-/obj/item/ammo_magazine/ammobox/magnum_40/scrap
+/obj/item/ammo_magazine/ammobox/pistol_10mm/scrap
 	name = "ammunition packet (old 10mm Magnum)"
 	icon_state = "magnum_s"
-	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
+	ammo_type = /obj/item/ammo_casing/pistol_10mm/scrap
 
-/obj/item/ammo_magazine/ammobox/magnum_40/practice
+/obj/item/ammo_magazine/ammobox/pistol_10mm/practice
 	name = "ammunition packet (10mm Magnum practice)"
 	icon_state = "magnum_p"
-	ammo_type = /obj/item/ammo_casing/magnum_40/practice
+	ammo_type = /obj/item/ammo_casing/pistol_10mm/practice
 
-/obj/item/ammo_magazine/ammobox/magnum_40/hv
+/obj/item/ammo_magazine/ammobox/pistol_10mm/hv
 	name = "ammunition packet (10mm Magnum high-velocity)"
 	icon_state = "magnum_hv"
-	ammo_type = /obj/item/ammo_casing/magnum_40/hv
+	ammo_type = /obj/item/ammo_casing/pistol_10mm/hv
 
-/obj/item/ammo_magazine/ammobox/magnum_40/rubber
+/obj/item/ammo_magazine/ammobox/pistol_10mm/rubber
 	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done."
 	name = "ammunition packet (10mm Magnum rubber)"
 	icon_state = "magnum_r"
-	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
+	ammo_type = /obj/item/ammo_casing/pistol_10mm/rubber
 
-/obj/item/ammo_magazine/ammobox/magnum_40/rubber/pepperball
+/obj/item/ammo_magazine/ammobox/pistol_10mm/rubber/pepperball
 	name = "ammunition packet (10mm Magnum pepperball)"
 	desc = "A box of police grade 10mm pepperball type rounds; complete with CO2 cartraiges."
 	icon_state = "magnum_pepper"
-	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
+	ammo_type = /obj/item/ammo_casing/pistol_10mm/rubber/pepperball
 
-/obj/item/ammo_magazine/ammobox/magnum_40/lethal
+/obj/item/ammo_magazine/ammobox/pistol_10mm/lethal
 	name = "ammunition packet (10mm Magnum hollow-point)"
 	desc = "A box of self-defense grade 10mm Auto-Mag hollow-points."
 	icon_state = "magnum_l"
-	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
+	ammo_type = /obj/item/ammo_casing/pistol_10mm/lethal
 
-/obj/item/ammo_magazine/ammobox/magnum_40/laser
+/obj/item/ammo_magazine/ammobox/pistol_10mm/laser
 	name = "ammunition packet (10mm Magnum Laser)"
 	icon_state = "magnum_si"
-	ammo_type = /obj/item/ammo_casing/magnum_40/laser
+	ammo_type = /obj/item/ammo_casing/pistol_10mm/laser
 	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 70
 
-/obj/item/ammo_magazine/ammobox/magnum_40/biomatter
+/obj/item/ammo_magazine/ammobox/pistol_10mm/biomatter
 	name = "ammunition packet (10mm Magnum Caustic)"
 	desc = "A box of caustic caseless 10mm Magnum."
 	icon_state = "magnum_bio"
-	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
+	ammo_type = /obj/item/ammo_casing/pistol_10mm/biomatter
 
 //10mm big boxes
-/obj/item/ammo_magazine/ammobox/magnum_40/large
+/obj/item/ammo_magazine/ammobox/pistol_10mm/large
 	name = "ammunition box (10mm Magnum)"
 	icon_state = "magbox"
 	matter = list(MATERIAL_STEEL = 15)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_MAGNUM
-	ammo_type = /obj/item/ammo_casing/magnum_40
+	ammo_type = /obj/item/ammo_casing/pistol_10mm
 	max_ammo = 150
 
-/obj/item/ammo_magazine/ammobox/magnum_40/large/lethal
+/obj/item/ammo_magazine/ammobox/pistol_10mm/large/lethal
 	name = "ammunition box (10mm Magnum hollow-point)"
 	icon_state = "magboxhp"
-	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
+	ammo_type = /obj/item/ammo_casing/pistol_10mm/lethal
 
-/obj/item/ammo_magazine/ammobox/magnum_40/large/rubber
+/obj/item/ammo_magazine/ammobox/pistol_10mm/large/rubber
 	name = "ammunition box (10mm Magnum rubber)"
 	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done."
 	icon_state = "magboxrubber"
-	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
+	ammo_type = /obj/item/ammo_casing/pistol_10mm/rubber
 
-/obj/item/ammo_magazine/ammobox/magnum_40/large/hv
+/obj/item/ammo_magazine/ammobox/pistol_10mm/large/hv
 	name = "ammunition box (10mm Magnum high-velocity)"
 	icon_state = "magboxhv"
-	ammo_type = /obj/item/ammo_casing/magnum_40/hv
+	ammo_type = /obj/item/ammo_casing/pistol_10mm/hv
 
 
 //// 6.5 carbine ////
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257
+/obj/item/ammo_magazine/ammobox/light_rifle_65
 	name = "ammunition box (6.5mm Carbine FMJ)"
 	icon_state = "box_lrifle"
 	matter = list(MATERIAL_STEEL = 10)
@@ -212,96 +212,96 @@
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_BOX
 	caliber = CAL_LRIFLE
-	ammo_type = /obj/item/ammo_casing/light_rifle_257
+	ammo_type = /obj/item/ammo_casing/light_rifle_65
 	max_ammo = 200
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257/pickup(mob/user)
+/obj/item/ammo_magazine/ammobox/light_rifle_65/pickup(mob/user)
 	..()
 	playsound(src,'sound/weapons/guns/interact/magmove.ogg',60,3)
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257/dropped(mob/user)
+/obj/item/ammo_magazine/ammobox/light_rifle_65/dropped(mob/user)
 	..()
 	playsound(src,'sound/weapons/guns/interact/ammomove.ogg',60,3)
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257/rubber
+/obj/item/ammo_magazine/ammobox/light_rifle_65/rubber
 	name = "ammunition box (6.5mm Carbine rubber)"
 	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done."
 	icon_state = "box_lrifle_r"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/rubber
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257/practice
+/obj/item/ammo_magazine/ammobox/light_rifle_65/practice
 	name = "ammunition box (6.5mm Carbine practice)"
 	icon_state = "box_lrifle_p"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/practice
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/practice
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257/lethal
+/obj/item/ammo_magazine/ammobox/light_rifle_65/lethal
 	name = "ammunition box (6.5mm Carbine hollow-point)"
 	icon_state = "box_clrifle_l"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/lethal
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257/highvelocity
+/obj/item/ammo_magazine/ammobox/light_rifle_65/highvelocity
 	name = "ammunition box (6.5mm Carbine high-velocity)"
 	icon_state = "box_lrifle_p"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/hv
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/hv
 
 // 6.5mm Packets
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small
+/obj/item/ammo_magazine/ammobox/light_rifle_65_small
 	name = "ammunition packet (6.5mm Carbine FMJ)"
 	icon_state = "lrifle"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_LRIFLE
-	ammo_type = /obj/item/ammo_casing/light_rifle_257
+	ammo_type = /obj/item/ammo_casing/light_rifle_65
 	max_ammo = 60
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small/practice
+/obj/item/ammo_magazine/ammobox/light_rifle_65_small/practice
 	name = "ammunition packet (6.5mm Carbine practice)"
 	icon_state = "lrifle_p"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/practice
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/practice
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small/hv
+/obj/item/ammo_magazine/ammobox/light_rifle_65_small/hv
 	name = "ammunition packet (6.5mm Carbine high-velocity)"
 	icon_state = "lrifle_hv"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/hv
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/hv
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small/rubber
+/obj/item/ammo_magazine/ammobox/light_rifle_65_small/rubber
 	name = "ammunition packet (6.5mm Carbine rubber)"
 	desc = "Gun ammunition stored in a shiny new box. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done."
 	icon_state = "lrifle_r"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/rubber
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small/rubber/pepperball
+/obj/item/ammo_magazine/ammobox/light_rifle_65_small/rubber/pepperball
 	name = "ammunition packet (6.5mm Carbine pepperball)"
 	desc = "A box of police grade 6.5mm pepperball type rounds; complete with CO2 cartriage casings."
 	icon_state = "lrifle_pepper"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber/pepperball
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/rubber/pepperball
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small/lethal
+/obj/item/ammo_magazine/ammobox/light_rifle_65_small/lethal
 	name = "ammunition packet (6.5mm Carbine hollow-point)"
 	icon_state = "lrifle_l"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/lethal
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small/incend
+/obj/item/ammo_magazine/ammobox/light_rifle_65_small/incend
 	name = "ammunition packet (6.5mm Carbine incendiary)"
 	icon_state = "lrifle_l"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/incend
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/incend
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257_small/laser
+/obj/item/ammo_magazine/ammobox/light_rifle_65_small/laser
 	name = "ammunition packet (6.5mm Carbine laser)"
 	icon_state = "clrifle_si"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/laser
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/laser
 	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 120
 
-/obj/item/ammo_magazine/ammobox/light_rifle_257/scrap
+/obj/item/ammo_magazine/ammobox/light_rifle_65/scrap
 	name = "ammunition packet (old 6.5mm Carbine)"
 	icon_state = "clrifle_s"
-	ammo_type = /obj/item/ammo_casing/light_rifle_257/scrap
+	ammo_type = /obj/item/ammo_casing/light_rifle_65/scrap
 	w_class = ITEM_SIZE_NORMAL
 	max_ammo = 30
 
 ////7.62mm Rifle////
 
-/obj/item/ammo_magazine/ammobox/rifle_75
+/obj/item/ammo_magazine/ammobox/rifle_762
 	name = "ammunition box (7.62mm Rifle ball)"
 	icon_state = "boxhrifle"
 	desc = "A box of 7.62mm rifle ammunition. 180ct, Full Metal Jacket rounds."
@@ -310,86 +310,86 @@
 	caliber = CAL_RIFLE
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_BOX
-	ammo_type = /obj/item/ammo_casing/rifle_75
+	ammo_type = /obj/item/ammo_casing/rifle_762
 	mag_type = SPEEDLOADER | MAGAZINE
 	max_ammo = 180
 
-/obj/item/ammo_magazine/ammobox/rifle_75/pickup(mob/user)
+/obj/item/ammo_magazine/ammobox/rifle_762/pickup(mob/user)
 	..()
 	playsound(src,'sound/weapons/guns/interact/magmove.ogg',60,3)
 
-/obj/item/ammo_magazine/ammobox/rifle_75/dropped(mob/user)
+/obj/item/ammo_magazine/ammobox/rifle_762/dropped(mob/user)
 	..()
 	playsound(src,'sound/weapons/guns/interact/ammomove.ogg',60,3)
 
-/obj/item/ammo_magazine/ammobox/rifle_75/rubber
+/obj/item/ammo_magazine/ammobox/rifle_762/rubber
 	name = "ammunition box (7.62mm Rifle rubber)"
 	icon_state = "boxhrifle-rubber"
 	desc = "A box of 7.62mm rifle ammunition. 180ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
-	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
+	ammo_type = /obj/item/ammo_casing/rifle_762/rubber
 
-/obj/item/ammo_magazine/ammobox/rifle_75/practice
+/obj/item/ammo_magazine/ammobox/rifle_762/practice
 	name = "ammunition box (7.62mm Rifle practice)"
 	icon_state = "boxhrifle-practice"
 	desc = "A box of 7.62mm rifle ammunition. 180ct, frangible training rounds."
-	ammo_type = /obj/item/ammo_casing/rifle_75/practice
+	ammo_type = /obj/item/ammo_casing/rifle_762/practice
 
-/obj/item/ammo_magazine/ammobox/rifle_75/lethal
+/obj/item/ammo_magazine/ammobox/rifle_762/lethal
 	name = "ammunition box (7.62mm Rifle Hollow Point)"
 	icon_state = "boxhrifle-lethal"
 	desc = "A box of 7.62mm rifle ammunition. 180ct, hollow-point rounds."
-	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
+	ammo_type = /obj/item/ammo_casing/rifle_762/lethal
 
-/obj/item/ammo_magazine/ammobox/rifle_75/hv
+/obj/item/ammo_magazine/ammobox/rifle_762/hv
 	name = "ammunition box (7.62mm Rifle APDS)"
 	icon_state = "boxhrifle-hv"
 	desc = "A box of 7.62mm rifle ammunition. 180ct, high-velocity rounds."
-	ammo_type = /obj/item/ammo_casing/rifle_75/hv
+	ammo_type = /obj/item/ammo_casing/rifle_762/hv
 
-/obj/item/ammo_magazine/ammobox/rifle_75_small
+/obj/item/ammo_magazine/ammobox/rifle_762_small
 	name = "ammunition packet (7.62mm Rifle ball)"
 	icon_state = "lrifle"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_RIFLE
-	ammo_type = /obj/item/ammo_casing/rifle_75
+	ammo_type = /obj/item/ammo_casing/rifle_762
 	max_ammo = 30
 
-/obj/item/ammo_magazine/ammobox/rifle_75_small/rubber
+/obj/item/ammo_magazine/ammobox/rifle_762_small/rubber
 	name = "ammunition packet (7.62mm Rifle rubber)"
 	desc = "A box of 7.62mm rifle ammunition. 30ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	icon_state = "rifle_r"
-	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
+	ammo_type = /obj/item/ammo_casing/rifle_762/rubber
 
-/obj/item/ammo_magazine/ammobox/rifle_75_small/practice
+/obj/item/ammo_magazine/ammobox/rifle_762_small/practice
 	name = "ammunition packet (7.62mm Rifle practice)"
 	icon_state = "rifle_p"
-	ammo_type = /obj/item/ammo_casing/rifle_75/practice
+	ammo_type = /obj/item/ammo_casing/rifle_762/practice
 
-/obj/item/ammo_magazine/ammobox/rifle_75_small/hv
+/obj/item/ammo_magazine/ammobox/rifle_762_small/hv
 	name = "ammunition packet (7.62mm Rifle APDS)"
 	icon_state = "rifle_hv"
-	ammo_type = /obj/item/ammo_casing/rifle_75/hv
+	ammo_type = /obj/item/ammo_casing/rifle_762/hv
 
-/obj/item/ammo_magazine/ammobox/rifle_75_small/lethal
+/obj/item/ammo_magazine/ammobox/rifle_762_small/lethal
 	name = "ammunition packet (7.62mm Rifle hollow-point)"
 	icon_state = "rifle_l"
-	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
+	ammo_type = /obj/item/ammo_casing/rifle_762/lethal
 
-/obj/item/ammo_magazine/ammobox/rifle_75_small/incend
+/obj/item/ammo_magazine/ammobox/rifle_762_small/incend
 	name = "ammunition packet (7.62mm Rifle incendiary)"
 	icon_state = "rifle_l"
-	ammo_type = /obj/item/ammo_casing/rifle_75/incend
+	ammo_type = /obj/item/ammo_casing/rifle_762/incend
 
-/obj/item/ammo_magazine/ammobox/rifle_75_small/scrap
+/obj/item/ammo_magazine/ammobox/rifle_762_small/scrap
 	name = "ammunition packet (old 7.62mm Rifle)"
 	icon_state = "srifle_s"
-	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
+	ammo_type = /obj/item/ammo_casing/rifle_762/scrap
 
-/obj/item/ammo_magazine/ammobox/rifle_75_small/laser
+/obj/item/ammo_magazine/ammobox/rifle_762_small/laser
 	name = "ammunition packet (7.62mm Rifle laser)"
 	desc = "A box of 7.62mm rifle ammunition. 90ct, laser core rounds. You can see caliber information on the label."
 	icon_state = "srifle_si"
-	ammo_type = /obj/item/ammo_casing/rifle_75/laser
+	ammo_type = /obj/item/ammo_casing/rifle_762/laser
 	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 90
 
@@ -439,46 +439,46 @@
 */
 //// 12mm heavy pistol
 
-/obj/item/ammo_magazine/ammobox/kurtz_50
+/obj/item/ammo_magazine/ammobox/kurtz_12
 	name = "ammunition box (12mm)"
 	icon_state = "box50"
 	matter = list(MATERIAL_CARDBOARD = 1)
-	caliber = CAL_50
-	ammo_type = /obj/item/ammo_casing/kurtz_50
+	caliber = CAL_HEAVY_PISTOL
+	ammo_type = /obj/item/ammo_casing/kurtz_12
 	max_ammo = 24
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/rubber
+/obj/item/ammo_magazine/ammobox/kurtz_12/rubber
 	name = "ammunition box (12mm rubber)"
 	desc = "A box of riot supression 12mm pistol ammunition. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	icon_state = "box50-rubber"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
+	ammo_type = /obj/item/ammo_casing/kurtz_12/rubber
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/rubber/pepperball
+/obj/item/ammo_magazine/ammobox/kurtz_12/rubber/pepperball
 	name = "ammunition box (12mm pepperball)"
 	desc = "A box of police grade 12mm pepperball type rounds; complete with CO2 cartriage casings."
 	icon_state = "box50-pepper"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber/pepperball
+	ammo_type = /obj/item/ammo_casing/kurtz_12/rubber/pepperball
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/practice
+/obj/item/ammo_magazine/ammobox/kurtz_12/practice
 	name = "ammunition box (12mm practice)"
 	icon_state = "box50-practice"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/practice
+	ammo_type = /obj/item/ammo_casing/kurtz_12/practice
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/hv
+/obj/item/ammo_magazine/ammobox/kurtz_12/hv
 	name = "ammunition box (12mm high-velocity)"
 	icon_state = "box50-hv"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
+	ammo_type = /obj/item/ammo_casing/kurtz_12/hv
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/lethal
+/obj/item/ammo_magazine/ammobox/kurtz_12/lethal
 	name = "ammunition box (12mm hollow-point)"
 	desc = "A box of self-defense grade 12mm hollow-points."
 	icon_state = "box50-lethal"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/lethal
+	ammo_type = /obj/item/ammo_casing/kurtz_12/lethal
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/laser
+/obj/item/ammo_magazine/ammobox/kurtz_12/laser
 	name = "ammunition box (12mm laser)"
 	icon_state = "box50-si"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/laser
+	ammo_type = /obj/item/ammo_casing/kurtz_12/laser
 	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 50
 
@@ -532,60 +532,60 @@
 
 //// 8.6mm Heavy Rifle ////
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86_small
 	name = "ammunition packet (8.6mm ball)"
 	icon_state = "hrifle"
 	desc = "A box of 8.6x70mm heavy rifle ammunition."
 	matter = list(MATERIAL_STEEL = 5, MATERIAL_CARDBOARD = 1)
 	caliber = CAL_HRIFLE
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86
 	max_ammo = 40
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/rubber
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86_small/rubber
 	name = "ammunition packet (8.6mm rubber)"
 	icon_state = "hrifle_r"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86/rubber
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/practice
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86_small/practice
 	name = "ammunition packet (8.6mm practice)"
 	icon_state = "hrifle_p"
 	desc = "A box of 8.6x70mm heavy rifle ammunition."
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/practice
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86/practice
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/hv
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86_small/hv
 	name = "ammunition packet (8.6mm SLAP)"
 	icon_state = "hrifle_hv"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 8mm Saboted Light Armor Penetrators, spoon-tipped."
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86/hv
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/lethal
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86_small/lethal
 	name = "ammunition packet (8.6mm hollow point)"
 	icon_state = "hrifle_l"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 10mm hollow-tipped full-caliber."
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86/lethal
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/incend
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86_small/incend
 	name = "ammunition packet (8.6mm incendiary)"
 	icon_state = "hrifle_l"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 40ct, 10mm incendiary full-caliber."
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/incend
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86/incend
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86_small/laser
 	name = "ammunition packet (8.6mm laser)"
 	icon_state = "hrifle_si"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 60ct, subcaliber laser rounds."
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/laser
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86/laser
 	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 60
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/scrap
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86_small/scrap
 	name = "ammunition packet (old 8.6mm Rifle)"
 	icon_state = "lrifle_s"
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/scrap
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86/scrap
 
 ////bulk 8.6mm////
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86
 	name = "ammunition box (8.6mm ball)"
 	icon_state = "boxhrifle"
 	desc = "A box of 8.6x70mm heavy rifle ammunition."
@@ -594,18 +594,18 @@
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_BOX
 	caliber = CAL_HRIFLE
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86
 	max_ammo = 120
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/pickup(mob/user)
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/pickup(mob/user)
 	..()
 	playsound(src,'sound/weapons/guns/interact/magmove.ogg',60,3)
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/dropped(mob/user)
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/dropped(mob/user)
 	..()
 	playsound(src,'sound/weapons/guns/interact/ammomove.ogg',60,3)
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/update_icon()
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "boxhrifle-0"
 		return
@@ -619,13 +619,13 @@
 		number = round(percent, 25)
 	icon_state = "boxhrifle-[number]"
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/rubber
 	name = "ammunition box (8.6mm rubber)"
 	icon_state = "boxhrifle-rubber"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 120ct, 8mm deforming impact rounds. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done. This one seems a lot more lengthy then others....really not gonna try and arrest someone with this right?"
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86/rubber
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/rubber/update_icon()
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/rubber/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "boxhrifle-rubber-0"
 		return
@@ -639,13 +639,13 @@
 		number = round(percent, 25)
 	icon_state = "boxhrifle-rubber-[number]"
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/practice
 	name = "ammunition box (8.6mm practice)"
 	icon_state = "boxhrifle-practice"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. 80ct, 8mm subcaliber frangible training rounds."
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/practice
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86/practice
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/practice/update_icon()
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/practice/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "boxhrifle-practice-0"
 		return
@@ -659,13 +659,13 @@
 		number = round(percent, 25)
 	icon_state = "boxhrifle-practice-[number]"
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/hv
 	name = "ammunition box (8.6mm SLAP)"
 	icon_state = "boxhrifle-hv"
 	desc = "A box of 8.6x70mm heavy rifle ammunition. Light Armor Penetrators, spoon-tipped."
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86/hv
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/hv/update_icon()
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/hv/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "boxhrifle-hv-0"
 		return
@@ -679,13 +679,13 @@
 		number = round(percent, 25)
 	icon_state = "boxhrifle-hv-[number]"
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/lethal
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/lethal
 	name = "ammunition box (8.6mm hollow-tip)"
 	icon_state = "boxhrifle-lethal"
 	desc = "A box of 8.6x70mm heavy rifle ammunition."
-	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
+	ammo_type = /obj/item/ammo_casing/heavy_rifle_86/lethal
 
-/obj/item/ammo_magazine/ammobox/heavy_rifle_408/lethal/update_icon()
+/obj/item/ammo_magazine/ammobox/heavy_rifle_86/lethal/update_icon()
 	if (!stored_ammo.len)
 		icon_state = "boxhrifle-lethal-0"
 		return

@@ -81,7 +81,7 @@
 	icon = 'icons/obj/guns/projectile/mateba.dmi'
 	icon_state = "mateba"
 	item_state = "mateba"
-	caliber = CAL_50
+	caliber = CAL_HEAVY_PISTOL
 	max_shells = 5
 	origin_tech = list(TECH_COMBAT = 10, TECH_MATERIAL = 5)
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_WOOD = 6, MATERIAL_PLATINUM = 2)

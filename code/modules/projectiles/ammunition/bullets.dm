@@ -1,359 +1,359 @@
 //// 9mm ////
 
-/obj/item/ammo_casing/pistol_35
+/obj/item/ammo_casing/pistol_9mm
 	desc = "A 9mm bullet casing."
 	icon_state = "pistol_c_l"
 	spent_icon = "pistol_c_l-spent"
 	shell_color = "l"
 	caliber = CAL_PISTOL
-	projectile_type = /obj/item/projectile/bullet/pistol_35
+	projectile_type = /obj/item/projectile/bullet/pistol_9mm
 	maxamount = 15
 
-/obj/item/ammo_casing/pistol_35/prespawned
+/obj/item/ammo_casing/pistol_9mm/prespawned
 	amount = 15
 
-/obj/item/ammo_casing/pistol_35/spent
+/obj/item/ammo_casing/pistol_9mm/spent
 	projectile_type = null
 
-/obj/item/ammo_casing/pistol_35/hv
+/obj/item/ammo_casing/pistol_9mm/hv
 	desc = "A 9mm high-velocity bullet casing."
 	icon_state = "pistol_c_hv"
 	spent_icon = "pistol_c_hv-spent"
 	shell_color = "hv"
-	projectile_type = /obj/item/projectile/bullet/pistol_35/hv
+	projectile_type = /obj/item/projectile/bullet/pistol_9mm/hv
 
-/obj/item/ammo_casing/pistol_35/spent/hv
+/obj/item/ammo_casing/pistol_9mm/spent/hv
 	shell_color = "hv"
 	icon_state = "pistol_c_hv"
 	spent_icon = "pistol_c_hv-spent"
 	projectile_type = null
 
-/obj/item/ammo_casing/pistol_35/practice
+/obj/item/ammo_casing/pistol_9mm/practice
 	desc = "A 9mm practice bullet casing."
 	icon_state = "pistol_c_p"
 	spent_icon = "pistol_c_p-spent"
 	shell_color = "p"
-	projectile_type = /obj/item/projectile/bullet/pistol_35/practice
+	projectile_type = /obj/item/projectile/bullet/pistol_9mm/practice
 
-/obj/item/ammo_casing/pistol_35/rubber
+/obj/item/ammo_casing/pistol_9mm/rubber
 	desc = "A 9mm rubber bullet casing."
 	icon_state = "pistol_c_r"
 	spent_icon = "pistol_c_r-spent"
 	shell_color = "r"
-	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber
+	projectile_type = /obj/item/projectile/bullet/pistol_9mm/rubber
 
-/obj/item/ammo_casing/pistol_35/rubber/pepperball
+/obj/item/ammo_casing/pistol_9mm/rubber/pepperball
 	desc = "A 9mm pepper-ball projectile casing."
 	icon_state = "pistol_c_pepper"
 	spent_icon = "pistol_c_pepper-spent"
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber/pepperball
+	projectile_type = /obj/item/projectile/bullet/pistol_9mm/rubber/pepperball
 
-/obj/item/ammo_casing/pistol_35/rubber/soporific_cbo
+/obj/item/ammo_casing/pistol_9mm/rubber/soporific_cbo
 	desc = "A 9mm soporific condensed plastic shell."
 	icon_state = "pistol_c_r"
 	spent_icon = "pistol_c_r-spent"
-	projectile_type = /obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
+	projectile_type = /obj/item/projectile/bullet/pistol_9mm/rubber/soporific/cbo
 	is_caseless = TRUE
 
-/obj/item/ammo_casing/pistol_35/lethal
+/obj/item/ammo_casing/pistol_9mm/lethal
 	desc = "A 9mm hollow-point bullet casing."
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/pistol_35/lethal
+	projectile_type = /obj/item/projectile/bullet/pistol_9mm/lethal
 
-/obj/item/ammo_casing/pistol_35/spent/lethal
+/obj/item/ammo_casing/pistol_9mm/spent/lethal
 	projectile_type = null
 	shell_color = "l"
 
-/obj/item/ammo_casing/pistol_35/scrap
+/obj/item/ammo_casing/pistol_9mm/scrap
 	desc = "An old 9mm bullet casing."
 	icon_state = "pistol_c_s"
 	spent_icon = "pistol_c_s-spent"
 	shell_color = "s"
-	projectile_type = /obj/item/projectile/bullet/pistol_35/scrap
+	projectile_type = /obj/item/projectile/bullet/pistol_9mm/scrap
 
-/obj/item/ammo_casing/pistol_35/scrap/prespawned
+/obj/item/ammo_casing/pistol_9mm/scrap/prespawned
 	amount = 15
 
-/obj/item/ammo_casing/pistol_35/laser
+/obj/item/ammo_casing/pistol_9mm/laser
 	desc = "A 9mm laser casing."
-	projectile_type = /obj/item/projectile/beam/weak/pistol_35
+	projectile_type = /obj/item/projectile/beam/weak/pistol_9mm
 
-/obj/item/ammo_casing/pistol_35/biomatter
+/obj/item/ammo_casing/pistol_9mm/biomatter
 	desc = "A caseless 9mm caustic."
-	projectile_type = /obj/item/projectile/bullet/pistol_35/biomatter
+	projectile_type = /obj/item/projectile/bullet/pistol_9mm/biomatter
 	icon_state = "clrifle_c_s"
 	shell_color = "s"
 	is_caseless = TRUE
 
 //// 10mm ////
 
-/obj/item/ammo_casing/magnum_40
+/obj/item/ammo_casing/pistol_10mm
 	desc = "A 10mm Magnum bullet casing."
 	icon_state = "magnum_c_l"
 	spent_icon = "magnum_c_l-spent"
 	caliber = CAL_MAGNUM
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/magnum_40
+	projectile_type = /obj/item/projectile/bullet/pistol_10mm
 	maxamount = 6
 
-/obj/item/ammo_casing/magnum_40/prespawned
+/obj/item/ammo_casing/pistol_10mm/prespawned
 	amount = 6
 
-/obj/item/ammo_casing/magnum_40/practice
+/obj/item/ammo_casing/pistol_10mm/practice
 	desc = "A 10mm Magnum practice bullet casing."
 	icon_state = "magnum_c_p"
 	spent_icon = "magnum_c_p-spent"
 	shell_color = "p"
-	projectile_type = /obj/item/projectile/bullet/magnum_40/practice
+	projectile_type = /obj/item/projectile/bullet/pistol_10mm/practice
 
-/obj/item/ammo_casing/magnum_40/hv
+/obj/item/ammo_casing/pistol_10mm/hv
 	desc = "A 10mm Magnum high-velocity bullet casing."
 	icon_state = "magnum_c_hv"
 	spent_icon = "magnum_c_hv-spent"
 	shell_color = "hv"
-	projectile_type = /obj/item/projectile/bullet/magnum_40/hv
+	projectile_type = /obj/item/projectile/bullet/pistol_10mm/hv
 
-/obj/item/ammo_casing/magnum_40/rubber
+/obj/item/ammo_casing/pistol_10mm/rubber
 	desc = "A 10mm Magnum rubber bullet casing."
 	icon_state = "magnum_c_r"
 	spent_icon = "magnum_c_r-spent"
 	shell_color = "r"
-	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber
+	projectile_type = /obj/item/projectile/bullet/pistol_10mm/rubber
 
-/obj/item/ammo_casing/magnum_40/rubber/pepperball
+/obj/item/ammo_casing/pistol_10mm/rubber/pepperball
 	desc = "A 10mm Magnum pepper-ball projectile casing."
 	icon_state = "magnum_c_pepper"
 	spent_icon = "magnum_c_pepper-spent"
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/magnum_40/rubber/pepperball
+	projectile_type = /obj/item/projectile/bullet/pistol_10mm/rubber/pepperball
 
-/obj/item/ammo_casing/magnum_40/lethal
+/obj/item/ammo_casing/pistol_10mm/lethal
 	desc = "A 10mm Magnum hollow point bullet casing."
 	icon_state = "magnum_c_l"
 	spent_icon = "magnum_c_l-spent"
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/magnum_40/lethal
+	projectile_type = /obj/item/projectile/bullet/pistol_10mm/lethal
 
-/obj/item/ammo_casing/magnum_40/laser
+/obj/item/ammo_casing/pistol_10mm/laser
 	desc = "A 10mm Magnum laser casing."
-	projectile_type = /obj/item/projectile/beam/weak/magnum_40
+	projectile_type = /obj/item/projectile/beam/weak/pistol_10mm
 
-/obj/item/ammo_casing/magnum_40/scrap
+/obj/item/ammo_casing/pistol_10mm/scrap
 	desc = "An old 10mm Magnum bullet casing."
 	icon_state = "magnum_c_s"
 	spent_icon = "magnum_c_s-spent"
 	shell_color = "s"
-	projectile_type = /obj/item/projectile/bullet/magnum_40/scrap
+	projectile_type = /obj/item/projectile/bullet/pistol_10mm/scrap
 
-/obj/item/ammo_casing/magnum_40/scrap/prespawned
+/obj/item/ammo_casing/pistol_10mm/scrap/prespawned
 	amount = 6
 
-/obj/item/ammo_casing/magnum_40/biomatter
+/obj/item/ammo_casing/pistol_10mm/biomatter
 	desc = "A caseless 10mm Magnum Caustic."
-	projectile_type = /obj/item/projectile/bullet/magnum_40/biomatter
+	projectile_type = /obj/item/projectile/bullet/pistol_10mm/biomatter
 	icon_state = "clrifle_c_p"
 	shell_color = "s"
 	is_caseless = TRUE
 
-/obj/item/ammo_casing/magnum_40/spent
+/obj/item/ammo_casing/pistol_10mm/spent
 	projectile_type = null
 
 //// 6.5 carbine ////
 
-/obj/item/ammo_casing/light_rifle_257
+/obj/item/ammo_casing/light_rifle_65
 	desc = "A 6.5mm bullet casing."
 	icon_state = "srifle_c_l"
 	spent_icon = "srifle_c_l-spent"
 	shell_color = "l"
 	caliber = CAL_LRIFLE
-	projectile_type = /obj/item/projectile/bullet/light_rifle_257
+	projectile_type = /obj/item/projectile/bullet/light_rifle_65
 	maxamount = 10
 
-/obj/item/ammo_casing/light_rifle_257/prespawned
+/obj/item/ammo_casing/light_rifle_65/prespawned
 	amount = 10
 
-/obj/item/ammo_casing/light_rifle_257/practice
+/obj/item/ammo_casing/light_rifle_65/practice
 	desc = "A 6.5mm practice bullet casing."
 	icon_state = "srifle_c_p"
 	spent_icon = "srifle_c_p-spent"
 	shell_color = "p"
-	projectile_type = /obj/item/projectile/bullet/light_rifle_257/practice
+	projectile_type = /obj/item/projectile/bullet/light_rifle_65/practice
 
-/obj/item/ammo_casing/light_rifle_257/hv
+/obj/item/ammo_casing/light_rifle_65/hv
 	desc = "A 6.5mm high-velocity bullet casing."
 	icon_state = "srifle_c_hv"
 	spent_icon = "srifle_c_hv-spent"
 	shell_color = "hv"
-	projectile_type = /obj/item/projectile/bullet/light_rifle_257/hv
+	projectile_type = /obj/item/projectile/bullet/light_rifle_65/hv
 
-/obj/item/ammo_casing/light_rifle_257/rubber
+/obj/item/ammo_casing/light_rifle_65/rubber
 	desc = "A 6.5mm rubber bullet casing."
 	icon_state = "srifle_c_r"
 	spent_icon = "srifle_c_r-spent"
 	shell_color = "r"
-	projectile_type = /obj/item/projectile/bullet/light_rifle_257/rubber
+	projectile_type = /obj/item/projectile/bullet/light_rifle_65/rubber
 
-/obj/item/ammo_casing/light_rifle_257/rubber/pepperball
+/obj/item/ammo_casing/light_rifle_65/rubber/pepperball
 	desc = "A 6.5mm pepper-ball projectile casing."
 	icon_state = "lrifle_c_pepper"
 	spent_icon = "lrifle_c_pepper-spent"
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/light_rifle_257/rubber/pepperball
+	projectile_type = /obj/item/projectile/bullet/light_rifle_65/rubber/pepperball
 
-/obj/item/ammo_casing/light_rifle_257/scrap
+/obj/item/ammo_casing/light_rifle_65/scrap
 	desc = "An old 6.5mm rifle bullet casing."
 	icon_state = "srifle_c_s"
 	spent_icon = "srifle_c_s-spent"
 	shell_color = "p"
-	projectile_type = /obj/item/projectile/bullet/light_rifle_257/scrap
+	projectile_type = /obj/item/projectile/bullet/light_rifle_65/scrap
 
-/obj/item/ammo_casing/light_rifle_257/scrap/prespawned
+/obj/item/ammo_casing/light_rifle_65/scrap/prespawned
 	amount = 10
 
-/obj/item/ammo_casing/light_rifle_257/lethal
+/obj/item/ammo_casing/light_rifle_65/lethal
 	desc = "A 6.5mm hollow-point bullet casing."
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/light_rifle_257/lethal
+	projectile_type = /obj/item/projectile/bullet/light_rifle_65/lethal
 
-/obj/item/ammo_casing/light_rifle_257/incend
+/obj/item/ammo_casing/light_rifle_65/incend
 	desc = "A 6.5mm incendiary bullet casing."
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/light_rifle_257/incend
+	projectile_type = /obj/item/projectile/bullet/light_rifle_65/incend
 
-/obj/item/ammo_casing/light_rifle_257/incend/prespawned
+/obj/item/ammo_casing/light_rifle_65/incend/prespawned
 	amount = 10
 
-/obj/item/ammo_casing/light_rifle_257/laser
+/obj/item/ammo_casing/light_rifle_65/laser
 	desc = "A 6.5mm laser casing."
-	projectile_type = /obj/item/projectile/beam/weak/light_rifle_257
+	projectile_type = /obj/item/projectile/beam/weak/light_rifle_65
 
 //// 7.62mm Rifle ////
 
-/obj/item/ammo_casing/rifle_75
+/obj/item/ammo_casing/rifle_762
 	desc = "A 7.62mm bullet casing."
 	icon_state = "srifle_c_l"
 	spent_icon = "srifle_c_l-spent"
 	shell_color = "l"
 	caliber = CAL_RIFLE
-	projectile_type = /obj/item/projectile/bullet/rifle_75
+	projectile_type = /obj/item/projectile/bullet/rifle_762
 	maxamount = 10
 
-/obj/item/ammo_casing/rifle_75/prespawned
+/obj/item/ammo_casing/rifle_762/prespawned
 	amount = 10
 
-/obj/item/ammo_casing/rifle_75/hv
+/obj/item/ammo_casing/rifle_762/hv
 	desc = "A 7.62mm high-velocity bullet casing."
 	icon_state = "srifle_c_hv"
 	spent_icon = "srifle_c_hv-spent"
 	shell_color = "hv"
-	projectile_type = /obj/item/projectile/bullet/rifle_75/hv
+	projectile_type = /obj/item/projectile/bullet/rifle_762/hv
 
-/obj/item/ammo_casing/rifle_75/rubber
+/obj/item/ammo_casing/rifle_762/rubber
 	desc = "A 7.62mm rubber bullet casing."
 	icon_state = "srifle_c_r"
 	spent_icon = "srifle_c_r-spent"
 	shell_color = "r"
-	projectile_type = /obj/item/projectile/bullet/rifle_75/rubber
+	projectile_type = /obj/item/projectile/bullet/rifle_762/rubber
 
-/obj/item/ammo_casing/rifle_75/practice
+/obj/item/ammo_casing/rifle_762/practice
 	desc = "A 7.62mm practice bullet casing."
 	icon_state = "srifle_c_p"
 	spent_icon = "srifle_c_p-spent"
-	projectile_type = /obj/item/projectile/bullet/rifle_75/practice
+	projectile_type = /obj/item/projectile/bullet/rifle_762/practice
 
-/obj/item/ammo_casing/rifle_75/lethal
+/obj/item/ammo_casing/rifle_762/lethal
 	desc = "A 7.62mm hollow-point bullet casing."
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/rifle_75/lethal
+	projectile_type = /obj/item/projectile/bullet/rifle_762/lethal
 
-/obj/item/ammo_casing/rifle_75/incend
+/obj/item/ammo_casing/rifle_762/incend
 	desc = "A 7.62mm incendiary bullet casing."
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/rifle_75/incend
+	projectile_type = /obj/item/projectile/bullet/rifle_762/incend
 
-/obj/item/ammo_casing/rifle_75/incend/prespawned
+/obj/item/ammo_casing/rifle_762/incend/prespawned
 	amount = 10
 
-/obj/item/ammo_casing/rifle_75/scrap
+/obj/item/ammo_casing/rifle_762/scrap
 	desc = "An old 7.62mm bullet casing."
 	icon_state = "srifle_c_s"
 	spent_icon = "srifle_c_s-spent"
 	shell_color = "p"
-	projectile_type = /obj/item/projectile/bullet/rifle_75/scrap
+	projectile_type = /obj/item/projectile/bullet/rifle_762/scrap
 
-/obj/item/ammo_casing/rifle_75/scrap/prespawned
+/obj/item/ammo_casing/rifle_762/scrap/prespawned
 	amount = 10
 
-/obj/item/ammo_casing/rifle_75/laser
+/obj/item/ammo_casing/rifle_762/laser
 	desc = "A 7.62mm laser casing."
-	projectile_type = /obj/item/projectile/beam/weak/rifle_75
+	projectile_type = /obj/item/projectile/beam/weak/rifle_762
 
 //// 8.6mm heavy rifle////
 
-/obj/item/ammo_casing/heavy_rifle_408
+/obj/item/ammo_casing/heavy_rifle_86
 	desc = "A 8.6mm bullet casing."
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
 	shell_color = "l"
 	caliber = CAL_HRIFLE
-	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408
+	projectile_type = /obj/item/projectile/bullet/heavy_rifle_86
 	maxamount = 10
 
-/obj/item/ammo_casing/heavy_rifle_408/prespawned
+/obj/item/ammo_casing/heavy_rifle_86/prespawned
 	amount = 10
 
-/obj/item/ammo_casing/heavy_rifle_408/rubber
+/obj/item/ammo_casing/heavy_rifle_86/rubber
 	desc = "A 8.6mm rubber bullet casing."
 	icon_state = "lrifle_c_r"
 	spent_icon = "lrifle_c_r-spent"
 	shell_color = "r"
-	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/rubber
+	projectile_type = /obj/item/projectile/bullet/heavy_rifle_86/rubber
 
-/obj/item/ammo_casing/heavy_rifle_408/practice
+/obj/item/ammo_casing/heavy_rifle_86/practice
 	desc = "A 8.6mm training bullet casing."
 	icon_state = "lrifle_c_p"
 	spent_icon = "lrifle_c_p-spent"
 	shell_color = "p"
-	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/practice
+	projectile_type = /obj/item/projectile/bullet/heavy_rifle_86/practice
 
-/obj/item/ammo_casing/heavy_rifle_408/hv
+/obj/item/ammo_casing/heavy_rifle_86/hv
 	desc = "A 8.6mm high-velocity bullet casing."
 	icon_state = "lrifle_c_hv"
 	spent_icon = "lrifle_c_hv-spent"
 	shell_color = "hv"
-	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/hv
+	projectile_type = /obj/item/projectile/bullet/heavy_rifle_86/hv
 
-/obj/item/ammo_casing/heavy_rifle_408/lethal
+/obj/item/ammo_casing/heavy_rifle_86/lethal
 	desc = "A 8.6mm bullet casing."
-	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/lethal
+	projectile_type = /obj/item/projectile/bullet/heavy_rifle_86/lethal
 
-/obj/item/ammo_casing/heavy_rifle_408/incend
+/obj/item/ammo_casing/heavy_rifle_86/incend
 	desc = "A 8.6mm incendiary bullet casing."
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/incend
+	projectile_type = /obj/item/projectile/bullet/heavy_rifle_86/incend
 
-/obj/item/ammo_casing/heavy_rifle_408/incend/prespawned
+/obj/item/ammo_casing/heavy_rifle_86/incend/prespawned
 	amount = 10
 
-/obj/item/ammo_casing/heavy_rifle_408/scrap
+/obj/item/ammo_casing/heavy_rifle_86/scrap
 	desc = "An old 8.6mm rifle bullet casing."
 	icon_state = "lrifle_c_s"
 	spent_icon = "lrifle_c_s-spent"
 	shell_color = "p"
-	projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/scrap
+	projectile_type = /obj/item/projectile/bullet/heavy_rifle_86/scrap
 
-/obj/item/ammo_casing/heavy_rifle_408/scrap/prespawned
+/obj/item/ammo_casing/heavy_rifle_86/scrap/prespawned
 	amount = 10
 
-/obj/item/ammo_casing/heavy_rifle_408/laser
+/obj/item/ammo_casing/heavy_rifle_86/laser
 	desc = "A 8.6mm laser casing."
-	projectile_type = /obj/item/projectile/beam/weak/heavy_rifle_408
+	projectile_type = /obj/item/projectile/beam/weak/heavy_rifle_86
 
-/obj/item/ammo_casing/heavy_rifle_408/spent
+/obj/item/ammo_casing/heavy_rifle_86/spent
 	projectile_type = null
 
-/obj/item/ammo_casing/heavy_rifle_408/hv/spent
+/obj/item/ammo_casing/heavy_rifle_86/hv/spent
 	projectile_type = null
 
 ///10mm caseless
@@ -423,58 +423,58 @@
 
 // 12mm HEAVY PISTOL
 
-/obj/item/ammo_casing/kurtz_50
+/obj/item/ammo_casing/kurtz_12
 	desc = "A 12mm bullet casing."
-	caliber = CAL_50
-	projectile_type = /obj/item/projectile/bullet/kurtz_50
+	caliber = CAL_HEAVY_PISTOL
+	projectile_type = /obj/item/projectile/bullet/kurtz_12
 	shell_color = "l"
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
 
-/obj/item/ammo_casing/kurtz_50/prespawned
+/obj/item/ammo_casing/kurtz_12/prespawned
 	amount = 6
 
-/obj/item/ammo_casing/kurtz_50/rubber
+/obj/item/ammo_casing/kurtz_12/rubber
 	desc = "A 12mm rubber bullet casing."
-	caliber = CAL_50
-	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber
+	caliber = CAL_HEAVY_PISTOL
+	projectile_type = /obj/item/projectile/bullet/kurtz_12/rubber
 	shell_color = "r"
 	icon_state = "lrifle_c_r"
 	spent_icon = "lrifle_c_r-spent"
 
-/obj/item/ammo_casing/kurtz_50/rubber/pepperball
+/obj/item/ammo_casing/kurtz_12/rubber/pepperball
 	desc = "A 12mm pepper-ball projectile casing."
 	icon_state = "lrifle_c_pepper"
 	spent_icon = "lrifle_c_pepper-spent"
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber/pepperball
+	projectile_type = /obj/item/projectile/bullet/kurtz_12/rubber/pepperball
 
-/obj/item/ammo_casing/kurtz_50/practice
+/obj/item/ammo_casing/kurtz_12/practice
 	desc = "A 12mm practice bullet casing."
-	caliber = CAL_50
-	projectile_type = /obj/item/projectile/bullet/kurtz_50/practice
+	caliber = CAL_HEAVY_PISTOL
+	projectile_type = /obj/item/projectile/bullet/kurtz_12/practice
 	shell_color = "p"
 	icon_state = "lrifle_c_p"
 	spent_icon = "lrifle_c_p-spent"
 
-/obj/item/ammo_casing/kurtz_50/hv
+/obj/item/ammo_casing/kurtz_12/hv
 	desc = "A 12mm high-velocity bullet casing."
-	caliber = CAL_50
-	projectile_type = /obj/item/projectile/bullet/kurtz_50/hv
+	caliber = CAL_HEAVY_PISTOL
+	projectile_type = /obj/item/projectile/bullet/kurtz_12/hv
 	shell_color = "hv"
 	icon_state = "lrifle_c_hv"
 	spent_icon = "lrifle_c_hv-spent"
 
-/obj/item/ammo_casing/kurtz_50/lethal
+/obj/item/ammo_casing/kurtz_12/lethal
 	desc = "A 12mm hollow point bullet casing."
-	caliber = CAL_50
+	caliber = CAL_HEAVY_PISTOL
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/kurtz_50/lethal
+	projectile_type = /obj/item/projectile/bullet/kurtz_12/lethal
 
-/obj/item/ammo_casing/kurtz_50/laser
+/obj/item/ammo_casing/kurtz_12/laser
 	desc = "A 12mm laser casing."
-	caliber = CAL_50
-	projectile_type = /obj/item/projectile/beam/weak/kurtz_50
+	caliber = CAL_HEAVY_PISTOL
+	projectile_type = /obj/item/projectile/beam/weak/kurtz_12
 
 //// .60-06 ////
 /obj/item/ammo_casing/antim

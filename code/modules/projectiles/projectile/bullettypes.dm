@@ -10,7 +10,7 @@
 //Low-caliber pistols and SMGs
 //*********************************//
 ///9mm///
-/obj/item/projectile/bullet/pistol_35
+/obj/item/projectile/bullet/pistol_9mm
 	damage_types = list(BRUTE = 24)
 	armor_divisor = 0.4
 	step_delay = 0.65
@@ -20,7 +20,7 @@
 	affective_ap_range = 4
 	recoil = 5
 
-/obj/item/projectile/bullet/pistol_35/hv
+/obj/item/projectile/bullet/pistol_9mm/hv
 	damage_types = list(BRUTE = 18)
 	armor_divisor = 1.2
 	step_delay = 0.5
@@ -30,7 +30,7 @@
 	sharp = TRUE
 	recoil = 6
 
-/obj/item/projectile/bullet/pistol_35/practice
+/obj/item/projectile/bullet/pistol_9mm/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 4)
 	embed = FALSE
@@ -39,7 +39,7 @@
 	can_ricochet = FALSE
 	recoil = 4
 
-/obj/item/projectile/bullet/pistol_35/lethal
+/obj/item/projectile/bullet/pistol_9mm/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 18)
 	armor_divisor = 0.2
@@ -52,7 +52,7 @@
 	recoil = 5
 	embed_mult = 1.5
 
-/obj/item/projectile/bullet/pistol_35/rubber
+/obj/item/projectile/bullet/pistol_9mm/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 12, HALLOSS = 22)
@@ -65,38 +65,38 @@
 	recoil = 4
 	ignition_source = FALSE
 
-/obj/item/projectile/bullet/pistol_35/rubber/soporific
+/obj/item/projectile/bullet/pistol_9mm/rubber/soporific
 	name = "soporific coated rubber bullet"
 	damage_types = list(BRUTE = 0, HALLOSS = 25)
 	var/spray = "stoxin"
 	can_ricochet = FALSE
 
-/obj/item/projectile/bullet/pistol_35/rubber/soporific/New()
+/obj/item/projectile/bullet/pistol_9mm/rubber/soporific/New()
 	..()
 	if(!testing)
 		create_reagents(2)
 		reagents.add_reagent(spray, 2)
 
-/obj/item/projectile/bullet/pistol_35/rubber/soporific/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/pistol_9mm/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(!testing)
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents)
 				reagents.trans_to_mob(L, 2, CHEM_TOUCH, copy = FALSE)
 
-/obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo
+/obj/item/projectile/bullet/pistol_9mm/rubber/soporific/cbo
 	name = "soporific condensed plastic bullet"
 	damage_types = list(HALLOSS = 30)
 	can_ricochet = FALSE
 
-/obj/item/projectile/bullet/pistol_35/rubber/soporific/cbo/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/pistol_9mm/rubber/soporific/cbo/on_hit(atom/target, def_zone = null)
 	if(!testing)
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents)
 				L.reagents.add_reagent("stoxin", 5)
 
-/obj/item/projectile/bullet/pistol_35/rubber/pepperball
+/obj/item/projectile/bullet/pistol_9mm/rubber/pepperball
 	name = "pepperball"
 	damage_types = list(BRUTE = 2, HALLOSS = 22)	//Pepperballs disipate upon impact. They'll sting like shit, but won't do much in a low-velocity round.
 	step_delay = 0.6 //a little slower than rubber rounds - these are just pepperspray balls
@@ -105,27 +105,27 @@
 	can_ricochet = FALSE
 	wounding_mult = WOUNDING_SMALL
 
-/obj/item/projectile/bullet/pistol_35/rubber/pepperball/New()
+/obj/item/projectile/bullet/pistol_9mm/rubber/pepperball/New()
 	..()
 	if (!testing)
 		create_reagents(3)
 		reagents.add_reagent(spray, 3)
 
-/obj/item/projectile/bullet/pistol_35/rubber/pepperball/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/pistol_9mm/rubber/pepperball/on_hit(atom/target, def_zone = null)
 	if(!testing)
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
 				reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
 
-/obj/item/projectile/bullet/pistol_35/scrap
+/obj/item/projectile/bullet/pistol_9mm/scrap
 	damage_types = list(BRUTE = 14)
 	armor_divisor = 0.25
 	affective_damage_range = 1
 	affective_ap_range = 1
 	recoil = 3
 
-/obj/item/projectile/bullet/pistol_35/biomatter
+/obj/item/projectile/bullet/pistol_9mm/biomatter
 	name = "biomatter bullet"
 	damage_types = list(BURN = 15, HALLOSS = 20)
 	penetrating = 0
@@ -140,7 +140,7 @@
 //*********************************//
 /// 10mm Magnum ///
 
-/obj/item/projectile/bullet/magnum_40
+/obj/item/projectile/bullet/pistol_10mm
 	icon_state = "bullet_magnum"
 	damage_types = list(BRUTE = 28)
 	armor_divisor = 0.5
@@ -152,7 +152,7 @@
 	affective_ap_range = 4
 	recoil = 7
 
-/obj/item/projectile/bullet/magnum_40/practice
+/obj/item/projectile/bullet/pistol_10mm/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 4)
 	embed = FALSE
@@ -161,7 +161,7 @@
 	step_delay = 0.4
 	recoil = 4
 
-/obj/item/projectile/bullet/magnum_40/hv
+/obj/item/projectile/bullet/pistol_10mm/hv
 	damage_types = list(BRUTE = 22)
 	armor_divisor = 1.3
 	penetrating = 1
@@ -172,7 +172,7 @@
 	affective_ap_range = 5
 	recoil = 9
 
-/obj/item/projectile/bullet/magnum_40/lethal
+/obj/item/projectile/bullet/pistol_10mm/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 22)
 	armor_divisor = 0.25
@@ -185,7 +185,7 @@
 	recoil = 7
 	embed_mult = 1.5
 
-/obj/item/projectile/bullet/magnum_40/rubber
+/obj/item/projectile/bullet/pistol_10mm/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 15, HALLOSS = 30)	//Basically a lower-damage HP but with more agony damage to it. Technically LTL - but not really ideal for it. Crowd-suppression.
@@ -199,7 +199,7 @@
 	recoil = 6
 	ignition_source = FALSE
 
-/obj/item/projectile/bullet/magnum_40/rubber/pepperball
+/obj/item/projectile/bullet/pistol_10mm/rubber/pepperball
 	name = "pepperball"
 	damage_types = list(BRUTE = 4, HALLOSS = 30)	//Pepperballs disipate upon impact. They'll sting like shit, but won't do much in a low-velocity round.
 	step_delay = 0.6 //a little slower than rubber rounds - these are just pepperspray balls
@@ -207,46 +207,46 @@
 	embed = FALSE
 	can_ricochet = FALSE	//breaks upon impact; impossible.
 
-/obj/item/projectile/bullet/magnum_40/rubber/pepperball/New()
+/obj/item/projectile/bullet/pistol_10mm/rubber/pepperball/New()
 	..()
 	if (!testing)
 		create_reagents(5)
 		reagents.add_reagent(spray, 5)
 
-/obj/item/projectile/bullet/magnum_40/rubber/pepperball/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/pistol_10mm/rubber/pepperball/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents && !testing)
 			reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
 
-/obj/item/projectile/bullet/magnum_40/rubber/soporific
+/obj/item/projectile/bullet/pistol_10mm/rubber/soporific
 	name = "soporific coated rubber bullet"
 	damage_types = list(BRUTE = 0, HALLOSS = 35)
 	var/spray = "stoxin"
 	can_ricochet = FALSE
 	embed = FALSE
 
-/obj/item/projectile/bullet/magnum_40/rubber/soporific/New()
+/obj/item/projectile/bullet/pistol_10mm/rubber/soporific/New()
 	..()
 	if (!testing)
 		create_reagents(3)
 		reagents.add_reagent(spray, 3)
 
-/obj/item/projectile/bullet/magnum_40/rubber/soporific/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/pistol_10mm/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if(!testing)
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
 				reagents.trans_to_mob(L, 3, CHEM_TOUCH, copy = FALSE)
 
-/obj/item/projectile/bullet/magnum_40/scrap
+/obj/item/projectile/bullet/pistol_10mm/scrap
 	damage_types = list(BRUTE = 15)
 	armor_divisor = 0.5
 	affective_damage_range = 3
 	affective_ap_range = 3
 	recoil = 6
 
-/obj/item/projectile/bullet/magnum_40/biomatter
+/obj/item/projectile/bullet/pistol_10mm/biomatter
 	name = "biomatter bullet"
 	damage_types = list(BURN = 20, HALLOSS = 32)
 	armor_divisor = 0.7
@@ -259,7 +259,7 @@
 	recoil = 6
 
 /// 12mm Heavy Pistol ///
-/obj/item/projectile/bullet/kurtz_50
+/obj/item/projectile/bullet/kurtz_12
 	icon_state = "bullet_krutz"
 	damage_types = list(BRUTE = 36)
 	armor_divisor = 0.6
@@ -271,7 +271,7 @@
 	affective_ap_range = 5
 	recoil = 14
 
-/obj/item/projectile/bullet/kurtz_50/rubber
+/obj/item/projectile/bullet/kurtz_12/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 20, HALLOSS = 35)
@@ -284,7 +284,7 @@
 	recoil = 10
 	ignition_source = FALSE
 
-/obj/item/projectile/bullet/kurtz_50/rubber/pepperball
+/obj/item/projectile/bullet/kurtz_12/rubber/pepperball
 	name = "pepperball"
 	damage_types = list(BRUTE = 6, HALLOSS = 35)	//Pepperballs disipate upon impact. They'll sting like shit, but won't do much in a low-velocity round.
 	step_delay = 0.75 //a little slower than rubber rounds - these are just pepperspray balls
@@ -293,20 +293,20 @@
 	can_ricochet = FALSE	//breaks upon impact; impossible.
 	wounding_mult = WOUNDING_SMALL
 
-/obj/item/projectile/bullet/kurtz_50/rubber/pepperball/New()
+/obj/item/projectile/bullet/kurtz_12/rubber/pepperball/New()
 	..()
 	if (!testing)
 		create_reagents(8)
 		reagents.add_reagent(spray, 8)
 
-/obj/item/projectile/bullet/kurtz_50/rubber/pepperball/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/kurtz_12/rubber/pepperball/on_hit(atom/target, def_zone = null)
 	if(!testing)
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
 				reagents.trans_to_mob(L, 8, CHEM_TOUCH, copy = FALSE)
 
-/obj/item/projectile/bullet/kurtz_50/practice
+/obj/item/projectile/bullet/kurtz_12/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 5)
 	embed = FALSE
@@ -314,7 +314,7 @@
 	step_delay = 0.75
 	recoil = 8
 
-/obj/item/projectile/bullet/kurtz_50/lethal
+/obj/item/projectile/bullet/kurtz_12/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 27)
 	armor_divisor = 0.3
@@ -325,7 +325,7 @@
 	recoil = 14
 	embed_mult = 2
 
-/obj/item/projectile/bullet/kurtz_50/hv
+/obj/item/projectile/bullet/kurtz_12/hv
 	name = "AV bullet"
 	damage_types = list(BRUTE = 27)
 	armor_divisor = 1.4
@@ -344,7 +344,7 @@
 
 /// 6.5x39mm Carbine///
 
-/obj/item/projectile/bullet/light_rifle_257
+/obj/item/projectile/bullet/light_rifle_65
 	icon_state = "bullet_carbine"
 	damage_types = list(BRUTE = 25)
 	armor_divisor = 1
@@ -356,7 +356,7 @@
 	affective_ap_range = 7
 	recoil = 5
 
-/obj/item/projectile/bullet/light_rifle_257/practice
+/obj/item/projectile/bullet/light_rifle_65/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 4)
 	embed = FALSE
@@ -365,7 +365,7 @@
 	step_delay = 0.5
 	recoil = 4
 
-/obj/item/projectile/bullet/light_rifle_257/hv
+/obj/item/projectile/bullet/light_rifle_65/hv
 	damage_types = list(BRUTE = 19)
 	armor_divisor = 2.5
 	penetrating = 2
@@ -376,7 +376,7 @@
 	sharp = TRUE
 	recoil = 7
 
-/obj/item/projectile/bullet/light_rifle_257/rubber
+/obj/item/projectile/bullet/light_rifle_65/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 10, HALLOSS = 20)
@@ -390,7 +390,7 @@
 	recoil = 4
 	ignition_source = FALSE
 
-/obj/item/projectile/bullet/light_rifle_257/rubber/pepperball
+/obj/item/projectile/bullet/light_rifle_65/rubber/pepperball
 	name = "pepperball"
 	damage_types = list(BRUTE = 4, HALLOSS = 20)	//Pepperballs disipate upon impact. They'll sting like shit, but won't do much in a low-velocity round.
 	step_delay = 1.0 //a little slower than rubber rounds - these are just pepperspray balls
@@ -398,19 +398,19 @@
 	embed = FALSE
 	can_ricochet = FALSE	//breaks upon impact; impossible.
 
-/obj/item/projectile/bullet/light_rifle_257/rubber/pepperball/New()
+/obj/item/projectile/bullet/light_rifle_65/rubber/pepperball/New()
 	..()
 	if (!testing)
 		create_reagents(5)
 		reagents.add_reagent(spray, 5)
 
-/obj/item/projectile/bullet/light_rifle_257/rubber/pepperball/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/light_rifle_65/rubber/pepperball/on_hit(atom/target, def_zone = null)
 	if(isliving(target))
 		var/mob/living/L = target
 		if(istype(L) && L.reagents && !testing)
 			reagents.trans_to_mob(L, 5, CHEM_TOUCH, copy = FALSE)
 
-/obj/item/projectile/bullet/light_rifle_257/lethal
+/obj/item/projectile/bullet/light_rifle_65/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 19)
 	armor_divisor = 0.5
@@ -423,7 +423,7 @@
 	recoil = 5
 	embed_mult = 2 //We suck and get blocked by must armor
 
-/obj/item/projectile/bullet/light_rifle_257/incend
+/obj/item/projectile/bullet/light_rifle_65/incend
 	name = "incendiary bullet"
 	damage_types = list(BURN = 10) //We deal most of are damage with fire stacks
 	fire_stacks = 1
@@ -436,19 +436,19 @@
 	step_delay = 0.7
 	recoil = 7
 
-/obj/item/projectile/bullet/light_rifle_257/scrap
+/obj/item/projectile/bullet/light_rifle_65/scrap
 	damage_types = list(BRUTE = 15)
 	armor_divisor = 0.5
 	affective_damage_range = 4
 	affective_ap_range = 4
 	recoil = 6
 
-/obj/item/projectile/bullet/light_rifle_257/nomuzzle
+/obj/item/projectile/bullet/light_rifle_65/nomuzzle
 	muzzle_type = null
 
 /// 7.62x39mm Rifle ///
 
-/obj/item/projectile/bullet/rifle_75
+/obj/item/projectile/bullet/rifle_762
 	damage_types = list(BRUTE = 27)
 	armor_divisor = 1.25
 	wounding_mult = WOUNDING_SERIOUS
@@ -459,7 +459,7 @@
 	affective_ap_range = 7
 	recoil = 10
 
-/obj/item/projectile/bullet/rifle_75/hv
+/obj/item/projectile/bullet/rifle_762/hv
 	damage_types = list(BRUTE = 21)
 	armor_divisor = 3
 	penetrating = 2
@@ -470,7 +470,7 @@
 	sharp = TRUE
 	recoil = 14
 
-/obj/item/projectile/bullet/rifle_75/practice
+/obj/item/projectile/bullet/rifle_762/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 2, HALLOSS = 2)
 	armor_divisor = 1
@@ -479,7 +479,7 @@
 	can_ricochet = FALSE
 	recoil = 6
 
-/obj/item/projectile/bullet/rifle_75/rubber
+/obj/item/projectile/bullet/rifle_762/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 14, HALLOSS = 26)
@@ -494,25 +494,25 @@
 	recoil = 6
 	ignition_source = FALSE
 
-/obj/item/projectile/bullet/rifle_75/rubber/soporific
+/obj/item/projectile/bullet/rifle_762/rubber/soporific
 	name = "soporific coated rubber bullet"
 	damage_types = list(BRUTE = 4, HALLOSS = 30) // Minor damage from blunt trauma, it's meant to be LTL
 	var/spray = "stoxin"
 
-/obj/item/projectile/bullet/rifle_75/rubber/soporific/New()
+/obj/item/projectile/bullet/rifle_762/rubber/soporific/New()
 	..()
 	if (!testing)
 		create_reagents(1)
 		reagents.add_reagent(spray, 1)
 
-/obj/item/projectile/bullet/rifle_75/rubber/soporific/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/rifle_762/rubber/soporific/on_hit(atom/target, def_zone = null)
 	if (!testing)
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
 				reagents.trans_to_mob(L, 1, CHEM_TOUCH, copy = FALSE)
 
-/obj/item/projectile/bullet/rifle_75/lethal
+/obj/item/projectile/bullet/rifle_762/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 21)
 	armor_divisor = 0.65
@@ -525,7 +525,7 @@
 	recoil = 10
 	embed_mult = 1.5
 
-/obj/item/projectile/bullet/rifle_75/incend
+/obj/item/projectile/bullet/rifle_762/incend
 	name = "incendiary bullet"
 	damage_types = list(BURN = 12) //We deal most of are damage with fire stacks
 	fire_stacks = 2
@@ -536,7 +536,7 @@
 	step_delay = 0.8
 	recoil = 9
 
-/obj/item/projectile/bullet/rifle_75/scrap
+/obj/item/projectile/bullet/rifle_762/scrap
 	damage_types = list(BRUTE = 17)
 	armor_divisor = 0.5
 	affective_damage_range = 3
@@ -545,7 +545,7 @@
 
 /// 8.6x70mm Heavy Rifle ///
 
-/obj/item/projectile/bullet/heavy_rifle_408
+/obj/item/projectile/bullet/heavy_rifle_86
 	icon_state = "bullet_heavy"
 	damage_types = list(BRUTE = 30)
 	armor_divisor = 1.4
@@ -557,7 +557,7 @@
 	affective_ap_range = 8
 	recoil = 16
 
-/obj/item/projectile/bullet/heavy_rifle_408/rubber
+/obj/item/projectile/bullet/heavy_rifle_86/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 17, HALLOSS = 32)
@@ -571,7 +571,7 @@
 	recoil = 14
 	ignition_source = FALSE
 
-/obj/item/projectile/bullet/heavy_rifle_408/practice
+/obj/item/projectile/bullet/heavy_rifle_86/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 6)
 	armor_divisor = 1
@@ -582,7 +582,7 @@
 	step_delay = 0.5
 	recoil = 10
 
-/obj/item/projectile/bullet/heavy_rifle_408/hv
+/obj/item/projectile/bullet/heavy_rifle_86/hv
 	name = "sabot penetrator"
 	damage_types = list(BRUTE = 24)
 	armor_divisor = 3.5
@@ -594,7 +594,7 @@
 	sharp = TRUE
 	recoil = 20
 
-/obj/item/projectile/bullet/heavy_rifle_408/lethal
+/obj/item/projectile/bullet/heavy_rifle_86/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 24)
 	armor_divisor = 0.7
@@ -607,7 +607,7 @@
 	recoil = 16
 	embed_mult = 2
 
-/obj/item/projectile/bullet/heavy_rifle_408/incend
+/obj/item/projectile/bullet/heavy_rifle_86/incend
 	name = "incendiary bullet"
 	damage_types = list(BURN = 15) //We deal most of are damage with fire stacks
 	fire_stacks = 3
@@ -619,7 +619,7 @@
 	step_delay = 0.8
 	recoil = 15
 
-/obj/item/projectile/bullet/heavy_rifle_408/scrap
+/obj/item/projectile/bullet/heavy_rifle_86/scrap
 	damage_types = list(BRUTE = 20)
 	armor_divisor = 0.75
 	affective_damage_range = 4
@@ -979,20 +979,20 @@
 	affective_ap_range = 10
 	recoil = 20
 
-/obj/item/projectile/bullet/kurtz_50/railgun
+/obj/item/projectile/bullet/kurtz_12/railgun
 	nocap_structures = TRUE
 	hitscan = TRUE
 	can_ricochet = FALSE
 	recoil = 13
 
-/obj/item/projectile/bullet/kurtz_50/rubber/railgun
+/obj/item/projectile/bullet/kurtz_12/rubber/railgun
 	hitscan = TRUE
 	can_ricochet = FALSE
 	//ricochet_mod = 1.5
 	recoil = 9
 	ignition_source = FALSE
 
-/obj/item/projectile/bullet/kurtz_50/incendiary
+/obj/item/projectile/bullet/kurtz_12/incendiary
 	damage_types = list(BRUTE = 5, HALLOSS = 5)
 	embed = FALSE
 	can_ricochet = FALSE
@@ -1000,7 +1000,7 @@
 	fire_stacks = 4
 	recoil = 19
 
-/obj/item/projectile/bullet/heavy_rifle_408/railgun
+/obj/item/projectile/bullet/heavy_rifle_86/railgun
 	can_ricochet = FALSE
 	icon_state = "toxin"
 	recoil = 23

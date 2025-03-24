@@ -17,7 +17,7 @@
 	init_firemodes = list(BURST_3_ROUND, BURST_8_ROUND, FULL_AUTO_600)
 	serial_type = "Kriosan"
 
-	var/projectile_type = /obj/item/projectile/bullet/heavy_rifle_408/hv
+	var/projectile_type = /obj/item/projectile/bullet/heavy_rifle_86/hv
 	var/obj/item/minigun_backpack/connected = null // The backpack the gun is connected to
 
 /obj/item/gun/minigun/New()

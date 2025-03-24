@@ -162,7 +162,7 @@ This monster is borderline unkillable and will make players upset
 		ranged_cooldown = 1
 		acceptableTargetDistance = 15
 		comfy_range = 12
-		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_408
+		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_86
 		rapid = FALSE
 		armor = list(melee = 20, bullet = 20, energy = 20, bomb = 20, bio = 100, rad = 100)
 		returning_fire = TRUE
@@ -175,7 +175,7 @@ This monster is borderline unkillable and will make players upset
 		delay_for_melee = 0 SECONDS
 		delay_for_all = 0.4 SECONDS
 		ranged_cooldown = 3
-		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_408
+		projectiletype = /obj/item/projectile/beam/weak/heavy_rifle_86
 		rapid = FALSE
 		armor = list(melee = 15, bullet = 15, energy = 15, bomb = 15, bio = 100, rad = 100)
 		able_to_build = TRUE
@@ -187,7 +187,7 @@ This monster is borderline unkillable and will make players upset
 		delay_for_melee = 0 SECONDS
 		delay_for_all = 0.4 SECONDS
 		ranged_cooldown = 3
-		projectiletype = /obj/item/projectile/beam/weak/rifle_75
+		projectiletype = /obj/item/projectile/beam/weak/rifle_762
 		rapid = TRUE
 		armor = list(melee = 10, bullet = 10, energy = 10, bomb = 10, bio = 100, rad = 100)
 		able_to_build = TRUE
@@ -199,7 +199,7 @@ This monster is borderline unkillable and will make players upset
 		delay_for_melee = 0 SECONDS
 		delay_for_all = 0.4 SECONDS
 		ranged_cooldown = 4 //Yikes
-		projectiletype = /obj/item/projectile/beam/weak/rifle_75
+		projectiletype = /obj/item/projectile/beam/weak/rifle_762
 		rapid = TRUE
 		armor = list(melee = 3, bullet = 3, energy = 3, bomb = 3, bio = 100, rad = 100)
 		able_to_build = TRUE
@@ -211,25 +211,25 @@ This monster is borderline unkillable and will make players upset
 		delay_for_melee = 0 SECONDS
 		delay_for_all = 0.4 SECONDS
 		ranged_cooldown = 4 //Yikes
-		projectiletype = /obj/item/projectile/beam/weak/rifle_75
+		projectiletype = /obj/item/projectile/beam/weak/rifle_762
 		rapid = FALSE
 		able_to_build = TRUE
 		armor = list(melee = -1, bullet = -1, energy = -1, bomb = -1, bio = 100, rad = 100) //Starting wise we are less then armorless
 		return
 
 	if(data_count >= 1000)
-		projectiletype = /obj/item/projectile/beam/weak/light_rifle_257
+		projectiletype = /obj/item/projectile/beam/weak/light_rifle_65
 		armor = list(melee = -1, bullet = -1, energy = -1, bomb = -1, bio = 100, rad = 100) //Starting wise we are less then armorless
 		able_to_build = TRUE
 		return
 
 	if(data_count >= 500)
-		projectiletype = /obj/item/projectile/beam/weak/magnum_40
+		projectiletype = /obj/item/projectile/beam/weak/pistol_10mm
 		able_to_build = TRUE
 		return
 
 	if(data_count >= 100)
-		projectiletype = /obj/item/projectile/beam/weak/pistol_35
+		projectiletype = /obj/item/projectile/beam/weak/pistol_9mm
 		rapid = TRUE
 		able_to_build = TRUE
 		return

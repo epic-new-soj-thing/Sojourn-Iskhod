@@ -519,7 +519,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 			M.equip_to_slot_or_del(new /obj/item/clothing/head/rank/inspector(M), slot_head)
 
 			M.equip_to_slot_or_del(new /obj/item/gun/projectile/revolver(M), slot_r_hand)
-			M.equip_to_slot_or_del(new /obj/item/ammo_magazine/speed_loader_magnum_40(M), slot_l_store)
+			M.equip_to_slot_or_del(new /obj/item/ammo_magazine/speed_loader_pistol_10mm(M), slot_l_store)
 
 		if ("tournament chef") //Steven Seagal FTW
 			M.equip_to_slot_or_del(new /obj/item/clothing/under/rank/chef(M), slot_w_uniform)
@@ -628,7 +628,7 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 				sec_briefcase.contents += new /obj/item/spacecash/bundle/c1000
 			sec_briefcase.contents += new /obj/item/gun/energy/crossbow
 			sec_briefcase.contents += new /obj/item/gun/projectile/revolver/hornet
-			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_magnum_40
+			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_pistol_10mm
 			sec_briefcase.contents += new /obj/item/plastique
 			M.equip_to_slot_or_del(sec_briefcase, slot_l_hand)
 
@@ -769,8 +769,8 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_dress_old, R_FUN, FALSE)
 				sec_briefcase.contents += new /obj/item/spacecash/bundle/c1000
 			sec_briefcase.contents += new /obj/item/gun/energy/crossbow
 			sec_briefcase.contents += new /obj/item/gun/projectile/revolver/hornet
-			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurtz_50
-			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurtz_50
+			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurtz_12
+			sec_briefcase.contents += new /obj/item/ammo_magazine/speed_loader_kurtz_12
 			M.equip_to_slot_or_del(sec_briefcase, slot_l_hand)
 
 			var/obj/item/card/id/W = new(M)

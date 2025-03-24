@@ -10,22 +10,22 @@
 
 /datum/gear/armament/ammo
 	display_name = "Rubber .35 Auto pistol mag"
-	path = /obj/item/ammo_magazine/pistol_35/rubber
+	path = /obj/item/ammo_magazine/pistol_9mm/rubber
 	cost = 1
 
 /datum/gear/armament/ammo_h
 	display_name = "High Cap Rubber .35 Auto pistol mag"
-	path = /obj/item/ammo_magazine/highcap_pistol_35/rubber
+	path = /obj/item/ammo_magazine/highcap_pistol_9mm/rubber
 	cost = 2
 
 /datum/gear/armament/ammo_speed
 	display_name = "Rubber .35 Auto pistol speed loader"
-	path = /obj/item/ammo_magazine/speed_loader_pistol_35/rubber
+	path = /obj/item/ammo_magazine/speed_loader_pistol_9mm/rubber
 	cost = 1
 
 /datum/gear/armament/ammo_box
 	display_name = "Rubber .35 Auto pistol ammo box"
-	path = /obj/item/ammo_magazine/ammobox/pistol_35/rubber
+	path = /obj/item/ammo_magazine/ammobox/pistol_9mm/rubber
 	cost = 2
 
 /datum/gear/armament/detective

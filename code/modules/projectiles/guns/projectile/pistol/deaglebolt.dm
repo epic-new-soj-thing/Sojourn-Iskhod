@@ -7,7 +7,7 @@
 	icon_state = "deagle"
 	item_state = "deagle"
 	force = WEAPON_FORCE_PAINFUL
-	caliber = CAL_50
+	caliber = CAL_HEAVY_PISTOL
 	load_method = SINGLE_CASING|MAGAZINE
 	mag_well = MAG_WELL_PISTOL|MAG_WELL_H_PISTOL
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_PLASTIC = 8)
@@ -33,7 +33,7 @@
 	set category = "Object"
 
 	playsound(src.loc, 'sound/weapons/guns/interact/chaingun_cock.ogg', 100, 1)
-	if(caliber == CAL_50)
+	if(caliber == CAL_HEAVY_PISTOL)
 		caliber = CAL_PISTOL
 		fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
 		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 9mm pistol caliber!"), \
@@ -44,7 +44,7 @@
 		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 10mm magnum caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	else if (caliber == CAL_MAGNUM)
-		caliber = CAL_50
+		caliber = CAL_HEAVY_PISTOL
 		fire_sound = initial(fire_sound)
 		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 12mm heavy pistol caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))

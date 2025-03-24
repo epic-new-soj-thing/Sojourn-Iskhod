@@ -207,8 +207,8 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/ih/ranger_officer/populate_contents()
 	new /obj/item/handcuffs/advanced(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
+	new /obj/item/ammo_magazine/speed_loader_kurtz_12/rubber(src)
+	new /obj/item/ammo_magazine/speed_loader_kurtz_12/rubber(src)
 	new /obj/item/device/lighting/toggleable/flashlight/seclite(src)
 	new /obj/item/clothing/accessory/badge/holo/inspector(src)
 	new /obj/item/cell/small/high(src)
@@ -516,9 +516,9 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list() // Moved the Galaxy to secondary selection
-		options["Python - precision rifle"] = list(/obj/item/gun/projectile/automatic/mamba/python,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber, /obj/item/storage/pouch/ammo)
+		options["Python - precision rifle"] = list(/obj/item/gun/projectile/automatic/mamba/python,/obj/item/ammo_magazine/heavy_rifle_86,/obj/item/ammo_magazine/heavy_rifle_86, /obj/item/ammo_magazine/heavy_rifle_86/rubber, /obj/item/storage/pouch/ammo)
 		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun/beanbag, /obj/item/ammo_magazine/ammobox/c10x24_small, /obj/item/storage/pouch/tubular)
-		options["Ostwind - police carbine"] = list(/obj/item/gun/projectile/automatic/ostwind, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball, /obj/item/storage/pouch/ammo)
+		options["Ostwind - police carbine"] = list(/obj/item/gun/projectile/automatic/ostwind, /obj/item/ammo_magazine/light_rifle_65, /obj/item/ammo_magazine/light_rifle_65, /obj/item/ammo_magazine/light_rifle_65/rubber/pepperball, /obj/item/storage/pouch/ammo)
 		options["Gleam - Assault Laser"] = list(/obj/item/gun/energy/lasercore/militia/blaster, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/storage/pouch/tubular)
 		options["Second Secondary"] = list(/obj/item/voucher/marshal/wosecondary)
 
@@ -546,7 +546,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list()
-		options["\"Longarm\" - marksman rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/storage/pouch/ammo)
+		options["\"Longarm\" - marksman rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped, /obj/item/ammo_magazine/heavy_rifle_86, /obj/item/ammo_magazine/heavy_rifle_86, /obj/item/ammo_magazine/heavy_rifle_86, /obj/item/ammo_magazine/heavy_rifle_86, /obj/item/ammo_magazine/heavy_rifle_86, /obj/item/storage/pouch/ammo)
 		options["\"Hustler\" - Breacher Shotgun"] = list(/obj/item/gun/projectile/automatic/omnirifle/hustler, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/storage/pouch/ammo)
 		options["\"Gleam\" - Assault Laser"] = list(/obj/item/gun/energy/lasercore/militia/blaster, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/storage/pouch/tubular)
 		options["Second Secondary"] = list(/obj/item/voucher/blackshield/COsecondary)
@@ -600,7 +600,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		stamped = TRUE
 		var/list/options = list()
 		// Keeping this in case any other "sensible" option for a primary weapon for Lifeline Techs arrives, just add them as an option here.
-		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_35/hv,/obj/item/ammo_magazine/smg_35/hv)
+		options["Bullpip SMG with HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_9mm/hv,/obj/item/ammo_magazine/smg_9mm/hv)
 		options["Soteria \"Sprocket\" laser carbine"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
 		options["SST \"Humility\" shotgun"] = list(/obj/item/gun/energy/sst/humility/preloaded,/obj/item/cell/medium/moebius/high)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options

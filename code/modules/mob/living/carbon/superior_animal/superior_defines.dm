@@ -277,7 +277,7 @@
 	var/limited_ammo = FALSE //Do we run out of ammo?
 	var/mag_drop = FALSE //Do we drop are mags?
 	var/rounds_left = 5 //Debug number
-	var/mag_type = /obj/item/ammo_magazine/pistol_35/empty//What is are mag/cell used?
+	var/mag_type = /obj/item/ammo_magazine/pistol_9mm/empty//What is are mag/cell used?
 	var/mags_left = 3 //How many mags do we have?
 	var/rounds_per_fire = 1 //how many bullets do we eat per shot, NOTE: rapid fire will use rounds_per_fire * 3
 	var/reload_message = "performs a tactical reload!" //Are reload message.

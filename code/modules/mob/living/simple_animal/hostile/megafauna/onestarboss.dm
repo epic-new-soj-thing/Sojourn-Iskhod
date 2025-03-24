@@ -28,7 +28,7 @@
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	emp_proof = TRUE
 
-	projectiletype = /obj/item/projectile/bullet/light_rifle_257/nomuzzle
+	projectiletype = /obj/item/projectile/bullet/light_rifle_65/nomuzzle
 
 /mob/living/simple/hostile/megafauna/one_star/death(gibbed, var/list/force_grant)
 	if(health <= death_threshold)

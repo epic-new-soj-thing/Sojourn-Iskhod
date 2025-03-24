@@ -33,5 +33,5 @@
 /obj/item/gun/projectile/automatic/armsmg/blackshield
 
 /obj/item/gun/projectile/automatic/armsmg/blackshield/New()
-	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_35/drum(src)
+	ammo_magazine = new /obj/item/ammo_magazine/highcap_pistol_9mm/drum(src)
 	. =..()
