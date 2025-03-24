@@ -74,23 +74,23 @@
 	name = "20mm loader tube (empty)"
 	build_path = /obj/item/ammo_magazine/speed_loader_shotgun/empty
 
-/datum/design/autolathe/ammo/m12empty
+/datum/design/autolathe/ammo/drum_20empty
 	name = "20mm ammo drum (empty)"
-	build_path = /obj/item/ammo_magazine/m12/empty
+	build_path = /obj/item/ammo_magazine/drum_20/empty
 
-/datum/design/autolathe/ammo/m12beanbag
+/datum/design/autolathe/ammo/drum_20beanbag
 	name = "ammo drum (20mm beanbag)"
-	build_path = /obj/item/ammo_magazine/m12/beanbag
+	build_path = /obj/item/ammo_magazine/drum_20/beanbag
 	materials = list(MATERIAL_STEEL = 8)
 
-/datum/design/autolathe/ammo/m12pellet
+/datum/design/autolathe/ammo/drum_20pellet
 	name = "ammo drum (20mm pellet)"
-	build_path = /obj/item/ammo_magazine/m12/pellet
+	build_path = /obj/item/ammo_magazine/drum_20/pellet
 	materials = list(MATERIAL_STEEL = 8)
 
-/datum/design/autolathe/ammo/m12slug
+/datum/design/autolathe/ammo/drum_20slug
 	name = "ammo drum (20mm slug)"
-	build_path = /obj/item/ammo_magazine/m12
+	build_path = /obj/item/ammo_magazine/drum_20
 	materials = list(MATERIAL_STEEL = 8)
 
 /datum/design/autolathe/ammo/sbaw_slug

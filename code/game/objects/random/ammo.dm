@@ -101,9 +101,9 @@
 				/obj/item/ammo_magazine/pistol_10mm/rubber,
 				/obj/item/ammo_magazine/pistol_10mm,
 				/obj/item/cell/medium/high,
-				/obj/item/ammo_magazine/m12,
-				/obj/item/ammo_magazine/m12/pellet,
-				/obj/item/ammo_magazine/m12/beanbag)
+				/obj/item/ammo_magazine/drum_20,
+				/obj/item/ammo_magazine/drum_20/pellet,
+				/obj/item/ammo_magazine/drum_20/beanbag)
 
 /obj/random/ammo_fancy/low_chance
 	name = "low chance random random ironhammer ammunition"
@@ -127,7 +127,7 @@
 				/obj/item/ammo_magazine/ammobox/shotgun/stunshells = 1,
 				/obj/item/ammo_magazine/ammobox/shotgun/buckshot = 3,
 				/obj/item/ammo_casing/shotgun/pellet/scrap/prespawned = 3,
-				/obj/item/ammo_magazine/m12/empty = 0.3))
+				/obj/item/ammo_magazine/drum_20/empty = 0.3))
 
 /obj/random/ammo/shotgun/low_chance
 	name = "low chance random shotgun ammunition"
@@ -203,7 +203,7 @@
 	return pickweight(list(/obj/item/ammo_magazine/c10x24 = 3,
 				//obj/item/ammo_magazine/a75 = 3,
 				/obj/item/ammo_magazine/heavy_rifle_86_drum = 3,
-				/obj/item/ammo_magazine/m12/pellet = 6,
+				/obj/item/ammo_magazine/drum_20/pellet = 6,
 				/obj/item/ammo_magazine/ammobox/rifle_762/lethal = 6,
 				/obj/item/ammo_magazine/smg_9mm/lethal = 9,
 				/obj/item/ammo_magazine/pistol_9mm/lethal = 9,

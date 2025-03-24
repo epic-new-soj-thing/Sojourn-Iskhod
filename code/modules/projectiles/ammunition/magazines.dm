@@ -1127,7 +1127,7 @@
 */
 ////////////Shotguns!////////////
 
-/obj/item/ammo_magazine/m12
+/obj/item/ammo_magazine/drum_20
 	name = "20mm ammo drum (sabot slug)"
 	desc = "A 20mm ammo drum for automatic and semiautomatic shotguns, holds 12 shells"
 	icon_state = "m12_hv"
@@ -1139,28 +1139,28 @@
 	max_ammo = 12 //back to twelve, rest in peace chud, if anyone uses "realism" IRL drums also use 12 majority of time
 	ammo_color = "-hv"
 
-/obj/item/ammo_magazine/m12/update_icon()
+/obj/item/ammo_magazine/drum_20/update_icon()
 	cut_overlays()
 	if(stored_ammo.len)
 		var/obj/item/ammo_casing/AC = stored_ammo[1] //look at next casing.
 		add_overlay("m12_shell_[AC.shell_color]") //look and display the overlay for the ammo
 
-/obj/item/ammo_magazine/m12/Initialize()
+/obj/item/ammo_magazine/drum_20/Initialize()
 	. = ..()
 	update_icon()
 
-/obj/item/ammo_magazine/m12/empty
+/obj/item/ammo_magazine/drum_20/empty
 	icon_state = "m12"
 	initial_ammo = 0
 	ammo_color = ""
 
-/obj/item/ammo_magazine/m12/pellet
+/obj/item/ammo_magazine/drum_20/pellet
 	name = "20mm ammo drum (buckshot)"
 	icon_state = "m12_l"
 	ammo_type = /obj/item/ammo_casing/shotgun/pellet
 	ammo_color = "-l"
 
-/obj/item/ammo_magazine/m12/beanbag
+/obj/item/ammo_magazine/drum_20/beanbag
 	name = "20mm ammo drum (beanbag)"
 	icon_state = "m12_r"
 	ammo_type = /obj/item/ammo_casing/shotgun/beanbag

@@ -243,7 +243,7 @@
 
 /obj/item/storage/box/syndie_kit/pug/populate_contents()
 	new /obj/item/gun/projectile/shotgun/pug(src)
-	new /obj/item/ammo_magazine/m12/pellet(src)
+	new /obj/item/ammo_magazine/drum_20/pellet(src)
 
 /obj/item/storage/box/syndie_kit/antimateriel_rifle
 	name = "sniper rifle box"
