@@ -1,105 +1,242 @@
-"a" = (/turf/simulated/floor/snow,/area/space)
-"X" = (/turf/unsimulated/mineral/cold,/area/space)
+"bx" = (/obj/structure/flora/small/snow/rock1,/turf/simulated/floor/snow,/area/space)
+"bN" = (/obj/effect/decal/cleanable/dirt,/obj/item/trash/mre_dalococh,/obj/item/remains,/obj/item/oddity/common/book_log{name = "The King In Yellow"; desc = "A once detailed book, now even the cover is faded, it is too damp to read. Even still the cloaked figure on the cover makes you shudder."},/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"cF" = (/obj/structure/grille,/obj/structure/sign/warning/high_voltage,/obj/structure/catwalk,/obj/structure/railing{dir = 7},/turf/simulated/floor/plating/under,/area/space)
+"cG" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/blood/writing,/obj/item/paper/crumpled/bloody{info = " Straya, dear, if you are reading this i must have woke you up, i have gone to retrieve the plasma for our generator, i am sorry to tell you this way but you would have tried to stop me, i will be back before you can even finish reading this, do not worry for me, the navy taught me how to handle myself, i love you."},/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout{name = "radio station 12"; is_maintenance = 0})
+"cN" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/gibspawner,/obj/effect/decal/cleanable/blood,/obj/structure/multiz/ladder/burrow_hole,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"cQ" = (/obj/effect/spider/stickyweb,/obj/effect/spider/eggcluster,/turf/simulated/floor/rock/grey,/area/space)
+"de" = (/obj/item/roach_egg,/turf/simulated/floor/rock/grey,/area/space)
+"dv" = (/obj/structure/grille,/obj/structure/sign/warning/high_voltage,/obj/structure/catwalk,/obj/structure/railing{dir = 4},/turf/simulated/floor/plating/under,/area/space)
+"dy" = (/obj/structure/flora/tree/pine/xmas,/turf/simulated/floor/snow,/area/space)
+"ea" = (/obj/item/roach_egg,/turf/simulated/wall/iskhod_red,/area/space)
+"eh" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/rock/grey,/area/space)
+"el" = (/obj/structure/salvageable/console_broken_os{dir = 4},/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"ez" = (/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/plating,/area/space)
+"eC" = (/obj/structure/grille,/obj/structure/grille,/obj/structure/catwalk,/obj/structure/railing{dir = 4},/turf/simulated/floor/plating/under,/area/space)
+"eD" = (/obj/item/scrap_lump,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"fd" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/item/trash/candy/proteinbar,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"fn" = (/obj/structure/sign/warning/hazard_caution,/obj/effect/floor_decal/industrial/danger{dir = 4},/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"fu" = (/obj/effect/gibspawner,/obj/effect/decal/cleanable/blood,/obj/item/oddity/common/old_knife,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"fz" = (/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel,/turf/simulated/floor/plating,/area/space)
+"fF" = (/obj/effect/floor_decal/industrial/danger/corner{dir = 8},/obj/effect/floor_decal/industrial/danger{dir = 1},/obj/effect/floor_decal/industrial/danger{dir = 8},/obj/effect/floor_decal/snow_edge,/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"fV" = (/mob/living/simple/hostile/nightmare{health = 0},/turf/simulated/floor/plating,/area/space)
+"fY" = (/obj/structure/grille,/obj/structure/catwalk,/obj/structure/railing{dir = 4},/obj/structure/railing{dir = 8},/turf/simulated/floor/plating/under,/area/space)
+"ge" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/rock/grey,/area/space)
+"hj" = (/obj/structure/catwalk,/obj/effect/floor_decal/rust,/obj/structure/cable/ender,/obj/machinery/power/port_gen/pacman/anchored,/turf/simulated/floor/industrial/fancy_slates_fixed,/area/nadezhda/maintenance/hideout)
+"hD" = (/turf/simulated/floor/rock/grey,/area/space)
+"hS" = (/obj/item/flamethrower,/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel,/turf/simulated/floor/plating,/area/space)
+"ip" = (/obj/structure/table/steel_reinforced,/obj/effect/decal/cleanable/dirt,/obj/item/paper_bin,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"jl" = (/obj/machinery/power/apc,/turf/simulated/wall/iskhod,/area/space)
+"kT" = (/obj/structure/table/bench/wooden,/turf/simulated/floor/snow,/area/space)
+"kW" = (/obj/random/cluster/roaches_hoard,/turf/simulated/floor/rock/grey,/area/space)
+"li" = (/obj/structure/grille,/obj/structure/catwalk,/obj/structure/railing{dir = 7},/obj/structure/railing{dir = 8},/turf/simulated/floor/plating/under,/area/space)
+"lq" = (/obj/structure/flora/small/snow/rock6,/turf/simulated/floor/snow,/area/space)
+"lD" = (/obj/structure/railing{dir = 7},/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel,/turf/simulated/floor/snow,/area/space)
+"lU" = (/obj/item/roach_egg,/obj/random/scrap/sparse_weighted/low_chance,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/rock/grey,/area/space)
+"mt" = (/obj/structure/grille,/obj/structure/catwalk,/obj/structure/railing{dir = 7},/turf/simulated/floor/plating/under,/area/space)
+"mw" = (/obj/effect/floor_decal/snow_edge,/turf/simulated/wall/rock/snow,/area/space)
+"mD" = (/obj/structure/grille,/obj/structure/catwalk,/obj/structure/railing{dir = 4},/turf/simulated/floor/plating/under,/area/space)
+"mE" = (/obj/structure/flora/small/snow/rock4,/turf/simulated/floor/snow,/area/space)
+"mP" = (/obj/effect/spider/stickyweb,/obj/effect/spider/stickyweb,/turf/simulated/floor/rock/grey,/area/space)
+"mZ" = (/obj/effect/spider/stickyweb,/obj/random/cluster/spiders,/turf/simulated/floor/rock/grey,/area/space)
+"nq" = (/obj/random/closet_tech,/turf/simulated/floor/rock/grey,/area/space)
+"nY" = (/obj/item/camera_assembly,/obj/item/material/wirerod,/turf/simulated/floor/snow,/area/space)
+"oc" = (/obj/effect/decal/cleanable/dirt,/obj/item/trash/mre_shokoladka,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"op" = (/turf/simulated/wall/iskhod_red,/area/space)
+"oY" = (/obj/structure/table/steel_reinforced,/obj/item/trash/os_wrapper,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"pg" = (/obj/effect/spider/stickyweb,/turf/simulated/floor/rock/grey,/area/space)
+"pk" = (/obj/effect/floor_decal/industrial/danger{dir = 1},/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"ps" = (/obj/effect/decal/cleanable/blood/gibs/body,/obj/item/clothing/head/helmet/space/void/atmos,/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel,/turf/simulated/floor/plating,/area/space)
+"pv" = (/obj/machinery/door/airlock/hatch,/obj/structure/catwalk,/turf/simulated/floor/industrial/fancy_slates_fixed,/area/nadezhda/maintenance/hideout)
+"pI" = (/obj/structure/bed/chair{dir = 8},/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"qH" = (/obj/structure/table/steel_reinforced,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/item/trash/os_soypack,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"rj" = (/obj/effect/decal/cleanable/cobweb,/turf/simulated/floor/snow,/area/space)
+"rr" = (/turf/simulated/floor/plating,/area/space)
+"sf" = (/obj/structure/flora/tree/pine,/turf/simulated/floor/snow,/area/space)
+"sQ" = (/mob/living/simple/hostile/nightmare,/turf/simulated/floor/snow,/area/space)
+"td" = (/obj/random/scrap/sparse_weighted/low_chance,/turf/simulated/floor/rock/grey,/area/space)
+"ts" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/blood/drip,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"tC" = (/obj/effect/spider/stickyweb,/obj/structure/spider_nest,/turf/simulated/floor/rock/grey,/area/space)
+"tE" = (/obj/structure/bed/chair/shuttle,/obj/effect/decal/cleanable/blood/gibs/body,/obj/item/clothing/head/helmet/space/void/merc{desc = "An advanced voidsuit helmet designed for combat, it doesn't seem to have helped the previous owner, if you can ignore the smell of copper it's a fine helmet."; name = "bloody-red voidsuit helmet"},/turf/simulated/floor/industrial/black_large_slates,/area/space)
+"uw" = (/obj/effect/floor_decal/industrial/danger/corner{dir = 1},/obj/effect/floor_decal/industrial/danger,/obj/effect/floor_decal/industrial/danger{dir = 8},/obj/effect/floor_decal/snow_edge,/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"vK" = (/obj/item/device/radio/beacon,/turf/simulated/floor/plating,/area/space)
+"vN" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/rock/grey,/area/space)
+"wn" = (/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel,/obj/item/tank/plasma,/turf/simulated/floor/plating,/area/space)
+"wM" = (/obj/structure/disposalpipe/broken,/turf/simulated/floor/snow,/area/space)
+"wX" = (/obj/structure/table/steel_reinforced,/obj/item/trash/mre,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"xe" = (/obj/structure/railing{dir = 7},/obj/structure/railing{dir = 4},/turf/simulated/floor/snow,/area/space)
+"xA" = (/obj/structure/bed/chair,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"xG" = (/obj/structure/flora/small/snow/boulder1,/turf/simulated/floor/snow,/area/space)
+"yl" = (/obj/item/tank/plasma,/obj/structure/closet/crate/secure,/turf/simulated/floor/plating,/area/space)
+"yn" = (/obj/effect/decal/cleanable/blood/gibs/body,/obj/item/clothing/head/costume/halloween/skeleton{desc = "A hollow skull picked clean of any tissue, grizzly. conveniently large enough to be worn."; name = "Skull"},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/rock/grey,/area/space)
+"zh" = (/obj/structure/barricade,/obj/structure/barricade,/obj/structure/grille,/turf/simulated/floor/snow,/area/space)
+"zt" = (/obj/structure/table/steel_reinforced,/obj/item/trash/teacup,/obj/item/paper/card/cat{info = " 'Happy anniversary my love, may even death not part us, i am yours alway--' the rest of the card is stained by something a reddish-brown."},/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"zz" = (/obj/structure/sign/painting/paintingsea,/turf/simulated/wall/iskhod,/area/space)
+"zA" = (/obj/structure/flora/small/snow/boulder2,/turf/simulated/floor/snow,/area/space)
+"AR" = (/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/rock/grey,/area/space)
+"Bb" = (/obj/effect/floor_decal/industrial/danger/corner{dir = 4},/obj/effect/floor_decal/industrial/danger{dir = 1},/obj/effect/floor_decal/industrial/danger{dir = 4},/obj/effect/floor_decal/snow_edge,/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"Bi" = (/turf/unsimulated/mineral/cold,/area/space)
+"Co" = (/obj/structure/flora/small/snow/rock2,/turf/simulated/floor/snow,/area/space)
+"CC" = (/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"CY" = (/obj/structure/sign/painting/paintingsnow,/turf/simulated/wall/iskhod,/area/space)
+"Dr" = (/obj/structure/grille,/obj/structure/grille,/obj/structure/catwalk,/turf/simulated/floor/plating/under,/area/space)
+"Dv" = (/obj/structure/table/steel_reinforced,/obj/item/brokenposi,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"DE" = (/obj/random/scrap/sparse_weighted/low_chance,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/rock/grey,/area/space)
+"DH" = (/obj/effect/spider/cocoon,/obj/effect/spider/stickyweb,/turf/simulated/floor/rock/grey,/area/space)
+"Ec" = (/obj/effect/floor_decal/industrial/danger/corner,/obj/effect/floor_decal/industrial/danger,/obj/effect/floor_decal/industrial/danger{dir = 4},/obj/effect/floor_decal/snow_edge,/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"Eh" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/structure/sink/puddle,/turf/simulated/floor/rock/grey,/area/space)
+"Ek" = (/obj/item/contraband/poster/placed/eris/electricwarning,/turf/simulated/wall/iskhod,/area/space)
+"EY" = (/obj/structure/grille,/obj/structure/catwalk,/obj/structure/railing{dir = 7},/obj/structure/railing{dir = 4},/turf/simulated/floor/plating/under,/area/space)
+"EZ" = (/obj/item/remains/robot,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"Fb" = (/obj/structure/flora/tree/snow/three,/turf/simulated/floor/snow,/area/space)
+"FZ" = (/obj/item/contraband/poster/placed/generic/fancyborg,/turf/simulated/wall/iskhod,/area/space)
+"Gk" = (/obj/structure/railing{dir = 4},/turf/simulated/floor/snow,/area/space)
+"Gr" = (/obj/effect/floor_decal/industrial/danger{dir = 3},/obj/effect/decal/cleanable/blood/drip,/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"Gz" = (/obj/structure/catwalk,/obj/effect/floor_decal/rust,/obj/machinery/light{light_color = "#b9e8ea"},/turf/simulated/floor/industrial/fancy_slates_fixed,/area/nadezhda/maintenance/hideout)
+"GF" = (/obj/structure/bed/chair/office/dark{dir = 8},/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"IF" = (/obj/structure/table/steel,/obj/item/gun/projectile/revolver/rev10,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"Jf" = (/obj/effect/decal/cleanable/dirt,/mob/living/carbon/superior/roach/fuhrer,/obj/item/reagent_containers/snacks/cube/roach/grestrahlte,/turf/simulated/floor/rock/grey,/area/space)
+"Jo" = (/obj/effect/decal/cleanable/blood,/turf/simulated/wall/iskhod_red,/area/space)
+"Kk" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb2,/obj/item/storage/toolbox/syndicate,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"Ks" = (/obj/item/roach_egg,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/rock/grey,/area/space)
+"KJ" = (/obj/effect/decal/cleanable/blood/gibs,/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel,/turf/simulated/floor/plating,/area/space)
+"KK" = (/turf/simulated/floor/snow,/area/nadezhda/maintenance/hideout{name = "radio station 12"; is_maintenance = 0})
+"KO" = (/obj/structure/scrap,/obj/item/reagent_containers/snacks/cube/roach/grestrahlte,/turf/simulated/floor/rock/grey,/area/space)
+"KR" = (/obj/effect/decal/cleanable/dirt,/obj/item/reagent_containers/snacks/cube/roach,/obj/item/storage/briefcase,/turf/simulated/floor/rock/grey,/area/space)
+"KV" = (/obj/structure/railing{dir = 7},/turf/simulated/floor/snow,/area/space)
+"Lz" = (/obj/effect/decal/cleanable/blood/gibs/body,/obj/item/gun/energy/chameleon,/obj/structure/door_assembly,/obj/effect/floor_decal/industrial/stand_clear/white,/turf/simulated/floor/industrial/black_large_slates,/area/space)
+"LS" = (/obj/structure/closet/secure_closet/freezer/fridge,/obj/effect/decal/cleanable/dirt,/obj/item/reagent_containers/snacks/meat/monkey,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"ME" = (/obj/structure/sign/warning/hazard_caution,/obj/effect/floor_decal/industrial/danger{dir = 8},/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"Nb" = (/turf/simulated/floor/snow,/area/space)
+"Ny" = (/obj/effect/floor_decal/snow_edge,/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/rock/grey,/area/space)
+"Pg" = (/obj/item/clothing/head/rank/first_officer{desc = "A side cap, it's been here for many cycles, missing it's owner."; name = "radio operator's cap"},/obj/structure/table/steel,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/cobweb,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"Qg" = (/obj/item/roach_egg,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/rock/grey,/area/space)
+"Qp" = (/turf/simulated/wall/rock/snow,/area/space)
+"Qv" = (/obj/structure/sign/warning/hazard_caution,/obj/effect/floor_decal/industrial/danger{dir = 3},/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"QI" = (/obj/structure/flora/tree/snow/five,/turf/simulated/floor/snow,/area/space)
+"QK" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"QN" = (/obj/effect/decal/cleanable/dirt,/obj/item/reagent_containers/snacks/cube/roach/grestrahlte,/turf/simulated/floor/rock/grey,/area/space)
+"QT" = (/obj/structure/flora/tree/snow/two,/turf/simulated/floor/snow,/area/space)
+"Rm" = (/obj/machinery/space_heater,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"RE" = (/obj/machinery/microwave/burnbarrel,/turf/simulated/floor/rock/grey,/area/space)
+"SD" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/item/reagent_containers/snacks/cube/roach,/turf/simulated/floor/rock/grey,/area/space)
+"Tl" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"TJ" = (/obj/structure/barricade,/obj/structure/grille,/turf/simulated/floor/snow,/area/space)
+"Vf" = (/obj/structure/sign/warning/hazard_caution,/obj/structure/sign/warning/hazard_caution,/obj/effect/floor_decal/industrial/danger{dir = 8},/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"VM" = (/obj/structure/grille,/obj/structure/sign/warning/hazard_electrical,/obj/structure/catwalk,/obj/structure/railing{dir = 4},/turf/simulated/floor/plating/under,/area/space)
+"Wv" = (/obj/structure/bed,/obj/random/furniture/bedsheet,/obj/structure/curtain/black,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"WH" = (/obj/effect/spider/stickyweb,/obj/item/spider_shadow_trap/burrowing,/turf/simulated/floor/rock/grey,/area/space)
+"WU" = (/obj/machinery/light{dir = 8; icon_state = "tube1"},/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/item/trash/candy/proteinbar,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"Xe" = (/obj/structure/sign/warning/hazard_caution,/obj/effect/floor_decal/industrial/danger{dir = 3},/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel,/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"XD" = (/obj/structure/table/steel_reinforced,/obj/machinery/microwave,/turf/simulated/floor/industrial/black_large_slates,/area/nadezhda/maintenance/hideout)
+"XI" = (/obj/effect/floor_decal/industrial/danger{dir = 3},/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"XK" = (/obj/structure/closet/crate/trashcart,/obj/item/paper/crumpled{info = SHIPMENT: 1 CELEBRATORY CARD FEATURING CAT FACE},/obj/item/paper/crumpled{info = NOTICE: BLUESPACE SHIPMENTS SHOULD NOT BE USED FOR PERSONAL EFFECTS, THE VALUE OF 1 CELEBRATORY CARD WITH CAT'S FACE HAS BEEN DOCKED FROM YOUR ACCOUNT},/obj/item/paper/crumpled{info = SHIPMENT: 3 27MOL PLASMA FUEL TANKS, RECURRING BI-ANNUALLY},/obj/item/paper/crumpled{info = SHIPMENT: 3 27MOL PLASMA FUEL TANKS, RECURRING BI-ANNUALLY},/obj/item/paper/crumpled{info = SHIPMENT: 3 27MOL PLASMA FUEL TANKS, RECURRING BI-ANNUALLY},/turf/simulated/floor/snow,/area/space)
+"XN" = (/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/rock/grey,/area/space)
+"XO" = (/obj/structure/sign/warning/hazard_caution,/obj/effect/floor_decal/industrial/danger{dir = 1},/obj/effect/floor_decal/snow_edge,/turf/simulated/floor/plating,/area/space)
+"XP" = (/obj/effect/decal/cleanable/blood/gibs/body,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/dirt,/turf/simulated/floor/rock/grey,/area/space)
+"Ya" = (/obj/structure/grille/broken,/turf/simulated/floor/snow,/area/space)
+"Yp" = (/turf/simulated/wall/iskhod,/area/space)
+"Yr" = (/obj/effect/decal/cleanable/blood/drip,/obj/effect/decal/cleanable/liquid_fuel/flamethrower_fuel,/turf/simulated/floor/plating,/area/space)
+"YT" = (/obj/structure/grille,/obj/structure/sign/warning/hazard_electrical,/obj/structure/catwalk,/obj/structure/railing{dir = 7},/turf/simulated/floor/plating/under,/area/space)
 
 (1,1,1) = {"
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+BiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpQpBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbNbKVKVKVKVKVKVKVKVKVKVKVKVKVKVKVNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbGkDrmtmtmtmtcFmtYTmtcFmtmtmtmteCNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbGkmDNbbxNbNbNbNbNbNbNbNbNbzAGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbNbGkmDNbNbNbNbNbNbNbNbNbNbNbNbGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbKKNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbNbNbwMGkmDNbNbNbNbNbsQNbQINbNbNbNbGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbNbYpEkYpYpmDNbNbNbNbNbNbNbNbNbNbNbNbGkdvNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbBi
+BiNbNbNbYpYpPgIFYpYpNbsfNbNbNbNbNbNbNbNbbxNbGkVMNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpNbQpNbBi
+BiNbNbNbYpDvCCCCKkFZYpXKNbQTNbNbdyNbNbNbNbNbGkdvNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQpQpQpQpQpQpBi
+BiNbNbNbzzelGFTleDRmYpjlYpNbNbNbkTNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpNbNbNbQpNbNbNbNbNbNbNbNbNbNbQpQpQpkWDEnqopQpQpBi
+BiNbNbNbYpwXipcNfuQKYphjYpNbNbNyARNyNbNbNbNbGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQphDhDhDQpQpNbNbNbNbNbNbNbNbQpQpQpEhKRQNoptEopQpBi
+BiNbNbNbYpWUCCxAcGQKpvGzpvNbNbARREARkTNbNbNbGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQphDhDhDhDQpQpNbNbNbNbNbNbNbQpQpKOSDJfdeJoLzeaQpBi
+BiNbNbNbYpLSocztpITlYpYpYpnYNbNyARARNbNbNbxGGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQphDhDhDhDhDQpQpQpQpNbNbNbNbQpKsvNXNKsQptdgeXPQpBi
+BiNbNbNbYpXDfdqHtsTlYprjNbbxNbNbNbNbNbNbNbNbGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQphDhDhDhDhDhDhDARQpQpNbNbQpQpXNvNhDQpQpQpehynQpBi
+BiNbNbNbYpoYbNtsEZYpYpNbNbNbNbNbNbNbNbNbQTNbGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQphDhDhDhDhDhDARARQpQpNbQpQptdhDQpQpQpkWXNKsQpBi
+BiNbNbNbYpCYWvWvYpYpNbfFpkpkpkXOXOXOpkpkpkBbGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQphDhDhDhDhDhDARARQpNbNbQpQpQggeQpQpQpnqlUQpBi
+BiNbNbNbNbYpYpYpYpfYsfMErrrrrrrrfzrrfzrrrrfnGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQpQphDhDhDhDhDARQpNbNbQpQpXNehgeQpQpQpQpQpBi
+BiNbNbNbNbNbNbNbNbfYNbVfrrvKfzYrpsKJfVrrrrfnGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQpQpQpARhDARQpQpNbNbQpQphDXNXNvNQpQpQpBi
+BiNbNbNbNbNbNbNbNbfYNbMEylrrezfzhSwnfzrrrrfnGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQpARhDARQpQpNbNbQpQpQpQpXNARzhTJYaBi
+BiNbNbNbNbNbNbNbNbfYNbuwXIXIGrXeXeQvXIXIXIEcGkmDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpARhDARARQpQpNbNbNbQpQpQpQpQpNbNbBi
+BiNbNbNbNbNbNbNbNbfYKVKVKVKVKVKVKVlDKVKVKVKVxemDNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpARARhDARARQpQpNbNbNbNbQpQpNbNbNbBi
+BiNbNbNbNbNbNbNbNblimtmtmtmtcFmtYTmtcFmtmtmtmtEYNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQpARARhDARARQpQpNbNbNbNbQpQpNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQpQpQpQpARARhDARARQpQpQpQpNbQpQpQpNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQpQppgpgcQQpQpARARhDARARmwmEQpQpQpQpNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQppgDHmZpgWHpgQpQpARARhDARARNbQpQpQpNbNbNbBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQptCpgmPpgpgpgpgtCQpQpARhDhDhDARQpbxlqQTNbCoBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQppgmZpgtCpgpgmZpgQpQpQpARARhDARARARARARARARBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQpcQpgpgpgWHQpQpQpNbNbQTARARNyhDhDhDhDhDhDBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQppgWHpgpgpgpgQpQpQpQpQpFbARARARARARARARBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQppgpgpgpgpgpghDQTNbNbNbNbQpNbQTNbNbbxBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQpQpQpQpQpQpxGNbNbQpQpQpQpQpNbNbQpQpBi
+BiNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbNbQpQpNbNbQpQpQpQpQpQpQpQpQpQpQpQpQpBi
+BiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBiBi
 "}
