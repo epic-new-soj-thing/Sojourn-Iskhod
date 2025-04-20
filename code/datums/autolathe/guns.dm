@@ -1,11 +1,9 @@
+// Syringe Gun
 /datum/design/autolathe/gun/syringe_gun
 	name = "syringe gun"
 	build_path = /obj/item/gun/launcher/syringe
 
-
-///H A N D G U N S
-//9mm
-
+// .35
 /datum/design/autolathe/gun/glock
 	name = "Seinemetall Defense GmbH HG 9mm \"Sky\""
 	build_path = /obj/item/gun/projectile/glock
@@ -46,10 +44,9 @@
 	name = "GP 9mm \"Spring\""
 	build_path = /obj/item/gun/projectile/spring
 
-/// 10mm M A G N U M
-
+// .40 Magnum
 /datum/design/autolathe/gun/ladon
-	name = "SA HG 10mm \"Ladon\"" //This is infact a LADON not a LAMIA not even a goddamn NAGA platform
+	name = "SA HG 10mm \"Ladon\"" // This is infact a LADON not a LAMIA not even a goddamn NAGA platform
 	build_path = /obj/item/gun/projectile/ladon
 
 /datum/design/autolathe/gun/ladon_hs
@@ -92,8 +89,7 @@
 	name = "NM 10mm Magnum \"Liberty\""
 	build_path = /obj/item/gun/projectile/colt/liberty
 
-// 12mm H E A V Y
-
+// .50 Kurtz
 /datum/design/autolathe/gun/lamia
 	name = "SA HG 12mm \"Lamia\""
 	build_path = /obj/item/gun/projectile/lamia
@@ -122,8 +118,7 @@
 	name = "GP 12mm Rebar"
 	build_path = /obj/item/gun/projectile/rebar
 
-/// S M G S
-
+// SMGs
 /datum/design/autolathe/gun/texan
 	name = "Seinemetall Defense GmbH SMG 9mm \"Texan\""
 	build_path = /obj/item/gun/projectile/automatic/texan
@@ -144,8 +139,7 @@
 	name = "BR 9mm \"Semyonovich\" assault SMG"
 	build_path = /obj/item/gun/projectile/automatic/ppsh/ppv
 
-// 10mm S M G S
-
+// .40 Magnum SMGs
 /datum/design/autolathe/gun/vector
 	name = "SA \"Trajectory\" 10mm Magnum SMG"
 	build_path = /obj/item/gun/projectile/automatic/vector
@@ -162,8 +156,7 @@
 	name = "NM 10mm Magnum \"Freedom\""
 	build_path = /obj/item/gun/projectile/automatic/freedom
 
-//S H O T G U N S
-
+// Shotguns
 /datum/design/autolathe/gun/doublebarrel
 	name = "SA double-barreled shotgun"
 	build_path = /obj/item/gun/projectile/shotgun/doublebarrel
@@ -216,8 +209,7 @@
 	name = "NM 20mm \"Hustler\""
 	build_path = /obj/item/gun/projectile/automatic/omnirifle/hustler
 
-//C A R B I N E S
-
+// .257 Carbine
 /datum/design/autolathe/gun/bastard
 	name = "NM C-MG 6.5x39mm \"Bastard\""
 	build_path = /obj/item/gun/projectile/automatic/bastard
@@ -266,9 +258,7 @@
 	name = "\"Kalashnabren\" LMG"
 	build_path = /obj/item/gun/projectile/automatic/bren
 
-///R I F L E S
-//7 . 6 2 m m
-
+// 7.5mm Rifles
 /datum/design/autolathe/gun/vintorez
 	name = "Excelsior 7.62x39mm \"Vintorez\""
 	build_path = /obj/item/gun/projectile/automatic/vintorez
@@ -345,9 +335,7 @@
 	name = "GP 7.62x39mm \"Trouble Shooter\""
 	build_path = /obj/item/gun/projectile/trouble_shooter
 
-// . 4 0 8 H E A V Y  R I F L E S
-
-
+// .408 Heavy Rifles
 /datum/design/autolathe/gun/scoped_omnirifle
 	name = "H&S BR 8.6x70mm \"Longarm\""
 	build_path = /obj/item/gun/projectile/automatic/omnirifle/scoped
@@ -376,14 +364,12 @@
 	name = "OT MR 8.6x70mm \"Shepherd\""
 	build_path = /obj/item/gun/projectile/automatic/shepherd
 
-// 10mm rifles
-
+// .40 Rifles
 /datum/design/autolathe/gun/lever
 	name = "H&S 10mm lever action \"Armstrong\""
 	build_path = /obj/item/gun/projectile/boltgun/lever
 
-// S N O W F L A K E S
-
+// Caseless
 /datum/design/autolathe/gun/scaffold
 	name = "GP 10mm Caseless Rifle \"Scaffold\""
 	build_path = /obj/item/gun/projectile/automatic/scaffold
@@ -412,8 +398,7 @@
 	name = "NM 10mm Caseless \"Spec-Op\" Compact Carbine"
 	build_path = /obj/item/gun/projectile/automatic/specop
 
-//L A U N C H E R S
-
+// Launchers
 /datum/design/autolathe/gun/grenade_launcher
 	name = "OT GL \"Protector\""
 	build_path = /obj/item/gun/projectile/grenade
@@ -426,8 +411,7 @@
 	name = "SA GL \"China Lake\""
 	build_path = /obj/item/gun/projectile/shotgun/pump/china
 
-// E N E R G Y
-
+// Energy
 /datum/design/autolathe/gun/taser
 	name = "OT SP \"Counselor\""
 	build_path = /obj/item/gun/energy/taser
@@ -536,8 +520,7 @@
 	name = "NT \"Excubitor\""
 	build_path = /obj/item/gun/energy/plasma/excubitor
 
-// Gun mods
-
+// Mods
 /datum/design/autolathe/gun/cop_mod
 	name = "H&S \"Cop Block\" Trigger"
 	build_path = /obj/item/gun_upgrade/trigger/cop_block
