@@ -190,8 +190,8 @@
 
 /obj/item/storage/box/syndie_kit/hpistol/populate_contents()
 	new /obj/item/gun/projectile/lamia/socom(src)
-	new /obj/item/ammo_magazine/kurtz_50/hv(src)
-	new /obj/item/ammo_magazine/kurtz_50/hv(src)
+	new /obj/item/ammo_magazine/kurz_50/hv(src)
+	new /obj/item/ammo_magazine/kurz_50/hv(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/mask/balaclava(src)
 
@@ -201,9 +201,9 @@
 
 /obj/item/storage/box/syndie_kit/painrevolver/populate_contents()
 	new /obj/item/gun/projectile/revolver/hornet(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal(src)
-	new /obj/item/ammo_magazine/speed_loader_kurtz_50/highvelocity(src)
+	new /obj/item/ammo_magazine/speed_loader_kurz_50/rubber(src)
+	new /obj/item/ammo_magazine/speed_loader_kurz_50/lethal(src)
+	new /obj/item/ammo_magazine/speed_loader_kurz_50/highvelocity(src)
 	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/clothing/mask/balaclava(src)
 

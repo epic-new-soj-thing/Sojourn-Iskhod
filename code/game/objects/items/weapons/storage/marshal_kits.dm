@@ -192,10 +192,10 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/deckard(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/zwang
@@ -226,9 +226,9 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
-		new /obj/item/ammo_magazine/speed_loader_kurtz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
+		new /obj/item/ammo_magazine/speed_loader_kurz_50(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 /obj/item/storage/box/m_kit/galaxy
@@ -247,8 +247,8 @@
 
 	populate_contents()
 		new /obj/item/gun/projectile/lamia/amnesty(src)
-		new /obj/item/ammo_magazine/kurtz_50/rubber/pepperball(src)
-		new /obj/item/ammo_magazine/kurtz_50(src)
+		new /obj/item/ammo_magazine/kurz_50/rubber/pepperball(src)
+		new /obj/item/ammo_magazine/kurz_50(src)
 		new /obj/item/clothing/accessory/holster/armpit(src)
 
 // Armor Kits

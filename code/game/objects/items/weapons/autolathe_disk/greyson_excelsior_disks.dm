@@ -72,10 +72,10 @@
 	license = 10
 	designs = list(
 		/datum/design/autolathe/gun/rebar = 3,
-		/datum/design/autolathe/ammo/kurtz_practice = 0,
-		/datum/design/autolathe/ammo/kurtz_rubber,
-		/datum/design/autolathe/ammo/kurtz,
-		/datum/design/autolathe/ammo/kurtz_lethal = 2,
+		/datum/design/autolathe/ammo/kurz_practice = 0,
+		/datum/design/autolathe/ammo/kurz_rubber,
+		/datum/design/autolathe/ammo/kurz,
+		/datum/design/autolathe/ammo/kurz_lethal = 2,
 		)
 
 /obj/item/pc_part/drive/disk/design/onestar/nail_gun

@@ -182,22 +182,22 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 /datum/recipe_crafting_station/ammo/twelve_mm/ammo_pile
 	name = "12mm ammo pile"
 	point_cost = 8
-	result = /obj/item/ammo_casing/kurtz_50/prespawned
+	result = /obj/item/ammo_casing/kurz_50/prespawned
 
 /datum/recipe_crafting_station/ammo/twelve_mm/speed_loader
 	name = "12mm speedloader"
 	point_cost = 10
-	result = /obj/item/ammo_magazine/speed_loader_kurtz_50
+	result = /obj/item/ammo_magazine/speed_loader_kurz_50
 
 /datum/recipe_crafting_station/ammo/twelve_mm/ammo_box
 	name = "12mm ammo box"
 	point_cost = 26
-	result = /obj/item/ammo_magazine/ammobox/kurtz_50
+	result = /obj/item/ammo_magazine/ammobox/kurz_50
 
 /datum/recipe_crafting_station/ammo/twelve_mm/mag
 	name = "EMPTY 12mm heavy pistol magazine"
 	point_cost = 8
-	result = /obj/item/ammo_magazine/kurtz_50/empty
+	result = /obj/item/ammo_magazine/kurz_50/empty
 
 // shotgun
 /datum/recipe_crafting_station/ammo/shotgun
@@ -534,7 +534,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 
 /datum/recipe_crafting_station/barrels/small/twelve_mm
 	name = "12mm barrel"
-	result = /obj/item/part/gun/barrel/kurtz
+	result = /obj/item/part/gun/barrel/kurz
 	required_resources = list(MATERIAL_PLASTEEL = 8)
 
 // |----------------------------|
@@ -573,7 +573,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 
 /datum/recipe_crafting_station/barrels/small_cheap/twelve_mm
 	name = "12mm barrel"
-	result = /obj/item/part/gun/barrel/kurtz/steel
+	result = /obj/item/part/gun/barrel/kurz/steel
 	required_resources = list(MATERIAL_STEEL = 8)
 
 // |----------------------------|

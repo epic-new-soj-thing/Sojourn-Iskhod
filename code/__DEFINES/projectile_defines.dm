@@ -7,7 +7,7 @@
 #define CAL_ANTIM ".60-06 Anti-Materiel"
 #define CAL_BALL "30mm rolled shot"
 #define CAL_SHOTGUN "Shotgun Shell"
-#define CAL_50	".50 kurtz"
+#define CAL_50	".50 kurz"
 #define CAL_70 ".70"
 #define CAL_CAP "plastic cap"
 #define CAL_ROCKET "rocket propelled grenade"

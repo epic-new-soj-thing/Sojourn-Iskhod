@@ -809,47 +809,47 @@
 
 //// 12mm Heavy Pistol ////
 
-/obj/item/ammo_magazine/kurtz_50
+/obj/item/ammo_magazine/kurz_50
 	name = "heavy pistol magazine"
 	desc = "A 7 round magazine marked for 12mm."
-	icon_state = "kurtz"
+	icon_state = "kurz"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
 	caliber = CAL_50
 	matter = list(MATERIAL_STEEL = 4)
-	ammo_type = /obj/item/ammo_casing/kurtz_50
+	ammo_type = /obj/item/ammo_casing/kurz_50
 	max_ammo = 7
 	multiple_sprites = 1
 
-/obj/item/ammo_magazine/kurtz_50/empty
-	icon_state = "kurtz"
+/obj/item/ammo_magazine/kurz_50/empty
+	icon_state = "kurz"
 	initial_ammo = 0
 
-/obj/item/ammo_magazine/kurtz_50/rubber
+/obj/item/ammo_magazine/kurz_50/rubber
 	name = "heavy pistol magazine (rubber)"
-	icon_state = "kurtz_r"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
+	icon_state = "kurz_r"
+	ammo_type = /obj/item/ammo_casing/kurz_50/rubber
 
-/obj/item/ammo_magazine/kurtz_50/rubber/pepperball
+/obj/item/ammo_magazine/kurz_50/rubber/pepperball
 	name = "heavy pistol magazine (pepperball)"
-	icon_state = "kurtz_l"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber/pepperball
+	icon_state = "kurz_l"
+	ammo_type = /obj/item/ammo_casing/kurz_50/rubber/pepperball
 
-/obj/item/ammo_magazine/kurtz_50/practice
+/obj/item/ammo_magazine/kurz_50/practice
 	name = "heavy pistol magazine (practice)"
-	icon_state = "kurtz_r"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/practice
+	icon_state = "kurz_r"
+	ammo_type = /obj/item/ammo_casing/kurz_50/practice
 
-/obj/item/ammo_magazine/kurtz_50/hv
+/obj/item/ammo_magazine/kurz_50/hv
 	name = "heavy pistol magazine (high-velocity)"
-	icon_state = "kurtz_hv"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
+	icon_state = "kurz_hv"
+	ammo_type = /obj/item/ammo_casing/kurz_50/hv
 
-/obj/item/ammo_magazine/kurtz_50/lethal
+/obj/item/ammo_magazine/kurz_50/lethal
 	name = "heavy pistol magazine (hollow-point)"
-	icon_state = "kurtz_l"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/lethal
+	icon_state = "kurz_l"
+	ammo_type = /obj/item/ammo_casing/kurz_50/lethal
 
 ///////// SPEEDLOADERS ///////////
 
@@ -949,42 +949,42 @@
 
 //// 12mm speed loader ////
 
-/obj/item/ammo_magazine/speed_loader_kurtz_50
+/obj/item/ammo_magazine/speed_loader_kurz_50
 	name = "speed loader (12mm Special)"
 	desc = "A 5 round speed loader marked for 12mm."
 	icon_state = "slmagnum_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_50
-	ammo_type = /obj/item/ammo_casing/kurtz_50
+	ammo_type = /obj/item/ammo_casing/kurz_50
 	matter = list(MATERIAL_STEEL = 3)
 	max_ammo = 5
 
-/obj/item/ammo_magazine/speed_loader_kurtz_50/update_icon()
+/obj/item/ammo_magazine/speed_loader_kurz_50/update_icon()
 	cut_overlays()
 	var/count = 0
 	for(var/obj/item/ammo_casing/AC in stored_ammo)
 		count++
 		add_overlay("slmagnum_[AC.shell_color]-[count]")
 
-/obj/item/ammo_magazine/speed_loader_kurtz_50/practice
+/obj/item/ammo_magazine/speed_loader_kurz_50/practice
 	name = "speed loader (12mm practice)"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/practice
+	ammo_type = /obj/item/ammo_casing/kurz_50/practice
 
-/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber
+/obj/item/ammo_magazine/speed_loader_kurz_50/rubber
 	name = "speed loader (12mm rubber)"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
+	ammo_type = /obj/item/ammo_casing/kurz_50/rubber
 
-/obj/item/ammo_magazine/speed_loader_kurtz_50/rubber/pepperball
+/obj/item/ammo_magazine/speed_loader_kurz_50/rubber/pepperball
 	name = "speed loader (12mm pepperball)"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber/pepperball
+	ammo_type = /obj/item/ammo_casing/kurz_50/rubber/pepperball
 
-/obj/item/ammo_magazine/speed_loader_kurtz_50/lethal
+/obj/item/ammo_magazine/speed_loader_kurz_50/lethal
 	name = "speed loader (12mm hollow-point)"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/lethal
+	ammo_type = /obj/item/ammo_casing/kurz_50/lethal
 
-/obj/item/ammo_magazine/speed_loader_kurtz_50/highvelocity
+/obj/item/ammo_magazine/speed_loader_kurz_50/highvelocity
 	name = "speed loader (12mm high-velocity)"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
+	ammo_type = /obj/item/ammo_casing/kurz_50/hv
 
 //////// RIFLE SPEEDLOADERS ////////
 

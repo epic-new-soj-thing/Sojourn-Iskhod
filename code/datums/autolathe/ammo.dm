@@ -414,82 +414,82 @@
 	build_path = /obj/item/ammo_magazine/smg_magnum_40/empty
 	materials = list(MATERIAL_STEEL = 12)
 
-// .50 Kurtz Mags
-/datum/design/autolathe/ammo/kurtz_rubber
-	name = "magazine (.50 Kurtz rubber)"
-	build_path = /obj/item/ammo_magazine/kurtz_50/rubber
+// .50 Kurz Mags
+/datum/design/autolathe/ammo/kurz_rubber
+	name = "magazine (.50 Kurz rubber)"
+	build_path = /obj/item/ammo_magazine/kurz_50/rubber
 	materials = list(MATERIAL_STEEL = 2)
 
-/datum/design/autolathe/ammo/kurtz
-	name = "magazine (.50 Kurtz)"
-	build_path = /obj/item/ammo_magazine/kurtz_50
+/datum/design/autolathe/ammo/kurz
+	name = "magazine (.50 Kurz)"
+	build_path = /obj/item/ammo_magazine/kurz_50
 	materials = list(MATERIAL_STEEL = 2)
 
-/datum/design/autolathe/ammo/kurtz_lethal
-	name = "magazine (.50 Kurtz hollow-point)"
-	build_path = /obj/item/ammo_magazine/kurtz_50/lethal
+/datum/design/autolathe/ammo/kurz_lethal
+	name = "magazine (.50 Kurz hollow-point)"
+	build_path = /obj/item/ammo_magazine/kurz_50/lethal
 	materials = list(MATERIAL_STEEL = 2)
 
-/datum/design/autolathe/ammo/kurtz_practice
-	name = "magazine (.50 Kurtz practice)"
-	build_path = /obj/item/ammo_magazine/kurtz_50/practice
+/datum/design/autolathe/ammo/kurz_practice
+	name = "magazine (.50 Kurz practice)"
+	build_path = /obj/item/ammo_magazine/kurz_50/practice
 	materials = list(MATERIAL_STEEL = 2)
 
-/datum/design/autolathe/ammo/kurtz_hv
-	name = "magazine (.50 Kurtz high-velocity)"
-	build_path = /obj/item/ammo_magazine/kurtz_50/hv
+/datum/design/autolathe/ammo/kurz_hv
+	name = "magazine (.50 Kurz high-velocity)"
+	build_path = /obj/item/ammo_magazine/kurz_50/hv
 	materials = list(MATERIAL_STEEL = 2)
 
-// .50 Kurtz Speed Loaders
-/datum/design/autolathe/ammo/slkurtz_rubber
-	name = "speed loader (.50 Kurtz rubber)"
-	build_path = /obj/item/ammo_magazine/speed_loader_kurtz_50/rubber
+// .50 Kurz Speed Loaders
+/datum/design/autolathe/ammo/slkurz_rubber
+	name = "speed loader (.50 Kurz rubber)"
+	build_path = /obj/item/ammo_magazine/speed_loader_kurz_50/rubber
 	materials = list(MATERIAL_STEEL = 1)
 
-/datum/design/autolathe/ammo/slkurtz
-	name = "speed loader (.50 Kurtz)"
-	build_path = /obj/item/ammo_magazine/speed_loader_kurtz_50
+/datum/design/autolathe/ammo/slkurz
+	name = "speed loader (.50 Kurz)"
+	build_path = /obj/item/ammo_magazine/speed_loader_kurz_50
 	materials = list(MATERIAL_STEEL = 1)
 
-/datum/design/autolathe/ammo/slkurtz_lethal
-	name = "speed loader (.50 Kurtz hollow-point)"
-	build_path = /obj/item/ammo_magazine/speed_loader_kurtz_50/lethal
+/datum/design/autolathe/ammo/slkurz_lethal
+	name = "speed loader (.50 Kurz hollow-point)"
+	build_path = /obj/item/ammo_magazine/speed_loader_kurz_50/lethal
 	materials = list(MATERIAL_STEEL = 1)
 
-/datum/design/autolathe/ammo/slkurtz_practice
-	name = "speed loader (.50 Kurtz practice)"
-	build_path = /obj/item/ammo_magazine/speed_loader_kurtz_50/practice
+/datum/design/autolathe/ammo/slkurz_practice
+	name = "speed loader (.50 Kurz practice)"
+	build_path = /obj/item/ammo_magazine/speed_loader_kurz_50/practice
 	materials = list(MATERIAL_STEEL = 1)
 
-/datum/design/autolathe/ammo/slkurtz_hv
-	name = "speed loader (.50 Kurtz high-velocity)"
-	build_path = /obj/item/ammo_magazine/speed_loader_kurtz_50/highvelocity
+/datum/design/autolathe/ammo/slkurz_hv
+	name = "speed loader (.50 Kurz high-velocity)"
+	build_path = /obj/item/ammo_magazine/speed_loader_kurz_50/highvelocity
 	materials = list(MATERIAL_STEEL = 1)
 
-// .50 Kurtz Ammoboxes
-/datum/design/autolathe/ammo/kurtz_ammobox
-	name = "ammunition box (.50 Kurtz)"
-	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50
+// .50 Kurz Ammoboxes
+/datum/design/autolathe/ammo/kurz_ammobox
+	name = "ammunition box (.50 Kurz)"
+	build_path = /obj/item/ammo_magazine/ammobox/kurz_50
 	materials = list(MATERIAL_STEEL = 12)
 
-/datum/design/autolathe/ammo/kurtz_ammobox_rubber
-	name = "ammunition box (.50 Kurtz rubber)"
-	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/rubber
+/datum/design/autolathe/ammo/kurz_ammobox_rubber
+	name = "ammunition box (.50 Kurz rubber)"
+	build_path = /obj/item/ammo_magazine/ammobox/kurz_50/rubber
 	materials = list(MATERIAL_STEEL = 12)
 
-/datum/design/autolathe/ammo/kurtz_ammobox_practice
-	name = "ammunition box (.50 Kurtz practice)"
-	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/practice
+/datum/design/autolathe/ammo/kurz_ammobox_practice
+	name = "ammunition box (.50 Kurz practice)"
+	build_path = /obj/item/ammo_magazine/ammobox/kurz_50/practice
 	materials = list(MATERIAL_STEEL = 12)
 
-/datum/design/autolathe/ammo/kurtz_ammobox_hv
-	name = "ammunition box (.50 Kurtz high-velocity)"
-	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/hv
+/datum/design/autolathe/ammo/kurz_ammobox_hv
+	name = "ammunition box (.50 Kurz high-velocity)"
+	build_path = /obj/item/ammo_magazine/ammobox/kurz_50/hv
 	materials = list(MATERIAL_STEEL = 12)
 
-/datum/design/autolathe/ammo/kurtz_ammobox_lethal
-	name = "ammunition box (.50 Kurtz hollow-point)"
-	build_path = /obj/item/ammo_magazine/ammobox/kurtz_50/lethal
+/datum/design/autolathe/ammo/kurz_ammobox_lethal
+	name = "ammunition box (.50 Kurz hollow-point)"
+	build_path = /obj/item/ammo_magazine/ammobox/kurz_50/lethal
 	materials = list(MATERIAL_STEEL = 12)
 
 // .257 Carbine Mags

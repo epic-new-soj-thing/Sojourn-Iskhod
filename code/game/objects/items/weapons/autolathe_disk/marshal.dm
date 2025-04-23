@@ -110,9 +110,9 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_pepperball,
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/magnum_ammobox/large,
-		/datum/design/autolathe/ammo/kurtz_ammobox_rubber = 0,
-		/datum/design/autolathe/ammo/kurtz_ammobox = 0,
-		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/kurz_ammobox_rubber = 0,
+		/datum/design/autolathe/ammo/kurz_ammobox = 0,
+		/datum/design/autolathe/ammo/kurz_ammobox_practice = 0,
 		/datum/design/autolathe/ammo/mag_10x24 = 0,
 		/datum/design/autolathe/ammo/box_10x24 = 3, // Two entire mags of a Pulse Rifle, thus costs 10% of license cost. It's also armory access exclusive.
 		/datum/design/autolathe/ammo/lrifle_ammobox = 1,
@@ -187,10 +187,10 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/amnesty = 3,
-		/datum/design/autolathe/ammo/kurtz_practice = 0,
-		/datum/design/autolathe/ammo/kurtz_rubber,
-		/datum/design/autolathe/ammo/kurtz,
-		/datum/design/autolathe/ammo/kurtz_lethal = 2,
+		/datum/design/autolathe/ammo/kurz_practice = 0,
+		/datum/design/autolathe/ammo/kurz_rubber,
+		/datum/design/autolathe/ammo/kurz,
+		/datum/design/autolathe/ammo/kurz_lethal = 2,
 		)
 
 // SHOTGUNS

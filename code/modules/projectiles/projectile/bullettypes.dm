@@ -259,7 +259,7 @@
 	recoil = 6
 
 /// 12mm Heavy Pistol ///
-/obj/item/projectile/bullet/kurtz_50
+/obj/item/projectile/bullet/kurz_50
 	icon_state = "bullet_krutz"
 	damage_types = list(BRUTE = 36)
 	armor_divisor = 0.6
@@ -271,7 +271,7 @@
 	affective_ap_range = 5
 	recoil = 14
 
-/obj/item/projectile/bullet/kurtz_50/rubber
+/obj/item/projectile/bullet/kurz_50/rubber
 	name = "rubber bullet"
 	icon_state = "rubber"
 	damage_types = list(BRUTE = 20, HALLOSS = 35)
@@ -284,7 +284,7 @@
 	recoil = 10
 	ignition_source = FALSE
 
-/obj/item/projectile/bullet/kurtz_50/rubber/pepperball
+/obj/item/projectile/bullet/kurz_50/rubber/pepperball
 	name = "pepperball"
 	damage_types = list(BRUTE = 6, HALLOSS = 35)	//Pepperballs disipate upon impact. They'll sting like shit, but won't do much in a low-velocity round.
 	step_delay = 0.75 //a little slower than rubber rounds - these are just pepperspray balls
@@ -293,20 +293,20 @@
 	can_ricochet = FALSE	//breaks upon impact; impossible.
 	wounding_mult = WOUNDING_SMALL
 
-/obj/item/projectile/bullet/kurtz_50/rubber/pepperball/New()
+/obj/item/projectile/bullet/kurz_50/rubber/pepperball/New()
 	..()
 	if (!testing)
 		create_reagents(8)
 		reagents.add_reagent(spray, 8)
 
-/obj/item/projectile/bullet/kurtz_50/rubber/pepperball/on_hit(atom/target, def_zone = null)
+/obj/item/projectile/bullet/kurz_50/rubber/pepperball/on_hit(atom/target, def_zone = null)
 	if(!testing)
 		if(isliving(target))
 			var/mob/living/L = target
 			if(istype(L) && L.reagents && !testing)
 				reagents.trans_to_mob(L, 8, CHEM_TOUCH, copy = FALSE)
 
-/obj/item/projectile/bullet/kurtz_50/practice
+/obj/item/projectile/bullet/kurz_50/practice
 	name = "practice bullet"
 	damage_types = list(BRUTE = 5)
 	embed = FALSE
@@ -314,7 +314,7 @@
 	step_delay = 0.75
 	recoil = 8
 
-/obj/item/projectile/bullet/kurtz_50/lethal
+/obj/item/projectile/bullet/kurz_50/lethal
 	name = "hollow-point bullet"
 	damage_types = list(BRUTE = 27)
 	armor_divisor = 0.3
@@ -325,7 +325,7 @@
 	recoil = 14
 	embed_mult = 2
 
-/obj/item/projectile/bullet/kurtz_50/hv
+/obj/item/projectile/bullet/kurz_50/hv
 	name = "AV bullet"
 	damage_types = list(BRUTE = 27)
 	armor_divisor = 1.4
@@ -809,7 +809,7 @@
 
 /obj/item/projectile/bullet/mech_burstcannon //Burst-Fire Autocannon
 	name = "humongous round"
-	icon_state = "bullet_kurtz"
+	icon_state = "bullet_kurz"
 	damage_types = list(BRUTE = 30)
 	armor_divisor = 3 //This fires 2 in a row so keep that in mind / It is technically armor defeating but for sake of it being the niche kill hordes gun alongside HMG it will stay this way - Lamasmaster
 	wounding_mult = WOUNDING_WIDE
@@ -979,20 +979,20 @@
 	affective_ap_range = 10
 	recoil = 20
 
-/obj/item/projectile/bullet/kurtz_50/railgun
+/obj/item/projectile/bullet/kurz_50/railgun
 	nocap_structures = TRUE
 	hitscan = TRUE
 	can_ricochet = FALSE
 	recoil = 13
 
-/obj/item/projectile/bullet/kurtz_50/rubber/railgun
+/obj/item/projectile/bullet/kurz_50/rubber/railgun
 	hitscan = TRUE
 	can_ricochet = FALSE
 	//ricochet_mod = 1.5
 	recoil = 9
 	ignition_source = FALSE
 
-/obj/item/projectile/bullet/kurtz_50/incendiary
+/obj/item/projectile/bullet/kurz_50/incendiary
 	damage_types = list(BRUTE = 5, HALLOSS = 5)
 	embed = FALSE
 	can_ricochet = FALSE

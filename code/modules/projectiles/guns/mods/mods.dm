@@ -305,8 +305,8 @@
 
 // Guild made upgrade kit that makes 12mm guns a bit more viable
 /obj/item/gun_upgrade/mechanism/upgrade_kit
-	name = "Kurtz's refinement kit"
-	desc = "A kit made of plasteel designed to refit and refine any kurtz loaded 12mm weapon. This kit is produced by the Artificer's Guild so even \
+	name = "Kurz's refinement kit"
+	desc = "A kit made of plasteel designed to refit and refine any kurz loaded 12mm weapon. This kit is produced by the Artificer's Guild so even \
 	the heaviest caliber pistols might stand a chance of competing with their legendary myrmidon design."
 	icon_state = "kit_heavy_alt"
 	can_remove = FALSE
@@ -331,7 +331,7 @@
 // Todo make Cult spawn with this and the clockwork block
 /obj/item/gun_upgrade/mechanism/brass_kit
 	name = "\"Brass Fighter\" refinement kit"
-	desc = "A kit made from brass and designed to improve 12mm caliber kurtz weaponry. It's strange to look at in this day and age. It ticks, tocks, chimes, \
+	desc = "A kit made from brass and designed to improve 12mm caliber kurz weaponry. It's strange to look at in this day and age. It ticks, tocks, chimes, \
 	and plays a faint melodic tone through brass gears and perptually grinding cogs. Was this an invention of the blue cross or a toy some other entity made?"
 	icon_state = "Clockblock"
 	can_remove = FALSE

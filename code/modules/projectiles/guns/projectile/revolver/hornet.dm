@@ -25,7 +25,7 @@
 
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
-	gun_parts = list(/obj/item/part/gun/frame/hornet = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurtz = 1)
+	gun_parts = list(/obj/item/part/gun/frame/hornet = 1, /obj/item/part/gun/grip/black = 1, /obj/item/part/gun/mechanism/revolver = 1, /obj/item/part/gun/barrel/kurz = 1)
 
 /obj/item/gun/projectile/revolver/hornet/refresh_upgrades()
 	..()
@@ -40,4 +40,4 @@
 	resultvars = list(/obj/item/gun/projectile/revolver/hornet)
 	gripvars = list(/obj/item/part/gun/grip/black)
 	mechanismvar = /obj/item/part/gun/mechanism/revolver
-	barrelvars = list(/obj/item/part/gun/barrel/kurtz)
+	barrelvars = list(/obj/item/part/gun/barrel/kurz)

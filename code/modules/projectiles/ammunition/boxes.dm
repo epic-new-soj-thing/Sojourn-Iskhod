@@ -439,46 +439,46 @@
 */
 //// 12mm heavy pistol
 
-/obj/item/ammo_magazine/ammobox/kurtz_50
+/obj/item/ammo_magazine/ammobox/kurz_50
 	name = "ammunition box (12mm)"
 	icon_state = "box50"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_50
-	ammo_type = /obj/item/ammo_casing/kurtz_50
+	ammo_type = /obj/item/ammo_casing/kurz_50
 	max_ammo = 24
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/rubber
+/obj/item/ammo_magazine/ammobox/kurz_50/rubber
 	name = "ammunition box (12mm rubber)"
 	desc = "A box of riot supression 12mm pistol ammunition. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	icon_state = "box50-rubber"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber
+	ammo_type = /obj/item/ammo_casing/kurz_50/rubber
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/rubber/pepperball
+/obj/item/ammo_magazine/ammobox/kurz_50/rubber/pepperball
 	name = "ammunition box (12mm pepperball)"
 	desc = "A box of police grade 12mm pepperball type rounds; complete with CO2 cartriage casings."
 	icon_state = "box50-pepper"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/rubber/pepperball
+	ammo_type = /obj/item/ammo_casing/kurz_50/rubber/pepperball
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/practice
+/obj/item/ammo_magazine/ammobox/kurz_50/practice
 	name = "ammunition box (12mm practice)"
 	icon_state = "box50-practice"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/practice
+	ammo_type = /obj/item/ammo_casing/kurz_50/practice
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/hv
+/obj/item/ammo_magazine/ammobox/kurz_50/hv
 	name = "ammunition box (12mm high-velocity)"
 	icon_state = "box50-hv"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/hv
+	ammo_type = /obj/item/ammo_casing/kurz_50/hv
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/lethal
+/obj/item/ammo_magazine/ammobox/kurz_50/lethal
 	name = "ammunition box (12mm hollow-point)"
 	desc = "A box of self-defense grade 12mm hollow-points."
 	icon_state = "box50-lethal"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/lethal
+	ammo_type = /obj/item/ammo_casing/kurz_50/lethal
 
-/obj/item/ammo_magazine/ammobox/kurtz_50/laser
+/obj/item/ammo_magazine/ammobox/kurz_50/laser
 	name = "ammunition box (12mm laser)"
 	icon_state = "box50-si"
-	ammo_type = /obj/item/ammo_casing/kurtz_50/laser
+	ammo_type = /obj/item/ammo_casing/kurz_50/laser
 	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 50
 

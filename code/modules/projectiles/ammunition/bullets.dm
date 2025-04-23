@@ -423,58 +423,58 @@
 
 // .50 Kurz HEAVY PISTOL
 
-/obj/item/ammo_casing/kurtz_50
+/obj/item/ammo_casing/kurz_50
 	desc = "A .50 Kurz bullet casing."
 	caliber = CAL_50
-	projectile_type = /obj/item/projectile/bullet/kurtz_50
+	projectile_type = /obj/item/projectile/bullet/kurz_50
 	shell_color = "l"
 	icon_state = "lrifle_c_l"
 	spent_icon = "lrifle_c_l-spent"
 
-/obj/item/ammo_casing/kurtz_50/prespawned
+/obj/item/ammo_casing/kurz_50/prespawned
 	amount = 6
 
-/obj/item/ammo_casing/kurtz_50/rubber
+/obj/item/ammo_casing/kurz_50/rubber
 	desc = "A .50 Kurz rubber bullet casing."
 	caliber = CAL_50
-	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber
+	projectile_type = /obj/item/projectile/bullet/kurz_50/rubber
 	shell_color = "r"
 	icon_state = "lrifle_c_r"
 	spent_icon = "lrifle_c_r-spent"
 
-/obj/item/ammo_casing/kurtz_50/rubber/pepperball
+/obj/item/ammo_casing/kurz_50/rubber/pepperball
 	desc = "A .50 Kurz pepper-ball projectile casing."
 	icon_state = "lrifle_c_pepper"
 	spent_icon = "lrifle_c_pepper-spent"
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/kurtz_50/rubber/pepperball
+	projectile_type = /obj/item/projectile/bullet/kurz_50/rubber/pepperball
 
-/obj/item/ammo_casing/kurtz_50/practice
+/obj/item/ammo_casing/kurz_50/practice
 	desc = "A .50 Kurz practice bullet casing."
 	caliber = CAL_50
-	projectile_type = /obj/item/projectile/bullet/kurtz_50/practice
+	projectile_type = /obj/item/projectile/bullet/kurz_50/practice
 	shell_color = "p"
 	icon_state = "lrifle_c_p"
 	spent_icon = "lrifle_c_p-spent"
 
-/obj/item/ammo_casing/kurtz_50/hv
+/obj/item/ammo_casing/kurz_50/hv
 	desc = "A .50 Kurz high-velocity bullet casing."
 	caliber = CAL_50
-	projectile_type = /obj/item/projectile/bullet/kurtz_50/hv
+	projectile_type = /obj/item/projectile/bullet/kurz_50/hv
 	shell_color = "hv"
 	icon_state = "lrifle_c_hv"
 	spent_icon = "lrifle_c_hv-spent"
 
-/obj/item/ammo_casing/kurtz_50/lethal
+/obj/item/ammo_casing/kurz_50/lethal
 	desc = "A .50 Kurz hollow point bullet casing."
 	caliber = CAL_50
 	shell_color = "l"
-	projectile_type = /obj/item/projectile/bullet/kurtz_50/lethal
+	projectile_type = /obj/item/projectile/bullet/kurz_50/lethal
 
-/obj/item/ammo_casing/kurtz_50/laser
+/obj/item/ammo_casing/kurz_50/laser
 	desc = "A .50 Kurz laser casing."
 	caliber = CAL_50
-	projectile_type = /obj/item/projectile/beam/weak/kurtz_50
+	projectile_type = /obj/item/projectile/beam/weak/kurz_50
 
 //// .60-06 ////
 /obj/item/ammo_casing/antim

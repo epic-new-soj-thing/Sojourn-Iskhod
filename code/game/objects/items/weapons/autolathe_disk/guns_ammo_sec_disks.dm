@@ -12,11 +12,11 @@
 		//pistol mags
 		/datum/design/autolathe/ammo/pistol_rubber,
 		/datum/design/autolathe/ammo/magnum_rubber,
-		/datum/design/autolathe/ammo/kurtz_rubber,
+		/datum/design/autolathe/ammo/kurz_rubber,
 		//speed loaders
 		/datum/design/autolathe/ammo/slpistol_rubber,
 		/datum/design/autolathe/ammo/slmagnum_rubber,
-		/datum/design/autolathe/ammo/slkurtz_rubber,
+		/datum/design/autolathe/ammo/slkurz_rubber,
 		//smg mags
 		/datum/design/autolathe/ammo/smg_rubber,
 		/datum/design/autolathe/ammo/smg_magnum_40_rubber,
@@ -39,15 +39,15 @@
 		/datum/design/autolathe/ammo/pistol_lethal,
 		/datum/design/autolathe/ammo/magnum,
 		/datum/design/autolathe/ammo/magnum_lethal,
-		/datum/design/autolathe/ammo/kurtz,
-		/datum/design/autolathe/ammo/kurtz_lethal,
+		/datum/design/autolathe/ammo/kurz,
+		/datum/design/autolathe/ammo/kurz_lethal,
 		//speed loaders
 		/datum/design/autolathe/ammo/slpistol,
 		/datum/design/autolathe/ammo/slpistol_lethal,
 		/datum/design/autolathe/ammo/slmagnum,
 		/datum/design/autolathe/ammo/slmagnum_lethal,
-		/datum/design/autolathe/ammo/slkurtz,
-		/datum/design/autolathe/ammo/slkurtz_lethal,
+		/datum/design/autolathe/ammo/slkurz,
+		/datum/design/autolathe/ammo/slkurz_lethal,
 		//smg mags
 		/datum/design/autolathe/ammo/smg,
 		/datum/design/autolathe/ammo/smg_lethal,
@@ -85,10 +85,10 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_lethal,
 		/datum/design/autolathe/ammo/magnum_ammobox/large,
 		/datum/design/autolathe/ammo/magnum_ammobox_practice = 0,
-		/datum/design/autolathe/ammo/kurtz_ammobox,
-		/datum/design/autolathe/ammo/kurtz_ammobox_rubber,
-		/datum/design/autolathe/ammo/kurtz_ammobox_lethal,
-		/datum/design/autolathe/ammo/kurtz_ammobox_practice = 0,
+		/datum/design/autolathe/ammo/kurz_ammobox,
+		/datum/design/autolathe/ammo/kurz_ammobox_rubber,
+		/datum/design/autolathe/ammo/kurz_ammobox_lethal,
+		/datum/design/autolathe/ammo/kurz_ammobox_practice = 0,
 	) // Ammo can on misc disk
 
 /obj/item/pc_part/drive/disk/design/ammo_boxes_rifle
@@ -351,10 +351,10 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/lamia = 3,
-		/datum/design/autolathe/ammo/kurtz_practice = 0,
-		/datum/design/autolathe/ammo/kurtz_rubber,
-		/datum/design/autolathe/ammo/kurtz,
-		/datum/design/autolathe/ammo/kurtz_lethal = 2,
+		/datum/design/autolathe/ammo/kurz_practice = 0,
+		/datum/design/autolathe/ammo/kurz_rubber,
+		/datum/design/autolathe/ammo/kurz,
+		/datum/design/autolathe/ammo/kurz_lethal = 2,
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/basilisk
@@ -364,10 +364,10 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/basilisk = 3,
-		/datum/design/autolathe/ammo/kurtz_practice = 0,
-		/datum/design/autolathe/ammo/kurtz_rubber,
-		/datum/design/autolathe/ammo/kurtz,
-		/datum/design/autolathe/ammo/kurtz_lethal = 2,
+		/datum/design/autolathe/ammo/kurz_practice = 0,
+		/datum/design/autolathe/ammo/kurz_rubber,
+		/datum/design/autolathe/ammo/kurz,
+		/datum/design/autolathe/ammo/kurz_lethal = 2,
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/socom
@@ -377,10 +377,10 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/socom = 3,
-		/datum/design/autolathe/ammo/kurtz_practice = 0,
-		/datum/design/autolathe/ammo/kurtz_rubber,
-		/datum/design/autolathe/ammo/kurtz,
-		/datum/design/autolathe/ammo/kurtz_lethal = 2,
+		/datum/design/autolathe/ammo/kurz_practice = 0,
+		/datum/design/autolathe/ammo/kurz_rubber,
+		/datum/design/autolathe/ammo/kurz,
+		/datum/design/autolathe/ammo/kurz_lethal = 2,
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/mateba
@@ -390,10 +390,10 @@
 	license = 8
 	designs = list(
 		/datum/design/autolathe/gun/mateba = 4,
-		/datum/design/autolathe/ammo/slkurtz_practice = 0,
-		/datum/design/autolathe/ammo/slkurtz_rubber,
-		/datum/design/autolathe/ammo/slkurtz,
-		/datum/design/autolathe/ammo/slkurtz_lethal = 2,
+		/datum/design/autolathe/ammo/slkurz_practice = 0,
+		/datum/design/autolathe/ammo/slkurz_rubber,
+		/datum/design/autolathe/ammo/slkurz,
+		/datum/design/autolathe/ammo/slkurz_lethal = 2,
 	)
 
 // SHOTGUNS

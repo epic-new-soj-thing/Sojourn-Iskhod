@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/deaglebolt
 	name = "\"Triple Primary\" heavy pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these weapons are known to vanish and reappear when left alone. \
-	This particular pistol is the pinnacle of gunsmithing, featuring an advanced chamber switching magwell capable of fitting pistol, magnum, and kurtz rounds. A bit flashy, but hands down \
+	This particular pistol is the pinnacle of gunsmithing, featuring an advanced chamber switching magwell capable of fitting pistol, magnum, and kurz rounds. A bit flashy, but hands down \
 	one of the greatest pistols ever made in terms of versatility."
 	icon = 'icons/obj/guns/projectile/deaglebolt.dmi'
 	icon_state = "deagle"

@@ -66,7 +66,7 @@
 	price_tag = 475 // Still an upgrade.
 
 /obj/item/gun/projectile/revolver/lemant/uppercut
-	name = "\"Pilgrim Hero\" kurtz revolver"
+	name = "\"Pilgrim Hero\" kurz revolver"
 	desc = "Once a legendary frontier weapon on old earth, hailing from its second greatest empire, this signature weapon holds six 12mm rounds and one single action underslung 20mm shell. \
 	This particular model is crafted by the New Testament, having good utility and plenty of shots, but is painstakingly slow to reload since it requires removing each spent shell individually. \
 	This model is a conversion, known as the pilgrim hero, its caliber is converted to 12mm but it loses ammo capacity due to the larger shells and lacks the \
@@ -79,7 +79,7 @@
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
 	max_shells = 6
 	price_tag = 500
-	init_recoil = HANDGUN_RECOIL(1.3)// Massive recoil due to being a kurtz revolver without the weight to compensate for the blast. -Kaz
+	init_recoil = HANDGUN_RECOIL(1.3)// Massive recoil due to being a kurz revolver without the weight to compensate for the blast. -Kaz
 	wield_delay = 0.6 SECOND
 	wield_delay_factor = 0.6 // 60 vig
 */

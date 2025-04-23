@@ -89,7 +89,7 @@
 	name = "NM .40 Magnum \"Liberty\""
 	build_path = /obj/item/gun/projectile/colt/liberty
 
-// .50 Kurtz
+// .50 Kurz
 /datum/design/autolathe/gun/lamia
 	name = "SA HG .50 Kurz \"Lamia\""
 	build_path = /obj/item/gun/projectile/lamia
