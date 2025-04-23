@@ -35,7 +35,7 @@
 	materials = list(MATERIAL_STEEL = 6, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1, MATERIAL_URANIUM = 1)
 /*
 /datum/design/autolathe/ammo/shotgun_he
-	name = "20mm shells (HEFI)"
+	name = "12 gauge shells (HEFI)"
 	build_path = /obj/item/ammo_casing/shotgun/payload/prespawned
 	chemicals = list("phosphorus" = 2)
 */
@@ -56,64 +56,64 @@
 	build_path = /obj/item/ammo_magazine/ammobox/shotgun/biomatter
 	materials = list(MATERIAL_BIOMATTER = 60) //Double the cost of magnum rounds, i guess? It works.
 
-// 20mm Loader Tubes
+// 12 gauge Loader Tubes
 /datum/design/autolathe/ammo/shotgun_speedloader_slug
-	name = "20mm loader tube (slug)"
+	name = "12 gauge loader tube (slug)"
 	build_path = /obj/item/ammo_magazine/speed_loader_shotgun
 	materials = list(MATERIAL_STEEL = 6)
 
 /datum/design/autolathe/ammo/shotgun_speedloader_buckshot
-	name = "20mm loader tube (buckshot)"
+	name = "12 gauge loader tube (buckshot)"
 	build_path = /obj/item/ammo_magazine/speed_loader_shotgun/pellet
 	materials = list(MATERIAL_STEEL = 6)
 
 /datum/design/autolathe/ammo/shotgun_speedloader_beanbag
-	name = "20mm loader tube (beanbag)"
+	name = "12 gauge loader tube (beanbag)"
 	build_path = /obj/item/ammo_magazine/speed_loader_shotgun/beanbag
 	materials = list(MATERIAL_STEEL = 6)
 
 /datum/design/autolathe/ammo/shotgun_speedloader_empty
-	name = "20mm loader tube (empty)"
+	name = "12 gauge loader tube (empty)"
 	build_path = /obj/item/ammo_magazine/speed_loader_shotgun/empty
 
-// 20mm Drums
+// 12 gauge Drums
 /datum/design/autolathe/ammo/m12empty
-	name = "20mm ammo drum (empty)"
+	name = "12 gauge ammo drum (empty)"
 	build_path = /obj/item/ammo_magazine/m12/empty
 
 /datum/design/autolathe/ammo/m12beanbag
-	name = "ammo drum (20mm beanbag)"
+	name = "ammo drum (12 gauge beanbag)"
 	build_path = /obj/item/ammo_magazine/m12/beanbag
 	materials = list(MATERIAL_STEEL = 8)
 
 /datum/design/autolathe/ammo/m12pellet
-	name = "ammo drum (20mm pellet)"
+	name = "ammo drum (12 gauge pellet)"
 	build_path = /obj/item/ammo_magazine/m12/pellet
 	materials = list(MATERIAL_STEEL = 8)
 
 /datum/design/autolathe/ammo/m12slug
-	name = "ammo drum (20mm slug)"
+	name = "ammo drum (12 gauge slug)"
 	build_path = /obj/item/ammo_magazine/m12
 	materials = list(MATERIAL_STEEL = 8)
 
 // SBAW Mags
 /datum/design/autolathe/ammo/sbaw_slug
-	name = "SBAW magazine (20mm slug)"
+	name = "SBAW magazine (12 gauge slug)"
 	build_path = /obj/item/ammo_magazine/sbaw
 	materials = list(MATERIAL_STEEL = 10)
 
 /datum/design/autolathe/ammo/sbaw_pellet
-	name = "SBAW magazine (20mm buckshot)"
+	name = "SBAW magazine (12 gauge buckshot)"
 	build_path = /obj/item/ammo_magazine/sbaw/pellet
 	materials = list(MATERIAL_STEEL = 10)
 
 /datum/design/autolathe/ammo/sbaw_beanbag
-	name = "SBAW magazine (20mm beanbag)"
+	name = "SBAW magazine (12 gauge beanbag)"
 	build_path = /obj/item/ammo_magazine/sbaw/beanbag
 	materials = list(MATERIAL_STEEL = 10)
 /*
 /datum/design/autolathe/ammo/sbaw_payload
-	name = "SBAW magazine (20mm HEFI)"
+	name = "SBAW magazine (12 gauge HEFI)"
 	build_path = /obj/item/ammo_magazine/sbaw/he
 	materials = list(MATERIAL_STEEL = 10)
 */
