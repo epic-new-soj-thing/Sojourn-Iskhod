@@ -119,13 +119,3 @@
 	if(.)
 		visible_emote("nashes at [.].")
 
-/mob/living/simple/hostile/carp/AttackingTarget()
-	. =..()
-	var/mob/living/L = .
-	if(istype(L))
-		if(L)
-			if(L?.stats?.getPerk(PERK_ASS_OF_CONCRETE) || L?.stats?.getPerk(PERK_BRAWN))
-				return
-			if(prob(15))
-				L?.Weaken(3)
-				L?.visible_message(SPAN_DANGER("\the [src] knocks down \the [L]!"))
