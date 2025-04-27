@@ -29,7 +29,7 @@
 	)
 
 /datum/craft_recipe/gun/stripper2
-	name = "handmade 7.62mm rifle stripper clip"
+	name = "handmade 7.5mm rifle stripper clip"
 	result = /obj/item/ammo_magazine/speed_loader_rifle_75/empty
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 30),
@@ -269,7 +269,7 @@
 	)
 
 /datum/craft_recipe/gun/kalash
-	name = "Makeshift 7.62 \"Kalash\""
+	name = "Makeshift 7.5 \"Kalash\""
 	result = /obj/item/gun/projectile/automatic/ak47/makeshift
 	steps = list(
 		list(CRAFT_MATERIAL, 20, MATERIAL_STEEL),

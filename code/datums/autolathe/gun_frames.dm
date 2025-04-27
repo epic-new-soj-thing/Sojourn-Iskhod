@@ -22,11 +22,11 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	build_path = /obj/item/part/gun/frame/freedom
 
 /datum/design/autolathe/gun_frame/judge
-	name = "7.62mm judge revolver - frame"
+	name = "7.5mm judge revolver - frame"
 	build_path = /obj/item/part/gun/frame/judge
 
 /datum/design/autolathe/gun_frame/mamba
-	name = "6.5mm / 7.62mm mamba - frame"
+	name = ".257 / 7.5mm mamba - frame"
 	build_path = /obj/item/part/gun/frame/mamba
 
 /datum/design/autolathe/gun_frame/specop
@@ -42,7 +42,7 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	build_path = /obj/item/part/gun/frame/tk
 
 /datum/design/autolathe/gun_frame/wind
-	name = "6.5mm/7.62mm Wind frame"
+	name = "6.5mm/7.5mm Wind frame"
 	build_path = /obj/item/part/gun/frame/nord
 
 //Marshal Surplus
@@ -72,13 +72,13 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	build_path = /obj/item/part/gun/frame/bastard
 
 /datum/design/autolathe/gun_frame/dp
-	name = "7.62mm DP27 - frame"
+	name = "7.5mm DP27 - frame"
 	build_path = /obj/item/part/gun/frame/dp27
 
 //Blackshield guns.
 
 /datum/design/autolathe/gun_frame/discountnordwind
-	name = "6.5mm/7.62 carbine/rifle- frame"
+	name = "6.5mm/7.5mm carbine/rifle- frame"
 	build_path = /obj/item/part/gun/frame/discountnordwind
 
 /datum/design/autolathe/gun_frame/omni

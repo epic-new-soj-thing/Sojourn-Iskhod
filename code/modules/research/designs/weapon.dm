@@ -240,8 +240,8 @@
 	materials = list(MATERIAL_STEEL = 12, MATERIAL_GLASS = 12, MATERIAL_GOLD = 6)
 
 /datum/design/research/item/ammo/rifle_75
-	name = "Rifle 7.62mm laser casing."
-	desc = "7.62mm casings fitted with a one time use laser payload."
+	name = "Rifle 7.5mm laser casing."
+	desc = "7.5mm casings fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
 	materials = list(MATERIAL_STEEL = 9, MATERIAL_GLASS = 9, MATERIAL_GOLD = 4.5)
 

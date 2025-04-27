@@ -339,7 +339,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 20
 	result = /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty
 
-// 7.62mm
+// 7.5mm
 /datum/recipe_crafting_station/ammo/rifle
 	category = "Long Arms Ammo"
 	subcategory = CAL_RIFLE
@@ -549,7 +549,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	result = /obj/item/part/gun/barrel/srifle
 
 /datum/recipe_crafting_station/barrels/long/sevensixtwo_mm
-	name = "7.62mm barrel"
+	name = "7.5mm barrel"
 	result = /obj/item/part/gun/barrel/lrifle
 
 /datum/recipe_crafting_station/barrels/long/shotgun
@@ -592,7 +592,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	result = /obj/item/part/gun/barrel/clrifle/steel
 
 /datum/recipe_crafting_station/barrels/long_cheap/sevenfive_mm
-	name = "7.62mm barrel"
+	name = "7.5mm barrel"
 	result = /obj/item/part/gun/barrel/lrifle/steel
 
 /datum/recipe_crafting_station/barrels/long_cheap/eightsix_mm

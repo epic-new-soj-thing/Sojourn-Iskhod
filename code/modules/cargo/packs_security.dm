@@ -253,7 +253,7 @@
 					/obj/item/ammo_magazine/light_rifle_257)
 
 	cost = 980
-	crate_name = "7.62mm and 6.5mm Ammunition Crate"
+	crate_name = "7.5mm and 6.5mm Ammunition Crate"
 	group = "Enforcement"
 
 

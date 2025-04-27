@@ -110,7 +110,7 @@
 
 /obj/item/storage/box/m_kit/viper
 	name = "Viper marksman rifle kit"
-	desc = "The standard Marshal box kit containing a Viper DMR, a variant of the typical Mamba frame but in 7.62 with a recoil compensating stock. Perfect for marksmen."
+	desc = "The standard Marshal box kit containing a Viper DMR, a variant of the typical Mamba frame but in 7.5mm with a recoil compensating stock. Perfect for marksmen."
 
 	populate_contents()
 		new /obj/item/gun/projectile/automatic/mamba/viper(src)

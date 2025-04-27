@@ -299,12 +299,12 @@
 	w_class = ITEM_SIZE_NORMAL
 	max_ammo = 30
 
-////7.62mm Rifle////
+////7.5mm Rifle////
 
 /obj/item/ammo_magazine/ammobox/rifle_75
-	name = "ammunition box (7.62mm Rifle ball)"
+	name = "ammunition box (7.5mm Rifle ball)"
 	icon_state = "boxhrifle"
-	desc = "A box of 7.62mm rifle ammunition. 180ct, Full Metal Jacket rounds."
+	desc = "A box of 7.5mm rifle ammunition. 180ct, Full Metal Jacket rounds."
 	matter = list(MATERIAL_STEEL = 10)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_RIFLE
@@ -323,31 +323,31 @@
 	playsound(src,'sound/weapons/guns/interact/ammomove.ogg',60,3)
 
 /obj/item/ammo_magazine/ammobox/rifle_75/rubber
-	name = "ammunition box (7.62mm Rifle rubber)"
+	name = "ammunition box (7.5mm Rifle rubber)"
 	icon_state = "boxhrifle-rubber"
-	desc = "A box of 7.62mm rifle ammunition. 180ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
+	desc = "A box of 7.5mm rifle ammunition. 180ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
 
 /obj/item/ammo_magazine/ammobox/rifle_75/practice
-	name = "ammunition box (7.62mm Rifle practice)"
+	name = "ammunition box (7.5mm Rifle practice)"
 	icon_state = "boxhrifle-practice"
-	desc = "A box of 7.62mm rifle ammunition. 180ct, frangible training rounds."
+	desc = "A box of 7.5mm rifle ammunition. 180ct, frangible training rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/practice
 
 /obj/item/ammo_magazine/ammobox/rifle_75/lethal
-	name = "ammunition box (7.62mm Rifle Hollow Point)"
+	name = "ammunition box (7.5mm Rifle Hollow Point)"
 	icon_state = "boxhrifle-lethal"
-	desc = "A box of 7.62mm rifle ammunition. 180ct, hollow-point rounds."
+	desc = "A box of 7.5mm rifle ammunition. 180ct, hollow-point rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
 /obj/item/ammo_magazine/ammobox/rifle_75/hv
-	name = "ammunition box (7.62mm Rifle APDS)"
+	name = "ammunition box (7.5mm Rifle APDS)"
 	icon_state = "boxhrifle-hv"
-	desc = "A box of 7.62mm rifle ammunition. 180ct, high-velocity rounds."
+	desc = "A box of 7.5mm rifle ammunition. 180ct, high-velocity rounds."
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small
-	name = "ammunition packet (7.62mm Rifle ball)"
+	name = "ammunition packet (7.5mm Rifle ball)"
 	icon_state = "lrifle"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_RIFLE
@@ -355,39 +355,39 @@
 	max_ammo = 30
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/rubber
-	name = "ammunition packet (7.62mm Rifle rubber)"
-	desc = "A box of 7.62mm rifle ammunition. 30ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
+	name = "ammunition packet (7.5mm Rifle rubber)"
+	desc = "A box of 7.5mm rifle ammunition. 30ct, deforming traumatic rounds. You can see caliber information on the label. It contains a lengthy warning label clearly stating it is a less-lethal round and declaring the manufacturer is not responsible for damages done"
 	icon_state = "rifle_r"
 	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/practice
-	name = "ammunition packet (7.62mm Rifle practice)"
+	name = "ammunition packet (7.5mm Rifle practice)"
 	icon_state = "rifle_p"
 	ammo_type = /obj/item/ammo_casing/rifle_75/practice
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/hv
-	name = "ammunition packet (7.62mm Rifle APDS)"
+	name = "ammunition packet (7.5mm Rifle APDS)"
 	icon_state = "rifle_hv"
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/lethal
-	name = "ammunition packet (7.62mm Rifle hollow-point)"
+	name = "ammunition packet (7.5mm Rifle hollow-point)"
 	icon_state = "rifle_l"
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/incend
-	name = "ammunition packet (7.62mm Rifle incendiary)"
+	name = "ammunition packet (7.5mm Rifle incendiary)"
 	icon_state = "rifle_l"
 	ammo_type = /obj/item/ammo_casing/rifle_75/incend
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/scrap
-	name = "ammunition packet (old 7.62mm Rifle)"
+	name = "ammunition packet (old 7.5mm Rifle)"
 	icon_state = "srifle_s"
 	ammo_type = /obj/item/ammo_casing/rifle_75/scrap
 
 /obj/item/ammo_magazine/ammobox/rifle_75_small/laser
-	name = "ammunition packet (7.62mm Rifle laser)"
-	desc = "A box of 7.62mm rifle ammunition. 90ct, laser core rounds. You can see caliber information on the label."
+	name = "ammunition packet (7.5mm Rifle laser)"
+	desc = "A box of 7.5mm rifle ammunition. 90ct, laser core rounds. You can see caliber information on the label."
 	icon_state = "srifle_si"
 	ammo_type = /obj/item/ammo_casing/rifle_75/laser
 	matter = list(MATERIAL_CARDBOARD = 1)

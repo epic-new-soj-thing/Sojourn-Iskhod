@@ -399,7 +399,7 @@
 	..()
 	var/datum/component/item_upgrade/I = AddComponent(/datum/component/item_upgrade)
 	I.weapon_upgrades = list(
-		GUN_UPGRADE_DAMAGE_BRUTE = 0.5, //7.62mm extra damage at new max charge
+		GUN_UPGRADE_DAMAGE_BRUTE = 0.5, //7.5mm extra damage at new max charge
 		GUN_UPGRADE_OVERCHARGE_MAX = 1.5,
 		GUN_UPGRADE_OVERCHARGE_RATE = 0.35
 		)

@@ -446,7 +446,7 @@
 /obj/item/projectile/bullet/light_rifle_257/nomuzzle
 	muzzle_type = null
 
-/// 7.62x39mm Rifle ///
+/// 7.5x39mm Rifle ///
 
 /obj/item/projectile/bullet/rifle_75
 	damage_types = list(BRUTE = 27)
@@ -486,7 +486,7 @@
 	check_armour = ARMOR_MELEE
 	armor_divisor = 1
 	wounding_mult = WOUNDING_NORMAL
-	embed = TRUE	//literally imagine a 7.62 rubber bullet hitting you - holy shit.
+	embed = TRUE	//literally imagine a 7.5 rubber bullet hitting you - holy shit.
 	sharp = FALSE
 	can_ricochet = TRUE
 	//ricochet_mod = 2 //including armor penalty ends up as closer to 1.85x as likely.

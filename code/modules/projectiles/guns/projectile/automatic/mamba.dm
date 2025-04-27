@@ -67,12 +67,12 @@
 	update_icon()
 
 ////////////////////
-//7.62mm Viper DMR//
+//7.5mm Viper DMR//
 ////////////////////
 /obj/item/gun/projectile/automatic/mamba/viper
 	name = "\"Viper\" marksman rifle"
 	desc = "The \"Viper\" designated marksman rifle appears to be a design based off the Nadezhda Marshal's \"Mamba\" carbine. \
-	Chambered in 7.62 and sporting a special recoil-compensating stock, along with an improved scope, the \"Viper\" acts as a perfect intermediate rifle between that of a battle rifle and a sniper; perfect for flexibility in the field."
+	Chambered in 7.5mm and sporting a special recoil-compensating stock, along with an improved scope, the \"Viper\" acts as a perfect intermediate rifle between that of a battle rifle and a sniper; perfect for flexibility in the field."
 	icon_state = "viper"
 	item_state = "viper"
 	icon = 'icons/obj/guns/projectile/viper.dmi'
@@ -98,12 +98,12 @@
 	gun_parts = list(/obj/item/part/gun/frame/mamba = 1, /obj/item/part/gun/grip/rubber = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /////////////////////////////////////////
-//7.62mm Copperhead w/ grenade launcher//
+//7.5mm Copperhead w/ grenade launcher//
 /////////////////////////////////////////
 /obj/item/gun/projectile/automatic/mamba/copperhead
 	name = "\"Copperhead\" battle rifle"
 	desc = "The \"Copperhead\" rifle appears to be a design based off the Nadezhda Marshal's \"Mamba\" carbine. \
-	Chambered in 7.62mm and sporting a carry handle the \"Copperhead\" is intended both as a squad support weapon and as a battle rifle sporting a recoil compensating stock as well as an underbarrel grenade launcher to ensure both uses."
+	Chambered in 7.5mm and sporting a carry handle the \"Copperhead\" is intended both as a squad support weapon and as a battle rifle sporting a recoil compensating stock as well as an underbarrel grenade launcher to ensure both uses."
 	icon_state = "copperhead"
 	item_state = "copperhead"
 	icon = 'icons/obj/guns/projectile/copperhead.dmi'
@@ -170,7 +170,7 @@
 		to_chat(user, "\The [launcher] is empty.")
 
 //////////////////
-//7.62mm Python//
+//7.5mm Python//
 /////////////////
 /obj/item/gun/projectile/automatic/mamba/python
 	name = "\"Python\" heavy sniper"

@@ -295,7 +295,7 @@
 	build_path = /obj/item/part/gun/barrel/srifle
 
 /datum/design/autolathe/part/barrel/rifle
-	name = "firearm 7.62mm rifle barrel"
+	name = "firearm 7.5mm rifle barrel"
 	build_path = /obj/item/part/gun/barrel/lrifle
 
 /datum/design/autolathe/part/barrel/caseless
@@ -329,7 +329,7 @@
 	build_path = /obj/item/part/gun/barrel/srifle/steel
 
 /datum/design/autolathe/part/barrel/rifle/steel
-	name = "firearm steel 7.62mm rifle barrel"
+	name = "firearm steel 7.5mm rifle barrel"
 	build_path = /obj/item/part/gun/barrel/lrifle/steel
 
 /datum/design/autolathe/part/barrel/shotgun/steel

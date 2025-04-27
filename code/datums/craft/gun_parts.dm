@@ -445,8 +445,8 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	refence_for_legal = "clrifle"
 
 /obj/item/part/gun/barrel/lrifle
-	name = "7.62mm rifle barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 7.62mm rifle."
+	name = "7.5mm rifle barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 7.5mm rifle."
 	icon_state = "barrel_rifle"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	caliber = CAL_RIFLE
@@ -508,8 +508,8 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	matter = list(MATERIAL_STEEL = 5)
 
 /obj/item/part/gun/barrel/lrifle/steel
-	name = "cheap 7.62 barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 7.62mm rifle. \
+	name = "cheap 7.5 barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 7.5mm rifle. \
 			This one does not look as high quality."
 	matter = list(MATERIAL_STEEL = 5)
 

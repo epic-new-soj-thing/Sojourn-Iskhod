@@ -606,10 +606,10 @@
 		/datum/design/autolathe/ammo/lrifle_ammobox_small_lethal = 2,
 	)
 
-// 7.62mm Rifles
+// 7.5mm Rifles
 
 /obj/item/pc_part/drive/disk/design/guns/sa_kalashnikov
-	disk_name = "SA - 7.62mm Kalashnikov Rifle"
+	disk_name = "SA - 7.5mm Kalashnikov Rifle"
 	icon_state = "sa"
 
 	license = 16
@@ -626,7 +626,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/strelki
-	disk_name = "Hunters Inc - 7.62mm \"Strelki\""
+	disk_name = "Hunters Inc - 7.5mm \"Strelki\""
 	icon_state = "hunters"
 	license = 8
 
@@ -639,7 +639,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/tac_kalashnikov
-	disk_name = "SA - 7.62mm Breacher Kalashnikov Rifle"
+	disk_name = "SA - 7.5mm Breacher Kalashnikov Rifle"
 	icon_state = "sa"
 
 	license = 18
@@ -659,7 +659,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/boltgun_sa
-	disk_name = "Hunters Inc - 7.62mm Novakovic Rifle"
+	disk_name = "Hunters Inc - 7.5mm Novakovic Rifle"
 	icon_state = "hunters"
 
 	license = 12
@@ -742,7 +742,7 @@
 
 
 /obj/item/pc_part/drive/disk/design/guns/sa_pk
-	disk_name = "SA - 7.62mm Pulemyot Kalashnikova MG"
+	disk_name = "SA - 7.5mm Pulemyot Kalashnikova MG"
 	icon_state = "sa"
 
 	license = 12

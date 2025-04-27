@@ -237,10 +237,10 @@
 		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
-// 7.62mm Rifles
+// 7.5mm Rifles
 
 /obj/item/pc_part/drive/disk/design/guns/copperhead
-	disk_name = "NM - 7.62mm Copperhead Rifle"
+	disk_name = "NM - 7.5mm Copperhead Rifle"
 	icon_state = "marshal"
 
 	license = 16
@@ -257,7 +257,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/viper
-	disk_name = "NM - 7.62mm Viper DMR"
+	disk_name = "NM - 7.5mm Viper DMR"
 	icon_state = "marshal"
 
 	license = 16
@@ -275,7 +275,7 @@
 
 // 8.6 Rifles
 /obj/item/pc_part/drive/disk/design/guns/python
-	disk_name = "NM - 7.62mm Python Heavy Rifle"
+	disk_name = "NM - 7.5mm Python Heavy Rifle"
 	icon_state = "marshal"
 
 	license = 16

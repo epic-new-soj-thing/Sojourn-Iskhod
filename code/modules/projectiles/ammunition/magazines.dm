@@ -451,11 +451,11 @@
 	icon_state = "lrifle_drum_l"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
 
-///////// 7.62 RIFLE /////////
+///////// 7.5 RIFLE /////////
 
 /obj/item/ammo_magazine/rifle_75
 	name = "rifle magazine"
-	desc = "A 20 round magazine marked for 7.62mm Rifle."
+	desc = "A 20 round magazine marked for 7.5mm Rifle."
 	icon_state = "rifle"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
@@ -502,7 +502,7 @@
 
 /obj/item/ammo_magazine/rifle_75_short
 	name = "short rifle magazine"
-	desc = "A 10 round magazine marked for 7.62mm Rifle."
+	desc = "A 10 round magazine marked for 7.5mm Rifle."
 	icon_state = "rifle_short"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
@@ -537,11 +537,11 @@
 	icon_state = "rifle_short_l"
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
-//// Drum 7.62mm ////
+//// Drum 7.5mm ////
 
 /obj/item/ammo_magazine/rifle_75_drum
 	name = "rifle drum magazine"
-	desc = "A 40 round drum magazine marked for 7.62mm Rifle."
+	desc = "A 40 round drum magazine marked for 7.5mm Rifle."
 	icon_state = "rifle_drum"
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
@@ -577,11 +577,11 @@
 	icon_state = "rifle_drum_l"
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
-//Linked 7.62mm
+//Linked 7.5mm
 
 /obj/item/ammo_magazine/rifle_75_linked_box
-	name = "linked ammunition box (7.62mm Rifle)"
-	desc = "A 100 round linked box marked for 7.62mm Rifle."
+	name = "linked ammunition box (7.5mm Rifle)"
+	desc = "A 100 round linked box marked for 7.5mm Rifle."
 	icon_state = "pk_box"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -608,15 +608,15 @@
 	icon_state = "pk_box-[number]"
 
 /obj/item/ammo_magazine/rifle_75_linked_box/highvelocity
-	name = "linked ammunition box (7.62mm Rifle APDS)"
+	name = "linked ammunition box (7.5mm Rifle APDS)"
 	ammo_type = /obj/item/ammo_casing/rifle_75/hv
 
 /obj/item/ammo_magazine/rifle_75_linked_box/rubber
-	name = "linked ammunition box (7.62mm Rifle rubber)"
+	name = "linked ammunition box (7.5mm Rifle rubber)"
 	ammo_type = /obj/item/ammo_casing/rifle_75/rubber
 
 /obj/item/ammo_magazine/rifle_75_linked_box/lethal
-	name = "linked ammunition box (7.62mm Rifle hollowpoint)"
+	name = "linked ammunition box (7.5mm Rifle hollowpoint)"
 	ammo_type = /obj/item/ammo_casing/rifle_75/lethal
 
 /obj/item/ammo_magazine/rifle_75_linked_box/empty
@@ -672,11 +672,11 @@
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/empty
 	initial_ammo = 0
 
-//Pan 7.62mm
+//Pan 7.5mm
 
 /obj/item/ammo_magazine/maxim_75
-	name = "pan magazine (7.62mm Rifle)"
-	desc = "A 96 round pan magazine marked for 7.62mm Rifle."
+	name = "pan magazine (7.5mm Rifle)"
+	desc = "A 96 round pan magazine marked for 7.5mm Rifle."
 	icon_state = "maxim"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PAN
@@ -989,8 +989,8 @@
 //////// RIFLE SPEEDLOADERS ////////
 
 /obj/item/ammo_magazine/speed_loader_rifle_75
-	name = "ammo strip (7.62mm Rifle)"
-	desc = "A 10 round ammo strip for 7.62mm Rifle."
+	name = "ammo strip (7.5mm Rifle)"
+	desc = "A 10 round ammo strip for 7.5mm Rifle."
 	icon_state = "stripper_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_RIFLE
