@@ -205,7 +205,7 @@
 	group = "Enforcement"
 
 /datum/supply_pack/kurz_ammo
-	name = "HS 12mm Ammunition Crate"
+	name = "HS .50 Kurz Ammunition Crate"
 	contains = list(/obj/item/ammo_magazine/ammobox/kurz_50,
 					/obj/item/ammo_magazine/ammobox/kurz_50,
 					/obj/item/ammo_magazine/ammobox/kurz_50,
@@ -216,11 +216,11 @@
 					/obj/item/ammo_magazine/speed_loader_kurz_50,
 					/obj/item/ammo_magazine/speed_loader_kurz_50)
 	cost = 950
-	crate_name = "HS 12mm ammunition crate"
+	crate_name = "HS .50 Kurz ammunition crate"
 	group = "Enforcement"
 
 /datum/supply_pack/kurz_ammo_nl
-	name = "HS 12mm Less-Than-Lethal Ammunition Crate"
+	name = "HS .50 Kurz Less-Than-Lethal Ammunition Crate"
 	contains = list(/obj/item/ammo_magazine/ammobox/kurz_50,
 					/obj/item/ammo_magazine/ammobox/kurz_50,
 					/obj/item/ammo_magazine/ammobox/kurz_50,
@@ -231,7 +231,7 @@
 					/obj/item/ammo_magazine/speed_loader_kurz_50,
 					/obj/item/ammo_magazine/speed_loader_kurz_50)
 	cost = 750
-	crate_name = "HS 12mm Less-Than-Lethal ammunition crate"
+	crate_name = "HS .50 Kurz Less-Than-Lethal ammunition crate"
 	group = "Enforcement"
 
 /datum/supply_pack/ammo_disks_1

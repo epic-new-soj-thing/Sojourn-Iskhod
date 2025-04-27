@@ -186,7 +186,7 @@
 
 /obj/item/storage/box/syndie_kit/hpistol
 	name = "\improper gunfighter kit"
-	desc = "12mm suppressed handgun and its kit."
+	desc = ".50 Kurz suppressed handgun and its kit."
 
 /obj/item/storage/box/syndie_kit/hpistol/populate_contents()
 	new /obj/item/gun/projectile/lamia/socom(src)
@@ -197,7 +197,7 @@
 
 /obj/item/storage/box/syndie_kit/painrevolver
 	name = "\improper vigilante revolver kit"
-	desc = "12mm revolver and its kit."
+	desc = ".50 Kurz revolver and its kit."
 
 /obj/item/storage/box/syndie_kit/painrevolver/populate_contents()
 	new /obj/item/gun/projectile/revolver/hornet(src)

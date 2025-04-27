@@ -156,7 +156,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	icon_state = "ammo_case"
 	sticker_name = "ammo"
 	matter = list(MATERIAL_STEEL = 20)
-	storage_slots = 14 //336 rounds of 12mm. Really annoying big ammo box! More or less.
+	storage_slots = 14 //336 rounds of .50 Kurz. Really annoying big ammo box! More or less.
 	max_w_class = ITEM_SIZE_SMALL //no drum mags or big boxes etc.
 
 	can_hold = list(

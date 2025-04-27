@@ -188,7 +188,7 @@
 // Ranger secondary kits
 /obj/item/storage/box/m_kit/deckard
 	name = "Deckard Secondary Kit"
-	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of six 12mm rounds."
+	desc = "The standard Marshal box kit containing a Deckard revolver. A handcanon in all but name, its cylinder having the capacity of six .50 Kurz rounds."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/deckard(src)
@@ -222,7 +222,7 @@
 // Warrant Officer secondaries (from voucher)
 /obj/item/storage/box/m_kit/mateba
 	name = "\improper Mateba Secondary Kit"
-	desc = "An equipment kit containing a specialized semiautomatic 12mm revolver. Great recoil control and even better stopping power, a flashy weapon of high-ranked officers."
+	desc = "An equipment kit containing a specialized semiautomatic .50 Kurz revolver. Great recoil control and even better stopping power, a flashy weapon of high-ranked officers."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
@@ -243,7 +243,7 @@
 
 /obj/item/storage/box/m_kit/amnesty
 	name = "\"Amnesty\" Heavy Pistol Kit"
-	desc = "A kit containing the prototype \"Amnesty\" heavy pistol, a 12mm powerhouse of improvement over improvement of the \"Lamia\" pattern"
+	desc = "A kit containing the prototype \"Amnesty\" heavy pistol, a .50 Kurz powerhouse of improvement over improvement of the \"Lamia\" pattern"
 
 	populate_contents()
 		new /obj/item/gun/projectile/lamia/amnesty(src)

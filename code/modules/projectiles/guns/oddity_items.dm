@@ -436,7 +436,7 @@
 /obj/item/gun/projectile/cane_pistol_bluecross
 	name = "\"Blue Carpet\" cane"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
-			A blue handled cane that seems to make you walk faster. It also contains a hidden silenced 12mm pistol inside."
+			A blue handled cane that seems to make you walk faster. It also contains a hidden silenced .50 Kurz pistol inside."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "blue_cane"
 	item_state = "stick"
@@ -451,7 +451,7 @@
 	damage_multiplier = 2
 	penetration_multiplier = 2
 	init_recoil = EMBEDDED_RECOIL(0.3)
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_12MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_50)
 	serial_type = "BlueCross"
 	gun_parts = null
 	slowdown = -0.2

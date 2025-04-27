@@ -252,8 +252,8 @@
 	materials = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 6, MATERIAL_GOLD = 3)
 
 /datum/design/research/item/ammo/kurz_laser
-	name = "Specialized 12mm, laser cases"
-	desc = "12mm cases fitted with a one time use laser payload."
+	name = "Specialized .50 Kurz, laser cases"
+	desc = ".50 Kurz cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/kurz_50/laser
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2.5, MATERIAL_GOLD = 2.5)
 

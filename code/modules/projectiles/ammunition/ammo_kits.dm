@@ -69,10 +69,10 @@
 			"7 points: EMPTY .40 pistol magazine" = list(7, /obj/item/ammo_magazine/magnum_40/empty)
 			),
 		CAL_50 = list(
-			"8 points, 6 ammo: 12mm ammo pile" = list(8, /obj/item/ammo_casing/kurz_50/prespawned),
-			"8 points: EMPTY 12mm heavy pistol magazine" = list(8, /obj/item/ammo_magazine/kurz_50/empty),
-			"10 points, 6 ammo: 12mm speedloader" = list(10, /obj/item/ammo_magazine/speed_loader_kurz_50),
-			"26 points, 24 ammo: 12mm ammo box" = list(26, /obj/item/ammo_magazine/ammobox/kurz_50) // Same price for all packets, except 4 less ammo
+			"8 points, 6 ammo: .50 Kurz ammo pile" = list(8, /obj/item/ammo_casing/kurz_50/prespawned),
+			"8 points: EMPTY .50 Kurz heavy pistol magazine" = list(8, /obj/item/ammo_magazine/kurz_50/empty),
+			"10 points, 6 ammo: .50 Kurz speedloader" = list(10, /obj/item/ammo_magazine/speed_loader_kurz_50),
+			"26 points, 24 ammo: .50 Kurz ammo box" = list(26, /obj/item/ammo_magazine/ammobox/kurz_50) // Same price for all packets, except 4 less ammo
 			),
 		CAL_SHOTGUN = list(
 			"3 points, 5 ammo: Scrap beanbags pile" = list(3, /obj/item/ammo_casing/shotgun/beanbag/scrap/prespawned),

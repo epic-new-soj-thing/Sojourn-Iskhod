@@ -421,8 +421,8 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	refence_for_legal = "magnum"
 
 /obj/item/part/gun/barrel/kurz
-	name = "12mm pistol barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 12mm."
+	name = ".50 Kurz pistol barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .50 Kurz."
 	icon_state = "barrel_12mm"
 	price_tag = 150
 	caliber = CAL_50
@@ -490,8 +490,8 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	matter = list(MATERIAL_STEEL = 2)
 
 /obj/item/part/gun/barrel/kurz/steel
-	name = "cheap 12mm barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 12mm. \
+	name = "cheap .50 Kurz barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .50 Kurz. \
 			This one does not look as high quality."
 	matter = list(MATERIAL_STEEL = 5)
 

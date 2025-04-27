@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/lamia
 	name = "\"Lamia\" heavy pistol"
-	desc = "The \"Lamia\", a massive handgun based on the M6 series, repurposed by Holland & Sullivan for civilian and law enforcement use. Uses 12mm."
+	desc = "The \"Lamia\", a massive handgun based on the M6 series, repurposed by Holland & Sullivan for civilian and law enforcement use. Uses .50 Kurz."
 	icon = 'icons/obj/guns/projectile/lamia.dmi'
 	icon_state = "lamia"
 	item_state = "lamia"
@@ -18,7 +18,7 @@
 	damage_multiplier = 1.2
 	penetration_multiplier = 1.3
 	init_recoil = HANDGUN_RECOIL(1.3)
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50)
 	serial_type = "H&S"
 
 	wield_delay = 0.6 SECOND
@@ -47,7 +47,7 @@
 
 /obj/item/gun/projectile/lamia/gemini
 	name = "\"Gemini\" advanced heavy pistol"
-	desc = "The M6D \"Gemini\", a heavy pistol manufactured on Mars and often used by SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses 12mm."
+	desc = "The M6D \"Gemini\", a heavy pistol manufactured on Mars and often used by SolFed enforcers and commissars, fitted with a smart-linked optic and stabilizer. Uses .50 Kurz."
 	icon_state = "scoped_dark_lamia"
 	item_state = "scoped_dark_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
@@ -63,7 +63,7 @@
 
 /obj/item/gun/projectile/lamia/scoped
 	name = "\"Argos\" advanced heavy pistol"
-	desc = "Seinemetall Defense GmbH handgun 12mm \"Argos\" Based on the \"Lamia\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses 12mm."
+	desc = "Seinemetall Defense GmbH handgun .50 Kurz \"Argos\" Based on the \"Lamia\" heavy pistol, it's fit for high ranking enforcers; fitted with a smart-linked optic and stabilizer. Uses .50 Kurz."
 	icon_state = "scoped_lamia"
 	item_state = "scoped_lamia"
 	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 5)
@@ -80,7 +80,7 @@
 
 /obj/item/gun/projectile/lamia/socom
 	name = "\"SOCOM\" silenced heavy pistol"
-	desc = "The M6C SOCOM, a variant of the M6 \"Naga\", it's a highly specialized and advanced handgun developed for the Solar Federation Special Operations Command. This one is fitted with a smart-linked optic and integrated suppressor. Uses 12mm."
+	desc = "The M6C SOCOM, a variant of the M6 \"Naga\", it's a highly specialized and advanced handgun developed for the Solar Federation Special Operations Command. This one is fitted with a smart-linked optic and integrated suppressor. Uses .50 Kurz."
 	icon_state = "socom"
 	item_state = "socom"
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_PLASTIC = 10, MATERIAL_GLASS = 5, MATERIAL_SILVER = 3)
@@ -95,7 +95,7 @@
 
 /obj/item/gun/projectile/lamia/amnesty
 	name = "\"Amnesty\" heavy pistol"
-	desc = "The \"Amnesty\" pistol started as a prototype as parts from advanced heavy pistols found themselves converted to a cheaper, easier to procude format alongside improvements made to Marshal firearms. Chambered in 12mm."
+	desc = "The \"Amnesty\" pistol started as a prototype as parts from advanced heavy pistols found themselves converted to a cheaper, easier to procude format alongside improvements made to Marshal firearms. Chambered in .50 Kurz."
 	icon = 'icons/obj/guns/projectile/amnesty.dmi'
 	icon_state = "amnesty"
 	item_state = "amnesty"

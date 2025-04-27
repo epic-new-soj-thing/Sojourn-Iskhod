@@ -342,10 +342,10 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
 		)
 
-// 12mm PISTOLS
+// .50 Kurz PISTOLS
 
 /obj/item/pc_part/drive/disk/design/guns/lamia
-	disk_name = "H&S - 12mm Lamia Handgun"
+	disk_name = "H&S - .50 Kurz Lamia Handgun"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -358,7 +358,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/basilisk
-	disk_name = "H&S - 12mm Basilisk Handgun"
+	disk_name = "H&S - .50 Kurz Basilisk Handgun"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -371,7 +371,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/socom
-	disk_name = "SF - 12mm \"SOCOM\" Silenced Handgun"
+	disk_name = "SF - .50 Kurz \"SOCOM\" Silenced Handgun"
 	icon_state = "solfed"
 
 	license = 8

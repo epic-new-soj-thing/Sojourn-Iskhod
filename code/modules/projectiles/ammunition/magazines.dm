@@ -807,11 +807,11 @@
 	max_ammo = 40
 	multiple_sprites = 1
 
-//// 12mm Heavy Pistol ////
+//// .50 Kurz Heavy Pistol ////
 
 /obj/item/ammo_magazine/kurz_50
 	name = "heavy pistol magazine"
-	desc = "A 7 round magazine marked for 12mm."
+	desc = "A 7 round magazine marked for .50 Kurz."
 	icon_state = "kurz"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -947,11 +947,11 @@
 	name = "speed loader (.40 Magnum Caustic)"
 	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
 
-//// 12mm speed loader ////
+//// .50 Kurz speed loader ////
 
 /obj/item/ammo_magazine/speed_loader_kurz_50
-	name = "speed loader (12mm Special)"
-	desc = "A 5 round speed loader marked for 12mm."
+	name = "speed loader (.50 Kurz Special)"
+	desc = "A 5 round speed loader marked for .50 Kurz."
 	icon_state = "slmagnum_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_50
@@ -967,23 +967,23 @@
 		add_overlay("slmagnum_[AC.shell_color]-[count]")
 
 /obj/item/ammo_magazine/speed_loader_kurz_50/practice
-	name = "speed loader (12mm practice)"
+	name = "speed loader (.50 Kurz practice)"
 	ammo_type = /obj/item/ammo_casing/kurz_50/practice
 
 /obj/item/ammo_magazine/speed_loader_kurz_50/rubber
-	name = "speed loader (12mm rubber)"
+	name = "speed loader (.50 Kurz rubber)"
 	ammo_type = /obj/item/ammo_casing/kurz_50/rubber
 
 /obj/item/ammo_magazine/speed_loader_kurz_50/rubber/pepperball
-	name = "speed loader (12mm pepperball)"
+	name = "speed loader (.50 Kurz pepperball)"
 	ammo_type = /obj/item/ammo_casing/kurz_50/rubber/pepperball
 
 /obj/item/ammo_magazine/speed_loader_kurz_50/lethal
-	name = "speed loader (12mm hollow-point)"
+	name = "speed loader (.50 Kurz hollow-point)"
 	ammo_type = /obj/item/ammo_casing/kurz_50/lethal
 
 /obj/item/ammo_magazine/speed_loader_kurz_50/highvelocity
-	name = "speed loader (12mm high-velocity)"
+	name = "speed loader (.50 Kurz high-velocity)"
 	ammo_type = /obj/item/ammo_casing/kurz_50/hv
 
 //////// RIFLE SPEEDLOADERS ////////

@@ -282,7 +282,7 @@
 
 /obj/item/storage/box/bs_kit/mateba
 	name = "\improper Mateba Secondary Kit"
-	desc = "An equipment kit containing a specialized semiautomatic 12mm revolver. Great recoil control and even better stopping power, a flashy weapon of high-ranked officers."
+	desc = "An equipment kit containing a specialized semiautomatic .50 Kurz revolver. Great recoil control and even better stopping power, a flashy weapon of high-ranked officers."
 
 	populate_contents()
 		new /obj/item/gun/projectile/revolver/rev10/mateba(src)
@@ -292,7 +292,7 @@
 
 /obj/item/storage/box/bs_kit/gemini
 	name = "\"Gemini\" Secondary Kit"
-	desc = "A kit containing a highly specialized 12mm pistol with smart-linked optics and stabilizers."
+	desc = "A kit containing a highly specialized .50 Kurz pistol with smart-linked optics and stabilizers."
 
 	populate_contents()
 		new /obj/item/gun/projectile/lamia/gemini(src)

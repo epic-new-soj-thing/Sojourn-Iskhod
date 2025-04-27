@@ -178,10 +178,10 @@
 		/datum/design/autolathe/ammo/smg_magnum_40_practice = 0
 		)
 
-// 12mm Heavy Pistol
+// .50 Kurz Heavy Pistol
 
 /obj/item/pc_part/drive/disk/design/guns/amnesty
-	disk_name = "NM - 12mm Amnesty Handgun"
+	disk_name = "NM - .50 Kurz Amnesty Handgun"
 	icon_state = "marshal"
 
 	license = 8

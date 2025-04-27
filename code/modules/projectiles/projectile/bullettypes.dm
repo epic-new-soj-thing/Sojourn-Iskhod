@@ -258,7 +258,7 @@
 	check_armour = ARMOR_BIO
 	recoil = 6
 
-/// 12mm Heavy Pistol ///
+/// .50 Kurz Heavy Pistol ///
 /obj/item/projectile/bullet/kurz_50
 	icon_state = "bullet_krutz"
 	damage_types = list(BRUTE = 36)

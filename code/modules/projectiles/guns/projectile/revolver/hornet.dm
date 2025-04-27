@@ -1,7 +1,7 @@
 /obj/item/gun/projectile/revolver/hornet
 	name = "\"Hornet\" heavy revolver"
 	desc = "A heavy pistol of custom make with a built-in PainMaker, its heavy round allowing it to still be able to penetrate through basic armor and flesh alike when necessary. \
-	Used primarily by either vigilantes, or during hostage situations where taking lives may be needed. Uses 12mm rounds."
+	Used primarily by either vigilantes, or during hostage situations where taking lives may be needed. Uses .50 Kurz rounds."
 	icon = 'icons/obj/guns/projectile/hornet.dmi'
 	icon_state = "hornet"
 	item_state = "hornet"
@@ -20,7 +20,7 @@
 	unload_sound 	= 'sound/weapons/guns/interact/hpistol_magout.ogg'
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_12MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_REVOLVER, GUN_CALIBRE_50)
 	serial_type = "SA"
 
 	wield_delay = 0.6 SECOND

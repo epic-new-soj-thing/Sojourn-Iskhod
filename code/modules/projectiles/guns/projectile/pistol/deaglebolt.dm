@@ -21,7 +21,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM, GUN_CALIBRE_35)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_50, GUN_CALIBRE_35)
 	serial_type = "BlueCross"
 
 	wield_delay = 0.6 SECOND
@@ -46,6 +46,6 @@
 	else if (caliber == CAL_MAGNUM)
 		caliber = CAL_50
 		fire_sound = initial(fire_sound)
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 12mm heavy pistol caliber!"), \
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to .50 Kurz heavy pistol caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	refresh_upgrades()

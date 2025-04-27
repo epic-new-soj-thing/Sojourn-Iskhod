@@ -174,28 +174,28 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 7
 	result = /obj/item/ammo_magazine/magnum_40/empty
 
-// 12mm
+// .50 Kurz
 /datum/recipe_crafting_station/ammo/twelve_mm
 	category = "Small Arms Ammo"
 	subcategory = CAL_50
 
 /datum/recipe_crafting_station/ammo/twelve_mm/ammo_pile
-	name = "12mm ammo pile"
+	name = ".50 Kurz ammo pile"
 	point_cost = 8
 	result = /obj/item/ammo_casing/kurz_50/prespawned
 
 /datum/recipe_crafting_station/ammo/twelve_mm/speed_loader
-	name = "12mm speedloader"
+	name = ".50 Kurz speedloader"
 	point_cost = 10
 	result = /obj/item/ammo_magazine/speed_loader_kurz_50
 
 /datum/recipe_crafting_station/ammo/twelve_mm/ammo_box
-	name = "12mm ammo box"
+	name = ".50 Kurz ammo box"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/kurz_50
 
 /datum/recipe_crafting_station/ammo/twelve_mm/mag
-	name = "EMPTY 12mm heavy pistol magazine"
+	name = "EMPTY .50 Kurz heavy pistol magazine"
 	point_cost = 8
 	result = /obj/item/ammo_magazine/kurz_50/empty
 
@@ -533,7 +533,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	result = /obj/item/part/gun/barrel/magnum
 
 /datum/recipe_crafting_station/barrels/small/twelve_mm
-	name = "12mm barrel"
+	name = ".50 Kurz barrel"
 	result = /obj/item/part/gun/barrel/kurz
 	required_resources = list(MATERIAL_PLASTEEL = 8)
 
@@ -572,7 +572,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	result = /obj/item/part/gun/barrel/magnum/steel
 
 /datum/recipe_crafting_station/barrels/small_cheap/twelve_mm
-	name = "12mm barrel"
+	name = ".50 Kurz barrel"
 	result = /obj/item/part/gun/barrel/kurz/steel
 	required_resources = list(MATERIAL_STEEL = 8)
 
