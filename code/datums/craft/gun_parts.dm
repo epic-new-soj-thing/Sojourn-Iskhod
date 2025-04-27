@@ -429,8 +429,8 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	refence_for_legal = "kurz"
 
 /obj/item/part/gun/barrel/srifle
-	name = "6.5mm carbine barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 6.5mm carbine."
+	name = ".257 carbine barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .257 carbine."
 	icon_state = "barrel_carbine"
 	matter = list(MATERIAL_PLASTEEL = 8)
 	caliber = CAL_LRIFLE
@@ -453,8 +453,8 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	refence_for_legal = "lrifle"
 
 /obj/item/part/gun/barrel/hrifle
-	name = "8.6mm heavy rifle barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 8.6mm heavy rifle."
+	name = ".408 heavy rifle barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .408 heavy rifle."
 	icon_state = "barrel_heavy"
 	matter = list(MATERIAL_PLASTEEL = 10)
 	caliber = CAL_HRIFLE
@@ -496,8 +496,8 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	matter = list(MATERIAL_STEEL = 5)
 
 /obj/item/part/gun/barrel/srifle/steel
-	name = "cheap 6.5mm barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 6.5mm carbine. \
+	name = "cheap .257 barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .257 carbine. \
 			 This one does not look as high quality."
 	matter = list(MATERIAL_STEEL = 5)
 
@@ -514,8 +514,8 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	matter = list(MATERIAL_STEEL = 5)
 
 /obj/item/part/gun/barrel/hrifle/steel
-	name = "cheap 8.6mm heavy rifle barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 8.6mm heavy rifle. \
+	name = "cheap .408 heavy rifle barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .408 heavy rifle. \
 			This one does not look as high quality."
 	icon_state = "barrel_heavy"
 	matter = list(MATERIAL_STEEL = 14)

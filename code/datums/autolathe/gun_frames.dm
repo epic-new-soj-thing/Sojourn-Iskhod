@@ -38,11 +38,11 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	build_path = /obj/item/part/gun/frame/opshot
 
 /datum/design/autolathe/gun_frame/takeshi
-	name = "6.5mm takeshi - frame"
+	name = ".257 takeshi - frame"
 	build_path = /obj/item/part/gun/frame/tk
 
 /datum/design/autolathe/gun_frame/wind
-	name = "6.5mm/7.5mm Wind frame"
+	name = ".257/7.5mm Wind frame"
 	build_path = /obj/item/part/gun/frame/nord
 
 //Marshal Surplus
@@ -60,7 +60,7 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	build_path = /obj/item/part/gun/frame/grease
 
 /datum/design/autolathe/gun_frame/canine
-	name = "6.5mm K9 frame"
+	name = ".257 K9 frame"
 	build_path = /obj/item/part/gun/frame/bulldog
 
 /datum/design/autolathe/gun_frame/gladstone
@@ -68,7 +68,7 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	build_path = /obj/item/part/gun/frame/gladstone
 
 /datum/design/autolathe/gun_frame/bastard
-	name = "6.5mm bastard smg - frame"
+	name = ".257 bastard smg - frame"
 	build_path = /obj/item/part/gun/frame/bastard
 
 /datum/design/autolathe/gun_frame/dp
@@ -78,11 +78,11 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 //Blackshield guns.
 
 /datum/design/autolathe/gun_frame/discountnordwind
-	name = "6.5mm/7.5mm carbine/rifle- frame"
+	name = ".257/7.5mm carbine/rifle- frame"
 	build_path = /obj/item/part/gun/frame/discountnordwind
 
 /datum/design/autolathe/gun_frame/omni
-	name = "8.6mm omni - frame"
+	name = ".408 omni - frame"
 	build_path = /obj/item/part/gun/frame/omni
 
 // Retail section - low-end guns for LSS to order gun-frame disks for. Allows more guns per-disk at a cheaper overall price, realistically.

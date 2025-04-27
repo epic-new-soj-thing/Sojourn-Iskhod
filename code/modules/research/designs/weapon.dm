@@ -234,8 +234,8 @@
 	materials = list(MATERIAL_STEEL = 7, MATERIAL_GLASS = 7, MATERIAL_GOLD = 3.5)
 
 /datum/design/research/item/ammo/light_rifle_257
-	name = "Light rifle 6.5mm laser casing."
-	desc = "6.5mm casings fitted with a one time use laser payload."
+	name = "Light rifle .257 laser casing."
+	desc = ".257 casings fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/light_rifle_257_small/laser
 	materials = list(MATERIAL_STEEL = 12, MATERIAL_GLASS = 12, MATERIAL_GOLD = 6)
 
@@ -246,7 +246,7 @@
 	materials = list(MATERIAL_STEEL = 9, MATERIAL_GLASS = 9, MATERIAL_GOLD = 4.5)
 
 /datum/design/research/item/ammo/heavy_rifle_408
-	name = "Heavy Rifle 8.6mm laser casing."
+	name = "Heavy Rifle .408 laser casing."
 	desc = "Heavy Rifle 8.6x70mm casing fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/heavy_rifle_408_small/laser
 	materials = list(MATERIAL_STEEL = 6, MATERIAL_GLASS = 6, MATERIAL_GOLD = 3)

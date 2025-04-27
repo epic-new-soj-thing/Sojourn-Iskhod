@@ -284,7 +284,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 28
 	result = /obj/item/ammo_magazine/ammobox/shotgun/incendiary
 
-// 6.5mm
+// .257
 /datum/recipe_crafting_station/ammo/lrifle
 	category = "Long Arms Ammo"
 	subcategory = CAL_LRIFLE
@@ -394,7 +394,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 20
 	result = /obj/item/ammo_magazine/rifle_75_linked_box/empty
 
-// 8.6mm
+// .408
 /datum/recipe_crafting_station/ammo/hrifle
 	category = "Long Arms Ammo"
 	subcategory = CAL_HRIFLE
@@ -545,7 +545,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	required_resources = list(MATERIAL_PLASTEEL = 8)
 
 /datum/recipe_crafting_station/barrels/long/sixfive_mm
-	name = "6.5mm barrel"
+	name = ".257 barrel"
 	result = /obj/item/part/gun/barrel/srifle
 
 /datum/recipe_crafting_station/barrels/long/sevensixtwo_mm
@@ -584,7 +584,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	required_resources = list(MATERIAL_STEEL = 8)
 
 /datum/recipe_crafting_station/barrels/long_cheap/sixfive_mm
-	name = "6.5mm barrel"
+	name = ".257 barrel"
 	result = /obj/item/part/gun/barrel/srifle/steel
 
 /datum/recipe_crafting_station/barrels/long_cheap/caseless
@@ -596,7 +596,7 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	result = /obj/item/part/gun/barrel/lrifle/steel
 
 /datum/recipe_crafting_station/barrels/long_cheap/eightsix_mm
-	name = "8.6mm barrel"
+	name = ".408 barrel"
 	result = /obj/item/part/gun/barrel/hrifle/steel
 
 /datum/recipe_crafting_station/barrels/long_cheap/shotgun

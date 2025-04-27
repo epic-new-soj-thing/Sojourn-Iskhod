@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/sts
 	name = "\"STS\" carbine"
-	desc = "The rugged STS-25, the right arm of the unfree world. Uses 6.5mm Carbine rounds."
+	desc = "The rugged STS-25, the right arm of the unfree world. Uses .257 Carbine rounds."
 	icon = 'icons/obj/guns/projectile/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"
@@ -59,7 +59,7 @@
 
 /obj/item/gun/projectile/automatic/sts/sawn // Skeleton one for code reasons
 	name = "short-barreled \"STS\" carbine"
-	desc = "The rugged STS-25, the right left arm of the unfree world. Uses 6.5mm Carbine rounds. This one has had its stock lopped off and its barrel shortened, rendering it rather impractical to use."
+	desc = "The rugged STS-25, the right left arm of the unfree world. Uses .257 Carbine rounds. This one has had its stock lopped off and its barrel shortened, rendering it rather impractical to use."
 	icon = 'icons/obj/guns/projectile/sawnoff/sts25.dmi'
 	icon_state = "sts"
 	item_state = "sts"

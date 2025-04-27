@@ -1,9 +1,9 @@
 /////////////////////////
-//6.5mm Mamba, Standard//
+//.257 Mamba, Standard//
 /////////////////////////
 /obj/item/gun/projectile/automatic/mamba
 	name = "\"Mamba\" carbine"
-	desc = "Cheaply produced, versatile and made for mass usage are all traits of the 6.5mm \"Mamba\" carbine. Made by Nadezhda Marshal gunsmiths to be used in both close and mid-range combat the Mamba sports an adjustable folding-stock and a holographic sight."
+	desc = "Cheaply produced, versatile and made for mass usage are all traits of the .257 \"Mamba\" carbine. Made by Nadezhda Marshal gunsmiths to be used in both close and mid-range combat the Mamba sports an adjustable folding-stock and a holographic sight."
 	icon_state = "mamba"
 	item_state = "mamba"
 	icon = 'icons/obj/guns/projectile/mamba.dmi'
@@ -175,7 +175,7 @@
 /obj/item/gun/projectile/automatic/mamba/python
 	name = "\"Python\" heavy sniper"
 	desc = "A fine work of the Nadezhda Marshal gunsmiths is the Python, a heavy rifle with a state of the art smart scope displaying wind speeds, built in range finding, nightvision capability and an internal stabilization system. \
-	Chambered in the heavy 8.6mm for velocity and armor peircing capability, able to punch well above its weight even compared to other 8.6mm rifles. However, due to its design, it seems incapable of taking drum magazines."
+	Chambered in the heavy .408 for velocity and armor peircing capability, able to punch well above its weight even compared to other .408 rifles. However, due to its design, it seems incapable of taking drum magazines."
 	icon_state = "python"
 	item_state = "python"
 	icon = 'icons/obj/guns/projectile/python.dmi'
@@ -190,7 +190,7 @@
 	damage_multiplier = 1.2			//~33 damage base. Same as longarm.
 	penetration_multiplier = 1.4
 	zoom_factors = list(0.6, 1.2)
-	extra_damage_mult_scoped = 0.4	//1.6 total; STRONG due to chambered in 8.6mm. ~42 damage base.
+	extra_damage_mult_scoped = 0.4	//1.6 total; STRONG due to chambered in .408. ~42 damage base.
 	init_recoil = RIFLE_RECOIL(0.8)	//More recoil than Longarm, because it slaps harder.
 	see_invisible_gun = SEE_INVISIBLE_NOLIGHTING
 	gun_tags = list(GUN_PROJECTILE, GUN_SILENCABLE, GUN_MAGWELL, GUN_SIGHT)

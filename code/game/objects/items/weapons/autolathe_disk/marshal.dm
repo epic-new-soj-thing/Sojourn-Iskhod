@@ -207,10 +207,10 @@
 		/datum/design/autolathe/ammo/shotgun_illumination,
 		)
 
-// 6.5mm carbines
+// .257 carbines
 
 /obj/item/pc_part/drive/disk/design/guns/bastard
-	disk_name = "NM - 6.5mm \"Bastard\" Compact Machine Gun"
+	disk_name = "NM - .257 \"Bastard\" Compact Machine Gun"
 	icon_state = "marshal"
 
 	license = 8
@@ -221,7 +221,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/mamba
-	disk_name = "NM - 6.5mm Mamba Carbine"
+	disk_name = "NM - .257 Mamba Carbine"
 	icon_state = "marshal"
 
 	license = 16

@@ -132,7 +132,7 @@
 /obj/item/gun/projectile/automatic/lmg/tk
 	name = "\"Takeshi\" suppression machinegun"
 	desc = "The \"Takeshi LMG\" is Seinemetall Defense GmbH's answer to any scenario that requires suppression or meat grinding, a well oiled machine of war and death. \
-			Takes 6.5mm linked boxes as well as normal carbine magazines."
+			Takes .257 linked boxes as well as normal carbine magazines."
 	icon = 'icons/obj/guns/projectile/tk.dmi'
 	icon_base = "tk"
 	icon_state = "tk"

@@ -314,7 +314,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257
 	name = "carbine magazine"
-	desc = "A 30 round magazine marked for 6.5mm Carbine."
+	desc = "A 30 round magazine marked for .257 Carbine."
 	icon_state = "lrifle_long"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
@@ -366,7 +366,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257_short
 	name = "short carbine magazine"
-	desc = "A 20 round magazine marked for 6.5mm Carbine."
+	desc = "A 20 round magazine marked for .257 Carbine."
 	icon_state = "lrifle_short"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
@@ -410,7 +410,7 @@
 
 /obj/item/ammo_magazine/light_rifle_257_drum
 	name = "carbine drum magazine"
-	desc = "A 50 round drum magazine marked for 6.5mm Carbine."
+	desc = "A 50 round drum magazine marked for .257 Carbine."
 	icon_state = "lrifle_drum"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_RIFLE
@@ -624,8 +624,8 @@
 
 ///easiest to make it a child
 /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257
-	name = "linked ammunition box (6.5mm Carbine)"
-	desc = "A 100 round linked box marked for 6.5mm Carbine."
+	name = "linked ammunition box (.257 Carbine)"
+	desc = "A 100 round linked box marked for .257 Carbine."
 	icon_state = "pkl_box"
 	caliber = CAL_LRIFLE
 	ammo_type = /obj/item/ammo_casing/light_rifle_257
@@ -633,22 +633,22 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/highvelocity
-	name = "linked ammunition box (6.5mm Carbine highvelocity)"
+	name = "linked ammunition box (.257 Carbine highvelocity)"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/hv
 
 /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/rubber
-	name = "linked ammunition box (6.5mm Carbine rubber)"
+	name = "linked ammunition box (.257 Carbine rubber)"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/rubber
 
 /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/lethal
-	name = "linked ammunition box (6.5mm Carbine hollowpoint)"
+	name = "linked ammunition box (.257 Carbine hollowpoint)"
 	ammo_type = /obj/item/ammo_casing/light_rifle_257/lethal
 
 /obj/item/ammo_magazine/rifle_75_linked_box/light_rifle_257/empty
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408
-	name = "linked ammunition box (8.6mm Heavy Rifle)"
+	name = "linked ammunition box (.408 Heavy Rifle)"
 	desc = "A 64 round linked box marked for 8.6x70mm Heavy Rifle."
 	max_ammo = 64
 	icon_state = "pkh_box"
@@ -658,15 +658,15 @@
 	multiple_sprites = 1
 
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/highvelocity
-	name = "linked ammunition box (8.6mm Heavy Rifle SLAP)"
+	name = "linked ammunition box (.408 Heavy Rifle SLAP)"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/hv
 
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/rubber
-	name = "linked ammunition box (8.6mm Heavy Rifle rubber)"
+	name = "linked ammunition box (.408 Heavy Rifle rubber)"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/rubber
 
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/lethal
-	name = "linked ammunition box (8.6mm Heavy Rifle hollowpoint)"
+	name = "linked ammunition box (.408 Heavy Rifle hollowpoint)"
 	ammo_type = /obj/item/ammo_casing/heavy_rifle_408/lethal
 
 /obj/item/ammo_magazine/rifle_75_linked_box/heavy_rifle_408/empty
@@ -689,7 +689,7 @@
 /obj/item/ammo_magazine/maxim_75/empty
 	initial_ammo = 0
 
-////8.6mm heavy rifle////
+////.408 heavy rifle////
 
 /obj/item/ammo_magazine/heavy_rifle_408
 	name = "heavy rifle magazine"
@@ -1014,8 +1014,8 @@
 	icon_state = "stripper_base"
 
 /obj/item/ammo_magazine/speed_loader_light_rifle_257
-	name = "ammo strip (6.5mm Carbine)"
-	desc = "A 10 round ammo strip for 6.5mm Carbine."
+	name = "ammo strip (.257 Carbine)"
+	desc = "A 10 round ammo strip for .257 Carbine."
 	icon_state = "stripper_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_LRIFLE
@@ -1039,7 +1039,7 @@
 	icon_state = "stripper_base"
 
 /obj/item/ammo_magazine/speed_loader_heavy_rifle_408
-	name = "ammo strip (8.6mm Heavy Rifle)"
+	name = "ammo strip (.408 Heavy Rifle)"
 	desc = "A 10 round ammo strip for 8.6x70mm Heavy Rifle."
 	icon_state = "stripper_base"
 	icon = 'icons/obj/ammo_speed.dmi'

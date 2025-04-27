@@ -20,7 +20,7 @@
 	)
 
 /datum/craft_recipe/gun/stripper1
-	name = "handmade 6.5mm carbine stripper clip"
+	name = "handmade .257 carbine stripper clip"
 	result = /obj/item/ammo_magazine/speed_loader_light_rifle_257/empty
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 30),
@@ -38,7 +38,7 @@
 	)
 
 /datum/craft_recipe/gun/stripper3
-	name = "handmade 8.6mm heavy rifle stripper clip"
+	name = "handmade .408 heavy rifle stripper clip"
 	result = /obj/item/ammo_magazine/speed_loader_heavy_rifle_408/empty
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 30),

@@ -500,11 +500,11 @@
 		/datum/design/autolathe/ammo/smg_lethal = 2,
 	)
 
-// 6.5mm carbines
+// .257 carbines
 
 
 /obj/item/pc_part/drive/disk/design/guns/pitbull
-	disk_name = "SolFed  - 6.5mm Pitbull Carbine"
+	disk_name = "SolFed  - .257 Pitbull Carbine"
 	icon_state = "solfed"
 
 	license = 16
@@ -522,7 +522,7 @@
 
 
 /obj/item/pc_part/drive/disk/design/guns/bulldog
-	disk_name = "Seinemetall Defense GmbH - 6.5mm Bulldog Carbine"
+	disk_name = "Seinemetall Defense GmbH - .257 Bulldog Carbine"
 	icon_state = "frozenstar"
 
 	license = 16
@@ -540,7 +540,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/sol
-	disk_name = "H&S - 6.5mm \"Solarian\" Carbine"
+	disk_name = "H&S - .257 \"Solarian\" Carbine"
 	icon_state = "solfed"
 
 	license = 18
@@ -560,7 +560,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/ostwind
-	disk_name = "Seinemetall Defense GmbH - 6.5mm Ostwind Carbine"
+	disk_name = "Seinemetall Defense GmbH - .257 Ostwind Carbine"
 	icon_state = "frozenstar"
 
 	license = 16
@@ -576,10 +576,10 @@
 		/datum/design/autolathe/ammo/lrifle_lethal = 4,
 	)
 
-// 6.5mm Carbine
+// .257 Carbine
 
 /obj/item/pc_part/drive/disk/design/guns/tk
-	disk_name = "SD GmbH - 6.5mm Takeshi LMG"
+	disk_name = "SD GmbH - .257 Takeshi LMG"
 	icon_state = "frozenstar"
 
 	license = 8 //So we can print 2 and some ammo
@@ -593,7 +593,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/roe
-	disk_name = "Hunters Inc - 6.5mm Roe Rifle"
+	disk_name = "Hunters Inc - .257 Roe Rifle"
 	icon_state = "hunters"
 
 	license = 8
@@ -672,10 +672,10 @@
 		/datum/design/autolathe/ammo/sl_rifle,
 	)
 
-//8.6mm heavy rifles
+//.408 heavy rifles
 
 /obj/item/pc_part/drive/disk/design/guns/omni
-	disk_name = "H&S NM - 8.6mm Omnirifle"
+	disk_name = "H&S NM - .408 Omnirifle"
 	icon_state = "ironhammer"
 
 	license = 12
@@ -688,7 +688,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/omni/longarm
-	disk_name = "H&S NM - 8.6mm Longarm Omnirfile"
+	disk_name = "H&S NM - .408 Longarm Omnirfile"
 	icon_state = "ironhammer"
 
 	license = 8
@@ -701,7 +701,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/scout
-	disk_name = "H&S - 8.6mm Scout Sniper Rifle"
+	disk_name = "H&S - .408 Scout Sniper Rifle"
 	icon_state = "frozenstar"
 
 	license = 6
@@ -715,7 +715,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/custer
-	disk_name = "H&S - 8.6mm Custer Repeating Rifle"
+	disk_name = "H&S - .408 Custer Repeating Rifle"
 	icon_state = "sa"
 
 	license = 8
