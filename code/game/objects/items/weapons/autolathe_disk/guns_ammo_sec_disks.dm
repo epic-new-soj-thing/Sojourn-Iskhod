@@ -151,10 +151,10 @@
 // G U N S (minus excelsior and research)
 // Pack is used when there is more than one gun on the disk
 
-// 9mm PISTOLS + REVOLVERS
+// .35 PISTOLS + REVOLVERS
 
 /obj/item/pc_part/drive/disk/design/guns/cheap_guns
-	disk_name = "H&S - 9mm Economy Pack"
+	disk_name = "H&S - .35 Economy Pack"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -175,7 +175,7 @@
 
 
 /obj/item/pc_part/drive/disk/design/guns/colt
-	disk_name = "H&S - 9mm M1911"
+	disk_name = "H&S - .35 M1911"
 	icon_state = "ironhammer"
 
 	license = 8
@@ -192,7 +192,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/glock
-	disk_name = "Seinemetall Defense GmbH - 9mm Sky Auto Pistol"
+	disk_name = "Seinemetall Defense GmbH - .35 Sky Auto Pistol"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -205,10 +205,10 @@
 	)
 
 
-// 10mm REVOLVERS
+// .40 REVOLVERS
 
 /obj/item/pc_part/drive/disk/design/guns/revolver
-	disk_name = "H&S - 10mm Minotaur Revolver"
+	disk_name = "H&S - .40 Minotaur Revolver"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -221,7 +221,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/rev10
-	disk_name = "H&S - 10mm Frontier Revolver"
+	disk_name = "H&S - .40 Frontier Revolver"
 	icon_state = "ironhammer"
 
 	license = 8
@@ -233,10 +233,10 @@
 		/datum/design/autolathe/ammo/slmagnum_lethal = 2,
 		)
 
-// 10mm pistols
+// .40 pistols
 
 /obj/item/pc_part/drive/disk/design/guns/ladon/dark
-	disk_name = "Seinemetall Defense GmbH - 10mm Auto-Mag Ladon Handgun"
+	disk_name = "Seinemetall Defense GmbH - .40 Auto-Mag Ladon Handgun"
 	icon_state = "onestar"
 
 	license = 8
@@ -249,7 +249,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/ladon
-	disk_name = "H&S - 10mm Auto-Mag Porton Handgun"
+	disk_name = "H&S - .40 Auto-Mag Porton Handgun"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -262,7 +262,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/ladon/sa
-	disk_name = "SA - 10mm Auto-Mag Sigia Handgun"
+	disk_name = "SA - .40 Auto-Mag Sigia Handgun"
 	icon_state = "sa"
 
 	license = 8
@@ -275,7 +275,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/colt/ten
-	disk_name = "H&S - 10mm Auto-Mag Delta Elite"
+	disk_name = "H&S - .40 Auto-Mag Delta Elite"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -288,7 +288,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/rafale
-	disk_name = "Seinemetall Defense GmbH - 10mm Auto-Mag Rafale"
+	disk_name = "Seinemetall Defense GmbH - .40 Auto-Mag Rafale"
 	icon_state = "frozenstar"
 
 	license = 8
@@ -301,7 +301,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/armstrong
-	disk_name = "H&S - 10mm lever action Armstrong"
+	disk_name = "H&S - .40 lever action Armstrong"
 	icon_state = "frozenstar"
 
 	license = 16
@@ -313,9 +313,9 @@
 		/datum/design/autolathe/ammo/magnum_ammobox_lethal = 4,
 		)
 
-// 10mm SMGS
+// .40 SMGS
 /obj/item/pc_part/drive/disk/design/guns/vector
-	disk_name = "SA - 10mm Vector SMG"
+	disk_name = "SA - .40 Vector SMG"
 	icon_state = "sa"
 
 	license = 16
@@ -330,7 +330,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/thompson
-	disk_name = "SolFed - 10mm Thompson SMG"
+	disk_name = "SolFed - .40 Thompson SMG"
 	icon_state = "solfed"
 
 	license = 12
@@ -488,7 +488,7 @@
 // SMGs
 
 /obj/item/pc_part/drive/disk/design/guns/texan
-	disk_name = "Seinemetall Defense GmbH - 9mm Texan SMG"
+	disk_name = "Seinemetall Defense GmbH - .35 Texan SMG"
 	icon_state = "frozenstar"
 
 	license = 12

@@ -12,8 +12,8 @@
 
 /////////////Standard/////////////
 /obj/item/ammo_magazine/pistol_35
-	name = "standard magazine (9mm)"
-	desc = "a 10 round magazine marked for 9mm."
+	name = "standard magazine (.35)"
+	desc = "a 10 round magazine marked for .35."
 	icon_state = "pistol"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -29,32 +29,32 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/pistol_35/practice
-	name = "standard magazine (9mm practice)"
+	name = "standard magazine (.35 practice)"
 	icon_state = "pistol_p"
 	ammo_type = /obj/item/ammo_casing/pistol_35/practice
 
 /obj/item/ammo_magazine/pistol_35/highvelocity
-	name = "standard magazine (9mm high-velocity)"
+	name = "standard magazine (.35 high-velocity)"
 	icon_state = "pistol_hv"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 
 /obj/item/ammo_magazine/pistol_35/rubber
-	name = "standard magazine (9mm rubber)"
+	name = "standard magazine (.35 rubber)"
 	icon_state = "pistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
 /obj/item/ammo_magazine/pistol_35/rubber/pepperball
-	name = "standard magazine (9mm pepperball)"
+	name = "standard magazine (.35 pepperball)"
 	icon_state = "pistol_l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/pistol_35/lethal
-	name = "standard magazine (9mm hollow-point)"
+	name = "standard magazine (.35 hollow-point)"
 	icon_state = "pistol_l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
 /obj/item/ammo_magazine/pistol_35/scrap
-	name = "old standard magazine (9mm)"
+	name = "old standard magazine (.35)"
 	icon_state = "pistol_s"
 	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
 
@@ -64,7 +64,7 @@
 /obj/item/ammo_magazine/highcap_pistol_35/drum
 	name = "standard auto drum magazine"
 	icon_state = "ldrum"
-	desc = "A 71 round drum magazine marked for 9mm."
+	desc = "A 71 round drum magazine marked for .35."
 	origin_tech = list(TECH_COMBAT = 2)
 	w_class = ITEM_SIZE_NORMAL
 	mag_type = MAGAZINE
@@ -117,7 +117,7 @@
 /////////////HighCap/////////////
 /obj/item/ammo_magazine/highcap_pistol_35
 	name = "highcap pistol magazine"
-	desc = "A 16 round magazine marked for 9mm."
+	desc = "A 16 round magazine marked for .35."
 	icon_state = "hpistol"
 	origin_tech = list(TECH_COMBAT = 2)
 	mag_type = MAGAZINE
@@ -133,27 +133,27 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/highcap_pistol_35/practice
-	name = "highcap magazine (9mm practice)"
+	name = "highcap magazine (.35 practice)"
 	icon_state = "hpistol_p"
 	ammo_type = /obj/item/ammo_casing/pistol_35/practice
 
 /obj/item/ammo_magazine/highcap_pistol_35/highvelocity
-	name = "highcap magazine (9mm high-velocity)"
+	name = "highcap magazine (.35 high-velocity)"
 	icon_state = "hpistol_hv"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 
 /obj/item/ammo_magazine/highcap_pistol_35/rubber
-	name = "highcap magazine (9mm rubber)"
+	name = "highcap magazine (.35 rubber)"
 	icon_state = "hpistol_r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
 /obj/item/ammo_magazine/highcap_pistol_35/rubber/pepperball
-	name = "highcap magazine (9mm pepperball)"
+	name = "highcap magazine (.35 pepperball)"
 	icon_state = "hpistol_l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/highcap_pistol_35/lethal
-	name = "highcap magazine (9mm hollow-point)"
+	name = "highcap magazine (.35 hollow-point)"
 	icon_state = "hpistol_l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
@@ -161,7 +161,7 @@
 
 /obj/item/ammo_magazine/smg_35
 	name = "smg magazine"
-	desc = "A 32 round magazine marked for 9mm."
+	desc = "A 32 round magazine marked for .35."
 	icon_state = "smg"
 	ammo_color = "-l"
 	origin_tech = list(TECH_COMBAT = 2)
@@ -179,13 +179,13 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/smg_35/practice
-	name = "smg magazine (9mm practice)"
+	name = "smg magazine (.35 practice)"
 	icon_state = "smg_p"
 	ammo_color = "-p"
 	ammo_type = /obj/item/ammo_casing/pistol_35/practice
 
 /obj/item/ammo_magazine/smg_35/hv
-	name = "smg magazine (9mm high-velocity)"
+	name = "smg magazine (.35 high-velocity)"
 	icon_state = "smg_hv"
 	ammo_color = "-hv"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
@@ -196,28 +196,28 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/smg_35/rubber
-	name = "smg magazine (9mm rubber)"
+	name = "smg magazine (.35 rubber)"
 	icon_state = "smg_r"
 	ammo_color = "-r"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
 /obj/item/ammo_magazine/smg_35/rubber/pepperball
-	name = "smg magazine (9mm pepperball)"
+	name = "smg magazine (.35 pepperball)"
 	icon_state = "smg_l"
 	ammo_color = "-l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/smg_35/lethal
-	name = "smg magazine (9mm hollow-point)"
+	name = "smg magazine (.35 hollow-point)"
 	icon_state = "smg_l"
 	ammo_color = "-l"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
-///////////// 10mm pistol ///////////
+///////////// .40 pistol ///////////
 
 /obj/item/ammo_magazine/magnum_40
 	name = "magnum pistol magazine"
-	desc = "A 10 round magazine marked for 10mm Magnum."
+	desc = "A 10 round magazine marked for .40 Magnum."
 	icon_state = "magnum"
 	mag_type = MAGAZINE
 	mag_well = MAG_WELL_PISTOL
@@ -232,40 +232,40 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/magnum_40/practice
-	name = "magazine (10mm Magnum practice)"
+	name = "magazine (.40 Magnum practice)"
 	icon_state = "magnum_p"
 	ammo_type = /obj/item/ammo_casing/magnum_40/practice
 
 /obj/item/ammo_magazine/magnum_40/hv
-	name = "magazine (10mm Magnum high-velocity)"
+	name = "magazine (.40 Magnum high-velocity)"
 	icon_state = "magnum_hv"
 	ammo_type = /obj/item/ammo_casing/magnum_40/hv
 
 /obj/item/ammo_magazine/magnum_40/rubber
-	name = "magazine (10mm Magnum rubber)"
+	name = "magazine (.40 Magnum rubber)"
 	icon_state = "magnum_r"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
 /obj/item/ammo_magazine/magnum_40/rubber/pepperball
-	name = "magazine(10mm Magnum pepperball)"
+	name = "magazine(.40 Magnum pepperball)"
 	icon_state = "magnum_l"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/magnum_40/lethal
-	name = "magazine (10mm Magnum hollow-point)"
+	name = "magazine (.40 Magnum hollow-point)"
 	icon_state = "magnum_l"
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
 /obj/item/ammo_magazine/magnum_40/old
-	name = "old magazine (10mm Magnum)"
+	name = "old magazine (.40 Magnum)"
 	icon_state = "magnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
-////10mm SMG////
+////.40 SMG////
 
 /obj/item/ammo_magazine/smg_magnum_40
-	name = "smg magnum magazine (10mm Magnum)"
-	desc = "A 30 round magazine marked for 10mm Magnum."
+	name = "smg magnum magazine (.40 Magnum)"
+	desc = "A 30 round magazine marked for .40 Magnum."
 	icon_state = "smg_magnum"
 	origin_tech = list(TECH_COMBAT = 3)
 	mag_type = MAGAZINE
@@ -281,32 +281,32 @@
 	initial_ammo = 0
 
 /obj/item/ammo_magazine/smg_magnum_40/practice
-	name = "smg magazine (10mm Magnum practice)"
+	name = "smg magazine (.40 Magnum practice)"
 	icon_state = "smg_magnum_p"
 	ammo_type = /obj/item/ammo_casing/magnum_40/practice
 
 /obj/item/ammo_magazine/smg_magnum_40/hv
-	name = "smg magazine (10mm Magnum high-velocity)"
+	name = "smg magazine (.40 Magnum high-velocity)"
 	icon_state = "smg_magnum_hv"
 	ammo_type = /obj/item/ammo_casing/magnum_40/hv
 
 /obj/item/ammo_magazine/smg_magnum_40/rubber
-	name = "smg magazine (10mm Magnum rubber)"
+	name = "smg magazine (.40 Magnum rubber)"
 	icon_state = "smg_magnum_r"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
 /obj/item/ammo_magazine/smg_magnum_40/rubber/pepperball
-	name = "smg magazine (10mm Magnum pepperball)"
+	name = "smg magazine (.40 Magnum pepperball)"
 	icon_state = "smg_magnum_l"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/smg_magnum_40/lethal
-	name = "smg magazine (10mm Magnum hollow-point)"
+	name = "smg magazine (.40 Magnum hollow-point)"
 	icon_state = "smg_magnum_l"
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
 /obj/item/ammo_magazine/smg_magnum_40/old
-	name = "old smg magazine (10mm Magnum)"
+	name = "old smg magazine (.40 Magnum)"
 	icon_state = "smg_magnum_s"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
@@ -853,11 +853,11 @@
 
 ///////// SPEEDLOADERS ///////////
 
-//////// 9mm SPEEDLOADERS //////////
+//////// .35 SPEEDLOADERS //////////
 
 /obj/item/ammo_magazine/speed_loader_pistol_35
-	name = "speed loader (9mm Special)"
-	desc = "A 6 round speed loader marked for (9mm."
+	name = "speed loader (.35 Special)"
+	desc = "A 6 round speed loader marked for (.35."
 	icon_state = "slpistol_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_PISTOL
@@ -873,34 +873,34 @@
 		add_overlay("slpistol_[AC.shell_color]-[count]")
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/practice
-	name = "speed loader (9mm Special practice)"
+	name = "speed loader (.35 Special practice)"
 	ammo_type = /obj/item/ammo_casing/pistol_35/practice
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/hv
-	name = "speed loader (9mm Special high-velocity)"
+	name = "speed loader (.35 Special high-velocity)"
 	ammo_type = /obj/item/ammo_casing/pistol_35/hv
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/rubber
-	name = "speed loader (9mm Special rubber)"
+	name = "speed loader (.35 Special rubber)"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/rubber/pepperball
-	name = "speed loader (9mm Special pepperball)"
+	name = "speed loader (.35 Special pepperball)"
 	ammo_type = /obj/item/ammo_casing/pistol_35/rubber/pepperball
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/lethal
-	name = "speed loader (9mm Special hollow point)"
+	name = "speed loader (.35 Special hollow point)"
 	ammo_type = /obj/item/ammo_casing/pistol_35/lethal
 
 /obj/item/ammo_magazine/speed_loader_pistol_35/scrap
-	name = "old speed loader (9mm Special)"
+	name = "old speed loader (.35 Special)"
 	ammo_type = /obj/item/ammo_casing/pistol_35/scrap
 
-//////// 10mm SPEEDLOADERS //////////
+//////// .40 SPEEDLOADERS //////////
 
 /obj/item/ammo_magazine/speed_loader_magnum_40
-	name = "speed loader (10mm Magnum)"
-	desc = "A 6 round speed loader marked for 10mm Magnum."
+	name = "speed loader (.40 Magnum)"
+	desc = "A 6 round speed loader marked for .40 Magnum."
 	icon_state = "slmagnum_base"
 	icon = 'icons/obj/ammo_speed.dmi'
 	caliber = CAL_MAGNUM
@@ -920,31 +920,31 @@
 	update_icon()
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/practice
-	name = "speed loader (10mm Magnum practice)"
+	name = "speed loader (.40 Magnum practice)"
 	ammo_type = /obj/item/ammo_casing/magnum_40/practice
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/highvelocity
-	name = "speed loader (10mm Magnum high-velocity)"
+	name = "speed loader (.40 Magnum high-velocity)"
 	ammo_type = /obj/item/ammo_casing/magnum_40/hv
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/rubber
-	name = "speed loader (10mm Magnum rubber)"
+	name = "speed loader (.40 Magnum rubber)"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/rubber/pepperball
-	name = "speed loader (10mm Magnum pepperball)"
+	name = "speed loader (.40 Magnum pepperball)"
 	ammo_type = /obj/item/ammo_casing/magnum_40/rubber/pepperball
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/lethal
-	name = "speed loader (10mm Magnum hollow-point)"
+	name = "speed loader (.40 Magnum hollow-point)"
 	ammo_type = /obj/item/ammo_casing/magnum_40/lethal
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/scrap
-	name = "old speed loader (10mm Magnum)"
+	name = "old speed loader (.40 Magnum)"
 	ammo_type = /obj/item/ammo_casing/magnum_40/scrap
 
 /obj/item/ammo_magazine/speed_loader_magnum_40/biomatter
-	name = "speed loader (10mm Magnum Caustic)"
+	name = "speed loader (.40 Magnum Caustic)"
 	ammo_type = /obj/item/ammo_casing/magnum_40/biomatter
 
 //// 12mm speed loader ////
@@ -1110,8 +1110,8 @@
 	multiple_sprites = 1
 /*
 /obj/item/ammo_magazine/a75
-	name = "ammo magazine (19mm gyro)"
-	desc = "A 4 magazine in 19mm gyro."
+	name = "ammo magazine (1.35 gyro)"
+	desc = "A 4 magazine in 1.35 gyro."
 	icon_state = "gyropistol"
 	icon = 'icons/obj/ammo_mags.dmi'
 	mag_type = MAGAZINE

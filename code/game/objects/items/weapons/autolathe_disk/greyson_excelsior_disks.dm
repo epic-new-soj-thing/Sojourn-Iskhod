@@ -293,7 +293,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/ex_drozd
-	name = "design disk 9mm Drozd SMG"
+	name = "design disk .35 Drozd SMG"
 	disk_name = "Excelsior"
 	desc = "The back has a machine etching: \"Nobody is to be blamed for being born a slave; but a slave who not only eschews a striving for freedom but justifies and eulogies his slavery - such a slave is a lickspittle and a boor, who arouses a legitimate feeling of indignation, contempt, and loathing..\""
 	icon_state = "excelsior"

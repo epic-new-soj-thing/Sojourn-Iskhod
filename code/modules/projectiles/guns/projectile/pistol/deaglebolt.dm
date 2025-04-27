@@ -21,7 +21,7 @@
 	reload_sound 	= 'sound/weapons/guns/interact/hpistol_magin.ogg'
 	cocked_sound 	= 'sound/weapons/guns/interact/hpistol_cock.ogg'
 	auto_eject = 1
-	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM, GUN_CALIBRE_9MM)
+	gun_tags = list(GUN_PROJECTILE, GUN_MAGWELL, GUN_CALIBRE_12MM, GUN_CALIBRE_35)
 	serial_type = "BlueCross"
 
 	wield_delay = 0.6 SECOND
@@ -36,12 +36,12 @@
 	if(caliber == CAL_50)
 		caliber = CAL_PISTOL
 		fire_sound = 'sound/weapons/guns/fire/pistol_fire.ogg'
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 9mm pistol caliber!"), \
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to .35 pistol caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	else if(caliber == CAL_PISTOL)
 		caliber = CAL_MAGNUM
 		fire_sound = 'sound/weapons/guns/fire/1911_fire.ogg'
-		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to 10mm magnum caliber!"), \
+		visible_message(SPAN_NOTICE("\The [usr] clicks a button on \the [src], a beep and a metallic whirr are heard before it changes to .40 magnum caliber!"), \
 		SPAN_NOTICE("You hear something metallic whirr and beep."))
 	else if (caliber == CAL_MAGNUM)
 		caliber = CAL_50

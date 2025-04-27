@@ -279,11 +279,11 @@
 
 //Barrels
 /datum/design/autolathe/part/barrel/pistol
-	name = "firearm 9mm pistol barrel"
+	name = "firearm .35 pistol barrel"
 	build_path = /obj/item/part/gun/barrel/pistol
 
 /datum/design/autolathe/part/barrel/magnum
-	name = "firearm 10mm pistol barrel"
+	name = "firearm .40 pistol barrel"
 	build_path = /obj/item/part/gun/barrel/magnum
 
 /datum/design/autolathe/part/barrel/kurz
@@ -317,11 +317,11 @@
 // Bootleg steel parts - for the shitty disk.
 
 /datum/design/autolathe/part/barrel/pistol/steel
-	name = "firearm steel 9mm pistol barrel"
+	name = "firearm steel .35 pistol barrel"
 	build_path = /obj/item/part/gun/barrel/pistol/steel
 
 /datum/design/autolathe/part/barrel/magnum/steel
-	name = "firearm steel 10mm pistol barrel"
+	name = "firearm steel .40 pistol barrel"
 	build_path = /obj/item/part/gun/barrel/magnum/steel
 
 /datum/design/autolathe/part/barrel/carbine/steel

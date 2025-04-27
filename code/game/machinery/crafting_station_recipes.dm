@@ -94,83 +94,83 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	data["point_cost"] = point_cost
 	return data
 
-// 9mm
+// .35
 /datum/recipe_crafting_station/ammo/nine_mm
 	category = "Small Arms Ammo"
 	subcategory = CAL_PISTOL
 
 /datum/recipe_crafting_station/ammo/nine_mm/scrap_ammo_pile
-	name = "Scrap 9mm ammo pile"
+	name = "Scrap .35 ammo pile"
 	point_cost = 5
 	result = /obj/item/ammo_casing/pistol_35/scrap/prespawned
 
 /datum/recipe_crafting_station/ammo/nine_mm/scrap_speedloader
-	name = "Scrap 9mm speedloader"
+	name = "Scrap .35 speedloader"
 	point_cost = 3
 	result = /obj/item/ammo_magazine/speed_loader_pistol_35/scrap
 
 /datum/recipe_crafting_station/ammo/nine_mm/scrap_packet
-	name = "Scrap 9mm ammo packet"
+	name = "Scrap .35 ammo packet"
 	point_cost = 12
 	result = /obj/item/ammo_magazine/ammobox/pistol_35/scrap
 
 /datum/recipe_crafting_station/ammo/nine_mm/ammo_pile
-	name = "9mm ammo pile"
+	name = ".35 ammo pile"
 	point_cost = 8
 	result = /obj/item/ammo_casing/pistol_35/prespawned
 
 /datum/recipe_crafting_station/ammo/nine_mm/ammo_packet
-	name = "9mm ammo packet"
+	name = ".35 ammo packet"
 	point_cost = 18
 	result = /obj/item/ammo_magazine/ammobox/pistol_35
 
 /datum/recipe_crafting_station/ammo/nine_mm/pistol_mag
-	name = "EMPTY 9mm pistol magazine"
+	name = "EMPTY .35 pistol magazine"
 	point_cost = 5
 	result = /obj/item/ammo_magazine/pistol_35/empty
 
 /datum/recipe_crafting_station/ammo/nine_mm/extended_mag
-	name = "EMPTY 9mm extended magazine"
+	name = "EMPTY .35 extended magazine"
 	point_cost = 7
 	result = /obj/item/ammo_magazine/highcap_pistol_35/empty
 
 /datum/recipe_crafting_station/ammo/nine_mm/smg_mag
-	name = "EMPTY 9mm SMG magazine"
+	name = "EMPTY .35 SMG magazine"
 	point_cost = 12
 	result = /obj/item/ammo_magazine/smg_35/empty
 
-// 10mm
+// .40
 /datum/recipe_crafting_station/ammo/ten_mm
 	category = "Small Arms Ammo"
 	subcategory = CAL_MAGNUM
 
 /datum/recipe_crafting_station/ammo/ten_mm/scrap_ammo_pile
-	name = "Scrap 10mm ammo pile"
+	name = "Scrap .40 ammo pile"
 	point_cost = 3
 	result = /obj/item/ammo_casing/magnum_40/scrap/prespawned
 
 /datum/recipe_crafting_station/ammo/ten_mm/scrap_speedloader
-	name = "Scrap 10mm speedloader"
+	name = "Scrap .40 speedloader"
 	point_cost = 5
 	result = /obj/item/ammo_magazine/speed_loader_magnum_40/scrap
 
 /datum/recipe_crafting_station/ammo/ten_mm/scrap_ammo_packet
-	name = "Scrap 10mm ammo packet"
+	name = "Scrap .40 ammo packet"
 	point_cost = 15
 	result = /obj/item/ammo_magazine/ammobox/magnum_40/scrap
 
 /datum/recipe_crafting_station/ammo/ten_mm/ammo_pile
-	name = "10mm magnum ammo pile"
+	name = ".40 magnum ammo pile"
 	point_cost = 7
 	result = /obj/item/ammo_casing/magnum_40/prespawned
 
 /datum/recipe_crafting_station/ammo/ten_mm/ammo_packet
-	name = "10mm ammo packet"
+	name = ".40 ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/magnum_40
 
 /datum/recipe_crafting_station/ammo/ten_mm/pistol_mag
-	name = "EMPTY 10mm pistol magazine"
+	name = "EMPTY .40 pistol magazine"
 	point_cost = 7
 	result = /obj/item/ammo_magazine/magnum_40/empty
 
@@ -525,11 +525,11 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	required_resources = list(MATERIAL_PLASTEEL = 4)
 
 /datum/recipe_crafting_station/barrels/small/nine_mm
-	name = "9mm barrel"
+	name = ".35 barrel"
 	result = /obj/item/part/gun/barrel/pistol
 
 /datum/recipe_crafting_station/barrels/small/ten_mm
-	name = "10mm barrel"
+	name = ".40 barrel"
 	result = /obj/item/part/gun/barrel/magnum
 
 /datum/recipe_crafting_station/barrels/small/twelve_mm
@@ -564,11 +564,11 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	required_resources = list(MATERIAL_STEEL = 4)
 
 /datum/recipe_crafting_station/barrels/small_cheap/nine_mm
-	name = "9mm barrel"
+	name = ".35 barrel"
 	result = /obj/item/part/gun/barrel/pistol/steel
 
 /datum/recipe_crafting_station/barrels/small_cheap/ten_mm
-	name = "10mm barrel"
+	name = ".40 barrel"
 	result = /obj/item/part/gun/barrel/magnum/steel
 
 /datum/recipe_crafting_station/barrels/small_cheap/twelve_mm

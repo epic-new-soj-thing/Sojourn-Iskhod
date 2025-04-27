@@ -371,11 +371,11 @@
 
 // Caseless
 /datum/design/autolathe/gun/scaffold
-	name = "GP 10mm Caseless Rifle \"Scaffold\""
+	name = "GP .40 Caseless Rifle \"Scaffold\""
 	build_path = /obj/item/gun/projectile/automatic/scaffold
 
 /datum/design/autolathe/gun/pulse_rifle
-	name = "PAR - 10mm Caseless Pulse Rifle"
+	name = "PAR - .40 Caseless Pulse Rifle"
 	build_path = /obj/item/gun/projectile/automatic/pulse_rifle
 
 /datum/design/autolathe/gun/heavysniper
@@ -387,7 +387,7 @@
 	build_path = /obj/item/gun/matter/launcher/reclaimer
 
 /datum/design/autolathe/gun/survivalrifle
-	name = "Hunters Inc 10mm Caseless \"Bond\" Rifle"
+	name = "Hunters Inc .40 Caseless \"Bond\" Rifle"
 	build_path = /obj/item/gun/projectile/automatic/survivalrifle
 
 /datum/design/autolathe/gun/flare_gun

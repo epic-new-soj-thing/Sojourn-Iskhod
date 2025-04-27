@@ -5,11 +5,11 @@
 //Step delays - default value is 1. Lower value makes bullet go faster, higher value makes bullet go slower.
 //Hollowpoint do extra damage against targets that lack armor sufficient. They should have higher wound mult and lower damage to account for the damage_mult.
 //Wounding multiplier is generally based on bullet width, it affects some damage procs.
-//rifle rounds should generally have lower wounding mult vs handgun rounds(the latter of which are more limited in how many rounds are available, with exception of 9mm/.35)
+//rifle rounds should generally have lower wounding mult vs handgun rounds(the latter of which are more limited in how many rounds are available, with exception of .35/.35)
 
 //Low-caliber pistols and SMGs
 //*********************************//
-///9mm///
+///.35///
 /obj/item/projectile/bullet/pistol_35
 	damage_types = list(BRUTE = 24)
 	armor_divisor = 0.4
@@ -58,7 +58,7 @@
 	damage_types = list(BRUTE = 12, HALLOSS = 22)
 	armor_divisor = 0.4
 	wounding_mult = WOUNDING_SMALL
-	embed = FALSE	//Prob should have a chance to embed, but makes close to no sense to do this for 9mm at least.
+	embed = FALSE	//Prob should have a chance to embed, but makes close to no sense to do this for .35 at least.
 	sharp = FALSE
 	can_ricochet = TRUE
 //	//ricochet_mod = 3 //lower cal rubbers are the most likely to ricochet.
@@ -138,7 +138,7 @@
 
 //Revolvers and high-caliber pistols
 //*********************************//
-/// 10mm Magnum ///
+/// .40 Magnum ///
 
 /obj/item/projectile/bullet/magnum_40
 	icon_state = "bullet_magnum"
@@ -191,7 +191,7 @@
 	damage_types = list(BRUTE = 15, HALLOSS = 30)	//Basically a lower-damage HP but with more agony damage to it. Technically LTL - but not really ideal for it. Crowd-suppression.
 	armor_divisor = 0.5
 	wounding_mult = WOUNDING_SMALL
-	embed = TRUE	//If you shoot someone with a rubber, it will take out an eye - or require surgery if it's high-velocity. Anything over 9mm should, realistically, fuck you up.
+	embed = TRUE	//If you shoot someone with a rubber, it will take out an eye - or require surgery if it's high-velocity. Anything over .35 should, realistically, fuck you up.
 	sharp = FALSE
 	can_ricochet = TRUE
 	//ricochet_mod = 2.5

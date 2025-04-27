@@ -145,7 +145,7 @@
 
 //AMMUNITION
 /datum/supply_pack/thirtyfive_ammo
-	name = "HS 9mm Handgun Ammunition Crate"
+	name = "HS .35 Handgun Ammunition Crate"
 	contains = list(/obj/item/ammo_magazine/ammobox/pistol_35,
 					/obj/item/ammo_magazine/ammobox/pistol_35,
 					/obj/item/ammo_magazine/ammobox/pistol_35,
@@ -156,11 +156,11 @@
 					/obj/item/ammo_magazine/speed_loader_pistol_35,
 					/obj/item/ammo_magazine/speed_loader_pistol_35)
 	cost = 650
-	crate_name = "HS 9mm ammunition crate"
+	crate_name = "HS .35 ammunition crate"
 	group = "Enforcement"
 
 /datum/supply_pack/thirtyfive_ammo_nl
-	name = "HS 9mm Handgun Non-Lethal Ammunition Crate"
+	name = "HS .35 Handgun Non-Lethal Ammunition Crate"
 	contains = list(/obj/item/ammo_magazine/ammobox/pistol_35/rubber,
 					/obj/item/ammo_magazine/ammobox/pistol_35/rubber,
 					/obj/item/ammo_magazine/ammobox/pistol_35/rubber,
@@ -171,11 +171,11 @@
 					/obj/item/ammo_magazine/speed_loader_pistol_35/rubber,
 					/obj/item/ammo_magazine/speed_loader_pistol_35/rubber)
 	cost = 450
-	crate_name = "HS 9mm Non-Lethal ammunition crate"
+	crate_name = "HS .35 Non-Lethal ammunition crate"
 	group = "Enforcement"
 
 /datum/supply_pack/fourty_ammo
-	name = "HS 10mm Ammunition Crate"
+	name = "HS .40 Ammunition Crate"
 	contains = list(/obj/item/ammo_magazine/ammobox/magnum_40,
 					/obj/item/ammo_magazine/ammobox/magnum_40,
 					/obj/item/ammo_magazine/ammobox/magnum_40,
@@ -186,11 +186,11 @@
 					/obj/item/ammo_magazine/speed_loader_magnum_40,
 					/obj/item/ammo_magazine/speed_loader_magnum_40)
 	cost = 750
-	crate_name = "HS 10mm ammunition crate"
+	crate_name = "HS .40 ammunition crate"
 	group = "Enforcement"
 
 /datum/supply_pack/fourty_ammo_nl
-	name = "HS 10mm Non-Lethal Ammunition Crate"
+	name = "HS .40 Non-Lethal Ammunition Crate"
 	contains = list(/obj/item/ammo_magazine/ammobox/magnum_40/rubber,
 					/obj/item/ammo_magazine/ammobox/magnum_40/rubber,
 					/obj/item/ammo_magazine/ammobox/magnum_40/rubber,
@@ -201,7 +201,7 @@
 					/obj/item/ammo_magazine/speed_loader_magnum_40/rubber,
 					/obj/item/ammo_magazine/speed_loader_magnum_40/rubber)
 	cost = 550
-	crate_name = "HS 10mm Non-Lethal ammunition crate"
+	crate_name = "HS .40 Non-Lethal ammunition crate"
 	group = "Enforcement"
 
 /datum/supply_pack/kurz_ammo

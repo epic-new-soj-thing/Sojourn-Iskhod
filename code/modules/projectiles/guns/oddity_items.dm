@@ -17,7 +17,7 @@
 /obj/item/gun/projectile/revolver/mistral/elite
 	name = "\"Elite\" magnum revolver"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
-	Unlike a standard Mistral magnum this one has a bluespace crystal in its cylinder and a weighted barrel for better recoil control. How many bullets does it hold? Uses 10mm Magnum rounds."
+	Unlike a standard Mistral magnum this one has a bluespace crystal in its cylinder and a weighted barrel for better recoil control. How many bullets does it hold? Uses .40 Magnum rounds."
 	max_shells = 60
 	init_recoil = RIFLE_RECOIL(1.1)
 	price_tag = 3000
@@ -165,7 +165,7 @@
 	name = "\"Devil Eye\" pistol"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
 			A small red eye has been painted onto the firing pin of this formerly undepowered pistol, this one has been modified with a better feed mechanism to allow \
-			for deadlier shots. Uses 9mm rounds and can take standard pistol magazines, high cap magazines, or submachine gun mags, even drums!"
+			for deadlier shots. Uses .35 rounds and can take standard pistol magazines, high cap magazines, or submachine gun mags, even drums!"
 	price_tag = 2000
 	gun_parts = null
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_SMG | MAG_WELL_DRUM
@@ -385,7 +385,7 @@
 	mag_well = MAG_WELL_PISTOL | MAG_WELL_H_PISTOL | MAG_WELL_DRUM
 	damage_multiplier = 1.25
 	penetration_multiplier = 1
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_MAGWELL)
 	init_recoil = HANDGUN_RECOIL(0.1)
 
 	init_firemodes = list(
@@ -429,7 +429,7 @@
 	damage_multiplier = 1.5
 	penetration_multiplier = 1.2
 	init_recoil = HANDGUN_RECOIL(0.3)
-	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM, GUN_SILENCABLE, GUN_MAGWELL)
+	gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35, GUN_SILENCABLE, GUN_MAGWELL)
 	serial_type = "BlueCross"
 
 //Weaker spawn but speed is speed

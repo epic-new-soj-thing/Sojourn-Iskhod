@@ -283,10 +283,10 @@
 /* //This mod works fine but if a bullet hits an object it run times, my theory is its trying to make an effect work via rads that isn't coded properly either by ERIS or my bad porting.
 //For now this has been modified to not use rad damage since that has issues.
 */
-//Adds extra burns and toxin damage to 9mm rounds. Acquired through raiding greyson machines or heavy SI investment.
+//Adds extra burns and toxin damage to .35 rounds. Acquired through raiding greyson machines or heavy SI investment.
 /obj/item/gun_upgrade/mechanism/glass_widow
 	name = "Greyson \"Glass Widow\" infuser"
-	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits 9mm weapons only and coats the bullets in dangerous caustic toxins."
+	desc = "An old technology from the Greyson's glory days, used to make formerly useless civilian-grade weaponry into something much more lethal. This mechanism fits .35 weapons only and coats the bullets in dangerous caustic toxins."
 	icon_state = "Glass_Widow"
 	matter = list(MATERIAL_STEEL = 6, MATERIAL_PLASTEEL = 4, MATERIAL_PLATINUM = 4)
 	price_tag = 800
@@ -299,7 +299,7 @@
 		GUN_UPGRADE_DAMAGE_TOX = 10,
 		UPGRADE_BULK = 1
 		)
-	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_9MM)
+	I.req_gun_tags = list(GUN_PROJECTILE, GUN_CALIBRE_35)
 	I.gun_loc_tag = GUN_MECHANISM
 	I.prefix = "infused"
 

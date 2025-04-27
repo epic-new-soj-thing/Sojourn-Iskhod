@@ -6,11 +6,11 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 
 // Marshals section
 /datum/design/autolathe/gun_frame/judiciary
-	name = "9mm judiciary pistol - frame"
+	name = ".35 judiciary pistol - frame"
 	build_path = /obj/item/part/gun/frame/judiciary
 
 /datum/design/autolathe/gun_frame/colt
-	name = "10mm liberty pistol - frame"
+	name = ".40 liberty pistol - frame"
 	build_path = /obj/item/part/gun/frame/colt
 
 /datum/design/autolathe/gun_frame/amnesty
@@ -18,7 +18,7 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	build_path = /obj/item/part/gun/frame/amnesty
 
 /datum/design/autolathe/gun_frame/freedom
-	name = "10mm freedom SMG - frame"
+	name = ".40 freedom SMG - frame"
 	build_path = /obj/item/part/gun/frame/freedom
 
 /datum/design/autolathe/gun_frame/judge
@@ -48,15 +48,15 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 //Marshal Surplus
 
 /datum/design/autolathe/gun_frame/glock
-	name = "9mm sky - frame"
+	name = ".35 sky - frame"
 	build_path = /obj/item/part/gun/frame/glock
 
 /datum/design/autolathe/gun_frame/ladon
-	name = "10mm ladon - frame"
+	name = ".40 ladon - frame"
 	build_path = /obj/item/part/gun/frame/ladon
 
 /datum/design/autolathe/gun_frame/grease
-	name = "9mm greasegun/texan - frame"
+	name = ".35 greasegun/texan - frame"
 	build_path = /obj/item/part/gun/frame/grease
 
 /datum/design/autolathe/gun_frame/canine

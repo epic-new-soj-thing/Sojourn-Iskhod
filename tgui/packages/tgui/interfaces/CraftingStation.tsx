@@ -40,8 +40,8 @@ const categorySortingOrder = [
 ];
 
 const subcategorySortingOrder = [
-  '9mm',
-  '10mm magnum',
+  '.35',
+  '.40 magnum',
   '12mm heavy pistol',
   'shotgun shell',
   '6.5mm carbine',

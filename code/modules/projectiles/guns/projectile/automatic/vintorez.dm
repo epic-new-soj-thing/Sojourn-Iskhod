@@ -31,7 +31,7 @@
 	serial_type = "EXC"
 
 	wield_delay = 1.4 SECOND
-	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class assault rifle. Why is this 7.5mm instead of 9mm? I'll never know.
+	wield_delay_factor = 0.4 // 40 vig to insta wield , heavy class assault rifle. Why is this 7.5mm instead of .35? I'll never know.
 	gun_parts = list(/obj/item/part/gun/frame/vintorez = 1, /obj/item/part/gun/grip/excel = 1, /obj/item/part/gun/mechanism/autorifle = 1, /obj/item/part/gun/barrel/lrifle = 1)
 
 /obj/item/gun/projectile/automatic/vintorez/NM_colony

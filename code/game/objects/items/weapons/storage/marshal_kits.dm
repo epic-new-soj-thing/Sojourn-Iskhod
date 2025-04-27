@@ -152,7 +152,7 @@
 
 /obj/item/storage/box/m_kit/liberty
 	name = "Liberty Secondary Kit"
-	desc = "The standard Marshal box kit containing a Liberty pistol. A 10mm Magnum pistol made by a local Marshal gunsmith near you!"
+	desc = "The standard Marshal box kit containing a Liberty pistol. A .40 Magnum pistol made by a local Marshal gunsmith near you!"
 
 	populate_contents()
 		new /obj/item/gun/projectile/colt/liberty(src)
@@ -163,7 +163,7 @@
 
 /obj/item/storage/box/m_kit/mistral
 	name = "Mistral Secondary Kit" //WO gets a mateba and with how rest of the weapons are set up, makes sense
-	desc = "The standard Marshal box kit containing a Mistral revolver. A 10mm Magnum revolver used primarily by old timers due to it's reliability and meaty punch.\
+	desc = "The standard Marshal box kit containing a Mistral revolver. A .40 Magnum revolver used primarily by old timers due to it's reliability and meaty punch.\
 	'Do I Feel Lucky?' Well, Do Ya... PUNK?"
 
 	populate_contents()
@@ -175,7 +175,7 @@
 
 /obj/item/storage/box/m_kit/judiciary
 	name = "Judiciary Secondary Kit"
-	desc = "The standard Marshal box kit containing a Judicary 9mm pistol. The staple icon of the Marshals, commonly found on most hiring posters! \
+	desc = "The standard Marshal box kit containing a Judicary .35 pistol. The staple icon of the Marshals, commonly found on most hiring posters! \
 	Known for its low recoil, ability to fit a durm magazine and being an overall reliable workhorse."
 
 	populate_contents()

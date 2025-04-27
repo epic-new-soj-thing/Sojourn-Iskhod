@@ -242,7 +242,7 @@
 	)
 
 /datum/craft_recipe/gun/luty
-	name = "Handmade SMG 9mm \"Luty\""
+	name = "Handmade SMG .35 \"Luty\""
 	result = /obj/item/gun/projectile/automatic/luty
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL),

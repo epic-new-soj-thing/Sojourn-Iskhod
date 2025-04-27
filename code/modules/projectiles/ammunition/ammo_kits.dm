@@ -51,22 +51,22 @@
 
 	var/list/array = list(
 		CAL_PISTOL = list(
-			"5 points, 15 ammo: Scrap 9mm ammo pile" = list(5, /obj/item/ammo_casing/pistol_35/scrap/prespawned),
-			"3 points, 6 ammo: Scrap 9mm speedloader" = list(3, /obj/item/ammo_magazine/speed_loader_pistol_35/scrap),
-			"12 points, 30 ammo: Scrap 9mm ammo box" = list(12, /obj/item/ammo_magazine/ammobox/pistol_35/scrap),
-			"8 points, 15 ammo: 9mm ammo pile" = list(8, /obj/item/ammo_casing/pistol_35/prespawned),
-			"18 points, 30 ammo: 9mm ammo box" = list(18, /obj/item/ammo_magazine/ammobox/pistol_35),
-			"5 points: EMPTY 9mm pistol magazine" = list(5, /obj/item/ammo_magazine/pistol_35/empty),
-			"7 points: EMPTY 9mm extended magazine" = list(7, /obj/item/ammo_magazine/highcap_pistol_35/empty),
-			"9 points: EMPTY 9mm SMG magazine" = list(12, /obj/item/ammo_magazine/smg_35/empty)
+			"5 points, 15 ammo: Scrap .35 ammo pile" = list(5, /obj/item/ammo_casing/pistol_35/scrap/prespawned),
+			"3 points, 6 ammo: Scrap .35 speedloader" = list(3, /obj/item/ammo_magazine/speed_loader_pistol_35/scrap),
+			"12 points, 30 ammo: Scrap .35 ammo box" = list(12, /obj/item/ammo_magazine/ammobox/pistol_35/scrap),
+			"8 points, 15 ammo: .35 ammo pile" = list(8, /obj/item/ammo_casing/pistol_35/prespawned),
+			"18 points, 30 ammo: .35 ammo box" = list(18, /obj/item/ammo_magazine/ammobox/pistol_35),
+			"5 points: EMPTY .35 pistol magazine" = list(5, /obj/item/ammo_magazine/pistol_35/empty),
+			"7 points: EMPTY .35 extended magazine" = list(7, /obj/item/ammo_magazine/highcap_pistol_35/empty),
+			"9 points: EMPTY .35 SMG magazine" = list(12, /obj/item/ammo_magazine/smg_35/empty)
 			),
 		CAL_MAGNUM = list(
-			"3 points, 6 ammo: Scrap 10mm ammo pile" = list(3, /obj/item/ammo_casing/magnum_40/scrap/prespawned),
-			"15 points, 30 ammo: Scrap 10mm ammo box" = list(15, /obj/item/ammo_magazine/ammobox/magnum_40/scrap),
-			"5 points, 6 ammo: Scrap 10mm speedloader" = list(5, /obj/item/ammo_magazine/speed_loader_magnum_40/scrap),
-			"7 points, 6 ammo: 10mm magnum ammo pile" = list(7, /obj/item/ammo_casing/magnum_40/prespawned),
-			"26 points, 30 ammo: 10mm ammo box" = list(26, /obj/item/ammo_magazine/ammobox/magnum_40),
-			"7 points: EMPTY 10mm pistol magazine" = list(7, /obj/item/ammo_magazine/magnum_40/empty)
+			"3 points, 6 ammo: Scrap .40 ammo pile" = list(3, /obj/item/ammo_casing/magnum_40/scrap/prespawned),
+			"15 points, 30 ammo: Scrap .40 ammo box" = list(15, /obj/item/ammo_magazine/ammobox/magnum_40/scrap),
+			"5 points, 6 ammo: Scrap .40 speedloader" = list(5, /obj/item/ammo_magazine/speed_loader_magnum_40/scrap),
+			"7 points, 6 ammo: .40 magnum ammo pile" = list(7, /obj/item/ammo_casing/magnum_40/prespawned),
+			"26 points, 30 ammo: .40 ammo box" = list(26, /obj/item/ammo_magazine/ammobox/magnum_40),
+			"7 points: EMPTY .40 pistol magazine" = list(7, /obj/item/ammo_magazine/magnum_40/empty)
 			),
 		CAL_50 = list(
 			"8 points, 6 ammo: 12mm ammo pile" = list(8, /obj/item/ammo_casing/kurz_50/prespawned),

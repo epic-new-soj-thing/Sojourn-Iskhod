@@ -209,7 +209,7 @@
 
 /obj/item/storage/deferred/crate/sidearm
 	name = "sidearm crate"
-	desc = "A crate containing six Makarov 9mm pistols, 200 rounds of ammunition, and six fixed-blade combat knives."
+	desc = "A crate containing six Makarov .35 pistols, 200 rounds of ammunition, and six fixed-blade combat knives."
 	icon_state = "serbcrate_deferred_green"
 	initial_contents = list(/obj/item/gun/projectile/makarov = 6,
 	/obj/item/ammo_magazine/highcap_pistol_35  = 20,

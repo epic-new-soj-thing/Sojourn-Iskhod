@@ -137,10 +137,10 @@
 		/datum/design/autolathe/container/ammocan_ih,
 		)
 
-// 10mm Magnum
+// .40 Magnum
 
 /obj/item/pc_part/drive/disk/design/guns/judiciary
-	disk_name = "NM - 9mm Judiciary"
+	disk_name = "NM - .35 Judiciary"
 	icon_state = "marshal"
 
 	license = 8
@@ -153,7 +153,7 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/guns/liberty
-	disk_name = "NM - 10mm Liberty"
+	disk_name = "NM - .40 Liberty"
 	icon_state = "marshal"
 
 	license = 8
@@ -166,7 +166,7 @@
 		)
 
 /obj/item/pc_part/drive/disk/design/guns/freedom
-	disk_name = "NM - 10mm Freedom SMG"
+	disk_name = "NM - .40 Freedom SMG"
 	icon_state = "marshal"
 
 	license = 12
@@ -291,7 +291,7 @@
 		/datum/design/autolathe/ammo/rifle_lethal = 4,
 	)
 
-//10mm Guns
+//.40 Guns
 
 /obj/item/pc_part/drive/disk/design/guns/specop
 	disk_name = "NM - 10x24mm Caseless /'Spec-Op/' SMG"

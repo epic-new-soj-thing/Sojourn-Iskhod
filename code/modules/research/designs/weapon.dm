@@ -30,7 +30,7 @@
 
 /datum/design/research/item/weapon/c20r
 	name = "Lightweight C20R"
-	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses 9mm rounds."
+	desc = "The C-20r is a lightweight and rapid-firing SMG. Uses .35 rounds."
 	build_path = /obj/item/gun/projectile/automatic/c20r/sci
 
 /datum/design/research/item/weapon/centurio
@@ -186,50 +186,50 @@
 	category = "Ammo"
 
 /datum/design/research/item/ammo/pistol/empty
-	name = "Pistol Magazine 9mm (Empty)"
-	desc = "An empty magazine for pistols, chambered for 9mm"
+	name = "Pistol Magazine .35 (Empty)"
+	desc = "An empty magazine for pistols, chambered for .35"
 	build_path = /obj/item/ammo_magazine/pistol_35/empty
 	materials = list(MATERIAL_STEEL = 3)
 
 /datum/design/research/item/ammo/pistol
-	name = "Pistol Magazine 9mm"
-	desc = "A magazine for pistols, chambered for 9mm"
+	name = "Pistol Magazine .35"
+	desc = "A magazine for pistols, chambered for .35"
 	build_path = /obj/item/ammo_magazine/pistol_35
 	materials = list(MATERIAL_STEEL = 8)
 
 /datum/design/research/item/ammo/pistol/rubber
-	name = "Pistol Magazine 9mm (Rubber)"
-	desc = "A magazine for pistols, chambered for 9mm rubber"
+	name = "Pistol Magazine .35 (Rubber)"
+	desc = "A magazine for pistols, chambered for .35 rubber"
 	build_path = /obj/item/ammo_magazine/pistol_35/rubber
 	materials = list(MATERIAL_STEEL = 6, MATERIAL_PLASTIC = 3)
 
 /datum/design/research/item/ammo/smg_mag
-	name = "SMG Magazine 9mm (Empty) "
-	desc = "A magazine for 9mm, used in smgs."
+	name = "SMG Magazine .35 (Empty) "
+	desc = "A magazine for .35, used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35/empty
 	materials = list(MATERIAL_STEEL = 15)
 
 /datum/design/research/item/ammo/smg_mag/lethal
-	name = "SMG Magazine 9mm"
-	desc = "A magazine for 9mm, used in smgs."
+	name = "SMG Magazine .35"
+	desc = "A magazine for .35, used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35
 	materials = list(MATERIAL_STEEL = 30)
 
 /datum/design/research/item/ammo/smg_mag/rubber
-	name = "SMG Magazine 9mm (Rubber)"
-	desc = "A magazine for 9mm (Rubber), used in smgs."
+	name = "SMG Magazine .35 (Rubber)"
+	desc = "A magazine for .35 (Rubber), used in smgs."
 	build_path = /obj/item/ammo_magazine/smg_35/rubber
 	materials = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5)
 
 /datum/design/research/item/ammo/pistol_laser
-	name = "Specialized Magaine 9mm, laser"
-	desc = "Auto 9mm cases fitted with a one time use laser payload."
+	name = "Specialized Magaine .35, laser"
+	desc = "Auto .35 cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/pistol_35/laser
 	materials = list(MATERIAL_STEEL = 9, MATERIAL_GLASS = 9, MATERIAL_GOLD = 4.5)
 
 /datum/design/research/item/ammo/magum_laser
-	name = "Magnum 10mm, laser case"
-	desc = "Magnum 10mm cases fitted with a one time use laser payload."
+	name = "Magnum .40, laser case"
+	desc = "Magnum .40 cases fitted with a one time use laser payload."
 	build_path = /obj/item/ammo_magazine/ammobox/magnum_40/laser
 	materials = list(MATERIAL_STEEL = 7, MATERIAL_GLASS = 7, MATERIAL_GOLD = 3.5)
 

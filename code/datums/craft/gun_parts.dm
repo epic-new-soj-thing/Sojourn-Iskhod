@@ -397,7 +397,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 /obj/item/part/gun/barrel
 	name = "generic barrel"
 	desc = "A gun barrel, which keeps the bullet going in the right direction."
-	icon_state = "barrel_9mm"
+	icon_state = "barrel_.35"
 	generic = FALSE
 	matter = list(MATERIAL_PLASTEEL = 4)
 	price_tag = 200
@@ -405,16 +405,16 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	var/refence_for_legal = "baseline"
 
 /obj/item/part/gun/barrel/pistol
-	name = "9mm pistol barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 9mm."
-	icon_state = "barrel_9mm"
+	name = ".35 pistol barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .35."
+	icon_state = "barrel_.35"
 	price_tag = 100
 	caliber = CAL_PISTOL
 	refence_for_legal = "pistol"
 
 /obj/item/part/gun/barrel/magnum
-	name = "10mm pistol barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 10mm."
+	name = ".40 pistol barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .40."
 	icon_state = "barrel_10mm"
 	price_tag = 125
 	caliber = CAL_MAGNUM
@@ -478,14 +478,14 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 
 // steel barrels
 /obj/item/part/gun/barrel/pistol/steel
-	name = "cheap 9mm barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 9mm. \
+	name = "cheap .35 barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .35. \
 			This one does not look as high quality."
 	matter = list(MATERIAL_STEEL = 2)
 
 /obj/item/part/gun/barrel/magnum/steel
-	name = "cheap 10mm barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 10mm. \
+	name = "cheap .40 barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .40. \
 			This one does not look as high quality."
 	matter = list(MATERIAL_STEEL = 2)
 
