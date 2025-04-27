@@ -178,13 +178,13 @@
 /obj/item/gun/projectile/boltgun/lever/handcock
 	name = "\"Handcock\" lever action rifle"
 	desc = "An anomalous weapon created by an unknown person (or group?), their work marked by a blue cross, these items are known to vanish and reappear when left alone. \
-			This lever action rifle seems to be masterfully rebored, its loading port skillfully enlarged to allow 14.5mm anti-materiel rounds to be loaded! \
+			This lever action rifle seems to be masterfully rebored, its loading port skillfully enlarged to allow .60-06 anti-materiel rounds to be loaded! \
 			Wild-west styled antimateriel rifle... who would have thought?"
 	icon = 'icons/obj/guns/projectile/lever.dmi'
 	icon_state = "lever"
 	item_state = "lever"
 	fire_sound = 'sound/weapons/guns/fire/sniper.ogg' // High caliber but not AMR sound
-	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE) //Doesn't take a silencer cuz thats just mean, also 14.5 AMR
+	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG, GUN_SCOPE) //Doesn't take a silencer cuz thats just mean, also .60-06 AMR
 	bolt_training = FALSE
 	caliber = CAL_ANTIM
 	max_shells = 4

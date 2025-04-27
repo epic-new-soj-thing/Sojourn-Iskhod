@@ -482,12 +482,12 @@
 	matter = list(MATERIAL_CARDBOARD = 1)
 	max_ammo = 50
 
-//// 14.5×114mm ////
+//// .60-06 ////
 
 /obj/item/ammo_magazine/ammobox/antim
-	name = "ammunition box (14.5mm AP)"
+	name = "ammunition box (.60-06 AP)"
 	icon_state = "antim"
-	desc = "A box of large 14.5×114mm antimateriel rounds."
+	desc = "A box of large .60-06 antimateriel rounds."
 	matter = list(MATERIAL_CARDBOARD = 1)
 	w_class = ITEM_SIZE_BULKY
 	caliber = CAL_ANTIM
@@ -495,7 +495,7 @@
 	max_ammo = 30
 
 /obj/item/ammo_magazine/ammobox/antim_small
-	name = "ammunition packet (14.5mm AP)"
+	name = "ammunition packet (.60-06 AP)"
 	icon_state = "60-06sm"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_ANTIM
@@ -504,7 +504,7 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/ammobox/antim_small/incend
-	name = "ammunition packet (14.5mm Incendiary)"
+	name = "ammunition packet (.60-06 Incendiary)"
 	icon_state = "60-06sm"
 	matter = list(MATERIAL_CARDBOARD = 1)
 	caliber = CAL_ANTIM
@@ -513,7 +513,7 @@
 	max_ammo = 15
 
 /obj/item/ammo_magazine/ammobox/antim/scrap
-	name = "ammunition box (old 14.5mm Anti-Materiel)"
+	name = "ammunition box (old .60-06 Anti-Materiel)"
 	icon_state = "antim_s"
 	ammo_type = /obj/item/ammo_casing/antim/scrap
 	max_ammo = 5

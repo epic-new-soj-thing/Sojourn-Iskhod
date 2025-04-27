@@ -439,28 +439,28 @@ GLOBAL_LIST_EMPTY(all_crafting_station_recipes)
 	point_cost = 30
 	result = /obj/item/ammo_magazine/heavy_rifle_408_drum/empty
 
-// 14.5mm
+// .60-06
 /datum/recipe_crafting_station/ammo/antim
 	category = "Long Arms Ammo"
 	subcategory = CAL_ANTIM
 
 /datum/recipe_crafting_station/ammo/antim/scrap_pile
-	name = "Scrap 14.5mm ammo pile"
+	name = "Scrap .60-06 ammo pile"
 	point_cost = 5
 	result = /obj/item/ammo_casing/antim/scrap/prespawned
 
 /datum/recipe_crafting_station/ammo/antim/scrap_box
-	name = "Scrap 14.5mm ammo box"
+	name = "Scrap .60-06 ammo box"
 	point_cost = 10
 	result = /obj/item/ammo_magazine/ammobox/antim/scrap
 
 /datum/recipe_crafting_station/ammo/antim/pile
-	name = "14.5mm ammo pile"
+	name = ".60-06 ammo pile"
 	point_cost = 10
 	result = /obj/item/ammo_casing/antim/prespawned
 
 /datum/recipe_crafting_station/ammo/antim/packet
-	name = "14.5mm ammo packet"
+	name = ".60-06 ammo packet"
 	point_cost = 26
 	result = /obj/item/ammo_magazine/ammobox/antim_small // Same price as every packet for half the ammo, otherwise impossible to get
 

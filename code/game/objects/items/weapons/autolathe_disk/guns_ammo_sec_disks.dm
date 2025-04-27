@@ -730,7 +730,7 @@
 // Heavy
 
 /obj/item/pc_part/drive/disk/design/guns/heavysniper
-	disk_name = "SA - 14.5×114mm Penetrator AMR"
+	disk_name = "SA - .60-06 Penetrator AMR"
 	icon_state = "sa"
 
 	license = 8

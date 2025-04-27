@@ -311,7 +311,7 @@
 	build_path = /obj/item/part/gun/barrel/shotgun
 
 /datum/design/autolathe/part/barrel/amr
-	name = "firearm 14.5mm anti-materiel rifle barrel"
+	name = "firearm .60-06 anti-materiel rifle barrel"
 	build_path = /obj/item/part/gun/barrel/antim
 
 // Bootleg steel parts - for the shitty disk.

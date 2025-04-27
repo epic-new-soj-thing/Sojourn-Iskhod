@@ -469,8 +469,8 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 	refence_for_legal = "shotgun"
 
 /obj/item/part/gun/barrel/antim
-	name = "14.5mm AMR barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered in 14.5mm AMR."
+	name = ".60-06 AMR barrel"
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered in .60-06 AMR."
 	icon_state = "barrel_amr"
 	matter = list(MATERIAL_PLASTEEL = 16)
 	caliber = CAL_ANTIM
@@ -515,7 +515,7 @@ Make it so steel parts fit into any gun you want but can 'break', or cause jams.
 
 /obj/item/part/gun/barrel/hrifle/steel
 	name = "cheap .408 heavy rifle barrel"
-	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for .408 heavy rifle. \
+	desc = "A gun barrel, which keeps the bullet going in the right direction. Chambered for 8.6mm heavy rifle. \
 			This one does not look as high quality."
 	icon_state = "barrel_heavy"
 	matter = list(MATERIAL_STEEL = 14)

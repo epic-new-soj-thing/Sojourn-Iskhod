@@ -280,7 +280,7 @@
 			list(name="Grenade Box (Frag)", cost=5400, path=/obj/item/storage/box/frag_grenade_shells),
 			list(name="Grenade Box (EMP)", cost=5400, path=/obj/item/storage/box/emp_grenade_shells),
 		".60-06 AP, Anti-Materiel",
-			list(name="Box (14.5×114mm AP)", cost=12000, path=/obj/item/ammo_magazine/ammobox/antim),
+			list(name="Box (.60-06 AP)", cost=12000, path=/obj/item/ammo_magazine/ammobox/antim),
 			list(name=".60-06 Anti-Materiel Red-Nose", cost=2000, path=/obj/item/ammo_casing/antim/lethal/prespawned),
 			list(name=".60-06 Anti-Materiel Off-Switch", cost=2000, path=/obj/item/ammo_casing/antim/ion/prespawned),
 			list(name=".60-06 Anti-Materiel Willy-Pete", cost=2000, path=/obj/item/ammo_casing/antim/incend/prespawned),

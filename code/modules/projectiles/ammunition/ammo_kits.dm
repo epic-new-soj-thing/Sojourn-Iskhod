@@ -121,10 +121,10 @@
 			"30 points: EMPTY heavy rifle drum magazine" = list(30, /obj/item/ammo_magazine/heavy_rifle_408_drum/empty)
 			),
 		CAL_ANTIM = list(
-			"5 points, 3 ammo: Scrap 14.5mm ammo pile" = list(5, /obj/item/ammo_casing/antim/scrap/prespawned),
-			"10 points, 5 ammo: Scrap 14.5mm ammo box" = list(10, /obj/item/ammo_magazine/ammobox/antim/scrap),
-			"10 points, 3 ammo: 14.5mm ammo pile" = list(10, /obj/item/ammo_casing/antim/prespawned),
-			"28 points, 15 ammo: 14.5mm ammo box" = list(26, /obj/item/ammo_magazine/ammobox/antim_small) // Same price as every packet for half the ammo, otherwise impossible to get
+			"5 points, 3 ammo: Scrap .60-06 ammo pile" = list(5, /obj/item/ammo_casing/antim/scrap/prespawned),
+			"10 points, 5 ammo: Scrap .60-06 ammo box" = list(10, /obj/item/ammo_magazine/ammobox/antim/scrap),
+			"10 points, 3 ammo: .60-06 ammo pile" = list(10, /obj/item/ammo_casing/antim/prespawned),
+			"28 points, 15 ammo: .60-06 ammo box" = list(26, /obj/item/ammo_magazine/ammobox/antim_small) // Same price as every packet for half the ammo, otherwise impossible to get
 			),
 		CAL_FLARE = list(
 			"1 point: old flare x1" = list(1, /obj/item/ammo_casing/flare/old),

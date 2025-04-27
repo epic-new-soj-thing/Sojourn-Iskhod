@@ -660,7 +660,7 @@
 	affective_ap_range = 5
 	recoil = 12
 
-//// 14.5×114mm Anti-Materiel Rifle Rounds ////
+//// .60-06 Anti-Materiel Rifle Rounds ////
 /obj/item/projectile/bullet/antim
 	damage_types = list(BRUTE = 60)
 	armor_divisor = 10
