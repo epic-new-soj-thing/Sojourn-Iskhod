@@ -29,7 +29,7 @@
 	var/turn_on_sound = 'sound/effects/Custom_flashlight.ogg'
 
 	//Advanced T-rays can find hidden stashes and boxes
-	var/advanced = FALSE
+	var/advanced = TRUE //FALSE // CFW - Enabling this on request
 	/*Enabled and active are seperate things.
 	Enabled determines the power status. Is the scanner turned on or not?
 	The scanner is enabled as long as it has power, and the power switch is turned on. While enabled it will use power
@@ -58,7 +58,7 @@
 	name = "\improper High-Power T-ray scanner"
 	desc = "A terahertz-ray emitter and scanner used to detect underfloor objects such as cables and pipes. This one scans deeper and more clearly showing hidden storage objects."
 	advanced = TRUE
-	active_power_usage = 75 //3x the Watts of a normal one
+	active_power_usage = 25 //3x the Watts of a normal one
 	icon_swap_to_old = FALSE // We start looking soj fancy
 
 /obj/item/device/t_scanner/verb/toggle_style()

@@ -42,9 +42,17 @@ GLOBAL_LIST_EMPTY(spawntypes)
 
 // Outsider spawn stuff
 /obj/landmark/join/late/cryo/outsider
-	name = "Outsider old-cyro spawn"
+	name = "Outsider old-cryo spawn"
 	icon_state = "player-blue-cluster"
 	join_tag = "starboard_late_cryo"
+	message = null
+	spawn_datum_type = /datum/spawnpoint/cryo/outsider
+	restrict_job = list("Outsider")
+
+/obj/landmark/join/late/cryo_outsider
+	name = "Outsider Outpost"
+	icon_state = "player-blue-cluster"
+	join_tag = "aft_late_cryo"
 	message = null
 	spawn_datum_type = /datum/spawnpoint/cryo/outsider
 	restrict_job = list("Outsider")
