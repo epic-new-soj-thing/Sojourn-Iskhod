@@ -134,8 +134,7 @@
 /mob/living/carbon/superior/vox/scout
 	name = "Dikhindoj Ciriklo"
 	desc = "A small predator native to these lands. They are known for their limited craftsmanship and manipulation of objects. This one is caked with dirt and grime, with a shank in its hands and plates of crude scrap armor on its chest."
-//	icon_state = "vox_brave"
-	icon_state = "grayscale" // CFW - Quickfix, vox_brave doesn't exist
+	icon_state = "vox_brave"
 
 	melee_damage_lower = 23
 	melee_damage_upper = 20

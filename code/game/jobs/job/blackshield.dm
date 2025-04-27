@@ -132,7 +132,6 @@
 	wage = WAGE_PROFESSIONAL
 	health_modifier = 5
 	disallow_species = list(FORM_AGSYNTH, FORM_NASHEF)
-	playtimerequired = 240 //4 hours
 
 	outfit_type = /decl/hierarchy/outfit/job/blackshield/medspec
 
@@ -184,7 +183,7 @@
 	supervisors = "the Blackshield Commander"
 	difficulty = "Hard."
 	noob_name = "Blackshield Cadet"
-//	alt_titles = list("Blackshield Cadet")
+	alt_titles = list("Blackshield Cadet")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 10
@@ -234,8 +233,8 @@
 	department = DEPARTMENT_BLACKSHIELD
 	department_flag = BLACKSHIELD
 	faction = MAP_FACTION
-	total_positions = 3 //2
-	spawn_positions = 3 //2
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the Blackshield Commander"
 	difficulty = "Easy."
 	selection_color = "#a7bbc6"
