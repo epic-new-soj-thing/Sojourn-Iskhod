@@ -230,7 +230,7 @@
 							/datum/design/research/item/weapon/katana,
 							/datum/design/research/item/ammo/rifle_75,
 							/datum/design/research/item/ammo/light_rifle_257,
-							/datum/design/research/item/ammo/kurz_laser)
+							/datum/design/research/item/ammo/kurtz_laser)
 
 /datum/technology/exotic_gunmods
 	name = "Experimental Gunmods"

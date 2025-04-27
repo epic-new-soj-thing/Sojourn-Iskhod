@@ -771,7 +771,7 @@
 	)
 
 /datum/craft_recipe/guild/kit
-	name = "Kurz's refinement kit"
+	name = "Kurtz's refinement kit"
 	result = /obj/item/gun_upgrade/mechanism/upgrade_kit
 	icon_state = "gun"
 	steps = list(
