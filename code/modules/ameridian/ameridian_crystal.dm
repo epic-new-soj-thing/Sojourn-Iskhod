@@ -43,7 +43,7 @@
 	update_icon()
 	if(is_growing)
 		addtimer(CALLBACK(src, PROC_REF(spread)), rand(fast_improvement,slow_improvement))
-	if(!randomized_colour)
+	if(!randomized_color)
 		gooners()
 		return
 	if(prob(33))
