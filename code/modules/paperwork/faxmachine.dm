@@ -168,7 +168,7 @@ var/last_staff_request_time = 0
 	var/jobname = input(usr, "Enter job name (optional):", "Job Name", "") as text
 	// Send the ping to the Discord relay (AphroditeBot.py expects TCP or webhook, here we use send2irc)
 	var/ping_id = null
-	switch(ping_id)
+	switch(role_to_ping)
 		if("Low Council") ping_id = "1342911886361890907"
 		if("Artificer's Guild") ping_id = "1342911983673933936"
 		if("Church") ping_id = "1342912183415083078"
