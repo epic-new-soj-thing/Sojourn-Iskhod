@@ -163,27 +163,44 @@ var/last_staff_request_time = 0
     updateUsrDialog()
 
 /obj/machinery/photocopier/faxmachine/proc/request_roles(var/role_to_ping)
-	// Optionally, you can prompt for reason/jobname here as well
-	var/reason = input(usr, "Enter reason for request:", "Request Reason", "Unspecified") as text
-	var/jobname = input(usr, "Enter job name (optional):", "Job Name", "") as text
-	// Send the ping to the Discord relay (AphroditeBot.py expects TCP or webhook, here we use send2irc)
-	var/ping_id = null
-	switch(role_to_ping)
-		if("Low Council") ping_id = "1342911886361890907"
-		if("Artificer's Guild") ping_id = "1342911983673933936"
-		if("Church") ping_id = "1342912183415083078"
-		if("Prospectors") ping_id = "1342912254600806400"
-		if("Security Roles") ping_id = "1342913722276118659"
-		if("SI Medical") ping_id = "1342912277514420267"
-		if("SI Research") ping_id = "1342912405176324269"
-		if("LSS Cargo") ping_id = "1342912457156329595"
-		if("LSS Service") ping_id = "1342912586802266193"
-	if(ping_id)
-		var/requester = (usr && usr.name) ? usr.name : "Unknown"
-		// Add channel id for department pings
-		var/msg = "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester + " channel:1345434730597843095"
-		send2irc(msg)
-	to_chat(usr, span_notice("Your request was transmitted."))
+    // Optionally, you can prompt for reason/jobname here as well
+    var/reason = input(usr, "Enter reason for request:", "Request Reason", "Unspecified") as text
+    var/jobname = input(usr, "Enter job name (optional):", "Job Name", "") as text
+    // Send the ping to the Discord relay (AphroditeBot.py expects TCP or webhook, here we use send2irc)
+    var/ping_id = null
+    switch(role_to_ping)
+        if("Low Council")
+            ping_id = "1342911886361890907"
+        if("Artificer's Guild")
+            ping_id = "1342911983673933936"
+        if("Church")
+            ping_id = "1342912183415083078"
+        if("Prospectors")
+            ping_id = "1342912254600806400"
+        if("Security Roles")
+            ping_id = "1342913722276118659"
+        if("SI Medical")
+            ping_id = "1342912277514420267"
+        if("SI Research")
+            ping_id = "1342912405176324269"
+        if("LSS Cargo")
+            ping_id = "1342912457156329595"
+        if("LSS Service")
+            ping_id = "1342912586802266193"
+
+    // Debug logging to check if ping_id is set
+    to_chat(usr, span_notice("Debug: role_to_ping=[role_to_ping], ping_id=[ping_id]"))
+
+    if(ping_id)
+        var/requester = (usr && usr.name) ? usr.name : "Unknown"
+        // Add channel id for department pings
+        var/msg = "ping:" + ping_id + " Job Request: " + jobname + " (" + reason + ") requested by " + requester + " channel:1345434730597843095"
+        to_chat(usr, span_notice("Debug: Sending message: [msg]"))
+        send2irc(msg)
+    else
+        to_chat(usr, span_warning("Error: Could not find ping_id for department: [role_to_ping]"))
+
+    to_chat(usr, span_notice("Your request was transmitted."))
 
 /obj/machinery/photocopier/faxmachine/proc/sendfax(var/destination)
     if(stat & (BROKEN|NOPOWER))
