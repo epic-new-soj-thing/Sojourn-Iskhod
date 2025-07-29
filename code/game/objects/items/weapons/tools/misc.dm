@@ -51,8 +51,8 @@
 	workspeed = 0.8
 
 /obj/item/tool/polytool/marqua
-	name = "Mar'quaian polytool"
-	desc = "An ergonomic cell loading polytool, made of a strange alloy, and seemingly constructed without any screws welds or bolts on its surface, perfectly polished. Uses a medium cell."
+	name = "Mar'quaian engineering polytool"
+	desc = "An ergonomic cell loading polytool consisting of an arc-welder like design with far more intricate measures taken to allow it to complete near-any mechanical task, made of a strange alloy, and seemingly constructed without any screws welds or bolts on its surface, perfectly polished. Uses a medium cell."
 	icon_state = "skrell_welder_arc"
 	item_state = "skrell_welder_arc"
 	w_class = ITEM_SIZE_NORMAL
@@ -129,8 +129,8 @@
 	workspeed = 1.1 //Can't be upgraded and its locked behind a race that can literally get no other implants but this one, which can't be upgraded, so its slightly better. -Kaz
 
 /obj/item/tool/medmultitool/marqua
-	name = "Mar'quaian medical poly tool"
-	desc = "A complicated mess of medical tools in a single tool, this intricate mess of a tool in a handle has it all, its made of a strange alloy yet still has a slot under it for fuel."
+	name = "Mar'quaian medical omnitool"
+	desc = "A complicated mess of medical tools in a single cell-loading tool, this intricate and sleek tool in a small handle has it all, its made of a strange alloy and is seemingly constructed without any screws welds or bolts on its surface, perfectly polished. Uses a medium cell."
 	icon_state = "clustertool"
 	item_state = "clustertool"
 	max_health = 300
