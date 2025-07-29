@@ -243,8 +243,8 @@
 				if(is_dead(M))
 					// Calculate points based on mob's research_value variable
 					var/points_to_award = 50 // Default fallback value
-					if(M.vars.Find("research_value"))
-						points_to_award = M.research_value
+					if("research_value" in M.vars)
+						points_to_award = M.vars["research_value"]
 
 					user.visible_message("[user] drives [src.name] into [M.name]'s body, deconstructing it!", "You drive the [src.name] into [M.name], extracting research data")
 					msg_admin_attack("[user] deconned [M.name] - ([user.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[M.x];Y=[M.y];Z=[M.z]'>JMP</a>)")

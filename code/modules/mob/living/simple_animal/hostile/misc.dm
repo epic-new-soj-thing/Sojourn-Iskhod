@@ -88,7 +88,6 @@
 	density = 0
 	mob_size = MOB_TINY
 	sanity_damage = -1
-	research_value = 75
 
 /mob/living/simple/tindalos
 	name = "tindalos"
@@ -113,7 +112,6 @@
 	//Schlorgo is a fucking mess
 	inherent_mutations = list(MUTATION_DWARFISM, MUTATION_NO_PAIN, MUTATION_UNBALANCED, MUTATION_IMBECILE, MUTATION_TOURETTES)
 	sanity_damage = -1
-	research_value = 85
 
 /mob/living/simple/hostile/snake
 	name = "viper"

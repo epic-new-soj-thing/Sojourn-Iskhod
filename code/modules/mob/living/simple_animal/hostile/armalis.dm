@@ -25,7 +25,7 @@
 	speed = 2
 
 	a_intent = I_HURT
-	research_value = 400
+	var/research_value = 400
 
 
 /mob/living/simple/armalis/armored

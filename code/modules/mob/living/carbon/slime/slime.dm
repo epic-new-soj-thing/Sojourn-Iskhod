@@ -1,4 +1,5 @@
 /mob/living/carbon/slime
+	var/research_value = 800
 	name = "baby slime"
 	icon = 'icons/mob/slimes.dmi'
 	icon_state = "grey baby slime"
@@ -60,7 +61,6 @@
 	var/list/slime_mutation[4]
 
 	var/core_removal_stage = 0 //For removing cores.
-	research_value = 800
 
 /mob/living/carbon/slime/New(var/location, var/colour="grey")
 
