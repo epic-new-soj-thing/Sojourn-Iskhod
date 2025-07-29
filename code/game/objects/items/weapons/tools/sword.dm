@@ -1,4 +1,3 @@
-
 //Swords
 
 /obj/item/tool/sword
@@ -222,6 +221,7 @@
 	var/datum/component/rnd_points/point_holder
 	degradation = 0.4 //Used a lot
 	embed_mult = 0
+	action_button_name = "Upload Gathered Points"
 
 /obj/item/tool/sword/saber/deconstuctive_rapier/New()
 	..()
@@ -234,6 +234,25 @@
 		//message_admins("[points] points!")
 		point_holder.data_points += points
 
+/obj/item/tool/sword/saber/deconstuctive_rapier/ui_action_click(mob/user, action_name)
+	if(action_name == "Upload Gathered Points")
+		if(!point_holder || point_holder.data_points <= 0)
+			to_chat(user, SPAN_WARNING("[src] has no research data to upload."))
+			return
+
+		var/points_to_upload = point_holder.data_points
+
+		// Find the main research console and give it the points
+		for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list)
+			if(RD.id == 1) // only core gets the science
+				RD.files.adjust_research_points(points_to_upload)
+				break
+
+		point_holder.data_points = 0
+
+		user.visible_message("[user] activates [src]'s data transmission system!", "You upload [points_to_upload] research points to the database.")
+		to_chat(user, SPAN_NOTICE("[src] successfully uploaded [points_to_upload] research points to the research database."))
+
 /obj/item/tool/sword/saber/deconstuctive_rapier/resolve_attackby(atom/target, mob/user)
 	.=..()
 	//Little icky but it works
@@ -242,10 +261,15 @@
 		if(!ishuman(M))
 			if(!issilicon(M))
 				if(is_dead(M))
+					// Calculate points based on mob's research_value variable
+					var/points_to_award = 50 // Default fallback value
+					if("research_value" in M.vars)
+						points_to_award = M.vars["research_value"]
+
 					user.visible_message("[user] drives [src.name] into [M.name]'s body, deconstructing it!", "You drive the [src.name] into [M.name], extracting research data")
 					msg_admin_attack("[user] deconned [M.name] - ([user.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[M.x];Y=[M.y];Z=[M.z]'>JMP</a>)")
 					M.dust()
-					add_points(50)
+					add_points(points_to_award)
 					add_overlay(image('icons/obj/cwj_cooking/scan.dmi', icon_state="scan_person", layer=ABOVE_WINDOW_LAYER))
 					addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 11)
 					return

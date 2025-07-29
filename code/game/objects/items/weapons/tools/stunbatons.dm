@@ -288,14 +288,14 @@
 	hitcost = 100
 
 /obj/item/tool/baton/arcwelder/marqua
-	name = "Mar'quaian arcwelder"
-	desc = "An ergonomic cell loading arc welder, made of a strange alloy, and seemingly constructed without any screws welds or bolts on its surface, perfectly polished. Uses a medium cell."
+	name = "Mar'quaian arcwelder polytool"
+	desc = "An ergonomic cell loading polytool, made of a strange alloy, and seemingly constructed without any screws welds or bolts on its surface, perfectly polished. Uses a medium cell."
 	icon = 'icons/obj/tools.dmi'
 	icon_state = "skrell_welder_arc"
 	item_state = "skrell_welder_arc"
 	w_class = ITEM_SIZE_NORMAL
 	worksound = WORKSOUND_WELDING
-	switched_on_qualities = list(QUALITY_WELDING = 85, QUALITY_PULSING = 70, QUALITY_WIRE_CUTTING = 25, QUALITY_CAUTERIZING = 40)
+	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 90, QUALITY_WELDING = 75, QUALITY_BOLT_TURNING = 90, QUALITY_DRILLING = 60, QUALITY_PRYING = 70, QUALITY_WIRE_CUTTING = 45, QUALITY_HAMMERING = 70, QUALITY_SHOVELING = 70, QUALITY_SAWING = 70, QUALITY_CUTTING = 70, QUALITY_PULSING = 75, QUALITY_CAUTERIZING = 45)
 	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_PLASTIC = 3)
 	price_tag = 7000 //valuable given its design
 	use_power_cost = 0.2

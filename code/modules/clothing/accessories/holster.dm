@@ -342,7 +342,7 @@ Sword holsters
 	update_icon()
 
 /obj/item/clothing/accessory/holster/saber/rapiermed
-	name = "CBO Multi-Scabbard"
+	name = "Soteria CBOs Multi-Scabbard"
 	desc = "A brilliantly wood carved gold gilded scabbard fit for royalty, it's design is surgically precise."
 	icon_state = "rapiermed_holster"
 	overlay_state = "rapiermed"
@@ -368,7 +368,7 @@ Sword holsters
 
 //
 /obj/item/clothing/accessory/holster/saber/rapiersci
-	name = "CROs Multi-Saya"
+	name = "Soteria CROs Multi-Saya"
 	desc = "A sleek hardened ebony material covers the entire saya in multifaceted shapes, it's design probes your mind."
 	icon_state = "rapiersci_holster"
 	overlay_state = "rapiersci"
