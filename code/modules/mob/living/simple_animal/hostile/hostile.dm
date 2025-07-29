@@ -5,6 +5,7 @@
 var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST, SOUTHEAST)
 
 /mob/living/simple/hostile
+	var/research_value = 15
 	faction = "hostile"
 	var/stance = HOSTILE_STANCE_IDLE	//Used to determine behavior
 
