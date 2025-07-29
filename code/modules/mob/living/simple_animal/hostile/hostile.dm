@@ -27,6 +27,8 @@ var/list/mydirs = list(NORTH, SOUTH, EAST, WEST, SOUTHWEST, NORTHWEST, NORTHEAST
 	can_burrow = FALSE
 	hunger_enabled = 0//Until automated eating mechanics are enabled, disable hunger for hostile mobs
 
+	var/research_value = 100
+
 	var/minimum_distance = 1 //Minimum approach distance, so ranged mobs chase targets down, but still keep their distance set in tiles
 	var/atom/targets_from = null //all range/attack/etc. calculations should be done from this atom, defaults to the mob itself, useful for Vehicles and such
 
