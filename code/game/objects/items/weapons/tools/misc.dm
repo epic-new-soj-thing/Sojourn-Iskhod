@@ -50,23 +50,6 @@
 	max_upgrades = 5
 	workspeed = 0.8
 
-/obj/item/tool/polytool/marqua
-	name = "Mar'quaian poly tool"
-	desc = "A complicated mess of drivers, bits, wrench heads, snips and pliers, this intricate mess of a tool in a handle has it all, its made of a strange alloy yet still has a slot under it for fuel."
-	icon_state = "clustertool"
-	item_state = "clustertool"
-	max_health = 300
-	w_class = ITEM_SIZE_NORMAL
-	worksound = WORKSOUND_DRIVER_TOOL
-	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 75, QUALITY_BOLT_TURNING = 75, QUALITY_DRILLING = 40, QUALITY_PULSING = 60, QUALITY_WIRE_CUTTING = 30, QUALITY_WELDING = 60, QUALITY_CAUTERIZING = 30)
-	price_tag = 6000
-	use_fuel_cost = 0.01
-	max_fuel = 100
-	toggleable = TRUE
-	create_hot_spot = TRUE
-	glow_color = COLOR_BLUE_LIGHT
-	max_upgrades = 0 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
-
 /obj/item/tool/medmultitool
 	name = "Greyson Positronic \"Autosurgeon\" medical omnitool"
 	desc = "A compact Greyson Positronic medical omnitool. It has all surgery tools and takes a medium cell in its handle."
@@ -125,6 +108,24 @@
 	degradation = 0
 	max_upgrades = 0
 	workspeed = 1.1 //Can't be upgraded and its locked behind a race that can literally get no other implants but this one, which can't be upgraded, so its slightly better. -Kaz
+
+/obj/item/tool/medmultitool/marqua
+	name = "Mar'quaian medical poly tool"
+	desc = "A complicated mess of medical tools in a single tool, this intricate mess of a tool in a handle has it all, its made of a strange alloy yet still has a slot under it for fuel."
+	icon_state = "clustertool"
+	item_state = "clustertool"
+	max_health = 300
+	w_class = ITEM_SIZE_NORMAL
+	worksound = WORKSOUND_DRIVER_TOOL
+	switched_on_qualities = list(QUALITY_CLAMPING = 75, QUALITY_RETRACTING = 75, QUALITY_BONE_SETTING = 75, QUALITY_CAUTERIZING = 75, QUALITY_SAWING = 56, QUALITY_CUTTING = 75, QUALITY_LASER_CUTTING = 56, QUALITY_WIRE_CUTTING = 47, QUALITY_BONE_GRAFTING = 94)
+	price_tag = 6000
+	suitable_cell = /obj/item/cell/medium
+	use_power_cost = 0.2 //Effective!
+	max_upgrades = 2
+	workspeed = 1.2
+	price_tag = 8000 // Super fancy
+	degradation = 0
+	max_upgrades = 0 //Superior in all ways to the munchkin and arc welder as a tool, only way to obtain it is through guild crafting or getting really lucky in cargo tech lockers. Give how fuck rare munckins are, balance by scarcity factor. -Kaz
 
 /obj/item/tool/medmultitool/medimplant/organic
 	name = "organic medical omnitool"
