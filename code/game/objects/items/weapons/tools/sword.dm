@@ -221,7 +221,6 @@
 	var/datum/component/rnd_points/point_holder
 	degradation = 0.4 //Used a lot
 	embed_mult = 0
-	action_button_name = "Upload Gathered Points"
 
 /obj/item/tool/sword/saber/deconstuctive_rapier/New()
 	..()
@@ -233,25 +232,6 @@
 	if(point_holder)
 		//message_admins("[points] points!")
 		point_holder.data_points += points
-
-/obj/item/tool/sword/saber/deconstuctive_rapier/ui_action_click(mob/user, action_name)
-	if(action_name == "Upload Gathered Points")
-		if(!point_holder || point_holder.data_points <= 0)
-			to_chat(user, SPAN_WARNING("[src] has no research data to upload."))
-			return
-
-		var/points_to_upload = point_holder.data_points
-
-		// Find the main research console and give it the points
-		for(var/obj/machinery/computer/rdconsole/RD in GLOB.computer_list)
-			if(RD.id == 1) // only core gets the science
-				RD.files.adjust_research_points(points_to_upload)
-				break
-
-		point_holder.data_points = 0
-
-		user.visible_message("[user] activates [src]'s data transmission system!", "You upload [points_to_upload] research points to the database.")
-		to_chat(user, SPAN_NOTICE("[src] successfully uploaded [points_to_upload] research points to the research database."))
 
 /obj/item/tool/sword/saber/deconstuctive_rapier/resolve_attackby(atom/target, mob/user)
 	.=..()
