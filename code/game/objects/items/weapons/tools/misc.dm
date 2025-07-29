@@ -50,7 +50,7 @@
 	max_upgrades = 5
 	workspeed = 0.8
 
-/obj/item/tool/baton/polytool/marqua
+/obj/item/tool/polytool/marqua
 	name = "Mar'quaian polytool"
 	desc = "An ergonomic cell loading polytool, made of a strange alloy, and seemingly constructed without any screws welds or bolts on its surface, perfectly polished. Uses a medium cell."
 	icon_state = "skrell_welder_arc"
