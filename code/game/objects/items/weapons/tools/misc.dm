@@ -50,6 +50,25 @@
 	max_upgrades = 5
 	workspeed = 0.8
 
+/obj/item/tool/baton/polytool/marqua
+	name = "Mar'quaian polytool"
+	desc = "An ergonomic cell loading polytool, made of a strange alloy, and seemingly constructed without any screws welds or bolts on its surface, perfectly polished. Uses a medium cell."
+	icon_state = "skrell_welder_arc"
+	item_state = "skrell_welder_arc"
+	w_class = ITEM_SIZE_NORMAL
+	worksound = WORKSOUND_WELDING
+	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 90, QUALITY_WELDING = 75, QUALITY_BOLT_TURNING = 90, QUALITY_DRILLING = 60, QUALITY_PRYING = 70, QUALITY_WIRE_CUTTING = 45, QUALITY_HAMMERING = 70, QUALITY_SHOVELING = 70, QUALITY_SAWING = 70, QUALITY_CUTTING = 70, QUALITY_PULSING = 75, QUALITY_CAUTERIZING = 45)
+	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_SILVER = 3, MATERIAL_GOLD = 2, MATERIAL_DIAMOND = 0.5, MATERIAL_BIOMATTER = 10)
+	price_tag = 7000 //valuable given its design
+	use_power_cost = 0.2
+	sparks_on_use = FALSE
+	suitable_cell = /obj/item/cell/medium
+	toggleable = TRUE
+	glow_color = COLOR_BLUE_LIGHT
+	max_upgrades = 0
+	agonyforce = 80
+	hitcost = 10
+
 /obj/item/tool/medmultitool
 	name = "Greyson Positronic \"Autosurgeon\" medical omnitool"
 	desc = "A compact Greyson Positronic medical omnitool. It has all surgery tools and takes a medium cell in its handle."
@@ -118,6 +137,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	worksound = WORKSOUND_DRIVER_TOOL
 	switched_on_qualities = list(QUALITY_CLAMPING = 75, QUALITY_RETRACTING = 75, QUALITY_BONE_SETTING = 75, QUALITY_CAUTERIZING = 75, QUALITY_SAWING = 56, QUALITY_CUTTING = 75, QUALITY_LASER_CUTTING = 56, QUALITY_WIRE_CUTTING = 47, QUALITY_BONE_GRAFTING = 94)
+	matter = list(MATERIAL_PLASTEEL = 8, MATERIAL_SILVER = 4, MATERIAL_GOLD = 2, MATERIAL_DIAMOND = 0.5, MATERIAL_BIOMATTER = 10)
 	price_tag = 6000
 	suitable_cell = /obj/item/cell/medium
 	use_power_cost = 0.2 //Effective!
