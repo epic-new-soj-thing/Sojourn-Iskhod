@@ -15,7 +15,6 @@
 	leather_amount = 0
 	bones_amount = 0
 	sanity_damage = 1
-	research_value = 1500
 
 	armor = list(melee = 8, bullet = 20, energy = 2, bomb = 25, bio = 100, rad = 100) //Were basiclly ballastic jell
 
@@ -33,4 +32,3 @@
 	speak_chance = 2
 	emote_hear = list("squishes","spluts","splorts","sqrshes","digests","makes slime noises")
 	emote_see = list("undulates quietly")
-	research_value = 1800

@@ -31,7 +31,6 @@
 	slow_respawn = 3 MINUTES
 	respawn_mob_type = /obj/random/cluster/psi_monster
 	affects_chaos = TRUE
-	research_value = 15000
 
 /mob/living/carbon/superior/psi/dreaming_king/hound_crown
 	name = "Hound of the Crown"
@@ -52,7 +51,6 @@
 	slow_respawn = 3 MINUTES
 	respawn_mob_type = /obj/random/cluster/psi_monster
 	affects_chaos = TRUE
-	research_value = 12000
 
 /obj/random/psi_megafauna
 	name = "random calamity"

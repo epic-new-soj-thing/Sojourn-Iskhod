@@ -19,7 +19,6 @@
 	leather_amount = 8 //The amount of leather sheets dropped.
 	bones_amount = 6 //The amount of bone sheets dropped.
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_NEARSIGHTED, MUTATION_RAND_UNSTABLE)
-	research_value = 600 // Large giant snake
 
 /mob/living/simple/hostile/render
 	name = "primal render"
@@ -49,7 +48,6 @@
 	melee_damage_upper = 40
 
 	armor = list(melee = 10, bullet = 14, energy = 12, bomb = 5, bio = 10, agony = 10, rad = 25)
-	research_value = 10000 // Primal render - maximum deep maint creature
 
 	old_x = -16
 	old_y = 0
@@ -86,7 +84,6 @@
 	melee_damage_lower = 40
 	melee_damage_upper = 45
 	color = "#8B0000"
-	research_value = 12000
 
 /mob/living/simple/hostile/render/wasprender
 	name = "Wasp Queen"
@@ -101,7 +98,6 @@
 	melee_damage_upper = 45
 	poison_per_bite = 6
 	poison_type = "wasp_toxin"
-	research_value = 12000
 
 /mob/living/simple/hostile/render/chunks
 	name = "Chunks"
@@ -115,7 +111,6 @@
 	melee_damage_upper = 40
 	meat_amount = 8
 	leather_amount = 24 //The amount of leather sheets dropped.
-	research_value = 11000
 
 /mob/living/simple/hostile/panther
 	name = "panther"
@@ -147,7 +142,6 @@
 	mob_size = MOB_LARGE
 	armor = list(melee = 6, bullet = 2, energy = 0, bomb = 5, bio = 10, rad = 25)
 	inherent_mutations = list(MUTATION_CAT_EYES, MUTATION_GIGANTISM, MUTATION_RAND_UNSTABLE)
-	research_value = 400
 
 /mob/living/simple/hostile/retaliate/gaslamp
 	name = "gaslamp"
@@ -179,7 +173,6 @@
 	max_co2 = 0
 	min_n2 = 0
 	max_n2 = 0
-	research_value = 120
 
 /mob/living/simple/hostile/retaliate/hippo
 	name = "hippo"
@@ -215,7 +208,6 @@
 	emote_see = list("shakes its head")
 	meat_amount = 10 //Infinite meat!
 	meat_type = /obj/item/reagent_containers/snacks/meat
-	research_value = 500
 
 /mob/living/simple/hostile/nightmare
 	name = "nightmare stalker"
@@ -248,7 +240,6 @@
 	armor = list(melee = 5, bullet = 7, energy = 1, bomb = 5, bio = 10, agony = 20, rad = 25)
 	mob_size = MOB_LARGE
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_CLOAKING)
-	research_value = 8000 // Nightmare stalker - high-tier deep maint creature
 
 /mob/living/simple/hostile/nightmare/dream_daemon
 	name = "dream daemon"
@@ -267,7 +258,6 @@
 	aggro_vision_range = 20
 	armor = list(melee = 5, bullet = 14, energy = 12, bomb = 5, bio = 10, agony = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_COUGHING, MUTATION_NERVOUSNESS, MUTATION_GREATER_CLOAKING)
-	research_value = 12000
 
 /mob/living/simple/hostile/nightmare/MoveToTarget()
 	..()
@@ -320,7 +310,6 @@
 	mob_size = MOB_LARGE
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE)
 	var/alerted = FALSE
-	research_value = 6000
 
 /mob/living/simple/hostile/retaliate/croakerlord/adjustBruteLoss(damage)
 	..()
@@ -374,7 +363,6 @@
 	mob_size = MOB_LARGE
 	armor = list(melee = 8, bullet = 6, energy = 10, bomb = 5, bio = 10, agony = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_BLINDNESS, MUTATION_NO_PAIN, MUTATION_HYPERION, MUTATION_BLOOD_BANK)
-	research_value = 7500
 
 /mob/living/simple/hostile/hell_pig/wendigo
 	name = "wendigo"
@@ -418,4 +406,3 @@
 	special_parts = list(/obj/item/animal_part/slepnir_hoof,/obj/item/animal_part/wolf_tooth,/obj/item/animal_part/wolf_tooth)
 	armor = list(melee = 8, bullet = 4, energy = 4, bomb = 5, bio = 10, agony = 10, rad = 25)
 	inherent_mutations = list(MUTATION_GIGANTISM, MUTATION_CLUMSY, MUTATION_IMBECILE, MUTATION_RAND_UNSTABLE, MUTATION_HYPERION, MUTATION_BLOOD_BANK)
-	research_value = 3500

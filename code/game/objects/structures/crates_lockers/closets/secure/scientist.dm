@@ -86,4 +86,3 @@
 	new /obj/item/circuitboard/teleporter(src)
 	new /obj/item/circuitboard/aicore(src)
 	new /obj/item/oddity/chem_book(src)
-	new /obj/item/clothing/accessory/holster/saber/rapiersci/occupied(src)

@@ -29,7 +29,6 @@
 	leather_amount = 0
 	bones_amount = 0
 	inherent_mutations = list(MUTATION_HEART, MUTATION_LUNG, MUTATION_LIVER, MUTATION_BLOOD_VESSEL, MUTATION_MUSCLES, MUTATION_NERVES)
-	research_value = 200
 
 /mob/living/simple/hostile/syndicate/death(gibbed, deathmessage = "drops its weapon as it explodes in a shower of gore when their death implant detonates!")
 	..()
@@ -58,7 +57,6 @@
 		rad = 0,
 		agony = 1000 //Pain damage proof, and rubber proof.
 	)
-	research_value = 300
 
 /mob/living/simple/hostile/syndicate/melee/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	if(prob(65))
@@ -88,7 +86,6 @@
 	icon_state = "syndicatemeleespace"
 	name = "Mercenary Commando"
 	speed = 0
-	research_value = 350
 
 /mob/living/simple/hostile/syndicate/melee/space/allow_spacemove()
 	return ..()
@@ -101,7 +98,6 @@
 	projectiletype = /obj/item/projectile/bullet/pistol_35
 
 	drop_items = list(/obj/item/gun/projectile/automatic/c20r)
-	research_value = 250
 
 /mob/living/simple/hostile/syndicate/ranged/space
 	icon_state = "syndicaterangedpsace"
@@ -116,7 +112,6 @@
 	max_n2 = 0
 	minbodytemp = 0
 	speed = 0
-	research_value = 300
 
 /mob/living/simple/hostile/syndicate/ranged/space/allow_spacemove()
 	return ..()
@@ -132,7 +127,6 @@
 	maxHealth = 100
 	health = 100
 	drop_items = list(/obj/item/tool/knife/tacknife)
-	research_value = 150
 
 /mob/living/simple/hostile/syndicate/melee/heavy
 	name = "\improper Mercenary heavy"
@@ -141,7 +135,6 @@
 	melee_damage_upper = 30
 	maxHealth = 300 //Boosted because melee given armor/shield
 	health = 300
-	research_value = 400
 
 //range
 /mob/living/simple/hostile/syndicate/ranged/weak
@@ -149,14 +142,12 @@
 	rapid = 0
 	icon_state = "syndicate_pistol"
 	drop_items = list(/obj/item/gun/projectile/makarov)
-	research_value = 150
 
 /mob/living/simple/hostile/syndicate/ranged/heavy
 	ranged_cooldown = 3
 	icon_state = "syndicate_smg"
 	maxHealth = 200 //Boosted because melee given armor/shield
 	health = 200
-	research_value = 350
 
 /mob/living/simple/hostile/syndicate/ranged/heavy/shotgun
 	ranged_cooldown = 4
@@ -165,7 +156,6 @@
 	drop_items = list(/obj/item/gun/projectile/shotgun/pump/combat/sawn)
 	projectilesound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun
-	research_value = 400
 
 //space melee
 /mob/living/simple/hostile/syndicate/melee/space/weak
@@ -175,7 +165,6 @@
 	maxHealth = 100
 	health = 100
 	drop_items = list(/obj/item/tool/knife/tacknife, /obj/item/shield/buckler/energy)
-	research_value = 200
 
 //space range
 /mob/living/simple/hostile/syndicate/ranged/space/weak
@@ -183,14 +172,12 @@
 	rapid = 0
 	icon_state = "syndicate_space_pistol"
 	drop_items = list(/obj/item/gun/projectile/makarov)
-	research_value = 200
 
 /mob/living/simple/hostile/syndicate/ranged/space/heavy
 	ranged_cooldown = 2
 	icon_state = "syndicaterangedpsace"
 	maxHealth = 200 //Boosted because melee given armor/shield
 	health = 200
-	research_value = 400
 
 /mob/living/simple/hostile/syndicate/ranged/space/heavy/shotgun
 	ranged_cooldown = 4
@@ -199,7 +186,6 @@
 	drop_items = list(/obj/item/gun/projectile/shotgun/pump/combat/sawn)
 	projectilesound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun
-	research_value = 450
 
 //robots
 /mob/living/simple/hostile/viscerator
@@ -224,7 +210,6 @@
 	min_n2 = 0
 	max_n2 = 0
 	minbodytemp = 0
-	research_value = 100
 
 /mob/living/simple/hostile/viscerator/death()
 	..(null,"is smashed into pieces!")
@@ -235,14 +220,12 @@
 	desc = "A small, twin-bladed machine capable of inflicting very deadly lacerations. This one is an opifex model and thus targets non-colony humanoids, animals, and cht'mants."
 	faction = "neutral"
 	colony_friend = TRUE
-	research_value = 120
 
 /mob/living/simple/hostile/viscerator/colony
 	name = "colony-locked viscerator"
 	desc = "A small, twin-bladed machine capable of inflicting very deadly lacerations. This model has functional colony-locked IFF and thus only targets non-colony humanoids and animals."
 	faction = "neutral"
 	colony_friend = TRUE
-	research_value = 120
 
 /mob/living/simple/hostile/viscerator/psionic
 	name = "psionic swarm"
@@ -253,7 +236,6 @@
 	colony_friend = TRUE
 	attack_sound = 'sound/weapons/lightstab.ogg'
 	var/time_alive = 0
-	research_value = 150
 
 /mob/living/simple/hostile/viscerator/psionic/New()
 	..()
@@ -309,7 +291,6 @@
 	environment_smash = 1
 	faction = "elitemerc"
 	status_flags = 0
-	research_value = 800
 
 /mob/living/simple/hostile/elitemercenary/New()
 	..()
@@ -336,7 +317,6 @@
 	icon_state = "syndicate_stormtrooper_sword"
 	drop_items = list(/obj/item/melee/energy/sword/red, /obj/item/shield/buckler/energy)
 	attacktext = "slashed"
-	research_value = 1000
 
 //elite range
 /mob/living/simple/hostile/elitemercenary/range
@@ -347,7 +327,6 @@
 	projectilesound = 'sound/weapons/Gunshot_light.ogg'
 	projectiletype = /obj/item/projectile/bullet/pistol_35
 	drop_items = list(/obj/item/gun/projectile/automatic/c20r)
-	research_value = 900
 
 /mob/living/simple/hostile/elitemercenary/range/gunslinger
 	ranged_cooldown = 2
@@ -356,7 +335,6 @@
 	projectilesound = 'sound/weapons/guns/fire/revolver_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/kurz_50
 	drop_items = list(/obj/item/gun/projectile/revolver/mistral)
-	research_value = 1000
 
 /mob/living/simple/hostile/elitemercenary/range/space/heavy/shotgun
 	ranged_cooldown = 4
@@ -368,4 +346,3 @@
 	projectilesound = 'sound/weapons/guns/fire/shotgunp_fire.ogg'
 	projectiletype = /obj/item/projectile/bullet/shotgun
 	drop_items = list(/obj/item/gun/projectile/shotgun/pump/combat)
-	research_value = 1200

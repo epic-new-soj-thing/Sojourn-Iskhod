@@ -17,7 +17,6 @@
 	response_help = "waves their hands through"
 	response_harm = "hits"
 	response_disarm = "fans at"
-	research_value = 100
 
 
 /mob/living/simple/hostile/commanded/nanomachine/emp_act(severity)

@@ -29,7 +29,6 @@
 	var/health_marker_3 = 0//100
 	mob_classification = CLASSIFICATION_SYNTHETIC
 	projectiletype = /obj/item/projectile/goo
-	research_value = 8000
 
 /mob/living/simple/hostile/megafauna/hivemind_tyrant/emp_act(severity)
 	..()

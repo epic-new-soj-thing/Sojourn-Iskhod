@@ -29,7 +29,6 @@
 	emp_proof = TRUE
 
 	projectiletype = /obj/item/projectile/bullet/light_rifle_257/nomuzzle
-	research_value = 5000
 
 /mob/living/simple/hostile/megafauna/one_star/death(gibbed, var/list/force_grant)
 	if(health <= death_threshold)

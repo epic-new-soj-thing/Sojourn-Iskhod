@@ -53,7 +53,6 @@
 	faction = "malf_drone"
 
 	mob_classification = CLASSIFICATION_SYNTHETIC
-	research_value = 400
 
 /mob/living/simple/hostile/retaliate/malf_drone/New()
 	..()

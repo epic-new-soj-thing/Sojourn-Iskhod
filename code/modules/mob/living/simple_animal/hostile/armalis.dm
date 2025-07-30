@@ -25,7 +25,6 @@
 	speed = 2
 
 	a_intent = I_HURT
-	var/research_value = 400
 
 
 /mob/living/simple/armalis/armored
@@ -35,4 +34,3 @@
 	maxHealth = 175
 	resistance = 8
 	speed = 3
-	research_value = 600

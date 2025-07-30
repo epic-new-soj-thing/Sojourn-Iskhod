@@ -1,6 +1,5 @@
 /mob/living/simple/hostile/retaliate
 	var/list/enemies = list()
-	research_value = 150
 
 /mob/living/simple/hostile/retaliate/Found(var/atom/A)
 	if(isliving(A))

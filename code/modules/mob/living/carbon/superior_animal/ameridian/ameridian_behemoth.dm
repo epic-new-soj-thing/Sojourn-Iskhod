@@ -14,7 +14,6 @@
 
 	mob_ablative_armor = 10
 	ablative_retaining = ABLATION_STANDARD
-	research_value = 2000
 
 /mob/living/carbon/superior/ameridian_golem/behemoth/attack_hand(mob/living/carbon/M as mob)
 	if(M.a_intent == I_GRAB || M.a_intent == I_DISARM)

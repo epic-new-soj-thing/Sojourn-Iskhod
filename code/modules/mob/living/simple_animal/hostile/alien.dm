@@ -33,7 +33,6 @@
 	minbodytemp = 0
 	heat_damage_per_tick = 20
 	sanity_damage = 2
-	research_value = 300 // Medium alien hunter
 
 
 /mob/living/simple/hostile/alien/drone
@@ -43,7 +42,6 @@
 	health = 60
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	research_value = 200 // Small alien drone
 
 /mob/living/simple/hostile/alien/sentinel
 	name = "alien sentinel"
@@ -55,7 +53,6 @@
 	ranged = 1
 	projectiletype = /obj/item/projectile/neurotox
 	projectilesound = 'sound/weapons/pierce.ogg'
-	research_value = 400 // Medium-large alien sentinel
 
 
 /mob/living/simple/hostile/alien/queen
@@ -73,7 +70,6 @@
 	rapid = 1
 	status_flags = 0
 	sanity_damage = 4
-	research_value = 800 // Large alien queen
 
 /mob/living/simple/hostile/alien/queen/large
 	name = "alien empress"
@@ -83,7 +79,6 @@
 	move_to_delay = 4
 	maxHealth = 400
 	health = 400
-	research_value = 1200 // Very large alien empress
 
 /obj/item/projectile/neurotox
 	damage_types = list(BURN = 30)
