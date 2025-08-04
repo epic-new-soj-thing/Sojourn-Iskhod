@@ -45,7 +45,7 @@
 	if(!assembly && !assembly.battery)
 		return FALSE // Pointless to do everything else if there's no battery to draw from.
 	var/list/power_cell_list = get_power_cell(AM)
-	var/obj/item/cell/small/cell = power_cell_list[1]
+	var/obj/item/cell/cell = power_cell_list[1]
 	if(istype(cell))
 		var/transfer_amount = amount_to_move
 		var/turf/A = get_turf(src)

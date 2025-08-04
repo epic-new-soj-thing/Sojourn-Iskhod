@@ -127,14 +127,23 @@
 		return
 	return L
 
+/obj/item/integrated_circuit/reagent/injector/proc/inject_bypass(atom/movable/target)
+	if(ismob(target))
+		var/mob/m = target
+		if(m.isEquipped(assembly))
+			return TRUE
+	return FALSE
+
 /obj/item/integrated_circuit/reagent/injector/proc/inject_check(atom/movable/target)
 	if(!target.Adjacent(get_turf(src)))
 		return FALSE
 
-	if(!target.is_injectable(allowmobs = TRUE))
+	if(!target.reagents.get_free_space())
 		return FALSE
 
-	if(!target.reagents.get_free_space())
+	if(!target.is_injectable(allowmobs = TRUE))
+		if(inject_bypass(target))
+			return TRUE
 		return FALSE
 
 	return TRUE
@@ -192,10 +201,10 @@
 
 		if(isliving(AM) && inject_check(AM))
 			var/mob/living/L = AM
-			if(!L.can_inject(null, 0))
+			if(!L.can_inject(null, FALSE, BP_CHEST, inject_bypass(AM)))
 				activate_pin(3)
 				return
-			var/injection_status = L.can_inject(null, BP_CHEST)
+			var/injection_status = L.can_inject(null, FALSE, BP_CHEST, inject_bypass(AM))
 			// admin logging stuff
 			log_admin("[key_name(L)] is getting injected with " + reagents.get_reagents() + " by \the [acting_object]")
 			L.visible_message(SPAN("danger", "[acting_object] is trying to inject [L]!"), \
@@ -221,7 +230,7 @@
 
 		if(istype(AM, /mob/living/carbon))
 			var/mob/living/carbon/C = AM
-			var/injection_status = C.can_inject(null, BP_CHEST)
+			var/injection_status = C.can_inject(null, FALSE, BP_CHEST, inject_bypass(AM))
 			if(istype(C, /mob/living/carbon/slime) || !C.dna || !injection_status)
 				activate_pin(3)
 				return
