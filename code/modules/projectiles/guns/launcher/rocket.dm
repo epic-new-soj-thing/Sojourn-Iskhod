@@ -119,20 +119,36 @@
 		item_state = "spear_spent"
 		return
 
+	// Only mark as fired if we actually have ammunition and can fire
+	if(!rockets.len)
+		to_chat(user, SPAN_WARNING("\The [src] is empty!"))
+		return
+
+	// Count rockets before firing
+	var/rockets_before = rockets.len
+
 	// Call parent Fire method to actually fire the weapon
-	..()
+	var/result = ..()
 
-	// After successful firing, mark as fired and disable
-	fired = 1
-	name = "spent SI-BS \"SPEAR\" recoilless rifle"
-	desc = "A used SI-BS SPEAR recoilless rifle. The firing mechanism has been destroyed and it's now just expensive scrap metal."
-	icon_state = "spear_spent"
-	item_state = "spear_spent"
+	// Check if a rocket was actually consumed (fired)
+	var/rockets_after = rockets.len
+	var/rocket_consumed = (rockets_before > rockets_after)
 
-	// Clear remaining rockets and disable functionality
-	rockets.Cut()
-	safety = 1
-	restrict_safety = 1
+	// Only mark as spent if a rocket was actually fired
+	if(rocket_consumed)
+		// After successful firing, mark as fired and disable
+		fired = 1
+		name = "spent SI-BS \"SPEAR\" recoilless rifle"
+		desc = "A used SI-BS SPEAR recoilless rifle. The firing mechanism has been destroyed and it's now just expensive scrap metal."
+		icon_state = "spear_spent"
+		item_state = "spear_spent"
+
+		// Clear remaining rockets and disable functionality
+		rockets.Cut()
+		safety = 1
+		restrict_safety = 1
+
+	return result
 
 /obj/item/gun/launcher/rocket/spear/process_projectile(obj/item/projectile/projectile, mob/user, atom/target, var/target_zone, var/params=null, var/pointblank=0, var/reflex=0)
 	// Use ballistic launch instead of throwing for visible rocket travel
@@ -140,8 +156,6 @@
 	projectile.launch(target, target_zone, 0, 0, 0, null, user)
 	return 1
 
-/obj/item/gun/launcher/rocket/sable
-	name = "SI-BS \"SABLE\" utility platform"
 /obj/item/gun/launcher/rocket/spear/examine(mob/user)
 	if(!..(user, 2))
 		return
@@ -160,6 +174,43 @@
 		return
 
 	..()
+
+/obj/item/gun/launcher/rocket/sable
+	name = "SI-BS \"SABLE\" utility platform"
+	desc = "A SI-BS pattern Specialised Advanced Ballistic Rocket Engagement (SABRE) utility platform. \
+	This advanced rocket launcher features a distinctive rocket launch sound and enhanced targeting capabilities."
+	icon = 'icons/obj/guns/projectile/sable.dmi'
+	icon_state = "sable_closed"
+	item_state = "sable_closed"
+	w_class = ITEM_SIZE_NORMAL
+	slot_flags = SLOT_BACK|SLOT_BELT
+	serial_type = "SI-BS"
+	force = WEAPON_FORCE_NORMAL
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_STEEL = 15)
+	price_tag = 1500
+	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 4)
+
+	// Enhanced rocket launcher with special launch sound
+	fire_sound = 'sound/mecha/weapons/rocketlauncher.ogg'
+	max_rockets = 2
+	fire_delay = 15
+	slowdown_hold = 0.6
+	init_recoil = HANDGUN_RECOIL(3)
+	twohanded = TRUE
+
+/obj/item/gun/launcher/rocket/sable/Fire(atom/target, mob/living/user, params, pointblank=0, reflex=0)
+	// Play the rocket launch sound
+	if(fire_sound)
+		playsound(src, fire_sound, 70, 1)
+
+	return ..()
+
+/obj/item/gun/launcher/rocket/sable/process_projectile(obj/item/projectile/projectile, mob/user, atom/target, var/target_zone, var/params=null, var/pointblank=0, var/reflex=0)
+	// Use ballistic launch instead of throwing for visible rocket travel
+	projectile.loc = get_turf(user)
+	projectile.launch(target, target_zone, 0, 0, 0, null, user)
+	return 1
+
 
 /obj/item/gun/projectile/shotgun/pump/sabul
 	name = "SI-BS \"SABUL\" utility platform"
@@ -276,6 +327,10 @@
 	if(safety)
 		to_chat(user, SPAN_WARNING("\The [src] safety is on! Toggle it off to fire."))
 		return
+
+	// Play fire sound before firing
+	if(fire_sound)
+		playsound(src, fire_sound, 70, 1)
 
 	return ..()
 
