@@ -2019,10 +2019,46 @@
 	var/turf/user_turf = get_turf(user)
 	var/turf/target_turf = get_turf(tablet.target_mob)
 
-	if(!user_turf || !target_turf || user_turf.z != target_turf.z)
+	if(!user_turf || !target_turf)
 		return null
 
+	// Check for Z-level differences
+	if(user_turf.z != target_turf.z)
+		if(target_turf.z > user_turf.z)
+			return "ARROW_UP"
+		else
+			return "ARROW_DOWN"
+
 	return get_dir(user_turf, target_turf)
+
+/obj/item/clothing/head/helmet/faceshield/paramedic/proc/is_tracked_patient_critical()
+	if(!ishuman(loc))
+		return FALSE
+
+	var/mob/living/carbon/human/user = loc
+
+	// Look for a Moebius tablet in user's inventory that is tracking
+	var/obj/item/modular_computer/tablet/moebius/tablet = null
+	for(var/obj/item/I in user.get_all_slots())
+		if(istype(I, /obj/item/modular_computer/tablet/moebius))
+			var/obj/item/modular_computer/tablet/moebius/T = I
+			if(T.is_tracking && T.target_mob)
+				tablet = T
+				break
+
+	if(!tablet || !tablet.target_mob)
+		return FALSE
+
+	// Check crew repository for alert status
+	var/list/z_levels_to_scan = list(1, 2, 3, 4, 5, 8, 9)
+	for(var/z_level in z_levels_to_scan)
+		var/list/crewmembers = crew_repository.health_data(z_level)
+		if(crewmembers.len)
+			for(var/i = 1, i <= crewmembers.len, i++)
+				var/list/entry = crewmembers[i]
+				if(entry["name"] == tablet.target_mob.real_name && entry["alert"])
+					return TRUE
+	return FALSE
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/proc/update_tracking_overlay()
 	if(!ishuman(loc))
@@ -2036,6 +2072,15 @@
 
 	// Remove any existing tracking overlay
 	remove_tracking_overlay()
+
+	// Check if tracked patient is in critical condition first
+	if(is_tracked_patient_critical())
+		// Create screen object for critical alert
+		tracking_overlay = new /obj/screen/tracking_arrow()
+		tracking_overlay.icon_state = "ALERT_CRITICAL"
+		// Add the overlay to the user's screen
+		user.client.screen += tracking_overlay
+		return
 
 	var/direction = get_direction_to_target()
 	if(!direction)
@@ -2062,6 +2107,10 @@
 			tracking_overlay.icon_state = "ARROW_SOUTHWEST"
 		if(WEST)
 			tracking_overlay.icon_state = "ARROW_WEST"
+		if("Z_LEVEL_UP")
+			tracking_overlay.icon_state = "ARROW_UP"
+		if("Z_LEVEL_DOWN")
+			tracking_overlay.icon_state = "ARROW_DOWN"
 		else
 			qdel(tracking_overlay)
 			tracking_overlay = null
