@@ -1917,11 +1917,17 @@
 	..()
 	medical_hud = new(src)
 	medical_hud.canremove = FALSE
+	medical_hud.active = TRUE  // Ensure the HUD is always active
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/equipped(mob/M)
 	. = ..()
 	schedule_scan()
 	START_PROCESSING(SSobj, src)
+	// Auto-activate medical HUD when helmet is equipped
+	if(medical_hud && medical_hud in src)
+		if(M.equip_to_slot_if_possible(medical_hud, slot_glasses))
+			medical_hud.toggle(M, TRUE)
+			to_chat(M, SPAN_NOTICE("[src]'s medical HUD automatically activates."))
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/attack_self(mob/user)
 	if(!user.incapacitated())
@@ -2080,7 +2086,7 @@
 		if(ismob(medical_hud.loc))
 			var/mob/hud_loc = medical_hud.loc
 			hud_loc.drop_from_inventory(medical_hud, src)
-			medical_hud.toggle(user, FALSE)
+			// Don't toggle the HUD off - keep it active for next use
 			medical_hud.forceMove(src)
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/Process()
@@ -2162,23 +2168,27 @@
 	if(user.get_equipped_item(slot_head) != src)
 		to_chat(user, SPAN_WARNING("You need to be wearing the helmet to use this function."))
 		return
+	if(world.time < last_hud_toggle)
+		to_chat(user, SPAN_WARNING("You can't toggle the medical HUD so fast!"))
+		return
 	if(medical_hud in src)
-		if(user.equip_to_slot_if_possible(medical_hud, slot_glasses) && world.time > last_hud_toggle)
+		if(user.equip_to_slot_if_possible(medical_hud, slot_glasses))
 			to_chat(user, SPAN_NOTICE("You activate [src]'s medical HUD display."))
 			last_hud_toggle = world.time + hud_toggle_delay
 			medical_hud.toggle(user, TRUE)
 		else
-			to_chat(user, SPAN_WARNING("You are wearing something which is in the way or trying to toggle too fast!"))
+			to_chat(user, SPAN_WARNING("You are wearing something which is in the way!"))
 	else
-		if(ismob(medical_hud.loc) && world.time > last_hud_toggle)
+		if(ismob(medical_hud.loc))
 			last_hud_toggle = world.time + hud_toggle_delay
 			var/mob/hud_loc = medical_hud.loc
 			hud_loc.drop_from_inventory(medical_hud, src)
-			medical_hud.toggle(user, FALSE)
+			// Keep HUD active for next use
 			to_chat(user, SPAN_NOTICE("You deactivate [src]'s medical HUD display."))
 			medical_hud.forceMove(src)
 		else
-			to_chat(user, SPAN_WARNING("You can't toggle the medical HUD so fast!"))
+			to_chat(user, SPAN_WARNING("Medical HUD is not currently active!"))
+	user.update_action_buttons()
 
 
 
