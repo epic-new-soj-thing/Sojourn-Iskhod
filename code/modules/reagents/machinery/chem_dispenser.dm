@@ -501,7 +501,7 @@
 			component_parts += new /obj/item/cell/large/moebius/omega(null)
 			component_parts += new /obj/item/stock_parts/capacitor/super(null)
 			component_parts += new /obj/item/stock_parts/matter_bin/super(null)
-			component_parts += new /obj/item/stock_parts/manipulator/pico(null)
+component_parts += new /obj/item/stock_parts/manipulator/pico(null)
 
 		// Recalculate ratings and ensure UI/icon reflect parts
 		RefreshParts()
