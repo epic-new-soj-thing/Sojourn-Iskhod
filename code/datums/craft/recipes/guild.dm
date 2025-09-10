@@ -1094,7 +1094,7 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
 	)
-
+/* Advanced versions of the basic stock parts, requiring 2 of the base part and more materials and crafting time
 /datum/craft_recipe/guild/guild_bin_alt
 	name = "Hand Cast Matter Bin Alt"
 	result = /obj/item/stock_parts/matter_bin/handmade
@@ -1162,6 +1162,7 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 		list(CRAFT_MATERIAL, 2, MATERIAL_SILVER),
 		list(QUALITY_SAWING, 60)
 	)
+*/
 // Just speeder to make in bulk then one by one, and costs a upfrunt of 1 cardbord they can recoop
 /datum/craft_recipe/guild/guild_bin_box
 	name = "Box of Cast Matter Bins"
