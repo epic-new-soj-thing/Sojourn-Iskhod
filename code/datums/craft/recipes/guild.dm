@@ -1037,10 +1037,13 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 	result = /obj/item/stock_parts/capacitor/one_star/advanced
 	icon_state = "electronic"
 	steps = list(
-		list(/obj/item/stock_parts/capacitor/handmade, 1, "time" = 10),
-		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL, "time" = 10),
-		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC, "time" = 10),
-		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
+		list(/obj/item/stock_parts/capacitor/one_star, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
 	)
@@ -1050,10 +1053,13 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 	result = /obj/item/stock_parts/scanning_module/one_star/advanced
 	icon_state = "electronic"
 	steps = list(
-		list(/obj/item/stock_parts/scanning_module/handmade, 1, "time" = 10),
-		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL, "time" = 10),
-		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC, "time" = 10),
-		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
+		list(/obj/item/stock_parts/scanning_module/one_star, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_GOLD, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_SILVER, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
 	)
@@ -1063,7 +1069,7 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 	result = /obj/item/stock_parts/manipulator/one_star/advanced
 	icon_state = "electronic"
 	steps = list(
-		list(/obj/item/stock_parts/manipulator/handmade, 1, "time" = 10),
+		list(/obj/item/stock_parts/manipulator/one_star, 1, "time" = 10),
 		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL, "time" = 10),
 		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC, "time" = 10),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
@@ -1075,10 +1081,13 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 	result = /obj/item/stock_parts/micro_laser/one_star/advanced
 	icon_state = "electronic"
 	steps = list(
-		list(/obj/item/stock_parts/micro_laser/handmade, 1, "time" = 10),
-		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL, "time" = 10),
-		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC, "time" = 10),
-		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
+		list(/obj/item/stock_parts/micro_laser/one_star, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_RGLASS, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
 	)
@@ -1088,9 +1097,14 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 	result = /obj/item/stock_parts/matter_bin/one_star/advanced
 	icon_state = "electronic"
 	steps = list(
-		list(/obj/item/stock_parts/matter_bin/handmade, 1, "time" = 10),
-		list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC, "time" = 10),
-		list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
+		list(/obj/item/stock_parts/matter_bin/one_star, 1, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 10, 70, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLASMAGLASS, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70, "time" = 10),
+		list(QUALITY_WELDING, 40, "time" = 10),
+		list(QUALITY_HAMMERING, 40, "time" = 10),
+		list(QUALITY_SAWING, 60, "time" = 10),
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLATINUM, "time" = 10),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
 	)
