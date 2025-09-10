@@ -1242,10 +1242,15 @@ My deeplest sorrow for this keepsake of the rnd's hoard
     result = /obj/item/storage/box/greyson_capacitor
     steps = list(
         list(/obj/item/stock_parts/capacitor/one_star, 4, "time" = 10),
-        list(CRAFT_MATERIAL, 4, MATERIAL_GOLD, "time" = 10),
-        list(CRAFT_MATERIAL, 4, MATERIAL_SILVER, "time" = 10),
-        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10),
-        list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 4, MATERIAL_GOLD, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(CRAFT_MATERIAL, 4, MATERIAL_SILVER, "time" = 10),
+		list(QUALITY_SAWING, 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 10),
+        list(QUALITY_SCREW_DRIVING, 40, "time" = 15),
+        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
     )
 
 /datum/craft_recipe/guild/greyson_scanner_box
@@ -1253,10 +1258,15 @@ My deeplest sorrow for this keepsake of the rnd's hoard
     result = /obj/item/storage/box/greyson_scanner
     steps = list(
         list(/obj/item/stock_parts/scanning_module/one_star, 4, "time" = 10),
-        list(CRAFT_MATERIAL, 4, MATERIAL_GOLD, "time" = 10),
-        list(CRAFT_MATERIAL, 4, MATERIAL_SILVER, "time" = 10),
-        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10),
-        list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 4, MATERIAL_GOLD, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(CRAFT_MATERIAL, 4, MATERIAL_SILVER, "time" = 10),
+		list(QUALITY_SAWING, 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 10),
+        list(QUALITY_SCREW_DRIVING, 40, "time" = 15),
+        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
     )
 
 /datum/craft_recipe/guild/greyson_manipulator_box
@@ -1264,10 +1274,18 @@ My deeplest sorrow for this keepsake of the rnd's hoard
     result = /obj/item/storage/box/greyson_manip
     steps = list(
         list(/obj/item/stock_parts/manipulator/one_star, 4, "time" = 10),
-        list(CRAFT_MATERIAL, 8, MATERIAL_PLASTEEL, "time" = 10),
-        list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC, "time" = 10),
-        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10),
-        list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
+		list(/obj/item/stock_parts/manipulator/pico, 4, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 40, 70),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(/obj/item/stack/cable_coil, 10, "time" = 10),
+		list(QUALITY_HAMMERING, 40),
+		list(QUALITY_SAWING, 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 10),
+        list(QUALITY_SCREW_DRIVING, 40, "time" = 15),
+        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
     )
 
 /datum/craft_recipe/guild/greyson_laser_box
@@ -1278,16 +1296,24 @@ My deeplest sorrow for this keepsake of the rnd's hoard
         list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS, "time" = 10),
         list(CRAFT_MATERIAL, 4, MATERIAL_RGLASS, "time" = 10),
         list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10),
-        list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 10),
+        list(QUALITY_SCREW_DRIVING, 40, "time" = 15),
+        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
     )
 
 /datum/craft_recipe/guild/greyson_matter_box
     name = "Box of Greyson Matter Bins"
     result = /obj/item/storage/box/greyson_bin
     steps = list(
-        list(/obj/item/stock_parts/matter_bin/one_star, 4, "time" = 10),
-        list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC, "time" = 10),
-        list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
-        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10),
-        list(QUALITY_SCREW_DRIVING, 40, "time" = 15)
+	list(/obj/item/stock_parts/matter_bin/super, 4, "time" = 10),
+		list(QUALITY_SCREW_DRIVING, 10, 70),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTEEL, "time" = 10),
+		list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS, "time" = 10),
+		list(QUALITY_BOLT_TURNING, 10, 70),
+		list(QUALITY_WELDING, 40),
+		list(QUALITY_HAMMERING, 40),
+		list(QUALITY_SAWING, 60),
+		list(CRAFT_MATERIAL, 1, MATERIAL_PLATINUM, "time" = 10),
+        list(QUALITY_SCREW_DRIVING, 40, "time" = 15),
+        list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10)
     )
