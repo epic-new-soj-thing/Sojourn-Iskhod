@@ -256,7 +256,7 @@
 /obj/item/stock_parts/capacitor/handmade
 	name = "handcrafted ultra capacitor"
 	desc = "A guild tinkered super-high capacity capacitor used in the construction of a variety of devices. Being made by hand by the skilled Guild shows that they can out perform even a Nanoforge."
-	icon_state = "capacitor_guild"
+	icon_state = "guild_capacitor"
 	origin_tech = list(TECH_POWER = 5, TECH_MATERIAL = 4)
 	rating = 5
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_GLASS = 1, MATERIAL_GOLD  = 2, MATERIAL_SILVER = 2)
@@ -265,7 +265,7 @@
 /obj/item/stock_parts/scanning_module/handmade
 	name = "handcrafted over-tuned scanning module"
 	desc = "An over engineered and expensive yet compact, high resolution phasic scanning module used in the construction of certain devices. Being made by hand by the skilled Guild shows that they can out perform even a Nanoforge."
-	icon_state = "scanner_guild"
+	icon_state = "guild_scan_module"
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 5
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 2, MATERIAL_RGLASS  = 1, MATERIAL_GOLD  = 2, MATERIAL_SILVER = 2)
@@ -274,7 +274,7 @@
 /obj/item/stock_parts/manipulator/handmade
 	name = "handcrafted forged manipulator"
 	desc = "A buffed up pico manipulator with a added case to increase manipulation used in the construction of certain devices. Being made by hand by the skilled Guild shows that they can out perform even a Nanoforge."
-	icon_state = "mani_guild"
+	icon_state = "guild_mani"
 	origin_tech = list(TECH_MATERIAL = 5, TECH_DATA = 2)
 	rating = 5
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_PLASTIC = 5)
@@ -282,7 +282,7 @@
 
 /obj/item/stock_parts/micro_laser/handmade
 	name = "handcrafted perfected micro-laser"
-	icon_state = "laser_guild"
+	icon_state = "guild_micro_laser"
 	desc = "An ultra-high micro laser with a perfected lens to increase productivity. Being made by hand by the skilled Guild shows that they can out perform even a Nanoforge."
 	origin_tech = list(TECH_MAGNET = 5)
 	rating = 5
@@ -292,7 +292,7 @@
 /obj/item/stock_parts/matter_bin/handmade
 	name = "handcrafted cast matter bin"
 	desc = "A super matter bin with added compression cast onto the base itself for more effective storage. Being made by hand by the skilled Guild shows that they can out perform even a Nanoforge."
-	icon_state = "bin_guild"
+	icon_state = "guild_matter_bin"
 	origin_tech = list(TECH_MATERIAL = 5)
 	rating = 5
 	matter = list(MATERIAL_PLASTEEL = 3, MATERIAL_GLASS = 2, MATERIAL_STEEL = 1)
@@ -491,7 +491,7 @@
 /obj/item/stock_parts/matter_bin/one_star/advanced
 	name = "Greyson Positronic ultra-capacity matter bin"
 	desc = "A container for holding compressed matter awaiting re-construction."
-	icon_state = "one_matter_advanced"
+	icon_state = "one_bin_advanced"
 	origin_tech = list(TECH_MATERIAL = 11)
 	rating = 6
 	matter = list(MATERIAL_PLASTIC = 6, MATERIAL_GLASS = 2, MATERIAL_PLATINUM = 6)
