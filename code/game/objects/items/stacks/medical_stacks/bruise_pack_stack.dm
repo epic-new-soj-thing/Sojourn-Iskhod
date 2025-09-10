@@ -459,7 +459,8 @@
 	icon = 'icons/obj/stack/medical_big.dmi'
 	origin_tech = list(TECH_BIO = 8)
 	heal_brute = 3 //15 hp per packet, 9 packets in a kit, 135 hp total
-	preloaded_reagents = list("uncap nanites" = 4, "ethanol" = 8, "carbon" = 2, "glue" = 26) //Has a lot of stuff
+	// Use medical nanites by default and keep solvent/adhesive components
+	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, "purgers" = 1, "oxyrush" = 1, "ethanol" = 6, "carbon" = 2, "glue" = 6)
 	fancy_icon = TRUE
 	amount = 5
 	max_amount = 5

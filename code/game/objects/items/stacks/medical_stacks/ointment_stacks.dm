@@ -262,3 +262,5 @@
 	always_useful = TRUE
 	extra_bulk = 2
 	prevent_wasting = TRUE
+	// Preload medical nanites so Greyson ointment injects beneficial nanite reagents on use
+	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, "purgers" = 1, "oxyrush" = 1)
