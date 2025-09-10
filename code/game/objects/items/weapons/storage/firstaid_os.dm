@@ -24,6 +24,13 @@
 	for(var/i in 1 to 9)
 		new /obj/item/stack/medical/bruise_pack/greyson(src)
 
+/obj/item/storage/firstaid/greyson/empty
+	name = "Greyson Field Abrasion Medical Kit"
+	desc = "A Greyson Smart Kit that rejects anything other than Greyson Advanced Treatment Packs. \
+	Alt+click to open and close."
+	icon_state = "medigel_case_brute_preview"
+	real_item_state = "medigel_case_brute"
+
 /obj/item/storage/firstaid/greyson/update_icon()
 	..()
 	cut_overlays()
@@ -112,3 +119,10 @@
 	if (empty) return
 	for(var/i in 1 to 9)
 		new /obj/item/stack/medical/ointment/greyson(src)
+
+/obj/item/storage/firstaid/greyson/burn/empty
+	name = "Greyson Field Scorch Medical Kit"
+	desc = "A Greyson Smart Kit that rejects anything other than Greyson Advanced Burn-Treatment Packs. \
+	Alt+click to open and close."
+	icon_state = "medigel_case_burn_preview"
+	real_item_state = "medigel_case_burn"
