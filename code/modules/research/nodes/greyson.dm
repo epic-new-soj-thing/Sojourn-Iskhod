@@ -136,24 +136,24 @@
 	                           /datum/design/research/item/part/greyson_manipulator)
 
 
-	/datum/technology/GP_stockparts_advanced
-		name = "Greyson Advanced Stock Parts"
-		desc = "High-grade Greyson stock parts - advanced variants requiring specialist production."
-		tech_type = RESEARCH_GREYSON
+/datum/technology/GP_stockparts_advanced
+	name = "Greyson Advanced Stock Parts"
+	desc = "High-grade Greyson stock parts - advanced variants requiring specialist production."
+	tech_type = RESEARCH_GREYSON
 
-		x = 0.5
-		y = 0.95
-		icon = "greysonstockparts"
+	x = 0.5
+	y = 0.95
+	icon = "greysonstockparts"
 
-		required_technologies = list(/datum/technology/GP_stockparts)
-		required_tech_levels = list(RESEARCH_ENGINEERING = 22)
-		cost = 5500
+	required_technologies = list(/datum/technology/GP_stockparts)
+	required_tech_levels = list(RESEARCH_ENGINEERING = 22)
+	cost = 5500
 
-		unlocks_designs = list(/datum/design/research/item/part/greyson_capacitor_advanced,
-						   /datum/design/research/item/part/greyson_scanner_advanced,
-						   /datum/design/research/item/part/greyson_manipulator_advanced,
-						   /datum/design/research/item/part/greyson_laser_advanced,
-						   /datum/design/research/item/part/greyson_matter_advanced)
+	unlocks_designs = list(/datum/design/research/item/part/greyson_capacitor_advanced,
+						/datum/design/research/item/part/greyson_scanner_advanced,
+						/datum/design/research/item/part/greyson_manipulator_advanced,
+						/datum/design/research/item/part/greyson_laser_advanced,
+						/datum/design/research/item/part/greyson_matter_advanced)
 
 /datum/technology/GP_misc_tools
 	name = "Greyson Positronic Tools"
