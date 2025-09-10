@@ -133,7 +133,12 @@
 						   /datum/design/research/item/part/greyson_matter,
 						   /datum/design/research/item/part/greyson_module,
 						   /datum/design/research/item/part/greyson_capacitor,
-						   /datum/design/research/item/part/greyson_manipulator)
+						   /datum/design/research/item/part/greyson_manipulator,
+						   /datum/design/research/item/part/greyson_capacitor_advanced,
+						   /datum/design/research/item/part/greyson_scanner_advanced,
+						   /datum/design/research/item/part/greyson_manipulator_advanced,
+						   /datum/design/research/item/part/greyson_laser_advanced,
+						   /datum/design/research/item/part/greyson_matter_advanced)
 
 /datum/technology/GP_misc_tools
 	name = "Greyson Positronic Tools"
