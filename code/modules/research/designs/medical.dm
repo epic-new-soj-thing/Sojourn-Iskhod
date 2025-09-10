@@ -63,6 +63,14 @@
 	materials = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 4, MATERIAL_PLATINUM = 4, MATERIAL_SILVER = 2, MATERIAL_DIAMOND = 1)
 	category = "Medical"
 
+// Greyson health scanner design
+/datum/design/research/item/medical/greyson_health_scanner
+	name = "Greyson Health Analyzer"
+	desc = "An advanced Greyson health analyzer with built-in nano-AI for expanded diagnostics."
+	build_path = /obj/item/device/scanner/health/greyson
+	materials = list(MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 4, MATERIAL_PLATINUM = 4, MATERIAL_SILVER = 2, MATERIAL_DIAMOND = 1)
+	category = "Medical"
+
 //Defibs
 
 /datum/design/research/item/medical/defibs
@@ -270,6 +278,16 @@
 	name = "Man-machine interface"
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/device/mmi
+	category = "Medical"
+
+
+// Greyson bruise pack printing
+/datum/design/research/item/medical/bruise_pack_greyson
+	name = "Greyson Advanced Treatment Pack"
+	desc = "A Greyson-branded advanced treatment pack filled with programmed medical nanites. Requires nanites to print."
+	build_path = /obj/item/stack/medical/bruise_pack/greyson
+	materials = list(MATERIAL_PLASTIC = 4, MATERIAL_GLASS = 2)
+	chemicals = list("nanosymbiotes" = 4, "fbp_repair" = 1)
 	category = "Medical"
 
 

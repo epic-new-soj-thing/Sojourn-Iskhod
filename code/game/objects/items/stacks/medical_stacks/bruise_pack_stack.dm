@@ -106,7 +106,6 @@
 			)
 			var/used = 0
 			var/healed_by_faith
-			var/list/allowed_medical = list("quickclot" = 1, "meralyne" = 1, "dylovene" = 1, "spaceacillin" = 1, "sterilizine" = 1, "uncap nanites" = 1, "ethanol" = 1, "carbon" = 1, "glue" = 1, "holywater" = 1, "holytricord" = 1, "holyquickclot" = 1, "holydylo" = 1, "holycilin" = 1, "kelotane" = 1, "tramadol" = 1, "dermaline" = 1)
 			if(care_about_faith && (holy_healer || holy_healing))
 				if(holy_healer)
 					healed_by_faith += heal_brute
@@ -367,7 +366,7 @@
 	singular_name = "Soteria advanced gauze"
 	desc = "Premium sterile gauze manufactured by the Soteria Institute. Each strip is pre-treated with a specialized medical cocktail including quick-clotting agents, advanced healing compounds, detoxification chemicals, and broad-spectrum antibiotics. The gauze features Soteria's signature blue threading and comes with more applications than standard field dressings. Hand-crafted with care by skilled Soteria Medical personnel with care and concern."
 	icon_state = "sr_brutepack"
-	preloaded_reagents = list("quickclot" = 1, "meralyne" = 2, "dylovene" = 2, "spaceacillin" = 1, "sterilizine" = 1)
+	preloaded_reagents = list("quickclot" = 1, "meralyne" = 2, "antitox" = 2, "spaceacillin" = 1, "sterilizine" = 1)
 	fancy_icon = TRUE
 	disinfectant  = TRUE
 	amount = 8
@@ -448,23 +447,3 @@
 		return psionic_things
 	else
 		return FALSE
-
-/obj/item/stack/medical/bruise_pack/greyson
-	name = "Greyson Advanced Treatment Pack" //G(P)ATP
-	singular_name = "Greyson Advanced Treatment Pack"
-	desc = "A packet of nanites with small fibres and ethanol that treats bruises and tissue damage. \
-	Due to GP-programming these nanites are able to be used on already sealed or healed wounds as long as they are able to detect still-present damage. \
-	Works on robotic limbs."
-	icon_state = "medigel_big_brute"
-	icon = 'icons/obj/stack/medical_big.dmi'
-	origin_tech = list(TECH_BIO = 8)
-	heal_brute = 3 //15 hp per packet, 9 packets in a kit, 135 hp total
-	// Use medical nanites by default and keep solvent/adhesive components
-	preloaded_reagents = list("nanosymbiotes" = 2, "fbp_repair" = 1, "purgers" = 1, "oxyrush" = 1, "ethanol" = 6, "carbon" = 2, "glue" = 6)
-	fancy_icon = TRUE
-	amount = 5
-	max_amount = 5
-	use_timer = 60 //These are compelx things
-	always_useful = TRUE
-	extra_bulk = 2
-	prevent_wasting = TRUE
