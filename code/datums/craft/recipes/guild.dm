@@ -1238,9 +1238,9 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 
 /datum/craft_recipe/guild/greyson_capacitor_box
     name = "Box of Greyson Hyper Capacitors"
-    result = /obj/item/storage/box/guild_capacitor
+    result = /obj/item/storage/box/greyson_capacitor
     steps = list(
-        list(/obj/item/stock_parts/capacitor/handmade, 4, "time" = 10),
+        list(/obj/item/stock_parts/capacitor/one_star, 4, "time" = 10),
         list(CRAFT_MATERIAL, 4, MATERIAL_GOLD, "time" = 10),
         list(CRAFT_MATERIAL, 4, MATERIAL_SILVER, "time" = 10),
         list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10),
@@ -1249,9 +1249,9 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 
 /datum/craft_recipe/guild/greyson_scanner_box
     name = "Box of Greyson Scanning Modules"
-    result = /obj/item/storage/box/guild_scanner
+    result = /obj/item/storage/box/greyson_scanner
     steps = list(
-        list(/obj/item/stock_parts/scanning_module/handmade, 4, "time" = 10),
+        list(/obj/item/stock_parts/scanning_module/one_star, 4, "time" = 10),
         list(CRAFT_MATERIAL, 4, MATERIAL_GOLD, "time" = 10),
         list(CRAFT_MATERIAL, 4, MATERIAL_SILVER, "time" = 10),
         list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10),
@@ -1260,9 +1260,9 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 
 /datum/craft_recipe/guild/greyson_manipulator_box
     name = "Box of Greyson Manipulators"
-    result = /obj/item/storage/box/guild_manip
+    result = /obj/item/storage/box/greyson_manip
     steps = list(
-        list(/obj/item/stock_parts/manipulator/handmade, 4, "time" = 10),
+        list(/obj/item/stock_parts/manipulator/one_star, 4, "time" = 10),
         list(CRAFT_MATERIAL, 8, MATERIAL_PLASTEEL, "time" = 10),
         list(CRAFT_MATERIAL, 8, MATERIAL_PLASTIC, "time" = 10),
         list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10),
@@ -1271,9 +1271,9 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 
 /datum/craft_recipe/guild/greyson_laser_box
     name = "Box of Greyson Micro-Lasers"
-    result = /obj/item/storage/box/guild_laser
+    result = /obj/item/storage/box/greyson_laser
     steps = list(
-        list(/obj/item/stock_parts/micro_laser/handmade, 4, "time" = 10),
+        list(/obj/item/stock_parts/micro_laser/one_star, 4, "time" = 10),
         list(CRAFT_MATERIAL, 4, MATERIAL_PLASMAGLASS, "time" = 10),
         list(CRAFT_MATERIAL, 4, MATERIAL_RGLASS, "time" = 10),
         list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10),
@@ -1282,9 +1282,9 @@ My deeplest sorrow for this keepsake of the rnd's hoard
 
 /datum/craft_recipe/guild/greyson_matter_box
     name = "Box of Greyson Matter Bins"
-    result = /obj/item/storage/box/guild_bin
+    result = /obj/item/storage/box/greyson_bin
     steps = list(
-        list(/obj/item/stock_parts/matter_bin/handmade, 4, "time" = 10),
+        list(/obj/item/stock_parts/matter_bin/one_star, 4, "time" = 10),
         list(CRAFT_MATERIAL, 6, MATERIAL_PLASTIC, "time" = 10),
         list(CRAFT_MATERIAL, 2, MATERIAL_GLASS, "time" = 10),
         list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD, "time" = 10),
