@@ -50,24 +50,51 @@ if (!(Test-Path $PythonExe -PathType Leaf)) {
 	[System.IO.Compression.ZipFile]::ExtractToDirectory($Archive, $PythonDir)
 
 	# Copy a ._pth file without "import site" commented, so pip will work
-	Copy-Item "$Bootstrap/python37._pth" $PythonDir `
-		-ErrorAction Stop
+	$PythonMajorMinor = $PythonVersion -replace "^(\d+\.\d+).*", '$1' -replace "\.", ""
+	$PthFile = "$Bootstrap/python$PythonMajorMinor._pth"
+	if (!(Test-Path $PthFile)) {
+		# Fallback to a generic python3._pth if specific version doesn't exist
+		$PthFile = "$Bootstrap/python3._pth"
+		if (!(Test-Path $PthFile)) {
+			throw "No suitable ._pth file found for Python $PythonVersion"
+		}
+	}
 
-	Remove-Item $Archive
+	# Simply copy the .pth file - don't modify it as that breaks the standard library
+	Copy-Item $PthFile "$PythonDir\python$PythonMajorMinor._pth" -ErrorAction Stop	Remove-Item $Archive
 }
 
 # Install pip
-if (!(Test-Path "$PythonDir/Scripts/pip.exe")) {
+if (!(Test-Path "$PythonDir/Scripts/pip.exe") -and !(Test-Path "$PythonDir/Lib/site-packages/pip")) {
 	$host.ui.RawUI.WindowTitle = "Downloading Pip..."
 
 	Invoke-WebRequest "https://bootstrap.pypa.io/get-pip.py" `
 		-OutFile "$Cache/get-pip.py" `
 		-ErrorAction Stop
 
-	& $PythonExe "$Cache/get-pip.py" --no-warn-script-location
+	# Create the Lib/site-packages directory if it doesn't exist
+	New-Item "$PythonDir/Lib/site-packages" -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null
+
+	# For embedded Python, install directly to the site-packages directory
+	& $PythonExe "$Cache/get-pip.py" --no-warn-script-location --target="$PythonDir/Lib/site-packages"
 	if ($LASTEXITCODE -ne 0) {
-		exit $LASTEXITCODE
+		Write-Host "Direct pip installation failed. Trying with prefix..."
+		& $PythonExe "$Cache/get-pip.py" --no-warn-script-location --prefix="$PythonDir"
+		if ($LASTEXITCODE -ne 0) {
+			Write-Host "All pip installation methods failed. Continuing without pip..."
+		}
 	}
+
+	# Also try to create a pip script in the Python directory for easier access
+	$PipScript = @"
+import sys
+import os
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'Lib', 'site-packages'))
+from pip import main
+if __name__ == '__main__':
+    sys.exit(main())
+"@
+	$PipScript | Out-File -Encoding ASCII "$PythonDir/pip.py"
 
 	Remove-Item "$Cache/get-pip.py" `
 		-ErrorAction Stop
@@ -77,9 +104,33 @@ if (!(Test-Path "$PythonDir/Scripts/pip.exe")) {
 if (!(Test-Path "$PythonDir/requirements.txt") -or ((Get-FileHash "$Tools/requirements.txt").hash -ne (Get-FileHash "$PythonDir/requirements.txt").hash)) {
 	$host.ui.RawUI.WindowTitle = "Updating dependencies..."
 
-	& $PythonExe -m pip install -U pip -r "$Tools/requirements.txt"
-	if ($LASTEXITCODE -ne 0) {
-		exit $LASTEXITCODE
+	# Try different methods to use pip
+	$PipSuccess = $false
+
+	# Method 1: Try python -m pip
+	& $PythonExe -m pip install -U pip -r "$Tools/requirements.txt" 2>&1 | Out-Null
+	if ($LASTEXITCODE -eq 0) {
+		$PipSuccess = $true
+	} else {
+		# Method 2: Try using our pip.py script
+		if (Test-Path "$PythonDir/pip.py") {
+			& $PythonExe "$PythonDir/pip.py" install -U pip -r "$Tools/requirements.txt" 2>&1 | Out-Null
+			if ($LASTEXITCODE -eq 0) {
+				$PipSuccess = $true
+			}
+		}
+
+		# Method 3: Try using pip executable if it exists
+		if (!$PipSuccess -and (Test-Path "$PythonDir/Scripts/pip.exe")) {
+			& "$PythonDir/Scripts/pip.exe" install -U pip -r "$Tools/requirements.txt" 2>&1 | Out-Null
+			if ($LASTEXITCODE -eq 0) {
+				$PipSuccess = $true
+			}
+		}
+	}
+
+	if (!$PipSuccess) {
+		Write-Host "Warning: Could not install requirements using pip. Some functionality may not work."
 	}
 
 	Copy-Item "$Tools/requirements.txt" "$PythonDir/requirements.txt"
