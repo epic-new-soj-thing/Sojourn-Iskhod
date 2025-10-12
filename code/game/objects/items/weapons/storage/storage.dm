@@ -21,6 +21,7 @@
 	var/use_sound = "rustle" //sound played when used. null for no sound.
 	contained_sprite = FALSE
 	var/acts_as_holster = FALSE // other systems can query this to treat the belt as a holster
+	var/holster_enabled = TRUE // whether holster functionality is currently enabled (user toggleable)
 	var/holster_slots = 0 // how many holster-capable slots we provide
 	var/insertion_sound
 	var/extraction_sound
@@ -97,7 +98,7 @@
 		return 0
 
 	// Only storages that explicitly act as holsters should accept holstering.
-	if(!S.acts_as_holster)
+	if(!S.acts_as_holster || !S.holster_enabled)
 		to_chat(user, SPAN_WARNING("[S] cannot be used as a holster."))
 		return 0
 	if(!(W.slot_flags & SLOT_HOLSTER) && S.can_hold.len && !is_type_in_list(W, S.can_hold))
@@ -142,7 +143,7 @@
 		to_chat(user, SPAN_WARNING("You need an empty hand to draw \the [W]!"))
 		return 0
 
-	S.remove_from_storage(W, user)
+	S.remove_from_storage(W, get_turf(S))
 	user.put_in_active_hand(W)
 	W.add_fingerprint(user)
 	playsound(user, 'sound/effects/holsterout.ogg', 75, 0)
@@ -169,13 +170,68 @@
 		to_chat(user, SPAN_WARNING("You need an empty hand to draw \the [W]!"))
 		return 0
 
-	S.remove_from_storage(W, user)
+	S.remove_from_storage(W, get_turf(S))
 	user.put_in_active_hand(W)
 	W.add_fingerprint(user)
 	playsound(user, 'sound/effects/holsterout.ogg', 75, 0)
 	S.holstered[index] = null
 	S.update_icon()
 	return 1
+
+// Helper proc to update holster-related verbs and storage
+/obj/item/storage/proc/update_holster_verbs()
+	if(!acts_as_holster)
+		return
+
+	if(holster_enabled)
+		verbs |= /obj/item/storage/verb/holster_verb
+	else
+		verbs -= /obj/item/storage/verb/holster_verb
+
+// Toggle holster functionality verb
+/obj/item/storage/verb/toggle_holster()
+	set name = "Toggle Holster"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(usr))
+		return
+	if(usr.stat)
+		return
+
+	// Only storages that can act as holsters should provide this option
+	if(!src.acts_as_holster)
+		to_chat(usr, SPAN_WARNING("[src] does not have holster capability."))
+		return
+
+	var/old_enabled = src.holster_enabled
+	src.holster_enabled = !src.holster_enabled
+
+	// Adjust storage slots based on holster status
+	if(src.storage_slots != null)
+		if(src.holster_enabled && !old_enabled)
+			// Enabling holster - add holster slots to storage
+			src.storage_slots += src.holster_slots
+		else if(!src.holster_enabled && old_enabled)
+			// Disabling holster - remove holster slots from storage
+			src.storage_slots -= src.holster_slots
+			// Make sure we don't go negative
+			if(src.storage_slots < 0)
+				src.storage_slots = 0
+
+	// Update verb visibility
+	src.update_holster_verbs()
+
+	if(src.holster_enabled)
+		to_chat(usr, SPAN_NOTICE("You enable the holster functionality on [src]. It now has [src.holster_slots] additional storage slot\s."))
+	else
+		to_chat(usr, SPAN_NOTICE("You disable the holster functionality on [src]. It now has [src.holster_slots] fewer storage slot\s."))
+		// If disabling holster while items are holstered, warn the user
+		if(src.get_first_occupied_holster())
+			to_chat(usr, SPAN_WARNING("Items are still holstered in [src]. Use the normal storage interface to remove them."))
+
+	// Refresh any open storage windows
+	src.refresh_all()
 
 // Holster verb for storages that act as holsters
 /obj/item/storage/verb/holster_verb()
@@ -189,7 +245,7 @@
 		return
 
 	// Only storages that act as holsters should provide the holster action.
-	if(!src.acts_as_holster)
+	if(!src.acts_as_holster || !src.holster_enabled)
 		to_chat(usr, SPAN_WARNING("You cannot holster items into [src]."))
 		return
 
@@ -496,7 +552,7 @@
 
 	if(can_hold.len)
 		// If this storage declares it acts_as_holster, accept items flagged SLOT_HOLSTER
-		if(src && src.acts_as_holster && (W.slot_flags & SLOT_HOLSTER))
+		if(src && src.acts_as_holster && src.holster_enabled && (W.slot_flags & SLOT_HOLSTER))
 			// allow holsterable items even if not explicitly in can_hold
 			return 1
 		else if(!is_type_in_list(W, can_hold))
@@ -741,13 +797,23 @@
 		// Ensure holster_slots is sane
 		if(!holster_slots)
 			holster_slots = 1
-		verbs += /obj/item/storage/verb/holster_verb
+
+		// Add holster slots to total storage slots
+		if(storage_slots != null && holster_enabled)
+			storage_slots += holster_slots
+
+		verbs += /obj/item/storage/verb/toggle_holster
+
 		// Ensure holstered list matches holster_slots
 		if(holstered.len < holster_slots)
 			for(var/i = holstered.len + 1, i <= holster_slots, i++)
 				holstered += null
+
+		// Set up initial verb state
+		update_holster_verbs()
 	else
 		verbs -= /obj/item/storage/verb/holster_verb
+		verbs -= /obj/item/storage/verb/toggle_holster
 
 	if(isnull(max_storage_space) && !isnull(storage_slots))
 		max_storage_space = storage_slots*BASE_STORAGE_COST(max_w_class)
