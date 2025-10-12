@@ -543,9 +543,16 @@
 	if(src.loc == W)
 		return 0 //Means the item is already in the storage item
 	if(storage_slots != null && contents.len >= storage_slots)
-		if(!stop_messages)
-			to_chat(usr, SPAN_NOTICE("[src] is full, make some space."))
-		return 0 //Storage item is full
+		// For holsters, don't count holstered items against regular storage slots
+		var/holstered_items = 0
+		if(acts_as_holster && holstered.len)
+			for(var/obj/item/holstered_item in holstered)
+				if(holstered_item && (holstered_item in contents))
+					holstered_items++
+		if((contents.len - holstered_items) >= storage_slots)
+			if(!stop_messages)
+				to_chat(usr, SPAN_NOTICE("[src] is full, make some space."))
+			return 0 //Storage item is full
 
 	if(W.anchored)
 		return 0
