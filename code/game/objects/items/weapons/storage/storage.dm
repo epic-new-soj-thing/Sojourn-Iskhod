@@ -54,7 +54,7 @@
 
 // Return first empty holster index or 0 if none
 /obj/item/storage/proc/get_first_empty_holster()
-	if(!holster_slots)
+	if(!holster_slots || !holster_enabled)
 		return 0
 	for(var/i = 1, i <= holster_slots, i++)
 		if(!holstered[i])
@@ -63,7 +63,7 @@
 
 // Return first occupied holster index or 0 if none
 /obj/item/storage/proc/get_first_occupied_holster()
-	if(!holster_slots)
+	if(!holster_slots || !holster_enabled)
 		return 0
 	for(var/i = 1, i <= holster_slots, i++)
 		if(holstered[i])
@@ -72,7 +72,8 @@
 
 // Return last occupied holster index or 0 if none
 /obj/item/storage/proc/get_last_occupied_holster()
-	if(!holster_slots)
+	update_holster_verbs()
+	if(!holster_slots || !holster_enabled)
 		return 0
 	for(var/i = holster_slots, i >= 1, i--)
 		if(holstered[i])
@@ -81,14 +82,17 @@
 
 // Holster an item from user's active hand into the storage
 /obj/item/storage/proc/holster(obj/item/W as obj, mob/living/user)
+	update_holster_verbs()
 	return holster_into(src, W, user)
 
 // Unholster the first occupied holster into the user's active hand
 /obj/item/storage/proc/unholster(mob/living/user)
+	update_holster_verbs()
 	return unholster_from(src, user)
 
 // Unholster the last occupied holster into the user's active hand
 /obj/item/storage/proc/unholster_last(mob/living/user)
+	update_holster_verbs()
 	return unholster_last_from(src, user)
 
 
@@ -113,8 +117,27 @@
 	if(!S.can_be_inserted(W, 0, user))
 		return 0
 
-	if(!S.handle_item_insertion(W, FALSE, user))
-		return 0
+	// For holsters with no regular storage slots, don't use regular storage insertion
+	if(S.storage_slots == 0 && S.acts_as_holster)
+		// Handle holster-only storage differently - don't add to contents
+		if(usr)
+			usr.prepare_for_slotmove(W)
+			usr.update_icons()
+
+		W.loc = S
+		W.on_enter_storage(S)
+
+		if(usr)
+			if(usr.client)
+				usr.client.screen -= W
+			W.dropped(usr)
+			S.add_fingerprint(usr)
+
+			if(S.insertion_sound)
+				playsound(get_turf(S), S.insertion_sound, 100)
+	else
+		if(!S.handle_item_insertion(W, FALSE, user))
+			return 0
 
 	S.holstered[index] = W
 	user.visible_message(SPAN_NOTICE("[user] holsters \the [W]."), SPAN_NOTICE("You holster \the [W]."))
@@ -143,7 +166,20 @@
 		to_chat(user, SPAN_WARNING("You need an empty hand to draw \the [W]!"))
 		return 0
 
-	S.remove_from_storage(W, get_turf(S))
+	// Handle holster-only storage differently
+	if(S.storage_slots == 0 && S.acts_as_holster)
+		// For holster-only storage, just move the item location without using remove_from_storage
+		W.loc = get_turf(S)
+		W.on_exit_storage(S)
+		W.layer = initial(W.layer)
+		W.set_plane(initial(W.plane))
+		if(W.maptext)
+			W.maptext = ""
+		if(S.extraction_sound)
+			playsound(get_turf(S), S.extraction_sound, 100)
+	else
+		S.remove_from_storage(W, get_turf(S))
+
 	user.put_in_active_hand(W)
 	W.add_fingerprint(user)
 	playsound(user, 'sound/effects/holsterout.ogg', 75, 0)
@@ -170,7 +206,20 @@
 		to_chat(user, SPAN_WARNING("You need an empty hand to draw \the [W]!"))
 		return 0
 
-	S.remove_from_storage(W, get_turf(S))
+	// Handle holster-only storage differently
+	if(S.storage_slots == 0 && S.acts_as_holster)
+		// For holster-only storage, just move the item location without using remove_from_storage
+		W.loc = get_turf(S)
+		W.on_exit_storage(S)
+		W.layer = initial(W.layer)
+		W.set_plane(initial(W.plane))
+		if(W.maptext)
+			W.maptext = ""
+		if(S.extraction_sound)
+			playsound(get_turf(S), S.extraction_sound, 100)
+	else
+		S.remove_from_storage(W, get_turf(S))
+
 	user.put_in_active_hand(W)
 	W.add_fingerprint(user)
 	playsound(user, 'sound/effects/holsterout.ogg', 75, 0)
@@ -258,20 +307,22 @@
 		else
 			// If user's hand is occupied, try to holster the currently held item into this storage first (swap behaviour).
 			var/obj/item/cur = usr.get_active_hand()
+			// Only try swap if the current item can actually be holstered here
 			if(src.can_be_inserted(cur, TRUE) && src.holster(cur, usr))
 				// Successfully holstered current item; now unholster the last one into the now-empty hand.
 				src.unholster_last(usr)
 			else
-				// Cannot holster current item; inform the user about needing an empty hand to draw the holstered item.
+				// Cannot swap; just tell user they need an empty hand to unholster
 				var/obj/item/peekW = src.holstered[last_idx]
 				if(peekW)
-					to_chat(usr, SPAN_WARNING("You need an empty hand to draw \the [peekW]!"))
+					to_chat(usr, SPAN_WARNING("You need an empty hand to draw \the [peekW], or put away your [cur] first."))
 				else
 					to_chat(usr, SPAN_NOTICE("There is nothing holstered."))
 	else
+		// No items holstered, try to holster the currently held item
 		var/obj/item/H = usr.get_active_hand()
 		if(!istype(H, /obj/item))
-			to_chat(usr, SPAN_WARNING("You need your gun equipped to holster it."))
+			to_chat(usr, SPAN_WARNING("You need an item in your hand to holster it."))
 			return
 		// Attempt holster
 		src.holster(H, usr)
@@ -398,6 +449,9 @@
 			filtered_contents_last = new //last of x item type in storage
 			filtered_contents_count = new //total number of x item type in storage
 			for(var/obj/item/I in contents) //count items and remember last item for each type
+				// Skip holstered items when holster is disabled
+				if(acts_as_holster && !holster_enabled && (I in holstered))
+					continue
 				var/item_type = I.type
 				if (filtered_contents_count[item_type])
 					filtered_contents_count[item_type]++
@@ -407,7 +461,14 @@
 
 				filtered_contents_last[item_type] = I
 		else
-			storage_contents = contents //items in storage
+			// Filter out holstered items when holster is disabled
+			if(acts_as_holster && !holster_enabled && holstered.len)
+				storage_contents = new
+				for(var/obj/item/I in contents)
+					if(!(I in holstered))
+						storage_contents.Add(I)
+			else
+				storage_contents = contents //items in storage
 
 		var/spacingBetweenSlots = 0 //in pixels
 
@@ -543,16 +604,24 @@
 	if(src.loc == W)
 		return 0 //Means the item is already in the storage item
 	if(storage_slots != null && contents.len >= storage_slots)
-		// For holsters, don't count holstered items against regular storage slots
-		var/holstered_items = 0
-		if(acts_as_holster && holstered.len)
-			for(var/obj/item/holstered_item in holstered)
-				if(holstered_item && (holstered_item in contents))
-					holstered_items++
-		if((contents.len - holstered_items) >= storage_slots)
-			if(!stop_messages)
-				to_chat(usr, SPAN_NOTICE("[src] is full, make some space."))
-			return 0 //Storage item is full
+		// For holsters with storage_slots = 0, don't count holstered items since they're not in contents
+		if(storage_slots == 0 && acts_as_holster)
+			// Holster-only storage: check if all holster slots are occupied
+			if(get_first_empty_holster() == 0)
+				if(!stop_messages)
+					to_chat(usr, SPAN_NOTICE("[src] has no free holster slots."))
+				return 0
+		else
+			// Regular storage or mixed storage: count holstered items properly
+			var/holstered_items = 0
+			if(acts_as_holster && holstered.len)
+				for(var/obj/item/holstered_item in holstered)
+					if(holstered_item && (holstered_item in contents))
+						holstered_items++
+			if((contents.len - holstered_items) >= storage_slots)
+				if(!stop_messages)
+					to_chat(usr, SPAN_NOTICE("[src] is full, make some space."))
+				return 0 //Storage item is full
 
 	if(W.anchored)
 		return 0
