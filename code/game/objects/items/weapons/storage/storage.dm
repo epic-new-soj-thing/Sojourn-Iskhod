@@ -63,7 +63,7 @@
 
 // Return first occupied holster index or 0 if none
 /obj/item/storage/proc/get_first_occupied_holster()
-	if(!holster_slots || !holster_enabled)
+	if(!holster_slots)
 		return 0
 	for(var/i = 1, i <= holster_slots, i++)
 		if(holstered[i])
@@ -72,8 +72,7 @@
 
 // Return last occupied holster index or 0 if none
 /obj/item/storage/proc/get_last_occupied_holster()
-	update_holster_verbs()
-	if(!holster_slots || !holster_enabled)
+	if(!holster_slots)
 		return 0
 	for(var/i = holster_slots, i >= 1, i--)
 		if(holstered[i])
@@ -232,10 +231,10 @@
 	if(!acts_as_holster)
 		return
 
-	if(holster_enabled)
-		verbs |= /obj/item/storage/verb/holster_verb
-	else
+	if(!holster_enabled)
 		verbs -= /obj/item/storage/verb/holster_verb
+	else
+		verbs |= /obj/item/storage/verb/holster_verb
 
 // Toggle holster functionality verb
 /obj/item/storage/verb/toggle_holster()
@@ -294,12 +293,13 @@
 		return
 
 	// Only storages that act as holsters should provide the holster action.
-	if(!src.acts_as_holster || !src.holster_enabled)
+	if(!src.acts_as_holster)
 		to_chat(usr, SPAN_WARNING("You cannot holster items into [src]."))
 		return
 
 	// Use last-in-first-out behaviour: unholster the last holstered item when H is pressed
 	var/last_idx = src.get_last_occupied_holster()
+
 	if(last_idx)
 		// If user has an empty hand, just unholster into it.
 		if(!istype(usr.get_active_hand(), /obj))
@@ -307,8 +307,18 @@
 		else
 			// If user's hand is occupied, try to holster the currently held item into this storage first (swap behaviour).
 			var/obj/item/cur = usr.get_active_hand()
-			// Only try swap if the current item can actually be holstered here
-			if(src.can_be_inserted(cur, TRUE) && src.holster(cur, usr))
+			// Only try swap if the current item can actually be holstered here AND holstering is enabled
+			// For pouches with restrictive can_hold lists, be more permissive about swapping
+			var/can_swap = FALSE
+			if(src.holster_enabled)
+				if(istype(src, /obj/item/storage/pouch) && src.storage_slots == 0)
+					// For holster-only pouches, check if item has SLOT_HOLSTER flag or is in can_hold list
+					can_swap = (cur.slot_flags & SLOT_HOLSTER) || (src.can_hold.len && is_type_in_list(cur, src.can_hold))
+				else
+					// For regular storage with holster capability, use normal can_be_inserted check
+					can_swap = src.can_be_inserted(cur, TRUE)
+
+			if(can_swap && src.holster(cur, usr))
 				// Successfully holstered current item; now unholster the last one into the now-empty hand.
 				src.unholster_last(usr)
 			else
@@ -320,6 +330,9 @@
 					to_chat(usr, SPAN_NOTICE("There is nothing holstered."))
 	else
 		// No items holstered, try to holster the currently held item
+		if(!src.holster_enabled)
+			to_chat(usr, SPAN_WARNING("You cannot holster items into [src]."))
+			return
 		var/obj/item/H = usr.get_active_hand()
 		if(!istype(H, /obj/item))
 			to_chat(usr, SPAN_WARNING("You need an item in your hand to holster it."))
@@ -711,6 +724,12 @@
 		var/obj/item/storage/fancy/F = src
 		F.update_icon(1)
 
+	// Clean up holstered items list if this item was holstered
+	if(acts_as_holster && holstered.len)
+		for(var/i = 1, i <= holster_slots, i++)
+			if(holstered[i] == W)
+				holstered[i] = null
+				break
 
 	if (new_location)
 		W.loc = new_location
@@ -765,6 +784,13 @@
 				to_chat(user, SPAN_WARNING("God damnit!"))
 
 	W.add_fingerprint(user)
+
+	// Check if this storage acts as a holster and the item can be holstered
+	if(acts_as_holster && holster_enabled && (W.slot_flags & SLOT_HOLSTER || (can_hold.len && is_type_in_list(W, can_hold))))
+		// Try to holster first if there are available holster slots
+		if(get_first_empty_holster())
+			return holster_into(src, W, user)
+
 	return handle_item_insertion(W,,user)
 
 /obj/item/storage/dropped(mob/user as mob)

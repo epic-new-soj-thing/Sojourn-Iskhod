@@ -30,8 +30,13 @@
 	to_chat(usr, SPAN_NOTICE("Items will now [sliding_behavior ? "" : "not"] slide out of [src]"))
 
 /obj/item/storage/pouch/attack_hand(mob/living/carbon/human/user)
-	if(sliding_behavior && contents.len && (src in user))
-		slide_out_item(user)
+	if(sliding_behavior && (src in user))
+		// Check for regular storage contents first
+		if(contents.len)
+			slide_out_item(user)
+		// Check for holstered items if this is a holster pouch
+		else if(acts_as_holster && get_first_occupied_holster())
+			unholster(user)
 	else
 		..()
 
