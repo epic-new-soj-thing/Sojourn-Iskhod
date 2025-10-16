@@ -196,6 +196,26 @@
 	else // Otherwise, a green color for our nominal NSA
 		dat += span("highlight", "Neural System Accumulation: <font color='green'>[NSA] / [NSA_MAX]</font>")
 
+	// Check for systemic organ failure (3+ vital organs with wounds of severity 1+)
+	var/vital_organs_with_wounds = 0
+	for(var/obj/item/organ/internal/I in H.internal_organs)
+		// Check if this is a vital organ (heart, lungs, brain, liver, etc.)
+		if(istype(I, /obj/item/organ/internal/vital) || I.vital)
+			// Check if it has wounds with severity >= 1
+			var/list/wounds = I.GetComponents(/datum/component/internal_wound)
+			for(var/datum/component/internal_wound/IW in wounds)
+				if(IW.severity >= 1)
+					vital_organs_with_wounds++
+					break // Only count this organ once even if it has multiple wounds
+	
+	if(vital_organs_with_wounds >= 3)
+		dat += span("highlight", "<font color='red'><b>⚠ CRITICAL: MAJOR SYSTEMIC ORGAN FAILURE ⚠</b></font>")
+
+	// Check for facial disfigurement (less intrusive)
+	var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
+	if(head && head.disfigured)
+		dat += span("highlight", "<font color='#666'><i>Note: Facial disfigurement detected</i></font>")
+
 	if(M.tod && (M.stat == DEAD || (M.status_flags & FAKEDEATH)))
 		dat += span("highlight", "Time of Death: [M.tod]")
 	if(mode == 1)
@@ -242,6 +262,21 @@
 								var/wsev = wd["severity"]
 								var/wsevmax = wd["severity_max"]
 								dat += text("<span class='highlight'>        - [] (Severity: [] / [])</span>", wname, wsev, wsevmax)
+
+						// Add infection status - Ported from Baystation12
+						if(I.germ_level)
+							var/infection_color = "green"
+							var/infection_text = "Clean"
+							if(I.germ_level >= INFECTION_LEVEL_THREE)
+								infection_color = "red"
+								infection_text = "Septic"
+							else if(I.germ_level >= INFECTION_LEVEL_TWO)
+								infection_color = "orange"
+								infection_text = "Severe Infection"
+							else if(I.germ_level >= INFECTION_LEVEL_ONE)
+								infection_color = "yellow"
+								infection_text = "Mild Infection"
+							dat += text("<span class='highlight'>    <font color='[]'>Infection Status: []</font></span>", infection_color, infection_text)
 		else
 			dat += span("highlight", "Limbs are OK.")
 		dat += "<hr>"
@@ -281,12 +316,14 @@
 		dat += SPAN_WARNING("Subject appears to have cellular corruption.")
 	if (M.has_brain_worms())
 		dat += SPAN_WARNING("Subject has an anomalous neural pattern. Further investigation required.")
-	else if (M.getBrainLoss() >= 60 || !M.has_brain())
+	else if ((M.getBrainLoss() >= 60 || !M.has_brain()) && M.stat == DEAD)
 		dat += SPAN_WARNING("Subject is brain dead.")
+	else if (M.getBrainLoss() >= 60)
+		dat += SPAN_WARNING("Critical brain damage detected. Subject requires immediate medical attention.")
 	else if (M.getBrainLoss() >= 25)
 		dat += SPAN_WARNING("Severe brain damage detected. Subject likely to have a traumatic brain injury.")
 	else if (M.getBrainLoss() >= 10)
-		dat += SPAN_WARNING("Significant brain damage detected. Subject may have had a concussion.")
+		dat += SPAN_WARNING("Significant brain damage detected. Subject may have had a minor brain injury.")
 
 	if(H.vessel)
 		var/blood_volume = H.vessel.get_reagent_amount("blood")
@@ -301,4 +338,53 @@
 		else
 			dat += span("highlight", "Blood Level Normal: [blood_percent]% [blood_volume]cl. Type: [blood_type]")
 	dat += "<span class='highlight'>Subject's pulse: <font color='[H.pulse() == PULSE_THREADY || H.pulse() == PULSE_NONE ? "red" : "#0080ff"]'>[H.get_pulse(GETPULSE_TOOL)] bpm.</font></span>"
+
+	// Add blood pressure and oxygenation readings
+	var/blood_pressure = H.get_blood_pressure()
+	var/oxygenation = H.get_blood_oxygenation()
+
+	var/bp_color = "green"
+	var/oxy_color = "green"
+
+	// Blood pressure color coding - normal is ~120/80
+	var/list/bp_parts = splittext(blood_pressure, "/")
+	if(length(bp_parts) >= 2)
+		var/systolic = text2num(bp_parts[1])
+		var/diastolic = text2num(bp_parts[2])
+		if(systolic < 90 || diastolic < 60 || systolic > 180 || diastolic > 110)
+			bp_color = "red"
+		else if(systolic < 100 || diastolic < 70 || systolic > 140 || diastolic > 90)
+			bp_color = "orange"
+
+	// Oxygenation color coding
+	if(oxygenation < 70)
+		oxy_color = "red"
+	else if(oxygenation < 90)
+		oxy_color = "orange"
+
+	dat += "<span class='highlight'>Blood Pressure: <font color='[bp_color]'>[blood_pressure] mmHg</font></span>"
+	dat += "<span class='highlight'>Blood Oxygenation: <font color='[oxy_color]'>[round(oxygenation, 1)]%</font></span>"
+
+	// Add shock status display
+	if(H.shock_stage)
+		var/shock_level = H.get_shock_level_text()
+		var/shock_color = ""
+		if(H.shock_stage < 40)
+			shock_color = "#ffaa00"
+		else if(H.shock_stage < 80)
+			shock_color = "#ff6600"
+		else if(H.shock_stage < 120)
+			shock_color = "#ff3300"
+		else
+			shock_color = "#ff0000"
+
+		dat += "<font color='[shock_color]'><b>[shock_level] shock detected</b></font>"
+
+		// Advanced scanner shows more detailed shock information
+		if(advanced)
+			dat += "<font color='[shock_color]'>Traumatic shock level: [H.traumatic_shock]</font>"
+			if(H.shock_stage >= 60)
+				dat += "<font color='red'>Warning: Cardiac arrhythmia risk elevated</font>"
+			if(H.shock_stage >= 120)
+				dat += "<font color='red'>Danger: Cardiac arrest risk high</font>"
 	. = jointext(dat, "<br>")
