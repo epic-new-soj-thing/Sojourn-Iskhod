@@ -30,8 +30,13 @@
 	to_chat(usr, SPAN_NOTICE("Items will now [sliding_behavior ? "" : "not"] slide out of [src]"))
 
 /obj/item/storage/pouch/attack_hand(mob/living/carbon/human/user)
-	if(sliding_behavior && contents.len && (src in user))
-		slide_out_item(user)
+	if(sliding_behavior && (src in user))
+		// Check for regular storage contents first
+		if(contents.len)
+			slide_out_item(user)
+		// Check for holstered items if this is a holster pouch
+		else if(acts_as_holster && get_first_occupied_holster())
+			unholster(user)
 	else
 		..()
 
@@ -513,7 +518,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	desc = "Can hold a handgun in."
 	icon_state = "pistol_holster"
 	item_state = "pistol_holster"
-	storage_slots = 1
+	storage_slots = 0
 	acts_as_holster = TRUE
 	holster_slots = 1
 	w_class = ITEM_SIZE_SMALL
@@ -605,7 +610,7 @@ obj/item/storage/pouch/large_generic/advmedic/populate_contents()
 	matter = list(MATERIAL_BIOMATTER = 24) // Two holsters in one!
 	slot_flags = SLOT_BELT|SLOT_DENYPOCKET
 	max_w_class = ITEM_SIZE_HUGE
-	storage_slots = 2
+	storage_slots = 0
 	acts_as_holster = TRUE
 	holster_slots = 2
 
