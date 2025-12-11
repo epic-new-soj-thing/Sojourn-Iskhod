@@ -10,7 +10,7 @@ jobs:
 
     environment:
       name: BOT_TOKEN  # optional
-      
+
     env:
       BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
 
