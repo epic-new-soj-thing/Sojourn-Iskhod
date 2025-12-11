@@ -16,7 +16,6 @@ import {
 import { classes } from 'tgui-core/react';
 
 const icons = {
-  add: { icon: 'check-circle', color: 'green' },
   admin: { icon: 'user-shield', color: 'purple' },
   balance: { icon: 'balance-scale-right', color: 'yellow' },
   bugfix: { icon: 'bug', color: 'green' },

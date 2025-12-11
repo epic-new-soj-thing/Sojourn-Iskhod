@@ -30,18 +30,13 @@
 		for(var/turf/T in turfs)
 			for(var/dir in cardinal)
 				var/list/connect_types = list("1" = 0, "2" = 0, "3" = 0)
-				for(var/obj/machinery/atmospherics/pipe in T)
-					if(dir & pipe.initialize_directions)
-						for(var/connect_type in pipe.connect_types)
-						if(connect_types["[connect_type]"] > 1) // connect_type is likely 1, 2 or 3.
-						// actually connect_type is 1,2,3 from pipe.connect_types.
-						// The previous code was: connect_types[connect_type] += 1
-						// connect_type is likely integer.
-						// So we need to access string key.
-						connect_types["[connect_type]"] += 1
-						if(connect_types["1"] > 1 || connect_types["2"] > 1 || connect_types["3"] > 1)
-							to_chat(usr, "Overlapping pipe ([pipe.name]) located at [T.x],[T.y],[T.z] ([get_area(T)])")
-							continue next_turf
+				for(var/obj/machinery/atmospherics/pipe/P in T)
+					if(dir & P.initialize_directions)
+						for(var/connect_type in P.connect_types)
+							connect_types["[connect_type]"]++
+				if(connect_types["1"] > 1 || connect_types["2"] > 1 || connect_types["3"] > 1)
+					to_chat(usr, "Overlapping pipe located at [T.x],[T.y],[T.z] ([get_area(T)])")
+					continue next_turf
 	to_chat(usr, "Done")
 
 /client/proc/powerdebug()
