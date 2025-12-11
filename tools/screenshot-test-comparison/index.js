@@ -22,6 +22,10 @@ if (!outputDirectory) {
 	process.exit(1)
 }
 
+if (!fs.existsSync(outputDirectory)) {
+	fs.mkdirSync(outputDirectory, { recursive: true })
+}
+
 const knownFailures = new Set()
 
 const fail = (screenshotName, newScreenshot, oldScreenshot, diff) => {
@@ -48,7 +52,10 @@ for (const filename of fs.readdirSync(artifactsDirectory)) {
 		continue
 	}
 
-	const fullPath = path.join(artifactsDirectory, filename, "screenshots_new")
+	let fullPath = path.join(artifactsDirectory, filename, "screenshots_new")
+	if (!fs.existsSync(fullPath)) {
+		fullPath = path.join(artifactsDirectory, filename)
+	}
 
 	const fullPathStat = fs.statSync(fullPath)
 	if (!fullPathStat.isDirectory()) {
