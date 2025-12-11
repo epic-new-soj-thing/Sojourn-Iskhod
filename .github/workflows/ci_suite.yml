@@ -130,6 +130,11 @@ jobs:
         with:
           path: ~/BYOND
           key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY || '' }}
+      - name: Install dependencies
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt update || true
+          sudo apt install -y zlib1g-dev:i386 libcurl4:i386 libstdc++6:i386 || true
       - name: Setup database
         run: |
           sudo systemctl start mysql
@@ -137,9 +142,6 @@ jobs:
           mysql -u root -proot tg_ci < schema.sql || true
       - name: Install rust-g
         run: |
-          sudo dpkg --add-architecture i386
-          sudo apt update || true
-          sudo apt install -y zlib1g-dev:i386 || true
           bash tools/ci/install_rust_g.sh
       - name: Provide BYOND zip
         run: |
@@ -292,8 +294,19 @@ jobs:
             ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY || '' }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - name: Install dependencies
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt update || true
+          sudo apt install -y zlib1g-dev:i386 libcurl4:i386 libstdc++6:i386 || true
+      - name: Provide BYOND zip
+        run: |
+          cp tools/ci/byond_working.zip byond.zip
       - name: Compile
-        run: tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
+        run: |
+          bash tools/ci/install_byond.sh
+          source $HOME/BYOND/byond/bin/byondsetup
+          tools/build/build --ci dm -DCIBUILDING -DANSICOLORS
       - name: Create artifact
         run: |
           mkdir -p deploy
