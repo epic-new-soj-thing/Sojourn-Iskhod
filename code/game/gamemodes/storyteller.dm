@@ -36,7 +36,7 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 	EVENT_LEVEL_MUNDANE = 10, //Mundane
 	EVENT_LEVEL_MODERATE = 10, //Moderate
 	EVENT_LEVEL_MAJOR = 5, //Major
-	EVENT_LEVEL_ROLESET = -999 //Roleset
+	EVENT_LEVEL_ROLESET = 50 //Roleset
 	)
 
 	//Lists of events. These are built dynamically at runtime
@@ -88,8 +88,8 @@ GLOBAL_DATUM(storyteller, /datum/storyteller)
 		to_chat(world, "<b><font color='[tcol]'>A single ready player is required to start the round.</font></b>")
 		return FALSE
 
-	if(GLOB.player_list.len <= 15) //15 players is low pop do to lurkers
-		to_chat(world, "<i>But there's less than 16 players, so this requirement will be ignored.</i>")
+	if(GLOB.player_list.len <= 3) //3 players is low pop do to lurkers
+		to_chat(world, "<i>But there's less than 4 players, so this requirement will be ignored.</i>")
 		return TRUE
 
 	return FALSE
