@@ -250,7 +250,7 @@ jobs:
     name: Windows Build
     runs-on: windows-latest
     concurrency:
-      group: test_build-${{ github.ref }}
+      group: test_windows-${{ github.ref }}
       cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
@@ -281,7 +281,7 @@ jobs:
     name: Linux Build
     runs-on: ubuntu-latest
     concurrency:
-      group: test_build-${{ github.ref }}
+      group: test_linux-${{ github.ref }}
       cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
