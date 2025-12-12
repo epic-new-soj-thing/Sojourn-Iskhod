@@ -222,17 +222,17 @@
 
 	// Self-surgery increases failure chance
 	if(owner && user == owner)
-		difficulty_adjust += 70 // Godlike status required for surgery. Good luck keeping hands steady.
+		difficulty_adjust += 50 // no longer needing godlike status
 		time_adjust += 40
 
 		//un-nerfed self-surgery on prosthetic limbs
 		if(nature == MODIFICATION_SILICON && !user.stats.getPerk(PERK_ROBOTICS_EXPERT))
-			difficulty_adjust += -40
+			difficulty_adjust += -20
 			time_adjust += -20
 
 		//Chtmants feel no pain, and are pretty used to working on themselves due to metal paranoia. Still slightly worse than letting someone else do, due to limited ability to see inside
 		if(user.stats.getPerk(PERK_SCUTTLEBUG || PERK_ICHOR || PERK_CHITINARMOR))
-			difficulty_adjust += -60
+			difficulty_adjust += -30
 			time_adjust += -30
 
 		// ...unless you are a carrion
