@@ -227,13 +227,13 @@
 
 		//un-nerfed self-surgery on prosthetic limbs
 		if(nature == MODIFICATION_SILICON && !user.stats.getPerk(PERK_ROBOTICS_EXPERT))
-			difficulty_adjust += -20
+			difficulty_adjust += -25
 			time_adjust += -20
 
 		//Chtmants feel no pain, and are pretty used to working on themselves due to metal paranoia. Still slightly worse than letting someone else do, due to limited ability to see inside
 		if(user.stats.getPerk(PERK_SCUTTLEBUG || PERK_ICHOR || PERK_CHITINARMOR))
-			difficulty_adjust += -30
-			time_adjust += -30
+			difficulty_adjust += -40
+			time_adjust += -40
 
 		// ...unless you are a carrion
 		// It makes sense that carrions have a way of making their flesh cooperate
