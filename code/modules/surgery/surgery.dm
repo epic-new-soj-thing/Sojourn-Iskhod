@@ -225,14 +225,12 @@
 		difficulty_adjust += 70 // Godlike status required for surgery. Good luck keeping hands steady.
 		time_adjust += 40
 
-		//For if a user is doing 'surgery' on their own prosthetic bodypart
-		//this is VERY complicated work to do with perfect sightlines and ergonomics - let alone without these.
-		//Thus we add properly now a 5 increase to non-experts difficulty when self surgerying but make it take way longer burning more cell/fuel/ect
+		//un-nerfed self-surgery on prosthetic limbs
 		if(nature == MODIFICATION_SILICON && !user.stats.getPerk(PERK_ROBOTICS_EXPERT))
-			difficulty_adjust += 5
-			time_adjust += 20
+			difficulty_adjust += -40
+			time_adjust += -20
 
-		//Chtmants feel no pain, and are pretty used to working on ourselves due to metal paranoia. Still slightly worse than letting someone else do, due to limited ability to see inside
+		//Chtmants feel no pain, and are pretty used to working on themselves due to metal paranoia. Still slightly worse than letting someone else do, due to limited ability to see inside
 		if(user.stats.getPerk(PERK_SCUTTLEBUG || PERK_ICHOR || PERK_CHITINARMOR))
 			difficulty_adjust += -60
 			time_adjust += -30
