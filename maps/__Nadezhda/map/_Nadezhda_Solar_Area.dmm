@@ -65,18 +65,25 @@
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
 "al" = (
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "am" = (
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "au" = (
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "av" = (
-/obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/catwalk,
+/obj/structure/catwalk,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "aw" = (
 /obj/machinery/atmospherics/portables_connector,
@@ -85,7 +92,10 @@
 /area/nadezhda/engineering/dorm)
 "ax" = (
 /obj/structure/flora/ausbushes/leafybush,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "aA" = (
 /obj/effect/decal/cleanable/dirt,
@@ -96,7 +106,10 @@
 /area/nadezhda/engineering/dorm)
 "aD" = (
 /obj/structure/flora/small/busha1,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "aE" = (
 /turf/simulated/floor/carpet/oracarpet,
@@ -118,7 +131,10 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "aI" = (
 /obj/structure/cable{
@@ -180,7 +196,10 @@
 /area/nadezhda/engineering/dorm)
 "aQ" = (
 /obj/structure/flora/ausbushes/genericbush,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "aR" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -191,21 +210,26 @@
 	},
 /turf/simulated/floor/plating,
 /area/nadezhda/outside/mountainsolars)
-"aS" = (
-/obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
 "aT" = (
 /obj/structure/flora/small/busha3,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "aU" = (
-/obj/random/flora/small_jungle_tree,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/flora/tree/snow/four,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "aV" = (
-/obj/random/flora/small_jungle_tree/low,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/flora/tree/snow/five,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "aW" = (
 /obj/structure/cable{
@@ -219,7 +243,7 @@
 /obj/machinery/camera/network/engineering{
 	dir = 4
 	},
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/techmaint_perforated,
 /area/nadezhda/engineering/dorm)
 "aY" = (
@@ -228,12 +252,15 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
 "aZ" = (
 /obj/structure/railing,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "ba" = (
 /obj/structure/cable{
@@ -241,13 +268,19 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bb" = (
 /obj/machinery/camera/network/engineering{
 	dir = 8
 	},
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bc" = (
 /obj/machinery/door/airlock/multi_tile/glass,
@@ -263,13 +296,19 @@
 	icon_state = "4-8"
 	},
 /obj/structure/railing,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bh" = (
 /obj/machinery/camera/network/engineering{
 	dir = 1
 	},
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bi" = (
 /turf/simulated/wall/r_wall,
@@ -278,7 +317,7 @@
 /obj/machinery/camera/network/engineering{
 	dir = 8
 	},
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "bk" = (
@@ -372,7 +411,10 @@
 /obj/structure/railing{
 	dir = 1
 	},
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bC" = (
 /obj/structure/railing{
@@ -382,17 +424,26 @@
 	dir = 4;
 	tag = "icon-railing0 (EAST)"
 	},
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bD" = (
 /obj/machinery/camera/network/engineering,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bE" = (
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bG" = (
 /obj/structure/cable{
@@ -404,7 +455,10 @@
 	dir = 8;
 	tag = "icon-railing0 (WEST)"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bH" = (
 /obj/structure/cable{
@@ -431,48 +485,75 @@
 "bL" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bM" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/random/flora/small_jungle_tree,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/flora/tree/snow/four,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bN" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bO" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bP" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bQ" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bR" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bT" = (
-/obj/random/flora/jungle_tree,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/flora/tree/pine,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "bV" = (
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "ca" = (
 /obj/effect/decal/cleanable/dirt,
@@ -483,7 +564,10 @@
 /area/nadezhda/outside/mountainsolars)
 "cc" = (
 /mob/living/simple/jungle_bird,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cd" = (
 /obj/structure/table/standard,
@@ -561,32 +645,45 @@
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
 "cp" = (
-/obj/structure/railing,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/catwalk,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cq" = (
 /obj/structure/railing{
 	dir = 4;
 	tag = "icon-railing0 (EAST)"
 	},
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cr" = (
 /obj/structure/railing{
 	dir = 8
 	},
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "ct" = (
-/obj/structure/railing{
-	dir = 8
+/obj/structure/flora/tree/snow/two,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
 	},
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "cw" = (
 /obj/structure/flora/small/bushb1,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cx" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -597,7 +694,10 @@
 /area/nadezhda/outside/mountainsolars)
 "cy" = (
 /obj/structure/flora/rock/variant1,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cz" = (
 /obj/effect/decal/cleanable/dirt,
@@ -609,12 +709,18 @@
 	dir = 8
 	},
 /obj/structure/railing,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cB" = (
 /obj/structure/railing,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cC" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -634,12 +740,18 @@
 	},
 /obj/structure/railing,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cE" = (
 /obj/structure/railing,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -659,7 +771,10 @@
 	dir = 1;
 	tag = "icon-railing0 (NORTH)"
 	},
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cJ" = (
 /obj/structure/table/marble,
@@ -680,7 +795,10 @@
 	dir = 1;
 	tag = "icon-railing0 (NORTH)"
 	},
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cM" = (
 /obj/structure/railing{
@@ -691,11 +809,17 @@
 	tag = "icon-railing0 (NORTH)"
 	},
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cN" = (
 /obj/structure/flora/ausbushes/sunnybush,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cO" = (
 /obj/structure/railing{
@@ -707,14 +831,20 @@
 	tag = "icon-railing0 (NORTH)"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cP" = (
 /obj/structure/railing{
 	dir = 8
 	},
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cQ" = (
 /obj/structure/railing{
@@ -722,11 +852,17 @@
 	tag = "icon-railing0 (EAST)"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cR" = (
 /obj/structure/flora/small/busha2,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cS" = (
 /obj/machinery/light,
@@ -734,13 +870,16 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "cT" = (
-/obj/random/furniture/pottedplant,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "cU" = (
-/obj/random/flora/small_jungle_tree,
-/turf/simulated/floor/asteroid/dirt,
+/obj/random/scrap/sparse_even/low_chance,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cV" = (
 /obj/structure/cable{
@@ -752,20 +891,32 @@
 /area/nadezhda/outside/mountainsolars)
 "cW" = (
 /obj/structure/flora/rock/variant2,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cX" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cY" = (
 /obj/structure/flora/small/grassb2,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "cZ" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/small/grassb2,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "da" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
@@ -793,7 +944,10 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "df" = (
 /mob/living/simple/snail,
@@ -805,7 +959,10 @@
 /area/nadezhda/outside/mountainsolars)
 "dh" = (
 /obj/structure/flora/rock,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "di" = (
 /obj/structure/flora/ausbushes/reedbush,
@@ -821,11 +978,17 @@
 /area/nadezhda/outside/mountainsolars)
 "dk" = (
 /obj/structure/flora/small/bushc1,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "dl" = (
 /obj/structure/flora/small/grassa3,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "dm" = (
 /obj/structure/flora/ausbushes/sunnybush,
@@ -847,7 +1010,10 @@
 /area/nadezhda/outside/mountainsolars)
 "dq" = (
 /obj/structure/flora/small/grassa2,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "dr" = (
 /obj/structure/flora/small/lavarock2,
@@ -859,20 +1025,22 @@
 /turf/simulated/floor/beach/sand,
 /area/nadezhda/outside/mountainsolars)
 "dt" = (
-/obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/dirt,
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/mountainsolars)
 "du" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
-"dv" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "dw" = (
 /obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "dx" = (
 /obj/effect/overlay/water,
@@ -883,7 +1051,10 @@
 "dy" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/small/lavarock3,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "dz" = (
 /obj/structure/flora/small/lavarock3,
@@ -954,12 +1125,18 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "em" = (
 /obj/structure/catwalk,
 /obj/item/caution,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "eq" = (
 /obj/structure/window/reinforced{
@@ -1002,7 +1179,10 @@
 /area/nadezhda/outside/mountainsolars)
 "eT" = (
 /obj/structure/flora/big/bush2,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "fn" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1020,12 +1200,16 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "fp" = (
-/obj/structure/railing{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/obj/structure/invislight,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "fq" = (
 /obj/machinery/light{
@@ -1110,7 +1294,10 @@
 	dir = 8
 	},
 /obj/structure/railing,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "hG" = (
 /obj/structure/cable{
@@ -1148,10 +1335,6 @@
 	},
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
-"is" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/simulated/floor/rock,
-/area/nadezhda/outside/mountainsolars)
 "it" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/radiation,
@@ -1169,7 +1352,10 @@
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/small/busha3,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "iY" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1275,7 +1461,10 @@
 /area/nadezhda/outside/mountainsolars)
 "kO" = (
 /obj/structure/flora/small/bushc3,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "kP" = (
 /obj/effect/decal/cleanable/rubble,
@@ -1386,11 +1575,11 @@
 /turf/simulated/floor/rock,
 /area/nadezhda/outside/mountainsolars)
 "nz" = (
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
+/obj/structure/flora/tree/snow/three,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
 	},
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "nJ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1407,7 +1596,10 @@
 	dir = 8;
 	tag = "icon-railing0 (WEST)"
 	},
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "nU" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1449,7 +1641,10 @@
 /area/nadezhda/outside/mountainsolars)
 "ox" = (
 /obj/item/reagent_containers/drinks/bottle/small/beer_two,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "oG" = (
 /obj/effect/floor_decal/industrial/warning,
@@ -1464,7 +1659,10 @@
 	},
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/invislight,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "oM" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1577,7 +1775,10 @@
 /area/nadezhda/engineering/dorm)
 "qU" = (
 /obj/structure/flora/small/rock4,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "qX" = (
 /obj/machinery/camera/network/engineering{
@@ -1586,8 +1787,11 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/outside/mountainsolars)
 "rm" = (
-/obj/random/flora/jungle_tree/low,
-/turf/simulated/floor/asteroid/grass,
+/obj/structure/flora/tree/dead,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "rC" = (
 /obj/machinery/atmospherics/portables_connector{
@@ -1676,7 +1880,10 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "sX" = (
 /obj/random/junk/cigbutt,
@@ -1736,7 +1943,10 @@
 "tK" = (
 /obj/machinery/camera/network/engineering,
 /obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "ug" = (
 /obj/effect/decal/cleanable/dirt,
@@ -1772,7 +1982,10 @@
 "vl" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/flora/ausbushes/ywflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "vR" = (
 /obj/machinery/photocopier,
@@ -1782,7 +1995,10 @@
 /obj/structure/bed/chair,
 /obj/item/storage/fancy/cigarettes/toha,
 /obj/item/flame/lighter/zippo/brass,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "vU" = (
 /obj/machinery/light{
@@ -1844,7 +2060,10 @@
 "wR" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/brflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "wU" = (
 /obj/structure/cable{
@@ -1894,7 +2113,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "yc" = (
 /obj/random/scrap/sparse_even/low_chance,
@@ -1911,7 +2133,10 @@
 	tag = "icon-railing0 (WEST)"
 	},
 /obj/structure/railing,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "yp" = (
 /obj/structure/railing{
@@ -1919,7 +2144,10 @@
 	tag = "icon-railing0 (EAST)"
 	},
 /obj/structure/railing,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "yC" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
@@ -1953,7 +2181,10 @@
 /area/nadezhda/outside/mountainsolars)
 "zi" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "zG" = (
 /obj/effect/floor_decal/industrial/warning/full,
@@ -1983,7 +2214,10 @@
 /area/nadezhda/outside/mountainsolars)
 "AA" = (
 /obj/random/junk/cigbutt,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "AB" = (
 /obj/structure/table/rack/shelf,
@@ -2033,7 +2267,10 @@
 "BI" = (
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible,
 /obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "BP" = (
 /obj/structure/boulder,
@@ -2105,7 +2342,10 @@
 /area/nadezhda/outside/mountainsolars)
 "Dv" = (
 /obj/structure/flora/small/lavarock3,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "DA" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
@@ -2296,7 +2536,10 @@
 /area/nadezhda/engineering/dorm)
 "FX" = (
 /obj/structure/invislight,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Gd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2305,11 +2548,11 @@
 /turf/simulated/floor/tiled/steel/orangecorner,
 /area/nadezhda/engineering/dorm)
 "Gh" = (
-/obj/structure/railing{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
+/obj/structure/flora/big/rocks3,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
 	},
-/turf/simulated/floor/asteroid/grass,
 /area/nadezhda/outside/mountainsolars)
 "Gj" = (
 /obj/machinery/door/airlock/atmos{
@@ -2363,7 +2606,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "HP" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -2407,14 +2653,20 @@
 	},
 /obj/structure/catwalk,
 /obj/structure/invislight,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Io" = (
 /obj/structure/catwalk,
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "IQ" = (
 /obj/structure/flora/ausbushes/ppflowers,
@@ -2422,7 +2674,10 @@
 	dir = 1;
 	tag = "icon-railing0 (NORTH)"
 	},
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "IT" = (
 /obj/machinery/papershredder,
@@ -2447,7 +2702,7 @@
 /area/nadezhda/engineering/dorm)
 "JU" = (
 /obj/structure/boulder,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/mountainsolars)
 "JX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2471,12 +2726,15 @@
 /area/nadezhda/outside/mountainsolars)
 "Kf" = (
 /obj/random/scrap/dense_weighted,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/asteroid/dirt/mud,
 /area/nadezhda/outside/mountainsolars)
 "Kk" = (
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/ausbushes/ppflowers,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Kn" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
@@ -2532,7 +2790,10 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Le" = (
 /obj/structure/boulder,
@@ -2578,7 +2839,10 @@
 /area/nadezhda/outside/mountainsolars)
 "LS" = (
 /obj/structure/flora/small/rock5,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Mg" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
@@ -2625,7 +2889,10 @@
 /area/nadezhda/outside/mountainsolars)
 "Nh" = (
 /obj/structure/flora/small/bushc2,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Nn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -2638,7 +2905,10 @@
 /area/nadezhda/engineering/dorm)
 "Nq" = (
 /obj/structure/flora/small/trailrocka4,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Nt" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2666,7 +2936,10 @@
 "NQ" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/random/scrap/moderate_weighted,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Od" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2684,21 +2957,11 @@
 /obj/structure/low_wall,
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/dorm)
-"Oj" = (
-/obj/structure/railing{
-	dir = 1
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
 "Ok" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/low_wall,
 /turf/simulated/floor/plating,
 /area/nadezhda/engineering/dorm)
-"Oq" = (
-/obj/structure/invislight,
-/turf/simulated/floor/asteroid/grass,
-/area/nadezhda/outside/mountainsolars)
 "Ot" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint_perforated,
@@ -2728,7 +2991,10 @@
 /area/nadezhda/engineering/dorm)
 "OU" = (
 /obj/structure/flora/big/bush3,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Pd" = (
 /obj/effect/decal/cleanable/rubble,
@@ -2780,7 +3046,10 @@
 	dir = 1;
 	tag = "icon-railing0 (NORTH)"
 	},
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Qq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2811,13 +3080,16 @@
 /turf/simulated/floor/plating/under,
 /area/nadezhda/outside/mountainsolars)
 "QX" = (
-/obj/random/furniture/pottedplant,
+/obj/structure/flora/pottedplant/xmas,
 /turf/simulated/floor/carpet/oracarpet,
 /area/nadezhda/engineering/dorm)
 "Rb" = (
 /obj/item/reagent_containers/drinks/bottle/small/beer_two,
 /obj/structure/flora/small/bushc3,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Rd" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
@@ -2845,7 +3117,10 @@
 "Rq" = (
 /obj/random/junk/cigbutt,
 /obj/structure/flora/big/bush2,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "RK" = (
 /obj/effect/decal/cleanable/dirt,
@@ -2938,7 +3213,10 @@
 "TD" = (
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/random/junk/cigbutt,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "TF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3039,7 +3317,10 @@
 /obj/structure/sign/faction/technomancers{
 	pixel_y = 32
 	},
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "UT" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging{
@@ -3133,7 +3414,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "WH" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -3147,11 +3431,17 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "WS" = (
 /obj/effect/decal/cleanable/rubble,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "WV" = (
 /obj/machinery/light{
@@ -3176,7 +3466,10 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Xj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3188,7 +3481,10 @@
 "Xp" = (
 /obj/structure/catwalk,
 /obj/machinery/camera/network/engineering,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Xq" = (
 /obj/structure/cable{
@@ -3224,7 +3520,10 @@
 /area/nadezhda/engineering/dorm)
 "Ye" = (
 /obj/structure/flora/small/bushb2,
-/turf/simulated/floor/asteroid/grass,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Yv" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3279,7 +3578,10 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Zm" = (
 /obj/effect/decal/cleanable/dirt,
@@ -3298,7 +3600,10 @@
 	tag = "icon-railing0 (EAST)"
 	},
 /obj/structure/invislight,
-/turf/simulated/floor/asteroid/dirt,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 "Zy" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
@@ -3341,7 +3646,10 @@
 	dir = 4;
 	tag = "icon-railing0 (EAST)"
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	temperature = 278.15
+	},
 /area/nadezhda/outside/mountainsolars)
 
 (1,1,1) = {"
@@ -4398,15 +4706,15 @@ ab
 ab
 ab
 ab
-ac
-ac
+al
+al
 ab
-ac
+al
 ab
 ab
-ac
-ac
-ac
+al
+al
+al
 ab
 ab
 ab
@@ -4483,7 +4791,7 @@ ab
 ab
 ab
 ab
-ac
+al
 ab
 ab
 ab
@@ -4499,17 +4807,17 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -4584,8 +4892,8 @@ ab
 ab
 ab
 ab
-ac
-ac
+al
+al
 ab
 ab
 ab
@@ -4601,16 +4909,16 @@ ab
 ab
 ab
 ab
-ac
-ac
 al
 al
 al
 al
 al
-ac
-ac
-ac
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -4685,10 +4993,10 @@ aa
 ab
 ab
 ab
-ac
-ac
-ac
-ac
+al
+al
+al
+al
 ab
 ab
 ab
@@ -4701,9 +5009,6 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
 al
 al
 al
@@ -4712,22 +5017,25 @@ al
 al
 al
 al
-ac
-ac
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ac
 al
 al
 al
 al
-ac
-ac
+al
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -4737,8 +5045,8 @@ ab
 ab
 ab
 ab
-ac
-ac
+al
+al
 ab
 ab
 aa
@@ -4787,12 +5095,12 @@ aa
 ab
 ab
 ab
-ac
 al
 al
-ac
-ac
-ac
+al
+al
+al
+al
 ab
 ab
 ab
@@ -4802,8 +5110,16 @@ ab
 ab
 ab
 ab
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+rm
 al
 al
 al
@@ -4815,22 +5131,14 @@ al
 al
 al
 al
-ac
-al
-al
-al
-al
-al
-ac
-ac
-ac
 al
 al
 al
 al
 al
 al
-ac
+al
+al
 ab
 ab
 ab
@@ -4838,9 +5146,9 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
+al
+al
+al
 ab
 ab
 ab
@@ -4889,32 +5197,6 @@ ab
 ab
 ab
 ab
-ac
-al
-al
-al
-al
-ac
-ac
-ac
-ac
-ac
-ac
-al
-al
-al
-al
-al
-al
-al
-al
-ac
-ac
-ac
-ac
-ac
-ac
-ac
 al
 al
 al
@@ -4924,8 +5206,6 @@ al
 al
 al
 al
-ac
-ac
 al
 al
 al
@@ -4933,17 +5213,45 @@ al
 al
 al
 al
-ac
-ac
-ac
-ac
 al
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -4991,64 +5299,64 @@ ab
 ab
 ab
 ab
-ac
-al
-av
-av
-av
 al
 al
-av
+bV
+bV
+bV
+al
+al
+bV
 bT
 al
 al
 al
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-al
-ac
-ac
-al
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-cU
-ac
-ac
-ac
 al
 al
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -5093,66 +5401,66 @@ ab
 ab
 ab
 ab
-ac
 al
-aS
+al
+cX
 aU
-aS
-aS
+cX
+cX
 aT
 ae
 af
 ah
-ac
-ae
-af
-ah
-ac
-ae
-af
-ah
-ac
-ae
-af
-ah
-ac
-ae
-af
-ah
-ac
-ae
-af
-ah
-ac
-ae
-af
-ah
-ac
-ae
-af
-ah
-ac
-ae
-af
-ah
-ac
-ac
 al
-ac
+ae
+af
+ah
 al
-ac
-ac
+ae
+af
+ah
+al
+ae
+af
+ah
+al
+ae
+af
+ah
+al
+ae
+af
+ah
+al
+ae
+af
+ah
+al
+ae
+af
+ah
+al
+ae
+af
+ah
 al
 al
-ac
-ac
-ac
 al
 al
-ac
-ac
-ac
-ac
+nz
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -5195,67 +5503,67 @@ ab
 ab
 ab
 ab
-ac
-al
-aS
-al
-aS
-aS
-al
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
 al
-aS
-aS
+cX
+al
+cX
+cX
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+al
+al
+cX
+cX
 al
 al
 al
 dh
-ac
-ac
-aU
 al
 al
-ac
+bT
 al
-ac
-ac
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -5297,68 +5605,68 @@ ab
 ab
 ab
 ab
-ac
-ac
-aS
-av
 al
-aS
+al
+cX
+bV
+al
+cX
 al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
-ac
+al
+al
+al
 al
 bP
-aS
-av
+cX
+bV
 bL
 bL
 al
-ac
 al
-ac
 al
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -5399,68 +5707,68 @@ ab
 ab
 ab
 ab
-ac
 al
-av
-aU
+al
+bV
+aV
 al
 bL
-av
+bV
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
 al
 al
-aS
+al
+al
+cX
 al
 bL
 bL
 de
 al
-ac
-al
-ac
-al
-ac
-al
-ac
 al
 al
-ac
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -5501,69 +5809,69 @@ ab
 ab
 ab
 ab
-ac
 al
-av
 al
-aS
+bV
+al
+cX
 bL
-av
+bV
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
 al
 al
-aS
 al
-bT
+al
+cX
+al
+aV
 al
 bL
 al
-ac
 al
 al
 al
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -5603,71 +5911,71 @@ ab
 ab
 ab
 ab
-ac
-ac
-av
-aS
+al
+al
+bV
+cX
 bP
-aS
-aS
+cX
+cX
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
-ac
 al
 al
-av
-aS
-aS
+al
+al
+al
+bV
+cX
+cX
 bP
 al
-ac
 al
-bT
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+al
+aU
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -5705,51 +6013,51 @@ ab
 ab
 ab
 ab
-ac
-ac
 al
-aS
+al
+al
+cX
 bP
-aS
-aS
+cX
+cX
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
-cU
+al
+al
+aU
 al
 al
 al
@@ -5759,18 +6067,18 @@ al
 al
 al
 al
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 aa
@@ -5807,73 +6115,73 @@ ab
 ab
 ab
 ab
-ac
-ac
-av
+al
+al
+bV
 bL
 bL
-aS
+cX
 bL
 ae
 ag
 dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
-ac
-ac
-ac
-ac
-ac
-ac
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
 al
 al
 al
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 dn
 dn
 dr
-ac
+al
 dn
 dn
 dn
 dn
 dn
 dn
-ac
-ac
+al
+al
 ab
 aa
 aa
@@ -5909,8 +6217,8 @@ ab
 ab
 ab
 ab
-ac
-ac
+al
+al
 al
 bL
 bQ
@@ -5919,53 +6227,53 @@ bQ
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
 al
 al
 al
-ac
-ac
-ac
-ac
 al
 al
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 dn
 dn
 dd
@@ -5974,8 +6282,8 @@ dn
 dn
 dn
 dn
-ac
-ac
+al
+al
 ab
 aa
 aa
@@ -6011,59 +6319,59 @@ ab
 ab
 ab
 ab
-ac
-ac
 al
-aS
+al
+al
+cX
 bP
 bQ
 bQ
 ae
 ag
 dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
-aS
-aS
-ac
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
 al
 al
 al
-ac
-ac
+cX
+cX
+al
+al
+al
+al
+al
+al
 db
 db
 db
@@ -6076,7 +6384,7 @@ dd
 dn
 dn
 dn
-ac
+al
 ab
 ab
 aa
@@ -6113,58 +6421,58 @@ ab
 ab
 ab
 ab
-ac
-ac
 al
-aS
+al
+al
+cX
 bP
 bQ
 bP
 ae
 ag
 dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
-aS
-aS
-ac
-aU
+ae
+ag
+dF
 al
-ac
-ac
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+al
+cX
+cX
+al
+bT
+al
+al
+al
 db
 db
 dm
@@ -6178,7 +6486,7 @@ dc
 dd
 dn
 dn
-ac
+al
 ab
 ab
 aa
@@ -6215,57 +6523,57 @@ ab
 ab
 ab
 ab
-ac
 al
 al
-aS
+al
+cX
 bQ
 bP
 bP
 ae
 ag
 dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
-aS
-aS
+ae
+ag
+dF
 al
-ac
-ac
-ac
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+al
+cX
+cX
+al
+al
+al
+al
 db
 db
 db
@@ -6317,7 +6625,7 @@ ab
 ab
 ab
 ab
-ac
+al
 al
 al
 bM
@@ -6327,46 +6635,46 @@ bR
 ae
 ag
 dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
-av
-av
-ac
-ac
-ac
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+al
+bV
+bV
+al
+al
+al
 db
 db
 df
@@ -6419,55 +6727,55 @@ ab
 ab
 ab
 ab
-ac
-ac
 al
 al
-aS
-aS
+al
+al
+cX
+cX
 bP
 ae
 ag
 dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
-av
-av
-ac
-ac
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+al
+bV
+bV
+al
+al
 db
 db
 db
@@ -6521,52 +6829,52 @@ ab
 ab
 ab
 ab
-ac
-ac
+al
+al
 aT
 al
-aS
-aS
-aS
+cX
+cX
+cX
 ae
 ag
 dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
-av
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+al
+bV
 al
 al
 al
@@ -6623,52 +6931,52 @@ ab
 ab
 ab
 ab
-ac
+al
 al
 al
 bN
 bL
-aS
-aS
+cX
+cX
 ae
 ag
 dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
-av
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+al
+bV
 al
 al
 al
@@ -6725,55 +7033,55 @@ ab
 ab
 ab
 ab
-ac
 al
-av
+al
+bV
 bO
 bL
-aS
-aS
+cX
+cX
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
+al
+al
 al
 bL
-aS
-ac
-ac
+cX
+al
+al
 db
 db
 dg
@@ -6827,55 +7135,55 @@ ab
 ab
 ab
 ab
-ac
 al
-aS
-av
-av
-aS
-aS
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
-aU
-aS
-aS
 al
-ac
+cX
+bV
+bV
+cX
+cX
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+aV
+cX
+cX
+al
+al
 db
 dg
 di
@@ -6929,55 +7237,55 @@ ab
 ab
 ab
 ab
-ac
 al
-aS
-av
+al
+cX
+bV
 bL
-aS
-aS
+cX
+cX
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
 al
 al
 al
 al
-ac
+al
+al
+al
 db
 dc
 dc
@@ -7031,55 +7339,55 @@ ab
 ab
 ab
 ab
-ac
 al
 al
-av
-av
-aS
+al
+bV
+bV
+cX
 al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
+al
+al
 al
 cW
 al
-ac
-ac
+al
+al
 dc
 dc
 dc
@@ -7133,55 +7441,55 @@ ab
 ab
 ab
 ab
-ac
-al
-aU
 al
 al
+ct
+al
+al
 al
 al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
+al
+al
 al
 bL
-aS
-ac
-ac
+cX
+al
+al
 dc
 dc
 dc
@@ -7235,55 +7543,55 @@ ab
 ab
 ab
 ab
-ac
 al
 al
 al
 al
-aS
-aS
+al
+cX
+cX
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
+al
+al
 al
 bL
-aS
-ac
-ac
+cX
+al
+al
 dc
 dc
 dc
@@ -7293,9 +7601,9 @@ dc
 dc
 dc
 dd
-dt
 dw
-dt
+dw
+dw
 dz
 dd
 dc
@@ -7337,55 +7645,55 @@ ab
 ab
 ab
 ab
-ac
-ac
+al
+al
 al
 bN
-av
-aS
-aS
+bV
+cX
+cX
 ae
 ag
 dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
-av
+ae
+ag
+dF
 al
-ac
-ac
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+al
+bV
+al
+al
+al
 dc
 dc
 dc
@@ -7396,8 +7704,8 @@ dc
 dc
 dd
 bV
-av
-av
+bV
+bV
 bV
 dn
 dc
@@ -7439,55 +7747,55 @@ ab
 ab
 ab
 ab
-ac
-ac
-al
-av
-av
 al
 al
+al
+bV
+bV
+al
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
+al
+al
 al
 bL
 al
 al
-ac
+al
 dc
 dc
 dc
@@ -7497,10 +7805,10 @@ dc
 dc
 dc
 dd
-aS
-aS
-aS
-aS
+cX
+cX
+cX
+cX
 dn
 dc
 dc
@@ -7541,55 +7849,55 @@ ab
 ab
 ab
 ab
-ac
-ac
 al
 al
 al
 al
-aU
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
-al
-aS
 al
 al
-ac
+nz
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+al
+cX
+al
+al
+al
 dc
 dc
 dc
@@ -7598,7 +7906,7 @@ dc
 dc
 dp
 dc
-ac
+al
 du
 du
 dy
@@ -7643,55 +7951,55 @@ ab
 ab
 ab
 ab
-ac
-ac
 al
 al
 al
-av
+al
+al
+bV
 al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
+al
+al
 cc
 al
 al
 al
-ac
+al
 dc
 dc
 dc
@@ -7700,10 +8008,10 @@ dc
 dc
 dc
 dc
-ac
-dv
+al
 du
-aU
+du
+aV
 du
 dn
 dc
@@ -7745,55 +8053,55 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
-ac
 al
 al
 al
+al
+al
+al
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
-av
+al
+al
 bV
-ac
+bV
 al
-ac
+al
+al
 dd
 dc
 dc
@@ -7802,8 +8110,8 @@ dc
 dc
 dc
 dc
-ac
-dv
+al
+du
 du
 du
 dn
@@ -7848,54 +8156,54 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
 al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
+al
 ae
 ag
 dF
-ac
-ac
+al
+al
 al
 cX
-ac
-ac
-ac
+al
+al
+al
 dd
 dc
 dc
@@ -7904,9 +8212,9 @@ dc
 dc
 dc
 dc
-ac
-ac
-ac
+al
+al
+al
 dn
 dd
 dc
@@ -7950,54 +8258,54 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
+al
+al
+al
 al
 al
 al
 ae
 ag
 dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
-ac
-ac
-ac
-ac
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+al
+al
+al
+al
+al
 dd
 dc
 dc
@@ -8053,52 +8361,52 @@ ab
 ab
 ab
 ab
-ac
-ac
 al
 al
-av
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ae
-ag
-dF
-ac
-ac
 al
-ac
-ac
-ac
+al
+bV
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+ae
+ag
+dF
+al
+al
+al
+al
+al
+al
 ab
 dd
 dd
@@ -8156,50 +8464,50 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
-av
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ac
-ac
+al
+al
 al
 bV
-ac
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+ad
+al
+al
+al
+bV
+al
 ab
 ab
 ab
@@ -8259,49 +8567,49 @@ ab
 ab
 ab
 ab
-ac
-ac
-av
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-bx
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
 al
-ac
-ac
+al
+bV
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+bx
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -8361,30 +8669,27 @@ ab
 ab
 ab
 ab
-ac
-ac
 al
-av
-av
+al
+al
+bV
+bV
 al
 ax
 al
 Nh
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
 Ye
 aQ
 al
-ac
-ac
-ac
+al
+al
+al
 aG
-ac
-ac
-ac
 al
 al
 al
@@ -8394,17 +8699,20 @@ al
 al
 al
 al
-ac
-ac
-ac
-ac
-ac
-ac
-ac
 al
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -8463,37 +8771,37 @@ ab
 ab
 ab
 ab
-ac
-ac
 al
-av
+al
+al
+bV
 bL
-aS
+cX
 al
 aD
 al
 al
-aS
-av
+cX
+bV
 aD
 al
-av
-aS
+bV
+cX
 al
 Ye
-ac
-ac
+al
+al
 aG
-ac
-ac
-ac
+al
+al
+al
 cw
 al
-aS
-aS
-av
-av
-aS
+cX
+cX
+bV
+bV
+cX
 cw
 al
 al
@@ -8501,11 +8809,11 @@ al
 al
 al
 al
+bT
 al
 al
-ac
-ac
-ac
+al
+al
 al
 al
 ab
@@ -8520,8 +8828,8 @@ ab
 ab
 al
 al
-ac
-ac
+al
+al
 ab
 ab
 ab
@@ -8565,50 +8873,51 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
-av
-av
-bT
+al
+al
+al
+bV
+bV
+aU
 Ye
-aS
+cX
 cR
 al
 cR
 Ye
-ac
-ac
-ac
+al
+al
+al
 FX
 FX
 FX
-ac
-ac
+al
+al
 Ib
-ac
+al
 bb
-ac
 al
 al
-av
+al
+bV
 al
 cw
 al
 al
 al
 al
-aS
-bP
-aS
-aS
-aS
-ac
-ac
-ac
-ac
 cX
-aS
+bP
+cX
+cX
+cX
+al
+al
+al
+al
+cX
+cX
+al
 al
 al
 al
@@ -8618,13 +8927,12 @@ ab
 ab
 ab
 ab
-ab
 al
 al
 al
-ac
-ac
-ac
+al
+al
+al
 ab
 ab
 ab
@@ -8667,19 +8975,19 @@ ab
 ab
 ab
 ab
-ac
-ac
+al
+al
 Nh
 al
 OU
 al
 OU
 aQ
-av
+bV
 al
-aS
-ac
-ac
+cX
+al
+al
 aa
 aj
 ak
@@ -8690,27 +8998,27 @@ aj
 aR
 aj
 aj
-ac
 al
-aS
-av
+al
+cX
+bV
 bN
 al
 bL
-aS
+cX
 al
-av
+bV
 bL
 bL
 al
 al
-aS
-ac
-ac
-ac
-ac
-aS
-aS
+cX
+al
+al
+al
+al
+cX
+cX
 al
 al
 al
@@ -8724,10 +9032,10 @@ al
 al
 al
 al
-ac
-ac
-ac
-ac
+al
+al
+al
+al
 ab
 ab
 ab
@@ -8769,18 +9077,18 @@ ab
 ab
 ab
 ab
-ac
+al
 al
 eT
 Rb
-aS
+cX
 TD
 Rb
 OU
 al
 rm
-ac
-ac
+al
+al
 ab
 aa
 nt
@@ -8804,21 +9112,19 @@ al
 al
 al
 al
-av
-av
-al
-ac
-ac
-al
-al
-av
+bV
+bV
 al
 al
 al
-aS
-aS
 al
 al
+bV
+al
+al
+al
+cX
+cX
 al
 al
 al
@@ -8826,11 +9132,13 @@ al
 al
 al
 al
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -8871,18 +9179,18 @@ ab
 ab
 ab
 ab
-ac
-aS
+al
+cX
 al
 AA
-aS
+cX
 vS
 Rq
-aS
+cX
 Ye
-ac
-ac
-ac
+al
+al
+al
 ab
 aa
 nt
@@ -8895,22 +9203,6 @@ cj
 zI
 ak
 FX
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-al
-al
-al
-al
-al
-cw
-ac
-ac
 al
 al
 al
@@ -8918,22 +9210,38 @@ al
 al
 al
 al
-al
-al
-al
-aS
-al
-aS
 al
 al
 aU
 al
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+cw
+al
+al
+al
+al
+al
+al
+al
+al
+al
+aU
+al
+al
+cX
+al
+cX
+al
+al
+ct
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -8973,17 +9281,17 @@ ab
 ab
 ab
 ab
-ac
-ac
+al
+al
 al
 aV
 AA
 ox
 al
 al
-ac
-ac
-ac
+al
+al
+al
 ab
 ab
 aa
@@ -9003,19 +9311,6 @@ au
 cq
 cq
 cq
-ac
-al
-al
-al
-al
-al
-al
-ac
-ac
-ac
-ac
-ac
-ac
 al
 al
 al
@@ -9030,10 +9325,23 @@ al
 al
 al
 al
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -9075,15 +9383,15 @@ ab
 ab
 ab
 ab
-ac
-ac
+al
+al
 al
 al
 OU
-aS
+cX
 ax
-ac
-ac
+al
+al
 ab
 ab
 ab
@@ -9107,16 +9415,16 @@ cz
 au
 cI
 al
-ac
 al
 al
-ac
 al
-ac
-ac
-ac
-ac
-aU
+al
+al
+al
+al
+al
+al
+nz
 al
 al
 al
@@ -9133,7 +9441,7 @@ al
 al
 al
 al
-ac
+al
 ab
 ab
 ab
@@ -9177,14 +9485,14 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
-aS
-aS
+al
+al
+al
+cX
+cX
 Nh
-ac
-ac
+al
+al
 ab
 ab
 ab
@@ -9208,16 +9516,16 @@ cF
 cH
 au
 cI
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 al
 al
 al
@@ -9231,7 +9539,7 @@ al
 cc
 dq
 al
-ac
+al
 al
 al
 ab
@@ -9280,12 +9588,12 @@ ab
 ab
 ab
 ab
-ac
-ac
-aS
-ac
-ac
-ac
+al
+al
+cX
+al
+al
+al
 ab
 ab
 ab
@@ -9303,22 +9611,22 @@ Xq
 Ok
 ak
 oJ
-ct
+bE
 cr
 cA
 cg
 cF
 cg
 cI
-aS
+cX
 cN
 bL
 bL
-aS
+cX
 al
-aS
-ac
-ac
+cX
+al
+al
 al
 cY
 cZ
@@ -9332,12 +9640,12 @@ al
 al
 al
 dq
-ac
 al
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -9383,9 +9691,9 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
+al
+al
+al
 ab
 ab
 ab
@@ -9404,26 +9712,26 @@ Di
 cn
 cJ
 ak
-Oq
-aS
+FX
+cX
 al
 cB
 cg
 cz
 cg
 cI
-aS
-av
+cX
+bV
 bQ
 bL
-aS
+cX
 cR
-aS
-ac
-ac
+cX
 al
 al
-av
+al
+al
+bV
 al
 al
 al
@@ -9436,11 +9744,11 @@ al
 dq
 al
 al
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -9485,9 +9793,9 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
+al
+al
+al
 ab
 ab
 ab
@@ -9506,23 +9814,23 @@ Qa
 cn
 cK
 ak
-Oq
+FX
 al
 cy
-cp
+aZ
 au
 cF
 cg
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 bi
 bi
 bi
@@ -9536,15 +9844,15 @@ dk
 al
 al
 dh
-ac
+al
+al
+bT
 al
 al
 al
 al
-ac
-ac
-ac
-ac
+al
+al
 ab
 ab
 ab
@@ -9589,7 +9897,7 @@ ab
 ab
 ab
 ab
-ac
+al
 ab
 ab
 ab
@@ -9608,23 +9916,23 @@ FR
 dB
 dC
 ak
-Oq
-aS
-aS
+FX
+cX
+cX
 cB
 au
 cF
 au
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
+al
+al
 bi
 ad
 fq
@@ -9638,15 +9946,15 @@ dk
 dk
 al
 al
-ac
 al
 al
 al
 al
 al
-ac
-ac
-ac
+al
+al
+al
+al
 ab
 ab
 ab
@@ -9710,23 +10018,23 @@ Di
 hG
 vR
 ak
-Oq
+FX
 al
 al
-cp
+aZ
 au
 cz
 au
 cI
-aS
-av
+cX
+bV
 cR
 al
 bi
 bi
 bi
 bi
-ac
+al
 bi
 ad
 bi
@@ -9745,11 +10053,11 @@ al
 al
 al
 al
-ac
-ac
-ac
-ac
-ac
+aU
+al
+al
+al
+al
 ab
 ab
 ab
@@ -9812,23 +10120,23 @@ aM
 co
 rR
 ak
-Oq
+FX
 al
 al
-cp
+aZ
 cz
 cg
 au
 cI
 cN
-av
+bV
 al
-aS
+cX
 mN
 qX
 Es
 mN
-ac
+al
 mN
 Tz
 dL
@@ -9846,12 +10154,12 @@ al
 al
 al
 al
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -9914,18 +10222,18 @@ qL
 hG
 IT
 ak
-Oq
+FX
 al
-al
-cp
+bT
+aZ
 cg
 cz
 au
 cI
-ac
-ac
-ac
-ac
+al
+al
+al
+al
 mN
 qg
 pl
@@ -9944,15 +10252,15 @@ dl
 dl
 cN
 dq
-ac
 al
 al
 al
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -10016,16 +10324,16 @@ OC
 dB
 tc
 ak
-Oq
+FX
 al
 al
-cp
+aZ
 cg
 cz
 au
 cI
-ac
-ac
+al
+al
 al
 al
 mN
@@ -10045,16 +10353,16 @@ bi
 al
 al
 al
-ac
-ac
 al
 al
-ac
-ac
-ac
-ac
 al
-ac
+al
+al
+al
+al
+al
+al
+al
 ab
 ab
 ab
@@ -10118,16 +10426,16 @@ aM
 cn
 tc
 ak
-Oq
-av
-av
-cp
+FX
+bV
+bV
+aZ
 cg
 cF
 au
 cI
-ac
 al
+aV
 al
 al
 bi
@@ -10148,11 +10456,11 @@ al
 al
 al
 al
+nz
 al
 al
 al
-ac
-ac
+al
 al
 al
 al
@@ -10220,20 +10528,20 @@ Di
 aW
 aY
 ak
-Oq
+FX
 al
-av
-cp
+bV
+aZ
 au
 cz
 cg
 cI
-ac
+al
 al
 bL
-av
-av
-aS
+bV
+bV
+cX
 al
 al
 wZ
@@ -10252,8 +10560,8 @@ al
 al
 al
 al
-ac
-ac
+al
+al
 al
 al
 al
@@ -10330,14 +10638,14 @@ au
 cz
 cg
 cI
-ac
-aS
+al
+cX
 bL
 bL
 al
 bP
 bP
-aS
+cX
 sZ
 bi
 bi
@@ -10353,14 +10661,14 @@ al
 al
 al
 al
-ac
-ac
 al
 al
-bT
 al
 al
-ac
+aV
+al
+al
+al
 dM
 dM
 dM
@@ -10424,21 +10732,21 @@ aA
 kq
 gS
 ak
-fp
-Gh
-Gh
+Zx
+cq
+cq
 yp
 cg
 cz
 au
 cI
-ac
+al
 al
 al
 al
 al
 cN
-av
+bV
 al
 wZ
 Qm
@@ -10450,19 +10758,19 @@ Hk
 xP
 al
 al
-av
+bV
 al
 al
 al
 al
-ac
-ac
-ac
 al
 al
 al
 al
-ac
+al
+al
+al
+al
 dM
 dM
 dM
@@ -10534,13 +10842,13 @@ au
 cg
 cg
 cL
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
 al
 wZ
 IQ
@@ -10552,19 +10860,19 @@ ZC
 kE
 al
 al
-av
+bV
+al
+al
+al
+aU
 al
 al
 al
 al
-ac
-ac
-ac
 al
 al
 al
-ac
-ac
+al
 dM
 dM
 dM
@@ -10659,14 +10967,14 @@ bw
 jM
 al
 al
-ac
-ac
-ac
 al
 al
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
 Zm
 mI
 mI
@@ -10730,9 +11038,9 @@ JX
 JX
 fn
 ak
-ct
-ct
-ct
+bE
+bE
+bE
 cD
 au
 au
@@ -10761,14 +11069,14 @@ aj
 bw
 al
 al
-ac
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+al
+al
+al
+al
 eI
 Lv
 Uo
@@ -10835,7 +11143,7 @@ aj
 UN
 al
 al
-cp
+aZ
 au
 au
 cg
@@ -10861,16 +11169,16 @@ ik
 cg
 aj
 hd
-ac
-ac
-ac
-ac
-ac
-ac
-ac
+al
+al
+al
+al
+nz
+al
+al
 bi
 Xp
-bw
+cp
 dM
 dM
 dM
@@ -10965,14 +11273,14 @@ mN
 bw
 al
 al
-ac
-ac
+al
+al
 al
 al
 dM
 dM
-bw
-bw
+cp
+cp
 dM
 dM
 dM
@@ -11065,15 +11373,15 @@ EB
 cg
 tr
 bw
-ac
-ac
-ac
-ac
+al
+al
+al
+al
 al
 al
 dM
 dM
-bw
+cp
 em
 dM
 dM
@@ -11137,11 +11445,11 @@ al
 al
 aZ
 be
-bw
-Oj
+cp
+bB
 al
 al
-ac
+al
 bi
 wu
 cg
@@ -11168,14 +11476,14 @@ cg
 gT
 bw
 al
-ac
-ac
-ac
+al
+al
+al
 al
 dM
 dM
 dM
-bw
+cp
 CE
 KB
 iZ
@@ -11237,13 +11545,13 @@ ab
 ab
 al
 al
-cp
+aZ
 be
-bw
-Oj
+cp
+bB
 al
+aU
 al
-ac
 bi
 bt
 cg
@@ -11269,10 +11577,10 @@ cg
 vk
 mN
 bw
-ac
-ac
-ac
-ac
+al
+al
+bT
+al
 al
 dM
 dM
@@ -11339,13 +11647,13 @@ ab
 ab
 al
 al
-cp
+aZ
 be
-bw
+cp
 bC
-Gh
+cq
 al
-ac
+al
 ak
 au
 cz
@@ -11371,9 +11679,9 @@ Cg
 sj
 aj
 hd
-ac
-ac
-ac
+al
+al
+al
 al
 al
 al
@@ -11385,9 +11693,9 @@ KB
 iZ
 iZ
 iZ
-ac
-ac
-ac
+al
+al
+al
 al
 dM
 dM
@@ -11440,14 +11748,14 @@ ab
 ab
 ab
 al
-al
+rm
 aZ
 be
-bw
-bw
-bw
-Oj
-ac
+cp
+cp
+cp
+bB
+al
 ak
 bj
 au
@@ -11473,9 +11781,9 @@ aj
 aj
 aj
 bw
-ac
-ac
-ac
+al
+al
+al
 al
 al
 al
@@ -11486,9 +11794,9 @@ CE
 KB
 iZ
 dM
-yc
+cU
 dM
-yc
+cU
 al
 al
 dM
@@ -11542,14 +11850,14 @@ ab
 ab
 ab
 al
-ac
+al
 aZ
 ba
 sS
 hy
-bw
+cp
 bB
-ac
+al
 ak
 bi
 bi
@@ -11559,24 +11867,24 @@ bo
 bi
 bi
 ak
-jM
-bw
+av
+cp
 Io
-bw
-wZ
-bw
-bw
-bw
+cp
+fp
+cp
+cp
+cp
 Io
-bw
+cp
 lh
 nY
-bw
+cp
 Io
-bw
-jM
-ac
-ac
+cp
+av
+al
+al
 al
 al
 aU
@@ -11643,15 +11951,15 @@ ab
 ab
 ab
 ab
-ac
-ac
-ac
+al
+al
+al
 nM
 yo
 be
-bw
+cp
 bB
-ac
+al
 bi
 bi
 bl
@@ -11662,22 +11970,22 @@ br
 bi
 bi
 ab
-ac
-ac
-bw
+al
+al
+cp
 WE
 bB
-ac
-ac
-bw
-bw
+al
+al
+cp
+cp
 Zh
 GD
 Ev
 WH
 Ev
 fL
-ac
+al
 al
 al
 al
@@ -11747,13 +12055,13 @@ ab
 ab
 ab
 ab
-ac
-ac
+al
+al
 aZ
 be
-bw
+cp
 bB
-ac
+ct
 bi
 bi
 bm
@@ -11765,12 +12073,12 @@ bi
 bi
 ab
 ab
-ac
-bw
+al
+cp
 WE
 bB
-ac
-ac
+al
+rm
 wl
 uz
 Br
@@ -11794,7 +12102,7 @@ dM
 Dv
 al
 kO
-aS
+cX
 al
 al
 al
@@ -11850,12 +12158,12 @@ ab
 ab
 ab
 ab
-ac
+al
 aZ
 be
-bw
+cp
 bB
-ac
+al
 bi
 bi
 bm
@@ -11867,12 +12175,12 @@ bi
 bi
 ab
 ab
-ac
-bw
+al
+cp
 WE
 bB
-ac
-ac
+al
+al
 zV
 ZC
 Rd
@@ -11890,8 +12198,8 @@ iZ
 DZ
 RP
 CE
-bw
-nz
+cp
+cI
 cy
 al
 al
@@ -11955,9 +12263,9 @@ ab
 ab
 aZ
 be
-bw
+cp
 bB
-ac
+al
 bi
 bi
 bm
@@ -11969,14 +12277,14 @@ bi
 bi
 ab
 ab
-ac
-bw
+al
+cp
 WE
 bB
-ac
-ac
-bw
-bw
+al
+al
+cp
+cp
 ng
 rW
 Ev
@@ -11992,8 +12300,8 @@ iZ
 QH
 RP
 CE
-bw
-nz
+cp
+cI
 al
 al
 al
@@ -12057,9 +12365,9 @@ ab
 ab
 aZ
 be
-bw
+cp
 bB
-ac
+al
 bi
 bi
 bn
@@ -12072,20 +12380,20 @@ bi
 ab
 ab
 ab
-bw
+cp
 WE
 bB
-ac
-jM
-bw
-bw
+al
+av
+cp
+cp
 HP
 PU
-bw
-bw
-bw
-bw
-bw
+cp
+cp
+cp
+cp
+cp
 ab
 iZ
 iZ
@@ -12094,8 +12402,8 @@ iZ
 wK
 RP
 em
-bw
-nz
+cp
+cI
 al
 al
 dM
@@ -12107,7 +12415,7 @@ al
 al
 al
 al
-WS
+dt
 aa
 Dt
 OJ
@@ -12159,9 +12467,9 @@ ab
 ab
 aZ
 be
-bw
+cp
 bB
-ac
+al
 bi
 bi
 bi
@@ -12174,11 +12482,11 @@ bi
 ab
 ab
 ab
-bw
+cp
 WE
 bB
 al
-bw
+cp
 eA
 pp
 lL
@@ -12194,10 +12502,10 @@ ab
 iZ
 iZ
 al
+aZ
 cp
-bw
-bw
-nz
+cp
+cI
 al
 al
 dM
@@ -12261,7 +12569,7 @@ ab
 ab
 aZ
 be
-bw
+cp
 bC
 bh
 bi
@@ -12276,11 +12584,11 @@ bi
 ab
 ab
 ab
-bw
+cp
 WE
 bB
 al
-bw
+cp
 KB
 iZ
 lL
@@ -12297,11 +12605,11 @@ iZ
 iZ
 iJ
 al
-bw
-bw
+cp
+cp
 al
 al
-aU
+rm
 al
 ki
 Lz
@@ -12310,7 +12618,7 @@ BI
 al
 al
 al
-xk
+Gh
 aa
 aa
 wK
@@ -12363,26 +12671,26 @@ ab
 ab
 aZ
 be
-bw
-bw
-bw
-bw
-bw
-bw
+cp
+cp
+cp
+cp
+cp
+cp
 bi
 bI
 ad
 bi
-bw
-bw
-bw
-bw
-bw
-jM
+cp
+cp
+cp
+cp
+cp
+av
 WE
 bB
 al
-bw
+cp
 KB
 iZ
 lL
@@ -12396,7 +12704,7 @@ iZ
 iZ
 iZ
 iZ
-aS
+cX
 al
 al
 du
@@ -12411,7 +12719,7 @@ dM
 dM
 al
 al
-is
+du
 aa
 aa
 aa
@@ -12484,7 +12792,7 @@ Hw
 Zj
 bB
 al
-bw
+cp
 KB
 iZ
 lL
@@ -12497,15 +12805,15 @@ iZ
 iZ
 iZ
 iZ
-aS
+cX
 wR
 qU
 al
 al
 al
 bP
-aS
-aS
+cX
+cX
 mI
 dM
 xk
@@ -12565,28 +12873,28 @@ ab
 ab
 ab
 ab
-ac
-bE
-bE
-bE
-bE
-bE
-bE
-bE
-bi
-bi
-bi
-bi
-bE
-bE
-bE
-bE
-bE
-bE
-bE
-ac
 al
-bw
+bE
+bE
+bE
+bE
+bE
+bE
+bE
+bi
+bi
+bi
+bi
+bE
+bE
+bE
+bE
+bE
+bE
+bE
+al
+al
+cp
 KB
 iZ
 lL
@@ -12600,7 +12908,7 @@ iZ
 iZ
 vl
 dw
-av
+bV
 al
 al
 al
@@ -12687,8 +12995,8 @@ aa
 aa
 aa
 al
-al
-bw
+aU
+cp
 KB
 iZ
 lL
@@ -12701,15 +13009,15 @@ iZ
 iZ
 al
 al
-bT
+aV
 al
 al
 al
 al
 al
 al
-av
-av
+bV
+bV
 al
 al
 al
@@ -12790,7 +13098,7 @@ aa
 aa
 al
 al
-bw
+cp
 KB
 iZ
 lL
@@ -12804,11 +13112,11 @@ iZ
 al
 al
 al
-ac
-ac
+al
+al
 Nq
-ac
-ac
+al
+al
 al
 al
 al
@@ -12891,7 +13199,7 @@ aa
 aa
 bi
 tK
-bw
+cp
 em
 KB
 iZ
@@ -12904,9 +13212,9 @@ iZ
 iZ
 al
 al
-ac
-ac
-ac
+al
+al
+al
 aa
 aa
 aa
@@ -13004,10 +13312,10 @@ iZ
 iZ
 iZ
 iZ
-ac
-ac
-ac
-ac
+al
+al
+al
+al
 aa
 aa
 aa
@@ -13107,7 +13415,7 @@ iZ
 iZ
 iZ
 aa
-ac
+al
 aa
 aa
 aa
