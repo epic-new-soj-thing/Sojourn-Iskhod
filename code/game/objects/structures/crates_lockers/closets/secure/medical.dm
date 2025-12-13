@@ -249,3 +249,7 @@
 	new /obj/item/storage/pouch/tubular/vial(src)
 	new /obj/item/storage/bag/chemistry(src)
 	new /obj/item/storage/bag/chemistry(src)
+	new /obj/item/clothing/glasses/powered/science(src)
+	new /obj/item/clothing/glasses/powered/science(src)
+	new /obj/item/clothing/suit/storage/toggle/labcoat/chemist(src)
+	new /obj/item/clothing/suit/storage/toggle/labcoat/chemist(src)
