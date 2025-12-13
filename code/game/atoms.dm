@@ -396,14 +396,26 @@ its easier to just keep the beam vertical.
 			user.client.statpanel = "Examine"
 
 	if(reagents)
-		if(reagent_flags & TRANSPARENT)
+		var/can_see_reagents_inside = (reagent_flags & TRANSPARENT) || user.can_see_reagents()
+		if(can_see_reagents_inside)
 			to_chat(user, SPAN_NOTICE("It contains:"))
 			var/return_value = user.can_see_reagents()
 			var/cop_vision = user.can_see_illegal_reagents()
 			var/bar_vision = user.can_see_common_reagents()
+
+			var/has_sirc_access = FALSE
+			if(ishuman(user))
+				var/mob/living/carbon/human/H = user
+				if(istype(H.glasses, /obj/item/clothing/glasses/powered/science))
+					var/obj/item/clothing/glasses/powered/science/S = H.glasses
+					if(S.active) has_sirc_access = TRUE
+
 			if(return_value == TRUE) //Show each individual reagent
 				for(var/datum/reagent/R in reagents.reagent_list)
-					to_chat(user, SPAN_NOTICE("[R.volume] units of [R.name]"))
+					var/display_name = R.name
+					if(has_sirc_access)
+						display_name = "<a href='?src=[REF(src)];action=sirc_inspect;reagent=[R.type]'>[R.name]</a>"
+					to_chat(user, SPAN_NOTICE("[R.volume] units of [display_name]"))
 			// Only display reagents marked as "Common", IE, a regular person will know what it is and does.
 			else if(bar_vision)
 				var/misc_reagent = 0
@@ -452,6 +464,17 @@ its easier to just keep the beam vertical.
 	LEGACY_SEND_SIGNAL(src, COMSIG_EXAMINE, user, distance)
 
 	return distance == -1 || (get_dist(src, user) <= distance) || isobserver(user)
+
+/atom/Topic(href, href_list)
+	..()
+	if(href_list["action"] == "sirc_inspect")
+		if(ishuman(usr))
+			var/mob/living/carbon/human/H = usr // usr required for Topic hrefs
+			if(istype(H.glasses, /obj/item/clothing/glasses/powered/science))
+				var/obj/item/clothing/glasses/powered/science/S = H.glasses
+				if(S.active)
+					var/reagent_path = text2path(href_list["reagent"])
+					S.open_sirc(usr, reagent_path)
 
 // called by mobs when e.g. having the atom as their machine, pulledby, loc (AKA mob being inside the atom) or buckled var set.
 // see code/modules/mob/mob_movement.dm for more.
