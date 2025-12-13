@@ -8,3 +8,10 @@
 	gain_mult_moderate = 0.4
 	gain_mult_major = 0.4
 	gain_mult_roleset = 0.5
+
+	points = list(
+	EVENT_LEVEL_MUNDANE = 0, //Mundane
+	EVENT_LEVEL_MODERATE = 0, //Moderate
+	EVENT_LEVEL_MAJOR = 0, //Major
+	EVENT_LEVEL_ROLESET = -999 //Roleset
+	)

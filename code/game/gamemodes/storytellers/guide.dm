@@ -6,3 +6,10 @@ It is set as storyteller base in __defines/gamemode.dm
 	name = "The Guide"
 	welcome = "Welcome to the Nadezhda colony!"
 	description = "Offers a well balanced experience that has a little of everything. Considered the default experience"
+
+	points = list(
+	EVENT_LEVEL_MUNDANE = 10, //Mundane
+	EVENT_LEVEL_MODERATE = 10, //Moderate
+	EVENT_LEVEL_MAJOR = 5, //Major
+	EVENT_LEVEL_ROLESET = 50 //Roleset
+	)
