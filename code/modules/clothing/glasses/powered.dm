@@ -52,6 +52,7 @@
 	desc = "A pair of goggles with a science HUD. These can show you reagents within transparent containers and organoid information."
 	icon_state = "purple"
 	item_state = "glasses"
+	prescription = 1
 
 	tick_cost = 0.1
 
