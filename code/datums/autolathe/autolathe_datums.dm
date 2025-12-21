@@ -144,7 +144,9 @@
 	)
 
 	if(build_path)
-		nano_ui_data["img_tag"] = icon2base64tgui(build_path)
+		// We use a separate field for the base64 image to avoid conflict with TGUI's icon class
+		// TGUI uses 'icon' which is populated by the design_icons spritesheet
+		nano_ui_data["icon"] = icon2base64tgui(build_path)
 
 	if(length(materials))
 		var/list/RS = list()
