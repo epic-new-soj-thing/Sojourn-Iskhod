@@ -180,6 +180,18 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		if(tech_tree && tech_tree.shown)
 			selected_tech_tree = tech_tree
 			selected_technology = null
+	if(href_list["research_all"]) // Research everything feasible
+		var/can_continue = TRUE
+		var/max_iterations = 50 // Fail-safe to prevent infinite loops, though unlikely
+		while(can_continue && max_iterations > 0)
+			can_continue = FALSE
+			max_iterations--
+			for(var/t in SSresearch.all_tech_nodes)
+				var/datum/technology/tech_node = t
+				if(!files.IsResearched(tech_node) && files.CanResearch(tech_node))
+					files.UnlockTechology(tech_node)
+					can_continue = TRUE
+
 	if(href_list["select_technology"]) // User selected a technology node.
 		var/tech_node = locate(href_list["select_technology"]) in SSresearch.all_tech_nodes
 		if(tech_node)
@@ -309,9 +321,9 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 				linked_imprinter = null
 	if(href_list["reset"]) //Reset the R&D console's database.
 		griefProtection()
-		var/choice = alert("R&D Console Database Reset", "Are you sure you want to reset the R&D console's database? Data lost cannot be recovered.", "Continue", "Cancel")
+		var/choice = alert(usr, "Are you sure you want to reset the R&D console's database? Data lost cannot be recovered.", "R&D Console Database Reset", "Continue", "Cancel")
 		if(choice == "Continue")
-			log_and_message_admins("reset the R&D console's database")
+			log_and_message_admins("[key_name(usr)] reset the R&D console's database.")
 			screen = SCREEN_WORKING
 			qdel(files)
 			files = new /datum/research(src)

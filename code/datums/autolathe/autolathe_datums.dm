@@ -143,6 +143,9 @@
 		"ignore_object_materials" = ignore_object_materials
 	)
 
+	if(build_path)
+		nano_ui_data["img_tag"] = icon2base64tgui(build_path)
+
 	if(length(materials))
 		var/list/RS = list()
 
