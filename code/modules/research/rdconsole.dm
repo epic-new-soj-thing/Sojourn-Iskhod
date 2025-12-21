@@ -191,6 +191,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 				if(!files.IsResearched(tech_node) && files.CanResearch(tech_node))
 					files.UnlockTechology(tech_node)
 					can_continue = TRUE
+		SSnano.update_uis(src)
 
 	if(href_list["select_technology"]) // User selected a technology node.
 		var/tech_node = locate(href_list["select_technology"]) in SSresearch.all_tech_nodes
