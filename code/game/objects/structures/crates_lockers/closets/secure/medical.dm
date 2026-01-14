@@ -19,6 +19,10 @@
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
 	new /obj/item/storage/hcases/med(src)
+	new /obj/item/storage/box/pillbottles(src)
+	new /obj/item/storage/box/pillbottles(src)
+	new /obj/item/clothing/glasses/powered/science(src)
+	new /obj/item/clothing/suit/storage/toggle/labcoat/chemist(src)
 
 /obj/structure/closet/secure_closet/anesthetics
 	name = "anesthetics closet"
@@ -249,3 +253,7 @@
 	new /obj/item/storage/pouch/tubular/vial(src)
 	new /obj/item/storage/bag/chemistry(src)
 	new /obj/item/storage/bag/chemistry(src)
+	new /obj/item/clothing/glasses/powered/science(src)
+	new /obj/item/clothing/glasses/powered/science(src)
+	new /obj/item/clothing/suit/storage/toggle/labcoat/chemist(src)
+	new /obj/item/clothing/suit/storage/toggle/labcoat/chemist(src)

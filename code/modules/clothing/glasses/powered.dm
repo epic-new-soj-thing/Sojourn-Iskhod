@@ -52,8 +52,25 @@
 	desc = "A pair of goggles with a science HUD. These can show you reagents within transparent containers and organoid information."
 	icon_state = "purple"
 	item_state = "glasses"
+	prescription = 1
 
 	tick_cost = 0.1
+
+	var/datum/tgui_module/catalog/chemistry/sirc
+
+/obj/item/clothing/glasses/powered/science/Destroy()
+	if(sirc)
+		QDEL_NULL(sirc)
+	. = ..()
+
+/obj/item/clothing/glasses/powered/science/proc/open_sirc(mob/user, reagent_path)
+	if(!sirc)
+		sirc = new(src)
+
+	var/datum/catalog_entry/E = GLOB.all_catalog_entries_by_type[reagent_path]
+	if(E)
+		sirc.set_selected_entry(user, E)
+		sirc.ui_interact(user)
 
 /obj/item/clothing/glasses/powered/science/Initialize()
 	. = ..()
