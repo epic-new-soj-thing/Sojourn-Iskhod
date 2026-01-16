@@ -367,7 +367,7 @@
 /obj/item/robot_parts/robot_component/armor/mkiv
 	name = "Mark IV heavy armor plating"
 	desc = "A robot part, whats better then a few metal plates? MORE metal plates! Protects other sensitive components."
-	icon_state = "armormk3"
+	icon_state = "armormk5"
 	icon_state_broken = "armormk3_broken"
 	internal_damage = 160
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
