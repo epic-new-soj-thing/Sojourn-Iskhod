@@ -135,16 +135,8 @@
 
 	var/datum/robot_component/armor/A = get_armor()
 	if(A)
-		var/armor_value = 0
-		if(A.armor)
-			if(used_weapon)
-				//It would be nice to have a way to get the damage type from the weapon, but we don't.
-				//So we assume melee.
-				armor_value = A.armor["melee"]
-			else
-				armor_value = A.armor["melee"] //Fall back to melee if unspecified? Or maybe just brute?
-
 		//Apply armor reduction
+		//Standard body armor formula is usually prob(armor) to block, or flat reduction?
 		//Standard body armor formula is usually prob(armor) to block, or flat reduction?
 		//Looking at code, clothing/suits seem to just have values.
 		//Let's assume standard Baystation/TG armor logic: damage = max(0, damage - armor_value/X) or prob based?
@@ -162,10 +154,10 @@
 
         //Let's implement a flat percent reduction based on the value, clamped.
         //If armor is 50, takes 50% less damage.
-        if (A.armor && A.armor["melee"])
-             var/reduction = A.armor["melee"] / 100
-             brute *= max(0, 1 - reduction)
-             burn *= max(0, 1 - reduction) //Assuming melee covers both? Or should checking burn?
+		if (A.armor && A.armor["melee"])
+			var/reduction = A.armor["melee"] / 100
+			brute *= max(0, 1 - reduction)
+			burn *= max(0, 1 - reduction) //Assuming melee covers both? Or should checking burn?
 
         //Original logic below:
 		A.take_damage(brute*A.brute_mult,burn*A.burn_mult,sharp)
