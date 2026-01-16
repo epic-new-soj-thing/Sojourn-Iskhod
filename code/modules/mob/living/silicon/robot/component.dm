@@ -15,6 +15,7 @@
 	var/powered_trait = FALSE // does this module need to be powered for its trait to be active ?
 	var/brute_mult = 1 // allows components to become resistant to a form of damage. If brute and burn are both 0 then they can't be broken.
 	var/burn_mult = 1
+	var/list/armor // A list of armor values, similar to clothing.
 
 // The actual device object that has to be installed for this.
 /datum/robot_component/var/external_type = null
@@ -98,28 +99,48 @@
 /datum/robot_component/armor
 	name = "mark I armor plating"
 	external_type = /obj/item/robot_parts/robot_component/armor
-	max_damage = 80
+	max_damage = 150
+	armor = list(melee = 20, bullet = 20, laser = 10, energy = 10, bomb = 10, bio = 100, rad = 0)
 
 /datum/robot_component/armor/energy
 	name = "mark II energy armor plating"
 	external_type = /obj/item/robot_parts/robot_component/armor/mkii
-	max_damage = 120
+	max_damage = 200
 	installed_by_default = FALSE
 	burn_mult = 0.5
+	//High energy protection, low physical
+	armor = list(melee = 10, bullet = 10, laser = 50, energy = 50, bomb = 30, bio = 100, rad = 30)
 
 /datum/robot_component/armor/melee
 	name = "mark III reinforced armor plating"
 	external_type = /obj/item/robot_parts/robot_component/armor/mkiii
-	max_damage = 120
+	max_damage = 200
 	installed_by_default = FALSE
 	brute_mult = 0.5
+	//High physical protection, low energy
+	armor = list(melee = 50, bullet = 50, laser = 10, energy = 10, bomb = 40, bio = 100, rad = 0)
 
 /datum/robot_component/armor/extra
-	name = "mark V extra armor plating"
-	external_type = /obj/item/robot_parts/robot_component/armor/mkv
-	max_damage = 160 //33% more hp then other plates but no resistances.
+	name = "mark IV heavy armor plating"
+	external_type = /obj/item/robot_parts/robot_component/armor/mkiv
+	max_damage = 300 //33% more hp then other plates but less resistances.
 	installed_by_default = FALSE
+	armor = list(melee = 20, bullet = 20, laser = 20, energy = 20, bomb = 40, bio = 100, rad = 20)
 
+/datum/robot_component/armor/mixed
+	name = "mark V specialized armor plating"
+	external_type = /obj/item/robot_parts/robot_component/armor/mkv
+	max_damage = 250
+	installed_by_default = FALSE
+	//Decent all around
+	armor = list(melee = 35, bullet = 35, laser = 35, energy = 35, bomb = 50, bio = 100, rad = 50)
+
+/datum/robot_component/armor/heavy
+	name = "mark VI experimental armor plating"
+	external_type = /obj/item/robot_parts/robot_component/armor/mkvi
+	max_damage = 300 //33% more hp then other plates and more resistances.
+	installed_by_default = FALSE
+	armor = list(melee = 60, bullet = 60, laser = 60, energy = 60, bomb = 70, bio = 100, rad = 80)
 
 // JETPACK
 // Allows the cyborg to move in space
@@ -343,13 +364,29 @@
 	matter = list(MATERIAL_STEEL = 25)
 	brute_mult = 0.5
 
-/obj/item/robot_parts/robot_component/armor/mkv
-	name = "Mark V extra armor plating"
+/obj/item/robot_parts/robot_component/armor/mkiv
+	name = "Mark IV heavy armor plating"
 	desc = "A robot part, whats better then a few metal plates? MORE metal plates! Protects other sensitive components."
-	icon_state = "armormk5"
-	icon_state_broken = "armormk5_broken"
+	icon_state = "armormk3"
+	icon_state_broken = "armormk3_broken"
 	internal_damage = 160
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
+
+/obj/item/robot_parts/robot_component/armor/mkv
+	name = "Mark V specialized armor plating"
+	desc = "A robot part, extremely heavy and durable plating. It makes the cyborg look like a tank."
+	icon_state = "armormk5"
+	icon_state_broken = "armormk5_broken"
+	internal_damage = 250 // Base HP upon installation
+	matter = list(MATERIAL_PLASTEEL = 30)
+
+/obj/item/robot_parts/robot_component/armor/mkvi
+	name = "Mark VI experimental armor plating"
+	desc = "A robot part, cutting-edge defensive technology constructed by the Artificers Guild. It combines exotic materials for ultimate protection."
+	icon_state = "armormk5" // Placeholder if no unique sprite
+	icon_state_broken = "armormk5_broken"
+	internal_damage = 300
+	matter = list(MATERIAL_PLASTEEL = 20, MATERIAL_PLASMA = 5, MATERIAL_DIAMOND = 2)
 
 /obj/item/robot_parts/robot_component/camera
 	name = "camera"

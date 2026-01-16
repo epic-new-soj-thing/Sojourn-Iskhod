@@ -64,8 +64,16 @@
 	name = "Mark II energy armor plating"
 	build_path = /obj/item/robot_parts/robot_component/armor/mkii
 
+/datum/design/research/item/mechfab/robot/component/armor/mkiii
+	name = "Mark III reinforced armor plating"
+	build_path = /obj/item/robot_parts/robot_component/armor/mkiii
+
+/datum/design/research/item/mechfab/robot/component/armor/mkiv
+	name = "Mark IV heavy armor plating"
+	build_path = /obj/item/robot_parts/robot_component/armor/mkiv
+
 /datum/design/research/item/mechfab/robot/component/armor/mkv
-	name = "Mark V extra armor plating"
+	name = "Mark V specialized armor plating"
 	build_path = /obj/item/robot_parts/robot_component/armor/mkv
 
 
