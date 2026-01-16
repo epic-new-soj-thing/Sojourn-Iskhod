@@ -314,9 +314,16 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //hardsuits.
 	src.modules += new /obj/item/device/scanner/health(src)
 	src.modules += new /obj/item/gripper/universal(src)
-	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/melee/energy/sword(src)
+
+	src.modules += new /obj/item/device/t_scanner(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/gripper/ammo(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
 	synths += medicine
@@ -424,9 +431,28 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //hardsuits.
 	src.modules += new /obj/item/tool/scalpel/laser/si/robo(src) //hardsuits.
 	src.modules += new /obj/item/gripper/universal(src)
-	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/melee/energy/sword(src)
+	src.modules += new /obj/item/reagent_containers/dropper/industrial(src)
+	src.modules += new /obj/item/reagent_containers/syringe/large(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large(src) //Two beakers
+	src.modules += new /obj/item/device/scanner/reagent/adv(src)
+	src.modules += new /obj/item/autopsy_scanner(src) // an autopsy scanner
+	src.modules += new /obj/item/reagent_containers/spray/sterilizine(src)
+	src.modules += new /obj/item/shockpaddles/robot(src)
+	src.modules += new /obj/item/roller_holder(src)
+	src.modules += new /obj/item/gripper/chemistry(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.modules += new /obj/item/tool/sword/saber/injection_rapier(src)
+	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/gripper/ammo(src)
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
 	synths += medicine
@@ -561,9 +587,24 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/scanner/gas(src)
 	src.modules += new /obj/item/taperoll/engineering(src)
 	src.modules += new /obj/item/gripper/universal(src)
-	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.emag += new /obj/item/tool/baton/robot(src)
+
+	src.modules += new /obj/item/gripper/no_use/loader(src)
+	src.modules += new /obj/item/device/lightreplacer(src)
+	src.modules += new /obj/item/device/pipe_painter(src)
+	src.modules += new /obj/item/device/floor_painter(src)
+	src.modules += new /obj/item/inflatable_dispenser(src)
+	src.modules += new /obj/item/storage/rped/compact(src)
+	src.modules += new /obj/item/reagent_containers/glass/bucket(src)
+	src.modules += new /obj/item/reagent_containers/spray/cleaner(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/device/scanner/price(src)
+	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
+	src.modules += new /obj/item/gripper/paperwork(src)
+	src.modules += new /obj/item/gripper/ammo(src)
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(80000)
 	var/datum/matter_synth/plasteel = new /datum/matter_synth/plasteel(40000)
@@ -728,8 +769,18 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/hammer/ironhammer(src) //breaching!
 	src.modules += new /obj/item/gun/energy/bsrifle(src) //Clearing! Comes prepared to do warcrimes via incendiary rounds
 	src.modules += new /obj/item/gripper/universal(src)
-	src.modules += new /obj/item/gripper/universal(src)
 	src.emag += new /obj/item/melee/energy/sword(src)
+
+	src.modules += new /obj/item/gripper/ammo(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/shield_projector/rectangle/borg_personal(src) //this is your lifeline, without it you are SCRAP
+	src.modules += new /obj/item/gripper/upgrade(src)
+	src.modules += new /obj/item/tool/robotic_omni/sec(src) //borrows and the like.
+	src.modules += new /obj/item/tool/weldingtool/robotic/weaker(src) //cracks and the like.
+	src.modules += new /obj/item/gun/energy/dazzlation(src)
+	src.modules += new /obj/item/device/gps(src)
+	src.modules += new /obj/item/pen/robopen(src)
+	src.modules += new /obj/item/form_printer(src)
 
 	//We are stronk so we get less no knockdowns
 	R?.stats?.addPerk(PERK_ASS_OF_CONCRETE)
@@ -818,7 +869,6 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/taperoll/police(src)
 	src.modules += new /obj/item/gun/energy/riot(src)
 	src.modules += new /obj/item/gripper/universal(src)
-	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
@@ -826,6 +876,9 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/holowarrant(src)
 	//src.modules += new /obj/item/book/manual/wiki/security_ironparagraphs(src) // book of marshal paragraphs
 	src.emag += new /obj/item/gun/energy/laser/mounted/cyborg(src)
+
+	src.modules += new /obj/item/gripper/ammo(src)
+	src.modules += new /obj/item/gripper/upgrade(src)
 
 	//We are stronk so we get less no knockdowns
 	R?.stats?.addPerk(PERK_ASS_OF_CONCRETE)
@@ -920,7 +973,6 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/gripper/universal(src)
-	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/pen/robopen(src)
 	src.modules += new /obj/item/form_printer(src)
@@ -1009,7 +1061,6 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/robotic_omni/standard(src)
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/flash(src)
-	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/device/gps(src)
 	src.modules += new /obj/item/device/synthesized_instrument/synthesizer(src)
@@ -1105,11 +1156,11 @@ var/global/list/robot_modules = list(
 /obj/item/robot_module/miner/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/tool/robotic_omni/miner(src)
 	src.modules += new /obj/item/tool/pickaxe/borgonly(src)
+	src.modules += new /obj/item/gun/projectile/shotgun/pump(src)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/borg/sight/material(src)
 	src.modules += new /obj/item/storage/bag/robotic/ore(src)
 	src.modules += new /obj/item/storage/bag/robotic/sheetsnatcher(src)
-	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/device/scanner/price(src)
 	src.modules += new /obj/item/device/gps(src)
@@ -1180,7 +1231,6 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/flash(src)
 //	src.modules += new /obj/item/portable_destructive_analyzer(src) dosnt work
 	src.modules += new /obj/item/gripper/universal(src)
-	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/gripper/ammo(src)
 	src.modules += new /obj/item/gun/energy/borg/pistol(src)
 	src.modules += new /obj/item/device/gps(src)
@@ -1233,7 +1283,6 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/tool/tape_roll/fiber/robotic(src) //Window repair
 	src.modules += new /obj/item/device/t_scanner(src)
 	src.modules += new /obj/item/device/lightreplacer(src)
-	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/gripper/universal(src)
 	src.modules += new /obj/item/device/gps(src)
 
