@@ -368,7 +368,7 @@
 	name = "Mark IV heavy armor plating"
 	desc = "A robot part, whats better then a few metal plates? MORE metal plates! Protects other sensitive components."
 	icon_state = "armormk5"
-	icon_state_broken = "armormk3_broken"
+	icon_state_broken = "armormk5_broken"
 	internal_damage = 160
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTEEL = 10)
 
