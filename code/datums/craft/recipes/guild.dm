@@ -115,13 +115,13 @@
 
 //The big boy. Requires the mark V to be built in science first.
 /datum/craft_recipe/guild/robotexp
-	name = "robot mark vi heavy armor plating"
+	name = "robot mark vi experimental armor plating"
 	result = /obj/item/robot_parts/robot_component/armor/mkvi
 	steps = list(
 		list(/obj/item/robot_parts/robot_component/armor/mkv, 1, "time" = 10),
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASMA, "time" = 90),
-		list(CRAFT_MATERIAL, 10, MATERIAL_DIAMOND, "time" = 90),
-		list(CRAFT_MATERIAL, 10, MATERIAL_GOLD, "time" = 90),
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASMA, "time" = 90),
+		list(CRAFT_MATERIAL, 2, MATERIAL_DIAMOND, "time" = 90),
+		list(CRAFT_MATERIAL, 5, MATERIAL_GOLD, "time" = 90),
 		list(QUALITY_WELDING, 40, "time" = 180),
 		list(QUALITY_CUTTING, 30, "time" = 180),
 		list(QUALITY_HAMMERING, 30, "time" = 180),
