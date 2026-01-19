@@ -296,11 +296,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		var/loaded_chan_author = db_author
 		var/loaded_chan_announcement = db_announcement
 		if(loaded_chan_name && dd_hasprefix(loaded_chan_name, "'") && dd_hassuffix(loaded_chan_name, "'"))
-			loaded_chan_name = copytext(loaded_chan_name, 2, length(loaded_chan_name))
+			loaded_chan_name = copytext(loaded_chan_name, 2, -1)
 		if(loaded_chan_author && dd_hasprefix(loaded_chan_author, "'") && dd_hassuffix(loaded_chan_author, "'"))
-			loaded_chan_author = copytext(loaded_chan_author, 2, length(loaded_chan_author))
+			loaded_chan_author = copytext(loaded_chan_author, 2, -1)
 		if(loaded_chan_announcement && dd_hasprefix(loaded_chan_announcement, "'") && dd_hassuffix(loaded_chan_announcement, "'"))
-			loaded_chan_announcement = copytext(loaded_chan_announcement, 2, length(loaded_chan_announcement))
+			loaded_chan_announcement = copytext(loaded_chan_announcement, 2, -1)
 
 		// Try to find an existing in-memory channel first by DB id, then by name
 		var/datum/feed_channel/FC = null
@@ -393,11 +393,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		var/loaded_body = m["body"]
 		var/loaded_type = m["message_type"]
 		if(loaded_author && dd_hasprefix(loaded_author, "'") && dd_hassuffix(loaded_author, "'"))
-			loaded_author = copytext(loaded_author, 2, length(loaded_author))
+			loaded_author = copytext(loaded_author, 2, -1)
 		if(loaded_body && dd_hasprefix(loaded_body, "'") && dd_hassuffix(loaded_body, "'"))
-			loaded_body = copytext(loaded_body, 2, length(loaded_body))
+			loaded_body = copytext(loaded_body, 2, -1)
 		if(loaded_type && dd_hasprefix(loaded_type, "'") && dd_hassuffix(loaded_type, "'"))
-			loaded_type = copytext(loaded_type, 2, length(loaded_type))
+			loaded_type = copytext(loaded_type, 2, -1)
 
 		newMsg.author = loaded_author
 		newMsg.body = loaded_body
@@ -436,7 +436,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	// Handle potentially quoted names from database loading or manual entry
 	var/clean_name = channel_name
 	if(clean_name && dd_hasprefix(clean_name, "'") && dd_hassuffix(clean_name, "'"))
-		clean_name = copytext(clean_name, 2, length(clean_name))
+		clean_name = copytext(clean_name, 2, -1)
 
 	if(!config)
 		return 0
