@@ -20,7 +20,10 @@ var/database_whitelist_loaded = 0
 			log_debug("Database error: [dbcon.ErrorMsg()]")
 		else
 			log_debug("No database connection object exists")
-		load_whitelist() // Call the old file-based function
+		// Load file-based whitelist directly
+		whitelist = file2list("data/whitelist.txt")
+		if(!whitelist.len)
+			whitelist = null
 		return
 
 	log_world("DEBUG: Database connection established successfully for whitelist")
@@ -33,7 +36,9 @@ var/database_whitelist_loaded = 0
 	if(!query.Execute())
 		log_debug("Failed to load whitelist from database: [query.ErrorMsg()]")
 		// Fall back to file-based system
-		load_whitelist()
+		whitelist = file2list("data/whitelist.txt")
+		if(!whitelist.len)
+			whitelist = null
 		return
 
 	database_whitelist = list()
