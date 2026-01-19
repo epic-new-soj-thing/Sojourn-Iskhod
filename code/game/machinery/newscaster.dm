@@ -291,6 +291,17 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		var/db_admin = q.item[5]
 		var/db_announcement = q.item[6]
 
+		// Normalize DB-loaded fields: some DB rows may have surrounding single quotes
+		var/loaded_chan_name = chan_name
+		var/loaded_chan_author = db_author
+		var/loaded_chan_announcement = db_announcement
+		if(loaded_chan_name && dd_hasprefix(loaded_chan_name, "'"))
+			loaded_chan_name = copytext(loaded_chan_name, 2, length(loaded_chan_name))
+		if(loaded_chan_author && dd_hasprefix(loaded_chan_author, "'"))
+			loaded_chan_author = copytext(loaded_chan_author, 2, length(loaded_chan_author))
+		if(loaded_chan_announcement && dd_hasprefix(loaded_chan_announcement, "'"))
+			loaded_chan_announcement = copytext(loaded_chan_announcement, 2, length(loaded_chan_announcement))
+
 		// Try to find an existing in-memory channel first by DB id, then by name
 		var/datum/feed_channel/FC = null
 		// search by db_id
@@ -301,7 +312,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		// if no db_id match, try name match (to handle pre-created defaults)
 		if(!FC)
 			for(var/datum/feed_channel/exists2 in network_channels)
-				if(exists2.channel_name == chan_name)
+				if(exists2.channel_name == loaded_chan_name)
 					FC = exists2
 					break
 
@@ -329,11 +340,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 			FC.db_id = chan_id
 
 		// Update the channel fields from DB record
-		FC.channel_name = chan_name
-		FC.author = db_author
+		FC.channel_name = loaded_chan_name
+		FC.author = loaded_chan_author
 		FC.locked = db_locked
 		FC.is_admin_channel = db_admin
-		FC.announcement = db_announcement
+		FC.announcement = loaded_chan_announcement
 		FC.db_id = chan_id
 
 		// Use associative lookup to avoid index-out-of-bounds errors with sparse IDs
@@ -382,11 +393,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		var/loaded_body = m["body"]
 		var/loaded_type = m["message_type"]
 		if(loaded_author && dd_hasprefix(loaded_author, "'"))
-			loaded_author = copytext(loaded_author, 2, length(loaded_author) - 1)
+			loaded_author = copytext(loaded_author, 2, length(loaded_author))
 		if(loaded_body && dd_hasprefix(loaded_body, "'"))
-			loaded_body = copytext(loaded_body, 2, length(loaded_body) - 1)
+			loaded_body = copytext(loaded_body, 2, length(loaded_body))
 		if(loaded_type && dd_hasprefix(loaded_type, "'"))
-			loaded_type = copytext(loaded_type, 2, length(loaded_type) - 1)
+			loaded_type = copytext(loaded_type, 2, length(loaded_type))
 
 		newMsg.author = loaded_author
 		newMsg.body = loaded_body
@@ -397,7 +408,15 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		if(loaded_type)
 			newMsg.message_type = loaded_type
 
-		insert_message_in_channel(FC, newMsg)
+		// De-duplication check: don't add the message if it's already in memory
+		var/is_duplicate = FALSE
+		for(var/datum/feed_message/existing_msg in FC.messages)
+			if(existing_msg.db_id == newMsg.db_id)
+				is_duplicate = TRUE
+				break
+
+		if(!is_duplicate)
+			insert_message_in_channel(FC, newMsg)
 
 	var/channel_count = length(network_channels)
 	var/message_count = 0
