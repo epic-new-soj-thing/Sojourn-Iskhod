@@ -9223,7 +9223,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/landmark/join/start/chemist,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/white/orangecorner,
 /area/nadezhda/medical/chemistry)
 "bLg" = (
 /obj/effect/decal/cleanable/rubble,
@@ -109742,7 +109742,7 @@
 /obj/structure/bed/chair/office/light,
 /obj/effect/decal/cleanable/dirt,
 /obj/landmark/join/start/chemist,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/white/orangecorner,
 /area/nadezhda/medical/chemistry)
 "uiI" = (
 /obj/machinery/constructable_frame/machine_frame,
@@ -115166,9 +115166,6 @@
 /obj/machinery/door/airlock/maintenance_common,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/nadezhda/maintenance/undergroundfloor1west)
-"viz" = (
-/turf/space,
-/area/nadezhda/medical/sleeper)
 "viB" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "14,19"
@@ -148684,7 +148681,7 @@ qUI
 qUI
 qUI
 qUI
-viz
+qUI
 xCT
 mJa
 rmq
