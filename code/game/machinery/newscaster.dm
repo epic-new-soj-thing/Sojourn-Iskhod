@@ -295,11 +295,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		var/loaded_chan_name = chan_name
 		var/loaded_chan_author = db_author
 		var/loaded_chan_announcement = db_announcement
-		if(loaded_chan_name && dd_hasprefix(loaded_chan_name, "'"))
+		if(loaded_chan_name && dd_hasprefix(loaded_chan_name, "'") && dd_hassuffix(loaded_chan_name, "'"))
 			loaded_chan_name = copytext(loaded_chan_name, 2, length(loaded_chan_name))
-		if(loaded_chan_author && dd_hasprefix(loaded_chan_author, "'"))
+		if(loaded_chan_author && dd_hasprefix(loaded_chan_author, "'") && dd_hassuffix(loaded_chan_author, "'"))
 			loaded_chan_author = copytext(loaded_chan_author, 2, length(loaded_chan_author))
-		if(loaded_chan_announcement && dd_hasprefix(loaded_chan_announcement, "'"))
+		if(loaded_chan_announcement && dd_hasprefix(loaded_chan_announcement, "'") && dd_hassuffix(loaded_chan_announcement, "'"))
 			loaded_chan_announcement = copytext(loaded_chan_announcement, 2, length(loaded_chan_announcement))
 
 		// Try to find an existing in-memory channel first by DB id, then by name
@@ -320,7 +320,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		if(!FC)
 			// Use the centralized CreateFeedChannel so persistence and de-duplication logic
 			// (and any side-effects) happen in one place instead of constructing datums here.
-			FC = CreateFeedChannel(chan_name, db_author, db_locked, db_admin, db_announcement)
+			FC = CreateFeedChannel(loaded_chan_name, loaded_chan_author, db_locked, db_admin, loaded_chan_announcement)
 			// CreateFeedChannel will either return an existing channel or a newly-created one
 			// that has been added to network_channels.
 			if(FC)
@@ -392,11 +392,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		var/loaded_author = m["author"]
 		var/loaded_body = m["body"]
 		var/loaded_type = m["message_type"]
-		if(loaded_author && dd_hasprefix(loaded_author, "'"))
+		if(loaded_author && dd_hasprefix(loaded_author, "'") && dd_hassuffix(loaded_author, "'"))
 			loaded_author = copytext(loaded_author, 2, length(loaded_author))
-		if(loaded_body && dd_hasprefix(loaded_body, "'"))
+		if(loaded_body && dd_hasprefix(loaded_body, "'") && dd_hassuffix(loaded_body, "'"))
 			loaded_body = copytext(loaded_body, 2, length(loaded_body))
-		if(loaded_type && dd_hasprefix(loaded_type, "'"))
+		if(loaded_type && dd_hasprefix(loaded_type, "'") && dd_hassuffix(loaded_type, "'"))
 			loaded_type = copytext(loaded_type, 2, length(loaded_type))
 
 		newMsg.author = loaded_author
@@ -433,13 +433,19 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		log_debug("Newscaster: skipping DB persist for excluded channel '[channel_name]'")
 		return 0
 
+	// Handle potentially quoted names from database loading or manual entry
+	var/clean_name = channel_name
+	if(clean_name && dd_hasprefix(clean_name, "'") && dd_hassuffix(clean_name, "'"))
+		clean_name = copytext(clean_name, 2, length(clean_name))
+
 	if(!config)
 		return 0
 	if(!establish_db_connection())
 		return 0
-	var/sql_channel_name = sanitizeSQL(channel_name)
+	var/sql_channel_name = sanitizeSQL(clean_name)
 	var/sql_author = sanitizeSQL(author)
-	var/DBQuery/chk = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
+	// Query handles both clean and potentially quoted names in the DB to avoid duplicate entries
+	var/DBQuery/chk = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' OR channel_name = '\'[sql_channel_name]\'' LIMIT 1")
 	if(!chk.Execute())
 		log_debug("Newscaster DB: failed to query channels in EnsureChannelInDB: [chk.ErrorMsg()]")
 		return 0
