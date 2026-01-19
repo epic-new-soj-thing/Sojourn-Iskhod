@@ -111,13 +111,13 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		if(qm.Execute())
 			while(qm.NextRow())
 				var/datum/feed_message/msg = new /datum/feed_message
-				msg.db_id = qm.item[1]
+				msg.db_id = text2num(qm.item[1])
 				msg.author = qm.item[2]
 				msg.body = qm.item[3]
 				if(qm.item[4])
 					msg.message_type = qm.item[4]
 				msg.time_stamp = qm.item[5]
-				msg.is_admin_message = qm.item[6]
+				msg.is_admin_message = text2num(qm.item[6])
 				// Insert into the new channel (this will call update() on the channel)
 				insert_message_in_channel(newChannel, msg)
 			qm.Close()
@@ -172,7 +172,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 					return
 			var/chan_id_num = null
 			while(check.NextRow())
-				chan_id_num = check.item[1]
+				chan_id_num = text2num(check.item[1])
 			check.Close()
 			if(!chan_id_num)
 				// create channel
@@ -181,7 +181,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 					var/DBQuery/lastq = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
 					if(lastq.Execute())
 						while(lastq.NextRow())
-							chan_id_num = lastq.item[1]
+							chan_id_num = text2num(lastq.item[1])
 						lastq.Close()
 			// Insert the message
 			if(chan_id_num)
@@ -195,7 +195,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 					var/DBQuery/last = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
 					if(last.Execute())
 						while(last.NextRow())
-							newMsg.db_id = last.item[1]
+							newMsg.db_id = text2num(last.item[1])
 						last.Close()
 					else
 						log_debug("Newscaster DB: failed to fetch last_insert_id: [last.ErrorMsg()]")
@@ -283,7 +283,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	var/list/channel_by_id = list()
 	var/num_db_channels = 0
 	while(q.NextRow())
-		var/chan_id = q.item[1]
+		var/chan_id = text2num(q.item[1])
 		num_db_channels++
 		var/chan_name = q.item[2]
 		var/db_author = q.item[3]
@@ -360,8 +360,8 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	var/list/msg_buffer = list()
 	while(q2.NextRow())
 		var/msgrec = list(
-			"id" = q2.item[1],
-			"channel_id" = q2.item[2],
+			"id" = text2num(q2.item[1]),
+			"channel_id" = text2num(q2.item[2]),
 			"author" = q2.item[3],
 			"body" = q2.item[4],
 			"message_type" = q2.item[5],
@@ -392,7 +392,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		newMsg.author = loaded_author
 		newMsg.body = loaded_body
 		newMsg.time_stamp = m["time_stamp"]
-		newMsg.is_admin_message = m["is_admin_message"]
+		newMsg.is_admin_message = text2num(m["is_admin_message"])
 		// store DB id for later persistence actions
 		newMsg.db_id = m["id"]
 		if(loaded_type)
@@ -427,7 +427,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		return 0
 	var/chan_id = 0
 	while(chk.NextRow())
-		chan_id = chk.item[1]
+		chan_id = text2num(chk.item[1])
 	chk.Close()
 	if(chan_id)
 		return chan_id
@@ -452,7 +452,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		var/DBQuery/last = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
 		if(last.Execute())
 			while(last.NextRow())
-				chan_id = last.item[1]
+				chan_id = text2num(last.item[1])
 			last.Close()
 		return chan_id
 
