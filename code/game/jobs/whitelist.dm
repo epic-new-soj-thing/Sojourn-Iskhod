@@ -9,20 +9,10 @@ var/list/whitelist = list()
 
 /proc/load_whitelist()
 	log_world("DEBUG: Starting whitelist load process...")
-	log_world("DEBUG: SQL enabled check: [config ? "config exists" : "config is null"]")
+	log_debug("SQL enabled check: [config ? "config exists" : "config is null"]")
 	if(config)
 		log_world("DEBUG: config.sql_enabled value: [config.sql_enabled]")
-
-	if(config.sql_enabled)
-		log_world("DEBUG: SQL is enabled, attempting database whitelist load...")
 		load_database_whitelist()
-		return 1
-	else
-		log_world("DEBUG: SQL not enabled, using file-based whitelist...")
-		// File-based whitelist loading code
-		whitelist = file2list(WHITELISTFILE)
-		if(!whitelist.len)
-			whitelist = null
 		return 1
 
 /proc/check_whitelist(mob/M /*, var/rank*/)

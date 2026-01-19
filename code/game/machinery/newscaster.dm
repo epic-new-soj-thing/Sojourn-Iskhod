@@ -122,7 +122,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 				insert_message_in_channel(newChannel, msg)
 			qm.Close()
 		else
-			log_world("Newscaster DB: failed to query messages for new channel '[channel_name]': [qm.ErrorMsg()]")
+			log_debug("Newscaster DB: failed to query messages for new channel '[channel_name]': [qm.ErrorMsg()]")
 
 	// Return the created channel so callers can use it immediately
 	return newChannel
@@ -148,7 +148,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	if(adminMessage && config)
 		if(ShouldExcludeFromDatabase(channel_name))
 			// Keep excluded channels in-memory only; do not create DB noise.
-			log_world("Newscaster: skipping DB persist for message from excluded channel '[channel_name]'")
+			log_debug("Newscaster: skipping DB persist for message from excluded channel '[channel_name]'")
 		else if(establish_db_connection())
 			// Ensure channel exists in DB; attempt to create if missing
 			var/sql_channel_name = sanitizeSQL(channel_name)
@@ -158,17 +158,17 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 			if(!check.Execute())
 				// Check if it's a connection error and retry once
 				if(findtext(check.ErrorMsg(), "MySQL server has gone away") || findtext(check.ErrorMsg(), "Lost connection"))
-					log_world("Newscaster DB: Connection lost, attempting to reconnect...")
+					log_debug("Newscaster DB: Connection lost, attempting to reconnect...")
 					if(establish_db_connection())
 						check = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
 						if(!check.Execute())
-							log_world("Newscaster DB: Retry failed for channel check: [check.ErrorMsg()]")
+							log_debug("Newscaster DB: Retry failed for channel check: [check.ErrorMsg()]")
 							return // Give up after retry fails
 					else
-						log_world("Newscaster DB: Failed to reconnect")
+						log_debug("Newscaster DB: Failed to reconnect")
 						return
 				else
-					log_world("Newscaster DB: Failed to query channel: [check.ErrorMsg()]")
+					log_debug("Newscaster DB: Failed to query channel: [check.ErrorMsg()]")
 					return
 			var/chan_id_num = null
 			while(check.NextRow())
@@ -189,7 +189,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 				var/sql_type = sanitizeSQL(message_type)
 				var/DBQuery/ins = dbcon.NewQuery("INSERT INTO news_messages (channel_id, author, body, message_type, time_stamp, is_admin_message) VALUES ([chan_id_num], '[sql_author]', '[sql_body]', '[sql_type]', Now(), 1)")
 				if(!ins.Execute())
-					log_world("Newscaster DB: failed to insert message: [ins.ErrorMsg()]")
+					log_debug("Newscaster DB: failed to insert message: [ins.ErrorMsg()]")
 				else
 					// capture the inserted id and store on the message
 					var/DBQuery/last = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
@@ -198,11 +198,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 							newMsg.db_id = last.item[1]
 						last.Close()
 					else
-						log_world("Newscaster DB: failed to fetch last_insert_id: [last.ErrorMsg()]")
+						log_debug("Newscaster DB: failed to fetch last_insert_id: [last.ErrorMsg()]")
 			else
-				log_world("Newscaster DB: failed to ensure channel exists for [channel_name]")
+				log_debug("Newscaster DB: failed to ensure channel exists for [channel_name]")
 		else
-			log_world("Newscaster: DB not available; admin message not persisted")
+			log_debug("Newscaster: DB not available; admin message not persisted")
 	for(var/datum/feed_channel/FC in network_channels)
 		if(FC.channel_name == channel_name)
 			insert_message_in_channel(FC, newMsg) //Adding message to the network's appropriate feed_channel
@@ -246,17 +246,17 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	// Expected tables (best-effort): news_channels(id, channel_name, author, locked, is_admin_channel, announcement)
 	// and news_messages(id, channel_id, author, body, message_type, time_stamp, is_admin_message)
 	if(!config)
-		log_world("DEBUG: Newscaster DB load skipped - no config")
+		log_debug("Newscaster DB load skipped - no config")
 		return 0
 
-	log_world("DEBUG: Newscaster attempting DB load. SQL enabled status: [config.sql_enabled]")
+	log_debug("Newscaster attempting DB load. SQL enabled status: [config.sql_enabled]")
 
 	// Establish database connection before attempting queries
 	if(!establish_db_connection())
-		log_world("DEBUG: Newscaster DB load failed - could not establish database connection")
+		log_debug("Newscaster DB load failed - could not establish database connection")
 		return 0
 
-	log_world("DEBUG: Newscaster DB connection established successfully")
+	log_debug("Newscaster DB connection established successfully")
 
 	// Ensure the required tables exist
 	CreateNewsTablesIfNeeded()
@@ -266,17 +266,17 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	if(!q.Execute())
 		// Check if it's a connection error and retry once
 		if(findtext(q.ErrorMsg(), "MySQL server has gone away") || findtext(q.ErrorMsg(), "Lost connection"))
-			log_world("Newscaster: Connection lost during channel load, attempting to reconnect...")
+			log_debug("Newscaster: Connection lost during channel load, attempting to reconnect...")
 			if(establish_db_connection())
 				q = dbcon.NewQuery("SELECT id, channel_name, author, locked, is_admin_channel, announcement FROM news_channels ORDER BY id ASC")
 				if(!q.Execute())
-					log_world("Newscaster: Retry failed to query news_channels: [q.ErrorMsg()]")
+					log_debug("Newscaster: Retry failed to query news_channels: [q.ErrorMsg()]")
 					return 0
 			else
-				log_world("Newscaster: Failed to reconnect during channel load")
+				log_debug("Newscaster: Failed to reconnect during channel load")
 				return 0
 		else
-			log_world("Newscaster: failed to query news_channels: [q.ErrorMsg()]")
+			log_debug("Newscaster: failed to query news_channels: [q.ErrorMsg()]")
 			return 0
 
 	// channel_by_id will be a list keyed numerically by DB id where possible
@@ -321,8 +321,12 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 		// If we failed to get or create a channel for this DB record, skip it and log.
 		if(!FC)
-			log_world("Newscaster: failed to create or find channel for DB id [chan_id] '[chan_name]'; skipping")
+			log_debug("Newscaster: failed to create or find channel for DB id [chan_id] '[chan_name]'; skipping")
 			continue
+
+		// Ensure the db_id is set on the channel object, even if it was reused from memory
+		if(!FC.db_id)
+			FC.db_id = chan_id
 
 		// Update the channel fields from DB record
 		FC.channel_name = chan_name
@@ -340,16 +344,16 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		var/verb = "created"
 		if(was_existing)
 			verb = "reused"
-		log_world("Newscaster: DB channel [chan_id] '[chan_name]' loaded ([verb])")
+		log_debug("Newscaster: DB channel [chan_id] '[chan_name]' loaded ([verb])")
 	q.Close()
 
 	if(num_db_channels == 0)
-		log_world("Newscaster: no channels found in DB (news_channels table empty)")
+		log_debug("Newscaster: no channels found in DB (news_channels table empty)")
 
 	// Load recent messages — limit to last 200 messages to avoid huge loads
 	var/DBQuery/q2 = dbcon.NewQuery("SELECT id, channel_id, author, body, message_type, DATE_FORMAT(time_stamp, '%Y-%m-%d %H:%i:%s') as ts, is_admin_message FROM news_messages WHERE channel_id IS NOT NULL ORDER BY time_stamp DESC LIMIT 200")
 	if(!q2.Execute())
-		log_world("Newscaster: failed to query news_messages: [q2.ErrorMsg()]")
+		log_debug("Newscaster: failed to query news_messages: [q2.ErrorMsg()]")
 		return 1
 
 	// Messages were selected newest-first; insert them so channels end up in chronological order
@@ -400,7 +404,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	var/message_count = 0
 	for(var/datum/feed_channel/FC in network_channels)
 		message_count += length(FC.messages)
-	log_world("Newscaster: loaded [channel_count] channels and [message_count] messages from DB")
+	log_debug("Newscaster: loaded [channel_count] channels and [message_count] messages from DB")
 	return 1
 
 
@@ -408,7 +412,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 /datum/feed_network/proc/EnsureChannelInDB(var/channel_name, var/author, var/locked = 0, var/adminChannel = 0, var/announcement_message = "")
 	// Check if this channel should be excluded from database persistence
 	if(ShouldExcludeFromDatabase(channel_name))
-		log_world("Newscaster: skipping DB persist for excluded channel '[channel_name]'")
+		log_debug("Newscaster: skipping DB persist for excluded channel '[channel_name]'")
 		return 0
 
 	if(!config)
@@ -419,7 +423,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	var/sql_author = sanitizeSQL(author)
 	var/DBQuery/chk = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
 	if(!chk.Execute())
-		log_world("Newscaster DB: failed to query channels in EnsureChannelInDB: [chk.ErrorMsg()]")
+		log_debug("Newscaster DB: failed to query channels in EnsureChannelInDB: [chk.ErrorMsg()]")
 		return 0
 	var/chan_id = 0
 	while(chk.NextRow())
@@ -428,10 +432,12 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	if(chan_id)
 		return chan_id
 	// Not found: try to insert
-	var/DBQuery/ins = dbcon.NewQuery("INSERT INTO news_channels (channel_name, author, locked, is_admin_channel, announcement) VALUES ('[sql_channel_name]', '[sql_author]', [locked], [adminChannel], '[sanitizeSQL(announcement_message)]')")
+	var/insert_sql = "INSERT INTO news_channels (channel_name, author, locked, is_admin_channel, announcement) VALUES ('[sql_channel_name]', '[sql_author]', [(locked ? 1 : 0)], [(adminChannel ? 1 : 0)], '[sanitizeSQL(announcement_message)]')"
+	log_debug("Newscaster DB: Attempting insert: [insert_sql]")
+	var/DBQuery/ins = dbcon.NewQuery(insert_sql)
 	if(!ins.Execute())
 		// insertion failed; it may be a transient DB error or a race where another process inserted it.
-		log_world("Newscaster DB: failed to insert channel '[channel_name]': [ins.ErrorMsg()]")
+		log_debug("Newscaster DB: failed to insert channel '[channel_name]': [ins.ErrorMsg()]")
 		// Try to re-query in case it was inserted by another process concurrently
 		var/DBQuery/rechk = dbcon.NewQuery("SELECT id FROM news_channels WHERE channel_name = '[sql_channel_name]' LIMIT 1")
 		if(rechk.Execute())
@@ -440,7 +446,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 			rechk.Close()
 			return chan_id
 		else
-			log_world("Newscaster DB: re-query failed after insert failure: [rechk.ErrorMsg()]")
+			log_debug("Newscaster DB: re-query failed after insert failure: [rechk.ErrorMsg()]")
 			return 0
 	else
 		var/DBQuery/last = dbcon.NewQuery("SELECT LAST_INSERT_ID() as id")
@@ -478,7 +484,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 // Create the news tables if they don't exist
 /datum/feed_network/proc/CreateNewsTablesIfNeeded()
 	if(!dbcon || !dbcon.IsConnected())
-		log_world("Newscaster: Cannot create tables - no database connection")
+		log_debug("Newscaster: Cannot create tables - no database connection")
 		return FALSE
 
 	// Create news_channels table
@@ -499,7 +505,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 	var/DBQuery/create_channels = dbcon.NewQuery(channels_sql)
 	if(!create_channels.Execute())
-		log_world("Newscaster: Failed to create news_channels table: [create_channels.ErrorMsg()]")
+		log_debug("Newscaster: Failed to create news_channels table: [create_channels.ErrorMsg()]")
 		return FALSE
 
 	// Create news_messages table
@@ -522,10 +528,10 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 	var/DBQuery/create_messages = dbcon.NewQuery(messages_sql)
 	if(!create_messages.Execute())
-		log_world("Newscaster: Failed to create news_messages table: [create_messages.ErrorMsg()]")
+		log_debug("Newscaster: Failed to create news_messages table: [create_messages.ErrorMsg()]")
 		return FALSE
 
-	log_world("Newscaster: Database tables verified/created successfully")
+	log_debug("Newscaster: Database tables verified/created successfully")
 	return TRUE
 
 /obj/machinery/newscaster
@@ -1096,7 +1102,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 				var/sql_censored_author = sanitizeSQL(FC.author)
 				var/DBQuery/update = dbcon.NewQuery("UPDATE news_channels SET author='[sql_censored_author]' WHERE id=[FC.db_id]")
 				if(!update.Execute())
-					log_world("Newscaster DB: failed to update channel author for id [FC.db_id]: [update.ErrorMsg()]")
+					log_debug("Newscaster DB: failed to update channel author for id [FC.db_id]: [update.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["censor_channel_story_author"])
@@ -1115,7 +1121,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 				var/sql_author = sanitizeSQL(MSG.author)
 				var/DBQuery/upm = dbcon.NewQuery("UPDATE news_messages SET author='[sql_author]' WHERE id=[MSG.db_id]")
 				if(!upm.Execute())
-					log_world("Newscaster DB: failed to update message author id [MSG.db_id]: [upm.ErrorMsg()]")
+					log_debug("Newscaster DB: failed to update message author id [MSG.db_id]: [upm.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["censor_channel_story_body"])
@@ -1142,7 +1148,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 				var/sql_caption = sanitizeSQL(MSG.caption)
 				var/DBQuery/upb = dbcon.NewQuery("UPDATE news_messages SET body='[sql_body]', caption='[sql_caption]' WHERE id=[MSG.db_id]")
 				if(!upb.Execute())
-					log_world("Newscaster DB: failed to update message body id [MSG.db_id]: [upb.ErrorMsg()]")
+					log_debug("Newscaster DB: failed to update message body id [MSG.db_id]: [upb.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["pick_d_notice"])
@@ -1162,7 +1168,7 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 			if(config && establish_db_connection() && FC.db_id)
 				var/DBQuery/upc = dbcon.NewQuery("UPDATE news_channels SET censored=[(FC.censored) ? (1) : (0)] WHERE id=[FC.db_id]")
 				if(!upc.Execute())
-					log_world("Newscaster DB: failed to update censored state for channel id [FC.db_id]: [upc.ErrorMsg()]")
+					log_debug("Newscaster DB: failed to update censored state for channel id [FC.db_id]: [upc.ErrorMsg()]")
 			src.updateUsrDialog()
 
 		else if(href_list["view"])
