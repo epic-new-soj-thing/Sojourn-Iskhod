@@ -42,7 +42,9 @@ proc/BC_IsDiscordLinked(var/key)
 		log_and_message_admins("Discord link check skipped for [key]: DB unavailable. Allowing connection by default.")
 		return 1
 
-	var/DBQuery/query = dbcon.NewQuery("SELECT discord_id FROM players WHERE ckey = '[key]' AND discord_id IS NOT NULL AND discord_id != ''")
+	var/discord_query = "SELECT discord_id FROM players WHERE ckey = '[key]' AND discord_id IS NOT NULL AND discord_id != ''"
+	log_debug("Border Control: Checking Discord link for [key]: [discord_query]")
+	var/DBQuery/query = dbcon.NewQuery(discord_query)
 	if(!query.Execute())
 		// Query failed; allow rather than block
 		log_and_message_admins("Discord link check failed for [key]: [dbcon.ErrorMsg()]. Allowing connection by default.")
@@ -59,17 +61,19 @@ proc/BC_IsKeyWhitelisted(var/key)
 	// If SQL is enabled, always check the database directly so border control
 	// reflects the latest whitelist state on every connection attempt.
 	// Attempt DB check when SQL is enabled and a db connection object exists.
-	if(config.sql_enabled && dbcon)
-		var/DBQuery/q = dbcon.NewQuery("SELECT 1 FROM whitelist WHERE ckey = '[key]' AND active = 1 LIMIT 1")
+	if(dbcon)
+		var/whitelist_query = "SELECT 1 FROM whitelist WHERE ckey = '[key]' AND active = 1 LIMIT 1"
+		log_debug("Border Control: Checking whitelist for [key]: [whitelist_query]")
+		var/DBQuery/q = dbcon.NewQuery(whitelist_query)
 		if(!q)
-			log_and_message_admins("[key] whitelist check: failed to prepare DB query (null query object). Falling back to file-backed whitelist.")
+			log_debug("[key] whitelist check: failed to prepare DB query (null query object). Falling back to file-backed whitelist.")
 		else if(!q.Execute())
-			log_and_message_admins("[key] whitelist check: DB query execution failed: [dbcon.ErrorMsg()]. Falling back to file-backed whitelist.")
+			log_debug("[key] whitelist check: DB query execution failed: [dbcon.ErrorMsg()]. Falling back to file-backed whitelist.")
 		else
 			if(q.NextRow())
 				return 1
 			// No match in DB; fall back to file-backed whitelist instead of denying immediately
-			log_and_message_admins("[key] not found in SQL whitelist; falling back to file-backed whitelist.")
+			log_debug("[key] not found in SQL whitelist; falling back to file-backed whitelist.")
 
 	// Fall back to file-backed whitelist
 	if(!whitelistLoaded)
@@ -103,7 +107,9 @@ proc/BC_WhitelistKey(var/key, var/added_by = "server")
 	if(key)
 		// If SQL is enabled, try to insert/update the whitelist row there first
 		if(config.sql_enabled && dbcon)
-			var/DBQuery/ins = dbcon.NewQuery("INSERT INTO whitelist (ckey, active, added_by, added_at) VALUES ('[key]', 1, '[sql_sanitize_text(added_by)]', NOW()) ON DUPLICATE KEY UPDATE active = 1, added_by = '[sql_sanitize_text(added_by)]', added_at = NOW()")
+			var/insert_query = "INSERT INTO whitelist (ckey, active, added_by, added_at) VALUES ('[key]', 1, '[sql_sanitize_text(added_by)]', NOW()) ON DUPLICATE KEY UPDATE active = 1, added_by = '[sql_sanitize_text(added_by)]', added_at = NOW()"
+			log_debug("Border Control: Adding [key] to whitelist: [insert_query]")
+			var/DBQuery/ins = dbcon.NewQuery(insert_query)
 			if(!ins)
 				log_and_message_admins("Failed to prepare DB insert for whitelisting [key]. Falling back to file-backed whitelist.")
 			else if(!ins.Execute())
@@ -161,7 +167,9 @@ ADMIN_VERB_ADD(/client/proc/BC_RemoveKeyVerb, R_ADMIN, FALSE)
 	else
 		// If SQL is enabled, mark the whitelist row inactive so DB reflects removal
 		if(config.sql_enabled && dbcon)
-			var/DBQuery/qdel = dbcon.NewQuery("UPDATE whitelist SET active = 0, removed_at = NOW() WHERE ckey = '[key]'")
+			var/remove_query = "UPDATE whitelist SET active = 0, removed_at = NOW() WHERE ckey = '[key]'"
+			log_debug("Border Control: Removing [key] from whitelist: [remove_query]")
+			var/DBQuery/qdel = dbcon.NewQuery(remove_query)
 			if(!qdel)
 				log_and_message_admins("Failed to prepare DB update to remove whitelist entry for [key].")
 			else if(!qdel.Execute())
