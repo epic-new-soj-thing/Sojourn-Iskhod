@@ -336,10 +336,8 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		FC.announcement = db_announcement
 		FC.db_id = chan_id
 
-		// ensure list can hold at least chan_id
-		if(channel_by_id.len < chan_id)
-			channel_by_id.len = chan_id
-		channel_by_id[chan_id] = FC
+		// Use associative lookup to avoid index-out-of-bounds errors with sparse IDs
+		channel_by_id["[chan_id]"] = FC
 		// diagnostic log to help debug missing channels
 		var/verb = "created"
 		if(was_existing)
@@ -373,8 +371,9 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 	for(var/I = msg_buffer.len; I >= 1; I--)
 		var/m = msg_buffer[I]
-		var/FC = channel_by_id[m["channel_id"]]
+		var/FC = channel_by_id["[m["channel_id"]]"]
 		if(!FC)
+			log_debug("Newscaster: message [m["id"]] references unknown/missing channel ID [m["channel_id"]]; skipping")
 			continue
 		var/datum/feed_message/newMsg = new /datum/feed_message
 		// Normalize DB-loaded fields: some DB rows may have surrounding single quotes
