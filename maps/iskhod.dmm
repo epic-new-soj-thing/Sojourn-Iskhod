@@ -234,6 +234,10 @@
 /obj/item/device/radio,
 /obj/item/device/radio,
 /obj/item/device/radio,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/command/armory)
 "adM" = (
@@ -2031,7 +2035,7 @@
 "aFP" = (
 /obj/item/modular_computer/console/preset/security/records{
 	dir = 4;
-	pixel_x = -4
+	pixel_x = -5
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/security/detectives_office)
@@ -2904,6 +2908,9 @@
 "aTA" = (
 /obj/structure/dogbed,
 /mob/living/simple/corgi/fluff/Ian,
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters)
 "aTL" = (
@@ -3782,7 +3789,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
 "bgK" = (
-/obj/machinery/door/airlock/security,
+/obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/iskhod/security/maingate)
@@ -5226,6 +5233,10 @@
 /obj/item/ammo_magazine/ammobox/magnum_40,
 /obj/item/ammo_magazine/ammobox/magnum_40,
 /obj/item/ammo_magazine/ammobox/magnum_40,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/command/armory)
 "bDd" = (
@@ -6887,6 +6898,19 @@
 	},
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/storage/tech)
+"cbU" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "cbW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -7223,6 +7247,10 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/toilet/public)
+"cir" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "cis" = (
 /obj/structure/table/glass,
 /obj/item/toy/plushie/fox/coffee,
@@ -7875,6 +7903,7 @@
 /area/space)
 "ctj" = (
 /obj/machinery/disposal,
+/obj/effect/floor_decal/industrial/box,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
 "ctz" = (
@@ -9930,6 +9959,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/reception)
+"dcT" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "dcV" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -12890,6 +12928,14 @@
 /obj/machinery/door/window/iskhod,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/reception)
+"eag" = (
+/obj/machinery/computer/prisoner{
+	dir = 1;
+	req_access = list(5);
+	pixel_y = -4
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "eal" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -14446,6 +14492,9 @@
 "eyp" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/security,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/iskhod/security/maingate)
 "eyy" = (
@@ -18141,6 +18190,10 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
+"fHL" = (
+/obj/effect/floor_decal/industrial/road/curve2,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/outside/inside_colony)
 "fHV" = (
 /obj/structure/window/reinforced/iskhod{
 	dir = 4
@@ -21046,6 +21099,12 @@
 "gDo" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/service/changing_room/pool)
+"gDA" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/iskhod/outside/inside_colony/east)
 "gDF" = (
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/outside/inside_colony/west)
@@ -24990,6 +25049,10 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/scient)
+"hTW" = (
+/obj/machinery/vending/snack,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "hTZ" = (
 /obj/item/stool/custom/bar_special,
 /obj/effect/decal/cleanable/dirt,
@@ -26171,6 +26234,10 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/iskhod/engineering/breakroom)
+"iqh" = (
+/obj/effect/floor_decal/industrial/road/curve1,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/outside/inside_colony)
 "iqj" = (
 /obj/effect/floor_decal/industrial/loading/white,
 /obj/effect/decal/cleanable/dirt,
@@ -27613,6 +27680,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/crew_quarters/fitness)
+"iMd" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "iMC" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/industrial/caution{
@@ -28593,6 +28666,15 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
+"jcO" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
+/turf/simulated/floor/tiled/white/techfloor,
+/area/iskhod/waterfall/subsurface)
 "jcW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump,
@@ -29094,6 +29176,14 @@
 	icon_state = "13,1"
 	},
 /area/space)
+"jkW" = (
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/road/straight2,
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/outside/inside_colony)
 "jlc" = (
 /obj/machinery/vending/wallmed/lobby{
 	pixel_x = 30
@@ -29755,6 +29845,10 @@
 	},
 /turf/simulated/open,
 /area/iskhod/rnd/server)
+"jvo" = (
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "jvt" = (
 /obj/machinery/telecomms/server/presets/blackshield,
 /turf/simulated/floor/greengrid,
@@ -33618,6 +33712,15 @@
 /obj/landmark/join/start/roboticist,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/robotics)
+"kHJ" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "kHM" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/maintenance/undergroundfloor1south)
@@ -35716,6 +35819,7 @@
 "lqj" = (
 /obj/machinery/door/airlock/multi_tile/metal/mait,
 /obj/machinery/door/firedoor/multi_tile,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/iskhod/security/maingate)
 "lqn" = (
@@ -35828,6 +35932,14 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/iskhod/ai/coolant_waste)
+"lsd" = (
+/obj/effect/floor_decal/industrial/stand_clear,
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "lsk" = (
 /obj/structure/closet/wall_mounted/emcloset{
 	pixel_x = -1;
@@ -36426,6 +36538,11 @@
 	dir = 8;
 	pixel_x = 27
 	},
+/obj/structure/table/steel_reinforced,
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen/invisible,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
 "lDr" = (
@@ -36516,6 +36633,12 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/crew_quarters/dorm2)
 "lEF" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/iskhod/security/maingate)
 "lEJ" = (
@@ -36648,6 +36771,9 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section4)
+"lHa" = (
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/iskhod/outside/inside_colony/east)
 "lHc" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/remote/blast_door{
@@ -37832,6 +37958,21 @@
 	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
+"mbu" = (
+/obj/item/modular_computer/console/preset/security{
+	dir = 1;
+	pixel_y = -4
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
+"mbx" = (
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
+	dir = 1
+	},
+/obj/machinery/door/airlock/security,
+/turf/simulated/floor/tiled/dark/monofloor,
+/area/iskhod/security/maingate)
 "mco" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/carpet/oracarpet,
@@ -39747,6 +39888,13 @@
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
+"mJu" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "mJF" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -41406,6 +41554,10 @@
 	icon_state = "snow0"
 	},
 /area/iskhod/outside/inside_colony/east)
+"nmM" = (
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "nmP" = (
 /turf/simulated/floor/wood,
 /area/iskhod/medical/psych)
@@ -41577,6 +41729,16 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/bridge)
+"npl" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "npp" = (
 /obj/structure/closet/secure_closet/personal/salvager,
 /obj/machinery/vending/wallmed/lobby{
@@ -41856,6 +42018,9 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/iskhod/waterfall/subsurface)
 "nsw" = (
@@ -42442,6 +42607,15 @@
 /obj/machinery/computer/arcade,
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/hut_cell1)
+"nAq" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "nAr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/office/dark,
@@ -45379,6 +45553,18 @@
 	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/dorm2)
+"oxk" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
+	},
+/turf/simulated/floor/tiled/steel/danger,
+/area/iskhod/command/bridge)
 "oxl" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -46520,6 +46706,13 @@
 /obj/structure/closet/secure_closet/personal,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/holodeck/control)
+"oRp" = (
+/obj/effect/floor_decal/industrial/warningwhite/full,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 2
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/hallway/surface/section5)
 "oRw" = (
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/space)
@@ -47719,6 +47912,7 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
 "pit" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/iskhod/security/maingate)
 "piw" = (
@@ -49718,6 +49912,18 @@
 	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
+"pQT" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/recharger{
+	pixel_x = -5;
+	pixel_y = 3
+	},
+/obj/machinery/recharger{
+	pixel_x = 5;
+	pixel_y = 3
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "pQY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -50364,6 +50570,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/holodeck/control)
+"qbk" = (
+/obj/effect/floor_decal/industrial/warning/corner,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "qbn" = (
 /obj/structure/table/steel,
 /obj/item/reagent_containers/drinks/bottle/small/beer,
@@ -50385,6 +50598,9 @@
 "qbD" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/hatch,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/iskhod/security/maingate)
 "qcg" = (
@@ -50587,7 +50803,10 @@
 	},
 /area/space)
 "qfc" = (
-/obj/effect/floor_decal/industrial/road/warning4,
+/obj/effect/floor_decal/industrial/road/warning4{
+	pixel_y = 11
+	},
+/obj/effect/floor_decal/industrial/road/straight3,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/hallway/surface/section5)
 "qfl" = (
@@ -51068,6 +51287,10 @@
 "qoy" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/engineering/foyer)
+"qoA" = (
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "qoB" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/structure/railing{
@@ -51228,6 +51451,7 @@
 "qrA" = (
 /obj/machinery/door/firedoor/multi_tile,
 /obj/machinery/door/airlock/multi_tile/metal/mait,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/iskhod/security/maingate)
 "qrG" = (
@@ -51764,6 +51988,18 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
+"qBV" = (
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "qCd" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -53382,6 +53618,18 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/lab)
+"reu" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/stand_clear{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "reD" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -53648,6 +53896,16 @@
 "rhP" = (
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/iskhod/command/captain)
+"rhQ" = (
+/obj/effect/floor_decal/industrial/warningwhite{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/road/straight1,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/outside/inside_colony)
 "rhR" = (
 /turf/simulated/floor/reinforced/airmix,
 /area/iskhod/engineering/atmos)
@@ -53796,6 +54054,12 @@
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/iskhod/engineering/atmos)
+"rkV" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/space)
 "rkW" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -53857,6 +54121,9 @@
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/machinery/light{
+	light_color = "#b9e8ea"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/misc3)
@@ -54881,6 +55148,9 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/misc3)
 "rEz" = (
@@ -55539,6 +55809,15 @@
 /obj/structure/railing/grey,
 /turf/simulated/open,
 /area/iskhod/medical/medbay/uppercor)
+"rQV" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "rRb" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
 /turf/space,
@@ -55571,6 +55850,10 @@
 "rRH" = (
 /obj/structure/table/rack,
 /obj/item/storage/box/handcuffs,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/command/armory)
 "rRP" = (
@@ -60387,6 +60670,10 @@
 /mob/living/carbon/superior/roach/nitro,
 /turf/simulated/floor/industrial,
 /area/iskhod/maintenance/undergroundfloor2west)
+"ttd" = (
+/obj/machinery/photocopier,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "tth" = (
 /obj/structure/railing/grey{
 	dir = 1
@@ -60774,6 +61061,19 @@
 	},
 /turf/simulated/floor/tiled/steel/golden,
 /area/iskhod/command/bridge)
+"txR" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/security/secrecroom)
 "tya" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -61220,6 +61520,12 @@
 	icon_state = "10,17"
 	},
 /area/iskhod/pros/shuttle)
+"tGs" = (
+/obj/structure/fireaxecabinet{
+	pixel_y = 30
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "tGv" = (
 /obj/machinery/atmospherics/binary/pump,
 /obj/structure/sign/warning/nosmoking/small{
@@ -62206,6 +62512,13 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/iskhod/pros)
+"tXN" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "tXT" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /turf/simulated/wall/iskhod_red,
@@ -63876,6 +64189,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/vending/snack,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/secrecroom)
 "uAx" = (
@@ -64498,6 +64812,9 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/secrecroom)
+"uJZ" = (
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/iskhod/outside/inside_colony/west)
 "uKo" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/red,
@@ -66921,6 +67238,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
+"vzZ" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "vAc" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
@@ -67309,7 +67630,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/steel/golden,
 /area/iskhod/command/hallway)
 "vFY" = (
@@ -67681,7 +68001,7 @@
 "vLW" = (
 /obj/item/modular_computer/console/preset/security/records{
 	dir = 1;
-	pixel_y = -3
+	pixel_y = -4
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/main)
@@ -68091,6 +68411,12 @@
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/space)
+"vTI" = (
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/dirt/mud,
+/area/iskhod/outside/inside_colony/west)
 "vTN" = (
 /obj/machinery/light,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -69006,6 +69332,14 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /turf/simulated/floor/reinforced,
 /area/iskhod/hallway/side/f2section2)
+"wjU" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8;
+	icon_state = "warning"
+	},
+/obj/effect/floor_decal/industrial/warning/corner,
+/turf/simulated/floor/tiled/dark/brown_perforated,
+/area/iskhod/security/maingate)
 "wjV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cyberplant{
@@ -72919,6 +73253,10 @@
 /obj/machinery/vending/props,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/showers/public)
+"xzl" = (
+/obj/structure/filingcabinet/security,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "xzw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -73884,6 +74222,12 @@
 	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
+"xRB" = (
+/obj/structure/closet/wall_mounted{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/security/maingate)
 "xRH" = (
 /obj/machinery/telecomms/bus/preset_three,
 /turf/simulated/floor/greengrid,
@@ -74324,6 +74668,10 @@
 /area/iskhod/hallway/surface/section1)
 "xWW" = (
 /obj/machinery/atmospherics/unary/vent_pump,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters)
 "xXg" = (
@@ -124146,7 +124494,7 @@ mAI
 fSq
 mAI
 mAI
-nza
+txR
 dUf
 eyf
 aIr
@@ -127343,7 +127691,7 @@ iZe
 iZe
 sbO
 sbO
-tid
+oxk
 sbO
 sbO
 eYn
@@ -147755,7 +148103,7 @@ evL
 aYi
 evL
 bmV
-sdD
+jcO
 vza
 jEF
 dYT
@@ -167382,7 +167730,7 @@ cqi
 cqi
 pfL
 eoe
-hrI
+xRB
 hrI
 hrI
 eoe
@@ -167584,9 +167932,9 @@ cqi
 cqi
 pfL
 eoe
+hTW
 hrI
-hrI
-hrI
+nmM
 eoe
 hrI
 hrI
@@ -167990,11 +168338,11 @@ hGk
 iJD
 hrI
 hrI
+jvo
+pQT
 hrI
 hrI
-hrI
-hrI
-hrI
+xzl
 aRW
 qOA
 cqi
@@ -168190,13 +168538,13 @@ cqi
 cqi
 cqi
 eoe
+tGs
 hrI
 hrI
 hrI
 hrI
 hrI
-hrI
-hrI
+mbu
 eoe
 cqi
 cqi
@@ -168392,13 +168740,13 @@ ycV
 cqi
 cqi
 eoe
+qoA
 hrI
 hrI
 hrI
 hrI
-hrI
-hrI
-hrI
+iMd
+eag
 eoe
 cqi
 cqi
@@ -168596,11 +168944,11 @@ ycV
 aRW
 ctj
 lDf
-hrI
-hrI
-hrI
-hrI
-hrI
+ttd
+cir
+dcT
+mJu
+jvo
 aRW
 qOA
 qOA
@@ -168800,11 +169148,11 @@ aRW
 eoe
 bgK
 aRW
-aRW
+mbx
 aRW
 aRW
 eoe
-qOA
+uJZ
 qOA
 qOA
 qOA
@@ -168997,17 +169345,17 @@ ycV
 ycV
 ycV
 mOo
-ycV
-ycV
+iqh
+jkW
 eoe
+qbk
 lEF
-lEF
-lEF
-lEF
-lEF
+reu
+nAq
+tXN
 eoe
-qOA
-qOA
+vTI
+uJZ
 qOA
 qOA
 qOA
@@ -169200,15 +169548,15 @@ coz
 coz
 coz
 qfc
-moW
+oRp
 qrA
-lEF
+lsd
 nKa
 nKa
 nKa
-lEF
+qBV
 qrA
-ejl
+rkV
 ejl
 ejl
 ejl
@@ -169402,15 +169750,15 @@ coz
 coz
 coz
 qfc
-moW
-lEF
-lEF
+oRp
+vzZ
+lsd
 nKa
 nKa
 nKa
-lEF
-lEF
-ejl
+qBV
+vzZ
+rkV
 ejl
 ejl
 ejl
@@ -169603,17 +169951,17 @@ ycV
 fSp
 ycV
 ycV
-ycV
-ycV
+fHL
+rhQ
 eoe
-lEF
-lEF
-lEF
-lEF
-lEF
+kHJ
+wjU
+cbU
+npl
+rQV
 eoe
-fep
-fep
+gDA
+lHa
 fep
 fep
 fep
@@ -169814,7 +170162,7 @@ eyp
 eoe
 eoe
 eoe
-fep
+lHa
 fep
 fep
 fep
