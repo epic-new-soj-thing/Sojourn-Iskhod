@@ -6,28 +6,24 @@ var/list/database_whitelist = null
 var/database_whitelist_loaded = 0
 
 /hook/startup/proc/loadDatabaseWhitelist()
-	if(config.usewhitelist)
-		load_database_whitelist()
+	load_database_whitelist()
 	return 1
 
 /proc/load_database_whitelist()
-	log_world("DEBUG: Attempting to load database whitelist...")
-	log_world("DEBUG: SQL enabled status: [config.sql_enabled]")
-
-	if(!config.sql_enabled)
-		log_world("DEBUG: SQL is disabled in config. Using file-based system.")
-		load_whitelist()
-		return
+	log_debug("Attempting to load database whitelist...")
 
 	if(!establish_db_connection())
 		// Fall back to file-based system if database is not available
 		log_world("Database connection failed for whitelist. Using file-based system.")
-		log_world("DEBUG: Failed DB connections count: [failed_db_connections]")
+		log_debug("Failed DB connections count: [failed_db_connections]")
 		if(dbcon)
-			log_world("DEBUG: Database error: [dbcon.ErrorMsg()]")
+			log_debug("Database error: [dbcon.ErrorMsg()]")
 		else
-			log_world("DEBUG: No database connection object exists")
-		load_whitelist() // Call the old file-based function
+			log_debug("No database connection object exists")
+		// Load file-based whitelist directly
+		whitelist = file2list("data/whitelist.txt")
+		if(!whitelist.len)
+			whitelist = null
 		return
 
 	log_world("DEBUG: Database connection established successfully for whitelist")
@@ -38,9 +34,11 @@ var/database_whitelist_loaded = 0
 	// Load whitelist from database
 	var/DBQuery/query = dbcon.NewQuery("SELECT ckey FROM whitelist WHERE active = 1")
 	if(!query.Execute())
-		log_world("Failed to load whitelist from database: [query.ErrorMsg()]")
+		log_debug("Failed to load whitelist from database: [query.ErrorMsg()]")
 		// Fall back to file-based system
-		load_whitelist()
+		whitelist = file2list("data/whitelist.txt")
+		if(!whitelist.len)
+			whitelist = null
 		return
 
 	database_whitelist = list()
@@ -50,14 +48,14 @@ var/database_whitelist_loaded = 0
 			database_whitelist[ckey] = 1
 
 	database_whitelist_loaded = 1
-	log_world("Loaded [database_whitelist.len] entries from database whitelist.")
+	log_debug("Loaded [database_whitelist.len] entries from database whitelist.")
 
 /proc/create_whitelist_table()
 	log_world("DEBUG: Attempting to create whitelist table...")
 	var/DBQuery/query = dbcon.NewQuery("CREATE TABLE IF NOT EXISTS whitelist (id INT AUTO_INCREMENT PRIMARY KEY, ckey VARCHAR(32) NOT NULL, added_by VARCHAR(32), added_date DATETIME DEFAULT CURRENT_TIMESTAMP, active BOOLEAN DEFAULT TRUE, notes TEXT, UNIQUE KEY unique_ckey (ckey), INDEX idx_ckey_active (ckey, active), INDEX idx_active (active)) ENGINE=InnoDB DEFAULT CHARSET=utf8")
 
 	if(!query.Execute())
-		log_world("Failed to create whitelist table: [query.ErrorMsg()]")
+		log_debug("Failed to create whitelist table: [query.ErrorMsg()]")
 	else
 		log_world("DEBUG: Whitelist table created/verified successfully")
 
@@ -79,7 +77,7 @@ var/database_whitelist_loaded = 0
 	return (ckey_to_check in database_whitelist)
 
 /proc/add_to_database_whitelist(var/target_ckey, var/added_by_ckey = null, var/notes = null)
-	log_world("DEBUG: Attempting to add [target_ckey] to database whitelist")
+	log_debug("Attempting to add [target_ckey] to database whitelist")
 
 	if(!establish_db_connection())
 		log_world("DEBUG: Database connection failed when adding [target_ckey]")
@@ -97,7 +95,7 @@ var/database_whitelist_loaded = 0
 	var/check_query_string = "SELECT id FROM whitelist WHERE ckey = '" + target_ckey + "'"
 	var/DBQuery/check_query = dbcon.NewQuery(check_query_string)
 	if(!check_query)
-		log_world("Failed to create check query for [target_ckey]")
+		log_debug("Failed to create check query for [target_ckey]")
 		return 0
 
 	check_query.Execute()
@@ -110,15 +108,15 @@ var/database_whitelist_loaded = 0
 		var/safe_added_by = added_by_ckey ? "'" + added_by_ckey + "'" : "NULL"
 		var/update_query_string = "UPDATE whitelist SET active = 1, added_by = " + safe_added_by + ", notes = " + safe_notes + ", added_date = CURRENT_TIMESTAMP WHERE ckey = '" + target_ckey + "'"
 
-		log_world("DEBUG: Update query string: [update_query_string]")
+		log_debug("Update query string: [update_query_string]")
 
 		query = dbcon.NewQuery(update_query_string)
 		if(!query)
-			log_world("Failed to create update query for [target_ckey]")
+			log_debug("Failed to create update query for [target_ckey]")
 			return 0
-		log_world("DEBUG: Update query created successfully for [target_ckey]")
+		log_debug("Update query created successfully for [target_ckey]")
 		if(!query.Execute())
-			log_world("Failed to update [target_ckey] in database whitelist: [query.ErrorMsg()]")
+			log_debug("Failed to update [target_ckey] in database whitelist: [query.ErrorMsg()]")
 			return 0
 	else
 		// Insert new entry - using direct values instead of parameters for testing
@@ -130,11 +128,11 @@ var/database_whitelist_loaded = 0
 
 		query = dbcon.NewQuery(query_string)
 		if(!query)
-			log_world("Failed to create insert query for [target_ckey]")
+			log_debug("Failed to create insert query for [target_ckey]")
 			return 0
-		log_world("DEBUG: Insert query created successfully for [target_ckey]")
+		log_debug("Insert query created successfully for [target_ckey]")
 		if(!query.Execute())
-			log_world("Failed to add [target_ckey] to database whitelist: [query.ErrorMsg()]")
+			log_debug("Failed to add [target_ckey] to database whitelist: [query.ErrorMsg()]")
 			return 0
 
 	// Update cache
@@ -144,7 +142,7 @@ var/database_whitelist_loaded = 0
 	return 1
 
 /proc/remove_from_database_whitelist(var/target_ckey, var/removed_by_ckey = null)
-	log_world("DEBUG: Attempting to remove [target_ckey] from database whitelist")
+	log_debug("Attempting to remove [target_ckey] from database whitelist")
 
 	if(!establish_db_connection())
 		log_world("DEBUG: Database connection failed when removing [target_ckey]")
@@ -158,15 +156,15 @@ var/database_whitelist_loaded = 0
 
 	// Use direct SQL construction to DELETE the record completely
 	var/query_string = "DELETE FROM whitelist WHERE ckey = '" + target_ckey + "'"
-	log_world("DEBUG: Remove query string: [query_string]")
+	log_debug("Remove query string: [query_string]")
 
 	var/DBQuery/query = dbcon.NewQuery(query_string)
 
 	if(!query)
-		log_world("Failed to create remove query for [target_ckey]")
+		log_debug("Failed to create remove query for [target_ckey]")
 		return 0
 
-	log_world("DEBUG: Remove query created successfully for [target_ckey]")
+	log_debug("Remove query created successfully for [target_ckey]")
 
 	if(query.Execute())
 		// Update cache
@@ -175,7 +173,7 @@ var/database_whitelist_loaded = 0
 		log_admin("Removed [target_ckey] from database whitelist" + (removed_by_ckey ? " by [removed_by_ckey]" : ""))
 		return 1
 	else
-		log_world("Failed to remove [target_ckey] from database whitelist: [query.ErrorMsg()]")
+		log_debug("Failed to remove [target_ckey] from database whitelist: [query.ErrorMsg()]")
 		return 0
 
 /proc/migrate_file_whitelist_to_database()

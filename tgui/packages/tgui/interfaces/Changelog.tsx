@@ -16,7 +16,6 @@ import {
 import { classes } from 'tgui-core/react';
 
 const icons = {
-  add: { icon: 'check-circle', color: 'green' },
   admin: { icon: 'user-shield', color: 'purple' },
   balance: { icon: 'balance-scale-right', color: 'yellow' },
   bugfix: { icon: 'bug', color: 'green' },
@@ -29,8 +28,6 @@ const icons = {
   imagedel: { icon: 'tg-image-minus', color: 'red' },
   qol: { icon: 'hand-holding-heart', color: 'green' },
   refactor: { icon: 'tools', color: 'green' },
-  rscadd: { icon: 'check-circle', color: 'green' },
-  rscdel: { icon: 'times-circle', color: 'red' },
   add: { icon: 'check-circle', color: 'green' },
   del: { icon: 'times-circle', color: 'red' },
   server: { icon: 'server', color: 'purple' },
@@ -46,12 +43,12 @@ const icons = {
 
 type ChangelogState = {
   data:
-    | string
-    | {
-        [date: string]: {
-          [author: string]: string[];
-        };
-      };
+  | string
+  | {
+    [date: string]: {
+      [author: string]: string[];
+    };
+  };
   selectedDate: any;
   selectedIndex: any;
 };
@@ -152,7 +149,7 @@ export class Changelog extends Component<{}, ChangelogState> {
               window.scrollTo(
                 0,
                 document.body.scrollHeight ||
-                  document.documentElement.scrollHeight,
+                document.documentElement.scrollHeight,
               );
               return this.getData(dates[index]);
             }}
@@ -171,7 +168,7 @@ export class Changelog extends Component<{}, ChangelogState> {
               window.scrollTo(
                 0,
                 document.body.scrollHeight ||
-                  document.documentElement.scrollHeight,
+                document.documentElement.scrollHeight,
               );
               return this.getData(dates[index]);
             }}
@@ -193,7 +190,7 @@ export class Changelog extends Component<{}, ChangelogState> {
               window.scrollTo(
                 0,
                 document.body.scrollHeight ||
-                  document.documentElement.scrollHeight,
+                document.documentElement.scrollHeight,
               );
               return this.getData(dates[index]);
             }}

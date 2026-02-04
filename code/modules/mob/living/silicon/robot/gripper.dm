@@ -204,6 +204,36 @@
 	//Definitions of gripper subtypes
 */
 
+/obj/item/gripper/universal
+	name = "universal gripper"
+	desc = "A versatile grasping tool designed to hold almost any item. It processes the object's molecular structure to ensure a secure grip."
+	icon_state = "gripper"
+
+/obj/item/gripper/universal/grip_item(obj/item/I as obj, mob/user as mob, var/feedback = 1)
+	if(istype(I, /obj/item/gripper))
+		if(feedback)
+			to_chat(user, "<span class='warning'>You cannot put a gripper inside another gripper. That would be silly.</span>")
+		return FALSE
+
+	if(I.w_class > ITEM_SIZE_BULKY)
+		if(feedback)
+			to_chat(user, "<span class='warning'>The [I] is too large for your universal gripper.</span>")
+		return FALSE
+
+	//It's universal, so we just check if it's already holding something
+	if (!wrapped)
+		if (feedback)
+			to_chat(user, "You collect \the [I].")
+		I.do_pickup_animation(user.loc, I.loc)
+		I.forceMove(src)
+		wrapped = I
+		update_icon()
+		return TRUE
+
+	if (feedback)
+		to_chat(user, "<span class='danger'>Your gripper is already holding \the [wrapped].</span>")
+	return FALSE
+
 // VEEEEERY limited version for mining borgs. Basically only for swapping cells, upgrading the drills, and upgrading custom KAs.
 /obj/item/gripper/miner
 	name = "drill maintenance gripper"

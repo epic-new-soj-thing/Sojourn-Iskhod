@@ -10,14 +10,8 @@
 
 /obj/structure/extinguisher_cabinet/New()
 	..()
-	if(prob(80))
-		has_extinguisher = new/obj/item/extinguisher(src)
-	else if(prob(20))
-		has_extinguisher = new/obj/item/extinguisher/mini(src)
-	else
-		has_extinguisher = null //OSHA would flip out
+	has_extinguisher = new/obj/item/extinguisher(src)
 	update_icon()
-
 
 /obj/structure/extinguisher_cabinet/attackby(obj/item/O, mob/user)
 	if(isrobot(user))

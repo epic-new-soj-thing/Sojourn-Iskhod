@@ -31,7 +31,7 @@
 /datum/gear/factionartificer/guild_rebreather
 	display_name = "Artificer rebreather"
 	allowed_roles = list(JOBS_ENGINEERING)
-	path = /obj/item/clothing/mask/gas/guild_rebreather
+	path = /obj/item/clothing/mask/gas/artificer/sleek
 	sort_category = "Faction: Artificer"
 	slot = slot_wear_mask
 	cost = 2

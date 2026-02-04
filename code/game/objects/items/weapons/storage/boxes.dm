@@ -683,7 +683,7 @@
 
 /obj/item/storage/box/autoinjectors/populate_contents()
 	for(var/i in 1 to 7)
-		new /obj/item/reagent_containers/hypospray/autoinjector/sugar(src)
+		new /obj/item/reagent_containers/hypospray/autoinjector(src)
 
 /obj/item/storage/box/lights
 	name = "box of replacement bulbs"
