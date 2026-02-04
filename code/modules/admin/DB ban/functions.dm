@@ -139,7 +139,7 @@ datum/admins/proc/DB_ban_unban(var/ckey, var/bantype, var/job = "")
 
 	query = dbcon.NewQuery(sql)
 	if(!query.Execute())
-		log_world("[key_name_admin(usr)] attempted to unban [ckey], but got error: [query.ErrorMsg()].")
+		log_debug("[key_name_admin(usr)] attempted to unban [ckey], but got error: [query.ErrorMsg()].")
 		return
 	while(query.NextRow())
 		ban_id = query.item[1]

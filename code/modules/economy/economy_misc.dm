@@ -79,8 +79,8 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 
 	payroll_mailer = new
 
-	// News channels are created at roundstart to ensure DB loading and deduplication
-	// happens after the world's DB connection is established. See /hook/roundstart/proc/init_news_network().
+	// News channels are created at global init, and DB loading happens
+	// when the database connection is established (in world/proc/connectDB).
 
 	for(var/loc_type in typesof(/datum/trade_destination) - /datum/trade_destination)
 		var/datum/trade_destination/D = new loc_type
@@ -102,15 +102,6 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 
 	economy_init = 1
 	return 1
-
-
-/hook/roundstart/proc/init_news_network()
-	// Create default in-memory channels; LoadFromDatabase will reconcile DB channels with these.
-	if(!news_network)
-		return
-
-	news_network.LoadFromDatabase()
-
 
 /proc/create_department_account(var/datum/department/department)
 	next_account_number = rand(111111, 999999)

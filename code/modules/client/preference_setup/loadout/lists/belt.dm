@@ -16,6 +16,11 @@
 	path = /obj/item/storage/sheath/non_church/general
 	cost = 1
 
+/datum/gear/belt/church_sheath
+	display_name = "church sheath"
+	path = /obj/item/storage/sheath
+	cost = 1
+
 /datum/gear/belt/toolbelt
 	display_name = "handmade tool belt"
 	path = /obj/item/storage/belt/utility/handmade
