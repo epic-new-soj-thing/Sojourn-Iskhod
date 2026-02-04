@@ -13,8 +13,7 @@
 	create_reagents(460)
 	..()
 
-/obj/structure/mopbucket/attackby(obj/item/I, mob/user)
-	return
+
 
 /obj/structure/mopbucket/on_reagent_change()
 	cut_overlays()

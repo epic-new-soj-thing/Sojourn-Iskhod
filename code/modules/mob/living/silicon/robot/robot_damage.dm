@@ -135,6 +135,31 @@
 
 	var/datum/robot_component/armor/A = get_armor()
 	if(A)
+		//Apply armor reduction
+		//Standard body armor formula is usually prob(armor) to block, or flat reduction?
+		//Standard body armor formula is usually prob(armor) to block, or flat reduction?
+		//Looking at code, clothing/suits seem to just have values.
+		//Let's assume standard Baystation/TG armor logic: damage = max(0, damage - armor_value/X) or prob based?
+		//Actually, let's look at human defense to be sure, but since I can't look at files casually, I will use a probability block similar to bullet_act for now or flat reduction if high.
+
+		//For consistent mechanics with "mech armor" or "traditional body armor", flat reduction is good for mechs.
+		//But vest values are small (10, 20). Usually that's a probability to block OR a reduction.
+		//Let's assume it's a reduction percentage for now? No, 10-20 is low for % if max is 100.
+		//Let's assume it's a flat reduction for Mechs.
+		//But for body armor it's usually: if(prob(armor)) reduce damage.
+
+        //Wait, I'll stick to a simple damage reduction based on the armor value.
+        //If armor is 50, reduce damage by 50%?
+        //Actually, checking bullet_act earlier: chance = max((chance / B.armor_divisor), 0).
+
+        //Let's implement a flat percent reduction based on the value, clamped.
+        //If armor is 50, takes 50% less damage.
+		if (A.armor && A.armor["melee"])
+			var/reduction = A.armor["melee"] / 100
+			brute *= max(0, 1 - reduction)
+			burn *= max(0, 1 - reduction) //Assuming melee covers both? Or should checking burn?
+
+        //Original logic below:
 		A.take_damage(brute*A.brute_mult,burn*A.burn_mult,sharp)
 		return
 

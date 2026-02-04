@@ -553,6 +553,26 @@
 	return FALSE
 
 /mob/living/silicon/robot/bullet_act(var/obj/item/projectile/Proj)
+	var/datum/robot_component/armor/A = get_armor()
+	if(A && A.armor && A.armor["bullet"] && istype(Proj, /obj/item/projectile/bullet))
+		//Standard armor deflection logic
+		var/chance = A.armor["bullet"]
+		var/obj/item/projectile/bullet/B = Proj
+		if(B.armor_divisor)
+			chance = max((chance / B.armor_divisor), 0)
+
+		if(prob(chance))
+			if (!(Proj.testing))
+				visible_message(SPAN_DANGER("\The [Proj.name] ricochets off [src]\'s armor!"))
+				var/multiplier = round(10 / get_dist(B.starting, src))
+				var/turf/sourceloc = get_turf_away_from_target_complex(src, B.starting, multiplier)
+				if(sourceloc)
+					var/distance = get_dist(sourceloc, src)
+					var/new_x =  sourceloc.x + ( rand(0, distance) * prob(50) ? -1 : 1 )
+					var/new_y =  sourceloc.y + ( rand(0, distance) * prob(50) ? -1 : 1 )
+					B.redirect(new_x, new_y, get_turf(src), src)
+				return PROJECTILE_CONTINUE
+
 	if(HasTrait(CYBORG_TRAIT_DEFLECTIVE_BALLISTIC_ARMOR) && istype(Proj, /obj/item/projectile/bullet))
 		var/chance = 90
 		if(ishuman(Proj.firer))
