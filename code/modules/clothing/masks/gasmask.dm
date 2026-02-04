@@ -281,6 +281,7 @@
 	name = "compact rebreather"
 	desc = "A small, Lonestar-brand rebreather designed to regulate the flux of gasses fed to its user. Taking it off will not make you die...unless you're in a non-breathable environment." // It won't be extremely painful either. - Seb
 	flags_inv = BLOCKFACEHAIR
+	w_class = ITEM_SIZE_SMALL
 	body_parts_covered = FACE
 	icon_state = "bane"
 	is_alts = FALSE
@@ -299,12 +300,13 @@
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 100, rad = 80)
 	is_alts = FALSE
 
-/obj/item/clothing/mask/gas/guild_rebreather
+/obj/item/clothing/mask/gas/artificer/sleek
 	name = "artificer's rebreather"
-	desc = "An industrial gas mask bearing the colors of the artificer's guild."
+	desc = "A sleek industrial rebreather bearing the colors of the artificer's guild."
 	icon_state = "bane_guild" // Sprites by Ezoken/Dromkii
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 30, rad = 40) // Half coverage, half bonuses.
 	flags_inv = BLOCKFACEHAIR
+	w_class = ITEM_SIZE_SMALL
 	body_parts_covered = FACE
 	is_alts = FALSE
 
