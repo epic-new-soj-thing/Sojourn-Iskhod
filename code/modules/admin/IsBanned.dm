@@ -76,7 +76,7 @@ world/IsBanned(key, address, computer_id, real_bans_only=FALSE)
 			)")
 
 		if(!query.Execute())
-			log_world("Trying to fetch ban record for [ckeytext] but got error: [query.ErrorMsg()].")
+			log_debug("Trying to fetch ban record for [ckeytext] but got error: [query.ErrorMsg()].")
 			return
 
 		while(query.NextRow())

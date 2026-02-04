@@ -38,7 +38,7 @@
 	icon_state = "engi_omni"
 	item_state = "engi_omni"
 	max_health = 300
-	w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_SMALL
 	worksound = WORKSOUND_DRIVER_TOOL
 	switched_on_qualities = list(QUALITY_SCREW_DRIVING = 30, QUALITY_WELDING = 30, QUALITY_BOLT_TURNING = 30, QUALITY_DRILLING = 20, QUALITY_PRYING = 30, QUALITY_WIRE_CUTTING = 30, QUALITY_HAMMERING = 30, QUALITY_SHOVELING = 30, QUALITY_SAWING = 30, QUALITY_CUTTING = 30, QUALITY_PULSING = 30, QUALITY_CAUTERIZING = 10)
 	matter = list(MATERIAL_PLASTEEL = 5, MATERIAL_STEEL = 3)
@@ -67,6 +67,8 @@
 	max_upgrades = 0
 	agonyforce = 80
 	hitcost = 10
+	use_fuel_cost = 0
+	max_fuel = 0
 
 /obj/item/tool/medmultitool
 	name = "Greyson Positronic \"Autosurgeon\" medical omnitool"

@@ -127,6 +127,10 @@
 	name = "Underground Floor 2 South Maintenance"
 	icon_state = "erisgreen"
 
+/area/iskhod/maintenance/undergroundfloor2central
+	name = "Underground Floor 2 Central Maintenance"
+	icon_state = "erisblue"
+
 /area/iskhod/maintenance/surfacenorth
 	name = "Surface North Maintenance"
 	icon_state = "erisyellow"
@@ -552,6 +556,9 @@
 
 /area/iskhod/maintenance/substation/bridge
 	name = "Bridge Substation"
+
+/area/iskhod/maintenance/substation/surface
+	name = "Surface Substation"
 
 //Hallway
 
@@ -1028,6 +1035,10 @@
 /area/iskhod/absolutism/chapelritualroom
 	name = "Chapel Rituals Room"
 	icon_state = "erisgreen"
+
+/area/iskhod/absolutism/substation
+	name = "\\improper Church Substation"
+	icon_state = "substation"
 
 //Engineering
 
@@ -1858,3 +1869,40 @@ area/nadezhda/medical/medbaymeeting
 /area/iskhod/storage/tech
 	name = "Technical Storage"
 	icon_state = "auxstorage"
+
+//Abandoned Surface Sites
+/area/iskhod/dungeon/outside/abandoned_surface_sites
+	name = "Abandoned Surface Sites"
+	icon_state = "erisgreen"
+	dynamic_lighting = TRUE
+	is_maintenance = TRUE
+	flags = AREA_FLAG_RAD_SHIELDED
+	sound_env = TUNNEL_ENCLOSED
+	ship_area = FALSE
+	turf_initializer = new /datum/turf_initializer/maintenance()
+	ambience = list('sound/ambience/maintambience.ogg')
+	area_light_color = COLOR_LIGHTING_MAINT_DARK
+	is_dungeon_lootable = TRUE
+
+//Shuttle Landing Zones
+/area/iskhod/pros/shuttle_landing_zone
+	name = "\improper Shuttle Landing Zone"
+	icon_state = "erisgreen"
+	dynamic_lighting = FALSE
+
+//Prospector Shop
+/area/iskhod/pros/shop
+	name = "\improper Prospector Shop"
+	icon_state = "erisgreen"
+
+//Surface Colony Footpath
+/area/iskhod/outside/surface_colony_footpath
+	name = "Surface Colony Footpath"
+	icon_state = "meadow"
+	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
+	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
+	dynamic_lighting = FALSE
+	flags = null
+	is_dungeon_lootable = TRUE
+	ship_area = FALSE
+	prevent_ship_area = TRUE

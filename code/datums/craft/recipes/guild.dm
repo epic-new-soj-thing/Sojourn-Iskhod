@@ -97,33 +97,39 @@
 		list(QUALITY_SAWING, 30, "time" = 60)
 	)
 
-/datum/craft_recipe/guild/robotmelee //Lots of heating and hammering. Forge your blade samurai.
-	name = "robot mark III reinforced armor plating"
-	result = /obj/item/robot_parts/robot_component/armor/mkiii
+//Standard specialized plating, cheap and efficient
+/datum/craft_recipe/guild/robotmix
+	name = "robot mark iv heavy armor plating"
+	result = /obj/item/robot_parts/robot_component/armor/mkiv
 	steps = list(
-		list(CRAFT_MATERIAL, 25, MATERIAL_STEEL, "time" = 30),
+		list(CRAFT_MATERIAL, 20, MATERIAL_PLASTEEL, "time" = 90),
+		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC, "time" = 90),
 		list(QUALITY_WELDING, 40, "time" = 90),
-		list(QUALITY_HAMMERING, 30, "time" = 180),
-		list(QUALITY_WELDING, 40, "time" = 90),
-		list(QUALITY_HAMMERING, 30, "time" = 180),
-		list(QUALITY_WELDING, 40, "time" = 90),
-		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
-		list(QUALITY_CUTTING, 30, "time" = 180),
-	)
-
-/datum/craft_recipe/guild/robothp //Lots of steps
-	name = "robot mark v extra armor plating"
-	result = /obj/item/robot_parts/robot_component/armor/mkv
-	steps = list(
-		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL, "time" = 90),
-		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL, "time" = 30),
-		list(QUALITY_WELDING, 40, "time" = 90),
+		list(/obj/item/stack/cable_coil, 10, "time" = 20),
 		list(QUALITY_CUTTING, 30, "time" = 180),
 		list(QUALITY_HAMMERING, 30, "time" = 180),
 		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
 		list(QUALITY_BOLT_TURNING, 40, "time" = 120),
 		list(QUALITY_SAWING, 30, "time" = 60)
 	)
+
+//The big boy. Requires the mark V to be built in science first.
+/datum/craft_recipe/guild/robotexp
+	name = "robot mark vi experimental armor plating"
+	result = /obj/item/robot_parts/robot_component/armor/mkvi
+	steps = list(
+		list(/obj/item/robot_parts/robot_component/armor/mkv, 1, "time" = 10),
+		list(CRAFT_MATERIAL, 5, MATERIAL_PLASMA, "time" = 90),
+		list(CRAFT_MATERIAL, 2, MATERIAL_DIAMOND, "time" = 90),
+		list(CRAFT_MATERIAL, 5, MATERIAL_GOLD, "time" = 90),
+		list(QUALITY_WELDING, 40, "time" = 180),
+		list(QUALITY_CUTTING, 30, "time" = 180),
+		list(QUALITY_HAMMERING, 30, "time" = 180),
+		list(QUALITY_SCREW_DRIVING, 40, "time" = 90),
+		list(QUALITY_BOLT_TURNING, 40, "time" = 120),
+		list(QUALITY_SAWING, 30, "time" = 60)
+	)
+
 
 //Cells --------------------------
 /datum/craft_recipe/guild/cellsmall

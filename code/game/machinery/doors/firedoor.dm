@@ -12,9 +12,9 @@
 #define F_SOUTH "South"
 #define F_EAST "East"
 #define F_WEST "West"
-#define FIREDOOR_TURF 1
-#define FIREDOOR_ATMOS 2
-#define FIREDOOR_ALERT 3
+#define FIREDOOR_TURF "1"
+#define FIREDOOR_ATMOS "2"
+#define FIREDOOR_ALERT "3"
 /obj/machinery/door/firedoor
 	name = "\improper Emergency Shutter"
 	desc = "Emergency air-tight shutter, capable of sealing off breached areas."
