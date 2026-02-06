@@ -35,7 +35,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance_rnd{
-	req_access = list(5)
+	req_access = list(55)
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/rnd/xenobiology)
@@ -604,11 +604,11 @@
 	},
 /obj/machinery/door/airlock/research{
 	autoclose = 0;
-	frequency = 1345;
+	frequency = 1379;
 	icon_state = "door_locked";
-	id_tag = "genetics_airlock_interior";
+	id_tag = "xeno_airlock_exterior";
 	locked = 1;
-	name = "Xenogenetics Internal Airlock";
+	name = "Xenobiology External Airlock";
 	req_access = list(55)
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -6468,7 +6468,7 @@
 "bJU" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/remote/blast_door{
-	id = "xenobio7";
+	id = "xenobio5";
 	name = "Containment Cell 5 Blast Doors";
 	pixel_y = 4
 	},
@@ -8434,6 +8434,14 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
+/obj/machinery/access_button{
+	pixel_x = -26;
+	name = "Supermatter Access Button";
+	frequency = 1254;
+	command = "cycle_interior";
+	master_tag = "sm_airlock_control";
+	req_access = list(10)
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/enginehallway)
 "cjk" = (
@@ -9034,12 +9042,12 @@
 "crY" = (
 /obj/structure/closet/l3closet/scientist,
 /obj/effect/floor_decal/industrial/box/red,
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -27
-	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/item/device/radio/intercom{
+	dir = 4;
+	pixel_x = -25
 	},
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/rnd/misc_lab)
@@ -12968,7 +12976,7 @@
 "dve" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/remote/blast_door{
-	id = "xenobio6";
+	id = "xenobio4";
 	name = "Containment Cell 4 Blast Doors";
 	pixel_y = 4
 	},
@@ -13334,9 +13342,9 @@
 	autoclose = 0;
 	frequency = 1379;
 	icon_state = "door_locked";
-	id_tag = "xeno_airlock_interior";
+	id_tag = "xeno_airlock_exterior";
 	locked = 1;
-	name = "Xenobiology Internal Airlock";
+	name = "Xenobiology External Airlock";
 	req_access = list(55)
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -16511,9 +16519,9 @@
 	autoclose = 0;
 	frequency = 1379;
 	icon_state = "door_locked";
-	id_tag = "xeno_airlock_exterior";
+	id_tag = "xeno_airlock_interior";
 	locked = 1;
-	name = "Xenobiology External Airlock";
+	name = "Xenobiology Internal Airlock";
 	req_access = list(55)
 	},
 /turf/simulated/floor/tiled/dark/panels,
@@ -18313,15 +18321,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/machinery/embedded_controller/radio/airlock/access_controller{
-	id_tag = "genetics_airlock_control";
-	name = "Xenogenetics Access Console";
-	pixel_y = 28;
-	tag_exterior_door = "genetics_airlock_exterior";
-	tag_interior_door = "genetics_airlock_interior";
-	req_access = list(9);
-	frequency = 1345
-	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/medical/genetics)
 "eUs" = (
@@ -18842,9 +18841,6 @@
 /turf/simulated/open,
 /area/iskhod/pit/surface)
 "fbx" = (
-/obj/structure/sign/department/gene{
-	pixel_x = 30
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -18854,6 +18850,9 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/sign/department/gene{
+	pixel_x = 30
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/misc_lab)
@@ -21416,6 +21415,9 @@
 /obj/machinery/light{
 	brightness_power = 1
 	},
+/obj/structure/sign/warningnew/cryogenics{
+	pixel_y = -32
+	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/telecommonitor)
 "fLL" = (
@@ -22015,12 +22017,13 @@
 /obj/machinery/door/window/southright{
 	dir = 1;
 	icon_state = "left";
-	name = "Containment Pen"
+	name = "Containment Pen";
+	req_access = list(55)
 	},
 /obj/machinery/door/window/southright{
 	icon_state = "left";
 	name = "Containment Pen";
-	req_access = newlist()
+	req_access = list(55)
 	},
 /obj/effect/floor_decal/industrial/stand_clear/red{
 	dir = 1
@@ -24929,17 +24932,7 @@
 /area/iskhod/maintenance/substation/misc1)
 "gLb" = (
 /obj/structure/closet/l3closet/scientist,
-/obj/structure/sign/warningnew/biohazard{
-	pixel_x = 32
-	},
 /obj/effect/floor_decal/industrial/box/red,
-/obj/machinery/embedded_controller/radio/airlock/access_controller{
-	id_tag = "xeno_airlock_control";
-	name = "Xenobiology Access Console";
-	pixel_y = -28;
-	tag_exterior_door = "xeno_airlock_exterior";
-	tag_interior_door = "xeno_airlock_interior"
-	},
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/rnd/misc_lab)
 "gLc" = (
@@ -27162,27 +27155,26 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial_plant,
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "East APC";
-	pixel_x = 28
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/embedded_controller/radio/airlock/access_controller{
+	id_tag = "xeno_airlock_control";
+	name = "Xenobiology Access Console";
+	tag_exterior_door = "xeno_airlock_exterior";
+	tag_interior_door = "xeno_airlock_interior";
+	pixel_x = 26;
+	req_access = list(55)
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/misc_lab)
@@ -29421,18 +29413,19 @@
 /obj/machinery/door/window/southright{
 	dir = 1;
 	icon_state = "left";
-	name = "Containment Pen"
+	name = "Containment Pen";
+	req_access = list(55)
 	},
 /obj/machinery/door/window/southright{
 	icon_state = "left";
 	name = "Containment Pen";
-	req_access = newlist()
+	req_access = list(55)
 	},
 /obj/effect/floor_decal/industrial/stand_clear/red{
 	dir = 1
 	},
 /obj/machinery/door/blast/regular/open{
-	id = "xenobio6";
+	id = "xenobio4";
 	name = "containment blast door"
 	},
 /turf/simulated/floor/tiled/white/danger,
@@ -32831,7 +32824,7 @@
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/blast/regular/open{
-	id = "xenobio6";
+	id = "xenobio4";
 	name = "containment blast door"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -32966,12 +32959,13 @@
 /obj/machinery/door/window/southright{
 	dir = 1;
 	icon_state = "left";
-	name = "Containment Pen"
+	name = "Containment Pen";
+	req_access = list(55)
 	},
 /obj/machinery/door/window/southright{
 	icon_state = "left";
 	name = "Containment Pen";
-	req_access = newlist()
+	req_access = list(55)
 	},
 /obj/effect/floor_decal/industrial/stand_clear/red{
 	dir = 1
@@ -33989,14 +33983,10 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/research{
-	autoclose = 0;
-	frequency = 1345;
-	icon_state = "door_locked";
-	id_tag = "genetics_airlock_interior";
-	locked = 1;
-	name = "Xenogenetics Internal Airlock";
-	req_access = list(55)
+/obj/machinery/door/airlock/maintenance_rnd{
+	req_access = list(9);
+	id_tag = "genetics_bolts";
+	locked = 1
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/medical/genetics)
@@ -35243,7 +35233,7 @@
 "jEv" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/machinery/door/blast/regular/open{
-	id = "xenobio7";
+	id = "xenobio5";
 	name = "containment blast door"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -35725,12 +35715,13 @@
 /obj/machinery/door/window/southright{
 	dir = 1;
 	icon_state = "left";
-	name = "Containment Pen"
+	name = "Containment Pen";
+	req_access = list(55)
 	},
 /obj/machinery/door/window/southright{
 	icon_state = "left";
 	name = "Containment Pen";
-	req_access = newlist()
+	req_access = list(55)
 	},
 /obj/effect/floor_decal/industrial/stand_clear/red{
 	dir = 1
@@ -37120,7 +37111,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/vault/bolted,
+/obj/machinery/door/airlock/vault/bolted{
+	name = "Supermatter External Airlock";
+	autoclose = 0;
+	frequency = 1254;
+	id_tag = "sm_airlock_exterior"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_airlock)
 "kfC" = (
@@ -40803,6 +40799,11 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/misc_lab)
 "lgA" = (
@@ -43886,6 +43887,12 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/remote/airlock{
+	name = "Genetics Bolt Control";
+	pixel_x = 26;
+	specialfunctions = 4;
+	id = "genetics_bolts"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/medical/genetics)
 "lZU" = (
@@ -45685,22 +45692,11 @@
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/panic_room)
 "mBf" = (
-/obj/machinery/door/firedoor,
-/obj/effect/floor_decal/industrial_plant/steel_grate_border{
-	dir = 1
+/obj/machinery/light/small{
+	dir = 8
 	},
-/obj/machinery/door/airlock/command{
-	name = "Telecommunications";
-	req_access = list(61)
-	},
-/obj/structure/sign/warningnew/cryogenics{
-	pixel_y = -32
-	},
-/obj/structure/sign/warningnew/cryogenics{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled/dark,
-/area/iskhod/command/tcommsat/chamber)
+/turf/simulated/floor/wood/wild3,
+/area/iskhod/command/bridge)
 "mBg" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 1
@@ -46712,8 +46708,13 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/techstorage)
 "mSc" = (
-/obj/structure/sign/warningnew/biohazard{
-	pixel_x = 32
+/obj/machinery/access_button{
+	command = "cycle_interior";
+	frequency = 1379;
+	master_tag = "xeno_airlock_control";
+	name = "Xenobiology Access Button";
+	pixel_x = 26;
+	req_access = list(55)
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/docking)
@@ -47699,13 +47700,6 @@
 /area/iskhod/abandoned/recreation)
 "nfK" = (
 /obj/machinery/light/small,
-/obj/machinery/embedded_controller/radio/airlock/access_controller{
-	id_tag = "xeno_airlock_control";
-	name = "Xenobiology Access Console";
-	pixel_y = -28;
-	tag_exterior_door = "xeno_airlock_exterior";
-	tag_interior_door = "xeno_airlock_interior"
-	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/rnd/xenobiology)
 "nfS" = (
@@ -47750,14 +47744,10 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/research{
-	autoclose = 0;
-	frequency = 1379;
-	icon_state = "door_locked";
-	id_tag = "xeno_airlock_interior";
-	locked = 1;
-	name = "Xenobiology Internal Airlock";
-	req_access = list(55)
+/obj/machinery/door/airlock/maintenance_rnd{
+	req_access = list(55);
+	id_tag = "xenobiology_bolts";
+	locked = 1
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/rnd/xenobiology)
@@ -48466,7 +48456,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/maintenance_rnd{
-	req_access = list(5)
+	req_access = list(9)
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/medical/genetics)
@@ -48798,18 +48788,9 @@
 /area/iskhod/security/secrecroom)
 "ntl" = (
 /obj/structure/closet/l3closet/scientist,
-/obj/structure/sign/warningnew/biohazard{
-	pixel_x = 32
-	},
 /obj/effect/floor_decal/industrial/box/red,
-/obj/machinery/embedded_controller/radio/airlock/access_controller{
-	id_tag = "genetics_airlock_control";
-	name = "Xenogenetics Access Console";
-	pixel_y = 28;
-	tag_exterior_door = "genetics_airlock_exterior";
-	tag_interior_door = "genetics_airlock_interior";
-	req_access = list(9);
-	frequency = 1345
+/obj/machinery/alarm{
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/rnd/misc_lab)
@@ -50451,18 +50432,19 @@
 /obj/machinery/door/window/southright{
 	dir = 1;
 	icon_state = "left";
-	name = "Containment Pen"
+	name = "Containment Pen";
+	req_access = list(55)
 	},
 /obj/machinery/door/window/southright{
 	icon_state = "left";
 	name = "Containment Pen";
-	req_access = newlist()
+	req_access = list(55)
 	},
 /obj/effect/floor_decal/industrial/stand_clear/red{
 	dir = 1
 	},
 /obj/machinery/door/blast/regular/open{
-	id = "xenobio7";
+	id = "xenobio5";
 	name = "containment blast door"
 	},
 /turf/simulated/floor/tiled/white/danger,
@@ -52345,9 +52327,9 @@
 	autoclose = 0;
 	frequency = 1379;
 	icon_state = "door_locked";
-	id_tag = "xeno_airlock_interior";
+	id_tag = "xeno_airlock_exterior";
 	locked = 1;
-	name = "Xenobiology Internal Airlock";
+	name = "Xenobiology External Airlock";
 	req_access = list(55)
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -55025,6 +55007,11 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/button/remote/airlock{
+	name = "Xenobiology Bolt Control";
+	pixel_x = 26;
+	id = "xenobiology_bolts"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/xenobiology)
 "pdx" = (
@@ -57689,9 +57676,6 @@
 /area/iskhod/engineering/techstorage)
 "pQH" = (
 /obj/structure/catwalk,
-/obj/structure/sign/warningnew/cryogenics{
-	pixel_x = -32
-	},
 /obj/machinery/light{
 	brightness_power = 1;
 	dir = 8
@@ -64571,9 +64555,6 @@
 /turf/simulated/floor/tiled/white/monofloor,
 /area/iskhod/pros/shuttle_landing_zone)
 "rRD" = (
-/obj/structure/sign/department/xenolab{
-	pixel_x = 30
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -64583,6 +64564,9 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/sign/department/xenolab{
+	pixel_x = 30
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/misc_lab)
@@ -67100,7 +67084,7 @@
 "sAt" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/machinery/door/blast/regular/open{
-	id = "xenobio6";
+	id = "xenobio4";
 	name = "containment blast door"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -70493,11 +70477,11 @@
 	},
 /obj/machinery/door/airlock/research{
 	autoclose = 0;
-	frequency = 1345;
+	frequency = 1379;
 	icon_state = "door_locked";
-	id_tag = "genetics_airlock_interior";
+	id_tag = "xeno_airlock_exterior";
 	locked = 1;
-	name = "Xenogenetics Internal Airlock";
+	name = "Xenobiology External Airlock";
 	req_access = list(55)
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -71625,19 +71609,12 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "tML" = (
-/obj/structure/sign/warningnew/biohazard{
-	pixel_x = 32
-	},
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
-/obj/machinery/embedded_controller/radio/airlock/access_controller{
-	id_tag = "xeno_airlock_control";
-	name = "Xenobiology Access Console";
-	pixel_y = -28;
-	tag_exterior_door = "xeno_airlock_exterior";
-	tag_interior_door = "xeno_airlock_interior"
+/obj/structure/sign/warning/hazard_biohazard{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/docking)
@@ -72772,9 +72749,15 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/obj/item/device/radio/intercom{
-	dir = 4;
-	pixel_x = -25
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	operating = 0;
+	pixel_x = -28
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/misc_lab)
@@ -74330,9 +74313,6 @@
 "uDk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
 	dir = 1
-	},
-/obj/structure/sign/warningnew/cryogenics{
-	pixel_x = -32
 	},
 /obj/machinery/light{
 	brightness_power = 1;
@@ -79041,7 +79021,8 @@
 /obj/machinery/door/window/southright{
 	dir = 1;
 	icon_state = "left";
-	name = "Containment Pen"
+	name = "Containment Pen";
+	req_access = list(55)
 	},
 /obj/structure/window/reinforced/iskhod{
 	dir = 4
@@ -83754,8 +83735,28 @@
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/quartermaster/supplydock)
 "xnI" = (
-/obj/machinery/embedded_controller/radio/airlock/access_controller,
-/turf/simulated/wall/iskhod_blue,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
+	dir = 1
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/vault/bolted{
+	frequency = 1254;
+	name = "Supermatter Internal Airlock";
+	autoclose = 0;
+	id_tag = "sm_airlock_interior"
+	},
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_airlock)
 "xoa" = (
 /obj/structure/disposalpipe/segment,
@@ -84420,6 +84421,15 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/radiation,
 /obj/item/storage/firstaid/radiation,
+/obj/machinery/embedded_controller/radio/airlock/access_controller{
+	name = "Supermatter Access Controller";
+	pixel_y = -26;
+	id_tag = "sm_airlock_control";
+	frequency = 1254;
+	tag_interior_door = "sm_airlock_interior";
+	tag_exterior_door = "sm_airlock_exterior";
+	req_access = list(10)
+	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/engine_airlock)
 "xxL" = (
@@ -109139,7 +109149,7 @@ pgO
 rNS
 dGL
 pIZ
-mBf
+psU
 pIZ
 ipH
 tSD
@@ -139963,7 +139973,7 @@ hzy
 aLz
 rxg
 gzA
-gFF
+mBf
 efB
 gFF
 unI
@@ -144096,7 +144106,7 @@ vrR
 vrR
 vrR
 hNA
-xnI
+hNA
 kfz
 hNA
 hNA
@@ -144904,8 +144914,8 @@ axX
 arf
 arf
 hNA
+hNA
 xnI
-kfz
 hNA
 hNA
 arf
