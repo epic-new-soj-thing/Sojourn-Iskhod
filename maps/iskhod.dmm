@@ -5023,6 +5023,11 @@
 "bpO" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "chemistry_shutters";
+	name = "Chemistry Shutters"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/medical/chemistry)
 "bpV" = (
@@ -7242,6 +7247,11 @@
 /obj/structure/table/reinforced,
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/machinery/button/remote/blast_door{
+	id = "guild_lobby";
+	name = "Guild Lobby shutter control";
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/foyer)
@@ -11156,6 +11166,10 @@
 "cXe" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	name = "Robotics Privacy Shutters";
+	id = "robotics_privacy_shutters"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/maintenance/substation/science)
 "cXg" = (
@@ -11314,6 +11328,15 @@
 	},
 /turf/simulated/floor/beach/sand/drywater,
 /area/iskhod/crew_quarters/bar)
+"cZk" = (
+/obj/machinery/button/remote/blast_door{
+	id = "cargo_lobby";
+	name = "Frontier Logistics Lobby shutter control";
+	pixel_y = 32;
+	req_one_access = list(50,48,26)
+	},
+/turf/simulated/floor/industrial/grey_slates_long,
+/area/iskhod/quartermaster/office)
 "cZB" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -14036,6 +14059,10 @@
 "dIH" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	name = "R&D Reception Shutters";
+	id = "research_desk_shutters"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/rnd/lab)
 "dIR" = (
@@ -14545,6 +14572,10 @@
 "dRl" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	name = "Robotics Reception Shutters";
+	id = "robotics_desk_shutters"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/rnd/robotics)
 "dRw" = (
@@ -14801,7 +14832,9 @@
 "dVx" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/obj/machinery/door/airlock/maintenance_medical,
+/obj/machinery/door/airlock/maintenance_medical{
+	req_access = list(5)
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/medbay/uppercor)
 "dVC" = (
@@ -15025,6 +15058,10 @@
 /obj/machinery/door/window/iskhod{
 	req_one_access = list(5,45,64)
 	},
+/obj/machinery/door/blast/shutters{
+	name = "Medical Front Desk Shutters";
+	id = "medbay_front_shutters"
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/reception)
 "eag" = (
@@ -15131,7 +15168,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/maintenance_interior,
+/obj/machinery/door/airlock/maintenance_interior{
+	req_access = list(33)
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/medical/chemistry)
 "ebC" = (
@@ -15456,6 +15495,11 @@
 /obj/machinery/door/window/iskhod/right{
 	dir = 2
 	},
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "guild_lobby";
+	name = "Office Shutters"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/engineering/foyer)
 "efQ" = (
@@ -15652,7 +15696,8 @@
 /obj/machinery/door/airlock/multi_tile/glass{
 	dir = 2;
 	name = "Medical Lobby";
-	req_one_access = list(5,45,64)
+	req_one_access = list(5,45,64);
+	id_tag = "medbay_exit"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/reception)
@@ -18654,9 +18699,7 @@
 "eYw" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/maintenance_cargo{
-	req_one_access = list(50,48,26)
-	},
+/obj/machinery/door/airlock/maintenance_cargo,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -18915,6 +18958,13 @@
 	dir = 5
 	},
 /obj/machinery/recharger,
+/obj/machinery/button/remote/blast_door{
+	name = "Maintenance shutter control";
+	id = "sec_maint_shutter";
+	pixel_y = 26;
+	pixel_x = 32;
+	req_access = list(63)
+	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/breakroom)
 "fbU" = (
@@ -19989,6 +20039,11 @@
 	dir = 2;
 	req_one_access = list(5,45,64)
 	},
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "chemistry_shutters";
+	name = "Chemistry Shutters"
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/chemistry)
 "fsr" = (
@@ -20213,6 +20268,10 @@
 	dir = 2;
 	req_one_access = list(63)
 	},
+/obj/machinery/door/blast/shutters{
+	name = "Security Front Desk Shutters";
+	id = "security_front_shutters"
+	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
 "fwq" = (
@@ -20307,7 +20366,9 @@
 "fxD" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/obj/machinery/door/airlock/glass_mining,
+/obj/machinery/door/airlock/maintenance_cargo{
+	req_one_access = list(50,48,26)
+	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/quartermaster/supplydock)
 "fxR" = (
@@ -20417,6 +20478,10 @@
 /obj/machinery/door/window/iskhod/right{
 	dir = 2;
 	req_one_access = list(63)
+	},
+/obj/machinery/door/blast/shutters{
+	name = "Security Front Desk Shutters";
+	id = "security_front_shutters"
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
@@ -22091,13 +22156,14 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/security/warden)
 "fVn" = (
+/obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
-/obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/iskhod/medical/medbay/uppercor)
+/obj/machinery/door/blast/shutters{
+	name = "Security Front Desk Shutters";
+	id = "security_front_shutters"
+	},
+/turf/simulated/floor/plating/under,
+/area/iskhod/security)
 "fVp" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/bar_dance,
@@ -22608,6 +22674,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
+/obj/structure/table/steel_reinforced{
+	flipped = 1
+	},
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen/multi,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
 "geb" = (
@@ -23658,6 +23731,10 @@
 "gsK" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	name = "Cargo Bay Privacy Shutters";
+	id = "cargo_privacy_shutters"
+	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/quartermaster/supplydock)
 "gsQ" = (
@@ -25372,9 +25449,7 @@
 /area/iskhod/hallway/main/f1section4)
 "gQA" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/maintenance_cargo{
-	req_one_access = list(50,48,26)
-	},
+/obj/machinery/door/airlock/maintenance_cargo,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/maintenance/substation/surface)
 "gQF" = (
@@ -29583,6 +29658,10 @@
 "ick" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	name = "Robotics Privacy Shutters";
+	id = "robotics_privacy_shutters"
+	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/rnd/robotics)
 "icF" = (
@@ -30208,6 +30287,18 @@
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/security/showers)
+"imP" = (
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/glass_medical{
+	id_tag = "medbay_exit";
+	name = "Medbay"
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/medical/medbay/uppercor)
 "imR" = (
 /obj/machinery/nanite_reconstitution_apparatus/loaded,
 /obj/effect/floor_decal/industrial/outline/red,
@@ -30497,6 +30588,10 @@
 	},
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	name = "Robotics Privacy Shutters";
+	id = "robotics_privacy_shutters"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/maintenance/substation/science)
 "iqT" = (
@@ -32917,10 +33012,19 @@
 /area/iskhod/engineering/breakroom)
 "iYh" = (
 /obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_y = 3
+/obj/machinery/button/remote/blast_door{
+	name = "Front Desk Shutter Control";
+	dir = 8;
+	pixel_y = 8
 	},
-/obj/item/pen/multi,
+/obj/machinery/button/remote/airlock{
+	blue_ink_tk_blocker = 1;
+	desc = "A remote control switch.";
+	id = "medbay_exit";
+	name = "Medbay Exit Button";
+	dir = 8;
+	pixel_y = -3
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/reception)
 "iYt" = (
@@ -33537,6 +33641,7 @@
 "jhG" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/gibs,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2south)
 "jhS" = (
@@ -34662,7 +34767,13 @@
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/iskhod/right{
-	dir = 2
+	dir = 2;
+	req_access = list(31)
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "cargo_lobby";
+	name = "Office Shutters"
 	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/quartermaster/office)
@@ -35881,6 +35992,11 @@
 "jMC" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "guild_lobby";
+	name = "Office Shutters"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/engineering/foyer)
 "jMG" = (
@@ -37343,6 +37459,13 @@
 "kiF" = (
 /obj/machinery/light{
 	brightness_power = 1
+	},
+/obj/machinery/button/remote/blast_door{
+	name = "Robotics Front Desk Shutter Control";
+	id = "robotics_desk_shutters";
+	pixel_y = -26;
+	req_access = list(29);
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/robotics)
@@ -41085,11 +41208,14 @@
 /obj/machinery/centrifuge{
 	pixel_x = 1
 	},
-/obj/structure/sign/misc/periodic{
-	pixel_y = 32
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
+	},
+/obj/machinery/button/remote/blast_door{
+	name = "Chemistry shutter control";
+	id = "chemistry_shutters";
+	pixel_y = 26;
+	req_access = list(33)
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemistry)
@@ -41567,6 +41693,13 @@
 /obj/machinery/cooking_with_jane/grill,
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
+"lqA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/holoposter{
+	pixel_y = -32
+	},
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/security/sechall)
 "lqK" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -42506,6 +42639,9 @@
 "lEK" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk,
+/obj/structure/sign/misc/periodic{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemistry)
 "lEQ" = (
@@ -45195,6 +45331,10 @@
 /obj/structure/window/reinforced/iskhod{
 	dir = 4
 	},
+/obj/machinery/door/blast/shutters{
+	name = "Medical Front Desk Shutters";
+	id = "medbay_front_shutters"
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/reception)
 "msG" = (
@@ -45294,6 +45434,11 @@
 "muV" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "research_shutters";
+	name = "R&D Privacy Shutters"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/rnd/lab)
 "muY" = (
@@ -45486,6 +45631,10 @@
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/blast/shutters{
+	name = "R&D Reception Shutters";
+	id = "research_desk_shutters"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/rnd/lab)
 "myC" = (
@@ -47343,20 +47492,15 @@
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/abandoned/barber)
 "nbJ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
+/obj/machinery/button/remote/blast_door{
+	id = "research_shutters";
+	name = "R&D Privacy Shutter Control";
+	req_access = list(5);
+	dir = 4;
+	pixel_x = -26
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/holoposter{
-	pixel_y = -32
-	},
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/iskhod/security/sechall)
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/rnd/lab)
 "ncf" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/window/basic/iskhod{
@@ -47491,10 +47635,12 @@
 /obj/structure/table/steel_reinforced{
 	flipped = 1
 	},
-/obj/item/paper_bin{
-	pixel_y = 3
+/obj/machinery/button/remote/blast_door{
+	name = "Security Front Desk Shutter Control";
+	id = "security_front_shutters";
+	pixel_y = 6;
+	req_access = list(63)
 	},
-/obj/item/pen/multi,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
 "ndR" = (
@@ -47893,6 +48039,10 @@
 "niN" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	name = "Robotics Privacy Shutters";
+	id = "robotics_privacy_shutters"
+	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/rnd/robotics)
 "niT" = (
@@ -48291,6 +48441,9 @@
 /obj/machinery/disposal,
 /obj/effect/floor_decal/corner/red{
 	dir = 5
+	},
+/obj/machinery/holoposter{
+	pixel_y = 32
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/breakroom)
@@ -49146,7 +49299,13 @@
 /obj/machinery/door/firedoor,
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/iskhod{
-	dir = 2
+	dir = 2;
+	req_access = list(31)
+	},
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "cargo_lobby";
+	name = "Office Shutters"
 	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/quartermaster/office)
@@ -49885,6 +50044,10 @@
 "nHv" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	name = "Robotics Reception Shutters";
+	id = "robotics_desk_shutters"
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/rnd/robotics)
 "nHF" = (
@@ -50240,6 +50403,10 @@
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/blast/shutters{
+	name = "Robotics Reception Shutters";
+	id = "robotics_desk_shutters"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/rnd/robotics)
 "nMP" = (
@@ -51677,6 +51844,11 @@
 "oiH" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "research_shutters";
+	name = "R&D Privacy Shutters"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/rnd/scient)
 "oiI" = (
@@ -53928,6 +54100,10 @@
 "oQm" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	name = "Security Front Desk Shutters";
+	id = "security_front_shutters"
+	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
 "oQo" = (
@@ -55933,6 +56109,12 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/button/remote/blast_door{
+	name = "Cargo Bay Shutter Control";
+	id = "cargo_privacy_shutters";
+	pixel_y = 26;
+	req_one_access = list(50,48,26)
+	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/quartermaster/supplydock)
 "pqa" = (
@@ -56051,6 +56233,18 @@
 /obj/machinery/porta_turret,
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
+"prJ" = (
+/obj/structure/table/standard{
+	flipped = 1
+	},
+/obj/machinery/button/remote/blast_door{
+	name = "Robotics Privacy Shutter Control";
+	pixel_y = 26;
+	id = "robotics_privacy_shutters";
+	req_access = list(29)
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/rnd/robotics)
 "prK" = (
 /obj/effect/floor_decal/industrial/box/red,
 /obj/structure/extinguisher_cabinet{
@@ -56623,6 +56817,10 @@
 "pBg" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	name = "Cargo Bay Privacy Shutters";
+	id = "cargo_privacy_shutters"
+	},
 /turf/simulated/floor/industrial/bricks,
 /area/iskhod/quartermaster/supplydock)
 "pBj" = (
@@ -59123,6 +59321,15 @@
 /obj/landmark/join/start/technomancer,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/foyer)
+"qmk" = (
+/obj/effect/window_lwall_spawn,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	name = "Robotics Privacy Shutters";
+	id = "robotics_privacy_shutters"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/rnd/robotics)
 "qms" = (
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/abandoned/strip_club)
@@ -62266,6 +62473,18 @@
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
+"rgW" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 8;
+	icon_state = "shutter0";
+	id = "visitation_lockdown";
+	name = "Visitation Shutters";
+	opacity = 0
+	},
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/security/prison)
 "rha" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -64195,6 +64414,11 @@
 "rKz" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "cargo_lobby";
+	name = "Office Shutters"
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/quartermaster/office)
 "rKL" = (
@@ -68832,8 +69056,10 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
 	},
-/obj/machinery/door/airlock/glass_mining,
 /obj/effect/decal/cleanable/rubble,
+/obj/machinery/door/airlock/maintenance_cargo{
+	req_one_access = list(50,48,26)
+	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/quartermaster/office)
 "sYY" = (
@@ -68967,6 +69193,10 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/iskhod/right{
 	req_one_access = list(5,45,64)
+	},
+/obj/machinery/door/blast/shutters{
+	name = "Medical Front Desk Shutters";
+	id = "medbay_front_shutters"
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/reception)
@@ -69725,6 +69955,10 @@
 "tmP" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	name = "shutter";
+	id = "sec_maint_shutter"
+	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/security/breakroom)
 "tmU" = (
@@ -69910,7 +70144,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/glass_security{
 	name = "Security Post";
-	req_access = list(2)
+	req_access = list(63)
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
@@ -70101,6 +70335,11 @@
 "trB" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	id = "chemistry_shutters";
+	name = "Chemistry Shutters"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/medical/chemistry)
 "trG" = (
@@ -71016,6 +71255,16 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/outpost/abandoned)
+"tCZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/button/remote/blast_door{
+	name = "Visitation Shutters";
+	id = "visitation_lockdown";
+	req_access = list(63);
+	pixel_x = 26
+	},
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/security/prison)
 "tDD" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -74812,6 +75061,19 @@
 "uJw" = (
 /turf/simulated/floor/plating/under,
 /area/iskhod/security/maintpost)
+"uJz" = (
+/obj/structure/table/standard{
+	flipped = 1
+	},
+/obj/machinery/button/remote/blast_door{
+	name = "R&D Front Desk Shutter Control";
+	id = "research_desk_shutters";
+	dir = 8;
+	pixel_x = 26;
+	req_access = list(29)
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/iskhod/rnd/lab)
 "uJA" = (
 /obj/effect/window_lwall_spawn,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -77565,6 +77827,10 @@
 "vyW" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn,
+/obj/machinery/door/blast/shutters{
+	name = "Cargo Bay Privacy Shutters";
+	id = "cargo_privacy_shutters"
+	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/quartermaster/supplydock)
 "vyY" = (
@@ -78416,9 +78682,6 @@
 /obj/structure/closet/secure_closet/freezer/icebox,
 /obj/effect/floor_decal/corner/red{
 	dir = 5
-	},
-/obj/machinery/holoposter{
-	pixel_y = 32
 	},
 /obj/machinery/light{
 	dir = 1
@@ -80931,10 +81194,14 @@
 "wxg" = (
 /obj/structure/table/reinforced,
 /obj/item/folder/cyan,
-/obj/item/folder/cyan,
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen/multi,
+/obj/item/folder/cyan,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/reception)
 "wxh" = (
@@ -84445,6 +84712,9 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters)
+"xxP" = (
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/maintenance/undergroundfloor2east)
 "xxR" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/grey_slates_long,
@@ -85458,6 +85728,10 @@
 "xMX" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	name = "R&D Reception Shutters";
+	id = "research_desk_shutters"
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/rnd/lab)
 "xNe" = (
@@ -85759,6 +86033,10 @@
 /area/iskhod/maintenance/undergroundfloor2south)
 "xSN" = (
 /obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	name = "Medical Front Desk Shutters";
+	id = "medbay_front_shutters"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/medical/reception)
 "xSO" = (
@@ -86316,6 +86594,14 @@
 /area/iskhod/engineering/techstorage)
 "xYU" = (
 /obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 2;
+	icon_state = "shutter0";
+	id = "visitation_lockdown";
+	name = "Visitation Shutters";
+	opacity = 0
+	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/prison)
 "xYX" = (
@@ -91934,7 +92220,7 @@ cnn
 xYU
 lYW
 wXW
-gqT
+tCZ
 mZI
 gqT
 dAC
@@ -92133,9 +92419,9 @@ wkv
 wkv
 uqL
 pLT
-xYU
-xYU
-xYU
+hTH
+rgW
+rgW
 hTH
 kph
 kPi
@@ -97800,8 +98086,8 @@ sSX
 qYS
 aSf
 vhe
-nbJ
-vhe
+aCy
+lqA
 fRl
 qdJ
 uzt
@@ -97994,7 +98280,7 @@ fif
 cSA
 twX
 bRQ
-jxF
+fVn
 eOM
 jQf
 haP
@@ -98398,7 +98684,7 @@ fif
 lWf
 kIl
 bRQ
-jxF
+fVn
 ndK
 gdW
 tlb
@@ -98802,7 +99088,7 @@ fif
 fxU
 tnR
 bRQ
-jxF
+fVn
 ikP
 xua
 bqB
@@ -110934,8 +111220,8 @@ bda
 ylj
 ojm
 epo
-rKz
-eqB
+vGv
+cZk
 iKw
 xxR
 xxR
@@ -111338,7 +111624,7 @@ kCg
 ocS
 bEH
 epo
-rKz
+vGv
 eqB
 lvM
 xxR
@@ -113336,7 +113622,7 @@ iqs
 xAq
 rYd
 jmt
-uuZ
+qmk
 bzF
 nGB
 loO
@@ -113539,7 +113825,7 @@ fSL
 jfp
 kiF
 udL
-nQd
+prJ
 djU
 gad
 vQp
@@ -114144,7 +114430,7 @@ iqs
 fSL
 wIj
 jmt
-uuZ
+qmk
 fgn
 xfA
 kef
@@ -114334,7 +114620,7 @@ fnG
 mVl
 oIi
 khi
-rMa
+uJz
 fnG
 jxU
 dqf
@@ -114741,7 +115027,7 @@ uwC
 aAN
 rAn
 aAN
-aAN
+nbJ
 wqR
 aAN
 uHc
@@ -146845,13 +147131,13 @@ tRV
 ubs
 fpU
 kqI
-vsj
+imP
 mEB
 mNm
 kNY
 mNm
 vbI
-fVn
+vsj
 ffo
 aei
 kVd
@@ -151938,7 +152224,7 @@ fyL
 kTi
 mYl
 fqc
-cVQ
+gwN
 gwN
 gwN
 gwN
@@ -152926,7 +153212,7 @@ iqT
 ohF
 nFV
 nFV
-kTi
+iId
 kTi
 gwN
 gwN
@@ -153128,7 +153414,7 @@ kTg
 nFV
 sTh
 vlE
-kTi
+iId
 kTi
 kTi
 kTi
@@ -153330,7 +153616,7 @@ cTQ
 kqD
 raf
 gab
-evF
+xxP
 evF
 evF
 evF
