@@ -5129,7 +5129,7 @@
 /area/iskhod/waterfall/subsurface)
 "bnp" = (
 /obj/random/structures,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "bnq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -14981,13 +14981,7 @@
 "dJS" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/shutters{
-	dir = 2;
-	name = "shutter"
-	},
-/obj/structure/barricade,
-/obj/random/traps,
-/turf/simulated/floor/plating/under,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "dKq" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
@@ -18429,7 +18423,7 @@
 	brightness_power = 1;
 	dir = 8
 	},
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "eEI" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
@@ -20874,7 +20868,7 @@
 "fnE" = (
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "fnG" = (
 /turf/simulated/wall/iskhod_green,
@@ -21267,7 +21261,7 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "Recovery Ward";
-	req_access = newlist();
+	req_access = newlist()
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/patient_wing)
@@ -25855,7 +25849,7 @@
 /area/iskhod/medical/genetics)
 "gzb" = (
 /obj/random/scrap/dense_weighted,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "gzk" = (
 /obj/effect/floor_decal/industrial/warningwhite/corner{
@@ -28005,7 +27999,7 @@
 "heg" = (
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/random/scrap/sparse_weighted/low_chance,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "heh" = (
 /turf/simulated/shuttle/wall/science{
@@ -38138,7 +38132,7 @@
 /area/iskhod/crew_quarters/hydroponics)
 "jJi" = (
 /obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "jJl" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -42107,7 +42101,7 @@
 /area/iskhod/hallway/side/f2section1)
 "kJi" = (
 /obj/random/melee/low_chance,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "kJm" = (
 /obj/effect/spider/stickyweb,
@@ -44672,7 +44666,7 @@
 /area/iskhod/engineering/engine_airlock)
 "lrG" = (
 /obj/random/scrap/sparse_weighted,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "lrQ" = (
 /obj/structure/table/rack,
@@ -44880,7 +44874,7 @@
 "lvl" = (
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/structure/scrap/poor,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "lvr" = (
 /obj/effect/floor_decal/spline/plain{
@@ -48810,7 +48804,7 @@
 /area/iskhod/maintenance/undergroundfloor1south)
 "myI" = (
 /obj/random/scrap/sparse_weighted/low_chance,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "myL" = (
 /obj/structure/table/reinforced,
@@ -51420,7 +51414,7 @@
 /obj/machinery/light{
 	brightness_power = 1
 	},
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "njk" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized,
@@ -52567,8 +52561,7 @@
 /obj/structure/boulder{
 	pixel_x = -1
 	},
-/obj/structure/barricade,
-/turf/simulated/floor/rock/dark,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "nvB" = (
 /obj/structure/table/rack,
@@ -53849,7 +53842,7 @@
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/structure/catwalk,
 /obj/item/remains/human,
-/turf/simulated/floor/plating/under,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "nLX" = (
 /obj/structure/bed/chair{
@@ -58922,7 +58915,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "pcU" = (
 /obj/structure/cable/cyan{
@@ -62627,7 +62620,7 @@
 "qaK" = (
 /obj/structure/catwalk,
 /obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "qaP" = (
 /obj/structure/dispenser/plasma,
@@ -65384,7 +65377,7 @@
 /area/shuttle/surface_transport_lz)
 "qOZ" = (
 /obj/random/structures/low_chance,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "qPa" = (
 /obj/structure/closet/secure_closet/personal,
@@ -66256,7 +66249,7 @@
 "rai" = (
 /obj/structure/catwalk,
 /obj/random/cluster/roaches/low_chance,
-/turf/simulated/floor/plating/under,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "raj" = (
 /obj/item/modular_computer/console/preset/command/access{
@@ -69097,7 +69090,7 @@
 "rOO" = (
 /obj/random/structures/low_chance,
 /obj/random/scrap/sparse_weighted/low_chance,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "rOQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -73006,7 +72999,7 @@
 "sPu" = (
 /obj/random/cluster/roaches/low_chance,
 /obj/structure/scrap/poor,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "sPE" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -78621,7 +78614,7 @@
 /area/iskhod/security/main)
 "ulV" = (
 /obj/structure/scrap/poor,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "ulZ" = (
 /obj/machinery/power/smes/buildable{
@@ -88976,7 +88969,7 @@
 "wZz" = (
 /obj/random/structures/low_chance,
 /obj/structure/scrap/poor,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "wZS" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
@@ -90933,7 +90926,7 @@
 /area/iskhod/security/sechall)
 "xDG" = (
 /obj/random/closet_maintloot,
-/turf/simulated/floor/asteroid/dirt/flood,
+/turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
 "xDV" = (
 /obj/machinery/light{
@@ -111089,18 +111082,18 @@ afz
 mrl
 gjF
 hVF
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
 hVF
 hVF
 hVF
@@ -111291,7 +111284,7 @@ jEc
 waY
 hVF
 hVF
-lCt
+hVF
 qOZ
 bnp
 eEH
@@ -111302,7 +111295,7 @@ ulV
 myI
 qOZ
 qOZ
-lCt
+hVF
 hVF
 hVF
 hVF
@@ -111493,7 +111486,7 @@ jEc
 waY
 hVF
 hVF
-lCt
+hVF
 myI
 qaK
 jJi
@@ -111504,7 +111497,7 @@ jJi
 fnE
 qaK
 lrG
-lCt
+hVF
 hVF
 hVF
 hVF
@@ -111695,7 +111688,7 @@ jEc
 waY
 hVF
 hVF
-lCt
+hVF
 myI
 nLS
 gzb
@@ -111706,7 +111699,7 @@ lrG
 ulV
 jJi
 myI
-lCt
+hVF
 hVF
 hVF
 hVF
@@ -111897,7 +111890,7 @@ jEc
 waY
 hVF
 hVF
-lCt
+hVF
 xDG
 jJi
 ulV
@@ -111908,7 +111901,7 @@ myI
 ulV
 jJi
 njb
-lCt
+hVF
 hVF
 hVF
 hVF
@@ -112099,7 +112092,7 @@ jEc
 waY
 sOF
 hVF
-lCt
+hVF
 lvl
 jJi
 sPu
@@ -112110,7 +112103,7 @@ myI
 ulV
 jJi
 myI
-lCt
+hVF
 hVF
 hVF
 hVF
@@ -112312,7 +112305,7 @@ gzb
 sPu
 jJi
 lrG
-lCt
+hVF
 hVF
 hVF
 hVF
@@ -112503,7 +112496,7 @@ jEc
 waY
 hVF
 hVF
-lCt
+hVF
 kJi
 jJi
 ulV
@@ -112514,7 +112507,7 @@ wZz
 ulV
 jJi
 lrG
-lCt
+hVF
 hVF
 hVF
 hVF
@@ -112705,7 +112698,7 @@ jEc
 waY
 hVF
 hVF
-lCt
+hVF
 myI
 jJi
 gzb
@@ -112716,7 +112709,7 @@ gzb
 ulV
 fnE
 lrG
-lCt
+hVF
 hVF
 hVF
 hVF
@@ -112907,7 +112900,7 @@ aJE
 waY
 hVF
 hVF
-lCt
+hVF
 qOZ
 qaK
 jJi
@@ -112918,7 +112911,7 @@ jJi
 jJi
 rai
 lrG
-lCt
+hVF
 hVF
 hVF
 hVF
@@ -113109,7 +113102,7 @@ jEc
 waY
 hVF
 hVF
-lCt
+hVF
 qOZ
 qOZ
 lrG
@@ -113120,7 +113113,7 @@ myI
 lvl
 qOZ
 qOZ
-lCt
+hVF
 hVF
 hVF
 hVF
@@ -113311,18 +113304,18 @@ jEc
 waY
 hVF
 hVF
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
-lCt
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
+hVF
 hVF
 hVF
 hVF
