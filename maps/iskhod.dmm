@@ -53256,7 +53256,7 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Command Armory";
 	req_access = list(20);
-	id_tag = command_armory
+	id_tag = "command_armory"
 	},
 /obj/machinery/door/blast/shutters{
 	dir = 2;
@@ -75755,7 +75755,7 @@
 	pixel_y = 24;
 	specialfunctions = 4;
 	req_access = list(20);
-	id = command_armory
+	id = "command_armory"
 	},
 /obj/machinery/button/remote/blast_door{
 	name = "Command Armory Shutters";
@@ -79509,7 +79509,7 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Command Armory";
 	req_access = list(20);
-	id_tag = command_armory
+	id_tag = "command_armory"
 	},
 /obj/machinery/door/blast/shutters{
 	dir = 2;

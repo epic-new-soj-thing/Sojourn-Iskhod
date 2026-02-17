@@ -5,6 +5,16 @@
 
 // Iskhod Deep Tunnels Areas
 
+/area/iskhod
+	name = "Iskhod"
+
+/area/iskhod/Initialize()
+	. = ..()
+	for(var/turf/T in contents)
+		T.oxygen = MOLES_O2STANDARD
+		T.nitrogen = MOLES_N2STANDARD
+		T.temperature = T20C
+
 // Security
 /area/iskhod/security/showers
 	name = "Security Showers"
