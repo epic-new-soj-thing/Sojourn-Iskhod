@@ -1,11 +1,11 @@
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevOne
 	name = "Turbolift"
-	lift_size_x = 3 // Size of the actual lift, shaft walls are extra.
-	lift_size_y = 3
+	lift_size_x = 4 // Size of the actual lift, shaft walls are extra.
+	lift_size_y = 5
 	icon = 'icons/modules/turbolift/turbolift_preview_3x3 - no walls.dmi'
-	dir = WEST
+	dir = SOUTH
 
-	wall_type = null // Don't make walls
+	wall_type = /turf/simulated/wall/iskhod
 	createInnerDoors = 1
 
 	turbolift_stops = list(
@@ -19,12 +19,12 @@
 
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevTwo
 	name = "Turbolift"
-	lift_size_x = 3 // Size of the actual lift, shaft walls are extra.
-	lift_size_y = 3
+	lift_size_x = 4 // Size of the actual lift, shaft walls are extra.
+	lift_size_y = 5
 	icon = 'icons/modules/turbolift/turbolift_preview_3x3 - no walls.dmi'
-	dir = WEST
+	dir = SOUTH
 
-	wall_type = null // Don't make walls
+	wall_type = /turf/simulated/wall/iskhod
 	createInnerDoors = 1
 
 	turbolift_stops = list(
@@ -39,12 +39,12 @@
 //MINING ELEVATOR
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining
 	name = "Turbolift"
-	lift_size_x = 3 // Size of the actual lift, shaft walls are extra.
+	lift_size_x = 4 // Size of the actual lift, shaft walls are extra.
 	lift_size_y = 3
 	icon = 'icons/modules/turbolift/turbolift_preview_3x3 - no walls.dmi'
-	dir = WEST
+	dir = NORTH
 
-	wall_type = null // Don't make walls
+	wall_type = /turf/simulated/wall/iskhod
 	createInnerDoors = 1
 
 	turbolift_stops = list(
@@ -90,11 +90,11 @@
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/prospector
 	name = "Turbolift"
 	lift_size_x = 3 // Size of the actual lift, shaft walls are extra.
-	lift_size_y = 3
+	lift_size_y = 4
 	icon = 'icons/modules/turbolift/turbolift_preview_3x3 - no walls.dmi'
-	dir = WEST
+	dir = SOUTH
 
-	wall_type = null // Don't make walls
+	wall_type = /turf/simulated/wall/iskhod
 	createInnerDoors = 1
 
 	turbolift_stops = list(
@@ -138,11 +138,11 @@
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/mountaintop
 	name = "Turbolift"
 	lift_size_x = 3 // Size of the actual lift, shaft walls are extra.
-	lift_size_y = 3
+	lift_size_y = 4
 	icon = 'icons/modules/turbolift/turbolift_preview_3x3 - no walls.dmi'
-	dir = WEST
+	dir = SOUTH
 
-	wall_type = null // Don't make walls
+	wall_type = /turf/simulated/wall/iskhod
 	createInnerDoors = 1
 
 	turbolift_stops = list(
@@ -186,11 +186,11 @@
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research
 	name = "Turbolift"
 	lift_size_x = 3 // Size of the actual lift, shaft walls are extra.
-	lift_size_y = 3
+	lift_size_y = 5
 	icon = 'icons/modules/turbolift/turbolift_preview_3x3 - no walls.dmi'
-	dir = WEST
+	dir = SOUTH
 
-	wall_type = null // Don't make walls
+	wall_type = /turf/simulated/wall/iskhod
 	createInnerDoors = 1
 
 	turbolift_stops = list(

@@ -183,7 +183,7 @@
 		// Update the appropriate turfs.
 		for(var/turfX = stop.x to (stop.x + lift_size_x) )
 
-			for(var/turfY = stop.y to (stop.y + lift_size_y-1) )
+			for(var/turfY = stop.y to (stop.y + lift_size_y) )
 
 				var/turf/checking = locate(turfX,turfY,stop.z)
 
@@ -239,7 +239,7 @@
 				//		log_debug("checking.type != floor_type,  [checking.x],[checking.y],[checking.z]")
 
 			// Place exterior control panel.
-			var/turf/placing = locate(stop.x-2, stop.y-1, stop.z)
+			var/turf/placing = locate(stop.x, stop.y+1, stop.z)
 
 			var/obj/structure/lift/button/panel_ext = new(placing, lift)
 			panel_ext.floor = cfloor
