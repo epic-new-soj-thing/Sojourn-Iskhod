@@ -1075,9 +1075,7 @@
 /turf/simulated/floor/industrial/blue_slates,
 /area/iskhod/security/interview)
 "amN" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
@@ -2426,9 +2424,7 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "aDH" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/range)
@@ -2540,9 +2536,7 @@
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
 "aFS" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/pen,
 /obj/item/paper_bin{
 	pixel_y = 3
@@ -3107,9 +3101,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
 "aNx" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/device/radio/phone,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned)
@@ -3177,7 +3169,7 @@
 	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "aOd" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
@@ -3290,9 +3282,7 @@
 /obj/structure/fireaxecabinet{
 	pixel_y = 30
 	},
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/pen/invisible,
 /obj/item/paper_bin{
 	pixel_y = 3
@@ -3761,9 +3751,7 @@
 /turf/simulated/shuttle/floor/mining,
 /area/iskhod/pros/shuttle_landing_zone)
 "aVL" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/oddity/common/mirror,
 /obj/item/haircomb,
 /obj/item/material/butterflyblade,
@@ -4197,9 +4185,7 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/security/detectives_office)
 "bbJ" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/machinery/button/remote/airlock{
 	name = "North Gate Bolts";
@@ -5129,7 +5115,7 @@
 /area/iskhod/waterfall/subsurface)
 "bnp" = (
 /obj/random/structures,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "bnq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -6446,9 +6432,7 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/security/prison)
 "bDW" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/light{
 	brightness_power = 1
 	},
@@ -6561,9 +6545,7 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/office)
 "bFC" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/storage/box/donkpockets,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/maintenance/undergroundfloor2south)
@@ -6615,9 +6597,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "bGg" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/photocopier/faxmachine{
 	department = "Security - Briefing Room"
 	},
@@ -6808,9 +6788,7 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/pool)
 "bIP" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /turf/simulated/floor/light,
 /area/iskhod/security/armory)
@@ -7793,7 +7771,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section1)
 "bVo" = (
 /obj/structure/dispenser/plasma,
@@ -7975,9 +7953,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
 "bWS" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
 "bWV" = (
@@ -8019,9 +7995,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
 "bXt" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/service/office)
 "bXC" = (
@@ -8459,9 +8433,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section1)
 "caZ" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/stack/medical/bruise_pack{
 	pixel_y = 11;
 	pixel_x = -1
@@ -8776,9 +8748,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section2)
 "cfF" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/roller{
 	pixel_y = 10
 	},
@@ -9298,9 +9268,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "cnn" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
 "cnp" = (
@@ -10650,9 +10618,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
 "cFH" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/device/lighting/toggleable/lamp,
 /turf/simulated/floor/industrial/blue_slates,
 /area/iskhod/security/interview)
@@ -10750,9 +10716,7 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/quartermaster/supplydock)
 "cHa" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/device/scanner/gas,
 /obj/item/device/scanner/gas,
 /turf/simulated/floor/tiled/white/danger,
@@ -10825,9 +10789,7 @@
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters)
 "cHQ" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/carpet,
 /area/iskhod/security/breakroom)
 "cHS" = (
@@ -11396,9 +11358,7 @@
 /turf/simulated/floor/industrial,
 /area/iskhod/maintenance/undergroundfloor2west)
 "cPS" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
@@ -11755,7 +11715,7 @@
 "cVi" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "cVB" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
@@ -12644,9 +12604,7 @@
 /turf/simulated/floor/industrial/blue_slates,
 /area/iskhod/security/eye)
 "dhv" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial,
@@ -13377,7 +13335,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section1)
 "dqN" = (
 /obj/structure/cable/green{
@@ -13640,9 +13598,7 @@
 /area/iskhod/medical/organ_lab)
 "dtL" = (
 /obj/item/paper_bin,
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned)
@@ -14405,9 +14361,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/security/brig)
 "dBY" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/device/lighting/toggleable/lamp,
 /turf/simulated/floor/carpet/blucarpet,
 /area/outpost/abandoned)
@@ -14417,9 +14371,7 @@
 /area/iskhod/hallway/main/stairwell)
 "dCe" = (
 /obj/machinery/microwave,
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/maintenance/undergroundfloor2south)
 "dCf" = (
@@ -14538,7 +14490,7 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/hallway/main/f1section3)
 "dEu" = (
-/obj/structure/table/steel_reinforced{
+/obj/structure/table/steel{
 	flipped = 1
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -14981,7 +14933,13 @@
 "dJS" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/firedoor,
-/turf/simulated/mineral/planet,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	name = "shutter"
+	},
+/obj/structure/barricade,
+/obj/random/traps,
+/turf/simulated/floor/plating/under,
 /area/iskhod/maintenance/guild)
 "dKq" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
@@ -15458,9 +15416,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/absolutism/chapel)
 "dRS" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned)
 "dSb" = (
@@ -16026,9 +15982,7 @@
 /turf/simulated/floor/carpet,
 /area/iskhod/security/main)
 "eaB" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /obj/machinery/alarm{
 	dir = 4;
@@ -18423,7 +18377,7 @@
 	brightness_power = 1;
 	dir = 8
 	},
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "eEI" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
@@ -19996,9 +19950,7 @@
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/command/captain/quarters)
 "fbe" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/recharger,
 /obj/machinery/alarm{
 	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
@@ -20412,9 +20364,7 @@
 /turf/simulated/wall/iskhod_red,
 /area/iskhod/hallway/surface/section3)
 "ffG" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
@@ -20868,7 +20818,7 @@
 "fnE" = (
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/structure/catwalk,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/plating/under,
 /area/iskhod/maintenance/guild)
 "fnG" = (
 /turf/simulated/wall/iskhod_green,
@@ -21060,7 +21010,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section1)
 "fpW" = (
 /obj/structure/table/rack,
@@ -21127,9 +21077,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section2)
 "fqp" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/device/radio/intercom{
@@ -21261,7 +21209,8 @@
 	},
 /obj/machinery/door/airlock/highsecurity{
 	name = "Recovery Ward";
-	req_access = newlist()
+	req_access = newlist();
+	req_one_access = s
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/patient_wing)
@@ -21547,9 +21496,7 @@
 /area/iskhod/medical/chemstor)
 "fwm" = (
 /obj/machinery/door/firedoor,
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/door/window/iskhod{
 	dir = 2;
 	req_one_access = list(63)
@@ -21768,9 +21715,7 @@
 /area/iskhod/waterfall/subsurface)
 "fyy" = (
 /obj/machinery/door/firedoor,
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/door/window/iskhod/right{
 	dir = 2;
 	req_one_access = list(63)
@@ -21824,9 +21769,7 @@
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/security/eye)
 "fzg" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/random/lowkeyrandom/low_chance,
 /obj/random/lowkeyrandom/low_chance,
 /turf/simulated/floor/tiled/steel,
@@ -22412,7 +22355,7 @@
 	pixel_y = -25
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "fGA" = (
 /obj/structure/railing/grey{
 	dir = 8
@@ -23551,9 +23494,7 @@
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/iskhod/abandoned/recreation)
 "fVq" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/paper_bin{
 	pixel_y = 3
 	},
@@ -24093,9 +24034,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/paper_bin{
 	pixel_y = 3
 	},
@@ -25069,9 +25008,7 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor2central)
 "grn" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -25087,9 +25024,7 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/hallway/main/f1section4)
 "grD" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/random/lowkeyrandom/low_chance,
 /obj/random/powercell,
 /obj/random/powercell,
@@ -25301,9 +25236,7 @@
 "gtP" = (
 /obj/machinery/recharger,
 /obj/effect/floor_decal/industrial/outline/blue,
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/light{
 	brightness_power = 1;
 	dir = 8
@@ -25849,7 +25782,7 @@
 /area/iskhod/medical/genetics)
 "gzb" = (
 /obj/random/scrap/dense_weighted,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "gzk" = (
 /obj/effect/floor_decal/industrial/warningwhite/corner{
@@ -26095,7 +26028,7 @@
 "gDs" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/effect/decal/cleanable/rubble,
-/obj/structure/table/steel_reinforced{
+/obj/structure/table/steel{
 	flipped = 1
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -26210,9 +26143,7 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/command/Priest)
 "gFx" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/tank/oxygen{
 	pixel_y = 4
 	},
@@ -26683,9 +26614,7 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/toilet/public)
 "gMa" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/storage/firstaid/regular,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/shuttle/escape/station)
@@ -27999,7 +27928,7 @@
 "heg" = (
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/random/scrap/sparse_weighted/low_chance,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "heh" = (
 /turf/simulated/shuttle/wall/science{
@@ -28685,9 +28614,7 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/showers/public)
 "hpm" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/storage/firstaid/regular,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/panic_room)
@@ -30799,9 +30726,7 @@
 /turf/simulated/floor/wood,
 /area/iskhod/command/cbo/quarters)
 "hSa" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/librarypubliccomp,
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/service/office)
@@ -31045,9 +30970,7 @@
 /turf/simulated/open,
 /area/iskhod/maintenance/substation/medical)
 "hUd" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 0;
 	pixel_y = -30
@@ -31502,9 +31425,7 @@
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/maintenance/substation/bridge)
 "ibB" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/clothing/under/cyber{
 	pixel_y = -3
 	},
@@ -31995,9 +31916,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "iim" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
 "iio" = (
@@ -32110,7 +32029,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section1)
 "ikr" = (
 /obj/effect/decal/cleanable/rubble,
@@ -32346,9 +32265,7 @@
 /area/iskhod/hallway/main/f1section3)
 "ioh" = (
 /obj/machinery/microscope,
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
@@ -32531,9 +32448,7 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay)
 "iqs" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/robotics)
 "iqC" = (
@@ -33172,9 +33087,7 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/docking)
 "izy" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -25
@@ -33192,9 +33105,7 @@
 /turf/simulated/floor/tiled/cafe,
 /area/outpost/abandoned)
 "izN" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -33412,9 +33323,7 @@
 /area/iskhod/maintenance/undergroundfloor1east)
 "iCe" = (
 /obj/machinery/recharger,
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/range)
@@ -33557,9 +33466,7 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "iDK" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/camera/network/medbay{
 	dir = 4
 	},
@@ -35779,9 +35686,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -36144,9 +36049,7 @@
 /turf/simulated/floor/tiled/white/techfloor,
 /area/iskhod/ai/coolant_waste)
 "jkh" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/industrial/ceramic,
 /area/iskhod/crew_quarters/hydroponics)
 "jkj" = (
@@ -36357,9 +36260,7 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/outside/scave)
 "jmj" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/tool/wirecutters/pliers,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor1west)
@@ -36683,9 +36584,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/quartermaster)
 "jqs" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /obj/machinery/light/small{
 	dir = 8
@@ -37058,9 +36957,7 @@
 /turf/simulated/open,
 /area/iskhod/rnd/server)
 "jvo" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/power/apc{
 	dir = 8;
 	name = "West APC";
@@ -37296,9 +37193,7 @@
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/security/secrecroom)
 "jzk" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/reagent_containers/spray/cleaner,
 /obj/random/lowkeyrandom/low_chance,
 /turf/simulated/floor/tiled/techmaint,
@@ -37670,9 +37565,7 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
 "jDw" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/toy/figure/character/bobblehead/excelsior,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/green_large_slates,
@@ -38132,7 +38025,7 @@
 /area/iskhod/crew_quarters/hydroponics)
 "jJi" = (
 /obj/structure/catwalk,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/plating/under,
 /area/iskhod/maintenance/guild)
 "jJl" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -38196,6 +38089,9 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/outside/scave)
+"jJP" = (
+/turf/simulated/wall/iskhod_blue,
+/area/space)
 "jJV" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/wall/iskhod_blue,
@@ -38384,9 +38280,7 @@
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/command/bridge)
 "jMA" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/camera/network/security{
 	dir = 8
 	},
@@ -38543,9 +38437,7 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/iskhod/pros/shuttle_landing_zone)
 "jOP" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/paper_bin,
 /turf/simulated/floor/carpet/blucarpet,
 /area/outpost/abandoned)
@@ -39285,9 +39177,7 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/side/f2section2)
 "jZE" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
 /obj/machinery/light/floor{
 	dir = 4
@@ -39729,7 +39619,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/vault/bolted{
+/obj/machinery/door/airlock/highsecurity{
 	name = "Supermatter External Airlock";
 	autoclose = 0;
 	frequency = 1254;
@@ -40405,7 +40295,7 @@
 	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "koo" = (
 /obj/structure/disposalpipe/junction{
 	dir = 1;
@@ -40651,7 +40541,7 @@
 	icon_state = "pipe-j2"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section1)
 "kqM" = (
 /obj/structure/cable/green{
@@ -42098,7 +41988,7 @@
 /area/iskhod/hallway/side/f2section1)
 "kJi" = (
 /obj/random/melee/low_chance,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "kJm" = (
 /obj/effect/spider/stickyweb,
@@ -42470,9 +42360,7 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
 "kPa" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -43926,9 +43814,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
 "liX" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maintpost)
 "lja" = (
@@ -44167,9 +44053,7 @@
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/crew_quarters/fitness)
 "lmg" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/wood,
 /area/iskhod/security/locker)
 "lmh" = (
@@ -44663,7 +44547,7 @@
 /area/iskhod/engineering/engine_airlock)
 "lrG" = (
 /obj/random/scrap/sparse_weighted,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "lrQ" = (
 /obj/structure/table/rack,
@@ -44871,7 +44755,7 @@
 "lvl" = (
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/structure/scrap/poor,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "lvr" = (
 /obj/effect/floor_decal/spline/plain{
@@ -45429,9 +45313,7 @@
 	dir = 8;
 	pixel_x = 27
 	},
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/paper_bin{
 	pixel_y = 3
 	},
@@ -45982,9 +45864,7 @@
 /turf/simulated/floor/carpet,
 /area/iskhod/security/detectives_office)
 "lLK" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/holoposter{
 	pixel_x = -32
 	},
@@ -46552,9 +46432,7 @@
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/bridge)
 "lTT" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/smartfridge/disk,
 /obj/item/pc_part/drive/disk/design/gun_parts/marshal{
 	license = -1
@@ -48547,7 +48425,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "muj" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
@@ -48801,7 +48679,7 @@
 /area/iskhod/maintenance/undergroundfloor1south)
 "myI" = (
 /obj/random/scrap/sparse_weighted/low_chance,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "myL" = (
 /obj/structure/table/reinforced,
@@ -49618,9 +49496,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
@@ -49766,9 +49642,7 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/bioreactor)
 "mMl" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -50151,7 +50025,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "mSu" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "1,21"
@@ -50946,9 +50820,7 @@
 /obj/effect/floor_decal/corner/red{
 	dir = 5
 	},
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/button/remote/blast_door{
 	name = "Security Front Desk Shutter Control";
 	id = "security_front_shutters";
@@ -51411,7 +51283,7 @@
 /obj/machinery/light{
 	brightness_power = 1
 	},
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "njk" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized,
@@ -51546,9 +51418,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/patient_b)
 "nkI" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/shuttle/floor/science{
 	icon_state = "8,18"
 	},
@@ -51897,7 +51767,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section1)
 "npk" = (
 /obj/structure/table/woodentable,
@@ -52558,7 +52428,8 @@
 /obj/structure/boulder{
 	pixel_x = -1
 	},
-/turf/simulated/mineral/planet,
+/obj/structure/barricade,
+/turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/guild)
 "nvB" = (
 /obj/structure/table/rack,
@@ -52648,9 +52519,7 @@
 "nwD" = (
 /obj/effect/decal/cleanable/blood/oil,
 /obj/item/toy/figure/character/civilian/janitor,
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/grenade/chem_grenade/cleaner,
 /obj/item/grenade/chem_grenade/cleaner,
 /obj/item/grenade/chem_grenade/cleaner,
@@ -52991,9 +52860,7 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
 "nBd" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/storage/toolbox/mechanical,
 /turf/simulated/shuttle/floor/science{
 	icon_state = "9,18"
@@ -53132,9 +52999,7 @@
 /area/iskhod/crew_quarters/fitness)
 "nBY" = (
 /obj/machinery/door/firedoor,
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/door/window/iskhod{
 	dir = 2;
 	name = "Shop door"
@@ -53839,7 +53704,7 @@
 /obj/effect/decal/cleanable/solid_biomass,
 /obj/structure/catwalk,
 /obj/item/remains/human,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/plating/under,
 /area/iskhod/maintenance/guild)
 "nLX" = (
 /obj/structure/bed/chair{
@@ -54120,9 +53985,7 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/medbay)
 "nQd" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/robotics)
 "nQf" = (
@@ -54782,7 +54645,7 @@
 	},
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "nYM" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
@@ -56017,9 +55880,7 @@
 /turf/simulated/open,
 /area/iskhod/crew_quarters/bar)
 "opF" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
@@ -57689,9 +57550,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
 "oOy" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/deck/cards,
 /obj/machinery/power/apc{
 	dir = 8;
@@ -57844,7 +57703,7 @@
 	req_access = list(10)
 	},
 /turf/simulated/floor/tiled/dark,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "oQm" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -58086,7 +57945,7 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "oSr" = (
 /obj/structure/sign/levels/section4,
 /turf/simulated/wall/iskhod_red,
@@ -58353,9 +58212,7 @@
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/absolutism/chapel)
 "oVz" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/stack/medical/splint,
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
@@ -58530,7 +58387,7 @@
 	icon_state = "1-2";
 	dir = 8
 	},
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section1)
 "oXG" = (
 /obj/structure/railing{
@@ -58912,7 +58769,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "pcU" = (
 /obj/structure/cable/cyan{
@@ -59625,9 +59482,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/medbay)
 "plD" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/structure/flora/pottedplant/dead{
 	oldified = 1;
 	pixel_y = 16
@@ -60067,9 +59922,7 @@
 /turf/simulated/floor/plating/under,
 /area/turret_protected/ai)
 "prJ" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/button/remote/blast_door{
 	name = "Robotics Privacy Shutter Control";
 	pixel_y = 26;
@@ -60250,9 +60103,7 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/hallway/main/f1section4)
 "put" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/storage/box/cdeathalarm_kit,
 /obj/machinery/camera/network/security{
 	dir = 1
@@ -60578,9 +60429,7 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor2south)
 "pyF" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
@@ -60599,6 +60448,13 @@
 	},
 /turf/simulated/open,
 /area/iskhod/medical/medbay/uppercor)
+"pze" = (
+/obj/machinery/alarm{
+	dir = 8;
+	pixel_x = 27
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/space)
 "pzm" = (
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 1
@@ -60888,9 +60744,7 @@
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
 "pCS" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/random/lowkeyrandom/low_chance,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned)
@@ -60939,9 +60793,7 @@
 /turf/simulated/floor/reinforced,
 /area/shuttle/surface_transport_lz)
 "pDA" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/device/radio/intercom{
 	dir = 1;
 	pixel_y = -25
@@ -61212,9 +61064,7 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor2south)
 "pHi" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/carpet,
 /area/iskhod/security/interview)
 "pHn" = (
@@ -61700,7 +61550,7 @@
 "pOo" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/firedoor,
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section1)
 "pOp" = (
 /obj/structure/railing,
@@ -61866,9 +61716,7 @@
 /turf/simulated/shuttle/floor/mining,
 /area/shuttle/surface_transport_lz)
 "pQT" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/recharger{
 	pixel_x = -5;
 	pixel_y = 3
@@ -62610,7 +62458,7 @@
 "qaK" = (
 /obj/structure/catwalk,
 /obj/structure/catwalk,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/plating/under,
 /area/iskhod/maintenance/guild)
 "qaP" = (
 /obj/structure/dispenser/plasma,
@@ -62828,9 +62676,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/derelict/abandoned_area)
 "qdJ" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /obj/machinery/button/remote/blast_door{
 	id = "shop_armory_blast_door";
@@ -62923,9 +62769,7 @@
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/bridge)
 "qex" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/industrial/blue_slates,
 /area/iskhod/security/interview)
 "qeO" = (
@@ -63498,9 +63342,7 @@
 	pixel_x = -1;
 	pixel_y = 3
 	},
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "East APC";
@@ -63835,9 +63677,7 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor2north)
 "qrZ" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/door/window/iskhod,
 /obj/machinery/door/window/iskhod{
 	dir = 8
@@ -64044,9 +63884,7 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_monitoring)
 "quL" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/recharger,
 /turf/simulated/floor/wood,
 /area/iskhod/security/locker)
@@ -64348,9 +64186,7 @@
 /obj/machinery/photocopier/faxmachine{
 	department = "Brig"
 	},
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/newscaster/directional/north,
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
@@ -64569,9 +64405,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/secrecroom)
 "qDM" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
@@ -64779,9 +64613,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "qFJ" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet,
 /area/iskhod/security/breakroom)
@@ -65162,7 +64994,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section1)
 "qLU" = (
 /obj/structure/cable/yellow{
@@ -65367,7 +65199,7 @@
 /area/shuttle/surface_transport_lz)
 "qOZ" = (
 /obj/random/structures/low_chance,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "qPa" = (
 /obj/structure/closet/secure_closet/personal,
@@ -65472,7 +65304,7 @@
 /area/iskhod/medical/patient_wing)
 "qRg" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/space,
 /area/iskhod/pit/level3)
 "qRk" = (
 /obj/structure/cable/green{
@@ -65619,9 +65451,7 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/patient_wing)
 "qTv" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/device/binoculars,
 /obj/item/device/binoculars,
 /obj/item/pen/multi,
@@ -66239,7 +66069,7 @@
 "rai" = (
 /obj/structure/catwalk,
 /obj/random/cluster/roaches/low_chance,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/plating/under,
 /area/iskhod/maintenance/guild)
 "raj" = (
 /obj/item/modular_computer/console/preset/command/access{
@@ -66527,15 +66357,11 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
 "rdW" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/warden)
 "rec" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/recharger,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -66546,9 +66372,7 @@
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/panic_room)
 "reo" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -66757,9 +66581,7 @@
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/iskhod/absolutism/chapel)
 "rgc" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/random/lowkeyrandom/low_chance,
 /obj/random/lowkeyrandom/low_chance,
 /obj/structure/cable/cyan{
@@ -66902,9 +66724,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
 "rhy" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
@@ -68181,9 +68001,7 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/absolutism/office)
 "rBj" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/storage/briefcase/inflatable,
 /obj/item/storage/briefcase/inflatable,
 /turf/simulated/floor/tiled/white/danger,
@@ -68943,9 +68761,7 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/showers/public)
 "rMa" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/lab)
 "rMc" = (
@@ -69080,7 +68896,7 @@
 "rOO" = (
 /obj/random/structures/low_chance,
 /obj/random/scrap/sparse_weighted/low_chance,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "rOQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -69406,9 +69222,7 @@
 /turf/simulated/floor/asteroid,
 /area/iskhod/maintenance/northcave)
 "rUd" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned)
 "rUh" = (
@@ -69420,10 +69234,10 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/maintenance/undergroundfloor2east)
 "rUs" = (
-/obj/structure/table/steel_reinforced{
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/steel{
 	flipped = 1
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2south)
 "rUu" = (
@@ -69521,9 +69335,7 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/command/cbo)
 "rVB" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/folder/red,
 /obj/item/device/taperecorder,
 /obj/item/folder/red,
@@ -70789,9 +70601,7 @@
 	},
 /area/shuttle/surface_transport_lz)
 "sjv" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /obj/item/device/radio/intercom{
 	dir = 1;
@@ -71091,9 +70901,7 @@
 /area/iskhod/command/cro/quarters)
 "snl" = (
 /obj/item/brokenposi,
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 27
@@ -71814,9 +71622,7 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/hallway/side/f2section2)
 "sxv" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/main)
@@ -71964,9 +71770,7 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/xenobiology)
 "sAF" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor1west)
@@ -72017,9 +71821,7 @@
 /turf/simulated/floor/carpet,
 /area/iskhod/security/warden)
 "sBy" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
 	},
@@ -72119,9 +71921,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/command/armory)
 "sDL" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/photocopier/faxmachine{
 	department = "Public Office"
 	},
@@ -72989,7 +72789,7 @@
 "sPu" = (
 /obj/random/cluster/roaches/low_chance,
 /obj/structure/scrap/poor,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "sPE" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -73435,9 +73235,7 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/paper_bin{
 	pixel_y = 3
 	},
@@ -76298,9 +76096,7 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/iskhod/command/panic_room)
 "tGx" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/storage/toolbox/electrical,
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = 5
@@ -76823,9 +76619,7 @@
 /turf/simulated/floor/industrial/ceramic,
 /area/iskhod/crew_quarters/hydroponics)
 "tNj" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
 /obj/machinery/light/floor{
 	dir = 4
@@ -77210,9 +77004,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
 "tTs" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/light,
@@ -77342,9 +77134,7 @@
 	},
 /obj/random/powercell,
 /obj/random/powercell,
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
@@ -77406,9 +77196,7 @@
 	name = "North APC";
 	pixel_y = 28
 	},
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/random/common_oddities/low_chance,
 /obj/random/lowkeyrandom/low_chance,
 /obj/random/powercell,
@@ -77485,7 +77273,7 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "tXu" = (
 /obj/structure/ore_box,
 /obj/effect/floor_decal/industrial/danger,
@@ -77823,7 +77611,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section1)
 "ubB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -77848,9 +77636,7 @@
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/bridge)
 "ubU" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/storage/box/donut,
 /turf/simulated/shuttle/floor/science{
 	icon_state = "7,18"
@@ -78392,9 +78178,7 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/hut_cell1)
 "uis" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/recharger,
 /turf/simulated/floor/industrial/ceramic,
 /area/iskhod/crew_quarters/hydroponics)
@@ -78604,7 +78388,7 @@
 /area/iskhod/security/main)
 "ulV" = (
 /obj/structure/scrap/poor,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "ulZ" = (
 /obj/machinery/power/smes/buildable{
@@ -79531,9 +79315,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section2)
 "uzt" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/random/gun_fancy/low_chance,
 /obj/random/gun_fancy/low_chance,
 /obj/random/gun_fancy/low_chance,
@@ -79783,7 +79565,7 @@
 "uDu" = (
 /obj/machinery/camera/network/engineering,
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "uDA" = (
 /obj/item/modular_computer/console/preset/security/records{
 	dir = 4;
@@ -80292,9 +80074,7 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/security/maintpost)
 "uJz" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/button/remote/blast_door{
 	name = "R&D Front Desk Shutter Control";
 	id = "research_desk_shutters";
@@ -80565,6 +80345,9 @@
 /obj/structure/closet/random_milsupply,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor2south)
+"uMX" = (
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/space)
 "uNa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -81345,9 +81128,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/range)
 "uYY" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/abandoned/barber)
@@ -82147,9 +81928,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section2)
 "vkw" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /turf/simulated/floor/carpet/blucarpet,
 /area/outpost/abandoned)
 "vkH" = (
@@ -84583,9 +84362,7 @@
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/iskhod/abandoned/strip_club)
 "vRk" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
@@ -84606,9 +84383,7 @@
 /turf/simulated/floor/carpet,
 /area/iskhod/command/swo/quarters)
 "vRw" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/power/apc{
 	name = "South APC";
 	pixel_y = -28
@@ -85508,9 +85283,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
 "wec" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/iskhod/pros)
@@ -85730,7 +85503,7 @@
 "wit" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/area/space)
 "wiA" = (
 /obj/structure/window/reinforced/iskhod{
 	dir = 4
@@ -86079,9 +85852,7 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/storage/tech)
 "wnm" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/clothing/head/costume/misc/paper,
 /obj/item/device/lighting/toggleable/lamp,
 /turf/simulated/floor/tiled/steel,
@@ -86209,9 +85980,7 @@
 /turf/simulated/floor/industrial/bricks,
 /area/iskhod/maintenance/substation/medical)
 "woF" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/paper_bin{
 	pixel_y = 3
 	},
@@ -86887,9 +86656,7 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/sechall)
 "wxU" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/smartfridge/disk,
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/light,
@@ -87511,9 +87278,7 @@
 /turf/unsimulated/mineral/cold,
 /area/colony)
 "wEZ" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -88497,7 +88262,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/side/f2section1)
 "wSY" = (
 /obj/structure/disposalpipe/trunk{
@@ -88956,7 +88721,7 @@
 "wZz" = (
 /obj/random/structures/low_chance,
 /obj/structure/scrap/poor,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "wZS" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
@@ -89108,9 +88873,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "xcN" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/random/tool_upgrade/rare/always_spawn,
 /obj/random/common_oddities/low_chance,
 /obj/structure/cable/cyan{
@@ -89552,9 +89315,7 @@
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/crew_quarters/fitness)
 "xjm" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
 	},
@@ -89842,10 +89603,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/door/airlock/vault/bolted{
-	frequency = 1254;
+/obj/machinery/door/airlock/highsecurity{
 	name = "Supermatter Internal Airlock";
 	autoclose = 0;
+	frequency = 1254;
 	id_tag = "sm_airlock_interior"
 	},
 /turf/simulated/floor/tiled/dark,
@@ -89933,9 +89694,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/engineering)
 "xoz" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/beehive_assembly,
 /obj/item/bee_pack,
 /obj/item/honey_frame,
@@ -90268,9 +90027,7 @@
 /obj/machinery/cash_register{
 	dir = 4
 	},
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/abandoned/barber)
@@ -90899,9 +90656,7 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section1)
 "xDA" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/item/device/eftpos{
 	eftpos_name = "Marshal EFTPOS scanner"
 	},
@@ -90913,7 +90668,7 @@
 /area/iskhod/security/sechall)
 "xDG" = (
 /obj/random/closet_maintloot,
-/turf/simulated/mineral/planet,
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "xDV" = (
 /obj/machinery/light{
@@ -91230,9 +90985,7 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/cargo/locker)
 "xIQ" = (
-/obj/structure/table/steel_reinforced{
-	flipped = 1
-	},
+/obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
 /turf/simulated/floor/carpet,
 /area/iskhod/security/breakroom)
@@ -92466,9 +92219,7 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/docking)
 "xWR" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned)
@@ -93416,9 +93167,7 @@
 /turf/simulated/floor/carpet,
 /area/iskhod/command/swo)
 "ykD" = (
-/obj/structure/table/standard{
-	flipped = 1
-	},
+/obj/structure/table/standard,
 /obj/item/reagent_containers/drinks/drinkingglass/soda,
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prisoncells)
@@ -111069,18 +110818,18 @@ afz
 mrl
 gjF
 hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
 hVF
 hVF
 hVF
@@ -111271,7 +111020,7 @@ jEc
 waY
 hVF
 hVF
-hVF
+lCt
 qOZ
 bnp
 eEH
@@ -111282,7 +111031,7 @@ ulV
 myI
 qOZ
 qOZ
-hVF
+lCt
 hVF
 hVF
 hVF
@@ -111473,7 +111222,7 @@ jEc
 waY
 hVF
 hVF
-hVF
+lCt
 myI
 qaK
 jJi
@@ -111484,7 +111233,7 @@ jJi
 fnE
 qaK
 lrG
-hVF
+lCt
 hVF
 hVF
 hVF
@@ -111675,7 +111424,7 @@ jEc
 waY
 hVF
 hVF
-hVF
+lCt
 myI
 nLS
 gzb
@@ -111686,7 +111435,7 @@ lrG
 ulV
 jJi
 myI
-hVF
+lCt
 hVF
 hVF
 hVF
@@ -111877,7 +111626,7 @@ jEc
 waY
 hVF
 hVF
-hVF
+lCt
 xDG
 jJi
 ulV
@@ -111888,7 +111637,7 @@ myI
 ulV
 jJi
 njb
-hVF
+lCt
 hVF
 hVF
 hVF
@@ -112079,7 +111828,7 @@ jEc
 waY
 sOF
 hVF
-hVF
+lCt
 lvl
 jJi
 sPu
@@ -112090,7 +111839,7 @@ myI
 ulV
 jJi
 myI
-hVF
+lCt
 hVF
 hVF
 hVF
@@ -112292,7 +112041,7 @@ gzb
 sPu
 jJi
 lrG
-hVF
+lCt
 hVF
 hVF
 hVF
@@ -112483,7 +112232,7 @@ jEc
 waY
 hVF
 hVF
-hVF
+lCt
 kJi
 jJi
 ulV
@@ -112494,7 +112243,7 @@ wZz
 ulV
 jJi
 lrG
-hVF
+lCt
 hVF
 hVF
 hVF
@@ -112685,7 +112434,7 @@ jEc
 waY
 hVF
 hVF
-hVF
+lCt
 myI
 jJi
 gzb
@@ -112696,7 +112445,7 @@ gzb
 ulV
 fnE
 lrG
-hVF
+lCt
 hVF
 hVF
 hVF
@@ -112887,7 +112636,7 @@ aJE
 waY
 hVF
 hVF
-hVF
+lCt
 qOZ
 qaK
 jJi
@@ -112898,7 +112647,7 @@ jJi
 jJi
 rai
 lrG
-hVF
+lCt
 hVF
 hVF
 hVF
@@ -113089,7 +112838,7 @@ jEc
 waY
 hVF
 hVF
-hVF
+lCt
 qOZ
 qOZ
 lrG
@@ -113100,7 +112849,7 @@ myI
 lvl
 qOZ
 qOZ
-hVF
+lCt
 hVF
 hVF
 hVF
@@ -113291,18 +113040,18 @@ jEc
 waY
 hVF
 hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
-hVF
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
+lCt
 hVF
 hVF
 hVF
@@ -153859,12 +153608,12 @@ xSJ
 hgv
 nKb
 nKb
-axX
-pXJ
-pXJ
+jJP
+uMX
+uMX
 oSn
-pXJ
-axX
+uMX
+jJP
 arf
 arf
 arf
@@ -154061,12 +153810,12 @@ iFe
 iFe
 nKb
 nKb
-axX
-pXJ
+jJP
+uMX
 wit
 mSj
 fGs
-axX
+jJP
 nKb
 nKb
 nKb
@@ -154263,12 +154012,12 @@ xdy
 nKb
 nKb
 nKb
-axX
+jJP
 uDu
 cVi
 mtX
-pXJ
-axX
+uMX
+jJP
 nKb
 nKb
 nKb
@@ -154465,12 +154214,12 @@ iFe
 nKb
 nKb
 nKb
-axX
+jJP
 nYF
 aNY
 tXp
-pXJ
-axX
+uMX
+jJP
 nKb
 nKb
 nKb
@@ -154667,12 +154416,12 @@ iFe
 nKb
 nKb
 nKb
-axX
-axX
-axX
-pXJ
-pXJ
-axX
+jJP
+jJP
+jJP
+uMX
+uMX
+jJP
 dzb
 wPL
 nKb
@@ -154871,8 +154620,8 @@ nKb
 nKb
 nKb
 nKb
-axX
-vjw
+jJP
+pze
 koi
 oQe
 iFe
@@ -155073,10 +154822,10 @@ nKb
 nKb
 nKb
 nKb
-axX
-axX
-axX
-axX
+jJP
+jJP
+jJP
+jJP
 nKb
 jVj
 nKb
@@ -157220,8 +156969,8 @@ sgx
 rje
 gSG
 jwa
-vlE
-vlE
+anE
+anE
 wIG
 wIG
 wIG
@@ -157422,8 +157171,8 @@ efL
 duT
 etx
 jwa
-vlE
-vlE
+anE
+anE
 wIG
 wIG
 fZj
@@ -160150,7 +159899,7 @@ frw
 bFC
 sbK
 sbK
-xFs
+yaj
 frw
 nKb
 nKb
@@ -160958,7 +160707,7 @@ frw
 jDw
 bqm
 sbK
-xFs
+yaj
 frw
 nKb
 nKb

@@ -58,6 +58,9 @@
 
 /obj/turbolift_map_obj/turbolift_map_base/proc/computeDirections(var/turf/stop)
 
+	var/ext_panel_x
+	var/ext_panel_y
+
 	switch(dir)
 
 		if(NORTH)
@@ -66,14 +69,17 @@
 			int_panel_y = elevatorBaseY + (make_walls ? 1 : 0)
 
 			door_x1 = elevatorBaseX + 1
-			door_y1 = elevatorSizeY + (make_walls ? 0 : 1)
+			door_y1 = elevatorSizeY
 			door_x2 = elevatorSizeX - 1
-			door_y2 = elevatorSizeY + 1
+			door_y2 = elevatorSizeY
 
 			light_x1 = elevatorBaseX + (make_walls ? 1 : 0)
 			light_y1 = elevatorBaseY + (make_walls ? 1 : 0)
 			light_x2 = elevatorBaseX + lift_size_x - (make_walls ? 1 : 0)
 			light_y2 = elevatorBaseY + (make_walls ? 1 : 0)
+
+			ext_panel_x = elevatorBaseX
+			ext_panel_y = elevatorSizeY + 1
 
 		if(SOUTH)
 
@@ -81,23 +87,26 @@
 			int_panel_y = elevatorSizeY - (make_walls ? 1 : 0)
 
 			door_x1 = elevatorBaseX + 1
-			door_y1 = elevatorBaseY - 1
+			door_y1 = elevatorBaseY
 			door_x2 = elevatorSizeX - 1
-			door_y2 = elevatorBaseY - (make_walls ? 0 : 1)
+			door_y2 = elevatorBaseY
 
 			light_x1 = elevatorBaseX + (make_walls ? 1 : 0)
 			light_y1 = elevatorBaseY + (make_walls ? 2 : 1)
 			light_x2 = elevatorBaseX + lift_size_x - (make_walls ? 1 : 0)
 			light_y2 = elevatorBaseY + lift_size_y - (make_walls ? 1 : 0)
 
+			ext_panel_x = elevatorBaseX
+			ext_panel_y = elevatorBaseY - 1
+
 		if(EAST)
 
 			int_panel_x = elevatorBaseX + (make_walls ? 1 : 0)
 			int_panel_y = elevatorBaseY + FLOOR(lift_size_y/2, 1)
 
-			door_x1 = elevatorSizeX + (make_walls ? 0 : 1)
+			door_x1 = elevatorSizeX
 			door_y1 = elevatorBaseY + 1
-			door_x2 = elevatorSizeX + 1
+			door_x2 = elevatorSizeX
 			door_y2 = elevatorSizeY - 1
 
 			light_x1 = elevatorBaseX + (make_walls ? 1 : 0)
@@ -105,24 +114,30 @@
 			light_x2 = elevatorBaseX + (make_walls ? 1 : 0)
 			light_y2 = elevatorBaseY + lift_size_x - (make_walls ? 1 : 0)
 
+			ext_panel_x = elevatorSizeX + 1
+			ext_panel_y = elevatorBaseY
+
 		if(WEST)
 
 			int_panel_x = elevatorSizeX - (make_walls ? 1 : 0)
 			int_panel_y = elevatorBaseY + FLOOR(lift_size_y/2, 1)
 
-			door_x1 = stop.x - 1
-			door_x2 = stop.x - (createInnerDoors ? 0 : 1)
+			door_x1 = elevatorBaseX
+			door_x2 = elevatorBaseX
 
-			door_y1 = stop.y + 0
-			door_y2 = stop.y + lift_size_y - 1
-
-
+			door_y1 = elevatorBaseY + 1
+			door_y2 = elevatorSizeY - 1
 
 			light_x1 = stop.x + lift_size_x - (make_walls ? 1 : 0)
 			light_x2 = stop.x + lift_size_x - (make_walls ? 1 : 0)
 
 			light_y1 = stop.y + (make_walls ? 1 : 0)
 			light_y2 = stop.y + lift_size_y-1 - (make_walls ? 1 : 0)
+
+			ext_panel_x = elevatorBaseX - 1
+			ext_panel_y = elevatorBaseY
+
+	return list("ext_x" = ext_panel_x, "ext_y" = ext_panel_y)
 
 
 
@@ -170,10 +185,15 @@
 		if(!stop)
 			CRASH("Failed to find turf in area [stopArea.name].")
 
-		computeDirections(stop)
+			var/list/coords = computeDirections(stop)
 
-		var/datum/turbolift_stop/cfloor = new()
-		lift.stops += cfloor
+			var/datum/turbolift_stop/cfloor = new()
+			lift.stops += cfloor
+
+			// ... (rest of loop logic) ...
+
+			// Place exterior control panel.
+			var/turf/placing = locate(coords["ext_x"], coords["ext_y"], stop.z)
 
 		var/levelFloorType = floor_type
 		if(level > 1)
@@ -239,7 +259,7 @@
 				//		log_debug("checking.type != floor_type,  [checking.x],[checking.y],[checking.z]")
 
 			// Place exterior control panel.
-			var/turf/placing = locate(stop.x, stop.y+1, stop.z)
+			var/turf/placing = locate(coords["ext_x"], coords["ext_y"], stop.z)
 
 			var/obj/structure/lift/button/panel_ext = new(placing, lift)
 			panel_ext.floor = cfloor
