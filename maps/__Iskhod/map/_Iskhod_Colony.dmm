@@ -8369,7 +8369,7 @@
 	brightness_power = 1
 	},
 /turf/simulated/floor/plating/under,
-/area/iskhod/quartermaster/supplydock)
+/area/turbolift/Mining/colony)
 "ccn" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
@@ -8789,15 +8789,15 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
+/obj/effect/decal/cleanable/dirt,
 /obj/machinery/access_button{
 	pixel_x = -26;
 	name = "Supermatter Access Button";
-	frequency = 1254;
-	command = "cycle_interior";
+	command = "cycle_exterior";
 	master_tag = "sm_airlock_control";
-	req_access = list(10)
+	req_access = list(10);
+	frequency = 1245
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/enginehallway)
 "cjk" = (
@@ -11352,8 +11352,8 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor1east)
 "cSR" = (
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/turbolift/ElevatorOne/surface)
+/turf/simulated/floor/plating/under,
+/area/turbolift/ElevatorOne/midlevelTwo)
 "cTh" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/carpet,
@@ -17508,7 +17508,7 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/outside/scave)
 "eyP" = (
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/open,
 /area/turbolift/ElevatorOne/midlevelOne)
 "eyT" = (
 /obj/machinery/disposal,
@@ -21945,7 +21945,7 @@
 /area/outpost/abandoned)
 "fGi" = (
 /turf/simulated/floor/plating/under,
-/area/iskhod/quartermaster/supplydock)
+/area/turbolift/Mining/colony)
 "fGl" = (
 /obj/structure/closet/wall_mounted/emcloset/escape_pods{
 	pixel_y = 32
@@ -35448,6 +35448,15 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/engine,
+/obj/machinery/embedded_controller/radio/airlock/access_controller{
+	name = "Supermatter Access Controller";
+	id_tag = "sm_airlock_control";
+	tag_interior_door = "sm_airlock_interior";
+	tag_exterior_door = "sm_airlock_exterior";
+	req_access = list(10);
+	pixel_x = -26;
+	frequency = 1245
+	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/engine_airlock)
 "jkt" = (
@@ -38958,8 +38967,9 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Supermatter External Airlock";
 	autoclose = 0;
-	frequency = 1254;
-	id_tag = "sm_airlock_exterior"
+	id_tag = "sm_airlock_interior";
+	idle_power_usage = s;
+	frequency = 1245
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_airlock)
@@ -46759,6 +46769,10 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/pool)
+"mhW" = (
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevOne,
+/turf/simulated/floor/plating/under,
+/area/turbolift/ElevatorOne/midlevelTwo)
 "mie" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -47671,8 +47685,9 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/security/prisoncells)
 "mvD" = (
-/turf/simulated/floor/industrial/navy_slates,
-/area/turbolift/ElevatorOne/midlevelOne)
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
+/turf/simulated/floor/plating/under,
+/area/turbolift/Research/colony)
 "mvI" = (
 /obj/machinery/sparker{
 	id = "burnchamber"
@@ -54655,7 +54670,7 @@
 /area/iskhod/hallway/side/f2section2)
 "omf" = (
 /turf/simulated/open,
-/area/iskhod/hallway/side/f2section2)
+/area/turbolift/ElevatorTwo/midlevelOne)
 "omm" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -61016,7 +61031,7 @@
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
-/area/turbolift/ElevatorTwo/midlevelOne)
+/area/turbolift/ElevatorTwo/midlevelTwo)
 "pVo" = (
 /obj/structure/table/reinforced,
 /obj/item/reagent_containers/spray/cleaner,
@@ -63339,6 +63354,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/secrecroom)
+"qDA" = (
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevTwo,
+/turf/simulated/floor/plating/under,
+/area/turbolift/ElevatorTwo/midlevelTwo)
 "qDM" = (
 /obj/structure/table/standard,
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -64935,7 +64954,7 @@
 /area/iskhod/ai/coolant_waste)
 "qZq" = (
 /turf/simulated/floor/plating/under,
-/area/iskhod/rnd/docking)
+/area/turbolift/Research/colony)
 "qZD" = (
 /turf/simulated/shuttle/wall/science{
 	icon_state = "5,6"
@@ -65976,7 +65995,7 @@
 /area/iskhod/pros/shuttle_landing_zone)
 "rmz" = (
 /turf/simulated/floor/plating/under,
-/area/iskhod/hallway/main/f1section4)
+/area/turbolift/ElevatorTwo/midlevelTwo)
 "rmL" = (
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,8"
@@ -76884,6 +76903,14 @@
 	pixel_y = 0
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/access_button{
+	pixel_x = 26;
+	name = "Supermatter Access Button";
+	command = s;
+	master_tag = "sm_airlock_control";
+	req_access = list(10);
+	frequency = 1245
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "uin" = (
@@ -80419,7 +80446,7 @@
 /turf/simulated/floor/carpet/purcarpet,
 /area/iskhod/rnd/scient)
 "viv" = (
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/open,
 /area/turbolift/ElevatorOne/surface)
 "vix" = (
 /obj/effect/decal/cleanable/dirt,
@@ -86954,6 +86981,10 @@
 /obj/machinery/computer/drone_control,
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai_upload)
+"wVg" = (
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining,
+/turf/simulated/floor/plating/under,
+/area/turbolift/Mining/colony)
 "wVm" = (
 /obj/effect/spider/stickyweb,
 /obj/random/closet_maintloot,
@@ -88129,8 +88160,8 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Supermatter Internal Airlock";
 	autoclose = 0;
-	frequency = 1254;
-	id_tag = "sm_airlock_interior"
+	frequency = 1245;
+	id_tag = "sm_airlock_exterior"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_airlock)
@@ -88848,15 +88879,6 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/radiation,
 /obj/item/storage/firstaid/radiation,
-/obj/machinery/embedded_controller/radio/airlock/access_controller{
-	name = "Supermatter Access Controller";
-	pixel_y = -26;
-	id_tag = "sm_airlock_control";
-	frequency = 1254;
-	tag_interior_door = "sm_airlock_interior";
-	tag_exterior_door = "sm_airlock_exterior";
-	req_access = list(10)
-	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/engine_airlock)
 "xxL" = (
@@ -110584,12 +110606,12 @@ uJh
 aEX
 aEX
 sRl
-sRl
-sRl
-sRl
-sRl
-sRl
-aEX
+cSR
+cSR
+cSR
+cSR
+cSR
+mhW
 aEX
 cAa
 uJh
@@ -110672,7 +110694,7 @@ rmz
 rmz
 rmz
 rmz
-rmz
+qDA
 bHI
 bdK
 wxZ
@@ -110786,12 +110808,12 @@ uJh
 aEX
 sRl
 sRl
-sRl
-mvD
-mvD
-mvD
-eyP
-eyP
+cSR
+vSf
+vSf
+vSf
+hHU
+hHU
 qRg
 ezS
 ezS
@@ -110870,10 +110892,10 @@ gdM
 kVe
 mVq
 rmz
-iwr
-iwr
-iwr
-qje
+cXR
+cXR
+cXR
+bkT
 pVh
 eLh
 bPc
@@ -110988,12 +111010,12 @@ apF
 aEX
 hNr
 sRl
-sRl
-mvD
-mvD
-mvD
-eyP
-eyP
+cSR
+vSf
+vSf
+vSf
+hHU
+hHU
 qRg
 ezS
 ezS
@@ -111072,10 +111094,10 @@ gdM
 kVe
 mVq
 rmz
-iwr
-iwr
-iwr
-qje
+cXR
+cXR
+cXR
+bkT
 pVh
 eLh
 tJL
@@ -111190,12 +111212,12 @@ uJh
 aEX
 sRl
 sRl
-sRl
-mvD
-mvD
-mvD
-eyP
-eyP
+cSR
+vSf
+vSf
+vSf
+hHU
+hHU
 qRg
 ezS
 ezS
@@ -111274,10 +111296,10 @@ gdM
 kVe
 mVq
 rmz
-iwr
-iwr
-iwr
-qje
+cXR
+cXR
+cXR
+bkT
 pVh
 eLh
 qUs
@@ -111392,12 +111414,12 @@ uJh
 aEX
 aEX
 sRl
-sRl
-sRl
-sRl
-sRl
-sRl
-aEX
+cSR
+cSR
+cSR
+cSR
+cSR
+cSR
 aEX
 dZH
 uJh
@@ -115523,7 +115545,7 @@ fGi
 fGi
 fGi
 fGi
-fGi
+wVg
 wyx
 rtq
 wMo
@@ -121325,7 +121347,7 @@ qZq
 qZq
 qZq
 qZq
-qZq
+mvD
 iQn
 izs
 jIx
@@ -150985,12 +151007,12 @@ sbD
 edm
 xvf
 xvf
-edm
-edm
-edm
-edm
-edm
-edm
+eyP
+eyP
+eyP
+eyP
+eyP
+eyP
 xvf
 iQZ
 oTi
@@ -151187,12 +151209,12 @@ sbD
 edm
 xvf
 edm
-edm
-vSf
-vSf
-vSf
-hHU
-hHU
+eyP
+eyP
+eyP
+eyP
+eyP
+eyP
 dtn
 btd
 btd
@@ -151271,11 +151293,11 @@ hsy
 kBx
 vyq
 omf
-cXR
-cXR
-cXR
-bkT
-bkT
+iwr
+iwr
+iwr
+qje
+qje
 hdD
 cNl
 meu
@@ -151389,12 +151411,12 @@ wxa
 tBj
 xvf
 xCS
-edm
-vSf
-vSf
-vSf
-hHU
-hHU
+eyP
+eyP
+eyP
+eyP
+eyP
+eyP
 dtn
 btd
 btd
@@ -151473,11 +151495,11 @@ hsy
 kBx
 vyq
 omf
-cXR
-cXR
-cXR
-bkT
-bkT
+iwr
+iwr
+iwr
+qje
+qje
 hdD
 khx
 bqV
@@ -151591,12 +151613,12 @@ sbD
 edm
 xvf
 edm
-edm
-vSf
-vSf
-vSf
-hHU
-hHU
+eyP
+eyP
+eyP
+eyP
+eyP
+eyP
 dtn
 btd
 btd
@@ -151675,11 +151697,11 @@ hsy
 kBx
 vyq
 omf
-cXR
-cXR
-cXR
-bkT
-bkT
+iwr
+iwr
+iwr
+qje
+qje
 hdD
 gRB
 meu
@@ -151793,12 +151815,12 @@ sbD
 edm
 xvf
 xvf
-edm
-edm
-edm
-edm
-edm
-edm
+eyP
+eyP
+eyP
+eyP
+eyP
+eyP
 xvf
 qSq
 fil
@@ -191386,12 +191408,12 @@ qpF
 iRf
 nir
 nir
-iRf
-iRf
-iRf
-iRf
-iRf
-iRf
+viv
+viv
+viv
+viv
+viv
+viv
 nir
 fbw
 vUC
@@ -191588,12 +191610,12 @@ qpF
 iRf
 nir
 iRf
-iRf
 viv
 viv
 viv
-cSR
-cSR
+viv
+viv
+viv
 eZm
 ffK
 ffK
@@ -191790,12 +191812,12 @@ kAi
 dEI
 nir
 jQp
-iRf
 viv
 viv
 viv
-cSR
-cSR
+viv
+viv
+viv
 eZm
 ffK
 ffK
@@ -191992,12 +192014,12 @@ qpF
 iRf
 nir
 iRf
-iRf
 viv
 viv
 viv
-cSR
-cSR
+viv
+viv
+viv
 eZm
 ffK
 ffK
@@ -192194,12 +192216,12 @@ qpF
 iRf
 nir
 nir
-iRf
-iRf
-iRf
-iRf
-iRf
-iRf
+viv
+viv
+viv
+viv
+viv
+viv
 nir
 xKA
 sNW
