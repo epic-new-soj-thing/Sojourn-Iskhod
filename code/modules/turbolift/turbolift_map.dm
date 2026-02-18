@@ -60,6 +60,10 @@
 
 	var/ext_panel_x
 	var/ext_panel_y
+	var/ext_door_x1
+	var/ext_door_y1
+	var/ext_door_x2
+	var/ext_door_y2
 
 	switch(dir)
 
@@ -72,6 +76,11 @@
 			door_y1 = elevatorSizeY
 			door_x2 = elevatorSizeX - 1
 			door_y2 = elevatorSizeY
+
+			ext_door_x1 = elevatorBaseX + 1
+			ext_door_y1 = elevatorSizeY + 1
+			ext_door_x2 = elevatorSizeX - 1
+			ext_door_y2 = elevatorSizeY + 1
 
 			light_x1 = elevatorBaseX + (make_walls ? 1 : 0)
 			light_y1 = elevatorBaseY + (make_walls ? 1 : 0)
@@ -91,6 +100,11 @@
 			door_x2 = elevatorSizeX - 1
 			door_y2 = elevatorBaseY
 
+			ext_door_x1 = elevatorBaseX + 1
+			ext_door_y1 = elevatorBaseY - 1
+			ext_door_x2 = elevatorSizeX - 1
+			ext_door_y2 = elevatorBaseY - 1
+
 			light_x1 = elevatorBaseX + (make_walls ? 1 : 0)
 			light_y1 = elevatorBaseY + (make_walls ? 2 : 1)
 			light_x2 = elevatorBaseX + lift_size_x - (make_walls ? 1 : 0)
@@ -108,6 +122,11 @@
 			door_y1 = elevatorBaseY + 1
 			door_x2 = elevatorSizeX
 			door_y2 = elevatorSizeY - 1
+
+			ext_door_x1 = elevatorSizeX + 1
+			ext_door_y1 = elevatorBaseY + 1
+			ext_door_x2 = elevatorSizeX + 1
+			ext_door_y2 = elevatorSizeY - 1
 
 			light_x1 = elevatorBaseX + (make_walls ? 1 : 0)
 			light_y1 = elevatorBaseY + (make_walls ? 1 : 0)
@@ -128,6 +147,11 @@
 			door_y1 = elevatorBaseY + 1
 			door_y2 = elevatorSizeY - 1
 
+			ext_door_x1 = elevatorBaseX - 1
+			ext_door_y1 = elevatorBaseY + 1
+			ext_door_x2 = elevatorBaseX - 1
+			ext_door_y2 = elevatorSizeY - 1
+
 			light_x1 = stop.x + lift_size_x - (make_walls ? 1 : 0)
 			light_x2 = stop.x + lift_size_x - (make_walls ? 1 : 0)
 
@@ -137,7 +161,7 @@
 			ext_panel_x = elevatorBaseX - 1
 			ext_panel_y = elevatorBaseY
 
-	return list("ext_x" = ext_panel_x, "ext_y" = ext_panel_y)
+	return list("ext_x" = ext_panel_x, "ext_y" = ext_panel_y, "edoor_x1" = ext_door_x1, "edoor_y1" = ext_door_y1, "edoor_x2" = ext_door_x2, "edoor_y2" = ext_door_y2)
 
 
 
@@ -178,8 +202,6 @@
 	for(var/stopAreaAsPseudoInstance in turbolift_stops)
 		var/area/turbolift/stopArea = locate(stopAreaAsPseudoInstance) in world
 
-
-
 		var/turf/stop = locate() in stopArea
 
 		if(!stop)
@@ -188,111 +210,107 @@
 		var/list/coords = computeDirections(stop)
 
 		var/datum/turbolift_stop/cfloor = new()
+		cfloor.anchor_turf = locate(elevatorBaseX, elevatorBaseY, stop.z)
 		lift.stops += cfloor
 
-		var/levelFloorType = floor_type
-		if(level > 1)
-			levelFloorType = stopArea.base_turf
-
 		var/list/floor_turfs = list()
-		// Update the appropriate turfs.
-		for(var/turfX = stop.x to (stop.x + lift_size_x) )
 
-			for(var/turfY = stop.y to (stop.y + lift_size_y) )
+		if(level == 1)
+			// Build the physical elevator car only at the first stop.
+			// Update the appropriate turfs.
+			for(var/turfX = stop.x to (stop.x + lift_size_x))
+				for(var/turfY = stop.y to (stop.y + lift_size_y))
+					var/turf/checking = locate(turfX, turfY, stop.z)
 
-				var/turf/checking = locate(turfX,turfY,stop.z)
+					if(!istype(checking))
+						log_debug("[name] cannot find a component turf at [turfX],[turfY] on floor [stop.z]. Aborting.")
+						qdel(src)
+						return
 
-				if(!istype(checking))
-					log_debug("[name] cannot find a component turf at [turfX],[turfY] on floor [stop.z]. Aborting.")
-					qdel(src)
-					return
+					// Update path appropriately if needed.
+					var/swap_to = /turf/simulated/open
+					if(wall_type && (turfX == elevatorBaseX || turfY == elevatorBaseY || turfX == elevatorSizeX || turfY == elevatorSizeY) && !(turfX >= door_x1 && turfX <= door_x2 && turfY >= door_y1 && turfY <= door_y2))
+						swap_to = wall_type
+					else
+						swap_to = floor_type
 
-				// Update path appropriately if needed.
-				var/swap_to = /turf/simulated/open                                                                    // Elevator.
-				if(wall_type && (turfX == elevatorBaseX || turfY == elevatorBaseY || turfX == elevatorSizeX || turfY == elevatorSizeY) && !(turfX >= door_x1 && turfX <= door_x2 && turfY >= door_y1 && turfY <= door_y2))
-					swap_to = wall_type
-				else
-					swap_to = levelFloorType
+					if(checking.type != swap_to)
+						checking.ChangeTurf(swap_to)
+						checking = locate(turfX, turfY, stop.z)
 
-				if(checking.type != swap_to)
-					checking.ChangeTurf(swap_to)
-					// Let's make absolutely sure that we have the right turf.
-					checking = locate(turfX,turfY,stop.z)
+					// Clear out contents.
+					for(var/atom/movable/thing in checking.contents)
+						if(thing.simulated)
+							qdel(thing)
 
-				// Clear out contents.
-				for(var/atom/movable/thing in checking.contents)
-					if(thing.simulated)
-						qdel(thing)
+					if(turfX >= elevatorBaseX && turfX <= elevatorSizeX && turfY >= elevatorBaseY && turfY <= elevatorSizeY)
+						floor_turfs += checking
 
-				if(turfX >= elevatorBaseX && turfX <= elevatorSizeX && turfY >= elevatorBaseY && turfY <= elevatorSizeY)
-					floor_turfs += checking
-
-		if(stopArea.lift_floor_label)
-			// Place all doors.
+			// Place interior doors (on the wall tiles of the car).
 			for(var/turfX = door_x1 to door_x2)
 				for(var/turfY = door_y1 to door_y2)
-					var/turf/checking = locate(turfX,turfY,stop.z)
-					var/internal = 1
-					if(!(checking in floor_turfs))
-						internal = 0
-						/*if(checking.type != levelFloorType)
-							checking.ChangeTurf(levelFloorType)
-							checking = locate(turfX,turfY,stop.z)
-						for(var/atom/movable/thing in checking.contents)
-							if(thing.simulated)
-								qdel(thing)*/
-
-				//	if(checking.type == levelFloorType) // Don't build over empty space on lower levels.
+					var/turf/checking = locate(turfX, turfY, stop.z)
 					var/obj/machinery/door/airlock/lift/newdoor = new door_type(checking)
-					if(internal)
-						lift.doors += newdoor
-						newdoor.lift = cfloor
-					else
-						cfloor.doors += newdoor
-						newdoor.floor = cfloor
-				//	else
-				//		log_debug("checking.type != floor_type,  [checking.x],[checking.y],[checking.z]")
+					lift.doors += newdoor
+					newdoor.lift = cfloor
 
-			// Place exterior control panel.
-			var/turf/placing = locate(coords["ext_x"], coords["ext_y"], stop.z)
+			// Place lights inside the car.
+			var/turf/placing1 = locate(light_x1, light_y1, stop.z)
+			var/turf/placing2 = locate(light_x2, light_y2, stop.z)
+			var/obj/machinery/light/light1 = new(placing1, light)
+			var/obj/machinery/light/light2 = new(placing2, light)
+			if(elevatorBaseDir == NORTH || elevatorBaseDir == SOUTH)
+				light1.set_dir(WEST)
+				light2.set_dir(EAST)
+			else
+				light1.set_dir(SOUTH)
+				light2.set_dir(NORTH)
 
-			var/obj/structure/lift/button/panel_ext = new(placing, lift)
-			panel_ext.floor = cfloor
-			panel_ext.set_dir(elevatorBaseDir)
-			cfloor.ext_panel = panel_ext
+			// Place interior panel inside the car.
+			var/turf/int_T = locate(int_panel_x, int_panel_y, stop.z)
+			var/obj/structure/lift/panel/int_panel = new(int_T, lift)
+			int_panel.set_dir(elevatorBaseDir)
+			lift.control_panel_interior = int_panel
 
-
-	        // Place lights
-			if(level == 1)
-				var/turf/placing1 = locate(light_x1, light_y1, stop.z)
-				var/turf/placing2 = locate(light_x2, light_y2, stop.z)
-				var/obj/machinery/light/light1 = new(placing1, light)
-				var/obj/machinery/light/light2 = new(placing2, light)
-				if(elevatorBaseDir == NORTH || elevatorBaseDir == SOUTH)
-					light1.set_dir(WEST)
-					light2.set_dir(EAST)
-				else
-					light1.set_dir(SOUTH)
-					light2.set_dir(NORTH)
-
-
-
+		// For all stops: assign area to the floor turfs (first stop only has turfs).
 		var/area_path = turbolift_stops[level]
 		for(var/thing in floor_turfs)
 			new area_path(thing)
 		var/area/A = locate(area_path)
 		cfloor.set_area_ref("\ref[A]")
+
+		// For all stops: place exterior doors and call button (these are fixed to the landing).
+		if(stopArea.lift_floor_label)
+			// Place exterior doors (one tile outside the shaft opening).
+			for(var/turfX = coords["edoor_x1"] to coords["edoor_x2"])
+				for(var/turfY = coords["edoor_y1"] to coords["edoor_y2"])
+					var/turf/ext_checking = locate(turfX, turfY, stop.z)
+					if(ext_checking)
+						var/obj/machinery/door/airlock/lift/ext_door = new door_type(ext_checking)
+						ext_door.floor = cfloor
+						cfloor.doors += ext_door
+
+			// Place exterior call button.
+			var/turf/placing = locate(coords["ext_x"], coords["ext_y"], stop.z)
+			var/obj/structure/lift/button/panel_ext = new(placing, lift)
+			panel_ext.floor = cfloor
+			panel_ext.set_dir(elevatorBaseDir)
+			panel_ext.pixel_x = 0
+			panel_ext.pixel_y = 0
+			cfloor.ext_panel = panel_ext
+
 		level++
 
-		if(level > 1)
-			createInnerDoors = 0
 
 
+	// Ensure control_panel_interior is set (fallback if somehow not set above).
+	if(!lift.control_panel_interior && lift.stops.len)
+		var/datum/turbolift_stop/first = lift.stops[1]
+		var/area/first_area = locate(first.area_ref)
+		var/turf/first_turf = locate() in first_area
+		if(first_turf)
+			lift.control_panel_interior = new/obj/structure/lift/panel(first_turf, lift)
 
-	// Place lift panel.
-	var/turf/T = locate(int_panel_x, int_panel_y, elevatorBaseZ)
-	lift.control_panel_interior = new(T, lift)
-	lift.control_panel_interior.set_dir(elevatorBaseDir)
 	lift.current_stop = lift.stops[1]
 
 	lift.open_doors()

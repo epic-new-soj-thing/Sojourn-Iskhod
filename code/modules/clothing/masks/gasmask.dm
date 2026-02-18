@@ -394,7 +394,7 @@
 
 /obj/item/clothing/mask/gas/bigguy/sleekmarshalguy
 	name = "sleek marshal rebreather"
-	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user. This one carries the Marshal colors and has thicker filters."
+	desc = "A small, Vesalius-Andra-brand rebreather designed to regulate the flux of gasses fed to its user. This one carries the Ranger colors and has thicker filters."
 	icon_state = "srebreath_marshal"
 
 /obj/item/clothing/mask/gas/bigguy/sleekpurpleguy

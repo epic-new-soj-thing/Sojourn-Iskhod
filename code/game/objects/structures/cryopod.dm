@@ -46,7 +46,7 @@ Unused file of cryo pods that on click dont even work, these are not used and ar
 
 /obj/structure/cryopod_spawner/ironhammer
 	outfit_type = /decl/hierarchy/outfit/job/security/ihoper
-	spawn_faction = "Marshal"
+	spawn_faction = "Ranger"
 	spawn_role = "Warrant Officer"
 
 	stat_modifiers = list(

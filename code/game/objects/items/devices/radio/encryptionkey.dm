@@ -31,7 +31,7 @@
 /obj/item/device/encryptionkey/headset_bs
 	name = "blackshield radio encryption key"
 	icon_state = "sec_cypherkey"
-	channels = list("Security" = 1, "Security(I)" = 1)	//Marshal coms taken away due to abuse by regular troopers. Sergeant and CO have maintained theirs.
+	channels = list("Security" = 1, "Security(I)" = 1)	//Ranger coms taken away due to abuse by regular troopers. Sergeant and CO have maintained theirs.
 
 /obj/item/device/encryptionkey/headset_bs/corps
 	name = "corpsman radio encryption key"

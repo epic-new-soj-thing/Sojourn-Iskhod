@@ -189,10 +189,10 @@
 	else
 		voucher.stamped = FALSE
 
-//For Marshal Kits
+//For Ranger Kits
 /obj/machinery/vending/marshal_kit
-	name = "\improper Marshal Kit Vendor"
-	desc = "A vendor that can dispense specialized equipment kits for Marshal Officers."
+	name = "\improper Ranger Kit Vendor"
+	desc = "A vendor that can dispense specialized equipment kits for Ranger Officers."
 	icon_state = "trashvend"
 	products = list(
 		//obj/item/storage/box/m_kit/freedom = 2,
@@ -257,7 +257,7 @@
 					"Mamba Kit" = /obj/item/storage/box/m_kit/mamba,
 					"Gear Laser Carbine Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
 					"Second Secondary" = /obj/item/voucher/marshal/secondary)
-	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
+	var/selection = items[input(redeemer, "Pick your primary weapon", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -272,7 +272,7 @@
 					"Gear Laser Carbine Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
 					"Sunrise Las-SMG Kit" = /obj/item/storage/box/m_kit/typewriter,
 					"Second Secondary" = /obj/item/voucher/marshal/secondary)
-	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
+	var/selection = items[input(redeemer, "Pick your primary weapon", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -287,7 +287,7 @@
 					"Custer Kit" = /obj/item/storage/box/m_kit/custer,
 					"Peacekeeper Kit" = /obj/item/storage/box/m_kit/peacekeeper,
 					"Second Secondary" = /obj/item/voucher/marshal/rangersecondary)
-	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
+	var/selection = items[input(redeemer, "Pick your primary weapon", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -301,7 +301,7 @@
 					"Liberty Kit" = /obj/item/storage/box/m_kit/liberty,
 					"Mistral Kit" = /obj/item/storage/box/m_kit/mistral,
 					"Judiciary Kit" = /obj/item/storage/box/m_kit/judiciary)
-	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
+	var/selection = items[input(redeemer, "Pick your side-arm", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -315,7 +315,7 @@
 					"Deckard Kit" = /obj/item/storage/box/m_kit/deckard,
 					"Zwang Kit" = /obj/item/storage/box/m_kit/zwang,
 					"Judge Kit" = /obj/item/storage/box/m_kit/judge)
-	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
+	var/selection = items[input(redeemer, "Pick your side-arm", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -328,7 +328,7 @@
 					"Mateba Kit" = /obj/item/storage/box/m_kit/mateba,
 					"Galaxy Kit" = /obj/item/storage/box/m_kit/galaxy,
 					"Amnesty Kit" = /obj/item/storage/box/m_kit/amnesty)
-	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
+	var/selection = items[input(redeemer, "Pick your side-arm", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -345,7 +345,7 @@
 					"Bullet-Proof Armor Kit" = /obj/item/storage/box/m_kit/bullet_proof,
 					"Ablative Armor Kit" = /obj/item/storage/box/m_kit/laser_armor
 					)
-	var/selection = items[input(redeemer, "Pick your armor", "Marshal Voucher Redemption") as null|anything in items]
+	var/selection = items[input(redeemer, "Pick your armor", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)

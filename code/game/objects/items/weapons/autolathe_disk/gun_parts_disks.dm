@@ -31,7 +31,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/part/barrel/rifle = 2,
 	)
 
-// Marshal-specific disk, used by Rangers for high-end gun crafting. MOST gun parts should be here, but thankfully licenses keep it at limited-use.
+// Ranger-specific disk, used by Rangers for high-end gun crafting. MOST gun parts should be here, but thankfully licenses keep it at limited-use.
 // Infinate given gun parts are mass-printed by Guild, orderable by LS, and can be taken from broken down guns. Guild can mass-produce better, but only Rangers can print high-end.
 /obj/item/pc_part/drive/disk/design/gun_parts/marshal
 	disk_name = "NM - \"Gunsmiths United\" firearm parts"
@@ -86,7 +86,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 // Gun frame disks //
 /////////////////////
 
-// This section contains gun frame disks, including Marshal gun frame disks used to make Marshal specific guns.
+// This section contains gun frame disks, including Ranger gun frame disks used to make Ranger specific guns.
 // Guns here should keep in mind that you can produce these for retail and resale at FL, as some are going to be orderable by Cargo. Return for investment and time, really.
 
 // Resale disk for FL to make and sell guns. Maybe put into piles.
@@ -117,7 +117,7 @@ Avoid any disks here being found or used commonly beyond an intended purpose, ot
 		/datum/design/autolathe/gun_frame/strelki,
 	)
 
-// Marshal gun-frame print disk, allows the printing of what used to be on the Negotiator disk to the Spec and WO. Do NOT put this into piles.
+// Ranger gun-frame print disk, allows the printing of what used to be on the Negotiator disk to the Spec and WO. Do NOT put this into piles.
 /obj/item/pc_part/drive/disk/design/gun_frames/marshal
 	disk_name = "NM - \"Framework of Dreams\" gun frames"
 	icon_state = "marshal"

@@ -537,7 +537,7 @@
 	name = "Science Substation"
 
 /area/iskhod/maintenance/substation/sec
-	name = "Marshal Substation"
+	name = "Ranger Substation"
 
 /area/iskhod/maintenance/substation/cargo
 	name = "Cargo Substation"

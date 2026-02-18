@@ -244,7 +244,7 @@
 	Beloved by rangers, detectives, and night owls because it will keep you awake on the middle of the night stake outs."
 	icon_state = "bang_pina_colada"
 	center_of_mass = list("x"=16, "y"=6)
-	preloaded_reagents = list("energy_drink_baton" = 25, "sodawater" = 15, "atomicoffee" = 10, "sugar" = 10) // Marshall buff
+	preloaded_reagents = list("energy_drink_baton" = 25, "sodawater" = 15, "atomicoffee" = 10, "sugar" = 10) // Rangerl buff
 	volume = 60
 
 /obj/item/reagent_containers/drinks/cans/baton_rent_a_cop

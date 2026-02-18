@@ -16,13 +16,13 @@
 	name = "Rangers - Boris Kilmeade"
 
 	fax_alert = "MARSHAL COMMUNIQUE"
-	fax_response = "Marshal Order"
+	fax_response = "Ranger Order"
 
 	color = "#00b1e8"
 	darkcolor = "#026685"
 	lightcolor = "#7cdffe"
 
-	stamptext = "This paper has been authorized with the Provost Marshal Boris's Insignia"
+	stamptext = "This paper has been authorized with the Provost Ranger Boris's Insignia"
 	stampshape = "paper_stamp-x"
 
 /datum/faction/nadezhda/militia

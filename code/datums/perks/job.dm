@@ -683,7 +683,7 @@
 
 /datum/perk/codespeak
 	name = "Codespeak"
-	desc = "You know Marshal codes."
+	desc = "You know Ranger codes."
 	icon_state = "codespeak" // https://game-icons.net/1x1/delapouite/police-officer-head.html
 	copy_protected = TRUE //Borers already grant omni language translation.
 	var/list/codespeak_procs = list(

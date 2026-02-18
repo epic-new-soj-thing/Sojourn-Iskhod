@@ -9,7 +9,7 @@ var/list/department_radio_keys = list(
 	"m" = "Medical",
 	"j" = "Medical(I)",
 	"e" = "Engineering",
-	"s" = "Marshal",
+	"s" = "Ranger",
 	"b" = "Blackshield",
 	"w" = "whisper",
 	"y" = "Mercenary",
@@ -291,9 +291,9 @@ var/list/channel_to_radio_key = new
 	INVOKE_ASYNC(GLOBAL_PROC, .proc/animate_speechbubble, speech_bubble, speech_bubble_recipients, 30)
 
 	if(ismouse(src))
-		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, "Squeak!", speaking, italics, speech_bubble_recipients, 40)
+		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, "Squeak!", speaking, italics, speech_bubble_recipients, 40, src)
 	else
-		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients, 40)
+		INVOKE_ASYNC(src, /atom/movable/proc/animate_chat, message, speaking, italics, speech_bubble_recipients, 40, src)
 
 	for(var/obj/O as anything in listening_obj)
 		spawn(0)

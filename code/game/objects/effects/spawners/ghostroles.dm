@@ -128,16 +128,16 @@
 
 /obj/effect/mob_spawn/human/marshal_ert
 	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Iskhod Colonial Marshal"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Iskhod Colonial Ranger"
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/marshal_ert
 	ghost_role_perks = list(PERK_ASS_OF_CONCRETE, PERK_SMARTLINK, PERK_CODESPEAK, PERK_CHEM_CONTRABAND, PERK_TRUE_NAME)
-	short_desc = "You are a Marshal agent."
+	short_desc = "You are a Ranger agent."
 	flavour_text = "Something has happend to the upper colony to warrant your deployment. Uphold the word of law and ensure peace is upkept in Iskhod."
-	assignedrole = "Marshal Agent"
-	title = "Marshal Agent"
+	assignedrole = "Ranger Agent"
+	title = "Ranger Agent"
 	stat_modifiers = list(
 		STAT_ROB = 50,
 		STAT_TGH = 45,
@@ -224,7 +224,7 @@
 	You are not a cop, but you may assist the Rangers in tracking down a renegade clergy member if necessary."
 	assignedrole = "Church Inquisitor"
 	title = "Church Inquisitor"
-	stat_modifiers = list( //Literally just Marshal agent stats, I'm lazy
+	stat_modifiers = list( //Literally just Ranger agent stats, I'm lazy
 		STAT_ROB = 50,
 		STAT_TGH = 45,
 		STAT_BIO = 10,

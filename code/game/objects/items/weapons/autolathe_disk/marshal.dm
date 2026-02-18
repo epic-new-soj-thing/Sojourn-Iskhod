@@ -1,7 +1,7 @@
 // Disks formated as /designpath = pointcost , if no point cost is specified it defaults to 1.
 // To make a design unprotect use -1
 
-// Marshal
+// Ranger
 /obj/item/pc_part/drive/disk/design/security
 	disk_name = "Security Miscellaneous Pack"
 	icon_state = "ironhammer"

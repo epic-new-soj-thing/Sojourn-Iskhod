@@ -227,8 +227,8 @@
 	..()
 
 /obj/item/card/id/syndicate/ert/aa/marshal_ert
-	name = "Marshal Agent's ID card"
-	desc = "A specialized all access ID issued to agents of the Provost Marshal and the Iskhod Rangers."
+	name = "Ranger Agent's ID card"
+	desc = "A specialized all access ID issued to agents of the Provost Ranger and the Iskhod Rangers."
 	registered_name = "Special Agent"
 	assignment = "Special Agent"
 

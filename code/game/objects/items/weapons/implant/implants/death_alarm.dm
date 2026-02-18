@@ -37,11 +37,11 @@
 	var/medical = FALSE
 	switch (cause)
 		if("death")
-			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Ranger")}(src)
 			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
 				radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
 			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
-				radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Marshal")
+				radio_caller.autosay("[mobname] has died in [t.name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Ranger")
 			for(wearer in GLOB.player_list)
 				if(wearer.mind.assigned_role in list(JOBS_MEDICAL))
 					medical = TRUE
@@ -51,12 +51,12 @@
 			qdel(radio_caller)
 			STOP_PROCESSING(SSobj, src)
 		if ("emp")
-			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Ranger")}(src)
 			var/name = prob(50) ? t.name : pick(SSmapping.teleportlocs)
 			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
 				radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Blackshield")
 			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
-				radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Marshal")
+				radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Ranger")
 			for(wearer in GLOB.player_list)
 				if(wearer.mind.assigned_role in list(JOBS_MEDICAL))
 					medical = TRUE
@@ -65,11 +65,11 @@
 			radio_caller.autosay("[mobname] has died in [name] at coordinates [T.x], [T.y], [T.z]!", "[mobname]'s Death Alarm", "Medical")
 			qdel(radio_caller)
 		else
-			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Marshal")}(src)
+			var/obj/item/device/radio/headset/radio_caller = new /obj/item/device/radio{channels=list("Medical", "Blackshield", "Ranger")}(src)
 			if(T.z > 5) //WAH HARDCODE! - SOB EVEN
 				radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Blackshield")
 			if(T.z <= 5) //WAH HARDCODE! - SOB EVEN
-				radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Marshal")
+				radio_caller.autosay("[mobname] has died-zzzzt in-in-in...", "[mobname]'s Death Alarm", "Ranger")
 			for(wearer in GLOB.player_list)
 				if(wearer.mind.assigned_role in list(JOBS_MEDICAL))
 					medical = TRUE

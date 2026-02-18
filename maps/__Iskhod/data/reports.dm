@@ -88,7 +88,7 @@
 
 /datum/computer_file/report/recipient/sec/investigation/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "Marshal Security Department")
+	add_field(/datum/report_field/instruction, "Ranger Security Department")
 	add_field(/datum/report_field/instruction, "For internal use only.")
 	add_field(/datum/report_field/people/from_manifest, "Name")
 	add_field(/datum/report_field/date, "Date")
@@ -106,7 +106,7 @@
 
 /datum/computer_file/report/recipient/sec/incident/generate_fields()
 	..()
-	add_field(/datum/report_field/instruction, "Marshal Security Department")
+	add_field(/datum/report_field/instruction, "Ranger Security Department")
 	add_field(/datum/report_field/instruction, "To be filled out by Officer on duty responding to the Incident. Report must be signed and submitted before the end of the shift!")
 	add_field(/datum/report_field/people/from_manifest, "Reporting Officer")
 	add_field(/datum/report_field/simple_text, "Offense/Incident Type")
@@ -128,7 +128,7 @@
 /datum/computer_file/report/recipient/sec/evidence/generate_fields()
 	..()
 	var/datum/report_field/temp_field
-	add_field(/datum/report_field/instruction, "Marshal Security Department")
+	add_field(/datum/report_field/instruction, "Ranger Security Department")
 	add_field(/datum/report_field/date, "Date")
 	add_field(/datum/report_field/time, "Time")
 	add_field(/datum/report_field/people/from_manifest, "Confiscated from")

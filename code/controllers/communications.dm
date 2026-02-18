@@ -74,7 +74,7 @@ Radio:
 1337 - Engineering
 1359 - Security
 1362 - Blackshield
-1363 - Marshalls
+1363 - Rangerls
 1341 - deathsquad
 1443 - Confession Intercom
 1347 - Cargo techs

@@ -73,7 +73,7 @@
 //hardcases
 
 /datum/design/autolathe/container/ammocan_ih
-	name = "Marshal Ammo Can"
+	name = "Ranger Ammo Can"
 	build_path = /obj/item/storage/hcases/ammo/ih
 
 /datum/design/autolathe/container/ammocan_serb

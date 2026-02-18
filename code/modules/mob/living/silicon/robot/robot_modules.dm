@@ -743,9 +743,9 @@ var/global/list/robot_modules = list(
 					"Contractor Tactical Alt" = "mmekasec",
 					"Contractor Foxtrot" = "mekasyndi_foxtrot",
 					"Contractor Traffic Light" = "fmekasyndi",
-					"Marshal Civil Servant" = "fmekasyndi_marshal", //Odio made this and for some reason named the original file slutty_bot.dmi so putting here so nobody will forget to shame him later for it.
+					"Ranger Civil Servant" = "fmekasyndi_marshal", //Odio made this and for some reason named the original file slutty_bot.dmi so putting here so nobody will forget to shame him later for it.
 					"Contractor Riot Stopper" = "mmekasyndi",
-					"Marshal Riot Unit" = "mmekasyndi_marshal",
+					"Ranger Riot Unit" = "mmekasyndi_marshal",
 					"Dullahan Riot Unit" = "dullahansyndi"
 				)
 
@@ -836,9 +836,9 @@ var/global/list/robot_modules = list(
 					"Contractor Tactical Alt" = "mmekasec",
 					"Contractor Foxtrot" = "mekasyndi_foxtrot",
 					"Contractor Traffic Light" = "fmekasyndi",
-					"Marshal Civil Servant" = "fmekasyndi_marshal", //Odio made this and for some reason named the original file slutty_bot.dmi so putting here so nobody will forget to shame him later for it.
+					"Ranger Civil Servant" = "fmekasyndi_marshal", //Odio made this and for some reason named the original file slutty_bot.dmi so putting here so nobody will forget to shame him later for it.
 					"Contractor Riot Stopper" = "mmekasyndi",
-					"Marshal Riot Unit" = "mmekasyndi_marshal",
+					"Ranger Riot Unit" = "mmekasyndi_marshal",
 					"Dullahan Riot Unit" = "dullahansyndi"
 				)
 

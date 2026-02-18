@@ -55,7 +55,7 @@
 	icon_state = "voucher"
 	voucher_type = "CorpsmanArmor"
 
-// Marshal
+// Ranger
 /obj/item/voucher/marshal
 	name = "marshal voucher"
 	desc = "A token to redeem marshal equipment from a vendor."

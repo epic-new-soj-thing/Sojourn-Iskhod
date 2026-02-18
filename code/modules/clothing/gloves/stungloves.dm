@@ -126,7 +126,7 @@
 	armor_list = list(melee = 3, bullet = 0, energy = 2, bomb = 0, bio = 100, rad = 0)  //same armor values as jackboots + bio protection.
 	action_button_name = "Toggle placeholder Glove"
 	price_tag = 500 //rarer and harder to find.
-	agonyforce = 40 //same as the stun baton, these are slightly better than the Marshal version thusly.
+	agonyforce = 40 //same as the stun baton, these are slightly better than the Ranger version thusly.
 
 /obj/item/clothing/gloves/stungloves/trauma/update_icon()
 	if(status)

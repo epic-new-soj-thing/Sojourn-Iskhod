@@ -1133,7 +1133,7 @@
 
 /obj/item/clothing/suit/storage/vest/ironhammer
 	name = "webbed operator armor"
-	desc = "An armored vest that protects against some damage. This one has been done in Iskhod Marshal colors and has various pouches and straps attached."
+	desc = "An armored vest that protects against some damage. This one has been done in Iskhod Ranger colors and has various pouches and straps attached."
 	icon_state = "webvest_ironhammer"
 	armor_list = list(
 		melee =8,
@@ -1625,7 +1625,7 @@
 
 /obj/item/clothing/suit/storage/armor/marshal_coat
 	name = "marshal officers greatcoat"
-	desc = "Marshal Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
+	desc = "Ranger Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
 	armor_list = list(melee = 8, bullet = 7, energy = 5, bomb = 10, bio = 0, rad = 0)
 	icon_state = "marshal_coat"
 	item_state = "marshal_coat"

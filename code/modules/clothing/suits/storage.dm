@@ -302,8 +302,8 @@
 	icon_closed = "militaryjacket_soyfed"
 
 /obj/item/clothing/suit/storage/toggle/miljacket_marshal
-	name = "Marshal jacket"
-	desc = "A Resistant Marshal Coloured jacket with reflective yellow patches on it."
+	name = "Ranger jacket"
+	desc = "A Resistant Ranger Coloured jacket with reflective yellow patches on it."
 	armor_list = list(melee = 3, bullet = 3, energy = 3, bomb = 10, bio = 0, rad = 0)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	icon_state = "marshal_jacket"

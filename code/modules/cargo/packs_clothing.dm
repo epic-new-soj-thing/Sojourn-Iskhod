@@ -45,7 +45,7 @@
 
 //ARMORY
 /datum/supply_pack/armor
-	name = "Marshal Surplus Armor Crate"
+	name = "Ranger Surplus Armor Crate"
 	contains = list(/obj/item/clothing/suit/armor/vest,
 					/obj/item/clothing/suit/armor/vest/ironhammer,
 					/obj/item/clothing/suit/storage/vest,
@@ -53,7 +53,7 @@
 					/obj/item/clothing/head/helmet)
 	cost = 1200
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "Marshal surplus armor crate"
+	crate_name = "Ranger surplus armor crate"
 	group = "Clothing"
 
 /datum/supply_pack/ballisticarmor
@@ -66,7 +66,7 @@
 	group = "Clothing"
 
 /datum/supply_pack/riot
-	name = "Marshal Riot Gear Crate"
+	name = "Ranger Riot Gear Crate"
 	contains = list(/obj/item/tool/baton,
 					/obj/item/tool/baton,
 					/obj/item/tool/baton,
@@ -87,22 +87,22 @@
 					/obj/item/clothing/suit/armor/heavy/riot)
 	cost = 4880
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "Marshal riot gear crate"
+	crate_name = "Ranger riot gear crate"
 	group = "Clothing"
 
 /datum/supply_pack/ballisticarmor
-	name = "Marshal Ballistic Armor Crate"
+	name = "Ranger Ballistic Armor Crate"
 	contains = list(/obj/item/clothing/suit/armor/bulletproof,
 					/obj/item/clothing/suit/armor/bulletproof,
 					/obj/item/clothing/head/helmet,
 					/obj/item/clothing/head/helmet)
 	cost = 2400
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "Marshal ballistic armor crate"
+	crate_name = "Ranger ballistic armor crate"
 	group = "Clothing"
 
 /datum/supply_pack/energyarmor
-	name = "Marshal Ablative Armor Crate"
+	name = "Ranger Ablative Armor Crate"
 	contains = list(/obj/item/clothing/suit/armor/laserproof,
 					/obj/item/clothing/suit/armor/laserproof,
 					/obj/item/clothing/shoes/ablative,
@@ -113,5 +113,5 @@
 					/obj/item/clothing/head/helmet/laserproof)
 	cost = 2800
 	containertype = /obj/structure/closet/crate/secure
-	crate_name = "Marshal ablative armor crate"
+	crate_name = "Ranger ablative armor crate"
 	group = "Clothing"

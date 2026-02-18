@@ -276,7 +276,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 
 	//Rangers
 	dat += {"
-	<u>Marshal scores</u><br>
+	<u>Ranger scores</u><br>
 	<b>Base score:</b> [green_text(GLOB.initial_ironhammer_score)]<br>
 	<b>Lost faction items:</b> [GLOB.ironhammer_faction_item_loss] ([to_score_color(GLOB.score_ironhammer_faction_item_loss)] Points)<br>
 	<b>Faction objectives completed:</b> [GLOB.ironhammer_objectives_completed] ([to_score_color(GLOB.ironhammer_objectives_score)] Points)<br>
@@ -284,7 +284,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	<b>Antagonists killed or captured:</b> [GLOB.captured_or_dead_antags] ([to_score_color(GLOB.captured_or_dead_antags_score)] Points)<br>
 	<b>Escaped Antagonists:</b> [GLOB.ironhammer_escaped_antagonists] ([to_score_color(GLOB.ironhammer_escaped_antagonists_score)] Points)<br>
 	<b>Rangers killed:</b> [GLOB.ironhammer_operative_dead] ([to_score_color(GLOB.ironhammer_operative_dead_score)] Points)<br>
-	<b>Final Marshal score:</b> [get_color_score(GLOB.ironhammer_score, GLOB.ironhammer_score)] Points<br><br>
+	<b>Final Ranger score:</b> [get_color_score(GLOB.ironhammer_score, GLOB.ironhammer_score)] Points<br><br>
 	"}
 
 	//Vesalius-Andra

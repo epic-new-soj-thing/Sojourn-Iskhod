@@ -244,7 +244,7 @@
 	dynamic_lighting = FALSE
 	base_turf = /turf/simulated/floor/reinforced
 
-//Marshal shuttle
+//Ranger shuttle
 /datum/shuttle/autodock/multi/vasiliy
 	name = "The Vasiliy"
 	move_time = (3 MINUTES) / (1 SECOND)

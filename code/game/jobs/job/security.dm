@@ -189,7 +189,7 @@
 	spawn_positions = 3
 	supervisors = "the Captain"
 	difficulty = "Hard."
-	noob_name = "Marshal Assistant"
+	noob_name = "Ranger Assistant"
 	alt_titles = list("Ranger Patrolman","Ranger Enforcer")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
