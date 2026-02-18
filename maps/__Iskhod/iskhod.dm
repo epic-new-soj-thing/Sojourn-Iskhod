@@ -21,7 +21,7 @@
 	is_accessable_level = FALSE
 	is_sealed = TRUE
 	generate_asteroid = TRUE
-	height = 3
+	height = 4
 	digsites = "HOUSE"
 
 /obj/map_data/admin
