@@ -76906,7 +76906,7 @@
 /obj/machinery/access_button{
 	pixel_x = 26;
 	name = "Supermatter Access Button";
-	command = s;
+	command = "cycle_interior";
 	master_tag = "sm_airlock_control";
 	req_access = list(10);
 	frequency = 1245
