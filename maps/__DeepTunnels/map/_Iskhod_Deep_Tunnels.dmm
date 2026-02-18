@@ -204,7 +204,7 @@
 /area/mine/hallway)
 "da" = (
 /turf/simulated/floor/plating/under,
-/area/iskhod/rnd/outpostgeneral)
+/area/turbolift/Research/underground)
 "df" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -445,7 +445,7 @@
 /area/iskhod/rnd/mixing)
 "gC" = (
 /turf/simulated/floor/industrial/navy_large_slates,
-/area/space)
+/area/turbolift/Research/underground)
 "gE" = (
 /turf/simulated/wall/iskhod,
 /area/mine/prep)
@@ -701,7 +701,7 @@
 /area/iskhod/rnd/outpostgeneral)
 "jE" = (
 /turf/simulated/floor/plating/under,
-/area/space)
+/area/turbolift/Mining/underground)
 "jI" = (
 /obj/effect/floor_decal/industrial/loading/red,
 /turf/simulated/floor/reinforced,
@@ -755,7 +755,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /turf/simulated/floor/industrial/navy_large_slates,
-/area/space)
+/area/mine/prep)
 "kD" = (
 /obj/machinery/portable_atmospherics/canister/sleeping_agent,
 /turf/simulated/floor/tiled/white/cargo,
@@ -2416,7 +2416,7 @@
 /area/mine/medical)
 "CP" = (
 /turf/simulated/floor/industrial/navy_slates,
-/area/space)
+/area/turbolift/Mining/underground)
 "CQ" = (
 /obj/machinery/power/sensor{
 	long_range = 1;
@@ -2905,6 +2905,9 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
+"II" = (
+/turf/simulated/floor/industrial/navy_slates,
+/area/turbolift/Research/underground)
 "IR" = (
 /obj/machinery/vending/wallmed/lobby{
 	pixel_x = 30
@@ -3720,6 +3723,9 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
+"RS" = (
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/turbolift/Mining/underground)
 "RY" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -11540,8 +11546,8 @@ jE
 CP
 CP
 CP
-gC
-gC
+RS
+RS
 kz
 el
 el
@@ -11742,8 +11748,8 @@ jE
 CP
 CP
 CP
-gC
-gC
+RS
+RS
 kz
 el
 el
@@ -11944,8 +11950,8 @@ jE
 CP
 CP
 CP
-gC
-gC
+RS
+RS
 kz
 el
 el
@@ -16720,9 +16726,9 @@ MV
 MV
 jA
 da
-CP
-CP
-CP
+II
+II
+II
 gC
 gC
 AQ
@@ -16922,9 +16928,9 @@ MV
 MV
 jA
 da
-CP
-CP
-CP
+II
+II
+II
 gC
 gC
 AQ
@@ -17124,9 +17130,9 @@ MV
 MV
 jA
 da
-CP
-CP
-CP
+II
+II
+II
 gC
 gC
 AQ
