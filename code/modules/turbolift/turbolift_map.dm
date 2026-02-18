@@ -185,15 +185,10 @@
 		if(!stop)
 			CRASH("Failed to find turf in area [stopArea.name].")
 
-			var/list/coords = computeDirections(stop)
+		var/list/coords = computeDirections(stop)
 
-			var/datum/turbolift_stop/cfloor = new()
-			lift.stops += cfloor
-
-			// ... (rest of loop logic) ...
-
-			// Place exterior control panel.
-			var/turf/placing = locate(coords["ext_x"], coords["ext_y"], stop.z)
+		var/datum/turbolift_stop/cfloor = new()
+		lift.stops += cfloor
 
 		var/levelFloorType = floor_type
 		if(level > 1)

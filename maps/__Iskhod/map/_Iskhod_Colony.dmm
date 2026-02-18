@@ -21210,7 +21210,7 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Recovery Ward";
 	req_access = newlist();
-	req_one_access = s
+	req_one_access = newlist()
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/patient_wing)
