@@ -8390,17 +8390,11 @@
 "cbX" = (
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/maintenance/undergroundfloor2south)
-"ccf" = (
+"cch" = (
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
-/area/iskhod/hallway/main/f1section4)
-"cch" = (
-/obj/machinery/light{
-	brightness_power = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/turbolift/Mining/colony)
+/area/turbolift/ElevatorTwo/midlevelTwo)
 "ccn" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
@@ -12772,8 +12766,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
 "dmj" = (
-/turf/simulated/floor/industrial/navy_slates,
-/area/iskhod/quartermaster/supplydock)
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevTwo,
+/turf/simulated/floor/plating/under,
+/area/turbolift/ElevatorTwo/midlevelTwo)
 "dmC" = (
 /obj/structure/shuttle_part/mining{
 	icon_state = "15,2"
@@ -16924,17 +16919,9 @@
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
 "epJ" = (
-/obj/machinery/door/firedoor,
-/obj/effect/floor_decal/industrial_plant/steel_grate_border{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial_plant/steel_grate_border{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/airlock/hatch,
-/turf/simulated/floor/reinforced,
-/area/iskhod/hallway/main/stairwell)
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
+/turf/simulated/floor/plating/under,
+/area/turbolift/Research/colony)
 "epK" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -18593,8 +18580,8 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/patient_wing)
 "eLh" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevTwo,
-/turf/simulated/floor/plating/under,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/hallway/main/f1section4)
 "eLm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -22747,8 +22734,8 @@
 /turf/simulated/floor/asteroid,
 /area/iskhod/maintenance/northcave)
 "fQa" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
-/turf/simulated/floor/plating/under,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/rnd/docking)
 "fQc" = (
 /turf/simulated/shuttle/floor/science{
@@ -50865,7 +50852,8 @@
 /turf/simulated/floor/carpet/gaycarpet,
 /area/iskhod/crew_quarters/cafeteria)
 "njQ" = (
-/turf/simulated/floor/plating/under,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/quartermaster/supplydock)
 "njR" = (
 /obj/machinery/disposal,
@@ -65607,10 +65595,8 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section2)
 "rcA" = (
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
-/area/iskhod/rnd/docking)
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/turbolift/Mining/colony)
 "rcD" = (
 /obj/effect/floor_decal/corner_oldtile,
 /obj/effect/floor_decal/corner_oldtile{
@@ -111326,7 +111312,7 @@ rmz
 rmz
 rmz
 rmz
-rmz
+dmj
 bHI
 bdK
 wxZ
@@ -111527,8 +111513,8 @@ rmz
 cXR
 cXR
 cXR
-rmz
-rmz
+bkT
+cch
 eLh
 bPc
 llx
@@ -111729,9 +111715,9 @@ rmz
 cXR
 cXR
 cXR
-cXR
 bkT
-ccf
+cch
+eLh
 tJL
 dvu
 blq
@@ -111931,9 +111917,9 @@ rmz
 cXR
 cXR
 cXR
-cXR
 bkT
-ccf
+bkT
+eLh
 qUs
 xVm
 sXL
@@ -116177,7 +116163,7 @@ fGi
 fGi
 fGi
 fGi
-fGi
+wVg
 wyx
 rtq
 wMo
@@ -116375,8 +116361,8 @@ phb
 iLr
 kXs
 njQ
-fGi
-wVg
+rcA
+gBf
 gBf
 gBf
 fGi
@@ -116576,12 +116562,12 @@ nBq
 eCx
 hQG
 kXs
-dmj
+njQ
+rcA
+gBf
+gBf
 gBf
 fGi
-gBf
-gBf
-cch
 wyx
 rtq
 wMo
@@ -116778,9 +116764,9 @@ cKX
 hxm
 cGW
 kXs
-dmj
+njQ
+rcA
 gBf
-fGi
 gBf
 gBf
 fGi
@@ -121979,7 +121965,7 @@ qZq
 qZq
 qZq
 qZq
-qZq
+epJ
 iQn
 izs
 jIx
@@ -122180,8 +122166,8 @@ qZq
 kMy
 kMy
 kMy
-qZq
-qZq
+fCu
+fCu
 fQa
 fYu
 oEJ
@@ -122382,9 +122368,9 @@ qZq
 kMy
 kMy
 kMy
-kMy
 fCu
-rcA
+fCu
+fQa
 cbu
 lXS
 nQF
@@ -122586,7 +122572,7 @@ kMy
 kMy
 kMy
 fCu
-rcA
+fQa
 mSc
 xWQ
 tML
@@ -152666,7 +152652,7 @@ edm
 edm
 sJy
 sJy
-epJ
+lqY
 gab
 iAG
 oUT
