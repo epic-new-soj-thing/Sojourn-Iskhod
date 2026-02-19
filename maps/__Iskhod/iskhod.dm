@@ -23,16 +23,6 @@
 	height = 4
 	digsites = "HOUSE"
 
-/obj/map_data/iskhod/Initialize()
-	. = ..()
-	// Initialize all non-airless floors on the station with standard atmosphere
-	for(var/z_level in GLOB.maps_data.station_levels)
-		for(var/turf/simulated/floor/T in block(locate(1, 1, z_level), locate(world.maxx, world.maxy, z_level)))
-			if(!T.oxygen && !T.nitrogen && !findtext("[T.type]", "airless"))
-				T.oxygen = MOLES_O2STANDARD
-				T.nitrogen = MOLES_N2STANDARD
-				T.temperature = T20C
-
 /obj/map_data/admin
 	name = "Admin Level"
 	is_admin_level = TRUE
