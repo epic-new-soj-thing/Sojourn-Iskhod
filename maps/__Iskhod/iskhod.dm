@@ -19,6 +19,7 @@
 	is_player_level = TRUE
 	is_contact_level = TRUE
 	is_accessable_level = FALSE
+	generate_asteroid = TRUE
 	is_sealed = TRUE
 	height = 4
 	digsites = "HOUSE"
