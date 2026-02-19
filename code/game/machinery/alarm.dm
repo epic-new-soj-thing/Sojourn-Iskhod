@@ -5,6 +5,7 @@
 	var/list/air_scrub_names = list()
 	var/list/air_vent_info = list()
 	var/list/air_scrub_info = list()
+	var/list/fire_alarms = list()
 
 /obj/machinery/alarm
 	name = "alarm"
@@ -54,6 +55,7 @@
 	var/other_dangerlevel = 0
 
 	var/report_danger_level = 1
+	var/last_fire_status = 0
 
 /obj/machinery/alarm/nobreach
 	breach_detection = 0
@@ -115,7 +117,7 @@
 	TLV["plasma"] =			list(-1.0, -1.0, 0.01, 0.5) // Partial pressure, kpa
 	TLV["other"] =			list(-1.0, -1.0, 0.5, 1.0) // Partial pressure, kpa
 	TLV["pressure"] =		list(ONE_ATMOSPHERE*0.80,ONE_ATMOSPHERE*0.90,ONE_ATMOSPHERE*1.10,ONE_ATMOSPHERE*1.20) /* kpa */
-	TLV["temperature"] =	list(T0C-26, T0C, T0C+40, T0C+66) // K
+	TLV["temperature"] =	list(T0C-40, T0C-20, T0C+40, T0C+66) // K
 
 	// Apply default mode to ensure scrubbers and vents are turned on
 	spawn(10)
@@ -147,15 +149,43 @@
 	handle_heating_cooling(environment)
 
 	var/old_level = danger_level
-	var/old_pressurelevel = pressure_dangerlevel
+	//var/old_pressurelevel = pressure_dangerlevel // handled by state_changed
+	var/old_fire = last_fire_status
+	last_fire_status = (alarm_area.fire != null)
+
 	danger_level = overall_danger_level(environment)
+
+	var/state_changed = (old_level != danger_level) || (old_fire != last_fire_status)
 
 	if (old_level != danger_level)
 		apply_danger_level(danger_level)
 
-	if (old_pressurelevel != pressure_dangerlevel)
-		if (breach_detected())
-			apply_mode(AALARM_MODE_OFF)
+	// Automated HVAC Response Logic
+	// Only act if state changed, allowing manual overrides to stick until the next event
+	if(state_changed || (danger_level > 0 && prob(5))) // Retrigger occasionally on danger just to be safe
+		if(last_fire_status) // FIRE DETECTED
+			// Vents OFF (Starve fire of fresh O2)
+			for(var/device_id in alarm_area.air_vent_names)
+				send_signal(device_id, list("power"= 0) )
+			// Scrubbers ON (Filter smoke/toxins)
+			for(var/device_id in alarm_area.air_scrub_names)
+				send_signal(device_id, list("power"= 1, "co2_scrub"= 1, "scrubbing"= 1, "panic_siphon"= 0) )
+
+		else if (breach_detected()) // BREACH DETECTED
+			// Vents OFF (Don't pump air into space)
+			for(var/device_id in alarm_area.air_vent_names)
+				send_signal(device_id, list("power"= 0) )
+			// Scrubbers ON (Try to filter/recover what we can)
+			for(var/device_id in alarm_area.air_scrub_names)
+				send_signal(device_id, list("power"= 1, "co2_scrub"= 1, "scrubbing"= 1, "panic_siphon"= 0) )
+
+		else if (danger_level > 0) // HAZARD (Bad Air/Temp/Pressure)
+			// Vents ON (Regulate pressure/gas/temp)
+			for(var/device_id in alarm_area.air_vent_names)
+				send_signal(device_id, list("power"= 1, "checks"= "default", "set_external_pressure"= "default") )
+			// Scrubbers ON (Filter contaminants)
+			for(var/device_id in alarm_area.air_scrub_names)
+				send_signal(device_id, list("power"= 1, "co2_scrub"= 1, "scrubbing"= 1, "panic_siphon"= 0) )
 
 	if (mode==AALARM_MODE_CYCLE && environment.return_pressure()<ONE_ATMOSPHERE*0.05)
 		apply_mode(AALARM_MODE_FILL)
@@ -176,8 +206,20 @@
 
 /obj/machinery/alarm/proc/handle_heating_cooling(var/datum/gas_mixture/environment)
 	if (!regulating_temperature)
+		// Calculate average temperature from all sensors (Local + Fire Alarms)
+		var/avg_temp = environment.temperature
+		var/sensor_count = 1
+		for(var/obj/machinery/firealarm/FA in alarm_area.fire_alarms)
+			var/turf/T = get_turf(FA)
+			if(istype(T))
+				var/datum/gas_mixture/FA_env = T.return_air()
+				if(FA_env)
+					avg_temp += FA_env.temperature
+					sensor_count++
+		avg_temp /= sensor_count
+
 		//check for when we should start adjusting temperature
-		if(get_danger_level(environment.temperature, TLV["temperature"]) || abs(environment.temperature - target_temperature) > 2.0)
+		if(get_danger_level(avg_temp, TLV["temperature"]) || abs(avg_temp - target_temperature) > 2.0)
 			update_use_power(2)
 			regulating_temperature = 1
 			visible_message("\The [src] clicks as it starts up.",\
@@ -198,18 +240,24 @@
 
 		if(environment.total_moles)
 			var/thermalChange = environment.get_thermal_energy_change(target_temperature)
+
+			// Scale power by number of vents AND scrubbers to simulate full system capacity
+			var/vent_count = length(alarm_area.air_vent_names)
+			var/scrub_count = length(alarm_area.air_scrub_names)
+			var/total_power = active_power_usage * max(1, vent_count + scrub_count)
+
 			if (environment.temperature <= target_temperature)
 				//gas heating
-				var/energy_used = min(thermalChange, active_power_usage)
+				var/energy_used = min(thermalChange, total_power)
 				environment.add_thermal_energy(energy_used)
 			else
 				//gas cooling
-				var/heat_transfer = min(abs(thermalChange), active_power_usage)
+				var/heat_transfer = min(abs(thermalChange), total_power)
 				//Assume the heat is being pumped into the hull which is fixed at 20 C
 				//none of this is really proper thermodynamics but whatever
 
 				var/cop = environment.temperature/T20C	//coefficient of performance -> power used = heat_transfer/cop
-				heat_transfer = min(heat_transfer, cop * active_power_usage)	//this ensures that we don't use more than active_power_usage amount of power
+				heat_transfer = min(heat_transfer, cop * total_power)	//this ensures that we don't use more than active_power_usage amount of power
 				heat_transfer = -environment.add_thermal_energy(-heat_transfer)	//get the actual heat transfer
 				//use_power(heat_transfer / cop, ENVIRON)	//handle by update_use_power instead
 
@@ -228,7 +276,7 @@
 	temperature_dangerlevel = get_danger_level(environment.temperature, TLV["temperature"])
 	other_dangerlevel = get_danger_level(other_moles*partial_pressure, TLV["other"])
 
-	return max(
+	var/local_danger = max(
 		pressure_dangerlevel,
 		oxygen_dangerlevel,
 		co2_dangerlevel,
@@ -236,6 +284,31 @@
 		other_dangerlevel,
 		temperature_dangerlevel
 		)
+
+	// Check Fire Alarms acting as secondary sensors
+	for(var/obj/machinery/firealarm/FA in alarm_area.fire_alarms)
+		var/turf/T = get_turf(FA)
+		if(!istype(T)) continue
+		var/datum/gas_mixture/FA_env = T.return_air()
+		if(!FA_env) continue
+
+		// Simplified danger check for remote sensors (using same TLV)
+		var/fa_partial_pressure = R_IDEAL_GAS_EQUATION*FA_env.temperature/FA_env.volume
+		var/fa_other_moles = 0
+		for(var/g in trace_gas)
+			fa_other_moles += FA_env.gas[g]
+
+		var/fa_danger = 0
+		fa_danger = max(fa_danger, get_danger_level(FA_env.return_pressure(), TLV["pressure"]))
+		fa_danger = max(fa_danger, get_danger_level(FA_env.gas["oxygen"]*fa_partial_pressure, TLV["oxygen"]))
+		fa_danger = max(fa_danger, get_danger_level(FA_env.gas["carbon_dioxide"]*fa_partial_pressure, TLV["carbon dioxide"]))
+		fa_danger = max(fa_danger, get_danger_level(FA_env.gas["plasma"]*fa_partial_pressure, TLV["plasma"]))
+		fa_danger = max(fa_danger, get_danger_level(FA_env.temperature, TLV["temperature"]))
+		fa_danger = max(fa_danger, get_danger_level(fa_other_moles*fa_partial_pressure, TLV["other"]))
+
+		local_danger = max(local_danger, fa_danger)
+
+	return local_danger
 
 // Returns whether this air alarm thinks there is a breach, given the sensors that are available to it.
 /obj/machinery/alarm/proc/breach_detected()
@@ -1200,6 +1273,8 @@ FIRE ALARM
 
 	if(loc)
 		src.loc = loc
+		var/area/A = get_area(src)
+		if(A) A.fire_alarms |= src
 
 	if(dir)
 		src.set_dir(dir)
@@ -1213,6 +1288,8 @@ FIRE ALARM
 	GLOB.firealarm_list += src
 
 /obj/machinery/firealarm/Destroy()
+	var/area/A = get_area(src)
+	if(A) A.fire_alarms -= src
 	GLOB.firealarm_list -= src
 	..()
 

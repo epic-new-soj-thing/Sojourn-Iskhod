@@ -166,14 +166,14 @@
 /obj/machinery/power/terminal{
 	dir = 1
 	},
-/obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/reinforced,
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "abU" = (
 /obj/effect/decal/cleanable/dirt,
@@ -998,6 +998,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
+"aln" = (
+/obj/structure/railing,
+/turf/unsimulated/floor/shuttle_ceiling,
+/area/iskhod/pros/shuttle)
 "alq" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -6079,7 +6083,9 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "Server Room";
-	req_access = list(30)
+	req_access = list(30);
+	id_tag = "rnd_door_ext";
+	frequency = 1335
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
@@ -8255,6 +8261,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/alarmlock,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section1)
 "caZ" = (
@@ -9291,7 +9298,7 @@
 "cqv" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 4;
-	frequency = 1443;
+	frequency = 1441;
 	id = "air_in";
 	use_power = 1
 	},
@@ -9369,6 +9376,9 @@
 /obj/machinery/computer/mecha{
 	dir = 4;
 	pixel_x = -5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
@@ -10308,7 +10318,11 @@
 /area/iskhod/pros/shuttle_landing_zone)
 "cEC" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 8
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
@@ -10604,7 +10618,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "cIB" = (
 /obj/effect/floor_decal/spline/wood{
@@ -12180,10 +12194,6 @@
 /obj/machinery/computer/borgupload{
 	dir = 1
 	},
-/obj/machinery/alarm{
-	dir = 1;
-	pixel_y = -27
-	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
@@ -12709,7 +12719,8 @@
 /obj/machinery/atmospherics/unary/freezer{
 	cooling = 1;
 	dir = 4;
-	set_temperature = 0
+	set_temperature = 180;
+	use_power = 2
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
@@ -13181,15 +13192,15 @@
 	output_level_max = 5e+006
 	},
 /obj/structure/cable/cyan{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced,
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "drQ" = (
 /obj/machinery/door/unpowered/simple/wood,
@@ -13482,6 +13493,8 @@
 /area/iskhod/rnd/xenobiology)
 "dvm" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "dvp" = (
@@ -13957,6 +13970,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/alarmlock,
 /turf/simulated/floor/reinforced,
 /area/iskhod/hallway/main/stairwell)
 "dAv" = (
@@ -14037,7 +14051,7 @@
 	dir = 8;
 	tag = "icon-railing0 (WEST)"
 	},
-/turf/simulated/open,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle_landing_zone)
 "dBc" = (
 /obj/structure/table/reinforced,
@@ -15457,7 +15471,7 @@
 	dir = 4;
 	tag = "icon-railing0 (EAST)"
 	},
-/turf/simulated/open,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle_landing_zone)
 "dWT" = (
 /obj/structure/closet/wall_mounted/emcloset{
@@ -16191,10 +16205,10 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/foyer)
 "ehD" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark,
@@ -18819,6 +18833,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "eQc" = (
@@ -19015,10 +19031,11 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
 "eSL" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 9
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8;
+	id_tag = "rnd_pump_ext";
+	frequency = 1335
 	},
-/obj/machinery/meter,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
 "eSV" = (
@@ -26662,6 +26679,12 @@
 /obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/quartermaster/supplydock)
+"gSD" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/rnd/server)
 "gSE" = (
 /obj/effect/floor_decal/industrial_plant/border{
 	dir = 1
@@ -30065,16 +30088,17 @@
 "hQu" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "hQy" = (
 /obj/structure/table/rack/shelf,
@@ -30164,7 +30188,6 @@
 "hRm" = (
 /obj/machinery/computer/general_air_control/large_tank_control{
 	dir = 4;
-	frequency = 1443;
 	input_tag = "air_in";
 	name = "Mixed Air Supply Control";
 	output_tag = "air_out";
@@ -30874,6 +30897,7 @@
 "ibd" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section1)
 "ibn" = (
@@ -31496,6 +31520,9 @@
 /area/iskhod/maintenance/undergroundfloor2south)
 "ikB" = (
 /obj/structure/sign/atmos/atmos_air,
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
+	invisibility = 101
+	},
 /turf/simulated/floor/reinforced/airmix,
 /area/iskhod/engineering/atmos)
 "ikH" = (
@@ -31802,10 +31829,10 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/organ_lab)
 "ipa" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
 "ipb" = (
@@ -33174,12 +33201,11 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay)
 "iGi" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
+/obj/structure/cable{
+	d1 = 1;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-8"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "iGk" = (
@@ -35598,6 +35624,8 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/alarmlock,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "jlc" = (
@@ -37192,9 +37220,10 @@
 	output_level = 250000
 	},
 /obj/structure/cable{
-	dir = 4
+	d2 = 8;
+	icon_state = "0-8"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "jGC" = (
 /obj/item/newspaper,
@@ -38030,7 +38059,8 @@
 /area/iskhod/security/sechall)
 "jRH" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 4
+	dir = 4;
+	id_tag = "rnd_pump"
 	},
 /turf/simulated/floor/bluegrid{
 	name = "Server Base";
@@ -38111,6 +38141,30 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/danger,
 /area/iskhod/maintenance/undergroundfloor2south)
+"jTi" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
+	dir = 1
+	},
+/obj/machinery/access_button/airlock_exterior{
+	name = "server room access button";
+	pixel_x = 26;
+	pixel_y = -10;
+	master_tag = "rnd_server_airlock";
+	frequency = 1335
+	},
+/obj/machinery/airlock_sensor/airlock_exterior{
+	pixel_x = 26;
+	pixel_y = 10;
+	id_tag = "rnd_ext";
+	frequency = 1335
+	},
+/turf/simulated/floor/bluegrid{
+	name = "Server Base";
+	nitrogen = 500;
+	oxygen = 0;
+	temperature = 80
+	},
+/area/iskhod/rnd/server)
 "jTl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -40398,13 +40452,6 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "kyI" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
-	dir = 4
-	},
-/obj/machinery/alarm{
-	dir = 8;
-	pixel_x = 27
-	},
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
@@ -42372,6 +42419,14 @@
 /obj/machinery/seed_extractor,
 /turf/simulated/floor/industrial/ornate,
 /area/iskhod/absolutism/office)
+"kWq" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/atmos)
 "kWr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -43421,8 +43476,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/prison)
 "lmU" = (
-/obj/machinery/portable_atmospherics/canister/nitrogen/prechilled,
-/obj/machinery/atmospherics/portables_connector{
+/obj/machinery/atmospherics/pipe/tank/nitrogen{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark,
@@ -47388,17 +47442,18 @@
 "mqQ" = (
 /obj/machinery/power/terminal,
 /obj/structure/cable/yellow{
-	d2 = 8;
-	icon_state = "0-8"
-	},
-/obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "mqU" = (
 /turf/simulated/wall/iskhod_red,
@@ -48964,6 +49019,11 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
@@ -52204,6 +52264,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 2
+	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section2)
 "nCh" = (
@@ -52278,6 +52341,9 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/mineral/planet,
 /area/iskhod/maintenance/undergroundfloor1east)
+"nDb" = (
+/turf/unsimulated/floor/shuttle_ceiling,
+/area/iskhod/pros/shuttle)
 "nDd" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -53081,11 +53147,9 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "nPi" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/dark,
-/area/iskhod/rnd/server)
+/obj/structure/railing,
+/turf/unsimulated/floor/shuttle_ceiling,
+/area/colony)
 "nPm" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/structure/disposalpipe/segment,
@@ -54915,6 +54979,13 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/shuttle/escape/station)
+"ooW" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/unsimulated/floor/shuttle_ceiling,
+/area/iskhod/pros/shuttle)
 "ooX" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/machinery/light{
@@ -56299,6 +56370,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/reinforced,
 /area/iskhod/hallway/main/stairwell)
 "oJl" = (
@@ -57932,7 +58004,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle)
 "pdF" = (
 /obj/structure/disposalpipe/segment,
@@ -58384,16 +58456,19 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay)
 "pka" = (
-/obj/machinery/door/firedoor,
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
-	dir = 1
+/obj/machinery/airlock_sensor{
+	pixel_y = 26;
+	id_tag = "rnd_chmb";
+	frequency = 1335
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/cyan{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
 	},
-/obj/machinery/door/airlock/command{
-	name = "Server Room";
-	req_access = list(30)
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 1;
+	id_tag = "rnd_scrubber";
+	frequency = 1335
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
@@ -60579,6 +60654,7 @@
 "pOo" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/reinforced,
 /area/iskhod/hallway/side/f2section1)
 "pOp" = (
@@ -60765,7 +60841,7 @@
 /area/iskhod/security/sechall)
 "pRc" = (
 /obj/structure/railing,
-/turf/simulated/open,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle_landing_zone)
 "pRP" = (
 /obj/structure/railing/grey{
@@ -62274,7 +62350,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "qmj" = (
 /obj/structure/bed/chair/office/dark{
@@ -64227,6 +64303,14 @@
 /area/iskhod/security/sechall)
 "qPE" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/door/airlock/command{
+	name = "Server Room";
+	req_access = list(30);
+	id_tag = "rnd_door_int";
+	frequency = 1335
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
 "qPS" = (
@@ -65523,6 +65607,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
+/obj/machinery/door/airlock/alarmlock,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section1)
 "rfW" = (
@@ -67618,11 +67703,8 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/guild)
 "rKr" = (
-/obj/machinery/alarm/server{
-	dir = 4
-	},
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/rnd/server)
+/turf/unsimulated/floor/shuttle_ceiling,
+/area/colony)
 "rKw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_scrubber,
@@ -68284,13 +68366,20 @@
 	name = "Powernet Sensor - Engine Power";
 	name_tag = "Engine Power"
 	},
-/obj/structure/cable{
-	dir = 8
-	},
 /obj/machinery/power/apc{
 	dir = 1;
 	name = "North APC";
 	pixel_y = 28
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8";
+	dir = 1
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
@@ -70534,7 +70623,7 @@
 	dir = 4;
 	icon_state = "railing0"
 	},
-/turf/simulated/open,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle)
 "syl" = (
 /obj/structure/disposalpipe/segment,
@@ -72636,6 +72725,12 @@
 /obj/random/mob/roaches/low_chance,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/maintenance/undergroundfloor2central)
+"tcC" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/rnd/server)
 "tcG" = (
 /obj/machinery/space_heater,
 /turf/simulated/floor/industrial/navy_large_slates,
@@ -74569,6 +74664,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 2
+	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section2)
 "tBO" = (
@@ -76402,6 +76500,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/alarmlock,
 /turf/simulated/floor/reinforced,
 /area/iskhod/hallway/side/f2section1)
 "ubB" = (
@@ -82719,6 +82818,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/main)
+"vLY" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/rnd/server)
 "vMb" = (
 /obj/structure/salvageable/machine,
 /obj/machinery/light{
@@ -83496,8 +83601,27 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/quartermaster/supplydock)
 "vWX" = (
+/obj/machinery/embedded_controller/radio/airlock/advanced_airlock_controller{
+	name = "RnD Server Airlock Controller";
+	id_tag = "rnd_server_airlock";
+	pixel_y = 26;
+	tag_exterior_sensor = "rnd_ext";
+	tag_interior_sensor = "rnd_int";
+	tag_exterior_door = "rnd_door_ext";
+	tag_interior_door = "rnd_door_int";
+	tag_chamber_sensor = "rnd_chmb";
+	tag_airpump = "rnd_pump";
+	tag_airpump_ext = "rnd_pump_ext";
+	tag_scrubber = "rnd_scrubber";
+	frequency = 1335
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 4
+	},
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4;
+	id_tag = "rnd_pump";
+	frequency = 1335
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
@@ -83740,15 +83864,16 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "waJ" = (
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+/obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4;
 	external_pressure_bound = 0;
 	external_pressure_bound_default = 0;
-	frequency = 1443;
+	frequency = 1441;
 	icon_state = "map_vent_in";
 	id_tag = "air_out";
-	internal_pressure_bound = 2000;
-	internal_pressure_bound_default = 2000;
+	initialize_directions = 1;
+	internal_pressure_bound = 4000;
+	internal_pressure_bound_default = 4000;
 	pressure_checks = 2;
 	pressure_checks_default = 2;
 	pump_direction = 0;
@@ -87368,12 +87493,24 @@
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "wZS" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 8
+/obj/machinery/access_button/airlock_interior{
+	pixel_x = 10;
+	pixel_y = -26;
+	master_tag = "rnd_server_airlock";
+	frequency = 1335
 	},
-/obj/structure/sign/warningnew/cryogenics{
-	pixel_y = -32
+/obj/machinery/airlock_sensor/airlock_interior{
+	pixel_y = -26;
+	pixel_x = -10;
+	id_tag = "rnd_int";
+	frequency = 1335
 	},
+/obj/machinery/atmospherics/pipe/manifold/visible/cyan{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/meter,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
 "xae" = (
@@ -89345,6 +89482,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section1)
 "xED" = (
@@ -90553,17 +90691,18 @@
 /area/iskhod/command/bridge)
 "xUk" = (
 /obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "xUm" = (
 /obj/structure/table/rack/shelf,
@@ -91598,6 +91737,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
+	},
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 2
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section2)
@@ -104725,7 +104867,7 @@ env
 fod
 xJr
 paa
-env
+kWq
 fod
 xJr
 paa
@@ -129999,8 +130141,6 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
 cxR
 cxR
 cxR
@@ -130016,9 +130156,11 @@ cxR
 cxR
 cxR
 cxR
-jDL
-jDL
-jDL
+cxR
+cxR
+cxR
+cxR
+cxR
 jDL
 jDL
 "}
@@ -130201,15 +130343,6 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-cxR
-xui
-xui
-xui
-xui
-xui
-cxR
 cxR
 xui
 xui
@@ -130217,10 +130350,19 @@ xui
 xui
 xui
 xui
+xui
 cxR
-jDL
-jDL
-jDL
+cxR
+xui
+xui
+xui
+xui
+xui
+xui
+xui
+xui
+xui
+cxR
 jDL
 jDL
 "}
@@ -130403,9 +130545,9 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
 cxR
+xui
+xui
 tdK
 xqj
 xqj
@@ -130419,10 +130561,10 @@ xgm
 xgm
 oLV
 pub
+xui
+xui
+xui
 cxR
-jDL
-jDL
-jDL
 jDL
 jDL
 "}
@@ -130605,9 +130747,9 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
 cxR
+xui
+xui
 tdK
 xqj
 xqj
@@ -130621,10 +130763,10 @@ xgm
 xgm
 oLV
 pub
+xui
+xui
+xui
 cxR
-jDL
-jDL
-jDL
 jDL
 jDL
 "}
@@ -130807,9 +130949,9 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
 cxR
+xui
+xui
 tdK
 xqj
 xqj
@@ -130823,10 +130965,10 @@ xgm
 xgm
 oLV
 pub
+xui
+xui
+xui
 cxR
-jDL
-jDL
-jDL
 jDL
 jDL
 "}
@@ -131009,15 +131151,6 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-cxR
-xui
-xui
-xui
-xui
-xui
-cxR
 cxR
 xui
 xui
@@ -131025,10 +131158,19 @@ xui
 xui
 xui
 xui
+xui
 cxR
-jDL
-jDL
-jDL
+cxR
+xui
+xui
+xui
+xui
+xui
+xui
+xui
+xui
+xui
+cxR
 jDL
 jDL
 "}
@@ -131211,8 +131353,6 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
 cxR
 cxR
 cxR
@@ -131228,9 +131368,11 @@ cxR
 cxR
 cxR
 cxR
-jDL
-jDL
-jDL
+cxR
+cxR
+cxR
+cxR
+cxR
 jDL
 jDL
 "}
@@ -159187,7 +159329,7 @@ evF
 kCK
 kCK
 kCK
-rKr
+kCK
 kCK
 kCK
 kCK
@@ -159996,7 +160138,7 @@ kCK
 hFq
 eVk
 eVk
-eVk
+jTi
 fuO
 kCK
 lof
@@ -160602,7 +160744,7 @@ kCK
 ehD
 cEC
 wZS
-kCK
+tcC
 pka
 kCK
 dAZ
@@ -160802,7 +160944,7 @@ evF
 evF
 kCK
 vJF
-nPi
+gns
 kyI
 qPE
 eSL
@@ -161004,7 +161146,7 @@ evF
 kCK
 kCK
 bGF
-kCK
+gSD
 kCK
 kCK
 kCK
@@ -161408,7 +161550,7 @@ evF
 kCK
 aBS
 ipa
-gKv
+vLY
 gKv
 gKv
 gKv
@@ -227656,13 +227798,13 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
 fct
 sch
 fct
-cIh
+rKr
 cIh
 cIh
 cIh
@@ -227857,14 +227999,14 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
+ooW
+rKr
 cIh
 cIh
 cIh
@@ -228058,17 +228200,17 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -228259,18 +228401,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -228461,18 +228603,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 fct
 sch
 fct
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -228663,18 +228805,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -228865,18 +229007,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -229067,18 +229209,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -229269,18 +229411,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 fct
 sch
 fct
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -229471,18 +229613,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -229673,18 +229815,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -229875,36 +230017,36 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -230077,37 +230219,37 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 fct
 sch
 fct
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -230279,37 +230421,37 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -230481,12 +230623,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 tks
 eiq
@@ -230683,12 +230825,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 jON
 uNn
@@ -230885,12 +231027,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 jON
 jON
@@ -231087,12 +231229,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 jON
 jON
@@ -231289,12 +231431,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 jON
 jON
@@ -231491,12 +231633,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 jON
 jON
@@ -231693,12 +231835,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 jON
 jON
@@ -231895,12 +232037,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 jON
 jON
@@ -232097,12 +232239,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 jON
 jON
@@ -232299,12 +232441,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 qfZ
 jON
@@ -232501,12 +232643,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 dzD
 jON
@@ -232703,12 +232845,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 dzD
 jON
@@ -232905,12 +233047,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 dzD
 jON
@@ -233107,12 +233249,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 dzD
 jON
@@ -233309,12 +233451,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 dzD
 jON
@@ -233511,12 +233653,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 dzD
 jON
@@ -233713,12 +233855,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-ybR
+rKr
+rKr
+rKr
+rKr
+rKr
+nPi
 eiq
 dzD
 jON
@@ -233915,12 +234057,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-ybR
+rKr
+rKr
+rKr
+rKr
+rKr
+nPi
 tuk
 dzD
 jON
@@ -234117,12 +234259,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-ybR
+rKr
+rKr
+rKr
+rKr
+rKr
+nPi
 bGv
 qvp
 dxn
@@ -234319,11 +234461,11 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
 kai
 tks
 tks
@@ -234521,37 +234663,37 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
 sch
-aAK
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -234721,7 +234863,7 @@ cIh
 cIh
 cIh
 cIh
-mfU
+nDb
 fct
 sye
 fct
@@ -234732,27 +234874,27 @@ fct
 sch
 sch
 fct
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -234933,27 +235075,27 @@ sch
 sch
 sch
 sch
-aAK
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -235125,7 +235267,7 @@ cIh
 cIh
 cIh
 cIh
-jFl
+aln
 sch
 sch
 sch
@@ -235135,26 +235277,26 @@ sch
 sch
 sch
 sch
-aAK
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -235338,24 +235480,24 @@ fct
 pdE
 pdE
 fct
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -235529,10 +235671,10 @@ cIh
 cIh
 cIh
 cIh
-jFl
+aln
 sch
 sch
-aAK
+ooW
 cIh
 cIh
 cIh
@@ -235541,22 +235683,22 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -235744,20 +235886,20 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -235947,18 +236089,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -236150,16 +236292,16 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh

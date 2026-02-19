@@ -14,6 +14,8 @@
 	var/tag_exterior_door
 	var/tag_interior_door
 	var/tag_airpump
+	var/tag_airpump_ext // Optional: Secondary pump for exterior cycling (e.g. Nitrogen)
+	var/tag_scrubber // Optional: Dedicated scrubber for faster cycling
 	var/tag_chamber_sensor
 	var/tag_exterior_sensor
 	var/tag_interior_sensor
@@ -41,6 +43,8 @@
 		tag_exterior_door = controller.tag_exterior_door? controller.tag_exterior_door : "[id_tag]_outer"
 		tag_interior_door = controller.tag_interior_door? controller.tag_interior_door : "[id_tag]_inner"
 		tag_airpump = controller.tag_airpump? controller.tag_airpump : "[id_tag]_pump"
+		tag_airpump_ext = "[id_tag]_pump_ext"
+		tag_scrubber = "[id_tag]_scrubber"
 		tag_chamber_sensor = controller.tag_chamber_sensor? controller.tag_chamber_sensor : "[id_tag]_sensor"
 		tag_exterior_sensor = controller.tag_exterior_sensor
 		tag_interior_sensor = controller.tag_interior_sensor
@@ -160,6 +164,8 @@
 
 	if(shutdown_pump)
 		signalPump(tag_airpump, 0)		//send a signal to stop pressurizing
+		if(tag_airpump_ext) signalPump(tag_airpump_ext, 0)
+		if(tag_scrubber) signalScrubber(tag_scrubber, 0) // Stop scrubbing
 
 
 /datum/computer/file/embedded_program/airlock/Process()
@@ -179,6 +185,8 @@
 			//make sure to return to a sane idle state
 			if(memory["pump_status"] != "off")	//send a signal to stop pumping
 				signalPump(tag_airpump, 0)
+				if(tag_airpump_ext) signalPump(tag_airpump_ext, 0)
+				if(tag_scrubber) signalScrubber(tag_scrubber, 0)
 
 	if ((state == STATE_PRESSURIZE || state == STATE_DEPRESSURIZE) && !check_doors_secured())
 		//the airlock will not allow itself to continue to cycle when any of the doors are forced open.
@@ -191,18 +199,33 @@
 				var/target_pressure = memory["target_pressure"]
 
 				if(memory["purge"])
-					//purge apparently means clearing the airlock chamber to vacuum (then refilling, handled later)
 					target_pressure = 0
 					state = STATE_DEPRESSURIZE
 					signalPump(tag_airpump, 1, 0, 0)	//send a signal to start depressurizing
+					if(tag_airpump_ext) signalPump(tag_airpump_ext, 1, 0, 0)
+					if(tag_scrubber) signalScrubber(tag_scrubber, 1, 1) // Panic siphon!
 
 				else if(chamber_pressure <= target_pressure)
 					state = STATE_PRESSURIZE
-					signalPump(tag_airpump, 1, 1, target_pressure)	//send a signal to start pressurizing
+
+					// Select appropriate pump based on target destination
+					// Select appropriate pump based on target destination
+					var/active_pump = tag_airpump
+					var/inactive_pump = tag_airpump_ext
+
+					if(target_state == TARGET_OUTOPEN && tag_airpump_ext)
+						active_pump = tag_airpump_ext
+						inactive_pump = tag_airpump
+
+					signalPump(active_pump, 1, 1, target_pressure)	//send a signal to start pressurizing
+					if(inactive_pump) signalPump(inactive_pump, 0) // Ensure other pump is off
+					if(tag_scrubber) signalScrubber(tag_scrubber, 0) // Ensure scrubbers are off while filling
 
 				else if(chamber_pressure > target_pressure)
 					state = STATE_DEPRESSURIZE
 					signalPump(tag_airpump, 1, 0, target_pressure)	//send a signal to start depressurizing
+					if(tag_airpump_ext) signalPump(tag_airpump_ext, 1, 0, target_pressure)
+					if(tag_scrubber) signalScrubber(tag_scrubber, 1, 1) // Panic siphon!
 
 				//Make sure the airlock isn't aiming for pure vacuum - an impossibility
 				memory["target_pressure"] = max(target_pressure, ONE_ATMOSPHERE * 0.05)
@@ -212,6 +235,8 @@
 				//not done until the pump has reported that it's off
 				if(memory["pump_status"] != "off")
 					signalPump(tag_airpump, 0)		//send a signal to stop pumping
+					if(tag_airpump_ext) signalPump(tag_airpump_ext, 0)
+					if(tag_scrubber) signalScrubber(tag_scrubber, 0)
 				else
 					cycleDoors(target_state)
 					state = STATE_IDLE
@@ -228,6 +253,8 @@
 
 				else if(memory["pump_status"] != "off")
 					signalPump(tag_airpump, 0)
+					if(tag_airpump_ext) signalPump(tag_airpump_ext, 0)
+					if(tag_scrubber) signalScrubber(tag_scrubber, 0)
 				else
 					cycleDoors(target_state)
 					state = STATE_IDLE
@@ -286,6 +313,20 @@
 		"direction" = direction,
 		"set_external_pressure" = pressure,
 		"expanded_range" = TRUE
+	)
+	post_signal(signal)
+
+/datum/computer/file/embedded_program/airlock/proc/signalScrubber(var/tag, var/power, var/panic=0)
+	var/datum/signal/signal = new
+	signal.data = list(
+		"tag" = tag,
+		"sigtype" = "command",
+		"power" = power,
+		"panic_siphon" = panic, // 1 = Panic Siphon (Volume Pump), 0 = Normal Scrubbing
+		"scrubbing" = !panic,   // Inverse of panic
+		"co2_scrub" = 1,        // Default filters
+		"tox_scrub" = 1,
+		"n2o_scrub" = 1
 	)
 	post_signal(signal)
 
