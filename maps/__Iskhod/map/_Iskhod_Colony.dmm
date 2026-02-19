@@ -830,6 +830,11 @@
 	pixel_y = 20
 	},
 /obj/machinery/light/small,
+/obj/structure/cable/cyan{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
+	},
 /turf/simulated/open,
 /area/iskhod/maintenance/undergroundfloor2west)
 "ajw" = (
@@ -8391,14 +8396,13 @@
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/maintenance/undergroundfloor2south)
 "ccf" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/turf/simulated/floor/industrial/navy_slates,
+/area/iskhod/hallway/main/f1section4)
+"cch" = (
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
 /turf/simulated/floor/plating/under,
 /area/turbolift/Research/colony)
-"cch" = (
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
-/area/turbolift/ElevatorTwo/midlevelTwo)
 "ccn" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
@@ -12769,6 +12773,10 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
+"dmj" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/turf/simulated/floor/industrial/navy_slates,
+/area/iskhod/quartermaster/supplydock)
 "dmC" = (
 /obj/structure/shuttle_part/mining{
 	icon_state = "15,2"
@@ -14014,6 +14022,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/reinforced,
 /area/iskhod/hallway/main/stairwell)
 "dAv" = (
@@ -16918,10 +16927,6 @@
 "epH" = (
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
-"epJ" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevTwo,
-/turf/simulated/floor/plating/under,
-/area/turbolift/ElevatorTwo/midlevelTwo)
 "epK" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -18579,10 +18584,6 @@
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/patient_wing)
-"eLh" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/turf/simulated/floor/industrial/navy_slates,
-/area/iskhod/hallway/main/f1section4)
 "eLm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -22733,10 +22734,6 @@
 /obj/random/mob/nightmare/low_chance,
 /turf/simulated/floor/asteroid,
 /area/iskhod/maintenance/northcave)
-"fQa" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/turf/simulated/floor/industrial/navy_slates,
-/area/iskhod/rnd/docking)
 "fQc" = (
 /turf/simulated/shuttle/floor/science{
 	icon_state = "10,12"
@@ -33438,6 +33435,12 @@
 	icon_state = "16-0"
 	},
 /obj/structure/cable/cyan,
+/obj/structure/cable/cyan{
+	d1 = 32;
+	d2 = 2;
+	icon_state = "32-2";
+	pixel_y = 20
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/undergroundfloor1west)
 "iHs" = (
@@ -49835,6 +49838,10 @@
 	},
 /obj/random/powercell,
 /obj/random/powercell,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/engineering)
 "mWz" = (
@@ -50842,9 +50849,8 @@
 /turf/simulated/floor/carpet/gaycarpet,
 /area/iskhod/crew_quarters/cafeteria)
 "njQ" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/turf/simulated/floor/industrial/navy_slates,
-/area/iskhod/quartermaster/supplydock)
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/turbolift/Mining/colony)
 "njR" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -56609,11 +56615,10 @@
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/recreation/fight_club)
 "oJh" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/reinforced,
-/area/iskhod/hallway/main/stairwell)
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/turbolift/ElevatorTwo/midlevelTwo)
 "oJl" = (
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/ai/control)
@@ -60898,10 +60903,9 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/changing_room/pool)
 "pOo" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/reinforced,
-/area/iskhod/hallway/side/f2section1)
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevTwo,
+/turf/simulated/floor/plating/under,
+/area/turbolift/ElevatorTwo/midlevelTwo)
 "pOp" = (
 /obj/structure/railing,
 /obj/effect/floor_decal/industrial/danger{
@@ -65534,7 +65538,6 @@
 "rbY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/cobweb2,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
@@ -65585,8 +65588,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section2)
 "rcA" = (
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/turbolift/Mining/colony)
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/turf/simulated/floor/industrial/navy_slates,
+/area/iskhod/rnd/docking)
 "rcD" = (
 /obj/effect/floor_decal/corner_oldtile,
 /obj/effect/floor_decal/corner_oldtile{
@@ -76801,6 +76805,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/reinforced,
 /area/iskhod/hallway/side/f2section1)
 "ubB" = (
@@ -84365,6 +84370,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/engineering)
@@ -111295,7 +111305,7 @@ rmz
 rmz
 rmz
 rmz
-epJ
+pOo
 bHI
 bdK
 wxZ
@@ -111427,7 +111437,7 @@ ezS
 nMz
 aqQ
 ogn
-oJh
+tui
 cuC
 hrf
 dgy
@@ -111497,8 +111507,8 @@ cXR
 cXR
 cXR
 bkT
-cch
-eLh
+oJh
+ccf
 bPc
 llx
 oeP
@@ -111699,8 +111709,8 @@ cXR
 cXR
 cXR
 bkT
-cch
-eLh
+oJh
+ccf
 tJL
 dvu
 blq
@@ -111831,7 +111841,7 @@ ezS
 nMz
 pid
 koA
-oJh
+tui
 vjr
 tNE
 wPw
@@ -111902,7 +111912,7 @@ cXR
 cXR
 bkT
 bkT
-eLh
+ccf
 qUs
 xVm
 sXL
@@ -116343,8 +116353,8 @@ xMK
 phb
 iLr
 kXs
+dmj
 njQ
-rcA
 gBf
 gBf
 gBf
@@ -116545,8 +116555,8 @@ nBq
 eCx
 hQG
 kXs
+dmj
 njQ
-rcA
 gBf
 gBf
 gBf
@@ -116747,8 +116757,8 @@ cKX
 hxm
 cGW
 kXs
+dmj
 njQ
-rcA
 gBf
 gBf
 gBf
@@ -121948,7 +121958,7 @@ qZq
 qZq
 qZq
 qZq
-ccf
+cch
 iQn
 izs
 jIx
@@ -122151,7 +122161,7 @@ kMy
 kMy
 fCu
 fCu
-fQa
+rcA
 fYu
 oEJ
 eIR
@@ -122353,7 +122363,7 @@ kMy
 kMy
 fCu
 fCu
-fQa
+rcA
 cbu
 lXS
 nQF
@@ -122555,7 +122565,7 @@ kMy
 kMy
 kMy
 fCu
-fQa
+rcA
 mSc
 xWQ
 tML
@@ -151828,7 +151838,7 @@ btd
 xAY
 atm
 atm
-pOo
+gab
 bVj
 iki
 wua
@@ -152232,7 +152242,7 @@ btd
 xAY
 bKN
 aAM
-pOo
+gab
 wST
 dqK
 wua
