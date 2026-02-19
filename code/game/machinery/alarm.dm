@@ -186,6 +186,7 @@
 			// Scrubbers ON (Filter contaminants)
 			for(var/device_id in alarm_area.air_scrub_names)
 				send_signal(device_id, list("power"= 1, "co2_scrub"= 1, "scrubbing"= 1, "panic_siphon"= 0) )
+			apply_mode(AALARM_MODE_SCRUBBING)
 
 	if (mode==AALARM_MODE_CYCLE && environment.return_pressure()<ONE_ATMOSPHERE*0.05)
 		apply_mode(AALARM_MODE_FILL)
