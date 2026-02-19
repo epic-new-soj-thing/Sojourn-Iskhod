@@ -169,9 +169,9 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
+/obj/structure/cable/yellow{
+	d2 = 8;
+	icon_state = "0-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
@@ -8390,6 +8390,10 @@
 "cbX" = (
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/maintenance/undergroundfloor2south)
+"ccf" = (
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
+/turf/simulated/floor/plating/under,
+/area/turbolift/Research/colony)
 "cch" = (
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
@@ -12765,10 +12769,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
-"dmj" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevTwo,
-/turf/simulated/floor/plating/under,
-/area/turbolift/ElevatorTwo/midlevelTwo)
 "dmC" = (
 /obj/structure/shuttle_part/mining{
 	icon_state = "15,2"
@@ -16919,9 +16919,9 @@
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
 "epJ" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevTwo,
 /turf/simulated/floor/plating/under,
-/area/turbolift/Research/colony)
+/area/turbolift/ElevatorTwo/midlevelTwo)
 "epK" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -30206,11 +30206,6 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "hQy" = (
@@ -33332,10 +33327,10 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay)
 "iGi" = (
-/obj/structure/cable{
-	d1 = 1;
+/obj/structure/cable/yellow{
+	d1 = 4;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
@@ -37372,7 +37367,7 @@
 	output_attempt = 1;
 	output_level = 250000
 	},
-/obj/structure/cable{
+/obj/structure/cable/cyan{
 	d2 = 8;
 	icon_state = "0-8"
 	},
@@ -49240,11 +49235,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
@@ -68653,16 +68643,9 @@
 	name = "North APC";
 	pixel_y = 28
 	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8";
-	dir = 1
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 0
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
@@ -91094,7 +91077,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable{
+/obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
@@ -111312,7 +111295,7 @@ rmz
 rmz
 rmz
 rmz
-dmj
+epJ
 bHI
 bdK
 wxZ
@@ -121965,7 +121948,7 @@ qZq
 qZq
 qZq
 qZq
-epJ
+ccf
 iQn
 izs
 jIx
