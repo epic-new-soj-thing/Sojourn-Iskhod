@@ -21056,9 +21056,6 @@
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/robotics)
-"fub" = (
-/turf/unsimulated/mask,
-/area/iskhod/hallway/main/f1section4)
 "fuu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -21827,9 +21824,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_monitoring)
-"fDJ" = (
-/turf/unsimulated/mask,
-/area/iskhod/maintenance/undergroundfloor1south)
 "fDL" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -30132,6 +30126,11 @@
 /obj/structure/cable/yellow{
 	d2 = 8;
 	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
@@ -40036,6 +40035,12 @@
 /obj/machinery/door/window/iskhod,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/colony)
+"krq" = (
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
+	invisibility = 101
+	},
+/turf/simulated/floor/rock/dark,
+/area/iskhod/hallway/main/f1section2)
 "krF" = (
 /obj/machinery/ntnet_relay,
 /turf/simulated/floor/greengrid,
@@ -66295,9 +66300,6 @@
 /obj/structure/disposalpipe/trunk,
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/command/merchant)
-"rob" = (
-/turf/unsimulated/mask,
-/area/iskhod/hallway/main/f1section3)
 "rod" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -68451,8 +68453,9 @@
 	dir = 1
 	},
 /obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
@@ -70748,9 +70751,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor2south)
-"syR" = (
-/turf/unsimulated/mask,
-/area/iskhod/maintenance/undergroundfloor1east)
 "szb" = (
 /obj/structure/table/reinforced,
 /obj/machinery/reagentgrinder/portable,
@@ -90801,12 +90801,12 @@
 	icon_state = "1-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "xUm" = (
@@ -106771,13 +106771,13 @@ nsk
 bap
 rBE
 apq
-fub
+pLS
 yeh
 apq
 yeh
 mnz
 mnz
-fDJ
+vHk
 mnz
 yeh
 yeh
@@ -110208,9 +110208,9 @@ vLJ
 yeh
 yeh
 yeh
-fub
-fub
-fub
+pLS
+pLS
+pLS
 yeh
 yeh
 qVm
@@ -111000,7 +111000,7 @@ sIb
 nRP
 ngR
 ngR
-rob
+olY
 ngR
 ngR
 ngR
@@ -111205,7 +111205,7 @@ ngR
 ngR
 ngR
 ngR
-rob
+olY
 nGY
 nZj
 jMG
@@ -111402,7 +111402,7 @@ xet
 roW
 jLr
 nRP
-rob
+olY
 ngR
 ngR
 ngR
@@ -116440,7 +116440,7 @@ gex
 efV
 bbZ
 qOV
-xwy
+krq
 rit
 tya
 muY
@@ -117457,8 +117457,8 @@ gAs
 jmd
 jmd
 xdv
-syR
-syR
+tWH
+tWH
 xdv
 xdv
 xdv
@@ -117497,9 +117497,9 @@ mnz
 mnz
 mnz
 mnz
-fDJ
-fDJ
-fDJ
+vHk
+vHk
+vHk
 mnz
 mnz
 mnz
@@ -117685,7 +117685,7 @@ qva
 tNs
 mnz
 mnz
-fDJ
+vHk
 mnz
 mnz
 mnz
@@ -117699,9 +117699,9 @@ mnz
 mnz
 mnz
 mnz
-fDJ
+vHk
 mnz
-fDJ
+vHk
 mnz
 mnz
 mnz
@@ -117869,8 +117869,8 @@ xdv
 xdv
 xdv
 xdv
-syR
-syR
+tWH
+tWH
 xdv
 iwp
 iwp
@@ -117907,9 +117907,9 @@ mnz
 mnz
 mnz
 mnz
-fDJ
-fDJ
-fDJ
+vHk
+vHk
+vHk
 mnz
 mnz
 mnz
@@ -118071,8 +118071,8 @@ xdv
 xdv
 xdv
 xdv
-syR
-syR
+tWH
+tWH
 xdv
 usG
 iwp
@@ -118099,9 +118099,9 @@ mnz
 mnz
 mnz
 mnz
-fDJ
-fDJ
-fDJ
+vHk
+vHk
+vHk
 mnz
 mnz
 mnz
@@ -118109,7 +118109,7 @@ mnz
 mnz
 mnz
 mnz
-fDJ
+vHk
 mnz
 mnz
 mnz
@@ -118293,8 +118293,8 @@ mnz
 mnz
 mnz
 mnz
-fDJ
-fDJ
+vHk
+vHk
 sLz
 hSH
 mnz
@@ -118664,8 +118664,8 @@ fWL
 xdv
 xdv
 xdv
-syR
-syR
+tWH
+tWH
 xdv
 xdv
 xdv
@@ -118866,8 +118866,8 @@ fWL
 nCY
 xdv
 xdv
-syR
-syR
+tWH
+tWH
 xdv
 xdv
 xdv
@@ -118877,10 +118877,10 @@ bNh
 dMX
 xdv
 xdv
-syR
-syR
-syR
-syR
+tWH
+tWH
+tWH
+tWH
 xdv
 xdv
 tyl
@@ -119079,10 +119079,10 @@ bNh
 bNh
 xdv
 xdv
-syR
-syR
-syR
-syR
+tWH
+tWH
+tWH
+tWH
 xdv
 nCY
 pSO
@@ -119281,10 +119281,10 @@ xdv
 azb
 xdv
 xdv
-syR
-syR
-syR
-syR
+tWH
+tWH
+tWH
+tWH
 xdv
 sDp
 epK
@@ -120304,13 +120304,13 @@ pSO
 xdv
 xdv
 xdv
-syR
-fDJ
-fDJ
-fDJ
-fDJ
-fDJ
-fDJ
+tWH
+vHk
+vHk
+vHk
+vHk
+vHk
+vHk
 mnz
 mnz
 mnz
@@ -120506,13 +120506,13 @@ ogT
 kdO
 xdv
 xdv
-syR
-fDJ
+tWH
+vHk
 mnz
 mnz
 mnz
 mnz
-fDJ
+vHk
 mnz
 mnz
 mnz
@@ -120689,10 +120689,10 @@ tyl
 xdv
 xdv
 xdv
-syR
-syR
-syR
-syR
+tWH
+tWH
+tWH
+tWH
 xdv
 xdv
 xdv
@@ -120708,13 +120708,13 @@ yhm
 kdO
 xdv
 xdv
-syR
-fDJ
-fDJ
-fDJ
-fDJ
-fDJ
-fDJ
+tWH
+vHk
+vHk
+vHk
+vHk
+vHk
+vHk
 mnz
 mnz
 mnz
@@ -120891,10 +120891,10 @@ pSO
 xdv
 xdv
 xdv
-syR
-syR
-syR
-syR
+tWH
+tWH
+tWH
+tWH
 xdv
 xdv
 xdv
@@ -122326,8 +122326,8 @@ lEQ
 tWH
 vtu
 xdv
-syR
-syR
+tWH
+tWH
 xdv
 tMd
 kTb
@@ -122927,7 +122927,7 @@ ust
 ljU
 dpJ
 axt
-syR
+tWH
 olh
 tWH
 tWH
@@ -236350,13 +236350,13 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 jFl
 sch
 aAK
@@ -236551,14 +236551,14 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 fct
 sch
 fct
@@ -236753,14 +236753,14 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 jFl
 sch
 aAK
@@ -236955,14 +236955,14 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 jFl
 sch
 aAK
@@ -237157,14 +237157,14 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 jFl
 sch
 aAK
@@ -237359,14 +237359,14 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 jFl
 sch
 aAK
@@ -237566,9 +237566,9 @@ gQO
 gQO
 gQO
 gQO
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
 aFe
 qTL
 aFe
@@ -237768,9 +237768,9 @@ gQO
 gQO
 gQO
 gQO
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
 aFe
 jUv
 aFe
