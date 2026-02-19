@@ -136,14 +136,16 @@
 	exploded = 1
 	for(var/mob/living/mob in GLOB.living_mob_list)
 		var/turf/T = get_turf(mob)
-		if(T && (loc.z == T.z))
+		if(T && (T.z in GLOB.maps_data.station_levels))
+			var/area/A = get_area(mob)
+			if(A && (A.flags & AREA_FLAG_RAD_SHIELDED))
+				continue
 			if(ishuman(mob))
 				//Hilariously enough, running into a closet should make you get hit the hardest.
 				var/mob/living/carbon/human/H = mob
 				var/power = min(300, DETONATION_HALLUCINATION * sqrt(1 / (get_dist(mob, src) + 1)) )
 				H.adjust_hallucination(power, power)
-			var/rads = DETONATION_RADS * sqrt( 1 / (get_dist(mob, src) + 1) )
-			mob.apply_effect(rads, IRRADIATE)
+			mob.apply_effect(DETONATION_RADS, IRRADIATE)
 	spawn(pull_time)
 		explosion(get_turf(src), explosion_power, explosion_power * 1.25, explosion_power * 1.5, explosion_power * 1.75, 1)
 		qdel(src)
@@ -183,7 +185,11 @@
 		//Public alerts
 		if((damage > emergency_point) && !public_alert)
 			radio.autosay("WARNING: SUPERMATTER CRYSTAL DELAMINATION IMMINENT!", "Supermatter Monitor")
-			playsound(src, 'sound/effects/matteralarm.ogg', 100, 1, extrarange = 30)
+			world << sound('sound/effects/matteralarm.ogg')
+
+			for(var/obj/machinery/M in GLOB.machines)
+				if(M.z in GLOB.maps_data.station_levels)
+					M.emp_act(1)
 			public_alert = 1
 		else if(safe_warned && public_alert)
 			radio.autosay(alert_msg, "Supermatter Monitor")
