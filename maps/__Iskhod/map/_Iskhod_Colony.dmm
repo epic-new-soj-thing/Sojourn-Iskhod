@@ -8400,9 +8400,10 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/hallway/main/f1section4)
 "cch" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
-/turf/simulated/floor/plating/under,
-/area/turbolift/Research/colony)
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/turbolift/ElevatorTwo/midlevelTwo)
 "ccn" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
@@ -16927,6 +16928,9 @@
 "epH" = (
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
+"epJ" = (
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/turbolift/Mining/colony)
 "epK" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -18584,6 +18588,10 @@
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/patient_wing)
+"eLh" = (
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
+/turf/simulated/floor/plating/under,
+/area/turbolift/Research/colony)
 "eLm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -22734,6 +22742,10 @@
 /obj/random/mob/nightmare/low_chance,
 /turf/simulated/floor/asteroid,
 /area/iskhod/maintenance/northcave)
+"fQa" = (
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevTwo,
+/turf/simulated/floor/plating/under,
+/area/turbolift/ElevatorTwo/midlevelTwo)
 "fQc" = (
 /turf/simulated/shuttle/floor/science{
 	icon_state = "10,12"
@@ -42592,14 +42604,6 @@
 /obj/machinery/seed_extractor,
 /turf/simulated/floor/industrial/ornate,
 /area/iskhod/absolutism/office)
-"kWq" = (
-/obj/effect/window_lwall_spawn/smartspawn,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating/under,
-/area/iskhod/engineering/atmos)
 "kWr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -50848,9 +50852,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/gaycarpet,
 /area/iskhod/crew_quarters/cafeteria)
-"njQ" = (
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/turbolift/Mining/colony)
 "njR" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -56614,11 +56615,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/recreation/fight_club)
-"oJh" = (
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "9,23"
-	},
-/area/turbolift/ElevatorTwo/midlevelTwo)
 "oJl" = (
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/ai/control)
@@ -60902,10 +60898,6 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/changing_room/pool)
-"pOo" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/ElevTwo,
-/turf/simulated/floor/plating/under,
-/area/turbolift/ElevatorTwo/midlevelTwo)
 "pOp" = (
 /obj/structure/railing,
 /obj/effect/floor_decal/industrial/danger{
@@ -105265,7 +105257,7 @@ env
 fod
 xJr
 paa
-kWq
+env
 fod
 xJr
 paa
@@ -111305,7 +111297,7 @@ rmz
 rmz
 rmz
 rmz
-pOo
+fQa
 bHI
 bdK
 wxZ
@@ -111507,7 +111499,7 @@ cXR
 cXR
 cXR
 bkT
-oJh
+cch
 ccf
 bPc
 llx
@@ -111709,7 +111701,7 @@ cXR
 cXR
 cXR
 bkT
-oJh
+cch
 ccf
 tJL
 dvu
@@ -116354,7 +116346,7 @@ phb
 iLr
 kXs
 dmj
-njQ
+epJ
 gBf
 gBf
 gBf
@@ -116556,7 +116548,7 @@ eCx
 hQG
 kXs
 dmj
-njQ
+epJ
 gBf
 gBf
 gBf
@@ -116758,7 +116750,7 @@ hxm
 cGW
 kXs
 dmj
-njQ
+epJ
 gBf
 gBf
 gBf
@@ -121958,7 +121950,7 @@ qZq
 qZq
 qZq
 qZq
-cch
+eLh
 iQn
 izs
 jIx
