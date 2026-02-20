@@ -6,7 +6,7 @@
 	cold_protection = HEAD
 	flags_inv = HIDEEARS | BLOCKHAIR
 
-/*
+
 // Winter coats
 /obj/item/clothing/head/hood/winter
 	name = "winter hood"
@@ -46,7 +46,7 @@
 /obj/item/clothing/head/hood/winter/cargo/miner
 	name = "mining winter hood"
 	armor_list = list(melee = 10, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-*/
+
 // Explorer gear
 /obj/item/clothing/head/hood/explorer
 	name = "explorer hood"

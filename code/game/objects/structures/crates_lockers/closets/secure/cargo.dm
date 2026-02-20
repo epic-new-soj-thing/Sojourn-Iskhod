@@ -10,6 +10,8 @@
 	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/cargotech(src)
 	new /obj/item/clothing/shoes/color/black(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/cargo(src)
+	new /obj/item/clothing/shoes/winter/supply(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/head/soft(src)
@@ -93,6 +95,7 @@
 		new /obj/item/storage/backpack/holding(src)
 	new /obj/item/clothing/under/rank/cargoclerk(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/cargo(src)
+	new /obj/item/clothing/shoes/winter/supply(src)
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/gloves/thick(src)
@@ -143,6 +146,8 @@
 
 	new /obj/item/device/radio/headset/headset_pro(src)
 	new /obj/item/clothing/accessory/cape/prospie(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/cargo/miner(src)
+	new /obj/item/clothing/shoes/winter/mining(src)
 
 	switch(bag_cache)
 		if("INDUSTRIAL")
@@ -378,6 +383,9 @@
 
 	new /obj/item/device/radio/headset/headset_pro(src)
 	new /obj/item/clothing/accessory/cape/prospie(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/cargo/miner(src)
+	new /obj/item/clothing/shoes/winter/mining(src)
+
 
 	switch(bag_cache)
 		if("INDUSTRIAL")
@@ -603,7 +611,10 @@
 
 	new /obj/item/device/radio/headset/heads/foreman(src)
 	new /obj/item/clothing/accessory/cape/prospie(src)
+
 	new /obj/item/clothing/accessory/halfcape/foreman(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/cargo/miner(src)
+	new /obj/item/clothing/shoes/winter/mining(src)
 	switch(bag_cache)
 		if("INDUSTRIAL")
 			if(prob(80))
