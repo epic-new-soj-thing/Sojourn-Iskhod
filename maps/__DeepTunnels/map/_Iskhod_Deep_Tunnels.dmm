@@ -180,6 +180,13 @@
 /area/mine/explored)
 "cq" = (
 /obj/structure/bed/roller,
+/obj/structure/cable,
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "East APC";
+	operating = 0;
+	pixel_y = -28
+	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/rnd/outpostmedical)
 "cr" = (
@@ -781,6 +788,23 @@
 /obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
+"jX" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/iskhod/rnd/outpostgeneral)
 "kb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -1212,7 +1236,7 @@
 	dir = 4;
 	name = "East APC";
 	operating = 0;
-	pixel_x = 28
+	pixel_y = -28
 	},
 /obj/structure/cable{
 	d2 = 8;
@@ -1504,6 +1528,11 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/airlock/glass_research{
 	name = "Medical Outpost"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/outpostmedical)
@@ -3040,6 +3069,17 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
+"HW" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 1
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/iskhod/rnd/outpostgeneral)
 "Ib" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
@@ -3348,6 +3388,11 @@
 	pixel_x = 30
 	},
 /obj/effect/floor_decal/industrial/box/white,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/rnd/outpostmedical)
 "Lo" = (
@@ -4226,6 +4271,14 @@
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/anomalisolfour)
+"Vl" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/iskhod/rnd/outpostmedical)
 "Vq" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -16841,12 +16894,12 @@ Rb
 jA
 Bp
 VE
-oT
-DW
-mW
+jX
+HW
+rr
 rh
 Ll
-vX
+Vl
 cq
 ac
 vW
