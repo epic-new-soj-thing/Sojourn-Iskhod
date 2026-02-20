@@ -10,6 +10,7 @@
 
 	name = "Thermal Transfer Plate"
 	desc = "Transfers heat to and from an area"
+	var/obj/machinery/atmospherics/node
 
 	update_icon()
 		if(node)

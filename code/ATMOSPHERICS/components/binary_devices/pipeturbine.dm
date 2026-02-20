@@ -3,8 +3,8 @@
 	desc = "A gas turbine. Converting pressure into energy since 1884."
 	icon = 'icons/obj/pipeturbine.dmi'
 	icon_state = "turbine"
-	anchored = 0
-	density = 1
+	anchored = FALSE
+	density = TRUE
 
 	var/efficiency = 0.4
 	var/kin_energy = 0
@@ -34,13 +34,14 @@
 				initialize_directions = NORTH|SOUTH
 
 	Destroy()
-		forceMove(null)
+		loc = null
+
 		if(node1)
 			node1.disconnect(src)
-			QDEL_NULL(network1)
+			qdel(network1)
 		if(node2)
 			node2.disconnect(src)
-			QDEL_NULL(network2)
+			qdel(network2)
 
 		node1 = null
 		node2 = null
@@ -72,48 +73,44 @@
 			network2.update = 1
 
 	update_icon()
-		overlays.Cut()
+		cut_overlays()
 		if (dP > 10)
-			overlays += image('icons/obj/pipeturbine.dmi', "moto-turb")
+			add_overlay(image('icons/obj/pipeturbine.dmi', "moto-turb"))
 		if (kin_energy > 100000)
-			overlays += image('icons/obj/pipeturbine.dmi', "low-turb")
+			add_overlay(image('icons/obj/pipeturbine.dmi', "low-turb"))
 		if (kin_energy > 500000)
-			overlays += image('icons/obj/pipeturbine.dmi', "med-turb")
+			add_overlay(image('icons/obj/pipeturbine.dmi', "med-turb"))
 		if (kin_energy > 1000000)
-			overlays += image('icons/obj/pipeturbine.dmi', "hi-turb")
+			add_overlay(image('icons/obj/pipeturbine.dmi', "hi-turb"))
 
-	attackby(obj/item/W as obj, mob/user as mob)
-		if(isWrench(W))
-			anchored = !anchored
-			to_chat(user, "<span class='notice'>You [anchored ? "secure" : "unsecure"] the bolts holding \the [src] to the floor.</span>")
+	attackby(obj/item/tool/W as obj, mob/user as mob)
+		if(!W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			return ..()
+		anchored = !anchored
+		to_chat(user, SPAN_NOTICE("You [anchored ? "secure" : "unsecure"] the bolts holding \the [src] to the floor."))
 
-			if(anchored)
-				if(dir & (NORTH|SOUTH))
-					initialize_directions = EAST|WEST
-				else if(dir & (EAST|WEST))
-					initialize_directions = NORTH|SOUTH
-
+		if(anchored)
+			if(dir & (NORTH|SOUTH))
+				initialize_directions = EAST|WEST
+			else if(dir & (EAST|WEST))
+				initialize_directions = NORTH|SOUTH
 				atmos_init()
-				build_network()
-				if (node1)
-					node1.atmos_init()
-					node1.build_network()
-				if (node2)
-					node2.atmos_init()
-					node2.build_network()
-			else
-				if(node1)
-					node1.disconnect(src)
-					qdel(network1)
-				if(node2)
-					node2.disconnect(src)
-					qdel(network2)
-
-				node1 = null
-				node2 = null
-
+			build_network()
+			if (node1)
+				node1.atmos_init()
+				node1.build_network()
+			if (node2)
+				node2.atmos_init()
+				node2.build_network()
 		else
-			..()
+			if(node1)
+				node1.disconnect(src)
+				qdel(network1)
+			if(node2)
+				node2.disconnect(src)
+				qdel(network2)
+				node1 = null
+			node2 = null
 
 	verb/rotate_clockwise()
 		set category = "Object"
@@ -152,19 +149,18 @@
 		return null
 
 	atmos_init()
-		..()
 		if(node1 && node2) return
 
 		var/node2_connect = turn(dir, -90)
 		var/node1_connect = turn(dir, 90)
 
-		for(var/obj/machinery/atmospherics/target in get_step(src,node1_connect))
-			if(target.initialize_directions & get_dir(target,src))
+		for(var/obj/machinery/atmospherics/target in get_step(src, node1_connect))
+			if(target.initialize_directions & get_dir(target, src))
 				node1 = target
 				break
 
-		for(var/obj/machinery/atmospherics/target in get_step(src,node2_connect))
-			if(target.initialize_directions & get_dir(target,src))
+		for(var/obj/machinery/atmospherics/target in get_step(src, node2_connect))
+			if(target.initialize_directions & get_dir(target, src))
 				node2 = target
 				break
 
@@ -226,8 +222,8 @@
 	desc = "Electrogenerator. Converts rotation into power."
 	icon = 'icons/obj/pipeturbine.dmi'
 	icon_state = "motor"
-	anchored = 0
-	density = 1
+	anchored = FALSE
+	density = TRUE
 
 	var/kin_to_el_ratio = 0.1	//How much kinetic energy will be taken from turbine and converted into electricity
 	var/obj/machinery/atmospherics/pipeturbine/turbine
@@ -240,18 +236,27 @@
 	proc/updateConnection()
 		turbine = null
 		if(src.loc && anchored)
-			turbine = locate(/obj/machinery/atmospherics/pipeturbine) in get_step(src,dir)
-			if (turbine.stat & (BROKEN) || !turbine.anchored || turn(turbine.dir,180) != dir)
+			turbine = locate(/obj/machinery/atmospherics/pipeturbine) in get_step(src, dir)
+			if (turbine.stat & (BROKEN) || !turbine.anchored || turn(turbine.dir, 180) != dir)
 				turbine = null
 
-	attackby(obj/item/W as obj, mob/user as mob)
-		if(isWrench(W))
-			anchored = !anchored
-			turbine = null
-			to_chat(user, "<span class='notice'>You [anchored ? "secure" : "unsecure"] the bolts holding \the [src] to the floor.</span>")
-			updateConnection()
-		else
-			..()
+	Process()
+		updateConnection()
+		if(!turbine || !anchored || stat & (BROKEN))
+			return
+
+		var/power_generated = kin_to_el_ratio * turbine.kin_energy
+		turbine.kin_energy -= power_generated
+		add_avail(power_generated)
+
+
+	attackby(obj/item/tool/W as obj, mob/user as mob)
+		if (!W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+			return ..()
+		anchored = !anchored
+		turbine = null
+		to_chat(user, SPAN_NOTICE("You [anchored ? "secure" : "unsecure"] the bolts holding \the [src] to the floor."))
+		updateConnection()
 
 	verb/rotate_clock()
 		set category = "Object"
@@ -272,12 +277,3 @@
 			return
 
 		src.set_dir(turn(src.dir, 90))
-
-/obj/machinery/power/turbinemotor/Process()
-	updateConnection()
-	if(!turbine || !anchored || stat & (BROKEN))
-		return
-
-	var/power_generated = kin_to_el_ratio * turbine.kin_energy
-	turbine.kin_energy -= power_generated
-	add_avail(power_generated)

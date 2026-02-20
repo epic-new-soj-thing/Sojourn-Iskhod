@@ -4,8 +4,9 @@ obj/machinery/atmospherics/pipe/simple/heat_exchanging
 	icon_state = "intact"
 	pipe_icon = "hepipe"
 	color = "#404040"
-	level = 2
+	level = ABOVE_PLATING_LEVEL
 	connect_types = CONNECT_TYPE_HE
+	layer = GAS_PIPE_VISIBLE_LAYER
 	var/initialize_directions_he
 	var/surface = 2	//surface area in m^2
 	var/icon_temperature = T20C //stop small changes in temperature causing an icon refresh
@@ -13,37 +14,33 @@ obj/machinery/atmospherics/pipe/simple/heat_exchanging
 	minimum_temperature_difference = 20
 	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
 
-	maximum_pressure = 360*ONE_ATMOSPHERE
-	fatigue_pressure = 300*ONE_ATMOSPHERE
-	alert_pressure = 360*ONE_ATMOSPHERE
-
-	can_buckle = 1
 	buckle_lying = 1
 
-obj/machinery/atmospherics/pipe/simple/heat_exchanging/New(var/atom/location, var/direction, var/nocircuit = FALSE)
+	// BubbleWrap
+obj/machinery/atmospherics/pipe/simple/heat_exchanging/New()
 	..()
 	initialize_directions_he = initialize_directions	// The auto-detection from /pipe is good enough for a simple HE pipe
-	color = "#404040" //we don't make use of the fancy overlay system for colours, use this to set the default.
+	// BubbleWrap END
+	color = "#404040" //we don't make use of the fancy overlay system for colors, use this to set the default.
 
 obj/machinery/atmospherics/pipe/simple/heat_exchanging/atmos_init()
 	..()
 	normalize_dir()
 	var/node1_dir
 	var/node2_dir
-
-	for(var/direction in GLOB.cardinal)
+	for(var/direction in cardinal)
 		if(direction&initialize_directions_he)
 			if (!node1_dir)
 				node1_dir = direction
 			else if (!node2_dir)
 				node2_dir = direction
 
-	for(var/obj/machinery/atmospherics/pipe/simple/heat_exchanging/target in get_step(src,node1_dir))
-		if(target.initialize_directions_he & get_dir(target,src))
+	for(var/obj/machinery/atmospherics/pipe/simple/heat_exchanging/target in get_step(src, node1_dir))
+		if(target.initialize_directions_he & get_dir(target, src))
 			node1 = target
 			break
-	for(var/obj/machinery/atmospherics/pipe/simple/heat_exchanging/target in get_step(src,node2_dir))
-		if(target.initialize_directions_he & get_dir(target,src))
+	for(var/obj/machinery/atmospherics/pipe/simple/heat_exchanging/target in get_step(src, node2_dir))
+		if(target.initialize_directions_he & get_dir(target, src))
 			node2 = target
 			break
 	if(!node1 && !node2)
@@ -51,22 +48,25 @@ obj/machinery/atmospherics/pipe/simple/heat_exchanging/atmos_init()
 		return
 
 	update_icon()
+	return
+
 
 obj/machinery/atmospherics/pipe/simple/heat_exchanging/Process()
 	if(!parent)
 		..()
 	else
 		var/datum/gas_mixture/pipe_air = return_air()
-		if(istype(loc, /turf/simulated/))
+		var/turf/current_loc = loc
+		if(istype(current_loc, /turf/simulated/))
 			var/environment_temperature = 0
-			if(loc:blocks_air)
-				environment_temperature = loc:temperature
+			if(current_loc.blocks_air)
+				environment_temperature = current_loc.temperature
 			else
-				var/datum/gas_mixture/environment = loc.return_air()
+				var/datum/gas_mixture/environment = current_loc.return_air()
 				environment_temperature = environment.temperature
 			if(abs(environment_temperature-pipe_air.temperature) > minimum_temperature_difference)
-				parent.temperature_interact(loc, volume, thermal_conductivity)
-		else if(istype(loc, /turf/space/))
+				parent.temperature_interact(current_loc, volume, thermal_conductivity)
+		else if(istype(current_loc, /turf/space/))
 			parent.radiate_heat_to_space(surface, 1)
 
 		if(buckled_mob)
@@ -108,43 +108,41 @@ obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction
 	icon = 'icons/atmos/junction.dmi'
 	icon_state = "intact"
 	pipe_icon = "hejunction"
-	level = 2
+	level = ABOVE_PLATING_LEVEL
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_HE
+	minimum_temperature_difference = 300
 
-// Doubling up on initialize_directions is necessary to allow HE pipes to connect
-obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction/New(var/atom/location, var/direction, var/nocircuit = FALSE)
+	// BubbleWrap
+obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction/New()
 	.. ()
-	switch (dir)
-		if (SOUTH)
+	switch ( dir )
+		if ( SOUTH )
+			initialize_directions = NORTH
 			initialize_directions_he = SOUTH
-			initialize_directions = NORTH|SOUTH
-		if (NORTH)
+		if ( NORTH )
+			initialize_directions = SOUTH
 			initialize_directions_he = NORTH
-			initialize_directions = NORTH|SOUTH
-		if (EAST)
+		if ( EAST )
+			initialize_directions = WEST
 			initialize_directions_he = EAST
-			initialize_directions = EAST|WEST
-		if (WEST)
+		if ( WEST )
+			initialize_directions = EAST
 			initialize_directions_he = WEST
-			initialize_directions = EAST|WEST
+	// BubbleWrap END
 
 obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction/atmos_init()
-	..()
-	// Only check back side for normal pipes
-	for(var/obj/machinery/atmospherics/target in get_step(src,GLOB.flip_dir[src.dir]))
-		if(target.initialize_directions & get_dir(target,src))
-			// Snowflake check; keeps back from connecting to HE pipes
-			if(!istype(target,/obj/machinery/atmospherics/pipe/simple/heat_exchanging))
-				node1 = target
-				break
-	// Only check front side for HE pipes
-	for(var/obj/machinery/atmospherics/pipe/simple/heat_exchanging/target in get_step(src,initialize_directions_he))
-		if(target.initialize_directions_he & get_dir(target,src))
+	for(var/obj/machinery/atmospherics/target in get_step(src, initialize_directions))
+		if(target.initialize_directions & get_dir(target, src))
+			node1 = target
+			break
+	for(var/obj/machinery/atmospherics/pipe/simple/heat_exchanging/target in get_step(src, initialize_directions_he))
+		if(target.initialize_directions_he & get_dir(target, src))
 			node2 = target
 			break
 
-	if(!node1 && !node2)
+	if(!node1&&!node2)
 		qdel(src)
 		return
 
 	update_icon()
+	return

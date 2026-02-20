@@ -1,7 +1,8 @@
 obj/machinery/atmospherics/trinary
 	dir = SOUTH
+	layer = GAS_FILTER_LAYER
 	initialize_directions = SOUTH|NORTH|WEST
-	use_power = 0
+	use_power = NO_POWER_USE
 
 	var/datum/gas_mixture/air1
 	var/datum/gas_mixture/air2
@@ -51,7 +52,8 @@ obj/machinery/atmospherics/trinary
 		return null
 
 	Destroy()
-		forceMove(null)
+		loc = null
+
 		if(node1)
 			node1.disconnect(src)
 			qdel(network1)
@@ -66,30 +68,29 @@ obj/machinery/atmospherics/trinary
 		node2 = null
 		node3 = null
 
-		..()
+		. = ..()
 
 	atmos_init()
-		..()
 		if(node1 && node2 && node3) return
 
 		var/node1_connect = turn(dir, -180)
 		var/node2_connect = turn(dir, -90)
 		var/node3_connect = dir
 
-		for(var/obj/machinery/atmospherics/target in get_step(src,node1_connect))
-			if(target.initialize_directions & get_dir(target,src))
-				if (check_connect_types(target,src))
+		for(var/obj/machinery/atmospherics/target in get_step(src, node1_connect))
+			if(target.initialize_directions & get_dir(target, src))
+				if (check_connect_types(target, src))
 					node1 = target
 					break
 
-		for(var/obj/machinery/atmospherics/target in get_step(src,node2_connect))
-			if(target.initialize_directions & get_dir(target,src))
-				if (check_connect_types(target,src))
+		for(var/obj/machinery/atmospherics/target in get_step(src, node2_connect))
+			if(target.initialize_directions & get_dir(target, src))
+				if (check_connect_types(target, src))
 					node2 = target
 					break
-		for(var/obj/machinery/atmospherics/target in get_step(src,node3_connect))
-			if(target.initialize_directions & get_dir(target,src))
-				if (check_connect_types(target,src))
+		for(var/obj/machinery/atmospherics/target in get_step(src, node3_connect))
+			if(target.initialize_directions & get_dir(target, src))
+				if (check_connect_types(target, src))
 					node3 = target
 					break
 

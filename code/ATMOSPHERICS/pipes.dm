@@ -12,13 +12,9 @@
 	var/in_stasis = 0
 		//minimum pressure before check_pressure(...) should be called
 
-	can_buckle = 1
 	buckle_require_restraints = 1
 	buckle_lying = -1
 	var/datum/sound_token/sound_token
-
-	//These are underfloor, stop getting involved in movement calculations
-
 
 //Added by nanako, makes pipes immune to explosions.
 //They're everywhere, blowing them up is functionally irreparable damage, and one bomb ruins the game. its not worth it
@@ -55,7 +51,7 @@
 
 /obj/machinery/atmospherics/pipe/proc/update_sound(var/playing)
 	if(playing && !sound_token)
-		sound_token = GLOB.sound_player.play_looping(src, SOUND_ID, "sound/machines/pipeleak.ogg", volume = 8, range = 3, falloff = 1, prefer_mute = TRUE)
+		// GLOB.sound_player.PlayLoopingSound(src, SOUND_ID, "sound/machines/pipeleak.ogg", volume = 8, range = 3, falloff = 1, prefer_mute = TRUE)
 	else if(!playing && sound_token)
 		QDEL_NULL(sound_token)
 
@@ -293,8 +289,6 @@
 		node2.update_underlays()
 
 /obj/machinery/atmospherics/pipe/simple/update_icon(var/safety = 0)
-	if(!atmos_initalized)
-		return
 	if(!check_icon_cache())
 		return
 
@@ -321,7 +315,6 @@
 	return
 
 /obj/machinery/atmospherics/pipe/simple/atmos_init()
-	..()
 	normalize_dir()
 	var/node1_dir
 	var/node2_dir
@@ -546,8 +539,6 @@
 		node3.update_underlays()
 
 /obj/machinery/atmospherics/pipe/manifold/update_icon(var/safety = 0)
-	if(!atmos_initalized)
-		return
 	if(!check_icon_cache())
 		return
 
@@ -589,7 +580,6 @@
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/manifold/atmos_init()
-	..()
 	var/connect_directions = (NORTH|SOUTH|EAST|WEST)&(~dir)
 
 	for(var/direction in GLOB.cardinal)
@@ -805,8 +795,6 @@
 		node4.update_underlays()
 
 /obj/machinery/atmospherics/pipe/manifold4w/update_icon(var/safety = 0)
-	if(!atmos_initalized)
-		return
 	if(!check_icon_cache())
 		return
 
@@ -868,7 +856,6 @@
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/manifold4w/atmos_init()
-	..()
 	for(var/obj/machinery/atmospherics/target in get_step(src,1))
 		if(target.initialize_directions & 2)
 			if (check_connect_types(target,src))
@@ -986,6 +973,7 @@
 	name = "4-way fuel pipe manifold"
 	color = PIPE_COLOR_ORANGE
 
+
 /obj/machinery/atmospherics/pipe/cap
 	name = "pipe endcap"
 	desc = "An endcap for pipes."
@@ -1049,7 +1037,6 @@
 	overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "cap")
 
 /obj/machinery/atmospherics/pipe/cap/atmos_init()
-	..()
 	for(var/obj/machinery/atmospherics/target in get_step(src, dir))
 		if(target.initialize_directions & get_dir(target,src))
 			if (check_connect_types(target,src))
@@ -1160,7 +1147,6 @@
 	update_underlays()
 
 /obj/machinery/atmospherics/pipe/tank/atmos_init()
-	..()
 	var/connect_direction = dir
 
 	for(var/obj/machinery/atmospherics/target in get_step(src,connect_direction))
@@ -1472,32 +1458,3 @@
 		underlays += icon_manager.get_atmos_icon("underlay", direction, color_cache_name(node), "retracted" + icon_connect_type)
 
 #undef SOUND_ID
-
-// Legacy map sink object
-/obj/machinery/atmospherics/pipe/simple/sink_heat
-	name = "legacy heat sink"
-	desc = "A legacy object. You shouldn't see this."
-	icon = 'icons/obj/atmospherics/heat_exchanger.dmi'
-	icon_state = "intact"
-	var/build_killswitch = 1
-	var/datum/gas_mixture/air_contents = new
-
-/obj/machinery/atmospherics/pipe/simple/sink_heat/Process()
-	if(!parent)
-		if(build_killswitch <= 0)
-			. = PROCESS_KILL
-		else
-			build_killswitch--
-		..()
-		return
-	else
-		air_contents.temperature = 0 // Remove all heat
-
-/obj/machinery/atmospherics/pipe/simple/sink_heat/atmos_init()
-	..()
-	var/connect_direction = dir
-	for(var/obj/machinery/atmospherics/target in get_step(src,connect_direction))
-		if(target.initialize_directions & get_dir(target,src))
-			if(check_connect_types(target,src))
-				node1 = target
-				break

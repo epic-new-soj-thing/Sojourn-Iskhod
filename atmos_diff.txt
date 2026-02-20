@@ -1,7 +1,7 @@
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/_atmos_setup.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/_atmos_setup.dm
+diff --git a/code/ATMOSPHERICS/_atmos_setup.dm b/code/ATMOSPHERICS/_atmos_setup.dm
 index 1f1201e94..a58327dd4 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/_atmos_setup.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/_atmos_setup.dm
+--- a/code/ATMOSPHERICS/_atmos_setup.dm
++++ b/code/ATMOSPHERICS/_atmos_setup.dm
 @@ -1,4 +1,11 @@
 -var/global/list/pipe_colors = list("grey" = PIPE_COLOR_GREY, "red" = PIPE_COLOR_RED, "blue" = PIPE_COLOR_BLUE, "cyan" = PIPE_COLOR_CYAN, "green" = PIPE_COLOR_GREEN, "yellow" = PIPE_COLOR_YELLOW, "black" = PIPE_COLOR_BLACK)
 +//--------------------------------------------
@@ -24,13 +24,13 @@ index 1f1201e94..a58327dd4 100644
  			var/image/I = image('icons/atmos/pipe_underlays.dmi', icon_state = state, dir = D)
  			underlays[cache_name + "[D]"] = I
  			for(var/pipe_color in pipe_colors)
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/_atmospherics_helpers.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/atmos_primitives.dm
+diff --git a/code/ATMOSPHERICS/_atmospherics_helpers.dm b/code/ATMOSPHERICS/atmos_primitives.dm
 similarity index 89%
-rename from D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/_atmospherics_helpers.dm
-rename to D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/atmos_primitives.dm
-index b045b1751..0f1c0c1aa 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/_atmospherics_helpers.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/atmos_primitives.dm
+rename from code/ATMOSPHERICS/_atmospherics_helpers.dm
+rename to code/ATMOSPHERICS/atmos_primitives.dm
+index b045b1751..f97cdb0dd 100644
+--- a/code/ATMOSPHERICS/_atmospherics_helpers.dm
++++ b/code/ATMOSPHERICS/atmos_primitives.dm
 @@ -15,7 +15,7 @@
  
  /obj/machinery/atmospherics/var/debug = 0
@@ -58,10 +58,14 @@ index b045b1751..0f1c0c1aa 100644
  	if (!mix_sources.len)
  		return -1
  
-@@ -460,57 +460,7 @@
- // - Is between 80 and 120kPa
- // - Has between 17% and 30% oxygen
- // - Has temperature between -10C and 50C
+@@ -456,56 +456,6 @@
+ 
+ 	return (source_pressure - sink_pressure)/(R_IDEAL_GAS_EQUATION * (source.temperature/source_volume + sink.temperature/sink_volume))
+ 
+-//Determines if the atmosphere is safe (for humans). Safe atmosphere:
+-// - Is between 80 and 120kPa
+-// - Has between 17% and 30% oxygen
+-// - Has temperature between -10C and 50C
 -// - Has no or only minimal plasma or N2O
 -/proc/is_safe_atmosphere(datum/gas_mixture/atmosphere, var/returntext = 0)
 -    var/list/status = list()
@@ -108,39 +112,24 @@ index b045b1751..0f1c0c1aa 100644
 -    else
 -        return status.len
 -
--//Determines if the atmosphere is safe (for humans). Safe atmosphere:
--// - Is between 80 and 120kPa
--// - Has between 17% and 30% oxygen
--// - Has temperature between -10C and 50C
--// - Has no or only minimal plasma or N2O
-+// - Has no or only minimal phoron or N2O
- /proc/get_atmosphere_issues(datum/gas_mixture/atmosphere, var/returntext = 0)
- 	var/list/status = list()
- 	if(!atmosphere)
-@@ -527,13 +477,13 @@
- 
- 	// Gas concentration checks
- 	var/oxygen = 0
--	var/plasma = 0
-+	var/phoron = 0
- 	var/carbondioxide = 0
- 	var/nitrousoxide = 0
+ //Determines if the atmosphere is safe (for humans). Safe atmosphere:
+ // - Is between 80 and 120kPa
+ // - Has between 17% and 30% oxygen
+@@ -533,7 +483,7 @@
  	var/hydrogen = 0
  	if(atmosphere.total_moles) // Division by zero prevention
  		oxygen = (atmosphere.gas["oxygen"] / atmosphere.total_moles) * 100 // Percentage of the gas
 -		plasma = (atmosphere.gas["plasma"] / atmosphere.total_moles) * 100
-+		phoron = (atmosphere.gas[MATERIAL_PHORON] / atmosphere.total_moles) * 100
++		plasma = (atmosphere.gas[MATERIAL_PLASMA] / atmosphere.total_moles) * 100
  		carbondioxide = (atmosphere.gas["carbon_dioxide"] / atmosphere.total_moles) * 100
  		nitrousoxide = (atmosphere.gas["sleeping_agent"] / atmosphere.total_moles) * 100
  		hydrogen = (atmosphere.gas["hydrogen"] / atmosphere.total_moles) * 100
-@@ -545,8 +495,8 @@
+@@ -546,7 +496,7 @@
  
  
- 
--	if(plasma > 0.1)		// Toxic even in small amounts.
+ 	if(plasma > 0.1)		// Toxic even in small amounts.
 -		status.Add("Plasma contamination.")
-+	if(phoron > 0.1)		// Toxic even in small amounts.
-+		status.Add("Phoron contamination.")
++		status.Add("plasma contamination.")
  	if(nitrousoxide > 0.1)	// Probably slightly less dangerous but still.
  		status.Add("N2O contamination.")
  	if(hydrogen > 2.5)	// Not too dangerous, but flammable.
@@ -170,10 +159,10 @@ index b045b1751..0f1c0c1aa 100644
 -
 -	return target_environments
 -
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/atmospherics.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/atmospherics.dm
-index 6dc9e52dc..85debf2e0 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/atmospherics.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/atmospherics.dm
+diff --git a/code/ATMOSPHERICS/atmospherics.dm b/code/ATMOSPHERICS/atmospherics.dm
+index 6dc9e52dc..ceccc448b 100644
+--- a/code/ATMOSPHERICS/atmospherics.dm
++++ b/code/ATMOSPHERICS/atmospherics.dm
 @@ -10,18 +10,14 @@ Pipelines + Other Objects -> Pipe network
  
  */
@@ -185,14 +174,13 @@ index 6dc9e52dc..85debf2e0 100644
 +	anchored = 1
  	idle_power_usage = 0
  	active_power_usage = 0
--	power_channel = STATIC_ENVIRON
-+	power_channel = ENVIRON
+ 	power_channel = STATIC_ENVIRON
  	var/nodealert = 0
  	var/power_rating //the maximum amount of power the machine can use to do work, affects how powerful the machine is, in Watts
  
 -	plane = FLOOR_PLANE
 -	layer = GAS_PIPE_HIDDEN_LAYER //under wires
-+	layer = EXPOSED_PIPE_LAYER
++	layer = GAS_PIPE_VISIBLE_LAYER
  
  	var/connect_types = CONNECT_TYPE_REGULAR
  	var/icon_connect_type = "" //"-supply" or "-scrubbers"
@@ -224,16 +212,15 @@ index 6dc9e52dc..85debf2e0 100644
 +
 +/obj/machinery/atmospherics/hide(var/do_hide)
 +	if(do_hide && level == 1)
-+		layer = PIPE_LAYER
++		layer = GAS_PIPE_HIDDEN_LAYER
 +	else
 +		reset_plane_and_layer()
  
  /obj/machinery/atmospherics/attackby(atom/A, mob/user as mob)
--	if(istype(A, /obj/item/device/pipe_painter))
-+	if(istype(A, /obj/item/pipe_painter))
-+		return
-+	if(istype(A, /obj/item/analyzer))
+ 	if(istype(A, /obj/item/device/pipe_painter))
  		return
++	if(istype(A, /obj/item/device/scanner/gas))
++		return
  	..()
  
  /obj/machinery/atmospherics/proc/add_underlay(var/turf/T, var/obj/machinery/atmospherics/node, var/direction, var/icon_connect_type)
@@ -252,20 +239,13 @@ index 6dc9e52dc..85debf2e0 100644
  	if(!istype(icon_manager))
  		if(!safety) //to prevent infinite loops
  			icon_manager = new()
-@@ -135,4 +134,4 @@ obj/machinery/atmospherics/proc/check_connect_types(obj/machinery/atmospherics/a
- /obj/machinery/atmospherics/proc/disconnect(obj/machinery/atmospherics/reference)
- 
- /obj/machinery/atmospherics/update_icon()
--	return null
-+	return null
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/binary_atmos_base.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/binary_atmos_base.dm
-index 842e48b26..5883293d4 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/binary_atmos_base.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/binary_atmos_base.dm
+diff --git a/code/ATMOSPHERICS/components/binary_devices/binary_atmos_base.dm b/code/ATMOSPHERICS/components/binary_devices/binary_atmos_base.dm
+index 842e48b26..e49331794 100644
+--- a/code/ATMOSPHERICS/components/binary_devices/binary_atmos_base.dm
++++ b/code/ATMOSPHERICS/components/binary_devices/binary_atmos_base.dm
 @@ -1,8 +1,8 @@
  obj/machinery/atmospherics/binary
-+	clicksound = "button2"
++
  	dir = SOUTH
  	initialize_directions = SOUTH|NORTH
 -	use_power = IDLE_POWER_USE
@@ -336,10 +316,10 @@ index 842e48b26..5883293d4 100644
 +	node2 = null
 +
 +	. = ..()
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/circulator.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/circulator.dm
-index 0da3c404c..50f4e88ac 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/circulator.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/circulator.dm
+diff --git a/code/ATMOSPHERICS/components/binary_devices/circulator.dm b/code/ATMOSPHERICS/components/binary_devices/circulator.dm
+index 0da3c404c..2c7552e51 100644
+--- a/code/ATMOSPHERICS/components/binary_devices/circulator.dm
++++ b/code/ATMOSPHERICS/components/binary_devices/circulator.dm
 @@ -1,16 +1,16 @@
  //node1, air1, network1 correspond to input
  //node2, air2, network2 correspond to output
@@ -453,21 +433,18 @@ index 0da3c404c..50f4e88ac 100644
  
  	else
  		..()
-@@ -147,8 +144,4 @@
- 		return
+@@ -148,7 +145,3 @@
  
  	src.set_dir(turn(src.dir, -90))
--	desc = initial(desc) + " Its outlet port is to the [dir2text(dir)]."
+ 	desc = initial(desc) + " Its outlet port is to the [dir2text(dir)]."
 -
 -/obj/machinery/atmospherics/binary/circulator/anchored
 -	icon_state = "circ-assembled"
 -	anchored = TRUE
-+	desc = initial(desc) + " Its outlet port is to the [dir2text(dir)]."
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/dp_vent_pump.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/dp_vent_pump.dm
-index e853838df..c6d8b2863 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/dp_vent_pump.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/dp_vent_pump.dm
+diff --git a/code/ATMOSPHERICS/components/binary_devices/dp_vent_pump.dm b/code/ATMOSPHERICS/components/binary_devices/dp_vent_pump.dm
+index e853838df..8011b3670 100644
+--- a/code/ATMOSPHERICS/components/binary_devices/dp_vent_pump.dm
++++ b/code/ATMOSPHERICS/components/binary_devices/dp_vent_pump.dm
 @@ -18,9 +18,9 @@
  	name = "Dual Port Air Vent"
  	desc = "Has a valve and pump attached to it. There are two ports."
@@ -543,19 +520,6 @@ index e853838df..c6d8b2863 100644
  			return
  		else
  			if (node1)
-@@ -161,10 +161,10 @@
- //Radio remote control
- 
- /obj/machinery/atmospherics/binary/dp_vent_pump/proc/set_frequency(new_frequency)
--	SSradio.remove_object(src, frequency)
-+	radio_controller.remove_object(src, frequency)
- 	frequency = new_frequency
- 	if(frequency)
--		radio_connection = SSradio.add_object(src, frequency, filter = RADIO_ATMOSIA)
-+		radio_connection = radio_controller.add_object(src, frequency, filter = RADIO_ATMOSIA)
- 
- /obj/machinery/atmospherics/binary/dp_vent_pump/proc/broadcast_status()
- 	if(!radio_connection)
 @@ -189,8 +189,8 @@
  
  	return 1
@@ -581,12 +545,12 @@ index e853838df..c6d8b2863 100644
  /obj/machinery/atmospherics/binary/dp_vent_pump/receive_signal(datum/signal/signal)
  	if(!signal.data["tag"] || (signal.data["tag"] != id) || (signal.data["sigtype"]!="command"))
  		return 0
-diff --git a/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/oxyregenerator.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/oxyregenerator.dm
+diff --git a/code/ATMOSPHERICS/components/binary_devices/oxyregenerator.dm b/code/ATMOSPHERICS/components/binary_devices/oxyregenerator.dm
 new file mode 100644
-index 000000000..5a521b89c
+index 000000000..f16bbc5f9
 --- /dev/null
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/oxyregenerator.dm
-@@ -0,0 +1,205 @@
++++ b/code/ATMOSPHERICS/components/binary_devices/oxyregenerator.dm
+@@ -0,0 +1,203 @@
 +/obj/machinery/atmospherics/binary/oxyregenerator
 +	name ="oxygen regenerator"
 +	desc = "A machine for breaking bonds in carbon dioxide and releasing pure oxygen."
@@ -632,9 +596,7 @@ index 000000000..5a521b89c
 +	to_chat(user,"Its outlet port is to the [dir2text(dir)]")
 +
 +/obj/machinery/atmospherics/binary/oxyregenerator/attackby(var/obj/item/O as obj, var/mob/user as mob)
-+	if(default_deconstruction_screwdriver(user, O))
-+		return
-+	if(default_deconstruction_crowbar(user, O))
++	if(default_part_replacement(user, O))
 +		return
 +	if(default_part_replacement(user, O))
 +		return
@@ -792,10 +754,10 @@ index 000000000..5a521b89c
 +	if(href_list["setPower"]) //setting power to 0 is redundant anyways
 +		power_setting = between(1, text2num(href_list["setPower"]), 5)
 +		return 1
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/passive_gate.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/passive_gate.dm
-index a9353a6f8..fd4d234a5 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/passive_gate.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/passive_gate.dm
+diff --git a/code/ATMOSPHERICS/components/binary_devices/passive_gate.dm b/code/ATMOSPHERICS/components/binary_devices/passive_gate.dm
+index a9353a6f8..8c7618aec 100644
+--- a/code/ATMOSPHERICS/components/binary_devices/passive_gate.dm
++++ b/code/ATMOSPHERICS/components/binary_devices/passive_gate.dm
 @@ -4,27 +4,31 @@
  
  /obj/machinery/atmospherics/binary/passive_gate
@@ -867,19 +829,6 @@ index a9353a6f8..fd4d234a5 100644
  
  	if (returnval >= 0)
  		if(network1)
-@@ -100,10 +100,10 @@
- //Radio remote control
- 
- /obj/machinery/atmospherics/binary/passive_gate/proc/set_frequency(new_frequency)
--	SSradio.remove_object(src, frequency)
-+	radio_controller.remove_object(src, frequency)
- 	frequency = new_frequency
- 	if(frequency)
--		radio_connection = SSradio.add_object(src, frequency, filter = RADIO_ATMOSIA)
-+		radio_connection = radio_controller.add_object(src, frequency, filter = RADIO_ATMOSIA)
- 
- /obj/machinery/atmospherics/binary/passive_gate/proc/broadcast_status()
- 	if(!radio_connection)
 @@ -127,8 +127,8 @@
  
  	return 1
@@ -1057,10 +1006,10 @@ index a9353a6f8..fd4d234a5 100644
  #undef REGULATE_NONE
  #undef REGULATE_INPUT
  #undef REGULATE_OUTPUT
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/pipeturbine.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/pipeturbine.dm
+diff --git a/code/ATMOSPHERICS/components/binary_devices/pipeturbine.dm b/code/ATMOSPHERICS/components/binary_devices/pipeturbine.dm
 index 406b1dd0b..63c4701b6 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/pipeturbine.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/pipeturbine.dm
+--- a/code/ATMOSPHERICS/components/binary_devices/pipeturbine.dm
++++ b/code/ATMOSPHERICS/components/binary_devices/pipeturbine.dm
 @@ -3,8 +3,8 @@
  	desc = "A gas turbine. Converting pressure into energy since 1884."
  	icon = 'icons/obj/pipeturbine.dmi'
@@ -1255,10 +1204,10 @@ index 406b1dd0b..63c4701b6 100644
 +	var/power_generated = kin_to_el_ratio * turbine.kin_energy
 +	turbine.kin_energy -= power_generated
 +	add_avail(power_generated)
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/pump.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/pump.dm
-index 101e37408..12f729dc0 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/pump.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/pump.dm
+diff --git a/code/ATMOSPHERICS/components/binary_devices/pump.dm b/code/ATMOSPHERICS/components/binary_devices/pump.dm
+index 101e37408..0ac143724 100644
+--- a/code/ATMOSPHERICS/components/binary_devices/pump.dm
++++ b/code/ATMOSPHERICS/components/binary_devices/pump.dm
 @@ -15,55 +15,36 @@ Thus, the two variables affect pump operation are set in New():
  /obj/machinery/atmospherics/binary/pump
  	icon = 'icons/atmos/pump.dmi'
@@ -1324,19 +1273,6 @@ index 101e37408..12f729dc0 100644
  
  
  /obj/machinery/atmospherics/binary/pump/update_icon()
-@@ -114,10 +95,10 @@ Thus, the two variables affect pump operation are set in New():
- //Radio remote control
- 
- /obj/machinery/atmospherics/binary/pump/proc/set_frequency(new_frequency)
--	SSradio.remove_object(src, frequency)
-+	radio_controller.remove_object(src, frequency)
- 	frequency = new_frequency
- 	if(frequency)
--		radio_connection = SSradio.add_object(src, frequency, filter = RADIO_ATMOSIA)
-+		radio_connection = radio_controller.add_object(src, frequency, filter = RADIO_ATMOSIA)
- 
- /obj/machinery/atmospherics/binary/pump/proc/broadcast_status()
- 	if(!radio_connection)
 @@ -139,8 +120,34 @@ Thus, the two variables affect pump operation are set in New():
  
  	return 1
@@ -1503,10 +1439,10 @@ index 101e37408..12f729dc0 100644
 -				target_pressure = clamp(pressure, 0, max_pressure_setting)
 -				investigate_log("had it's pressure changed to [target_pressure] by [key_name(usr)]", "atmos")
 -	update_icon()
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/volume_pump.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/volume_pump.dm
-index ece1b9e96..24a4dee61 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/binary_devices/volume_pump.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/binary_devices/volume_pump.dm
+diff --git a/code/ATMOSPHERICS/components/binary_devices/volume_pump.dm b/code/ATMOSPHERICS/components/binary_devices/volume_pump.dm
+index ece1b9e96..91aaaebca 100644
+--- a/code/ATMOSPHERICS/components/binary_devices/volume_pump.dm
++++ b/code/ATMOSPHERICS/components/binary_devices/volume_pump.dm
 @@ -1,7 +1,7 @@
  /obj/machinery/atmospherics/binary/pump/high_power
  	icon = 'icons/atmos/volume_pump.dmi'
@@ -1538,17 +1474,16 @@ index ece1b9e96..24a4dee61 100644
 +/obj/machinery/atmospherics/binary/pump/high_power/on/distribution/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 +	..()
 +	target_pressure = round(3 * ONE_ATMOSPHERE)
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/omni_devices/_omni_extras.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/omni_devices/_omni_extras.dm
-index 58d927807..a21f2b734 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/omni_devices/_omni_extras.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/omni_devices/_omni_extras.dm
+diff --git a/code/ATMOSPHERICS/components/omni_devices/_omni_extras.dm b/code/ATMOSPHERICS/components/omni_devices/_omni_extras.dm
+index 58d927807..44e60836e 100644
+--- a/code/ATMOSPHERICS/components/omni_devices/_omni_extras.dm
++++ b/code/ATMOSPHERICS/components/omni_devices/_omni_extras.dm
 @@ -8,8 +8,9 @@
  #define ATM_O2		3
  #define ATM_N2		4
  #define ATM_CO2		5
 -#define ATM_P		6	//Plasma
-+#define ATM_P		6	//Phoron
++#define ATM_P		6	//plasma
  #define ATM_N2O		7
 +#define ATM_H2		8
  
@@ -1559,22 +1494,22 @@ index 58d927807..a21f2b734 100644
  			return "carbon_dioxide"
  		if(ATM_P)
 -			return "plasma"
-+			return MATERIAL_PHORON
++			return MATERIAL_PLASMA
  		if(ATM_N2O)
  			return "sleeping_agent"
 +		if(ATM_H2)
 +			return "hydrogen"
  		else
  			return null
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/omni_devices/filter.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/omni_devices/filter.dm
-index 7a60dbb65..5dab97c42 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/omni_devices/filter.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/omni_devices/filter.dm
+diff --git a/code/ATMOSPHERICS/components/omni_devices/filter.dm b/code/ATMOSPHERICS/components/omni_devices/filter.dm
+index 7a60dbb65..aa802e233 100644
+--- a/code/ATMOSPHERICS/components/omni_devices/filter.dm
++++ b/code/ATMOSPHERICS/components/omni_devices/filter.dm
 @@ -2,23 +2,25 @@
  // Gas filter - omni variant
  //--------------------------------------------
  /obj/machinery/atmospherics/omni/filter
-+	clicksound = "button2"
++
  	name = "omni gas filter"
  	icon_state = "map_filter"
  
@@ -1728,7 +1663,7 @@ index 7a60dbb65..5dab97c42 100644
  			return "Carbon Dioxide"
  		if(ATM_P)
 -			return "Plasma" //*cough* Plasma *cough*
-+			return MATERIAL_PHORON //*cough* Plasma *cough*
++			return MATERIAL_PLASMA //*cough* Plasma *cough*
  		if(ATM_N2O)
  			return "Nitrous Oxide"
 +		if(ATM_H2)
@@ -1794,7 +1729,7 @@ index 7a60dbb65..5dab97c42 100644
 +			if("switch_mode")
 +				switch_mode(dir_flag(href_list["dir"]), mode_return_switch(href_list["mode"]))
 +			if("switch_filter")
-+				var/new_filter = input(usr,"Select filter mode:","Change filter",href_list["mode"]) in list("None", "Oxygen", "Nitrogen", "Carbon Dioxide", MATERIAL_PHORON, "Nitrous Oxide", "Hydrogen")
++				var/new_filter = input(usr,"Select filter mode:","Change filter",href_list["mode"]) in list("None", "Oxygen", "Nitrogen", "Carbon Dioxide", MATERIAL_PLASMA, "Nitrous Oxide", "Hydrogen")
 +				switch_filter(dir_flag(href_list["dir"]), mode_return_switch(new_filter))
  
  	update_icon()
@@ -1808,7 +1743,7 @@ index 7a60dbb65..5dab97c42 100644
  		if("Carbon Dioxide")
  			return ATM_CO2
 -		if("Plasma")
-+		if(MATERIAL_PHORON)
++		if(MATERIAL_PLASMA)
  			return ATM_P
  		if("Nitrous Oxide")
  			return ATM_N2O
@@ -1825,17 +1760,10 @@ index 7a60dbb65..5dab97c42 100644
  		else
  			return
  	else
-@@ -269,4 +273,4 @@
- 		else
- 			initialize_directions |= P.dir
- 			P.connect()
--	P.update = 1
-+	P.update = 1
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/omni_devices/mixer.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/omni_devices/mixer.dm
-index f6c119864..b92826e0e 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/omni_devices/mixer.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/omni_devices/mixer.dm
+diff --git a/code/ATMOSPHERICS/components/omni_devices/mixer.dm b/code/ATMOSPHERICS/components/omni_devices/mixer.dm
+index f6c119864..84606fa02 100644
+--- a/code/ATMOSPHERICS/components/omni_devices/mixer.dm
++++ b/code/ATMOSPHERICS/components/omni_devices/mixer.dm
 @@ -5,12 +5,13 @@
  	name = "omni gas mixer"
  	icon_state = "map_mixer"
@@ -2028,17 +1956,10 @@ index f6c119864..b92826e0e 100644
  
  	//cap it between 0 and the max remaining concentration
  	new_con = between(0, new_con, remain_con)
-@@ -304,4 +300,4 @@
- /obj/machinery/atmospherics/omni/mixer/proc/con_lock(var/port = NORTH)
- 	for(var/datum/omni_port/P in inputs)
- 		if(P.dir == port)
--			P.con_lock = !P.con_lock
-+			P.con_lock = !P.con_lock
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/omni_devices/omni_base.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/omni_devices/omni_base.dm
+diff --git a/code/ATMOSPHERICS/components/omni_devices/omni_base.dm b/code/ATMOSPHERICS/components/omni_devices/omni_base.dm
 index 6cf868907..de7f95738 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/omni_devices/omni_base.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/omni_devices/omni_base.dm
+--- a/code/ATMOSPHERICS/components/omni_devices/omni_base.dm
++++ b/code/ATMOSPHERICS/components/omni_devices/omni_base.dm
 @@ -5,9 +5,9 @@
  	name = "omni device"
  	icon = 'icons/atmos/omni_devices.dmi'
@@ -2169,10 +2090,10 @@ index 6cf868907..de7f95738 100644
  					P.node = target
  					break
  
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/portables_connector.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/portables_connector.dm
+diff --git a/code/ATMOSPHERICS/components/portables_connector.dm b/code/ATMOSPHERICS/components/portables_connector.dm
 index 676e21793..f7a4dcf2c 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/portables_connector.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/portables_connector.dm
+--- a/code/ATMOSPHERICS/components/portables_connector.dm
++++ b/code/ATMOSPHERICS/components/portables_connector.dm
 @@ -3,7 +3,7 @@
  	icon_state = "map_connector"
  
@@ -2275,11 +2196,11 @@ index 676e21793..f7a4dcf2c 100644
  			"You hear a ratchet.")
  		new /obj/item/pipe(loc, make_from=src)
  		qdel(src)
-diff --git a/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/shutoff.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/shutoff.dm
+diff --git a/code/ATMOSPHERICS/components/shutoff.dm b/code/ATMOSPHERICS/components/shutoff.dm
 new file mode 100644
-index 000000000..6fc160f9c
+index 000000000..0d78f4181
 --- /dev/null
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/shutoff.dm
++++ b/code/ATMOSPHERICS/components/shutoff.dm
 @@ -0,0 +1,53 @@
 +/obj/machinery/atmospherics/valve/shutoff
 +	icon = 'icons/atmos/clamp.dmi'
@@ -2314,7 +2235,7 @@ index 000000000..6fc160f9c
 +/obj/machinery/atmospherics/valve/shutoff/hide(var/do_hide)
 +	if(do_hide)
 +		if(level == 1)
-+			layer = PIPE_LAYER
++			layer = GAS_PIPE_HIDDEN_LAYER
 +		else if(level == 2)
 +			..()
 +	else
@@ -2334,18 +2255,17 @@ index 000000000..6fc160f9c
 +		close()
 +	else if(!closed_auto && !open)
 +		open()
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/trinary_devices/filter.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/trinary_devices/filter.dm
-index 7ee520d93..1cdfb6f77 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/trinary_devices/filter.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/trinary_devices/filter.dm
+diff --git a/code/ATMOSPHERICS/components/trinary_devices/filter.dm b/code/ATMOSPHERICS/components/trinary_devices/filter.dm
+index 7ee520d93..3a486fa3b 100644
+--- a/code/ATMOSPHERICS/components/trinary_devices/filter.dm
++++ b/code/ATMOSPHERICS/components/trinary_devices/filter.dm
 @@ -1,12 +1,13 @@
  /obj/machinery/atmospherics/trinary/filter
  	icon = 'icons/atmos/filter.dmi'
  	icon_state = "map"
 -	density = FALSE
 -	level = BELOW_PLATING_LEVEL
-+	clicksound = "button2"
++
 +	density = 0
 +	level = 1
  
@@ -2361,7 +2281,7 @@ index 7ee520d93..1cdfb6f77 100644
  	Filter types:
  	-1: Nothing
 -	 0: Plasma: Plasma, Oxygen Agent B
-+	 0: Phoron: Phoron, Oxygen Agent B
++	 0: plasma: plasma, Oxygen Agent B
  	 1: Oxygen: Oxygen ONLY
  	 2: Nitrogen: Nitrogen ONLY
  	 3: Carbon Dioxide: Carbon Dioxide ONLY
@@ -2370,16 +2290,9 @@ index 7ee520d93..1cdfb6f77 100644
  	*/
  	var/filter_type = -1
  	var/list/filtered_out = list()
-@@ -31,16 +33,16 @@
- 	var/datum/radio_frequency/radio_connection
- 
- /obj/machinery/atmospherics/trinary/filter/proc/set_frequency(new_frequency)
--	SSradio.remove_object(src, frequency)
-+	radio_controller.remove_object(src, frequency)
- 	frequency = new_frequency
+@@ -36,11 +38,11 @@
  	if(frequency)
--		radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
-+		radio_connection = radio_controller.add_object(src, frequency, RADIO_ATMOSIA)
+ 		radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
  
 -/obj/machinery/atmospherics/trinary/filter/New()
 +/obj/machinery/atmospherics/trinary/filter/New(var/atom/location, var/direction, var/nocircuit = FALSE)
@@ -2387,7 +2300,7 @@ index 7ee520d93..1cdfb6f77 100644
  	switch(filter_type)
  		if(0) //removing hydrocarbons
 -			filtered_out = list("plasma")
-+			filtered_out = list(MATERIAL_PHORON)
++			filtered_out = list(MATERIAL_PLASMA)
  		if(1) //removing O2
  			filtered_out = list("oxygen")
  		if(2) //removing N2
@@ -2470,7 +2383,7 @@ index 7ee520d93..1cdfb6f77 100644
  	switch(filter_type)
  		if(0)
 -			current_filter_type = "Plasma"
-+			current_filter_type = MATERIAL_PHORON
++			current_filter_type = MATERIAL_PLASMA
  		if(1)
  			current_filter_type = "Oxygen"
  		if(2)
@@ -2488,7 +2401,7 @@ index 7ee520d93..1cdfb6f77 100644
  			<b>Filtering: </b>[current_filter_type]<br><HR>
  			<h4>Set Filter Type:</h4>
 -			<A href='?src=\ref[src];filterset=0'>Plasma</A><BR>
-+			<A href='?src=\ref[src];filterset=0'>Phoron</A><BR>
++			<A href='?src=\ref[src];filterset=0'>plasma</A><BR>
  			<A href='?src=\ref[src];filterset=1'>Oxygen</A><BR>
  			<A href='?src=\ref[src];filterset=2'>Nitrogen</A><BR>
  			<A href='?src=\ref[src];filterset=3'>Carbon Dioxide</A><BR>
@@ -2511,7 +2424,7 @@ index 7ee520d93..1cdfb6f77 100644
  		switch(filter_type)
  			if(0) //removing hydrocarbons
 -				filtered_out += "plasma"
-+				filtered_out += MATERIAL_PHORON
++				filtered_out += MATERIAL_PLASMA
  			if(1) //removing O2
  				filtered_out += "oxygen"
  			if(2) //removing N2
@@ -2578,17 +2491,17 @@ index 7ee520d93..1cdfb6f77 100644
  			node3 = target
  			break
  
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/trinary_devices/mixer.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/trinary_devices/mixer.dm
-index d5c3e120e..d99eb3131 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/trinary_devices/mixer.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/trinary_devices/mixer.dm
+diff --git a/code/ATMOSPHERICS/components/trinary_devices/mixer.dm b/code/ATMOSPHERICS/components/trinary_devices/mixer.dm
+index d5c3e120e..612c9c54c 100644
+--- a/code/ATMOSPHERICS/components/trinary_devices/mixer.dm
++++ b/code/ATMOSPHERICS/components/trinary_devices/mixer.dm
 @@ -1,12 +1,13 @@
  /obj/machinery/atmospherics/trinary/mixer
  	icon = 'icons/atmos/mixer.dmi'
  	icon_state = "map"
 -	density = FALSE
 -	level = BELOW_PLATING_LEVEL
-+	clicksound = "button2"
++
 +	density = 0
 +	level = 1
  
@@ -2752,10 +2665,10 @@ index d5c3e120e..d99eb3131 100644
  			node3 = target
  			break
  
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/trinary_devices/trinary_base.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/trinary_devices/trinary_base.dm
-index ac45051a1..ee9133a7f 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/trinary_devices/trinary_base.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/trinary_devices/trinary_base.dm
+diff --git a/code/ATMOSPHERICS/components/trinary_devices/trinary_base.dm b/code/ATMOSPHERICS/components/trinary_devices/trinary_base.dm
+index ac45051a1..0400ef880 100644
+--- a/code/ATMOSPHERICS/components/trinary_devices/trinary_base.dm
++++ b/code/ATMOSPHERICS/components/trinary_devices/trinary_base.dm
 @@ -1,8 +1,7 @@
  obj/machinery/atmospherics/trinary
  	dir = SOUTH
@@ -2817,17 +2730,10 @@ index ac45051a1..ee9133a7f 100644
  					node3 = target
  					break
  
-@@ -165,4 +164,4 @@ obj/machinery/atmospherics/trinary
- 
- 		update_underlays()
- 
--		return null
-+		return null
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/tvalve.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/tvalve.dm
-index 08223eef1..2349e1334 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/tvalve.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/tvalve.dm
+diff --git a/code/ATMOSPHERICS/components/tvalve.dm b/code/ATMOSPHERICS/components/tvalve.dm
+index 08223eef1..b4a64f12a 100644
+--- a/code/ATMOSPHERICS/components/tvalve.dm
++++ b/code/ATMOSPHERICS/components/tvalve.dm
 @@ -3,9 +3,9 @@
  	icon_state = "map_tvalve0"
  
@@ -2936,7 +2842,7 @@ index 08223eef1..2349e1334 100644
  /obj/machinery/atmospherics/tvalve/digital/update_icon()
  	..()
  	if(!powered())
-@@ -306,22 +300,22 @@
+@@ -306,7 +300,7 @@
  	if(!powered())
  		return
  	if(!src.allowed(user))
@@ -2945,15 +2851,7 @@ index 08223eef1..2349e1334 100644
  		return
  	..()
  
- //Radio remote control
- 
- /obj/machinery/atmospherics/tvalve/digital/proc/set_frequency(new_frequency)
--	SSradio.remove_object(src, frequency)
-+	radio_controller.remove_object(src, frequency)
- 	frequency = new_frequency
- 	if(frequency)
--		radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
-+		radio_connection = radio_controller.add_object(src, frequency, RADIO_ATMOSIA)
+@@ -320,8 +314,8 @@
  
  
  
@@ -3057,7 +2955,7 @@ index 08223eef1..2349e1334 100644
  /obj/machinery/atmospherics/tvalve/mirrored/digital/update_icon()
  	..()
  	if(!powered())
-@@ -445,20 +435,20 @@
+@@ -445,7 +435,7 @@
  	if(!powered())
  		return
  	if(!src.allowed(user))
@@ -3066,15 +2964,9 @@ index 08223eef1..2349e1334 100644
  		return
  	..()
  
- //Radio remote control -eh?
- 
- /obj/machinery/atmospherics/tvalve/mirrored/digital/proc/set_frequency(new_frequency)
--	SSradio.remove_object(src, frequency)
-+	radio_controller.remove_object(src, frequency)
- 	frequency = new_frequency
+@@ -457,8 +447,8 @@
  	if(frequency)
--		radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
-+		radio_connection = radio_controller.add_object(src, frequency, RADIO_ATMOSIA)
+ 		radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
  
 -/obj/machinery/atmospherics/tvalve/mirrored/digital/atmos_init()
 -	..()
@@ -3083,10 +2975,10 @@ index 08223eef1..2349e1334 100644
  	if(frequency)
  		set_frequency(frequency)
  
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/air_blocker.dm b/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/air_blocker.dm
+diff --git a/code/ATMOSPHERICS/components/unary/air_blocker.dm b/code/ATMOSPHERICS/components/unary/air_blocker.dm
 deleted file mode 100644
 index 196d25f05..000000000
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/air_blocker.dm
+--- a/code/ATMOSPHERICS/components/unary/air_blocker.dm
 +++ /dev/null
 @@ -1,8 +0,0 @@
 -/obj/structure/air_blocker
@@ -3097,10 +2989,10 @@ index 196d25f05..000000000
 -	density = FALSE
 -	anchored = TRUE
 -	atmos_canpass = CANPASS_NEVER
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/cold_sink.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/cold_sink.dm
-index 50358b65f..be3b4e078 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/cold_sink.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/cold_sink.dm
+diff --git a/code/ATMOSPHERICS/components/unary/cold_sink.dm b/code/ATMOSPHERICS/components/unary/cold_sink.dm
+index 50358b65f..b2c9468de 100644
+--- a/code/ATMOSPHERICS/components/unary/cold_sink.dm
++++ b/code/ATMOSPHERICS/components/unary/cold_sink.dm
 @@ -3,14 +3,15 @@
  
  /obj/machinery/atmospherics/unary/freezer
@@ -3112,7 +3004,7 @@ index 50358b65f..be3b4e078 100644
 -	density = TRUE
 -	anchored = TRUE
 -	use_power = NO_POWER_USE
-+	clicksound = "button2"
++
 +	density = 1
 +	anchored = 1
 +	use_power = 0
@@ -3263,7 +3155,7 @@ index 50358b65f..be3b4e078 100644
  
  /obj/machinery/atmospherics/unary/freezer/Process()
  	..()
-@@ -156,25 +166,24 @@
+@@ -156,25 +166,22 @@
  
  	power_rating = initial(power_rating) * cap_rating / 2			//more powerful
  	heatsink_temperature = initial(heatsink_temperature) / ((manip_rating + bin_rating) / 2)	//more efficient
@@ -3280,12 +3172,10 @@ index 50358b65f..be3b4e078 100644
 -
 -	if(default_deconstruction(I, user))
 +/obj/machinery/atmospherics/unary/freezer/attackby(var/obj/item/O as obj, var/mob/user as mob)
-+	if(default_deconstruction_screwdriver(user, O))
++	if(default_part_replacement(user, O))
  		return
 -
 -	if(default_part_replacement(I, user))
-+	if(default_deconstruction_crowbar(user, O))
-+		return
 +	if(default_part_replacement(user, O))
  		return
  
@@ -3297,10 +3187,10 @@ index 50358b65f..be3b4e078 100644
 +	. = ..(user)
  	if(panel_open)
  		to_chat(user, "The maintenance hatch is open.")
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/generator_input.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/generator_input.dm
-index f45af730c..a48724ca6 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/generator_input.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/generator_input.dm
+diff --git a/code/ATMOSPHERICS/components/unary/generator_input.dm b/code/ATMOSPHERICS/components/unary/generator_input.dm
+index f45af730c..4546ea820 100644
+--- a/code/ATMOSPHERICS/components/unary/generator_input.dm
++++ b/code/ATMOSPHERICS/components/unary/generator_input.dm
 @@ -1,15 +1,15 @@
  /obj/machinery/atmospherics/unary/generator_input
  	icon = 'icons/obj/atmospherics/heat_exchanger.dmi'
@@ -3320,17 +3210,10 @@ index f45af730c..a48724ca6 100644
  			icon_state = "intact"
  		else
  			icon_state = "exposed"
-@@ -18,4 +18,4 @@
- 
- 	proc
- 		return_exchange_air()
--			return air_contents
-+			return air_contents
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/heat_exchanger.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/heat_exchanger.dm
+diff --git a/code/ATMOSPHERICS/components/unary/heat_exchanger.dm b/code/ATMOSPHERICS/components/unary/heat_exchanger.dm
 index 3b27489c6..5dce356c4 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/heat_exchanger.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/heat_exchanger.dm
+--- a/code/ATMOSPHERICS/components/unary/heat_exchanger.dm
++++ b/code/ATMOSPHERICS/components/unary/heat_exchanger.dm
 @@ -2,17 +2,16 @@
  
  	icon = 'icons/obj/atmospherics/heat_exchanger.dmi'
@@ -3408,10 +3291,10 @@ index 3b27489c6..5dce356c4 100644
 +				"You hear a ratchet.")
 +			new /obj/item/pipe(loc, make_from=src)
 +			qdel(src)
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/heat_source.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/heat_source.dm
-index cc3ced8bc..e78cd1471 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/heat_source.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/heat_source.dm
+diff --git a/code/ATMOSPHERICS/components/unary/heat_source.dm b/code/ATMOSPHERICS/components/unary/heat_source.dm
+index cc3ced8bc..b3b6e48cd 100644
+--- a/code/ATMOSPHERICS/components/unary/heat_source.dm
++++ b/code/ATMOSPHERICS/components/unary/heat_source.dm
 @@ -3,14 +3,14 @@
  
  /obj/machinery/atmospherics/unary/heater
@@ -3428,7 +3311,7 @@ index cc3ced8bc..e78cd1471 100644
 +	use_power = 0
  	idle_power_usage = 5			//5 Watts for thermostat related circuitry
 -	circuit = /obj/item/circuitboard/unary_atmos/heater
-+	clicksound = "button2"
++
  
  	var/max_temperature = T20C + 680
  	var/internal_volume = 600	//L
@@ -3578,7 +3461,7 @@ index cc3ced8bc..e78cd1471 100644
  
  //upgrading parts
  /obj/machinery/atmospherics/unary/heater/RefreshParts()
-@@ -140,25 +154,24 @@
+@@ -140,25 +154,22 @@
  
  	max_power_rating = initial(max_power_rating) * cap_rating / 2
  	max_temperature = max(initial(max_temperature) - T20C, 0) * ((bin_rating * 4 + cap_rating) / 5) + T20C
@@ -3595,12 +3478,10 @@ index cc3ced8bc..e78cd1471 100644
 -
 -	if(default_deconstruction(I, user))
 +/obj/machinery/atmospherics/unary/heater/attackby(var/obj/item/O as obj, var/mob/user as mob)
-+	if(default_deconstruction_screwdriver(user, O))
++	if(default_part_replacement(user, O))
  		return
 -
 -	if(default_part_replacement(I, user))
-+	if(default_deconstruction_crowbar(user, O))
-+		return
 +	if(default_part_replacement(user, O))
  		return
  
@@ -3612,10 +3493,10 @@ index cc3ced8bc..e78cd1471 100644
 +	. = ..(user)
  	if(panel_open)
  		to_chat(user, "The maintenance hatch is open.")
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/map_sink.dm b/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/map_sink.dm
+diff --git a/code/ATMOSPHERICS/components/unary/map_sink.dm b/code/ATMOSPHERICS/components/unary/map_sink.dm
 deleted file mode 100644
 index 18c7b3a5f..000000000
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/map_sink.dm
+--- a/code/ATMOSPHERICS/components/unary/map_sink.dm
 +++ /dev/null
 @@ -1,53 +0,0 @@
 -/obj/machinery/atmospherics/pipe/simple/sink_heat
@@ -3671,10 +3552,10 @@ index 18c7b3a5f..000000000
 -
 -/obj/machinery/atmospherics/unary/sink_gas/attackby(obj/item/I, mob/user)
 -	return //Maybe for later
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/outlet_injector.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/outlet_injector.dm
-index 6b166b840..eb80c904d 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/outlet_injector.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/outlet_injector.dm
+diff --git a/code/ATMOSPHERICS/components/unary/outlet_injector.dm b/code/ATMOSPHERICS/components/unary/outlet_injector.dm
+index 6b166b840..5133ed68b 100644
+--- a/code/ATMOSPHERICS/components/unary/outlet_injector.dm
++++ b/code/ATMOSPHERICS/components/unary/outlet_injector.dm
 @@ -9,7 +9,7 @@
  	name = "air injector"
  	desc = "Passively injects air into its surroundings. Has a valve attached to it that can control flow rate."
@@ -3716,19 +3597,6 @@ index 6b166b840..eb80c904d 100644
  
  /obj/machinery/atmospherics/unary/outlet_injector/Process()
  	..()
-@@ -93,10 +86,10 @@
- 	flick("inject", src)
- 
- /obj/machinery/atmospherics/unary/outlet_injector/proc/set_frequency(new_frequency)
--	SSradio.remove_object(src, frequency)
-+	radio_controller.remove_object(src, frequency)
- 	frequency = new_frequency
- 	if(frequency)
--		radio_connection = SSradio.add_object(src, frequency)
-+		radio_connection = radio_controller.add_object(src, frequency)
- 
- /obj/machinery/atmospherics/unary/outlet_injector/proc/broadcast_status()
- 	if(!radio_connection)
 @@ -118,9 +111,8 @@
  
  	return 1
@@ -3741,17 +3609,10 @@ index 6b166b840..eb80c904d 100644
  	set_frequency(frequency)
  
  /obj/machinery/atmospherics/unary/outlet_injector/receive_signal(datum/signal/signal)
-@@ -151,4 +143,4 @@
- 	update_icon()
- 
- /obj/machinery/atmospherics/unary/outlet_injector/hide(var/i)
--	update_underlays()
-+	update_underlays()
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/oxygen_generator.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/oxygen_generator.dm
-index 3f7c6c60e..4f78fd22a 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/oxygen_generator.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/oxygen_generator.dm
+diff --git a/code/ATMOSPHERICS/components/unary/oxygen_generator.dm b/code/ATMOSPHERICS/components/unary/oxygen_generator.dm
+index 3f7c6c60e..6d39dbf45 100644
+--- a/code/ATMOSPHERICS/components/unary/oxygen_generator.dm
++++ b/code/ATMOSPHERICS/components/unary/oxygen_generator.dm
 @@ -1,7 +1,7 @@
  obj/machinery/atmospherics/unary/oxygen_generator
  	icon = 'icons/obj/atmospherics/oxygen_generator.dmi'
@@ -3782,18 +3643,11 @@ index 3f7c6c60e..4f78fd22a 100644
  
  		return
  
-@@ -46,4 +46,4 @@ obj/machinery/atmospherics/unary/oxygen_generator
- 			if(network)
- 				network.update = 1
- 
--		return 1
-+		return 1
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/thermal_plate.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/thermal_plate.dm
+diff --git a/code/ATMOSPHERICS/components/unary/thermal_plate.dm b/code/ATMOSPHERICS/components/unary/thermal_plate.dm
 new file mode 100644
-index 000000000..b5f668e26
+index 000000000..c7516d87e
 --- /dev/null
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/thermal_plate.dm
++++ b/code/ATMOSPHERICS/components/unary/thermal_plate.dm
 @@ -0,0 +1,81 @@
 +#define RADIATION_CAPACITY 30000 //Radiation isn't particularly effective (TODO BALANCE)
 +
@@ -3802,7 +3656,7 @@ index 000000000..b5f668e26
 +//Based off Heat Reservoir and Space Heater
 +//Transfers heat between a pipe system and environment, based on which has a greater thermal energy concentration
 +
-+	icon = 'icons/obj/atmospherics/cold_sink.dmi'
++	icon = 'icons/obj/Cryogenic2.dmi'
 +	icon_state = "intact_off"
 +
 +	name = "Thermal Transfer Plate"
@@ -3876,16 +3730,15 @@ index 000000000..b5f668e26
 +			network.update = 1
 +
 +		return 1
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/unary_base.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/unary_base.dm
-index fcf7a791e..31df42ddb 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/unary_base.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/unary_base.dm
+diff --git a/code/ATMOSPHERICS/components/unary/unary_base.dm b/code/ATMOSPHERICS/components/unary/unary_base.dm
+index fcf7a791e..4229845d6 100644
+--- a/code/ATMOSPHERICS/components/unary/unary_base.dm
++++ b/code/ATMOSPHERICS/components/unary/unary_base.dm
 @@ -2,8 +2,12 @@
  	dir = SOUTH
  	initialize_directions = SOUTH
  
-+	layer = ABOVE_TILE_LAYER
++	layer = GAS_PIPE_VISIBLE_LAYER
 +
  	var/datum/gas_mixture/air_contents
  
@@ -3959,7 +3812,7 @@ index fcf7a791e..31df42ddb 100644
  			return network
  
  		return null
-@@ -80,11 +84,11 @@
+@@ -80,9 +84,9 @@
  		return results
  
  	disconnect(obj/machinery/atmospherics/reference)
@@ -3971,15 +3824,11 @@ index fcf7a791e..31df42ddb 100644
  
  		update_icon()
  		update_underlays()
- 
--		return null
-+		return null
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/vent_pump.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/vent_pump.dm
-index f3a8ccf21..bb0affed3 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/vent_pump.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/vent_pump.dm
-@@ -11,23 +11,23 @@
+diff --git a/code/ATMOSPHERICS/components/unary/vent_pump.dm b/code/ATMOSPHERICS/components/unary/vent_pump.dm
+index f3a8ccf21..db95a3cf7 100644
+--- a/code/ATMOSPHERICS/components/unary/vent_pump.dm
++++ b/code/ATMOSPHERICS/components/unary/vent_pump.dm
+@@ -11,23 +11,21 @@
  	icon = 'icons/atmos/vent_pump.dmi'
  	icon_state = "map_vent"
  
@@ -3997,8 +3846,7 @@ index f3a8ccf21..bb0affed3 100644
  
 -	level = BELOW_PLATING_LEVEL
 -	layer = GAS_SCRUBBER_LAYER
-+	can_block_movement = FALSE //Its on the floor
- 
+-
  	var/area/initial_loc
 +	level = 1
  	var/area_uid
@@ -4011,7 +3859,7 @@ index f3a8ccf21..bb0affed3 100644
  
  	var/external_pressure_bound = EXTERNAL_PRESSURE_BOUND
  	var/internal_pressure_bound = INTERNAL_PRESSURE_BOUND
-@@ -42,7 +42,7 @@
+@@ -42,7 +40,7 @@
  	var/internal_pressure_bound_default = INTERNAL_PRESSURE_BOUND
  	var/pressure_checks_default = PRESSURE_CHECKS
  
@@ -4020,7 +3868,7 @@ index f3a8ccf21..bb0affed3 100644
  
  	var/frequency = 1439
  	var/datum/radio_frequency/radio_connection
-@@ -51,70 +51,81 @@
+@@ -51,70 +49,81 @@
  	var/radio_filter_in
  
  /obj/machinery/atmospherics/unary/vent_pump/on
@@ -4071,9 +3919,8 @@ index f3a8ccf21..bb0affed3 100644
  
  /obj/machinery/atmospherics/unary/vent_pump/high_volume
  	name = "Large Air Vent"
--	power_channel = STATIC_EQUIP
+ 	power_channel = STATIC_EQUIP
 -	power_rating = 15000	//15 kW ~ 20 HP
-+	power_channel = EQUIP
 +	power_rating = 80000	//80 kW ~ 100 HP
  
 -/obj/machinery/atmospherics/unary/vent_pump/high_volume/New()
@@ -4084,8 +3931,7 @@ index f3a8ccf21..bb0affed3 100644
  
  /obj/machinery/atmospherics/unary/vent_pump/engine
  	name = "Engine Core Vent"
--	power_channel = STATIC_ENVIRON
-+	power_channel = ENVIRON
+ 	power_channel = STATIC_ENVIRON
  	power_rating = 30000	//15 kW ~ 20 HP
  
 -/obj/machinery/atmospherics/unary/vent_pump/engine/New()
@@ -4130,7 +3976,7 @@ index f3a8ccf21..bb0affed3 100644
  
  /obj/machinery/atmospherics/unary/vent_pump/update_underlays()
  	if(..())
-@@ -122,67 +133,65 @@
+@@ -122,67 +131,65 @@
  		var/turf/T = get_turf(src)
  		if(!istype(T))
  			return
@@ -4169,15 +4015,15 @@ index f3a8ccf21..bb0affed3 100644
  	if(welded)
  		return 0
 +	return 1
- 
--	var/list/environments = get_target_environments(src, expanded_range)
--	if(!length(environments))
++
 +/obj/machinery/atmospherics/unary/vent_pump/Process()
 +	..()
 +
 +	if (hibernate > world.time)
 +		return 1
-+
+ 
+-	var/list/environments = get_target_environments(src, expanded_range)
+-	if(!length(environments))
 +	if (!node)
 +		use_power = 0
 +	if(!can_pump())
@@ -4235,7 +4081,7 @@ index f3a8ccf21..bb0affed3 100644
  		last_power_draw = power_draw
  		use_power(power_draw)
  		if(network)
-@@ -221,7 +230,6 @@
+@@ -221,7 +228,6 @@
  		"device" = "AVP",
  		"power" = use_power,
  		"direction" = pump_direction?("release"):("siphon"),
@@ -4243,7 +4089,7 @@ index f3a8ccf21..bb0affed3 100644
  		"checks" = pressure_checks,
  		"internal" = internal_pressure_bound,
  		"external" = external_pressure_bound,
-@@ -234,7 +242,7 @@
+@@ -234,7 +240,7 @@
  	if(!initial_loc.air_vent_names[id_tag])
  		var/new_name = "[initial_loc.name] Vent Pump #[initial_loc.air_vent_names.len+1]"
  		initial_loc.air_vent_names[id_tag] = new_name
@@ -4252,7 +4098,7 @@ index f3a8ccf21..bb0affed3 100644
  	initial_loc.air_vent_info[id_tag] = signal.data
  
  	radio_connection.post_signal(src, signal, radio_filter_out)
-@@ -242,9 +250,13 @@
+@@ -242,9 +248,13 @@
  	return 1
  
  
@@ -4269,7 +4115,7 @@ index f3a8ccf21..bb0affed3 100644
  	//some vents work his own special way
  	radio_filter_in = frequency==1439?(RADIO_FROM_AIRALARM):null
  	radio_filter_out = frequency==1439?(RADIO_TO_AIRALARM):null
-@@ -256,6 +268,8 @@
+@@ -256,6 +266,8 @@
  	if(stat & (NOPOWER|BROKEN))
  		return
  
@@ -4278,7 +4124,7 @@ index f3a8ccf21..bb0affed3 100644
  	//log_admin("DEBUG \[[world.timeofday]\]: /obj/machinery/atmospherics/unary/vent_pump/receive_signal([signal.debug_print()])")
  	if(!signal.data["tag"] || (signal.data["tag"] != id_tag) || (signal.data["sigtype"]!="command"))
  		return 0
-@@ -286,47 +300,26 @@
+@@ -286,47 +298,26 @@
  	if(signal.data["direction"] != null)
  		pump_direction = text2num(signal.data["direction"])
  
@@ -4331,7 +4177,7 @@ index f3a8ccf21..bb0affed3 100644
  		return
  
  	if(signal.data["status"] != null)
-@@ -340,57 +333,19 @@
+@@ -340,57 +331,19 @@
  	update_icon()
  	return
  
@@ -4353,17 +4199,7 @@ index f3a8ccf21..bb0affed3 100644
 -					update_icon()
 -					return
 -			return
-+/obj/machinery/atmospherics/unary/vent_pump/attackby(obj/item/W, mob/user)
-+	if(isWelder(W))
-+		to_chat(user, "<span class='notice'>Now welding \the [src].</span>")
-+		if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_NORMAL))
-+			welded = !welded
-+			update_icon()
-+			user.visible_message("<span class='notice'>\The [user] [welded ? "welds \the [src] shut" : "unwelds \the [src]"].</span>", \
-+				"<span class='notice'>You [welded ? "weld \the [src] shut" : "unweld \the [src]"].</span>", \
-+				"You hear welding.")
-+		return 1
- 
+-
 -
 -
 -		if(QUALITY_BOLT_TURNING)
@@ -4391,7 +4227,17 @@ index f3a8ccf21..bb0affed3 100644
 -				qdel(src)
 -				return
 -			return
--
++/obj/machinery/atmospherics/unary/vent_pump/attackby(obj/item/W, mob/user)
++	if(isWelder(W))
++		to_chat(user, "<span class='notice'>Now welding \the [src].</span>")
++		if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_NORMAL))
++			welded = !welded
++			update_icon()
++			user.visible_message("<span class='notice'>\The [user] [welded ? "welds \the [src] shut" : "unwelds \the [src]"].</span>", \
++				"<span class='notice'>You [welded ? "weld \the [src] shut" : "unweld \the [src]"].</span>", \
++				"You hear welding.")
++		return 1
+ 
 -		if(ABORT_CHECK)
 -			return
 -
@@ -4401,7 +4247,7 @@ index f3a8ccf21..bb0affed3 100644
  
  /obj/machinery/atmospherics/unary/vent_pump/examine(mob/user)
  	if(..(user, 1))
-@@ -400,17 +355,31 @@
+@@ -400,17 +353,31 @@
  	if(welded)
  		to_chat(user, "It seems welded shut.")
  
@@ -4444,22 +4290,55 @@ index f3a8ccf21..bb0affed3 100644
  
  #undef DEFAULT_PRESSURE_DELTA
  
-@@ -419,4 +388,4 @@
+@@ -418,5 +385,35 @@
+ #undef INTERNAL_PRESSURE_BOUND
  #undef PRESSURE_CHECKS
  
- #undef PRESSURE_CHECK_EXTERNAL
--#undef PRESSURE_CHECK_INTERNAL
-+#undef PRESSURE_CHECK_INTERNAL
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/vent_scrubber.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/vent_scrubber.dm
-index f091b6bfa..366a55d9f 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/unary/vent_scrubber.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/vent_scrubber.dm
-@@ -1,72 +1,70 @@
+-#undef PRESSURE_CHECK_EXTERNAL
+ #undef PRESSURE_CHECK_INTERNAL
++
++// Legacy map sink object
++/obj/machinery/atmospherics/unary/sink_gas
++	name = "legacy gas sink"
++	desc = "A legacy object. You shouldn't see this."
++	icon = 'icons/obj/atmospherics/pipe_vent.dmi'
++	icon_state = "intact"
++	var/build_killswitch = 1
++	var/datum/pipeline/parent
++
++/obj/machinery/atmospherics/unary/sink_gas/Process()
++	if(!parent)
++		if(build_killswitch <= 0)
++			. = PROCESS_KILL
++		else
++			build_killswitch--
++		..()
++		return
++	else
++		var/datum/gas_mixture/removed = air_contents.remove(air_contents.total_moles)
++		if(removed)
++			qdel(removed)
++
++/obj/machinery/atmospherics/unary/sink_gas/atmos_init()
++	..()
++	var/connect_direction = dir
++	for(var/obj/machinery/atmospherics/target in get_step(src,connect_direction))
++		if(target.initialize_directions & get_dir(target,src))
++			if(check_connect_types(target,src))
++				node = target
++				break
+diff --git a/code/ATMOSPHERICS/components/unary/vent_scrubber.dm b/code/ATMOSPHERICS/components/unary/vent_scrubber.dm
+index f091b6bfa..42a785d14 100644
+--- a/code/ATMOSPHERICS/components/unary/vent_scrubber.dm
++++ b/code/ATMOSPHERICS/components/unary/vent_scrubber.dm
+@@ -1,72 +1,72 @@
 -#define SIPHONING	0
 -#define SCRUBBING	1
 -#define SLEEPOUT_TIME	15 SECONDS // If ZAS TICK does not occur for 15 seconds , sleep us
--
++#define SCRUBBER_SCRUB 1
++#define SCRUBBER_SIPHON 2
++#define SCRUBBER_EXCHANGE 3
+ 
  /obj/machinery/atmospherics/unary/vent_scrubber
  	icon = 'icons/atmos/vent_scrubber.dmi'
  	icon_state = "map_scrubber_off"
@@ -4479,8 +4358,6 @@ index f091b6bfa..366a55d9f 100644
 -	level = BELOW_PLATING_LEVEL
 -	layer = GAS_SCRUBBER_LAYER
 +	level = 1
-+
-+	can_block_movement = FALSE //Its on the floor
  
  	var/area/initial_loc
 -	var/id_tag
@@ -4564,7 +4441,7 @@ index f091b6bfa..366a55d9f 100644
  
  /obj/machinery/atmospherics/unary/vent_scrubber/update_underlays()
  	if(..())
-@@ -74,23 +72,22 @@
+@@ -74,14 +74,13 @@
  		var/turf/T = get_turf(src)
  		if(!istype(T))
  			return
@@ -4581,11 +4458,8 @@ index f091b6bfa..366a55d9f 100644
 -			underlays += "frame"
  
  /obj/machinery/atmospherics/unary/vent_scrubber/proc/set_frequency(new_frequency)
--	SSradio.remove_object(src, frequency)
-+	radio_controller.remove_object(src, frequency)
- 	frequency = new_frequency
--	radio_connection = SSradio.add_object(src, frequency, radio_filter_in)
-+	radio_connection = radio_controller.add_object(src, frequency, radio_filter_in)
+ 	SSradio.remove_object(src, frequency)
+@@ -90,7 +89,7 @@
  
  /obj/machinery/atmospherics/unary/vent_scrubber/proc/broadcast_status()
  	if(!radio_connection)
@@ -4594,7 +4468,7 @@ index f091b6bfa..366a55d9f 100644
  
  	var/datum/signal/signal = new
  	signal.transmission_method = 1 //radio signal
-@@ -103,78 +100,81 @@
+@@ -103,78 +102,81 @@
  		"power" = use_power,
  		"scrubbing" = scrubbing,
  		"panic" = panic,
@@ -4603,7 +4477,7 @@ index f091b6bfa..366a55d9f 100644
  		"filter_n2" = ("nitrogen" in scrubbing_gas),
  		"filter_co2" = ("carbon_dioxide" in scrubbing_gas),
 -		"filter_plasma" = ("plasma" in scrubbing_gas),
-+		"filter_phoron" = (MATERIAL_PHORON in scrubbing_gas),
++		"filter_plasma" = (MATERIAL_PLASMA in scrubbing_gas),
  		"filter_n2o" = ("sleeping_agent" in scrubbing_gas),
  		"sigtype" = "status"
  	)
@@ -4720,7 +4594,7 @@ index f091b6bfa..366a55d9f 100644
  
  /obj/machinery/atmospherics/unary/vent_scrubber/hide(var/i) //to make the little pipe section invisible, the icon changes.
  	update_icon()
-@@ -191,31 +191,25 @@
+@@ -191,31 +193,25 @@
  	if(signal.data["power_toggle"] != null)
  		use_power = !use_power
  
@@ -4766,21 +4640,21 @@ index f091b6bfa..366a55d9f 100644
  
  	var/list/toggle = list()
  
-@@ -234,10 +228,10 @@
+@@ -234,10 +230,10 @@
  	else if(signal.data["toggle_co2_scrub"])
  		toggle += "carbon_dioxide"
  
 -	if(!isnull(signal.data["tox_scrub"]) && text2num(signal.data["tox_scrub"]) != ("plasma" in scrubbing_gas))
 -		toggle += "plasma"
-+	if(!isnull(signal.data["tox_scrub"]) && text2num(signal.data["tox_scrub"]) != (MATERIAL_PHORON in scrubbing_gas))
-+		toggle += MATERIAL_PHORON
++	if(!isnull(signal.data["tox_scrub"]) && text2num(signal.data["tox_scrub"]) != (MATERIAL_PLASMA in scrubbing_gas))
++		toggle += MATERIAL_PLASMA
  	else if(signal.data["toggle_tox_scrub"])
 -		toggle += "plasma"
-+		toggle += MATERIAL_PHORON
++		toggle += MATERIAL_PLASMA
  
  	if(!isnull(signal.data["n2o_scrub"]) && text2num(signal.data["n2o_scrub"]) != ("sleeping_agent" in scrubbing_gas))
  		toggle += "sleeping_agent"
-@@ -247,7 +241,7 @@
+@@ -247,7 +243,7 @@
  	scrubbing_gas ^= toggle
  
  	if(signal.data["init"] != null)
@@ -4789,7 +4663,7 @@ index f091b6bfa..366a55d9f 100644
  		return
  
  	if(signal.data["status"] != null)
-@@ -261,67 +255,54 @@
+@@ -261,67 +257,54 @@
  	update_icon()
  	return
  
@@ -4896,19 +4770,19 @@ index f091b6bfa..366a55d9f 100644
 -#undef SCRUBBING
 -#undef SLEEPOUT_TIME
 +	.=..()
-diff --git a/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/wall_vent.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/wall_vent.dm
+diff --git a/code/ATMOSPHERICS/components/unary/wall_vent.dm b/code/ATMOSPHERICS/components/unary/wall_vent.dm
 new file mode 100644
-index 000000000..f0e9c3f82
+index 000000000..248da8f19
 --- /dev/null
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/unary/wall_vent.dm
-@@ -0,0 +1,69 @@
++++ b/code/ATMOSPHERICS/components/unary/wall_vent.dm
+@@ -0,0 +1,50 @@
 +//"Wall" mounted vent variant. Pixelshifted to appear as though it's on the wall, however it should be placed on the floor to avoid suffocation / atmos issues.
 +
 +/obj/machinery/atmospherics/unary/vent_pump/wall
 +	name = "Wall mounted vent pump"
 +	var/cover = TRUE //Is the wall-vent covered?
-+	layer = ABOVE_HUMAN_LAYER //So that the vents stack on top of the necromorphs.
-+	icon = 'icons/atmos/wallvent.dmi'
++	layer = MOB_LAYER + 0.1 //So that the vents stack on top of the necromorphs.
++	icon = 'icons/obj/atmospherics/pipe_vent.dmi'
 +
 +/obj/machinery/atmospherics/unary/vent_pump/wall/examine(mob/user)
 +	. = ..()
@@ -4940,41 +4814,22 @@ index 000000000..f0e9c3f82
 +	if(W && istype(W))
 +		W.exit_vent(src)
 +
-+
-+/mob/living/carbon/human/necromorph/is_allowed_vent_crawl_item(var/obj/item/carried_item)
-+	//FOR NOW. This is because necros can't really take their clothes off.
-+	if(istype(species, /datum/species/necromorph))
-+		return TRUE
-+	return ..()
-+
-+/*
-+/obj/machinery/atmospherics/unary/vent_pump/wall/update_icon(safety)
-+	. = ..()
-+	//Probably best to do this with a icon state to save CPU.
-+	/*
-+	//No cover? Expose the necromorph underneath it..
-+	vis_contents = list()
-+	if(!cover)
-+		for(var/mob/living/M in contents)
-+			vis_contents |= M
-+	*/
-+*/
++// (commented update_icon code removed)
 +
 +/obj/machinery/atmospherics/unary/vent_pump/wall/proc/exit_vent(mob/living/user)
 +	//If there's a cover, break that first.
 +	if(cover)
 +		shake_animation(10)
 +		user.shake_animation(2)
-+		playsound(src.loc, 'sound/effects/vent_scare.ogg', 100, FALSE)
 +		cover = FALSE
 +		update_icon() //This vent is now burst.
 +	(cover) ? user.visible_message("<span class='userdanger'>[user] violently bursts out of [src]!</span>", "<span class='warning'>You burst through [src]!</span>") : user.visible_message("You hear something squeezing through the ducts.", "You climb out the ventilation system.")
 +	user.remove_ventcrawl()
 +	user.forceMove(get_turf(src)) //handles entering and so on
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/valve.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/valve.dm
-index 89bf95d16..71cb822e1 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/components/valve.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/components/valve.dm
+diff --git a/code/ATMOSPHERICS/components/valve.dm b/code/ATMOSPHERICS/components/valve.dm
+index 89bf95d16..f925ce6db 100644
+--- a/code/ATMOSPHERICS/components/valve.dm
++++ b/code/ATMOSPHERICS/components/valve.dm
 @@ -3,9 +3,9 @@
  	icon_state = "map_valve0"
  
@@ -5103,7 +4958,7 @@ index 89bf95d16..71cb822e1 100644
  		return
  	..()
  
-@@ -247,25 +243,19 @@
+@@ -247,12 +243,6 @@
  	open = 1
  	icon_state = "map_valve1"
  
@@ -5116,15 +4971,9 @@ index 89bf95d16..71cb822e1 100644
  /obj/machinery/atmospherics/valve/digital/update_icon()
  	..()
  	if(!powered())
- 		icon_state = "valve[open]nopower"
- 
- /obj/machinery/atmospherics/valve/digital/proc/set_frequency(new_frequency)
--	SSradio.remove_object(src, frequency)
-+	radio_controller.remove_object(src, frequency)
- 	frequency = new_frequency
+@@ -264,8 +254,8 @@
  	if(frequency)
--		radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
-+		radio_connection = radio_controller.add_object(src, frequency, RADIO_ATMOSIA)
+ 		radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
  
 -/obj/machinery/atmospherics/valve/digital/atmos_init()
 -	..()
@@ -5170,10 +5019,10 @@ index 89bf95d16..71cb822e1 100644
 -	..()
 +	. = ..()
  	to_chat(user, "It is [open ? "open" : "closed"].")
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/datum_pipe_network.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/datum_pipe_network.dm
+diff --git a/code/ATMOSPHERICS/datum_pipe_network.dm b/code/ATMOSPHERICS/datum_pipe_network.dm
 index 523133c46..08bb85cf0 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/datum_pipe_network.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/datum_pipe_network.dm
+--- a/code/ATMOSPHERICS/datum_pipe_network.dm
++++ b/code/ATMOSPHERICS/datum_pipe_network.dm
 @@ -1,94 +1,84 @@
 -//var/global/list/datum/pipe_network/pipe_networks = list()
 -
@@ -5332,10 +5181,10 @@ index 523133c46..08bb85cf0 100644
 -		equalize_gases(gases)
 +/datum/pipe_network/proc/reconcile_air()
 +	equalize_gases(gases)
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/datum_pipeline.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/datum_pipeline.dm
-index fd19bc619..3286d1c0b 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/datum_pipeline.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/datum_pipeline.dm
+diff --git a/code/ATMOSPHERICS/datum_pipeline.dm b/code/ATMOSPHERICS/datum_pipeline.dm
+index fd19bc619..b8222f11e 100644
+--- a/code/ATMOSPHERICS/datum_pipeline.dm
++++ b/code/ATMOSPHERICS/datum_pipeline.dm
 @@ -1,223 +1,243 @@
 -
 -datum/pipeline
@@ -5740,11 +5589,10 @@ index fd19bc619..3286d1c0b 100644
 +	// Only would happen if both sides (all 2 square meters of surface area) were exposed to sunlight.  We now assume it aligned edge on.
 +	// It currently should stabilise at 129.6K or -143.6C
 +	. -= surface * STEFAN_BOLTZMANN_CONSTANT * thermal_conductivity * (surface_temperature - COSMIC_RADIATION_TEMPERATURE) ** 4
-\ No newline at end of file
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/he_pipes.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/he_pipes.dm
+diff --git a/code/ATMOSPHERICS/he_pipes.dm b/code/ATMOSPHERICS/he_pipes.dm
 index 1c554a89d..74584e743 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/he_pipes.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/he_pipes.dm
+--- a/code/ATMOSPHERICS/he_pipes.dm
++++ b/code/ATMOSPHERICS/he_pipes.dm
 @@ -4,9 +4,8 @@ obj/machinery/atmospherics/pipe/simple/heat_exchanging
  	icon_state = "intact"
  	pipe_icon = "hepipe"
@@ -5901,10 +5749,10 @@ index 1c554a89d..74584e743 100644
  
  	update_icon()
 -	return
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/mainspipe.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/mainspipe.dm
-index 8e42cf87d..45c90e49c 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/mainspipe.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/mainspipe.dm
+diff --git a/code/ATMOSPHERICS/mainspipe.dm b/code/ATMOSPHERICS/mainspipe.dm
+index 8e42cf87d..6a0245090 100644
+--- a/code/ATMOSPHERICS/mainspipe.dm
++++ b/code/ATMOSPHERICS/mainspipe.dm
 @@ -34,7 +34,6 @@
  
  /obj/machinery/atmospherics/mains_pipe
@@ -6346,7 +6194,18 @@ index 8e42cf87d..45c90e49c 100644
  				return
  			..()
  
-@@ -665,23 +663,23 @@ obj/machinery/atmospherics/mains_pipe/valve
+@@ -656,32 +654,32 @@ obj/machinery/atmospherics/mains_pipe/valve
+ 
+ 		proc
+ 			set_frequency(new_frequency)
+-				radio_controller.remove_object(src, frequency)
++				SSradio.remove_object(src, frequency)
+ 				frequency = new_frequency
+ 				if(frequency)
+-					radio_connection = radio_controller.add_object(src, frequency, RADIO_ATMOSIA)
++					radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
+ 
+ 		var/frequency = 0
  		var/id = null
  		var/datum/radio_frequency/radio_connection
  
@@ -6376,10 +6235,10 @@ index 8e42cf87d..45c90e49c 100644
  			else
  				icon_state = "[hide?"h":""]dvalve[open]"
  
-diff --git a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/pipes.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/pipes.dm
-index 8014f99c4..add75c959 100644
---- a/D:/Repositories/Sojourn-Iskhod/code/ATMOSPHERICS/pipes.dm
-+++ b/D:/Repositories/Sojourn-Iskhod/atmostest/atmospherics/pipes.dm
+diff --git a/code/ATMOSPHERICS/pipes.dm b/code/ATMOSPHERICS/pipes.dm
+index 8014f99c4..b3cebedfb 100755
+--- a/code/ATMOSPHERICS/pipes.dm
++++ b/code/ATMOSPHERICS/pipes.dm
 @@ -1,30 +1,64 @@
 -/obj/machinery/atmospherics/pipe
 +#define SOUND_ID "pipe_leakage"
@@ -6407,7 +6266,7 @@ index 8014f99c4..add75c959 100644
 +	var/datum/sound_token/sound_token
 +
 +	//These are underfloor, stop getting involved in movement calculations
-+	can_block_movement = FALSE
++
 +
 +//Added by nanako, makes pipes immune to explosions.
 +//They're everywhere, blowing them up is functionally irreparable damage, and one bomb ruins the game. its not worth it
@@ -6446,7 +6305,7 @@ index 8014f99c4..add75c959 100644
 +
 +/obj/machinery/atmospherics/pipe/proc/update_sound(var/playing)
 +	if(playing && !sound_token)
-+		sound_token = GLOB.sound_player.PlayLoopingSound(src, SOUND_ID, "sound/machines/pipeleak.ogg", volume = 8, range = 3, falloff = 1, prefer_mute = TRUE)
++		sound_token = GLOB.sound_player.play_looping(src, SOUND_ID, "sound/machines/pipeleak.ogg", volume = 8, range = 3, falloff = 1, prefer_mute = TRUE)
 +	else if(!playing && sound_token)
 +		QDEL_NULL(sound_token)
 +
@@ -6472,7 +6331,7 @@ index 8014f99c4..add75c959 100644
  		return ..()
  
 -	if(istype(I,/obj/item/device/pipe_painter))
-+	if(istype(W,/obj/item/pipe_painter))
++	if(istype(W,/obj/item/device/pipe_painter))
  		return 0
 +
 +	if(!isWrench(W))
@@ -7190,14 +7049,13 @@ index 8014f99c4..add75c959 100644
  	icon_connect_type = "-supply"
  	color = PIPE_COLOR_BLUE
  
-@@ -918,13 +982,17 @@
+@@ -918,13 +982,16 @@
  /obj/machinery/atmospherics/pipe/manifold4w/hidden/blue
  	color = PIPE_COLOR_BLUE
  
 +/obj/machinery/atmospherics/pipe/manifold4w/hidden/fuel
 +	name = "4-way fuel pipe manifold"
 +	color = PIPE_COLOR_ORANGE
-+
 +
  /obj/machinery/atmospherics/pipe/cap
  	name = "pipe endcap"
@@ -7211,7 +7069,7 @@ index 8014f99c4..add75c959 100644
  
  	volume = 35
  
-@@ -933,13 +1001,13 @@
+@@ -933,13 +1000,13 @@
  
  	var/obj/machinery/atmospherics/node
  
@@ -7227,7 +7085,7 @@ index 8014f99c4..add75c959 100644
  	update_icon()
  
  /obj/machinery/atmospherics/pipe/cap/pipeline_expansion()
-@@ -978,27 +1046,28 @@
+@@ -978,27 +1045,28 @@
  
  	alpha = 255
  
@@ -7263,7 +7121,7 @@ index 8014f99c4..add75c959 100644
  	icon_state = "cap-scrubbers"
  	connect_types = CONNECT_TYPE_SCRUBBER
  	icon_connect_type = "-scrubbers"
-@@ -1006,20 +1075,25 @@
+@@ -1006,20 +1074,25 @@
  
  /obj/machinery/atmospherics/pipe/cap/visible/supply
  	name = "supply pipe endcap"
@@ -7292,7 +7150,7 @@ index 8014f99c4..add75c959 100644
  	icon_state = "cap-f-scrubbers"
  	connect_types = CONNECT_TYPE_SCRUBBER
  	icon_connect_type = "-scrubbers"
-@@ -1027,12 +1101,18 @@
+@@ -1027,12 +1100,18 @@
  
  /obj/machinery/atmospherics/pipe/cap/hidden/supply
  	name = "supply pipe endcap"
@@ -7312,7 +7170,7 @@ index 8014f99c4..add75c959 100644
  
  /obj/machinery/atmospherics/pipe/tank
  	icon = 'icons/atmos/tank.dmi'
-@@ -1044,16 +1124,15 @@
+@@ -1044,16 +1123,15 @@
  	volume = 10000 //in liters, 1 meters by 1 meters by 2 meters ~tweaked it a little to simulate a pressure tank without needing to recode them yet
  	var/start_pressure = 25*ONE_ATMOSPHERE
  
@@ -7333,7 +7191,7 @@ index 8014f99c4..add75c959 100644
  
  /obj/machinery/atmospherics/pipe/tank/Process()
  	if(!parent)
-@@ -1082,11 +1161,12 @@
+@@ -1082,11 +1160,12 @@
  	update_underlays()
  
  /obj/machinery/atmospherics/pipe/tank/atmos_init()
@@ -7349,17 +7207,13 @@ index 8014f99c4..add75c959 100644
  				node1 = target
  				break
  
-@@ -1103,14 +1183,17 @@
- 	return null
- 
- /obj/machinery/atmospherics/pipe/tank/attackby(var/obj/item/W as obj, var/mob/user as mob)
--	if(istype(W, /obj/item/device/pipe_painter))
-+	if(istype(W, /obj/item/pipe_painter))
-+		return
-+
-+	if(istype(W, /obj/item/analyzer))
+@@ -1106,11 +1185,14 @@
+ 	if(istype(W, /obj/item/device/pipe_painter))
  		return
  
++	if(istype(W, /obj/item/device/scanner/gas))
++		return
++
  /obj/machinery/atmospherics/pipe/tank/air
  	name = "Pressure Tank (Air)"
  	icon_state = "air_map"
@@ -7369,7 +7223,7 @@ index 8014f99c4..add75c959 100644
  	air_temporary = new
  	air_temporary.volume = volume
  	air_temporary.temperature = T20C
-@@ -1126,7 +1209,7 @@
+@@ -1126,7 +1208,7 @@
  	name = "Pressure Tank (Oxygen)"
  	icon_state = "o2_map"
  
@@ -7378,7 +7232,7 @@ index 8014f99c4..add75c959 100644
  	air_temporary = new
  	air_temporary.volume = volume
  	air_temporary.temperature = T20C
-@@ -1140,7 +1223,7 @@
+@@ -1140,7 +1222,7 @@
  	name = "Pressure Tank (Nitrogen)"
  	icon_state = "n2_map"
  
@@ -7387,7 +7241,7 @@ index 8014f99c4..add75c959 100644
  	air_temporary = new
  	air_temporary.volume = volume
  	air_temporary.temperature = T20C
-@@ -1154,7 +1237,7 @@
+@@ -1154,7 +1236,7 @@
  	name = "Pressure Tank (Carbon Dioxide)"
  	icon_state = "co2_map"
  
@@ -7396,30 +7250,27 @@ index 8014f99c4..add75c959 100644
  	air_temporary = new
  	air_temporary.volume = volume
  	air_temporary.temperature = T20C
-@@ -1164,26 +1247,25 @@
- 	..()
+@@ -1165,25 +1247,24 @@
  	icon_state = "co2"
  
--/obj/machinery/atmospherics/pipe/tank/plasma
+ /obj/machinery/atmospherics/pipe/tank/plasma
 -	name = "Pressure Tank (Plasma)"
 -	description_antag = "Will blind people if they do not wear face-covering gear"
--	icon_state = "plasma_map"
-+/obj/machinery/atmospherics/pipe/tank/phoron
-+	name = "Pressure Tank (Phoron)"
-+	icon_state = "phoron_map"
++	name = "Pressure Tank (plasma)"
+ 	icon_state = "plasma_map"
  
 -/obj/machinery/atmospherics/pipe/tank/plasma/New()
-+/obj/machinery/atmospherics/pipe/tank/phoron/New(var/atom/location, var/direction, var/nocircuit = FALSE)
++/obj/machinery/atmospherics/pipe/tank/plasma/New(var/atom/location, var/direction, var/nocircuit = FALSE)
  	air_temporary = new
  	air_temporary.volume = volume
  	air_temporary.temperature = T20C
  
 -	air_temporary.adjust_gas("plasma", (start_pressure)*(air_temporary.volume)/(R_IDEAL_GAS_EQUATION*air_temporary.temperature))
-+	air_temporary.adjust_gas(MATERIAL_PHORON, (start_pressure)*(air_temporary.volume)/(R_IDEAL_GAS_EQUATION*air_temporary.temperature))
++	air_temporary.adjust_gas(MATERIAL_PLASMA, (start_pressure)*(air_temporary.volume)/(R_IDEAL_GAS_EQUATION*air_temporary.temperature))
  
  	..()
 -	icon_state = "plasma"
-+	icon_state = MATERIAL_PHORON
++	icon_state = MATERIAL_PLASMA
  
  /obj/machinery/atmospherics/pipe/tank/nitrous_oxide
  	name = "Pressure Tank (Nitrous Oxide)"
@@ -7430,7 +7281,7 @@ index 8014f99c4..add75c959 100644
  	air_temporary = new
  	air_temporary.volume = volume
  	air_temporary.temperature = T0C
-@@ -1193,14 +1275,28 @@
+@@ -1193,14 +1274,28 @@
  	..()
  	icon_state = "n2o"
  
@@ -7461,7 +7312,7 @@ index 8014f99c4..add75c959 100644
  
  	volume = 250
  
-@@ -1209,8 +1305,7 @@
+@@ -1209,8 +1304,7 @@
  
  	var/build_killswitch = 1
  
@@ -7471,7 +7322,7 @@ index 8014f99c4..add75c959 100644
  	initialize_directions = dir
  	..()
  
-@@ -1248,11 +1343,12 @@
+@@ -1248,11 +1342,12 @@
  		icon_state = "exposed"
  
  /obj/machinery/atmospherics/pipe/vent/atmos_init()
@@ -7487,7 +7338,7 @@ index 8014f99c4..add75c959 100644
  				node1 = target
  				break
  
-@@ -1278,7 +1374,7 @@
+@@ -1278,7 +1373,7 @@
  
  /obj/machinery/atmospherics/pipe/simple/visible/universal
  	name="Universal pipe adapter"
@@ -7496,7 +7347,7 @@ index 8014f99c4..add75c959 100644
  	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY|CONNECT_TYPE_SCRUBBER
  	icon_state = "map_universal"
  
-@@ -1288,8 +1384,8 @@
+@@ -1288,8 +1383,8 @@
  
  	alpha = 255
  
@@ -7507,7 +7358,7 @@ index 8014f99c4..add75c959 100644
  	underlays.Cut()
  
  	if (node1)
-@@ -1297,15 +1393,13 @@
+@@ -1297,15 +1392,13 @@
  		if(node2)
  			universal_underlays(node2)
  		else
@@ -7527,7 +7378,7 @@ index 8014f99c4..add75c959 100644
  
  /obj/machinery/atmospherics/pipe/simple/visible/universal/update_underlays()
  	..()
-@@ -1315,7 +1409,7 @@
+@@ -1315,7 +1408,7 @@
  
  /obj/machinery/atmospherics/pipe/simple/hidden/universal
  	name="Universal pipe adapter"
@@ -7536,7 +7387,7 @@ index 8014f99c4..add75c959 100644
  	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY|CONNECT_TYPE_SCRUBBER
  	icon_state = "map_universal"
  
-@@ -1325,8 +1419,8 @@
+@@ -1325,8 +1418,8 @@
  
  	alpha = 255
  
@@ -7547,7 +7398,7 @@ index 8014f99c4..add75c959 100644
  	underlays.Cut()
  
  	if (node1)
-@@ -1334,15 +1428,15 @@
+@@ -1334,15 +1427,15 @@
  		if(node2)
  			universal_underlays(node2)
  		else
@@ -7569,7 +7420,7 @@ index 8014f99c4..add75c959 100644
  
  /obj/machinery/atmospherics/pipe/simple/hidden/universal/update_underlays()
  	..()
-@@ -1351,7 +1445,7 @@
+@@ -1351,7 +1444,7 @@
  /obj/machinery/atmospherics/proc/universal_underlays(var/obj/machinery/atmospherics/node, var/direction)
  	var/turf/T = loc
  	if(node)
@@ -7578,7 +7429,7 @@ index 8014f99c4..add75c959 100644
  		if(node.icon_connect_type == "-supply")
  			add_underlay_adapter(T, , node_dir, "")
  			add_underlay_adapter(T, node, node_dir, "-supply")
-@@ -1371,9 +1465,11 @@
+@@ -1371,9 +1464,40 @@
  
  /obj/machinery/atmospherics/proc/add_underlay_adapter(var/turf/T, var/obj/machinery/atmospherics/node, var/direction, var/icon_connect_type) //modified from add_underlay, does not make exposed underlays
  	if(node)
@@ -7591,4 +7442,32 @@ index 8014f99c4..add75c959 100644
  		underlays += icon_manager.get_atmos_icon("underlay", direction, color_cache_name(node), "retracted" + icon_connect_type)
 +
 +#undef SOUND_ID
-\ No newline at end of file
++
++// Legacy map sink object
++/obj/machinery/atmospherics/pipe/simple/sink_heat
++	name = "legacy heat sink"
++	desc = "A legacy object. You shouldn't see this."
++	icon = 'icons/obj/atmospherics/heat_exchanger.dmi'
++	icon_state = "intact"
++	var/build_killswitch = 1
++	var/datum/gas_mixture/air_contents = new
++
++/obj/machinery/atmospherics/pipe/simple/sink_heat/Process()
++	if(!parent)
++		if(build_killswitch <= 0)
++			. = PROCESS_KILL
++		else
++			build_killswitch--
++		..()
++		return
++	else
++		air_contents.temperature = 0 // Remove all heat
++
++/obj/machinery/atmospherics/pipe/simple/sink_heat/atmos_init()
++	..()
++	var/connect_direction = dir
++	for(var/obj/machinery/atmospherics/target in get_step(src,connect_direction))
++		if(target.initialize_directions & get_dir(target,src))
++			if(check_connect_types(target,src))
++				node1 = target
++				break

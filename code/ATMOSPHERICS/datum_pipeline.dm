@@ -32,7 +32,7 @@
 	var/pressure = air.return_pressure()
 	if(pressure > alert_pressure)
 		for(var/obj/machinery/atmospherics/pipe/member in members)
-			if(!member.check_pressure(pressure))
+			if(!member.check_pressure())
 				members.Remove(member)
 				break //Only delete 1 pipe per process
 

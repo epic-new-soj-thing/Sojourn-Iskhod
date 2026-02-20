@@ -18,6 +18,18 @@
 
 /turf/simulated/New()
 	..()
+	// Ensure every simulated turf has a baseline atmosphere so return_air()/make_air()
+	// can rely on it rather than generating an empty mixture at start.
+	// skip airless floor types entirely, they intentionally have none.
+	if(!initial_gas && !istype(src, /turf/simulated/floor/airless))
+		initial_gas = new/datum/gas_mixture
+		// copy the default macro values that other turfs used to set via
+		// oxygen/nitrogen variables when the old system was still active.
+		initial_gas.adjust_multi(GAS_OXYGEN, MOLES_O2STANDARD,
+			GAS_NITROGEN, MOLES_N2STANDARD)
+		initial_gas.temperature = temperature
+		initial_gas.update_values()
+
 	if(istype(loc, /area/iskhod/absolutism))
 		holy = 1
 	levelupdate()

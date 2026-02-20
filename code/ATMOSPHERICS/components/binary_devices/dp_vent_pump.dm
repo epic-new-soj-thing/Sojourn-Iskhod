@@ -18,9 +18,9 @@
 	name = "Dual Port Air Vent"
 	desc = "Has a valve and pump attached to it. There are two ports."
 
-	level = 1
+	level = BELOW_PLATING_LEVEL
 
-	use_power = 0
+	use_power = NO_POWER_USE
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
 	power_rating = 7500			//7500 W ~ 10 HP
 
@@ -33,7 +33,7 @@
 	var/output_pressure_max = DEFAULT_PRESSURE_DELTA
 
 	var/frequency = 0
-	var/id = null
+	var/id
 	var/datum/radio_frequency/radio_connection
 
 	var/pressure_checks = PRESSURE_CHECK_EXTERNAL
@@ -41,7 +41,7 @@
 	//2: Do not pass input_pressure_min
 	//4: Do not pass output_pressure_max
 
-/obj/machinery/atmospherics/binary/dp_vent_pump/New(var/atom/location, var/direction, var/nocircuit = FALSE)
+/obj/machinery/atmospherics/binary/dp_vent_pump/New()
 	..()
 	air1.volume = ATMOS_DEFAULT_VOLUME_PUMP
 	air2.volume = ATMOS_DEFAULT_VOLUME_PUMP
@@ -50,7 +50,7 @@
 /obj/machinery/atmospherics/binary/dp_vent_pump/high_volume
 	name = "Large Dual Port Air Vent"
 
-/obj/machinery/atmospherics/binary/dp_vent_pump/high_volume/New(var/atom/location, var/direction, var/nocircuit = FALSE)
+/obj/machinery/atmospherics/binary/dp_vent_pump/high_volume/New()
 	..()
 	air1.volume = ATMOS_DEFAULT_VOLUME_PUMP + 800
 	air2.volume = ATMOS_DEFAULT_VOLUME_PUMP + 800
@@ -59,7 +59,7 @@
 	if(!check_icon_cache())
 		return
 
-	overlays.Cut()
+	cut_overlays()
 
 	var/vent_icon = "vent"
 
@@ -67,7 +67,7 @@
 	if(!istype(T))
 		return
 
-	if(!T.is_plating() && node1 && node2 && node1.level == 1 && node2.level == 1 && istype(node1, /obj/machinery/atmospherics/pipe) && istype(node2, /obj/machinery/atmospherics/pipe))
+	if(!T.is_plating() && node1 && node2 && node1.level == BELOW_PLATING_LEVEL && node2.level == BELOW_PLATING_LEVEL && istype(node1, /obj/machinery/atmospherics/pipe) && istype(node2, /obj/machinery/atmospherics/pipe))
 		vent_icon += "h"
 
 	if(!powered())
@@ -75,7 +75,7 @@
 	else
 		vent_icon += "[use_power ? "[pump_direction ? "out" : "in"]" : "off"]"
 
-	overlays += icon_manager.get_atmos_icon("device", , , vent_icon)
+	add_overlay(icon_manager.get_atmos_icon("device", , , vent_icon))
 
 /obj/machinery/atmospherics/binary/dp_vent_pump/update_underlays()
 	if(..())
@@ -83,7 +83,7 @@
 		var/turf/T = get_turf(src)
 		if(!istype(T))
 			return
-		if(!T.is_plating() && node1 && node2 && node1.level == 1 && node2.level == 1 && istype(node1, /obj/machinery/atmospherics/pipe) && istype(node2, /obj/machinery/atmospherics/pipe))
+		if(!T.is_plating() && node1 && node2 && node1.level == BELOW_PLATING_LEVEL && node2.level == BELOW_PLATING_LEVEL && istype(node1, /obj/machinery/atmospherics/pipe) && istype(node2, /obj/machinery/atmospherics/pipe))
 			return
 		else
 			if (node1)
@@ -189,14 +189,21 @@
 
 	return 1
 
-/obj/machinery/atmospherics/binary/dp_vent_pump/Initialize()
-	. = ..()
+/obj/machinery/atmospherics/binary/dp_vent_pump/atmos_init()
+	..()
 	if(frequency)
 		set_frequency(frequency)
 
 /obj/machinery/atmospherics/binary/dp_vent_pump/examine(mob/user)
 	if(..(user, 1))
 		to_chat(user, "A small gauge in the corner reads [round(last_flow_rate, 0.1)] L/s; [round(last_power_draw)] W")
+
+
+/obj/machinery/atmospherics/unary/vent_pump/power_change()
+	var/old_stat = stat
+	..()
+	if(old_stat != stat)
+		update_icon()
 
 /obj/machinery/atmospherics/binary/dp_vent_pump/receive_signal(datum/signal/signal)
 	if(!signal.data["tag"] || (signal.data["tag"] != id) || (signal.data["sigtype"]!="command"))

@@ -3,6 +3,7 @@
 
 /turf/var/needs_air_update = 0
 /turf/var/datum/gas_mixture/air
+/turf/var/datum/gas_mixture/initial_gas
 
 /turf/simulated/proc/update_graphic(list/graphic_add = null, list/graphic_remove = null)
 	if(graphic_add && graphic_add.len)
@@ -242,6 +243,14 @@
 	//Create gas mixture to hold data for passing
 	var/datum/gas_mixture/GM = new
 
+	// if a specified initial_gas mix exists use it; otherwise generate
+	// a standard air mixture so tiles aren't empty by default.
+	// don't fill airless floor types
+	if(initial_gas)
+		GM.copy_from(initial_gas)
+	else if(!istype(src, /turf/simulated/floor/airless))
+		GM.adjust_multi(GAS_OXYGEN, MOLES_O2STANDARD,
+			GAS_NITROGEN, MOLES_N2STANDARD)
 
 	GM.temperature = temperature
 	GM.update_values()
@@ -284,6 +293,11 @@
 /turf/proc/make_air()
 	air = new/datum/gas_mixture
 	air.temperature = temperature
+	if(initial_gas)
+		air.copy_from(initial_gas)
+	else if(!istype(src, /turf/simulated/floor/airless))
+		air.adjust_multi(GAS_OXYGEN, MOLES_O2STANDARD,
+			GAS_NITROGEN, MOLES_N2STANDARD)
 
 	air.update_values()
 

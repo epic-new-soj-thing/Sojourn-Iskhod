@@ -1,13 +1,12 @@
 /obj/machinery/atmospherics/trinary/mixer
 	icon = 'icons/atmos/mixer.dmi'
 	icon_state = "map"
-
-	density = 0
-	level = 1
+	density = FALSE
+	level = BELOW_PLATING_LEVEL
 
 	name = "Gas mixer"
 
-	use_power = 1
+	use_power = IDLE_POWER_USE
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
 	power_rating = 3700	//This also doubles as a measure of how powerful the mixer is, in Watts. 3700 W ~ 5 HP
 
@@ -34,7 +33,7 @@
 		icon_state += use_power ? "on" : "off"
 	else
 		icon_state += "off"
-		use_power = 0
+		use_power = NO_POWER_USE
 
 /obj/machinery/atmospherics/trinary/mixer/update_underlays()
 	if(..())
@@ -58,7 +57,13 @@
 /obj/machinery/atmospherics/trinary/mixer/hide(var/i)
 	update_underlays()
 
-/obj/machinery/atmospherics/trinary/mixer/New(var/atom/location, var/direction, var/nocircuit = FALSE)
+/obj/machinery/atmospherics/trinary/mixer/power_change()
+	var/old_stat = stat
+	..()
+	if(old_stat != stat)
+		update_icon()
+
+/obj/machinery/atmospherics/trinary/mixer/New()
 	..()
 	air1.volume = ATMOS_DEFAULT_VOLUME_MIXER
 	air2.volume = ATMOS_DEFAULT_VOLUME_MIXER
@@ -98,21 +103,20 @@
 
 	return 1
 
-/obj/machinery/atmospherics/trinary/mixer/attackby(var/obj/item/W as obj, var/mob/user as mob)
-	if(!isWrench(W))
+/obj/machinery/atmospherics/trinary/mixer/attackby(var/obj/item/I, var/mob/user as mob)
+	if(!(QUALITY_BOLT_TURNING in I.tool_qualities))
 		return ..()
 	var/datum/gas_mixture/int_air = return_air()
 	var/datum/gas_mixture/env_air = loc.return_air()
 	if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
-		to_chat(user, "<span class='warning'>You cannot unwrench \the [src], it too exerted due to internal pressure.</span>")
+		to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it too exerted due to internal pressure."))
 		add_fingerprint(user)
 		return 1
-	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
-	to_chat(user, "<span class='notice'>You begin to unfasten \the [src]...</span>")
-	if (do_after(user, 40, src))
+	to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
+	if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_MEC))
 		user.visible_message( \
-			"<span class='notice'>\The [user] unfastens \the [src].</span>", \
-			"<span class='notice'>You have unfastened \the [src].</span>", \
+			SPAN_NOTICE("\The [user] unfastens \the [src]."), \
+			SPAN_NOTICE("You have unfastened \the [src]."), \
 			"You hear ratchet.")
 		new /obj/item/pipe(loc, make_from=src)
 		qdel(src)
@@ -122,7 +126,7 @@
 		return
 	src.add_fingerprint(usr)
 	if(!src.allowed(user))
-		to_chat(user, "<span class='warning'>Access denied.</span>")
+		to_chat(user, SPAN_WARNING("Access denied."))
 		return
 	usr.set_machine(src)
 	var/dat = {"<b>Power: </b><a href='?src=\ref[src];power=1'>[use_power?"On":"Off"]</a><br>
@@ -146,26 +150,26 @@
 				<a href='?src=\ref[src];node2_c=0.1'>+</a>
 				"}
 
-	user << browse("<HEAD><TITLE>[src.name] control</TITLE></HEAD><TT>[dat]</TT>", "window=atmo_mixer")
+	user << browse(HTML_SKELETON_TITLE("[src.name] control","<tt>[dat]</tt>"),"window=atmo_mixer")
 	onclose(user, "atmo_mixer")
 	return
 
-/obj/machinery/atmospherics/trinary/mixer/Topic(href,href_list)
+/obj/machinery/atmospherics/trinary/mixer/Topic(href, href_list)
 	if(..()) return 1
 	if(href_list["power"])
 		use_power = !use_power
 	if(href_list["set_press"])
 		var/max_flow_rate = min(air1.volume, air2.volume)
-		var/new_flow_rate = input(usr,"Enter new flow rate limit (0-[max_flow_rate]L/s)","Flow Rate Control",src.set_flow_rate) as num
+		var/new_flow_rate = input(usr, "Enter new flow rate limit (0-[max_flow_rate]L/s)", "Flow Rate Control", src.set_flow_rate) as num
 		src.set_flow_rate = max(0, min(max_flow_rate, new_flow_rate))
 	if(href_list["node1_c"])
 		var/value = text2num(href_list["node1_c"])
 		src.mixing_inputs[air1] = max(0, min(1, src.mixing_inputs[air1] + value))
-		src.mixing_inputs[air2] = 1.0 - mixing_inputs[air1]
+		src.mixing_inputs[air2] = 1 - mixing_inputs[air1]
 	if(href_list["node2_c"])
 		var/value = text2num(href_list["node2_c"])
 		src.mixing_inputs[air2] = max(0, min(1, src.mixing_inputs[air2] + value))
-		src.mixing_inputs[air1] = 1.0 - mixing_inputs[air2]
+		src.mixing_inputs[air1] = 1 - mixing_inputs[air2]
 	src.update_icon()
 	src.updateUsrDialog()
 	return
@@ -198,18 +202,18 @@ obj/machinery/atmospherics/trinary/mixer/t_mixer/atmos_init()
 	var/node2_connect = turn(dir, 90)
 	var/node3_connect = dir
 
-	for(var/obj/machinery/atmospherics/target in get_step(src,node1_connect))
-		if(target.initialize_directions & get_dir(target,src))
+	for(var/obj/machinery/atmospherics/target in get_step(src, node1_connect))
+		if(target.initialize_directions & get_dir(target, src))
 			node1 = target
 			break
 
-	for(var/obj/machinery/atmospherics/target in get_step(src,node2_connect))
-		if(target.initialize_directions & get_dir(target,src))
+	for(var/obj/machinery/atmospherics/target in get_step(src, node2_connect))
+		if(target.initialize_directions & get_dir(target, src))
 			node2 = target
 			break
 
-	for(var/obj/machinery/atmospherics/target in get_step(src,node3_connect))
-		if(target.initialize_directions & get_dir(target,src))
+	for(var/obj/machinery/atmospherics/target in get_step(src, node3_connect))
+		if(target.initialize_directions & get_dir(target, src))
 			node3 = target
 			break
 
@@ -224,7 +228,7 @@ obj/machinery/atmospherics/trinary/mixer/m_mixer
 
 	//node 3 is the outlet, nodes 1 & 2 are intakes
 
-obj/machinery/atmospherics/trinary/mixer/m_mixer/New(var/atom/location, var/direction, var/nocircuit = FALSE)
+obj/machinery/atmospherics/trinary/mixer/m_mixer/New()
 	..()
 	switch(dir)
 		if(NORTH)
@@ -244,18 +248,18 @@ obj/machinery/atmospherics/trinary/mixer/m_mixer/atmos_init()
 	var/node2_connect = turn(dir, 90)
 	var/node3_connect = dir
 
-	for(var/obj/machinery/atmospherics/target in get_step(src,node1_connect))
-		if(target.initialize_directions & get_dir(target,src))
+	for(var/obj/machinery/atmospherics/target in get_step(src, node1_connect))
+		if(target.initialize_directions & get_dir(target, src))
 			node1 = target
 			break
 
-	for(var/obj/machinery/atmospherics/target in get_step(src,node2_connect))
-		if(target.initialize_directions & get_dir(target,src))
+	for(var/obj/machinery/atmospherics/target in get_step(src, node2_connect))
+		if(target.initialize_directions & get_dir(target, src))
 			node2 = target
 			break
 
-	for(var/obj/machinery/atmospherics/target in get_step(src,node3_connect))
-		if(target.initialize_directions & get_dir(target,src))
+	for(var/obj/machinery/atmospherics/target in get_step(src, node3_connect))
+		if(target.initialize_directions & get_dir(target, src))
 			node3 = target
 			break
 

@@ -242,8 +242,13 @@
 	//Create gas mixture to hold data for passing
 	var/datum/gas_mixture/GM = new
 
+	//if a specific initial composition was provided, use it; otherwise fall back to standard air
 	if(initial_gas)
-		GM.gas = initial_gas.Copy()
+		GM.copy_from(initial_gas)
+	else
+		GM.adjust_multi(GAS_OXYGEN, MOLES_O2STANDARD,
+			GAS_NITROGEN, MOLES_N2STANDARD)
+
 	GM.temperature = temperature
 	GM.update_values()
 
@@ -286,7 +291,10 @@
 	air = new/datum/gas_mixture
 	air.temperature = temperature
 	if(initial_gas)
-		air.gas = initial_gas.Copy()
+		air.copy_from(initial_gas)
+	else
+		air.adjust_multi(GAS_OXYGEN, MOLES_O2STANDARD,
+			GAS_NITROGEN, MOLES_N2STANDARD)
 	air.update_values()
 
 /turf/simulated/proc/c_copy_air()

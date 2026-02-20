@@ -19,6 +19,8 @@
 
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY //connects to regular and supply pipes
 
+	can_buckle = 0 //Its on the floor
+
 	var/area/initial_loc
 	level = 1
 	var/area_uid
@@ -102,7 +104,7 @@
 /obj/machinery/atmospherics/unary/vent_pump/update_icon(var/safety = 0)
 	if(!check_icon_cache())
 		return
-	if (!node)
+	if (!node1)
 		use_power = 0
 
 	overlays.Cut()
@@ -113,7 +115,7 @@
 	if(!istype(T))
 		return
 
-	if(!T.is_plating() && node && node.level == 1 && istype(node, /obj/machinery/atmospherics/pipe))
+	if(!T.is_plating() && node1 && node1.level == 1 && istype(node1, /obj/machinery/atmospherics/pipe))
 		vent_icon += "h"
 
 	if(welded)
@@ -131,11 +133,11 @@
 		var/turf/T = get_turf(src)
 		if(!istype(T))
 			return
-		if(!T.is_plating() && node && node.level == 1 && istype(node, /obj/machinery/atmospherics/pipe))
+		if(!T.is_plating() && node1 && node1.level == 1 && istype(node1, /obj/machinery/atmospherics/pipe))
 			return
 		else
-			if(node)
-				add_underlay(T, node, dir, node.icon_connect_type)
+			if(node1)
+				add_underlay(T, node1, dir, node1.icon_connect_type)
 			else
 				add_underlay(T,, dir)
 
@@ -158,7 +160,7 @@
 	if (hibernate > world.time)
 		return 1
 
-	if (!node)
+	if (!node1)
 		use_power = 0
 	if(!can_pump())
 		return 0
@@ -360,7 +362,7 @@
 		to_chat(user, "<span class='warning'>You cannot unwrench \the [src], turn it off first.</span>")
 		return 1
 	var/turf/T = src.loc
-	if (node && node.level==1 && isturf(T) && !T.is_plating())
+	if (node1 && node1.level==1 && isturf(T) && !T.is_plating())
 		to_chat(user, "<span class='warning'>You must remove the plating first.</span>")
 		return 1
 	var/datum/gas_mixture/int_air = return_air()
@@ -385,35 +387,5 @@
 #undef INTERNAL_PRESSURE_BOUND
 #undef PRESSURE_CHECKS
 
+#undef PRESSURE_CHECK_EXTERNAL
 #undef PRESSURE_CHECK_INTERNAL
-
-// Legacy map sink object
-/obj/machinery/atmospherics/unary/sink_gas
-	name = "legacy gas sink"
-	desc = "A legacy object. You shouldn't see this."
-	icon = 'icons/obj/atmospherics/pipe_vent.dmi'
-	icon_state = "intact"
-	var/build_killswitch = 1
-	var/datum/pipeline/parent
-
-/obj/machinery/atmospherics/unary/sink_gas/Process()
-	if(!parent)
-		if(build_killswitch <= 0)
-			. = PROCESS_KILL
-		else
-			build_killswitch--
-		..()
-		return
-	else
-		var/datum/gas_mixture/removed = air_contents.remove(air_contents.total_moles)
-		if(removed)
-			qdel(removed)
-
-/obj/machinery/atmospherics/unary/sink_gas/atmos_init()
-	..()
-	var/connect_direction = dir
-	for(var/obj/machinery/atmospherics/target in get_step(src,connect_direction))
-		if(target.initialize_directions & get_dir(target,src))
-			if(check_connect_types(target,src))
-				node = target
-				break
