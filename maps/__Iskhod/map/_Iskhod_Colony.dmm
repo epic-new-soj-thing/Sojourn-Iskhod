@@ -8921,8 +8921,8 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/holofloor,
-/area/holodeck/source_plating)
+/turf/simulated/floor/tiled/techmaint,
+/area/holodeck/alphadeck)
 "cki" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -12114,8 +12114,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/holofloor,
-/area/holodeck/source_plating)
+/turf/simulated/floor/tiled/techmaint,
+/area/holodeck/alphadeck)
 "dcj" = (
 /obj/effect/floor_decal/industrial/warningdust{
 	dir = 8
@@ -14156,8 +14156,8 @@
 /obj/machinery/alarm{
 	pixel_y = 32
 	},
-/turf/simulated/floor/holofloor,
-/area/holodeck/source_plating)
+/turf/simulated/floor/tiled/techmaint,
+/area/holodeck/alphadeck)
 "dBw" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 8
@@ -21963,8 +21963,8 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/holofloor,
-/area/holodeck/source_plating)
+/turf/simulated/floor/tiled/techmaint,
+/area/holodeck/alphadeck)
 "fEf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -23658,8 +23658,8 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/turf/simulated/floor/holofloor,
-/area/holodeck/source_plating)
+/turf/simulated/floor/tiled/techmaint,
+/area/holodeck/alphadeck)
 "gcV" = (
 /obj/structure/catwalk,
 /obj/structure/cable/cyan{
@@ -30278,8 +30278,8 @@
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/crew_quarters/barbackroom)
 "hPL" = (
-/turf/simulated/floor/holofloor,
-/area/holodeck/source_plating)
+/turf/simulated/floor/tiled/techmaint,
+/area/holodeck/alphadeck)
 "hPO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -46929,8 +46929,8 @@
 	dir = 1;
 	pixel_y = -32
 	},
-/turf/simulated/floor/holofloor,
-/area/holodeck/source_plating)
+/turf/simulated/floor/tiled/techmaint,
+/area/holodeck/alphadeck)
 "meg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -51210,8 +51210,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/holofloor,
-/area/holodeck/source_plating)
+/turf/simulated/floor/tiled/techmaint,
+/area/holodeck/alphadeck)
 "nls" = (
 /obj/machinery/atmospherics/pipe/manifold/visible,
 /obj/structure/catwalk{
@@ -70938,7 +70938,7 @@
 	icon_state = "spline_fancy_corner"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/HolodeckControl{
+/obj/machinery/computer/HolodeckControl/Exodus{
 	dir = 4
 	},
 /turf/simulated/floor/wood,
