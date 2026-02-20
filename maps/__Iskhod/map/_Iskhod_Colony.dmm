@@ -1016,11 +1016,6 @@
 "akZ" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/multiz/stairs/enter/bottom,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "aln" = (
@@ -8039,18 +8034,6 @@
 "bYO" = (
 /obj/structure/disposalpipe/down{
 	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
-/obj/structure/cable/green,
-/obj/structure/multiz/stairs/enter,
-/obj/structure/cable/green{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-1"
 	},
 /turf/simulated/open,
 /area/iskhod/engineering/enginehallway)
@@ -18307,6 +18290,11 @@
 /obj/structure/window/basic/iskhod{
 	dir = 8
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
 "eGZ" = (
@@ -28140,10 +28128,10 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
@@ -34010,6 +33998,11 @@
 /area/iskhod/pros/shuttle_landing_zone)
 "iLL" = (
 /obj/machinery/door/firedoor,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
 "iLQ" = (
@@ -35227,6 +35220,16 @@
 	dir = 8
 	},
 /obj/random/furniture/pottedplant,
+/obj/structure/cable/green{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
 "jbO" = (
@@ -42966,8 +42969,8 @@
 /obj/machinery/door/firedoor,
 /obj/structure/cable/yellow{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/enginehallway)
@@ -60832,6 +60835,11 @@
 /obj/machinery/door/firedoor,
 /obj/structure/sign/levels/stairsdown{
 	pixel_x = 32
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/enginehallway)
@@ -79549,6 +79557,18 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
+"uHe" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/cable/green{
+	d1 = 32;
+	d2 = 2;
+	icon_state = "32-1"
+	},
+/turf/simulated/open,
+/area/iskhod/engineering/enginehallway)
 "uHg" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/sign/misc/enlist{
@@ -92298,16 +92318,6 @@
 "yek" = (
 /obj/structure/disposalpipe/up,
 /obj/structure/multiz/stairs/active/bottom,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "yev" = (
@@ -110663,7 +110673,7 @@ mhC
 mJr
 fkK
 idj
-aHg
+mgO
 yek
 akZ
 hmd
@@ -110865,7 +110875,7 @@ nRQ
 dxA
 vRO
 eci
-mgO
+aHg
 jbJ
 eGS
 iLL
@@ -151267,7 +151277,7 @@ cFZ
 uuK
 noG
 pIb
-sNT
+uHe
 sGd
 sGd
 arf
