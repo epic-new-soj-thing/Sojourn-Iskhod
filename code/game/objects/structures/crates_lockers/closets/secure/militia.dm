@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/reinforced/commander
-	name = "blackshield commander's locker"
+	name = "ranger captain's locker"
 	req_access = list(access_hos)
 	icon_state = "mc"
 
@@ -8,6 +8,8 @@
 		return
 	populated_contents = TRUE
 	new /obj/item/gunbox/commanding_officer(src) // Secondary on their personal hardcase, primary on the locker.
+	new /obj/item/voucher/marshal/wosecondary(src)
+	new /obj/item/voucher/marshal/armor(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/tool/disciplinary_action(src)
 	new /obj/item/clothing/head/helmet/ballistic/militia/full/co(src)
@@ -36,7 +38,7 @@
 
 
 /obj/structure/closet/secure_closet/armorer
-	name = "sergeant's locker"
+	name = "liuetenant's locker"
 	req_access = list(access_armory)
 	icon_state = "armorer"
 
@@ -44,9 +46,9 @@
 	if(populated_contents)
 		return
 	populated_contents = TRUE
-	new /obj/item/voucher/blackshield/sargprimary(src)
-	new /obj/item/voucher/blackshield/secondary(src)
-	new /obj/item/voucher/blackshield/armor(src)
+	new /obj/item/voucher/marshal/specprimary(src)
+	new /obj/item/voucher/marshal/secondary(src)
+	new /obj/item/voucher/marshal/armor(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/clothing/accessory/holster/saber/militiasergeant/occupied(src)
 	new /obj/item/clothing/mask/gas/blackshield_gasmask(src)
@@ -75,7 +77,7 @@
 		new /obj/item/storage/backpack/military(src)
 
 /obj/structure/closet/secure_closet/personal/corpsman
-	name = "blackshield medical corpsman locker"
+	name = "ranger medical corpsman locker"
 	req_access = list(access_hos)
 	access_occupy = list(access_brig) //So we can claim
 	icon_state = "corpsman"
@@ -85,7 +87,7 @@
 		return
 	populated_contents = TRUE
 	new /obj/item/voucher/blackshield/corpsprimary(src)
-	new /obj/item/voucher/blackshield/secondary(src)
+	new /obj/item/voucher/marshal/secondary(src)
 	new /obj/item/voucher/blackshield/armorcorpsman(src)
 	new /obj/item/device/scanner/health(src)
 	new /obj/item/roller(src)
@@ -131,9 +133,9 @@
 	if(populated_contents)
 		return
 	populated_contents = TRUE
-	new /obj/item/voucher/blackshield/primary(src)
-	new /obj/item/voucher/blackshield/secondary(src)
-	new /obj/item/voucher/blackshield/armor(src)
+	new /obj/item/voucher/marshal/primary(src)
+	new /obj/item/voucher/marshal/secondary(src)
+	new /obj/item/voucher/marshal/armor(src)
 	new /obj/item/tool/knife/boot/blackshield(src)
 	new /obj/item/tool/fireaxe/militia_tomahawk(src)
 	new /obj/item/clothing/glasses/ballistic(src)

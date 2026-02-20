@@ -134,7 +134,7 @@
 	new /obj/item/voucher/marshal/armor(src)
 
 /obj/structure/closet/secure_closet/personal/security
-	name = "marshal officer's locker"
+	name = "ranger's locker"
 	req_access = list(access_hos)
 	access_occupy = list(access_brig)
 	icon_state = "sec"
@@ -171,7 +171,7 @@
 	new /obj/item/device/t_scanner/advanced(src)
 
 /obj/structure/closet/secure_closet/personal/detective
-	name = "ranger's locker"
+	name = "detective's locker"
 	req_access = list(access_hos)
 	access_occupy = list(access_forensics_lockers) //So we can claim
 	icon_state = "cabinetdetective"
