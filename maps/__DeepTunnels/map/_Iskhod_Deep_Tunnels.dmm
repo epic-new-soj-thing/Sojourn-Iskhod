@@ -21,6 +21,9 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/black{
 	dir = 1
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
 "an" = (
@@ -115,6 +118,9 @@
 	dir = 4;
 	pixel_x = -27
 	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/outpoststorage)
 "bA" = (
@@ -189,6 +195,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
+	},
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/simulated/floor/reinforced,
 /area/iskhod/rnd/mixing)
@@ -281,6 +290,9 @@
 	id = "mining_internal"
 	},
 /obj/landmark/machinery/output,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/plating/under,
 /area/mine/processing)
 "dV" = (
@@ -291,6 +303,11 @@
 /obj/machinery/atmospherics/binary/pump/on{
 	dir = 1
 	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Engineering Maintenance";
+	req_access = list(10)
+	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
 "ea" = (
@@ -298,6 +315,16 @@
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = -32
 	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/anomal)
+"ed" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/light,
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
 "el" = (
@@ -456,6 +483,17 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
+"gI" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	brightness_power = 1
+	},
+/turf/simulated/floor/industrial/grey_slates_long,
+/area/mine/atmos)
 "hb" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 1;
@@ -469,6 +507,21 @@
 	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
+"hd" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
+	},
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/mine/atmos)
 "hg" = (
 /obj/map_data/iskhod_deep_tunnels,
 /turf/unsimulated/mineral/cold,
@@ -578,6 +631,11 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
+"iy" = (
+/obj/machinery/suit_storage_unit/engineering/atmos,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/cargo,
+/area/iskhod/rnd/mixing)
 "iI" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
@@ -639,6 +697,15 @@
 /obj/machinery/vending/snack,
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
+"jd" = (
+/obj/machinery/atmospherics/pipe/tank/air{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/outpostmachineroom)
 "je" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -715,7 +782,6 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
 "kb" = (
-/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -726,10 +792,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/maintenance_engineering{
-	name = "Engineering Maintenance";
-	req_access = list(10)
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
@@ -776,6 +838,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/mine/power)
 "ly" = (
@@ -786,8 +851,12 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/misc_lab)
 "lD" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/turf/simulated/floor/industrial/grey_slates_long,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/recharger,
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
 "lJ" = (
 /obj/machinery/recharge_station,
@@ -831,6 +900,9 @@
 /area/mine/prep)
 "mg" = (
 /obj/machinery/vending/snack,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/outpostgeneral)
 "mh" = (
@@ -875,6 +947,7 @@
 	dir = 1;
 	pixel_y = -27
 	},
+/obj/machinery/light,
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
 "mD" = (
@@ -887,6 +960,9 @@
 /area/iskhod/rnd/outpostgeneral)
 "mH" = (
 /obj/machinery/portable_atmospherics/canister/sleeping_agent,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/outpoststorage)
 "mI" = (
@@ -933,6 +1009,14 @@
 /obj/machinery/pipedispenser,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
+"mU" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid{
+	temperature = 253.15
+	},
+/area/mine/explored)
 "mW" = (
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/outpostgeneral)
@@ -950,6 +1034,12 @@
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/lockers)
+"nc" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/anomal)
 "nd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -1079,6 +1169,12 @@
 	temperature = 253.15
 	},
 /area/mine/explored)
+"oG" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/grey_slates_long,
+/area/mine/atmos)
 "oJ" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 8
@@ -1162,6 +1258,7 @@
 /area/iskhod/rnd/anomal)
 "pl" = (
 /obj/machinery/artifact_scanpad,
+/obj/structure/invislight,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/anomalisolone)
 "pm" = (
@@ -1256,6 +1353,11 @@
 /obj/machinery/door/airlock/maintenance_engineering{
 	name = "Engineering Maintenance";
 	req_access = list(10)
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
@@ -1464,6 +1566,9 @@
 	tag_west = 2;
 	tag_north = 5
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
 "rY" = (
@@ -1633,6 +1738,13 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/misc_lab)
+"ur" = (
+/obj/structure/closet/secure_closet/personal/miner,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/navy_slates,
+/area/mine/lockers)
 "uu" = (
 /obj/machinery/atmospherics/portables_connector,
 /turf/simulated/floor/tiled/white,
@@ -1672,6 +1784,9 @@
 	pixel_y = 3
 	},
 /obj/item/pen/multi,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/processing)
 "uK" = (
@@ -1680,6 +1795,12 @@
 	temperature = 253.15
 	},
 /area/mine/explored)
+"uP" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/outpostmachineroom)
 "uS" = (
 /turf/simulated/floor/asteroid{
 	temperature = 253.15
@@ -1816,8 +1937,14 @@
 	temperature = 253.15
 	},
 /area/mine/hallway)
+"wf" = (
+/obj/machinery/portable_atmospherics/canister/sleeping_agent,
+/obj/machinery/light,
+/turf/simulated/floor/tiled/white/cargo,
+/area/iskhod/rnd/storage)
 "wi" = (
 /obj/machinery/radiocarbon_spectrometer,
+/obj/structure/invislight,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/anomalisolfour)
 "wn" = (
@@ -1920,9 +2047,9 @@
 	dir = 5
 	},
 /obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
@@ -2044,6 +2171,15 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/rnd/outpostmachineroom)
+"yw" = (
+/obj/machinery/atmospherics/pipe/simple/visible/black{
+	dir = 10
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/anomal)
 "yy" = (
 /obj/structure/dispenser,
 /obj/structure/sign/warningnew/flammables{
@@ -2079,6 +2215,9 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/misc_lab)
 "yT" = (
@@ -2112,6 +2251,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
+"zw" = (
+/obj/machinery/atmospherics/binary/pump,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/mixing)
 "zF" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2208,6 +2354,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/rnd/mixing)
 "AQ" = (
@@ -2250,6 +2399,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
+"Bp" = (
+/obj/random/furniture/pottedplant,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/iskhod/rnd/outpostgeneral)
 "Bq" = (
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
@@ -2321,6 +2477,9 @@
 	dir = 8;
 	pixel_x = 27
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
 "BN" = (
@@ -2381,6 +2540,12 @@
 "Co" = (
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/outpoststorage)
+"Cy" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/grey_slates_long,
+/area/mine/processing)
 "CD" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/device/scanner/mining,
@@ -2447,6 +2612,14 @@
 	temperature = 253.15
 	},
 /area/mine/explored)
+"CY" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/mine/atmos)
 "CZ" = (
 /obj/machinery/conveyor/south{
 	id = "mining_internal"
@@ -2534,6 +2707,9 @@
 	pixel_x = 30
 	},
 /obj/effect/floor_decal/industrial/box/white,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/outpostgeneral)
 "DY" = (
@@ -2599,6 +2775,9 @@
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/outpoststorage)
 "EO" = (
@@ -2639,7 +2818,8 @@
 /obj/structure/sign/department/telecoms{
 	pixel_x = -32
 	},
-/turf/simulated/floor/industrial/grey_slates_long,
+/obj/machinery/space_heater,
+/turf/simulated/floor/industrial/navy_slates,
 /area/mine/atmos)
 "Fh" = (
 /turf/simulated/floor/tiled/white,
@@ -2723,6 +2903,14 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/storage)
+"Gi" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/mine/atmos)
 "Gk" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -2880,17 +3068,12 @@
 /turf/simulated/mineral,
 /area/mine/unexplored)
 "Iw" = (
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28
+/obj/structure/anomaly_container,
+/obj/machinery/light{
+	dir = 4
 	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/industrial/grey_slates_long,
-/area/mine/atmos)
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/iskhod/rnd/outpoststorage)
 "ID" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
@@ -2906,12 +3089,26 @@
 "II" = (
 /turf/simulated/floor/industrial/navy_slates,
 /area/turbolift/Research/underground)
+"IN" = (
+/obj/machinery/space_heater,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/iskhod/rnd/mixing)
 "IR" = (
 /obj/machinery/vending/wallmed/lobby{
 	pixel_x = 30
 	},
 /obj/effect/floor_decal/industrial/box/white,
 /turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/mixing)
+"IT" = (
+/obj/structure/closet/secure_closet/personal/scientist,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
 "IV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -2980,6 +3177,16 @@
 	},
 /turf/simulated/floor/carpet/purcarpet,
 /area/iskhod/rnd/outpostgeneral)
+"JA" = (
+/obj/machinery/power/emitter/anchored{
+	dir = 1;
+	tag = "icon-emitter (NORTH)"
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/iskhod/rnd/outpoststorage)
 "JD" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
@@ -3012,6 +3219,7 @@
 	id_tag = "toxins_mixing_2";
 	output = 63
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced/airless,
 /area/iskhod/rnd/mixing)
 "Kl" = (
@@ -3376,6 +3584,7 @@
 /area/mine/medical)
 "Ow" = (
 /obj/machinery/psionic_harvester,
+/obj/structure/invislight,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/anomalisolthree)
 "OD" = (
@@ -3418,6 +3627,9 @@
 /area/iskhod/rnd/anomalisolthree)
 "OM" = (
 /obj/structure/medical_stand,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/rnd/outpostmedical)
 "OO" = (
@@ -3485,6 +3697,9 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
 "Pm" = (
@@ -3544,6 +3759,13 @@
 "PT" = (
 /turf/simulated/wall/iskhod,
 /area/mine/lockers)
+"Qf" = (
+/obj/structure/ore_box,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/navy_slates,
+/area/mine/hallway)
 "Qi" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
@@ -3576,6 +3798,13 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
+"Qn" = (
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/iskhod/rnd/storage)
 "Qs" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -3654,12 +3883,22 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
 "Rh" = (
-/obj/machinery/space_heater,
-/obj/structure/sign/department/atmos{
-	pixel_x = -32
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
 	},
-/turf/simulated/floor/industrial/navy_slates,
-/area/mine/lockers)
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/danger,
+/area/iskhod/rnd/mixing)
 "Rl" = (
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 2;
@@ -3826,8 +4065,20 @@
 /obj/machinery/vending/style,
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
+"Th" = (
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 1
+	},
+/obj/machinery/light{
+	brightness_power = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/mixing)
 "Tk" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
+/obj/structure/sign/department/atmos{
+	pixel_y = 32
+	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
 "Tm" = (
@@ -3860,14 +4111,12 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpostmachineroom)
 "TD" = (
-/obj/machinery/atmospherics/pipe/simple/visible/universal,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/structure/reagent_dispensers/fueltank/huge,
+/obj/machinery/light{
+	dir = 4
 	},
-/turf/simulated/floor/industrial/grey_slates_long,
-/area/mine/atmos)
+/turf/simulated/floor/industrial/navy_slates,
+/area/mine/prep)
 "TE" = (
 /turf/simulated/wall/iskhod,
 /area/mine/unexplored)
@@ -3918,6 +4167,7 @@
 "Uo" = (
 /obj/machinery/eternal_ascension_resonances,
 /obj/effect/floor_decal/industrial/hatch/red,
+/obj/structure/invislight,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/iskhod/rnd/misc_lab)
 "Ux" = (
@@ -3934,8 +4184,21 @@
 /area/mine/power)
 "UC" = (
 /obj/machinery/ntnet_relay,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/rnd/outpostmachineroom)
+"UE" = (
+/obj/structure/table/steel_reinforced,
+/turf/simulated/floor/industrial/navy_slates,
+/area/mine/prep)
+"UR" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/anomal)
 "UT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -4018,6 +4281,9 @@
 "VH" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/recharger,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/lockers)
 "VI" = (
@@ -4034,6 +4300,13 @@
 	temperature = 253.15
 	},
 /area/mine/explored)
+"VO" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/cargo,
+/area/iskhod/rnd/storage)
 "VP" = (
 /turf/simulated/wall/iskhod,
 /area/mine/medical)
@@ -4084,6 +4357,7 @@
 /area/iskhod/rnd/anomalisolthree)
 "We" = (
 /obj/machinery/artifact_scanpad,
+/obj/structure/invislight,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/anomalisoltwo)
 "Wj" = (
@@ -4163,6 +4437,7 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
 "WV" = (
+/obj/machinery/light,
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
 "Xa" = (
@@ -4290,10 +4565,10 @@
 /area/iskhod/rnd/anomalisolthree)
 "XY" = (
 /obj/machinery/atmospherics/binary/pump/on,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Engineering Maintenance";
+	req_access = list(10)
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
@@ -4383,6 +4658,15 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
+"YP" = (
+/obj/machinery/atmospherics/pipe/tank/air{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/grey_slates_long,
+/area/mine/atmos)
 "YS" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
@@ -4476,8 +4760,17 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/outpostgeneral)
+"ZB" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/mixing)
 "ZL" = (
 /obj/machinery/portable_atmospherics/powered/scrubber,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/outpoststorage)
 "ZO" = (
@@ -4488,6 +4781,13 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/mixing)
+"ZQ" = (
+/obj/structure/closet/bombcloset,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
 "ZR" = (
 /obj/structure/table/rack,
@@ -4507,6 +4807,9 @@
 /obj/item/storage/firstaid/o2,
 /obj/item/storage/firstaid/toxin,
 /obj/item/storage/firstaid/fire,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/mine/medical)
 "ZX" = (
@@ -10737,7 +11040,7 @@ uS
 uS
 fA
 GJ
-jP
+hd
 Rc
 fA
 vW
@@ -10939,8 +11242,8 @@ uS
 uS
 fA
 jP
-jP
-jP
+Gi
+CY
 fA
 vW
 vW
@@ -11157,7 +11460,7 @@ Ku
 va
 eR
 Zr
-dJ
+Cy
 dJ
 dV
 iN
@@ -11339,12 +11642,12 @@ uS
 fA
 ao
 jl
+YP
 jl
 jl
-jl
-Iw
+fA
 Ff
-ao
+gI
 fA
 jE
 jE
@@ -11545,7 +11848,7 @@ tD
 Tv
 Tv
 XY
-TD
+Jj
 xs
 kz
 jE
@@ -11554,8 +11857,8 @@ CP
 CP
 RS
 gE
-lD
-el
+gE
+UE
 el
 sF
 el
@@ -11692,7 +11995,7 @@ Pl
 Fo
 RQ
 Fo
-Fh
+nc
 ea
 Ga
 Ab
@@ -11746,7 +12049,7 @@ zb
 Nn
 ao
 ao
-ao
+fA
 WS
 YC
 kz
@@ -11756,8 +12059,8 @@ CP
 CP
 RS
 gE
+gE
 lD
-el
 el
 sF
 el
@@ -11958,8 +12261,8 @@ CP
 CP
 RS
 gE
-lD
-el
+gE
+UE
 el
 sF
 el
@@ -12150,7 +12453,7 @@ zb
 rW
 mL
 fV
-ao
+fA
 Tk
 IV
 fA
@@ -12292,7 +12595,7 @@ Eb
 Eb
 Eb
 Eb
-rg
+yw
 GX
 yK
 Qj
@@ -12353,7 +12656,7 @@ fA
 fA
 fA
 fA
-fA
+oG
 kb
 PT
 PT
@@ -12505,7 +12808,7 @@ Re
 iv
 Ab
 Yx
-Yx
+Iw
 Yx
 Yx
 cd
@@ -12555,11 +12858,11 @@ Xa
 ds
 VP
 lJ
-Rh
+MW
 XH
 lR
 iu
-iu
+ur
 iu
 gE
 hc
@@ -12704,7 +13007,7 @@ yK
 Fh
 vP
 Zg
-iv
+ed
 Ab
 cd
 cd
@@ -13373,7 +13676,7 @@ Il
 Kl
 HV
 WM
-Kl
+TD
 JJ
 Kx
 Kx
@@ -13714,7 +14017,7 @@ vP
 QQ
 ni
 Re
-iv
+ed
 Ab
 cd
 cd
@@ -13765,10 +14068,10 @@ uS
 uS
 uS
 KV
-rb
+Qf
 TO
 BF
-rb
+Qf
 KV
 uS
 uS
@@ -13908,7 +14211,7 @@ OK
 OK
 OK
 OK
-Fh
+UR
 Fh
 Fh
 xf
@@ -13919,7 +14222,7 @@ Zg
 iv
 Ab
 EB
-EB
+JA
 EB
 EB
 cd
@@ -14912,7 +15215,7 @@ sR
 xr
 sP
 sP
-sP
+jd
 sP
 wz
 tw
@@ -15721,7 +16024,7 @@ wV
 FF
 uU
 ws
-tw
+uP
 tw
 tw
 uc
@@ -16536,7 +16839,7 @@ da
 da
 Rb
 jA
-ge
+Bp
 VE
 oT
 DW
@@ -17344,7 +17647,7 @@ da
 da
 da
 jA
-ge
+Bp
 VE
 oT
 DW
@@ -17758,7 +18061,7 @@ uS
 uS
 uS
 uS
-oF
+uS
 uS
 uS
 uS
@@ -18154,7 +18457,7 @@ MV
 vW
 vW
 NM
-nL
+Rh
 Lf
 NM
 uS
@@ -18551,22 +18854,22 @@ MV
 NM
 hR
 tL
-Ca
+zw
 gx
 Bf
 fl
 AF
-AF
+ZQ
 AF
 Ql
 Bq
 Bq
-ad
+IN
 CG
 AU
 qg
 tc
-rK
+Qn
 rK
 rK
 AU
@@ -18972,7 +19275,7 @@ NL
 dn
 Gf
 fK
-kD
+wf
 AU
 uS
 uS
@@ -19374,7 +19677,7 @@ Yg
 AU
 NL
 dn
-Gf
+VO
 fK
 kD
 AU
@@ -19774,7 +20077,7 @@ sZ
 VC
 Bz
 Bq
-Yg
+iy
 NM
 uS
 uS
@@ -20981,7 +21284,7 @@ Rn
 IH
 Kw
 Kw
-Kw
+IT
 Kw
 NM
 Sg
@@ -21177,7 +21480,7 @@ vW
 NM
 TP
 yY
-Bq
+ZB
 IR
 eM
 Sg
@@ -21390,7 +21693,7 @@ fT
 NM
 eG
 jz
-ID
+Th
 NM
 uS
 uS
@@ -22192,9 +22495,9 @@ uS
 uS
 uS
 uS
-uS
+mU
 xR
-uS
+mU
 uS
 uS
 uS
@@ -22984,7 +23287,7 @@ vW
 vW
 vW
 vW
-uS
+oF
 uS
 vW
 vW
@@ -23667,7 +23970,7 @@ uS
 uS
 uS
 uS
-uS
+oF
 uS
 uS
 uS
@@ -25074,7 +25377,7 @@ MV
 MV
 MV
 uS
-uS
+Du
 uS
 MV
 vW
@@ -25696,7 +25999,7 @@ MV
 MV
 uS
 uS
-uS
+Du
 uS
 uS
 uS
