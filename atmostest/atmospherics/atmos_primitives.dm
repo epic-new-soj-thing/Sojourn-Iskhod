@@ -15,7 +15,7 @@
 
 /obj/machinery/atmospherics/var/debug = 0
 
-/client/proc/atmos_toggle_debug(var/obj/machinery/atmospherics/M in range(world.view))
+/client/proc/atmos_toggle_debug(var/obj/machinery/atmospherics/M in world)
 	set name = "Toggle Debug Messages"
 	set category = "Debug"
 	M.debug = !M.debug
@@ -25,7 +25,7 @@
 //Moves gas from one gas_mixture to another and returns the amount of power needed (assuming 1 second), or -1 if no gas was pumped.
 //transfer_moles - Limits the amount of moles to transfer. The actual amount of gas moved may also be limited by available_power, if given.
 //available_power - the maximum amount of power that may be used when moving gas. If null then the transfer is not limited by power.
-/proc/pump_gas(var/obj/machinery/M, var/datum/gas_mixture/source, var/datum/gas_mixture/sink, var/transfer_moles, var/available_power)
+/proc/pump_gas(var/obj/machinery/M, var/datum/gas_mixture/source, var/datum/gas_mixture/sink, var/transfer_moles = null, var/available_power = null)
 	if (source.total_moles < MINIMUM_MOLES_TO_PUMP) //if we cant transfer enough gas just stop to avoid further processing
 		return -1
 
@@ -326,7 +326,7 @@
 
 //Similar deal as the other atmos process procs.
 //mix_sources maps input gas mixtures to mix ratios. The mix ratios MUST add up to 1.
-/proc/mix_gas(var/obj/machinery/M, var/list/mix_sources, var/datum/gas_mixture/sink, var/total_transfer_moles, var/available_power)
+/proc/mix_gas(var/obj/machinery/M, var/list/mix_sources, var/datum/gas_mixture/sink, var/total_transfer_moles = null, var/available_power = null)
 	if (!mix_sources.len)
 		return -1
 
@@ -460,57 +460,7 @@
 // - Is between 80 and 120kPa
 // - Has between 17% and 30% oxygen
 // - Has temperature between -10C and 50C
-// - Has no or only minimal plasma or N2O
-/proc/is_safe_atmosphere(datum/gas_mixture/atmosphere, var/returntext = 0)
-    var/list/status = list()
-    if(!atmosphere)
-        status.Add("No atmosphere present.")
-
-    // Temperature check
-    if((atmosphere.temperature > (T0C + 50)) || (atmosphere.temperature < (T0C - 10)))
-        status.Add("Temperature too [atmosphere.temperature > (T0C + 50) ? "high" : "low"].")
-
-    // Pressure check
-    var/pressure = atmosphere.return_pressure()
-    if((pressure > 120) || (pressure < 80))
-        status.Add("Pressure too [pressure > 120 ? "high" : "low"].")
-
-    // Gas concentration checks
-    var/oxygen = 0
-    var/plasma = 0
-    var/carbondioxide = 0
-    var/nitrousoxide = 0
-    if(atmosphere.total_moles) // Division by zero prevention
-        oxygen = (atmosphere.gas["oxygen"] / atmosphere.total_moles) * 100 // Percentage of the gas
-        plasma = (atmosphere.gas["plasma"] / atmosphere.total_moles) * 100
-        carbondioxide = (atmosphere.gas["carbon_dioxide"] / atmosphere.total_moles) * 100
-        nitrousoxide = (atmosphere.gas["sleeping_agent"] / atmosphere.total_moles) * 100
-
-    if(!oxygen)
-        status.Add("No oxygen.")
-    else if((oxygen > 30) || (oxygen < 17))
-        status.Add("Oxygen too [oxygen > 30 ? "high" : "low"].")
-
-
-
-    if(plasma > 0.1)        // Toxic even in small amounts.
-        status.Add("Plasma contamination.")
-    if(nitrousoxide > 0.1)    // Probably slightly less dangerous but still.
-        status.Add("N2O contamination.")
-    if(carbondioxide > 5)    // Not as dangerous until very large amount is present.
-        status.Add("CO2 concentration high.")
-
-
-    if(returntext)
-        return jointext(status, " ")
-    else
-        return status.len
-
-//Determines if the atmosphere is safe (for humans). Safe atmosphere:
-// - Is between 80 and 120kPa
-// - Has between 17% and 30% oxygen
-// - Has temperature between -10C and 50C
-// - Has no or only minimal plasma or N2O
+// - Has no or only minimal phoron or N2O
 /proc/get_atmosphere_issues(datum/gas_mixture/atmosphere, var/returntext = 0)
 	var/list/status = list()
 	if(!atmosphere)
@@ -527,13 +477,13 @@
 
 	// Gas concentration checks
 	var/oxygen = 0
-	var/plasma = 0
+	var/phoron = 0
 	var/carbondioxide = 0
 	var/nitrousoxide = 0
 	var/hydrogen = 0
 	if(atmosphere.total_moles) // Division by zero prevention
 		oxygen = (atmosphere.gas["oxygen"] / atmosphere.total_moles) * 100 // Percentage of the gas
-		plasma = (atmosphere.gas["plasma"] / atmosphere.total_moles) * 100
+		phoron = (atmosphere.gas[MATERIAL_PHORON] / atmosphere.total_moles) * 100
 		carbondioxide = (atmosphere.gas["carbon_dioxide"] / atmosphere.total_moles) * 100
 		nitrousoxide = (atmosphere.gas["sleeping_agent"] / atmosphere.total_moles) * 100
 		hydrogen = (atmosphere.gas["hydrogen"] / atmosphere.total_moles) * 100
@@ -545,8 +495,8 @@
 
 
 
-	if(plasma > 0.1)		// Toxic even in small amounts.
-		status.Add("Plasma contamination.")
+	if(phoron > 0.1)		// Toxic even in small amounts.
+		status.Add("Phoron contamination.")
 	if(nitrousoxide > 0.1)	// Probably slightly less dangerous but still.
 		status.Add("N2O contamination.")
 	if(hydrogen > 2.5)	// Not too dangerous, but flammable.
@@ -559,25 +509,3 @@
 		return jointext(status, " ")
 	else
 		return status.len
-
-// Gets target gas mixtures from either just the location turf, or a 3x3 radius.
-// Used by air vents and air scrubbers.
-/proc/get_target_environments(obj/machinery/M, expanded = FALSE)
-	var/turf/loc_turf = get_turf(M)
-	var/datum/gas_mixture/environment = loc_turf.return_air()
-	var/list/target_environments = environment ? list(environment) : list()
-
-	if(!expanded)
-		return target_environments
-
-	for(var/turf/T in orange(1, loc_turf))
-		if(SSair.air_blocked(loc_turf, T) & AIR_BLOCKED)
-			continue
-
-		environment = T.return_air()
-		if(!environment)
-			continue
-		target_environments += environment
-
-	return target_environments
-

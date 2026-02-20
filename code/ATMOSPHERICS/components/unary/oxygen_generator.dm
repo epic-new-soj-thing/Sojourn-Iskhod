@@ -1,7 +1,7 @@
 obj/machinery/atmospherics/unary/oxygen_generator
 	icon = 'icons/obj/atmospherics/oxygen_generator.dmi'
 	icon_state = "intact_off"
-	density = TRUE
+	density = 1
 
 	name = "Oxygen Generator"
 	desc = ""
@@ -9,17 +9,17 @@ obj/machinery/atmospherics/unary/oxygen_generator
 	dir = SOUTH
 	initialize_directions = SOUTH
 
-	var/on = FALSE
+	var/on = 0
 
 	var/oxygen_content = 10
 
 	update_icon()
-		if(node1)
+		if(node)
 			icon_state = "intact_[on?("on"):("off")]"
 		else
 			icon_state = "exposed_off"
 
-			on = FALSE
+			on = 0
 
 		return
 

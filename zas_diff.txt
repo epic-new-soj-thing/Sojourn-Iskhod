@@ -1,0 +1,2463 @@
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Airflow.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Airflow.dm
+index 0d4bcffd9..fb5c6cde6 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Airflow.dm
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Airflow.dm
+@@ -2,12 +2,11 @@
+ Contains helper procs for airflow, handled in /connection_group.
+ */
+ 
+-/mob/var/tmp/last_airflow_stun = 0
+-/mob/proc/airflow_stun()
++mob/var/tmp/last_airflow_stun = 0
++mob/proc/airflow_stun()
+ 	if(stat == 2)
+ 		return FALSE
+-	if(last_airflow_stun > world.time - vsc.airflow_stun_cooldown)
+-		return FALSE
++	if(last_airflow_stun > world.time - vsc.airflow_stun_cooldown)	return FALSE
+ 
+ 	if(!(status_flags & CANSTUN) && !(status_flags & CANWEAKEN))
+ 		to_chat(src, "<span class='notice'>You stay upright as the air rushes past you.</span>")
+@@ -17,59 +16,64 @@ Contains helper procs for airflow, handled in /connection_group.
+ 		return FALSE
+ 	if(!lying)
+ 		to_chat(src, "<span class='warning'>The sudden rush of air knocks you over!</span>")
+-	Weaken(5)
++	Weaken(4)
+ 	last_airflow_stun = world.time
+ 
+-/mob/living/silicon/airflow_stun()
++mob/living/silicon/airflow_stun()
+ 	return
+ 
+-/mob/living/carbon/slime/airflow_stun()
++mob/living/carbon/slime/airflow_stun()
+ 	return
+ 
+-/mob/living/carbon/human/airflow_stun()
+-	if(shoes)
+-		if(shoes.item_flags & NOSLIP)
+-			return FALSE
++mob/living/carbon/human/airflow_stun()
++	if(!slip_chance())
++		to_chat(src, "<span class='notice'>Air suddenly rushes past you!</span>")
++		return FALSE
+ 	..()
+ 
+-/atom/movable/proc/check_airflow_movable(n)
++atom/movable/proc/check_airflow_movable(n)
+ 
+ 	if(anchored && !ismob(src)) return FALSE
+ 
+-	if(!istype(src,/obj/item) && n < vsc.airflow_dense_pressure)
+-		return FALSE
++	if(!isobj(src) && n < vsc.airflow_dense_pressure) return FALSE
+ 
+ 	return TRUE
+ 
+-/mob/check_airflow_movable(n)
++mob/check_airflow_movable(n)
+ 	if(n < vsc.airflow_heavy_pressure)
+ 		return FALSE
++	else if (mob_size >= MOB_LARGE && n < vsc.airflow_extreme_pressure)
++		return FALSE
++
+ 	return TRUE
+ 
+-/mob/abstract/observer/check_airflow_movable()
++mob/living/silicon/check_airflow_movable()
+ 	return FALSE
+ 
+-/mob/living/silicon/check_airflow_movable()
+-	return FALSE
+ 
++obj/check_airflow_movable(n)
++	if(isnull(w_class))
++		if(n < vsc.airflow_dense_pressure) return FALSE //most non-item objs don't have a w_class yet
++	else
++		switch(w_class)
++			if(1,2)
++				if(n < vsc.airflow_lightest_pressure) return FALSE
++			if(3)
++				if(n < vsc.airflow_light_pressure) return FALSE
++			if(4,5)
++				if(n < vsc.airflow_medium_pressure) return FALSE
++			if(6)
++				if(n < vsc.airflow_heavy_pressure) return FALSE
++			if(7 to INFINITY)
++				if(n < vsc.airflow_dense_pressure) return FALSE
++	return ..()
+ 
+-/obj/item/check_airflow_movable(n)
+-	. = ..()
+-	switch(w_class)
+-		if(2)
+-			if(n < vsc.airflow_lightest_pressure)
+-				return FALSE
+-		if(3)
+-			if(n < vsc.airflow_light_pressure)
+-				return FALSE
+-		if(4,5)
+-			if(n < vsc.airflow_medium_pressure)
+-				return FALSE
+ 
+ /atom/movable/var/tmp/turf/airflow_dest
+ /atom/movable/var/tmp/airflow_speed = 0
+ /atom/movable/var/tmp/airflow_time = 0
+ /atom/movable/var/tmp/last_airflow = 0
++/atom/movable/var/tmp/airborne_acceleration = 0
+ 
+ /atom/movable/proc/AirflowCanMove(n)
+ 	return TRUE
+@@ -80,52 +84,63 @@ Contains helper procs for airflow, handled in /connection_group.
+ 	if(buckled)
+ 		return FALSE
+ 	var/obj/item/shoes = get_equipped_item(slot_shoes)
+-	if(istype(shoes) && (shoes.item_flags & NOSLIP))
++	if(istype(shoes) && (shoes.item_flags & ITEM_FLAG_NOSLIP))
+ 		return FALSE
+ 	return TRUE
+ 
+-/*
+-/atom/movable/proc/GotoAirflowDest(n)
+-	and
+-/atom/movable/proc/RepelAirflowDest(n)
+-	have been moved to SSairflow.
+-
+-*/
++/atom/movable/Bump(atom/A)
++	if(airflow_speed > 0 && airflow_dest)
++		if(airborne_acceleration > 1)
++			airflow_hit(A)
++		else if(istype(src, /mob/living/carbon/human))
++			to_chat(src, "<span class='notice'>You are pinned against [A] by airflow!</span>")
++			airborne_acceleration = 0
++	else
++		airflow_speed = 0
++		airflow_time = 0
++		airborne_acceleration = 0
++		. = ..()
+ 
+-/atom/movable/proc/airflow_hit(atom/A)
++atom/movable/proc/airflow_hit(atom/A)
+ 	airflow_speed = 0
+ 	airflow_dest = null
++	airborne_acceleration = 0
+ 
+-/mob/airflow_hit(atom/A)
++mob/airflow_hit(atom/A)
+ 	for(var/mob/M in hearers(src))
+ 		M.show_message("<span class='danger'>\The [src] slams into \a [A]!</span>",1,"<span class='danger'>You hear a loud slam!</span>",2)
+-	playsound(src.loc, 'sound/weapons/smash.ogg', 25, 1, -1)
++	playsound(src.loc, "smash.ogg", 25, 1, -1)
+ 	var/weak_amt = istype(A,/obj/item) ? A:w_class : rand(1,5) //Heheheh
+ 	Weaken(weak_amt)
+ 	. = ..()
+ 
+-/obj/airflow_hit(atom/A)
++obj/airflow_hit(atom/A)
+ 	for(var/mob/M in hearers(src))
+ 		M.show_message("<span class='danger'>\The [src] slams into \a [A]!</span>",1,"<span class='danger'>You hear a loud slam!</span>",2)
+-	playsound(src.loc, 'sound/weapons/smash.ogg', 25, 1, -1)
++	playsound(src.loc, "smash.ogg", 25, 1, -1)
+ 	. = ..()
+ 
+-/obj/item/airflow_hit(atom/A)
++obj/item/airflow_hit(atom/A)
+ 	airflow_speed = 0
+ 	airflow_dest = null
+ 
+-/mob/living/carbon/human/airflow_hit(atom/A)
++mob/living/carbon/human/airflow_hit(atom/A)
+ //	for(var/mob/M in hearers(src))
+ //		M.show_message("<span class='danger'>[src] slams into [A]!</span>",1,"<span class='danger'>You hear a loud slam!</span>",2)
+-	playsound(src.loc, 'sound/weapons/punch1.ogg', 25, 1, -1)
++	playsound(src.loc, "punch", 25, 1, -1)
+ 	if (prob(33))
+ 		loc:add_blood(src)
+ 		bloody_body(src)
+-	var/b_loss = airflow_speed * vsc.airflow_damage
++	var/b_loss = min(airflow_speed, (airborne_acceleration*2)) * vsc.airflow_damage
++
++	var/blocked = run_armor_check(BP_HEAD,"melee")
++	apply_damage(b_loss/3, BRUTE, BP_HEAD, blocked, 0, "Airflow")
++
++	blocked = run_armor_check(BP_CHEST,"melee")
++	apply_damage(b_loss/3, BRUTE, BP_CHEST, blocked, 0, "Airflow")
+ 
+-	apply_damage(b_loss/3, BRUTE, BP_HEAD, used_weapon = "Airflow")
+-	apply_damage(b_loss/3, BRUTE, BP_CHEST, used_weapon = "Airflow")
+-	apply_damage(b_loss/3, BRUTE, BP_GROIN, used_weapon = "Airflow")
++	blocked = run_armor_check(BP_GROIN,"melee")
++	apply_damage(b_loss/3, BRUTE, BP_GROIN, blocked, 0, "Airflow")
+ 
+ 	if(airflow_speed > 10)
+ 		Paralyse(round(airflow_speed * vsc.airflow_stun))
+@@ -134,23 +149,10 @@ Contains helper procs for airflow, handled in /connection_group.
+ 		Stun(round(airflow_speed * vsc.airflow_stun/2))
+ 	. = ..()
+ 
+-/zone/proc/movables(list/origins)
++zone/proc/movables()
+ 	. = list()
+-	if (!origins?.len)
+-		return
+-
+-	var/static/list/movables_tcache = typecacheof(list(/obj/effect, /mob/abstract))
+-
+-	var/atom/movable/AM
+-	for (var/testing_turf in contents)
+-		CHECK_TICK
+-		for (var/am in testing_turf)
+-			AM = am
+-			CHECK_TICK
+-			if (AM.simulated && !AM.anchored && !movables_tcache[AM.type])
+-				for (var/source_turf in origins)
+-					if (get_dist(testing_turf, source_turf) <= EDGE_KNOCKDOWN_MAX_DISTANCE)
+-						.[AM] = TRUE
+-						break
+-
+-					CHECK_TICK
++	for(var/turf/T in contents)
++		for(var/atom/movable/A in T)
++			if(!A.simulated || A.anchored || istype(A, /obj/effect) || isobserver(A))
++				continue
++			. += A
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Atom.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Atom.dm
+index 6e6311f81..547dc3a51 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Atom.dm
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Atom.dm
+@@ -8,32 +8,34 @@
+ 	return (!density || !height || air_group)
+ 
+ /turf/CanPass(atom/movable/mover, turf/target, height=1.5,air_group=0)
+-	if(!target)
+-		return FALSE
++	if(!target) return 0
+ 
+ 	if(istype(mover)) // turf/Enter(...) will perform more advanced checks
+ 		return !density
+ 
+ 	else // Now, doing more detailed checks for air movement and air group formation
+ 		if(target.blocks_air||blocks_air)
+-			return FALSE
++			return 0
+ 
+ 		for(var/obj/obstacle in src)
+ 			if(!obstacle.CanPass(mover, target, height, air_group))
+-				return FALSE
++				return 0
+ 		if(target != src)
+ 			for(var/obj/obstacle in target)
+ 				if(!obstacle.CanPass(mover, src, height, air_group))
+-					return FALSE
++					return 0
+ 
+-		return TRUE
++		return 1
+ 
+ //Convenience function for atoms to update turfs they occupy
+ /atom/movable/proc/update_nearby_tiles(need_rebuild)
+ 	for(var/turf/simulated/turf in locs)
+ 		SSair.mark_for_update(turf)
+ 
+-	return TRUE
++	for (var/obj/effect/vine/V in range(1, src))
++		V.wake_up()
++
++	return 1
+ 
+ //Basically another way of calling CanPass(null, other, 0, 0) and CanPass(null, other, 1.5, 1).
+ //Returns:
+@@ -59,11 +61,9 @@ turf/c_airblock(turf/other)
+ 	#ifdef MULTIZAS
+ 	if(other.z != src.z)
+ 		if(other.z < src.z)
+-			if(!isopenturf(src))
+-				return BLOCKED
++			if(!istype(src, /turf/simulated/open)) return BLOCKED
+ 		else
+-			if(!isopenturf(other))
+-				return BLOCKED
++			if(!istype(other, /turf/simulated/open)) return BLOCKED
+ 	#endif
+ 
+ 	if(((blocks_air & ZONE_BLOCKED) || (other.blocks_air & ZONE_BLOCKED)))
+@@ -72,12 +72,11 @@ turf/c_airblock(turf/other)
+ 		else
+ 			return AIR_BLOCKED
+ 
+-	var/result = FALSE
++	var/result = 0
+ 	for(var/mm in contents)
+ 		var/atom/movable/M = mm
+ 		result |= M.c_airblock(other)
+-		if(result == BLOCKED)
+-			return BLOCKED
++		if(result == BLOCKED) return BLOCKED
+ 	return result
+ 
+ /atom/movable
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Connection.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Connection.dm
+index 2a66aa29e..17c8ea162 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Connection.dm
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Connection.dm
+@@ -79,13 +79,13 @@ Class Procs:
+ 	if(!direct())
+ 		state |= CONNECTION_DIRECT
+ 		edge.direct++
+-	//world << "Marked direct."
++//	log_debug("Marked direct.")
+ 
+ /connection/proc/mark_indirect()
+ 	if(direct())
+ 		state &= ~CONNECTION_DIRECT
+ 		edge.direct--
+-	//world << "Marked indirect."
++//	log_debug("Marked indirect.")
+ 
+ /connection/proc/mark_space()
+ 	state |= CONNECTION_SPACE
+@@ -99,18 +99,18 @@ Class Procs:
+ /connection/proc/erase()
+ 	edge.remove_connection(src)
+ 	state |= CONNECTION_INVALID
+-	//world << "Connection Erased: [state]"
++//	log_debug("Connection Erased: [state]")
+ 
+ /connection/proc/update()
+-	//world << "Updated, \..."
++//	log_debug("Updated, \...")
+ 	if(!istype(A,/turf/simulated))
+-		//world << "Invalid A."
++//		log_debug("Invalid A.")
+ 		erase()
+ 		return
+ 
+ 	var/block_status = SSair.air_blocked(A,B)
+ 	if(block_status & AIR_BLOCKED)
+-		//world << "Blocked connection."
++//		log_debug("Blocked connection.")
+ 		erase()
+ 		return
+ 	else if(block_status & ZONE_BLOCKED)
+@@ -122,14 +122,14 @@ Class Procs:
+ 
+ 	if(state & CONNECTION_SPACE)
+ 		if(!b_is_space)
+-			//world << "Invalid B."
++//			log_debug("Invalid B.")
+ 			erase()
+ 			return
+ 		if(A.zone != zoneA)
+-			//world << "Zone changed, \..."
++//			log_debug("Zone changed, \...")
+ 			if(!A.zone)
+ 				erase()
+-				//world << "erased."
++//				log_debug("erased.")
+ 				return
+ 			else
+ 				edge.remove_connection(src)
+@@ -137,22 +137,22 @@ Class Procs:
+ 				edge.add_connection(src)
+ 				zoneA = A.zone
+ 
+-		//world << "valid."
++//		log_debug("valid.")
+ 		return
+ 
+ 	else if(b_is_space)
+-		//world << "Invalid B."
++//		log_debug("Invalid B.")
+ 		erase()
+ 		return
+ 
+ 	if(A.zone == B.zone)
+-		//world << "A == B"
++//		log_debug("A == B")
+ 		erase()
+ 		return
+ 
+ 	if(A.zone != zoneA || (zoneB && (B.zone != zoneB)))
+ 
+-		//world << "Zones changed, \..."
++//		log_debug("Zones changed, \...")
+ 		if(A.zone && B.zone)
+ 			edge.remove_connection(src)
+ 			edge = SSair.get_edge(A.zone, B.zone)
+@@ -160,9 +160,9 @@ Class Procs:
+ 			zoneA = A.zone
+ 			zoneB = B.zone
+ 		else
+-			//world << "erased."
++//			log_debug("erased.")
+ 			erase()
+ 			return
+ 
+ 
+-	//world << "valid."
++//	log_debug("valid.")
+\ No newline at end of file
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/ConnectionGroup.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/ConnectionGroup.dm
+index 78a1d43b8..cbf8e338a 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/ConnectionGroup.dm
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/ConnectionGroup.dm
+@@ -58,12 +58,13 @@ Class Procs:
+ */
+ 
+ 
+-/connection_edge
+-	var/zone/A
+-	var/list/connecting_turfs = list()
+-	var/direct = 0
+-	var/sleeping = 1
+-	var/coefficient = 0
++/connection_edge/var/zone/A
++
++/connection_edge/var/list/connecting_turfs = list()
++/connection_edge/var/direct = 0
++/connection_edge/var/sleeping = 1
++
++/connection_edge/var/coefficient = 0
+ 
+ /connection_edge/New()
+ 	CRASH("Cannot make connection edge without specifications.")
+@@ -88,46 +89,38 @@ Class Procs:
+ 	SSair.remove_edge(src)
+ //	log_debug("[type] Erased.")
+ 
++
+ /connection_edge/proc/tick()
+ 
+ /connection_edge/proc/recheck()
+ 
+ /connection_edge/proc/flow(list/movable, differential, repelled)
+-	set waitfor = FALSE
+-	for(var/thing in movable)
+-		var/atom/movable/M = thing
++	for(var/i = 1; i <= movable.len; i++)
++		var/atom/movable/M = movable[i]
+ 
+ 		//If they're already being tossed, don't do it again.
+-		if(M.last_airflow > world.time - vsc.airflow_delay)
+-			continue
+-
+-		if(M.airflow_speed)
+-			continue
+-
+-		//Check for knocking people over
+-		if(ismob(M) && differential > vsc.airflow_stun_pressure)
+-			if(M:status_flags & GODMODE)
+-				continue
+-			M:airflow_stun()
++		if(M.last_airflow > world.time - vsc.airflow_delay) continue
++		if(M.airflow_speed) continue
+ 
+ 		if(M.check_airflow_movable(differential))
++			//Check for knocking people over
++			if(ismob(M) && differential > vsc.airflow_stun_pressure)
++				if(M:status_flags & GODMODE) continue
++				M:airflow_stun()
++
+ 			//Check for things that are in range of the midpoint turfs.
+ 			var/list/close_turfs = list()
+-			for (var/T in RANGE_TURFS(world.view, M))
+-				if (connecting_turfs[T])
+-					close_turfs += T
+-
+-			if(!close_turfs.len)
+-				continue
++			for(var/turf/U in connecting_turfs)
++				if(get_dist(M,U) < world.view) close_turfs += U
++			if(!close_turfs.len) continue
+ 
+ 			M.airflow_dest = pick(close_turfs) //Pick a random midpoint to fly towards.
+ 
+-			if(repelled)
+-				M.RepelAirflowDest(differential/5)
+-			else
+-				M.GotoAirflowDest(differential/10)
++			if(repelled) spawn if(M) M.RepelAirflowDest(differential/5)
++			else spawn if(M) M.GotoAirflowDest(differential/10)
++
++
+ 
+-		CHECK_TICK
+ 
+ /connection_edge/zone/var/zone/B
+ 
+@@ -135,26 +128,26 @@ Class Procs:
+ 
+ 	src.A = A
+ 	src.B = B
+-	LAZYADD(A.edges, src)
+-	LAZYADD(B.edges, src)
++	A.edges.Add(src)
++	B.edges.Add(src)
+ 	//id = edge_id(A,B)
+ //	log_debug("New edge between [A] and [B]")
+ 
+ 
+ /connection_edge/zone/add_connection(connection/c)
+ 	. = ..()
+-	connecting_turfs[c.A] = TRUE
++	connecting_turfs.Add(c.A)
+ 
+ /connection_edge/zone/remove_connection(connection/c)
+-	connecting_turfs -= c.A
++	connecting_turfs.Remove(c.A)
+ 	. = ..()
+ 
+ /connection_edge/zone/contains_zone(zone/Z)
+ 	return A == Z || B == Z
+ 
+ /connection_edge/zone/erase()
+-	LAZYREMOVE(A.edges, src)
+-	LAZYREMOVE(B.edges, src)
++	A.edges.Remove(src)
++	B.edges.Remove(src)
+ 	. = ..()
+ 
+ /connection_edge/zone/tick()
+@@ -169,13 +162,12 @@ Class Procs:
+ 		var/list/attracted
+ 		var/list/repelled
+ 		if(differential > 0)
+-			attracted = A.movables(connecting_turfs)
+-			repelled = B.movables(connecting_turfs)
++			attracted = A.movables()
++			repelled = B.movables()
+ 		else
+-			attracted = B.movables(connecting_turfs)
+-			repelled = A.movables(connecting_turfs)
++			attracted = B.movables()
++			repelled = A.movables()
+ 
+-		// These are async, with waitfor = FALSE
+ 		flow(attracted, abs(differential), 0)
+ 		flow(repelled, abs(differential), 1)
+ 
+@@ -192,8 +184,8 @@ Class Procs:
+ 	SSair.mark_zone_update(B)
+ 
+ /connection_edge/zone/recheck()
+-	// Edges with only one side being vacuum need processing no matter how close.
+ 	if(!A.air.compare(B.air, vacuum_exception = 1))
++	// Edges with only one side being vacuum need processing no matter how close.
+ 		SSair.mark_edge_active(src)
+ 
+ //Helper proc to get connections for a zone.
+@@ -207,7 +199,7 @@ Class Procs:
+ /connection_edge/unsimulated/New(zone/A, turf/B)
+ 	src.A = A
+ 	src.B = B
+-	LAZYADD(A.edges, src)
++	A.edges.Add(src)
+ 	air = B.return_air()
+ 	//id = 52*A.id
+ //	log_debug("New edge from [A] to [B].")
+@@ -215,16 +207,16 @@ Class Procs:
+ 
+ /connection_edge/unsimulated/add_connection(connection/c)
+ 	. = ..()
+-	connecting_turfs[c.B] = TRUE
++	connecting_turfs.Add(c.B)
+ 	air.group_multiplier = coefficient
+ 
+ /connection_edge/unsimulated/remove_connection(connection/c)
+-	connecting_turfs -= c.B
++	connecting_turfs.Remove(c.B)
+ 	air.group_multiplier = coefficient
+ 	. = ..()
+ 
+ /connection_edge/unsimulated/erase()
+-	LAZYREMOVE(A.edges, src)
++	A.edges.Remove(src)
+ 	. = ..()
+ 
+ /connection_edge/unsimulated/contains_zone(zone/Z)
+@@ -239,8 +231,7 @@ Class Procs:
+ 
+ 	var/differential = A.air.return_pressure() - air.return_pressure()
+ 	if(abs(differential) >= vsc.airflow_lightest_pressure)
+-		var/list/attracted = A.movables(connecting_turfs)
+-		// This call is async, with waitfor = FALSE
++		var/list/attracted = A.movables()
+ 		flow(attracted, abs(differential), differential < 0)
+ 
+ 	if(equiv)
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/ConnectionManager.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/ConnectionManager.dm
+index 699630c16..3890cd85f 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/ConnectionManager.dm
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/ConnectionManager.dm
+@@ -16,7 +16,7 @@ Class Procs:
+ 		Preferable to accessing the connection directly because it checks validity.
+ 
+ 	place(connection/c, d)
+-		Called by SSair.connect(). Sets the connection in the specified direction to c.
++		Called by air_master.connect(). Sets the connection in the specified direction to c.
+ 
+ 	update_all()
+ 		Called after turf/update_air_properties(). Updates the validity of all connections on this turf.
+@@ -24,26 +24,26 @@ Class Procs:
+ 	erase_all()
+ 		Called when the turf is changed with ChangeTurf(). Erases all existing connections.
+ 
++Macros:
+ 	check(connection/c)
+ 		Checks for connection validity. It's possible to have a reference to a connection that has been erased.
+ 
+ 
+ */
+ 
++// macro-ized to cut down on proc calls
+ #define check(c) (c && c.valid())
+ 
+-/turf
+-	var/tmp/connection_manager/connections
++/turf/var/tmp/connection_manager/connections
+ 
+-/connection_manager
+-	var/connection/N
+-	var/connection/S
+-	var/connection/E
+-	var/connection/W
++/connection_manager/var/connection/N
++/connection_manager/var/connection/S
++/connection_manager/var/connection/E
++/connection_manager/var/connection/W
+ 
+ #ifdef MULTIZAS
+-	var/connection/U
+-	var/connection/D
++/connection_manager/var/connection/U
++/connection_manager/var/connection/D
+ #endif
+ 
+ /connection_manager/proc/get(d)
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Controller.dm b/D:/Repositories/Sojourn-Iskhod/code/ZAS/Controller.dm
+deleted file mode 100644
+index a8ce12d09..000000000
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Controller.dm
++++ /dev/null
+@@ -1,380 +0,0 @@
+-var/datum/controller/air_system/air_master
+-
+-var/tick_multiplier = 2
+-
+-/*
+-
+-Overview:
+-	The air controller does everything. There are tons of procs in here.
+-
+-Class Vars:
+-	zones - All zones currently holding one or more turfs.
+-	edges - All processing edges.
+-
+-	tiles_to_update - Tiles scheduled to update next tick.
+-	zones_to_update - Zones which have had their air changed and need air archival.
+-	active_hotspots - All processing fire objects.
+-
+-	active_zones - The number of zones which were archived last tick. Used in debug verbs.
+-	next_id - The next UID to be applied to a zone. Mostly useful for debugging purposes as zones do not need UIDs to function.
+-
+-Class Procs:
+-
+-	mark_for_update(turf/T)
+-		Adds the turf to the update list. When updated, update_air_properties() will be called.
+-		When stuff changes that might affect airflow, call this. It's basically the only thing you need.
+-
+-	add_zone(zone/Z) and remove_zone(zone/Z)
+-		Adds zones to the zones list. Does not mark them for update.
+-
+-	air_blocked(turf/A, turf/B)
+-		Returns a bitflag consisting of:
+-		AIR_BLOCKED - The connection between turfs is physically blocked. No air can pass.
+-		ZONE_BLOCKED - There is a door between the turfs, so zones cannot cross. Air may or may not be permeable.
+-
+-	has_valid_zone(turf/T)
+-		Checks the presence and validity of T's zone.
+-		May be called on unsimulated turfs, returning 0.
+-
+-	merge(zone/A, zone/B)
+-		Called when zones have a direct connection and equivalent pressure and temperature.
+-		Merges the zones to create a single zone.
+-
+-	connect(turf/simulated/A, turf/B)
+-		Called by turf/update_air_properties(). The first argument must be simulated.
+-		Creates a connection between A and B.
+-
+-	mark_zone_update(zone/Z)
+-		Adds zone to the update list. Unlike mark_for_update(), this one is called automatically whenever
+-		air is returned from a simulated turf.
+-
+-	equivalent_pressure(zone/A, zone/B)
+-		Currently identical to A.air.compare(B.air). Returns 1 when directly connected zones are ready to be merged.
+-
+-	get_edge(zone/A, zone/B)
+-	get_edge(zone/A, turf/B)
+-		Gets a valid connection_edge between A and B, creating a new one if necessary.
+-
+-	has_same_air(turf/A, turf/B)
+-		Used to determine if an unsimulated edge represents a specific turf.
+-		Simulated edges use connection_edge/contains_zone() for the same purpose.
+-		Returns 1 if A has identical gases and temperature to B.
+-
+-	remove_edge(connection_edge/edge)
+-		Called when an edge is erased. Removes it from processing.
+-
+-*/
+-
+-
+-//Geometry lists
+-/datum/controller/air_system/var/list/zones = list()
+-/datum/controller/air_system/var/list/edges = list()
+-
+-//Geometry updates lists
+-/datum/controller/air_system/var/list/tiles_to_update = list()
+-/datum/controller/air_system/var/list/zones_to_update = list()
+-/datum/controller/air_system/var/list/active_fire_zones = list()
+-/datum/controller/air_system/var/list/active_hotspots = list()
+-/datum/controller/air_system/var/list/active_edges = list()
+-
+-/datum/controller/air_system/var/active_zones = 0
+-
+-/datum/controller/air_system/var/current_cycle = 0
+-/datum/controller/air_system/var/update_delay = 5 //How long between check should it try to process atmos again.
+-/datum/controller/air_system/var/failed_ticks = 0 //How many ticks have runtimed?
+-
+-/datum/controller/air_system/var/tick_progress = 0
+-
+-/datum/controller/air_system/var/next_id = 1 //Used to keep track of zone UIDs.
+-
+-/datum/controller/air_system/proc/Setup()
+-	//Purpose: Call this at the start to setup air groups geometry
+-	//    (Warning: Very processor intensive but only must be done once per round)
+-	//Called by: Gameticker/Master controller
+-	//Inputs: None.
+-	//Outputs: None.
+-
+-	#ifndef ZASDBG
+-	#endif
+-
+-	admin_notice(SPAN_DANGER("Processing Geometry..."), R_DEBUG)
+-	sleep(-1)
+-
+-	var/start_time = world.timeofday
+-
+-	var/simulated_turf_count = 0
+-
+-	for(var/turf/simulated/S in turfs)
+-		simulated_turf_count++
+-		S.update_air_properties()
+-
+-	admin_notice({"<span class='danger'>Geometry initialized in [round(0.1*(world.timeofday-start_time),0.1)] seconds.</span>
+-<span class='info'>
+-Total Simulated Turfs: [simulated_turf_count]
+-Total Zones: [zones.len]
+-Total Edges: [edges.len]
+-Total Active Edges: [active_edges.len ? SPAN_DANGER("[active_edges.len]") : "None"]
+-Total Unsimulated Turfs: [world.maxx*world.maxy*world.maxz - simulated_turf_count]
+-</span>"}, R_DEBUG)
+-
+-
+-//	spawn Start()
+-
+-
+-/datum/controller/air_system/proc/Start()
+-	//Purpose: This is kicked off by the master controller, and controls the processing of all atmosphere.
+-	//Called by: Master controller
+-	//Inputs: None.
+-	//Outputs: None.
+-
+-	#ifndef ZASDBG
+-	#endif
+-
+-	while(1)
+-		Tick()
+-		sleep(max(5,update_delay*tick_multiplier))
+-
+-
+-/datum/controller/air_system/proc/Tick()
+-	. = 1 //Set the default return value, for runtime detection.
+-
+-	current_cycle++
+-
+-	//If there are tiles to update, do so.
+-	tick_progress = "updating turf properties"
+-
+-	var/list/updating
+-
+-	if(tiles_to_update.len)
+-		updating = tiles_to_update
+-		tiles_to_update = list()
+-
+-		#ifdef ZASDBG
+-		var/updated = 0
+-		#endif
+-
+-		//defer updating of self-zone-blocked turfs until after all other turfs have been updated.
+-		//this hopefully ensures that non-self-zone-blocked turfs adjacent to self-zone-blocked ones
+-		//have valid zones when the self-zone-blocked turfs update.
+-		var/list/deferred = list()
+-
+-		for(var/turf/T in updating)
+-			//check if the turf is self-zone-blocked
+-
+-			var/c_airblock
+-			ATMOS_CANPASS_TURF(c_airblock, T, T)
+-			if(c_airblock & ZONE_BLOCKED)
+-				deferred += T
+-				continue
+-
+-			T.update_air_properties()
+-			T.post_update_air_properties()
+-			T.needs_air_update = 0
+-			#ifdef ZASDBG
+-			T.cut_overlay(mark)
+-			updated++
+-			#endif
+-			//sleep(1)
+-
+-		for(var/turf/T in deferred)
+-			T.update_air_properties()
+-			T.post_update_air_properties()
+-			T.needs_air_update = 0
+-			#ifdef ZASDBG
+-			T.cut_overlay(mark)
+-			updated++
+-			#endif
+-
+-		#ifdef ZASDBG
+-		if(updated != updating.len)
+-			tick_progress = "[updating.len - updated] tiles left unupdated."
+-			world << SPAN_DANGER("[tick_progress]")
+-			. = 0
+-		#endif
+-
+-	//Where gas exchange happens.
+-	if(.)
+-		tick_progress = "processing edges"
+-
+-	for(var/connection_edge/edge in active_edges)
+-		edge.tick()
+-
+-	//Process fire zones.
+-	if(.)
+-		tick_progress = "processing fire zones"
+-
+-	for(var/zone/Z in active_fire_zones)
+-		Z.process_fire()
+-
+-	//Process hotspots.
+-	if(.)
+-		tick_progress = "processing hotspots"
+-
+-	for(var/obj/fire/fire in active_hotspots)
+-		fire.Process()
+-
+-	//Process zones.
+-	if(.)
+-		tick_progress = "updating zones"
+-
+-	active_zones = zones_to_update.len
+-	if(zones_to_update.len)
+-		updating = zones_to_update
+-		zones_to_update = list()
+-		for(var/zone/zone in updating)
+-			zone.tick()
+-			zone.needs_update = 0
+-
+-	if(.)
+-		tick_progress = "success"
+-
+-/datum/controller/air_system/proc/add_zone(zone/z)
+-	zones.Add(z)
+-	z.name = "Zone [next_id++]"
+-	mark_zone_update(z)
+-
+-/datum/controller/air_system/proc/remove_zone(zone/z)
+-	zones.Remove(z)
+-	zones_to_update.Remove(z)
+-
+-/datum/controller/air_system/proc/air_blocked(turf/A, turf/B)
+-	#ifdef ZASDBG
+-	ASSERT(isturf(A))
+-	ASSERT(isturf(B))
+-	#endif
+-	var/ablock
+-	ATMOS_CANPASS_TURF(ablock, A, B)
+-	if(ablock == BLOCKED)
+-		return BLOCKED
+-	var/bblock
+-	ATMOS_CANPASS_TURF(bblock, B, A)
+-	return ablock | bblock
+-
+-/datum/controller/air_system/proc/has_valid_zone(turf/simulated/T)
+-	#ifdef ZASDBG
+-	ASSERT(istype(T))
+-	#endif
+-	return istype(T) && T.zone && !T.zone.invalid
+-
+-/datum/controller/air_system/proc/merge(zone/A, zone/B)
+-	#ifdef ZASDBG
+-	ASSERT(istype(A))
+-	ASSERT(istype(B))
+-	ASSERT(!A.invalid)
+-	ASSERT(!B.invalid)
+-	ASSERT(A != B)
+-	#endif
+-	if(A.contents.len < B.contents.len)
+-		A.c_merge(B)
+-		mark_zone_update(B)
+-	else
+-		B.c_merge(A)
+-		mark_zone_update(A)
+-
+-/datum/controller/air_system/proc/connect(turf/simulated/A, turf/simulated/B)
+-	#ifdef ZASDBG
+-	ASSERT(istype(A))
+-	ASSERT(isturf(B))
+-	ASSERT(A.zone)
+-	ASSERT(!A.zone.invalid)
+-	//ASSERT(B.zone)
+-	ASSERT(A != B)
+-	#endif
+-
+-	var/block = air_master.air_blocked(A,B)
+-	if(block & AIR_BLOCKED) return
+-
+-	var/direct = !(block & ZONE_BLOCKED)
+-	var/space = !istype(B)
+-
+-	if(!space)
+-		if(min(A.zone.contents.len, B.zone.contents.len) < ZONE_MIN_SIZE || (direct && (equivalent_pressure(A.zone,B.zone) || current_cycle == 0)))
+-			merge(A.zone,B.zone)
+-			return
+-
+-	var
+-		a_to_b = get_dir(A,B)
+-		b_to_a = get_dir(B,A)
+-
+-	if(!A.connections) A.connections = new
+-	if(!B.connections) B.connections = new
+-
+-	if(A.connections.get(a_to_b)) return
+-	if(B.connections.get(b_to_a)) return
+-	if(!space)
+-		if(A.zone == B.zone) return
+-
+-
+-	var/connection/c = new /connection(A,B)
+-
+-	A.connections.place(c, a_to_b)
+-	B.connections.place(c, b_to_a)
+-
+-	if(direct) c.mark_direct()
+-
+-/datum/controller/air_system/proc/mark_for_update(turf/T)
+-	#ifdef ZASDBG
+-	ASSERT(isturf(T))
+-	#endif
+-	if(T.needs_air_update) return
+-	tiles_to_update |= T
+-	#ifdef ZASDBG
+-	T.add_overlay(mark)
+-	#endif
+-	T.needs_air_update = 1
+-
+-/datum/controller/air_system/proc/mark_zone_update(zone/Z)
+-	#ifdef ZASDBG
+-	ASSERT(istype(Z))
+-	#endif
+-	if(Z.needs_update) return
+-	zones_to_update.Add(Z)
+-	Z.needs_update = 1
+-
+-/datum/controller/air_system/proc/mark_edge_sleeping(connection_edge/E)
+-	#ifdef ZASDBG
+-	ASSERT(istype(E))
+-	#endif
+-	if(E.sleeping) return
+-	active_edges.Remove(E)
+-	E.sleeping = 1
+-
+-/datum/controller/air_system/proc/mark_edge_active(connection_edge/E)
+-	#ifdef ZASDBG
+-	ASSERT(istype(E))
+-	#endif
+-	if(!E.sleeping) return
+-	active_edges.Add(E)
+-	E.sleeping = 0
+-
+-/datum/controller/air_system/proc/equivalent_pressure(zone/A, zone/B)
+-	return A.air.compare(B.air)
+-
+-/datum/controller/air_system/proc/get_edge(zone/A, zone/B)
+-
+-	if(istype(B))
+-		for(var/connection_edge/zone/edge in A.edges)
+-			if(edge.contains_zone(B)) return edge
+-		var/connection_edge/edge = new/connection_edge/zone(A,B)
+-		edges.Add(edge)
+-		edge.recheck()
+-		return edge
+-	else
+-		for(var/connection_edge/unsimulated/edge in A.edges)
+-			if(has_same_air(edge.B,B)) return edge
+-		var/connection_edge/edge = new/connection_edge/unsimulated(A,B)
+-		edges.Add(edge)
+-		edge.recheck()
+-		return edge
+-
+-/datum/controller/air_system/proc/has_same_air(turf/A, turf/B)
+-	if(A.oxygen != B.oxygen) return 0
+-	if(A.nitrogen != B.nitrogen) return 0
+-	if(A.plasma != B.plasma) return 0
+-	if(A.carbon_dioxide != B.carbon_dioxide) return 0
+-	if(A.temperature != B.temperature) return 0
+-	return 1
+-
+-/datum/controller/air_system/proc/remove_edge(connection_edge/E)
+-	edges.Remove(E)
+-	if(!E.sleeping) active_edges.Remove(E)
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Debug.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Debug.dm
+index 3c6df4368..6f0a67fd3 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Debug.dm
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Debug.dm
+@@ -12,9 +12,9 @@ var/image/mark = image('icons/Testing/Zone.dmi', icon_state = "mark")
+ /turf/var/tmp/dbg_img
+ /turf/proc/dbg(image/img, d = 0)
+ 	if(d > 0) img.dir = d
+-	cut_overlay(dbg_img)
+-	add_overlay(img)
++	overlays -= dbg_img
++	overlays += img
+ 	dbg_img = img
+ 
+ proc/soft_assert(thing,fail)
+-	if(!thing) message_admins(fail)
++	if(!thing) message_admins(fail)
+\ No newline at end of file
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Diagnostic.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Diagnostic.dm
+index 3fa1679cd..5ed23bd58 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Diagnostic.dm
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Diagnostic.dm
+@@ -23,22 +23,21 @@ client/proc/Test_ZAS_Connection(var/turf/simulated/T as turf)
+ 		return
+ 
+ 	var/direction_list = list(
+-		"North" = NORTH,
+-		"South" = SOUTH,
+-		"East" = EAST,
+-		"West" = WEST,
+-		"Up" = UP,
+-		"Down" = DOWN,
+-		"N/A" = null
+-	)
++	"North" = NORTH,
++	"South" = SOUTH,
++	"East" = EAST,
++	"West" = WEST,
++	#ifdef MULTIZAS
++	"Up" = UP,
++	"Down" = DOWN,
++	#endif
++	"N/A" = null)
+ 	var/direction = input("What direction do you wish to test?","Set direction") as null|anything in direction_list
+ 	if(!direction)
+ 		return
+ 
+ 	if(direction == "N/A")
+-		var/res
+-		ATMOS_CANPASS_TURF(res, T, T)
+-		if(!(res & AIR_BLOCKED))
++		if(!(T.c_airblock(T) & AIR_BLOCKED))
+ 			to_chat(mob, "The turf can pass air! :D")
+ 		else
+ 			to_chat(mob, "No air passage :x")
+@@ -48,10 +47,8 @@ client/proc/Test_ZAS_Connection(var/turf/simulated/T as turf)
+ 	if(!istype(other_turf))
+ 		return
+ 
+-	var/t_block
+-	ATMOS_CANPASS_TURF(t_block, T, other_turf)
+-	var/o_block
+-	ATMOS_CANPASS_TURF(o_block, other_turf, T)
++	var/t_block = T.c_airblock(other_turf)
++	var/o_block = other_turf.c_airblock(T)
+ 
+ 	if(o_block & AIR_BLOCKED)
+ 		if(t_block & AIR_BLOCKED)
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Fire.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Fire.dm
+index 0bab7a261..78a8abe96 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Fire.dm
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Fire.dm
+@@ -7,31 +7,33 @@ If it gains pressure too slowly, it may leak or just rupture instead of explodin
+ */
+ 
+ //#define FIREDBG
+-#define MINIMUM_FUEL_VOLUME 0.0005 //Used to prevent leaving patches with astronomically tiny amounts of fuel
+ 
+-#define FIRE_LIGHT_1	2 //These defines are the power of the light given off by fire at various stages
+-#define FIRE_LIGHT_2	4
+-#define FIRE_LIGHT_3	5
+-
+-/turf
+-	var/tmp/obj/fire/fire = null
++/turf/var/obj/fire/fire = null
+ 
+ //Some legacy definitions so fires can be started.
+ atom/proc/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+ 	return null
+ 
++/atom/movable/proc/is_burnable()
++	return FALSE
++
++/mob/is_burnable()
++	return simulated
+ 
+ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 
+ 
+ /turf/simulated/hotspot_expose(exposed_temperature, exposed_volume, soh)
+ 	if(fire_protection > world.time-300)
+-		return FALSE
++		return 0
+ 	if(locate(/obj/fire) in src)
+-		return TRUE
++		return 1
+ 	var/datum/gas_mixture/air_contents = return_air()
+-	if(!air_contents || exposed_temperature < PLASMA_MINIMUM_BURN_TEMPERATURE)
+-		return FALSE
++	if(!air_contents || exposed_temperature < PHORON_MINIMUM_BURN_TEMPERATURE)
++		return 0
++
++	if (!air_contents.can_support_fire())
++		return 0
+ 
+ 	var/igniting = 0
+ 	var/obj/effect/decal/cleanable/liquid_fuel/liquid = locate() in src
+@@ -43,9 +45,9 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 	return igniting
+ 
+ /zone/proc/process_fire()
+-	var/datum/gas_mixture/burn_gas = air.remove_ratio(vsc.fire_consuption_rate, LAZYLEN(fire_tiles))
++	var/datum/gas_mixture/burn_gas = air.remove_ratio(vsc.fire_consuption_rate, fire_tiles.len)
+ 
+-	var/firelevel = burn_gas.zburn(src, fire_tiles, force_burn = 1, no_check = 1)
++	var/firelevel = burn_gas.react(src, fire_tiles, force_burn = 1, no_check = 1)
+ 
+ 	air.merge(burn_gas)
+ 
+@@ -55,23 +57,21 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 				T.fire.firelevel = firelevel
+ 			else
+ 				var/obj/effect/decal/cleanable/liquid_fuel/fuel = locate() in T
+-				LAZYREMOVE(fire_tiles, T)
+-				LAZYREMOVE(fuel_objs, fuel)
++				fire_tiles -= T
++				fuel_objs -= fuel
+ 	else
+ 		for(var/turf/simulated/T in fire_tiles)
+ 			if(istype(T.fire))
+ 				T.fire.RemoveFire()
+ 			T.fire = null
+-		LAZYCLEARLIST(fire_tiles)
+-		LAZYCLEARLIST(fuel_objs)
+-		UNSETEMPTY(fire_tiles)
+-		UNSETEMPTY(fuel_objs)
++		fire_tiles.Cut()
++		fuel_objs.Cut()
+ 
+-	if(!LAZYLEN(fire_tiles))
+-		SSair.active_fire_zones -= src
++	if(!fire_tiles.len)
++		SSair.active_fire_zones.Remove(src)
+ 
+ /zone/proc/remove_liquidfuel(var/used_liquid_fuel, var/remove_fire=0)
+-	if(!LAZYLEN(fuel_objs))
++	if(!fuel_objs.len)
+ 		return
+ 
+ 	//As a simplification, we remove fuel equally from all fuel sources. It might be that some fuel sources have more fuel,
+@@ -82,44 +82,36 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 	for(var/O in fuel_objs)
+ 		var/obj/effect/decal/cleanable/liquid_fuel/fuel = O
+ 		if(!istype(fuel))
+-			LAZYREMOVE(fuel_objs, fuel)
++			fuel_objs -= fuel
+ 			continue
+ 
+ 		fuel.amount -= fuel_to_remove
+-		if(fuel.amount <= MINIMUM_FUEL_VOLUME)
+-			LAZYREMOVE(fuel_objs, fuel)
++		if(fuel.amount <= 0)
++			fuel_objs -= fuel
+ 			if(remove_fire)
+ 				var/turf/T = fuel.loc
+ 				if(istype(T) && T.fire) qdel(T.fire)
+ 			qdel(fuel)
+ 
+ /turf/proc/create_fire(fl)
+-	return FALSE
++	return 0
+ 
+ /turf/simulated/create_fire(fl)
+-
+ 	if(fire)
+ 		fire.firelevel = max(fl, fire.firelevel)
+-		return TRUE
++		return 1
+ 
+ 	if(!zone)
+-		return TRUE
++		return 1
+ 
+ 	fire = new(src, fl)
+ 	SSair.active_fire_zones |= zone
+ 
+ 	var/obj/effect/decal/cleanable/liquid_fuel/fuel = locate() in src
+-	LAZYINITLIST(zone.fire_tiles)
+ 	zone.fire_tiles |= src
+-	if(fuel)
+-		LAZYADD(zone.fuel_objs, fuel)
+-
+-	//var/obj/effect/decal/cleanable/foam/extinguisher_foam = locate() in src
+-	//if(extinguisher_foam && extinguisher_foam.reagents)
+-	//	fire.firelevel *= max(0,1 - (extinguisher_foam.reagents.total_volume*0.04))
+-		//25 units will eliminate the fire completely
++	if(fuel) zone.fuel_objs += fuel
+ 
+-	return FALSE
++	return 0
+ 
+ /obj/fire
+ 	//Icon for fire on turfs.
+@@ -131,9 +123,10 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 
+ 	icon = 'icons/effects/fire.dmi'
+ 	icon_state = "1"
+-	light_color = "#ED9200"
+-	layer = GASFIRE_LAYER
+-
++	light_color = "#ed9200"
++	layer = FIRE_LAYER
++	light_range = 3
++	light_power = 0.5
+ 	var/firelevel = 1 //Calculated by gas_mixture.calculate_firelevel()
+ 
+ /obj/fire/Process()
+@@ -144,18 +137,26 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 		if(my_tile && my_tile.fire == src)
+ 			my_tile.fire = null
+ 		RemoveFire()
+-		return TRUE
++		return 1
+ 
+ 	var/datum/gas_mixture/air_contents = my_tile.return_air()
++	if (!air_contents.can_support_fire())
++		my_tile.fire = null
++		RemoveFire()
++		return 0
+ 
+ 	if(firelevel > 6)
+-		set_light(9, FIRE_LIGHT_3, no_update = TRUE)	// We set color later in the proc, that should trigger an update.
++		icon_state = "3"
++		set_light_range(7)
++		set_light_power(1)
+ 	else if(firelevel > 2.5)
+-		set_light(7, FIRE_LIGHT_2, no_update = TRUE)
++		icon_state = "2"
++		set_light_range(5)
++		set_light_power(0.7)
+ 	else
+-		set_light(5, FIRE_LIGHT_1, no_update = TRUE)
+-
+-	air_contents.adjust_gas(GAS_CO2, firelevel * 0.07)
++		icon_state = "1"
++		set_light_range(3)
++		set_light_power(0.5)
+ 
+ 	for(var/mob/living/L in loc)
+ 		L.FireBurn(firelevel, air_contents.temperature, air_contents.return_pressure())  //Burn the mobs!
+@@ -165,7 +166,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 		A.fire_act(air_contents, air_contents.temperature, air_contents.volume)
+ 
+ 	//spread
+-	for(var/direction in cardinal)
++	for(var/direction in GLOB.cardinal)
+ 		var/turf/simulated/enemy_tile = get_step(my_tile, direction)
+ 
+ 		if(istype(enemy_tile))
+@@ -193,7 +194,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 				enemy_tile.adjacent_fire_act(loc, air_contents, air_contents.temperature, air_contents.volume)
+ 
+ 	animate(src, color = fire_color(air_contents.temperature), 5)
+-	set_light(l_color = color)
++	set_light_color(color)
+ 
+ /obj/fire/New(newLoc,fl)
+ 	..()
+@@ -202,20 +203,14 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 		qdel(src)
+ 		return
+ 
+-	set_dir(pick(cardinal))
++	set_dir(pick(GLOB.cardinal))
+ 
+ 	var/datum/gas_mixture/air_contents = loc.return_air()
+ 	color = fire_color(air_contents.temperature)
+-	set_light(3, 1, color)
++	set_light_color(color)
+ 
+ 	firelevel = fl
+-	SSair.active_hotspots += src
+-
+-	//When a fire is created, immediately call fire_act on things in the tile.
+-	//This is needed for flamethrowers
+-	for (var/a in loc)
+-		var/atom/A = a
+-		A.fire_act()
++	SSair.active_hotspots.Add(src)
+ 
+ /obj/fire/proc/fire_color(var/env_temperature)
+ 	var/temperature = max(4000*sqrt(firelevel/vsc.fire_firelevel_multiplier), env_temperature)
+@@ -224,30 +219,27 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ /obj/fire/Destroy()
+ 	RemoveFire()
+ 
+-	return ..()
++	. = ..()
+ 
+ /obj/fire/proc/RemoveFire()
+ 	var/turf/T = loc
+ 	if (istype(T))
+-		set_light(0)
++		set_light_on(FALSE)
+ 
+ 		T.fire = null
+-		loc = null
+-	SSair.active_hotspots -= src
++		forceMove(null)
++	SSair.active_hotspots.Remove(src)
+ 
+-/turf/simulated
+-	var/tmp/fire_protection = 0 //Protects newly extinguished tiles from being overrun again.
+ 
++/turf/simulated/var/fire_protection = 0 //Protects newly extinguished tiles from being overrun again.
+ /turf/proc/apply_fire_protection()
+-	return
+-
+ /turf/simulated/apply_fire_protection()
+ 	fire_protection = world.time
+ 
+ //Returns the firelevel
+-/datum/gas_mixture/proc/zburn(zone/zone, force_burn, no_check = 0)
++/datum/gas_mixture/proc/react(zone/zone, force_burn, no_check = 0)
+ 	. = 0
+-	if((temperature > PLASMA_MINIMUM_BURN_TEMPERATURE || force_burn) && (no_check ||check_recombustability(zone? zone.fuel_objs : null)))
++	if((temperature > PHORON_MINIMUM_BURN_TEMPERATURE || force_burn) && (no_check ||check_recombustability(zone? zone.fuel_objs : null)))
+ 
+ 		#ifdef FIREDBG
+ 		log_debug("***************** FIREDBG *****************")
+@@ -277,7 +269,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 
+ 		total_fuel = gas_fuel + liquid_fuel
+ 		if(total_fuel <= 0.005)
+-			return FALSE
++			return 0
+ 
+ 		//*** Determine how fast the fire burns
+ 
+@@ -316,7 +308,7 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 		//if the reaction is progressing too slow then it isn't self-sustaining anymore and burns out
+ 		if(zone) //be less restrictive with canister and tank reactions
+ 			if((!liquid_fuel || used_fuel <= FIRE_LIQUD_MIN_BURNRATE) && (!gas_fuel || used_fuel <= FIRE_GAS_MIN_BURNRATE*zone.contents.len))
+-				return FALSE
++				return 0
+ 
+ 
+ 		//*** Remove fuel and oxidizer, add carbon dioxide and heat
+@@ -327,8 +319,9 @@ turf/proc/hotspot_expose(exposed_temperature, exposed_volume, soh = 0)
+ 
+ 		//remove_by_flag() and adjust_gas() handle the group_multiplier for us.
+ 		remove_by_flag(XGM_GAS_OXIDIZER, used_oxidizers)
+-		remove_by_flag(XGM_GAS_FUEL, used_gas_fuel)
+-		adjust_gas(GAS_CO2, used_oxidizers)
++		var/datum/gas_mixture/burned_fuel = remove_by_flag(XGM_GAS_FUEL, used_gas_fuel)
++		for(var/g in burned_fuel.gas)
++			adjust_gas(gas_data.burn_product[g], burned_fuel.gas[g])
+ 
+ 		if(zone)
+ 			zone.remove_liquidfuel(used_liquid_fuel, !check_combustability())
+@@ -352,10 +345,10 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
+ 			break
+ 
+ 	if(!.)
+-		return FALSE
++		return 0
+ 
+ 	if(fuel_objs && fuel_objs.len)
+-		return TRUE
++		return 1
+ 
+ 	. = 0
+ 	for(var/g in gas)
+@@ -371,14 +364,14 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
+ 			break
+ 
+ 	if(!.)
+-		return FALSE
++		return 0
+ 
+ 	if(liquid)
+-		return TRUE
++		return 1
+ 
+ 	. = 0
+ 	for(var/g in gas)
+-		if(gas_data.flags[g] & XGM_GAS_FUEL && QUANTIZE(gas[g] * vsc.fire_consuption_rate) >= 0.005)
++		if(gas_data.flags[g] & XGM_GAS_FUEL && QUANTIZE(gas[g] * vsc.fire_consuption_rate) >= 0.1)
+ 			. = 1
+ 			break
+ 
+@@ -392,15 +385,7 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
+ 
+ 	if(total_combustables > 0)
+ 		//slows down the burning when the concentration of the reactants is low
+-		var/damping_multiplier
+-		if(!total_moles || !group_multiplier)
+-			damping_multiplier = min(1, active_combustables)
+-		else if(!total_moles)
+-			damping_multiplier = min(1, active_combustables / group_multiplier)
+-		else if(!group_multiplier)
+-			damping_multiplier = min(1, active_combustables / total_moles)
+-		else
+-			damping_multiplier = min(1, active_combustables / (total_moles/group_multiplier))
++		var/damping_multiplier = min(1, active_combustables / (total_moles/group_multiplier))
+ 
+ 		//weight the damping mult so that it only really brings down the firelevel when the ratio is closer to 0
+ 		damping_multiplier = 2*damping_multiplier - (damping_multiplier*damping_multiplier)
+@@ -425,10 +410,13 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
+ 	apply_damage(2.5*mx, BURN)
+ 
+ 
++
+ /mob/living/carbon/human/FireBurn(var/firelevel, var/last_temperature, var/pressure)
+ 	//Burns mobs due to fire. Respects heat transfer coefficients on various body parts.
+ 	//Due to TG reworking how fireprotection works, this is kinda less meaningful.
+ 
++
++
+ 	var/head_exposure = 1
+ 	var/chest_exposure = 1
+ 	var/groin_exposure = 1
+@@ -457,15 +445,16 @@ datum/gas_mixture/proc/check_recombustability(list/fuel_objs)
+ 
+ 	//Always check these damage procs first if fire damage isn't working. They're probably what's wrong.
+ 
+-	apply_damage(2.5 * mx * head_exposure,  BURN, BP_HEAD, FALSE, FALSE, FALSE, "Fire")
+-	apply_damage(2.5 * mx * chest_exposure, BURN, BP_CHEST, FALSE, FALSE, FALSE, "Fire")
+-	apply_damage(2.0 * mx * groin_exposure, BURN, BP_GROIN, FALSE, FALSE, FALSE, "Fire")
+-	apply_damage(0.6 * mx * legs_exposure,  BURN, BP_L_LEG, FALSE, FALSE, FALSE, "Fire")
+-	apply_damage(0.6 * mx * legs_exposure,  BURN, BP_R_LEG, FALSE, FALSE, FALSE, "Fire")
+-	apply_damage(0.4 * mx * arms_exposure,  BURN, BP_L_ARM, FALSE, FALSE, FALSE, "Fire")
+-	apply_damage(0.4 * mx * arms_exposure,  BURN, BP_R_ARM, FALSE, FALSE, FALSE, "Fire")
++	apply_damage(0.9*mx*head_exposure,  BURN, BP_HEAD,  0, 0, "Fire")
++	apply_damage(2.5*mx*chest_exposure, BURN, BP_CHEST, 0, 0, "Fire")
++	apply_damage(2.0*mx*groin_exposure, BURN, BP_GROIN, 0, 0, "Fire")
++	apply_damage(0.6*mx*legs_exposure,  BURN, BP_L_LEG, 0, 0, "Fire")
++	apply_damage(0.6*mx*legs_exposure,  BURN, BP_R_LEG, 0, 0, "Fire")
++	apply_damage(0.4*mx*arms_exposure,  BURN, BP_L_ARM, 0, 0, "Fire")
++	apply_damage(0.4*mx*arms_exposure,  BURN, BP_R_ARM, 0, 0, "Fire")
++
+ 
+ 
+-#undef FIRE_LIGHT_1
+-#undef FIRE_LIGHT_2
+-#undef FIRE_LIGHT_3
++//Return the highest temperature this atom can safely endure before it suffers damage
++/atom/proc/get_heat_limit()
++	return (T0C + 300) //300 celsius
+\ No newline at end of file
+diff --git a/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Phoron.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Phoron.dm
+new file mode 100644
+index 000000000..1425b974f
+--- /dev/null
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Phoron.dm
+@@ -0,0 +1,157 @@
++var/image/contamination_overlay = image('icons/effects/contamination.dmi')
++
++/pl_control
++	var/PHORON_DMG = 3
++	var/PHORON_DMG_NAME = "Phoron Damage Amount"
++	var/PHORON_DMG_DESC = "Self Descriptive"
++
++	var/CLOTH_CONTAMINATION = 1
++	var/CLOTH_CONTAMINATION_NAME = "Cloth Contamination"
++	var/CLOTH_CONTAMINATION_DESC = "If this is on, phoron does damage by getting into cloth."
++
++	var/PHORONGUARD_ONLY = 0
++	var/PHORONGUARD_ONLY_NAME = "\"PhoronGuard Only\""
++	var/PHORONGUARD_ONLY_DESC = "If this is on, only biosuits and spacesuits protect against contamination and ill effects."
++
++	var/GENETIC_CORRUPTION = 0
++	var/GENETIC_CORRUPTION_NAME = "Genetic Corruption Chance"
++	var/GENETIC_CORRUPTION_DESC = "Chance of genetic corruption as well as toxic damage, X in 10,000."
++
++	var/SKIN_BURNS = 0
++	var/SKIN_BURNS_DESC = "Phoron has an effect similar to mustard gas on the un-suited."
++	var/SKIN_BURNS_NAME = "Skin Burns"
++
++	var/EYE_BURNS = 1
++	var/EYE_BURNS_NAME = "Eye Burns"
++	var/EYE_BURNS_DESC = "Phoron burns the eyes of anyone not wearing eye protection."
++
++	var/CONTAMINATION_LOSS = 0.02
++	var/CONTAMINATION_LOSS_NAME = "Contamination Loss"
++	var/CONTAMINATION_LOSS_DESC = "How much toxin damage is dealt from contaminated clothing" //Per tick?  ASK ARYN
++
++	var/PHORON_HALLUCINATION = 0
++	var/PHORON_HALLUCINATION_NAME = "Phoron Hallucination"
++	var/PHORON_HALLUCINATION_DESC = "Does being in phoron cause you to hallucinate?"
++
++	var/N2O_HALLUCINATION = 1
++	var/N2O_HALLUCINATION_NAME = "N2O Hallucination"
++	var/N2O_HALLUCINATION_DESC = "Does being in sleeping gas cause you to hallucinate?"
++
++
++obj/var/contaminated = 0
++
++
++/obj/item/proc/can_contaminate()
++	//Clothing and backpacks can be contaminated.
++	if(obj_flags & ITEM_FLAG_PHORONGUARD) return 0
++	else if(istype(src,/obj/item/storage/backpack)) return 0 //Cannot be washed :(
++	else if(istype(src,/obj/item/clothing)) return 1
++
++/obj/item/proc/contaminate()
++	//Do a contamination overlay? Temporary measure to keep contamination less deadly than it was.
++	if(!contaminated)
++		contaminated = 1
++		overlays += contamination_overlay
++
++/obj/item/proc/decontaminate()
++	contaminated = 0
++	overlays -= contamination_overlay
++
++/mob/proc/contaminate()
++
++/mob/living/carbon/human/contaminate()
++	//See if anything can be contaminated.
++
++	if(!pl_suit_protected())
++		suit_contamination()
++
++	if(!pl_head_protected())
++		if(prob(1)) suit_contamination() //Phoron can sometimes get through such an open suit.
++
++//Cannot wash backpacks currently.
++//	if(istype(back,/obj/item/storage/backpack))
++//		back.contaminate()
++
++/mob/proc/pl_effects()
++
++/mob/living/carbon/human/pl_effects()
++	//Handles all the bad things phoron can do.
++
++	//Contamination
++	if(vsc.plc.CLOTH_CONTAMINATION) contaminate()
++
++	//Anything else requires them to not be dead.
++	if(stat >= 2)
++		return
++
++	//Burn skin if exposed.
++	if(vsc.plc.SKIN_BURNS)
++		if(!pl_head_protected() || !pl_suit_protected())
++			burn_skin(0.75)
++			if(prob(20)) to_chat(src, "<span class='danger'>Your skin burns!</span>")
++			updatehealth()
++
++	//Burn eyes if exposed.
++	if(vsc.plc.EYE_BURNS)
++		if(!head)
++			if(!wear_mask)
++				burn_eyes()
++			else
++				if(!(wear_mask.body_parts_covered & EYES))
++					burn_eyes()
++		else
++			if(!(head.body_parts_covered & EYES))
++				if(!wear_mask)
++					burn_eyes()
++				else
++					if(!(wear_mask.body_parts_covered & EYES))
++						burn_eyes()
++
++	//Genetic Corruption
++	if(vsc.plc.GENETIC_CORRUPTION)
++		if(rand(1,10000) < vsc.plc.GENETIC_CORRUPTION)
++			randmutb(src)
++			to_chat(src, "<span class='danger'>High levels of toxins cause you to spontaneously mutate!</span>")
++			domutcheck(src,null)
++
++
++/mob/living/carbon/human/proc/burn_eyes()
++	var/obj/item/organ/internal/eyes/E = internal_organs_by_name[BP_EYES]
++	if(E && !E.phoron_guard)
++		if(prob(20)) to_chat(src, "<span class='danger'>Your eyes burn!</span>")
++		E.damage += 2.5
++		eye_blurry = min(eye_blurry+1.5,50)
++		if (prob(max(0,E.damage - 15) + 1) &&!eye_blind)
++			to_chat(src, "<span class='danger'>You are blinded!</span>")
++			eye_blind += 20
++
++/mob/living/carbon/human/proc/pl_head_protected()
++	//Checks if the head is adequately sealed.
++	if(head)
++		if(vsc.plc.PHORONGUARD_ONLY)
++			if(head.item_flags & ITEM_FLAG_PHORONGUARD)
++				return 1
++		else if(head.body_parts_covered & EYES)
++			return 1
++	return 0
++
++/mob/living/carbon/human/proc/pl_suit_protected()
++	//Checks if the suit is adequately sealed.
++	var/coverage = 0
++	for(var/obj/item/protection in list(wear_suit, gloves, shoes))
++		if(!protection)
++			continue
++		if(vsc.plc.PHORONGUARD_ONLY && !(protection.item_flags & ITEM_FLAG_PHORONGUARD))
++			return 0
++		coverage |= protection.body_parts_covered
++
++	if(vsc.plc.PHORONGUARD_ONLY)
++		return 1
++
++	return BIT_TEST_ALL(coverage, UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS)
++
++/mob/living/carbon/human/proc/suit_contamination()
++	//Runs over the things that can be contaminated and does so.
++	if(w_uniform) w_uniform.contaminate()
++	if(shoes) shoes.contaminate()
++	if(gloves) gloves.contaminate()
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Plasma.dm b/D:/Repositories/Sojourn-Iskhod/code/ZAS/Plasma.dm
+deleted file mode 100644
+index b53a22f03..000000000
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Plasma.dm
++++ /dev/null
+@@ -1,94 +0,0 @@
+-var/image/contamination_overlay = image('icons/effects/contamination.dmi')
+-
+-/pl_control
+-	var/PLASMA_DMG = 3
+-	var/PLASMA_DMG_NAME = "Plasma Damage Amount"
+-	var/PLASMA_DMG_DESC = "Self Descriptive"
+-
+-	var/PLASMAGUARD_ONLY = FALSE
+-	var/PLASMAGUARD_ONLY_NAME = "\"PlasmaGuard Only\""
+-	var/PLASMAGUARD_ONLY_DESC = "If this is on, only biosuits and spacesuits protect against ill effects."
+-
+-	var/GENETIC_CORRUPTION = FALSE
+-	var/GENETIC_CORRUPTION_NAME = "Genetic Corruption Chance"
+-	var/GENETIC_CORRUPTION_DESC = "Chance of genetic corruption as well as toxic damage, X in 10,000."
+-
+-	var/SKIN_BURNS = TRUE
+-	var/SKIN_BURNS_DESC = "Plasma has an effect similar to mustard gas on the un-suited."
+-	var/SKIN_BURNS_NAME = "Skin Burns"
+-
+-	var/EYE_BURNS = TRUE
+-	var/EYE_BURNS_NAME = "Eye Burns"
+-	var/EYE_BURNS_DESC = "Plasma burns the eyes of anyone not wearing eye protection."
+-
+-	var/PLASMA_HALLUCINATION = FALSE
+-	var/PLASMA_HALLUCINATION_NAME = "Plasma Hallucination"
+-	var/PLASMA_HALLUCINATION_DESC = "Does being in plasma cause you to hallucinate?"
+-
+-	var/N2O_HALLUCINATION = TRUE
+-	var/N2O_HALLUCINATION_NAME = "N2O Hallucination"
+-	var/N2O_HALLUCINATION_DESC = "Does being in sleeping gas cause you to hallucinate?"
+-
+-
+-/mob/proc/pl_effects()
+-
+-/mob/living/carbon/human/pl_effects()
+-	//Handles all the bad things plasma can do.
+-	if(stat >= DEAD)
+-		return
+-
+-	//Burn skin if exposed.
+-	if(vsc.plc.SKIN_BURNS)
+-		if(!pl_head_protected() || !pl_suit_protected())
+-			burn_skin(0.75)
+-			if(prob(20)) to_chat(src, SPAN_DANGER("Your skin burns!"))
+-			updatehealth()
+-
+-	//Burn eyes if exposed.
+-	if(vsc.plc.EYE_BURNS)
+-		if(!head)
+-			if(!wear_mask)
+-				burn_eyes()
+-			else
+-				if(!(wear_mask.body_parts_covered & EYES))
+-					burn_eyes()
+-		else
+-			if(!(head.body_parts_covered & EYES))
+-				if(!wear_mask)
+-					burn_eyes()
+-				else
+-					if(!(wear_mask.body_parts_covered & EYES))
+-						burn_eyes()
+-
+-/mob/living/carbon/human/proc/burn_eyes()
+-	//The proc that handles eye burning.
+-	if(!species.has_process[OP_EYES])
+-		return
+-
+-	var/obj/item/organ/internal/eyes/E = random_organ_by_process(OP_EYES)
+-	if(E)
+-		if(prob(20)) to_chat(src, SPAN_DANGER("Your eyes burn!"))
+-		E.damage += 2.5
+-		eye_blurry = min(eye_blurry+1.5,50)
+-		if (prob(max(0,E.damage - 15) + 1) &&!eye_blind)
+-			to_chat(src, SPAN_DANGER("You are blinded!"))
+-			eye_blind += 20
+-
+-/mob/living/carbon/human/proc/pl_head_protected()
+-	//Checks if the head is adequately sealed.
+-	if(head && (head.body_parts_covered & EYES))
+-		return 1
+-	return 0
+-
+-/mob/living/carbon/human/proc/pl_suit_protected()
+-	//Checks if the suit is adequately sealed.
+-	var/coverage = 0
+-	for(var/obj/item/protection in list(wear_suit, gloves, shoes))
+-		if(!protection)
+-			continue
+-		coverage |= protection.body_parts_covered
+-
+-	if(vsc.plc.PLASMAGUARD_ONLY)
+-		return 1
+-
+-	return BIT_TEST_ALL(coverage, UPPER_TORSO|LOWER_TORSO|LEGS|ARMS)
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Turf.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Turf.dm
+index 2f0e7f5b5..da7ccb09f 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Turf.dm
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Turf.dm
+@@ -5,17 +5,16 @@
+ /turf/var/datum/gas_mixture/air
+ 
+ /turf/simulated/proc/update_graphic(list/graphic_add = null, list/graphic_remove = null)
+-	if (LAZYLEN(graphic_add))
+-		vis_contents += graphic_add
+-	if(LAZYLEN(graphic_remove))
+-		vis_contents -= graphic_remove
++	if(graphic_add && graphic_add.len)
++		overlays += graphic_add
++	if(graphic_remove && graphic_remove.len)
++		overlays -= graphic_remove
+ 
+ /turf/proc/update_air_properties()
+-	var/block
+-	ATMOS_CANPASS_TURF(block, src, src)
++	var/block = c_airblock(src)
+ 	if(block & AIR_BLOCKED)
+ 		//dbg(blocked)
+-		return TRUE
++		return 1
+ 
+ 	#ifdef MULTIZAS
+ 	for(var/d = 1, d < 64, d *= 2)
+@@ -28,14 +27,13 @@
+ 		if(!unsim)
+ 			continue
+ 
+-		ATMOS_CANPASS_TURF(block, unsim, src)
++		block = unsim.c_airblock(src)
+ 
+ 		if(block & AIR_BLOCKED)
+ 			//unsim.dbg(air_blocked, turn(180,d))
+ 			continue
+ 
+-		var/r_block
+-		ATMOS_CANPASS_TURF(r_block, src, unsim)
++		var/r_block = c_airblock(unsim)
+ 
+ 		if(r_block & AIR_BLOCKED)
+ 			continue
+@@ -44,26 +42,8 @@
+ 
+ 			var/turf/simulated/sim = unsim
+ 			if(TURF_HAS_VALID_ZONE(sim))
+-
+ 				SSair.connect(sim, src)
+ 
+-
+-// Helper for can_safely_remove_from_zone().
+-#define GET_ZONE_NEIGHBOURS(T, ret) \
+-	ret = 0; \
+-	if (T.zone) { \
+-		for (var/_gzn_dir in gzn_check) { \
+-			var/turf/simulated/other = get_step(T, _gzn_dir); \
+-			if (istype(other) && other.zone == T.zone) { \
+-				var/block; \
+-				ATMOS_CANPASS_TURF(block, other, T); \
+-				if (!(block & AIR_BLOCKED)) { \
+-					ret |= _gzn_dir; \
+-				} \
+-			} \
+-		} \
+-	} \
+-
+ /*
+ 	Simple heuristic for determining if removing the turf from it's zone will not partition the zone (A very bad thing).
+ 	Instead of analyzing the entire zone, we only check the nearest 3x3 turfs surrounding the src turf.
+@@ -71,30 +51,46 @@
+ */
+ 
+ /turf/simulated/proc/can_safely_remove_from_zone()
+-	if(!zone)
++	if(!zone) return 1
++
++	var/check_dirs = get_zone_neighbours(src)
++	var/unconnected_dirs = check_dirs
++
++	//src is only connected to the zone by a single direction, this is a safe removal.
++	if (!(check_dirs & (check_dirs - 1))) //if(IsInteger(log(2, .)))
+ 		return TRUE
+ 
+-	var/check_dirs
+-	GET_ZONE_NEIGHBOURS(src, check_dirs)
+-	. = check_dirs
+-	for(var/dir in csrfz_check)
++	#ifdef MULTIZAS
++	var/to_check = GLOB.cornerdirsz
++	#else
++	var/to_check = GLOB.cornerdirs
++	#endif
++
++	for(var/dir in to_check)
++
+ 		//for each pair of "adjacent" cardinals (e.g. NORTH and WEST, but not NORTH and SOUTH)
+ 		if((dir & check_dirs) == dir)
+ 			//check that they are connected by the corner turf
+-			var/turf/simulated/T = get_step(src, dir)
+-			if (!istype(T))
+-				. &= ~dir
+-				continue
+-
+-			var/connected_dirs
+-			GET_ZONE_NEIGHBOURS(T, connected_dirs)
+-			if(connected_dirs && (dir & reverse_dir[connected_dirs]) == dir)
+-				. &= ~dir //they are, so unflag the cardinals in question
++			var/connected_dirs = get_zone_neighbours(get_step(src, dir))
++			if(connected_dirs && (dir & GLOB.reverse_dir[connected_dirs]) == dir)
++				unconnected_dirs &= ~dir //they are, so unflag the cardinals in question
+ 
+ 	//it is safe to remove src from the zone if all cardinals are connected by corner turfs
+-	. = !.
+-
+-#undef GET_ZONE_NEIGHBOURS
++	return !unconnected_dirs
++
++//helper for can_safely_remove_from_zone()
++/turf/simulated/proc/get_zone_neighbours(turf/simulated/T)
++	. = 0
++	if(istype(T) && T.zone)
++		#ifdef MULTIZAS
++		var/to_check = GLOB.cardinalz
++		#else
++		var/to_check = GLOB.cardinal
++		#endif
++		for(var/dir in to_check)
++			var/turf/simulated/other = get_step(T, dir)
++			if(istype(other) && other.zone == T.zone && !(other.c_airblock(T) & AIR_BLOCKED) && get_dist(src, other) <= 1)
++				. |= dir
+ 
+ /turf/simulated/update_air_properties()
+ 
+@@ -102,8 +98,7 @@
+ 		c_copy_air() //not very efficient :(
+ 		zone = null //Easier than iterating through the list at the zone.
+ 
+-	var/s_block
+-	ATMOS_CANPASS_TURF(s_block, src, src)
++	var/s_block = c_airblock(src)
+ 	if(s_block & AIR_BLOCKED)
+ 		#ifdef ZASDBG
+ 		if(verbose) log_debug("Self-blocked.")
+@@ -116,9 +111,9 @@
+ 				c_copy_air() //we aren't rebuilding, but hold onto the old air so it can be readded
+ 				z.remove(src)
+ 			else
+-				z.rebuild()
++				INVOKE_ASYNC(z, /zone/proc/rebuild)
+ 
+-		return TRUE
++		return 1
+ 
+ 	var/previously_open = open_directions
+ 	open_directions = 0
+@@ -135,8 +130,7 @@
+ 		if(!unsim) //edge of map
+ 			continue
+ 
+-		var/block
+-		ATMOS_CANPASS_TURF(block, unsim, src)
++		var/block = unsim.c_airblock(src)
+ 		if(block & AIR_BLOCKED)
+ 
+ 			#ifdef ZASDBG
+@@ -146,8 +140,7 @@
+ 
+ 			continue
+ 
+-		var/r_block
+-		ATMOS_CANPASS_TURF(r_block, src, unsim)
++		var/r_block = c_airblock(unsim)
+ 		if(r_block & AIR_BLOCKED)
+ 
+ 			#ifdef ZASDBG
+@@ -156,15 +149,11 @@
+ 			#endif
+ 
+ 			//Check that our zone hasn't been cut off recently.
+-			//This happens when windows move or are constructed. Try to remove first, otherwise we need to rebuild.
++			//This happens when windows move or are constructed. We need to rebuild.
+ 			if((previously_open & d) && istype(unsim, /turf/simulated))
+ 				var/turf/simulated/sim = unsim
+ 				if(zone && sim.zone == zone)
+-					if (can_safely_remove_from_zone())
+-						c_copy_air()
+-						zone.remove(src)
+-					else
+-						zone.rebuild()
++					zone.rebuild()
+ 					return
+ 
+ 			continue
+@@ -174,9 +163,10 @@
+ 		if(istype(unsim, /turf/simulated))
+ 
+ 			var/turf/simulated/sim = unsim
+-			sim.open_directions |= reverse_dir[d]
++			sim.open_directions |= GLOB.reverse_dir[d]
+ 
+ 			if(TURF_HAS_VALID_ZONE(sim))
++
+ 				//Might have assigned a zone, since this happens for each direction.
+ 				if(!zone)
+ 
+@@ -191,8 +181,11 @@
+ 						#endif
+ 
+ 						//Postpone this tile rather than exit, since a connection can still be made.
+-						LAZYADD(postponed, sim)
++						if(!postponed) postponed = list()
++						postponed.Add(sim)
++
+ 					else
++
+ 						sim.zone.add(src)
+ 
+ 						#ifdef ZASDBG
+@@ -208,17 +201,21 @@
+ 
+ 					SSair.connect(src, sim)
+ 
++
+ 			#ifdef ZASDBG
+ 				else if(verbose) log_debug("[d] has same zone.")
+ 
+ 			else if(verbose) log_debug("[d] has invalid zone.")
+ 			#endif
++
+ 		else
++
+ 			//Postponing connections to tiles until a zone is assured.
+-			LAZYADD(postponed, unsim)
++			if(!postponed) postponed = list()
++			postponed.Add(unsim)
+ 
+ 	if(!TURF_HAS_VALID_ZONE(src)) //Still no zone, make a new one.
+-		var/zone/newzone = new
++		var/zone/newzone = new/zone()
+ 		newzone.add(src)
+ 
+ 	#ifdef ZASDBG
+@@ -229,43 +226,32 @@
+ 
+ 	//At this point, a zone should have happened. If it hasn't, don't add more checks, fix the bug.
+ 
+-	for(var/thing in postponed)
+-		var/turf/T = thing
++	for(var/turf/T in postponed)
+ 		SSair.connect(src, T)
+ 
+ /turf/proc/post_update_air_properties()
+ 	if(connections) connections.update_all()
+ 
+ /turf/assume_air(datum/gas_mixture/giver) //use this for machines to adjust air
+-	return FALSE
++	return 0
+ 
+ /turf/proc/assume_gas(gasid, moles, temp = 0)
+-	return FALSE
++	return 0
+ 
+ /turf/return_air()
+ 	//Create gas mixture to hold data for passing
+ 	var/datum/gas_mixture/GM = new
+ 
+-	GM.adjust_multi(GAS_OXYGEN, oxygen, GAS_CO2, carbon_dioxide, GAS_NITROGEN, nitrogen, GAS_PLASMA, plasma, GAS_HYDROGEN, hydrogen)
++	if(initial_gas)
++		GM.gas = initial_gas.Copy()
+ 	GM.temperature = temperature
++	GM.update_values()
+ 
+ 	return GM
+ 
+ /turf/remove_air(amount as num)
+-	var/datum/gas_mixture/GM = new
+-
+-	var/sum = oxygen + carbon_dioxide + nitrogen + plasma
+-	if(sum>0)
+-		GM.gas[GAS_OXYGEN] = (oxygen/sum)*amount
+-		GM.gas[GAS_CO2] = (carbon_dioxide/sum)*amount
+-		GM.gas[GAS_NITROGEN] = (nitrogen/sum)*amount
+-		GM.gas[GAS_PLASMA] = (plasma/sum)*amount
+-		GM.gas[GAS_HYDROGEN] = (hydrogen/sum)*amount
+-
+-	GM.temperature = temperature
+-	GM.update_values()
+-
+-	return GM
++	var/datum/gas_mixture/GM = return_air()
++	return GM.remove(amount)
+ 
+ /turf/simulated/assume_air(datum/gas_mixture/giver)
+ 	var/datum/gas_mixture/my_air = return_air()
+@@ -279,11 +265,7 @@
+ 	else
+ 		my_air.adjust_gas_temp(gasid, moles, temp)
+ 
+-	return TRUE
+-
+-/turf/simulated/remove_air(amount as num)
+-	var/datum/gas_mixture/my_air = return_air()
+-	return my_air.remove(amount)
++	return 1
+ 
+ /turf/simulated/return_air()
+ 	if(zone)
+@@ -303,30 +285,11 @@
+ /turf/proc/make_air()
+ 	air = new/datum/gas_mixture
+ 	air.temperature = temperature
+-	air.adjust_multi(GAS_OXYGEN, oxygen, GAS_CO2, carbon_dioxide, GAS_NITROGEN, nitrogen, GAS_PLASMA, plasma, GAS_HYDROGEN, hydrogen)
+-	air.group_multiplier = 1
+-	air.volume = CELL_VOLUME
++	if(initial_gas)
++		air.gas = initial_gas.Copy()
++	air.update_values()
+ 
+ /turf/simulated/proc/c_copy_air()
+-	if(!air)
+-		air = new /datum/gas_mixture
++	if(!air) air = new/datum/gas_mixture
++	air.copy_from(zone.air)
+ 	air.group_multiplier = 1
+-	air.copy_from(zone.air, TRUE)
+-
+-/turf/proc/GetAtmosAdjacentTurfs(alldir = FALSE)
+-	var/check_dirs
+-	if(alldir)
+-		check_dirs = alldirs
+-	else
+-		check_dirs = cardinal
+-
+-	var/list/adjacent_turfs = list()
+-
+-	for(var/direction in check_dirs)
+-		var/turf/T = get_step(src, direction)
+-		if(!T)
+-			continue
+-		if(src.CanPass(null, T, 1.5, TRUE))
+-			adjacent_turfs += T
+-
+-	return adjacent_turfs
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Variable Settings.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Variable Settings.dm
+index 37344986b..d6dbf68b9 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Variable Settings.dm	
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Variable Settings.dm	
+@@ -9,7 +9,7 @@ var/global/vs_control/vsc = new
+ 	var/fire_firelevel_multiplier_NAME = "Fire - Firelevel Constant"
+ 	var/fire_firelevel_multiplier_DESC = "Multiplied by the equation for firelevel, affects mainly the extingiushing of fires."
+ 
+-	//Note that this parameter and the plasma heat capacity have a significant impact on TTV yield.
++	//Note that this parameter and the phoron heat capacity have a significant impact on TTV yield.
+ 	var/fire_fuel_energy_release = 866000 //J/mol. Adjusted to compensate for fire energy release being fixed, was 397000
+ 	var/fire_fuel_energy_release_NAME = "Fire - Fuel energy release"
+ 	var/fire_fuel_energy_release_DESC = "The energy in joule released when burning one mol of a burnable substance"
+@@ -38,6 +38,10 @@ var/global/vs_control/vsc = new
+ 	var/airflow_dense_pressure_NAME = "Airflow - Dense Movement Threshold %"
+ 	var/airflow_dense_pressure_DESC = "Percent of 1 Atm. at which items with canisters and closets will move."
+ 
++	var/airflow_extreme_pressure = 120
++	var/airflow_extreme_pressure_NAME = "Airflow - Extreme Movement Threshold %"
++	var/airflow_extreme_pressure_DESC = "Percent of 1 Atm. at which large mobs will move"
++
+ 	var/airflow_stun_pressure = 60
+ 	var/airflow_stun_pressure_NAME = "Airflow - Mob Stunning Threshold %"
+ 	var/airflow_stun_pressure_DESC = "Percent of 1 Atm. at which mobs will be stunned by airflow."
+@@ -50,7 +54,7 @@ var/global/vs_control/vsc = new
+ 	var/airflow_stun_NAME = "Airflow Impact - Stunning"
+ 	var/airflow_stun_DESC = "How much a mob is stunned when hit by an object."
+ 
+-	var/airflow_damage = 2
++	var/airflow_damage = 3
+ 	var/airflow_damage_NAME = "Airflow Impact - Damage"
+ 	var/airflow_damage_DESC = "Damage from airflow impacts."
+ 
+@@ -113,7 +117,7 @@ var/global/vs_control/vsc = new
+ 			if("[ch]_NAME" in vars) vw_name = vars["[ch]_NAME"]
+ 		dat += "<b>[vw_name] = [vw]</b> <A href='?src=\ref[src];changevar=[ch]'>\[Change\]</A><br>"
+ 		dat += "<i>[vw_desc]</i><br><br>"
+-	user << browse(HTML_SKELETON(dat),"window=settings")
++	user << browse(dat,"window=settings")
+ 
+ /vs_control/Topic(href,href_list)
+ 	if("changevar" in href_list)
+@@ -169,7 +173,7 @@ var/global/vs_control/vsc = new
+ 		vars[ch] = vw
+ 	if(how == "Toggle")
+ 		newvar = (newvar?"ON":"OFF")
+-	to_world("<span class='notice'><b>[key_name(user)] changed the setting [display_description] to [newvar].</b></span>")
++	to_chat(world, "<span class='notice'><b>[key_name(user)] changed the setting [display_description] to [newvar].</b></span>")
+ 	if(ch in plc.settings)
+ 		ChangeSettingsDialog(user,plc.settings)
+ 	else
+@@ -187,44 +191,52 @@ var/global/vs_control/vsc = new
+ 				newvalue = vars[V]
+ 		V = newvalue
+ 
+-/vs_control/proc/ChangePlasma()
++/vs_control/proc/ChangePhoron()
+ 	for(var/V in plc.settings)
+ 		plc.Randomize(V)
+ 
+ /vs_control/proc/SetDefault(var/mob/user)
+-	var/list/setting_choices = list("Plasma - Standard", "Plasma - Low Hazard", "Plasma - High Hazard", "Plasma - Oh Shit!",\
+-	"ZAS - Normal", "ZAS - Forgiving", "ZAS - Dangerous", "ZAS - Hellish", "ZAS/Plasma - Initial")
++	var/list/setting_choices = list("Phoron - Standard", "Phoron - Low Hazard", "Phoron - High Hazard", "Phoron - Oh Shit!",\
++	"ZAS - Normal", "ZAS - Forgiving", "ZAS - Dangerous", "ZAS - Hellish", "ZAS/Phoron - Initial")
+ 	var/def = input(user, "Which of these presets should be used?") as null|anything in setting_choices
+ 	if(!def)
+ 		return
+ 	switch(def)
+-		if("Plasma - Standard")
+-			plc.PLASMAGUARD_ONLY = 0
++		if("Phoron - Standard")
++			plc.CLOTH_CONTAMINATION = 1 //If this is on, phoron does damage by getting into cloth.
++			plc.PHORONGUARD_ONLY = 0
+ 			plc.GENETIC_CORRUPTION = 0 //Chance of genetic corruption as well as toxic damage, X in 1000.
+-			plc.SKIN_BURNS = 0       //Plasma has an effect similar to mustard gas on the un-suited.
+-			plc.EYE_BURNS = 1 //Plasma burns the eyes of anyone not wearing eye protection.
+-			plc.PLASMA_HALLUCINATION = 0
+-
+-		if("Plasma - Low Hazard")
+-			plc.PLASMAGUARD_ONLY = 0
++			plc.SKIN_BURNS = 0       //Phoron has an effect similar to mustard gas on the un-suited.
++			plc.EYE_BURNS = 1 //Phoron burns the eyes of anyone not wearing eye protection.
++			plc.PHORON_HALLUCINATION = 0
++			plc.CONTAMINATION_LOSS = 0.02
++
++		if("Phoron - Low Hazard")
++			plc.CLOTH_CONTAMINATION = 0 //If this is on, phoron does damage by getting into cloth.
++			plc.PHORONGUARD_ONLY = 0
+ 			plc.GENETIC_CORRUPTION = 0 //Chance of genetic corruption as well as toxic damage, X in 1000
+-			plc.SKIN_BURNS = 0       //Plasma has an effect similar to mustard gas on the un-suited.
+-			plc.EYE_BURNS = 1 //Plasma burns the eyes of anyone not wearing eye protection.
+-			plc.PLASMA_HALLUCINATION = 0
+-
+-		if("Plasma - High Hazard")
+-			plc.PLASMAGUARD_ONLY = 0
++			plc.SKIN_BURNS = 0       //Phoron has an effect similar to mustard gas on the un-suited.
++			plc.EYE_BURNS = 1 //Phoron burns the eyes of anyone not wearing eye protection.
++			plc.PHORON_HALLUCINATION = 0
++			plc.CONTAMINATION_LOSS = 0.01
++
++		if("Phoron - High Hazard")
++			plc.CLOTH_CONTAMINATION = 1 //If this is on, phoron does damage by getting into cloth.
++			plc.PHORONGUARD_ONLY = 0
+ 			plc.GENETIC_CORRUPTION = 0 //Chance of genetic corruption as well as toxic damage, X in 1000.
+-			plc.SKIN_BURNS = 1       //Plasma has an effect similar to mustard gas on the un-suited.
+-			plc.EYE_BURNS = 1 //Plasma burns the eyes of anyone not wearing eye protection.
+-			plc.PLASMA_HALLUCINATION = 1
+-
+-		if("Plasma - Oh Shit!")
+-			plc.PLASMAGUARD_ONLY = 1
++			plc.SKIN_BURNS = 1       //Phoron has an effect similar to mustard gas on the un-suited.
++			plc.EYE_BURNS = 1 //Phoron burns the eyes of anyone not wearing eye protection.
++			plc.PHORON_HALLUCINATION = 1
++			plc.CONTAMINATION_LOSS = 0.05
++
++		if("Phoron - Oh Shit!")
++			plc.CLOTH_CONTAMINATION = 1 //If this is on, phoron does damage by getting into cloth.
++			plc.PHORONGUARD_ONLY = 1
+ 			plc.GENETIC_CORRUPTION = 5 //Chance of genetic corruption as well as toxic damage, X in 1000.
+-			plc.SKIN_BURNS = 1       //Plasma has an effect similar to mustard gas on the un-suited.
+-			plc.EYE_BURNS = 1 //Plasma burns the eyes of anyone not wearing eye protection.
+-			plc.PLASMA_HALLUCINATION = 1
++			plc.SKIN_BURNS = 1       //Phoron has an effect similar to mustard gas on the un-suited.
++			plc.EYE_BURNS = 1 //Phoron burns the eyes of anyone not wearing eye protection.
++			plc.PHORON_HALLUCINATION = 1
++			plc.CONTAMINATION_LOSS = 0.075
+ 
+ 		if("ZAS - Normal")
+ 			airflow_lightest_pressure = 20
+@@ -235,7 +247,7 @@ var/global/vs_control/vsc = new
+ 			airflow_stun_pressure = 60
+ 			airflow_stun_cooldown = 60
+ 			airflow_stun = 1
+-			airflow_damage = 2
++			airflow_damage = 3
+ 			airflow_speed_decay = 1.5
+ 			airflow_delay = 30
+ 			airflow_mob_slowdown = 1
+@@ -249,7 +261,7 @@ var/global/vs_control/vsc = new
+ 			airflow_stun_pressure = 150
+ 			airflow_stun_cooldown = 90
+ 			airflow_stun = 0.15
+-			airflow_damage = 0.15
++			airflow_damage = 0.5
+ 			airflow_speed_decay = 1.5
+ 			airflow_delay = 50
+ 			airflow_mob_slowdown = 0
+@@ -263,7 +275,7 @@ var/global/vs_control/vsc = new
+ 			airflow_stun_pressure = 50
+ 			airflow_stun_cooldown = 50
+ 			airflow_stun = 2
+-			airflow_damage = 3
++			airflow_damage = 4
+ 			airflow_speed_decay = 1.2
+ 			airflow_delay = 25
+ 			airflow_mob_slowdown = 2
+@@ -277,13 +289,13 @@ var/global/vs_control/vsc = new
+ 			airflow_stun_pressure = 40
+ 			airflow_stun_cooldown = 40
+ 			airflow_stun = 3
+-			airflow_damage = 4
++			airflow_damage = 5
+ 			airflow_speed_decay = 1
+ 			airflow_delay = 20
+ 			airflow_mob_slowdown = 3
+ 			connection_insulation = 0
+ 
+-		if("ZAS/Plasma - Initial")
++		if("ZAS/Phoron - Initial")
+ 			fire_consuption_rate 			= initial(fire_consuption_rate)
+ 			fire_firelevel_multiplier 		= initial(fire_firelevel_multiplier)
+ 			fire_fuel_energy_release 		= initial(fire_fuel_energy_release)
+@@ -303,16 +315,18 @@ var/global/vs_control/vsc = new
+ 			connection_insulation 			= initial(connection_insulation)
+ 			connection_temperature_delta 	= initial(connection_temperature_delta)
+ 
+-			plc.PLASMA_DMG 					= initial(plc.PLASMA_DMG)
+-			plc.PLASMAGUARD_ONLY 			= initial(plc.PLASMAGUARD_ONLY)
++			plc.PHORON_DMG 					= initial(plc.PHORON_DMG)
++			plc.CLOTH_CONTAMINATION 		= initial(plc.CLOTH_CONTAMINATION)
++			plc.PHORONGUARD_ONLY 			= initial(plc.PHORONGUARD_ONLY)
+ 			plc.GENETIC_CORRUPTION 			= initial(plc.GENETIC_CORRUPTION)
+ 			plc.SKIN_BURNS 					= initial(plc.SKIN_BURNS)
+ 			plc.EYE_BURNS 					= initial(plc.EYE_BURNS)
+-			plc.PLASMA_HALLUCINATION 		= initial(plc.PLASMA_HALLUCINATION)
++			plc.CONTAMINATION_LOSS 			= initial(plc.CONTAMINATION_LOSS)
++			plc.PHORON_HALLUCINATION 		= initial(plc.PHORON_HALLUCINATION)
+ 			plc.N2O_HALLUCINATION 			= initial(plc.N2O_HALLUCINATION)
+ 
+ 
+-	to_world("<span class='notice'><b>[key_name(user)] changed the global plasma/ZAS settings to \"[def]\"</b></span>")
++	to_chat(world, "<span class='notice'><b>[key_name(user)] changed the global phoron/ZAS settings to \"[def]\"</b></span>")
+ 
+ /pl_control/var/list/settings = list()
+ 
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Zone.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Zone.dm
+index 797bbdc27..167eb6a19 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/Zone.dm
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/Zone.dm
+@@ -40,18 +40,20 @@ Class Procs:
+ */
+ 
+ 
+-/zone
+-	var/name
+-	var/invalid = 0
+-	var/list/contents = list()
+-	var/list/fire_tiles
+-	var/list/fuel_objs
++/zone/var/name
++/zone/var/invalid = 0
++/zone/var/list/contents = list()
++/zone/var/list/fire_tiles = list()
++/zone/var/list/fuel_objs = list()
+ 
+-	var/needs_update = 0
++/zone/var/needs_update = 0
+ 
+-	var/list/edges
++/zone/var/list/edges = list()
+ 
+-	var/datum/gas_mixture/air = new
++/zone/var/datum/gas_mixture/air = new
++
++/zone/var/list/graphic_add = list()
++/zone/var/list/graphic_remove = list()
+ 
+ /zone/New()
+ 	SSair.add_zone(src)
+@@ -63,18 +65,18 @@ Class Procs:
+ #ifdef ZASDBG
+ 	ASSERT(!invalid)
+ 	ASSERT(istype(T))
+-	ASSERT(!TURF_HAS_VALID_ZONE(T))
++	ASSERT(!SSair.has_valid_zone(T))
+ #endif
++
+ 	var/datum/gas_mixture/turf_air = T.return_air()
+ 	add_tile_air(turf_air)
+ 	T.zone = src
+-	contents += T
++	contents.Add(T)
+ 	if(T.fire)
+ 		var/obj/effect/decal/cleanable/liquid_fuel/fuel = locate() in T
+-		LAZYADD(fire_tiles, T)
++		fire_tiles.Add(T)
+ 		SSair.active_fire_zones |= src
+-		if (fuel)
+-			LAZYADD(fuel_objs, fuel)
++		if(fuel) fuel_objs += fuel
+ 	T.update_graphic(air.graphic)
+ 
+ /zone/proc/remove(turf/simulated/T)
+@@ -84,14 +86,21 @@ Class Procs:
+ 	ASSERT(T.zone == src)
+ 	soft_assert(T in contents, "Lists are weird broseph")
+ #endif
+-	contents -= T
+-	LAZYREMOVE(fire_tiles, T)
++
++	if(!T.can_safely_remove_from_zone())
++		INVOKE_ASYNC(src, .proc/rebuild)
++		return
++
++	T.c_copy_air()
++
++	contents.Remove(T)
++	fire_tiles.Remove(T)
+ 	if(T.fire)
+ 		var/obj/effect/decal/cleanable/liquid_fuel/fuel = locate() in T
+-		LAZYREMOVE(fuel_objs, fuel)
++		fuel_objs -= fuel
+ 	T.zone = null
+ 	T.update_graphic(graphic_remove = air.graphic)
+-	if(contents.len)
++	if(length(contents))
+ 		air.group_multiplier = contents.len
+ 	else
+ 		c_invalidate()
+@@ -112,24 +121,21 @@ Class Procs:
+ 		#endif
+ 
+ 	//rebuild the old zone's edges so that they will be possessed by the new zone
+-	for(var/ee in edges)
+-		var/connection_edge/E = ee
++	for(var/connection_edge/E in edges)
+ 		if(E.contains_zone(into))
+ 			continue //don't need to rebuild this edge
+-		for(var/T in E.connecting_turfs)
++		for(var/turf/T in E.connecting_turfs)
+ 			SSair.mark_for_update(T)
+ 
+ /zone/proc/c_invalidate()
+ 	invalid = 1
+ 	SSair.remove_zone(src)
+-	LEGACY_SEND_SIGNAL(src, COMSIG_ZAS_DELETE, TRUE)
+ 	#ifdef ZASDBG
+ 	for(var/turf/simulated/T in contents)
+ 		T.dbg(invalid_zone)
+ 	#endif
+ 
+ /zone/proc/rebuild()
+-	set waitfor = FALSE
+ 	if(invalid) return //Short circuit for explosions where rebuild is called many times over.
+ 	c_invalidate()
+ 	for(var/turf/simulated/T in contents)
+@@ -149,38 +155,35 @@ Class Procs:
+ 	air.group_multiplier = contents.len+1
+ 
+ /zone/proc/tick()
+-	if(air.temperature >= PLASMA_FLASHPOINT && !(src in SSair.active_fire_zones) && air.check_combustability() && contents.len)
++	if(air.temperature >= PHORON_FLASHPOINT && !(src in SSair.active_fire_zones) && air.check_combustability() && contents.len)
+ 		var/turf/T = pick(contents)
+ 		if(istype(T))
+ 			T.create_fire(vsc.fire_firelevel_multiplier)
+ 
+-	var/list/graphic_add = list()
+-	var/list/graphic_remove = list()
+ 	if(air.check_tile_graphic(graphic_add, graphic_remove))
+ 		for(var/turf/simulated/T in contents)
+ 			T.update_graphic(graphic_add, graphic_remove)
++		graphic_add.len = 0
++		graphic_remove.len = 0
+ 
+ 	for(var/connection_edge/E in edges)
+ 		if(E.sleeping)
+ 			E.recheck()
+ 
+-	LEGACY_SEND_SIGNAL(src, COMSIG_ZAS_TICK, src)
+-
+ /zone/proc/dbg_data(mob/M)
+ 	to_chat(M, name)
+ 	for(var/g in air.gas)
+ 		to_chat(M, "[gas_data.name[g]]: [air.gas[g]]")
+ 	to_chat(M, "P: [air.return_pressure()] kPa V: [air.volume]L T: [air.temperature]°K ([air.temperature - T0C]°C)")
+-	to_chat(M, "O2 per N2: [(air.gas[GAS_NITROGEN] ? air.gas[GAS_OXYGEN]/air.gas[GAS_NITROGEN] : "N/A")] Moles: [air.total_moles]")
++	to_chat(M, "O2 per N2: [(air.gas["nitrogen"] ? air.gas["oxygen"]/air.gas["nitrogen"] : "N/A")] Moles: [air.total_moles]")
+ 	to_chat(M, "Simulated: [contents.len] ([air.group_multiplier])")
+-	//to_chat(M, "Unsimulated: [unsimulated_contents.len]")
+-	//to_chat(M, "Edges: [LAZYLEN(edges)]")
++//	to_chat(M, "Unsimulated: [unsimulated_contents.len]")
++//	to_chat(M, "Edges: [edges.len]")
+ 	if(invalid) to_chat(M, "Invalid!")
+ 	var/zone_edges = 0
+ 	var/space_edges = 0
+ 	var/space_coefficient = 0
+-	for(var/ee in edges)
+-		var/connection_edge/E = ee
++	for(var/connection_edge/E in edges)
+ 		if(E.type == /connection_edge/zone) zone_edges++
+ 		else
+ 			space_edges++
+@@ -191,4 +194,4 @@ Class Procs:
+ 	to_chat(M, "Space Edges: [space_edges] ([space_coefficient] connections)")
+ 
+ 	//for(var/turf/T in unsimulated_contents)
+-	//	to_chat(M, "[T] at ([T.x],[T.y])")
++//		to_chat(M, "[T] at ([T.x],[T.y])")
+diff --git a/D:/Repositories/Sojourn-Iskhod/code/ZAS/_docs.dm b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/_docs.dm
+index 822c8ac7b..41372ea2a 100644
+--- a/D:/Repositories/Sojourn-Iskhod/code/ZAS/_docs.dm
++++ b/D:/Repositories/Sojourn-Iskhod/atmostest/ZAS/_docs.dm
+@@ -25,4 +25,4 @@ Notes for people who used ZAS before:
+ 	for(var/connection_edge/zone/edge in zone.edges)
+ 		var/zone/connected_zone = edge.get_connected_zone(zone)
+ 
+-*/
++*/
+\ No newline at end of file

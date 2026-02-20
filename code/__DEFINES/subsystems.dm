@@ -156,8 +156,8 @@ if(Datum.is_processing) {\
 	}\
 }
 
-#define START_PROCESSING_PIPENET(Datum) START_PROCESSING_IN_LIST(Datum, pipenets)
-#define STOP_PROCESSING_PIPENET(Datum) STOP_PROCESSING_IN_LIST(Datum, pipenets)
+#define START_PROCESSING_PIPENET(Datum) SSair.networks |= Datum
+#define STOP_PROCESSING_PIPENET(Datum) SSair.networks -= Datum
 
 #define START_PROCESSING_POWERNET(Datum) START_PROCESSING_IN_LIST(Datum, powernets)
 #define STOP_PROCESSING_POWERNET(Datum) STOP_PROCESSING_IN_LIST(Datum, powernets)

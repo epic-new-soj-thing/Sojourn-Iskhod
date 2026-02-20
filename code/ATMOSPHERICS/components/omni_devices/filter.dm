@@ -2,23 +2,25 @@
 // Gas filter - omni variant
 //--------------------------------------------
 /obj/machinery/atmospherics/omni/filter
+
 	name = "omni gas filter"
 	icon_state = "map_filter"
 
 	var/list/gas_filters = new()
 	var/datum/omni_port/input
 	var/datum/omni_port/output
+	var/max_output_pressure = MAX_OMNI_PRESSURE
 
-	use_power = IDLE_POWER_USE
+	use_power = 1
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
 	power_rating = 7500			//7500 W ~ 10 HP
 
-	var/max_flow_rate = 200
-	var/set_flow_rate = 200
+	var/max_flow_rate = ATMOS_DEFAULT_VOLUME_FILTER
+	var/set_flow_rate = ATMOS_DEFAULT_VOLUME_FILTER
 
 	var/list/filtering_outputs = list()	//maps gasids to gas_mixtures
 
-/obj/machinery/atmospherics/omni/filter/New()
+/obj/machinery/atmospherics/omni/filter/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	..()
 	rebuild_filtering_list()
 	for(var/datum/omni_port/P in ports)
@@ -31,27 +33,23 @@
 	. = ..()
 
 /obj/machinery/atmospherics/omni/filter/sort_ports()
-	var/any_updated = FALSE
 	for(var/datum/omni_port/P in ports)
 		if(P.update)
-			any_updated = TRUE
 			if(output == P)
 				output = null
 			if(input == P)
 				input = null
-			if(gas_filters.Find(P))
+			if(P in gas_filters)
 				gas_filters -= P
 
-			P.air.volume = 200
+			P.air.volume = ATMOS_DEFAULT_VOLUME_FILTER
 			switch(P.mode)
 				if(ATM_INPUT)
 					input = P
 				if(ATM_OUTPUT)
 					output = P
-				if(ATM_O2 to ATM_N2O)
+				if(ATM_O2 to ATM_H2)
 					gas_filters += P
-	if(any_updated)
-		rebuild_filtering_list()
 
 /obj/machinery/atmospherics/omni/filter/error_check()
 	if(!input || !output || !gas_filters)
@@ -68,8 +66,14 @@
 	var/datum/gas_mixture/output_air = output.air	//BYOND doesn't like referencing "output.air.return_pressure()" so we need to make a direct reference
 	var/datum/gas_mixture/input_air = input.air		// it's completely happy with them if they're in a loop though i.e. "P.air.return_pressure()"... *shrug*
 
+	var/delta = between(0, (output_air ? (max_output_pressure - output_air.return_pressure()) : 0), max_output_pressure)
+	var/transfer_moles_max = calculate_transfer_moles(input_air, output_air, delta, (output && output.network && output.network.volume) ? output.network.volume : 0)
+	for(var/datum/omni_port/filter_output in gas_filters)
+		delta = between(0, (filter_output.air ? (max_output_pressure - filter_output.air.return_pressure()) : 0), max_output_pressure)
+		transfer_moles_max = min(transfer_moles_max, (calculate_transfer_moles(input_air, filter_output.air, delta, (filter_output && filter_output.network && filter_output.network.volume) ? filter_output.network.volume : 0)))
+
 	//Figure out the amount of moles to transfer
-	var/transfer_moles = (set_flow_rate/input_air.volume)*input_air.total_moles
+	var/transfer_moles = between(0, ((set_flow_rate/input_air.volume)*input_air.total_moles), transfer_moles_max)
 
 	var/power_draw = -1
 	if (transfer_moles > MINIMUM_MOLES_TO_FILTER)
@@ -89,45 +93,57 @@
 
 	return 1
 
-/obj/machinery/atmospherics/omni/filter/ui_interact(mob/user, datum/tgui/ui)
-	ui = SStgui.try_update_ui(user, src, ui)
-	if(!ui)
-		ui = new(user, src, "AtmosOmniFilter", name)
+/obj/machinery/atmospherics/omni/filter/ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = 1)
+	usr.set_machine(src)
+
+	var/list/data = new()
+
+	data = build_uidata()
+
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+
+	if (!ui)
+		ui = new(user, src, ui_key, "omni_filter.tmpl", "Omni Filter Control", 330, 330)
+		ui.set_initial_data(data)
+
 		ui.open()
 
-/obj/machinery/atmospherics/omni/filter/ui_data(mob/user)
-	var/list/data = list()
+/obj/machinery/atmospherics/omni/filter/proc/build_uidata()
+	var/list/data = new()
 
 	data["power"] = use_power
 	data["config"] = configuring
 
-	var/list/port_data = list()
+	var/portData[0]
 	for(var/datum/omni_port/P in ports)
 		if(!configuring && P.mode == 0)
 			continue
 
 		var/input = 0
 		var/output = 0
+		var/filter = 1
 		var/f_type = null
 		switch(P.mode)
 			if(ATM_INPUT)
 				input = 1
+				filter = 0
 			if(ATM_OUTPUT)
 				output = 1
-			if(ATM_O2 to ATM_N2O)
+				filter = 0
+			if(ATM_O2 to ATM_H2)
 				f_type = mode_send_switch(P.mode)
 
-		port_data += list(list(
-			"dir" = dir_name(P.dir, capitalize = 1),
-			"input" = input,
-			"output" = output,
-			"f_type" = f_type
-		))
+		portData[++portData.len] = list("dir" = dir_name(P.dir, capitalize = 1), \
+										"input" = input, \
+										"output" = output, \
+										"filter" = filter, \
+										"f_type" = f_type)
 
-	data["ports"] = port_data
-
-	data["set_flow_rate"] = round(set_flow_rate*10)		//because nanoui can't handle rounded decimals.
-	data["last_flow_rate"] = round(last_flow_rate*10)
+	if(portData.len)
+		data["ports"] = portData
+	if(output)
+		data["set_flow_rate"] = round(set_flow_rate*10)		//because nanoui can't handle rounded decimals.
+		data["last_flow_rate"] = round(last_flow_rate*10)
 
 	return data
 
@@ -140,57 +156,42 @@
 		if(ATM_CO2)
 			return "Carbon Dioxide"
 		if(ATM_P)
-			return "Plasma" //*cough* Plasma *cough*
+			return MATERIAL_PLASMA //*cough* Plasma *cough*
 		if(ATM_N2O)
 			return "Nitrous Oxide"
+		if(ATM_H2)
+			return "Hydrogen"
 		else
 			return null
 
-/obj/machinery/atmospherics/omni/filter/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
-	. = ..()
-	if(.)
-		return
-
-	switch(action)
+/obj/machinery/atmospherics/omni/filter/Topic(href, href_list)
+	if(..()) return 1
+	switch(href_list["command"])
 		if("power")
 			if(!configuring)
 				use_power = !use_power
 			else
-				use_power = NO_POWER_USE
-			investigate_log("was [use_power ? "enabled" : "disabled"] by [key_name(usr)]", "atmos")
-			. = TRUE
-
+				use_power = 0
 		if("configure")
 			configuring = !configuring
 			if(configuring)
-				use_power = NO_POWER_USE
-			. = TRUE
+				use_power = 0
 
-		if("set_flow_rate")
-			if(!configuring || use_power)
-				return
-			var/new_flow_rate = input(usr, "Enter new flow rate limit (0-[max_flow_rate]L/s)", "Flow Rate Control", set_flow_rate) as num
-			set_flow_rate = between(0, new_flow_rate, max_flow_rate)
-			. = TRUE
-
-		if("switch_mode")
-			if(!configuring || use_power)
-				return
-			switch_mode(dir_flag(params["dir"]), mode_return_switch(params["mode"]))
-			. = TRUE
-
-		if("switch_filter")
-			if(!configuring || use_power)
-				return
-			var/new_filter = input(usr, "Select filter mode:", "Change filter", params["mode"]) in list("None", "Oxygen", "Nitrogen", "Carbon Dioxide", "Plasma", "Nitrous Oxide")
-			switch_filter(dir_flag(params["dir"]), mode_return_switch(new_filter))
-			. = TRUE
-
-	if(.)
-		investigate_log("had it's settings modified by [key_name(usr)]", "atmos")
-		playsound(loc, 'sound/machines/machine_switch.ogg', 100, 1)
+	//only allows config changes when in configuring mode ~otherwise you'll get weird pressure stuff going on
+	if(configuring && !use_power)
+		switch(href_list["command"])
+			if("set_flow_rate")
+				var/new_flow_rate = input(usr,"Enter new flow rate limit (0-[max_flow_rate]L/s)","Flow Rate Control",set_flow_rate) as num
+				set_flow_rate = between(0, new_flow_rate, max_flow_rate)
+			if("switch_mode")
+				switch_mode(dir_flag(href_list["dir"]), mode_return_switch(href_list["mode"]))
+			if("switch_filter")
+				var/new_filter = input(usr,"Select filter mode:","Change filter",href_list["mode"]) in list("None", "Oxygen", "Nitrogen", "Carbon Dioxide", MATERIAL_PLASMA, "Nitrous Oxide", "Hydrogen")
+				switch_filter(dir_flag(href_list["dir"]), mode_return_switch(new_filter))
 
 	update_icon()
+	SSnano.update_uis(src)
+	return
 
 /obj/machinery/atmospherics/omni/filter/proc/mode_return_switch(var/mode)
 	switch(mode)
@@ -200,10 +201,12 @@
 			return ATM_N2
 		if("Carbon Dioxide")
 			return ATM_CO2
-		if("Plasma")
+		if(MATERIAL_PLASMA)
 			return ATM_P
 		if("Nitrous Oxide")
 			return ATM_N2O
+		if("Hydrogen")
+			return ATM_H2
 		if("in")
 			return ATM_INPUT
 		if("out")
@@ -240,6 +243,7 @@
 		target_port.mode = mode
 		if(target_port.mode != previous_mode)
 			handle_port_change(target_port)
+			rebuild_filtering_list()
 		else
 			return
 	else

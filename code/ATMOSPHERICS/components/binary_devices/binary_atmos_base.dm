@@ -1,8 +1,8 @@
 obj/machinery/atmospherics/binary
+
 	dir = SOUTH
 	initialize_directions = SOUTH|NORTH
-	use_power = IDLE_POWER_USE
-	layer = GAS_PUMP_LAYER
+	use_power = 1
 
 	var/datum/gas_mixture/air1
 	var/datum/gas_mixture/air2
@@ -42,36 +42,22 @@ obj/machinery/atmospherics/binary
 
 		return null
 
-	Destroy()
-		loc = null
-
-		if(node1)
-			node1.disconnect(src)
-			qdel(network1)
-		if(node2)
-			node2.disconnect(src)
-			qdel(network2)
-
-		node1 = null
-		node2 = null
-
-		. = ..()
-
 	atmos_init()
+		..()
 		if(node1 && node2) return
 
 		var/node2_connect = dir
 		var/node1_connect = turn(dir, 180)
 
-		for(var/obj/machinery/atmospherics/target in get_step(src, node1_connect))
-			if(target.initialize_directions & get_dir(target, src))
-				if (check_connect_types(target, src))
+		for(var/obj/machinery/atmospherics/target in get_step(src,node1_connect))
+			if(target.initialize_directions & get_dir(target,src))
+				if (check_connect_types(target,src))
 					node1 = target
 					break
 
-		for(var/obj/machinery/atmospherics/target in get_step(src, node2_connect))
-			if(target.initialize_directions & get_dir(target, src))
-				if (check_connect_types(target, src))
+		for(var/obj/machinery/atmospherics/target in get_step(src,node2_connect))
+			if(target.initialize_directions & get_dir(target,src))
+				if (check_connect_types(target,src))
 					node2 = target
 					break
 
@@ -132,3 +118,17 @@ obj/machinery/atmospherics/binary
 		update_underlays()
 
 		return null
+
+obj/machinery/atmospherics/binary/Destroy()
+	forceMove(null)
+	if(node1)
+		node1.disconnect(src)
+		qdel(network1)
+	if(node2)
+		node2.disconnect(src)
+		qdel(network2)
+
+	node1 = null
+	node2 = null
+
+	. = ..()

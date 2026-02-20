@@ -9,7 +9,7 @@
 	name = "air injector"
 	desc = "Passively injects air into its surroundings. Has a valve attached to it that can control flow rate."
 
-	use_power = NO_POWER_USE
+	use_power = 0
 	idle_power_usage = 150		//internal circuitry, friction losses and stuff
 	power_rating = 15000	//15000 W ~ 20 HP
 
@@ -18,13 +18,12 @@
 	var/volume_rate = 50	//flow rate limit
 
 	var/frequency = 0
-	var/id
+	var/id = null
 	var/datum/radio_frequency/radio_connection
 
-	level = BELOW_PLATING_LEVEL
-	layer = GAS_SCRUBBER_LAYER
+	level = 1
 
-/obj/machinery/atmospherics/unary/outlet_injector/New()
+/obj/machinery/atmospherics/unary/outlet_injector/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	..()
 	air_contents.volume = ATMOS_DEFAULT_VOLUME_PUMP + 500	//Give it a small reservoir for injecting. Also allows it to have a higher flow rate limit than vent pumps, to differentiate injectors a bit more.
 
@@ -40,13 +39,7 @@
 		var/turf/T = get_turf(src)
 		if(!istype(T))
 			return
-		add_underlay(T, node1, dir)
-
-/obj/machinery/atmospherics/unary/outlet_injector/power_change()
-	var/old_stat = stat
-	..()
-	if(old_stat != stat)
-		update_icon()
+		add_underlay(T, node, dir)
 
 /obj/machinery/atmospherics/unary/outlet_injector/Process()
 	..()
@@ -118,9 +111,8 @@
 
 	return 1
 
-/obj/machinery/atmospherics/unary/outlet_injector/atmos_init()
-	..()
-
+/obj/machinery/atmospherics/unary/outlet_injector/Initialize()
+	. = ..()
 	set_frequency(frequency)
 
 /obj/machinery/atmospherics/unary/outlet_injector/receive_signal(datum/signal/signal)

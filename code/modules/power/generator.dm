@@ -36,10 +36,9 @@
 //and a circulator to the WEST of the generator connects first to the NORTH, then to the SOUTH
 //note that the circulator's outlet dir is it's always facing dir, and it's inlet is always the reverse
 /obj/machinery/power/generator/proc/reconnect()
-	if(circ1)
-		circ1.temperature_overlay = null
-	if(circ2)
-		circ2.temperature_overlay = null
+	//if(circ1)
+		//circ1.temperature_overlay = null
+		//circ2.temperature_overlay = null
 	circ1 = null
 	circ2 = null
 	if(src.loc && anchored)
@@ -69,14 +68,6 @@
 	else
 		if (lastgenlev != 0)
 			add_overlay(image('icons/obj/machines/thermoelectric.dmi', "teg-op[lastgenlev]"))
-			if (circ1 && circ2)
-				var/extreme = (lastgenlev > 9) ? "ex" : ""
-				if (circ1.last_temperature < circ2.last_temperature)
-					circ1.temperature_overlay = "circ-[extreme]cold"
-					circ2.temperature_overlay = "circ-[extreme]hot"
-				else
-					circ1.temperature_overlay = "circ-[extreme]hot"
-					circ2.temperature_overlay = "circ-[extreme]cold"
 		return 1
 
 

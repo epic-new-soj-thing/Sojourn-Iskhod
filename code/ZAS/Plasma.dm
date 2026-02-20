@@ -1,47 +1,94 @@
 var/image/contamination_overlay = image('icons/effects/contamination.dmi')
 
 /pl_control
-	var/PLASMA_DMG = 3
-	var/PLASMA_DMG_NAME = "Plasma Damage Amount"
-	var/PLASMA_DMG_DESC = "Self Descriptive"
+	var/plasma_DMG = 3
+	var/plasma_DMG_NAME = "plasma Damage Amount"
+	var/plasma_DMG_DESC = "Self Descriptive"
 
-	var/PLASMAGUARD_ONLY = FALSE
-	var/PLASMAGUARD_ONLY_NAME = "\"PlasmaGuard Only\""
-	var/PLASMAGUARD_ONLY_DESC = "If this is on, only biosuits and spacesuits protect against ill effects."
+	var/CLOTH_CONTAMINATION = 1
+	var/CLOTH_CONTAMINATION_NAME = "Cloth Contamination"
+	var/CLOTH_CONTAMINATION_DESC = "If this is on, plasma does damage by getting into cloth."
 
-	var/GENETIC_CORRUPTION = FALSE
+	var/plasmaGUARD_ONLY = 0
+	var/plasmaGUARD_ONLY_NAME = "\"plasmaGuard Only\""
+	var/plasmaGUARD_ONLY_DESC = "If this is on, only biosuits and spacesuits protect against contamination and ill effects."
+
+	var/GENETIC_CORRUPTION = 0
 	var/GENETIC_CORRUPTION_NAME = "Genetic Corruption Chance"
 	var/GENETIC_CORRUPTION_DESC = "Chance of genetic corruption as well as toxic damage, X in 10,000."
 
-	var/SKIN_BURNS = TRUE
-	var/SKIN_BURNS_DESC = "Plasma has an effect similar to mustard gas on the un-suited."
+	var/SKIN_BURNS = 0
+	var/SKIN_BURNS_DESC = "plasma has an effect similar to mustard gas on the un-suited."
 	var/SKIN_BURNS_NAME = "Skin Burns"
 
-	var/EYE_BURNS = TRUE
+	var/EYE_BURNS = 1
 	var/EYE_BURNS_NAME = "Eye Burns"
-	var/EYE_BURNS_DESC = "Plasma burns the eyes of anyone not wearing eye protection."
+	var/EYE_BURNS_DESC = "plasma burns the eyes of anyone not wearing eye protection."
 
-	var/PLASMA_HALLUCINATION = FALSE
-	var/PLASMA_HALLUCINATION_NAME = "Plasma Hallucination"
-	var/PLASMA_HALLUCINATION_DESC = "Does being in plasma cause you to hallucinate?"
+	var/CONTAMINATION_LOSS = 0.02
+	var/CONTAMINATION_LOSS_NAME = "Contamination Loss"
+	var/CONTAMINATION_LOSS_DESC = "How much toxin damage is dealt from contaminated clothing" //Per tick?  ASK ARYN
 
-	var/N2O_HALLUCINATION = TRUE
+	var/plasma_HALLUCINATION = 0
+	var/plasma_HALLUCINATION_NAME = "plasma Hallucination"
+	var/plasma_HALLUCINATION_DESC = "Does being in plasma cause you to hallucinate?"
+
+	var/N2O_HALLUCINATION = 1
 	var/N2O_HALLUCINATION_NAME = "N2O Hallucination"
 	var/N2O_HALLUCINATION_DESC = "Does being in sleeping gas cause you to hallucinate?"
 
+
+obj/var/contaminated = 0
+
+
+/obj/item/proc/can_contaminate()
+	//Clothing and backpacks can be contaminated.
+	if(item_flags & THICKMATERIAL) return 0
+	else if(istype(src,/obj/item/storage/backpack)) return 0 //Cannot be washed :(
+	else if(istype(src,/obj/item/clothing)) return 1
+
+/obj/item/proc/contaminate()
+	//Do a contamination overlay? Temporary measure to keep contamination less deadly than it was.
+	if(!contaminated)
+		contaminated = 1
+		overlays += contamination_overlay
+
+/obj/item/proc/decontaminate()
+	contaminated = 0
+	overlays -= contamination_overlay
+
+/mob/proc/contaminate()
+
+/mob/living/carbon/human/contaminate()
+	//See if anything can be contaminated.
+
+	if(!pl_suit_protected())
+		suit_contamination()
+
+	if(!pl_head_protected())
+		if(prob(1)) suit_contamination() //plasma can sometimes get through such an open suit.
+
+//Cannot wash backpacks currently.
+//	if(istype(back,/obj/item/storage/backpack))
+//		back.contaminate()
 
 /mob/proc/pl_effects()
 
 /mob/living/carbon/human/pl_effects()
 	//Handles all the bad things plasma can do.
-	if(stat >= DEAD)
+
+	//Contamination
+	if(vsc.plc.CLOTH_CONTAMINATION) contaminate()
+
+	//Anything else requires them to not be dead.
+	if(stat >= 2)
 		return
 
 	//Burn skin if exposed.
 	if(vsc.plc.SKIN_BURNS)
 		if(!pl_head_protected() || !pl_suit_protected())
 			burn_skin(0.75)
-			if(prob(20)) to_chat(src, SPAN_DANGER("Your skin burns!"))
+			if(prob(20)) to_chat(src, "<span class='danger'>Your skin burns!</span>")
 			updatehealth()
 
 	//Burn eyes if exposed.
@@ -60,24 +107,34 @@ var/image/contamination_overlay = image('icons/effects/contamination.dmi')
 					if(!(wear_mask.body_parts_covered & EYES))
 						burn_eyes()
 
-/mob/living/carbon/human/proc/burn_eyes()
-	//The proc that handles eye burning.
-	if(!species.has_process[OP_EYES])
-		return
+	//Genetic Corruption
+	if(vsc.plc.GENETIC_CORRUPTION)
+		if(rand(1,10000) < vsc.plc.GENETIC_CORRUPTION)
+			randmutb(src)
+			to_chat(src, "<span class='danger'>High levels of toxins cause you to spontaneously mutate!</span>")
+			domutcheck(src,null)
 
-	var/obj/item/organ/internal/eyes/E = random_organ_by_process(OP_EYES)
+
+/mob/living/carbon/human/proc/burn_eyes()
+	var/obj/item/organ/internal/eyes/E
+	var/list/eyes = organ_list_by_process(OP_EYES)
+	if(eyes && eyes.len)
+		E = eyes[1]
 	if(E)
-		if(prob(20)) to_chat(src, SPAN_DANGER("Your eyes burn!"))
+		if(prob(20)) to_chat(src, "<span class='danger'>Your eyes burn!</span>")
 		E.damage += 2.5
 		eye_blurry = min(eye_blurry+1.5,50)
 		if (prob(max(0,E.damage - 15) + 1) &&!eye_blind)
-			to_chat(src, SPAN_DANGER("You are blinded!"))
+			to_chat(src, "<span class='danger'>You are blinded!</span>")
 			eye_blind += 20
 
 /mob/living/carbon/human/proc/pl_head_protected()
 	//Checks if the head is adequately sealed.
-	if(head && (head.body_parts_covered & EYES))
-		return 1
+	if(head)
+		if((wear_suit && (wear_suit.item_flags & THICKMATERIAL)) || (head && (head.item_flags & THICKMATERIAL)))
+			return 1
+		else if(head.body_parts_covered & EYES)
+			return 1
 	return 0
 
 /mob/living/carbon/human/proc/pl_suit_protected()
@@ -86,9 +143,17 @@ var/image/contamination_overlay = image('icons/effects/contamination.dmi')
 	for(var/obj/item/protection in list(wear_suit, gloves, shoes))
 		if(!protection)
 			continue
+		if(vsc.plc.plasmaGUARD_ONLY && !(protection.item_flags & THICKMATERIAL))
+			return 0
 		coverage |= protection.body_parts_covered
 
-	if(vsc.plc.PLASMAGUARD_ONLY)
+	if(vsc.plc.plasmaGUARD_ONLY)
 		return 1
 
 	return BIT_TEST_ALL(coverage, UPPER_TORSO|LOWER_TORSO|LEGS|ARMS)
+
+/mob/living/carbon/human/proc/suit_contamination()
+	//Runs over the things that can be contaminated and does so.
+	if(w_uniform) w_uniform.contaminate()
+	if(shoes) shoes.contaminate()
+	if(gloves) gloves.contaminate()

@@ -33,11 +33,11 @@
 		if     (istype(make_from, /obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction))
 			src.pipe_type = PIPE_JUNCTION
 			connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_HE
-		else if(istype(make_from, /obj/machinery/atmospherics/pipe/simple/heat_exchanging))
-			src.pipe_type = PIPE_HE_STRAIGHT + is_bent
-			connect_types = CONNECT_TYPE_HE
-		else if(istype(make_from, /obj/machinery/atmospherics/pipe/simple/insulated))
-			src.pipe_type = PIPE_INSULATED_STRAIGHT + is_bent
+		//else if(istype(make_from, /obj/machinery/atmospherics/pipe/simple/heat_exchanging))
+		//	src.pipe_type = PIPE_HE_STRAIGHT + is_bent
+		//	connect_types = CONNECT_TYPE_HE
+		//else if(istype(make_from, /obj/machinery/atmospherics/pipe/simple/insulated))
+		//	src.pipe_type = PIPE_INSULATED_STRAIGHT + is_bent
 		else if(istype(make_from, /obj/machinery/atmospherics/pipe/simple/visible/supply) || istype(make_from, /obj/machinery/atmospherics/pipe/simple/hidden/supply))
 			src.pipe_type = PIPE_SUPPLY_STRAIGHT + is_bent
 			connect_types = CONNECT_TYPE_SUPPLY
@@ -85,8 +85,8 @@
 			src.pipe_type = PIPE_SCRUBBER
 		else if(istype(make_from, /obj/machinery/atmospherics/binary/passive_gate))
 			src.pipe_type = PIPE_PASSIVE_GATE
-		else if(istype(make_from, /obj/machinery/atmospherics/unary/heat_exchanger))
-			src.pipe_type = PIPE_HEAT_EXCHANGE
+		//else if(istype(make_from, /obj/machinery/atmospherics/unary/heat_exchanger))
+		//	src.pipe_type = PIPE_HEAT_EXCHANGE
 		else if(istype(make_from, /obj/machinery/atmospherics/tvalve/mirrored))
 			src.pipe_type = PIPE_MTVALVEM
 		else if(istype(make_from, /obj/machinery/atmospherics/tvalve))
@@ -852,23 +852,25 @@
 				S.node1.atmos_init()
 				S.node1.build_network()
 
+		/*
 		if(PIPE_INSULATED_STRAIGHT, PIPE_INSULATED_BENT)
-			var/obj/machinery/atmospherics/pipe/simple/insulated/P = new( src.loc )
-			P.set_dir(src.dir)
-			P.initialize_directions = pipe_dir
-			var/turf/T = P.loc
-			P.level = !T.is_plating() ? 2 : 1
-			P.atmos_init()
-			if (QDELETED(P))
-				to_chat(usr, pipefailtext)
-				return 1
-			P.build_network()
-			if (P.node1)
-				P.node1.atmos_init()
-				P.node1.build_network()
-			if (P.node2)
-				P.node2.atmos_init()
-				P.node2.build_network()
+			//var/obj/machinery/atmospherics/pipe/simple/insulated/P = new( src.loc )
+			//P.set_dir(src.dir)
+			//P.initialize_directions = src.pipe_dir
+			//var/datum/gas_mixture/int_air = P.return_air()
+			//var/datum/gas_mixture/env_air = loc.return_air()
+			//P.atmos_init()
+			//int_air.copy_from(env_air)
+			//if(!P.gc_destroyed)
+			//	if(P.node1)
+			//		if(!P.node1.atmos_initalized)
+			//			P.node1.atmos_init()
+			//		P.node1.build_network()
+			//	if(P.node2)
+			//		if(!P.node2.atmos_initalized)
+			//			P.node2.atmos_init()
+			//		P.node2.build_network()
+		*/
 
 		if(PIPE_MTVALVE)		//manual t-valve
 			var/obj/machinery/atmospherics/tvalve/V = new(src.loc)
@@ -974,6 +976,7 @@
 				P.node2.atmos_init()
 				P.node2.build_network()
 
+		/*
 		if(PIPE_HEAT_EXCHANGE)		// heat exchanger
 			var/obj/machinery/atmospherics/unary/heat_exchanger/C = new( src.loc )
 			C.set_dir(dir)
@@ -987,6 +990,7 @@
 			if (C.node1)
 				C.node1.atmos_init()
 				C.node1.build_network()
+		*/
 ///// Z-Level stuff
 		if(PIPE_UP)
 			var/obj/machinery/atmospherics/pipe/zpipe/up/P = new(src.loc)

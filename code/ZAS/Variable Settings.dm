@@ -38,6 +38,10 @@ var/global/vs_control/vsc = new
 	var/airflow_dense_pressure_NAME = "Airflow - Dense Movement Threshold %"
 	var/airflow_dense_pressure_DESC = "Percent of 1 Atm. at which items with canisters and closets will move."
 
+	var/airflow_extreme_pressure = 120
+	var/airflow_extreme_pressure_NAME = "Airflow - Extreme Movement Threshold %"
+	var/airflow_extreme_pressure_DESC = "Percent of 1 Atm. at which large mobs will move"
+
 	var/airflow_stun_pressure = 60
 	var/airflow_stun_pressure_NAME = "Airflow - Mob Stunning Threshold %"
 	var/airflow_stun_pressure_DESC = "Percent of 1 Atm. at which mobs will be stunned by airflow."
@@ -50,7 +54,7 @@ var/global/vs_control/vsc = new
 	var/airflow_stun_NAME = "Airflow Impact - Stunning"
 	var/airflow_stun_DESC = "How much a mob is stunned when hit by an object."
 
-	var/airflow_damage = 2
+	var/airflow_damage = 3
 	var/airflow_damage_NAME = "Airflow Impact - Damage"
 	var/airflow_damage_DESC = "Damage from airflow impacts."
 
@@ -113,7 +117,7 @@ var/global/vs_control/vsc = new
 			if("[ch]_NAME" in vars) vw_name = vars["[ch]_NAME"]
 		dat += "<b>[vw_name] = [vw]</b> <A href='?src=\ref[src];changevar=[ch]'>\[Change\]</A><br>"
 		dat += "<i>[vw_desc]</i><br><br>"
-	user << browse(HTML_SKELETON(dat),"window=settings")
+	user << browse(dat,"window=settings")
 
 /vs_control/Topic(href,href_list)
 	if("changevar" in href_list)
@@ -169,7 +173,7 @@ var/global/vs_control/vsc = new
 		vars[ch] = vw
 	if(how == "Toggle")
 		newvar = (newvar?"ON":"OFF")
-	to_world("<span class='notice'><b>[key_name(user)] changed the setting [display_description] to [newvar].</b></span>")
+	to_chat(world, "<span class='notice'><b>[key_name(user)] changed the setting [display_description] to [newvar].</b></span>")
 	if(ch in plc.settings)
 		ChangeSettingsDialog(user,plc.settings)
 	else
@@ -187,44 +191,52 @@ var/global/vs_control/vsc = new
 				newvalue = vars[V]
 		V = newvalue
 
-/vs_control/proc/ChangePlasma()
+/vs_control/proc/Changeplasma()
 	for(var/V in plc.settings)
 		plc.Randomize(V)
 
 /vs_control/proc/SetDefault(var/mob/user)
-	var/list/setting_choices = list("Plasma - Standard", "Plasma - Low Hazard", "Plasma - High Hazard", "Plasma - Oh Shit!",\
-	"ZAS - Normal", "ZAS - Forgiving", "ZAS - Dangerous", "ZAS - Hellish", "ZAS/Plasma - Initial")
+	var/list/setting_choices = list("plasma - Standard", "plasma - Low Hazard", "plasma - High Hazard", "plasma - Oh Shit!",\
+	"ZAS - Normal", "ZAS - Forgiving", "ZAS - Dangerous", "ZAS - Hellish", "ZAS/plasma - Initial")
 	var/def = input(user, "Which of these presets should be used?") as null|anything in setting_choices
 	if(!def)
 		return
 	switch(def)
-		if("Plasma - Standard")
-			plc.PLASMAGUARD_ONLY = 0
+		if("plasma - Standard")
+			plc.CLOTH_CONTAMINATION = 1 //If this is on, plasma does damage by getting into cloth.
+			plc.plasmaGUARD_ONLY = 0
 			plc.GENETIC_CORRUPTION = 0 //Chance of genetic corruption as well as toxic damage, X in 1000.
-			plc.SKIN_BURNS = 0       //Plasma has an effect similar to mustard gas on the un-suited.
-			plc.EYE_BURNS = 1 //Plasma burns the eyes of anyone not wearing eye protection.
-			plc.PLASMA_HALLUCINATION = 0
+			plc.SKIN_BURNS = 0       //plasma has an effect similar to mustard gas on the un-suited.
+			plc.EYE_BURNS = 1 //plasma burns the eyes of anyone not wearing eye protection.
+			plc.plasma_HALLUCINATION = 0
+			plc.CONTAMINATION_LOSS = 0.02
 
-		if("Plasma - Low Hazard")
-			plc.PLASMAGUARD_ONLY = 0
+		if("plasma - Low Hazard")
+			plc.CLOTH_CONTAMINATION = 0 //If this is on, plasma does damage by getting into cloth.
+			plc.plasmaGUARD_ONLY = 0
 			plc.GENETIC_CORRUPTION = 0 //Chance of genetic corruption as well as toxic damage, X in 1000
-			plc.SKIN_BURNS = 0       //Plasma has an effect similar to mustard gas on the un-suited.
-			plc.EYE_BURNS = 1 //Plasma burns the eyes of anyone not wearing eye protection.
-			plc.PLASMA_HALLUCINATION = 0
+			plc.SKIN_BURNS = 0       //plasma has an effect similar to mustard gas on the un-suited.
+			plc.EYE_BURNS = 1 //plasma burns the eyes of anyone not wearing eye protection.
+			plc.plasma_HALLUCINATION = 0
+			plc.CONTAMINATION_LOSS = 0.01
 
-		if("Plasma - High Hazard")
-			plc.PLASMAGUARD_ONLY = 0
+		if("plasma - High Hazard")
+			plc.CLOTH_CONTAMINATION = 1 //If this is on, plasma does damage by getting into cloth.
+			plc.plasmaGUARD_ONLY = 0
 			plc.GENETIC_CORRUPTION = 0 //Chance of genetic corruption as well as toxic damage, X in 1000.
-			plc.SKIN_BURNS = 1       //Plasma has an effect similar to mustard gas on the un-suited.
-			plc.EYE_BURNS = 1 //Plasma burns the eyes of anyone not wearing eye protection.
-			plc.PLASMA_HALLUCINATION = 1
+			plc.SKIN_BURNS = 1       //plasma has an effect similar to mustard gas on the un-suited.
+			plc.EYE_BURNS = 1 //plasma burns the eyes of anyone not wearing eye protection.
+			plc.plasma_HALLUCINATION = 1
+			plc.CONTAMINATION_LOSS = 0.05
 
-		if("Plasma - Oh Shit!")
-			plc.PLASMAGUARD_ONLY = 1
+		if("plasma - Oh Shit!")
+			plc.CLOTH_CONTAMINATION = 1 //If this is on, plasma does damage by getting into cloth.
+			plc.plasmaGUARD_ONLY = 1
 			plc.GENETIC_CORRUPTION = 5 //Chance of genetic corruption as well as toxic damage, X in 1000.
-			plc.SKIN_BURNS = 1       //Plasma has an effect similar to mustard gas on the un-suited.
-			plc.EYE_BURNS = 1 //Plasma burns the eyes of anyone not wearing eye protection.
-			plc.PLASMA_HALLUCINATION = 1
+			plc.SKIN_BURNS = 1       //plasma has an effect similar to mustard gas on the un-suited.
+			plc.EYE_BURNS = 1 //plasma burns the eyes of anyone not wearing eye protection.
+			plc.plasma_HALLUCINATION = 1
+			plc.CONTAMINATION_LOSS = 0.075
 
 		if("ZAS - Normal")
 			airflow_lightest_pressure = 20
@@ -235,7 +247,7 @@ var/global/vs_control/vsc = new
 			airflow_stun_pressure = 60
 			airflow_stun_cooldown = 60
 			airflow_stun = 1
-			airflow_damage = 2
+			airflow_damage = 3
 			airflow_speed_decay = 1.5
 			airflow_delay = 30
 			airflow_mob_slowdown = 1
@@ -249,7 +261,7 @@ var/global/vs_control/vsc = new
 			airflow_stun_pressure = 150
 			airflow_stun_cooldown = 90
 			airflow_stun = 0.15
-			airflow_damage = 0.15
+			airflow_damage = 0.5
 			airflow_speed_decay = 1.5
 			airflow_delay = 50
 			airflow_mob_slowdown = 0
@@ -263,7 +275,7 @@ var/global/vs_control/vsc = new
 			airflow_stun_pressure = 50
 			airflow_stun_cooldown = 50
 			airflow_stun = 2
-			airflow_damage = 3
+			airflow_damage = 4
 			airflow_speed_decay = 1.2
 			airflow_delay = 25
 			airflow_mob_slowdown = 2
@@ -277,13 +289,13 @@ var/global/vs_control/vsc = new
 			airflow_stun_pressure = 40
 			airflow_stun_cooldown = 40
 			airflow_stun = 3
-			airflow_damage = 4
+			airflow_damage = 5
 			airflow_speed_decay = 1
 			airflow_delay = 20
 			airflow_mob_slowdown = 3
 			connection_insulation = 0
 
-		if("ZAS/Plasma - Initial")
+		if("ZAS/plasma - Initial")
 			fire_consuption_rate 			= initial(fire_consuption_rate)
 			fire_firelevel_multiplier 		= initial(fire_firelevel_multiplier)
 			fire_fuel_energy_release 		= initial(fire_fuel_energy_release)
@@ -303,16 +315,18 @@ var/global/vs_control/vsc = new
 			connection_insulation 			= initial(connection_insulation)
 			connection_temperature_delta 	= initial(connection_temperature_delta)
 
-			plc.PLASMA_DMG 					= initial(plc.PLASMA_DMG)
-			plc.PLASMAGUARD_ONLY 			= initial(plc.PLASMAGUARD_ONLY)
+			plc.plasma_DMG 					= initial(plc.plasma_DMG)
+			plc.CLOTH_CONTAMINATION 		= initial(plc.CLOTH_CONTAMINATION)
+			plc.plasmaGUARD_ONLY 			= initial(plc.plasmaGUARD_ONLY)
 			plc.GENETIC_CORRUPTION 			= initial(plc.GENETIC_CORRUPTION)
 			plc.SKIN_BURNS 					= initial(plc.SKIN_BURNS)
 			plc.EYE_BURNS 					= initial(plc.EYE_BURNS)
-			plc.PLASMA_HALLUCINATION 		= initial(plc.PLASMA_HALLUCINATION)
+			plc.CONTAMINATION_LOSS 			= initial(plc.CONTAMINATION_LOSS)
+			plc.plasma_HALLUCINATION 		= initial(plc.plasma_HALLUCINATION)
 			plc.N2O_HALLUCINATION 			= initial(plc.N2O_HALLUCINATION)
 
 
-	to_world("<span class='notice'><b>[key_name(user)] changed the global plasma/ZAS settings to \"[def]\"</b></span>")
+	to_chat(world, "<span class='notice'><b>[key_name(user)] changed the global plasma/ZAS settings to \"[def]\"</b></span>")
 
 /pl_control/var/list/settings = list()
 

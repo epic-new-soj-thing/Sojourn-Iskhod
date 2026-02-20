@@ -34,7 +34,6 @@
 
 /obj/machinery/atmospherics/mains_pipe
 	icon = 'icons/obj/atmospherics/mainspipe.dmi'
-	layer = 2.4 //under wires with their 2.5
 
 	var/volume = 0
 
@@ -50,9 +49,9 @@
 	var/minimum_temperature_difference = 300
 	var/thermal_conductivity = 0 //WALL_HEAT_TRANSFER_COEFFICIENT No
 
-	var/maximum_pressure = 70*ONE_ATMOSPHERE
-	var/fatigue_pressure = 55*ONE_ATMOSPHERE
-	alert_pressure = 55*ONE_ATMOSPHERE
+	var/maximum_pressure = 210*ONE_ATMOSPHERE
+	var/fatigue_pressure = 170*ONE_ATMOSPHERE
+	alert_pressure = 170*ONE_ATMOSPHERE
 
 	New()
 		..()
@@ -68,8 +67,8 @@
 		aux.nodes.len = nodes.len
 
 	hide(var/i)
-		if(level == BELOW_PLATING_LEVEL && istype(loc, /turf/simulated))
-			invisibility = i ? 101 : 0
+		if(level == 1 && istype(loc, /turf/simulated))
+			set_invisibility(i ? 101 : 0)
 		update_icon()
 
 	proc/burst()
@@ -98,9 +97,10 @@
 
 	Destroy()
 		disconnect()
-		. = ..()
+		..()
 
 	atmos_init()
+		..()
 		for(var/i = 1 to nodes.len)
 			var/obj/machinery/atmospherics/mains_pipe/node = nodes[i]
 			if(node)
@@ -150,8 +150,6 @@
 		else
 			if(!nodes[1]&&!nodes[2])
 				qdel(src) //TODO: silent deleting looks weird
-				log_world("PIPE-DELETE at ([x],[y],[z]). Missed nodes.")
-				return
 			var/have_node1 = nodes[1]?1:0
 			var/have_node2 = nodes[2]?1:0
 			icon_state = "exposed[have_node1][have_node2][invisibility ? "-f" : "" ]"
@@ -161,37 +159,37 @@
 		var/node1_dir
 		var/node2_dir
 
-		for(var/direction in cardinal)
+		for(var/direction in GLOB.cardinal)
 			if(direction&initialize_mains_directions)
 				if (!node1_dir)
 					node1_dir = direction
 				else if (!node2_dir)
 					node2_dir = direction
 
-		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, node1_dir))
-			if(target.initialize_mains_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,node1_dir))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[1] = target
 				break
-		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, node2_dir))
-			if(target.initialize_mains_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,node2_dir))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[2] = target
 				break
 
 		..() // initialize internal pipes
 
 		var/turf/T = src.loc			// hide if turf is not intact
-		if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
+		if(level == 1 && !T.is_plating()) hide(1)
 		update_icon()
 
 	hidden
-		level = BELOW_PLATING_LEVEL
+		level = 1
 		icon_state = "intact-f"
 
 	visible
-		level = ABOVE_PLATING_LEVEL
+		level = 2
 		icon_state = "intact"
 
-/obj/machinery/atmospherics/mains_pipe/manifold
+obj/machinery/atmospherics/mains_pipe/manifold
 	name = "manifold pipe"
 	desc = "A manifold composed of mains pipes"
 
@@ -207,10 +205,10 @@
 	atmos_init()
 		var/connect_directions = initialize_mains_directions
 
-		for(var/direction in cardinal)
+		for(var/direction in GLOB.cardinal)
 			if(direction&connect_directions)
-				for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, direction))
-					if(target.initialize_mains_directions & get_dir(target, src))
+				for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,direction))
+					if(target.initialize_mains_directions & get_dir(target,src))
 						nodes[1] = target
 						connect_directions &= ~direction
 						break
@@ -218,10 +216,10 @@
 					break
 
 
-		for(var/direction in cardinal)
+		for(var/direction in GLOB.cardinal)
 			if(direction&connect_directions)
-				for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, direction))
-					if(target.initialize_mains_directions & get_dir(target, src))
+				for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,direction))
+					if(target.initialize_mains_directions & get_dir(target,src))
 						nodes[2] = target
 						connect_directions &= ~direction
 						break
@@ -229,10 +227,10 @@
 					break
 
 
-		for(var/direction in cardinal)
+		for(var/direction in GLOB.cardinal)
 			if(direction&connect_directions)
-				for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, direction))
-					if(target.initialize_mains_directions & get_dir(target, src))
+				for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,direction))
+					if(target.initialize_mains_directions & get_dir(target,src))
 						nodes[3] = target
 						connect_directions &= ~direction
 						break
@@ -242,21 +240,21 @@
 		..() // initialize internal pipes
 
 		var/turf/T = src.loc			// hide if turf is not intact
-		if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
+		if(level == 1 && !T.is_plating()) hide(1)
 		update_icon()
 
 	update_icon()
 		icon_state = "manifold[invisibility ? "-f" : "" ]"
 
 	hidden
-		level = BELOW_PLATING_LEVEL
+		level = 1
 		icon_state = "manifold-f"
 
 	visible
-		level = ABOVE_PLATING_LEVEL
+		level = 2
 		icon_state = "manifold"
 
-/obj/machinery/atmospherics/mains_pipe/manifold4w
+obj/machinery/atmospherics/mains_pipe/manifold4w
 	name = "manifold pipe"
 	desc = "A manifold composed of mains pipes"
 
@@ -269,44 +267,44 @@
 		..()
 
 	atmos_init()
-		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, NORTH))
-			if(target.initialize_mains_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,NORTH))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[1] = target
 				break
 
-		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, SOUTH))
-			if(target.initialize_mains_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,SOUTH))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[2] = target
 				break
 
-		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, EAST))
-			if(target.initialize_mains_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,EAST))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[3] = target
 				break
 
-		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, WEST))
-			if(target.initialize_mains_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,WEST))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[3] = target
 				break
 
 		..() // initialize internal pipes
 
 		var/turf/T = src.loc			// hide if turf is not intact
-		if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
+		if(level == 1 && !T.is_plating()) hide(1)
 		update_icon()
 
 	update_icon()
 		icon_state = "manifold4w[invisibility ? "-f" : "" ]"
 
 	hidden
-		level = BELOW_PLATING_LEVEL
+		level = 1
 		icon_state = "manifold4w-f"
 
 	visible
-		level = ABOVE_PLATING_LEVEL
+		level = 2
 		icon_state = "manifold4w"
 
-/obj/machinery/atmospherics/mains_pipe/split
+obj/machinery/atmospherics/mains_pipe/split
 	name = "mains splitter"
 	desc = "A splitter for connecting to a single pipe off a mains."
 
@@ -329,16 +327,16 @@
 		node2_dir = turn(dir, -90)
 		node3_dir = dir
 
-		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, node1_dir))
-			if(target.initialize_mains_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,node1_dir))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[1] = target
 				break
-		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, node2_dir))
-			if(target.initialize_mains_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,node2_dir))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[2] = target
 				break
-		for(var/obj/machinery/atmospherics/target in get_step(src, node3_dir))
-			if(target.initialize_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/target in get_step(src,node3_dir))
+			if(target.initialize_directions & get_dir(target,src))
 				node3 = target
 				break
 
@@ -353,7 +351,7 @@
 					N1.merge(N2)
 
 		var/turf/T = src.loc			// hide if turf is not intact
-		if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
+		if(level == 1 && !T.is_plating()) hide(1)
 		update_icon()
 
 	update_icon()
@@ -370,11 +368,11 @@
 			split_node = supply
 
 		hidden
-			level = BELOW_PLATING_LEVEL
+			level = 1
 			icon_state = "split-supply-f"
 
 		visible
-			level = ABOVE_PLATING_LEVEL
+			level = 2
 			icon_state = "split-supply"
 
 	scrubbers
@@ -385,11 +383,11 @@
 			split_node = scrubbers
 
 		hidden
-			level = BELOW_PLATING_LEVEL
+			level = 1
 			icon_state = "split-scrubbers-f"
 
 		visible
-			level = ABOVE_PLATING_LEVEL
+			level = 2
 			icon_state = "split-scrubbers"
 
 	aux
@@ -400,14 +398,14 @@
 			split_node = aux
 
 		hidden
-			level = BELOW_PLATING_LEVEL
+			level = 1
 			icon_state = "split-aux-f"
 
 		visible
-			level = ABOVE_PLATING_LEVEL
+			level = 2
 			icon_state = "split-aux"
 
-/obj/machinery/atmospherics/mains_pipe/split3
+obj/machinery/atmospherics/mains_pipe/split3
 	name = "triple mains splitter"
 	desc = "A splitter for connecting to the 3 pipes on a mainline."
 
@@ -419,7 +417,7 @@
 		nodes.len = 1
 		..()
 		initialize_mains_directions = dir
-		initialize_directions = cardinal & ~dir // actually have a normal connection too
+		initialize_directions = GLOB.cardinal & ~dir // actually have a normal connection too
 
 	atmos_init()
 		var/node1_dir
@@ -437,19 +435,19 @@
 			scrubbers_node_dir = NORTH
 
 		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, node1_dir))
-			if(target.initialize_mains_directions & get_dir(target, src))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[1] = target
 				break
-		for(var/obj/machinery/atmospherics/target in get_step(src, supply_node_dir))
-			if(target.initialize_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/target in get_step(src,supply_node_dir))
+			if(target.initialize_directions & get_dir(target,src))
 				supply_node = target
 				break
-		for(var/obj/machinery/atmospherics/target in get_step(src, scrubbers_node_dir))
-			if(target.initialize_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/target in get_step(src,scrubbers_node_dir))
+			if(target.initialize_directions & get_dir(target,src))
 				scrubbers_node = target
 				break
-		for(var/obj/machinery/atmospherics/target in get_step(src, aux_node_dir))
-			if(target.initialize_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/target in get_step(src,aux_node_dir))
+			if(target.initialize_directions & get_dir(target,src))
 				aux_node = target
 				break
 
@@ -474,7 +472,7 @@
 					N1.merge(N2)
 
 		var/turf/T = src.loc			// hide if turf is not intact
-		if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
+		if(level == 1 && !T.is_plating()) hide(1)
 		update_icon()
 
 	update_icon()
@@ -492,14 +490,14 @@
 		return A
 
 	hidden
-		level = BELOW_PLATING_LEVEL
+		level = 1
 		icon_state = "split-t-f"
 
 	visible
-		level = ABOVE_PLATING_LEVEL
+		level = 2
 		icon_state = "split-t"
 
-/obj/machinery/atmospherics/mains_pipe/cap
+obj/machinery/atmospherics/mains_pipe/cap
 	name = "pipe cap"
 	desc = "A cap for the end of a mains pipe"
 
@@ -516,23 +514,23 @@
 		icon_state = "cap[invisibility ? "-f" : ""]"
 
 	atmos_init()
-		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, dir))
-			if(target.initialize_mains_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,dir))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[1] = target
 				break
 
 		..()
 
 		var/turf/T = src.loc	// hide if turf is not intact
-		if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
+		if(level == 1 && !T.is_plating()) hide(1)
 		update_icon()
 
 	hidden
-		level = BELOW_PLATING_LEVEL
+		level = 1
 		icon_state = "cap-f"
 
 	visible
-		level = ABOVE_PLATING_LEVEL
+		level = 2
 		icon_state = "cap"
 
 //TODO: Get Mains valves working!
@@ -556,15 +554,15 @@ obj/machinery/atmospherics/mains_pipe/valve
 	update_icon(animation)
 		var/turf/simulated/floor = loc
 		var/hide = istype(floor) ? floor.intact : 0
-		level = BELOW_PLATING_LEVEL
+		level = 1
 		for(var/obj/machinery/atmospherics/mains_pipe/node in nodes)
-			if(node.level == ABOVE_PLATING_LEVEL)
+			if(node.level == 2)
 				hide = 0
-				level = ABOVE_PLATING_LEVEL
+				level = 2
 				break
 
 		if(animation)
-			flick("[hide?"h":""]mvalve[src.open][!src.open]", src)
+			flick("[hide?"h":""]mvalve[src.open][!src.open]",src)
 		else
 			icon_state = "[hide?"h":""]mvalve[open]"
 
@@ -580,12 +578,12 @@ obj/machinery/atmospherics/mains_pipe/valve
 				else if (!node2_dir)
 					node2_dir = direction
 
-		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, node1_dir))
-			if(target.initialize_mains_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,node1_dir))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[1] = target
 				break
-		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src, node2_dir))
-			if(target.initialize_mains_directions & get_dir(target, src))
+		for(var/obj/machinery/atmospherics/mains_pipe/target in get_step(src,node2_dir))
+			if(target.initialize_mains_directions & get_dir(target,src))
 				nodes[2] = target
 				break
 
@@ -648,7 +646,7 @@ obj/machinery/atmospherics/mains_pipe/valve
 
 		attack_hand(mob/user as mob)
 			if(!src.allowed(user))
-				to_chat(user, SPAN_WARNING("Access denied."))
+				to_chat(user, "<span class='warning'>Access denied.</span>")
 				return
 			..()
 
@@ -656,32 +654,32 @@ obj/machinery/atmospherics/mains_pipe/valve
 
 		proc
 			set_frequency(new_frequency)
-				radio_controller.remove_object(src, frequency)
+				SSradio.remove_object(src, frequency)
 				frequency = new_frequency
 				if(frequency)
-					radio_connection = radio_controller.add_object(src, frequency, RADIO_ATMOSIA)
+					radio_connection = SSradio.add_object(src, frequency, RADIO_ATMOSIA)
 
 		var/frequency = 0
 		var/id = null
 		var/datum/radio_frequency/radio_connection
 
-		atmos_init()
-			..()
+		Initialize()
+			. = ..()
 			if(frequency)
 				set_frequency(frequency)
 
 		update_icon(animation)
 			var/turf/simulated/floor = loc
 			var/hide = istype(floor) ? floor.intact : 0
-			level = BELOW_PLATING_LEVEL
+			level = 1
 			for(var/obj/machinery/atmospherics/mains_pipe/node in nodes)
-				if(node.level == ABOVE_PLATING_LEVEL)
+				if(node.level == 2)
 					hide = 0
-					level = ABOVE_PLATING_LEVEL
+					level = 2
 					break
 
 			if(animation)
-				flick("[hide?"h":""]dvalve[src.open][!src.open]", src)
+				flick("[hide?"h":""]dvalve[src.open][!src.open]",src)
 			else
 				icon_state = "[hide?"h":""]dvalve[open]"
 

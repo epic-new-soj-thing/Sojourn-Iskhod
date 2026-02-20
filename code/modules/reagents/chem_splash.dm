@@ -48,7 +48,12 @@
 			for(var/turf/T in turflist)
 				if(accessible[T])
 					continue
-				for(var/thing in T.GetAtmosAdjacentTurfs(alldir = TRUE))
+				var/list/turfs = list()
+				for(var/D in GLOB.alldirs)
+					var/turf/step = get_step(T, D)
+					if(step && !SSair.air_blocked(T, step))
+						turfs += step
+				for(var/thing in turfs)
 					var/turf/NT = thing
 					if(!(NT in accessible))
 						continue

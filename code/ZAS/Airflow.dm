@@ -2,12 +2,11 @@
 Contains helper procs for airflow, handled in /connection_group.
 */
 
-/mob/var/tmp/last_airflow_stun = 0
-/mob/proc/airflow_stun()
+mob/var/tmp/last_airflow_stun = 0
+mob/proc/airflow_stun()
 	if(stat == 2)
 		return FALSE
-	if(last_airflow_stun > world.time - vsc.airflow_stun_cooldown)
-		return FALSE
+	if(last_airflow_stun > world.time - vsc.airflow_stun_cooldown)	return FALSE
 
 	if(!(status_flags & CANSTUN) && !(status_flags & CANWEAKEN))
 		to_chat(src, "<span class='notice'>You stay upright as the air rushes past you.</span>")
@@ -17,59 +16,64 @@ Contains helper procs for airflow, handled in /connection_group.
 		return FALSE
 	if(!lying)
 		to_chat(src, "<span class='warning'>The sudden rush of air knocks you over!</span>")
-	Weaken(5)
+	Weaken(4)
 	last_airflow_stun = world.time
 
-/mob/living/silicon/airflow_stun()
+mob/living/silicon/airflow_stun()
 	return
 
-/mob/living/carbon/slime/airflow_stun()
+mob/living/carbon/slime/airflow_stun()
 	return
 
-/mob/living/carbon/human/airflow_stun()
-	if(shoes)
-		if(shoes.item_flags & NOSLIP)
-			return FALSE
+mob/living/carbon/human/airflow_stun()
+	if(!slip_chance())
+		to_chat(src, "<span class='notice'>Air suddenly rushes past you!</span>")
+		return FALSE
 	..()
 
-/atom/movable/proc/check_airflow_movable(n)
+atom/movable/proc/check_airflow_movable(n)
 
 	if(anchored && !ismob(src)) return FALSE
 
-	if(!istype(src,/obj/item) && n < vsc.airflow_dense_pressure)
-		return FALSE
+	if(!isobj(src) && n < vsc.airflow_dense_pressure) return FALSE
 
 	return TRUE
 
-/mob/check_airflow_movable(n)
+mob/check_airflow_movable(n)
 	if(n < vsc.airflow_heavy_pressure)
 		return FALSE
+	else if (mob_size >= MOB_LARGE && n < vsc.airflow_extreme_pressure)
+		return FALSE
+
 	return TRUE
 
-/mob/abstract/observer/check_airflow_movable()
-	return FALSE
-
-/mob/living/silicon/check_airflow_movable()
+mob/living/silicon/check_airflow_movable()
 	return FALSE
 
 
-/obj/item/check_airflow_movable(n)
-	. = ..()
-	switch(w_class)
-		if(2)
-			if(n < vsc.airflow_lightest_pressure)
-				return FALSE
-		if(3)
-			if(n < vsc.airflow_light_pressure)
-				return FALSE
-		if(4,5)
-			if(n < vsc.airflow_medium_pressure)
-				return FALSE
+obj/check_airflow_movable(n)
+	if(isnull(w_class))
+		if(n < vsc.airflow_dense_pressure) return FALSE //most non-item objs don't have a w_class yet
+	else
+		switch(w_class)
+			if(1,2)
+				if(n < vsc.airflow_lightest_pressure) return FALSE
+			if(3)
+				if(n < vsc.airflow_light_pressure) return FALSE
+			if(4,5)
+				if(n < vsc.airflow_medium_pressure) return FALSE
+			if(6)
+				if(n < vsc.airflow_heavy_pressure) return FALSE
+			if(7 to INFINITY)
+				if(n < vsc.airflow_dense_pressure) return FALSE
+	return ..()
+
 
 /atom/movable/var/tmp/turf/airflow_dest
 /atom/movable/var/tmp/airflow_speed = 0
 /atom/movable/var/tmp/airflow_time = 0
 /atom/movable/var/tmp/last_airflow = 0
+/atom/movable/var/tmp/airborne_acceleration = 0
 
 /atom/movable/proc/AirflowCanMove(n)
 	return TRUE
@@ -84,48 +88,59 @@ Contains helper procs for airflow, handled in /connection_group.
 		return FALSE
 	return TRUE
 
-/*
-/atom/movable/proc/GotoAirflowDest(n)
-	and
-/atom/movable/proc/RepelAirflowDest(n)
-	have been moved to SSairflow.
+/atom/movable/Bump(atom/A)
+	if(airflow_speed > 0 && airflow_dest)
+		if(airborne_acceleration > 1)
+			airflow_hit(A)
+		else if(istype(src, /mob/living/carbon/human))
+			to_chat(src, "<span class='notice'>You are pinned against [A] by airflow!</span>")
+			airborne_acceleration = 0
+	else
+		airflow_speed = 0
+		airflow_time = 0
+		airborne_acceleration = 0
+		. = ..()
 
-*/
-
-/atom/movable/proc/airflow_hit(atom/A)
+atom/movable/proc/airflow_hit(atom/A)
 	airflow_speed = 0
 	airflow_dest = null
+	airborne_acceleration = 0
 
-/mob/airflow_hit(atom/A)
+mob/airflow_hit(atom/A)
 	for(var/mob/M in hearers(src))
 		M.show_message("<span class='danger'>\The [src] slams into \a [A]!</span>",1,"<span class='danger'>You hear a loud slam!</span>",2)
-	playsound(src.loc, 'sound/weapons/smash.ogg', 25, 1, -1)
+	playsound(src.loc, "smash.ogg", 25, 1, -1)
 	var/weak_amt = istype(A,/obj/item) ? A:w_class : rand(1,5) //Heheheh
 	Weaken(weak_amt)
 	. = ..()
 
-/obj/airflow_hit(atom/A)
+obj/airflow_hit(atom/A)
 	for(var/mob/M in hearers(src))
 		M.show_message("<span class='danger'>\The [src] slams into \a [A]!</span>",1,"<span class='danger'>You hear a loud slam!</span>",2)
-	playsound(src.loc, 'sound/weapons/smash.ogg', 25, 1, -1)
+	playsound(src.loc, "smash.ogg", 25, 1, -1)
 	. = ..()
 
-/obj/item/airflow_hit(atom/A)
+obj/item/airflow_hit(atom/A)
 	airflow_speed = 0
 	airflow_dest = null
 
-/mob/living/carbon/human/airflow_hit(atom/A)
+mob/living/carbon/human/airflow_hit(atom/A)
 //	for(var/mob/M in hearers(src))
 //		M.show_message("<span class='danger'>[src] slams into [A]!</span>",1,"<span class='danger'>You hear a loud slam!</span>",2)
-	playsound(src.loc, 'sound/weapons/punch1.ogg', 25, 1, -1)
+	playsound(src.loc, "punch", 25, 1, -1)
 	if (prob(33))
 		loc:add_blood(src)
 		bloody_body(src)
-	var/b_loss = airflow_speed * vsc.airflow_damage
+	var/b_loss = min(airflow_speed, (airborne_acceleration*2)) * vsc.airflow_damage
 
-	apply_damage(b_loss/3, BRUTE, BP_HEAD, used_weapon = "Airflow")
-	apply_damage(b_loss/3, BRUTE, BP_CHEST, used_weapon = "Airflow")
-	apply_damage(b_loss/3, BRUTE, BP_GROIN, used_weapon = "Airflow")
+	var/blocked = getarmor(BP_HEAD,"melee")
+	apply_damage(b_loss/3, BRUTE, BP_HEAD, blocked, 0, "Airflow")
+
+	blocked = getarmor(BP_CHEST,"melee")
+	apply_damage(b_loss/3, BRUTE, BP_CHEST, blocked, 0, "Airflow")
+
+	blocked = getarmor(BP_GROIN,"melee")
+	apply_damage(b_loss/3, BRUTE, BP_GROIN, blocked, 0, "Airflow")
 
 	if(airflow_speed > 10)
 		Paralyse(round(airflow_speed * vsc.airflow_stun))
@@ -134,23 +149,10 @@ Contains helper procs for airflow, handled in /connection_group.
 		Stun(round(airflow_speed * vsc.airflow_stun/2))
 	. = ..()
 
-/zone/proc/movables(list/origins)
+zone/proc/movables()
 	. = list()
-	if (!origins?.len)
-		return
-
-	var/static/list/movables_tcache = typecacheof(list(/obj/effect, /mob/abstract))
-
-	var/atom/movable/AM
-	for (var/testing_turf in contents)
-		CHECK_TICK
-		for (var/am in testing_turf)
-			AM = am
-			CHECK_TICK
-			if (AM.simulated && !AM.anchored && !movables_tcache[AM.type])
-				for (var/source_turf in origins)
-					if (get_dist(testing_turf, source_turf) <= EDGE_KNOCKDOWN_MAX_DISTANCE)
-						.[AM] = TRUE
-						break
-
-					CHECK_TICK
+	for(var/turf/T in contents)
+		for(var/atom/movable/A in T)
+			if(!A.simulated || A.anchored || istype(A, /obj/effect) || isobserver(A))
+				continue
+			. += A

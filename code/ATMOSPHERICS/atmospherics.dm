@@ -10,18 +10,14 @@ Pipelines + Other Objects -> Pipe network
 
 */
 /obj/machinery/atmospherics
-
-	auto_init = 0
-
-	anchored = TRUE
+	anchored = 1
 	idle_power_usage = 0
 	active_power_usage = 0
 	power_channel = STATIC_ENVIRON
 	var/nodealert = 0
 	var/power_rating //the maximum amount of power the machine can use to do work, affects how powerful the machine is, in Watts
 
-	plane = FLOOR_PLANE
-	layer = GAS_PIPE_HIDDEN_LAYER //under wires
+	layer = GAS_PIPE_VISIBLE_LAYER
 
 	var/connect_types = CONNECT_TYPE_REGULAR
 	var/icon_connect_type = "" //"-supply" or "-scrubbers"
@@ -33,7 +29,9 @@ Pipelines + Other Objects -> Pipe network
 	var/obj/machinery/atmospherics/node1
 	var/obj/machinery/atmospherics/node2
 
-/obj/machinery/atmospherics/New()
+	var/atmos_initalized = FALSE
+
+/obj/machinery/atmospherics/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	if(!icon_manager)
 		icon_manager = new()
 
@@ -43,24 +41,27 @@ Pipelines + Other Objects -> Pipe network
 
 	if(!pipe_color_check(pipe_color))
 		pipe_color = null
-	GLOB.atmos_machinery += src
-	..()
-
-/obj/machinery/atmospherics/Destroy()
-	GLOB.atmos_machinery -= src
 	..()
 
 /obj/machinery/atmospherics/proc/atmos_init()
-	return
+	atmos_initalized = TRUE
+
+/obj/machinery/atmospherics/hide(var/do_hide)
+	if(do_hide && level == 1)
+		layer = GAS_PIPE_HIDDEN_LAYER
+	else
+		reset_plane_and_layer()
 
 /obj/machinery/atmospherics/attackby(atom/A, mob/user as mob)
 	if(istype(A, /obj/item/device/pipe_painter))
+		return
+	if(istype(A, /obj/item/device/scanner/gas))
 		return
 	..()
 
 /obj/machinery/atmospherics/proc/add_underlay(var/turf/T, var/obj/machinery/atmospherics/node, var/direction, var/icon_connect_type)
 	if(node)
-		if(T && !T.is_plating() && node.level == BELOW_PLATING_LEVEL && istype(node, /obj/machinery/atmospherics/pipe))
+		if(!T.is_plating() && node.level == 1 && istype(node, /obj/machinery/atmospherics/pipe))
 			//underlays += icon_manager.get_atmos_icon("underlay_down", direction, color_cache_name(node))
 			underlays += icon_manager.get_atmos_icon("underlay", direction, color_cache_name(node), "down" + icon_connect_type)
 		else
@@ -83,8 +84,6 @@ obj/machinery/atmospherics/proc/check_connect_types(obj/machinery/atmospherics/a
 	return (atmos1.connect_types & pipe2.connect_types)
 
 /obj/machinery/atmospherics/proc/check_icon_cache(var/safety = 0)
-	if(!SSatoms.initialized)
-		return 0
 	if(!istype(icon_manager))
 		if(!safety) //to prevent infinite loops
 			icon_manager = new()

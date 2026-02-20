@@ -1,29 +1,63 @@
-/obj/machinery/atmospherics/pipe
+#define SOUND_ID "pipe_leakage"
 
+/obj/machinery/atmospherics/pipe
+	plane = FLOOR_PLANE
 	var/datum/gas_mixture/air_temporary // used when reconstructing a pipeline that broke
 	var/datum/pipeline/parent
 	var/volume = 0
+	var/leaking = 0		// Do not set directly, use set_leaking(TRUE/FALSE)
+	use_power = 0
 
-	layer = GAS_PIPE_HIDDEN_LAYER
-	use_power = NO_POWER_USE
-
-	var/alert_pressure = 80*ONE_ATMOSPHERE
+	var/alert_pressure = 170*ONE_ATMOSPHERE
+	var/in_stasis = 0
 		//minimum pressure before check_pressure(...) should be called
 
-	can_buckle = TRUE
+	can_buckle = 1
 	buckle_require_restraints = 1
 	buckle_lying = -1
+	var/datum/sound_token/sound_token
+
+	//These are underfloor, stop getting involved in movement calculations
+
+
+//Added by nanako, makes pipes immune to explosions.
+//They're everywhere, blowing them up is functionally irreparable damage, and one bomb ruins the game. its not worth it
+/obj/machinery/atmospherics/pipe/ex_act()
+	return FALSE
 
 /obj/machinery/atmospherics/pipe/drain_power()
 	return -1
 
-/obj/machinery/atmospherics/pipe/New()
+/obj/machinery/atmospherics/pipe/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	if(istype(get_turf(src), /turf/simulated/wall) || istype(get_turf(src), /turf/simulated/shuttle/wall) || istype(get_turf(src), /turf/unsimulated/wall))
-		level = BELOW_PLATING_LEVEL
+		level = 1
 	..()
 
 /obj/machinery/atmospherics/pipe/hides_under_flooring()
 	return level != 2
+
+/obj/machinery/atmospherics/pipe/proc/set_leaking(var/new_leaking)
+	if(new_leaking && !leaking)
+		START_PROCESSING(SSmachines, src)
+		leaking = TRUE
+		if(parent)
+			parent.leaks |= src
+			if(parent.network)
+				parent.network.leaks |= src
+	else if (!new_leaking && leaking)
+		update_sound(0)
+		STOP_PROCESSING(SSmachines, src)
+		leaking = FALSE
+		if(parent)
+			parent.leaks -= src
+			if(parent.network)
+				parent.network.leaks -= src
+
+/obj/machinery/atmospherics/pipe/proc/update_sound(var/playing)
+	if(playing && !sound_token)
+		sound_token = GLOB.sound_player.play_looping(src, SOUND_ID, "sound/machines/pipeleak.ogg", volume = 8, range = 3, falloff = 1, prefer_mute = TRUE)
+	else if(!playing && sound_token)
+		QDEL_NULL(sound_token)
 
 /obj/machinery/atmospherics/pipe/proc/pipeline_expansion()
 	return null
@@ -64,46 +98,46 @@
 
 /obj/machinery/atmospherics/pipe/Destroy()
 	QDEL_NULL(parent)
+	QDEL_NULL(sound_token)
 	if(air_temporary)
 		loc.assume_air(air_temporary)
-		QDEL_NULL(air_temporary)
 
 	. = ..()
 
-/obj/machinery/atmospherics/pipe/attackby(obj/item/I, mob/user)
+/obj/machinery/atmospherics/pipe/attackby(var/obj/item/W as obj, var/mob/user as mob)
 	if (istype(src, /obj/machinery/atmospherics/pipe/tank))
 		return ..()
 	if (istype(src, /obj/machinery/atmospherics/pipe/vent))
 		return ..()
 
-	if(istype(I,/obj/item/device/pipe_painter))
+	if(istype(W,/obj/item/device/pipe_painter))
 		return 0
+
+	if(!isWrench(W))
+		return ..()
 	var/turf/T = src.loc
 	if (level==1 && isturf(T) && !T.is_plating())
-		to_chat(user, SPAN_WARNING("You must remove the plating first."))
+		to_chat(user, "<span class='warning'>You must remove the plating first.</span>")
 		return 1
-
-	if(QUALITY_BOLT_TURNING in I.tool_qualities)
-		var/datum/gas_mixture/int_air = return_air()
-		var/datum/gas_mixture/env_air = loc.return_air()
-		if ((int_air.return_pressure()-env_air.return_pressure()) > 4*ONE_ATMOSPHERE)
-			to_chat(user, SPAN_WARNING("You cannot unwrench \the [src], it is too exerted due to internal pressure."))
-			add_fingerprint(user)
-			return 1
-
-		to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src]..."))
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_MEC))
-			user.visible_message( \
-				SPAN_NOTICE("\The [user] unfastens \the [src]."), \
-				SPAN_NOTICE("You have unfastened \the [src]."), \
-				"You hear a ratchet.")
-			investigate_log("was unfastened by [key_name(user)]", "atmos")
-			new /obj/item/pipe(loc, make_from=src)
-			for (var/obj/machinery/meter/meter in T)
-				if (meter.target == src)
-					new /obj/item/pipe_meter(T)
-					qdel(meter)
-			qdel(src)
+	var/datum/gas_mixture/int_air = return_air()
+	var/datum/gas_mixture/env_air = loc.return_air()
+	if ((int_air.return_pressure()-env_air.return_pressure()) > 2*ONE_ATMOSPHERE)
+		to_chat(user, "<span class='warning'>You cannot unwrench \the [src], it is too exerted due to internal pressure.</span>")
+		add_fingerprint(user)
+		return 1
+	playsound(src.loc, 'sound/items/Ratchet.ogg', 50, 1)
+	to_chat(user, "<span class='notice'>You begin to unfasten \the [src]...</span>")
+	if (do_after(user, 40, src))
+		user.visible_message( \
+			"<span class='notice'>\The [user] unfastens \the [src].</span>", \
+			"<span class='notice'>You have unfastened \the [src].</span>", \
+			"You hear a ratchet.")
+		new /obj/item/pipe(loc, make_from=src)
+		for (var/obj/machinery/meter/meter in T)
+			if (meter.target == src)
+				new /obj/item/pipe_meter(T)
+				qdel(meter)
+		qdel(src)
 
 /obj/machinery/atmospherics/proc/change_color(var/new_color)
 	//only pass valid pipe colors please ~otherwise your pipe will turn invisible
@@ -147,7 +181,7 @@
 	icon_state = ""
 	var/pipe_icon = "" //what kind of pipe it is and from which dmi is the icon manager getting its icons, "" for simple pipes, "hepipe" for HE pipes, "hejunction" for HE junctions
 	name = "pipe"
-	desc = "A one meter section of regular pipe"
+	desc = "A one meter section of regular pipe."
 
 	volume = ATMOS_DEFAULT_VOLUME_PIPE
 
@@ -157,13 +191,13 @@
 	var/minimum_temperature_difference = 300
 	var/thermal_conductivity = 0 //WALL_HEAT_TRANSFER_COEFFICIENT No
 
-	var/maximum_pressure = 70*ONE_ATMOSPHERE
-	var/fatigue_pressure = 55*ONE_ATMOSPHERE
-	alert_pressure = 55*ONE_ATMOSPHERE
+	var/maximum_pressure = 210*ONE_ATMOSPHERE
+	var/fatigue_pressure = 170*ONE_ATMOSPHERE
+	alert_pressure = 170*ONE_ATMOSPHERE
 
-	level = BELOW_PLATING_LEVEL
+	level = 1
 
-/obj/machinery/atmospherics/pipe/simple/New()
+/obj/machinery/atmospherics/pipe/simple/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	..()
 
 	// Pipe colors and icon states are handled by an image cache - so color and icon should
@@ -187,16 +221,26 @@
 
 /obj/machinery/atmospherics/pipe/simple/hide(var/i)
 	if(istype(loc, /turf/simulated))
-		invisibility = i ? 101 : 0
+		set_invisibility(i ? 101 : 0)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/simple/Process()
 	if(!parent) //This should cut back on the overhead calling build_network thousands of times per cycle
 		..()
+	else if(leaking)
+		parent.mingle_with_turf(loc, volume)
+		if(!sound_token && parent.air.return_pressure())
+			update_sound(1)
+		else if(sound_token && !parent.air.return_pressure())
+			update_sound(0)
 	else
 		. = PROCESS_KILL
 
 /obj/machinery/atmospherics/pipe/simple/check_pressure(pressure)
+	// Don't ask me, it happened somehow.
+	if (!istype(loc, /turf))
+		return 1
+
 	var/datum/gas_mixture/environment = loc.return_air()
 
 	var/pressure_difference = pressure - environment.return_pressure()
@@ -212,10 +256,12 @@
 	else return 1
 
 /obj/machinery/atmospherics/pipe/simple/proc/burst()
-	src.visible_message(SPAN_DANGER("\The [src] bursts!"));
+	ASSERT(parent)
+	parent.temporarily_store_air()
+	src.visible_message("<span class='danger'>\The [src] bursts!</span>");
 	playsound(src.loc, 'sound/effects/bang.ogg', 25, 1)
 	var/datum/effect/effect/system/smoke_spread/smoke = new
-	smoke.set_up(1, 0, src.loc, 0)
+	smoke.set_up(1,0, src.loc, 0)
 	smoke.start()
 	qdel(src)
 
@@ -226,11 +272,13 @@
 		set_dir(4)
 
 /obj/machinery/atmospherics/pipe/simple/Destroy()
+	forceMove(null)
 	if(node1)
 		node1.disconnect(src)
+		node1 = null
 	if(node2)
 		node2.disconnect(src)
-
+		node2 = null
 	. = ..()
 
 /obj/machinery/atmospherics/pipe/simple/pipeline_expansion()
@@ -245,12 +293,14 @@
 		node2.update_underlays()
 
 /obj/machinery/atmospherics/pipe/simple/update_icon(var/safety = 0)
+	if(!atmos_initalized)
+		return
 	if(!check_icon_cache())
 		return
 
 	alpha = 255
 
-	cut_overlays()
+	overlays.Cut()
 
 	if(!node1 && !node2)
 		var/turf/T = get_turf(src)
@@ -261,33 +311,36 @@
 				qdel(meter)
 		qdel(src)
 	else if(node1 && node2)
-		add_overlay(icon_manager.get_atmos_icon("pipe", , pipe_color, "[pipe_icon]intact[icon_connect_type]"))
+		overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "[pipe_icon]intact[icon_connect_type]")
+		set_leaking(FALSE)
 	else
-		add_overlay(icon_manager.get_atmos_icon("pipe", , pipe_color, "[pipe_icon]exposed[node1?1:0][node2?1:0][icon_connect_type]"))
+		overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "[pipe_icon]exposed[node1?1:0][node2?1:0][icon_connect_type]")
+		set_leaking(TRUE)
 
 /obj/machinery/atmospherics/pipe/simple/update_underlays()
 	return
 
 /obj/machinery/atmospherics/pipe/simple/atmos_init()
+	..()
 	normalize_dir()
 	var/node1_dir
 	var/node2_dir
 
-	for(var/direction in cardinal)
+	for(var/direction in GLOB.cardinal)
 		if(direction&initialize_directions)
 			if (!node1_dir)
 				node1_dir = direction
 			else if (!node2_dir)
 				node2_dir = direction
 
-	for(var/obj/machinery/atmospherics/target in get_step(src, node1_dir))
-		if(target.initialize_directions & get_dir(target, src))
-			if (check_connect_types(target, src))
+	for(var/obj/machinery/atmospherics/target in get_step(src,node1_dir))
+		if(target.initialize_directions & get_dir(target,src))
+			if (check_connect_types(target,src))
 				node1 = target
 				break
-	for(var/obj/machinery/atmospherics/target in get_step(src, node2_dir))
-		if(target.initialize_directions & get_dir(target, src))
-			if (check_connect_types(target, src))
+	for(var/obj/machinery/atmospherics/target in get_step(src,node2_dir))
+		if(target.initialize_directions & get_dir(target,src))
+			if (check_connect_types(target,src))
 				node2 = target
 				break
 
@@ -296,7 +349,7 @@
 		return
 
 	var/turf/T = loc
-	if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
+	if(level == 1 && !T.is_plating()) hide(1)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/simple/disconnect(obj/machinery/atmospherics/reference)
@@ -316,24 +369,21 @@
 
 /obj/machinery/atmospherics/pipe/simple/visible
 	icon_state = "intact"
-	level = ABOVE_PLATING_LEVEL
-	layer = GAS_PIPE_VISIBLE_LAYER
+	level = 2
 
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers
 	name = "Scrubbers pipe"
-	desc = "A one meter section of scrubbers pipe"
+	desc = "A one meter section of scrubbers pipe."
 	icon_state = "intact-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-scrubbers"
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/simple/visible/supply
 	name = "Air supply pipe"
-	desc = "A one meter section of supply pipe"
+	desc = "A one meter section of supply pipe."
 	icon_state = "intact-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-supply"
 	color = PIPE_COLOR_BLUE
 
@@ -355,27 +405,31 @@
 /obj/machinery/atmospherics/pipe/simple/visible/blue
 	color = PIPE_COLOR_BLUE
 
+/obj/machinery/atmospherics/pipe/simple/visible/fuel
+	name = "Fuel pipe"
+	color = PIPE_COLOR_ORANGE
+	maximum_pressure = 420*ONE_ATMOSPHERE
+	fatigue_pressure = 350*ONE_ATMOSPHERE
+	alert_pressure = 350*ONE_ATMOSPHERE
+
 /obj/machinery/atmospherics/pipe/simple/hidden
 	icon_state = "intact"
-	layer = GAS_PIPE_HIDDEN_LAYER
-	level = BELOW_PLATING_LEVEL
+	level = 1
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers
 	name = "Scrubbers pipe"
-	desc = "A one meter section of scrubbers pipe"
+	desc = "A one meter section of scrubbers pipe."
 	icon_state = "intact-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-scrubbers"
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/simple/hidden/supply
 	name = "Air supply pipe"
-	desc = "A one meter section of supply pipe"
+	desc = "A one meter section of supply pipe."
 	icon_state = "intact-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-supply"
 	color = PIPE_COLOR_BLUE
 
@@ -397,24 +451,18 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/blue
 	color = PIPE_COLOR_BLUE
 
-/obj/machinery/atmospherics/pipe/simple/insulated
-	icon = 'icons/obj/atmospherics/red_pipe.dmi'
-	icon_state = "intact"
-
-	minimum_temperature_difference = 10000
-	thermal_conductivity = 0
-	maximum_pressure = 1000*ONE_ATMOSPHERE
-	fatigue_pressure = 900*ONE_ATMOSPHERE
-	alert_pressure = 900*ONE_ATMOSPHERE
-
-	level = ABOVE_PLATING_LEVEL
-
+/obj/machinery/atmospherics/pipe/simple/hidden/fuel
+	name = "Fuel pipe"
+	color = PIPE_COLOR_ORANGE
+	maximum_pressure = 420*ONE_ATMOSPHERE
+	fatigue_pressure = 350*ONE_ATMOSPHERE
+	alert_pressure = 350*ONE_ATMOSPHERE
 
 /obj/machinery/atmospherics/pipe/manifold
 	icon = 'icons/atmos/manifold.dmi'
 	icon_state = ""
 	name = "pipe manifold"
-	desc = "A manifold composed of regular pipes"
+	desc = "A manifold composed of regular pipes."
 
 	volume = ATMOS_DEFAULT_VOLUME_PIPE * 1.5
 
@@ -423,10 +471,9 @@
 
 	var/obj/machinery/atmospherics/node3
 
-	level = BELOW_PLATING_LEVEL
-	layer = GAS_PIPE_VISIBLE_LAYER
+	level = 1
 
-/obj/machinery/atmospherics/pipe/manifold/New()
+/obj/machinery/atmospherics/pipe/manifold/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	..()
 	alpha = 255
 	icon = null
@@ -443,7 +490,7 @@
 
 /obj/machinery/atmospherics/pipe/manifold/hide(var/i)
 	if(istype(loc, /turf/simulated))
-		invisibility = i ? 101 : 0
+		set_invisibility(i ? 101 : 0)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/manifold/pipeline_expansion()
@@ -458,10 +505,13 @@
 /obj/machinery/atmospherics/pipe/manifold/Destroy()
 	if(node1)
 		node1.disconnect(src)
+		node1 = null
 	if(node2)
 		node2.disconnect(src)
+		node2 = null
 	if(node3)
 		node3.disconnect(src)
+		node3 = null
 
 	. = ..()
 
@@ -496,9 +546,12 @@
 		node3.update_underlays()
 
 /obj/machinery/atmospherics/pipe/manifold/update_icon(var/safety = 0)
+	if(!atmos_initalized)
+		return
 	if(!check_icon_cache())
 		return
 
+	set_leaking(!(node1 && node2 && node3))
 	alpha = 255
 
 	if(!node1 && !node2 && !node3)
@@ -510,9 +563,9 @@
 				qdel(meter)
 		qdel(src)
 	else
-		cut_overlays()
-		add_overlay(icon_manager.get_atmos_icon("manifold", , pipe_color, "core" + icon_connect_type))
-		add_overlay(icon_manager.get_atmos_icon("manifold", , , "clamps" + icon_connect_type))
+		overlays.Cut()
+		overlays += icon_manager.get_atmos_icon("manifold", , pipe_color, "core" + icon_connect_type)
+		overlays += icon_manager.get_atmos_icon("manifold", , , "clamps" + icon_connect_type)
 		underlays.Cut()
 
 		var/turf/T = get_turf(src)
@@ -523,12 +576,12 @@
 
 		directions -= dir
 
-		directions -= add_underlay(T, node1, node1_direction, icon_connect_type)
-		directions -= add_underlay(T, node2, node2_direction, icon_connect_type)
-		directions -= add_underlay(T, node3, node3_direction, icon_connect_type)
+		directions -= add_underlay(T,node1,node1_direction,icon_connect_type)
+		directions -= add_underlay(T,node2,node2_direction,icon_connect_type)
+		directions -= add_underlay(T,node3,node3_direction,icon_connect_type)
 
 		for(var/D in directions)
-			add_underlay(T,,D, icon_connect_type)
+			add_underlay(T,,D,icon_connect_type)
 
 
 /obj/machinery/atmospherics/pipe/manifold/update_underlays()
@@ -536,13 +589,14 @@
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/manifold/atmos_init()
+	..()
 	var/connect_directions = (NORTH|SOUTH|EAST|WEST)&(~dir)
 
-	for(var/direction in cardinal)
+	for(var/direction in GLOB.cardinal)
 		if(direction&connect_directions)
-			for(var/obj/machinery/atmospherics/target in get_step(src, direction))
-				if(target.initialize_directions & get_dir(target, src))
-					if (check_connect_types(target, src))
+			for(var/obj/machinery/atmospherics/target in get_step(src,direction))
+				if(target.initialize_directions & get_dir(target,src))
+					if (check_connect_types(target,src))
 						node1 = target
 						connect_directions &= ~direction
 						break
@@ -550,11 +604,11 @@
 				break
 
 
-	for(var/direction in cardinal)
+	for(var/direction in GLOB.cardinal)
 		if(direction&connect_directions)
-			for(var/obj/machinery/atmospherics/target in get_step(src, direction))
-				if(target.initialize_directions & get_dir(target, src))
-					if (check_connect_types(target, src))
+			for(var/obj/machinery/atmospherics/target in get_step(src,direction))
+				if(target.initialize_directions & get_dir(target,src))
+					if (check_connect_types(target,src))
 						node2 = target
 						connect_directions &= ~direction
 						break
@@ -562,11 +616,11 @@
 				break
 
 
-	for(var/direction in cardinal)
+	for(var/direction in GLOB.cardinal)
 		if(direction&connect_directions)
-			for(var/obj/machinery/atmospherics/target in get_step(src, direction))
-				if(target.initialize_directions & get_dir(target, src))
-					if (check_connect_types(target, src))
+			for(var/obj/machinery/atmospherics/target in get_step(src,direction))
+				if(target.initialize_directions & get_dir(target,src))
+					if (check_connect_types(target,src))
 						node3 = target
 						connect_directions &= ~direction
 						break
@@ -578,28 +632,26 @@
 		return
 
 	var/turf/T = get_turf(src)
-	if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
+	if(level == 1 && !T.is_plating()) hide(1)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/manifold/visible
 	icon_state = "map"
-	level = ABOVE_PLATING_LEVEL
+	level = 2
 
 /obj/machinery/atmospherics/pipe/manifold/visible/scrubbers
 	name="Scrubbers pipe manifold"
-	desc = "A manifold composed of scrubbers pipes"
+	desc = "A manifold composed of scrubbers pipes."
 	icon_state = "map-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-scrubbers"
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/manifold/visible/supply
 	name="Air supply pipe manifold"
-	desc = "A manifold composed of supply pipes"
+	desc = "A manifold composed of supply pipes."
 	icon_state = "map-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-supply"
 	color = PIPE_COLOR_BLUE
 
@@ -621,27 +673,29 @@
 /obj/machinery/atmospherics/pipe/manifold/visible/blue
 	color = PIPE_COLOR_BLUE
 
+/obj/machinery/atmospherics/pipe/manifold/visible/fuel
+	name = "Fuel pipe manifold"
+	color = PIPE_COLOR_ORANGE
+
 
 /obj/machinery/atmospherics/pipe/manifold/hidden
 	icon_state = "map"
-	level = BELOW_PLATING_LEVEL
+	level = 1
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers
 	name="Scrubbers pipe manifold"
-	desc = "A manifold composed of scrubbers pipes"
+	desc = "A manifold composed of scrubbers pipes."
 	icon_state = "map-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-scrubbers"
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply
 	name="Air supply pipe manifold"
-	desc = "A manifold composed of supply pipes"
+	desc = "A manifold composed of supply pipes."
 	icon_state = "map-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-supply"
 	color = PIPE_COLOR_BLUE
 
@@ -663,11 +717,15 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/blue
 	color = PIPE_COLOR_BLUE
 
+/obj/machinery/atmospherics/pipe/manifold/hidden/fuel
+	name = "Fuel pipe manifold"
+	color = PIPE_COLOR_ORANGE
+
 /obj/machinery/atmospherics/pipe/manifold4w
 	icon = 'icons/atmos/manifold.dmi'
 	icon_state = ""
 	name = "4-way pipe manifold"
-	desc = "A manifold composed of regular pipes"
+	desc = "A manifold composed of regular pipes."
 
 	volume = ATMOS_DEFAULT_VOLUME_PIPE * 2
 
@@ -677,10 +735,9 @@
 	var/obj/machinery/atmospherics/node3
 	var/obj/machinery/atmospherics/node4
 
-	level = BELOW_PLATING_LEVEL
-	layer = GAS_PIPE_VISIBLE_LAYER
+	level = 1
 
-/obj/machinery/atmospherics/pipe/manifold4w/New()
+/obj/machinery/atmospherics/pipe/manifold4w/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	..()
 	alpha = 255
 	icon = null
@@ -697,12 +754,16 @@
 /obj/machinery/atmospherics/pipe/manifold4w/Destroy()
 	if(node1)
 		node1.disconnect(src)
+		node1 = null
 	if(node2)
 		node2.disconnect(src)
+		node2 = null
 	if(node3)
 		node3.disconnect(src)
+		node3 = null
 	if(node4)
 		node4.disconnect(src)
+		node4 = null
 
 	. = ..()
 
@@ -744,9 +805,12 @@
 		node4.update_underlays()
 
 /obj/machinery/atmospherics/pipe/manifold4w/update_icon(var/safety = 0)
+	if(!atmos_initalized)
+		return
 	if(!check_icon_cache())
 		return
 
+	set_leaking(!(node1 && node2 && node3 && node4))
 	alpha = 255
 
 	if(!node1 && !node2 && !node3 && !node4)
@@ -758,9 +822,9 @@
 				qdel(meter)
 		qdel(src)
 	else
-		cut_overlays()
-		add_overlay(icon_manager.get_atmos_icon("manifold", , pipe_color, "4way" + icon_connect_type))
-		add_overlay(icon_manager.get_atmos_icon("manifold", , , "clamps_4way" + icon_connect_type))
+		overlays.Cut()
+		overlays += icon_manager.get_atmos_icon("manifold", , pipe_color, "4way" + icon_connect_type)
+		overlays += icon_manager.get_atmos_icon("manifold", , , "clamps_4way" + icon_connect_type)
 		underlays.Cut()
 
 		/*
@@ -773,7 +837,7 @@
 		directions -= add_underlay(node4)
 
 		for(var/D in directions)
-			add_underlay(, D)
+			add_underlay(,D)
 		*/
 
 		var/turf/T = get_turf(src)
@@ -785,13 +849,13 @@
 
 		directions -= dir
 
-		directions -= add_underlay(T, node1, node1_direction, icon_connect_type)
-		directions -= add_underlay(T, node2, node2_direction, icon_connect_type)
-		directions -= add_underlay(T, node3, node3_direction, icon_connect_type)
-		directions -= add_underlay(T, node4, node4_direction, icon_connect_type)
+		directions -= add_underlay(T,node1,node1_direction,icon_connect_type)
+		directions -= add_underlay(T,node2,node2_direction,icon_connect_type)
+		directions -= add_underlay(T,node3,node3_direction,icon_connect_type)
+		directions -= add_underlay(T,node4,node4_direction,icon_connect_type)
 
 		for(var/D in directions)
-			add_underlay(T,,D, icon_connect_type)
+			add_underlay(T,,D,icon_connect_type)
 
 
 /obj/machinery/atmospherics/pipe/manifold4w/update_underlays()
@@ -800,32 +864,32 @@
 
 /obj/machinery/atmospherics/pipe/manifold4w/hide(var/i)
 	if(istype(loc, /turf/simulated))
-		invisibility = i ? 101 : 0
+		set_invisibility(i ? 101 : 0)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/manifold4w/atmos_init()
-
-	for(var/obj/machinery/atmospherics/target in get_step(src, 1))
+	..()
+	for(var/obj/machinery/atmospherics/target in get_step(src,1))
 		if(target.initialize_directions & 2)
-			if (check_connect_types(target, src))
+			if (check_connect_types(target,src))
 				node1 = target
 				break
 
-	for(var/obj/machinery/atmospherics/target in get_step(src, 2))
+	for(var/obj/machinery/atmospherics/target in get_step(src,2))
 		if(target.initialize_directions & 1)
-			if (check_connect_types(target, src))
+			if (check_connect_types(target,src))
 				node2 = target
 				break
 
-	for(var/obj/machinery/atmospherics/target in get_step(src, 4))
+	for(var/obj/machinery/atmospherics/target in get_step(src,4))
 		if(target.initialize_directions & 8)
-			if (check_connect_types(target, src))
+			if (check_connect_types(target,src))
 				node3 = target
 				break
 
-	for(var/obj/machinery/atmospherics/target in get_step(src, 8))
+	for(var/obj/machinery/atmospherics/target in get_step(src,8))
 		if(target.initialize_directions & 4)
-			if (check_connect_types(target, src))
+			if (check_connect_types(target,src))
 				node4 = target
 				break
 
@@ -834,28 +898,26 @@
 		return
 
 	var/turf/T = get_turf(src)
-	if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
+	if(level == 1 && !T.is_plating()) hide(1)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/manifold4w/visible
 	icon_state = "map_4way"
-	level = ABOVE_PLATING_LEVEL
+	level = 2
 
 /obj/machinery/atmospherics/pipe/manifold4w/visible/scrubbers
 	name="4-way scrubbers pipe manifold"
-	desc = "A manifold composed of scrubbers pipes"
+	desc = "A manifold composed of scrubbers pipes."
 	icon_state = "map_4way-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-scrubbers"
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/manifold4w/visible/supply
 	name="4-way air supply pipe manifold"
-	desc = "A manifold composed of supply pipes"
+	desc = "A manifold composed of supply pipes."
 	icon_state = "map_4way-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-supply"
 	color = PIPE_COLOR_BLUE
 
@@ -877,26 +939,28 @@
 /obj/machinery/atmospherics/pipe/manifold4w/visible/blue
 	color = PIPE_COLOR_BLUE
 
+/obj/machinery/atmospherics/pipe/manifold4w/visible/fuel
+	name = "4-way fuel pipe manifold"
+	color = PIPE_COLOR_ORANGE
+
 /obj/machinery/atmospherics/pipe/manifold4w/hidden
 	icon_state = "map_4way"
-	level = BELOW_PLATING_LEVEL
+	level = 1
 	alpha = 128		//set for the benefit of mapping - this is reset to opaque when the pipe is spawned in game
 
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers
 	name="4-way scrubbers pipe manifold"
-	desc = "A manifold composed of scrubbers pipes"
+	desc = "A manifold composed of scrubbers pipes."
 	icon_state = "map_4way-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-scrubbers"
 	color = PIPE_COLOR_RED
 
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply
 	name="4-way air supply pipe manifold"
-	desc = "A manifold composed of supply pipes"
+	desc = "A manifold composed of supply pipes."
 	icon_state = "map_4way-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
-	layer = GAS_PIPE_VISIBLE_LAYER
 	icon_connect_type = "-supply"
 	color = PIPE_COLOR_BLUE
 
@@ -918,13 +982,16 @@
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/blue
 	color = PIPE_COLOR_BLUE
 
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/fuel
+	name = "4-way fuel pipe manifold"
+	color = PIPE_COLOR_ORANGE
+
 /obj/machinery/atmospherics/pipe/cap
 	name = "pipe endcap"
-	desc = "An endcap for pipes"
+	desc = "An endcap for pipes."
 	icon = 'icons/atmos/pipes.dmi'
 	icon_state = ""
-	level = ABOVE_PLATING_LEVEL
-	layer = GAS_PIPE_VISIBLE_LAYER
+	level = 2
 
 	volume = 35
 
@@ -933,13 +1000,13 @@
 
 	var/obj/machinery/atmospherics/node
 
-/obj/machinery/atmospherics/pipe/cap/New()
+/obj/machinery/atmospherics/pipe/cap/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	..()
 	initialize_directions = dir
 
 /obj/machinery/atmospherics/pipe/cap/hide(var/i)
 	if(istype(loc, /turf/simulated))
-		invisibility = i ? 101 : 0
+		set_invisibility(i ? 101 : 0)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/cap/pipeline_expansion()
@@ -978,27 +1045,28 @@
 
 	alpha = 255
 
-	cut_overlays()
-	add_overlay(icon_manager.get_atmos_icon("pipe", , pipe_color, "cap"))
+	overlays.Cut()
+	overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "cap")
 
 /obj/machinery/atmospherics/pipe/cap/atmos_init()
+	..()
 	for(var/obj/machinery/atmospherics/target in get_step(src, dir))
-		if(target.initialize_directions & get_dir(target, src))
-			if (check_connect_types(target, src))
+		if(target.initialize_directions & get_dir(target,src))
+			if (check_connect_types(target,src))
 				node = target
 				break
 
 	var/turf/T = src.loc			// hide if turf is not intact
-	if(level == BELOW_PLATING_LEVEL && !T.is_plating()) hide(1)
+	if(level == 1 && !T.is_plating()) hide(1)
 	update_icon()
 
 /obj/machinery/atmospherics/pipe/cap/visible
-	level = ABOVE_PLATING_LEVEL
+	level = 2
 	icon_state = "cap"
 
 /obj/machinery/atmospherics/pipe/cap/visible/scrubbers
 	name = "scrubbers pipe endcap"
-	desc = "An endcap for scrubbers pipes"
+	desc = "An endcap for scrubbers pipes."
 	icon_state = "cap-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	icon_connect_type = "-scrubbers"
@@ -1006,20 +1074,25 @@
 
 /obj/machinery/atmospherics/pipe/cap/visible/supply
 	name = "supply pipe endcap"
-	desc = "An endcap for supply pipes"
+	desc = "An endcap for supply pipes."
 	icon_state = "cap-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	icon_connect_type = "-supply"
 	color = PIPE_COLOR_BLUE
 
+/obj/machinery/atmospherics/pipe/cap/visible/fuel
+	name = "fuel pipe endcap"
+	desc = "An endcap for fuel pipes."
+	color = PIPE_COLOR_ORANGE
+
 /obj/machinery/atmospherics/pipe/cap/hidden
-	level = BELOW_PLATING_LEVEL
+	level = 1
 	icon_state = "cap"
 	alpha = 128
 
 /obj/machinery/atmospherics/pipe/cap/hidden/scrubbers
 	name = "scrubbers pipe endcap"
-	desc = "An endcap for scrubbers pipes"
+	desc = "An endcap for scrubbers pipes."
 	icon_state = "cap-f-scrubbers"
 	connect_types = CONNECT_TYPE_SCRUBBER
 	icon_connect_type = "-scrubbers"
@@ -1027,11 +1100,17 @@
 
 /obj/machinery/atmospherics/pipe/cap/hidden/supply
 	name = "supply pipe endcap"
-	desc = "An endcap for supply pipes"
+	desc = "An endcap for supply pipes."
 	icon_state = "cap-f-supply"
 	connect_types = CONNECT_TYPE_SUPPLY
 	icon_connect_type = "-supply"
 	color = PIPE_COLOR_BLUE
+
+/obj/machinery/atmospherics/pipe/cap/hidden/fuel
+	name = "fuel pipe endcap"
+	desc = "An endcap for fuel pipes."
+	color = PIPE_COLOR_ORANGE
+
 
 
 /obj/machinery/atmospherics/pipe/tank
@@ -1044,16 +1123,15 @@
 	volume = 10000 //in liters, 1 meters by 1 meters by 2 meters ~tweaked it a little to simulate a pressure tank without needing to recode them yet
 	var/start_pressure = 25*ONE_ATMOSPHERE
 
-	level = BELOW_PLATING_LEVEL
+	level = 1
 	dir = SOUTH
 	initialize_directions = SOUTH
-	density = TRUE
-	layer = ABOVE_WINDOW_LAYER
+	density = 1
 
-/obj/machinery/atmospherics/pipe/tank/New()
+/obj/machinery/atmospherics/pipe/tank/Initialize()
 	icon_state = "air"
 	initialize_directions = dir
-	..()
+	. = ..()
 
 /obj/machinery/atmospherics/pipe/tank/Process()
 	if(!parent)
@@ -1082,11 +1160,12 @@
 	update_underlays()
 
 /obj/machinery/atmospherics/pipe/tank/atmos_init()
+	..()
 	var/connect_direction = dir
 
-	for(var/obj/machinery/atmospherics/target in get_step(src, connect_direction))
-		if(target.initialize_directions & get_dir(target, src))
-			if (check_connect_types(target, src))
+	for(var/obj/machinery/atmospherics/target in get_step(src,connect_direction))
+		if(target.initialize_directions & get_dir(target,src))
+			if (check_connect_types(target,src))
 				node1 = target
 				break
 
@@ -1106,11 +1185,14 @@
 	if(istype(W, /obj/item/device/pipe_painter))
 		return
 
+	if(istype(W, /obj/item/device/scanner/gas))
+		return
+
 /obj/machinery/atmospherics/pipe/tank/air
 	name = "Pressure Tank (Air)"
 	icon_state = "air_map"
 
-/obj/machinery/atmospherics/pipe/tank/air/New()
+/obj/machinery/atmospherics/pipe/tank/air/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	air_temporary = new
 	air_temporary.volume = volume
 	air_temporary.temperature = T20C
@@ -1126,7 +1208,7 @@
 	name = "Pressure Tank (Oxygen)"
 	icon_state = "o2_map"
 
-/obj/machinery/atmospherics/pipe/tank/oxygen/New()
+/obj/machinery/atmospherics/pipe/tank/oxygen/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	air_temporary = new
 	air_temporary.volume = volume
 	air_temporary.temperature = T20C
@@ -1140,7 +1222,7 @@
 	name = "Pressure Tank (Nitrogen)"
 	icon_state = "n2_map"
 
-/obj/machinery/atmospherics/pipe/tank/nitrogen/New()
+/obj/machinery/atmospherics/pipe/tank/nitrogen/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	air_temporary = new
 	air_temporary.volume = volume
 	air_temporary.temperature = T20C
@@ -1154,7 +1236,7 @@
 	name = "Pressure Tank (Carbon Dioxide)"
 	icon_state = "co2_map"
 
-/obj/machinery/atmospherics/pipe/tank/carbon_dioxide/New()
+/obj/machinery/atmospherics/pipe/tank/carbon_dioxide/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	air_temporary = new
 	air_temporary.volume = volume
 	air_temporary.temperature = T20C
@@ -1165,25 +1247,24 @@
 	icon_state = "co2"
 
 /obj/machinery/atmospherics/pipe/tank/plasma
-	name = "Pressure Tank (Plasma)"
-	description_antag = "Will blind people if they do not wear face-covering gear"
+	name = "Pressure Tank (plasma)"
 	icon_state = "plasma_map"
 
-/obj/machinery/atmospherics/pipe/tank/plasma/New()
+/obj/machinery/atmospherics/pipe/tank/plasma/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	air_temporary = new
 	air_temporary.volume = volume
 	air_temporary.temperature = T20C
 
-	air_temporary.adjust_gas("plasma", (start_pressure)*(air_temporary.volume)/(R_IDEAL_GAS_EQUATION*air_temporary.temperature))
+	air_temporary.adjust_gas(MATERIAL_PLASMA, (start_pressure)*(air_temporary.volume)/(R_IDEAL_GAS_EQUATION*air_temporary.temperature))
 
 	..()
-	icon_state = "plasma"
+	icon_state = MATERIAL_PLASMA
 
 /obj/machinery/atmospherics/pipe/tank/nitrous_oxide
 	name = "Pressure Tank (Nitrous Oxide)"
 	icon_state = "n2o_map"
 
-/obj/machinery/atmospherics/pipe/tank/nitrous_oxide/New()
+/obj/machinery/atmospherics/pipe/tank/nitrous_oxide/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	air_temporary = new
 	air_temporary.volume = volume
 	air_temporary.temperature = T0C
@@ -1193,14 +1274,28 @@
 	..()
 	icon_state = "n2o"
 
+/obj/machinery/atmospherics/pipe/tank/hydrogen
+	name = "Pressure Tank (Hydrogen)"
+	icon_state = "h2_map"
+
+/obj/machinery/atmospherics/pipe/tank/hydrogen/New(var/atom/location, var/direction, var/nocircuit = FALSE)
+	air_temporary = new
+	air_temporary.volume = volume
+	air_temporary.temperature = T20C
+
+	air_temporary.adjust_gas("hydrogen", (start_pressure)*(air_temporary.volume)/(R_IDEAL_GAS_EQUATION*air_temporary.temperature))
+
+	..()
+	icon_state = "h2"
+
 /obj/machinery/atmospherics/pipe/vent
 	icon = 'icons/obj/atmospherics/pipe_vent.dmi'
 	icon_state = "intact"
 
 	name = "Vent"
-	desc = "A large air vent"
+	desc = "A large air vent."
 
-	level = BELOW_PLATING_LEVEL
+	level = 1
 
 	volume = 250
 
@@ -1209,8 +1304,7 @@
 
 	var/build_killswitch = 1
 
-
-/obj/machinery/atmospherics/pipe/vent/New()
+/obj/machinery/atmospherics/pipe/vent/New(var/atom/location, var/direction, var/nocircuit = FALSE)
 	initialize_directions = dir
 	..()
 
@@ -1248,11 +1342,12 @@
 		icon_state = "exposed"
 
 /obj/machinery/atmospherics/pipe/vent/atmos_init()
+	..()
 	var/connect_direction = dir
 
-	for(var/obj/machinery/atmospherics/target in get_step(src, connect_direction))
-		if(target.initialize_directions & get_dir(target, src))
-			if (check_connect_types(target, src))
+	for(var/obj/machinery/atmospherics/target in get_step(src,connect_direction))
+		if(target.initialize_directions & get_dir(target,src))
+			if (check_connect_types(target,src))
 				node1 = target
 				break
 
@@ -1278,7 +1373,7 @@
 
 /obj/machinery/atmospherics/pipe/simple/visible/universal
 	name="Universal pipe adapter"
-	desc = "An adapter for regular, supply and scrubbers pipes"
+	desc = "An adapter for regular, supply and scrubbers pipes."
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY|CONNECT_TYPE_SCRUBBER
 	icon_state = "map_universal"
 
@@ -1288,8 +1383,8 @@
 
 	alpha = 255
 
-	cut_overlays()
-	add_overlay(icon_manager.get_atmos_icon("pipe", , pipe_color, "universal"))
+	overlays.Cut()
+	overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "universal")
 	underlays.Cut()
 
 	if (node1)
@@ -1297,15 +1392,13 @@
 		if(node2)
 			universal_underlays(node2)
 		else
-			var/node2_dir = turn(get_dir(src, node1), -180)
-			universal_underlays(, node2_dir)
+			var/node1_dir = get_dir(node1,src)
+			universal_underlays(null, node1_dir)
 	else if (node2)
 		universal_underlays(node2)
-		var/node1_dir = turn(get_dir(src, node2), -180)
-		universal_underlays(, node1_dir)
 	else
-		universal_underlays(, dir)
-		universal_underlays(, turn(dir, -180))
+		universal_underlays(null, dir)
+		universal_underlays(null, turn(dir, -180))
 
 /obj/machinery/atmospherics/pipe/simple/visible/universal/update_underlays()
 	..()
@@ -1315,7 +1408,7 @@
 
 /obj/machinery/atmospherics/pipe/simple/hidden/universal
 	name="Universal pipe adapter"
-	desc = "An adapter for regular, supply and scrubbers pipes"
+	desc = "An adapter for regular, supply and scrubbers pipes."
 	connect_types = CONNECT_TYPE_REGULAR|CONNECT_TYPE_SUPPLY|CONNECT_TYPE_SCRUBBER
 	icon_state = "map_universal"
 
@@ -1325,8 +1418,8 @@
 
 	alpha = 255
 
-	cut_overlays()
-	add_overlay(icon_manager.get_atmos_icon("pipe", , pipe_color, "universal"))
+	overlays.Cut()
+	overlays += icon_manager.get_atmos_icon("pipe", , pipe_color, "universal")
 	underlays.Cut()
 
 	if (node1)
@@ -1334,15 +1427,15 @@
 		if(node2)
 			universal_underlays(node2)
 		else
-			var/node2_dir = turn(get_dir(src, node1), -180)
-			universal_underlays(, node2_dir)
+			var/node2_dir = turn(get_dir(src,node1),-180)
+			universal_underlays(,node2_dir)
 	else if (node2)
 		universal_underlays(node2)
-		var/node1_dir = turn(get_dir(src, node2), -180)
-		universal_underlays(, node1_dir)
+		var/node1_dir = turn(get_dir(src,node2),-180)
+		universal_underlays(,node1_dir)
 	else
-		universal_underlays(, dir)
-		universal_underlays(, turn(dir, -180))
+		universal_underlays(,dir)
+		universal_underlays(,turn(dir, -180))
 
 /obj/machinery/atmospherics/pipe/simple/hidden/universal/update_underlays()
 	..()
@@ -1351,7 +1444,7 @@
 /obj/machinery/atmospherics/proc/universal_underlays(var/obj/machinery/atmospherics/node, var/direction)
 	var/turf/T = loc
 	if(node)
-		var/node_dir = get_dir(src, node)
+		var/node_dir = get_dir(src,node)
 		if(node.icon_connect_type == "-supply")
 			add_underlay_adapter(T, , node_dir, "")
 			add_underlay_adapter(T, node, node_dir, "-supply")
@@ -1371,9 +1464,40 @@
 
 /obj/machinery/atmospherics/proc/add_underlay_adapter(var/turf/T, var/obj/machinery/atmospherics/node, var/direction, var/icon_connect_type) //modified from add_underlay, does not make exposed underlays
 	if(node)
-		if(!T.is_plating() && node.level == BELOW_PLATING_LEVEL && istype(node, /obj/machinery/atmospherics/pipe))
+		if(!T.is_plating() && node.level == 1 && istype(node, /obj/machinery/atmospherics/pipe))
 			underlays += icon_manager.get_atmos_icon("underlay", direction, color_cache_name(node), "down" + icon_connect_type)
 		else
 			underlays += icon_manager.get_atmos_icon("underlay", direction, color_cache_name(node), "intact" + icon_connect_type)
 	else
 		underlays += icon_manager.get_atmos_icon("underlay", direction, color_cache_name(node), "retracted" + icon_connect_type)
+
+#undef SOUND_ID
+
+// Legacy map sink object
+/obj/machinery/atmospherics/pipe/simple/sink_heat
+	name = "legacy heat sink"
+	desc = "A legacy object. You shouldn't see this."
+	icon = 'icons/obj/atmospherics/heat_exchanger.dmi'
+	icon_state = "intact"
+	var/build_killswitch = 1
+	var/datum/gas_mixture/air_contents = new
+
+/obj/machinery/atmospherics/pipe/simple/sink_heat/Process()
+	if(!parent)
+		if(build_killswitch <= 0)
+			. = PROCESS_KILL
+		else
+			build_killswitch--
+		..()
+		return
+	else
+		air_contents.temperature = 0 // Remove all heat
+
+/obj/machinery/atmospherics/pipe/simple/sink_heat/atmos_init()
+	..()
+	var/connect_direction = dir
+	for(var/obj/machinery/atmospherics/target in get_step(src,connect_direction))
+		if(target.initialize_directions & get_dir(target,src))
+			if(check_connect_types(target,src))
+				node1 = target
+				break

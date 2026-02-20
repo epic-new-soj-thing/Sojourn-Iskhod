@@ -8,8 +8,9 @@
 #define ATM_O2		3
 #define ATM_N2		4
 #define ATM_CO2		5
-#define ATM_P		6	//Plasma
+#define ATM_P		6	//plasma
 #define ATM_N2O		7
+#define ATM_H2		8
 
 //--------------------------------------------
 // Omni port datum
@@ -101,8 +102,10 @@
 		if(ATM_CO2)
 			return "carbon_dioxide"
 		if(ATM_P)
-			return "plasma"
+			return MATERIAL_PLASMA
 		if(ATM_N2O)
 			return "sleeping_agent"
+		if(ATM_H2)
+			return "hydrogen"
 		else
 			return null
