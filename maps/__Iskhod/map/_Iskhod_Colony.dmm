@@ -35219,18 +35219,17 @@
 /obj/structure/window/basic/iskhod{
 	dir = 8
 	},
-/obj/random/furniture/pottedplant,
-/obj/structure/cable/green{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/dark/orangecorner,
+/obj/structure/cable/green{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
+	},
+/turf/simulated/floor/plating/under,
 /area/iskhod/engineering)
 "jbO" = (
 /obj/structure/railing/grey{
@@ -79557,18 +79556,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
-"uHe" = (
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
-	},
-/obj/structure/cable/green{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-1"
-	},
-/turf/simulated/open,
-/area/iskhod/engineering/enginehallway)
 "uHg" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/sign/misc/enlist{
@@ -85719,6 +85706,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section2)
+"woN" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/obj/structure/cable/green{
+	d1 = 32;
+	d2 = 2;
+	icon_state = "32-1"
+	},
+/turf/simulated/open,
+/area/iskhod/engineering/enginehallway)
 "woO" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/firedoor,
@@ -151277,7 +151276,7 @@ cFZ
 uuK
 noG
 pIb
-uHe
+woN
 sGd
 sGd
 arf
