@@ -254,6 +254,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/door/airlock/glass,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/crew_quarters/sleep/cryo2)
 "adk" = (
@@ -2247,7 +2248,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "aBH" = (
 /obj/effect/floor_decal/industrial/danger{
@@ -4018,9 +4019,6 @@
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 6
-	},
-/obj/structure/railing/grey{
-	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -6053,12 +6051,6 @@
 "bzA" = (
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/crew_quarters/cafeteria)
-"bzC" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 5
-	},
-/turf/simulated/floor/airless/ceiling,
-/area/colony)
 "bzF" = (
 /obj/machinery/autolathe/loaded,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -7426,15 +7418,6 @@
 	icon_state = "6,5"
 	},
 /area/shuttle/vasiliy_shuttle_area)
-"bRA" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_y = 0
-	},
-/turf/simulated/floor/wood,
-/area/iskhod/command/gmaster)
 "bRB" = (
 /obj/machinery/newscaster{
 	dir = 8;
@@ -8132,14 +8115,6 @@
 /turf/simulated/open,
 /area/iskhod/medical/medbay/uppercor)
 "bZS" = (
-/obj/structure/disposalpipe/junction{
-	dir = 2;
-	icon_state = "pipe-j2"
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 5
-	},
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/cable/yellow{
@@ -8147,12 +8122,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/yellow{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/enginehallway)
 "bZW" = (
@@ -8216,9 +8187,6 @@
 	dir = 4
 	},
 /obj/machinery/light/floor{
-	dir = 4
-	},
-/obj/structure/railing/grey{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -12178,9 +12146,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 10
 	},
-/obj/structure/railing/grey{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "dcW" = (
@@ -12522,7 +12487,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/industrial/box/red,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
 "djd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -14275,7 +14240,7 @@
 	pixel_y = -32
 	},
 /obj/effect/floor_decal/industrial/hatch/blue,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "dDo" = (
 /obj/random/closet_tech,
@@ -15738,6 +15703,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/multi_tile/glass,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/crew_quarters/sleep/cryo)
 "eae" = (
@@ -15906,7 +15872,7 @@
 	dir = 1
 	},
 /obj/machinery/disposal,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "ecv" = (
 /obj/random/scrap/moderate_weighted,
@@ -17990,9 +17956,9 @@
 	dir = 8
 	},
 /obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/misc3)
@@ -18545,8 +18511,8 @@
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "eJZ" = (
 /obj/machinery/portable_atmospherics/canister/hydrogen/engine_setup,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/iskhod/engineering/engine_room)
+/turf/simulated/floor/tiled/dark/panels,
+/area/iskhod/engineering/atmos)
 "eKc" = (
 /obj/structure/closet/wall_mounted/emcloset{
 	pixel_y = 32
@@ -19137,7 +19103,6 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/atmos)
 "eTp" = (
-/obj/structure/disposalpipe/segment,
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
@@ -19145,6 +19110,15 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/disposalpipe/junction{
+	dir = 2;
+	icon_state = "pipe-j2"
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/enginehallway)
 "eTA" = (
@@ -19211,12 +19185,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/maintenance/undergroundfloor2east)
-"eTZ" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 6
-	},
-/turf/simulated/floor/airless/ceiling,
-/area/colony)
 "eUb" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/firedoor,
@@ -20990,6 +20958,20 @@
 /obj/machinery/computer/borgupload{
 	dir = 1
 	},
+/obj/machinery/power/apc{
+	name = "South APC";
+	operating = 0;
+	pixel_y = -28
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai_upload)
 "frN" = (
@@ -21274,6 +21256,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/door/airlock/glass,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/crew_quarters/locker)
 "fwj" = (
@@ -22467,7 +22450,7 @@
 /area/iskhod/crew_quarters/dorm1)
 "fLh" = (
 /obj/machinery/recharge_station,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "fLq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -23278,6 +23261,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/obj/structure/table/woodentable,
 /turf/simulated/floor/carpet/oracarpet,
 /area/iskhod/command/gmaster/quarters)
 "fVQ" = (
@@ -30197,9 +30181,6 @@
 /obj/machinery/light/floor{
 	dir = 8
 	},
-/obj/structure/railing/grey{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "hPy" = (
@@ -31257,7 +31238,7 @@
 /obj/machinery/camera/network/engineering{
 	dir = 1
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "idv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -32117,7 +32098,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "iqh" = (
 /obj/effect/floor_decal/industrial/road/curve1,
@@ -33814,9 +33795,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
-/obj/structure/railing/grey{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "iKK" = (
@@ -34566,12 +34544,6 @@
 /obj/structure/boulder,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/hallway/main/f1section1)
-"iUD" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 8
-	},
-/turf/simulated/floor/airless/ceiling,
-/area/colony)
 "iUG" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/firedoor,
@@ -36533,9 +36505,11 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
 "jtd" = (
-/obj/machinery/portable_atmospherics/canister/plasma/engine_setup,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/iskhod/engineering/engine_room)
+/obj/structure/bed/chair/sofa/yellow/left{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/iskhod/command/gmaster/quarters)
 "jtf" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 5
@@ -36925,11 +36899,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/turret_protected/ai_upload)
@@ -38239,9 +38208,20 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/bioreactor)
 "jPY" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
-/turf/simulated/floor/airless/ceiling,
-/area/colony)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/wood,
+/area/iskhod/command/gmaster)
 "jPZ" = (
 /obj/structure/disposalpipe/down,
 /obj/effect/overlay/water,
@@ -38752,7 +38732,7 @@
 /area/iskhod/hallway/surface/section1)
 "jXo" = (
 /obj/machinery/vending/cola,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "jXy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -39034,13 +39014,6 @@
 	icon_state = "6,22"
 	},
 /area/iskhod/pros/shuttle_landing_zone)
-"kbt" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 6;
-	tag = "icon-intact (SOUTHEAST)"
-	},
-/turf/space,
-/area/colony)
 "kbC" = (
 /obj/structure/bed/padded,
 /obj/item/bedsheet/mime,
@@ -41452,10 +41425,9 @@
 	dir = 4
 	},
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	dir = 8
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/turret_protected/ai_upload)
@@ -41535,7 +41507,7 @@
 	brightness_power = 1;
 	dir = 8
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "kHY" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
@@ -46980,6 +46952,9 @@
 	dir = 1;
 	pixel_y = -25
 	},
+/obj/structure/bed/chair/sofa/yellow/corner{
+	dir = 4
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster/quarters)
 "mfy" = (
@@ -47499,11 +47474,6 @@
 	dir = 1
 	},
 /turf/simulated/floor/reinforced,
-/area/iskhod/engineering/engine_room)
-"mmJ" = (
-/obj/machinery/light,
-/obj/machinery/portable_atmospherics/canister/hydrogen/engine_setup,
-/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
 "mmO" = (
 /obj/structure/table/rack,
@@ -49753,11 +49723,9 @@
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/swo)
 "mTm" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 10
-	},
-/turf/simulated/floor/airless/ceiling,
-/area/colony)
+/obj/machinery/power/port_gen/pacman/diesel/anchored,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/engineering/engine_room)
 "mTA" = (
 /obj/machinery/door/window/iskhod{
 	dir = 1;
@@ -51317,12 +51285,19 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "noG" = (
-/obj/machinery/firealarm{
-	dir = 8;
-	pixel_x = 32
-	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/network/engineering{
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -51973,10 +51948,8 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "nuy" = (
-/obj/machinery/atmospherics/binary/pump/high_power{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/cyan,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "nuz" = (
@@ -52922,6 +52895,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/glass,
 /turf/simulated/floor/plating/under,
 /area/iskhod/crew_quarters/locker)
 "nFQ" = (
@@ -54589,7 +54563,7 @@
 /area/iskhod/maintenance/undergroundfloor1east)
 "odr" = (
 /obj/machinery/vending/snack,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "odu" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
@@ -57089,7 +57063,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/recharger,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "oOb" = (
 /obj/structure/bonfire/permanent,
@@ -57879,6 +57853,17 @@
 /area/iskhod/maintenance/undergroundfloor2west)
 "oXg" = (
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
 /turf/simulated/floor/carpet/oracarpet,
 /area/iskhod/command/gmaster)
 "oXh" = (
@@ -60818,12 +60803,12 @@
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/absolutism/chapel)
 "pLn" = (
-/obj/machinery/atmospherics/binary/pump/high_power,
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "pLs" = (
@@ -61950,9 +61935,9 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/abandoned/barber)
 "qaq" = (
-/obj/structure/low_wall,
 /obj/item/oddity/common/redbrick,
 /obj/machinery/door/firedoor,
+/obj/structure/low_wall/iskhod,
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/enginehallway)
 "qaA" = (
@@ -63464,7 +63449,7 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/security/armory)
 "qvz" = (
-/obj/machinery/portable_atmospherics/canister/empty,
+/obj/machinery/portable_atmospherics/canister/hydrogen,
 /turf/simulated/floor/tiled/dark/panels,
 /area/iskhod/engineering/atmos)
 "qvE" = (
@@ -64953,11 +64938,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	dir = 1
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/turret_protected/ai_upload)
@@ -70019,14 +70003,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/command{
-	name = "AI Upload";
-	req_access = list(16)
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	dir = 1
+	name = "AI Core";
+	req_access = newlist();
+	req_one_access = list(30,56)
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/turret_protected/ai_upload)
@@ -70641,6 +70620,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor/multi_tile,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/machinery/door/airlock/multi_tile/glass,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/crew_quarters/sleep/cryo2)
 "sqL" = (
@@ -70932,9 +70912,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "svA" = (
-/obj/machinery/portable_atmospherics/canister/carbon_dioxide/engine_setup,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/iskhod/engineering/engine_room)
+/obj/effect/window_lwall_spawn/reinforced/polarized,
+/turf/simulated/floor/wood,
+/area/iskhod/command/gmaster)
 "svW" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
@@ -72406,9 +72386,6 @@
 /obj/effect/floor_decal/industrial/warningdust{
 	dir = 1
 	},
-/obj/structure/railing/grey{
-	pixel_y = -4
-	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "sRN" = (
@@ -72707,11 +72684,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/misc3)
@@ -74070,7 +74042,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
 "toi" = (
 /obj/machinery/door/blast/shutters{
@@ -74653,7 +74625,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "tvr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -75717,11 +75689,13 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/medical/patient_wing)
 "tIN" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 9
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
 	},
-/turf/simulated/floor/airless/ceiling,
-/area/colony)
+/turf/simulated/floor/wood,
+/area/iskhod/command/gmaster)
 "tIO" = (
 /obj/structure/boulder,
 /obj/effect/decal/weldable/cracks,
@@ -76600,9 +76574,6 @@
 /area/iskhod/medical/medbay/uppercor)
 "tWc" = (
 /obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/obj/structure/railing/grey{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -78345,21 +78316,14 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section2)
 "uuK" = (
-/obj/structure/disposalpipe/segment{
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 32
+	},
+/obj/machinery/camera/network/engineering{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/enginehallway)
 "uuZ" = (
@@ -78522,16 +78486,14 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
 "uwZ" = (
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "East APC";
-	pixel_x = 28
-	},
 /obj/structure/cable/yellow{
 	d2 = 2;
 	icon_state = "0-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc/hyper{
+	pixel_x = 28
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "uxa" = (
@@ -80858,6 +80820,9 @@
 	pixel_y = -28
 	},
 /obj/structure/cable/yellow,
+/obj/structure/bed/chair/sofa/yellow/left{
+	dir = 1
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster/quarters)
 "vdB" = (
@@ -81958,10 +81923,6 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/security/brig)
-"vtw" = (
-/obj/machinery/portable_atmospherics/canister/nitrogen/engine_setup,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/iskhod/engineering/engine_room)
 "vtO" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "2,7"
@@ -82106,13 +82067,13 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "vvI" = (
-/obj/machinery/atmospherics/binary/pump/high_power,
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "vvM" = (
@@ -84070,7 +84031,6 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/machinery/power/port_gen/pacman/diesel/anchored,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "vVE" = (
@@ -86491,7 +86451,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/machinery/power/emitter,
 /obj/structure/cable/yellow,
-/obj/structure/cable/yellow,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
 "wCU" = (
@@ -88532,9 +88491,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/structure/railing/grey{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "xfM" = (
@@ -89281,11 +89237,13 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
 "xrb" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
-	dir = 8
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/space,
-/area/colony)
+/turf/simulated/wall/iskhod_blue,
+/area/turret_protected/ai_upload)
 "xrf" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -89748,6 +89706,10 @@
 "xxL" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/machinery/door/airlock/glass_engineering{
+	name = "Engineering";
+	req_access = list(10)
+	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_room)
 "xxN" = (
@@ -90248,9 +90210,6 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8;
 	icon_state = "warning"
-	},
-/obj/structure/railing/grey{
-	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -107983,9 +107942,9 @@ paa
 qvz
 qvz
 qvz
-qvz
-qvz
-qvz
+eJZ
+eJZ
+eJZ
 paa
 hVF
 hVF
@@ -133656,13 +133615,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+ocH
+jkc
+ocH
+jkc
+ocH
+jkc
 rKl
 jDL
 "}
@@ -133858,13 +133817,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -134060,13 +134019,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -134262,13 +134221,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -134464,13 +134423,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -134666,13 +134625,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -134868,13 +134827,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -135070,13 +135029,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -135272,13 +135231,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -135474,13 +135433,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -135676,13 +135635,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -135878,13 +135837,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -136080,13 +136039,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -136282,13 +136241,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -136484,13 +136443,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -136686,13 +136645,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -136888,13 +136847,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -137090,13 +137049,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -137292,13 +137251,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -137494,13 +137453,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -137696,13 +137655,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -137898,13 +137857,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -138100,13 +138059,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -138302,13 +138261,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -138504,13 +138463,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -138706,13 +138665,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -138908,13 +138867,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -139110,13 +139069,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -139312,13 +139271,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -139514,13 +139473,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -139716,13 +139675,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -139918,13 +139877,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -140120,13 +140079,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -140322,13 +140281,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -140524,13 +140483,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -140726,13 +140685,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -140928,13 +140887,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -141130,13 +141089,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -141332,13 +141291,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -141534,13 +141493,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -141736,13 +141695,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -141938,13 +141897,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -142140,13 +142099,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -142342,13 +142301,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -142544,13 +142503,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -142746,13 +142705,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -142948,13 +142907,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -143150,13 +143109,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -143352,13 +143311,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -143554,13 +143513,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -143756,13 +143715,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -143958,13 +143917,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -144160,13 +144119,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -144362,13 +144321,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -144564,13 +144523,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -144763,16 +144722,16 @@ jDL
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
-rKl
-rKl
-rKl
-rKl
-rKl
-rKl
-rKl
-rKl
-rKl
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
 rKl
 jDL
 "}
@@ -144948,13 +144907,16 @@ wMB
 sMC
 sMC
 vrR
-vtw
-vtw
-vtw
+fJN
+fJN
+fJN
 vrR
 vrR
 nKb
 nKb
+jDL
+jDL
+jDL
 jDL
 jDL
 jDL
@@ -144966,16 +144928,13 @@ jDL
 jDL
 jDL
 rKl
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (60,1,2) = {"
@@ -145151,12 +145110,15 @@ oaM
 aVP
 twO
 fJN
-jtd
-jtd
+fJN
+fJN
 vrR
 vrR
 nKb
 nKb
+jDL
+jDL
+jDL
 jDL
 jDL
 jDL
@@ -145168,16 +145130,13 @@ jDL
 jDL
 jDL
 rKl
-kbt
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (61,1,2) = {"
@@ -145353,12 +145312,15 @@ sMC
 mxk
 ddm
 fJN
-eJZ
-mmJ
+fJN
+iUA
 vrR
 vrR
 nKb
 nKb
+jDL
+jDL
+jDL
 jDL
 jDL
 jDL
@@ -145371,15 +145333,12 @@ jDL
 jDL
 rKl
 wvA
-ocH
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-vMK
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (62,1,2) = {"
@@ -145554,13 +145513,16 @@ sMC
 sMC
 wyF
 vrR
-svA
-svA
-svA
+fJN
+fJN
+fJN
 vrR
 vrR
 nKb
 nKb
+jDL
+jDL
+jDL
 jDL
 jDL
 jDL
@@ -145573,15 +145535,12 @@ jDL
 jDL
 rKl
 wvA
-bYG
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (63,1,2) = {"
@@ -145773,17 +145732,17 @@ jDL
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-ocH
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-vMK
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (64,1,2) = {"
@@ -145975,17 +145934,17 @@ vsH
 vsH
 vsH
 vsH
+vsH
+vsH
+vsH
 cCg
 vMK
-bYG
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (65,1,2) = {"
@@ -146177,17 +146136,17 @@ vsH
 vsH
 vsH
 vsH
+vsH
+vsH
+vsH
 cCg
 jkc
-ocH
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-vMK
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (66,1,2) = {"
@@ -146379,17 +146338,17 @@ jDL
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-bYG
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (67,1,2) = {"
@@ -146581,17 +146540,17 @@ jDL
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-ocH
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-vMK
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (68,1,2) = {"
@@ -146783,17 +146742,17 @@ jDL
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-bYG
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (69,1,2) = {"
@@ -146950,7 +146909,7 @@ nKb
 vrR
 vrR
 alt
-hwB
+pwU
 wGq
 uHC
 eEI
@@ -146985,17 +146944,17 @@ jDL
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-ocH
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-vMK
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (70,1,2) = {"
@@ -147187,17 +147146,17 @@ jDL
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-bYG
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (71,1,2) = {"
@@ -147389,17 +147348,17 @@ jDL
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-ocH
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-vMK
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (72,1,2) = {"
@@ -147591,17 +147550,17 @@ jDL
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-bYG
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (73,1,2) = {"
@@ -147793,17 +147752,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-ocH
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-vMK
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (74,1,2) = {"
@@ -147995,17 +147954,17 @@ nKb
 nKb
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-bYG
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (75,1,2) = {"
@@ -148197,17 +148156,17 @@ nKb
 nKb
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-ocH
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-vMK
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (76,1,2) = {"
@@ -148399,17 +148358,17 @@ nKb
 nKb
 nKb
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-bYG
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (77,1,2) = {"
@@ -148601,17 +148560,17 @@ stn
 nKb
 nKb
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-ocH
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-vMK
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (78,1,2) = {"
@@ -148803,17 +148762,17 @@ stn
 nKb
 nKb
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-bYG
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (79,1,2) = {"
@@ -149005,17 +148964,17 @@ stn
 nKb
 nKb
 jDL
+jDL
+jDL
+jDL
 rKl
 wvA
-ocH
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-vMK
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (80,1,2) = {"
@@ -149184,7 +149143,7 @@ pAa
 sMC
 xxL
 fJN
-fJN
+mTm
 nFB
 nvo
 gPF
@@ -149207,17 +149166,17 @@ nKb
 nKb
 nKb
 jDL
+jDL
+jDL
+jDL
 rKl
-xrb
-bYG
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (81,1,2) = {"
@@ -149409,17 +149368,17 @@ nKb
 nKb
 nKb
 jDL
+jDL
+jDL
+jDL
 rKl
-xrb
-ocH
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-vMK
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (82,1,2) = {"
@@ -149611,17 +149570,17 @@ nKb
 nKb
 nKb
 jDL
+jDL
+jDL
+jDL
 rKl
-xrb
-bYG
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-rRb
-jkc
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (83,1,2) = {"
@@ -149813,17 +149772,17 @@ nKb
 nKb
 nKb
 jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-eTZ
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-tIN
+wvA
+wvA
+wvA
+wvA
+wvA
+wvA
+rKl
 jDL
 "}
 (84,1,2) = {"
@@ -150015,17 +149974,17 @@ nKb
 nKb
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-mTm
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-bzC
+wvA
+bYG
+vMK
+bYG
+vMK
+wvA
+rKl
 jDL
 "}
 (85,1,2) = {"
@@ -150217,17 +150176,17 @@ nKb
 nKb
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-eTZ
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-tIN
+bYG
+rRb
+rRb
+rRb
+rRb
+vMK
+rKl
 jDL
 "}
 (86,1,2) = {"
@@ -150419,17 +150378,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-mTm
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-bzC
+rKl
+rKl
+rKl
+rKl
+rKl
+rKl
+rKl
 jDL
 "}
 (87,1,2) = {"
@@ -150621,17 +150580,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-eTZ
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-tIN
 jDL
 "}
 (88,1,2) = {"
@@ -150823,17 +150782,17 @@ jDL
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-mTm
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-bzC
 jDL
 "}
 (89,1,2) = {"
@@ -151025,17 +150984,17 @@ jDL
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-eTZ
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-tIN
 jDL
 "}
 (90,1,2) = {"
@@ -151197,13 +151156,13 @@ qaq
 oqN
 oqN
 arf
+arf
 uhh
 arf
 arf
 arf
 arf
 arf
-arf
 nKb
 nKb
 nKb
@@ -151223,21 +151182,21 @@ nKb
 nKb
 nKb
 nKb
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 jDL
 jDL
 jDL
 jDL
 rKl
-iUD
-mTm
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-bzC
 jDL
 "}
 (91,1,2) = {"
@@ -151398,10 +151357,10 @@ sGd
 sGd
 sGd
 sGd
+sGd
 ePH
 gvy
 sNT
-sGd
 sGd
 sGd
 arf
@@ -151429,17 +151388,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-eTZ
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-tIN
 jDL
 "}
 (92,1,2) = {"
@@ -151600,10 +151559,10 @@ sGd
 sGd
 sGd
 sGd
+sGd
 ePH
 gvy
 sNT
-sGd
 sGd
 sGd
 arf
@@ -151631,17 +151590,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-mTm
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-bzC
 jDL
 "}
 (93,1,2) = {"
@@ -151802,10 +151761,10 @@ sGd
 sGd
 sGd
 sGd
+sGd
 ybT
 gvy
 kPM
-sGd
 sGd
 sGd
 arf
@@ -151833,17 +151792,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-eTZ
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-tIN
 jDL
 "}
 (94,1,2) = {"
@@ -152004,12 +151963,12 @@ sGd
 sGd
 sGd
 puw
+svA
 puw
 tXU
 puw
 nxJ
 nxJ
-nxJ
 puw
 nKb
 nKb
@@ -152035,17 +151994,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-mTm
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-bzC
 jDL
 "}
 (95,1,2) = {"
@@ -152207,8 +152166,8 @@ sGd
 sGd
 nxJ
 jTv
+tIN
 nVA
-bRA
 hzK
 hzK
 bMy
@@ -152237,17 +152196,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-eTZ
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-tIN
 jDL
 "}
 (96,1,2) = {"
@@ -152409,7 +152368,7 @@ sGd
 sGd
 nxJ
 gNZ
-mVV
+jPY
 oXg
 eva
 gjw
@@ -152418,7 +152377,7 @@ puw
 xqP
 qaF
 qaF
-qaF
+jtd
 mfq
 vBu
 nKb
@@ -152439,17 +152398,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-mTm
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-bzC
 jDL
 "}
 (97,1,2) = {"
@@ -152641,17 +152600,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-eTZ
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-tIN
 jDL
 "}
 (98,1,2) = {"
@@ -152843,17 +152802,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-mTm
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-bzC
 jDL
 "}
 (99,1,2) = {"
@@ -153045,17 +153004,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-eTZ
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-tIN
 jDL
 "}
 (100,1,2) = {"
@@ -153247,17 +153206,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-iUD
-mTm
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-bzC
 jDL
 "}
 (101,1,2) = {"
@@ -153449,17 +153408,17 @@ nKb
 jDL
 jDL
 jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
-mTm
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-jPY
-tIN
 jDL
 "}
 (102,1,2) = {"
@@ -153651,16 +153610,16 @@ jDL
 jDL
 jDL
 jDL
-rKl
-rKl
-rKl
-rKl
-rKl
-rKl
-rKl
-rKl
-rKl
-rKl
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
+jDL
 rKl
 jDL
 "}
@@ -160622,7 +160581,7 @@ qCH
 pHK
 kHe
 frL
-sUX
+xrb
 eCG
 eFo
 rEw
