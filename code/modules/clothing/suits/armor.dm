@@ -700,10 +700,10 @@
 	item_state = "bulletproof_ironhammer"
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer/militia
-	name = "blackshield bulletproof suit"
+	name = "ranger bulletproof suit"
 	desc = "A set of vest, shoulder guards and leg guards that excel at protecting against high-velocity, solid projectiles. \
 			This particular set seems to have been taken straight from the armory of some low-budget P.D.F or Reserve force, repainted in \
-			Blackshield colors and given their I.F.F markings."
+			Ranger colors and given their I.F.F markings."
 	icon_state = "bulletproof_bs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
@@ -798,8 +798,8 @@
 	price_tag = 650
 
 /obj/item/clothing/suit/armor/vest/ablative/militia
-	name = "blackshield ablative plate"
-	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Blackshield's colors. \
+	name = "ranger ablative plate"
+	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Ranger's colors. \
 			A distinctive set of equipment, the MK-II 'Energy Defense Gear' sold more for its distinctive, and some would say 'flashy' \
 			appearance than its capabilities. Despite its bad reputation as a tax-payer credit sink, it serves as a fairly adequate piece of gear."
 	icon_state = "ablative_bs"
@@ -888,9 +888,9 @@
 	armor_list = list(melee = 8, bullet = 13, energy = 8, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/flakvest/militia
-	name = "blackshield flak vest"
+	name = "ranger flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
-			This one is marked with the distinct IFF stripes of the Blackshield."
+			This one is marked with the distinct IFF stripes of the Ranger."
 	icon_state = "flakvest_mil"
 	item_state = "flakvest_mil"
 
@@ -904,10 +904,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Default Blackshield Combat"] = "flakvest_mil"
-	options["Woodlands Blackshield Combat"] = "flakvest_green_mil"
-	options["Desert Blackshield Combat"] = "flakvest_tan_mil"
-	options["Urban Blackshield Combat"] = "flakvest_white_mil"
+	options["Default Ranger Combat"] = "flakvest_mil"
+	options["Woodlands Ranger Combat"] = "flakvest_green_mil"
+	options["Desert Ranger Combat"] = "flakvest_tan_mil"
+	options["Urban Ranger Combat"] = "flakvest_white_mil"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -921,9 +921,9 @@
 		return 1
 
 /obj/item/clothing/suit/armor/flakvest/militia/full
-	name = "blackshield full flak vest"
+	name = "ranger full flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
-			This one is marked with the distinct IFF stripes of the Blackshield, and offers additional coverage through shoulderpads and kneepads."
+			This one is marked with the distinct IFF stripes of the Ranger, and offers additional coverage through shoulderpads and kneepads."
 	icon_state = "flakvest_mil_fullbody"
 	item_state = "flakvest_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
@@ -940,10 +940,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Default Blackshield Combat"] = "flakvest_mil_fullbody"
-	options["Woodlands Blackshield Combat"] = "flakvest_green_mil_fullbody"
-	options["Desert Blackshield Combat"] = "flakvest_tan_mil_fullbody"
-	options["Urban Blackshield Combat"] = "flakvest_white_mil_fullbody"
+	options["Default Ranger Combat"] = "flakvest_mil_fullbody"
+	options["Woodlands Ranger Combat"] = "flakvest_green_mil_fullbody"
+	options["Desert Ranger Combat"] = "flakvest_tan_mil_fullbody"
+	options["Urban Ranger Combat"] = "flakvest_white_mil_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1313,8 +1313,8 @@
 
 //Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier/militia
-	name = "blackshield plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one bears the distinct IFF stripes of the Blackshield."
+	name = "ranger plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one bears the distinct IFF stripes of the Ranger."
 	icon_state = "platecarrier_mil"
 	item_state = "platecarrier_mil"
 
@@ -1328,10 +1328,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Default Blackshield Combat"] = "platecarrier_mil"
-	options["Desert Blackshield Combat"] = "platecarrier_tan_mil"
-	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil"
-	options["Urban Blackshield Combat"] = "platecarrier_white_mil"
+	options["Default Ranger Combat"] = "platecarrier_mil"
+	options["Desert Ranger Combat"] = "platecarrier_tan_mil"
+	options["Woodlands Ranger Combat"] = "platecarrier_green_mil"
+	options["Urban Ranger Combat"] = "platecarrier_white_mil"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1346,8 +1346,8 @@
 
 
 /obj/item/clothing/suit/armor/platecarrier/militia/full
-	name = "blackshield full body plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, as well as additional shoulderpads and kneepads, decorated with the IFF stripes of Blackshield."
+	name = "ranger full body plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, as well as additional shoulderpads and kneepads, decorated with the IFF stripes of Ranger."
 	icon_state = "platecarrier_mil_fullbody"
 	item_state = "platecarrier_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
@@ -1363,10 +1363,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Default Blackshield Combat"] = "platecarrier_mil_fullbody"
-	options["Desert Blackshield Combat"] = "platecarrier_tan_mil_fullbody"
-	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil_fullbody"
-	options["Urban Blackshield Combat"] = "platecarrier_white_mil_fullbody"
+	options["Default Ranger Combat"] = "platecarrier_mil_fullbody"
+	options["Desert Ranger Combat"] = "platecarrier_tan_mil_fullbody"
+	options["Woodlands Ranger Combat"] = "platecarrier_green_mil_fullbody"
+	options["Urban Ranger Combat"] = "platecarrier_white_mil_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1583,7 +1583,7 @@
 
 /obj/item/clothing/suit/armor/commander/militia
 	name = "commander's armored coat"
-	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Commander."
+	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Ranger Commander."
 	icon_state = "commander_mil"
 	item_state = "commander_mil"
 	siemens_coefficient = 0.6
@@ -1598,12 +1598,12 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Default Blackshield Combat"] = "commander_mil"
-	options["Desert Blackshield Combat"] = "commander_tan"
-	options["Woodlands Blackshield Combat"] = "commander_green"
-	options["Urban Blackshield Combat"] = "commander_white"
-	options["Cloaked BlackshieldGreatcoat"] = "mc_coat_cloak"
-	options["Blackshield Greatcoat"] = "mc_coat"
+	options["Default Ranger Combat"] = "commander_mil"
+	options["Desert Ranger Combat"] = "commander_tan"
+	options["Woodlands Ranger Combat"] = "commander_green"
+	options["Urban Ranger Combat"] = "commander_white"
+	options["Cloaked RangerGreatcoat"] = "mc_coat_cloak"
+	options["Ranger Greatcoat"] = "mc_coat"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1617,8 +1617,8 @@
 		return TRUE
 
 /obj/item/clothing/suit/storage/armor/militia_overcoat // Pockets for your hands on the cold.
-	name = "blackshield armored overcoat"
-	desc = "Blackshield greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
+	name = "ranger armored overcoat"
+	desc = "Ranger greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
 	armor_list = list(melee =7, bullet = 8, energy = 5, bomb = 10, bio = 0, rad = 0)
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
