@@ -196,16 +196,20 @@
 
 
 	// Generate each floor and store it in the controller datum.
+	var/car_built = FALSE
 
-	var/level = 1
+	for(var/stopAreaPath in turbolift_stops)
+		var/area/turbolift/stopArea = locate(stopAreaPath) in world
 
-	for(var/stopAreaAsPseudoInstance in turbolift_stops)
-		var/area/turbolift/stopArea = locate(stopAreaAsPseudoInstance) in world
+		// If the area/level isn't loaded, skip it.
+		if(!stopArea)
+			continue
 
 		var/turf/stop = locate() in stopArea
 
 		if(!stop)
-			CRASH("Failed to find turf in area [stopArea.name].")
+			// Area exists but has no turfs (empty marker?), skip.
+			continue
 
 		var/list/coords = computeDirections(stop)
 
@@ -215,8 +219,8 @@
 
 		var/list/floor_turfs = list()
 
-		if(level == 1)
-			// Build the physical elevator car only at the first stop.
+		if(!car_built)
+			// Build the physical elevator car only at the first VALID stop found.
 			// Update the appropriate turfs.
 			for(var/turfX = stop.x to (stop.x + lift_size_x))
 				for(var/turfY = stop.y to (stop.y + lift_size_y))
@@ -272,8 +276,13 @@
 			int_panel.set_dir(elevatorBaseDir)
 			lift.control_panel_interior = int_panel
 
+			car_built = TRUE
+
 		// For all stops: assign area to the floor turfs (first stop only has turfs).
-		var/area_path = turbolift_stops[level]
+		// Note: The car turfs are physically ON the level of the first valid stop.
+		// Moving the elevator moves these turfs.
+		// We set the area of the car turfs to match the current stop's area type.
+		var/area_path = stopAreaPath
 		for(var/thing in floor_turfs)
 			new area_path(thing)
 		var/area/A = locate(area_path)
@@ -299,9 +308,6 @@
 			panel_ext.pixel_y = 0
 			cfloor.ext_panel = panel_ext
 
-		level++
-
-
 
 	// Ensure control_panel_interior is set (fallback if somehow not set above).
 	if(!lift.control_panel_interior && lift.stops.len)
@@ -311,7 +317,8 @@
 		if(first_turf)
 			lift.control_panel_interior = new/obj/structure/lift/panel(first_turf, lift)
 
-	lift.current_stop = lift.stops[1]
+	if(lift.stops.len)
+		lift.current_stop = lift.stops[1]
 
 	lift.open_doors()
 

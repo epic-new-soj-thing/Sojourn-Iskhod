@@ -785,6 +785,10 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/misc_lab)
+"lD" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/turf/simulated/floor/industrial/grey_slates_long,
+/area/mine/prep)
 "lJ" = (
 /obj/machinery/recharge_station,
 /obj/structure/sign/medsci/firstaidstation{
@@ -3586,6 +3590,10 @@
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
+"Qt" = (
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining,
+/turf/simulated/floor/plating/under,
+/area/turbolift/Mining/underground)
 "Qv" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
@@ -3630,6 +3638,10 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/outpoststorage)
+"Rb" = (
+/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
+/turf/simulated/floor/plating/under,
+/area/turbolift/Research/underground)
 "Rc" = (
 /obj/machinery/telecomms/relay/preset/mining,
 /turf/simulated/floor/tiled/techmaint,
@@ -11333,13 +11345,13 @@ jl
 Iw
 Ff
 ao
-TE
+fA
 jE
 jE
 jE
 jE
-jE
-jE
+Qt
+gE
 gE
 eR
 el
@@ -11535,14 +11547,14 @@ Tv
 XY
 TD
 xs
-TE
+kz
 jE
 CP
 CP
 CP
 RS
-RS
-kz
+gE
+lD
 el
 el
 sF
@@ -11737,14 +11749,14 @@ ao
 ao
 WS
 YC
-TE
+kz
 jE
 CP
 CP
 CP
 RS
-RS
-kz
+gE
+lD
 el
 el
 sF
@@ -11939,14 +11951,14 @@ zb
 dZ
 Jj
 Qs
-TE
+kz
 jE
 CP
 CP
 CP
 RS
-RS
-kz
+gE
+lD
 el
 el
 sF
@@ -12141,13 +12153,13 @@ fV
 ao
 Tk
 IV
-TE
+fA
 jE
 jE
 jE
 jE
 jE
-jE
+gE
 gE
 Kl
 el
@@ -16522,7 +16534,7 @@ da
 da
 da
 da
-da
+Rb
 jA
 ge
 VE
