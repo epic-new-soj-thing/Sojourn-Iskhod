@@ -69,88 +69,88 @@
 
 		if(NORTH)
 
-			int_panel_x = elevatorBaseX + FLOOR(lift_size_x/2, 1)
-			int_panel_y = elevatorBaseY + (make_walls ? 1 : 0)
+			int_panel_x = stop.x + FLOOR(lift_size_x/2, 1)
+			int_panel_y = stop.y + (make_walls ? 1 : 0)
 
-			door_x1 = elevatorBaseX + 1
-			door_y1 = elevatorSizeY
-			door_x2 = elevatorSizeX - 1
-			door_y2 = elevatorSizeY
+			door_x1 = stop.x + 1
+			door_y1 = stop.y + lift_size_y
+			door_x2 = stop.x + lift_size_x - 1
+			door_y2 = stop.y + lift_size_y
 
-			ext_door_x1 = elevatorBaseX + 1
-			ext_door_y1 = elevatorSizeY + 1
-			ext_door_x2 = elevatorSizeX - 1
-			ext_door_y2 = elevatorSizeY + 1
+			ext_door_x1 = stop.x + 1
+			ext_door_y1 = stop.y + lift_size_y + 1
+			ext_door_x2 = stop.x + lift_size_x - 1
+			ext_door_y2 = stop.y + lift_size_y + 1
 
-			light_x1 = elevatorBaseX + (make_walls ? 1 : 0)
-			light_y1 = elevatorBaseY + (make_walls ? 1 : 0)
-			light_x2 = elevatorBaseX + lift_size_x - (make_walls ? 1 : 0)
-			light_y2 = elevatorBaseY + (make_walls ? 1 : 0)
+			light_x1 = stop.x + (make_walls ? 1 : 0)
+			light_y1 = stop.y + (make_walls ? 1 : 0)
+			light_x2 = stop.x + lift_size_x - (make_walls ? 1 : 0)
+			light_y2 = stop.y + (make_walls ? 1 : 0)
 
-			ext_panel_x = elevatorBaseX
-			ext_panel_y = elevatorSizeY + 1
+			ext_panel_x = stop.x
+			ext_panel_y = stop.y + lift_size_y + 1
 
 		if(SOUTH)
 
-			int_panel_x = elevatorBaseX + FLOOR(lift_size_x/2, 1)
-			int_panel_y = elevatorSizeY - (make_walls ? 1 : 0)
+			int_panel_x = stop.x + FLOOR(lift_size_x/2, 1)
+			int_panel_y = stop.y + lift_size_y - (make_walls ? 1 : 0)
 
-			door_x1 = elevatorBaseX + 1
-			door_y1 = elevatorBaseY
-			door_x2 = elevatorSizeX - 1
-			door_y2 = elevatorBaseY
+			door_x1 = stop.x + 1
+			door_y1 = stop.y
+			door_x2 = stop.x + lift_size_x - 1
+			door_y2 = stop.y
 
-			ext_door_x1 = elevatorBaseX + 1
-			ext_door_y1 = elevatorBaseY - 1
-			ext_door_x2 = elevatorSizeX - 1
-			ext_door_y2 = elevatorBaseY - 1
+			ext_door_x1 = stop.x + 1
+			ext_door_y1 = stop.y - 1
+			ext_door_x2 = stop.x + lift_size_x - 1
+			ext_door_y2 = stop.y - 1
 
-			light_x1 = elevatorBaseX + (make_walls ? 1 : 0)
-			light_y1 = elevatorBaseY + (make_walls ? 2 : 1)
-			light_x2 = elevatorBaseX + lift_size_x - (make_walls ? 1 : 0)
-			light_y2 = elevatorBaseY + lift_size_y - (make_walls ? 1 : 0)
+			light_x1 = stop.x + (make_walls ? 1 : 0)
+			light_y1 = stop.y + (make_walls ? 2 : 1)
+			light_x2 = stop.x + lift_size_x - (make_walls ? 1 : 0)
+			light_y2 = stop.y + lift_size_y - (make_walls ? 1 : 0)
 
-			ext_panel_x = elevatorBaseX
-			ext_panel_y = elevatorBaseY - 1
+			ext_panel_x = stop.x
+			ext_panel_y = stop.y - 1
 
 		if(EAST)
 
-			int_panel_x = elevatorBaseX + (make_walls ? 1 : 0)
-			int_panel_y = elevatorBaseY + FLOOR(lift_size_y/2, 1)
+			int_panel_x = stop.x + (make_walls ? 1 : 0)
+			int_panel_y = stop.y + FLOOR(lift_size_y/2, 1)
 
-			door_x1 = elevatorSizeX
-			door_y1 = elevatorBaseY + 1
-			door_x2 = elevatorSizeX
-			door_y2 = elevatorSizeY - 1
+			door_x1 = stop.x + lift_size_x
+			door_y1 = stop.y + 1
+			door_x2 = stop.x + lift_size_x
+			door_y2 = stop.y + lift_size_y - 1
 
-			ext_door_x1 = elevatorSizeX + 1
-			ext_door_y1 = elevatorBaseY + 1
-			ext_door_x2 = elevatorSizeX + 1
-			ext_door_y2 = elevatorSizeY - 1
+			ext_door_x1 = stop.x + lift_size_x + 1
+			ext_door_y1 = stop.y + 1
+			ext_door_x2 = stop.x + lift_size_x + 1
+			ext_door_y2 = stop.y + lift_size_y - 1
 
-			light_x1 = elevatorBaseX + (make_walls ? 1 : 0)
-			light_y1 = elevatorBaseY + (make_walls ? 1 : 0)
-			light_x2 = elevatorBaseX + (make_walls ? 1 : 0)
-			light_y2 = elevatorBaseY + lift_size_x - (make_walls ? 1 : 0)
+			light_x1 = stop.x + (make_walls ? 1 : 0)
+			light_y1 = stop.y + (make_walls ? 1 : 0)
+			light_x2 = stop.x + (make_walls ? 1 : 0)
+			light_y2 = stop.y + lift_size_x - (make_walls ? 1 : 0)
 
-			ext_panel_x = elevatorSizeX + 1
-			ext_panel_y = elevatorBaseY
+			ext_panel_x = stop.x + lift_size_x + 1
+			ext_panel_y = stop.y
 
 		if(WEST)
 
-			int_panel_x = elevatorSizeX - (make_walls ? 1 : 0)
-			int_panel_y = elevatorBaseY + FLOOR(lift_size_y/2, 1)
+			int_panel_x = stop.x + lift_size_x - (make_walls ? 1 : 0)
+			int_panel_y = stop.y + FLOOR(lift_size_y/2, 1)
 
-			door_x1 = elevatorBaseX
-			door_x2 = elevatorBaseX
+			door_x1 = stop.x
+			door_x2 = stop.x
 
-			door_y1 = elevatorBaseY + 1
-			door_y2 = elevatorSizeY - 1
+			door_y1 = stop.y + 1
+			door_y2 = stop.y + lift_size_y - 1
 
-			ext_door_x1 = elevatorBaseX - 1
-			ext_door_y1 = elevatorBaseY + 1
-			ext_door_x2 = elevatorBaseX - 1
-			ext_door_y2 = elevatorSizeY - 1
+			ext_door_x1 = stop.x - 1
+			ext_door_y1 = stop.y + 1
+			ext_door_x2 = stop.x - 1
+			ext_door_y2 = stop.y + lift_size_y - 1
 
 			light_x1 = stop.x + lift_size_x - (make_walls ? 1 : 0)
 			light_x2 = stop.x + lift_size_x - (make_walls ? 1 : 0)
@@ -158,8 +158,8 @@
 			light_y1 = stop.y + (make_walls ? 1 : 0)
 			light_y2 = stop.y + lift_size_y-1 - (make_walls ? 1 : 0)
 
-			ext_panel_x = elevatorBaseX - 1
-			ext_panel_y = elevatorBaseY
+			ext_panel_x = stop.x - 1
+			ext_panel_y = stop.y
 
 	return list("ext_x" = ext_panel_x, "ext_y" = ext_panel_y, "edoor_x1" = ext_door_x1, "edoor_y1" = ext_door_y1, "edoor_x2" = ext_door_x2, "edoor_y2" = ext_door_y2)
 
@@ -214,7 +214,7 @@
 		var/list/coords = computeDirections(stop)
 
 		var/datum/turbolift_stop/cfloor = new()
-		cfloor.anchor_turf = locate(elevatorBaseX, elevatorBaseY, stop.z)
+		cfloor.anchor_turf = locate(stop.x, stop.y, stop.z)
 		lift.stops += cfloor
 
 		var/list/floor_turfs = list()
@@ -232,8 +232,9 @@
 						return
 
 					// Update path appropriately if needed.
+					// Note: swap conditions use relative check
 					var/swap_to = /turf/simulated/open
-					if(wall_type && (turfX == elevatorBaseX || turfY == elevatorBaseY || turfX == elevatorSizeX || turfY == elevatorSizeY) && !(turfX >= door_x1 && turfX <= door_x2 && turfY >= door_y1 && turfY <= door_y2))
+					if(wall_type && (turfX == stop.x || turfY == stop.y || turfX == (stop.x + lift_size_x) || turfY == (stop.y + lift_size_y)) && !(turfX >= door_x1 && turfX <= door_x2 && turfY >= door_y1 && turfY <= door_y2))
 						swap_to = wall_type
 					else
 						swap_to = floor_type
@@ -247,7 +248,7 @@
 						if(thing.simulated)
 							qdel(thing)
 
-					if(turfX >= elevatorBaseX && turfX <= elevatorSizeX && turfY >= elevatorBaseY && turfY <= elevatorSizeY)
+					if(turfX >= stop.x && turfX <= (stop.x + lift_size_x) && turfY >= stop.y && turfY <= (stop.y + lift_size_y))
 						floor_turfs += checking
 
 			// Place interior doors (on the wall tiles of the car).
