@@ -8750,6 +8750,9 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/medical/psych)
+"chb" = (
+/turf/simulated/floor/plating/under,
+/area/turbolift/Mining/midlevelTwo)
 "chh" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -60335,9 +60338,6 @@
 	},
 /turf/simulated/floor/industrial/blue_slates,
 /area/iskhod/security/interview)
-"pDD" = (
-/turf/simulated/floor/plating/under,
-/area/turbolift/Mining/midlevelTwo)
 "pDP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -82853,9 +82853,6 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/medical/cryo)
-"vEN" = (
-/turf/simulated/floor/plating/under,
-/area/turbolift/Research/midlevelTwo)
 "vES" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "1,8"
@@ -85717,6 +85714,9 @@
 /obj/landmark/join/start/foreigner,
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/storage/tech)
+"wtq" = (
+/turf/simulated/floor/plating/under,
+/area/turbolift/Research/midlevelTwo)
 "wtr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -131023,21 +131023,21 @@ rKl
 jDL
 cxR
 xui
-xui
-pDD
-pDD
-pDD
-pDD
-pDD
+cxR
+chb
+chb
+chb
+chb
+chb
 cxR
 cxR
-vEN
-vEN
-vEN
-vEN
-vEN
-vEN
-xui
+wtq
+wtq
+wtq
+wtq
+wtq
+wtq
+cxR
 xui
 xui
 cxR
@@ -131230,10 +131230,10 @@ tdK
 xqj
 xqj
 xqj
-pDD
+chb
 cxR
 cxR
-vEN
+wtq
 xgm
 xgm
 xgm
@@ -131432,10 +131432,10 @@ tdK
 xqj
 xqj
 xqj
-pDD
+chb
 cxR
 cxR
-vEN
+wtq
 xgm
 xgm
 xgm
@@ -131634,10 +131634,10 @@ tdK
 xqj
 xqj
 xqj
-pDD
+chb
 cxR
 cxR
-vEN
+wtq
 xgm
 xgm
 xgm
@@ -131831,21 +131831,21 @@ rKl
 jDL
 cxR
 xui
-xui
-pDD
-pDD
-pDD
-pDD
-pDD
+cxR
+chb
+chb
+chb
+chb
+chb
 cxR
 cxR
-vEN
-vEN
-vEN
-vEN
-vEN
-vEN
-xui
+wtq
+wtq
+wtq
+wtq
+wtq
+wtq
+cxR
 xui
 xui
 cxR
