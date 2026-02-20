@@ -44,7 +44,7 @@
 	icon = 'icons/modules/turbolift/turbolift_preview_3x3 - no walls.dmi'
 	dir = NORTH
 
-	wall_type = /turf/simulated/shuttle/wall/mining
+	wall_type = /turf/simulated/shuttle/wall
 	createInnerDoors = 1
 
 	turbolift_stops = list(
@@ -190,7 +190,7 @@
 	icon = 'icons/modules/turbolift/turbolift_preview_3x3 - no walls.dmi'
 	dir = SOUTH
 
-	wall_type = /turf/simulated/shuttle/wall/mining
+	wall_type = /turf/simulated/shuttle/wall
 	createInnerDoors = 1
 
 	turbolift_stops = list(
