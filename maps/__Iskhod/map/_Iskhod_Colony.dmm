@@ -8750,9 +8750,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/medical/psych)
-"chb" = (
-/turf/simulated/floor/plating/under,
-/area/turbolift/Mining/midlevelTwo)
 "chh" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -18632,9 +18629,8 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/patient_wing)
 "eLh" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
 /turf/simulated/floor/plating/under,
-/area/turbolift/Research/colony)
+/area/turbolift/Research/midlevelTwo)
 "eLm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -85714,9 +85710,6 @@
 /obj/landmark/join/start/foreigner,
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/storage/tech)
-"wtq" = (
-/turf/simulated/floor/plating/under,
-/area/turbolift/Research/midlevelTwo)
 "wtr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -87819,9 +87812,8 @@
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai_upload)
 "wVg" = (
-/obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining,
 /turf/simulated/floor/plating/under,
-/area/turbolift/Mining/colony)
+/area/turbolift/Mining/midlevelTwo)
 "wVm" = (
 /obj/effect/spider/stickyweb,
 /obj/random/closet_maintloot,
@@ -116436,7 +116428,7 @@ fGi
 fGi
 fGi
 fGi
-wVg
+fGi
 wyx
 rtq
 wMo
@@ -122238,7 +122230,7 @@ qZq
 qZq
 qZq
 qZq
-eLh
+qZq
 iQn
 izs
 jIx
@@ -131024,19 +131016,19 @@ jDL
 cxR
 xui
 cxR
-chb
-chb
-chb
-chb
-chb
+wVg
+wVg
+wVg
+wVg
+wVg
 cxR
 cxR
-wtq
-wtq
-wtq
-wtq
-wtq
-wtq
+eLh
+eLh
+eLh
+eLh
+eLh
+eLh
 cxR
 xui
 xui
@@ -131230,10 +131222,10 @@ tdK
 xqj
 xqj
 xqj
-chb
+wVg
 cxR
 cxR
-wtq
+eLh
 xgm
 xgm
 xgm
@@ -131432,10 +131424,10 @@ tdK
 xqj
 xqj
 xqj
-chb
+wVg
 cxR
 cxR
-wtq
+eLh
 xgm
 xgm
 xgm
@@ -131634,10 +131626,10 @@ tdK
 xqj
 xqj
 xqj
-chb
+wVg
 cxR
 cxR
-wtq
+eLh
 xgm
 xgm
 xgm
@@ -131832,19 +131824,19 @@ jDL
 cxR
 xui
 cxR
-chb
-chb
-chb
-chb
-chb
+wVg
+wVg
+wVg
+wVg
+wVg
 cxR
 cxR
-wtq
-wtq
-wtq
-wtq
-wtq
-wtq
+eLh
+eLh
+eLh
+eLh
+eLh
+eLh
 cxR
 xui
 xui
