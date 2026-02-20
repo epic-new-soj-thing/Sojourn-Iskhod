@@ -56946,9 +56946,6 @@
 	icon_state = "12,10"
 	},
 /area/shuttle/vasiliy_shuttle_area)
-"oLV" = (
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/turbolift/Research/midlevelOne)
 "oLZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -59633,7 +59630,7 @@
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
-/area/turbolift/Research/midlevelOne)
+/area/turbolift/ElevatorOne/midlevelTwo)
 "puf" = (
 /obj/machinery/door/unpowered/simple/wood{
 	color = "#9a977b"
@@ -73264,7 +73261,7 @@
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
-/area/turbolift/Mining/midlevelOne)
+/area/turbolift/Mining/midlevelTwo)
 "tdT" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/boulder,
@@ -88566,9 +88563,6 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/quartermaster/supplydock)
-"xgm" = (
-/turf/simulated/floor/industrial/navy_slates,
-/area/turbolift/Research/midlevelOne)
 "xgs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -89190,7 +89184,7 @@
 /area/iskhod/maintenance/substation/engineering)
 "xqj" = (
 /turf/simulated/floor/industrial/navy_slates,
-/area/turbolift/Mining/midlevelOne)
+/area/turbolift/Mining/midlevelTwo)
 "xqk" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "13,11"
@@ -131228,10 +131222,10 @@ xui
 cxR
 cxR
 xui
-xgm
-xgm
-xgm
-oLV
+vSf
+vSf
+vSf
+hHU
 pub
 xui
 xui
@@ -131430,10 +131424,10 @@ xui
 cxR
 cxR
 xui
-xgm
-xgm
-xgm
-oLV
+vSf
+vSf
+vSf
+hHU
 pub
 xui
 xui
@@ -131632,10 +131626,10 @@ xui
 cxR
 cxR
 xui
-xgm
-xgm
-xgm
-oLV
+vSf
+vSf
+vSf
+hHU
 pub
 xui
 xui

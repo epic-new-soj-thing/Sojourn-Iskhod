@@ -40,7 +40,7 @@
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Mining
 	name = "Turbolift"
 	lift_size_x = 4 // Size of the actual lift, shaft walls are extra.
-	lift_size_y = 3
+	lift_size_y = 4
 	icon = 'icons/modules/turbolift/turbolift_preview_3x3 - no walls.dmi'
 	dir = NORTH
 
