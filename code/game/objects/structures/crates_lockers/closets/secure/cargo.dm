@@ -91,7 +91,8 @@
 		new /obj/item/storage/backpack/military(src)
 	else
 		new /obj/item/storage/backpack/holding(src)
-	new /obj/item/clothing/under/rank/cargotech(src)
+	new /obj/item/clothing/under/rank/cargoclerk(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/cargo(src)
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/gloves/thick(src)

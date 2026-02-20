@@ -9,6 +9,7 @@
 	if(populated_contents)
 		return
 	populated_contents = TRUE
+	new /obj/item/clothing/suit/hooded/wintercoat(src)
 	new /obj/item/reagent_containers/drinks/bottle/small/beer(src)
 	new /obj/item/reagent_containers/drinks/bottle/small/beer(src)
 	new /obj/item/reagent_containers/drinks/bottle/small/beer(src)
