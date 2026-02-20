@@ -14,7 +14,7 @@
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/head/helmet(src)
 	new /obj/item/clothing/shoes/color/brown(src)
-	new /obj/item/clothing/suit/hooded/wintercaptaincoat/(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
 	new /obj/item/clothing/shoes/winter/command(src)
 	new /obj/item/device/radio/headset/heads/captain(src)
 	new /obj/item/clothing/gloves/captain(src)
