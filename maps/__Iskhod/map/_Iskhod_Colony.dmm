@@ -31365,6 +31365,9 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/main/f1section1)
+"ieW" = (
+/turf/simulated/floor/plating/under,
+/area/turbolift/Mining/midlevelTwo)
 "ifo" = (
 /obj/machinery/computer/mecha,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -56946,6 +56949,9 @@
 	icon_state = "12,10"
 	},
 /area/shuttle/vasiliy_shuttle_area)
+"oLV" = (
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/turbolift/Research/midlevelTwo)
 "oLZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -59630,7 +59636,7 @@
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
-/area/turbolift/ElevatorOne/midlevelTwo)
+/area/turbolift/Research/midlevelTwo)
 "puf" = (
 /obj/machinery/door/unpowered/simple/wood{
 	color = "#9a977b"
@@ -60526,6 +60532,9 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/iskhod/maintenance/undergroundfloor2south)
+"pGt" = (
+/turf/simulated/floor/plating/under,
+/area/turbolift/Research/midlevelTwo)
 "pGu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/hologram/holopad,
@@ -88563,6 +88572,9 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/quartermaster/supplydock)
+"xgm" = (
+/turf/simulated/floor/industrial/navy_slates,
+/area/turbolift/Research/midlevelTwo)
 "xgs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -131012,19 +131024,19 @@ jDL
 cxR
 xui
 xui
-xui
-xui
-xui
-xui
-xui
+ieW
+ieW
+ieW
+ieW
+ieW
 cxR
 cxR
-xui
-xui
-xui
-xui
-xui
-xui
+pGt
+pGt
+pGt
+pGt
+pGt
+pGt
 xui
 xui
 xui
@@ -131218,14 +131230,14 @@ tdK
 xqj
 xqj
 xqj
-xui
+ieW
 cxR
 cxR
-xui
-vSf
-vSf
-vSf
-hHU
+pGt
+xgm
+xgm
+xgm
+oLV
 pub
 xui
 xui
@@ -131420,14 +131432,14 @@ tdK
 xqj
 xqj
 xqj
-xui
+ieW
 cxR
 cxR
-xui
-vSf
-vSf
-vSf
-hHU
+pGt
+xgm
+xgm
+xgm
+oLV
 pub
 xui
 xui
@@ -131622,14 +131634,14 @@ tdK
 xqj
 xqj
 xqj
-xui
+ieW
 cxR
 cxR
-xui
-vSf
-vSf
-vSf
-hHU
+pGt
+xgm
+xgm
+xgm
+oLV
 pub
 xui
 xui
@@ -131820,19 +131832,19 @@ jDL
 cxR
 xui
 xui
-xui
-xui
-xui
-xui
-xui
+ieW
+ieW
+ieW
+ieW
+ieW
 cxR
 cxR
-xui
-xui
-xui
-xui
-xui
-xui
+pGt
+pGt
+pGt
+pGt
+pGt
+pGt
 xui
 xui
 xui
