@@ -469,7 +469,17 @@
 
 /turf/simulated/mineral/random/high_chance
 	mineralChance = 100 //25
-	mineralSpawnChanceList = list(ORE_URANIUM = 10, ORE_PLATINUM = 10, ORE_IRON = 20, ORE_CARBON = 20, ORE_DIAMOND = 2, ORE_GOLD = 10, ORE_SILVER = 10, ORE_PLASMA = 20, ORE_HYDROGEN = 1)
+	mineralSpawnChanceList = list(ORE_URANIUM = 10, ORE_PLATINUM = 10, ORE_IRON = 20, ORE_CARBON = 20, ORE_DIAMOND = 2, ORE_GOLD = 10, ORE_SILVER = 10, ORE_PLASMA = 20, ORE_HYDROGEN = 5)
+
+/turf/simulated/mineral/random/high_chance/New()
+	if (prob(mineralChance) && !mineral)
+		var/mineral_name = pickweight(mineralSpawnChanceList) //temp mineral name
+		mineral_name = lowertext(mineral_name)
+		if (mineral_name && (mineral_name in ore_data))
+			mineral = ore_data[mineral_name]
+			UpdateMineral()
+
+	. = ..()
 
 /********************** Planet **************************/
 
