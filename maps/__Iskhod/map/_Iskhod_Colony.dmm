@@ -14481,12 +14481,6 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/pool)
-"dGx" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/iskhod/command/tcommsat/chamber)
 "dGz" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -22645,7 +22639,7 @@
 	pixel_y = -32
 	},
 /obj/machinery/camera/network/telecom,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/telecommonitor)
 "fLL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -30259,12 +30253,6 @@
 /obj/structure/invislight,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/shuttle/escape/station)
-"hNr" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/pit/level3)
 "hNA" = (
 /turf/simulated/wall/r_wall,
 /area/iskhod/engineering/engine_airlock)
@@ -38570,12 +38558,6 @@
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/pros/prep)
-"jQp" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/open,
-/area/iskhod/pit/surface)
 "jQr" = (
 /obj/structure/multiz/stairs/enter{
 	dir = 8
@@ -73096,9 +73078,6 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section2)
-"sRl" = (
-/turf/simulated/floor/plating/under,
-/area/iskhod/pit/level3)
 "sRn" = (
 /obj/machinery/power/apc/inactive{
 	pixel_x = -28
@@ -91035,15 +91014,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
-"xCS" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/open,
-/area/iskhod/pit/level2)
 "xDt" = (
 /obj/structure/catwalk,
 /obj/random/closet,
@@ -112279,11 +112249,11 @@ uJh
 ezS
 uJh
 uJh
+uJh
 aEX
 aEX
-sRl
 aEX
-sRl
+aEX
 aEX
 aEX
 aEX
@@ -112684,7 +112654,7 @@ ezS
 uJh
 uJh
 aEX
-sRl
+aEX
 cSR
 vSf
 vSf
@@ -112886,7 +112856,7 @@ ezS
 uJh
 uJh
 aEX
-hNr
+aEX
 cSR
 vSf
 vSf
@@ -113088,7 +113058,7 @@ ezS
 uJh
 uJh
 aEX
-sRl
+aEX
 cSR
 vSf
 vSf
@@ -113491,11 +113461,11 @@ uJh
 ezS
 uJh
 uJh
+uJh
 aEX
 aEX
-sRl
 aEX
-sRl
+aEX
 aEX
 aEX
 aEX
@@ -116017,7 +115987,7 @@ woo
 xiw
 sVf
 ruD
-dGx
+ktd
 ruD
 idb
 dlW
@@ -152682,9 +152652,9 @@ sbD
 edm
 edm
 xvf
-edm
 xvf
-edm
+xvf
+xvf
 xvf
 xvf
 xvf
@@ -153085,7 +153055,7 @@ btd
 sbD
 edm
 xvf
-edm
+xvf
 eyP
 eyP
 eyP
@@ -153287,7 +153257,7 @@ btd
 wxa
 tBj
 xvf
-xCS
+xvf
 eyP
 eyP
 eyP
@@ -153489,7 +153459,7 @@ btd
 sbD
 edm
 xvf
-edm
+xvf
 eyP
 eyP
 eyP
@@ -153894,9 +153864,9 @@ sbD
 edm
 edm
 xvf
-edm
 xvf
-edm
+xvf
+xvf
 xvf
 xvf
 xvf
@@ -193083,9 +193053,9 @@ qpF
 iRf
 iRf
 nir
-iRf
 nir
-iRf
+nir
+nir
 nir
 nir
 nir
@@ -193486,7 +193456,7 @@ ffK
 qpF
 iRf
 nir
-iRf
+nir
 viv
 viv
 viv
@@ -193688,7 +193658,7 @@ uDK
 kAi
 dEI
 nir
-jQp
+nir
 viv
 viv
 viv
@@ -193890,7 +193860,7 @@ ffK
 qpF
 iRf
 nir
-iRf
+nir
 viv
 viv
 viv
@@ -194295,9 +194265,9 @@ qpF
 iRf
 iRf
 nir
-iRf
 nir
-iRf
+nir
+nir
 nir
 nir
 nir
