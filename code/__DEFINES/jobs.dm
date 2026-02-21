@@ -1,5 +1,5 @@
 //Jobs depatment lists for use in constant expressions
-#define JOBS_SECURITY "Captain","Lieutenant","Detective","Ranger","Junior Ranger","Corpsman"
+#define JOBS_SECURITY "Captain","Lieutenant","Detective","Ranger","Junior Ranger"
 #define JOBS_COMMAND "Governor","Steward","Captain","Quartermaster","Chief Engineer","Biolab Overseer","Research Overseer","Priest","Foreman","Hospitality Manager"
 #define JOBS_ENGINEERING "Chief Engineer","Engineer","Apprentice","Janitor"
 #define JOBS_MEDICAL "Biolab Overseer","Doctor","Chemist","Psychiatrist","Nurse","Paramedic","Resident"
@@ -13,7 +13,7 @@
 #define JOBS_LODGE "Lodge Hunt Master","Lodge Hunter","Lodge Herbalist",
 #define JOBS_INDEPENDENT "Outsider"
 
-#define JOBS_ANTI_HIVEMIND "Captain","Lieutenant","Detective","Ranger","Junior Ranger","Corpsman","Priest","Cardinal","Foreman","Rookie","Salvager","Prospector","Governor","Steward","AI","Janitor","Paramedic","Roboticist","Miner","Chemist"
+#define JOBS_ANTI_HIVEMIND "Captain","Lieutenant","Detective","Ranger","Junior Ranger","Priest","Cardinal","Foreman","Rookie","Salvager","Prospector","Governor","Steward","AI","Janitor","Paramedic","Roboticist","Miner","Chemist"
 
 #define JOURNALIST "Journalist"
 #define HOP "Hospitality Manager"
