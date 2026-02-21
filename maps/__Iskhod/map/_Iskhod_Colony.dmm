@@ -2570,9 +2570,6 @@
 /area/iskhod/security/interview)
 "aFT" = (
 /obj/machinery/bodyscanner,
-/obj/structure/window/basic/iskhod{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/medbay)
 "aGd" = (
@@ -12045,6 +12042,9 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/window/basic/iskhod{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/medbay)
 "daK" = (
@@ -31937,6 +31937,14 @@
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
+"ikc" = (
+/obj/structure/medical_stand,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/window/basic/iskhod{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/medical/medbay)
 "iki" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/disposalpipe/segment{
@@ -59556,6 +59564,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/window/basic/iskhod{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/medbay)
 "plD" = (
@@ -60990,6 +61001,9 @@
 "pEW" = (
 /obj/structure/medical_stand,
 /obj/effect/floor_decal/industrial/hatch,
+/obj/structure/window/basic/iskhod{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/medbay)
 "pEX" = (
@@ -66071,6 +66085,9 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/window/basic/iskhod{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/medbay)
@@ -74555,12 +74572,6 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
 "tmF" = (
-/obj/structure/window/basic/iskhod{
-	dir = 4
-	},
-/obj/structure/window/basic/iskhod{
-	dir = 4
-	},
 /obj/machinery/sleeper{
 	dir = 8
 	},
@@ -76099,9 +76110,6 @@
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "tEx" = (
-/obj/structure/window/basic/iskhod{
-	dir = 8
-	},
 /obj/effect/floor_decal/industrial/loading,
 /obj/structure/cable/green{
 	d1 = 4;
@@ -85784,9 +85792,6 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/bioreactor)
 "wjp" = (
-/obj/structure/window/basic/iskhod{
-	dir = 4
-	},
 /obj/machinery/sleeper{
 	dir = 8
 	},
@@ -93024,6 +93029,9 @@
 /obj/structure/medical_stand,
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/window/basic/iskhod{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/medbay)
 "yeZ" = (
@@ -113650,7 +113658,7 @@ esA
 wGP
 tcn
 kbI
-pEW
+ikc
 qYR
 cDR
 juZ
