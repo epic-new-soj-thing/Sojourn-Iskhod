@@ -847,17 +847,11 @@
 /obj/structure/railing/grey{
 	dir = 1
 	},
-/obj/structure/cable/cyan{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2";
-	pixel_y = 20
-	},
 /obj/machinery/light/small,
-/obj/structure/cable/cyan{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
+/obj/structure/cable/cyan,
+/obj/structure/cable/ender{
+	id = "surface";
+	name = "main grid cable"
 	},
 /turf/simulated/open,
 /area/iskhod/maintenance/undergroundfloor2west)
@@ -9838,11 +9832,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/green{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -27;
@@ -9851,6 +9840,11 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/cable/ender{
+	name = "security power cable";
+	id = "sec"
+	},
+/obj/structure/cable/green,
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/sec)
 "cvh" = (
@@ -12808,17 +12802,16 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/engineering/telecommonitor)
 "dlZ" = (
-/obj/structure/cable/cyan{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
+/obj/structure/disposalpipe/up,
+/obj/machinery/atmospherics/pipe/zpipe/up,
 /obj/structure/cable/cyan{
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/structure/disposalpipe/up,
-/obj/machinery/atmospherics/pipe/zpipe/up,
+/obj/structure/cable/ender{
+	id = "surface";
+	name = "main grid cable"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
 "dmi" = (
@@ -22813,10 +22806,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
+/obj/structure/cable/ender{
+	id = "sci";
+	name = "research power cable"
+	},
 /obj/structure/cable/green{
-	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2"
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
@@ -25777,13 +25773,16 @@
 	dir = 4;
 	pixel_x = 4
 	},
-/obj/structure/cable/green{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2"
-	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/structure/cable/ender{
+	name = "security power cable";
+	id = "sec"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /turf/simulated/open,
 /area/iskhod/maintenance/substation/sec)
@@ -26282,11 +26281,13 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/green,
+/obj/structure/cable/ender{
+	id = "medical";
+	name = "medical power cable"
+	},
 /obj/structure/cable/green{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
+	d2 = 4;
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
@@ -26404,10 +26405,13 @@
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/maintenance/undergroundfloor2south)
 "gKV" = (
+/obj/structure/cable/ender{
+	id = "surface";
+	name = "main grid cable"
+	},
 /obj/structure/cable/cyan{
-	d1 = 2;
 	d2 = 4;
-	icon_state = "2-4"
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/undergroundfloor1west)
@@ -28832,13 +28836,16 @@
 	dir = 8;
 	tag = "icon-railing0 (WEST)"
 	},
-/obj/structure/cable/cyan{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2"
-	},
 /obj/structure/disposalpipe/down,
 /obj/machinery/atmospherics/pipe/zpipe/down,
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/ender{
+	id = "surface";
+	name = "main grid cable"
+	},
 /turf/simulated/open,
 /area/iskhod/hallway/surface/section4)
 "htP" = (
@@ -30874,13 +30881,16 @@
 /obj/structure/railing/grey{
 	pixel_y = -4
 	},
-/obj/structure/cable/green{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2"
-	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/ender{
+	id = "medical";
+	name = "medical power cable"
 	},
 /turf/simulated/open,
 /area/iskhod/maintenance/substation/medical)
@@ -33685,6 +33695,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "iGk" = (
@@ -33785,20 +33801,11 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/workshop)
 "iHq" = (
-/obj/structure/cable/cyan{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
+/obj/machinery/atmospherics/valve/digital{
+	open = 1
 	},
-/obj/structure/cable/cyan,
-/obj/structure/cable/cyan{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2";
-	pixel_y = 20
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/iskhod/maintenance/undergroundfloor1west)
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "iHs" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -34484,11 +34491,6 @@
 /area/iskhod/rnd/docking)
 "iQp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 1
 	},
@@ -34564,8 +34566,8 @@
 /turf/simulated/open,
 /area/iskhod/pit/surface)
 "iRi" = (
-/obj/machinery/power/supermatter,
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/machinery/power/supermatter,
 /turf/simulated/floor/reinforced/airless,
 /area/iskhod/engineering/engine_room)
 "iRB" = (
@@ -36956,11 +36958,6 @@
 /area/iskhod/medical/medbay)
 "jvh" = (
 /obj/structure/disposalpipe/down,
-/obj/structure/cable/green{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2"
-	},
 /obj/structure/multiz/stairs/enter{
 	dir = 1
 	},
@@ -39422,6 +39419,14 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
 "kcu" = (
+/obj/structure/cable/ender{
+	id = "sci";
+	name = "research power cable"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/server)
 "kcx" = (
@@ -40111,7 +40116,6 @@
 "klN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spider/stickyweb,
 /obj/machinery/power/apc/inactive{
 	pixel_x = -28
 	},
@@ -43667,12 +43671,6 @@
 /obj/structure/disposalpipe/up,
 /obj/structure/window/reinforced/iskhod,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
-/obj/structure/cable/green,
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 1
 	},
@@ -48765,7 +48763,7 @@
 	id = "sm_blast_shield_interior";
 	dir = 4
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_room)
 "myt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -51266,11 +51264,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
@@ -56884,9 +56877,9 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/server)
@@ -66253,11 +66246,11 @@
 	id = "research outpost to engine";
 	name = "surface power cable"
 	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_smes)
 "rbF" = (
@@ -68337,11 +68330,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
 "rEr" = (
@@ -69515,6 +69503,11 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "rVL" = (
@@ -70532,6 +70525,11 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
@@ -92299,11 +92297,6 @@
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/bridge)
 "xUk" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -101552,7 +101545,7 @@ iVp
 iVp
 fAE
 gKV
-iHq
+jSx
 jSx
 fAE
 iVp
@@ -116310,7 +116303,7 @@ sYY
 liH
 eJB
 rEn
-ufE
+roO
 gJE
 phB
 bCN
@@ -148504,7 +148497,7 @@ oTK
 vQN
 hwB
 oTK
-jDJ
+iHq
 jui
 vrR
 aWT
