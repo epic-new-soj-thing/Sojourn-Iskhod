@@ -78842,6 +78842,12 @@
 "unU" = (
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/hut_cell1)
+"uob" = (
+/obj/structure/multiz/stairs/enter{
+	dir = 4
+	},
+/turf/simulated/open,
+/area/iskhod/crew_quarters/bar)
 "uok" = (
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
@@ -92800,6 +92806,12 @@
 	},
 /turf/simulated/floor/tiled/dark/panels,
 /area/iskhod/engineering)
+"xZq" = (
+/obj/structure/multiz/stairs/active{
+	dir = 4
+	},
+/turf/simulated/open,
+/area/iskhod/crew_quarters/bar)
 "xZu" = (
 /obj/machinery/door/firedoor/multi_tile,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
@@ -153988,7 +154000,7 @@ fyL
 oVb
 oVb
 wUB
-lhX
+uob
 wUB
 wUB
 rgS
@@ -154190,7 +154202,7 @@ fyL
 oVb
 oVb
 wUB
-lhX
+xZq
 tvF
 xXr
 gwc
