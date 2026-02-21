@@ -31937,9 +31937,6 @@
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
-"ikc" = (
-/turf/simulated/floor/plating/under,
-/area/iskhod/engineering/engine_room)
 "iki" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/structure/disposalpipe/segment{
@@ -52492,6 +52489,9 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
+"nuD" = (
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/engine_room)
 "nuO" = (
 /obj/structure/sign/warning/hazard_coldloop,
 /turf/simulated/wall/iskhod_green,
@@ -115964,7 +115964,7 @@ hJx
 hJx
 hJx
 nuO
-ikc
+nuD
 jSW
 qBC
 qLU
@@ -117176,7 +117176,7 @@ wMo
 hJx
 hJx
 ybV
-ikc
+nuD
 vLR
 odz
 koB
