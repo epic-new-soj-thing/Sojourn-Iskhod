@@ -839,18 +839,7 @@
 /obj/structure/railing/grey{
 	dir = 1
 	},
-/obj/structure/cable/cyan{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2";
-	pixel_y = 20
-	},
 /obj/machinery/light/small,
-/obj/structure/cable/cyan{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
 /turf/simulated/open,
 /area/iskhod/maintenance/undergroundfloor2west)
 "ajw" = (
@@ -9821,11 +9810,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/structure/cable/green{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
 /obj/machinery/alarm{
 	dir = 4;
 	pixel_x = -27;
@@ -9834,6 +9818,11 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/cable/ender{
+	name = "surface power cable";
+	id = "surface_cable_3"
+	},
+/obj/structure/cable/green,
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/sec)
 "cvh" = (
@@ -25734,13 +25723,16 @@
 	dir = 4;
 	pixel_x = 4
 	},
-/obj/structure/cable/green{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2"
-	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/ender{
+	name = "surface power cable";
+	id = "surface_cable_3"
 	},
 /turf/simulated/open,
 /area/iskhod/maintenance/substation/sec)
@@ -26235,11 +26227,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/cable/green,
-/obj/structure/cable/green{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
 "gJF" = (
@@ -26356,10 +26343,13 @@
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/maintenance/undergroundfloor2south)
 "gKV" = (
+/obj/structure/cable/ender{
+	name = "surface power cable";
+	id = "surface_cable"
+	},
 /obj/structure/cable/cyan{
-	d1 = 2;
 	d2 = 4;
-	icon_state = "2-4"
+	icon_state = "0-4"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/undergroundfloor1west)
@@ -29325,15 +29315,18 @@
 /obj/structure/railing/grey{
 	pixel_y = -4
 	},
-/obj/structure/cable/green{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2"
-	},
 /obj/machinery/light/small{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/cobweb2,
+/obj/structure/cable/ender{
+	name = "surface power cable";
+	id = "surface_cable_3"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/open,
 /area/iskhod/maintenance/substation/servist)
 "hAA" = (
@@ -30826,13 +30819,16 @@
 /obj/structure/railing/grey{
 	pixel_y = -4
 	},
-/obj/structure/cable/green{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2"
-	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/structure/cable/ender{
+	name = "surface power cable";
+	id = "surface_cable_1"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /turf/simulated/open,
 /area/iskhod/maintenance/substation/medical)
@@ -33718,20 +33714,17 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/workshop)
 "iHq" = (
-/obj/structure/cable/cyan{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/ender{
+	name = "surface power cable";
+	id = "surface_cable"
 	},
-/obj/structure/cable/cyan,
 /obj/structure/cable/cyan{
-	d1 = 32;
 	d2 = 2;
-	icon_state = "32-2";
-	pixel_y = 20
+	icon_state = "0-2"
 	},
-/turf/simulated/floor/tiled/techmaint,
-/area/iskhod/maintenance/undergroundfloor1west)
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2west)
 "iHs" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -36888,10 +36881,13 @@
 /area/iskhod/medical/medbay)
 "jvh" = (
 /obj/structure/disposalpipe/down,
+/obj/structure/cable/ender{
+	name = "surface power cable";
+	id = "surface_cable_4"
+	},
 /obj/structure/cable/green{
-	d1 = 32;
 	d2 = 2;
-	icon_state = "32-2"
+	icon_state = "0-2"
 	},
 /obj/structure/multiz/stairs/enter{
 	dir = 1
@@ -40045,6 +40041,10 @@
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/structure/cable/ender{
+	name = "surface power cable";
+	id = "surface_cable_1"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
@@ -43572,14 +43572,13 @@
 /obj/structure/disposalpipe/up,
 /obj/structure/window/reinforced/iskhod,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
 /obj/structure/cable/green,
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 1
+	},
+/obj/structure/cable/ender{
+	name = "surface power cable";
+	id = "surface_cable_4"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/server)
@@ -56305,10 +56304,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/green{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
+/obj/structure/cable/ender{
+	name = "surface power cable";
+	id = "surface_cable_2"
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/techmaint,
@@ -61346,9 +61344,9 @@
 "pMU" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/cable/cyan{
-	d1 = 2;
+	d1 = 1;
 	d2 = 4;
-	icon_state = "2-4"
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2west)
@@ -74052,6 +74050,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/danger,
 /area/iskhod/command/bridge)
+"tin" = (
+/obj/structure/cable/ender{
+	name = "surface power cable";
+	id = "surface_cable"
+	},
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0"
+	},
+/area/iskhod/outside/inside_colony)
 "tiu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -84884,6 +84891,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/office)
+"vYh" = (
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/mineral/planet,
+/area/iskhod/maintenance/undergroundfloor1west)
 "vYj" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger/industrial,
@@ -101264,7 +101278,7 @@ iVp
 iVp
 fAE
 gKV
-iHq
+jSx
 jSx
 fAE
 iVp
@@ -102481,7 +102495,7 @@ asi
 caF
 iVp
 iVp
-iVp
+vYh
 iVp
 rlF
 hYm
@@ -141663,7 +141677,7 @@ iZe
 iZe
 eYn
 eYn
-pFA
+iHq
 pMU
 ajv
 vTX
@@ -202489,7 +202503,7 @@ aLF
 aLF
 ksV
 ksV
-ycV
+tin
 ycV
 ycV
 ycV
