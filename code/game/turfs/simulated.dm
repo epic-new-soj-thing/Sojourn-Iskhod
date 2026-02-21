@@ -7,7 +7,7 @@
 	var/has_resources
 	var/list/resources
 	var/seismic_activity = 1  // SEISMIC_MIN
-
+	var/initial_gas
 	var/thermite = 0
 	oxygen = MOLES_O2STANDARD
 	nitrogen = MOLES_N2STANDARD
@@ -22,10 +22,11 @@
 	// can rely on it rather than generating an empty mixture at start.
 	// skip airless floor types entirely, they intentionally have none.
 	if(!initial_gas && (oxygen || nitrogen || carbon_dioxide || plasma || hydrogen))
-		initial_gas = new/datum/gas_mixture
-		initial_gas.adjust_multi(GAS_OXYGEN, oxygen, GAS_NITROGEN, nitrogen, GAS_CO2, carbon_dioxide, GAS_PLASMA, plasma, GAS_HYDROGEN, hydrogen)
-		initial_gas.temperature = temperature
-		initial_gas.update_values()
+		var/datum/gas_mixture/G = new/datum/gas_mixture
+		G.adjust_multi(GAS_OXYGEN, oxygen, GAS_NITROGEN, nitrogen, GAS_CO2, carbon_dioxide, GAS_PLASMA, plasma, GAS_HYDROGEN, hydrogen)
+		G.temperature = temperature
+		G.update_values()
+		initial_gas = G
 
 	if(istype(loc, /area/iskhod/absolutism))
 		holy = 1
