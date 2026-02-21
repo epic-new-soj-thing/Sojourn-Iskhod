@@ -24,14 +24,18 @@ var/list/escape_pods_by_name = list()
 	controller_master = locate(controller_master)
 	if(!istype(controller_master))
 		CRASH("Escape pod \"[name]\" could not find it's controller master tagged [master_tag]!")
-
 	controller_master.pod = src
 	arming_controller.pod = src
 
+	// Debug: report escape pod initialisation state
+	log_debug("EscapePod New: name=[name], controller_master=[controller_master], arming_controller=[arming_controller], location=[location]")
+
 /datum/shuttle/autodock/ferry/escape_pod/can_launch()
-	if(arming_controller && !arming_controller.armed)	//must be armed
+	if(arming_controller && !arming_controller.armed)
+		log_debug("EscapePod can_launch: blocked because arming_controller not armed for pod [name] (arming_controller=[arming_controller])")
 		return FALSE
 	if(location)
+		log_debug("EscapePod can_launch: blocked because pod [name] has location set (one-way). location=[location]")
 		return FALSE	//it's a one-way trip.
 	return ..()
 
@@ -74,6 +78,8 @@ var/list/escape_pods_by_name = list()
 		return TOPIC_REFRESH*/
 
 	if(href_list["force_launch"])
+		// Debug: user requested force_launch
+		log_debug("EscapePod UI force_launch requested: pod=[pod], user=[user], can_force=[pod.can_force()], can_launch=[pod.can_launch()], evacuation_evacuated=[evacuation_controller.has_evacuated()]")
 		if (pod.can_force())
 			pod.force_launch(src)
 		else if (evacuation_controller.has_evacuated() && pod.can_launch())	//allow players to manually launch ahead of time if the shuttle leaves
