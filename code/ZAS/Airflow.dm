@@ -126,12 +126,6 @@ Contains helper procs for airflow, handled in /connection_group.
 	apply_damage(b_loss/3, BRUTE, BP_HEAD, used_weapon = "Airflow")
 	apply_damage(b_loss/3, BRUTE, BP_CHEST, used_weapon = "Airflow")
 	apply_damage(b_loss/3, BRUTE, BP_GROIN, used_weapon = "Airflow")
-
-	if(airflow_speed > 10)
-		//Paralyse(round(airflow_speed * vsc.airflow_stun))
-		//Stun(paralysis + 3)
-	else
-		//Stun(round(airflow_speed * vsc.airflow_stun/2))
 	. = ..()
 
 /zone/proc/movables(list/origins)
