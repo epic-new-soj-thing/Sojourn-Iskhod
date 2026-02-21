@@ -464,6 +464,16 @@
 
 	. = ..()
 
+/turf/simulated/mineral/random/Initialize()
+	// called when map loads; New may not run again
+	..()
+	if (prob(mineralChance) && !mineral)
+		var/mineral_name = pickweight(mineralSpawnChanceList)
+		mineral_name = lowertext(mineral_name)
+		if (mineral_name && (mineral_name in ore_data))
+			mineral = ore_data[mineral_name]
+			UpdateMineral()
+
 /turf/simulated/mineral/proc/check_radial_dig()
 	return TRUE
 
@@ -480,6 +490,16 @@
 			UpdateMineral()
 
 	. = ..()
+
+/turf/simulated/mineral/random/high_chance/Initialize()
+	// ensure high_chance tiles spawn correctly on map load
+	..()
+	if (prob(mineralChance) && !mineral)
+		var/mineral_name = pickweight(mineralSpawnChanceList)
+		mineral_name = lowertext(mineral_name)
+		if (mineral_name && (mineral_name in ore_data))
+			mineral = ore_data[mineral_name]
+			UpdateMineral()
 
 /********************** Planet **************************/
 
