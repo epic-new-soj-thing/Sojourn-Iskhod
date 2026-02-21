@@ -58948,7 +58948,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/hyper{
-	pixel_y = 28
+	pixel_y = 28;
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/atmos)
@@ -63914,7 +63915,8 @@
 /area/outpost/abandoned)
 "qtg" = (
 /obj/machinery/power/apc/inactive{
-	pixel_x = 28
+	pixel_x = 28;
+	dir = 4
 	},
 /obj/structure/cable/green{
 	d2 = 2;
