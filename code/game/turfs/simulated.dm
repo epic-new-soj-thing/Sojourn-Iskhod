@@ -9,8 +9,8 @@
 	var/seismic_activity = 1  // SEISMIC_MIN
 
 	var/thermite = 0
-	//oxygen = MOLES_O2STANDARD
-	//nitrogen = MOLES_N2STANDARD
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 	var/to_be_destroyed = 0 //Used for fire, if a melting temperature was reached, it will be destroyed
 	var/max_fire_temperature_sustained = 0 //The max temperature of the fire which it was subjected to
 
@@ -18,6 +18,15 @@
 
 /turf/simulated/New()
 	..()
+	// Ensure every simulated turf has a baseline atmosphere so return_air()/make_air()
+	// can rely on it rather than generating an empty mixture at start.
+	// skip airless floor types entirely, they intentionally have none.
+	if(!initial_gas && (oxygen || nitrogen || carbon_dioxide || plasma || hydrogen))
+		initial_gas = new/datum/gas_mixture
+		initial_gas.adjust_multi(GAS_OXYGEN, oxygen, GAS_NITROGEN, nitrogen, GAS_CO2, carbon_dioxide, GAS_PLASMA, plasma, GAS_HYDROGEN, hydrogen)
+		initial_gas.temperature = temperature
+		initial_gas.update_values()
+
 	if(istype(loc, /area/iskhod/absolutism))
 		holy = 1
 	levelupdate()
