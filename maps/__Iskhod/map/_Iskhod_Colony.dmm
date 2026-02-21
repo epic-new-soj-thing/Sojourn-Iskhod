@@ -513,6 +513,14 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/multi_tile{
+	dir = 2
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/holodeck/control)
 "agv" = (
@@ -840,6 +848,11 @@
 	dir = 1
 	},
 /obj/machinery/light/small,
+/obj/structure/cable/cyan,
+/obj/structure/cable/ender{
+	id = "surface";
+	name = "main grid cable"
+	},
 /turf/simulated/open,
 /area/iskhod/maintenance/undergroundfloor2west)
 "ajw" = (
@@ -1492,6 +1505,10 @@
 /obj/item/storage/fancy/cigar,
 /obj/item/trash/cigbutt/faith/orange,
 /obj/item/trash/cigbutt/ishimura,
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/khi,
+/obj/item/trash/cigbutt/fortressred,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
 "asr" = (
@@ -9118,6 +9135,11 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "cnn" = (
@@ -9819,8 +9841,8 @@
 	dir = 8
 	},
 /obj/structure/cable/ender{
-	name = "surface power cable";
-	id = "surface_cable_3"
+	name = "security power cable";
+	id = "sec"
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/techmaint,
@@ -12780,17 +12802,16 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/engineering/telecommonitor)
 "dlZ" = (
-/obj/structure/cable/cyan{
-	d1 = 16;
-	d2 = 0;
-	icon_state = "16-0"
-	},
+/obj/structure/disposalpipe/up,
+/obj/machinery/atmospherics/pipe/zpipe/up,
 /obj/structure/cable/cyan{
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/obj/structure/disposalpipe/up,
-/obj/machinery/atmospherics/pipe/zpipe/up,
+/obj/structure/cable/ender{
+	id = "surface";
+	name = "main grid cable"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
 "dmi" = (
@@ -15354,6 +15375,11 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "dTy" = (
@@ -18780,6 +18806,10 @@
 /obj/item/trash/cigbutt/khi,
 /obj/item/trash/cigbutt/ishimura,
 /obj/item/trash/cigbutt/frozen,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/faith,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
 "eMl" = (
@@ -20716,6 +20746,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "fov" = (
@@ -22076,13 +22111,13 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "fEQ" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/machinery/door/firedoor/multi_tile,
+/obj/machinery/door/airlock/multi_tile/glass{
+	name = "Holodeck"
 	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/holodeck/control)
+/turf/simulated/floor/wood/wild1,
+/area/iskhod/recreation)
 "fEV" = (
 /obj/random/scrap/moderate_weighted,
 /turf/simulated/floor/tiled/techmaint,
@@ -22460,6 +22495,18 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/white/orangecorner,
 /area/iskhod/maintenance/undergroundfloor2south)
+"fJC" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/iskhod/recreation)
 "fJD" = (
 /obj/structure/girder{
 	health = 200;
@@ -22759,10 +22806,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
+/obj/structure/cable/ender{
+	id = "sci";
+	name = "research power cable"
+	},
 /obj/structure/cable/green{
-	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2"
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
@@ -25726,13 +25776,13 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/cable/ender{
+	name = "security power cable";
+	id = "sec"
+	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
-	},
-/obj/structure/cable/ender{
-	name = "surface power cable";
-	id = "surface_cable_3"
 	},
 /turf/simulated/open,
 /area/iskhod/maintenance/substation/sec)
@@ -26105,6 +26155,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/holodeck/control)
 "gHs" = (
@@ -26226,7 +26281,14 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/green,
+/obj/structure/cable/ender{
+	id = "medical";
+	name = "medical power cable"
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
 "gJF" = (
@@ -26344,8 +26406,8 @@
 /area/iskhod/maintenance/undergroundfloor2south)
 "gKV" = (
 /obj/structure/cable/ender{
-	name = "surface power cable";
-	id = "surface_cable"
+	id = "surface";
+	name = "main grid cable"
 	},
 /obj/structure/cable/cyan{
 	d2 = 4;
@@ -26623,11 +26685,11 @@
 	pixel_y = 28
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
-	d2 = 8;
-	icon_state = "0-8"
-	},
 /obj/machinery/camera/network/colony_underground,
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/holodeck/control)
 "gOs" = (
@@ -28774,13 +28836,16 @@
 	dir = 8;
 	tag = "icon-railing0 (WEST)"
 	},
-/obj/structure/cable/cyan{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2"
-	},
 /obj/structure/disposalpipe/down,
 /obj/machinery/atmospherics/pipe/zpipe/down,
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/obj/structure/cable/ender{
+	id = "surface";
+	name = "main grid cable"
+	},
 /turf/simulated/open,
 /area/iskhod/hallway/surface/section4)
 "htP" = (
@@ -29315,18 +29380,15 @@
 /obj/structure/railing/grey{
 	pixel_y = -4
 	},
+/obj/structure/cable/green{
+	d1 = 32;
+	d2 = 2;
+	icon_state = "32-2"
+	},
 /obj/machinery/light/small{
 	dir = 1
 	},
 /obj/effect/decal/cleanable/cobweb2,
-/obj/structure/cable/ender{
-	name = "surface power cable";
-	id = "surface_cable_3"
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /turf/simulated/open,
 /area/iskhod/maintenance/substation/servist)
 "hAA" = (
@@ -30822,13 +30884,13 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/cable/ender{
-	name = "surface power cable";
-	id = "surface_cable_1"
-	},
 /obj/structure/cable/green{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/structure/cable/ender{
+	id = "medical";
+	name = "medical power cable"
 	},
 /turf/simulated/open,
 /area/iskhod/maintenance/substation/medical)
@@ -31876,7 +31938,6 @@
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
 "ikc" = (
-/obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_room)
 "iki" = (
@@ -32245,6 +32306,24 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
+"ipr" = (
+/obj/structure/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/mineral/planet,
+/area/iskhod/engineering/enginehallway)
 "ipA" = (
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = 32
@@ -33614,6 +33693,12 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "iGk" = (
@@ -33714,17 +33799,11 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/workshop)
 "iHq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/ender{
-	name = "surface power cable";
-	id = "surface_cable"
+/obj/machinery/atmospherics/valve/digital{
+	open = 1
 	},
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2west)
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "iHs" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -34410,11 +34489,6 @@
 /area/iskhod/rnd/docking)
 "iQp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 1
 	},
@@ -34491,6 +34565,7 @@
 /area/iskhod/pit/surface)
 "iRi" = (
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/machinery/power/supermatter,
 /turf/simulated/floor/reinforced/airless,
 /area/iskhod/engineering/engine_room)
 "iRB" = (
@@ -36881,14 +36956,6 @@
 /area/iskhod/medical/medbay)
 "jvh" = (
 /obj/structure/disposalpipe/down,
-/obj/structure/cable/ender{
-	name = "surface power cable";
-	id = "surface_cable_4"
-	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/structure/multiz/stairs/enter{
 	dir = 1
 	},
@@ -37009,6 +37076,11 @@
 /obj/machinery/light{
 	brightness_power = 1;
 	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
@@ -39345,6 +39417,14 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
 "kcu" = (
+/obj/structure/cable/ender{
+	id = "sci";
+	name = "research power cable"
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/server)
 "kcx" = (
@@ -40034,17 +40114,12 @@
 "klN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/spider/stickyweb,
 /obj/machinery/power/apc/inactive{
 	pixel_x = -28
 	},
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
-	},
-/obj/structure/cable/ender{
-	name = "surface power cable";
-	id = "surface_cable_1"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
@@ -40673,6 +40748,15 @@
 /obj/machinery/cooking_with_jane/stove,
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
+"ksY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/iskhod/holodeck/control)
 "kta" = (
 /obj/structure/railing/grey{
 	dir = 4
@@ -40758,6 +40842,10 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section2)
+"ktV" = (
+/obj/item/trash/cigbutt/toha,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor1west)
 "ktW" = (
 /obj/structure/sign/directions/room2{
 	pixel_x = 32
@@ -42291,6 +42379,15 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/prison)
+"kPk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/iskhod/holodeck/control)
 "kPs" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
@@ -43572,13 +43669,8 @@
 /obj/structure/disposalpipe/up,
 /obj/structure/window/reinforced/iskhod,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/cable/green,
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 1
-	},
-/obj/structure/cable/ender{
-	name = "surface power cable";
-	id = "surface_cable_4"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/server)
@@ -44752,6 +44844,14 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/service/changing_room)
+"lwu" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_alt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/hallway/main/stairwell)
 "lwC" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/machinery/power/terminal{
@@ -46510,6 +46610,19 @@
 /obj/item/trash/cigbutt/toha,
 /obj/item/clothing/mask/chewable/tobacco,
 /obj/item/storage/chewables/tobacco/nico,
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/khi,
+/obj/item/trash/cigbutt/khi,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/cigarbutt,
+/obj/item/trash/cigbutt/cigarbutt,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/fortressred,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
 "lVy" = (
@@ -46608,13 +46721,9 @@
 /turf/simulated/floor/carpet/gaycarpet,
 /area/iskhod/crew_quarters/cafeteria)
 "lWw" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor1west)
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/turf/simulated/floor/wood/wild1,
+/area/iskhod/recreation)
 "lWH" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/boulder,
@@ -46766,6 +46875,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/security/detectives_office)
+"lYB" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/iskhod/recreation)
 "lYG" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -48638,7 +48761,7 @@
 	id = "sm_blast_shield_interior";
 	dir = 4
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_room)
 "myt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -49206,6 +49329,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
@@ -49985,6 +50113,17 @@
 /obj/item/trash/cigbutt/faith/red,
 /obj/item/trash/cigbutt/cigarbutt,
 /obj/item/clothing/mask/chewable/tobacco/fine,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/cigarbutt,
+/obj/item/trash/cigbutt/cigarbutt,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/faith,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
 "mRE" = (
@@ -51123,11 +51262,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
@@ -56304,9 +56438,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/structure/cable/ender{
-	name = "surface power cable";
-	id = "surface_cable_2"
+/obj/structure/cable/green{
+	d1 = 16;
+	d2 = 0;
+	icon_state = "16-0"
 	},
 /obj/structure/cable/green,
 /turf/simulated/floor/tiled/techmaint,
@@ -56343,6 +56478,14 @@
 	icon_state = "1-8"
 	},
 /turf/simulated/floor/reinforced,
+/area/iskhod/hallway/main/f1section1)
+"owk" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "owo" = (
 /obj/structure/disposalpipe/segment{
@@ -56727,9 +56870,9 @@
 	dir = 8
 	},
 /obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/server)
@@ -57773,11 +57916,6 @@
 /area/iskhod/hallway/main/f1section3)
 "oRk" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/item/device/radio/intercom{
 	pixel_y = 25
 	},
@@ -60700,6 +60838,8 @@
 /obj/item/trash/cigbutt/ishimura,
 /obj/item/trash/cigbutt/toha,
 /obj/item/clothing/mask/chewable/tobacco/nico,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/faith,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
 "pCQ" = (
@@ -61344,9 +61484,9 @@
 "pMU" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/cable/cyan{
-	d1 = 1;
+	d1 = 2;
 	d2 = 4;
-	icon_state = "1-4"
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2west)
@@ -62443,6 +62583,11 @@
 "qbi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/holodeck/control)
 "qbk" = (
@@ -63026,12 +63171,17 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/science)
 "qjC" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/wall/iskhod_green,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "qjE" = (
 /obj/random/mob/excelsior,
@@ -63415,6 +63565,11 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/holodeck/control)
 "qpl" = (
@@ -64371,6 +64526,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/holodeck/control)
@@ -65546,6 +65706,11 @@
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/holodeck/control)
 "qUs" = (
@@ -66074,11 +66239,11 @@
 	id = "research outpost to engine";
 	name = "surface power cable"
 	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_smes)
 "rbF" = (
@@ -67688,6 +67853,10 @@
 /obj/item/trash/cigbutt/brouzouf,
 /obj/item/trash/cigbutt/toha,
 /obj/item/trash/cigbutt/cigarbutt,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/cigarbutt,
+/obj/item/trash/cigbutt/faith,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
 "rxk" = (
@@ -68153,11 +68322,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
@@ -68776,6 +68940,14 @@
 /obj/item/trash/cigbutt/frozen,
 /obj/item/trash/cigbutt/cigarbutt,
 /obj/item/clothing/mask/chewable/tobacco,
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/khi,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/fortressred,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
 "rNI" = (
@@ -68958,6 +69130,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/holodeck/control)
 "rQo" = (
@@ -69098,6 +69275,11 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/holodeck/control)
 "rSB" = (
@@ -69203,6 +69385,11 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "rUz" = (
@@ -69308,6 +69495,11 @@
 /obj/structure/cable/cyan{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
@@ -70327,6 +70519,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "sgX" = (
@@ -70949,6 +71146,9 @@
 /obj/item/trash/cigbutt/faith/red,
 /obj/item/trash/cigbutt/frozen,
 /obj/item/clothing/mask/chewable/tobacco/nico,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/faith,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
 "soJ" = (
@@ -72939,6 +73139,16 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/holodeck/control)
 "sSJ" = (
@@ -73989,6 +74199,12 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section2)
+"thA" = (
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/toha,
+/turf/simulated/floor/rock/dark,
+/area/iskhod/maintenance/undergroundfloor1west)
 "thE" = (
 /obj/structure/window/reinforced/iskhod{
 	dir = 4
@@ -74050,15 +74266,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/danger,
 /area/iskhod/command/bridge)
-"tin" = (
-/obj/structure/cable/ender{
-	name = "surface power cable";
-	id = "surface_cable"
-	},
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0"
-	},
-/area/iskhod/outside/inside_colony)
 "tiu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -74679,13 +74886,13 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
 "tpS" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
@@ -74897,6 +75104,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/holodeck/control)
 "tsO" = (
@@ -75320,6 +75532,11 @@
 	dir = 6
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/holodeck/control)
 "twL" = (
@@ -76591,6 +76808,11 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/iskhod/hallway/main/f1section1)
+"tNO" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/item/trash/cigbutt/os,
+/turf/simulated/floor/rock/dark,
+/area/iskhod/maintenance/undergroundfloor1west)
 "tNR" = (
 /obj/structure/spider_nest,
 /obj/item/remains/human,
@@ -78703,6 +78925,13 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor1east)
+"usL" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_alt,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/main/stairwell)
 "usS" = (
 /obj/effect/floor_decal/corner_kafel/white/full,
 /obj/effect/floor_decal/corner_kafel/white{
@@ -78720,16 +78949,8 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
 "utf" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/fortressred,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor1west)
 "uth" = (
@@ -78907,6 +79128,11 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "uvA" = (
@@ -79053,7 +79279,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/hyper{
-	pixel_y = 28
+	pixel_x = 28
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -79691,6 +79917,11 @@
 /area/iskhod/engineering)
 "uFN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/holodeck/control)
 "uFP" = (
@@ -81659,6 +81890,10 @@
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/medical/genetics)
+"vgT" = (
+/obj/effect/window_lwall_spawn/reinforced/polarized,
+/turf/simulated/floor/plating/under,
+/area/iskhod/recreation)
 "vgZ" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -84891,13 +85126,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/office)
-"vYh" = (
-/obj/structure/cable/cyan{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/mineral/planet,
-/area/iskhod/maintenance/undergroundfloor1west)
 "vYj" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger/industrial,
@@ -85216,6 +85444,11 @@
 	icon_state = "spline_fancy_corner"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/holodeck/control)
 "wdF" = (
@@ -85793,6 +86026,10 @@
 /obj/item/trash/cigbutt/faith/green,
 /obj/item/trash/cigbutt/comred,
 /obj/item/trash/cigbutt/ishimura,
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/faith,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
 "wmC" = (
@@ -85809,6 +86046,10 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
+"wmE" = (
+/obj/item/trash/cigbutt/os,
+/turf/simulated/floor/rock/dark,
+/area/iskhod/maintenance/undergroundfloor1west)
 "wmG" = (
 /obj/structure/sign/warningnew/radiation{
 	pixel_y = -32
@@ -88760,6 +89001,14 @@
 /obj/item/trash/cigbutt/ishimura,
 /obj/item/trash/cigbutt/toha,
 /obj/item/clothing/mask/chewable/tobacco/fine,
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/khi,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/fortressred,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
 "wZS" = (
@@ -89387,6 +89636,12 @@
 /obj/item/trash/cigbutt/frozen,
 /obj/item/trash/cigbutt/frozen,
 /obj/item/trash/cigbutt/cigarbutt,
+/obj/item/trash/cigbutt/shodan,
+/obj/item/trash/cigbutt/cigarbutt,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/faith,
+/obj/item/trash/cigbutt/fortressred,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
 "xjz" = (
@@ -90230,6 +90485,11 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
+"xuT" = (
+/obj/item/trash/cigbutt/fortressred,
+/obj/item/trash/cigbutt/cigarbutt,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor1west)
 "xuV" = (
 /obj/structure/bed/chair/office/dark,
 /obj/effect/decal/cleanable/dirt,
@@ -90995,6 +91255,11 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "xHH" = (
@@ -92025,11 +92290,6 @@
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/bridge)
 "xUk" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -100639,21 +100899,21 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -100841,21 +101101,21 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -101044,20 +101304,20 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -101247,19 +101507,19 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -101453,15 +101713,15 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -101657,13 +101917,13 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -101860,12 +102120,12 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -102063,11 +102323,11 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -102266,10 +102526,10 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -102468,10 +102728,10 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -102495,7 +102755,7 @@ asi
 caF
 iVp
 iVp
-vYh
+iVp
 iVp
 rlF
 hYm
@@ -102671,9 +102931,9 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -102873,16 +103133,16 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
 iVp
 iVp
-utf
-lWw
+uDB
+swN
 iVp
 iVp
 iVp
@@ -102891,7 +103151,7 @@ qxH
 iVp
 qxH
 hLa
-cAJ
+tNO
 uMa
 wzI
 xjq
@@ -103075,9 +103335,9 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -103089,9 +103349,9 @@ cAJ
 iVp
 iVp
 iVp
+wmE
 gey
-gey
-gey
+thA
 gey
 qxH
 caF
@@ -103277,9 +103537,9 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -103479,9 +103739,9 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -103492,8 +103752,8 @@ swN
 swN
 swN
 swN
-swN
-swN
+utf
+xuT
 swN
 swN
 swN
@@ -103682,8 +103942,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -103696,7 +103956,7 @@ swN
 swN
 swN
 swN
-swN
+ktV
 swN
 swN
 swN
@@ -103884,8 +104144,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -104086,8 +104346,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -104106,7 +104366,7 @@ hPL
 hPL
 hPL
 hPL
-eNa
+fEQ
 tSO
 eWc
 osQ
@@ -104289,7 +104549,7 @@ jDL
 jDL
 jDL
 jDL
-jDL
+gEN
 iVp
 iVp
 iVp
@@ -104308,7 +104568,7 @@ hPL
 hPL
 hPL
 hPL
-eNa
+lWw
 tSO
 tSO
 tSO
@@ -104491,7 +104751,7 @@ jDL
 jDL
 jDL
 jDL
-jDL
+gEN
 iVp
 iVp
 iVp
@@ -104693,7 +104953,7 @@ jDL
 jDL
 jDL
 jDL
-jDL
+gEN
 iVp
 iVp
 iVp
@@ -104712,7 +104972,7 @@ hPL
 hPL
 hPL
 hPL
-eNa
+vgT
 kUm
 stQ
 kDV
@@ -104894,8 +105154,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -104914,7 +105174,7 @@ hPL
 hPL
 hPL
 hPL
-eNa
+vgT
 tSO
 daO
 rGE
@@ -105096,8 +105356,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -105297,9 +105557,9 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
 iVp
 iVp
 iVp
@@ -105499,9 +105759,9 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
+gEN
+gEN
+gEN
 iVp
 swN
 swN
@@ -105723,8 +105983,8 @@ hPL
 hPL
 hPL
 uXo
-tSO
-daO
+fJC
+lYB
 xSv
 uXo
 ngR
@@ -106115,8 +106375,8 @@ fAE
 mQt
 bos
 tpS
-qjC
-fEQ
+mQt
+pej
 oRk
 dVC
 dVC
@@ -106316,11 +106576,11 @@ lby
 lby
 pcv
 esA
-esA
+owk
 bPV
 pej
 gOg
-dVC
+kPk
 rQl
 wdq
 twI
@@ -106330,7 +106590,7 @@ uFN
 tsH
 rSn
 qUl
-dVC
+ksY
 mQn
 pej
 ngR
@@ -106926,9 +107186,9 @@ rUv
 cnh
 dTx
 uvw
-oEv
-oEv
-oEv
+qjC
+qjC
+qjC
 jxT
 mFQ
 qJq
@@ -112371,7 +112631,7 @@ ezS
 ezS
 ezS
 nMz
-aqQ
+usL
 ogn
 tui
 cuC
@@ -116036,7 +116296,7 @@ sYY
 liH
 eJB
 rEn
-ufE
+roO
 gJE
 phB
 bCN
@@ -141677,7 +141937,7 @@ iZe
 iZe
 eYn
 eYn
-iHq
+pFA
 pMU
 ajv
 vTX
@@ -148230,7 +148490,7 @@ oTK
 vQN
 hwB
 oTK
-jDJ
+iHq
 jui
 vrR
 aWT
@@ -152061,7 +152321,7 @@ sGd
 sGd
 sGd
 ePH
-gvy
+ipr
 sNT
 sGd
 sGd
@@ -152772,7 +153032,7 @@ btd
 btd
 btd
 xAY
-atm
+lwu
 atm
 gab
 bVj
@@ -202503,7 +202763,7 @@ aLF
 aLF
 ksV
 ksV
-tin
+ycV
 ycV
 ycV
 ycV
