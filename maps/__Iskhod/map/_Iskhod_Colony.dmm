@@ -28967,6 +28967,11 @@
 /area/iskhod/crew_quarters/sleep/cryo)
 "hvv" = (
 /obj/machinery/photocopier,
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/cro)
 "hvy" = (
@@ -30627,6 +30632,10 @@
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 25
+	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/server)
@@ -34477,6 +34486,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 1
+	},
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/server)
@@ -45351,6 +45365,11 @@
 "lDx" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/cro/quarters)
@@ -67228,6 +67247,14 @@
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2south)
+"rmm" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/turf/simulated/floor/industrial/white_large_slates,
+/area/iskhod/command/cro/quarters)
 "rmr" = (
 /obj/machinery/atmospherics/valve/digital{
 	dir = 4;
@@ -82086,6 +82113,10 @@
 	dir = 8;
 	pixel_x = 25
 	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/cro)
 "vju" = (
@@ -92078,6 +92109,10 @@
 /area/iskhod/maintenance/undergroundfloor2south)
 "xRb" = (
 /obj/structure/disposalpipe/segment,
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/cro/quarters)
 "xRk" = (
@@ -122617,7 +122652,7 @@ pSO
 xdv
 rrJ
 rEQ
-vcJ
+rmm
 vcJ
 lEw
 kJs
