@@ -41,6 +41,7 @@
 /area/mine/explored
 	name = "Mine"
 	icon_state = "explored"
+	turf_initializer = new /datum/turf_initializer/mining()
 
 /area/mine/unexplored
 	name = "Mine"

@@ -108,3 +108,11 @@
 	build_type = PROTOLATHE | MECHFAB
 	build_path = /obj/item/cell/large/hydrogen
 	category = CAT_POWER
+
+// Ameridian Core
+/datum/design/research/item/ameridian_core
+	name = "Ameridian Core"
+	build_type = PROTOLATHE
+	build_path = /obj/item/ameridian_core
+	materials = list(MATERIAL_AMERIDIAN = 50)
+	category = CAT_POWER
