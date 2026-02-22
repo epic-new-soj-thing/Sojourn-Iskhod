@@ -67,7 +67,7 @@
 	id = DEPARTMENT_SECURITY
 	//With nepotism a full team 21 125 in 5 hours
 	account_initial_balance = 21200 //Required to run full roster with nepotism and basically nothing else.
-	jobs_in_department = list("/datum/job/swo","/datum/job/supsec","/datum/job/medspec","/datum/job/officer","/datum/job/officerjr")
+	jobs_in_department = list("/datum/job/swo","/datum/job/supsec","/datum/job/officer","/datum/job/officerjr")
 
 /datum/department/technomancers
 	name = "Artificer's Guild"

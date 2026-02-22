@@ -283,7 +283,7 @@
 	icon_state = "player-blue-lower"
 	join_tag = /datum/job/officerjr
 
-/datum/job/medspec
+/*/datum/job/medspec
 	title = "Corpsman"
 	flag = MEDSPEC
 	department = DEPARTMENT_SECURITY
@@ -331,7 +331,7 @@
 	Treat any prisoners and suspects and thoroughly monitor their health.<br>\
 	Work with the Detective to solve crimes through collecting forensic evidence and conducting autopsies.<br>\
 	<b>While you are sufficiently medically trained, you are not a replacement doctor for Medical. You are the personal combat medic under Ranger jurisdiction.</b>"
-
+*/
 /obj/landmark/join/start/medspec
 	name = "Corpsman"
 	icon_state = "player-blue"
