@@ -109,7 +109,7 @@
 
 /datum/job/salvager
 	title = "Prospector Specialist"
-	flag = PROSPECTOR
+	flag = SALVAGER
 	department = DEPARTMENT_PROSPECTOR
 	department_flag = PROSPECTORS
 	faction = MAP_FACTION
@@ -117,6 +117,7 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
+	playtimerequired = 300
 	noob_name = "Rookie Salvager"
 	alt_titles = list("Sawbones", "Junk Technician")
 	//alt_perks = list("Sawbones"=list(PERK_MEDICAL_EXPERT, PERK_STALKER), "Junk Technician"=list(PERK_JUNKBORN, PERK_ROBOTICS_EXPERT))
@@ -159,7 +160,7 @@
 
 /datum/job/pro
 	title = "Prospector"
-	flag = ROOKIE
+	flag = PROSPECTOR
 	department = DEPARTMENT_PROSPECTOR
 	department_flag = PROSPECTORS
 	faction = MAP_FACTION
@@ -167,6 +168,7 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
+	playtimerequired = 100
 	noob_name = "Rookie"
 	alt_titles = list("Hired Muscle")
 	selection_color = "#a7bbc6"

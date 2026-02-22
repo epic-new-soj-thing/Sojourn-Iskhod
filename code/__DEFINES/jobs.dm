@@ -8,19 +8,21 @@
 #define JOBS_SERVICE "Hospitality Manager","Bartender","Chef","Gardener","Artist","Journalist"
 #define JOBS_CIVILIAN "Colonist", "Visitor"
 #define JOBS_CHURCH "Priest", "Cardinal"
-#define JOBS_PROSPECTOR "Foreman","Fence","Prospector","Rookie"
+#define JOBS_PROSPECTOR "Foreman","Fence","Prospector Specialist","Prospector","Rookie Prospector"
 #define JOBS_NONHUMAN "AI","Robot","pAI"
 #define JOBS_LODGE "Lodge Hunt Master","Lodge Hunter","Lodge Herbalist",
 #define JOBS_INDEPENDENT "Outsider"
 
-#define JOBS_ANTI_HIVEMIND "Captain","Lieutenant","Detective","Ranger","Junior Ranger","Cardinal","Priest","Foreman","Rookie","Salvager","Prospector","Steward","AI","Paramedic","Roboticist","Miner"
+#define JOBS_ANTI_HIVEMIND "Captain","Lieutenant","Detective","Ranger","Junior Ranger","Cardinal","Priest","Foreman","Rookie Prospector","Prospector Specialist","Prospector","Steward","AI","Paramedic","Roboticist","Miner"
 
 #define JOURNALIST "Journalist"
 #define HOP "Hospitality Manager"
 #define CHEMIST "Chemist"
 #define NURSE "Nurse"
 #define PARAMEDIC "Paramedic"
-#define ROOKIE "Rookie"
+#define SALVAGER_NAME "Prospector Specialist"
+#define PROSPECTOR_NAME "Prospector"
+#define ROOKIE_PROSPECTOR "Rookie Prospector"
 #define CREDS "&cent;"
 
 
@@ -45,8 +47,4 @@
 
 #define JOBS_OVERALL list(JOBS_SECURITY, JOBS_COMMAND, JOBS_ENGINEERING, JOBS_MEDICAL, JOBS_SCIENCE,JOBS_SUPPLY,JOBS_SERVICE,JOBS_CIVILIAN,JOBS_CHURCH,JOBS_PROSPECTOR)
 
-#define NURSE "Nurse"
-#define PARAMEDIC "Paramedic"
-#define LEAD_PROSPECTOR "Lead Prospector"
-#define ROOKIE "Rookie"
 #define JOURNALIST "Journalist"
