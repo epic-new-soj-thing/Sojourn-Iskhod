@@ -69,7 +69,7 @@
 
 /tipsAndTricks/jobs/sell_things_you_hoarding_goblins
     jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
-    tipText = "Selling things to other departments is part of your job. Blackshield and Rangers like weapons and ammo, Vesalius-Andra will always love getting materials and Research disks. The Guild (specially a Guild Master) would appreciate Curios, cable coils and materials."
+    tipText = "Selling things to other departments is part of your job. Rangers like weapons and ammo, Vesalius-Andra will always love getting materials and Research disks. The Guild (specially a Chief Engineer) would appreciate Curios, cable coils and materials."
 
 /tipsAndTricks/jobs/your_perks_are_op
     jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
@@ -97,7 +97,7 @@
 
 /tipsAndTricks/jobs/engies_tribe
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "Since ancient times, the Guild had trained the best Engineers in the galaxy. That is why you are called Master."
+    tipText = "Since ancient times, the Guild had trained the best Engineers in the galaxy. That is why you are called Chief Engineer."
 
 /tipsAndTricks/jobs/unlimitedpower
 	jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
@@ -124,7 +124,7 @@
 
 //	tipsAndTricks/jobs/engies_suppermatter_three
 //	jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-//	tipText = "Woe betide the guild master who allows the crystal to delaminate, the number of such crystals dwindle. Any who cause such disgrace should go up with the engine rather than live with the shame."
+//	tipText = "Woe betide the Chief Engineer who allows the crystal to delaminate, the number of such crystals dwindle. Any who cause such disgrace should go up with the engine rather than live with the shame."
 
 /tipsAndTricks/jobs/engies_lifekeeper
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
@@ -136,7 +136,7 @@
 
 /tipsAndTricks/jobs/engies_firespacesuit
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "No Adept lives long without learning that firesuits are not space-proof suits, and not all void suits are fireproof."
+    tipText = "No Engineer lives long without learning that firesuits are not space-proof suits, and not all void suits are fireproof."
 
 /tipsAndTricks/jobs/theBlackBox
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)

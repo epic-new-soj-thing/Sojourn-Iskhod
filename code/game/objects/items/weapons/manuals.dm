@@ -203,7 +203,7 @@
 				</ol>
 
 				<h2><a name="Foreward">Foreward</h2><br>
-					<h3>This document is offered in its full, unedited form having been found amongst the many unfiled documents within the Guilds primary offices. Though densely written and at times containing error, it is believed that in this form it shall serve more use than if pared back or otherwise modified from its writers original form. This document shall not be taken as overriding any procedure, instead supplementing knowledge and S.O.P regarding the Shield Generator. Any questions, concerns or similar regarding this document should be directed to the office of Grandmaster Tacitus O'conner - Guildmaster <i>Zivka Tomic</i> </h3><br>
+					<h3>This document is offered in its full, unedited form having been found amongst the many unfiled documents within the Guilds primary offices. Though densely written and at times containing error, it is believed that in this form it shall serve more use than if pared back or otherwise modified from its writers original form. This document shall not be taken as overriding any procedure, instead supplementing knowledge and S.O.P regarding the Shield Generator. Any questions, concerns or similar regarding this document should be directed to the office of Grandmaster Tacitus O'conner - Chief Engineer <i>Zivka Tomic</i> </h3><br>
 
 
 				<h2><a name="Preface">Preface</h2><br>
@@ -216,7 +216,7 @@ Regardless of faction personnel, or personal preferences, or social bounds, this
 
 While the bubble shield is an asset of immense defensive potential, the best defense remains a good offense, and a good offense relies on our abilities to keep our fighters alive and weaponized.<br><br>
 
-At best, this equipment is to be treated as *a* -not the- non-fighter/non-medical option, for both Adepts and Scientists trying to participate during an emergency ;<br><br>
+At best, this equipment is to be treated as *a* -not the- non-fighter/non-medical option, for both Engineers and Scientists trying to participate during an emergency ;<br><br>
 
 In fact, not all threats need the bubble shield, and it's activation, and use of it's various settings, is a decision that should rely solely on the /concerned/ command staff, starting with the Blackshield Commander and Warrant Officer.<br><br>
 
@@ -353,7 +353,7 @@ Still, trying more isn't out of the question, in the future.<br><br>
 
 
 It's not out of the question to connect the shield's reserves to the colony by simply hotwiring their output back to the grid.<br>
-However, doing so is an extremely special, temporary decision that should only be a temporary fix, first decided by the Guild Master, if without one, Artificers Adepts,<br><br>
+However, doing so is an extremely special, temporary decision that should only be a temporary fix, first decided by the Chief Engineer, if without one, Artificers Engineers,<br><br>
 at the all-important condition that this is during an emergency, were the grid, the substations, and engine SMES are all completely drained or destroyed, with no means to use the solars / hydroelectric dam again during that emergency.<br>
 Having the shield generator backed, charged, with available reserves from it's assigned SMES units, should remain the main concern at all times - it should never, under any circumstances, be allowed to fully drain itself into the colony grid for whatever reason.<br><br>
 

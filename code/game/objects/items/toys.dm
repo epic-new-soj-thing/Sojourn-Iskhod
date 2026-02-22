@@ -682,14 +682,14 @@
 /*Engineer*/
 
 /obj/item/toy/figure/character/technomancer/ce
-	name = "guild master figure"
+	name = "chief engineer figure"
 	desc = "The overseer of all construction and repair. Artificer 1/2."
 	icon_state = "ce"
 	toysay = "Respect the Cube."
 
 /obj/item/toy/figure/character/technomancer/engineer
-	name = "guild adept action figure"
-	desc = "There's little an Adept can't fix. Artificer 2/2."
+	name = "engineer action figure"
+	desc = "There's little an Engineer can't fix. Artificer 2/2."
 	icon_state = "engineer"
 	toysay = "How do I fix a stalling turbine?"
 

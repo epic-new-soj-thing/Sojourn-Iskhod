@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/reinforced/engineering_chief
-	name = "guild master's locker"
+	name = "chief engineer's locker"
 	req_access = list(access_ce)
 	icon_state = "ce"
 
@@ -98,7 +98,7 @@
 	new /obj/item/storage/hcases/engi(src)
 
 /obj/structure/closet/secure_closet/personal/engineering_personal
-	name = "guild adept's locker"
+	name = "engineer's locker"
 	req_access = list(access_ce)
 	access_occupy = list(access_engine_equip)
 	icon_state = "eng"

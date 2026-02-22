@@ -243,7 +243,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Guild Chief Engineer"
+	supervisors = "the Chief Engineer"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Custodian","Sanitation Technician")
@@ -268,7 +268,7 @@
 	Although your status is miserable, your knowledge of maintenance may lead you to some valuable salvage for some extra cash."
 
 	duties = "Clean blood, dirt, rubble and messes. Don't clean up crime scenes!<br>\
-		Conduct minor repairs and maintenance when guild adepts aren't available.<br>\
+		Conduct minor repairs and maintenance when engineers aren't available.<br>\
 		Restock Newscasters to at least 15 prints.<br>\
 		Deploy traps on burrows and do your best to handle the ongoing roach and spider problem."
 
