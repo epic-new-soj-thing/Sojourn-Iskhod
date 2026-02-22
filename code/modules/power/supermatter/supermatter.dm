@@ -90,24 +90,6 @@
 	radio = new /obj/item/device/radio{channels=list("Engineering")}(src)
 	assign_uid()
 
-	//Change colors
-	var/angle = rand(-180, 180)
-	var/list/color_matrix = color_rotation(angle)
-	rotation_angle = angle
-	color = color_matrix
-
-	var/HSV = RGBtoHSV(base_color)
-	var/RGB = HSVtoRGB(RotateHue(HSV, angle))
-	base_color = RGB
-
-	HSV = RGBtoHSV(warning_color)
-	RGB = HSVtoRGB(RotateHue(HSV, angle))
-	warning_color = RGB
-
-	HSV = RGBtoHSV(emergency_color)
-	RGB = HSVtoRGB(RotateHue(HSV, angle))
-	emergency_color = RGB
-
 /obj/machinery/power/supermatter/Destroy()
 	if(GLOB.supermatter_status)
 		GLOB.supermatter_status.raise_event(src, FALSE)
@@ -544,8 +526,8 @@
 /obj/machinery/power/supermatter/shard
 	name = "supermatter shard"
 	desc = "A strangely translucent and iridescent crystal that looks like it used to be part of a larger structure. <span class='danger'>You get headaches just from looking at it.</span>"
-	icon_state = "darkmatter_shard"
-	base_icon_state = "darkmatter_shard"
+	icon_state = "supermatter_shard"
+	base_icon_state = "supermatter_shard"
 
 	warning_point = 50
 	emergency_point = 400
@@ -562,8 +544,8 @@
 
 /obj/machinery/power/supermatter/randomsample
 	name = "experimental supermatter sample"
-	icon_state = "darkmatter_shard"
-	base_icon_state = "darkmatter_shard"
+	icon_state = "supermatter_shard"
+	base_icon_state = "supermatter_shard"
 
 /obj/machinery/power/supermatter/randomsample/Initialize()
 	. = ..()
@@ -582,8 +564,8 @@
 
 /obj/machinery/power/supermatter/inert
 	name = "experimental supermatter sample"
-	icon_state = "darkmatter_shard"
-	base_icon_state = "darkmatter_shard"
+	icon_state = "supermatter_shard"
+	base_icon_state = "supermatter_shard"
 	thermal_release_modifier = 0
 	phoron_release_modifier = 100000000000
 	oxygen_release_modifier = 100000000000
