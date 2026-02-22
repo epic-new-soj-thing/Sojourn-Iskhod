@@ -72,7 +72,7 @@
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
 	minimum_character_age = 25
-	alt_titles = list("Emergency Physician"=/decl/hierarchy/outfit/job/medical/doctor/medERPhys, "Surgeon"=/decl/hierarchy/outfit/job/medical/doctor/medSurgeon, "Chemist")
+	alt_titles = list("Emergency Physician"=/decl/hierarchy/outfit/job/medical/doctor/medERPhys, "Surgeon"=/decl/hierarchy/outfit/job/medical/doctor/medSurgeon)
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
 	department_account_access = TRUE
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
@@ -115,7 +115,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Biolab Overseer"
+	supervisors = "the Biolab Overseer and fellow Doctors"
 	difficulty = "Medium."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
@@ -164,7 +164,7 @@
 	faction = MAP_FACTION
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Biolab Overseer"
+	supervisors = "the Biolab Overseer and more experienced Doctors"
 	difficulty = "Boring to Overwhelming."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
@@ -214,7 +214,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Biolab Overseer"
+	supervisors = "the Biolab Overseer and Doctors"
 	difficulty = "Medium."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
@@ -260,7 +260,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Biolab Overseer"
+	supervisors = "the Biolab Overseer and all other Biolab staff"
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
 	alt_titles = list("Emergency Recovery Specialist")
@@ -310,7 +310,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	wage = WAGE_PROFESSIONAL
-	supervisors = "the Biolab Overseer"
+	supervisors = "the Biolab Overseer exclusively"
 	difficulty = "Soul Crushing."
 	selection_color = "#a8b69a"
 	alt_titles = list("Psychologist", "Empath")
