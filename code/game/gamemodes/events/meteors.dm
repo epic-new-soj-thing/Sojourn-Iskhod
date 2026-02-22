@@ -525,7 +525,7 @@ disabled
 	name = "supermatter shard"
 	desc = "Oh god, what will be next..?"
 	icon = 'icons/obj/engine.dmi'
-	icon_state = "darkmatter"
+	icon_state = "supermatter_shard"
 
 /obj/effect/meteor/supermatter/meteor_effect()
 	..()
