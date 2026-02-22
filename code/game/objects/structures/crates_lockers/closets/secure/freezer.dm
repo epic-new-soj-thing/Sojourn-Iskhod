@@ -40,7 +40,7 @@
 	if(populated_contents)
 		return
 	populated_contents = TRUE
-	for(var/i in 1 to 3)
+	for(var/i in 1 to 10)
 		new /obj/item/reagent_containers/blood/OMinus(src)
 
 /obj/structure/closet/secure_closet/freezer/fridge

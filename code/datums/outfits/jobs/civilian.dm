@@ -51,7 +51,8 @@
 /decl/hierarchy/outfit/job/service/janitor
 	name = OUTFIT_JOB_NAME("Artificer - Janitor")
 	uniform = /obj/item/clothing/under/rank/janitor
-	pda_type = /obj/item/modular_computer/pda
+	pda_type = /obj/item/modular_computer/pda/engineering
+	l_ear = /obj/item/device/radio/headset/headset_eng
 	shoes = /obj/item/clothing/shoes/jackboots/janitor
 	belt = /obj/item/keys/janitor
 

@@ -239,7 +239,7 @@
 	title = "Janitor"
 	flag = JANITOR
 	department = DEPARTMENT_ENGINEERING
-	department_flag = FL
+	department_flag = ENGINEERING
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
@@ -247,8 +247,8 @@
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Custodian","Sanitation Technician")
-	access = list(access_janitor, access_maint_tunnels, access_morgue, access_hydroponics, access_bar, access_kitchen)
-	wage = WAGE_PROFESSIONAL
+	access = list(access_janitor, access_maint_tunnels, access_morgue, access_hydroponics, access_bar, access_kitchen, access_engine, access_engine_equip, access_tech_storage, access_eva, access_external_airlocks, access_construction, access_atmospherics)
+	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 5
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
 
