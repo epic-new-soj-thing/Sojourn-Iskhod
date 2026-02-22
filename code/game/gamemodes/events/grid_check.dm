@@ -15,9 +15,9 @@ So sometimes this event can result in people finding new and interesting things
 	event_type = /datum/event/grid_check
 	event_pools = list(EVENT_LEVEL_MUNDANE = POOL_THRESHOLD_MUNDANE,
 	EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
-	weight = 0.5 //Make this less common since its very long lasting
+	weight = 0 //Disabled
 
-	ocurrences_max = 1 //Can only do this once as its more annoying then fun
+	ocurrences_max = 0 //Can only do this once as its more annoying then fun
 
 	tags = list(TAG_SCARY, TAG_COMMUNAL)
 
