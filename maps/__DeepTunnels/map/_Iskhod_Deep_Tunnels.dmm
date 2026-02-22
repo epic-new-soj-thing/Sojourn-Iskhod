@@ -591,7 +591,9 @@
 /obj/machinery/camera/network/research{
 	dir = 8
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/asteroid{
+	temperature = 253.15
+	},
 /area/mine/explored)
 "ic" = (
 /obj/effect/floor_decal/industrial/danger,
@@ -2142,7 +2144,9 @@
 /area/iskhod/rnd/anomalisoltwo)
 "xR" = (
 /obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/asteroid{
+	temperature = 253.15
+	},
 /area/mine/explored)
 "xZ" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
@@ -3003,7 +3007,9 @@
 	dir = 8
 	},
 /obj/machinery/camera/network/research,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/asteroid{
+	temperature = 253.15
+	},
 /area/mine/explored)
 "GS" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -4387,7 +4393,9 @@
 "Wc" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/hatch/red,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/asteroid{
+	temperature = 253.15
+	},
 /area/mine/explored)
 "Wd" = (
 /obj/effect/floor_decal/industrial/warningred{
@@ -4453,7 +4461,9 @@
 /obj/machinery/camera/network/research{
 	dir = 1
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/asteroid{
+	temperature = 253.15
+	},
 /area/mine/explored)
 "WM" = (
 /obj/structure/closet/wall_mounted/emcloset{
