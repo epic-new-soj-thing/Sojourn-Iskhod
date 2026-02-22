@@ -196,6 +196,10 @@
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_moebius
 
+/obj/item/device/radio/headset/headset_para
+	name = "paramedic radio headset"
+	ks2type = /obj/item/device/encryptionkey/headset_para
+
 /obj/item/device/radio/headset/headset_sci
 	name = "science radio headset"
 	desc = "A sciency headset. Like usual."

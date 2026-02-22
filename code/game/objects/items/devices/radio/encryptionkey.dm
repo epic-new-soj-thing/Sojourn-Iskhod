@@ -61,17 +61,22 @@
 /obj/item/device/encryptionkey/headset_sci
 	name = "vesalius-andra science radio encryption key"
 	icon_state = "sci_cypherkey"
-	channels = list("Science" = 1, "Medical" = 1)
+	channels = list("Science" = 1)
 
 /obj/item/device/encryptionkey/headset_rob
 	name = "vesalius-andra roboticist radio encryption key"
 	icon_state = "rob_cypherkey"
-	channels = list("Science" = 1, "Engineering" = 1, "Medical" = 1)
+	channels = list("Science" = 1, "Engineering" = 1, "Medical(I)" = 1)
 
 /obj/item/device/encryptionkey/headset_moebius
 	name = "vesalius-andra medical encryption key"
 	icon_state = "med_cypherkey"
-	channels = list("Science" = 1, "Medical" = 1, "Medical(I)" = 1)
+	channels = list("Medical" = 1, "Medical(I)" = 1)
+
+/obj/item/device/encryptionkey/headset_para
+	name = "paramedic radio encryption key"
+	icon_state = "mil_cypherkey"
+	channels = list("Medical" = 1, "Medical(I)" = 1, "Security(I)" = 1)
 
 /obj/item/device/encryptionkey/headset_com
 	name = "council command radio encryption key"
@@ -81,24 +86,24 @@
 /obj/item/device/encryptionkey/heads/captain
 	name = "governor's encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Security(I)" = 1, "Security" = 1, "Plasmatag B" = 0, "Plasmatag R" = 0, "Plasmatag G" = 0, "Plasmatag Y" = 0)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 1, "Medical(I)" = 1, "Supply" = 0, "Service" = 0, "Security(I)" = 1, "Security" = 1, "Plasmatag B" = 0, "Plasmatag R" = 0, "Plasmatag G" = 0, "Plasmatag Y" = 0)
 
 /obj/item/device/encryptionkey/heads/ai_integrated
 	name = "ai integrated encryption key"
 	desc = "Integrated encryption key"
 	icon_state = "cap_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Security(I)" = 1, "Security" = 1, "Plasmatag B" = 1, "Plasmatag R" = 1, "Plasmatag G" = 1, "Plasmatag Y" = 1)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 1, "Church" = 1, "Science" = 1, "Medical" = 1, "Medical(I)" = 1, "Supply" = 1, "Service" = 1, "AI Private" = 1, "Security(I)" = 1, "Security" = 1, "Plasmatag B" = 1, "Plasmatag R" = 1, "Plasmatag G" = 1, "Plasmatag Y" = 1)
 
 /obj/item/device/encryptionkey/heads/rd
 	name = "research overseer's encryption key"
 	icon_state = "rd_cypherkey"
-	channels = list("Science" = 1, "Medical" = 1, "Command" = 1)
+	channels = list("Science" = 1, "Medical(I)" = 1, "Command" = 1)
 	translate_binary = 1
 
 /obj/item/device/encryptionkey/heads/moebius
 	name = "biolab overseer's encryption key"
 	icon_state = "rd_cypherkey"
-	channels = list("Science" = 1, "Medical" = 1, "Medical(I)" = 1, "Command" = 1)
+	channels = list("Medical" = 1, "Medical(I)" = 1, "Security(I)" = 1, "Command" = 1)
 
 /obj/item/device/encryptionkey/heads/hos
 	name = "security commander's encryption key"
@@ -118,7 +123,7 @@
 /obj/item/device/encryptionkey/heads/hop
 	name = "steward's encryption key"
 	icon_state = "hop_cypherkey"
-	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 0, "Supply" = 0, "Service" = 0, "Security(I)" = 1, "Security" = 1, "Plasmatag B" = 0, "Plasmatag R" = 0, "Plasmatag G" = 0, "Plasmatag Y" = 0)
+	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 1, "Medical(I)" = 1, "Supply" = 0, "Service" = 0, "Security(I)" = 1, "Security" = 1, "Plasmatag B" = 0, "Plasmatag R" = 0, "Plasmatag G" = 0, "Plasmatag Y" = 0)
 
 /obj/item/device/encryptionkey/heads/merchant
 	name = "frontier logistics executive radio encryption key"

@@ -40,6 +40,7 @@
 
 /decl/hierarchy/outfit/job/medical/recovery_team
 	name = OUTFIT_JOB_NAME("Vesalius-Andra - Recovery Team")
+	l_ear = /obj/item/device/radio/headset/headset_para
 	uniform = /obj/item/clothing/under/rank/paramedic
 	id_type = /obj/item/card/id/med
 	pda_type = /obj/item/modular_computer/pda/science/medical
