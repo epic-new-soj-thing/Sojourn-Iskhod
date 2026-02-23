@@ -21170,7 +21170,24 @@
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
 	},
-/obj/item/storage/box/cups,
+/obj/item/reagent_containers/drinks/mug/moebius/bio{
+	name = "VA Biolabs mug"
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/bio{
+	name = "VA Biolabs mug"
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/bio{
+	name = "VA Biolabs mug"
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/bio{
+	name = "VA Biolabs mug"
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/bio{
+	name = "VA Biolabs mug"
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/bio{
+	name = "VA Biolabs mug"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/medical/medbreak)
 "fqZ" = (
@@ -32248,9 +32265,7 @@
 /area/iskhod/crew_quarters/bar)
 "ijy" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/drinks/mug/moebius{
-	name = "Medical Overseer mug"
-	},
+/obj/item/reagent_containers/drinks/mug/moebius/bio,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
 "ikc" = (
@@ -42943,15 +42958,26 @@
 /area/iskhod/engineering/atmos)
 "kQL" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/drinks/mug/white{
-	pixel_x = 8
-	},
-/obj/item/reagent_containers/drinks/mug/rainbow,
-/obj/item/reagent_containers/drinks/mug/green{
-	pixel_x = -8
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/sci{
+	name = "VA Science mug"
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/sci{
+	name = "VA Science mug"
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/sci{
+	name = "VA Science mug"
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/sci{
+	name = "VA Science mug"
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/sci{
+	name = "VA Science mug"
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/sci{
+	name = "VA Science mug"
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/rnd/rbreakroom)
@@ -74226,15 +74252,15 @@
 /area/iskhod/absolutism/office)
 "sVa" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/drinks/mug/rainbow{
-	name = "Research Overseer mug"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/item/reagent_containers/drinks/mug/moebius/sci{
+	name = "VA Research Overseer mug"
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
