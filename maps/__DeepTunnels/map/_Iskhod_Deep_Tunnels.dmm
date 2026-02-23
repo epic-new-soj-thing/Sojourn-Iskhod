@@ -3455,6 +3455,14 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/eris/rnd/xenobiology/xenoflora)
+"Hi" = (
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
+	invisibility = 101
+	},
+/turf/simulated/floor/asteroid{
+	temperature = 253.15
+	},
+/area/mine/explored)
 "Hj" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -24486,7 +24494,7 @@ uS
 uS
 uS
 uS
-uS
+Hi
 uS
 uS
 uS
@@ -24688,7 +24696,7 @@ uS
 uS
 uS
 uS
-oF
+uS
 uS
 uS
 uS
