@@ -858,7 +858,7 @@
 /obj/machinery/light/small,
 /obj/structure/cable/cyan,
 /obj/structure/cable/ender{
-	id = "surface";
+	id = "deck 2";
 	name = "main grid cable"
 	},
 /turf/simulated/open,
@@ -1626,6 +1626,12 @@
 /obj/structure/cable/cyan{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	dir = 8
 	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_smes)
@@ -8415,7 +8421,15 @@
 /obj/machinery/alarm{
 	pixel_y = 27
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/structure/cable/ender{
+	id = "deck 2"
+	},
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_smes)
 "cbz" = (
 /obj/effect/decal/cleanable/dirt,
@@ -12931,14 +12945,7 @@
 "dlZ" = (
 /obj/structure/disposalpipe/up,
 /obj/machinery/atmospherics/pipe/zpipe/up,
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/structure/cable/ender{
-	id = "surface";
-	name = "main grid cable"
-	},
+/obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
 "dmi" = (
@@ -13380,11 +13387,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4;
 	icon_state = "pipe-c"
@@ -13538,6 +13540,14 @@
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
 "dta" = (
+/obj/structure/cable/ender{
+	id = "surface";
+	name = "main grid cable"
+	},
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /obj/random/closet,
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section4)
@@ -16281,14 +16291,6 @@
 	temperature = 278.15
 	},
 /area/iskhod/service/freezer)
-"eet" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/iskhod/maintenance/undergroundfloor1west)
 "eeu" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/firedoor,
@@ -19681,6 +19683,11 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section4)
 "eWw" = (
@@ -20366,11 +20373,6 @@
 	d2 = 2;
 	icon_state = "1-2";
 	dir = 8
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -26679,17 +26681,6 @@
 /obj/item/gun/projectile/makarov/preloaded,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/maintenance/undergroundfloor2south)
-"gKV" = (
-/obj/structure/cable/ender{
-	id = "surface";
-	name = "main grid cable"
-	},
-/obj/structure/cable/cyan{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/iskhod/maintenance/undergroundfloor1west)
 "gKY" = (
 /obj/structure/flora/pottedplant/minitree,
 /obj/structure/cable/green{
@@ -29126,14 +29117,6 @@
 	},
 /obj/structure/disposalpipe/down,
 /obj/machinery/atmospherics/pipe/zpipe/down,
-/obj/structure/cable/cyan{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/structure/cable/ender{
-	id = "surface";
-	name = "main grid cable"
-	},
 /turf/simulated/open,
 /area/iskhod/hallway/surface/section4)
 "htP" = (
@@ -29346,6 +29329,9 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section2)
@@ -32417,14 +32403,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet,
 /area/iskhod/security/inspectors_office)
-"imA" = (
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor1west)
 "imI" = (
 /obj/structure/sink/kitchen{
 	dir = 4;
@@ -35166,15 +35144,19 @@
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
-	icon_state = "1-2"
+	icon_state = "1-2";
+	dir = 8
+	},
+/obj/structure/cable/ender{
+	id = "shuttle"
 	},
 /obj/structure/cable/cyan{
-	d1 = 2;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "0-8"
 	},
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor1west)
+/obj/effect/floor_decal/industrial/danger/full,
+/turf/simulated/floor/tiled/dark/gray_perforated,
+/area/iskhod/pros/shuttle_landing_zone)
 "iUA" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -52725,12 +52707,6 @@
 "nqO" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/side/f2section1)
@@ -56041,7 +56017,15 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/orangecorner,
+/obj/structure/cable/ender{
+	id = "shuttle"
+	},
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/cable/cyan{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/plating/under,
 /area/iskhod/engineering/techstorage)
 "oiJ" = (
 /obj/structure/boulder,
@@ -65991,11 +65975,6 @@
 	dir = 8;
 	icon_state = "pipe-c"
 	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/machinery/atmospherics/pipe/simple/visible/universal,
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section4)
@@ -75498,13 +75477,12 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/security/breakroom)
 "tmU" = (
-/obj/structure/cable/cyan{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/junction{
+	dir = 2
 	},
-/turf/simulated/floor/tiled/techmaint,
-/area/iskhod/maintenance/undergroundfloor1west)
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/main/f1section2)
 "tmV" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -84915,11 +84893,6 @@
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/crew_quarters/cafeteria)
 "vJr" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 8;
 	icon_state = "pipe-c"
@@ -92450,12 +92423,6 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/derelict/abandoned_area)
 "xJZ" = (
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
@@ -102567,7 +102534,7 @@ iVp
 iVp
 iVp
 fAE
-gKV
+jSx
 jSx
 jSx
 fAE
@@ -102769,8 +102736,8 @@ iVp
 iVp
 iVp
 fAE
-tmU
-eet
+jSx
+jSx
 kLN
 fAE
 iVp
@@ -103174,7 +103141,7 @@ swN
 vXl
 swN
 swN
-imA
+swN
 xfd
 swN
 amO
@@ -103376,7 +103343,7 @@ sbM
 sbM
 sbM
 sbM
-iUw
+sbM
 sbM
 sbM
 sbM
@@ -115570,7 +115537,7 @@ prK
 fzi
 fMk
 rqu
-txb
+wnb
 txb
 ovi
 goo
@@ -120156,7 +120123,7 @@ dtc
 dtc
 jLG
 dtc
-dtc
+tmU
 gGg
 dtP
 dtc
@@ -236284,7 +236251,7 @@ rKr
 rKr
 rKr
 eiq
-dzD
+iUw
 jON
 fQN
 xTi
