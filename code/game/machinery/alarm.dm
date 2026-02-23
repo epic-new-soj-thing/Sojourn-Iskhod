@@ -239,28 +239,12 @@
 		else if(target_temperature < T0C + MIN_TEMPERATURE)
 			target_temperature = T0C + MIN_TEMPERATURE
 
-		if(environment.total_moles)
-			var/thermalChange = environment.get_thermal_energy_change(target_temperature)
-
-			// Scale power by number of vents AND scrubbers to simulate full system capacity
-			var/vent_count = length(alarm_area.air_vent_names)
-			var/scrub_count = length(alarm_area.air_scrub_names)
-			var/total_power = active_power_usage * max(1, vent_count + scrub_count)
-
-			if (environment.temperature <= target_temperature)
-				//gas heating
-				var/energy_used = min(thermalChange, total_power)
-				environment.add_thermal_energy(energy_used)
-			else
-				//gas cooling
-				var/heat_transfer = min(abs(thermalChange), total_power)
-				//Assume the heat is being pumped into the hull which is fixed at 20 C
-				//none of this is really proper thermodynamics but whatever
-
-				var/cop = environment.temperature/T20C	//coefficient of performance -> power used = heat_transfer/cop
-				heat_transfer = min(heat_transfer, cop * total_power)	//this ensures that we don't use more than active_power_usage amount of power
-				heat_transfer = -environment.add_thermal_energy(-heat_transfer)	//get the actual heat transfer
-				//use_power(heat_transfer / cop, ENVIRON)	//handle by update_use_power instead
+		// Broadcasting target temperature to all devices in area
+		if(prob(5)) // Retrigger occasionally to ensure all devices are in sync
+			for(var/device_id in alarm_area.air_vent_names)
+				send_signal(device_id, list("set_temperature"= target_temperature) )
+			for(var/device_id in alarm_area.air_scrub_names)
+				send_signal(device_id, list("set_temperature"= target_temperature) )
 
 /obj/machinery/alarm/proc/overall_danger_level(var/datum/gas_mixture/environment)
 	var/partial_pressure = R_IDEAL_GAS_EQUATION*environment.temperature/environment.volume
@@ -734,6 +718,10 @@
 				to_chat(usr, "Temperature must be between [min_temperature]C and [max_temperature]C")
 			else
 				target_temperature = input_temperature + T0C
+				for(var/device_id in alarm_area.air_vent_names)
+					send_signal(device_id, list("set_temperature"= target_temperature) )
+				for(var/device_id in alarm_area.air_scrub_names)
+					send_signal(device_id, list("set_temperature"= target_temperature) )
 			investigate_log("had it's target temperature changed by [key_name(usr)]", "atmos")
 		playsound(loc, 'sound/machines/button.ogg', 100, 1)
 		return 1
