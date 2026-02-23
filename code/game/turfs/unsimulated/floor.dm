@@ -2,6 +2,8 @@
 	name = "floor"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "Floor3"
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/unsimulated/mask
 	name = "mask"

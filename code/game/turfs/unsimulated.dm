@@ -1,13 +1,11 @@
 /turf/unsimulated
 	name = "command"
 	var/initial_gas
-	oxygen = MOLES_O2STANDARD
-	nitrogen = MOLES_N2STANDARD
+	oxygen = 0
+	nitrogen = 0
 
 /turf/unsimulated/Initialize()
 	. = ..()
-	oxygen = MOLES_O2STANDARD
-	nitrogen = MOLES_N2STANDARD
 	// keep an initial gas mixture around so return_air() can copy it directly
 	// unsimulated airless tiles should not populate this
 	if(!initial_gas && (oxygen || nitrogen || carbon_dioxide || plasma || hydrogen))

@@ -287,7 +287,7 @@
 
 	if(loc == null)
 		return
-		
+
 	var/datum/gas_mixture/environment = loc?.return_air()
 
 	if(environment)
@@ -306,7 +306,7 @@
 	desc = "You feel cold being near the tree that holds up the mountains."
 	icon = 'icons/obj/flora/snowtree.dmi'
 	icon_state = "tree3"
-	target_temperature = 240
+	target_temperature = 260
 
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/kriostree
 	name = "Kriosan Tree"
