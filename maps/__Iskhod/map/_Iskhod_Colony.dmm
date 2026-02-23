@@ -125,6 +125,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "abp" = (
@@ -1590,10 +1591,10 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
 "auz" = (
-/obj/structure/lattice,
-/obj/structure/invislight,
-/turf/simulated/open,
-/area/iskhod/pit/surface)
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/roaches,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2central)
 "auB" = (
 /obj/machinery/recharge_station/robotics,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -3523,6 +3524,11 @@
 /obj/structure/invislight,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section4)
+"aSR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/roaches,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2south)
 "aTc" = (
 /obj/structure/disposalpipe/junction{
 	dir = 1
@@ -4279,6 +4285,7 @@
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -4773,6 +4780,7 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "bjz" = (
@@ -5007,6 +5015,13 @@
 	},
 /turf/simulated/floor,
 /area/shuttle/rocinante_shuttle_area)
+"blT" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_alt,
+/obj/effect/floor_decal/corner_techfloor_gray/diagonal,
+/obj/machinery/camera/network/colony_surface,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section1)
 "blW" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/structure/cable/green{
@@ -5944,6 +5959,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section2)
 "bxo" = (
@@ -5965,6 +5981,12 @@
 /obj/random/closet_tech,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/iskhod/waterfall/subsurface)
+"bxw" = (
+/obj/machinery/door/firedoor,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/hallway/surface/section1)
 "bxC" = (
 /obj/structure/sign/levels/deck3,
 /turf/simulated/wall/iskhod_green,
@@ -6507,6 +6529,7 @@
 	dir = 1
 	},
 /obj/machinery/camera/network/colony_surface,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "bFB" = (
@@ -8168,6 +8191,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section2)
 "bZO" = (
@@ -8347,6 +8371,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section1)
 "caZ" = (
@@ -11011,9 +11036,11 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
 "cMb" = (
-/obj/structure/invislight,
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/pit/level2)
+/obj/effect/floor_decal/industrial_plant/steel_grate_alt,
+/obj/effect/floor_decal/corner_techfloor_gray/diagonal,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section1)
 "cMi" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8;
@@ -11043,6 +11070,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "cMC" = (
@@ -11725,6 +11753,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/security/inspectors_office)
+"cWu" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/machinery/door/airlock/multi_tile/glass,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/hallway/surface/section1)
 "cWB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -13690,6 +13724,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -13703,9 +13738,14 @@
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/xenobiology)
+"dvl" = (
+/obj/random/cluster/roaches/low_chance,
+/turf/simulated/floor/industrial,
+/area/iskhod/maintenance/undergroundfloor2west)
 "dvm" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/firedoor,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "dvp" = (
@@ -16606,9 +16646,8 @@
 	},
 /area/shuttle/rocinante_shuttle_area)
 "eiM" = (
-/obj/random/cluster/roaches,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2west)
+/turf/simulated/wall/rock/snow,
+/area/iskhod/maintenance/undergroundfloor2north)
 "eiO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -16973,6 +17012,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "env" = (
@@ -19154,6 +19194,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "eQc" = (
@@ -20751,6 +20792,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "fmV" = (
@@ -21956,6 +21998,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "fAo" = (
@@ -21980,6 +22023,7 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "fAy" = (
@@ -22250,6 +22294,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "fEQ" = (
@@ -22383,6 +22428,19 @@
 	},
 /turf/simulated/floor/fixed/hydrotile,
 /area/turret_protected/ai_upload)
+"fGK" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/hallway/surface/section1)
 "fGR" = (
 /obj/structure/railing,
 /turf/simulated/shuttle/floor/mining{
@@ -23087,6 +23145,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
+"fQu" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/iskhod/hallway/surface/section1)
 "fQE" = (
 /obj/random/furniture/pottedplant,
 /obj/machinery/light{
@@ -24350,6 +24415,7 @@
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -24831,8 +24897,9 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/brig)
 "gpe" = (
-/turf/space,
-/area/iskhod/maintenance/undergroundfloor2north)
+/obj/structure/invislight,
+/turf/simulated/wall/iskhod_red,
+/area/iskhod/pit/surface)
 "gph" = (
 /obj/structure/boulder{
 	pixel_x = -1
@@ -24857,6 +24924,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -25047,9 +25116,9 @@
 	},
 /area/shuttle/rocinante_shuttle_area)
 "grg" = (
-/obj/structure/invislight,
-/turf/simulated/wall/iskhod_red,
-/area/iskhod/pit/surface)
+/obj/random/cluster/roaches,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2west)
 "grk" = (
 /obj/structure/boulder,
 /turf/simulated/floor/rock/dark,
@@ -25401,6 +25470,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "gvd" = (
@@ -25678,6 +25748,13 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/security/armoryshop)
+"gxP" = (
+/obj/effect/floor_decal/industrial_plant/border{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section1)
 "gxT" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
@@ -27226,6 +27303,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "gSG" = (
@@ -28409,6 +28487,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -28955,6 +29034,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section2)
 "hsU" = (
@@ -30115,6 +30195,8 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "hHn" = (
@@ -30789,6 +30871,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "hQV" = (
@@ -32282,6 +32365,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section3)
+"ilO" = (
+/obj/effect/floor_decal/industrial_plant/border,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section2)
 "ilS" = (
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
@@ -33959,6 +34050,7 @@
 /area/iskhod/engineering/waste)
 "iGo" = (
 /obj/effect/floor_decal/industrial_plant/border_corner,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "iGs" = (
@@ -35328,10 +35420,23 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor2south)
 "iXz" = (
+/obj/effect/floor_decal/industrial_plant/border{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
 /obj/effect/decal/cleanable/dirt,
-/obj/random/cluster/roaches,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2central)
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section2)
 "iXB" = (
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/rock/dark,
@@ -35370,6 +35475,10 @@
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
+"iYf" = (
+/obj/structure/invislight,
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/pit/level2)
 "iYh" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/remote/blast_door{
@@ -35895,6 +36004,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "jeM" = (
@@ -36107,6 +36217,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "jic" = (
@@ -36178,6 +36289,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 1
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -36441,6 +36553,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "jlc" = (
@@ -36548,6 +36661,7 @@
 /obj/effect/floor_decal/industrial_plant/border_corner{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "jmG" = (
@@ -37317,11 +37431,14 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/iskhod/pros/shuttle_landing_zone)
 "jxf" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/obj/structure/invislight,
-/turf/simulated/open,
-/area/iskhod/pit/surface)
+/obj/effect/floor_decal/industrial_plant/steel_grate_alt,
+/obj/effect/floor_decal/corner_techfloor_gray/diagonal,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section1)
 "jxF" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -38148,6 +38265,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "jHT" = (
@@ -38186,6 +38304,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "jIl" = (
@@ -38199,6 +38318,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section2)
 "jIm" = (
@@ -39326,6 +39446,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -39793,6 +39914,7 @@
 	dir = 4
 	},
 /obj/machinery/light/small,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "kdB" = (
@@ -41726,6 +41848,7 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "kCV" = (
@@ -44228,6 +44351,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -45266,6 +45390,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "lxj" = (
@@ -45414,6 +45539,7 @@
 	dir = 4;
 	pixel_x = -25
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -45686,10 +45812,6 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
-"lDh" = (
-/obj/structure/invislight,
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/pit/level3)
 "lDr" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -46314,11 +46436,6 @@
 /obj/structure/railing,
 /turf/simulated/open,
 /area/iskhod/hallway/main/stairwell)
-"lMJ" = (
-/turf/simulated/floor/tiled/dark/gray_platform{
-	oxygen = s
-	},
-/area/iskhod/pros/shuttle_landing_zone)
 "lMO" = (
 /turf/simulated/wall/rock/snow,
 /area/iskhod/outside/scave)
@@ -46944,6 +47061,7 @@
 	icon_state = "1-2";
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "lUY" = (
@@ -47324,10 +47442,9 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/derelict/abandoned_area)
 "lZq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/cluster/roaches,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2south)
+/obj/structure/invislight,
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/pit/level3)
 "lZw" = (
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/cafe,
@@ -47984,6 +48101,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section2)
 "mhC" = (
@@ -48211,6 +48329,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -49010,6 +49129,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "mwe" = (
@@ -49455,6 +49575,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/foyer)
+"mBS" = (
+/obj/effect/floor_decal/industrial_plant,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section1)
 "mBV" = (
 /obj/structure/target_stake,
 /obj/item/target,
@@ -52297,6 +52422,12 @@
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/enginehallway)
+"noO" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_alt,
+/obj/machinery/atmospherics/unary/vent_scrubber,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section1)
 "noQ" = (
 /obj/structure/disposalpipe/trunk,
 /obj/machinery/disposal,
@@ -52702,6 +52833,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "nsk" = (
@@ -52996,6 +53128,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "nvg" = (
@@ -53393,6 +53526,7 @@
 "nAb" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -56642,6 +56776,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "ori" = (
@@ -56856,6 +56991,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "ouU" = (
@@ -59070,6 +59206,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "oYp" = (
@@ -59096,6 +59233,15 @@
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
+"oYO" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_alt,
+/obj/effect/floor_decal/corner_techfloor_gray/diagonal,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section1)
 "oYS" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -59695,6 +59841,11 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/range)
+"pgp" = (
+/turf/simulated/floor/tiled/dark/gray_platform{
+	nitrogen = s
+	},
+/area/iskhod/pros/shuttle_landing_zone)
 "pgq" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -60587,6 +60738,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "prW" = (
@@ -64273,6 +64425,7 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "qrg" = (
@@ -64593,6 +64746,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "qva" = (
@@ -65313,6 +65467,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "qFJ" = (
@@ -65630,6 +65785,7 @@
 	dir = 9;
 	pixel_y = 0
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "qKm" = (
@@ -65773,6 +65929,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "qNi" = (
@@ -67238,6 +67395,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/disposalpipe/segment,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section1)
 "rfW" = (
@@ -68785,6 +68943,8 @@
 /obj/structure/disposalpipe/junction{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -68813,12 +68973,6 @@
 	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
-"rCz" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/effect/decal/cleanable/dirt,
-/obj/random/cluster/termite_no_despawn_hoard,
-/turf/simulated/floor/tiled/white/danger,
-/area/iskhod/maintenance/undergroundfloor2west)
 "rCE" = (
 /obj/structure/bed/chair/comfy/brown,
 /obj/machinery/firealarm{
@@ -69014,6 +69168,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "rFg" = (
@@ -69169,6 +69325,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -69445,6 +69602,12 @@
 "rKL" = (
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/security/inspectors_office)
+"rKS" = (
+/obj/structure/lattice,
+/obj/structure/lattice,
+/obj/structure/invislight,
+/turf/simulated/open,
+/area/iskhod/pit/surface)
 "rKW" = (
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
@@ -71515,6 +71678,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -72253,6 +72417,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section1)
 "suJ" = (
@@ -73080,6 +73245,7 @@
 	icon_state = "1-2";
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "sJy" = (
@@ -73779,6 +73945,7 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -74455,12 +74622,11 @@
 /turf/simulated/floor/tiled/white,
 /area/shuttle/rocinante_shuttle_area)
 "tbe" = (
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472
-	},
-/area/iskhod/maintenance/undergroundfloor2north)
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/termite_no_despawn_hoard,
+/turf/simulated/floor/tiled/white/danger,
+/area/iskhod/maintenance/undergroundfloor2west)
 "tbg" = (
 /obj/random/closet_wardrobe,
 /turf/simulated/floor/industrial,
@@ -78749,6 +78915,11 @@
 /obj/machinery/camera/network/colony_underground,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
+"ufk" = (
+/turf/simulated/floor/tiled/dark/gray_platform{
+	oxygen = s
+	},
+/area/iskhod/pros/shuttle_landing_zone)
 "ufy" = (
 /turf/open/pool,
 /area/iskhod/crew_quarters/pool)
@@ -79711,6 +79882,24 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section3)
+"uty" = (
+/obj/effect/floor_decal/industrial_plant/border{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section1)
 "utL" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -80423,6 +80612,11 @@
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/storage/tech)
+"uCK" = (
+/obj/structure/lattice,
+/obj/structure/invislight,
+/turf/simulated/open,
+/area/iskhod/pit/surface)
 "uCW" = (
 /turf/simulated/shuttle/wall/science{
 	icon_state = "9,19";
@@ -82915,9 +83109,20 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
 "vlq" = (
-/obj/random/cluster/roaches/low_chance,
-/turf/simulated/floor/industrial,
-/area/iskhod/maintenance/undergroundfloor2west)
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
+	dir = 1
+	},
+/obj/machinery/door/blast/shutters{
+	density = 0;
+	dir = 4;
+	icon_state = "shutter0";
+	id = "marshals_shutters";
+	name = "Lockdown Shutters";
+	opacity = 0
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section1)
 "vlr" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -83299,6 +83504,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "vqi" = (
@@ -83571,6 +83777,7 @@
 /area/iskhod/crew_quarters/pool)
 "vvj" = (
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "8,23"
 	},
@@ -83770,6 +83977,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "vxh" = (
@@ -85381,6 +85589,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/cbo)
+"vTq" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
+/area/iskhod/hallway/surface/section1)
 "vTr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -87529,11 +87744,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
-"wwE" = (
-/turf/simulated/floor/tiled/dark/gray_platform{
-	nitrogen = s
-	},
-/area/iskhod/pros/shuttle_landing_zone)
 "wwI" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -91839,6 +92049,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section1)
 "xED" = (
@@ -93337,6 +93548,7 @@
 /area/outpost/abandoned)
 "xWS" = (
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
+/obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -110382,10 +110594,10 @@ qzE
 qzE
 qzE
 qzE
-qzE
 eqz
 eqz
-qzE
+eqz
+eqz
 qzE
 qzE
 qzE
@@ -110581,7 +110793,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 eqz
 eqz
@@ -110590,7 +110802,7 @@ iSc
 eqz
 eqz
 eqz
-qzE
+eqz
 qzE
 qzE
 qzE
@@ -110795,7 +111007,7 @@ iSc
 eqz
 eqz
 eqz
-qzE
+eqz
 qzE
 qzE
 qzE
@@ -110980,9 +111192,9 @@ qzE
 qzE
 qzE
 qzE
-qzE
 eqz
 eqz
+eqz
 iSc
 iSc
 iSc
@@ -110998,7 +111210,7 @@ iSc
 iSc
 iSc
 eqz
-qzE
+eqz
 qzE
 qzE
 kVv
@@ -111181,7 +111393,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 iSc
@@ -111201,7 +111413,7 @@ uJh
 uJh
 iSc
 eqz
-qzE
+eqz
 qzE
 kVv
 kVv
@@ -111382,7 +111594,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -111404,7 +111616,7 @@ uJh
 uJh
 iSc
 eqz
-qzE
+eqz
 qzE
 qzE
 qzE
@@ -111583,7 +111795,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -111607,9 +111819,9 @@ uJh
 uJh
 iSc
 eqz
-qzE
-qzE
-qzE
+eqz
+eqz
+eqz
 mQt
 mQt
 ooX
@@ -111784,7 +111996,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -111985,7 +112197,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -112590,7 +112802,7 @@ rZP
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -112993,7 +113205,7 @@ rZP
 rZP
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -113010,7 +113222,7 @@ uJh
 uJh
 aEX
 aEX
-lDh
+lZq
 aEX
 aEX
 aEX
@@ -113614,7 +113826,7 @@ ezS
 uJh
 uJh
 aEX
-lDh
+lZq
 cSR
 vSf
 vSf
@@ -114205,7 +114417,7 @@ rZP
 nmf
 aEX
 aEX
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -114222,7 +114434,7 @@ uJh
 uJh
 aEX
 aEX
-lDh
+lZq
 aEX
 aEX
 aEX
@@ -114610,7 +114822,7 @@ rZP
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -115217,7 +115429,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -115420,7 +115632,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -115623,7 +115835,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -115647,9 +115859,9 @@ uJh
 uJh
 iSc
 eqz
-qzE
-qzE
-qzE
+eqz
+eqz
+eqz
 mQt
 mQt
 sog
@@ -115826,7 +116038,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 uJh
@@ -115848,7 +116060,7 @@ uJh
 uJh
 iSc
 eqz
-qzE
+eqz
 qzE
 qzE
 qzE
@@ -116029,7 +116241,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 iSc
 iSc
@@ -116049,7 +116261,7 @@ uJh
 uJh
 iSc
 eqz
-qzE
+eqz
 qzE
 qzE
 qzE
@@ -116232,9 +116444,9 @@ qzE
 qzE
 qzE
 qzE
-qzE
 eqz
 eqz
+eqz
 iSc
 iSc
 iSc
@@ -116250,7 +116462,7 @@ iSc
 iSc
 iSc
 eqz
-qzE
+eqz
 qzE
 qzE
 qzE
@@ -116451,7 +116663,7 @@ iSc
 eqz
 eqz
 eqz
-qzE
+eqz
 qzE
 qzE
 qzE
@@ -116641,7 +116853,7 @@ qzE
 qzE
 qzE
 qzE
-qzE
+eqz
 eqz
 eqz
 eqz
@@ -116650,7 +116862,7 @@ iSc
 eqz
 eqz
 eqz
-qzE
+eqz
 qzE
 qzE
 qzE
@@ -116846,10 +117058,10 @@ qzE
 qzE
 qzE
 qzE
-qzE
 eqz
 eqz
-qzE
+eqz
+eqz
 qzE
 qzE
 qzE
@@ -141356,7 +141568,7 @@ oYS
 pyf
 eYn
 pFA
-eiM
+grg
 eYn
 eYn
 eYn
@@ -141767,7 +141979,7 @@ msh
 cDZ
 vIf
 gyO
-rCz
+tbe
 aye
 rKY
 pFm
@@ -144186,7 +144398,7 @@ ojK
 eYn
 pFA
 pFA
-eiM
+grg
 eYn
 eYn
 eYn
@@ -145414,7 +145626,7 @@ oMf
 iVf
 skc
 oMf
-vlq
+dvl
 cvb
 vTX
 nKb
@@ -150374,10 +150586,10 @@ iZe
 iZe
 iZe
 iZe
-iZe
-iZe
-iZe
-iZe
+eiM
+eiM
+eiM
+eiM
 iZe
 iZe
 iZe
@@ -150575,12 +150787,12 @@ iZe
 iZe
 iZe
 iZe
-iZe
-iZe
+eiM
+eiM
 hmy
 vRd
-iZe
-iZe
+eiM
+eiM
 iZe
 iZe
 iZe
@@ -150777,12 +150989,12 @@ iZe
 iZe
 iZe
 iZe
-iZe
+eiM
 bYU
 hmy
 hmy
 uIo
-iZe
+eiM
 xvf
 xvf
 xvf
@@ -150979,7 +151191,7 @@ iZe
 iZe
 iZe
 iZe
-iZe
+eiM
 buM
 lEu
 wky
@@ -150991,7 +151203,7 @@ uJp
 xvf
 tTd
 tTd
-iZe
+eiM
 iZe
 jFw
 jFw
@@ -151181,7 +151393,7 @@ iZe
 iZe
 iZe
 iZe
-iZe
+eiM
 jyo
 hmy
 hmy
@@ -151196,7 +151408,7 @@ edm
 tTd
 tTd
 tTd
-iZe
+eiM
 iZe
 iZe
 jFw
@@ -151399,7 +151611,7 @@ edm
 edm
 edm
 tTd
-iZe
+eiM
 iZe
 iZe
 iZe
@@ -151582,7 +151794,7 @@ iZe
 iZe
 iZe
 iZe
-iZe
+eiM
 xvf
 uJp
 edm
@@ -151602,7 +151814,7 @@ edm
 edm
 edm
 tTd
-iZe
+eiM
 iZe
 iZe
 iZe
@@ -151783,7 +151995,7 @@ iZe
 iZe
 iZe
 iZe
-iZe
+eiM
 tTd
 edm
 uJp
@@ -151805,7 +152017,7 @@ edm
 edm
 edm
 tTd
-iZe
+eiM
 iZe
 iZe
 iZe
@@ -151984,7 +152196,7 @@ iZe
 iZe
 iZe
 iZe
-iZe
+eiM
 tTd
 edm
 edm
@@ -152185,7 +152397,7 @@ iZe
 iZe
 iZe
 iZe
-iZe
+eiM
 tTd
 edm
 edm
@@ -152248,7 +152460,7 @@ oVb
 oVb
 oVb
 wBr
-iXz
+auz
 wBr
 qVR
 nne
@@ -152386,7 +152598,7 @@ jFw
 iZe
 iZe
 iZe
-iZe
+eiM
 tTd
 edm
 edm
@@ -152991,7 +153203,7 @@ iZe
 jFw
 iZe
 iZe
-iZe
+eiM
 tTd
 edm
 edm
@@ -153084,7 +153296,7 @@ oVb
 oVb
 wBr
 wBr
-iXz
+auz
 oVb
 fyL
 dVV
@@ -153411,7 +153623,7 @@ edm
 edm
 xvf
 xvf
-cMb
+iYf
 xvf
 xvf
 xvf
@@ -154015,7 +154227,7 @@ mEj
 wxa
 tBj
 xvf
-cMb
+iYf
 eyP
 eyP
 eyP
@@ -154623,7 +154835,7 @@ edm
 edm
 xvf
 xvf
-cMb
+iYf
 xvf
 xvf
 xvf
@@ -155011,7 +155223,7 @@ poM
 xVT
 poM
 kOA
-iZe
+eiM
 tTd
 edm
 edm
@@ -155618,7 +155830,7 @@ mYt
 kOA
 kOA
 iZe
-iZe
+eiM
 tTd
 edm
 edm
@@ -155821,7 +156033,7 @@ kOA
 kOA
 iZe
 iZe
-iZe
+eiM
 tTd
 edm
 edm
@@ -156021,10 +156233,10 @@ tfP
 kOA
 kOA
 kOA
-gpe
 iZe
 iZe
 iZe
+eiM
 tTd
 edm
 edm
@@ -156227,7 +156439,7 @@ iZe
 iZe
 iZe
 iZe
-iZe
+eiM
 tTd
 edm
 uJp
@@ -156249,7 +156461,7 @@ edm
 edm
 edm
 tTd
-iZe
+eiM
 iZe
 iZe
 iZe
@@ -156427,10 +156639,10 @@ kOA
 kOA
 iZe
 iZe
-tbe
 iZe
 iZe
 iZe
+eiM
 xvf
 uJp
 edm
@@ -156450,7 +156662,7 @@ edm
 edm
 edm
 tTd
-iZe
+eiM
 iZe
 iZe
 iZe
@@ -156548,7 +156760,7 @@ nKb
 nKb
 nKb
 iFe
-lZq
+aSR
 iFe
 iFe
 jVj
@@ -156651,7 +156863,7 @@ edm
 edm
 edm
 tTd
-iZe
+eiM
 iZe
 iZe
 iZe
@@ -156837,7 +157049,7 @@ iZe
 iZe
 iZe
 iZe
-iZe
+eiM
 tTd
 tTd
 tTd
@@ -156852,7 +157064,7 @@ edm
 tTd
 tTd
 tTd
-iZe
+eiM
 iZe
 iZe
 iZe
@@ -157042,7 +157254,7 @@ iZe
 iZe
 iZe
 iZe
-iZe
+eiM
 tTd
 tTd
 xvf
@@ -157051,7 +157263,7 @@ uJp
 xvf
 tTd
 tTd
-iZe
+eiM
 iZe
 iZe
 iZe
@@ -157246,12 +157458,12 @@ iZe
 iZe
 iZe
 iZe
-iZe
+eiM
 xvf
 xvf
 xvf
 xvf
-iZe
+eiM
 iZe
 iZe
 iZe
@@ -191387,7 +191599,7 @@ fSp
 ycV
 ycV
 nir
-auz
+uCK
 iNe
 nir
 ycV
@@ -191985,7 +192197,7 @@ ycV
 ycV
 ycV
 nir
-auz
+uCK
 iRf
 iRf
 iRf
@@ -192441,7 +192653,7 @@ xCp
 gOR
 gOR
 gOR
-lsm
+gOR
 cqi
 ycV
 ycV
@@ -192636,10 +192848,10 @@ hax
 hax
 gOR
 drd
-drd
+cMb
 fEL
 orh
-drd
+cMb
 wON
 drd
 dYf
@@ -192838,10 +193050,10 @@ aHm
 aHm
 xiz
 wTV
-drd
-drd
+cMb
+cMb
 orh
-drd
+cMb
 wTV
 drd
 drd
@@ -193039,11 +193251,11 @@ gOR
 gOR
 gOR
 gOR
-wej
-mJM
-fwB
+blT
+noO
+vTq
 jiS
-uGD
+fQu
 uGD
 kpg
 drd
@@ -193241,7 +193453,7 @@ fPg
 fPg
 fPg
 gOR
-plg
+oYO
 xBh
 scx
 dSb
@@ -193437,13 +193649,13 @@ lWj
 bZy
 lRk
 noF
-xgO
+cWu
 aHm
 aHm
 aHm
 aHm
 xgO
-drd
+cMb
 uZi
 aHm
 prr
@@ -193631,7 +193843,7 @@ gOR
 gOR
 gOR
 osP
-fgq
+uty
 gOR
 lWj
 lWj
@@ -193639,7 +193851,7 @@ lWj
 gOR
 uxD
 hQQ
-dnq
+fGK
 uop
 uop
 uop
@@ -193812,7 +194024,7 @@ iRf
 iRf
 nir
 nir
-grg
+gpe
 nir
 nir
 nir
@@ -194041,7 +194253,7 @@ gOR
 gOR
 gOR
 gOR
-glD
+vlq
 prP
 bKS
 bKS
@@ -194235,7 +194447,7 @@ tnt
 giv
 dvm
 lzE
-ibd
+bxw
 skO
 rGB
 ibd
@@ -194416,7 +194628,7 @@ uDK
 kAi
 dEI
 nir
-grg
+gpe
 viv
 viv
 viv
@@ -194642,7 +194854,7 @@ mla
 xEC
 dvc
 ljG
-ibd
+bxw
 iGo
 gVu
 bpe
@@ -195024,7 +195236,7 @@ iRf
 iRf
 nir
 nir
-grg
+gpe
 nir
 nir
 nir
@@ -195045,7 +195257,7 @@ gOR
 gOR
 huJ
 oDj
-rFc
+iXz
 huJ
 lLW
 xVp
@@ -195448,7 +195660,7 @@ aWD
 gOR
 gOR
 huJ
-oDj
+ilO
 rFc
 sRe
 wKQ
@@ -195860,7 +196072,7 @@ cvW
 cvW
 huJ
 pTJ
-fzX
+gxP
 bKS
 bKS
 bKS
@@ -196054,15 +196266,15 @@ gOR
 gOR
 gOR
 huJ
-oDj
-rFc
+ilO
+iXz
 huJ
 cqi
 cqi
 gOR
 gOR
 xlo
-fzX
+gxP
 bKS
 bKS
 rNq
@@ -196256,15 +196468,15 @@ toU
 cVf
 huJ
 huJ
-oDj
-rFc
+ilO
+iXz
 huJ
 cqi
 cqi
 gOR
 hin
 iif
-fdN
+mBS
 hIJ
 bZy
 aHm
@@ -196274,9 +196486,9 @@ gly
 drd
 drd
 nsj
-drd
-drd
-gly
+cMb
+cMb
+jxf
 drd
 drd
 gOR
@@ -196833,7 +197045,7 @@ ycV
 ycV
 ycV
 nir
-auz
+uCK
 iRf
 iRf
 iRf
@@ -197447,7 +197659,7 @@ ycV
 ycV
 ycV
 nir
-jxf
+rKS
 oHi
 nir
 ycV
@@ -210007,7 +210219,7 @@ tXK
 hlo
 hlo
 hlo
-wwE
+pgp
 hlo
 hlo
 hlo
@@ -210207,7 +210419,7 @@ jON
 jON
 tXK
 hlo
-lMJ
+ufk
 hlo
 hlo
 hlo
