@@ -9688,13 +9688,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/misc_lab)
-"csW" = (
-/obj/structure/multiz/stairs/active{
-	dir = 8
-	},
-/obj/structure/railing,
-/turf/simulated/open,
-/area/iskhod/hallway/main/stairwell)
 "cta" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -15856,6 +15849,10 @@
 "dYv" = (
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 4
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
 	},
 /turf/simulated/open,
 /area/iskhod/hallway/main/stairwell)
@@ -30581,13 +30578,6 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/panic_room)
-"hOh" = (
-/obj/structure/multiz/stairs/enter{
-	dir = 8
-	},
-/obj/structure/railing,
-/turf/simulated/open,
-/area/iskhod/hallway/main/stairwell)
 "hOu" = (
 /obj/structure/table/reinforced,
 /obj/machinery/power/apc{
@@ -33141,13 +33131,6 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/security/armory)
-"iwS" = (
-/obj/structure/multiz/stairs/active{
-	dir = 4
-	},
-/obj/structure/railing,
-/turf/simulated/open,
-/area/iskhod/hallway/main/stairwell)
 "iwW" = (
 /obj/machinery/autolathe/rnd/protolathe/loaded,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -36111,10 +36094,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/pros/prep)
-"jgT" = (
-/obj/structure/railing,
-/turf/simulated/open,
-/area/iskhod/maintenance/undergroundfloor2south)
 "jgV" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4;
@@ -42915,6 +42894,10 @@
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 8
 	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
 /turf/simulated/open,
 /area/iskhod/hallway/main/stairwell)
 "kQP" = (
@@ -46383,12 +46366,11 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "lMx" = (
-/obj/structure/multiz/stairs/enter{
-	dir = 4
-	},
-/obj/structure/railing,
-/turf/simulated/open,
-/area/iskhod/hallway/main/stairwell)
+/obj/structure/window/reinforced/iskhod,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/invislight,
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/bar)
 "lMO" = (
 /turf/simulated/wall/rock/snow,
 /area/iskhod/outside/scave)
@@ -58977,6 +58959,10 @@
 "oWT" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
+	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
 	},
 /turf/simulated/open,
 /area/iskhod/hallway/main/stairwell)
@@ -91508,6 +91494,10 @@
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 8
 	},
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
 /turf/simulated/open,
 /area/iskhod/hallway/main/stairwell)
 "xwv" = (
@@ -112912,7 +112902,7 @@ uJh
 uJh
 aEX
 aEX
-aEX
+lZq
 aEX
 aEX
 uJh
@@ -113717,7 +113707,7 @@ ezS
 ezS
 uJh
 uJh
-aEX
+lZq
 lZq
 cSR
 vSf
@@ -114528,7 +114518,7 @@ uJh
 uJh
 aEX
 aEX
-aEX
+lZq
 aEX
 aEX
 uJh
@@ -152924,7 +152914,7 @@ snx
 snx
 snx
 sJy
-csW
+aWD
 dYv
 gab
 iAG
@@ -153126,7 +153116,7 @@ edm
 edm
 edm
 sJy
-hOh
+bnR
 oWT
 gab
 vnC
@@ -153313,7 +153303,7 @@ edm
 edm
 xvf
 xvf
-xvf
+iYf
 xvf
 xvf
 edm
@@ -153408,7 +153398,7 @@ xFe
 lUi
 tnk
 tnk
-jgT
+kCi
 fbz
 iFe
 axX
@@ -153610,7 +153600,7 @@ xFe
 lUi
 tnk
 tnk
-jgT
+kCi
 fbz
 bnA
 axX
@@ -154118,7 +154108,7 @@ btd
 mEj
 wxa
 tBj
-xvf
+iYf
 iYf
 eyP
 eyP
@@ -154183,7 +154173,7 @@ asS
 aeb
 jmV
 ncx
-mju
+lMx
 opE
 xlj
 mUI
@@ -154822,7 +154812,7 @@ gwN
 pAy
 tnk
 tnk
-jgT
+kCi
 xSJ
 hgv
 nKb
@@ -154929,7 +154919,7 @@ edm
 edm
 xvf
 xvf
-xvf
+iYf
 xvf
 xvf
 edm
@@ -155024,7 +155014,7 @@ gwN
 pAy
 tnk
 tnk
-jgT
+kCi
 iFe
 iFe
 nKb
@@ -155146,7 +155136,7 @@ edm
 edm
 edm
 sJy
-lMx
+ukk
 xwu
 gab
 iAG
@@ -155348,7 +155338,7 @@ nQl
 nQl
 nQl
 sJy
-iwS
+usR
 kQN
 gab
 bmQ
@@ -193714,7 +193704,7 @@ iRf
 iRf
 nir
 nir
-nir
+gpe
 nir
 nir
 iRf
@@ -194519,7 +194509,7 @@ ffK
 uDK
 kAi
 dEI
-nir
+gpe
 gpe
 viv
 viv
@@ -195330,7 +195320,7 @@ iRf
 iRf
 nir
 nir
-nir
+gpe
 nir
 nir
 iRf
@@ -199844,7 +199834,7 @@ cqi
 cqi
 cqi
 fep
-fep
+kLx
 fep
 fep
 fep
