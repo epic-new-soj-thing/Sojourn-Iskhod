@@ -1627,10 +1627,9 @@
 	icon_state = "0-4"
 	},
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	dir = 8
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_smes)
@@ -35094,10 +35093,9 @@
 /area/iskhod/command/tcommsat/chamber)
 "iUw" = (
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2";
-	dir = 8
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /obj/structure/cable/ender{
 	id = "shuttle"
