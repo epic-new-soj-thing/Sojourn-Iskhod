@@ -4290,7 +4290,7 @@
 	dir = 4
 	},
 /obj/structure/cable/ender{
-	id = "mining outpost to engine";
+	id = "underground";
 	name = "mining outpost cable"
 	},
 /obj/structure/cable/yellow{
@@ -4999,8 +4999,8 @@
 /area/mine/prep)
 "VY" = (
 /obj/structure/cable/ender{
-	id = "research outpost to engine";
-	name = "surface power cable"
+	id = "underground";
+	name = "outpost power cable"
 	},
 /obj/structure/cable/yellow{
 	d2 = 2;
