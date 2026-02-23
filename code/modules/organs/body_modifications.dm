@@ -96,7 +96,7 @@ var/global/list/modifications_types = list(
 			return FALSE
 
 	// Department restriction check
-	if(department_specific.len && !(department_specific ~= ALL_DEPARTMENTS))
+	if(department_specific.len && department_specific.len < length(ALL_DEPARTMENTS))
 		if(H && H.mind)
 			var/department = H.mind.assigned_job.department
 			if(!department)
@@ -106,10 +106,11 @@ var/global/list/modifications_types = list(
 				return FALSE
 		else if(P)
 			var/datum/job/J
-			if(ASSISTANT in P.job_low)
-				J = SSjob.GetJob(ASSISTANT)
-			else
+			if("Assistant" in P.job_low)
+				J = SSjob.GetJob("Assistant")
+			else if(P.job_high)
 				J = SSjob.GetJob(P.job_high)
+
 			if(!J || !department_specific.Find(J.department))
 				to_chat(usr, "This body-mod does not match your highest-priority department.")
 				return FALSE
@@ -315,7 +316,7 @@ var/global/list/modifications_types = list(
 
 /datum/body_modification/organ/robotize_organ/create_organ(var/mob/living/carbon/holder, O, color)
 	var/obj/item/organ/I = ..(holder,O,color)
-	I.nature = MODIFICATION_ASSISTED
+	I.nature = nature
 	if(istype(I, /obj/item/organ/internal/eyes))
 		var/obj/item/organ/internal/eyes/E = I
 		E.robo_color = iscolor(color) ? color : "#FFFFFF"

@@ -303,8 +303,8 @@
 #define BP_R_ARM_EXTRA	list(BP_R_HAND)
 
 // Prosthetic helpers.
-#define BP_IS_ORGANIC(org)		(!QDELETED(org) && (org.nature == MODIFICATION_ORGANIC || org.nature == MODIFICATION_SUPERIOR))
-#define BP_IS_ROBOTIC(org)		(!QDELETED(org) && (org.nature == MODIFICATION_SILICON || org.nature == MODIFICATION_LIFELIKE))
+#define BP_IS_ORGANIC(org)		(!QDELETED(org) && (org.nature == MODIFICATION_ORGANIC))
+#define BP_IS_ROBOTIC(org)		(!QDELETED(org) && (org.nature == MODIFICATION_SILICON))
 #define BP_IS_SLIME(org)		(!QDELETED(org) && (org.nature == MODIFICATION_SLIME))
 #define BP_IS_PROSTHETIC(org)	(!QDELETED(org) && (org.nature == MODIFICATION_SILICON))
 #define BP_IS_BRITTLE(org)		(!QDELETED(org) && (org.status	& ORGAN_BRITTLE))
