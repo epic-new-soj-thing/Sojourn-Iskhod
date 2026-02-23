@@ -62,10 +62,10 @@
 		var/spec = data["species"]
 
 		var/base = "blood pack"
-		if(istype(src, /obj/item/reagent_containers/blood/oil)) base = "bag of synthetic oil"
-		else if(istype(src, /obj/item/reagent_containers/blood/synthetic)) base = "bag of synthetic blood"
+		if(istype(src, /obj/item/reagent_containers/blood/oil)) base = "bag of oil"
+		else if(istype(src, /obj/item/reagent_containers/blood/synthetic)) base = "bag of blood"
 		else if(istype(src, /obj/item/reagent_containers/blood/plant)) base = "sap pack"
-		else if(istype(src, /obj/item/reagent_containers/blood/slime)) base = "slimatic fluid pack"
+		else if(istype(src, /obj/item/reagent_containers/blood/slime)) base = "fluid pack"
 
 		if(blood_type && spec)
 			name = "[spec] [base] ([blood_type])"
