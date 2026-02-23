@@ -851,14 +851,6 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/outpoststorage)
-"jo" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
-	invisibility = 101
-	},
-/turf/simulated/floor/asteroid{
-	temperature = 253.15
-	},
-/area/mine/explored)
 "jr" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -2832,6 +2824,14 @@
 /obj/item/device/lighting/toggleable/lantern,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
+"BE" = (
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
+	invisibility = 101
+	},
+/turf/simulated/floor/asteroid{
+	temperature = 253.15
+	},
+/area/mine/explored)
 "BF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -24494,7 +24494,7 @@ uS
 uS
 uS
 uS
-jo
+BE
 uS
 uS
 uS
@@ -29899,7 +29899,7 @@ uS
 uS
 uS
 uS
-jo
+uS
 vW
 vW
 vW
@@ -31710,7 +31710,7 @@ xR
 uS
 uS
 uS
-uS
+BE
 vW
 vW
 vW
