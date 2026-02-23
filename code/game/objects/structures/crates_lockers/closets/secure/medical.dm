@@ -235,6 +235,7 @@
 	new /obj/item/oddity/chem_book(src)
 	new /obj/item/storage/hcases/med(src)
 	new /obj/item/clothing/accessory/holster/saber/rapiermed/occupied(src)
+	new /obj/item/reagent_containers/enricher(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"
