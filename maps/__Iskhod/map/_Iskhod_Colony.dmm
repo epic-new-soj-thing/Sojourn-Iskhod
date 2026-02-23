@@ -1264,7 +1264,8 @@
 /obj/machinery/light,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pit/level3)
 "apQ" = (
@@ -1589,9 +1590,10 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
 "auz" = (
-/obj/random/cluster/roaches,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2west)
+/obj/structure/lattice,
+/obj/structure/invislight,
+/turf/simulated/open,
+/area/iskhod/pit/surface)
 "auB" = (
 /obj/machinery/recharge_station/robotics,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -4422,7 +4424,8 @@
 /mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "bel" = (
@@ -7269,7 +7272,8 @@
 "bOA" = (
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/surface_colony_footpath)
 "bOC" = (
@@ -7369,7 +7373,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pros)
 "bPo" = (
@@ -7600,7 +7605,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "bTQ" = (
@@ -7702,7 +7708,8 @@
 /obj/structure/low_wall,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "bVj" = (
@@ -8607,7 +8614,8 @@
 /obj/structure/barricade,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "ceT" = (
@@ -9935,7 +9943,8 @@
 /obj/structure/invislight,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "cwg" = (
@@ -10147,7 +10156,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "czf" = (
@@ -10224,7 +10234,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "cAI" = (
@@ -10889,7 +10900,8 @@
 /obj/structure/flora/small/snow/rock3,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "cKS" = (
@@ -10999,10 +11011,9 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
 "cMb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/cluster/roaches,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2central)
+/obj/structure/invislight,
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/pit/level2)
 "cMi" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8;
@@ -11425,7 +11436,8 @@
 /obj/structure/flora/grass/brown,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "cRL" = (
@@ -11480,7 +11492,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pros)
 "cSd" = (
@@ -13473,7 +13486,8 @@
 /obj/structure/invislight,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "dsW" = (
@@ -14848,7 +14862,8 @@
 /obj/structure/flora/stump,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "dJF" = (
@@ -15510,7 +15525,8 @@
 /obj/structure/low_wall,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "dTO" = (
@@ -16590,11 +16606,9 @@
 	},
 /area/shuttle/rocinante_shuttle_area)
 "eiM" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/obj/structure/invislight,
-/turf/simulated/open,
-/area/iskhod/pit/surface)
+/obj/random/cluster/roaches,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2west)
 "eiO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -17358,7 +17372,8 @@
 /obj/structure/flora/stump,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "esb" = (
@@ -18157,7 +18172,8 @@
 /obj/structure/flora/tree/snow/five,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "eCx" = (
@@ -18201,7 +18217,8 @@
 /obj/structure/invislight,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pit/level3)
 "eDe" = (
@@ -20284,7 +20301,8 @@
 "fep" = (
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "feF" = (
@@ -21694,7 +21712,8 @@
 /obj/structure/flora/tree/snow/snow,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "fyk" = (
@@ -21968,7 +21987,8 @@
 /obj/structure/flora/tree/snow/four,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "fAA" = (
@@ -22510,7 +22530,8 @@
 /obj/structure/flora/small/snow/rock7,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "fIK" = (
@@ -23232,7 +23253,8 @@
 /obj/structure/flora/tree/snow/four,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "fSq" = (
@@ -23656,7 +23678,8 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "fZO" = (
@@ -25025,8 +25048,8 @@
 /area/shuttle/rocinante_shuttle_area)
 "grg" = (
 /obj/structure/invislight,
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/pit/level3)
+/turf/simulated/wall/iskhod_red,
+/area/iskhod/pit/surface)
 "grk" = (
 /obj/structure/boulder,
 /turf/simulated/floor/rock/dark,
@@ -25277,7 +25300,8 @@
 /obj/structure/railing,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pros)
 "gui" = (
@@ -26486,7 +26510,8 @@
 /obj/structure/railing,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "gJW" = (
@@ -27173,7 +27198,8 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "gSo" = (
@@ -30336,7 +30362,8 @@
 "hKU" = (
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/hallway/surface/section3)
 "hLa" = (
@@ -30768,7 +30795,8 @@
 /obj/structure/flora/small/snow/rock8,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "hRc" = (
@@ -31399,7 +31427,8 @@
 /obj/structure/flora/tree/snow/three,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "hYw" = (
@@ -33395,12 +33424,6 @@
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
-"iAU" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/effect/decal/cleanable/dirt,
-/obj/random/cluster/termite_no_despawn_hoard,
-/turf/simulated/floor/tiled/white/danger,
-/area/iskhod/maintenance/undergroundfloor2west)
 "iAV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -35305,10 +35328,10 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor2south)
 "iXz" = (
-/obj/structure/lattice,
-/obj/structure/invislight,
-/turf/simulated/open,
-/area/iskhod/pit/surface)
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/roaches,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2central)
 "iXB" = (
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/rock/dark,
@@ -37294,8 +37317,10 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/iskhod/pros/shuttle_landing_zone)
 "jxf" = (
+/obj/structure/lattice,
+/obj/structure/lattice,
 /obj/structure/invislight,
-/turf/simulated/wall/iskhod_red,
+/turf/simulated/open,
 /area/iskhod/pit/surface)
 "jxF" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -37510,7 +37535,8 @@
 /obj/structure/flora/tree/snow/four,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "jAb" = (
@@ -42409,7 +42435,8 @@
 /obj/structure/invislight,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "kLz" = (
@@ -43222,7 +43249,8 @@
 /obj/structure/flora/small/snow/rock2,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "kVd" = (
@@ -43653,7 +43681,8 @@
 /obj/structure/flora/small/snow/rock3,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "lbI" = (
@@ -45657,6 +45686,10 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
+"lDh" = (
+/obj/structure/invislight,
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/pit/level3)
 "lDr" = (
 /obj/structure/bed/chair{
 	dir = 8
@@ -45890,7 +45923,8 @@
 /obj/structure/flora/small/snow/rock4,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "lFW" = (
@@ -46280,6 +46314,11 @@
 /obj/structure/railing,
 /turf/simulated/open,
 /area/iskhod/hallway/main/stairwell)
+"lMJ" = (
+/turf/simulated/floor/tiled/dark/gray_platform{
+	oxygen = s
+	},
+/area/iskhod/pros/shuttle_landing_zone)
 "lMO" = (
 /turf/simulated/wall/rock/snow,
 /area/iskhod/outside/scave)
@@ -47285,9 +47324,10 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/derelict/abandoned_area)
 "lZq" = (
-/obj/structure/invislight,
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/pit/level2)
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/roaches,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2south)
 "lZw" = (
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/cafe,
@@ -47857,7 +47897,8 @@
 /obj/structure/railing,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pit/surface)
 "mgX" = (
@@ -47930,7 +47971,8 @@
 /obj/structure/flora/small/snow/rock7,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "mhB" = (
@@ -50284,7 +50326,8 @@
 /obj/structure/flora/small/snow/rock1,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "mOu" = (
@@ -51012,7 +51055,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "mYp" = (
@@ -51242,7 +51286,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "ncl" = (
@@ -51723,7 +51768,8 @@
 /obj/machinery/camera/network/colony_underground,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pit/level3)
 "nhB" = (
@@ -52069,7 +52115,8 @@
 /obj/structure/flora/tree/snow/five,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "nmM" = (
@@ -52882,7 +52929,8 @@
 /obj/structure/invislight,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/scave)
 "nui" = (
@@ -53904,7 +53952,8 @@
 "nGF" = (
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/scave)
 "nGM" = (
@@ -54162,7 +54211,8 @@
 /obj/structure/flora/tree/snow/five,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "nKB" = (
@@ -55255,7 +55305,8 @@
 /obj/structure/flora/small/snow/rock6,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "nZj" = (
@@ -55809,7 +55860,8 @@
 /obj/structure/flora/grass/brown,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "oiH" = (
@@ -56606,7 +56658,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "orv" = (
@@ -57126,7 +57179,8 @@
 /obj/structure/invislight,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "oyz" = (
@@ -57693,7 +57747,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "oHY" = (
@@ -57731,7 +57786,8 @@
 /obj/random/cluster/spiders,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/scave)
 "oIt" = (
@@ -59167,7 +59223,8 @@
 /obj/structure/barricade,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "paN" = (
@@ -59698,7 +59755,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pit/surface)
 "phL" = (
@@ -60824,7 +60882,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "pwf" = (
@@ -61908,7 +61967,8 @@
 /obj/structure/flora/tree/snow/two,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "pLD" = (
@@ -62996,7 +63056,8 @@
 /obj/random/cluster/spiders,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "pZP" = (
@@ -65009,7 +65070,8 @@
 /obj/structure/flora/small/snow/rock7,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "qDo" = (
@@ -65274,7 +65336,8 @@
 "qFY" = (
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "qGa" = (
@@ -65805,7 +65868,8 @@
 "qOA" = (
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "qOD" = (
@@ -68745,9 +68809,16 @@
 /obj/effect/shuttle_landmark/mercshuttle_colony,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
+"rCz" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/termite_no_despawn_hoard,
+/turf/simulated/floor/tiled/white/danger,
+/area/iskhod/maintenance/undergroundfloor2west)
 "rCE" = (
 /obj/structure/bed/chair/comfy/brown,
 /obj/machinery/firealarm{
@@ -69732,7 +69803,8 @@
 "rQs" = (
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pros)
 "rQB" = (
@@ -70135,7 +70207,8 @@
 /mob/living/carbon/superior/spider/plasma,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/scave)
 "rWD" = (
@@ -70393,7 +70466,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pros)
 "rZf" = (
@@ -73138,7 +73212,8 @@
 	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "sLb" = (
@@ -74382,7 +74457,8 @@
 "tbe" = (
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/maintenance/undergroundfloor2north)
 "tbg" = (
@@ -74851,10 +74927,6 @@
 	},
 /turf/simulated/floor/industrial,
 /area/iskhod/crew_quarters/techshop)
-"thO" = (
-/obj/random/cluster/roaches/low_chance,
-/turf/simulated/floor/industrial,
-/area/iskhod/maintenance/undergroundfloor2west)
 "thS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -75127,7 +75199,8 @@
 /obj/structure/signpost,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "tlK" = (
@@ -75220,7 +75293,8 @@
 /obj/structure/signpost,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "tmP" = (
@@ -76391,7 +76465,8 @@
 /obj/structure/invislight,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "tAd" = (
@@ -76404,7 +76479,8 @@
 /obj/structure/flora/small/snow/rock5,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "tAi" = (
@@ -78323,11 +78399,6 @@
 /obj/random/rig_module/low_chance,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/maintenance/undergroundfloor2west)
-"ubj" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/cluster/roaches,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2south)
 "ubk" = (
 /obj/machinery/vending/engivend,
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -79099,7 +79170,8 @@
 /mob/living/carbon/superior/spider/nurse,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/scave)
 "ukq" = (
@@ -79275,7 +79347,8 @@
 /obj/structure/flora/tree/snow/snow,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "umP" = (
@@ -80789,7 +80862,8 @@
 /obj/structure/flora/small/snow/rock1,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "uIb" = (
@@ -80873,7 +80947,8 @@
 "uJh" = (
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/pit/level3)
 "uJn" = (
@@ -82783,7 +82858,8 @@
 /obj/structure/flora/small/snow/rock3,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "vkO" = (
@@ -82839,9 +82915,9 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
 "vlq" = (
-/obj/structure/invislight,
-/turf/simulated/floor/hull,
-/area/colony)
+/obj/random/cluster/roaches/low_chance,
+/turf/simulated/floor/industrial,
+/area/iskhod/maintenance/undergroundfloor2west)
 "vlr" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -86349,7 +86425,8 @@
 /obj/structure/flora/tree/snow/two,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "wid" = (
@@ -87316,7 +87393,8 @@
 /obj/structure/flora/tree/snow/three,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "wuP" = (
@@ -87451,6 +87529,11 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
+"wwE" = (
+/turf/simulated/floor/tiled/dark/gray_platform{
+	nitrogen = s
+	},
+/area/iskhod/pros/shuttle_landing_zone)
 "wwI" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -88464,7 +88547,8 @@
 /obj/structure/flora/tree/snow/snow,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "wIQ" = (
@@ -88590,7 +88674,8 @@
 /obj/structure/flora/grass/brown,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "wKQ" = (
@@ -88875,7 +88960,8 @@
 /obj/structure/flora/tree/snow/four,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "wOJ" = (
@@ -89448,7 +89534,8 @@
 /obj/structure/invislight,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/west)
 "wWT" = (
@@ -90054,7 +90141,8 @@
 /obj/structure/flora/tree/snow/three,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony/east)
 "xfA" = (
@@ -90267,7 +90355,8 @@
 /obj/machinery/door/airlock/maintenance_engineering,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/hallway/surface/section1)
 "xjc" = (
@@ -93598,7 +93687,8 @@
 "ycV" = (
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
-	temperature = 278.15
+	oxygen = 21.8366;
+	nitrogen = 82.1472
 	},
 /area/iskhod/outside/inside_colony)
 "ycX" = (
@@ -112920,7 +113010,7 @@ uJh
 uJh
 aEX
 aEX
-grg
+lDh
 aEX
 aEX
 aEX
@@ -113524,7 +113614,7 @@ ezS
 uJh
 uJh
 aEX
-grg
+lDh
 cSR
 vSf
 vSf
@@ -114132,7 +114222,7 @@ uJh
 uJh
 aEX
 aEX
-grg
+lDh
 aEX
 aEX
 aEX
@@ -141266,7 +141356,7 @@ oYS
 pyf
 eYn
 pFA
-auz
+eiM
 eYn
 eYn
 eYn
@@ -141677,7 +141767,7 @@ msh
 cDZ
 vIf
 gyO
-iAU
+rCz
 aye
 rKY
 pFm
@@ -144096,7 +144186,7 @@ ojK
 eYn
 pFA
 pFA
-auz
+eiM
 eYn
 eYn
 eYn
@@ -145324,7 +145414,7 @@ oMf
 iVf
 skc
 oMf
-thO
+vlq
 cvb
 vTX
 nKb
@@ -152158,7 +152248,7 @@ oVb
 oVb
 oVb
 wBr
-cMb
+iXz
 wBr
 qVR
 nne
@@ -152994,7 +153084,7 @@ oVb
 oVb
 wBr
 wBr
-cMb
+iXz
 oVb
 fyL
 dVV
@@ -153321,7 +153411,7 @@ edm
 edm
 xvf
 xvf
-lZq
+cMb
 xvf
 xvf
 xvf
@@ -153925,7 +154015,7 @@ mEj
 wxa
 tBj
 xvf
-lZq
+cMb
 eyP
 eyP
 eyP
@@ -154533,7 +154623,7 @@ edm
 edm
 xvf
 xvf
-lZq
+cMb
 xvf
 xvf
 xvf
@@ -156458,7 +156548,7 @@ nKb
 nKb
 nKb
 iFe
-ubj
+lZq
 iFe
 iFe
 jVj
@@ -191297,7 +191387,7 @@ fSp
 ycV
 ycV
 nir
-iXz
+auz
 iNe
 nir
 ycV
@@ -191895,7 +191985,7 @@ ycV
 ycV
 ycV
 nir
-iXz
+auz
 iRf
 iRf
 iRf
@@ -193722,7 +193812,7 @@ iRf
 iRf
 nir
 nir
-jxf
+grg
 nir
 nir
 nir
@@ -194326,7 +194416,7 @@ uDK
 kAi
 dEI
 nir
-jxf
+grg
 viv
 viv
 viv
@@ -194934,7 +195024,7 @@ iRf
 iRf
 nir
 nir
-jxf
+grg
 nir
 nir
 nir
@@ -196743,7 +196833,7 @@ ycV
 ycV
 ycV
 nir
-iXz
+auz
 iRf
 iRf
 iRf
@@ -197357,7 +197447,7 @@ ycV
 ycV
 ycV
 nir
-eiM
+jxf
 oHi
 nir
 ycV
@@ -206317,7 +206407,7 @@ mZF
 mZF
 cOl
 qzn
-mZF
+qzn
 cqi
 cqi
 cqi
@@ -209917,7 +210007,7 @@ tXK
 hlo
 hlo
 hlo
-hlo
+wwE
 hlo
 hlo
 hlo
@@ -210117,7 +210207,7 @@ jON
 jON
 tXK
 hlo
-hlo
+lMJ
 hlo
 hlo
 hlo
@@ -238745,7 +238835,7 @@ gQO
 gQO
 gQO
 gQO
-vlq
+gQO
 gQO
 gQO
 gQO
@@ -239956,7 +240046,7 @@ gQO
 gQO
 gQO
 gQO
-vlq
+gQO
 gQO
 gQO
 gQO
@@ -240188,7 +240278,7 @@ cIh
 cIh
 cIh
 cIh
-cIh
+bER
 cIh
 cIh
 cIh
@@ -241773,7 +241863,7 @@ cIh
 gQO
 gQO
 gQO
-vlq
+gQO
 gQO
 gQO
 aFe
@@ -243398,7 +243488,7 @@ cIh
 cIh
 gQO
 gQO
-vlq
+gQO
 gQO
 cIh
 cIh
@@ -246714,11 +246804,11 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+cqi
+cqi
+cqi
+cqi
+cqi
 cIh
 cIh
 cIh
@@ -246915,14 +247005,14 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 cIh
 cIh
 cIh
@@ -247117,14 +247207,14 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 cIh
 cIh
 cIh
@@ -247320,16 +247410,16 @@ cIh
 cIh
 cIh
 cIh
-bER
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 cIh
 cIh
 cIh
@@ -247519,19 +247609,19 @@ cIh
 cIh
 cIh
 cIh
+bER
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 cIh
 cIh
 cIh
@@ -247725,15 +247815,15 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 cIh
 cIh
 cIh
@@ -247927,15 +248017,15 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
 cqi
 cqi
-cIh
-cIh
-cIh
-cIh
-cIh
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
 cIh
 cIh
 cIh
@@ -248133,11 +248223,11 @@ cIh
 cqi
 cqi
 cqi
-cIh
-cIh
-cIh
-cIh
-cIh
+cqi
+cqi
+cqi
+cqi
+cqi
 cIh
 cIh
 cIh
@@ -248335,9 +248425,9 @@ cIh
 cqi
 cqi
 cqi
-cIh
-cIh
-cIh
+cqi
+cqi
+cqi
 cIh
 cIh
 cIh
@@ -248538,7 +248628,7 @@ cqi
 cqi
 cqi
 cqi
-cIh
+cqi
 cIh
 cIh
 cIh
