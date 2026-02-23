@@ -26,7 +26,7 @@
 	var/blood_type = null
 	var/blood_reagent = "blood"
 	var/blood_group = "mammalian"
-	var/blood_species = "Human"
+	var/blood_species = "Mammalian"
 	var/mob/living/carbon/human/attached_patient = null // For direct IV connection without medical stand
 	var/iv_transfer_rate = REM // Current transfer rate for IV
 
