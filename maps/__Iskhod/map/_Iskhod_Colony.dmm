@@ -1589,14 +1589,9 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
 "auz" = (
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/random/cluster/roaches_hoard,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2central)
+/obj/structure/invislight,
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/pit/level3)
 "auB" = (
 /obj/machinery/recharge_station/robotics,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -1621,8 +1616,15 @@
 /obj/structure/sign/warning/hazard_electrical{
 	pixel_y = 32
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark,
+/obj/structure/cable/ender{
+	id = "surface"
+	},
+/obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_smes)
 "avn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -10997,10 +10999,10 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
 "cMb" = (
-/obj/random/cluster/roaches,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial,
-/area/iskhod/maintenance/undergroundfloor2west)
+/obj/random/cluster/roaches,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2south)
 "cMi" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 8;
@@ -12566,6 +12568,11 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
+"dhO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/roaches,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2central)
 "die" = (
 /obj/structure/sign/warningnew/danger{
 	pixel_y = 32
@@ -16588,14 +16595,9 @@
 	},
 /area/shuttle/rocinante_shuttle_area)
 "eiM" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/random/cluster/roaches_hoard,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2central)
+/obj/random/cluster/roaches/low_chance,
+/turf/simulated/floor/industrial,
+/area/iskhod/maintenance/undergroundfloor2west)
 "eiO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -22016,6 +22018,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain/quarters)
+"fBk" = (
+/obj/structure/lattice,
+/obj/structure/lattice,
+/obj/structure/invislight,
+/turf/simulated/open,
+/area/iskhod/pit/surface)
 "fBv" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
 /obj/effect/decal/cleanable/dirt,
@@ -22827,7 +22835,7 @@
 /area/iskhod/engineering/locker_room)
 "fMy" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/cluster/roaches_hoard,
+/obj/random/cluster/roaches,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2west)
 "fMC" = (
@@ -25025,18 +25033,9 @@
 	},
 /area/shuttle/rocinante_shuttle_area)
 "grg" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/random/cluster/roaches,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2central)
+/obj/structure/invislight,
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/pit/level2)
 "grk" = (
 /obj/structure/boulder,
 /turf/simulated/floor/rock/dark,
@@ -30699,11 +30698,6 @@
 	icon_state = "0-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "hQy" = (
@@ -35314,9 +35308,9 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor2south)
 "iXz" = (
-/obj/random/cluster/roaches_hoard,
+/obj/random/cluster/roaches,
 /turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2south)
+/area/iskhod/maintenance/undergroundfloor2west)
 "iXB" = (
 /obj/random/scrap/sparse_even,
 /turf/simulated/floor/rock/dark,
@@ -37302,10 +37296,9 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/iskhod/pros/shuttle_landing_zone)
 "jxf" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/cluster/roaches_hoard,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2central)
+/obj/structure/invislight,
+/turf/simulated/wall/iskhod_red,
+/area/iskhod/pit/surface)
 "jxF" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -40167,7 +40160,7 @@
 /area/iskhod/hallway/main/f1section3)
 "kih" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/cluster/roaches_hoard,
+/obj/random/cluster/roaches,
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/iskhod/abandoned/recreation)
 "kii" = (
@@ -47294,9 +47287,10 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/derelict/abandoned_area)
 "lZq" = (
-/obj/random/cluster/roaches,
-/turf/simulated/floor/industrial,
-/area/iskhod/maintenance/undergroundfloor2west)
+/obj/structure/lattice,
+/obj/structure/invislight,
+/turf/simulated/open,
+/area/iskhod/pit/surface)
 "lZw" = (
 /obj/structure/table/marble,
 /turf/simulated/floor/tiled/cafe,
@@ -66799,6 +66793,12 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	dir = 8
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_smes)
 "rbF" = (
@@ -70897,11 +70897,17 @@
 	id = "SM";
 	name = "supermatter power cable"
 	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2";
+	dir = 8
+	},
+/obj/structure/cable/cyan{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_smes)
 "seJ" = (
@@ -91327,6 +91333,12 @@
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/absolutism/chapel)
+"xxn" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/effect/decal/cleanable/dirt,
+/obj/random/cluster/termite_no_despawn_hoard,
+/turf/simulated/floor/tiled/white/danger,
+/area/iskhod/maintenance/undergroundfloor2west)
 "xxr" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/green_large_slates,
@@ -112912,7 +112924,7 @@ uJh
 uJh
 aEX
 aEX
-aEX
+auz
 aEX
 aEX
 aEX
@@ -113516,7 +113528,7 @@ ezS
 uJh
 uJh
 aEX
-aEX
+auz
 cSR
 vSf
 vSf
@@ -114124,7 +114136,7 @@ uJh
 uJh
 aEX
 aEX
-aEX
+auz
 aEX
 aEX
 aEX
@@ -141258,7 +141270,7 @@ oYS
 pyf
 eYn
 pFA
-nYs
+iXz
 eYn
 eYn
 eYn
@@ -141669,7 +141681,7 @@ msh
 cDZ
 vIf
 gyO
-vIf
+xxn
 aye
 rKY
 pFm
@@ -144088,7 +144100,7 @@ ojK
 eYn
 pFA
 pFA
-nYs
+iXz
 eYn
 eYn
 eYn
@@ -144904,7 +144916,7 @@ eYn
 eYn
 vTX
 tkA
-lZq
+qVS
 oMf
 wvG
 oMf
@@ -145114,7 +145126,7 @@ oMf
 uUV
 skc
 uVN
-cMb
+oMf
 sci
 vTX
 nKb
@@ -145316,7 +145328,7 @@ oMf
 iVf
 skc
 oMf
-qVS
+eiM
 cvb
 vTX
 nKb
@@ -150132,8 +150144,8 @@ baL
 baL
 baL
 fyL
-oVb
-grg
+aJI
+rSC
 tNz
 tNz
 tNz
@@ -151983,7 +151995,7 @@ fTy
 fTy
 fTy
 lCq
-oVb
+aJI
 oVb
 fyL
 fyL
@@ -152150,7 +152162,7 @@ oVb
 oVb
 oVb
 wBr
-wBr
+dhO
 wBr
 qVR
 nne
@@ -152184,7 +152196,7 @@ fyL
 fyL
 fyL
 oVb
-auz
+lCq
 oVb
 fyL
 fyL
@@ -152986,7 +152998,7 @@ oVb
 oVb
 wBr
 wBr
-wBr
+dhO
 oVb
 fyL
 dVV
@@ -153313,7 +153325,7 @@ edm
 edm
 xvf
 xvf
-xvf
+grg
 xvf
 xvf
 xvf
@@ -153388,7 +153400,7 @@ git
 wUB
 oVb
 wBr
-jxf
+wBr
 oVb
 nVa
 fyL
@@ -153917,7 +153929,7 @@ mEj
 wxa
 tBj
 xvf
-xvf
+grg
 eyP
 eyP
 eyP
@@ -154525,7 +154537,7 @@ edm
 edm
 xvf
 xvf
-xvf
+grg
 xvf
 xvf
 xvf
@@ -155210,7 +155222,7 @@ wBr
 fiB
 gbP
 gbP
-eiM
+gbP
 gbP
 hTU
 onp
@@ -155411,7 +155423,7 @@ ecv
 ecv
 ecv
 oVb
-oVb
+aJI
 wBr
 oVb
 fyL
@@ -155788,7 +155800,7 @@ lox
 ovZ
 lLM
 oVb
-xHX
+aJI
 oVb
 wUB
 lhX
@@ -156055,9 +156067,9 @@ nKb
 iFe
 iFe
 iFe
-iXz
 iFe
 iFe
+jPP
 iFe
 iFe
 iFe
@@ -156450,7 +156462,7 @@ nKb
 nKb
 nKb
 iFe
-jVj
+cMb
 iFe
 iFe
 jVj
@@ -191289,7 +191301,7 @@ fSp
 ycV
 ycV
 nir
-iNe
+lZq
 iNe
 nir
 ycV
@@ -191887,7 +191899,7 @@ ycV
 ycV
 ycV
 nir
-iNe
+lZq
 iRf
 iRf
 iRf
@@ -192310,7 +192322,7 @@ iRf
 iRf
 iRf
 iRf
-ycV
+tzR
 ycV
 bTI
 bTI
@@ -193714,7 +193726,7 @@ iRf
 iRf
 nir
 nir
-nir
+jxf
 nir
 nir
 nir
@@ -194318,7 +194330,7 @@ uDK
 kAi
 dEI
 nir
-nir
+jxf
 viv
 viv
 viv
@@ -194926,7 +194938,7 @@ iRf
 iRf
 nir
 nir
-nir
+jxf
 nir
 nir
 nir
@@ -196350,7 +196362,7 @@ iRf
 iRf
 iRf
 iRf
-ycV
+tzR
 ycV
 sKZ
 gSb
@@ -196735,7 +196747,7 @@ ycV
 ycV
 ycV
 nir
-iNe
+lZq
 iRf
 iRf
 iRf
@@ -197349,7 +197361,7 @@ ycV
 ycV
 ycV
 nir
-oHi
+fBk
 oHi
 nir
 ycV
