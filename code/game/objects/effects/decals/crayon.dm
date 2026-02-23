@@ -1186,8 +1186,8 @@
 	for(var/mob/living/carbon/human/T in oview(3))
 		if(T.species?.reagent_tag != IS_SYNTHETIC && T.species?.reagent_tag != IS_SLIME)
 			if(T.get_blood_volume() >= (bloodpercent * T.species.blood_volume))
-				T.vessel.remove_reagent("blood", ((T.get_blood_volume() * 0.01) - bloodpercent) * T.species.blood_volume)
-			else T.vessel.add_reagent("blood", (bloodpercent - (T.get_blood_volume() * 0.01)) * T.species.blood_volume)
+				T.vessel.remove_reagent(T.species.blood_reagent, ((T.get_blood_volume() * 0.01) - bloodpercent) * T.species.blood_volume)
+			else T.vessel.add_reagent(T.species.blood_reagent, (bloodpercent - (T.get_blood_volume() * 0.01)) * T.species.blood_volume)
 			to_chat(T, "<span class='warning'>You feel extremly woozy and light headed for a second. It partially recovers.</span>")
 			M.sanity.changeLevel(-5) //Good deads always get punished (but only if we successfully cast the spell!)
 
@@ -1195,8 +1195,8 @@
 	to_chat(M, "<span class='warning'>The sound of a heart beat fills the air around you.</span>")
 	playsound(loc, 'sound/effects/singlebeat.ogg', 80)
 	if(M.get_blood_volume() < bloodpercent)
-		M.vessel.add_reagent("blood", (bloodpercent - (M.get_blood_volume() * 0.01)) * M.species.blood_volume)
-	else M.vessel.remove_reagent("blood", ((M.get_blood_volume() * 0.01) - bloodpercent) * M.species.blood_volume)
+		M.vessel.add_reagent(M.species.blood_reagent, (bloodpercent - (M.get_blood_volume() * 0.01)) * M.species.blood_volume)
+	else M.vessel.remove_reagent(M.species.blood_reagent, ((M.get_blood_volume() * 0.01) - bloodpercent) * M.species.blood_volume)
 	B.remove_self(min(20 * targets.len, 80))
 	return
 

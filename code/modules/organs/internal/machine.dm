@@ -47,7 +47,7 @@
 		return
 	if(owner.stat == DEAD)	//not a drain anymore
 		return
-	if(!is_usable())
+	if(!is_usable() && is_broken())
 		owner.Paralyse(3)
 		return
 	var/cost = get_servo_cost()

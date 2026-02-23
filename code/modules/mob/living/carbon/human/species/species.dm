@@ -24,6 +24,9 @@
 	var/max_age = 90
 
 	var/blood_color = "#A10808"                          // Red.
+	var/blood_reagent = "blood"
+	var/blood_group = "mammalian"
+                          // Reagent used for blood.
 	var/flesh_color = "#FFC896"                          // Pink.
 	var/gibbed_anim = "gibbed-h"
 

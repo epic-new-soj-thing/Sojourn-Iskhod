@@ -26,7 +26,7 @@
 		STAT_VIG = 2
 	)
 	darksight = 2
-
+	blood_color = "#A10808"
 	perks = list(PERK_IWILLSURVIVE, PERK_BATTLECRY, PERK_TENACITY, PERK_DIVERSE_CULTURE)
 
 	spawn_flags = CAN_JOIN
@@ -67,7 +67,7 @@
 	)
 
 	darksight = 3
-
+	blood_color = "#A10808"
 	perks = list(PERK_SPLICER, PERK_DIVERSE_CULTURE)
 
 	has_limbs = list(
@@ -105,6 +105,7 @@
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/horns)
 	darksight = 8
+	blood_color = "#A10808"
 	num_alternate_languages = 2
 	name_language = null
 	min_age = 18
@@ -182,6 +183,9 @@
 	default_form = FORM_MARQUA
 	obligate_form = TRUE
 	reagent_tag = IS_MARQUA
+	blood_reagent = "aquatic_blood"
+	blood_group = "aquatic"
+	blood_color = "#597DE8"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick)
 	darksight = 4
 	num_alternate_languages = 2
@@ -245,6 +249,7 @@
 	reagent_tag = IS_KRIOSAN
 	unarmed_types = list(/datum/unarmed_attack/needle, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	darksight = 4 //enhanced eyes dosnt mean perfected
+	blood_color = "#A10808"
 	num_alternate_languages = 2
 	name_language = null
 	min_age = 18
@@ -305,6 +310,9 @@
 	default_form = FORM_AKULA
 	obligate_form = TRUE
 	reagent_tag = IS_AKULA
+	blood_reagent = "aquatic_blood"
+	blood_group = "aquatic"
+	blood_color = "#597DE8"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/tail, /datum/unarmed_attack/bite/strong)
 	darksight = 3
 	num_alternate_languages = 2
@@ -357,7 +365,7 @@
 	slowdown = -0.5
 	blurb = "no."
 	darksight = 2
-
+	blood_color = "#A10808"
 	spawn_flags = CAN_JOIN
 
 	stat_modifiers = list(
@@ -385,6 +393,9 @@
 	default_form = FORM_OPIFEX
 	obligate_form = TRUE
 	reagent_tag = IS_OPIFEX
+	blood_reagent = "opifex_blood"
+	blood_group = "opifex"
+	blood_color = "#D7AE0E"
 	unarmed_types = list(/datum/unarmed_attack/claws, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	num_alternate_languages = 2
 	name_language = null
@@ -428,6 +439,9 @@
 	default_form = FORM_CHTMANT
 	obligate_form = TRUE
 	reagent_tag = IS_CHTMANT
+	blood_reagent = "chtmant_blood"
+	blood_group = "chtmant"
+	blood_color = "#3C7240"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	num_alternate_languages = 2
 	name_language = null
@@ -518,6 +532,9 @@
 	default_form = FORM_CINDAR
 	obligate_form = TRUE
 	reagent_tag = IS_CINDARITE
+	blood_reagent = "reptile_blood"
+	blood_group = "reptile"
+	blood_color = "#B0C01B"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite, /datum/unarmed_attack/tail)
 	num_alternate_languages = 2
 	blurb = "no"
@@ -604,6 +621,8 @@
 	obligate_name = TRUE
 	obligate_form = TRUE
 	reagent_tag = IS_TREE
+	blood_reagent = "plant_blood"
+	blood_group = "plant"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2
@@ -616,6 +635,7 @@
 	flags = NO_PAIN | IS_PLANT
 	taste_sensitivity = TASTE_NUMB
 	darksight = 4
+	blood_color = "#228B22"
 
 	dark_color = "#93eb9e"
 	light_color = "#93eb9e"
@@ -654,6 +674,8 @@
 	obligate_name = TRUE
 	obligate_form = TRUE
 	reagent_tag = IS_TREE
+	blood_reagent = "plant_blood"
+	blood_group = "plant"
 	unarmed_types = list(/datum/unarmed_attack/punch/hammer_fist, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2
@@ -664,6 +686,7 @@
 	slowdown = 0.3
 	hunger_factor = 1.3
 	darksight = 6
+	blood_color = "#228B22"
 
 	burn_mod = 2						// Burn damage multiplier.
 	light_dam = 1 // Same threshold as the Nightcrawler perk
@@ -713,6 +736,8 @@
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	total_health = 75
+	blood_reagent = "synthetic_blood"
+	blood_color = "#247CFF"
 	breath_type = null
 	poison_type = null
 	darksight = 2
@@ -759,6 +784,8 @@
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no"
 	reagent_tag = IS_SYNTHETIC
+	blood_reagent = "synthetic_blood"
+	blood_color = "#247CFF"
 	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
@@ -815,6 +842,8 @@
 	max_age = 110
 	siemens_coefficient = 2
 	reagent_tag = IS_SYNTHETIC
+	blood_reagent = "synth_oil"
+	blood_color = "#0C0C0C"
 	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
@@ -879,6 +908,8 @@
 	max_age = 110
 	siemens_coefficient = 0
 	reagent_tag = IS_SYNTHETIC
+	blood_reagent = "synth_oil"
+	blood_color = "#0C0C0C"
 	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
@@ -948,6 +979,8 @@
 	breath_type = null
 	poison_type = null
 	total_health = 75
+	blood_reagent = "synth_oil"
+	blood_color = "#0C0C0C"
 	dark_color = "#FFFFFF"
 	light_color = "#000000"
 	darksight = 2
@@ -1002,6 +1035,8 @@
 	min_age = 18
 	max_age = 110
 	reagent_tag = IS_SYNTHETIC
+	blood_reagent = "synth_oil"
+	blood_color = "#0C0C0C"
 	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
@@ -1070,6 +1105,8 @@
 	radiation_mod = 0
 	breath_type = null
 	poison_type = null
+	blood_reagent = "synth_oil"
+	blood_color = "#0C0C0C"
 	darksight = 3
 
 	dark_color = "#FFFFFF"
@@ -1116,6 +1153,8 @@
 	obligate_form = TRUE
 	reagent_tag = IS_SLIME
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/slime_glomp)
+	blood_reagent = "slimatic_fluid"
+	blood_group = "slime"
 	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
 	siemens_coefficient = 3 //conductive
 	darksight = 3
@@ -1129,6 +1168,7 @@
 	max_age = 200
 	injury_type =  INJURY_TYPE_HOMOGENOUS
 	taste_sensitivity = TASTE_SENSITIVE
+	blood_color = "#05FF9B"
 
 	nutrition_mod = 250 //Important for some perks
 

@@ -64,7 +64,7 @@
 		toxnote.surgery_operations |= AUTODOC_TOXIN
 	if(patient.reagents.reagent_list.len)
 		toxnote.surgery_operations |= AUTODOC_DIALYSIS
-	if((patient.vessel.get_reagent_amount("blood") / patient.species.blood_volume) < 1)
+	if((patient.vessel.get_reagent_amount(patient.species.blood_reagent) / patient.species.blood_volume) < 1)
 		toxnote.surgery_operations |= AUTODOC_BLOOD
 	if(toxnote.surgery_operations)
 		scanned_patchnotes.Add(toxnote)
@@ -216,7 +216,7 @@
 	data["over_burn"] = patient.getFireLoss()
 	data["over_oxy"] = patient.getOxyLoss()
 	data["over_tox"] = patient.getToxLoss()
-	data["blood_amount"] = patient.vessel.get_reagent_amount("blood") / patient.species.blood_volume * 100
+	data["blood_amount"] = patient.vessel.get_reagent_amount(patient.species.blood_reagent) / patient.species.blood_volume * 100
 
 	var/list/organs = list()
 

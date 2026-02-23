@@ -552,7 +552,7 @@
 		"borer_present" = H.has_brain_worms(),
 		"blood_reagents" = H.reagents.reagent_list.Copy(),
 		"stomach_reagents" = H.ingested ? H.ingested.reagent_list.Copy() : list(),
-		"blood_amount" = round((H.vessel.get_reagent_amount("blood") / H.species.blood_volume)*100),
+		"blood_amount" = round((H.vessel.get_reagent_amount(H.species.blood_reagent) / H.species.blood_volume)*100),
 		"blood_type" = H.dna.b_type,
 		"pulse" = H.get_pulse(GETPULSE_TOOL),
 		"pulse_level" = H.pulse(),

@@ -8,7 +8,7 @@
     tipText = "As a premier, you function as an internal affairs agent, lawyer, and mediator."
 
 /tipsAndTricks/jobs/ironhammer_theft
-    jobs_list = list(/datum/job/swo, /datum/job/swo, /datum/job/supsec, /datum/job/inspector, /datum/job/medspec, /datum/job/officer, /datum/job/officer, /datum/job/supsec)
+    jobs_list = list(/datum/job/swo, /datum/job/swo, /datum/job/supsec, /datum/job/inspector, /datum/job/officer, /datum/job/officer, /datum/job/supsec)
     tipText = "As a member of security, you have broad access to chase criminals. This does not mean you can take anything you have access to. Taking things from other departments is theft!"
 
 /tipsAndTricks/jobs/plants_are_dieing_gardener

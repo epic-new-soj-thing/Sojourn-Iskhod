@@ -1036,7 +1036,7 @@
 
 
 			if(vessel)
-				var/blood_volume = vessel.get_reagent_amount("blood")
+				var/blood_volume = vessel.get_reagent_amount(species.blood_reagent)
 				var/blood_percent =  round((blood_volume / species.blood_volume)*100)
 				if(blood_percent * effective_blood_volume <= total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
 					holder.add_overlay("hud_low_blood")

@@ -1360,7 +1360,7 @@
 		set_pin_data(IC_OUTPUT, 6, H.getOxyLoss())
 		set_pin_data(IC_OUTPUT, 7, H.getCloneLoss())
 		set_pin_data(IC_OUTPUT, 8, text2num(H.get_pulse(GETPULSE_TOOL)))
-		set_pin_data(IC_OUTPUT, 9, round((H.vessel.get_reagent_amount("blood") / H.species.blood_volume)*100))
+		set_pin_data(IC_OUTPUT, 9, round((H.vessel.get_reagent_amount(H.species.blood_reagent) / H.species.blood_volume)*100))
 		set_pin_data(IC_OUTPUT, 10, H.radiation)
 		set_pin_data(IC_OUTPUT, 11, H.name)
 		set_pin_data(IC_OUTPUT, 12, round(H.health/H.maxHealth*100))

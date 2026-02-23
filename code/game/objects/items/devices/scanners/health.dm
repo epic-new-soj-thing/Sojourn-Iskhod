@@ -134,7 +134,7 @@
 /proc/medical_scan_results(var/mob/living/carbon/M, var/mode, var/advanced = FALSE)
 	. = list()
 	var/dat = list()
-	if (!ishuman(M) || M.isSynthetic())
+	if (M.isSynthetic())
 		//these sensors are designed for organic life
 		. += "<h2>Analyzing Results for ERROR:\n\t Overall Status: ERROR</h2>"
 		. += span("highlight", "    Key: <font color='#0080ff'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FFA500'>Burns</font>/<font color='red'>Brute</font>")
@@ -144,7 +144,7 @@
 		. += span("highlight", "Subject's pulse: <font color='red'>-- bpm.</font>")
 		return
 
-	var/mob/living/carbon/human/H = M
+	var/mob/living/carbon/H = M
 
 	var/fake_oxy = max(rand(1, 40), M.getOxyLoss(), (300 - (M.getFireLoss() + M.getBruteLoss())))
 	var/tox_content = M.chem_effects[CE_TOXIN] + M.chem_effects[CE_ALCOHOL_TOXIC]
@@ -163,11 +163,13 @@
 	var/limb_health
 	var/limb_damage
 
-	for(var/obj/item/organ/external/E in H.organs)
-		organ_health += E.total_internal_health
-		organ_damage += E.severity_internal_wounds
-		limb_health += E.max_damage
-		limb_damage += max(E.brute_dam, E.burn_dam)
+	if(ishuman(H))
+		var/mob/living/carbon/human/human_subject = H
+		for(var/obj/item/organ/external/E in human_subject.organs)
+			organ_health += E.total_internal_health
+			organ_damage += E.severity_internal_wounds
+			limb_health += E.max_damage
+			limb_damage += max(E.brute_dam, E.burn_dam)
 
 	var/crit_health = (H.health / H.maxHealth) * 100
 	var/external_health = (1 - (limb_health ? limb_damage / limb_health : 0)) * 100
@@ -212,14 +214,17 @@
 		dat += span("highlight", "<font color='red'><b>⚠ CRITICAL: MAJOR SYSTEMIC ORGAN FAILURE ⚠</b></font>")
 
 	// Check for facial disfigurement (less intrusive)
-	var/obj/item/organ/external/head = H.get_organ(BP_HEAD)
-	if(head && head.disfigured)
-		dat += span("highlight", "<font color='#666'><i>Note: Facial disfigurement detected</i></font>")
+	if(ishuman(H))
+		var/mob/living/carbon/human/human_subject = H
+		var/obj/item/organ/external/head = human_subject.get_organ(BP_HEAD)
+		if(head && head.disfigured)
+			dat += span("highlight", "<font color='#666'><i>Note: Facial disfigurement detected</i></font>")
 
 	if(M.tod && (M.stat == DEAD || (M.status_flags & FAKEDEATH)))
 		dat += span("highlight", "Time of Death: [M.tod]")
-	if(mode == 1)
-		var/list/damaged = H.get_damaged_organs(1, 1)
+	if(mode == 1 && ishuman(H))
+		var/mob/living/carbon/human/human_subject = H
+		var/list/damaged = human_subject.get_damaged_organs(1, 1)
 		dat += span("highlight", "Localized Damage:")
 		if(length(damaged) > 0)
 			for(var/obj/item/organ/external/org in damaged)
@@ -310,13 +315,13 @@
 	else if (M.getBrainLoss() >= 10)
 		dat += SPAN_WARNING("Significant brain damage detected. Subject may have had a minor brain injury.")
 
-	if(H.vessel)
-		var/blood_volume = H.vessel.get_reagent_amount("blood")
+	if(H.vessel && H.species)
+		var/blood_volume = H.vessel.get_reagent_amount(H.species.blood_reagent)
 		var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
-		var/blood_type = H.dna.b_type
-		if((blood_percent * H.effective_blood_volume <= H.total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER) && (blood_percent * H.effective_blood_volume > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER))
+		var/blood_type = H.dna ? H.dna.b_type : "Unknown"
+		if((blood_percent * H.get_blood_volume() / 100 <= H.maxHealth * 0.5) && (blood_percent * H.get_blood_volume() / 100 > H.maxHealth * 0.2))
 			dat += "<font color='red'>Warning: Blood Level LOW: [blood_percent]% [blood_volume]cl.</font> <span class='highlight'>Type: [blood_type]</span>"
-		else if(blood_percent * H.effective_blood_volume <= H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
+		else if(blood_percent * H.get_blood_volume() / 100 <= H.maxHealth * 0.2)
 			dat += "<font color='red'><i>Warning: Blood Level CRITICAL: [blood_percent]% [blood_volume]cl.</i></font> <span class='highlight'>Type: [blood_type]</span>"
 		else if(blood_percent > 100)
 			dat += span("highlight", "<font color='#14d70aff'>Blood Level Healthy: [blood_percent]% [blood_volume]cl. Type: [blood_type]</font>")

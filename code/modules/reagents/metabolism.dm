@@ -146,7 +146,7 @@
 	if(nsa_amount < nsa_threshold*1.6)
 		if(ishuman(src))
 			var/mob/living/carbon/human/H = src
-			var/blood_volume = H.vessel.get_reagent_amount("blood")
+			var/blood_volume = H.vessel.get_reagent_amount(H.species.blood_reagent)
 			var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
 			if(blood_percent * H.effective_blood_volume > H.total_blood_req + BLOOD_VOLUME_BAD_MODIFIER)
 				return
