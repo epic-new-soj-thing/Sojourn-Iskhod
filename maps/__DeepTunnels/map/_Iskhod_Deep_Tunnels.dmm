@@ -1327,7 +1327,9 @@
 /turf/simulated/floor/reinforced,
 /area/iskhod/rnd/mixing)
 "oF" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold,
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold{
+	invisibility = 101
+	},
 /turf/simulated/floor/asteroid{
 	temperature = 253.15
 	},
@@ -2882,14 +2884,6 @@
 /obj/item/storage/firstaid/adv,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/rnd/outpostmedical)
-"BO" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
-	invisibility = 101
-	},
-/turf/simulated/floor/asteroid{
-	temperature = 253.15
-	},
-/area/mine/explored)
 "BQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -24493,7 +24487,7 @@ uS
 uS
 uS
 uS
-BO
+uS
 uS
 uS
 uS
@@ -31709,7 +31703,7 @@ xR
 uS
 uS
 uS
-BO
+uS
 vW
 vW
 vW
