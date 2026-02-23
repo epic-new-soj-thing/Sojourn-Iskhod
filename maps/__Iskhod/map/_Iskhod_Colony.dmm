@@ -31296,11 +31296,11 @@
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/maintenance/undergroundfloor2south)
 "hXf" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
-	invisibility = 101
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4
 	},
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2central)
+/turf/simulated/wall/r_wall,
+/area/iskhod/engineering/engine_room)
 "hXm" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -31966,12 +31966,11 @@
 /turf/simulated/floor/wood,
 /area/iskhod/rnd/rbreakroom)
 "ihq" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
-	invisibility = 101
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4
 	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/hallway/main/f1section2)
+/turf/simulated/wall/r_wall,
+/area/iskhod/engineering/engine_airlock)
 "ihu" = (
 /obj/structure/table/marble,
 /obj/machinery/recharger,
@@ -34812,6 +34811,7 @@
 /area/iskhod/pit/surface)
 "iRi" = (
 /obj/effect/floor_decal/industrial/warning/full,
+/obj/machinery/power/supermatter,
 /turf/simulated/floor/reinforced/airless,
 /area/iskhod/engineering/engine_room)
 "iRB" = (
@@ -43592,16 +43592,6 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/crew_quarters/hydroponics)
-"kZG" = (
-/obj/machinery/light{
-	brightness_power = 1;
-	dir = 8
-	},
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
-	invisibility = 101
-	},
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2central)
 "kZH" = (
 /obj/structure/table/woodentable,
 /obj/machinery/chemical_dispenser/coffee_master{
@@ -81176,16 +81166,6 @@
 /obj/structure/closet/random_milsupply,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor2south)
-"uMX" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold{
-	name = "pine tree";
-	desc = "Something about it seems rather important, you should probably leave this one alone."
-	},
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	temperature = 278.15
-	},
-/area/iskhod/outside/inside_colony/east)
 "uNa" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -82030,16 +82010,6 @@
 /obj/structure/cable/green,
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
-"uZK" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold{
-	name = "pine tree";
-	desc = "Something about it seems rather important, you should probably leave this one alone."
-	},
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	temperature = 278.15
-	},
-/area/iskhod/outside/inside_colony/west)
 "uZO" = (
 /obj/item/frame/apc,
 /turf/simulated/floor/industrial/ornate,
@@ -85588,6 +85558,7 @@
 	dir = 8
 	},
 /obj/structure/table/marble,
+/obj/machinery/partyalarm,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
 "vWh" = (
@@ -90668,10 +90639,10 @@
 	dir = 9;
 	pixel_y = 0
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/security/showers)
 "xoq" = (
@@ -119670,7 +119641,7 @@ gWM
 bMt
 tAx
 fHu
-ihq
+gAs
 qKV
 jmd
 xdv
@@ -147411,7 +147382,7 @@ fJN
 sMC
 sMC
 mxk
-vrR
+hXf
 vrR
 fha
 vrR
@@ -150232,11 +150203,11 @@ eya
 gRF
 pXN
 bBS
+hXf
 vrR
 vrR
 vrR
-vrR
-vrR
+hXf
 vrR
 vrR
 vrR
@@ -151235,9 +151206,9 @@ vrR
 vrR
 vrR
 hNA
-hNA
+ihq
 kfz
-hNA
+ihq
 hNA
 vrR
 vrR
@@ -151377,7 +151348,7 @@ mzF
 fyL
 fyL
 fyL
-hXf
+oVb
 oVb
 oVb
 kVB
@@ -152043,9 +152014,9 @@ axX
 arf
 arf
 hNA
-hNA
+ihq
 xnI
-hNA
+ihq
 hNA
 arf
 arf
@@ -158042,7 +158013,7 @@ eMJ
 fyL
 fyL
 fyL
-kZG
+spj
 jXL
 epC
 epC
@@ -180289,7 +180260,7 @@ qOA
 qOA
 qOA
 qOA
-uZK
+qOA
 qOA
 qOA
 qOA
@@ -184490,7 +184461,7 @@ ycV
 ycV
 ycV
 ycV
-cAH
+ycV
 ycV
 ycV
 ycV
@@ -185286,7 +185257,7 @@ ycV
 ycV
 ycV
 ycV
-ycV
+wuN
 ycV
 ycV
 ycV
@@ -185680,7 +185651,7 @@ ycV
 ycV
 ycV
 ycV
-ycV
+wuN
 ycV
 ycV
 ycV
@@ -186087,7 +186058,7 @@ ycV
 ycV
 ycV
 ycV
-cAH
+ycV
 ycV
 ycV
 ycV
@@ -186580,7 +186551,7 @@ qOA
 qOA
 qOA
 qOA
-uZK
+qOA
 qOA
 qOA
 qOA
@@ -187736,7 +187707,7 @@ ycV
 ycV
 ycV
 ycV
-cAH
+ycV
 ycV
 tAg
 fSp
@@ -190120,7 +190091,7 @@ ycV
 ycV
 ycV
 ycV
-ycV
+wuN
 ycV
 ycV
 ycV
@@ -191774,7 +191745,7 @@ ycV
 ycV
 ycV
 ycV
-cAH
+ycV
 ycV
 ycV
 ycV
@@ -192107,7 +192078,7 @@ ycV
 ycV
 ycV
 ycV
-ycV
+wuN
 ycV
 mOo
 ycV
@@ -194635,7 +194606,7 @@ fep
 xfs
 fep
 fep
-uMX
+fep
 fep
 fep
 fep
@@ -203411,14 +203382,14 @@ ycV
 ycV
 ycV
 ycV
+wuN
 ycV
 ycV
 ycV
 ycV
 ycV
 ycV
-ycV
-ycV
+fSp
 ycV
 ycV
 ycV
@@ -203624,7 +203595,7 @@ ycV
 ycV
 ycV
 ycV
-ycV
+wuN
 ycV
 rQs
 bvX
@@ -203637,7 +203608,7 @@ rQs
 ycV
 ycV
 ycV
-ycV
+fSp
 ycV
 ycV
 ycV
@@ -203821,7 +203792,7 @@ ycV
 ycV
 ycV
 ycV
-ycV
+wuN
 ycV
 ycV
 ycV
@@ -204635,7 +204606,7 @@ ycV
 ycV
 ycV
 ycV
-ycV
+fSp
 ycV
 ycV
 ycV
@@ -204656,7 +204627,7 @@ ycV
 ycV
 ycV
 ycV
-cAH
+ycV
 ycV
 ycV
 ycV
@@ -204822,7 +204793,7 @@ cqi
 ycV
 ycV
 ycV
-ycV
+fSp
 ycV
 ycV
 ycV
@@ -204859,7 +204830,7 @@ fSp
 ycV
 ycV
 ycV
-ycV
+wuN
 ycV
 mOo
 ycV
@@ -206332,7 +206303,7 @@ ycV
 ycV
 ycV
 ycV
-ycV
+wuN
 ycV
 ycV
 ycV
@@ -209364,7 +209335,7 @@ ycV
 ycV
 ycV
 ycV
-cAH
+ycV
 ycV
 ycV
 ycV
@@ -210415,7 +210386,7 @@ fep
 fep
 fep
 fep
-uMX
+fep
 fep
 fep
 fep
@@ -211177,7 +211148,7 @@ nud
 ycV
 ycV
 ycV
-ycV
+wuN
 ycV
 ycV
 ycV
@@ -212356,7 +212327,7 @@ ycV
 ycV
 ycV
 ycV
-cAH
+ycV
 ycV
 ycV
 ycV
