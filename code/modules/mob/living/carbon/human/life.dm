@@ -33,7 +33,6 @@
 	var/pressure_alert = 0
 	var/temperature_alert = 0
 	var/in_stasis = 0
-	var/pulse = PULSE_NORM
 	var/global/list/overlays_cache = null
 
 /mob/living/carbon/human/Life()
