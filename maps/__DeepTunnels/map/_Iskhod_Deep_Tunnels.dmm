@@ -1371,15 +1371,14 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/power/apc{
-	dir = 4;
-	name = "East APC";
-	operating = 0;
-	pixel_y = -28
-	},
 /obj/structure/cable{
 	d2 = 8;
 	icon_state = "0-8"
+	},
+/obj/machinery/power/apc{
+	dir = 4;
+	name = "East APC";
+	pixel_x = 28
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
@@ -2824,14 +2823,6 @@
 /obj/item/device/lighting/toggleable/lantern,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
-"BE" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
-	invisibility = 101
-	},
-/turf/simulated/floor/asteroid{
-	temperature = 253.15
-	},
-/area/mine/explored)
 "BF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -2891,6 +2882,14 @@
 /obj/item/storage/firstaid/adv,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/rnd/outpostmedical)
+"BO" = (
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
+	invisibility = 101
+	},
+/turf/simulated/floor/asteroid{
+	temperature = 253.15
+	},
+/area/mine/explored)
 "BQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -24494,7 +24493,7 @@ uS
 uS
 uS
 uS
-BE
+BO
 uS
 uS
 uS
@@ -31710,7 +31709,7 @@ xR
 uS
 uS
 uS
-BE
+BO
 vW
 vW
 vW
