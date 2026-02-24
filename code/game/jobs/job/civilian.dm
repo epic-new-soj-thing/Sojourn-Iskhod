@@ -36,7 +36,7 @@
 							 /datum/computer_file/program/reports,
 							 /datum/computer_file/program/wordprocessor)
 
-	description = "The Hospitality Manager is the head of Independent Recreation Services, ensuring the comfort and entertainment of the colony.<br>\
+	description = "The Hospitality Manager is the head of Ivaris Hospitality Services, ensuring the comfort and entertainment of the colony.<br>\
 	You oversee the bar, kitchen, hydroponics, and all entertainment services.<br>\
 	Ensure your staff are profitable and keeping the crew happy.<br>\
 	You also serve as a member of the Iskhod Council, representing the civilian and service sectors."
@@ -75,7 +75,7 @@
 	perks = list(PERK_MARKET_PROF, /datum/perk/bartender)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
-	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment under Independent Recreation Services.<br>\
+	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment as an independent contractor.<br>\
 	Working with the Chef and Gardener, you make the big decisions. Run your business well - perhaps seek to maximise profits.<br>\
 	Although tips are a good source of income, your wider business acumen will truly decide your prosperity here."
 
@@ -237,7 +237,7 @@
 							 /datum/computer_file/program/reports,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Journalist is a member of the press for Independent Recreation Services, documenting life in the colony.<br>\
+	description = "The Journalist is a member of the press for as an independent contractor, documenting life in the colony.<br>\
 	Your duty is to report the news, good or bad, to the populace. Interviews, investigations, and photography are your tools.<br>\
 	Stay out of trouble, but don't be afraid to ask the hard questions. Ideally, you should be ensuring the truth gets out.<br>\
 	You report to the Hospitality Manager, but your loyalty is to the truth."

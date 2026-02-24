@@ -32,7 +32,7 @@
 #define DEPARTMENT_SCIENCE	"Vesalius-Andra Research"
 #define DEPARTMENT_SECURITY "Iskhod Rangers"
 #define DEPARTMENT_SUPPLY "Frontier Logistics"
-#define DEPARTMENT_SERVICE "Independent Recreation Services"
+#define DEPARTMENT_SERVICE "Independent Contractors"
 #define DEPARTMENT_CIVILIAN	"Contractors"
 #define DEPARTMENT_CHURCH	"Church of the Absolute"
 #define DEPARTMENT_PROSPECTOR "Prospectors"
