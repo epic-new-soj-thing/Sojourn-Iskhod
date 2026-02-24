@@ -20,6 +20,21 @@
 	)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/hop
+	health_modifier = 5
+
+	stat_modifiers = list(
+		STAT_ROB = 5,
+		STAT_TGH = 10,
+		STAT_VIG = 10,
+		STAT_COG = 20
+	)
+
+	perks = list(PERK_MARKET_PROF, /datum/perk/bartender, PERK_SOMELLIER)
+
+	software_on_spawn = list(/datum/computer_file/program/comm,
+							 /datum/computer_file/program/camera_monitor,
+							 /datum/computer_file/program/reports,
+							 /datum/computer_file/program/wordprocessor)
 
 	description = "The Hospitality Manager is the head of Ivaris Hospitality Services, ensuring the comfort and entertainment of the colony.<br>\
 	You oversee the bar, kitchen, hydroponics, and all entertainment services.<br>\
@@ -39,7 +54,7 @@
 	title = "Bartender"
 	flag = CLUBMANAGER
 	department = DEPARTMENT_SERVICE
-	department_flag = FL
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
@@ -77,7 +92,7 @@
 	title = "Chef"
 	flag = CLUBWORKER
 	department = DEPARTMENT_SERVICE
-	department_flag = FL
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
@@ -116,7 +131,7 @@
 	title = "Gardener"
 	flag = BOTANIST
 	department = DEPARTMENT_SERVICE
-	department_flag = FL
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
@@ -157,7 +172,7 @@
 	title = "Artist"
 	flag = ARTIST
 	department = DEPARTMENT_SERVICE
-	department_flag = FL
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
@@ -199,7 +214,7 @@
 	title = "Journalist"
 	flag = JOURNALIST
 	department = DEPARTMENT_SERVICE
-	department_flag = FL
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
