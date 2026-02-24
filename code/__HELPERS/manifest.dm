@@ -16,7 +16,7 @@
         list("names" = list(), "header" = DEPARTMENT_ENGINEERING, "flag" = ENGINEERING),
         list("names" = list(), "header" = DEPARTMENT_PROSPECTOR, "flag" = PROSPECTORS),
         list("names" = list(), "header" = DEPARTMENT_CIVILIAN,  "flag" = CIVILIAN),
-        list("names" = list(), "header" = DEPARTMENT_LODGE,     "flag" = LODGE),
+        list("names" = list(), "header" = DEPARTMENT_LODGE,     "flag" = LODGE)
     )
 
 	var/list/misc //Special departments for easier access

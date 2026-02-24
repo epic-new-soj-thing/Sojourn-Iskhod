@@ -25,19 +25,19 @@
 #define ROOKIE_PROSPECTOR "Rookie Prospector"
 #define CREDS "&cent;"
 
-/proc/html_crew_manifest(var/monochrome, var/OOC)
-	var/list/dept_data = list(
-        list("names" = list(), "header" = DEPARTMENT_COMMAND,   "flag" = COMMAND),
-        list("names" = list(), "header" = DEPARTMENT_SECURITY,  "flag" = SECURITY),
-        list("names" = list(), "header" = DEPARTMENT_MEDICAL,   "flag" = MEDICAL),
-        list("names" = list(), "header" = DEPARTMENT_SCIENCE,   "flag" = SCIENCE),
-        list("names" = list(), "header" = DEPARTMENT_CHURCH,    "flag" = CHURCH),
-        list("names" = list(), "header" = DEPARTMENT_SUPPLY,    "flag" = FL),
-        list("names" = list(), "header" = DEPARTMENT_ENGINEERING, "flag" = ENGINEERING),
-        list("names" = list(), "header" = DEPARTMENT_PROSPECTOR, "flag" = PROSPECTORS),
-        list("names" = list(), "header" = DEPARTMENT_CIVILIAN,  "flag" = CIVILIAN),
-        list("names" = list(), "header" = DEPARTMENT_LODGE,     "flag" = LODGE),
-    )
+
+#define DEPARTMENT_COMMAND	"Iskhod Council"
+#define DEPARTMENT_MEDICAL	"Vesalius-Andra Medical"
+#define DEPARTMENT_ENGINEERING	"Artificer Guild"
+#define DEPARTMENT_SCIENCE	"Vesalius-Andra Research"
+#define DEPARTMENT_SECURITY "Iskhod Rangers"
+#define DEPARTMENT_SUPPLY "Frontier Logistics"
+#define DEPARTMENT_SERVICE "Independent Contractors"
+#define DEPARTMENT_CIVILIAN	"Contractors"
+#define DEPARTMENT_CHURCH	"Church of the Absolute"
+#define DEPARTMENT_PROSPECTOR "Prospectors"
+#define DEPARTMENT_LODGE "Lodge"
+#define DEPARTMENT_INDEPENDENT "Independant"
 
 #define DEPARTMENT_GREYSON "Greyson Positronic"
 
