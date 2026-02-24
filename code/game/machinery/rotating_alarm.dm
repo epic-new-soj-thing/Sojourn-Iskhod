@@ -159,7 +159,7 @@
 	GLOB.supermatter_status.unregister_global(src, PROC_REF(check_supermatter))
 	. = ..()
 
-/obj/machinery/rotating_alarm/supermatter/proc/check_supermatter(obj/machinery/power/supermatter/SM, status)
+/obj/machinery/rotating_alarm/supermatter/proc/check_supermatter(obj/machinery/power/supermatter/SM, last_status)
 	if (SM)
 		if (SM.z in GetConnectedZlevels(src.z))
 			if(last_status >= SUPERMATTER_NOTIFY)
