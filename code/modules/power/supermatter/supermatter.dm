@@ -89,6 +89,7 @@
 	var/aw_EPR = FALSE
 
 	var/last_status = SUPERMATTER_INACTIVE
+	var/delam_test_running = FALSE
 
 /obj/machinery/power/supermatter/Initialize()
 	. = ..()
@@ -615,3 +616,29 @@
 	phoron_release_modifier = 100000000000
 	oxygen_release_modifier = 100000000000
 	radiation_release_modifier = 1
+
+/obj/machinery/power/supermatter/verb/test_delamination()
+	set name = "Test Delamination"
+	set category = "Debug"
+	set src in view()
+
+	if(!usr.client || !usr.client.holder)
+		to_chat(usr, SPAN_DANGER("You don't have the permissions to do this."))
+		return
+
+	if(delam_test_running)
+		delam_test_running = FALSE
+		to_chat(usr, SPAN_NOTICE("Stopping delamination test on [src]."))
+		return
+
+	delam_test_running = TRUE
+	to_chat(usr, SPAN_NOTICE("Initiating slow delamination test on [src]..."))
+	message_admins("[key_name_admin(usr)] initiated a slow delamination test on [src] at [x],[y],[z].")
+
+	spawn(0)
+		while(src && delam_test_running && damage < explosion_point)
+			damage = min(damage + 5, explosion_point)
+			sleep(1 SECONDS)
+		if(src)
+			delam_test_running = FALSE
+			to_chat(usr, SPAN_NOTICE("Delamination test complete, stopped, or crystal destroyed."))
