@@ -183,7 +183,7 @@ var/list/restricted_camera_networks = list(NETWORK_MERCENARY, "Secret")
 #define RCON_YES	3
 
 #define MAX_TEMPERATURE 90
-#define MIN_TEMPERATURE -40
+#define MIN_TEMPERATURE -45
 
 ////////////////////////////////////////////
 

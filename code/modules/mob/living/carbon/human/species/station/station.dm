@@ -66,6 +66,9 @@
 		STAT_VIG = 5
 	)
 
+	cold_level_1 = 270
+	cold_discomfort_level = 280
+
 	darksight = 3
 	blood_color = "#A10808"
 	perks = list(PERK_SPLICER, PERK_DIVERSE_CULTURE)
@@ -121,9 +124,9 @@
 	dark_color = "#00ff00"
 	light_color = "#008000"
 
-	cold_level_1 = 240 //Default 270
-	cold_level_2 = 215 //Default 230
-	cold_level_3 = 190  //Default 200
+	cold_level_1 = 220 //Default 270
+	cold_level_2 = 195 //Default 230
+	cold_level_3 = 170  //Default 200
 
 	heat_level_1 = 340 //Default 330
 	heat_level_2 = 400 //Default 380
@@ -199,11 +202,17 @@
 	dark_color = "#afeeee"
 	light_color = "#20b2aa"
 
-	cold_level_1 = 230 //Default 270
-	cold_level_2 = 210 //Default 230
-	cold_level_3 = 190  //Default 200
+	cold_level_1 = 248 //T0C - 25
+	cold_level_2 = 228
+	cold_level_3 = 208
 
-	cold_discomfort_level = 230
+	heat_level_1 = 350 //Default 330
+	heat_level_2 = 410 //Default 380
+	heat_level_3 = 500 //Default 460
+
+	heat_discomfort_level = 350
+
+	cold_discomfort_level = 248
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -271,6 +280,11 @@
 		STAT_VIG = 5
 	)
 
+	cold_level_1 = 240
+	cold_level_2 = 215
+	cold_level_3 = 190
+	cold_discomfort_level = 240
+
 	permitted_ears  = list("Fennec Ears",
 		"Fox Ears",
 		"Hound Ears",
@@ -323,11 +337,11 @@
 	taste_sensitivity = TASTE_DULL
 	hunger_factor = 1.25
 
-	cold_level_1 = 240 //Default 270
-	cold_level_2 = 200 //Default 230
+	cold_level_1 = 220 //Default 270
+	cold_level_2 = 195 //Default 230
 	cold_level_3 = 170  //Default 200
 
-	cold_discomfort_level = 240
+	cold_discomfort_level = 220
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -553,9 +567,9 @@
 		STAT_TGH = 2
 	)
 
-	cold_level_1 = 290 //Default 270
-	cold_level_2 = 265 //Default 230
-	cold_level_3 = 240  //Default 200
+	cold_level_1 = 300 //Default 270
+	cold_level_2 = 275 //Default 230
+	cold_level_3 = 250  //Default 200
 
 	heat_level_1 = 370 //Default 330
 	heat_level_2 = 410 //Default 380
@@ -571,7 +585,7 @@
 	dark_color = "#660066"
 	light_color = "#660066"
 
-	cold_discomfort_level = 290
+	cold_discomfort_level = 300
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
