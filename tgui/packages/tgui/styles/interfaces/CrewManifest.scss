@@ -3,18 +3,21 @@
 $department_map: (
   'heads': colors.$blue,
   'sec': colors.$red,
-  'bls': colors.$grey,
   'med': colors.$teal,
   'sci': colors.$purple,
   'chr': colors.$yellow,
-  'sup': colors.$green,
+  'car': colors.$green,
   'eng': colors.$orange,
   'pro': colors.$brown,
   'civ': colors.$white,
+  'srv': colors.$service-pink,
+  'ind': colors.$white,
+  'gry': colors.$light-grey,
   'bot': colors.$pink,
   'ldg': colors.$brown,
   'misc': colors.$label,
 );
+
 
 .CrewManifest {
   @each $department-name, $color-value in $department_map {

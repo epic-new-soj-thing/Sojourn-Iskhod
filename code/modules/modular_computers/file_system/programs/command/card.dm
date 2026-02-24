@@ -46,17 +46,18 @@
 		data["id_name"] = id_card ? id_card.name : "-----"
 
 	data["command_jobs"] = format_jobs(command_positions)
-	//data["support_jobs"] = format_jobs(support_positions)
 	data["engineering_jobs"] = format_jobs(engineering_positions)
 	data["medical_jobs"] = format_jobs(medical_positions)
 	data["science_jobs"] = format_jobs(science_positions)
 	data["security_jobs"] = format_jobs(security_positions)
 	data["prospector_jobs"] = format_jobs(prospector_positions)
-	data["service_jobs"] = format_jobs(civilian_positions)
+	data["service_jobs"] = format_jobs(service_positions)
 	data["supply_jobs"] = format_jobs(cargo_positions)
 	data["church_jobs"] = format_jobs(church_positions)
-	//data["civilian_jobs"] = format_jobs(civilian_positions)
+	data["civilian_jobs"] = format_jobs(civilian_positions)
+	data["independent_jobs"] = format_jobs(independent_positions)
 	data["centcom_jobs"] = format_jobs(get_all_centcom_jobs())
+
 
 	data["all_centcom_access"] = is_centcom
 	data["regions"] = list()

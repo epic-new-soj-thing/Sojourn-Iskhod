@@ -132,21 +132,51 @@
 		)))
 	return filtered_entries
 
+/proc/outsider_nano_crew_manifest()
+	var/list/filtered_entries = list()
+	for(var/datum/mind/M in SSticker.minds)
+		if(M.assigned_role in department_outsider && M.name)
+			var/status = "Unknown"
+			if(M.current)
+				if(M.current.stat == DEAD)
+					status = "Deceased"
+				else
+					var/inactive_time = world.time - M.last_activity
+					if(inactive_time >= 60 MINUTES)
+						status = "SSD"
+					else if(inactive_time >= 15 MINUTES)
+						status = "Inactive"
+					else
+						status = "Active"
+
+			filtered_entries.Add(list(list(
+				"name" = M.name,
+				"rank" = M.assigned_role,
+				"status" = status
+			)))
+	return filtered_entries
+
 /proc/nano_crew_manifest()
 	return list(\
 		"heads" = filtered_nano_crew_manifest(command_positions),\
-		"sci" = filtered_nano_crew_manifest(science_positions),\
 		"sec" = filtered_nano_crew_manifest(security_positions),\
-		"bls" = filtered_nano_crew_manifest(blackshield_positions),\
-		"eng" = filtered_nano_crew_manifest(engineering_positions),\
 		"med" = filtered_nano_crew_manifest(medical_positions),\
-		"sup" = filtered_nano_crew_manifest(cargo_positions),\
+		"sci" = filtered_nano_crew_manifest(science_positions),\
 		"chr" = filtered_nano_crew_manifest(church_positions),\
+		"car" = filtered_nano_crew_manifest(cargo_positions),\
+		"eng" = filtered_nano_crew_manifest(engineering_positions),\
 		"pro" = filtered_nano_crew_manifest(prospector_positions),\
-		"bot" = silicon_nano_crew_manifest(nonhuman_positions),\
 		"civ" = filtered_nano_crew_manifest(civilian_positions),\
-		"ldg" = filtered_nano_crew_manifest(lodge_positions)\
+		"srv" = filtered_nano_crew_manifest(service_positions),\
+		"ind" = filtered_nano_crew_manifest(independent_positions),\
+		"gry" = list(),\
+		"ldg" = filtered_nano_crew_manifest(lodge_positions),\
+		"out" = outsider_nano_crew_manifest(),\
+		"misc" = filtered_nano_crew_manifest(null, TRUE),\
+		"bot" = silicon_nano_crew_manifest(nonhuman_positions)\
 		)
+
+
 
 /proc/flat_nano_crew_manifest()
 	. = list()
