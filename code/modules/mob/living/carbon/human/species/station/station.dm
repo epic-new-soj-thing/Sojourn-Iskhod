@@ -3,6 +3,7 @@
 	name_plural = "Humans"
 	default_form = FORM_HUMAN
 	obligate_name = FALSE
+	blood_group = "mammalian"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "Humanity originated in the Sol system, and over the last five centuries has spread \
 	colonies across a wide swathe of space. They hold a wide range of forms and creeds.<br/><br/> \
@@ -38,6 +39,7 @@
 /datum/species/exalt_human
 	name = "Exalt Human"
 	name_plural = "Exalt Humans"
+	blood_group = "mammalian"
 	default_form = FORM_EXALT_HUMAN
 	obligate_name = FALSE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
@@ -103,6 +105,7 @@
 /datum/species/sablekyne
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
+	blood_group = "mammalian"
 	default_form = FORM_SABLEKYNE
 	reagent_tag = IS_TAJ
 	obligate_form = TRUE
@@ -253,6 +256,7 @@
 /datum/species/kriosan
 	name = "Kriosan"
 	name_plural = "Kriosans"
+	blood_group = "mammalian"
 	default_form = FORM_KRIOSAN
 	obligate_form = TRUE
 	reagent_tag = IS_KRIOSAN
@@ -378,6 +382,7 @@
 /datum/species/naramad
 	name = "Naramad"
 	name_plural = "Naramadi"
+	blood_group = "mammalian"
 	default_form = FORM_NARAMAD
 	obligate_form = TRUE
 	reagent_tag = IS_NARAMAD

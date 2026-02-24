@@ -183,8 +183,7 @@ proc/blood_incompatible(donor,receiver,donor_species,receiver_species,donor_grou
 	if(donor_group && receiver_group)
 		if(donor_group != receiver_group)
 			return 1
-
-	if(donor_species && receiver_species)
+	else if(donor_species && receiver_species)
 		if(donor_species != receiver_species)
 			return 1
 
