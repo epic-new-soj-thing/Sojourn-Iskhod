@@ -16,8 +16,8 @@ var/global/datum/global_init/init = new ()
 
 /datum/global_init/New()
 	generate_gameid()
-	world.SetupLogs()
 	load_configuration()
+	world.SetupLogs()
 	makeDatumRefLists()
 
 	initialize_chemical_reagents()
@@ -160,17 +160,18 @@ var/game_id
 
 /world/proc/SetupLogs()
 	var/override_dir = params[OVERRIDE_LOG_DIRECTORY_PARAMETER]
+	var/base_dir = config ? config.log_directory : "data/logs"
 	if(!override_dir)
 		var/realtime = world.realtime
 		var/texttime = time2text(realtime, "YYYY/MM/DD")
-		GLOB.log_directory = "data/logs/[texttime]/"
+		GLOB.log_directory = "[base_dir]/[texttime]/"
 		if(game_id)
 			GLOB.log_directory += "[game_id]"
 		else
 			var/timestamp = replacetext(time_stamp(), ":", ".")
 			GLOB.log_directory += "[timestamp]"
 	else
-		GLOB.log_directory = "data/logs/[override_dir]"
+		GLOB.log_directory = "[base_dir]/[override_dir]"
 
 var/world_topic_spam_protect_ip = "0.0.0.0"
 var/world_topic_spam_protect_time = world.timeofday
