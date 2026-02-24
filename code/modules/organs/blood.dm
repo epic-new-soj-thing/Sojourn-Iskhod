@@ -210,9 +210,12 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 	var/turf/T = get_turf(target)
 
 	// convert any mob into its blood reagent so we can read colour/data correctly
+	var/datum/reagent/organic/blood/B_tmp = null
 	if(istype(source, /mob/living/carbon))
 		var/mob/living/carbon/M = source
-		source = M.get_blood()
+		B_tmp = M.get_blood()
+	else if(istype(source, /datum/reagent/organic/blood))
+		B_tmp = source
 
 	// Are we dripping or splattering?
 	var/list/drips = list()
@@ -233,22 +236,30 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 		drop.add_overlay(drips)
 		drop.drips |= drips
 
-	// If there's no data to copy, call it quits here.
-	if(!source)
+	// If it's a mob (possibly non-carbon), we can still try to get some data
+	if(isliving(source))
+		var/mob/living/L = source
+		B.basecolor = L.blood_color ? L.blood_color : COLOR_BLOOD_HUMAN
+		B.add_blood(L)
+		B.update_icon()
 		return B
 
-	// Update appearance.
-	if(source.data["blood_color"])
-		B.basecolor = source.data["blood_color"]
-		B.update_icon()
+	// If we have a reagent source, use its data
+	if(B_tmp)
+		if(B_tmp.data["blood_color"])
+			B.basecolor = B_tmp.data["blood_color"]
+			B.update_icon()
 
-	// Update blood information.
-	if(source.data["blood_DNA"])
-		B.blood_DNA = list()
-		if(source.data["blood_type"])
-			B.blood_DNA[source.data["blood_DNA"]] = source.data["blood_type"]
-		else
-			B.blood_DNA[source.data["blood_DNA"]] = "O+"
+		if(B_tmp.data["blood_DNA"])
+			if(!B.blood_DNA)
+				B.blood_DNA = list()
+			if(B_tmp.data["blood_type"])
+				B.blood_DNA[B_tmp.data["blood_DNA"]] = B_tmp.data["blood_type"]
+			else
+				B.blood_DNA[B_tmp.data["blood_DNA"]] = "O+"
+		return B
+
+	return B
 
 	B.fluorescent  = 0
 	B.invisibility = 0

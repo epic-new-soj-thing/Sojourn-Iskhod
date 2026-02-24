@@ -413,10 +413,9 @@
 			var/turf/simulated/S = T
 			if(S.wet >= 2)
 				S.wet_floor(1, TRUE)
-		// Only clear visible decals/overlays and turf wetness; preserve the turf's
-		// was_bloodied flag so luminol traces still work. Most of the heavy
-		// metadata like blood_DNA is left intact.
-		T.clean_blood()
+		// Clear visible decals/overlays while erasing forensic DNA, but preserve
+		// the turf's was_bloodied flag so luminol traces still work.
+		T.clean_blood_preserve_was(TRUE)
 		for(var/obj/effect/O in T)
 			if(istype(O,/obj/effect/decal/cleanable) || (istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water)))
 				qdel(O)

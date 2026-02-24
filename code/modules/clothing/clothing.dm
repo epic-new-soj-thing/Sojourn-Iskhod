@@ -18,6 +18,7 @@
 
 	//Used for hardsuits. If false, this piece cannot be retracted while the core module is engaged
 	var/retract_while_active = TRUE
+	var/transfer_fibers = TRUE
 	blacklist_upgrades = list(
 							/obj/item/tool_upgrade/augment = TRUE,
 							/obj/item/tool_upgrade/refinement = TRUE,

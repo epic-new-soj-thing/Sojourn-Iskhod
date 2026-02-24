@@ -922,13 +922,9 @@ var/list/rank_prefix = list(\
 
 	..()
 
-/mob/living/carbon/human/add_blood(mob/living/carbon/human/M)
+/mob/living/carbon/human/add_blood(mob/living/L)
 	if(!..())
 		return 0
-	//if this blood isn't already in the list, add it
-	if(istype(M))
-		if(!blood_DNA[M.dna.unique_enzymes])
-			blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
 	hand_blood_color = blood_color
 	src.update_inv_gloves()	//handles bloody hands over-lays and updating
 	add_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
@@ -941,8 +937,36 @@ var/list/rank_prefix = list(\
 		return md5(chem_effects[CE_DYNAMICFINGERS])
 	return md5(dna.uni_identity)
 
+/mob/living/carbon/human/clean_blood_preserve_was(var/clean_feet)
+	. = ..()
+
+	if(gloves)
+		if(gloves.clean_blood_preserve_was())
+			update_inv_gloves()
+			. = TRUE
+	else
+		if(bloody_hands)
+			bloody_hands = 0
+			update_inv_gloves()
+			. = TRUE
+
+	gunshot_residue = null
+
+	if(clean_feet)
+		if(shoes)
+			if(shoes.clean_blood_preserve_was())
+				update_inv_shoes()
+				. = TRUE
+		else
+			if(feet_blood_color)
+				feet_blood_color = null
+				update_inv_shoes()
+				. = TRUE
+
+	return .
+
 /mob/living/carbon/human/clean_blood(var/clean_feet)
-	.=..()
+	. = ..()
 
 	if(gloves)
 		if(gloves.clean_blood())
