@@ -50,6 +50,8 @@
 	var/warning_alert = "Danger! Crystal hyperstructure instability!"
 	var/code_orange_point = 500
 	var/emergency_point = 700
+	var/code_red_point = 800
+	var/code_delta_point = 900
 	var/emergency_alert = "CRYSTAL DELAMINATION IMMINENT."
 	var/explosion_point = 1000
 
@@ -272,10 +274,28 @@
 			if(security_state && orange && security_state.current_security_level_is_lower_than(orange))
 				security_state.set_security_level(orange)
 
-		if((damage > emergency_point) && public_alert < 2)
+		if((damage > code_red_point) && public_alert < 2)
+			if(radio)
+				radio.autosay("WARNING: SUPERMATTER CRYSTAL INTEGRITY CRITICAL. CODE RED IN EFFECT.", "Supermatter Monitor")
+			public_alert = 2
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+			var/decl/security_level/red = decls_repository.get_decl(/decl/security_level/default/code_red)
+			if(security_state && red && security_state.current_security_level_is_lower_than(red))
+				security_state.set_security_level(red, TRUE)
+
+		if((damage > code_delta_point) && public_alert < 3)
+			if(radio)
+				radio.autosay("CRITICAL WARNING: SUPERMATTER CRYSTAL INTEGRITY FAILURE IMMINENT. CODE DELTA IN EFFECT.", "Supermatter Monitor")
+			public_alert = 3
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+			var/decl/security_level/delta = decls_repository.get_decl(/decl/security_level/default/code_delta)
+			if(security_state && delta && security_state.current_security_level_is_lower_than(delta))
+				security_state.set_security_level(delta, TRUE)
+
+		if((damage > emergency_point) && public_alert < 1.5) // Just a marker for the delam imminent message
 			if(radio)
 				radio.autosay("WARNING: SUPERMATTER CRYSTAL DELAMINATION IMMINENT! SAFEROOMS UNBOLTED.", "Supermatter Monitor")
-			public_alert = 2
+			// We don't increment public_alert higher than its threshold above unless it clears
 
 		else if(integrity > 50 && public_alert)
 			if(radio)
@@ -554,6 +574,8 @@
 	warning_point = 50
 	code_orange_point = 300
 	emergency_point = 400
+	code_red_point = 480
+	code_delta_point = 540
 	explosion_point = 600
 
 	gasefficency = 0.125
