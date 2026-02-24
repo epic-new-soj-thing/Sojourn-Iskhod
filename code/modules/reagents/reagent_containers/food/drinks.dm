@@ -461,17 +461,17 @@
 	icon_state = "britmug"
 
 /obj/item/reagent_containers/drinks/mug/moebius
-	name = "\improper soteria mug"
+	name = "\improper VA Biomechanics mug"
 	desc = "A mug with a VA Biomechanics logo on it. Not even your morning coffee is safe from corporate advertising."
 	icon_state = "mug_moebius"
 
 /obj/item/reagent_containers/drinks/mug/moebius/sci
-	name = "\improper soteria research mug"
+	name = "\improper VA Biomechanics research mug"
 	desc = "A mug with a VA Biomechanics research department logo on it. Not even your morning coffee is safe from corporate advertising."
 	icon_state = "mug_moebius_sci"
 
 /obj/item/reagent_containers/drinks/mug/moebius/bio
-	name = "\improper soteria biolabs mug"
+	name = "\improper VA Biomechanics biolabs mug"
 	desc = "A mug with a VA Biomechanics biolabs department logo on it. Not even your morning coffee is safe from corporate advertising."
 	icon_state = "mug_moebius_bio"
 
