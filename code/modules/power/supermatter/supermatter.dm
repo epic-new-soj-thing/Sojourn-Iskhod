@@ -622,13 +622,13 @@
 	set category = "Debug"
 	set src in view()
 
-	if(!usr.client || !usr.client.holder)
-		to_chat(usr, SPAN_DANGER("You don't have the permissions to do this."))
+	if(!usr.client || !check_rights(R_ADMIN))
 		return
 
 	if(delam_test_running)
 		delam_test_running = FALSE
-		to_chat(usr, SPAN_NOTICE("Stopping delamination test on [src]."))
+		damage = 0
+		to_chat(usr, SPAN_NOTICE("Stopping delamination test on [src] and restoring integrity."))
 		return
 
 	delam_test_running = TRUE
@@ -641,4 +641,6 @@
 			sleep(1 SECONDS)
 		if(src)
 			delam_test_running = FALSE
-			to_chat(usr, SPAN_NOTICE("Delamination test complete, stopped, or crystal destroyed."))
+			if(damage < explosion_point)
+				damage = 0
+			to_chat(usr, SPAN_NOTICE("Delamination test complete, stopped, or crystal destroyed. Integrity restored."))
