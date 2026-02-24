@@ -90,13 +90,15 @@
 	update_icon()
 
 
-/obj/structure/morgue/proc/open()
+/obj/structure/morgue/proc/open(var/mob/living/user)
 	if (!anchored)
 		//No opening while unanchored
 		return
 
 	var/turf/T = get_step(src, dir)
-	if (!(turf_clear(T)))
+	if (!T || !turf_clear_for_cleaning(T))
+		if(user)
+			to_chat(user, SPAN_WARNING("The [src.name] is blocked and cannot open!"))
 		return
 
 	open = TRUE
@@ -113,8 +115,6 @@
 	for(var/atom/movable/A in loc)
 		if (!A.anchored)
 			A.forceMove(T,glide_size_override=glidesize)
-
-
 
 	current_storage = 0
 
@@ -225,19 +225,9 @@
 	return
 
 /obj/structure/morgue/relaymove(mob/user as mob)
-	if (user.stat)
+	if (user.stat || open)
 		return
-	connected = new /obj/structure/m_tray( loc )
-	step(connected, EAST)
-	var/turf/T = get_step(src, EAST)
-	if (T.contents.Find(connected))
-		connected.connected = src
-		icon_state = "morgue0"
-		for(var/atom/movable/A as mob|obj in src)
-			A.forceMove(connected.loc)
-	else
-		qdel(connected)
-		connected = null
+	toggle(user)
 	return
 
 
@@ -289,6 +279,7 @@
 	desc = "An incinerator box, used to ash bodies or unwanted objects."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "crema1"
+	dir = SOUTH
 	density = 1
 	var/obj/structure/c_tray/connected = null
 	anchored = 1.0
@@ -347,39 +338,60 @@
 	return
 
 /obj/structure/crematorium/attack_hand(mob/user as mob)
-//	if (cremating) AWW MAN! THIS WOULD BE SO MUCH MORE FUN ... TO WATCH
-//		user.show_message(SPAN_WARNING("Uh-oh, that was a bad idea."), 1)
-//		//usr << "Uh-oh, that was a bad idea."
-//		src:loc:poison += 20000000
-//		src:loc:firelevel = src:loc:poison
-//		return
 	if (cremating)
-		to_chat(usr, SPAN_WARNING("It's locked."))
+		to_chat(user, SPAN_WARNING("It's locked."))
 		return
-	if ((connected) && (locked == 0))
-		for(var/atom/movable/A as mob|obj in connected.loc)
-			if (!( A.anchored ))
-				A.forceMove(src)
-		playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
-		//connected = null
-		qdel(connected)
-	else if (locked == 0)
-		playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
-		connected = new /obj/structure/c_tray( loc )
-		step(connected, SOUTH)
-		connected.layer = OBJ_LAYER
-		var/turf/T = get_step(src, SOUTH)
-		if (T.contents.Find(connected))
-			connected.connected = src
-			icon_state = "crema0"
-			for(var/atom/movable/A as mob|obj in src)
-				A.forceMove(connected.loc)
-			connected.icon_state = "cremat"
-		else
-			//connected = null
-			qdel(connected)
+	toggle(user)
 	add_fingerprint(user)
 	update()
+
+/obj/structure/crematorium/proc/toggle(var/mob/living/user)
+	if (connected)
+		close(user)
+	else
+		open(user)
+
+/obj/structure/crematorium/proc/open(var/mob/living/user)
+	if (locked)
+		return
+	var/turf/T = get_step(src, dir)
+	if (!T || !turf_clear_for_cleaning(T))
+		if(user)
+			to_chat(user, SPAN_WARNING("The [src.name] is blocked and cannot open!"))
+		return
+
+	playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
+	connected = new /obj/structure/c_tray( loc )
+	connected.connected = src
+	connected.set_dir(dir)
+
+	for(var/atom/movable/A in src)
+		A.forceMove(loc)
+
+	sleep(1)
+	var/glidesize = DELAY2GLIDESIZE(5)
+	connected.forceMove(T, glide_size_override=glidesize)
+	for(var/atom/movable/A in loc)
+		if (!A.anchored)
+			A.forceMove(T, glide_size_override=glidesize)
+	connected.icon_state = "cremat"
+
+/obj/structure/crematorium/proc/close(var/mob/living/user)
+	if (locked)
+		return
+	playsound(loc, 'sound/items/Deconstruct.ogg', 50, 1)
+	var/glidesize = DELAY2GLIDESIZE(5)
+	for(var/atom/movable/A in connected.loc)
+		if (!A.anchored)
+			A.forceMove(loc, glide_size_override=glidesize)
+
+	connected.forceMove(loc, glide_size_override=glidesize)
+	QDEL_IN(connected, 5)
+	sleep(5)
+	for(var/atom/movable/A in loc)
+		if(!A.anchored)
+			A.forceMove(src)
+	connected = null
 
 /obj/structure/crematorium/attackby(P as obj, mob/user as mob)
 	if (istype(P, /obj/item/pen))
@@ -397,21 +409,9 @@
 	return
 
 /obj/structure/crematorium/relaymove(mob/user as mob)
-	if (user.stat || locked)
+	if (user.stat || locked || connected)
 		return
-	connected = new /obj/structure/c_tray( loc )
-	step(connected, SOUTH)
-	connected.layer = OBJ_LAYER
-	var/turf/T = get_step(src, SOUTH)
-	if (T.contents.Find(connected))
-		connected.connected = src
-		icon_state = "crema0"
-		for(var/atom/movable/A as mob|obj in src)
-			A.forceMove(connected.loc)
-		connected.icon_state = "cremat"
-	else
-		qdel(connected)
-		connected = null
+	toggle(user)
 	return
 
 /obj/structure/crematorium/proc/cremate(atom/A, mob/user as mob)
