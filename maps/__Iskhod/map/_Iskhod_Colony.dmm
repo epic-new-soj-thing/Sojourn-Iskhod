@@ -5975,6 +5975,11 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
 "bwI" = (
@@ -6075,8 +6080,8 @@
 	},
 /obj/structure/cable/green{
 	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
@@ -9073,16 +9078,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/shop)
-"cjr" = (
-/obj/structure/window/reinforced/iskhod,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/bar)
 "cjx" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -13378,9 +13373,9 @@
 	dir = 4
 	},
 /obj/structure/cable/green{
-	d1 = 4;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
@@ -30385,14 +30380,8 @@
 /turf/simulated/mineral/planet,
 /area/iskhod/maintenance/undergroundfloor2west)
 "hFn" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
 	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
@@ -32958,15 +32947,14 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/organ_lab)
 "ioZ" = (
-/obj/structure/multiz/stairs/active{
-	dir = 1
-	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/open,
+/turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
 "ipa" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -52040,7 +52028,6 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/effect/floor_decal/steeldecal/steel_decals_central7,
-/obj/landmark/join/start/hop,
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
 "ncJ" = (
@@ -85320,6 +85307,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
 "vDc" = (
@@ -87176,17 +87168,6 @@
 	},
 /turf/simulated/floor/reinforced/airmix,
 /area/iskhod/engineering/atmos)
-"waK" = (
-/obj/structure/multiz/stairs/enter{
-	dir = 1
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/open,
-/area/iskhod/crew_quarters/bar)
 "waU" = (
 /obj/structure/closet/random_tech,
 /obj/random/tool_upgrade/rare,
@@ -154977,7 +154958,7 @@ nev
 tLa
 cxo
 vDa
-oZi
+ioZ
 bwH
 bwH
 dpC
@@ -155179,9 +155160,9 @@ lFq
 vBy
 mJD
 bxt
-cjr
-ioZ
-waK
+mju
+opE
+xlj
 hFn
 mUI
 mTK
