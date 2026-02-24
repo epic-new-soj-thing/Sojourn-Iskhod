@@ -1054,6 +1054,17 @@
 /obj/item/target,
 /turf/simulated/floor/tiled/steel/danger,
 /area/iskhod/security/range)
+"amf" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -20
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/workshop)
 "ami" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn,
@@ -1265,7 +1276,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/level3)
 "apQ" = (
@@ -4078,6 +4090,27 @@
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/industrial,
 /area/iskhod/crew_quarters/techshop)
+"aZK" = (
+/obj/machinery/disposal/deliveryChute{
+	dir = 8;
+	name = "biowaste chute"
+	},
+/obj/machinery/conveyor/west{
+	id = "BIOWASTE"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	pixel_y = 27
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/outpost/research/disposal{
+	name = "Biolab Waste Disposal"
+	})
 "aZO" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
@@ -4435,7 +4468,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "bel" = (
@@ -6220,6 +6254,17 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/prison)
+"bBk" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/foyer)
 "bBs" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -6995,12 +7040,6 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
-"bLq" = (
-/obj/machinery/rotating_alarm/supermatter{
-	pixel_y = -15
-	},
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/engineering/engine_monitoring)
 "bLu" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/wall/iskhod_blue,
@@ -7311,7 +7350,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/surface_colony_footpath)
 "bOC" = (
@@ -7412,7 +7452,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros)
 "bPo" = (
@@ -7491,17 +7532,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/sec)
-"bQQ" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 8;
-	pixel_x = -16
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 4;
-	pixel_x = 18
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/breakroom)
 "bQS" = (
 /obj/structure/closet/secure_closet/personal,
 /obj/machinery/alarm{
@@ -7655,7 +7685,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "bTQ" = (
@@ -7758,7 +7789,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "bVj" = (
@@ -8675,7 +8707,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "ceT" = (
@@ -8689,30 +8722,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
 /area/iskhod/medical/medbay/uppercor)
-"cfb" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/conveyor/west{
-	id = "BIOWASTE"
-	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/danger,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "cfj" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/effect/decal/cleanable/dirt,
@@ -10027,7 +10036,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "cwg" = (
@@ -10240,7 +10250,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "czf" = (
@@ -10318,7 +10329,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "cAI" = (
@@ -10396,29 +10408,6 @@
 /obj/machinery/vending/tool,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/storage/tech)
-"cCH" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/window/iskhod{
-	dir = 2;
-	req_one_access = list(5,45,64);
-	name = "biowaste access"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/machinery/atmospherics/unary/vent_pump,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "cCQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -11005,7 +10994,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "cKS" = (
@@ -11258,6 +11248,16 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/pros/prep)
+"cNN" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 1;
+	pixel_y = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/techstorage)
 "cNP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -11543,7 +11543,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "cRL" = (
@@ -11599,7 +11600,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros)
 "cSd" = (
@@ -11824,6 +11826,12 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
+"cVZ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/medical/reception)
 "cWt" = (
 /obj/structure/table/woodentable,
 /obj/item/device/lighting/toggleable/lamp/green,
@@ -11960,7 +11968,9 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 25
 	},
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "cYq" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
@@ -13219,6 +13229,13 @@
 /obj/item/circuitboard/smelter,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/techstorage)
+"doW" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/breakroom)
 "dpa" = (
 /obj/machinery/power/apc{
 	cell_type = /obj/item/cell/large/moebius/nuclear;
@@ -13516,16 +13533,6 @@
 	icon_state = "5,4"
 	},
 /area/shuttle/vasiliy_shuttle_area)
-"dsf" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 1;
-	pixel_y = 15
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	pixel_y = -15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/workshop)
 "dsh" = (
 /obj/machinery/door/airlock/external{
 	id_tag = "FS2";
@@ -13594,7 +13601,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "dsW" = (
@@ -14739,6 +14747,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain)
+"dGJ" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/engine_room)
 "dGK" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -14982,7 +14996,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "dJF" = (
@@ -15561,26 +15576,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/iskhod/engineering/engine_smes)
-"dTi" = (
-/obj/machinery/conveyor/southwest/ccw{
-	id = "BIOWASTE"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "dTr" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/light/small{
@@ -15663,7 +15658,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "dTO" = (
@@ -16755,7 +16751,9 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/patient_wing)
 "ejl" = (
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/surface_colony_footpath)
 "ejm" = (
 /obj/machinery/holoposter{
@@ -17501,7 +17499,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "esb" = (
@@ -18299,7 +18298,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "eCx" = (
@@ -18344,7 +18344,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/level3)
 "eDe" = (
@@ -20011,12 +20012,6 @@
 	},
 /turf/simulated/mineral/planet,
 /area/iskhod/maintenance/undergroundfloor2north)
-"faL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/hallway/main/f1section1)
 "faM" = (
 /obj/structure/bed/chair/office/light{
 	name = "VIP";
@@ -20439,7 +20434,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "feF" = (
@@ -21765,17 +21761,6 @@
 /obj/random/junk,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/dungeon/outside/abandoned_outpost)
-"fxl" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 4;
-	pixel_x = 15
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 8;
-	pixel_x = -15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/foyer)
 "fxs" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/machinery/light/small{
@@ -21872,7 +21857,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "fyk" = (
@@ -22149,7 +22135,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "fAA" = (
@@ -22706,7 +22693,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "fIK" = (
@@ -23436,7 +23424,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "fSq" = (
@@ -23861,7 +23850,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "fZO" = (
@@ -24592,6 +24582,17 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/security/prison)
+"gjc" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
+	},
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/command/gmaster)
 "gjf" = (
 /obj/structure/closet/secure_closet/xenoarchaeologist,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -25485,7 +25486,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros)
 "gui" = (
@@ -26273,7 +26275,9 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "gDF" = (
 /turf/simulated/floor/tiled/dark/cargo,
@@ -26610,24 +26614,6 @@
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
-"gIv" = (
-/obj/structure/window/reinforced/iskhod,
-/obj/machinery/conveyor_switch{
-	id = "BIOWASTE";
-	pixel_y = 15;
-	name = "biowaste disposals control"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "gIx" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/camera/network/research{
@@ -26720,7 +26706,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "gJW" = (
@@ -27397,7 +27384,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "gSo" = (
@@ -27494,17 +27482,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/misc2)
-"gTG" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 8;
-	pixel_x = -15
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 4;
-	pixel_x = 15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/foyer)
 "gTP" = (
 /obj/structure/table/rack/shelf,
 /obj/random/tool/low_chance,
@@ -27628,13 +27605,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled,
 /area/iskhod/command/hallway)
-"gVF" = (
-/obj/structure/disposalpipe/junction{
-	dir = 2;
-	icon_state = "pipe-j2"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/hallway/main/f1section1)
 "gVI" = (
 /obj/machinery/door/airlock/centcom{
 	id_tag = "F1-A4";
@@ -29111,6 +29081,30 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
+"hrO" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/conveyor/west{
+	id = "BIOWASTE"
+	},
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/danger,
+/area/outpost/research/disposal{
+	name = "Biolab Waste Disposal"
+	})
 "hrR" = (
 /obj/random/common_oddities,
 /turf/simulated/floor/rock/dark,
@@ -30572,7 +30566,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/hallway/surface/section3)
 "hLa" = (
@@ -31001,7 +30996,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "hRc" = (
@@ -31634,7 +31630,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "hYw" = (
@@ -33425,16 +33422,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/ornate,
 /area/iskhod/maintenance/undergroundfloor1east)
-"iyH" = (
-/obj/machinery/rotating_alarm/supermatter{
-	pixel_y = -15
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 1;
-	pixel_y = 15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering)
 "iyR" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 5
@@ -33481,6 +33468,16 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/security/showers)
+"izl" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 1;
+	pixel_y = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/workshop)
 "izs" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /obj/machinery/light{
@@ -33882,11 +33879,6 @@
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
-"iDG" = (
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/medical/reception{
-	name = "Biolab - Biowaste Processing"
-	})
 "iDK" = (
 /obj/structure/table/standard,
 /obj/machinery/camera/network/medbay{
@@ -34343,12 +34335,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/medical/patient_b)
-"iIc" = (
-/obj/machinery/rotating_alarm/supermatter{
-	pixel_y = -15
-	},
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/command/gmaster)
 "iId" = (
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/hallway/side/f2section3)
@@ -34466,26 +34452,6 @@
 /obj/random/credits/low_chance,
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
-"iJF" = (
-/obj/machinery/conveyor/west{
-	id = "BIOWASTE"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/warning/hazard_biohazard{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "iJP" = (
 /obj/structure/closet/secure_closet/personal/cargotech,
 /obj/effect/floor_decal/industrial/hatch/yellow,
@@ -34666,17 +34632,6 @@
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/quartermaster/supplydock)
-"iLw" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 8;
-	pixel_x = -15
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 4;
-	pixel_x = 15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/workshop)
 "iLz" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/structure/cable/cyan{
@@ -34741,6 +34696,13 @@
 /obj/landmark/join/start/officer,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
+"iMy" = (
+/obj/effect/decal/cleanable/rubble,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/wall/iskhod_green,
+/area/outpost/research/disposal{
+	name = "Biolab Waste Disposal"
+	})
 "iMC" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/industrial/caution{
@@ -35482,17 +35444,6 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
-"iWc" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 8;
-	pixel_x = -15
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 4;
-	pixel_x = 15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/locker_room)
 "iWe" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/newscaster{
@@ -36506,13 +36457,6 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/command/swo/quarters)
-"jjp" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 4;
-	pixel_x = 15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/breakroom)
 "jjq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -37191,6 +37135,13 @@
 	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
+"jqG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/junction{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/iskhod/medical/biostorage)
 "jqO" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
@@ -37844,7 +37795,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "jAb" = (
@@ -38207,6 +38159,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/breakroom)
+"jEj" = (
+/obj/machinery/camera/network/colony_underground{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/main/f1section1)
 "jEv" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -42746,7 +42704,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "kLz" = (
@@ -43570,7 +43529,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "kVd" = (
@@ -44002,7 +43962,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "lbI" = (
@@ -46240,7 +46201,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "lFW" = (
@@ -46313,7 +46275,9 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2east)
 "lHa" = (
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "lHc" = (
 /obj/structure/table/reinforced,
@@ -48208,7 +48172,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/surface)
 "mgX" = (
@@ -48282,7 +48247,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "mhB" = (
@@ -48973,6 +48939,11 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/guild)
+"mrn" = (
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/medical/reception{
+	name = "Biolab - Biowaste Processing"
+	})
 "mrr" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -48981,6 +48952,19 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
+"mrt" = (
+/obj/machinery/conveyor/west{
+	id = "BIOWASTE"
+	},
+/obj/structure/plasticflaps,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark/danger,
+/area/outpost/research/disposal{
+	name = "Biolab Waste Disposal"
+	})
 "mry" = (
 /obj/machinery/atm{
 	dir = 8;
@@ -50571,10 +50555,15 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/surgery)
 "mNm" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 1;
+	pixel_y = 15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
 /turf/simulated/wall/iskhod_green,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
+/area/iskhod/engineering/workshop)
 "mNw" = (
 /obj/machinery/portable_atmospherics/hydroponics{
 	pixel_y = 4
@@ -50638,7 +50627,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "mOu" = (
@@ -50871,17 +50861,6 @@
 /obj/item/trash/cigbutt/faith,
 /turf/simulated/floor/wood_old,
 /area/iskhod/maintenance/undergroundfloor1west)
-"mRw" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 4;
-	pixel_x = 15
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 8;
-	pixel_x = -20
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/workshop)
 "mRE" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "9,21"
@@ -51377,7 +51356,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "mYp" = (
@@ -51608,7 +51588,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "ncl" = (
@@ -52089,7 +52070,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/level3)
 "nhB" = (
@@ -52440,7 +52422,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "nmM" = (
@@ -53254,7 +53237,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/scave)
 "nui" = (
@@ -54016,6 +54000,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/morgue)
+"nCO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/main/f1section1)
 "nCV" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -54278,7 +54268,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/scave)
 "nGM" = (
@@ -54537,7 +54528,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "nKB" = (
@@ -55505,6 +55497,13 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
+"nXT" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -16
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/locker_room)
 "nYg" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -55635,7 +55634,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "nZj" = (
@@ -56081,6 +56081,13 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/fixed/hydrotile,
 /area/turret_protected/ai)
+"ogM" = (
+/obj/structure/disposalpipe/junction{
+	dir = 2;
+	icon_state = "pipe-j2"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/main/f1section1)
 "ogT" = (
 /obj/structure/barricade,
 /obj/effect/spider/stickyweb,
@@ -56190,7 +56197,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "oiH" = (
@@ -56963,6 +56971,18 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/main)
+"ord" = (
+/obj/machinery/door/airlock/maintenance_medical{
+	name = "Biowaste Storage";
+	req_access = list(5)
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/outpost/research/disposal{
+	name = "Biolab Waste Disposal"
+	})
 "orh" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/corner_techfloor_gray/diagonal,
@@ -56995,7 +57015,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "orv" = (
@@ -57517,7 +57538,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "oyz" = (
@@ -58085,7 +58107,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "oHY" = (
@@ -58103,18 +58126,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned)
-"oIa" = (
-/obj/machinery/door/airlock/maintenance_medical{
-	name = "Biowaste Storage";
-	req_access = list(5)
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "oId" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -58136,7 +58147,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/scave)
 "oIt" = (
@@ -59268,6 +59280,12 @@
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2west)
+"oXc" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/command/gmaster)
 "oXg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -59580,7 +59598,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "paN" = (
@@ -59656,12 +59675,6 @@
 	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prisoncells)
-"pbA" = (
-/obj/machinery/rotating_alarm/supermatter{
-	pixel_y = -15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/engine_room)
 "pbF" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
@@ -59732,6 +59745,29 @@
 	},
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
+"pcR" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/window/iskhod{
+	dir = 2;
+	req_one_access = list(5,45,64);
+	name = "biowaste access"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/atmospherics/unary/vent_pump,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark,
+/area/outpost/research/disposal{
+	name = "Biolab Waste Disposal"
+	})
 "pcU" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -60120,7 +60156,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/surface)
 "phL" = (
@@ -60191,17 +60228,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/pros/prep)
-"piv" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 8;
-	pixel_x = -16
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 4;
-	pixel_x = 15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/locker_room)
 "piw" = (
 /turf/simulated/shuttle/wall/science{
 	icon_state = "12,13"
@@ -61259,7 +61285,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "pwf" = (
@@ -61498,12 +61525,6 @@
 	},
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/abandoned/barber)
-"pzq" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/medical/reception)
 "pzN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/hologram/holopad,
@@ -62016,6 +62037,16 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/changing_room/pool)
+"pGe" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 1;
+	pixel_y = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering)
 "pGj" = (
 /obj/structure/disposalpipe/junction{
 	dir = 1
@@ -62350,7 +62381,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "pLD" = (
@@ -63439,7 +63471,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "pZP" = (
@@ -65277,7 +65310,9 @@
 /area/iskhod/pit/level3)
 "qzK" = (
 /obj/structure/invislight,
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "qzN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -65411,7 +65446,9 @@
 /obj/machinery/door/unpowered/simple/wood{
 	color = "#9a977b"
 	},
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "qCz" = (
 /obj/random/junk/low_chance,
@@ -65458,7 +65495,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "qDo" = (
@@ -65725,7 +65763,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "qGa" = (
@@ -66253,7 +66292,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "qOD" = (
@@ -66942,6 +66982,14 @@
 /obj/machinery/camera/network/security,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/range)
+"qWN" = (
+/obj/structure/sign/warning/biohazard{
+	name = "MEDICAL WASTE DISPOSALS"
+	},
+/turf/simulated/wall/iskhod_green,
+/area/outpost/research/disposal{
+	name = "Biolab Waste Disposal"
+	})
 "qWS" = (
 /obj/structure/cable/yellow{
 	d2 = 4;
@@ -67224,13 +67272,6 @@
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/quartermaster/office)
-"rbA" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 1;
-	pixel_y = 15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/engine_room)
 "rbE" = (
 /obj/structure/cable/ender{
 	id = "underground";
@@ -68039,7 +68080,9 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/surface_colony_footpath)
 "rkW" = (
 /obj/structure/disposalpipe/segment,
@@ -68311,6 +68354,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
+"roI" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/foyer)
 "roO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -68711,7 +68760,9 @@
 /obj/item/stack/rods,
 /obj/random/junkfood/low_chance,
 /obj/random/junkfood/low_chance,
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "rux" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -68771,13 +68822,6 @@
 	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prisoncells)
-"rvn" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 4;
-	pixel_x = 15
-	},
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/engineering/engine_monitoring)
 "rvq" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -69209,7 +69253,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "rCE" = (
@@ -70205,7 +70250,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros)
 "rQB" = (
@@ -70339,6 +70385,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/holodeck/control)
+"rSs" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 1;
+	pixel_y = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/engine_room)
 "rSB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -70523,13 +70576,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/command/cbo)
-"rVm" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 8;
-	pixel_x = -16
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/locker_room)
 "rVB" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/folder/red,
@@ -70616,7 +70662,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/scave)
 "rWD" = (
@@ -70753,12 +70800,6 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/robotics)
-"rYe" = (
-/obj/machinery/rotating_alarm/supermatter{
-	pixel_y = -15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/foyer)
 "rYs" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/cyan{
 	dir = 4
@@ -70881,7 +70922,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros)
 "rZf" = (
@@ -72049,19 +72091,6 @@
 /obj/effect/spider/stickyweb,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/outside/scave)
-"smy" = (
-/obj/machinery/conveyor/west{
-	id = "BIOWASTE"
-	},
-/obj/structure/plasticflaps,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/danger,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "smP" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/decal/cleanable/dirt,
@@ -73644,7 +73673,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "sLb" = (
@@ -74215,6 +74245,17 @@
 	icon_state = "8,23"
 	},
 /area/iskhod/hallway/main/stairwell)
+"sRO" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/foyer)
 "sRY" = (
 /turf/simulated/shuttle/wall/science{
 	icon_state = "2,6"
@@ -75604,13 +75645,6 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
-"tlc" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/junction{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/white/cyancorner,
-/area/iskhod/medical/biostorage)
 "tlv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
@@ -75637,15 +75671,10 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
-"tlF" = (
-/obj/machinery/camera/network/colony_underground{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/hallway/main/f1section1)
 "tlK" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
@@ -75737,7 +75766,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "tmP" = (
@@ -76197,6 +76227,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/pool)
+"trP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/up{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/iskhod/medical/biostorage)
 "tsj" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = -28;
@@ -76911,7 +76948,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "tAd" = (
@@ -76925,7 +76963,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "tAi" = (
@@ -78145,6 +78184,11 @@
 "tQS" = (
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/junk_tractor_beam)
+"tQT" = (
+/turf/simulated/wall/iskhod_green,
+/area/outpost/research/disposal{
+	name = "Biolab Waste Disposal"
+	})
 "tRd" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -78200,6 +78244,24 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/main/stairwell)
+"tRZ" = (
+/obj/structure/window/reinforced/iskhod,
+/obj/machinery/conveyor_switch{
+	id = "BIOWASTE";
+	pixel_y = 15;
+	name = "biowaste disposals control"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/tiled/dark,
+/area/outpost/research/disposal{
+	name = "Biolab Waste Disposal"
+	})
 "tSu" = (
 /obj/structure/computerframe{
 	anchored = 1;
@@ -79062,16 +79124,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/absolutism/chapel)
-"udu" = (
-/obj/machinery/rotating_alarm/supermatter{
-	pixel_y = -15
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 1;
-	pixel_y = 15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/techstorage)
 "udG" = (
 /obj/structure/sign/departmentold/restroom{
 	pixel_y = 32
@@ -79622,7 +79674,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/scave)
 "ukq" = (
@@ -79700,27 +79753,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet,
 /area/iskhod/security/breakroom)
-"ulI" = (
-/obj/machinery/disposal/deliveryChute{
-	dir = 8;
-	name = "biowaste chute"
-	},
-/obj/machinery/conveyor/west{
-	id = "BIOWASTE"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/obj/machinery/alarm{
-	pixel_y = 27
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "ulP" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -79820,7 +79852,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "umP" = (
@@ -81356,7 +81389,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "uIb" = (
@@ -81440,7 +81474,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/level3)
 "uJn" = (
@@ -81523,7 +81558,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
 "uJZ" = (
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/west)
 "uKc" = (
 /obj/structure/cable/green{
@@ -82631,16 +82668,6 @@
 /obj/machinery/vending/cola,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/main/f1section4)
-"vap" = (
-/obj/machinery/rotating_alarm/supermatter{
-	pixel_y = -15
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 1;
-	pixel_y = 15
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/engineering/workshop)
 "vav" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -83360,7 +83387,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "vkO" = (
@@ -83434,13 +83462,6 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/foyer)
-"vlt" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/up{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/white/cyancorner,
-/area/iskhod/medical/biostorage)
 "vlu" = (
 /obj/structure/shuttle_part/mining{
 	icon_state = "3,2"
@@ -84068,6 +84089,17 @@
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/iskhod/abandoned/recreation)
+"vuV" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -16
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/locker_room)
 "vvi" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -85387,7 +85419,9 @@
 /area/shuttle/escape/station)
 "vLr" = (
 /obj/structure/invislight,
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/surface_colony_footpath)
 "vLH" = (
 /obj/structure/disposalpipe/segment{
@@ -85517,6 +85551,26 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/bioreactor)
+"vNu" = (
+/obj/machinery/conveyor/southwest/ccw{
+	id = "BIOWASTE"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 2;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/outpost/research/disposal{
+	name = "Biolab Waste Disposal"
+	})
 "vNC" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -85939,7 +85993,9 @@
 /obj/machinery/camera/network/gate{
 	network = list("Nadzedha Wall Colony")
 	},
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/west)
 "vTN" = (
 /obj/machinery/light,
@@ -86945,7 +87001,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "wid" = (
@@ -87913,7 +87970,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "wuP" = (
@@ -89005,6 +89063,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/panels,
 /area/iskhod/engineering/atmos)
+"wHC" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/engineering/engine_monitoring)
 "wHG" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/ornate,
@@ -89061,7 +89125,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "wIQ" = (
@@ -89188,7 +89253,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "wKQ" = (
@@ -89473,7 +89539,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "wOJ" = (
@@ -90047,7 +90114,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "wWT" = (
@@ -90654,7 +90722,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "xfA" = (
@@ -90868,7 +90937,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/hallway/surface/section1)
 "xjc" = (
@@ -91394,6 +91464,17 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
+"xqx" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/workshop)
 "xqA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment,
@@ -91923,6 +92004,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
+"xwR" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -16
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 18
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/breakroom)
 "xwU" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/decal/cleanable/dirt,
@@ -91936,6 +92028,13 @@
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/absolutism/chapel)
+"xwY" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/engineering/engine_monitoring)
 "xxr" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/green_large_slates,
@@ -93078,13 +93177,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
-"xNs" = (
-/obj/effect/decal/cleanable/rubble,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall/iskhod_green,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "xNT" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
@@ -93623,17 +93715,6 @@
 	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/substation/science)
-"xUJ" = (
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 4;
-	pixel_x = 15
-	},
-/obj/machinery/rotating_alarm/supermatter{
-	dir = 8;
-	pixel_x = -15
-	},
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/command/gmaster)
 "xUS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -93949,6 +94030,26 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/secrecroom)
+"xXT" = (
+/obj/machinery/conveyor/west{
+	id = "BIOWASTE"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/warning/hazard_biohazard{
+	pixel_y = 32
+	},
+/turf/simulated/floor/tiled/dark/danger,
+/area/outpost/research/disposal{
+	name = "Biolab Waste Disposal"
+	})
 "xXX" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
@@ -94211,7 +94312,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "ycX" = (
@@ -94324,13 +94426,16 @@
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/medical/patient_b)
 "yeC" = (
-/obj/structure/sign/warning/biohazard{
-	name = "MEDICAL WASTE DISPOSALS"
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
 	},
 /turf/simulated/wall/iskhod_green,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
+/area/iskhod/engineering/locker_room)
 "yeE" = (
 /obj/structure/window/basic/iskhod{
 	dir = 8
@@ -111129,7 +111234,7 @@ kVv
 mQt
 bPV
 fIW
-tlF
+jEj
 pZD
 mVT
 xbp
@@ -111333,11 +111438,11 @@ kbe
 bNv
 mFH
 lhu
-gVF
+ogM
 vfM
 vfM
 oXh
-faL
+nCO
 oXh
 vfM
 vfM
@@ -111413,9 +111518,9 @@ oBZ
 tHM
 tat
 mgO
-jjp
+doW
 mgO
-jjp
+doW
 mgO
 mgO
 mgO
@@ -111534,10 +111639,10 @@ mQt
 bPV
 ucg
 rMF
-yeC
-oIa
-mNm
-mNm
+qWN
+ord
+tQT
+tQT
 kbe
 kbe
 kbe
@@ -111736,10 +111841,10 @@ mQt
 csK
 wMF
 nlG
-mNm
-dTi
+tQT
+vNu
 iUC
-xNs
+iMy
 sgt
 kbe
 kbe
@@ -111832,7 +111937,7 @@ lon
 kIm
 mOP
 mgO
-bQQ
+xwR
 mgO
 mgO
 uun
@@ -111938,10 +112043,10 @@ mQt
 aLI
 jNU
 rMF
-mNm
-smy
-yeC
-iDG
+tQT
+mrt
+qWN
+mrn
 oln
 xSN
 xSN
@@ -112140,9 +112245,9 @@ fHY
 iRB
 wMF
 pRS
-mNm
-cfb
-gIv
+tQT
+hrO
+tRZ
 lTI
 wxg
 fjd
@@ -112342,9 +112447,9 @@ peg
 sPK
 jNU
 pRS
-mNm
-iJF
-cCH
+tQT
+xXT
+pcR
 pip
 nKQ
 nKs
@@ -112423,9 +112528,9 @@ uLb
 sdA
 bXC
 uLb
-piv
+vuV
 uLb
-rVm
+nXT
 uLb
 aBz
 hJP
@@ -112544,8 +112649,8 @@ mQt
 oUu
 kEP
 pRS
-mNm
-ulI
+tQT
+aZK
 oln
 bpH
 mPJ
@@ -112747,7 +112852,7 @@ xbq
 oHj
 our
 oln
-pzq
+cVZ
 oln
 njE
 vLf
@@ -113029,14 +113134,14 @@ vVU
 vVU
 uLb
 aql
-gTG
+bBk
 mVo
 qoy
 uLb
 rwm
 oSQ
 oSQ
-iLw
+xqx
 hPP
 rwm
 rwm
@@ -113226,7 +113331,7 @@ qoy
 uLb
 uLb
 vcW
-piv
+vuV
 uLb
 uLb
 uLb
@@ -113431,7 +113536,7 @@ gig
 lEp
 hVp
 mAb
-rYe
+roI
 bUt
 qmj
 nFD
@@ -114042,25 +114147,25 @@ ixq
 rYT
 sav
 sRy
-vap
+izl
 wfz
 sDw
 sDw
 eGh
 kTq
 rMc
-dsf
+mNm
 eWw
 wuf
 dMP
-iyH
+pGe
 diJ
 rKW
 iGb
 hQD
 rKW
 npq
-iyH
+pGe
 fjC
 uTC
 oUO
@@ -114163,8 +114268,8 @@ dgy
 dNS
 kLB
 lYt
-tlc
-vlt
+jqG
+trP
 vxD
 dNS
 mIb
@@ -114446,7 +114551,7 @@ ezi
 rYT
 eDY
 fNs
-vap
+izl
 kuO
 iWp
 rSY
@@ -114464,7 +114569,7 @@ ueG
 uAx
 rKW
 oQS
-iyH
+pGe
 bpW
 uEY
 ewG
@@ -115047,7 +115152,7 @@ bHm
 eOj
 kOS
 rtn
-rYe
+roI
 ntp
 oJR
 wjK
@@ -115246,7 +115351,7 @@ qoy
 uLb
 uLb
 wAt
-iWc
+yeC
 uLb
 uLb
 uLb
@@ -115453,14 +115558,14 @@ vVU
 vVU
 uLb
 aql
-fxl
+sRO
 qcu
 qoy
 uLb
 rwm
 rwm
 rwm
-mRw
+amf
 nSq
 rwm
 rwm
@@ -116680,7 +116785,7 @@ txb
 eNH
 pQE
 nzO
-udu
+cNN
 pXN
 mOu
 gmA
@@ -117488,7 +117593,7 @@ hJx
 hJx
 sST
 sST
-pbA
+dGJ
 dlx
 xMD
 vIz
@@ -117502,7 +117607,7 @@ gOH
 gOH
 gOH
 wfd
-rbA
+rSs
 sST
 hVF
 waY
@@ -118310,7 +118415,7 @@ gwx
 gwx
 gwx
 iOm
-rbA
+rSs
 sST
 waY
 rNi
@@ -118700,7 +118805,7 @@ hJx
 hJx
 sST
 sST
-pbA
+dGJ
 bAs
 fJN
 rJn
@@ -152621,7 +152726,7 @@ iFe
 iFe
 nKb
 axX
-rvn
+xwY
 axX
 axX
 axX
@@ -153830,7 +153935,7 @@ tnk
 jgT
 fbz
 iFe
-bLq
+wHC
 cNA
 iDD
 nDd
@@ -154234,7 +154339,7 @@ vNO
 axX
 iAX
 axX
-bLq
+wHC
 heG
 cNf
 nDd
@@ -154247,9 +154352,9 @@ sGd
 sGd
 puw
 svA
-xUJ
+gjc
 tXU
-xUJ
+gjc
 nxJ
 nxJ
 puw
@@ -155255,7 +155360,7 @@ axX
 arf
 arf
 arf
-iIc
+oXc
 oMW
 kTU
 cED
