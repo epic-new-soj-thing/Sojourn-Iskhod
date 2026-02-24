@@ -7,22 +7,22 @@
 
 /proc/html_crew_manifest(var/monochrome, var/OOC)
 	var/list/dept_data = list(
-		list("names" = list(), "header" = DEPARTMENT_COMMAND,     "flag" = COMMAND),
-		list("names" = list(), "header" = DEPARTMENT_SECURITY,    "flag" = SECURITY),
-		list("names" = list(), "header" = DEPARTMENT_MEDICAL,     "flag" = MEDICAL),
-		list("names" = list(), "header" = DEPARTMENT_SCIENCE,     "flag" = SCIENCE),
-		list("names" = list(), "header" = DEPARTMENT_CHURCH,      "flag" = CHURCH),
-		list("names" = list(), "header" = DEPARTMENT_SUPPLY,      "flag" = FL),
-		list("names" = list(), "header" = DEPARTMENT_ENGINEERING, "flag" = ENGINEERING),
-		list("names" = list(), "header" = DEPARTMENT_PROSPECTOR,  "flag" = PROSPECTORS),
-		list("names" = list(), "header" = DEPARTMENT_CIVILIAN,    "flag" = CIVILIAN),
-		list("names" = list(), "header" = DEPARTMENT_SERVICE,     "flag" = SERVICE),
-		list("names" = list(), "header" = DEPARTMENT_INDEPENDENT, "flag" = INDEPENDENT),
-		list("names" = list(), "header" = DEPARTMENT_LODGE,       "flag" = LODGE),
-		list("names" = list(), "header" = "Silicon",              "flag" = SILICON),
-		list("names" = list(), "header" = "Miscellaneous",        "flag" = MISC)
+
+		list("names" = list(), "header" = "Command Staff", "flag" = COMMAND),
+		list("names" = list(), "header" = "Security - Rangers", "flag" = SECURITY),
+		list("names" = list(), "header" = "Vesalius-Andra Medical", "flag" = MEDICAL),
+		list("names" = list(), "header" = "Vesalius-Andra Research", "flag" = SCIENCE),
+		list("names" = list(), "header" = "Church of the Absolute", "flag" = CHURCH),
+		list("names" = list(), "header" = "Frontier Logistics", "flag" = FL),
+		list("names" = list(), "header" = "Artificers Guild", "flag" = ENGINEERING),
+		list("names" = list(), "header" = "Prospector", "flag" = PROSPECTORS),
+		list("names" = list(), "header" = "Civilian", "flag" = CIVILIAN),
+		list("names" = list(), "header" = "Silicon", "flag" = SILICON),
+		list("names" = list(), "header" = "Lodge", "flag" = LODGE),
+		list("names" = list(), "header" = "Miscellaneous", "flag" = MISC)
 	)
-	var/list/misc
+
+	var/list/misc //Special departments for easier access
 	var/list/bot
 	for(var/list/department in dept_data)
 		if(department["flag"] == MISC)
