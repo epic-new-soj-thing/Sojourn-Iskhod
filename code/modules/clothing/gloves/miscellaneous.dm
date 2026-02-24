@@ -272,18 +272,21 @@
 	siemens_coefficient = 1.0 //thin latex gloves, much more conductive than fabric gloves (basically a capacitor for AC)
 	permeability_coefficient = 0.01
 	price_tag = 50
+	transfer_fibers = FALSE
 
 /obj/item/clothing/gloves/latex/nitrile
 	name = "nitrile gloves"
 	desc = "A pair of sterile nitrile gloves."
 	icon_state = "nitrile"
 	item_state = "nitrile"
+	transfer_fibers = FALSE
 
 /obj/item/clothing/gloves/latex/regal
 	name = "regal white gloves"
 	desc = "A pair of white gloves, made with old fashioned gauze rather than latex. Still surprisingly sterile for all medical purposes."
 	icon_state = "regal"
 	item_state = "regal"
+	transfer_fibers = FALSE
 	siemens_coefficient = 1.0
 	permeability_coefficient = 0.01
 	price_tag = 300 // A relic!

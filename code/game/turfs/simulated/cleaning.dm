@@ -121,43 +121,28 @@
 
 
 //returns 1 if made bloody, returns 0 otherwise
-/turf/simulated/add_blood(mob/living/carbon/human/M as mob)
+/turf/simulated/add_blood(mob/living/L)
 	if (!..())
 		return 0
 
-	if(istype(M))
+	if(isliving(L))
 		for(var/obj/effect/decal/cleanable/blood/B in contents)
-			if(!B.blood_DNA)
-				B.blood_DNA = list()
-			if(!B.blood_DNA[M.dna.unique_enzymes])
-				B.blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
+			B.add_blood(L)
 			return 1 //we bloodied the floor
-		blood_splatter(src,M.get_blood(),1)
-		// mark the turf as having been bloodied for forensic traces
-		was_bloodied = TRUE
-		if(!blood_DNA || !istype(blood_DNA,/list))
-			blood_DNA = list()
-		if(istype(M.dna, /datum/dna))
-			if(!blood_DNA[M.dna.unique_enzymes])
-				blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
+		blood_splatter(src, L, 1)
 		return 1 //we bloodied the floor
 	return 0
 
 // Only adds blood on the floor -- Skie
-/turf/simulated/proc/add_blood_floor(mob/living/carbon/M as mob)
-	if( istype(M, /mob/living/carbon/alien ))
+/turf/simulated/proc/add_blood_floor(mob/living/L)
+	if(!L) return
+	if(istype(L, /mob/living/carbon/alien))
 		var/obj/effect/decal/cleanable/blood/xeno/this = new /obj/effect/decal/cleanable/blood/xeno(src)
-		this.blood_DNA["UNKNOWN BLOOD"] = "X*"
-	else if( istype(M, /mob/living/silicon/robot ))
+		this.add_blood(L)
+	else if(istype(L, /mob/living/silicon/robot))
 		new /obj/effect/decal/cleanable/blood/oil(src)
 	else
-		// Normal human/organism blood: ensure the turf records it
-		was_bloodied = TRUE
-		if(!blood_DNA || !istype(blood_DNA,/list))
-			blood_DNA = list()
-		if(istype(M.dna, /datum/dna))
-			if(!blood_DNA[M.dna.unique_enzymes])
-				blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
+		src.add_blood(L)
 
 // Reveal blood traces with luminol
 /turf/simulated/reveal_blood()
@@ -172,7 +157,10 @@
 		var/obj/effect/decal/cleanable/blood/luminol_trace = new /obj/effect/decal/cleanable/blood(src)
 		luminol_trace.basecolor = COLOR_LUMINOL
 		luminol_trace.fluorescent = TRUE
-		luminol_trace.blood_DNA = list("UNKNOWN" = "O+")  // Generic blood type for traces
+		if(blood_DNA)
+			luminol_trace.blood_DNA = blood_DNA.Copy()
+		else
+			luminol_trace.blood_DNA = list("UNKNOWN" = "O+")  // Generic blood type for traces
 		luminol_trace.update_icon()
 
 
@@ -182,5 +170,6 @@
 /turf/simulated/clean_blood_preserve_was()
 	if(!simulated)
 		return
-	was_bloodied = TRUE
 	fluorescent = 0
+	// were decals removed? Caller handles that, but we ensure the flags are set to indicate "cleaned"
+	return
