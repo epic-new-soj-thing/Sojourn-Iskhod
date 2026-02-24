@@ -23204,6 +23204,15 @@
 /obj/structure/flora/pottedplant/water_root,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/medical/patient_wing)
+"fOA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/pros/prostorage)
 "fOG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -25605,6 +25614,11 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
 	},
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/pros/prostorage)
 "gut" = (
@@ -26847,6 +26861,11 @@
 "gKC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/landmark/join/start/pro,
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/pros/prostorage)
 "gKG" = (
@@ -35152,6 +35171,11 @@
 "iRO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/landmark/join/start/salvager,
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prostorage)
 "iRW" = (
@@ -48781,6 +48805,20 @@
 	},
 /turf/simulated/floor/tiled/steel/techfloor_grid,
 /area/iskhod/engineering)
+"mmS" = (
+/obj/structure/closet/secure_closet/personal/prospector,
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/moebius/nuclear;
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/pros/prostorage)
 "mmY" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/grey,
@@ -72913,6 +72951,11 @@
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
+	},
+/obj/structure/cable/cyan{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
@@ -202551,9 +202594,9 @@ ycV
 fSp
 ycV
 asa
-gsZ
+mmS
 gKC
-sDs
+fOA
 gYt
 uSm
 nFR
