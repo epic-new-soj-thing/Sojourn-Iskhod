@@ -12,7 +12,7 @@
 		list("names" = list(), "header" = DEPARTMENT_MEDICAL,     "flag" = MEDICAL),
 		list("names" = list(), "header" = DEPARTMENT_SCIENCE,     "flag" = SCIENCE),
 		list("names" = list(), "header" = DEPARTMENT_CHURCH,      "flag" = CHURCH),
-		list("names" = list(), "header" = DEPARTMENT_SUPPLY,      "flag" = FL),
+		list("names" = list(), "header" = DEPARTMENT_SUPPLY,      "flag" = SUPPLY),
 		list("names" = list(), "header" = DEPARTMENT_ENGINEERING, "flag" = ENGINEERING),
 		list("names" = list(), "header" = DEPARTMENT_PROSPECTOR,  "flag" = PROSPECTORS),
 		list("names" = list(), "header" = DEPARTMENT_CIVILIAN,    "flag" = CIVILIAN),
