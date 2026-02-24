@@ -10620,6 +10620,9 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
 "cFk" = (
@@ -13229,6 +13232,9 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
@@ -33698,6 +33704,9 @@
 	dir = 8;
 	pixel_x = 25
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
 "iAT" = (
@@ -45483,6 +45492,9 @@
 	dir = 1;
 	pixel_y = -25
 	},
+/obj/machinery/light{
+	brightness_power = 1
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/lab)
 "ltV" = (
@@ -49081,6 +49093,13 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/security/armoryshop)
+"mrA" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light{
+	brightness_power = 1
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/rnd/lab)
 "mrK" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/red,
@@ -51651,6 +51670,9 @@
 	},
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/floor_decal/industrial/hatch/red,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/robotics)
 "nbm" = (
@@ -51677,6 +51699,10 @@
 	req_access = list(5);
 	dir = 4;
 	pixel_x = -26
+	},
+/obj/machinery/light{
+	brightness_power = 1;
+	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
@@ -61583,6 +61609,14 @@
 	},
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/abandoned/barber)
+"pzy" = (
+/obj/machinery/repair_station,
+/obj/machinery/light{
+	brightness_power = 1;
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/rnd/robotics)
 "pzN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/hologram/holopad,
@@ -73997,6 +74031,9 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 25
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/robotics)
 "sOw" = (
@@ -75916,6 +75953,9 @@
 	oldified = 1;
 	pixel_y = 16
 	},
+/obj/machinery/light{
+	brightness_power = 1
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/scient)
 "tnk" = (
@@ -76725,6 +76765,10 @@
 "tvT" = (
 /obj/item/device/radio/intercom{
 	pixel_y = 25
+	},
+/obj/machinery/light{
+	brightness_power = 1;
+	dir = 8
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/rnd/rbreakroom)
@@ -81620,6 +81664,9 @@
 	dir = 8;
 	pixel_x = 26;
 	req_access = list(29)
+	},
+/obj/machinery/light{
+	brightness_power = 1
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/lab)
@@ -122126,7 +122173,7 @@ xfA
 kef
 buF
 wnu
-qgz
+pzy
 ick
 fWL
 sDp
@@ -123326,7 +123373,7 @@ uHc
 bgX
 wqR
 aAN
-uHc
+mrA
 oHv
 ciN
 gat
