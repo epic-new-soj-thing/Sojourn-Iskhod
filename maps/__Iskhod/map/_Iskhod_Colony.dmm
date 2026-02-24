@@ -4529,6 +4529,10 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/maintenance/undergroundfloor2east)
+"bfb" = (
+/obj/effect/step_trigger/surface_to_forest_1_B,
+/turf/unsimulated/mineral/transition,
+/area/colony)
 "bfc" = (
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/atmos)
@@ -13141,6 +13145,10 @@
 	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
+"dnR" = (
+/obj/effect/step_trigger/surface_to_forest_1_A,
+/turf/unsimulated/mineral/transition,
+/area/colony)
 "dnU" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
@@ -16153,6 +16161,10 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/medical/chemistry)
+"ebB" = (
+/obj/effect/step_trigger/swampcaves_to_riverforest_1_A,
+/turf/simulated/floor/rock/dark,
+/area/colony)
 "ebC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -43360,6 +43372,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay)
+"kTp" = (
+/obj/effect/step_trigger/swampcaves_to_riverforest_1_B,
+/turf/simulated/floor/rock/dark,
+/area/colony)
 "kTq" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -43558,6 +43574,15 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/rnd/xenobiology)
+"kVp" = (
+/obj/effect/step_trigger/surface_to_forest_1_B,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/outside/inside_colony/west)
 "kVr" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -54651,6 +54676,15 @@
 	icon_state = "9,11"
 	},
 /area/shuttle/vasiliy_shuttle_area)
+"nMm" = (
+/obj/effect/step_trigger/surface_to_forest_1_A,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/outside/inside_colony/west)
 "nMn" = (
 /obj/random/junk/low_chance,
 /turf/simulated/floor/rock/dark,
@@ -60249,6 +60283,9 @@
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
+"piU" = (
+/turf/unsimulated/mineral/transition,
+/area/iskhod/outside/inside_colony/west)
 "piX" = (
 /obj/structure/reagent_dispensers/watertank/huge{
 	color = "#9a977b"
@@ -176147,10 +176184,10 @@ rKl
 rKl
 rKl
 rKl
-rKl
-rKl
-rKl
-rKl
+cqi
+cqi
+cqi
+cqi
 rKl
 rKl
 rKl
@@ -176350,8 +176387,8 @@ cqi
 cqi
 cqi
 cqi
-qOA
-qOA
+piU
+piU
 cqi
 cqi
 cqi
@@ -176552,8 +176589,8 @@ cqi
 cqi
 cqi
 cqi
-qOA
-qOA
+nMm
+kVp
 cqi
 cqi
 cqi
@@ -176754,8 +176791,8 @@ cqi
 cqi
 cqi
 cqi
-qOA
-qOA
+ejl
+ejl
 qOA
 cqi
 cqi
@@ -176956,8 +176993,8 @@ cqi
 cqi
 cqi
 qOA
-qOA
-qOA
+ejl
+ejl
 qOA
 qOA
 qOA
@@ -200640,7 +200677,7 @@ qwj
 qwj
 cqi
 cqi
-rKl
+cqi
 jDL
 "}
 (124,1,3) = {"
@@ -200840,9 +200877,9 @@ qwj
 qwj
 qwj
 qwj
-qwj
-qwj
-rKl
+ebB
+dnR
+cqi
 jDL
 "}
 (125,1,3) = {"
@@ -201042,9 +201079,9 @@ qwj
 qwj
 qwj
 qwj
-qwj
-qwj
-rKl
+kTp
+bfb
+cqi
 jDL
 "}
 (126,1,3) = {"
@@ -201246,7 +201283,7 @@ qwj
 qwj
 cqi
 cqi
-rKl
+cqi
 jDL
 "}
 (127,1,3) = {"
