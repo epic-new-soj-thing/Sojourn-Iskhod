@@ -1,11 +1,11 @@
 //Jobs depatment lists for use in constant expressions
 #define JOBS_SECURITY "Captain","Lieutenant","Detective","Ranger","Junior Ranger"
-#define JOBS_COMMAND "Governor","Steward","Captain","Quartermaster","Chief Engineer","Biolab Overseer","Research Overseer","Cardinal","Foreman","Hospitality Manager"
+#define JOBS_COMMAND "Governor","Steward","Captain","Quartermaster","Chief Engineer","Biolab Overseer","Research Overseer","Cardinal","Foreman"
 #define JOBS_ENGINEERING "Chief Engineer","Engineer","Apprentice","Janitor"
 #define JOBS_MEDICAL "Biolab Overseer","Doctor","Chemist","Psychiatrist","Nurse","Paramedic","Resident"
 #define JOBS_SCIENCE "Research Overseer","Scientist","Roboticist","Science Intern","Robotics Intern"
 #define JOBS_SUPPLY "Quartermaster","Cargo Technician","Mining Technician"
-#define JOBS_SERVICE "Hospitality Manager","Bartender","Chef","Gardener","Artist","Journalist"
+#define JOBS_SERVICE "Bartender","Chef","Gardener","Artist","Journalist"
 #define JOBS_CIVILIAN "Colonist", "Visitor"
 #define JOBS_CHURCH "Priest", "Cardinal"
 #define JOBS_PROSPECTOR "Foreman","Fence","Prospector Specialist","Prospector","Rookie Prospector"
