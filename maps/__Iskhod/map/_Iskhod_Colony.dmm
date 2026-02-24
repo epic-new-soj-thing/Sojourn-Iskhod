@@ -5657,6 +5657,11 @@
 /obj/structure/boulder,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/hallway/main/f1section4)
+"bsD" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple/cat/fluff/Runtime,
+/turf/simulated/floor/carpet/sblucarpet,
+/area/iskhod/command/cbo/quarters)
 "bsE" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet,
@@ -17627,12 +17632,6 @@
 /obj/structure/table/reinforced,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/misc_lab)
-"etF" = (
-/obj/effect/window_lwall_spawn/reinforced/polarized,
-/turf/simulated/floor/plating/under,
-/area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
-	})
 "etN" = (
 /obj/random/cluster/spiders,
 /obj/effect/spider/stickyweb,
@@ -28628,6 +28627,11 @@
 	},
 /turf/simulated/floor/tiled/dark/panels,
 /area/iskhod/engineering)
+"hiI" = (
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Premier's Office"
+	})
 "hjx" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -70820,6 +70824,7 @@
 /obj/machinery/smartfridge/disk,
 /obj/item/pc_part/drive/disk/design/nonlethal_ammo,
 /obj/item/pc_part/drive/disk/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/security,
 /obj/item/pc_part/drive/disk/design/medical,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemstor)
@@ -74892,11 +74897,6 @@
 /obj/item/material/kitchen/utensil/spoon,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor2central)
-"sXn" = (
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
-	})
 "sXz" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -77303,14 +77303,30 @@
 /area/iskhod/abandoned/barber)
 "tBP" = (
 /obj/structure/table/reinforced,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -32
+	},
+/obj/item/storage/pill_bottle/prosurgeon{
+	pixel_x = -5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemstor)
@@ -79227,6 +79243,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clipboard,
 /turf/simulated/floor/wood,
 /area/iskhod/command/cbo/quarters)
 "ucg" = (
@@ -84046,6 +84063,12 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/pool)
+"vpZ" = (
+/obj/effect/window_lwall_spawn/reinforced/polarized,
+/turf/simulated/floor/plating/under,
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Premier's Office"
+	})
 "vqc" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
@@ -91340,6 +91363,7 @@
 	pixel_x = -27;
 	req_one_access = newlist()
 	},
+/obj/item/reagent_containers/snacks/meat/runtimes_dinner,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/command/cbo/quarters)
 "xld" = (
@@ -150280,7 +150304,7 @@ fba
 wLM
 dMr
 qtP
-sXn
+hiI
 dhd
 soT
 rxk
@@ -150482,11 +150506,11 @@ fba
 mKA
 dMr
 bXS
-sXn
-sXn
-etF
-etF
-sXn
+hiI
+hiI
+vpZ
+vpZ
+hiI
 vnQ
 lto
 bsG
@@ -150684,7 +150708,7 @@ fba
 fba
 ugl
 fba
-sXn
+hiI
 leK
 sJV
 dur
@@ -151088,7 +151112,7 @@ fba
 uKH
 axU
 uLi
-sXn
+hiI
 uGV
 rxx
 bNw
@@ -151290,7 +151314,7 @@ fba
 gtp
 axU
 uLi
-sXn
+hiI
 suD
 aam
 jYn
@@ -151492,7 +151516,7 @@ fba
 qHU
 kAY
 seJ
-sXn
+hiI
 fYk
 eoo
 wGD
@@ -151694,7 +151718,7 @@ fba
 fba
 fba
 fba
-sXn
+hiI
 njR
 pam
 xxN
@@ -151899,8 +151923,8 @@ rxC
 hVE
 hVE
 hVE
-sXn
-sXn
+hiI
+hiI
 vnQ
 vnQ
 dCV
@@ -153337,7 +153361,7 @@ ocd
 yhC
 mnq
 xeC
-xeC
+bsD
 rpb
 jab
 jab
