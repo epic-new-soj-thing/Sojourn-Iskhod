@@ -1,6 +1,6 @@
 /datum/job/hop
 	title = "Hospitality Manager"
-	flag = HOP
+	flag = HOSP
 	department = DEPARTMENT_SERVICE
 	head_position = TRUE
 	department_flag = SERVICE | COMMAND
@@ -16,7 +16,7 @@
 
 	access = list(
 		access_hydroponics, access_bar, access_kitchen, access_janitor, access_theatre, access_library,
-		access_RC_announce, access_keycard_auth, access_heads, access_sec_doors, access_heads_vault
+		access_RC_announce, access_keycard_auth, access_heads, access_sec_doors, access_heads_vault, access_hosp
 	)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/hop

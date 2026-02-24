@@ -582,3 +582,9 @@
 /datum/access/crate_cash
 	id = access_crate_cash
 	access_type = ACCESS_TYPE_NONE
+
+/var/const/access_hosp = 201
+/datum/access/hosp
+	id = access_hosp
+	desc = "Steward"
+	region = ACCESS_REGION_COMMAND

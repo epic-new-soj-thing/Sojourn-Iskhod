@@ -13,10 +13,10 @@
 	item_state = "gy_suit"
 
 /obj/item/clothing/under/rank/hop
-	desc = "A specialized uniform dedicated to the Hospitality Manager."
+	desc = "A specialized suit and tie dedicated to the Hospitality Manager."
 	name = "hospitality manager's uniform"
-	icon_state = "hop"
-	item_state = "hop"
+	icon_state = "really_black_suit"
+	item_state = "really_black_suit"
 
 /obj/item/clothing/under/rank/bartender
 	desc = "An expensive shirt and tie with tailored pants."

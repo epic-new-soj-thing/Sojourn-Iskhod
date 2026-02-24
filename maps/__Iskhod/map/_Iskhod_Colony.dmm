@@ -3,6 +3,7 @@
 /obj/structure/table/woodentable,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/hand_tele,
+/obj/item/stamp/captain,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain/quarters{
 	name = "\improper Command - Premier's Office"
@@ -3259,6 +3260,11 @@
 	id = "bar_shutters";
 	req_access = list(25)
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
 "aOD" = (
@@ -4393,6 +4399,18 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section4)
+"bcV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/woodentable,
+/obj/item/paper_bin,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/item/pen/multi,
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "bcY" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "2,3"
@@ -5657,11 +5675,6 @@
 /obj/structure/boulder,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/hallway/main/f1section4)
-"bsD" = (
-/obj/effect/decal/cleanable/dirt,
-/mob/living/simple/cat/fluff/Runtime,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/iskhod/command/cbo/quarters)
 "bsE" = (
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/carpet,
@@ -6047,6 +6060,26 @@
 /obj/random/closet_tech,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/iskhod/waterfall/subsurface)
+"bxt" = (
+/obj/effect/floor_decal/spline/wood{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/bar)
 "bxw" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
@@ -6549,6 +6582,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/enginehallway)
+"bEl" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/bar)
 "bEn" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -9034,6 +9073,16 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/shop)
+"cjr" = (
+/obj/structure/window/reinforced/iskhod,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/bar)
 "cjx" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -10303,6 +10352,19 @@
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
+"czz" = (
+/obj/effect/floor_decal/corner_kafel/white/full,
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/white_large_slates,
+/area/iskhod/crew_quarters/bar)
 "czD" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10899,6 +10961,11 @@
 	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
+"cID" = (
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "cIL" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -13302,6 +13369,21 @@
 /obj/item/stool/padded,
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
+"dpC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/bar)
 "dpF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -16358,10 +16440,25 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/maintenance_common,
-/obj/random/traps/low_chance,
+/obj/machinery/door/airlock{
+	name = "Hospitality Manger's Office";
+	req_access = list(201)
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/crew_quarters/bar)
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "edu" = (
 /obj/structure/multiz/stairs/enter{
 	dir = 4
@@ -20079,7 +20176,7 @@
 /area/iskhod/maintenance/undergroundfloor2north)
 "faM" = (
 /obj/structure/bed/chair/office/light{
-	name = "VIP";
+	name = "Hospitality Manger seat";
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -23834,6 +23931,12 @@
 	},
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/dungeon/outside/abandoned_outpost)
+"fWQ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "fWX" = (
 /obj/structure/window/reinforced/iskhod,
 /obj/random/furniture/pottedplant,
@@ -28627,11 +28730,6 @@
 	},
 /turf/simulated/floor/tiled/dark/panels,
 /area/iskhod/engineering)
-"hiI" = (
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
-	})
 "hjx" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -30286,6 +30384,18 @@
 /obj/random/rig_module,
 /turf/simulated/mineral/planet,
 /area/iskhod/maintenance/undergroundfloor2west)
+"hFn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/bar)
 "hFq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 10
@@ -31154,6 +31264,15 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/cbo/quarters)
+"hRS" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 1
+	},
+/obj/landmark/join/start/hop,
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "hSa" = (
 /obj/structure/table/standard,
 /obj/machinery/librarypubliccomp,
@@ -32838,6 +32957,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/organ_lab)
+"ioZ" = (
+/obj/structure/multiz/stairs/active{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/open,
+/area/iskhod/crew_quarters/bar)
 "ipa" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -36253,6 +36383,10 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/crew_quarters/cafeteria)
+"jeC" = (
+/obj/effect/window_lwall_spawn/reinforced/polarized,
+/turf/simulated/floor/plating/under,
+/area/iskhod/command/hallway)
 "jeI" = (
 /obj/structure/closet/lasertag/green,
 /turf/simulated/floor/wood/wild1,
@@ -37933,6 +38067,12 @@
 	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
+"jAa" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "jAb" = (
 /obj/item/toy/junk/inflatable_duck,
 /turf/open/pool,
@@ -39991,6 +40131,24 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/crew_quarters/cafeteria)
+"kaL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "kaT" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -41416,7 +41574,7 @@
 	},
 /obj/machinery/door/airlock/command{
 	name = "Steward's Office";
-	req_access = s
+	req_access = list(57)
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
@@ -41697,7 +41855,9 @@
 "kwf" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized,
 /turf/simulated/floor/plating/under,
-/area/iskhod/command/hallway)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Premier's Office"
+	})
 "kwG" = (
 /obj/machinery/firealarm{
 	pixel_y = 32
@@ -41932,6 +42092,20 @@
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
+"kAg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -27;
+	req_one_access = newlist()
+	},
+/obj/item/modular_computer/console/preset/command{
+	dir = 4
+	},
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "kAi" = (
 /obj/structure/lattice,
 /obj/structure/railing{
@@ -42046,6 +42220,11 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
+"kBP" = (
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Premier's Office"
+	})
 "kBW" = (
 /obj/machinery/autolathe/organ_fabricator/loaded,
 /obj/machinery/light{
@@ -43776,6 +43955,11 @@
 /obj/effect/floor_decal/corner_kafel/gray/diagonal,
 /obj/effect/floor_decal/corner_kafel/gray{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
@@ -46294,6 +46478,11 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner_kafel/yellow,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
 "lFz" = (
@@ -47194,6 +47383,11 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /obj/landmark/join/start/clubmanager,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
 "lTE" = (
@@ -48579,6 +48773,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/hallway)
+"mjX" = (
+/obj/item/device/radio/intercom{
+	pixel_y = 25
+	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "mkc" = (
 /obj/structure/window/basic/iskhod{
 	dir = 4
@@ -50488,6 +50699,19 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
+"mJD" = (
+/obj/item/stool/custom/bar_special,
+/obj/effect/floor_decal/border/techfloor{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/wood/wild3,
+/area/iskhod/crew_quarters/bar)
 "mJF" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -51816,6 +52040,7 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/effect/floor_decal/steeldecal/steel_decals_central7,
+/obj/landmark/join/start/hop,
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
 "ncJ" = (
@@ -53083,6 +53308,11 @@
 	icon_state = "9,23"
 	},
 /area/iskhod/outside/inside_colony/east)
+"nro" = (
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "nrp" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue,
 /obj/effect/decal/cleanable/dirt,
@@ -53570,6 +53800,17 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/shop)
+"nwo" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/bed/chair/office/dark,
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "nwp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -61967,7 +62208,7 @@
 /area/iskhod/maintenance/undergroundfloor1west)
 "pCQ" = (
 /obj/structure/bed/chair/office/light{
-	name = "Operation Manager seat"
+	name = "Quartermaster seat"
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
@@ -62515,6 +62756,35 @@
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/command/bridge)
+"pKR" = (
+/obj/structure/closet/secure_closet/hospitality,
+/obj/item/clipboard,
+/obj/item/clothing/accessory/tie/redclip,
+/obj/item/clothing/accessory/tie/blueclip,
+/obj/item/clothing/accessory/holster/saber/saya/occupied,
+/obj/item/clothing/under/rank/hop,
+/obj/item/clothing/head/fedora,
+/obj/item/device/taperecorder,
+/obj/item/pen/multi,
+/obj/item/device/camera,
+/obj/item/device/camera_film,
+/obj/item/pc_part/drive/disk,
+/obj/item/pc_part/drive/disk,
+/obj/item/pc_part/drive/disk,
+/obj/item/storage/fancy/cigar,
+/obj/item/storage/fancy/cigar,
+/obj/item/flame/lighter/zippo,
+/obj/item/reagent_containers/drinks/bottle/whiskey,
+/obj/item/reagent_containers/drinks/bottle/whiskey,
+/obj/item/reagent_containers/drinks/bottle/whiskey,
+/obj/item/reagent_containers/drinks/bottle/whiskey,
+/obj/item/reagent_containers/drinks/drinkingglass/shot,
+/obj/item/reagent_containers/drinks/drinkingglass/shot,
+/obj/item/reagent_containers/drinks/drinkingglass/shot,
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "pLd" = (
 /obj/structure/table/woodentable{
 	layer = 2.6
@@ -62525,6 +62795,18 @@
 	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/absolutism/chapel)
+"pLl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/table/woodentable,
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "pLn" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -66036,6 +66318,8 @@
 "qHU" = (
 /obj/structure/closet/secure_closet/reinforced/captains,
 /obj/item/rig/hazard/steward,
+/obj/item/card/id/captains_spare,
+/obj/item/storage/secure/briefcase/nukedisk,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters)
 "qIc" = (
@@ -66265,6 +66549,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section3)
+"qKR" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple/cat/fluff/Runtime,
+/turf/simulated/floor/carpet/sblucarpet,
+/area/iskhod/command/cbo/quarters)
 "qKV" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/hallway/main/f1section2)
@@ -69947,6 +70236,7 @@
 	},
 /obj/item/device/megaphone,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stamp/hop,
 /turf/simulated/floor/wood,
 /area/iskhod/command/fo{
 	name = "\improper Command - Steward's Office"
@@ -73810,6 +74100,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
 "sKD" = (
@@ -73862,7 +74157,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock{
-	name = "Bartender's room";
+	name = "Hospitality Manger's Office";
 	req_access = list(25)
 	},
 /turf/simulated/floor/wood/wild2,
@@ -76080,6 +76375,13 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/rnd/robotics)
+"tnP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/bar)
 "tnQ" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/effect/decal/cleanable/dirt,
@@ -83378,6 +83680,21 @@
 /obj/item/clothing/under/bathrobe,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/changing_room/pool)
+"vgE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/bar)
 "vgS" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white/danger,
@@ -84063,12 +84380,6 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/pool)
-"vpZ" = (
-/obj/effect/window_lwall_spawn/reinforced/polarized,
-/turf/simulated/floor/plating/under,
-/area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
-	})
 "vqc" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
@@ -84922,6 +85233,19 @@
 "vBu" = (
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/command/gmaster/quarters)
+"vBy" = (
+/obj/structure/table/marble,
+/obj/machinery/door/blast/shutters/glass{
+	name = "glass shutter";
+	id = "bar_shutters"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/panels,
+/area/iskhod/crew_quarters/bar)
 "vBC" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -86038,6 +86362,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section2)
+"vQH" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber,
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "vQI" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
@@ -86843,6 +87176,17 @@
 	},
 /turf/simulated/floor/reinforced/airmix,
 /area/iskhod/engineering/atmos)
+"waK" = (
+/obj/structure/multiz/stairs/enter{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/open,
+/area/iskhod/crew_quarters/bar)
 "waU" = (
 /obj/structure/closet/random_tech,
 /obj/random/tool_upgrade/rare,
@@ -87694,6 +88038,18 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/security/armoryshop)
+"wnz" = (
+/obj/effect/floor_decal/corner_kafel/white/full,
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/white_large_slates,
+/area/iskhod/crew_quarters/bar)
 "wnA" = (
 /obj/machinery/cryopod,
 /turf/simulated/shuttle/floor/science{
@@ -91611,9 +91967,6 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
 "xot" = (
-/obj/structure/sign/levels/stairsdown{
-	pixel_x = -32
-	},
 /obj/machinery/light/small{
 	dir = 8
 	},
@@ -93500,6 +93853,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/medical/psych)
+"xPb" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "xPg" = (
 /obj/structure/bed/chair/shuttle,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -95215,6 +95585,16 @@
 /obj/effect/floor_decal/industrial/box/white,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/warden)
+"ykZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light,
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild2,
+/area/iskhod/crew_quarters/clownoffice{
+	name = "Hospitality Manager's Office"
+	})
 "ylc" = (
 /obj/structure/sink{
 	dir = 8;
@@ -150304,7 +150684,7 @@ fba
 wLM
 dMr
 qtP
-hiI
+kBP
 dhd
 soT
 rxk
@@ -150506,11 +150886,11 @@ fba
 mKA
 dMr
 bXS
-hiI
-hiI
-vpZ
-vpZ
-hiI
+kBP
+kBP
+kwf
+kwf
+kBP
 vnQ
 lto
 bsG
@@ -150708,7 +151088,7 @@ fba
 fba
 ugl
 fba
-hiI
+kBP
 leK
 sJV
 dur
@@ -151112,7 +151492,7 @@ fba
 uKH
 axU
 uLi
-hiI
+kBP
 uGV
 rxx
 bNw
@@ -151314,12 +151694,12 @@ fba
 gtp
 axU
 uLi
-hiI
+kBP
 suD
 aam
 jYn
 vhx
-kwf
+jeC
 ikH
 dOp
 ugX
@@ -151516,12 +151896,12 @@ fba
 qHU
 kAY
 seJ
-hiI
+kBP
 fYk
 eoo
 wGD
 fEG
-kwf
+jeC
 ikH
 fyr
 vWZ
@@ -151718,7 +152098,7 @@ fba
 fba
 fba
 fba
-hiI
+kBP
 njR
 pam
 xxN
@@ -151923,8 +152303,8 @@ rxC
 hVE
 hVE
 hVE
-hiI
-hiI
+kBP
+kBP
 vnQ
 vnQ
 dCV
@@ -152982,12 +153362,12 @@ uyA
 uyA
 fVp
 fVp
-wUB
-wBr
-wBr
-kgU
-fyL
-fyL
+cID
+fWQ
+fWQ
+cID
+cID
+oVb
 byg
 fTy
 fTy
@@ -153184,12 +153564,12 @@ lhX
 uyA
 uyA
 uyA
-wUB
-rrN
-wBr
-mGV
-fyL
-fyL
+cID
+mjX
+bcV
+kAg
+cID
+oVb
 fyL
 fyL
 fyL
@@ -153361,7 +153741,7 @@ ocd
 yhC
 mnq
 xeC
-bsD
+qKR
 rpb
 jab
 jab
@@ -153386,12 +153766,12 @@ lhX
 lhX
 lhX
 lhX
-wUB
+cID
+nwo
+pLl
+hRS
+cID
 oVb
-wBr
-oVb
-fyL
-fyL
 fyL
 fyL
 fyL
@@ -153588,12 +153968,12 @@ gYe
 gYe
 lhX
 lhX
-wUB
-bnF
-wBr
-wBr
-fyL
-fyL
+cID
+vQH
+kaL
+ykZ
+cID
+oVb
 fyL
 fyL
 fyL
@@ -153790,11 +154170,11 @@ aQB
 hMe
 vSw
 lhX
-wUB
-oVb
-wBr
-wBr
-wBr
+cID
+nro
+xPb
+jAa
+fWQ
 oVb
 fyL
 fyL
@@ -153992,11 +154372,11 @@ dhF
 jVf
 wUB
 gYe
-wUB
-ecv
-wBr
-oVb
-wBr
+cID
+pKR
+xPb
+nro
+fWQ
 wBr
 wBr
 wBr
@@ -154194,11 +154574,11 @@ oAn
 qvE
 pwy
 kur
-wUB
-wUB
+cID
+cID
 edt
-wUB
-wUB
+cID
+cID
 wUB
 wUB
 wUB
@@ -154398,7 +154778,7 @@ aGd
 mUI
 mUI
 xot
-mUI
+vgE
 btC
 fWX
 gQc
@@ -154600,7 +154980,7 @@ vDa
 oZi
 bwH
 bwH
-oZi
+dpC
 mGj
 mTK
 eCk
@@ -154791,18 +155171,18 @@ oVb
 wUB
 aOv
 sKs
-wxh
-fjO
+wnz
+czz
 lTr
 kVJ
 lFq
-rgS
-cxo
-wEO
-mju
-opE
-xlj
-mUI
+vBy
+mJD
+bxt
+cjr
+ioZ
+waK
+hFn
 mUI
 mTK
 qsm
@@ -155004,7 +155384,7 @@ ncx
 mju
 opE
 xlj
-mUI
+tnP
 pXf
 mTK
 riC
@@ -155206,7 +155586,7 @@ wEO
 mju
 opE
 xlj
-mUI
+tnP
 mUI
 mTK
 qsm
@@ -155408,7 +155788,7 @@ xRs
 dhF
 jyi
 jyi
-iaY
+bEl
 okt
 mTK
 lKm
