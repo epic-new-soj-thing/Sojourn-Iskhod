@@ -67,12 +67,12 @@
 /obj/item/organ/internal/kidney/left/opifex
 	name = "left filtration bladder"
 	icon = 'icons/obj/surgery.dmi'
-	icon_state = "kidneys"
+	icon_state = "kidney_left"
 
 /obj/item/organ/internal/kidney/right/opifex
 	name = "right filtration bladder"
 	icon = 'icons/obj/surgery.dmi'
-	icon_state = "kidneys"
+	icon_state = "kidney_right"
 
 /obj/item/organ/internal/liver/opifex
 	name = "waste tract"
@@ -115,11 +115,19 @@
 /obj/item/organ/internal/kidney/left/cindarite
 	name = "left reptilian kidney"
 	icon = 'icons/mob/human_races/species/cindarite/organs.dmi'
+	desc = "A dense set of tightly packed kidneys that work twice as better than a standard kidney.\
+	Likely worth more on the black market."
+	price_tag = 1000 //The right kidney should be worth as much as the left one.
+	organ_efficiency = list(OP_KIDNEYS = 200)
 	icon_state = "kidneys"
 
 /obj/item/organ/internal/kidney/right/cindarite
 	name = "right reptilian kidney"
 	icon = 'icons/mob/human_races/species/cindarite/organs.dmi'
+	desc = "A dense set of tightly packed kidneys that work twice as better than a standard kidney.\
+	Likely worth more on the black market."
+	price_tag = 1000 //The right kidney should be worth as much as the left one.
+	organ_efficiency = list(OP_KIDNEYS = 200)
 	icon_state = "kidneys"
 
 /obj/item/organ/internal/stomach/cindarite
