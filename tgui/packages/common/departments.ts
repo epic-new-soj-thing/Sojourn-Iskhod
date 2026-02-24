@@ -1,0 +1,17 @@
+export const departmentData = {
+  heads: { name: 'Iskhod Council' },
+  sec: { name: 'Iskhod Rangers' },
+  med: { name: 'Vesalius-Andra Medical' },
+  sci: { name: 'Vesalius-Andra Research' },
+  chr: { name: 'Church of the Absolute' },
+  car: { name: 'Frontier Logistics' },
+  eng: { name: 'Artificer Guild' },
+  pro: { name: 'Prospectors' },
+  civ: { name: 'Contractors' },
+  srv: { name: 'Independent Contractors' },
+  ind: { name: 'Independant' },
+  gry: { name: 'Greyson Positronic' },
+  ldg: { name: 'Lodge' },
+  bot: { name: 'Silicon' },
+  misc: { name: 'Miscellaneous' },
+};
