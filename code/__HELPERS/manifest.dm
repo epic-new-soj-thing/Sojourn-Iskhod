@@ -22,8 +22,7 @@
 		list("names" = list(), "header" = "Silicon",              "flag" = SILICON),
 		list("names" = list(), "header" = "Miscellaneous",        "flag" = MISC)
 	)
-
-	var/list/misc //Special departments for easier access
+	var/list/misc
 	var/list/bot
 	for(var/list/department in dept_data)
 		if(department["flag"] == MISC)
