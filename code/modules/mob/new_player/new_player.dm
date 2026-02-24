@@ -421,6 +421,7 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 					departments += department["key"]
 
 			jobs += list(list(
+				"name" = job.title,
 				"title" = job.title,
 				"departments" = departments,
 				"current_positions" = job.current_positions,
