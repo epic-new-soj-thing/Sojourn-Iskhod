@@ -85,8 +85,6 @@ var/game_id
 	//logs
 	// SetupLogs() is now called in global_init/New() to be ready for config loading
 	start_time = world.realtime
-
-	var/date_string = time2text(world.realtime, "YYYY/MM-Month/DD-Day")
 	href_logfile = file("[GLOB.log_directory]/[game_id]-hrefs.htm")
 	href_logfile_filename = "[GLOB.log_directory]/[game_id]-hrefs.htm"
 	diary = file("[GLOB.log_directory]/[game_id].log")
