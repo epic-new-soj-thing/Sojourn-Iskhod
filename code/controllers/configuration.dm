@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/log_adminwarn = 0				// log warnings admins get about bomb construction and such
 	var/log_pda = 0						// log pda messages
 	var/log_hrefs = 0					// logs all links clicked in-game. Could be used for debugging and tracking down exploits
-	var/log_runtime = 0					// logs world.log to a file
+	var/log_runtime = 1					// logs world.log to a file
 	var/log_world_output = 0			// log log_world(messages)
 	var/sql_enabled = 1					// for sql switching
 	var/require_discord_linking = FALSE	// require Discord linking to join the game

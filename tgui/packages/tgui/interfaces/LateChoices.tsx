@@ -53,7 +53,7 @@ export const LateChoices = (props) => {
               <Section
                 key={department}
                 className={'CrewManifest--' + department}
-                title={departmentData[department].name}
+                title={departmentData[department]?.name || `Dept: ${department}`}
               >
                 {filtered_jobs.map((job) => (
                   <Button
