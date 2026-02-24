@@ -88,13 +88,13 @@
 /obj/machinery/rotating_alarm/set_dir(ndir) //Due to effect, offsets cannot be part of sprite, so need to set it for each dir
 	. = ..()
 	if(dir == NORTH)
-		pixel_y = -13
-	if(dir == SOUTH)
 		pixel_y = 28
+	if(dir == SOUTH)
+		pixel_y = -13
 	if(dir == WEST)
-		pixel_x = 20
-	if(dir == EAST)
 		pixel_x = -20
+	if(dir == EAST)
+		pixel_x = 20
 
 
 /obj/machinery/rotating_alarm/proc/set_color(color)
@@ -162,7 +162,7 @@
 /obj/machinery/rotating_alarm/supermatter/proc/check_supermatter(obj/machinery/power/supermatter/SM, status)
 	if (SM)
 		if (SM.z in GetConnectedZlevels(src.z))
-			if(status >= SUPERMATTER_NOTIFY)
+			if(last_status >= SUPERMATTER_NOTIFY)
 				set_on()
 			else
 				set_off()
