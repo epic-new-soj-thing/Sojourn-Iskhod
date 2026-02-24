@@ -152,21 +152,26 @@
 
 /obj/machinery/rotating_alarm/supermatter/Initialize()
 	. = ..()
-	GLOB.supermatter_status.register_global(src, PROC_REF(check_supermatter))
+	START_PROCESSING(SSmachines, src)
 
 /obj/machinery/rotating_alarm/supermatter/Destroy()
-	GLOB.supermatter_status.unregister_global(src, PROC_REF(check_supermatter))
 	. = ..()
 
-/obj/machinery/rotating_alarm/supermatter/proc/check_supermatter()
-	for(var/obj/machinery/power/supermatter/S in GLOB.machines)
-		if (S.z in GetConnectedZlevels(src.z))
-			var/new_status = max(S.get_status(), last_status)
-			if(last_status != new_status)
-				last_status = new_status
-				if(last_status >= SUPERMATTER_NOTIFY)
-					set_on()
-				else
-					set_off()
-		else
-			set_off()
+/obj/machinery/rotating_alarm/supermatter/Process(seconds_per_tick)
+    var/found_sm = FALSE
+    var/highest_status = 0
+
+    for(var/obj/machinery/power/supermatter/S in GLOB.machines)
+        // Check if SM is on a connected Z-level
+        if (S.z in GetConnectedZlevels(z))
+            found_sm = TRUE
+            highest_status = max(S.get_status(), highest_status)
+
+    // If no SM was found at all, or if the status is safe, turn off
+    if(!found_sm || highest_status < SUPERMATTER_NOTIFY)
+        if(last_status != 0) // Only update if state actually changed
+            last_status = 0
+            set_off()
+    else if(last_status != highest_status)
+        last_status = highest_status
+        set_on()
