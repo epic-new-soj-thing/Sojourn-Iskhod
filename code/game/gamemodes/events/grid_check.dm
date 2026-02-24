@@ -8,7 +8,7 @@ All the doors being depowered means that people can crowbar their way into restr
 So sometimes this event can result in people finding new and interesting things
 */
 
-/* disabled temporarily due to lag
+
 /datum/storyevent/grid_check
 	id = "gridcheck"
 	name = "Grid Check"
@@ -17,9 +17,9 @@ So sometimes this event can result in people finding new and interesting things
 	event_type = /datum/event/grid_check
 	event_pools = list(EVENT_LEVEL_MUNDANE = POOL_THRESHOLD_MUNDANE,
 	EVENT_LEVEL_MODERATE = POOL_THRESHOLD_MODERATE)
-	weight = 0 //Disabled
+	weight = 10 //Disabled
 
-	ocurrences_max = 0 //Can only do this once as its more annoying then fun
+	ocurrences_max = 1 //Can only do this once as its more annoying then fun
 
 	tags = list(TAG_SCARY, TAG_COMMUNAL)
 
@@ -37,7 +37,7 @@ So sometimes this event can result in people finding new and interesting things
 
 /datum/event/grid_check/announce()
 	command_announcement.Announce("Abnormal activity detected in the colony's powernet. As a precautionary measure, power will be shut off for an indeterminate duration.", "Automated Grid Check", new_sound = 'sound/AI/poweroff.ogg')
-*/
+
 
 
 /proc/power_failure(var/announce = 1, var/severity = 2, var/list/affected_z_levels)
@@ -47,11 +47,13 @@ So sometimes this event can result in people finding new and interesting things
 	for(var/obj/machinery/power/smes/buildable/S in GLOB.smes_list)
 		if (is_valid_smes(S))
 			S.energy_fail(rand(30 * severity*severity,40 * severity*severity))
+		CHECK_TICK
 
 
 	for(var/obj/machinery/power/apc/C in GLOB.apc_list)
 		if(is_valid_apc(C) && (!affected_z_levels || (C.z in affected_z_levels)))
 			C.energy_fail(rand(90 * severity*severity,200 * severity*severity))
+		CHECK_TICK
 
 /proc/power_restore(var/announce = 1)
 	var/list/skipped_areas = list(/area/turret_protected/ai)
@@ -62,6 +64,7 @@ So sometimes this event can result in people finding new and interesting things
 		C.failure_timer = 0
 		if(C.cell)
 			C.cell.charge = C.cell.maxcharge
+		CHECK_TICK
 	for(var/obj/machinery/power/smes/S in GLOB.smes_list)
 		var/area/current_area = get_area(S)
 		if(current_area.type in skipped_areas)
@@ -70,6 +73,7 @@ So sometimes this event can result in people finding new and interesting things
 		S.charge = S.capacity
 		S.update_icon()
 		S.power_change()
+		CHECK_TICK
 
 /proc/power_restore_quick(var/announce = 1)
 
@@ -83,6 +87,7 @@ So sometimes this event can result in people finding new and interesting things
 		S.input_attempt = 1
 		S.update_icon()
 		S.power_change()
+		CHECK_TICK
 
 
 /proc/is_valid_smes(var/obj/machinery/power/smes/S)

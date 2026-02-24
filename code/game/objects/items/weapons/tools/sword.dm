@@ -248,6 +248,25 @@
 
 					user.visible_message("[user] drives [src.name] into [M.name]'s body, deconstructing it!", "You drive the [src.name] into [M.name], extracting research data")
 					msg_admin_attack("[user] deconned [M.name] - ([user.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[M.x];Y=[M.y];Z=[M.z]'>JMP</a>)")
+
+					var/turf/T = get_turf(M)
+					for(var/obj/item/I in M.contents)
+						if(!(I.flags & ABSTRACT))
+							I.forceMove(T)
+
+					if(LAZYLEN(M.embedded))
+						for(var/obj/item/I in M.embedded)
+							I.forceMove(T)
+						M.embedded.Cut()
+
+					if(ishuman(M))
+						var/mob/living/carbon/human/H = M
+						for(var/obj/item/organ/external/Ex in H.organs)
+							if(LAZYLEN(Ex.embedded))
+								for(var/obj/item/I in Ex.embedded)
+									I.forceMove(T)
+								Ex.embedded.Cut()
+
 					M.dust()
 					add_points(points_to_award)
 					add_overlay(image('icons/obj/cwj_cooking/scan.dmi', icon_state="scan_person", layer=ABOVE_WINDOW_LAYER))

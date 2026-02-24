@@ -161,7 +161,10 @@
 
 //Tough people can drink a lot
 	var/tolerance = max(5, strength + (M.stats.getStat(STAT_TGH) * 0.5)) //TGH scaling is 50%
-
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.species.reagent_tag == IS_MARQUA)
+			tolerance *= 0.5
 
 	if(dose * strength_mod >= tolerance) // Slurring
 		M.slurring = max(M.slurring, 30)

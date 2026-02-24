@@ -20,8 +20,18 @@
 	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("<b><font color='red'>[user] begins growling as their muscles tighten!</font><b>", "<b><font color='red'>You feel a comfortable warmth as your body steels itself against all pain.</font><b>", "<b><font color='red'>You hear something growling!</font><b>")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("sabledone", 10)
+	user.stats.addTempStat(STAT_TGH, 50, 45 SECONDS, "laststand")
+	duration_remaining = 45 SECONDS
 	return ..()
+
+/datum/perk/laststand/var/duration_remaining = 0
+
+/datum/perk/laststand/on_process()
+	if(..())
+		if(duration_remaining > 0)
+			holder.chem_effects[CE_PAINKILLER] = max(holder.chem_effects[CE_PAINKILLER], 200)
+			holder.apply_effect(-5, HALLOSS, 0)
+			duration_remaining -= 2 SECONDS // Approximation of life tick
 
 /datum/perk/bone
 	name = "Bone Plated"
@@ -60,7 +70,9 @@
 	cooldown_time = world.time + 25 MINUTES
 	user.visible_message("[user] suddenly looks lost in thought, their focus elsewhere for a moment.", "You clear your mind and feel your thoughts focusing into a single stream of brilliance.", "You hear the calming silence, as if someone nearby is thinking deeply.")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("marquatol", 10)
+	user.stats.addTempStat(STAT_MEC, 10, 1 MINUTES, "marquatol")
+	user.stats.addTempStat(STAT_BIO, 10, 1 MINUTES, "marquatol")
+	user.stats.addTempStat(STAT_COG, 10, 1 MINUTES, "marquatol")
 	return ..()
 
 /datum/perk/inspired
@@ -110,8 +122,21 @@
 	cooldown_time = world.time + 10 MINUTES
 	user.visible_message("[user] grits their teeth and begins breathing slowly.", "You grit your teeth and remind yourself you ain't got time to bleed!")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("adrenol", 5)
+	user.heal_organ_damage(10, 8, 4, 2)
+	user.adjustOxyLoss(-10)
+	user.stats.addTempStat(STAT_TGH, 10, 30 SECONDS, "iwillsurvive")
+	duration_remaining = 30 SECONDS
 	return ..()
+
+/datum/perk/iwillsurvive/var/duration_remaining = 0
+
+/datum/perk/iwillsurvive/on_process()
+	if(..())
+		if(duration_remaining > 0)
+			holder.chem_effects[CE_PAINKILLER] = max(holder.chem_effects[CE_PAINKILLER], 45)
+			holder.chem_effects[CE_BLOODRESTORE] = max(holder.chem_effects[CE_BLOODRESTORE], 1.1)
+			holder.chem_effects[CE_STABLE] = 1
+			duration_remaining -= 2 SECONDS
 
 /datum/perk/battlecry
 	name = "Inspiring Battlecry"
@@ -215,8 +240,20 @@
 	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("<b><font color='red'>[user] sneers lightly as their pupils dilate and tension builds in their body!</font><b>", "<b><font color='red'>You feel your senses focusing, sound becomes crystal clear and your reflexes as fluid as water.</font><b>")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("kriotol", 5)
+	user.stats.addTempStat(STAT_TGH, 10, 45 SECONDS, "kriotol")
+	user.stats.addTempStat(STAT_VIG, 20, 45 SECONDS, "kriotol")
+	duration_remaining = 45 SECONDS
 	return ..()
+
+/datum/perk/enhancedsenses/var/duration_remaining = 0
+
+/datum/perk/enhancedsenses/on_process()
+	if(..())
+		if(duration_remaining > 0)
+			holder.chem_effects[CE_DARKSIGHT] = max(holder.chem_effects[CE_DARKSIGHT], SEE_INVISIBLE_NOLIGHTING)
+			holder.chem_effects[CE_SPEEDBOOST] = max(holder.chem_effects[CE_SPEEDBOOST], 0.2)
+			holder.chem_effects[CE_PULSE] = max(holder.chem_effects[CE_PULSE], 1)
+			duration_remaining -= 2 SECONDS
 
 /datum/perk/exceptional_aim
 	name = "Instinctual Skill"
@@ -245,7 +282,8 @@
 	user.visible_message("<b><font color='red'>[user] lets out deep guttural growl as their eyes glaze over!</font><b>", "<b><font size='3px'><font color='red'>You abandon all reason as your sink into a blood thirsty frenzy!</font><b>", "<b><font color='red'>You hear a terrifying roar!</font><b>")
 	playsound(usr.loc, 'sound/voice/akularoar.ogg', 50, 1)
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("robustitol", 5)
+	user.stats.addTempStat(STAT_TGH, 60, 45 SECONDS, "robustitol")
+	user.stats.addTempStat(STAT_ROB, 60, 45 SECONDS, "robustitol")
 	return ..()
 
 /datum/perk/iron_flesh
@@ -274,8 +312,19 @@
 	user.visible_message("[user] begins breathing much quicker as they let out a merp!", "You feel your heart rate increasing rapidly as everything seems to speed up and you let out an excited merp!", "You hear a loud merp...")
 	playsound(usr.loc, 'sound/voice/merp.ogg', 50, 1)
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("naratonin", 5)
+	user.stats.addTempStat(STAT_TGH, 25, 45 SECONDS, "naratonin")
+	user.stats.addTempStat(STAT_ROB, 25, 45 SECONDS, "naratonin")
+	duration_remaining = 45 SECONDS
 	return ..()
+
+/datum/perk/adrenalineburst/var/duration_remaining = 0
+
+/datum/perk/adrenalineburst/on_process()
+	if(..())
+		if(duration_remaining > 0)
+			holder.chem_effects[CE_SPEEDBOOST] = max(holder.chem_effects[CE_SPEEDBOOST], 0.6)
+			holder.chem_effects[CE_PULSE] = max(holder.chem_effects[CE_PULSE], 1)
+			duration_remaining -= 2 SECONDS
 
 /datum/perk/stay_hydrated
 	name = "Hydration Reliance"
@@ -308,8 +357,18 @@
 	cooldown_time = world.time + 15 MINUTES
 	user.visible_message("[user] shivers slightly as they begin to slow down.", "You start to feel quite chilly and tired as your body begins purging toxins within your blood.")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("cindpetamol", 5)
+	duration_remaining = 45 SECONDS
 	return ..()
+
+/datum/perk/purgetoxins/var/duration_remaining = 0
+
+/datum/perk/purgetoxins/on_process()
+	if(..())
+		if(duration_remaining > 0)
+			holder.chem_effects[CE_TOXIN] = max(holder.chem_effects[CE_TOXIN], -8)
+			holder.chem_effects[CE_SLOWDOWN] = max(holder.chem_effects[CE_SLOWDOWN], 1)
+			holder.chem_effects[CE_PULSE] = min(holder.chem_effects[CE_PULSE], -1)
+			duration_remaining -= 2 SECONDS
 
 /datum/perk/purgeinfections
 	name = "Uncanny Resiliance"
@@ -329,8 +388,15 @@
 	cooldown_time = world.time + 30 MINUTES
 	user.visible_message("[user] shivers slightly before taking a deep breath.", "You shiver slightly and take a deep breath before willing your bodies chemical sacks to open and begin purging infections.")
 	log_and_message_admins("used their [src] perk.")
-	user.reagents.add_reagent("cindicillin", 5)
+	duration_remaining = 1 MINUTES
 	return ..()
+
+/datum/perk/purgeinfections/var/duration_remaining = 0
+
+/datum/perk/purgeinfections/on_process()
+	if(..())
+		if(duration_remaining > 0)
+			duration_remaining -= 2 SECONDS
 
 /datum/perk/second_skin
 	name = "Second Skin"
