@@ -935,6 +935,9 @@
 	dir = 4
 	},
 /obj/machinery/disposal,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/command/teleporter)
 "ic" = (
@@ -3801,6 +3804,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/command/teleporter)
 "Cy" = (
@@ -5479,6 +5485,12 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/misc_lab)
+"PH" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/command/teleporter)
 "PK" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -5678,6 +5690,14 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
+"QM" = (
+/obj/machinery/constructable_frame/machine_frame,
+/obj/structure/railing/grey,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/command/teleporter)
 "QO" = (
 /obj/structure/window/reinforced/iskhod{
 	dir = 4
@@ -6644,6 +6664,16 @@
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/lockers)
+"Yo" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/command/teleporter)
+"Yq" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/command/teleporter)
 "Ys" = (
 /obj/effect/floor_decal/industrial/loading/red{
 	dir = 1
@@ -6859,6 +6889,12 @@
 /obj/structure/table/rack,
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
+"ZS" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/command/teleporter)
 "ZT" = (
 /obj/item/inflatable_dispenser,
 /obj/item/inflatable_dispenser,
@@ -11633,7 +11669,7 @@ vW
 vW
 ii
 ne
-ne
+Yo
 ne
 ne
 bj
@@ -11641,7 +11677,7 @@ ia
 HM
 ne
 ne
-ne
+Yo
 ne
 ii
 vW
@@ -11834,7 +11870,7 @@ vW
 vW
 vW
 ii
-ne
+ZS
 ne
 yu
 RG
@@ -11844,7 +11880,7 @@ RG
 RG
 zj
 ne
-ne
+Yq
 ii
 vW
 vW
@@ -12642,7 +12678,7 @@ vW
 vW
 vW
 ii
-JN
+QM
 ca
 dq
 tK
@@ -12652,7 +12688,7 @@ Wm
 NY
 dq
 Id
-ne
+Yq
 ii
 vW
 vW
@@ -13450,7 +13486,7 @@ vW
 vW
 vW
 ii
-ne
+ZS
 ne
 vS
 YN
@@ -13460,7 +13496,7 @@ YN
 YN
 ta
 ne
-ne
+Yq
 ii
 vW
 vW
@@ -13653,7 +13689,7 @@ vW
 vW
 ii
 ne
-ne
+PH
 ne
 ne
 ne
@@ -13661,7 +13697,7 @@ Ct
 ne
 ne
 ne
-ne
+PH
 ne
 ii
 vW
