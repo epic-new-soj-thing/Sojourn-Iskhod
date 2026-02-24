@@ -13329,6 +13329,10 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
+"dpO" = (
+/obj/machinery/keycard_auth/enhanced,
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/security/sechall)
 "dqd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -15596,7 +15600,8 @@
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "dSQ" = (
 /obj/item/caution/cone,
-/turf/simulated/open,
+/obj/effect/floor_decal/industrial_plant/border,
+/turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section1)
 "dTc" = (
 /obj/effect/decal/cleanable/rubble,
@@ -15691,8 +15696,9 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/guild)
 "dTN" = (
-/turf/simulated/open,
-/area/iskhod/hallway/surface/section1)
+/obj/machinery/keycard_auth/enhanced,
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/command/merchant)
 "dTO" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/decal/cleanable/dirt,
@@ -35242,6 +35248,12 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
+"iTo" = (
+/obj/machinery/keycard_auth/enhanced,
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "iTp" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/sign/neon/diner{
@@ -35843,6 +35855,10 @@
 /obj/machinery/craftingstation,
 /turf/simulated/floor/tiled/dark/panels,
 /area/iskhod/engineering/workshop)
+"iZt" = (
+/obj/machinery/keycard_auth/enhanced,
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/command/gmaster)
 "iZF" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -37544,6 +37560,10 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
+"juJ" = (
+/obj/machinery/keycard_auth/enhanced,
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/command/cbo)
 "juQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -47784,6 +47804,10 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section2)
+"lZW" = (
+/obj/machinery/keycard_auth/enhanced,
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/command/bridge)
 "maz" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -62431,6 +62455,10 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
+"pKI" = (
+/obj/machinery/keycard_auth/enhanced,
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/command/cro)
 "pKJ" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/unary/vent_scrubber,
@@ -71161,6 +71189,10 @@
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/robotics)
+"saq" = (
+/obj/machinery/keycard_auth/enhanced,
+/turf/simulated/wall/iskhod_red,
+/area/iskhod/pros/foreman)
 "sav" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -73593,7 +73625,8 @@
 /area/iskhod/hallway/main/f1section1)
 "sHC" = (
 /obj/machinery/floodlight,
-/turf/simulated/open,
+/obj/effect/floor_decal/industrial_plant/border,
+/turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section1)
 "sHH" = (
 /obj/machinery/computer/cryopod{
@@ -89344,6 +89377,10 @@
 "wIQ" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/engineering)
+"wIT" = (
+/obj/machinery/keycard_auth/enhanced,
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/command/Priest)
 "wJd" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
@@ -117366,7 +117403,7 @@ snb
 xWw
 xHy
 qqB
-snb
+dTN
 pwI
 prW
 xWw
@@ -123378,7 +123415,7 @@ pSO
 olQ
 olQ
 pSO
-rMA
+pKI
 xtC
 wkz
 tHN
@@ -141998,7 +142035,7 @@ ojK
 ojK
 ojK
 ojK
-ojK
+dpO
 geb
 aia
 wum
@@ -148214,7 +148251,7 @@ pkk
 pkk
 pkk
 pkk
-sbO
+lZW
 fmn
 fmn
 hIm
@@ -151042,7 +151079,7 @@ fba
 uKH
 axU
 uLi
-fba
+iTo
 uGV
 rxx
 bNw
@@ -153894,7 +153931,7 @@ pBj
 sOQ
 tlM
 jfg
-ocd
+juJ
 jab
 jab
 jab
@@ -155792,7 +155829,7 @@ nCV
 puw
 puw
 puw
-puw
+iZt
 puw
 vBu
 mLi
@@ -162214,7 +162251,7 @@ whO
 whO
 fMC
 fMC
-fMC
+wIT
 fMC
 fMC
 fMC
@@ -197518,7 +197555,7 @@ huJ
 cqi
 cqi
 gOR
-dTN
+gOR
 dSQ
 fzX
 gOR
@@ -197720,7 +197757,7 @@ huJ
 huJ
 cqi
 cqi
-dTN
+gOR
 sHC
 gFy
 gOR
@@ -197922,8 +197959,8 @@ pqb
 huJ
 cqi
 cqi
-dTN
-dTN
+gOR
+lsm
 lsm
 gOR
 eoy
@@ -198124,8 +198161,8 @@ wSw
 huJ
 cqi
 cqi
-dTN
-dTN
+gOR
+lsm
 lsm
 gOR
 tMy
@@ -198326,8 +198363,8 @@ huJ
 huJ
 cqi
 cqi
-dTN
-dTN
+gOR
+lsm
 lsm
 gOR
 pli
@@ -198528,8 +198565,8 @@ pgp
 pgp
 pgp
 cqi
-dTN
-dTN
+gOR
+gOR
 gOR
 gOR
 gOR
@@ -200295,7 +200332,7 @@ iVI
 dTZ
 rJI
 iVI
-iVI
+saq
 iVI
 cpa
 akf
