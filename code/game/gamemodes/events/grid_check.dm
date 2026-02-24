@@ -9,6 +9,7 @@ So sometimes this event can result in people finding new and interesting things
 */
 
 
+/*
 /datum/storyevent/grid_check
 	id = "gridcheck"
 	name = "Grid Check"
@@ -25,7 +26,7 @@ So sometimes this event can result in people finding new and interesting things
 
 
 ///////////////////////////////////////////////////////////////////////
-
+*/
 /datum/event/grid_check	//NOTE: Times are measured in master controller ticks!
 	announceWhen		= 5
 
