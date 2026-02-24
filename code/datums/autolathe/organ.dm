@@ -85,7 +85,6 @@
 	category = "Mar'Qua"
 	starts_unlocked = TRUE
 
-
 /datum/design/organ/marqua/heart
 	name = "Amphibian Heart"
 	materials = list(MATERIAL_BIOMATTER = 40)
