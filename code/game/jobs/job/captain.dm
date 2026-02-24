@@ -80,21 +80,20 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	difficulty = "Hard."
 	selection_color = "#ddddff"
 	req_admin_notify = 1
-	playtimerequired = 1200
+	playtimerequired = 0
 	wage = WAGE_COMMAND
 	ideal_character_age = 35
 	minimum_character_age = 30
 
 	health_modifier = 5
-	description = "The Steward is the loyal right-hand of the Governor. Serving as a personal guard, follow them wherever they go.<br>\
-	Your primary, and perhaps only, responsibility is to ensure the safety of the Governor at all costs - even with your own life if necessary.<br>\
-	However, you are an adviser as well as a bodyguard. Discreetly inform them of mistakes. Make sure they follow the law and remain popular.<br>\
-	You may be assigned special tasks by the Governor for whatever reason. Ensure these orders are fulfilled.<br>\
+	description = "The Steward is a command role for the colony administration and command staff. Serving as a glorified secretary, ensure the smooth running of the colony.<br>\
+	Your primary, and perhaps only, responsibility is to ensure the smooth running of the colony - even if it costs your reputation. A good steward is not often well liked.<br>\
+	However, you are an advisor to the Governor as well as a secretary. Discreetly inform your superiors of mistakes. Make sure they follow the law and remain proper.<br>\
+	You may be assigned special tasks by Command for whatever reason. Ensure these orders are fulfilled to the best of your abilities.<br>\
 	Do not embarass them, and especially do not harm their relations with faction leaders. You may not do much talking, but you have great impact."
 
-	duties = "Act as a bodyguard, adviser and confidant to the Governor.<br>\
-	Remain conscious of any potential threats to the safety of the Governor.<br>\
-	Perform tasks as assigned by the Governor - such as filling paperwork or reassigning roles.<br>\
+	duties = "Act as an advisor and confidant to the Governor.<br>\
+	Perform tasks as assigned by the Governor and other command staff - such as filling paperwork or reassigning roles.<br>\
 	Demonstrate true loyalty and do not let your superior down."
 
 	outfit_type = /decl/hierarchy/outfit/job/hop

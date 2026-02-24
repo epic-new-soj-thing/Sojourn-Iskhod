@@ -14518,13 +14518,14 @@
 /turf/simulated/floor/asteroid,
 /area/iskhod/maintenance/northcave)
 "dDd" = (
-/obj/machinery/conveyor{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/machinery/conveyor/east{
+	id = "junk_to_bioreactor";
+	operating = 1
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
 "dDj" = (
@@ -21261,22 +21262,23 @@
 	dir = 8
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
+	pixel_y = -3;
+	pixel_x = -5
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
+	pixel_y = -3
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
+	pixel_y = 3;
+	pixel_x = -3
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
+	pixel_y = -3;
+	pixel_x = 5
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
-	},
-/obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
+	pixel_y = 3;
+	pixel_x = 3
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/medical/medbreak)
@@ -26457,6 +26459,18 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates_fixed,
 /area/iskhod/medical/morgue)
+"gFX" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/smelter/cargo_t2_parts,
+/obj/machinery/conveyor/east{
+	id = "junk_to_bioreactor";
+	operating = 1
+	},
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/waste)
 "gGf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -32377,7 +32391,7 @@
 /area/iskhod/crew_quarters/bar)
 "ijy" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/drinks/mug/moebius/bio,
+/obj/item/reagent_containers/drinks/mug/moebius/bio/overseer,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
 "ikc" = (
@@ -34205,6 +34219,13 @@
 /obj/structure/dispenser,
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/medical/genetics)
+"iGH" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/waste)
 "iGM" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -36634,7 +36655,7 @@
 "jkD" = (
 /obj/structure/table/woodentable,
 /obj/item/reagent_containers/drinks/mug/one{
-	name = "Head of Staff mug"
+	name = "Governor mug"
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
@@ -40875,14 +40896,15 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/command/Priest)
 "knw" = (
-/obj/machinery/conveyor{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/plasticflaps,
+/obj/machinery/conveyor/east{
+	id = "junk_to_bioreactor";
+	operating = 1
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
 "knC" = (
@@ -41282,7 +41304,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/command{
-	name = "HoS Office";
+	name = "Steward's Office";
 	req_access = list(20)
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -43093,27 +43115,28 @@
 /turf/simulated/floor/reinforced/oxygen,
 /area/iskhod/engineering/atmos)
 "kQL" = (
-/obj/structure/table/marble,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
+/obj/structure/table/marble,
 /obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
+	pixel_y = -3;
+	pixel_x = -5
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
+	pixel_y = -3;
+	pixel_x = 5
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
+	pixel_y = -3
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
+	pixel_y = 3;
+	pixel_x = 3
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
-	},
-/obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
+	pixel_y = 3;
+	pixel_x = -3
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/rnd/rbreakroom)
@@ -48210,9 +48233,6 @@
 /turf/simulated/floor/reinforced/airmix,
 /area/iskhod/engineering/atmos)
 "mhq" = (
-/obj/machinery/conveyor{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -48222,6 +48242,10 @@
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/recycler,
 /obj/structure/invislight,
+/obj/machinery/conveyor/east{
+	id = "junk_to_bioreactor";
+	operating = 1
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
 "mhx" = (
@@ -50015,6 +50039,7 @@
 "mFa" = (
 /obj/structure/bed/chair/comfy/black,
 /obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/pg,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain)
 "mFf" = (
@@ -65869,6 +65894,7 @@
 /area/iskhod/engineering/atmos)
 "qHU" = (
 /obj/structure/closet/secure_closet/reinforced/captains,
+/obj/item/rig/hazard/steward,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters)
 "qIc" = (
@@ -67986,10 +68012,8 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/derelict/abandoned_area)
 "rjr" = (
-/obj/item/modular_computer/console/preset/security/records{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/secure_closet/reinforced/hop,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain)
 "rjH" = (
@@ -69534,7 +69558,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/command{
-	name = "HoS Quarters";
+	name = "Governor's Quarters";
 	req_access = list(20);
 	id_tag = "HoS Bolts"
 	},
@@ -74545,9 +74569,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Research Overseer mug"
-	},
+/obj/item/reagent_containers/drinks/mug/moebius/sci/overseer,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
 "sVe" = (
@@ -76969,7 +76991,7 @@
 /area/iskhod/outside/inside_colony)
 "tAd" = (
 /obj/structure/bed/chair/office/light{
-	name = "Medical Overseer seat"
+	name = "Biolabs Overseer seat"
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
@@ -78211,6 +78233,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
+"tRj" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor_switch/oneway{
+	convdir = -1;
+	id = "junk_to_bioreactor"
+	},
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/waste)
 "tRv" = (
 /obj/structure/table/gamblingtable,
 /obj/item/bikehorn/rubberducky,
@@ -86791,15 +86824,14 @@
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/engineering/engine_room)
 "wdO" = (
-/obj/item/hydrogen_fuel_cell,
-/obj/item/hydrogen_fuel_cell,
-/obj/item/hydrogen_fuel_cell,
-/obj/item/hydrogen_fuel_cell,
 /obj/structure/table/rack/shelf,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 27
 	},
+/obj/item/storage/box/hydrogen_cell,
+/obj/item/hydrogen_fuel_cell/backpack,
+/obj/item/hydrogen_fuel_cell/backpack,
 /turf/simulated/floor/tiled/dark/panels,
 /area/iskhod/rnd/misc_lab)
 "wdW" = (
@@ -92761,9 +92793,6 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/security/detectives_office)
 "xJg" = (
-/obj/machinery/conveyor{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -92784,6 +92813,10 @@
 	dir = 8
 	},
 /obj/structure/invislight,
+/obj/machinery/conveyor/east{
+	id = "junk_to_bioreactor";
+	operating = 1
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
 "xJm" = (
@@ -113992,7 +114025,7 @@ wIQ
 isv
 ouZ
 oUO
-bMm
+tRj
 dDd
 ncf
 ewG
@@ -114194,7 +114227,7 @@ pGe
 fjC
 uTC
 oUO
-bMm
+iGH
 dDd
 ncf
 ewG
@@ -114396,8 +114429,8 @@ eDD
 wCO
 gtA
 nvh
-bMm
-dDd
+iGH
+gFX
 ncf
 ewG
 aJE
@@ -114598,7 +114631,7 @@ pGe
 bpW
 uEY
 ewG
-bMm
+iGH
 dDd
 ncf
 ewG
@@ -114800,7 +114833,7 @@ wIQ
 sWF
 vml
 ewG
-bMm
+iGH
 dDd
 ncf
 ewG
