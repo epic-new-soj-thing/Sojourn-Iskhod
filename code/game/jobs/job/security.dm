@@ -130,7 +130,7 @@
 	spawn_positions = 2
 	supervisors = "the Captain"
 	difficulty = "Hard."
-	noob_name = "Junior Ranger"
+	noob_name = "Junior Detective"
 	alt_titles = list("Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL

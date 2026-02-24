@@ -2,8 +2,12 @@
 "aam" = (
 /obj/structure/table/woodentable,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/hand_tele,
+/obj/item/stamp/captain,
 /turf/simulated/floor/carpet/turcarpet,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "aao" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
@@ -1028,11 +1032,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "aln" = (
-/obj/structure/multiz/stairs/active{
-	dir = 8
-	},
-/turf/simulated/open,
-/area/colony)
+/obj/structure/railing,
+/turf/unsimulated/floor/shuttle_ceiling,
+/area/iskhod/pros/shuttle)
 "alq" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -1056,6 +1058,17 @@
 /obj/item/target,
 /turf/simulated/floor/tiled/steel/danger,
 /area/iskhod/security/range)
+"amf" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -20
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/workshop)
 "ami" = (
 /obj/machinery/door/firedoor,
 /obj/effect/window_lwall_spawn,
@@ -1246,7 +1259,9 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "apg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood/wild2,
@@ -1267,7 +1282,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/level3)
 "apQ" = (
@@ -1493,7 +1509,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "asi" = (
 /obj/structure/table/woodentable,
 /obj/item/storage/fancy/cigar,
@@ -1904,7 +1922,9 @@
 "axU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "axW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/misc/enlist{
@@ -2382,7 +2402,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "aCD" = (
 /obj/structure/toilet{
 	dir = 8
@@ -3043,10 +3065,8 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/hallway/main/f1section4)
 "aMu" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
+/obj/structure/low_wall,
+/turf/simulated/wall/r_wall,
 /area/iskhod/pros/shuttle_landing_zone)
 "aMy" = (
 /obj/structure/reagent_dispensers/biomatter/large,
@@ -3600,7 +3620,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "aTL" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -4082,6 +4104,12 @@
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/industrial,
 /area/iskhod/crew_quarters/techshop)
+"aZK" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/mineral/planet,
+/area/iskhod/hallway/main/f1section1)
 "aZO" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
@@ -4439,7 +4467,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "bel" = (
@@ -5332,6 +5361,15 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
 "bpO" = (
@@ -5826,7 +5864,9 @@
 "bvF" = (
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "bvH" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -5937,6 +5977,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/atmos)
+"bwQ" = (
+/obj/effect/step_trigger/surface_to_forest_1_B,
+/turf/unsimulated/mineral/transition,
+/area/colony)
 "bwR" = (
 /obj/effect/floor_decal/fact_plaque/med4,
 /obj/structure/cable/green{
@@ -6215,6 +6259,17 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/prison)
+"bBk" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/foyer)
 "bBs" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -7239,7 +7294,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "bNx" = (
 /obj/machinery/atm{
 	dir = 1;
@@ -7300,7 +7357,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/surface_colony_footpath)
 "bOC" = (
@@ -7401,7 +7459,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros)
 "bPo" = (
@@ -7633,7 +7692,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "bTQ" = (
@@ -7736,7 +7796,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "bVj" = (
@@ -8022,7 +8083,9 @@
 "bXS" = (
 /obj/machinery/washing_machine,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "bXZ" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
@@ -8653,7 +8716,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "ceT" = (
@@ -9005,11 +9069,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section4)
 "ckh" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/holodeck/alphadeck)
+/obj/structure/sign/levels/section1,
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/hallway/main/f1section1)
 "cki" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -9218,12 +9280,6 @@
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
-"cnr" = (
-/obj/structure/multiz/stairs/enter{
-	dir = 8
-	},
-/turf/simulated/open,
-/area/iskhod/pros/shuttle)
 "cnz" = (
 /obj/item/tool/knife/butch,
 /obj/structure/table/reinforced,
@@ -9409,9 +9465,7 @@
 /turf/simulated/open,
 /area/iskhod/security/maintpost)
 "cpZ" = (
-/obj/structure/multiz/stairs/active/bottom{
-	dir = 8
-	},
+/obj/structure/railing,
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section4)
 "cqa" = (
@@ -9700,6 +9754,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/misc_lab)
+"csW" = (
+/obj/structure/multiz/stairs/active{
+	dir = 8
+	},
+/obj/structure/railing,
+/turf/simulated/open,
+/area/iskhod/hallway/main/stairwell)
 "cta" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -9982,7 +10043,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "cwg" = (
@@ -10195,7 +10257,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "czf" = (
@@ -10225,6 +10288,12 @@
 /obj/machinery/meter,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
+"czz" = (
+/obj/effect/floor_decal/corner_kafel/white{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/white_large_slates,
+/area/iskhod/crew_quarters/bar)
 "czD" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -10273,7 +10342,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "cAI" = (
@@ -10762,8 +10832,15 @@
 	name = "HoS Quarters";
 	req_access = list(20)
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "cHQ" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/carpet,
@@ -10937,7 +11014,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "cKS" = (
@@ -11190,6 +11268,16 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/pros/prep)
+"cNN" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 1;
+	pixel_y = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/techstorage)
 "cNP" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -11475,7 +11563,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "cRL" = (
@@ -11531,7 +11620,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros)
 "cSd" = (
@@ -11671,6 +11761,10 @@
 /obj/machinery/light,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
+"cUu" = (
+/obj/effect/step_trigger/surface_to_forest_1_A,
+/turf/unsimulated/mineral/transition,
+/area/colony)
 "cUN" = (
 /obj/structure/window/basic/iskhod{
 	dir = 8
@@ -11892,7 +11986,9 @@
 /obj/item/device/radio/intercom{
 	pixel_y = 25
 	},
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "cYq" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
@@ -12561,7 +12657,7 @@
 /area/iskhod/crew_quarters/toilet/public)
 "dhd" = (
 /obj/machinery/photocopier/faxmachine{
-	department = "LC Meeting Room Rep"
+	department = "LC Meeting Room"
 	},
 /obj/structure/table/woodentable,
 /turf/simulated/floor/wood/wild2,
@@ -13064,9 +13160,8 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
 "dnR" = (
-/obj/structure/sign/levels/stairsdown,
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/hallway/main/stairwell)
+/turf/unsimulated/mineral/transition,
+/area/iskhod/outside/inside_colony/west)
 "dnU" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
@@ -13151,6 +13246,13 @@
 /obj/item/circuitboard/smelter,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/techstorage)
+"doW" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/breakroom)
 "dpa" = (
 /obj/machinery/power/apc{
 	cell_type = /obj/item/cell/large/moebius/nuclear;
@@ -13185,6 +13287,13 @@
 /obj/item/stool/padded,
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
+"dpC" = (
+/obj/structure/disposalpipe/junction{
+	dir = 8;
+	icon_state = "pipe-j2"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/main/f1section1)
 "dpF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -13516,7 +13625,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "dsW" = (
@@ -13671,7 +13781,9 @@
 /obj/machinery/papershredder,
 /obj/item/paper/crumpled,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "duH" = (
 /obj/machinery/computer/mecha,
 /obj/machinery/light{
@@ -13741,8 +13853,9 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/xenobiology)
 "dvl" = (
-/turf/simulated/wall/rock/snow,
-/area/iskhod/outside/inside_colony/east)
+/obj/random/cluster/roaches/low_chance,
+/turf/simulated/floor/industrial,
+/area/iskhod/maintenance/undergroundfloor2west)
 "dvm" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/firedoor,
@@ -14302,7 +14415,7 @@
 	dir = 8;
 	tag = "icon-railing0 (WEST)"
 	},
-/turf/simulated/wall/rock/snow,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle_landing_zone)
 "dBc" = (
 /obj/structure/table/reinforced,
@@ -14426,13 +14539,14 @@
 /turf/simulated/floor/asteroid,
 /area/iskhod/maintenance/northcave)
 "dDd" = (
-/obj/machinery/conveyor{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/machinery/conveyor/east{
+	id = "junk_to_bioreactor";
+	operating = 1
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
 "dDj" = (
@@ -14659,7 +14773,15 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
+"dGJ" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/engine_room)
 "dGK" = (
 /obj/machinery/door/blast/regular{
 	density = 0;
@@ -14903,7 +15025,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "dJF" = (
@@ -15083,7 +15206,9 @@
 /area/iskhod/hallway/side/f2section3)
 "dMr" = (
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "dME" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/corner_techfloor_gray/diagonal,
@@ -15186,10 +15311,6 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/iskhod/security/maingate)
-"dNQ" = (
-/obj/structure/railing,
-/turf/simulated/floor/tiled/dark/golden,
-/area/junk_tractor_beam)
 "dNS" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -15281,7 +15402,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "dPc" = (
 /obj/structure/railing{
 	dir = 4;
@@ -15438,8 +15561,15 @@
 /area/iskhod/hallway/surface/section1)
 "dSd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "dSr" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -15550,7 +15680,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "dTD" = (
 /obj/random/scrap/moderate_weighted,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -15564,8 +15696,14 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/guild)
 "dTN" = (
-/turf/simulated/wall/rock/snow,
-/area/iskhod/outside/surface_colony_footpath)
+/obj/structure/low_wall,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/pros/shuttle_landing_zone)
 "dTO" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/decal/cleanable/dirt,
@@ -15753,7 +15891,7 @@
 	dir = 4;
 	tag = "icon-railing0 (EAST)"
 	},
-/turf/simulated/wall/rock/snow,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle_landing_zone)
 "dWT" = (
 /obj/structure/closet/wall_mounted/emcloset{
@@ -15771,8 +15909,15 @@
 "dXf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "dXo" = (
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 4
@@ -15859,10 +16004,6 @@
 "dYv" = (
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 4
-	},
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
 	},
 /turf/simulated/open,
 /area/iskhod/hallway/main/stairwell)
@@ -16071,12 +16212,6 @@
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
-"ebD" = (
-/obj/structure/multiz/stairs/enter{
-	dir = 8
-	},
-/turf/simulated/open,
-/area/colony)
 "ebF" = (
 /obj/structure/cable/yellow{
 	d2 = 8;
@@ -16214,15 +16349,6 @@
 "edm" = (
 /turf/simulated/open,
 /area/iskhod/pit/level2)
-"edt" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_border{
-	dir = 1
-	},
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/maintenance_common,
-/obj/random/traps/low_chance,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/crew_quarters/bar)
 "edu" = (
 /obj/structure/multiz/stairs/enter{
 	dir = 4
@@ -16578,7 +16704,7 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/floor/tiled/dark/monofloor,
+/turf/simulated/floor/tiled/dark/golden,
 /area/junk_tractor_beam)
 "eiq" = (
 /turf/simulated/wall/iskhod_red,
@@ -16665,7 +16791,9 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/patient_wing)
 "ejl" = (
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/surface_colony_footpath)
 "ejm" = (
 /obj/machinery/holoposter{
@@ -17094,7 +17222,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/landmark/join/start/premier,
 /turf/simulated/floor/carpet/turcarpet,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "eoq" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/unsimulated/mineral/cold,
@@ -17108,7 +17238,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "eoy" = (
 /obj/random/lowkeyrandom/low_chance,
 /turf/simulated/floor/plating/under,
@@ -17411,7 +17543,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "esb" = (
@@ -17536,7 +17669,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/command/bridge)
+/area/iskhod/command/panic_room)
 "eud" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/carpet/sblucarpet,
@@ -18209,7 +18342,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "eCx" = (
@@ -18254,7 +18388,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/level3)
 "eDe" = (
@@ -18827,11 +18962,19 @@
 /obj/machinery/button/remote/blast_door{
 	name = "Office Shutters";
 	id = "HOP Shutters";
-	req_access = list(20)
+	req_access = list(20);
+	pixel_x = -5;
+	pixel_y = 2
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/recharger{
+	pixel_x = 5;
+	pixel_y = 3
+	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "eKJ" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
@@ -19922,10 +20065,6 @@
 /turf/simulated/mineral/planet,
 /area/iskhod/maintenance/undergroundfloor2north)
 "faM" = (
-/obj/structure/bed/chair/office/light{
-	name = "VIP";
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -19936,6 +20075,10 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/bed/chair/office/light{
+	name = "VIP";
+	dir = 4
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
@@ -19994,7 +20137,9 @@
 /area/iskhod/pros/prep)
 "fba" = (
 /turf/simulated/wall/iskhod_blue,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "fbe" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
@@ -20192,7 +20337,9 @@
 /area/iskhod/maintenance/undergroundfloor2central)
 "fcY" = (
 /turf/simulated/wall/iskhod_blue,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "fda" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -20212,7 +20359,7 @@
 "fdi" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1;
-	name = "Head of Staff seat"
+	name = "Governor seat"
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
@@ -20343,7 +20490,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "feF" = (
@@ -20514,7 +20662,9 @@
 	pixel_x = -28
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "fhs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder{
@@ -20599,7 +20749,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "fjv" = (
 /obj/machinery/computer/prisoner{
 	dir = 8;
@@ -21164,22 +21316,23 @@
 	dir = 8
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
+	pixel_y = -3;
+	pixel_x = -5
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
+	pixel_y = -3
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
+	pixel_y = 3;
+	pixel_x = -3
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
+	pixel_y = -3;
+	pixel_x = 5
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
-	},
-/obj/item/reagent_containers/drinks/mug/moebius/bio{
-	name = "VA Biolabs mug"
+	pixel_y = 3;
+	pixel_x = 3
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/medical/medbreak)
@@ -21765,7 +21918,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "fyk" = (
@@ -22042,7 +22196,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "fAA" = (
@@ -22087,8 +22242,15 @@
 	},
 /obj/machinery/hologram/holopad,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/carpet/turcarpet,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "fBv" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
 /obj/effect/decal/cleanable/dirt,
@@ -22281,7 +22443,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "fEH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -22599,7 +22763,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "fIK" = (
@@ -23267,7 +23432,9 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "fRQ" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/shuttle/floor/mining{
@@ -23329,7 +23496,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "fSq" = (
@@ -23690,8 +23858,13 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/requests_console/preset/command/premier{
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "fYu" = (
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/docking)
@@ -23751,7 +23924,12 @@
 	dir = 4
 	},
 /obj/structure/railing/grey,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
 /area/iskhod/pros/shuttle_landing_zone)
 "fZO" = (
 /obj/effect/floor_decal/industrial_plant,
@@ -23915,7 +24093,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "gck" = (
 /obj/machinery/vending/assist,
 /obj/machinery/camera/network/colony_underground,
@@ -24481,6 +24661,17 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/security/prison)
+"gjc" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
+	},
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/command/gmaster)
 "gjf" = (
 /obj/structure/closet/secure_closet/xenoarchaeologist,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -24769,6 +24960,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
+"gmb" = (
+/obj/effect/step_trigger/swampcaves_to_riverforest_1_B,
+/turf/simulated/floor/rock/dark,
+/area/colony)
 "gmz" = (
 /obj/structure/boulder{
 	pixel_x = -1
@@ -25318,7 +25513,9 @@
 /obj/item/clothing/accessory/medal/bronze_heart,
 /obj/item/reagent_containers/atomic_distillery,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "gtr" = (
 /obj/machinery/computer/arcade/orion_trail,
 /turf/simulated/floor/carpet/gaycarpet,
@@ -25374,7 +25571,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros)
 "gui" = (
@@ -25462,7 +25660,6 @@
 /obj/machinery/camera/network/colony_surface{
 	dir = 8
 	},
-/obj/structure/multiz/ladder/up,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section3)
 "guR" = (
@@ -26163,7 +26360,9 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
 	},
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "gDF" = (
 /turf/simulated/floor/tiled/dark/cargo,
@@ -26334,6 +26533,18 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates_fixed,
 /area/iskhod/medical/morgue)
+"gFX" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/smelter/cargo_t2_parts,
+/obj/machinery/conveyor/east{
+	id = "junk_to_bioreactor";
+	operating = 1
+	},
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/waste)
 "gGf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -26592,7 +26803,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "gJW" = (
@@ -27189,11 +27401,8 @@
 /turf/simulated/floor/industrial/ornate,
 /area/iskhod/crew_quarters/library)
 "gQO" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/pros/shuttle_landing_zone)
+/turf/simulated/floor/hull,
+/area/colony)
 "gQP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
@@ -27272,7 +27481,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "gSo" = (
@@ -27913,10 +28123,6 @@
 /obj/random/cluster/spiders,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/outside/scave)
-"hca" = (
-/obj/structure/multiz/ladder,
-/turf/simulated/floor/plating/under,
-/area/iskhod/pros/shuttle)
 "hcb" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -28029,7 +28235,9 @@
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "hdW" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -28309,7 +28517,9 @@
 /obj/effect/floor_decal/industrial/outline,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "hhh" = (
 /obj/effect/floor_decal/industrial/warningwhite/corner,
 /turf/simulated/floor/industrial/blue_slates,
@@ -28501,13 +28711,10 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section2)
 "hld" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_alt,
-/obj/structure/sign/levels/section1{
-	pixel_y = -32
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
 	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/hallway/main/stairwell)
+/area/turbolift/ElevatorTwo/midlevelOne)
 "hli" = (
 /obj/item/device/scanner/xenobio,
 /obj/structure/table/rack,
@@ -28810,7 +29017,9 @@
 /obj/random/furniture/pottedplant,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "hqs" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -28883,7 +29092,9 @@
 	pixel_y = 25
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "hqW" = (
 /obj/machinery/light{
 	dir = 1
@@ -30433,7 +30644,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/hallway/surface/section3)
 "hLa" = (
@@ -30598,6 +30810,13 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/panic_room)
+"hOh" = (
+/obj/structure/multiz/stairs/enter{
+	dir = 8
+	},
+/obj/structure/railing,
+/turf/simulated/open,
+/area/iskhod/hallway/main/stairwell)
 "hOu" = (
 /obj/structure/table/reinforced,
 /obj/machinery/power/apc{
@@ -30855,7 +31074,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "hRc" = (
@@ -31254,7 +31474,9 @@
 "hVE" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/wall/iskhod_blue,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "hVF" = (
 /turf/simulated/mineral/planet,
 /area/iskhod/maintenance/guild)
@@ -31369,7 +31591,8 @@
 /area/iskhod/maintenance/undergroundfloor2south)
 "hXf" = (
 /obj/machinery/rotating_alarm/supermatter{
-	dir = 4
+	dir = 4;
+	pixel_x = 15
 	},
 /turf/simulated/wall/r_wall,
 /area/iskhod/engineering/engine_room)
@@ -31487,7 +31710,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "hYw" = (
@@ -32038,7 +32262,12 @@
 /area/iskhod/rnd/rbreakroom)
 "ihq" = (
 /obj/machinery/rotating_alarm/supermatter{
-	dir = 4
+	dir = 4;
+	pixel_x = 15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
 	},
 /turf/simulated/wall/r_wall,
 /area/iskhod/engineering/engine_airlock)
@@ -32222,7 +32451,7 @@
 /area/iskhod/crew_quarters/bar)
 "ijy" = (
 /obj/structure/table/woodentable,
-/obj/item/reagent_containers/drinks/mug/moebius/bio,
+/obj/item/reagent_containers/drinks/mug/moebius/bio/overseer,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
 "ikc" = (
@@ -32259,9 +32488,6 @@
 /area/iskhod/maintenance/undergroundfloor2south)
 "ikB" = (
 /obj/structure/sign/atmos/atmos_air,
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
-	invisibility = 101
-	},
 /turf/simulated/floor/reinforced/airmix,
 /area/iskhod/engineering/atmos)
 "ikH" = (
@@ -32395,7 +32621,6 @@
 "imP" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/glass_medical{
@@ -33151,12 +33376,13 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/security/armory)
-"iwP" = (
-/obj/structure/table/rack/shelf,
-/obj/effect/floor_decal/industrial/hatch,
+"iwS" = (
+/obj/structure/multiz/stairs/active{
+	dir = 4
+	},
 /obj/structure/railing,
-/turf/simulated/floor/tiled/dark/monofloor,
-/area/junk_tractor_beam)
+/turf/simulated/open,
+/area/iskhod/hallway/main/stairwell)
 "iwW" = (
 /obj/machinery/autolathe/rnd/protolathe/loaded,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -33322,6 +33548,16 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/security/showers)
+"izl" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 1;
+	pixel_y = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/workshop)
 "izs" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /obj/machinery/light{
@@ -33843,10 +34079,6 @@
 	dir = 4;
 	pixel_x = -8
 	},
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
-	},
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/junk_tractor_beam)
 "iFm" = (
@@ -34047,6 +34279,13 @@
 /obj/structure/dispenser,
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/medical/genetics)
+"iGH" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/waste)
 "iGM" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -34544,6 +34783,10 @@
 /obj/landmark/join/start/officer,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
+"iMy" = (
+/obj/effect/decal/cleanable/rubble,
+/turf/simulated/mineral/planet,
+/area/iskhod/hallway/main/f1section1)
 "iMC" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/industrial/caution{
@@ -34631,7 +34874,9 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "iNZ" = (
 /obj/structure/table/bench/standard,
 /turf/simulated/floor/industrial/navy_slates,
@@ -34843,12 +35088,19 @@
 "iQN" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
+/obj/machinery/door/window/iskhod{
+	dir = 2;
+	name = "steward's desk";
+	req_access = list(57)
+	},
 /obj/machinery/door/blast/shutters{
 	name = "Office Shutters";
 	id = "HOP Shutters"
 	},
 /turf/simulated/floor/plating/under,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "iQQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -35133,8 +35385,11 @@
 /area/iskhod/engineering/engine_room)
 "iUC" = (
 /obj/effect/decal/cleanable/rubble,
-/obj/structure/boulder,
-/turf/simulated/floor/rock/dark,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/mineral/planet,
 /area/iskhod/hallway/main/f1section1)
 "iUG" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
@@ -35947,6 +36202,10 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/crew_quarters/cafeteria)
+"jeC" = (
+/obj/effect/window_lwall_spawn/reinforced/polarized,
+/turf/simulated/floor/plating/under,
+/area/iskhod/command/hallway)
 "jeI" = (
 /obj/structure/closet/lasertag/green,
 /turf/simulated/floor/wood/wild1,
@@ -36124,6 +36383,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/pros/prep)
+"jgT" = (
+/obj/structure/railing,
+/turf/simulated/open,
+/area/iskhod/maintenance/undergroundfloor2south)
 "jgV" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4;
@@ -36450,7 +36713,7 @@
 "jkD" = (
 /obj/structure/table/woodentable,
 /obj/item/reagent_containers/drinks/mug/one{
-	name = "Head of Staff mug"
+	name = "Governor mug"
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
@@ -36946,7 +37209,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "jqB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -36957,6 +37222,13 @@
 	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
+"jqG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/junction{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/iskhod/medical/biostorage)
 "jqO" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
@@ -37610,7 +37882,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "jAb" = (
@@ -37973,6 +38246,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/breakroom)
+"jEj" = (
+/obj/machinery/camera/network/colony_underground{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/main/f1section1)
 "jEv" = (
 /obj/effect/window_lwall_spawn/plasma/reinforced,
 /obj/machinery/door/blast/regular/open{
@@ -38283,7 +38562,7 @@
 	dir = 8;
 	pixel_x = 25
 	},
-/turf/simulated/floor/tiled/dark/monofloor,
+/turf/simulated/floor/tiled/dark/golden,
 /area/junk_tractor_beam)
 "jIn" = (
 /obj/effect/decal/cleanable/dirt,
@@ -39220,7 +39499,9 @@
 /obj/structure/bed/chair,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "jUO" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/machinery/suit_storage_unit/standard_unit,
@@ -39526,7 +39807,9 @@
 /obj/item/device/lighting/toggleable/lamp/green,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "jYr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -40677,14 +40960,15 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/command/Priest)
 "knw" = (
-/obj/machinery/conveyor{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/plasticflaps,
+/obj/machinery/conveyor/east{
+	id = "junk_to_bioreactor";
+	operating = 1
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
 "knC" = (
@@ -40955,11 +41239,10 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/structure/disposalpipe/junction{
-	dir = 8;
-	icon_state = "pipe-j2"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
 /turf/simulated/floor/reinforced,
 /area/iskhod/hallway/side/f2section1)
 "kqM" = (
@@ -41085,12 +41368,14 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/command{
-	name = "HoS Office";
-	req_access = list(20)
+	name = "Steward's Office";
+	req_access = list(57)
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "ksg" = (
 /obj/structure/disposalpipe/segment,
 /obj/item/device/radio/intercom{
@@ -41365,7 +41650,9 @@
 "kwf" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized,
 /turf/simulated/floor/plating/under,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "kwG" = (
 /obj/machinery/firealarm{
 	pixel_y = 32
@@ -41647,7 +41934,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "kAZ" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -42351,7 +42640,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/command/bridge)
+/area/iskhod/command/hallway)
 "kJc" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 10
@@ -42513,7 +42802,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "kLz" = (
@@ -42684,7 +42974,6 @@
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/hallway/main/f1section2)
 "kNY" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/hologram/holopad,
@@ -42896,37 +43185,34 @@
 /turf/simulated/floor/reinforced/oxygen,
 /area/iskhod/engineering/atmos)
 "kQL" = (
-/obj/structure/table/marble,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
 	},
+/obj/structure/table/marble,
 /obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
+	pixel_y = -3;
+	pixel_x = -5
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
+	pixel_y = -3;
+	pixel_x = 5
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
+	pixel_y = -3
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
+	pixel_y = 3;
+	pixel_x = 3
 	},
 /obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
-	},
-/obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Science mug"
+	pixel_y = 3;
+	pixel_x = -3
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/rnd/rbreakroom)
 "kQN" = (
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 8
-	},
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
 	},
 /turf/simulated/open,
 /area/iskhod/hallway/main/stairwell)
@@ -43342,7 +43628,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "kVd" = (
@@ -43774,7 +44061,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "lbI" = (
@@ -43914,7 +44202,9 @@
 "leK" = (
 /obj/structure/filingcabinet/security,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "leN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -45154,11 +45444,14 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prisoncells)
 "ltk" = (
-/obj/structure/multiz/stairs/active{
-	dir = 8
+/obj/random/cluster/roaches/low_chance,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/open,
-/area/iskhod/pros/shuttle)
+/turf/simulated/floor/industrial,
+/area/iskhod/maintenance/undergroundfloor2west)
 "ltl" = (
 /obj/structure/table/woodentable,
 /obj/item/device/camera_film,
@@ -46009,7 +46302,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "lFW" = (
@@ -46082,7 +46376,9 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2east)
 "lHa" = (
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "lHc" = (
 /obj/structure/table/reinforced,
@@ -46145,7 +46441,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "lIF" = (
 /obj/structure/cable/cyan{
 	d2 = 8;
@@ -46393,11 +46691,12 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "lMx" = (
-/obj/structure/window/reinforced/iskhod,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/invislight,
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/bar)
+/obj/structure/multiz/stairs/enter{
+	dir = 4
+	},
+/obj/structure/railing,
+/turf/simulated/open,
+/area/iskhod/hallway/main/stairwell)
 "lMO" = (
 /turf/simulated/wall/rock/snow,
 /area/iskhod/outside/scave)
@@ -46607,7 +46906,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "lQr" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -47381,7 +47682,9 @@
 "lYT" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "lYW" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor/industrial/navy_large_slates,
@@ -47867,8 +48170,15 @@
 	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "mfA" = (
 /obj/machinery/honey_extractor,
 /obj/machinery/light{
@@ -47976,7 +48286,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/surface)
 "mgX" = (
@@ -48007,9 +48318,6 @@
 /turf/simulated/floor/reinforced/airmix,
 /area/iskhod/engineering/atmos)
 "mhq" = (
-/obj/machinery/conveyor{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -48019,6 +48327,10 @@
 /obj/effect/floor_decal/industrial/warning,
 /obj/machinery/recycler,
 /obj/structure/invislight,
+/obj/machinery/conveyor/east{
+	id = "junk_to_bioreactor";
+	operating = 1
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
 "mhx" = (
@@ -48050,7 +48362,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "mhB" = (
@@ -48471,7 +48784,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/command/bridge)
+/area/iskhod/command/hallway)
 "mny" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -48741,6 +49054,11 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/guild)
+"mrn" = (
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/medical/reception{
+	name = "Biolab - Biowaste Processing"
+	})
 "mrr" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -48805,10 +49123,6 @@
 /turf/simulated/floor/plating/under,
 /area/colony)
 "mrV" = (
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
-	},
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "9,23"
 	},
@@ -48920,7 +49234,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "msK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/bed/chair/custom/wood,
@@ -49746,7 +50062,6 @@
 	},
 /area/iskhod/service/freezer)
 "mEB" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
 	dir = 8
 	},
@@ -49799,7 +50114,9 @@
 /obj/structure/bed/chair/comfy/black,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "mFf" = (
 /obj/structure/table/marble,
 /obj/random/material/low_chance,
@@ -50220,7 +50537,9 @@
 /obj/item/towel/random,
 /obj/item/towel/random,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "mKN" = (
 /obj/structure/table/rack,
 /obj/item/towel/random,
@@ -50344,12 +50663,15 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/surgery)
 "mNm" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/white/cyancorner,
-/area/iskhod/medical/medbay/uppercor)
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 1;
+	pixel_y = 15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/workshop)
 "mNw" = (
 /obj/machinery/portable_atmospherics/hydroponics{
 	pixel_y = 4
@@ -50413,7 +50735,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "mOu" = (
@@ -51141,7 +51464,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "mYp" = (
@@ -51372,7 +51696,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "ncl" = (
@@ -51853,7 +52178,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/level3)
 "nhB" = (
@@ -52034,6 +52360,10 @@
 	req_access = list(5)
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/medical/reception)
 "njK" = (
@@ -52049,7 +52379,9 @@
 	dir = 2
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "njW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/cluster/roaches_hoard,
@@ -52151,15 +52483,6 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/crew_quarters/cafeteria)
-"nlG" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/machinery/newscaster{
-	pixel_y = -34
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/hallway/main/f1section1)
 "nlI" = (
 /obj/machinery/light{
 	dir = 1
@@ -52200,7 +52523,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "nmM" = (
@@ -53014,7 +53338,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/scave)
 "nui" = (
@@ -53688,7 +54013,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "nBT" = (
 /obj/landmark/join/start/robostudent,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -53702,7 +54029,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/machinery/door/window/iskhod{
 	dir = 2;
-	name = "Shop door"
+	name = "front desk"
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/crew_quarters/techshop)
@@ -53776,6 +54103,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/morgue)
+"nCO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/main/f1section1)
 "nCV" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -53799,7 +54132,7 @@
 /turf/simulated/mineral/planet,
 /area/iskhod/maintenance/undergroundfloor1east)
 "nDb" = (
-/turf/simulated/wall/rock/snow,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle)
 "nDd" = (
 /obj/effect/decal/cleanable/dirt,
@@ -54038,7 +54371,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/scave)
 "nGM" = (
@@ -54297,7 +54631,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "nKB" = (
@@ -54594,7 +54929,7 @@
 /area/iskhod/engineering/engine_room)
 "nPi" = (
 /obj/structure/railing,
-/turf/simulated/wall/rock/snow,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/colony)
 "nPm" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
@@ -55050,10 +55385,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/monofloor,
+/turf/simulated/floor/tiled/dark/golden,
 /area/junk_tractor_beam)
 "nUU" = (
 /obj/structure/disposalpipe/segment{
@@ -55268,6 +55600,13 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
+"nXT" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -16
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/locker_room)
 "nYg" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -55398,7 +55737,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "nZj" = (
@@ -55953,7 +56293,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "oiH" = (
@@ -56457,7 +56798,7 @@
 	dir = 1;
 	tag = "icon-railing0 (NORTH)"
 	},
-/turf/simulated/wall/rock/snow,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle)
 "ooX" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
@@ -56758,7 +57099,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "orv" = (
@@ -57176,7 +57518,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/danger,
-/area/iskhod/command/bridge)
+/area/iskhod/command/panic_room)
 "oxl" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -57280,7 +57622,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "oyz" = (
@@ -57839,8 +58182,19 @@
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/rnd/rbreakroom)
 "oHT" = (
-/turf/simulated/wall/rock/snow,
-/area/iskhod/outside/inside_colony/west)
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/pros/shuttle_landing_zone)
 "oHY" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow,
 /obj/effect/decal/cleanable/dirt,
@@ -57877,7 +58231,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/scave)
 "oIt" = (
@@ -58282,7 +58637,7 @@
 	old_lock_odds = -20
 	},
 /obj/effect/floor_decal/industrial/loading/white,
-/turf/simulated/floor/tiled/dark/monofloor,
+/turf/simulated/floor/tiled/dark/golden,
 /area/junk_tractor_beam)
 "oOE" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -58984,10 +59339,6 @@
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
 	},
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
-	},
 /turf/simulated/open,
 /area/iskhod/hallway/main/stairwell)
 "oWW" = (
@@ -59013,6 +59364,12 @@
 /obj/effect/floor_decal/industrial/warning/corner,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2west)
+"oXc" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/command/gmaster)
 "oXg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/yellow{
@@ -59296,7 +59653,7 @@
 /area/iskhod/hallway/main/f1section1)
 "pah" = (
 /obj/structure/invislight,
-/turf/simulated/wall/rock/snow,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/colony)
 "pam" = (
 /obj/structure/disposalpipe/segment,
@@ -59305,7 +59662,9 @@
 	pixel_x = 27
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "pau" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -59325,7 +59684,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "paN" = (
@@ -59561,7 +59921,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/simulated/open,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle)
 "pdF" = (
 /obj/structure/disposalpipe/segment,
@@ -59859,7 +60219,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/surface)
 "phL" = (
@@ -59891,10 +60252,12 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/camera/network/medbay,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
@@ -59902,12 +60265,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/structure/cable/green{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/camera/network/medbay,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
 "pit" = (
@@ -60706,20 +61063,6 @@
 	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/command/merchant)
-"pst" = (
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472
-	},
-/area/iskhod/outside/inside_colony)
 "psv" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -60997,7 +61340,12 @@
 /obj/structure/railing/grey{
 	dir = 4
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
 /area/iskhod/pros/shuttle_landing_zone)
 "pwf" = (
 /obj/effect/decal/cleanable/dirt,
@@ -61512,7 +61860,7 @@
 /area/iskhod/maintenance/undergroundfloor1west)
 "pCQ" = (
 /obj/structure/bed/chair/office/light{
-	name = "Operation Manager seat"
+	name = "Quartermaster seat"
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
@@ -61747,6 +62095,16 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/changing_room/pool)
+"pGe" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 1;
+	pixel_y = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering)
 "pGj" = (
 /obj/structure/disposalpipe/junction{
 	dir = 1
@@ -62081,7 +62439,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "pLD" = (
@@ -62489,7 +62848,7 @@
 /area/iskhod/security/sechall)
 "pRc" = (
 /obj/structure/railing,
-/turf/simulated/wall/rock/snow,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle_landing_zone)
 "pRP" = (
 /obj/structure/railing/grey{
@@ -63135,9 +63494,6 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "pZD" = (
-/obj/machinery/atm{
-	pixel_y = 32
-	},
 /obj/effect/floor_decal/industrial/outline/grey,
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -63170,7 +63526,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "pZP" = (
@@ -64105,8 +64462,15 @@
 "qnm" = (
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/carpet/turcarpet,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "qnr" = (
 /obj/structure/railing{
 	dir = 1;
@@ -64603,7 +64967,9 @@
 "qtP" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "qtX" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
@@ -65005,7 +65371,9 @@
 /area/iskhod/pit/level3)
 "qzK" = (
 /obj/structure/invislight,
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "qzN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -65139,7 +65507,9 @@
 /obj/machinery/door/unpowered/simple/wood{
 	color = "#9a977b"
 	},
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "qCz" = (
 /obj/random/junk/low_chance,
@@ -65186,7 +65556,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "qDo" = (
@@ -65450,7 +65821,12 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/medical/reception)
 "qFY" = (
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
 /area/iskhod/pros/shuttle_landing_zone)
 "qGa" = (
 /turf/simulated/shuttle/wall/escpod{
@@ -65548,8 +65924,13 @@
 /area/iskhod/engineering/atmos)
 "qHU" = (
 /obj/structure/closet/secure_closet/reinforced/captains,
+/obj/item/rig/hazard/steward,
+/obj/item/card/id/captains_spare,
+/obj/item/storage/secure/briefcase/nukedisk,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "qIc" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
@@ -65777,6 +66158,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section3)
+"qKR" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/simple/cat/fluff/Runtime,
+/turf/simulated/floor/carpet/sblucarpet,
+/area/iskhod/command/cbo/quarters)
 "qKV" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/hallway/main/f1section2)
@@ -65977,7 +66363,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "qOD" = (
@@ -66876,14 +67263,13 @@
 	pixel_x = -5
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood,
-/area/iskhod/command/captain)
-"ras" = (
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 8
+/obj/machinery/requests_console/preset/steward{
+	pixel_x = -32
 	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/hallway/surface/section4)
+/turf/simulated/floor/wood,
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "raK" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "6,3"
@@ -66911,12 +67297,16 @@
 /area/iskhod/quartermaster/office)
 "raT" = (
 /obj/structure/table/woodentable,
-/obj/machinery/recharger,
 /obj/machinery/firealarm{
 	pixel_y = 32
 	},
+/obj/machinery/photocopier/faxmachine{
+	department = "Stewards Office"
+	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "raW" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/dark,
@@ -67438,9 +67828,6 @@
 "rgK" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/floor_decal/industrial/botright/yellow,
-/obj/machinery/light{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/surface/section3)
 "rgL" = (
@@ -67564,7 +67951,9 @@
 /area/iskhod/hallway/surface/section3)
 "rhP" = (
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "rhQ" = (
 /obj/effect/floor_decal/industrial/warningwhite{
 	dir = 8
@@ -67665,12 +68054,12 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/derelict/abandoned_area)
 "rjr" = (
-/obj/item/modular_computer/console/preset/security/records{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "rjH" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -67765,7 +68154,9 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/surface_colony_footpath)
 "rkW" = (
 /obj/structure/disposalpipe/segment,
@@ -68037,6 +68428,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
+"roI" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/foyer)
 "roO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -68117,8 +68514,15 @@
 	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "rpx" = (
 /obj/effect/floor_decal/industrial/warningdust{
 	dir = 4
@@ -68280,17 +68684,6 @@
 "rro" = (
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/pros/foreman)
-"rrx" = (
-/obj/structure/railing,
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472
-	},
-/area/iskhod/outside/inside_colony)
 "rrE" = (
 /obj/machinery/power/apc{
 	dir = 8;
@@ -68448,7 +68841,9 @@
 /obj/item/stack/rods,
 /obj/random/junkfood/low_chance,
 /obj/random/junkfood/low_chance,
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/east)
 "rux" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -68632,7 +69027,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "rxC" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -68939,7 +69336,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "rCE" = (
@@ -69213,12 +69611,14 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/command{
-	name = "HoS Quarters";
+	name = "Governor's Quarters";
 	req_access = list(20);
 	id_tag = "HoS Bolts"
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "rFW" = (
 /obj/random/scrap/sparse_weighted,
 /turf/simulated/floor/rock/dark,
@@ -69246,8 +69646,8 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/derelict/abandoned_area)
 "rGn" = (
-/turf/simulated/wall/rock/snow,
-/area/iskhod/hallway/surface/section1)
+/turf/simulated/floor/plating/under,
+/area/iskhod/pros/shuttle)
 "rGo" = (
 /obj/machinery/genetics/cloner,
 /obj/structure/disposalpipe/trunk{
@@ -69437,8 +69837,11 @@
 	},
 /obj/item/device/megaphone,
 /obj/effect/decal/cleanable/dirt,
+/obj/item/stamp/hop,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "rIy" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
 /obj/item/reagent_containers/snacks/chocolatebar,
@@ -69546,12 +69949,8 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/guild)
 "rKr" = (
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
-	},
-/turf/simulated/floor/tiled/dark/golden,
-/area/junk_tractor_beam)
+/turf/unsimulated/floor/shuttle_ceiling,
+/area/colony)
 "rKw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_scrubber,
@@ -69742,9 +70141,6 @@
 /area/iskhod/maintenance/undergroundfloor1west)
 "rNI" = (
 /obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/structure/multiz/stairs/active/bottom{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/monofloor,
@@ -69942,7 +70338,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros)
 "rQB" = (
@@ -70076,6 +70473,13 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/holodeck/control)
+"rSs" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 1;
+	pixel_y = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/engine_room)
 "rSB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -70311,6 +70715,7 @@
 /obj/machinery/smartfridge/disk,
 /obj/item/pc_part/drive/disk/design/nonlethal_ammo,
 /obj/item/pc_part/drive/disk/design/lethal_ammo,
+/obj/item/pc_part/drive/disk/design/security,
 /obj/item/pc_part/drive/disk/design/medical,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemstor)
@@ -70346,7 +70751,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/scave)
 "rWD" = (
@@ -70605,7 +71011,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pros)
 "rZf" = (
@@ -71121,7 +71528,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "sfk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -71207,14 +71616,6 @@
 /obj/random/booze/low_chance,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/storage/tech)
-"sgt" = (
-/obj/random/spider_trap_burrowing,
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
-	},
-/turf/simulated/floor/rock/dark,
-/area/iskhod/hallway/main/f1section1)
 "sgu" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -72006,7 +72407,9 @@
 /obj/effect/window_lwall_spawn,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "spv" = (
 /obj/random/contraband,
 /obj/random/scrap/dense_weighted,
@@ -72360,12 +72763,16 @@
 /area/iskhod/maintenance/undergroundfloor2south)
 "suD" = (
 /obj/structure/table/woodentable,
-/obj/item/hand_tele,
 /obj/item/device/radio/intercom{
 	pixel_y = 25
 	},
+/obj/machinery/photocopier/faxmachine{
+	department = "Governors Office"
+	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "suH" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
@@ -72564,7 +72971,7 @@
 	dir = 4;
 	icon_state = "railing0"
 	},
-/turf/simulated/wall/rock/snow,
+/turf/unsimulated/floor/shuttle_ceiling,
 /area/iskhod/pros/shuttle)
 "syl" = (
 /obj/structure/disposalpipe/segment,
@@ -72686,7 +73093,7 @@
 "sAO" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk,
-/turf/simulated/floor/tiled/dark/monofloor,
+/turf/simulated/floor/tiled/dark/golden,
 /area/junk_tractor_beam)
 "sAY" = (
 /obj/structure/cable/cyan{
@@ -73245,7 +73652,9 @@
 "sJV" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "sJZ" = (
 /obj/structure/bed/chair/comfy/black,
 /obj/random/junk/cigbutt,
@@ -73333,7 +73742,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock{
-	name = "Bartender's room";
+	name = "Hospitality Manger's Office";
 	req_access = list(25)
 	},
 /turf/simulated/floor/wood/wild2,
@@ -73350,7 +73759,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "sLb" = (
@@ -73630,7 +74040,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "sOQ" = (
 /obj/item/toy/figure/character/moebius/cmo,
 /obj/structure/table/reinforced,
@@ -73921,6 +74333,17 @@
 	icon_state = "8,23"
 	},
 /area/iskhod/hallway/main/stairwell)
+"sRO" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/foyer)
 "sRY" = (
 /turf/simulated/shuttle/wall/science{
 	icon_state = "2,6"
@@ -74204,9 +74627,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/item/reagent_containers/drinks/mug/moebius/sci{
-	name = "VA Research Overseer mug"
-	},
+/obj/item/reagent_containers/drinks/mug/moebius/sci/overseer,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
 "sVe" = (
@@ -75097,7 +75518,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/danger,
-/area/iskhod/command/bridge)
+/area/iskhod/command/panic_room)
 "tiu" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -75336,7 +75757,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "tlK" = (
@@ -75370,6 +75792,15 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
+"tmk" = (
+/obj/effect/step_trigger/surface_to_forest_1_B,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/outside/inside_colony/west)
 "tms" = (
 /obj/effect/damagedfloor/rust,
 /obj/effect/floor_decal/rust,
@@ -75430,7 +75861,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "tmP" = (
@@ -75554,7 +75986,10 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/camera/network/colony_underground,
+/obj/machinery/atm{
+	pixel_y = 32
+	},
+/obj/effect/floor_decal/industrial/outline/grey,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "tnU" = (
@@ -75887,6 +76322,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/pool)
+"trP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/up{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/iskhod/medical/biostorage)
 "tsj" = (
 /obj/machinery/recharger/wallcharger{
 	pixel_x = -28;
@@ -76123,7 +76565,9 @@
 "tuu" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "tuv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/shuttle/floor/mining,
@@ -76601,12 +77045,13 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "tAd" = (
 /obj/structure/bed/chair/office/light{
-	name = "Medical Overseer seat"
+	name = "Biolabs Overseer seat"
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
@@ -76615,7 +77060,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "tAi" = (
@@ -76737,14 +77183,30 @@
 /area/iskhod/abandoned/barber)
 "tBP" = (
 /obj/structure/table/reinforced,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
-/obj/item/device/radio,
 /obj/machinery/firealarm{
 	dir = 1;
 	pixel_y = -32
+	},
+/obj/item/storage/pill_bottle/prosurgeon{
+	pixel_x = -5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
+	},
+/obj/item/device/radio{
+	pixel_x = 5
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemstor)
@@ -77141,10 +77603,7 @@
 /turf/simulated/open,
 /area/iskhod/pit/level2)
 "tGZ" = (
-/obj/structure/sign/levels/section1{
-	name = "SECURITY I";
-	desc = "A silver sign which reads 'SECURITY I' denoting the level of security in the area."
-	},
+/obj/structure/sign/levels/section1,
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/hallway/side/f2section1)
 "tHk" = (
@@ -77565,7 +78024,7 @@
 	dir = 1
 	},
 /obj/structure/sign/warning/hazard_biohazard{
-	pixel_x = 32
+	pixel_y = 32
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/docking)
@@ -77845,6 +78304,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
+"tRj" = (
+/obj/effect/floor_decal/industrial/warning{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/conveyor_switch/oneway{
+	convdir = -1;
+	id = "junk_to_bioreactor"
+	},
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/waste)
 "tRv" = (
 /obj/structure/table/gamblingtable,
 /obj/item/bikehorn/rubberducky,
@@ -77890,6 +78360,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/main/stairwell)
+"tRZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/medical/reception)
 "tSu" = (
 /obj/structure/computerframe{
 	anchored = 1;
@@ -78379,11 +78856,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2south)
-"tYK" = (
-/obj/structure/catwalk,
-/obj/structure/invislight,
-/turf/simulated/floor/plating/under,
-/area/iskhod/outside/inside_colony/east)
 "tZh" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -78635,6 +79107,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clipboard,
 /turf/simulated/floor/wood,
 /area/iskhod/command/cbo/quarters)
 "ucg" = (
@@ -78950,7 +79423,9 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/plating/under,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "ugo" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/security/armory)
@@ -79307,7 +79782,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/scave)
 "ukq" = (
@@ -79484,7 +79960,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "umP" = (
@@ -80226,7 +80703,9 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "uxD" = (
 /obj/effect/floor_decal/industrial_plant/border,
 /obj/machinery/atmospherics/unary/vent_scrubber,
@@ -80921,7 +81400,9 @@
 	pixel_y = 14
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "uGX" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -81020,7 +81501,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "uIb" = (
@@ -81104,7 +81586,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/pit/level3)
 "uJn" = (
@@ -81143,7 +81626,9 @@
 "uJA" = (
 /obj/effect/window_lwall_spawn,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "uJB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -81187,7 +81672,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
 "uJZ" = (
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/west)
 "uKc" = (
 /obj/structure/cable/green{
@@ -81233,7 +81720,9 @@
 "uKH" = (
 /obj/machinery/camera/network/command,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "uKK" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/landmark/corpse/excelsior,
@@ -81298,7 +81787,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "uLk" = (
 /obj/random/mob/termite_no_despawn/low_chance,
 /obj/random/junk/low_chance,
@@ -82367,12 +82858,12 @@
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/security/armory)
 "vbI" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/disposalpipe/down,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
 "vbJ" = (
@@ -82792,7 +83283,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "vhC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -83014,7 +83507,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "vkO" = (
@@ -83715,6 +84209,17 @@
 	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/iskhod/abandoned/recreation)
+"vuV" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -16
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/locker_room)
 "vvi" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -83813,8 +84318,8 @@
 /area/iskhod/engineering)
 "vwb" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/corner/paleblue/border,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/reception)
 "vwd" = (
@@ -84282,6 +84787,19 @@
 "vBu" = (
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/command/gmaster/quarters)
+"vBy" = (
+/obj/structure/table/marble,
+/obj/machinery/door/blast/shutters/glass{
+	name = "glass shutter";
+	id = "bar_shutters"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/white/panels,
+/area/iskhod/crew_quarters/bar)
 "vBC" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -84833,7 +85351,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating/under,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "vJg" = (
 /obj/machinery/computer/scan_consolenew{
 	dir = 8;
@@ -84936,6 +85456,15 @@
 	icon_state = "9,23"
 	},
 /area/iskhod/hallway/surface/section5)
+"vJL" = (
+/obj/effect/step_trigger/surface_to_forest_1_A,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/outside/inside_colony/west)
 "vJM" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -85035,7 +85564,9 @@
 /area/shuttle/escape/station)
 "vLr" = (
 /obj/structure/invislight,
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/surface_colony_footpath)
 "vLH" = (
 /obj/structure/disposalpipe/segment{
@@ -85165,6 +85696,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/bioreactor)
+"vNu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/mineral/planet,
+/area/iskhod/hallway/main/f1section1)
 "vNC" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -85587,7 +86129,9 @@
 /obj/machinery/camera/network/gate{
 	network = list("Nadzedha Wall Colony")
 	},
-/turf/simulated/floor/asteroid/dirt/mud,
+/turf/simulated/floor/asteroid/dirt/mud{
+	temperature = 240
+	},
 /area/iskhod/outside/inside_colony/west)
 "vTN" = (
 /obj/machinery/light,
@@ -86362,15 +86906,14 @@
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/engineering/engine_room)
 "wdO" = (
-/obj/item/hydrogen_fuel_cell,
-/obj/item/hydrogen_fuel_cell,
-/obj/item/hydrogen_fuel_cell,
-/obj/item/hydrogen_fuel_cell,
 /obj/structure/table/rack/shelf,
 /obj/machinery/alarm{
 	dir = 8;
 	pixel_x = 27
 	},
+/obj/item/storage/box/hydrogen_cell,
+/obj/item/hydrogen_fuel_cell/backpack,
+/obj/item/hydrogen_fuel_cell/backpack,
 /turf/simulated/floor/tiled/dark/panels,
 /area/iskhod/rnd/misc_lab)
 "wdW" = (
@@ -86593,7 +87136,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "wid" = (
@@ -87183,7 +87727,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "wpy" = (
 /obj/random/cluster/spiders,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -87561,7 +88107,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "wuP" = (
@@ -87666,7 +88213,9 @@
 /area/iskhod/abandoned/strip_club)
 "wwm" = (
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "wws" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -88183,12 +88732,10 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/robotics)
 "wCt" = (
-/obj/machinery/light{
-	brightness_power = 1;
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/pros/shuttle_landing_zone)
+/obj/random/cluster/roaches/low_chance,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial,
+/area/iskhod/maintenance/undergroundfloor2west)
 "wCx" = (
 /obj/structure/table/woodentable,
 /obj/item/paper_bin{
@@ -88601,7 +89148,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "wGK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -88655,6 +89204,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/panels,
 /area/iskhod/engineering/atmos)
+"wHC" = (
+/obj/machinery/rotating_alarm/supermatter{
+	pixel_y = -15
+	},
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/engineering/engine_monitoring)
 "wHG" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/ornate,
@@ -88711,7 +89266,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "wIQ" = (
@@ -88838,7 +89394,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "wKQ" = (
@@ -88909,7 +89466,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "wLR" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -89123,7 +89682,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "wOJ" = (
@@ -89375,7 +89935,9 @@
 	id = "HOP Shutters"
 	},
 /turf/simulated/floor/plating/under,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "wSw" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -89697,7 +90259,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/west)
 "wWT" = (
@@ -90265,7 +90828,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain)
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
+	})
 "xeI" = (
 /obj/machinery/power/emitter,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -90304,7 +90869,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
 "xfA" = (
@@ -90518,7 +91084,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/hallway/surface/section1)
 "xjc" = (
@@ -90667,6 +91234,7 @@
 	pixel_x = -27;
 	req_one_access = newlist()
 	},
+/obj/item/reagent_containers/snacks/meat/runtimes_dinner,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/command/cbo/quarters)
 "xld" = (
@@ -90914,11 +91482,11 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
 "xot" = (
-/obj/structure/sign/levels/stairsdown{
-	pixel_x = -32
-	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/structure/sign/levels/stairsdown{
+	pixel_x = -32
 	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
@@ -91044,6 +91612,17 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/vasiliy_shuttle_area)
+"xqx" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/workshop)
 "xqA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment,
@@ -91511,7 +92090,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "xwb" = (
 /obj/effect/floor_decal/industrial/warningwhite{
 	dir = 4
@@ -91558,10 +92139,6 @@
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 8
 	},
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
-	},
 /turf/simulated/open,
 /area/iskhod/hallway/main/stairwell)
 "xwv" = (
@@ -91577,6 +92154,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
+"xwR" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -16
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 18
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/breakroom)
 "xwU" = (
 /obj/effect/floor_decal/industrial/warningwhite,
 /obj/effect/decal/cleanable/dirt,
@@ -91590,6 +92178,17 @@
 /obj/structure/table/bench/wooden,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/absolutism/chapel)
+"xwY" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/iskhod_blue,
+/area/iskhod/engineering/engine_monitoring)
+"xxn" = (
+/obj/effect/step_trigger/swampcaves_to_riverforest_1_A,
+/turf/simulated/floor/rock/dark,
+/area/colony)
 "xxr" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/green_large_slates,
@@ -91626,7 +92225,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "xxP" = (
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/maintenance/undergroundfloor2east)
@@ -92291,9 +92892,6 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/security/detectives_office)
 "xJg" = (
-/obj/machinery/conveyor{
-	dir = 4
-	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
@@ -92314,6 +92912,10 @@
 	dir = 8
 	},
 /obj/structure/invislight,
+/obj/machinery/conveyor/east{
+	id = "junk_to_bioreactor";
+	operating = 1
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
 "xJm" = (
@@ -93506,8 +94108,20 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
+/obj/machinery/power/apc{
+	cell_type = /obj/item/cell/large/moebius/nuclear;
+	dir = 1;
+	name = "North APC";
+	pixel_y = 28
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "xXg" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4;
@@ -93585,6 +94199,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/secrecroom)
+"xXT" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/mineral/planet,
+/area/iskhod/hallway/main/f1section1)
 "xXX" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
@@ -93847,7 +94468,8 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
-	nitrogen = 82.1472
+	nitrogen = 82.1472;
+	temperature = 240
 	},
 /area/iskhod/outside/inside_colony)
 "ycX" = (
@@ -93960,12 +94582,16 @@
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/medical/patient_b)
 "yeC" = (
-/obj/structure/disposalpipe/junction{
+/obj/machinery/rotating_alarm/supermatter{
 	dir = 8;
-	icon_state = "pipe-j2"
+	pixel_x = -15
 	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/hallway/main/f1section1)
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/engineering/locker_room)
 "yeE" = (
 /obj/structure/window/basic/iskhod{
 	dir = 8
@@ -105312,7 +105938,7 @@ iVp
 uDB
 bSV
 fAE
-ckh
+hPL
 hPL
 hPL
 hPL
@@ -110764,7 +111390,7 @@ kVv
 mQt
 bPV
 fIW
-mQt
+jEj
 pZD
 mVT
 xbp
@@ -110972,7 +111598,7 @@ mlh
 vfM
 vfM
 oXh
-oXh
+nCO
 oXh
 vfM
 vfM
@@ -111048,9 +111674,9 @@ oBZ
 tHM
 tat
 mgO
+doW
 mgO
-mgO
-mgO
+doW
 mgO
 mgO
 mgO
@@ -111169,16 +111795,16 @@ mQt
 bPV
 ucg
 rMF
-imo
-mQt
+esA
+bPV
 bPV
 kbe
 kbe
 kbe
 kbe
-bPV
-bPV
-bPV
+kbe
+kbe
+kbe
 kbe
 iyd
 bPV
@@ -111370,17 +111996,17 @@ kVv
 mQt
 csK
 wMF
-nlG
-mQt
+rMF
 bPV
+vNu
 iUC
-iyd
-sgt
+iMy
+ivL
 kbe
 kbe
 ivL
-bPV
-bPV
+kbe
+kbe
 kbe
 bPV
 bPV
@@ -111467,7 +112093,7 @@ lon
 kIm
 mOP
 mgO
-mgO
+xwR
 mgO
 mgO
 uun
@@ -111574,9 +112200,9 @@ aLI
 jNU
 rMF
 bPV
-bPV
+xXT
 oln
-oln
+mrn
 oln
 xSN
 xSN
@@ -111776,8 +112402,8 @@ iRB
 wMF
 pRS
 bPV
-bPV
-oln
+xXT
+tRZ
 lTI
 wxg
 fjd
@@ -111978,8 +112604,8 @@ sPK
 jNU
 pRS
 bPV
-bPV
-vLf
+xXT
+tRZ
 pip
 nKQ
 nKs
@@ -112058,9 +112684,9 @@ uLb
 sdA
 bXC
 uLb
+vuV
 uLb
-uLb
-uLb
+nXT
 uLb
 aBz
 hJP
@@ -112180,7 +112806,7 @@ oUu
 kEP
 pRS
 bPV
-bPV
+aZK
 oln
 bpH
 mPJ
@@ -112664,14 +113290,14 @@ vVU
 vVU
 uLb
 aql
-qoy
+bBk
 mVo
 qoy
 uLb
 rwm
 oSQ
 oSQ
-rwm
+xqx
 hPP
 rwm
 rwm
@@ -112861,7 +113487,7 @@ qoy
 uLb
 uLb
 vcW
-uLb
+vuV
 uLb
 uLb
 uLb
@@ -112966,7 +113592,7 @@ uJh
 uJh
 aEX
 aEX
-lZq
+aEX
 aEX
 aEX
 uJh
@@ -112986,7 +113612,7 @@ aqQ
 mQt
 icW
 blp
-yeC
+dpC
 vwb
 pPY
 sWN
@@ -113066,7 +113692,7 @@ gig
 lEp
 hVp
 mAb
-qoy
+roI
 bUt
 qmj
 nFD
@@ -113183,7 +113809,7 @@ uJh
 eCL
 uJh
 tui
-tui
+ppw
 vBf
 mQt
 puf
@@ -113386,8 +114012,8 @@ uJh
 apF
 tui
 dsS
-hld
-mQt
+byB
+ckh
 wsu
 vyC
 gwK
@@ -113497,7 +114123,7 @@ wIQ
 isv
 ouZ
 oUO
-bMm
+tRj
 dDd
 ncf
 ewG
@@ -113677,29 +114303,29 @@ ixq
 rYT
 sav
 sRy
-rwm
+izl
 wfz
 sDw
 sDw
 eGh
 kTq
 rMc
-rwm
+mNm
 eWw
 wuf
 dMP
-wIQ
+pGe
 diJ
 rKW
 iGb
 hQD
 rKW
 npq
-wIQ
+pGe
 fjC
 uTC
 oUO
-bMm
+iGH
 dDd
 ncf
 ewG
@@ -113771,7 +114397,7 @@ ezS
 ezS
 uJh
 uJh
-lZq
+aEX
 lZq
 cSR
 vSf
@@ -113798,8 +114424,8 @@ dgy
 dNS
 kLB
 lYt
-veT
-cDu
+jqG
+trP
 vxD
 dNS
 mIb
@@ -113901,8 +114527,8 @@ eDD
 wCO
 gtA
 nvh
-bMm
-dDd
+iGH
+gFX
 ncf
 ewG
 aJE
@@ -114063,7 +114689,7 @@ cXR
 cXR
 cXR
 bkT
-bkT
+cch
 ccf
 qUs
 xVm
@@ -114081,7 +114707,7 @@ ezi
 rYT
 eDY
 fNs
-rwm
+izl
 kuO
 iWp
 rSY
@@ -114099,11 +114725,11 @@ ueG
 uAx
 rKW
 oQS
-wIQ
+pGe
 bpW
 uEY
 ewG
-bMm
+iGH
 dDd
 ncf
 ewG
@@ -114305,7 +114931,7 @@ wIQ
 sWF
 vml
 ewG
-bMm
+iGH
 dDd
 ncf
 ewG
@@ -114582,7 +115208,7 @@ uJh
 uJh
 aEX
 aEX
-lZq
+aEX
 aEX
 aEX
 uJh
@@ -114682,7 +115308,7 @@ bHm
 eOj
 kOS
 rtn
-qoy
+roI
 ntp
 oJR
 wjK
@@ -114881,7 +115507,7 @@ qoy
 uLb
 uLb
 wAt
-uLb
+yeC
 uLb
 uLb
 uLb
@@ -115088,14 +115714,14 @@ vVU
 vVU
 uLb
 aql
-qoy
+sRO
 qcu
 qoy
 uLb
 rwm
 rwm
 rwm
-rwm
+amf
 nSq
 rwm
 rwm
@@ -116315,7 +116941,7 @@ txb
 eNH
 pQE
 nzO
-xSw
+cNN
 pXN
 mOu
 gmA
@@ -117123,7 +117749,7 @@ hJx
 hJx
 sST
 sST
-sST
+dGJ
 dlx
 xMD
 vIz
@@ -117137,7 +117763,7 @@ gOH
 gOH
 gOH
 wfd
-sST
+rSs
 sST
 hVF
 waY
@@ -117945,7 +118571,7 @@ gwx
 gwx
 gwx
 iOm
-sST
+rSs
 sST
 waY
 rNi
@@ -118335,7 +118961,7 @@ hJx
 hJx
 sST
 sST
-sST
+dGJ
 bAs
 fJN
 rJn
@@ -144761,7 +145387,7 @@ doS
 rjo
 oMf
 uVN
-oMf
+wCt
 oMf
 uVN
 oMf
@@ -145572,7 +146198,7 @@ oMf
 iVf
 skc
 oMf
-qVS
+dvl
 cvb
 vTX
 nKb
@@ -145768,7 +146394,7 @@ vTX
 iVg
 jNf
 oMf
-rjo
+ltk
 qVS
 uVN
 qVS
@@ -146716,11 +147342,11 @@ iZe
 iZe
 iZe
 iZe
-sbO
-sbO
+jNe
+jNe
 oxk
-sbO
-sbO
+jNe
+jNe
 eYn
 eYn
 eYn
@@ -146918,11 +147544,11 @@ iZe
 iZe
 iZe
 iZe
-sbO
-sbO
+jNe
+jNe
 tid
-sbO
-sbO
+jNe
+jNe
 eYn
 eYn
 eYn
@@ -149747,7 +150373,7 @@ fba
 kwf
 kwf
 fba
-fba
+vnQ
 lto
 bsG
 mnw
@@ -149949,7 +150575,7 @@ leK
 sJV
 dur
 aTA
-fba
+vnQ
 dpa
 cdW
 oTn
@@ -150353,7 +150979,7 @@ uGV
 rxx
 bNw
 nBQ
-fba
+vnQ
 vFQ
 hpB
 iZU
@@ -150555,7 +151181,7 @@ suD
 aam
 jYn
 vhx
-kwf
+jeC
 ikH
 dOp
 ugX
@@ -150757,7 +151383,7 @@ fYk
 eoo
 wGD
 fEG
-kwf
+jeC
 ikH
 fyr
 vWZ
@@ -150959,7 +151585,7 @@ njR
 pam
 xxN
 aCz
-fba
+vnQ
 aJB
 sVu
 iNh
@@ -151161,7 +151787,7 @@ hVE
 hVE
 fba
 fba
-fba
+vnQ
 vnQ
 dCV
 shA
@@ -152219,11 +152845,11 @@ uyA
 fVp
 fVp
 wUB
-wBr
-wBr
-kgU
-fyL
-fyL
+oVb
+oVb
+oVb
+oVb
+oVb
 byg
 fTy
 fTy
@@ -152256,7 +152882,7 @@ iFe
 iFe
 nKb
 axX
-axX
+xwY
 axX
 axX
 axX
@@ -152421,11 +153047,11 @@ uyA
 uyA
 uyA
 wUB
-rrN
-wBr
-mGV
-fyL
-fyL
+oVb
+oVb
+oVb
+oVb
+oVb
 fyL
 fyL
 fyL
@@ -152597,7 +153223,7 @@ ocd
 yhC
 mnq
 xeC
-xeC
+qKR
 rpb
 jab
 jab
@@ -152624,10 +153250,10 @@ lhX
 lhX
 wUB
 oVb
-wBr
 oVb
-fyL
-fyL
+oVb
+oVb
+oVb
 fyL
 fyL
 fyL
@@ -152825,11 +153451,11 @@ gYe
 lhX
 lhX
 wUB
-bnF
-wBr
-wBr
-fyL
-fyL
+oVb
+oVb
+oVb
+oVb
+oVb
 fyL
 fyL
 fyL
@@ -152978,7 +153604,7 @@ snx
 snx
 snx
 sJy
-aWD
+csW
 dYv
 gab
 iAG
@@ -153028,9 +153654,9 @@ vSw
 lhX
 wUB
 oVb
-wBr
-wBr
-wBr
+oVb
+oVb
+oVb
 oVb
 fyL
 fyL
@@ -153180,7 +153806,7 @@ edm
 edm
 edm
 sJy
-bnR
+hOh
 oWT
 gab
 vnC
@@ -153229,10 +153855,10 @@ jVf
 wUB
 gYe
 wUB
-ecv
-wBr
 oVb
-wBr
+oVb
+oVb
+oVb
 wBr
 wBr
 wBr
@@ -153367,7 +153993,7 @@ edm
 edm
 xvf
 xvf
-iYf
+xvf
 xvf
 xvf
 edm
@@ -153432,7 +154058,7 @@ pwy
 kur
 wUB
 wUB
-edt
+ftX
 wUB
 wUB
 wUB
@@ -153462,10 +154088,10 @@ xFe
 lUi
 tnk
 tnk
-kCi
+jgT
 fbz
 iFe
-axX
+wHC
 cNA
 iDD
 nDd
@@ -153664,7 +154290,7 @@ xFe
 lUi
 tnk
 tnk
-kCi
+jgT
 fbz
 bnA
 axX
@@ -153833,7 +154459,7 @@ nev
 tLa
 cxo
 vDa
-oZi
+dcv
 bwH
 bwH
 oZi
@@ -153869,7 +154495,7 @@ vNO
 axX
 iAX
 axX
-axX
+wHC
 heG
 cNf
 nDd
@@ -153882,9 +154508,9 @@ sGd
 sGd
 puw
 svA
-puw
+gjc
 tXU
-puw
+gjc
 nxJ
 nxJ
 puw
@@ -154028,17 +154654,17 @@ wUB
 aOv
 sKs
 wxh
-fjO
+czz
 lTr
 kVJ
 lFq
-rgS
+vBy
 cxo
 wEO
 mju
 opE
 xlj
-mUI
+log
 mUI
 mTK
 qsm
@@ -154060,7 +154686,7 @@ iwr
 iwr
 iwr
 qje
-qje
+hld
 hdD
 cNl
 meu
@@ -154172,7 +154798,7 @@ btd
 mEj
 wxa
 tBj
-iYf
+xvf
 iYf
 eyP
 eyP
@@ -154197,9 +154823,9 @@ fpU
 kqI
 imP
 mEB
-mNm
+dPr
 kNY
-mNm
+dPr
 vbI
 vsj
 ffo
@@ -154237,7 +154863,7 @@ asS
 aeb
 jmV
 ncx
-lMx
+mju
 opE
 xlj
 mUI
@@ -154262,7 +154888,7 @@ iwr
 iwr
 iwr
 qje
-qje
+hld
 hdD
 khx
 bqV
@@ -154464,7 +155090,7 @@ iwr
 iwr
 iwr
 qje
-qje
+hld
 hdD
 gRB
 meu
@@ -154796,7 +155422,7 @@ edm
 edm
 edm
 sJy
-dnR
+bNk
 lqY
 gab
 iAG
@@ -154876,7 +155502,7 @@ gwN
 pAy
 tnk
 tnk
-kCi
+jgT
 xSJ
 hgv
 nKb
@@ -154890,7 +155516,7 @@ axX
 arf
 arf
 arf
-puw
+oXc
 oMW
 kTU
 cED
@@ -154983,7 +155609,7 @@ edm
 edm
 xvf
 xvf
-iYf
+xvf
 xvf
 xvf
 edm
@@ -155078,7 +155704,7 @@ gwN
 pAy
 tnk
 tnk
-kCi
+jgT
 iFe
 iFe
 nKb
@@ -155200,7 +155826,7 @@ edm
 edm
 edm
 sJy
-ukk
+lMx
 xwu
 gab
 iAG
@@ -155402,7 +156028,7 @@ nQl
 nQl
 nQl
 sJy
-usR
+iwS
 kQN
 gab
 bmQ
@@ -175688,10 +176314,10 @@ rKl
 rKl
 rKl
 rKl
-rKl
-rKl
-rKl
-rKl
+cqi
+cqi
+cqi
+cqi
 rKl
 rKl
 rKl
@@ -175891,8 +176517,8 @@ cqi
 cqi
 cqi
 cqi
-oHT
-oHT
+dnR
+dnR
 cqi
 cqi
 cqi
@@ -176093,8 +176719,8 @@ cqi
 cqi
 cqi
 cqi
-qOA
-qOA
+vJL
+tmk
 cqi
 cqi
 cqi
@@ -176295,8 +176921,8 @@ cqi
 cqi
 cqi
 cqi
-qOA
-qOA
+ejl
+ejl
 qOA
 cqi
 cqi
@@ -176490,15 +177116,15 @@ qOA
 qOA
 qOA
 qOA
-wWS
+qOA
 cqi
 cqi
 cqi
 cqi
 cqi
 qOA
-qOA
-qOA
+ejl
+ejl
 qOA
 qOA
 qOA
@@ -176697,13 +177323,13 @@ qOA
 qOA
 qOA
 qOA
-wWS
+qOA
 qOA
 ejl
 ejl
 qOA
 qOA
-wWS
+qOA
 cqi
 cqi
 cqi
@@ -176858,7 +177484,6 @@ cqi
 cqi
 cqi
 qOA
-wWS
 qOA
 qOA
 qOA
@@ -176867,6 +177492,7 @@ qOA
 qOA
 qOA
 qOA
+qOA
 cqi
 cqi
 cqi
@@ -176887,7 +177513,7 @@ cqi
 cqi
 cqi
 qOA
-wWS
+qOA
 qOA
 qOA
 qOA
@@ -177068,7 +177694,7 @@ qOA
 wOF
 qOA
 qOA
-wWS
+qOA
 qOA
 cqi
 cqi
@@ -177714,8 +178340,8 @@ ejl
 qOA
 qOA
 qOA
-wWS
-pah
+qOA
+cqi
 cqi
 cqi
 cqi
@@ -177862,7 +178488,7 @@ cqi
 cqi
 cqi
 cqi
-wWS
+qOA
 qOA
 qOA
 qOA
@@ -177892,7 +178518,7 @@ cqi
 cqi
 cqi
 qOA
-wWS
+qOA
 qOA
 qOA
 qOA
@@ -178283,7 +178909,7 @@ qOA
 nKz
 qOA
 qOA
-wWS
+qOA
 cqi
 cqi
 cqi
@@ -178515,7 +179141,7 @@ ejl
 qOA
 qOA
 qOA
-wWS
+qOA
 cqi
 cqi
 cqi
@@ -179068,7 +179694,7 @@ cqi
 cqi
 cqi
 cqi
-wWS
+qOA
 qOA
 qOA
 qOA
@@ -179099,7 +179725,7 @@ cqi
 cqi
 qOA
 qOA
-wWS
+qOA
 qOA
 qOA
 qOA
@@ -179734,7 +180360,7 @@ qOA
 qOA
 qOA
 qOA
-wWS
+qOA
 qOA
 cqi
 cqi
@@ -180102,7 +180728,7 @@ qOA
 qOA
 qOA
 qOA
-wWS
+qOA
 qOA
 qOA
 qOA
@@ -180278,7 +180904,7 @@ nGF
 qOA
 qOA
 qOA
-wWS
+qOA
 qOA
 cqi
 cqi
@@ -180686,7 +181312,7 @@ cqi
 cqi
 cqi
 cqi
-wWS
+qOA
 qOA
 qOA
 qOA
@@ -180950,7 +181576,7 @@ qOA
 qOA
 qOA
 qOA
-wWS
+qOA
 qOA
 cqi
 cqi
@@ -182098,7 +182724,7 @@ cqi
 cqi
 cqi
 cqi
-wWS
+qOA
 qOA
 qOA
 qOA
@@ -182165,7 +182791,7 @@ qOA
 qOA
 qOA
 qOA
-wWS
+qOA
 cqi
 cqi
 cqi
@@ -183119,7 +183745,7 @@ lXL
 cqi
 cqi
 cqi
-wWS
+qOA
 qOA
 qOA
 qOA
@@ -183176,7 +183802,7 @@ qOA
 qOA
 qOA
 qOA
-wWS
+qOA
 cqi
 cqi
 cqi
@@ -183327,7 +183953,7 @@ cqi
 cqi
 cqi
 qOA
-wWS
+qOA
 qOA
 qOA
 qOA
@@ -183701,7 +184327,7 @@ ycV
 ycV
 eCv
 ycV
-tzR
+ycV
 ycV
 ycV
 cqi
@@ -184098,7 +184724,7 @@ cqi
 cqi
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 mOo
@@ -184110,7 +184736,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 cqi
 cqi
@@ -184188,7 +184814,7 @@ qOA
 qOA
 qOA
 qOA
-wWS
+qOA
 qOA
 qOA
 qOA
@@ -184318,7 +184944,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 mOo
 ycV
 ycV
@@ -184532,11 +185158,11 @@ ycV
 wuN
 ycV
 ycV
-tzR
+ycV
 ycV
 cqi
 cqi
-tzR
+ycV
 ycV
 qIh
 eZD
@@ -185102,7 +185728,7 @@ cqi
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -185497,7 +186123,7 @@ cqi
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -185805,7 +186431,7 @@ qOA
 qOA
 qOA
 qOA
-wWS
+qOA
 cqi
 cqi
 cqi
@@ -185956,7 +186582,7 @@ eoe
 qbD
 eoe
 eoe
-kai
+cqi
 cqi
 cqi
 qOA
@@ -186157,8 +186783,8 @@ eoe
 eoe
 arP
 tAi
-wwO
-kai
+eoe
+cqi
 cqi
 cqi
 bVf
@@ -186359,8 +186985,8 @@ xmB
 eoe
 adr
 nic
-wwO
-kai
+eoe
+cqi
 ous
 fcc
 iCt
@@ -186812,7 +187438,7 @@ qOA
 qOA
 qOA
 qOA
-wWS
+qOA
 qOA
 cqi
 cqi
@@ -186904,7 +187530,7 @@ cqi
 cqi
 cqi
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -187726,7 +188352,7 @@ ycV
 dZg
 sAO
 eip
-tQS
+peM
 jWi
 qdV
 obv
@@ -188113,7 +188739,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 wuN
@@ -188629,7 +189255,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -189121,7 +189747,7 @@ cqi
 cqi
 cqi
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -189517,7 +190143,7 @@ cqi
 cqi
 cqi
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -189546,9 +190172,9 @@ tQS
 peM
 peM
 peM
-dNQ
+peM
 nUQ
-rKr
+peM
 peM
 peM
 peM
@@ -189583,7 +190209,7 @@ wuN
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 cqi
 cqi
@@ -189745,15 +190371,15 @@ ycV
 ycV
 dZg
 tQS
+peM
+peM
 tQS
-tQS
-tQS
-iwP
+qdV
 rNI
 iFg
 kIS
 tXo
-tQS
+peM
 jIm
 dZg
 ycV
@@ -190043,7 +190669,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -190521,7 +191147,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -190719,7 +191345,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -190790,11 +191416,11 @@ ycV
 cqi
 cqi
 ycV
-tzR
+ycV
 vkI
 ycV
 ycV
-tzR
+ycV
 ycV
 cqi
 cqi
@@ -191190,7 +191816,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 cqi
 cqi
@@ -191365,7 +191991,7 @@ cqi
 ycV
 ycV
 gJV
-pfL
+geW
 ort
 ycV
 ycV
@@ -191457,7 +192083,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -191921,7 +192547,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -192172,9 +192798,9 @@ cqi
 cqi
 cqi
 ycV
-rrx
+gJV
 pfL
-pst
+ort
 cqi
 cqi
 cqi
@@ -192870,7 +193496,7 @@ kLx
 fep
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -193412,7 +194038,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -193472,7 +194098,7 @@ fep
 nmE
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -193737,7 +194363,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -193768,7 +194394,7 @@ iRf
 iRf
 nir
 nir
-gpe
+nir
 nir
 nir
 iRf
@@ -194075,7 +194701,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -194573,7 +195199,7 @@ ffK
 uDK
 kAi
 dEI
-gpe
+nir
 gpe
 viv
 viv
@@ -195032,7 +195658,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 cqi
 cqi
@@ -195088,7 +195714,7 @@ fep
 fep
 xfs
 fep
-kLx
+fep
 fep
 fep
 cqi
@@ -195197,7 +195823,7 @@ iRf
 iRf
 iRf
 sZH
-sZH
+oLj
 eHF
 gOR
 gOR
@@ -195384,7 +196010,7 @@ iRf
 iRf
 nir
 nir
-gpe
+nir
 nir
 nir
 iRf
@@ -195496,7 +196122,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 fep
 fep
 cqi
@@ -195757,7 +196383,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -195769,7 +196395,7 @@ ycV
 ycV
 wuN
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -195971,7 +196597,7 @@ ycV
 ycV
 ycV
 fGR
-ras
+cpZ
 mrV
 ycV
 ycV
@@ -196306,7 +196932,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -196375,7 +197001,7 @@ ycV
 ycV
 ycV
 fGR
-gSb
+cpZ
 mrV
 ycV
 ycV
@@ -196779,7 +197405,7 @@ ycV
 ycV
 ycV
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -196824,7 +197450,7 @@ huJ
 cqi
 cqi
 gOR
-rGn
+gOR
 gFy
 fzX
 gOR
@@ -196846,7 +197472,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 eCv
 ycV
@@ -196968,7 +197594,7 @@ cqi
 cqi
 cqi
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -196981,7 +197607,7 @@ ycV
 ycV
 ycV
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -197026,7 +197652,7 @@ huJ
 huJ
 cqi
 cqi
-rGn
+gOR
 sHC
 gFy
 gOR
@@ -197087,7 +197713,7 @@ fep
 ejl
 ejl
 fep
-kLx
+fep
 cqi
 cqi
 fep
@@ -197183,7 +197809,7 @@ ycV
 ycV
 ycV
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -197228,7 +197854,7 @@ pqb
 huJ
 cqi
 cqi
-rGn
+gOR
 lsm
 lsm
 gOR
@@ -197317,7 +197943,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -197385,7 +198011,7 @@ ycV
 ycV
 ycV
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -197430,7 +198056,7 @@ wSw
 huJ
 cqi
 cqi
-rGn
+gOR
 lsm
 lsm
 gOR
@@ -197499,7 +198125,7 @@ cqi
 cqi
 cqi
 cqi
-kLx
+fep
 fep
 fep
 fep
@@ -197568,7 +198194,7 @@ cqi
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -197632,7 +198258,7 @@ huJ
 huJ
 cqi
 cqi
-rGn
+gOR
 lsm
 lsm
 gOR
@@ -197789,7 +198415,7 @@ ycV
 ycV
 ycV
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -197828,13 +198454,13 @@ pgp
 pgp
 pgp
 pgp
-wCt
+pgp
 pgp
 pgp
 pgp
 pgp
 cqi
-rGn
+gOR
 gOR
 gOR
 gOR
@@ -197991,7 +198617,7 @@ ycV
 ycV
 ycV
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -198099,7 +198725,7 @@ ejl
 fep
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -198170,7 +198796,7 @@ rKl
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -198193,7 +198819,7 @@ ycV
 fSp
 ycV
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -198228,7 +198854,7 @@ eRd
 aiv
 mwc
 huJ
-gQO
+pgp
 wUc
 uid
 qeR
@@ -198306,7 +198932,7 @@ fep
 fep
 cqi
 cqi
-kLx
+fep
 fep
 fep
 fep
@@ -198371,7 +198997,7 @@ jDL
 rKl
 cqi
 cqi
-riU
+ycV
 ycV
 ycV
 ycV
@@ -198395,7 +199021,7 @@ iVI
 iVI
 iVI
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -198573,7 +199199,7 @@ jDL
 rKl
 cqi
 cqi
-riU
+ycV
 ycV
 ycV
 wuN
@@ -198731,7 +199357,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -198775,7 +199401,7 @@ jDL
 rKl
 cqi
 cqi
-riU
+ycV
 ycV
 ycV
 ycV
@@ -198799,7 +199425,7 @@ rro
 gQe
 iVI
 fGR
-nWv
+cpZ
 mrV
 ycV
 fSp
@@ -198976,8 +199602,8 @@ jDL
 jDL
 rKl
 cqi
-riU
-riU
+ycV
+ycV
 ycV
 ycV
 ycV
@@ -199001,7 +199627,7 @@ aBn
 iVI
 iVI
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -199178,7 +199804,7 @@ jDL
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 ycV
 ycV
@@ -199203,7 +199829,7 @@ cpa
 sGb
 iVI
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -199255,7 +199881,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -199380,7 +200006,7 @@ jDL
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 ycV
 wuN
@@ -199405,7 +200031,7 @@ akf
 vZZ
 iVI
 fGR
-nWv
+cpZ
 mrV
 ycV
 ycV
@@ -199487,7 +200113,7 @@ ycV
 ycV
 ycV
 jld
-tYK
+ajD
 dAH
 pFe
 fep
@@ -199540,7 +200166,7 @@ jzO
 fep
 oiA
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -199582,7 +200208,7 @@ jDL
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 ycV
 ycV
@@ -199676,7 +200302,7 @@ ycV
 ycV
 eCv
 ycV
-tzR
+ycV
 cqi
 cqi
 cqi
@@ -199784,7 +200410,7 @@ jDL
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 ycV
 ycV
@@ -199898,7 +200524,7 @@ cqi
 cqi
 cqi
 fep
-kLx
+fep
 fep
 fep
 fep
@@ -199986,7 +200612,7 @@ jDL
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 ycV
 ycV
@@ -200046,7 +200672,7 @@ huJ
 nWF
 trr
 huJ
-gQO
+pgp
 wUc
 eQj
 oOz
@@ -200181,14 +200807,14 @@ qwj
 qwj
 cqi
 cqi
-rKl
+cqi
 jDL
 "}
 (124,1,3) = {"
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 ycV
 ycV
@@ -200381,18 +201007,18 @@ qwj
 qwj
 qwj
 qwj
-qwj
-dTN
-rKl
+xxn
+cUu
+cqi
 jDL
 "}
 (125,1,3) = {"
 jDL
 rKl
 cqi
-riU
 ycV
-tzR
+ycV
+ycV
 ycV
 ycV
 ycV
@@ -200454,7 +201080,7 @@ pgp
 pgp
 pgp
 pgp
-aMu
+pgp
 pgp
 pgp
 pgp
@@ -200583,16 +201209,16 @@ qwj
 qwj
 qwj
 qwj
-qwj
-dTN
-rKl
+gmb
+bwQ
+cqi
 jDL
 "}
 (126,1,3) = {"
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 ycV
 ycV
@@ -200787,14 +201413,14 @@ qwj
 qwj
 cqi
 cqi
-rKl
+cqi
 jDL
 "}
 (127,1,3) = {"
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 wuN
 ycV
@@ -200911,7 +201537,7 @@ cqi
 cqi
 cqi
 fep
-kLx
+fep
 fep
 fep
 erV
@@ -200996,7 +201622,7 @@ jDL
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 ycV
 wuN
@@ -201063,7 +201689,7 @@ eFh
 mhg
 ycV
 ycV
-tzR
+ycV
 ycV
 cqi
 cqi
@@ -201198,7 +201824,7 @@ jDL
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 ycV
 ycV
@@ -201400,7 +202026,7 @@ jDL
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 ycV
 ycV
@@ -201521,7 +202147,7 @@ cqi
 fep
 fep
 fep
-kLx
+fep
 fep
 fep
 fep
@@ -201602,7 +202228,7 @@ jDL
 jDL
 rKl
 cqi
-riU
+ycV
 ycV
 ycV
 ycV
@@ -201735,14 +202361,14 @@ fep
 nmE
 fep
 fep
-kLx
+fep
 fep
 fep
 jzO
 fep
 fep
 fep
-kLx
+fep
 fep
 fep
 fep
@@ -201761,7 +202387,7 @@ fep
 fep
 jzO
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -201804,7 +202430,7 @@ jDL
 jDL
 rKl
 cqi
-riU
+ycV
 wuN
 ycV
 ycV
@@ -201931,7 +202557,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 fep
 fep
 fep
@@ -202006,8 +202632,8 @@ jDL
 jDL
 rKl
 cqi
-riU
-riU
+ycV
+ycV
 ycV
 ycV
 ycV
@@ -202208,8 +202834,8 @@ jDL
 jDL
 rKl
 cqi
-riU
-riU
+ycV
+ycV
 ycV
 ycV
 ycV
@@ -202355,7 +202981,7 @@ cqi
 cqi
 cqi
 cqi
-kLx
+fep
 fep
 fep
 fep
@@ -202410,8 +203036,8 @@ jDL
 jDL
 rKl
 cqi
-riU
-riU
+ycV
+ycV
 fye
 ycV
 ycV
@@ -202912,7 +203538,7 @@ cqi
 cqi
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -203173,7 +203799,7 @@ ejl
 ejl
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -203421,7 +204047,7 @@ jDL
 rKl
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -204089,7 +204715,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 cqi
 cqi
 cqi
@@ -204331,7 +204957,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -204636,7 +205262,7 @@ cqi
 cqi
 cqi
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -204702,7 +205328,7 @@ cqi
 cqi
 cqi
 ycV
-tzR
+ycV
 mPD
 jON
 xfP
@@ -204789,7 +205415,7 @@ ejl
 ejl
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -205142,7 +205768,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 cqi
 cqi
 cqi
@@ -205166,14 +205792,6 @@ fep
 fep
 fep
 fep
-kLx
-fep
-fep
-fep
-fep
-fep
-fep
-kLx
 fep
 fep
 fep
@@ -205182,7 +205800,15 @@ fep
 fep
 fep
 fep
-kLx
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
 fep
 fep
 jzO
@@ -205253,7 +205879,7 @@ xkH
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -205362,7 +205988,7 @@ cqi
 cqi
 cqi
 fep
-kLx
+fep
 fep
 fep
 fep
@@ -205466,7 +206092,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -205661,7 +206287,7 @@ cqi
 cqi
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -205963,7 +206589,7 @@ cqi
 cqi
 cqi
 fep
-kLx
+fep
 fep
 fep
 fep
@@ -206002,7 +206628,7 @@ ejl
 fep
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -206078,14 +206704,14 @@ cqi
 ycV
 ycV
 ycV
-tzR
 ycV
 ycV
 ycV
 ycV
 ycV
 ycV
-tzR
+ycV
+ycV
 ycV
 ycV
 ycV
@@ -206111,7 +206737,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -206308,7 +206934,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 cqi
 cqi
 cqi
@@ -206354,7 +206980,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 cqi
 cqi
@@ -206699,14 +207325,14 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 cqi
 cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -206894,7 +207520,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -207407,7 +208033,7 @@ fep
 fep
 fep
 pLv
-fep
+kLx
 fep
 fep
 fep
@@ -207717,7 +208343,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -207930,7 +208556,7 @@ ycV
 ycV
 ycV
 ycV
-ycV
+tzR
 ycV
 eCv
 ycV
@@ -208578,7 +209204,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 cqi
 cqi
 cqi
@@ -208589,7 +209215,7 @@ cqi
 cqi
 cqi
 cqi
-kLx
+fep
 mZF
 mZF
 mZF
@@ -208629,7 +209255,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 cqi
 cqi
 cqi
@@ -208757,7 +209383,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -208770,7 +209396,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -208943,7 +209569,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -209149,29 +209775,29 @@ ycV
 ycV
 ycV
 nud
-aLF
-aLF
-fZI
+dTN
+dTN
+nud
 cGi
 cGi
 cGi
-sdl
-aLF
-aLF
+oHT
+dTN
+dTN
 nud
 qFY
 qFY
 qFY
 nud
-aLF
-aLF
+dTN
+dTN
 fZI
 cGi
 cGi
 pvT
 nud
-aLF
-aLF
+dTN
+dTN
 nud
 ycV
 ycV
@@ -209331,7 +209957,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -209350,7 +209976,7 @@ ycV
 ycV
 ycV
 ycV
-aLF
+dTN
 jON
 uNn
 jON
@@ -209374,7 +210000,7 @@ jON
 jON
 jON
 jON
-aLF
+dTN
 ycV
 ycV
 ycV
@@ -209552,7 +210178,7 @@ ycV
 ycV
 ycV
 ycV
-aLF
+dTN
 jON
 jON
 jON
@@ -209576,7 +210202,7 @@ jON
 jON
 jON
 jON
-aLF
+dTN
 ycV
 ycV
 ycV
@@ -209993,7 +210619,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 cqi
 cqi
 cqi
@@ -210205,7 +210831,7 @@ cqi
 cqi
 cqi
 fep
-kLx
+fep
 fep
 fep
 fep
@@ -210247,7 +210873,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 fep
 cqi
 cqi
@@ -210360,7 +210986,7 @@ ycV
 ycV
 ycV
 ycV
-aLF
+aMu
 jON
 jON
 tXK
@@ -210384,7 +211010,7 @@ pgp
 blC
 jON
 jON
-aLF
+dTN
 ycV
 ycV
 ycV
@@ -210562,7 +211188,7 @@ ycV
 ycV
 ycV
 ycV
-aLF
+dTN
 jON
 jON
 tXK
@@ -210586,7 +211212,7 @@ pgp
 blC
 jON
 jON
-aLF
+dTN
 ycV
 ycV
 ycV
@@ -211149,7 +211775,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -211572,7 +212198,7 @@ ycV
 ycV
 ycV
 ycV
-aLF
+dTN
 jON
 jON
 tXK
@@ -211596,7 +212222,7 @@ pgp
 blC
 jON
 jON
-aLF
+dTN
 ycV
 ycV
 ycV
@@ -211658,7 +212284,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 fep
 cqi
 cqi
@@ -211774,7 +212400,7 @@ wuN
 ycV
 ycV
 ycV
-aLF
+dTN
 jON
 jON
 tXK
@@ -211798,7 +212424,7 @@ pgp
 blC
 jON
 jON
-aLF
+dTN
 ycV
 ycV
 ycV
@@ -212012,7 +212638,7 @@ eCv
 ycV
 ycV
 ycV
-tzR
+ycV
 cqi
 cqi
 cqi
@@ -212160,7 +212786,7 @@ cqi
 cqi
 cqi
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -212582,7 +213208,7 @@ ycV
 ycV
 ycV
 ycV
-aLF
+dTN
 jON
 jON
 jON
@@ -212606,7 +213232,7 @@ jON
 jON
 jON
 jON
-aLF
+dTN
 ycV
 ycV
 ycV
@@ -212784,7 +213410,7 @@ ycV
 ycV
 ycV
 ycV
-aLF
+dTN
 jON
 jON
 jON
@@ -212808,7 +213434,7 @@ jON
 jON
 jON
 jON
-aLF
+dTN
 ycV
 ycV
 ycV
@@ -212866,7 +213492,7 @@ fep
 fep
 fep
 fep
-kLx
+fep
 fep
 cqi
 cqi
@@ -212987,29 +213613,29 @@ ycV
 ycV
 ycV
 nud
-aLF
-aLF
+dTN
+dTN
 nud
 qFY
 qFY
 qFY
 qFY
-aLF
-aLF
+dTN
+dTN
 nud
 qFY
 qFY
 qFY
 nud
-aLF
-aLF
+dTN
+dTN
 qFY
 qFY
 qFY
 qFY
 nud
-aLF
-aLF
+dTN
+dTN
 nud
 ycV
 ycV
@@ -213233,8 +213859,8 @@ cqi
 cqi
 cqi
 cqi
-dvl
-kLx
+fep
+fep
 fep
 fep
 fep
@@ -213374,7 +214000,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -213672,7 +214298,7 @@ fep
 fep
 fep
 fep
-fep
+kLx
 fep
 fep
 fep
@@ -213828,7 +214454,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 cqi
 cqi
 cqi
@@ -213984,7 +214610,7 @@ cqi
 cqi
 cqi
 cqi
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -214006,7 +214632,7 @@ ycV
 ycV
 ycV
 ycV
-tzR
+ycV
 ycV
 ycV
 ycV
@@ -214251,31 +214877,31 @@ fep
 fep
 fep
 fep
-fep
-fep
-lHa
-lHa
-lHa
-lHa
-fep
-fep
-fep
-fep
-fep
-fep
-lHa
-lHa
-lHa
-lHa
-lHa
-lHa
-fep
-fep
-fep
-fep
-fep
-fep
 kLx
+fep
+lHa
+lHa
+lHa
+lHa
+fep
+fep
+fep
+fep
+fep
+fep
+lHa
+lHa
+lHa
+lHa
+lHa
+lHa
+fep
+fep
+fep
+fep
+fep
+fep
+fep
 fep
 fep
 fep
@@ -214389,8 +215015,8 @@ cqi
 cqi
 cqi
 cqi
-riU
-riU
+ycV
+ycV
 ycV
 ycV
 ycV
@@ -214403,8 +215029,8 @@ ycV
 ycV
 fSp
 ycV
-riU
-riU
+ycV
+ycV
 ycV
 ycV
 ycV
@@ -214451,7 +215077,6 @@ cqi
 cqi
 fep
 fep
-kLx
 fep
 fep
 fep
@@ -214475,10 +215100,11 @@ fep
 fep
 fep
 fep
-dvl
-dvl
-dvl
-dvl
+fep
+fep
+fep
+fep
+fep
 fep
 fep
 fep
@@ -214593,48 +215219,48 @@ cqi
 cqi
 cqi
 cqi
-riU
-ycV
-tzR
-ycV
-ycV
-ycV
-ycV
-tzR
-ycV
-ycV
-riU
-riU
-riU
-riU
-riU
-ycV
-tzR
-ycV
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-ycV
-tzR
 ycV
 ycV
 ycV
 ycV
 ycV
-tzR
 ycV
 ycV
 ycV
 ycV
 ycV
-tzR
-riU
-riU
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
 cqi
 cqi
 cqi
@@ -214651,7 +215277,6 @@ cqi
 cqi
 cqi
 cqi
-dvl
 fep
 fep
 fep
@@ -214666,25 +215291,26 @@ fep
 fep
 fep
 fep
-kLx
 fep
 fep
 fep
 fep
 fep
-kLx
-fep
-fep
-dvl
-dvl
-dvl
-dvl
 fep
 fep
 fep
 fep
 fep
-kLx
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
 cqi
 cqi
 cqi
@@ -214799,19 +215425,19 @@ cqi
 cqi
 cqi
 cqi
-riU
-riU
-riU
-riU
-riU
-riU
-riU
-riU
-riU
-riU
-riU
-riU
-riU
+ycV
+ycV
+ycV
+ycV
+eCv
+ycV
+ycV
+ycV
+ycV
+ycV
+eCv
+ycV
+ycV
 cqi
 cqi
 cqi
@@ -214823,15 +215449,15 @@ cqi
 cqi
 cqi
 cqi
-riU
-riU
-riU
-riU
-riU
-riU
-riU
-riU
-riU
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
+ycV
 cqi
 cqi
 cqi
@@ -214853,35 +215479,35 @@ cqi
 cqi
 cqi
 cqi
-dvl
-dvl
-dvl
-dvl
-dvl
 fep
 fep
 fep
 fep
 fep
-dvl
-dvl
-dvl
-dvl
 fep
 fep
 fep
 fep
 fep
-dvl
-dvl
-dvl
-dvl
-dvl
-dvl
-dvl
-dvl
 fep
-kLx
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
 fep
 fep
 fep
@@ -215003,17 +215629,14 @@ cqi
 cqi
 cqi
 cqi
-riU
-riU
-riU
-riU
+ycV
+ycV
+ycV
+ycV
 cqi
 cqi
-riU
-riU
-cqi
-cqi
-cqi
+ycV
+ycV
 cqi
 cqi
 cqi
@@ -215026,16 +215649,16 @@ cqi
 cqi
 cqi
 cqi
-riU
-riU
-riU
-riU
-riU
-riU
-riU
 cqi
 cqi
 cqi
+ycV
+ycV
+eCv
+ycV
+ycV
+ycV
+ycV
 cqi
 cqi
 cqi
@@ -215057,30 +215680,33 @@ cqi
 cqi
 cqi
 cqi
-dvl
-dvl
-dvl
 cqi
 cqi
 cqi
-dvl
-dvl
-dvl
+fep
+fep
+fep
+cqi
+cqi
+cqi
+fep
+fep
+fep
 cqi
 cqi
 cqi
 cqi
-dvl
-dvl
-dvl
-dvl
-dvl
-dvl
-dvl
-dvl
-dvl
-dvl
-dvl
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
 cqi
 cqi
 cqi
@@ -215274,13 +215900,13 @@ cqi
 cqi
 cqi
 cqi
-dvl
-dvl
-dvl
-dvl
-dvl
-dvl
-dvl
+fep
+fep
+fep
+fep
+fep
+fep
+fep
 cqi
 cqi
 cqi
@@ -229947,9 +230573,9 @@ cIh
 cIh
 cIh
 cIh
-ybR
-ebD
-jtJ
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -230149,9 +230775,9 @@ cIh
 cIh
 cIh
 cIh
-ybR
-aln
-jtJ
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -230348,13 +230974,13 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
 fct
 sch
 fct
-cIh
+rKr
 cIh
 cIh
 cIh
@@ -230549,14 +231175,14 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+aln
 cyE
-aAK
-cIh
+ooW
+rKr
 cIh
 cIh
 cIh
@@ -230750,17 +231376,17 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -230951,18 +231577,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -231153,18 +231779,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 fct
 sch
 fct
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -231355,18 +231981,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -231557,18 +232183,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+pah
+pah
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -231759,18 +232385,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-jFl
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
-aAK
-cIh
-cIh
-cIh
+ooW
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -231961,18 +232587,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 fct
 cyE
 fct
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -232163,18 +232789,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-rdY
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
 ooW
-cqi
-cqi
-cIh
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -232365,18 +232991,18 @@ bER
 cIh
 cIh
 cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-rdY
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
 ooW
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -232567,36 +233193,36 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-rdY
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
 ooW
-cqi
-cqi
-cqi
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+pah
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -232769,37 +233395,37 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 fct
 sch
 fct
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -232971,37 +233597,37 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-rdY
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
 ooW
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -233173,12 +233799,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 tks
 eiq
@@ -233197,11 +233823,11 @@ dWM
 dWM
 dWM
 eiq
-efK
-efK
-efK
-efK
-efK
+dWM
+dWM
+dWM
+dWM
+dWM
 eiq
 eiq
 cIh
@@ -233375,12 +234001,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 twH
 uNn
@@ -233577,12 +234203,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 jON
 jON
@@ -233779,12 +234405,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 jON
 jON
@@ -233981,12 +234607,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 jON
 jON
@@ -234183,12 +234809,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 jON
 jON
@@ -234385,12 +235011,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 jON
 jON
@@ -234587,12 +235213,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+pah
+rKr
+rKr
+rKr
+rKr
 pRc
 jON
 jON
@@ -234789,12 +235415,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 jON
 jON
@@ -234991,12 +235617,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 qfZ
 jON
@@ -235193,12 +235819,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 dzD
 jON
@@ -235395,12 +236021,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 dzD
 jON
@@ -235597,12 +236223,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 dzD
 jON
@@ -235799,12 +236425,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 dzD
 jON
@@ -236001,12 +236627,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 pRc
 dzD
 jON
@@ -236203,12 +236829,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 eiq
 iUw
 jON
@@ -236371,9 +236997,9 @@ cIh
 cIh
 cIh
 cIh
-jFl
-ltk
-aAK
+mfU
+mfU
+mfU
 cIh
 cIh
 cIh
@@ -236405,11 +237031,11 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
+rKr
+rKr
+rKr
+rKr
+rKr
 nPi
 eiq
 dzD
@@ -236573,9 +237199,9 @@ cIh
 cIh
 cIh
 cIh
-jFl
-cnr
-aAK
+mfU
+mfU
+mfU
 cIh
 cIh
 cIh
@@ -236606,12 +237232,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+rKr
+rKr
+rKr
+rKr
+rKr
 nPi
 tuk
 dzD
@@ -236775,9 +237401,9 @@ cIh
 cIh
 cIh
 cIh
-jFl
-sch
-aAK
+mfU
+rGn
+mfU
 cIh
 cIh
 cIh
@@ -236807,13 +237433,13 @@ cIh
 bER
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+rKr
+rKr
+rKr
+rKr
+rKr
 nPi
 bGv
 qvp
@@ -237009,13 +237635,13 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+rKr
+rKr
+rKr
+rKr
+rKr
 kai
 tks
 tks
@@ -237210,40 +237836,40 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-rdY
+cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+aln
 sch
 sch
 ooW
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -237412,7 +238038,7 @@ cIh
 cIh
 cIh
 cIh
-cqi
+rKr
 nDb
 fct
 sye
@@ -237424,27 +238050,27 @@ fct
 sch
 sch
 fct
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -237613,8 +238239,8 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
+cIh
+rKr
 fct
 cyE
 sch
@@ -237626,26 +238252,26 @@ sch
 sch
 sch
 ooW
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -237828,25 +238454,25 @@ sch
 sch
 cyE
 ooW
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -238030,24 +238656,24 @@ fct
 pdE
 pdE
 fct
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -238224,7 +238850,7 @@ cqi
 rdY
 sch
 sch
-aAK
+ooW
 cIh
 cIh
 cIh
@@ -238233,22 +238859,22 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+pah
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -238436,20 +239062,20 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-bER
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -238589,10 +239215,10 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
 jFl
 cyE
 aAK
@@ -238639,18 +239265,18 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -238788,14 +239414,14 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-rdY
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+jFl
 sch
 aAK
 cIh
@@ -238842,16 +239468,16 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cqi
-cqi
-cIh
-cIh
-cIh
-cIh
-cIh
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
+rKr
 cIh
 cIh
 cIh
@@ -238989,14 +239615,14 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-cqi
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 fct
 sch
 fct
@@ -239191,15 +239817,15 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-rdY
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+jFl
 sch
 aAK
 cIh
@@ -239393,15 +240019,15 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-rdY
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+jFl
 sch
 aAK
 cIh
@@ -239595,15 +240221,15 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-rdY
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+jFl
 sch
 aAK
 cIh
@@ -239797,15 +240423,15 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-rdY
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+jFl
 cyE
 aAK
 cIh
@@ -239998,15 +240624,15 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 qTL
 aFe
@@ -240200,15 +240826,15 @@ cIh
 bER
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 jUv
 aFe
@@ -240402,15 +241028,15 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 qTL
 aFe
@@ -240603,16 +241229,16 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 rGz
 fkW
@@ -240805,16 +241431,16 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 rGz
 kFv
@@ -241007,16 +241633,16 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 aFe
 aFe
@@ -241209,16 +241835,16 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 osH
 ugp
@@ -241411,16 +242037,16 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 vOp
 rGz
@@ -241613,13 +242239,13 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 aFe
 aFe
@@ -241655,7 +242281,7 @@ qJO
 qJO
 qJO
 fct
-hca
+sch
 sch
 sch
 sch
@@ -241815,13 +242441,13 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 jCb
 aBT
@@ -242017,13 +242643,13 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 uLA
 pPW
@@ -242219,13 +242845,13 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 dqt
 jfy
@@ -242421,13 +243047,13 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 vwr
 iJw
@@ -242624,12 +243250,12 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 aFe
 aFe
 aFe
@@ -242826,20 +243452,20 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 kai
-cIh
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
 aFe
 aFe
 aFe
@@ -243030,18 +243656,18 @@ bER
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
 cIh
 cIh
 cIh
 cIh
 cIh
 cIh
+cIh
+cIh
+gQO
+gQO
+gQO
+gQO
 aFe
 aFe
 aFe
@@ -243234,16 +243860,16 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
 cIh
 cIh
 cIh
 cIh
 cIh
 cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
 cIh
 cIh
 aFe
@@ -243441,12 +244067,12 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
+gQO
+gQO
 cIh
 aFe
 aFe
@@ -243644,10 +244270,10 @@ bER
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
 cIh
 cIh
 cIh
@@ -243846,10 +244472,10 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
 cIh
 cIh
 cIh
@@ -244048,10 +244674,10 @@ cIh
 cIh
 cIh
 cIh
-cIh
-cIh
-cIh
-cIh
+gQO
+gQO
+gQO
+gQO
 cIh
 cIh
 cIh
@@ -244249,12 +244875,12 @@ cIh
 cIh
 cIh
 cIh
+gQO
 cIh
 cIh
 cIh
 cIh
-cIh
-cIh
+gQO
 cIh
 cIh
 cIh
@@ -246174,10 +246800,10 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -246375,11 +247001,11 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -246573,15 +247199,15 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -246773,17 +247399,17 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -246972,20 +247598,20 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -247174,20 +247800,20 @@ cqi
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -247364,7 +247990,7 @@ cIh
 cIh
 cIh
 cIh
-cqi
+cIh
 cqi
 cqi
 cqi
@@ -247375,21 +248001,21 @@ cqi
 cqi
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -247489,7 +248115,7 @@ cIh
 cIh
 cIh
 cIh
-bER
+cIh
 cIh
 cIh
 cIh
@@ -247566,6 +248192,8 @@ cIh
 cIh
 cIh
 cIh
+cIh
+cIh
 cqi
 cqi
 cqi
@@ -247576,22 +248204,20 @@ cqi
 cqi
 cqi
 cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -247769,6 +248395,7 @@ cIh
 cIh
 bER
 cIh
+cIh
 cqi
 cqi
 cqi
@@ -247779,21 +248406,20 @@ cqi
 cqi
 cqi
 cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -247888,18 +248514,18 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -247972,6 +248598,7 @@ cIh
 cIh
 cIh
 cIh
+cIh
 cqi
 cqi
 cqi
@@ -247981,21 +248608,20 @@ cqi
 cqi
 cqi
 cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -248082,29 +248708,29 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+bER
 cIh
 cIh
 cIh
@@ -248184,20 +248810,20 @@ cqi
 cqi
 cqi
 cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -248284,32 +248910,32 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
 cIh
 cIh
-bER
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -248386,20 +249012,20 @@ cqi
 cqi
 cqi
 cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -248486,30 +249112,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -248588,20 +249214,20 @@ cqi
 cqi
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -248688,30 +249314,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -248789,21 +249415,21 @@ cqi
 cqi
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -248890,30 +249516,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -248991,21 +249617,21 @@ cqi
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -249092,30 +249718,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -249193,21 +249819,21 @@ cqi
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -249294,30 +249920,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -249395,21 +250021,21 @@ cqi
 cqi
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -249496,30 +250122,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -249597,21 +250223,21 @@ cqi
 cqi
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -249698,30 +250324,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -249799,10 +250425,10 @@ cqi
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -249900,30 +250526,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -250002,8 +250628,8 @@ cqi
 cIh
 cIh
 cIh
-cqi
-cqi
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -250102,30 +250728,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -250304,30 +250930,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -250506,30 +251132,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -250708,30 +251334,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -250910,30 +251536,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -251112,30 +251738,30 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -251314,29 +251940,29 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -251516,29 +252142,29 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh
@@ -251718,29 +252344,29 @@ cIh
 cIh
 cIh
 cIh
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
+cIh
 cIh
 cIh
 cIh

@@ -1812,12 +1812,6 @@
 /obj/structure/boulder,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/dungeon/outside/prepper/vault/floor3)
-"btt" = (
-/obj/landmark/join/late/cryo_outsider,
-/turf/simulated/shuttle/floor/mining{
-	icon_state = "5,7"
-	},
-/area/colony/exposedsun/crashed_shop/outsider)
 "btF" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/invislight,
@@ -4833,7 +4827,6 @@
 	dir = 4;
 	pixel_y = 0
 	},
-/obj/landmark/join/late/cryo_outsider,
 /turf/simulated/floor/wood_old,
 /area/colony/exposedsun/crashed_shop/outsider)
 "dsd" = (
@@ -7503,7 +7496,6 @@
 	icon_state = "4-8";
 	pixel_x = 0
 	},
-/obj/landmark/join/late/cryo_outsider,
 /turf/simulated/shuttle/floor/mining{
 	icon_state = "5,7"
 	},
@@ -30948,7 +30940,6 @@
 /area/iskhod/outside/meadow)
 "uFC" = (
 /obj/random/furniture/bedsheet,
-/obj/landmark/join/late/dormitory_outsider,
 /obj/structure/bed/padded,
 /turf/simulated/floor/wood/wild5,
 /area/asteroid/rogue)
@@ -69388,9 +69379,9 @@ ybe
 xFK
 feK
 sBS
-btt
+umJ
 sBS
-btt
+umJ
 sBS
 umJ
 mIL
@@ -69597,9 +69588,9 @@ jVg
 aSc
 feK
 aeh
-btt
+umJ
 wOi
-btt
+umJ
 aeh
 qwo
 oUc

@@ -117,7 +117,7 @@
 	TLV["plasma"] =			list(-1.0, -1.0, 0.01, 0.5) // Partial pressure, kpa
 	TLV["other"] =			list(-1.0, -1.0, 0.5, 1.0) // Partial pressure, kpa
 	TLV["pressure"] =		list(ONE_ATMOSPHERE*0.80,ONE_ATMOSPHERE*0.90,ONE_ATMOSPHERE*1.10,ONE_ATMOSPHERE*1.20) /* kpa */
-	TLV["temperature"] =	list(T0C-40, T0C-20, T0C+40, T0C+66) // K
+	TLV["temperature"] =	list(T0C-45, T0C-30, T0C+40, T0C+66) // K
 
 	// Apply default mode to ensure scrubbers and vents are turned on
 	spawn(10)

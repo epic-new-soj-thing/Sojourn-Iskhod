@@ -16,7 +16,7 @@
 #define JOBS_ANTI_HIVEMIND "Captain","Lieutenant","Detective","Ranger","Junior Ranger","Cardinal","Priest","Foreman","Rookie Prospector","Prospector Specialist","Prospector","Steward","AI","Paramedic","Roboticist","Miner"
 
 #define JOURNALIST "Journalist"
-#define HOP "Hospitality Manager"
+#define HOSP "Hospitality Manager"
 #define CHEMIST "Chemist"
 #define NURSE "Nurse"
 #define PARAMEDIC "Paramedic"

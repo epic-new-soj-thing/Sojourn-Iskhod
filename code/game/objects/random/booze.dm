@@ -88,7 +88,6 @@
 	/obj/item/reagent_containers/drinks/mug/serb = 0.1,
 	/obj/item/reagent_containers/drinks/mug/ironhammer = 0.1,
 	/obj/item/reagent_containers/drinks/mug/league = 0.1,
-	/obj/item/reagent_containers/drinks/mug/moe = 0.1,
 	/obj/item/reagent_containers/drinks/mug/aster = 0.1,
 	/obj/item/reagent_containers/drinks/mug/guild = 0.1,
 	/obj/item/reagent_containers/drinks/mug/white = 1,

@@ -711,7 +711,7 @@
 	name = "snow"
 	icon = 'icons/turf/flooring/snows.dmi'
 	icon_state = "snow0"
-	temperature = 260
+	temperature = 240
 	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
 	nitrogen = MOLES_N2STANDARD *1.14
 	initial_flooring = /decl/flooring/snow
@@ -720,7 +720,7 @@
 	name = "snow"
 	icon = 'icons/turf/flooring/snow.dmi'
 	icon_state = "snow"
-	temperature = 260
+	temperature = 240
 	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
 	nitrogen = MOLES_N2STANDARD *1.14
 	initial_flooring = /decl/flooring/snow/smooth
@@ -729,7 +729,7 @@
 	name = "icewater"
 	icon = 'icons/turf/flooring/icewater.dmi'
 	icon_state = "ice_water0"
-	temperature = 260
+	temperature = 240
 	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
 	nitrogen = MOLES_N2STANDARD *1.14
 	initial_flooring = /decl/flooring/icewater
