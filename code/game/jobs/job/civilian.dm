@@ -36,12 +36,12 @@
 							 /datum/computer_file/program/reports,
 							 /datum/computer_file/program/wordprocessor)
 
-	description = "The Hospitality Manager is the head of Ivaris Hospitality Services, ensuring the comfort and entertainment of the colony.<br>\
+	description = "The Hospitality Manager is the head of Independent Recreation Services, ensuring the comfort and entertainment of the colony.<br>\
 	You oversee the bar, kitchen, hydroponics, and all entertainment services.<br>\
 	Ensure your staff are profitable and keeping the crew happy.<br>\
 	You also serve as a member of the Iskhod Council, representing the civilian and service sectors."
 
-	duties = "Manage the Ivaris Hospitality staff.<br>\
+	duties = "Manage the Independent Recreation staff.<br>\
 	Ensure the colony is fed and entertained.<br>\
 	Advise the Council on civilian matters."
 
@@ -75,7 +75,7 @@
 	perks = list(PERK_MARKET_PROF, /datum/perk/bartender)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
-	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment under Ivaris Hospitality Services.<br>\
+	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment under Independent Recreation Services.<br>\
 	Working with the Chef and Gardener, you make the big decisions. Run your business well - perhaps seek to maximise profits.<br>\
 	Although tips are a good source of income, your wider business acumen will truly decide your prosperity here."
 
@@ -153,7 +153,7 @@
 
 	perks = list(PERK_MARKET_PROF, /datum/perk/greenthumb, /datum/perk/bartender)
 
-	description = "The Gardener toils in Ivaris Hospitality hydroponics - utilising seeds, tools and fertilisers to grow bountiful crops.<br>\
+	description = "The Gardener toils in Independent Recreation hydroponics - utilising seeds, tools and fertilisers to grow bountiful crops.<br>\
 	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
 	You are the go-to expert for flora destruction - use shovels and hatchets, or seek more advanced equipment like flamethrowers and chainsaws.<br>\
 	Remember that your goods come with a cost and more exotic crops can command a higher price."
@@ -168,6 +168,7 @@
 	icon_state = "player-black"
 	join_tag = /datum/job/hydro
 
+/*
 /datum/job/artist
 	title = "Artist"
 	flag = ARTIST
@@ -208,7 +209,7 @@
 	name = "Artist"
 	icon_state = "player-grey"
 	join_tag = /datum/job/artist
-
+*/
 
 /datum/job/journalist
 	title = "Journalist"
@@ -236,7 +237,7 @@
 							 /datum/computer_file/program/reports,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Journalist is a member of the press for Ivaris Hospitality Services, documenting life in the colony.<br>\
+	description = "The Journalist is a member of the press for Independent Recreation Services, documenting life in the colony.<br>\
 	Your duty is to report the news, good or bad, to the populace. Interviews, investigations, and photography are your tools.<br>\
 	Stay out of trouble, but don't be afraid to ask the hard questions. Ideally, you should be ensuring the truth gets out.<br>\
 	You report to the Hospitality Manager, but your loyalty is to the truth."

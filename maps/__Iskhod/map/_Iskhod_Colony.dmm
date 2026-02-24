@@ -6,7 +6,7 @@
 /obj/item/stamp/captain,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "aao" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
@@ -1259,8 +1259,8 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "apg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -1509,8 +1509,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "asi" = (
 /obj/structure/table/woodentable,
@@ -1922,7 +1922,9 @@
 "axU" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "axW" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/misc/enlist{
@@ -2401,7 +2403,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "aCD" = (
 /obj/structure/toilet{
@@ -3619,7 +3621,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "aTL" = (
 /obj/machinery/door/firedoor,
@@ -5862,8 +5864,8 @@
 "bvF" = (
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "bvH" = (
 /obj/structure/cable/green{
@@ -7293,7 +7295,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "bNx" = (
 /obj/machinery/atm{
@@ -8081,7 +8083,9 @@
 "bXS" = (
 /obj/machinery/washing_machine,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "bXZ" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
@@ -10835,7 +10839,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "cHQ" = (
 /obj/structure/table/steel_reinforced,
@@ -13778,7 +13782,7 @@
 /obj/item/paper/crumpled,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "duH" = (
 /obj/machinery/computer/mecha,
@@ -14769,8 +14773,8 @@
 	icon_state = "0-8"
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "dGJ" = (
 /obj/machinery/rotating_alarm/supermatter{
@@ -15202,7 +15206,9 @@
 /area/iskhod/hallway/side/f2section3)
 "dMr" = (
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "dME" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/corner_techfloor_gray/diagonal,
@@ -15396,8 +15402,8 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "dPc" = (
 /obj/structure/railing{
@@ -15561,7 +15567,9 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "dSr" = (
 /obj/structure/table/woodentable,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -15672,8 +15680,8 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "dTD" = (
 /obj/random/scrap/moderate_weighted,
@@ -15908,7 +15916,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "dXo" = (
 /obj/effect/floor_decal/floordetail/edgedrain{
@@ -17215,7 +17223,7 @@
 /obj/landmark/join/start/premier,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "eoq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -17230,8 +17238,8 @@
 	dir = 4
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "eoy" = (
 /obj/random/lowkeyrandom/low_chance,
@@ -18964,8 +18972,8 @@
 	pixel_y = 3
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "eKJ" = (
 /obj/structure/table/reinforced,
@@ -20129,7 +20137,9 @@
 /area/iskhod/pros/prep)
 "fba" = (
 /turf/simulated/wall/iskhod_blue,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "fbe" = (
 /obj/structure/table/standard,
 /obj/machinery/recharger,
@@ -20327,8 +20337,8 @@
 /area/iskhod/maintenance/undergroundfloor2central)
 "fcY" = (
 /turf/simulated/wall/iskhod_blue,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "fda" = (
 /obj/structure/cable/cyan{
@@ -20652,7 +20662,9 @@
 	pixel_x = -28
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "fhs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/boulder{
@@ -20737,8 +20749,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "fjv" = (
 /obj/machinery/computer/prisoner{
@@ -22237,7 +22249,7 @@
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "fBv" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan,
@@ -22432,7 +22444,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "fEH" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -23420,8 +23432,8 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "fRQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23851,7 +23863,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "fYu" = (
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -24081,8 +24093,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "gck" = (
 /obj/machinery/vending/assist,
@@ -25501,7 +25513,9 @@
 /obj/item/clothing/accessory/medal/bronze_heart,
 /obj/item/reagent_containers/atomic_distillery,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "gtr" = (
 /obj/machinery/computer/arcade/orion_trail,
 /turf/simulated/floor/carpet/gaycarpet,
@@ -28221,8 +28235,8 @@
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "hdW" = (
 /obj/structure/disposalpipe/segment{
@@ -28503,8 +28517,8 @@
 /obj/effect/floor_decal/industrial/outline,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "hhh" = (
 /obj/effect/floor_decal/industrial/warningwhite/corner,
@@ -29003,8 +29017,8 @@
 /obj/random/furniture/pottedplant,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "hqs" = (
 /obj/structure/disposalpipe/segment{
@@ -29078,8 +29092,8 @@
 	pixel_y = 25
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "hqW" = (
 /obj/machinery/light{
@@ -31461,7 +31475,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "hVF" = (
 /turf/simulated/mineral/planet,
@@ -34860,8 +34874,8 @@
 	dir = 1
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "iNZ" = (
 /obj/structure/table/bench/standard,
@@ -35084,8 +35098,8 @@
 	id = "HOP Shutters"
 	},
 /turf/simulated/floor/plating/under,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "iQQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -37195,8 +37209,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "jqB" = (
 /obj/effect/decal/cleanable/dirt,
@@ -39485,8 +39499,8 @@
 /obj/structure/bed/chair,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "jUO" = (
 /obj/effect/floor_decal/industrial_plant,
@@ -39794,7 +39808,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "jYr" = (
 /obj/effect/decal/cleanable/dirt,
@@ -41359,8 +41373,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "ksg" = (
 /obj/structure/disposalpipe/segment,
@@ -41637,7 +41651,7 @@
 /obj/effect/window_lwall_spawn/reinforced/polarized,
 /turf/simulated/floor/plating/under,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "kwG" = (
 /obj/machinery/firealarm{
@@ -41920,7 +41934,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "kAZ" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -41987,11 +42003,6 @@
 /obj/effect/decal/cleanable/cobweb2,
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
-"kBP" = (
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
-	})
 "kBW" = (
 /obj/machinery/autolathe/organ_fabricator/loaded,
 /obj/machinery/light{
@@ -44192,7 +44203,7 @@
 /obj/structure/filingcabinet/security,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "leN" = (
 /obj/effect/decal/cleanable/dirt,
@@ -46430,7 +46441,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "lIF" = (
 /obj/structure/cable/cyan{
 	d2 = 8;
@@ -46893,8 +46906,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "lQr" = (
 /obj/structure/disposalpipe/segment,
@@ -47669,8 +47682,8 @@
 "lYT" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "lYW" = (
 /obj/structure/table/reinforced,
@@ -48163,7 +48176,9 @@
 	icon_state = "1-2"
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "mfA" = (
 /obj/machinery/honey_extractor,
 /obj/machinery/light{
@@ -49219,8 +49234,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "msK" = (
 /obj/effect/decal/cleanable/dirt,
@@ -50098,10 +50113,9 @@
 "mFa" = (
 /obj/structure/bed/chair/comfy/black,
 /obj/effect/decal/cleanable/dirt,
-/obj/landmark/join/start/pg,
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "mFf" = (
 /obj/structure/table/marble,
@@ -50523,7 +50537,9 @@
 /obj/item/towel/random,
 /obj/item/towel/random,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "mKN" = (
 /obj/structure/table/rack,
 /obj/item/towel/random,
@@ -52364,7 +52380,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "njW" = (
 /obj/effect/decal/cleanable/dirt,
@@ -53998,7 +54014,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "nBT" = (
 /obj/landmark/join/start/robostudent,
@@ -59647,7 +59663,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "pau" = (
 /obj/structure/disposalpipe/segment{
@@ -64453,7 +64469,7 @@
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "qnr" = (
 /obj/structure/railing{
@@ -64951,7 +64967,9 @@
 "qtP" = (
 /obj/machinery/light/small,
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "qtX" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
@@ -65910,7 +65928,9 @@
 /obj/item/card/id/captains_spare,
 /obj/item/storage/secure/briefcase/nukedisk,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "qIc" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 8
@@ -67247,8 +67267,8 @@
 	pixel_x = -32
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "raK" = (
 /turf/simulated/shuttle/wall/mining{
@@ -67284,8 +67304,8 @@
 	department = "Stewards Office"
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "raW" = (
 /obj/effect/decal/cleanable/rubble,
@@ -67931,8 +67951,8 @@
 /area/iskhod/hallway/surface/section3)
 "rhP" = (
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "rhQ" = (
 /obj/effect/floor_decal/industrial/warningwhite{
@@ -68035,10 +68055,10 @@
 /area/iskhod/derelict/abandoned_area)
 "rjr" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/secure_closet/reinforced/hop,
+/obj/structure/table/woodentable,
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "rjH" = (
 /obj/effect/decal/cleanable/dirt,
@@ -68501,7 +68521,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "rpx" = (
 /obj/effect/floor_decal/industrial/warningdust{
@@ -69008,7 +69028,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "rxC" = (
 /obj/machinery/light/small,
@@ -69597,7 +69617,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "rFW" = (
 /obj/random/scrap/sparse_weighted,
@@ -69819,8 +69839,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/stamp/hop,
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "rIy" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
@@ -71508,7 +71528,9 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "sfk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -72385,8 +72407,8 @@
 /obj/effect/window_lwall_spawn,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "spv" = (
 /obj/random/contraband,
@@ -72749,7 +72771,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "suH" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
@@ -73631,7 +73653,7 @@
 /obj/machinery/photocopier,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "sJZ" = (
 /obj/structure/bed/chair/comfy/black,
@@ -74018,8 +74040,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "sOQ" = (
 /obj/item/toy/figure/character/moebius/cmo,
@@ -76543,8 +76565,8 @@
 "tuu" = (
 /obj/machinery/photocopier,
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "tuv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -79401,7 +79423,9 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/unpowered/simple/wood,
 /turf/simulated/floor/plating/under,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "ugo" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/security/armory)
@@ -80679,8 +80703,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "uxD" = (
 /obj/effect/floor_decal/industrial_plant/border,
@@ -81377,7 +81401,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "uGX" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
@@ -81602,8 +81626,8 @@
 "uJA" = (
 /obj/effect/window_lwall_spawn,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "uJB" = (
 /obj/structure/disposalpipe/segment{
@@ -81696,7 +81720,9 @@
 "uKH" = (
 /obj/machinery/camera/network/command,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "uKK" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/landmark/corpse/excelsior,
@@ -81761,7 +81787,9 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "uLk" = (
 /obj/random/mob/termite_no_despawn/low_chance,
 /obj/random/junk/low_chance,
@@ -83256,7 +83284,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "vhC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -85323,8 +85351,8 @@
 	dir = 4
 	},
 /turf/simulated/floor/plating/under,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "vJg" = (
 /obj/machinery/computer/scan_consolenew{
@@ -87699,8 +87727,8 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/gray_platform,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "wpy" = (
 /obj/random/cluster/spiders,
@@ -88185,8 +88213,8 @@
 /area/iskhod/abandoned/strip_club)
 "wwm" = (
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "wws" = (
 /obj/effect/decal/cleanable/dirt,
@@ -89121,7 +89149,7 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "wGK" = (
 /obj/structure/disposalpipe/segment{
@@ -89438,7 +89466,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "wLR" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -89905,8 +89935,8 @@
 	id = "HOP Shutters"
 	},
 /turf/simulated/floor/plating/under,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "wSw" = (
 /obj/effect/floor_decal/industrial_plant,
@@ -90798,8 +90828,8 @@
 	dir = 8
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/fo{
-	name = "\improper Command - Steward's Office"
+/area/iskhod/command/captain{
+	name = "\improper Command - Govenor's Office"
 	})
 "xeI" = (
 /obj/machinery/power/emitter,
@@ -92060,7 +92090,9 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "xwb" = (
 /obj/effect/floor_decal/industrial/warningwhite{
 	dir = 4
@@ -92194,7 +92226,7 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
-	name = "\improper Command - Premier's Office"
+	name = "\improper Command - Governor's Quarters"
 	})
 "xxP" = (
 /turf/simulated/wall/iskhod_blue,
@@ -94087,7 +94119,9 @@
 	icon_state = "0-2"
 	},
 /turf/simulated/floor/wood,
-/area/iskhod/command/captain/quarters)
+/area/iskhod/command/captain/quarters{
+	name = "\improper Command - Governor's Quarters"
+	})
 "xXg" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4;
@@ -150132,7 +150166,7 @@ fba
 wLM
 dMr
 qtP
-kBP
+fba
 dhd
 soT
 rxk
@@ -150334,11 +150368,11 @@ fba
 mKA
 dMr
 bXS
-kBP
-kBP
+fba
+fba
 kwf
 kwf
-kBP
+fba
 vnQ
 lto
 bsG
@@ -150536,7 +150570,7 @@ fba
 fba
 ugl
 fba
-kBP
+fba
 leK
 sJV
 dur
@@ -150940,7 +150974,7 @@ fba
 uKH
 axU
 uLi
-kBP
+fba
 uGV
 rxx
 bNw
@@ -151142,7 +151176,7 @@ fba
 gtp
 axU
 uLi
-kBP
+fba
 suD
 aam
 jYn
@@ -151344,7 +151378,7 @@ fba
 qHU
 kAY
 seJ
-kBP
+fba
 fYk
 eoo
 wGD
@@ -151546,7 +151580,7 @@ fba
 fba
 fba
 fba
-kBP
+fba
 njR
 pam
 xxN
@@ -151751,8 +151785,8 @@ rxC
 hVE
 hVE
 hVE
-kBP
-kBP
+fba
+fba
 vnQ
 vnQ
 dCV
