@@ -12,7 +12,7 @@
 		list("key" = "med", "flag" = MEDICAL),
 		list("key" = "sci", "flag" = SCIENCE),
 		list("key" = "chr", "flag" = CHURCH),
-		list("key" = "sup", "flag" = FL),
+		list("key" = "sup", "flag" = SUPPLY),
 		list("key" = "eng", "flag" = ENGINEERING),
 		list("key" = "pro", "flag" = PROSPECTORS),
 		list("key" = "civ", "flag" = CIVILIAN),
