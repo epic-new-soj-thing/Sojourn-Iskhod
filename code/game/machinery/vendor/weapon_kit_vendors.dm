@@ -104,6 +104,12 @@
 					"Ekaterina SMG Kit" = /obj/item/storage/box/bs_kit/ekaterina,
 					"Drozd SMG Kit" = /obj/item/storage/box/bs_kit/drozd,
 					"Bounty Kit" = /obj/item/storage/box/bs_kit/bounty,
+					"Freedom Kit" = /obj/item/storage/box/m_kit/freedom,
+					"Breacher-hammer Kit" = /obj/item/storage/box/m_kit/breacher,
+					"Operator Kit" = /obj/item/storage/box/m_kit/opshotkit,
+					"Mamba Kit" = /obj/item/storage/box/m_kit/mamba,
+					"Gear Laser Carbine Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
+					"Second Secondary" = /obj/item/voucher/marshal/secondary,
 					"Second Secondary" = /obj/item/voucher/blackshield/secondary)
 	var/selection = items[input(redeemer, "Pick your primary weapon", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
@@ -176,11 +182,13 @@
 
 /obj/machinery/vending/blackshield_kit/proc/RedeemCorpsmanArmor(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
-					"Plate Armor Kit" = /obj/item/storage/box/bs_kit/standard_armor_corpsman,
-					"Armored Overcoat Kit" = /obj/item/storage/box/bs_kit/militia_overcoat, //We dont have a Corps-persons
-					"Flak Armor Kit" = /obj/item/storage/box/bs_kit/flak_armor,
-					"Ablative Armor Kit" = /obj/item/storage/box/bs_kit/laser_armor,
-					"Bullet-Proof Armor Kit" = /obj/item/storage/box/bs_kit/bullet_armor)
+		"Standard Full Plate" = /obj/item/storage/box/m_kit/standard_armor,
+		"Webbing Standard Plate" = /obj/item/storage/box/m_kit/webbing_armor,
+		"Plate Armor Kit" = /obj/item/storage/box/bs_kit/standard_armor_corpsman,
+		"Armored Overcoat Kit" = /obj/item/storage/box/bs_kit/militia_overcoat, //We dont have a Corps-persons
+		"Flak Armor Kit" = /obj/item/storage/box/bs_kit/flak_armor,
+		"Ablative Armor Kit" = /obj/item/storage/box/bs_kit/laser_armor,
+		"Bullet-Proof Armor Kit" = /obj/item/storage/box/bs_kit/bullet_armor)
 	var/selection = items[input(redeemer, "Pick your armor Kit", "Blackshield Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
@@ -189,10 +197,10 @@
 	else
 		voucher.stamped = FALSE
 
-//For Marshal Kits
+//For Ranger Kits
 /obj/machinery/vending/marshal_kit
-	name = "\improper Marshal Kit Vendor"
-	desc = "A vendor that can dispense specialized equipment kits for Marshal Officers."
+	name = "\improper Ranger Kit Vendor"
+	desc = "A vendor that can dispense specialized equipment kits for Ranger Officers."
 	icon_state = "trashvend"
 	products = list(
 		//obj/item/storage/box/m_kit/freedom = 2,
@@ -251,13 +259,20 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
+					"STS Para Kit" = /obj/item/storage/box/bs_kit/sts_para,
+					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
+					"Lascore kit" = /obj/item/storage/box/bs_kit/lascore,
+					"Warthog Omni Kit" = /obj/item/storage/box/bs_kit/rds_omnicarbine,
+					"Vintorez DMR Kit" = /obj/item/storage/box/bs_kit/vintorez,
+					"Saiga Kit" = /obj/item/storage/box/bs_kit/saiga,
 					"Freedom Kit" = /obj/item/storage/box/m_kit/freedom,
 					"Breacher-hammer Kit" = /obj/item/storage/box/m_kit/breacher,
 					"Operator Kit" = /obj/item/storage/box/m_kit/opshotkit,
 					"Mamba Kit" = /obj/item/storage/box/m_kit/mamba,
 					"Gear Laser Carbine Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
-					"Second Secondary" = /obj/item/voucher/marshal/secondary)
-	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
+					"Second Secondary" = /obj/item/voucher/marshal/secondary
+					)
+	var/selection = items[input(redeemer, "Pick your primary weapon", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -267,12 +282,19 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemSpecPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
+					"STS Para Kit" = /obj/item/storage/box/bs_kit/sts_para,
+					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
+					"Lascore kit" = /obj/item/storage/box/bs_kit/lascore,
+					"Warthog Omni Kit" = /obj/item/storage/box/bs_kit/rds_omnicarbine,
+					"Vintorez DMR Kit" = /obj/item/storage/box/bs_kit/vintorez,
+					"Saiga Kit" = /obj/item/storage/box/bs_kit/saiga,
 					"State Auto-Shotgun Kit" = /obj/item/storage/box/m_kit/state_auto,
 					"Copperhead Kit" = /obj/item/storage/box/m_kit/copperhead,
 					"Gear Laser Carbine Kit" = /obj/item/storage/box/m_kit/gear_lasgun,
 					"Sunrise Las-SMG Kit" = /obj/item/storage/box/m_kit/typewriter,
-					"Second Secondary" = /obj/item/voucher/marshal/secondary)
-	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
+					"Second Secondary" = /obj/item/voucher/marshal/secondary
+					)
+	var/selection = items[input(redeemer, "Pick your primary weapon", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -282,12 +304,21 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemRangerPrimary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
+					"Mosin Kit" = /obj/item/storage/box/bs_kit/mosin,
+					"Duty Kit" = /obj/item/storage/box/bs_kit/duty,
+					"Cog Kit" = /obj/item/storage/box/bs_kit/cog,
+					"Lascore kit" = /obj/item/storage/box/bs_kit/lascore,
+					"Triage Kit" = /obj/item/storage/box/bs_kit/triage,
+					"Ekaterina SMG Kit" = /obj/item/storage/box/bs_kit/ekaterina,
+					"Drozd SMG Kit" = /obj/item/storage/box/bs_kit/drozd,
+					"Bounty Kit" = /obj/item/storage/box/bs_kit/bounty,
 					"Spec-Op Kit" = /obj/item/storage/box/m_kit/specop,
 					"Viper Kit" = /obj/item/storage/box/m_kit/viper,
 					"Custer Kit" = /obj/item/storage/box/m_kit/custer,
 					"Peacekeeper Kit" = /obj/item/storage/box/m_kit/peacekeeper,
-					"Second Secondary" = /obj/item/voucher/marshal/rangersecondary)
-	var/selection = items[input(redeemer, "Pick your primary weapon", "Marshal Voucher Redemption") as null|anything in items]
+					"Second Secondary" = /obj/item/voucher/marshal/rangersecondary
+					)
+	var/selection = items[input(redeemer, "Pick your primary weapon", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -297,11 +328,16 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
+					"Makarov Kit" = /obj/item/storage/box/bs_kit/makarov,
+					"Delta Elite Kit" = /obj/item/storage/box/bs_kit/delta,
+					"Cowboy Kit" = /obj/item/storage/box/bs_kit/rex10,
+					"Pilgrim Kit" = /obj/item/storage/box/bs_kit/pilgrim,
+					"Sawn-Off Shotgun Kit" = /obj/item/storage/box/bs_kit/sawn_shotgun,
 					"Counselor Kit" = /obj/item/storage/box/m_kit/taser,
 					"Liberty Kit" = /obj/item/storage/box/m_kit/liberty,
 					"Mistral Kit" = /obj/item/storage/box/m_kit/mistral,
 					"Judiciary Kit" = /obj/item/storage/box/m_kit/judiciary)
-	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
+	var/selection = items[input(redeemer, "Pick your side-arm", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -311,11 +347,16 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemRangerSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
+					"Makarov Kit" = /obj/item/storage/box/bs_kit/makarov,
+					"Delta Elite Kit" = /obj/item/storage/box/bs_kit/delta,
+					"Cowboy Kit" = /obj/item/storage/box/bs_kit/rex10,
+					"Pilgrim Kit" = /obj/item/storage/box/bs_kit/pilgrim,
+					"Sawn-Off Shotgun Kit" = /obj/item/storage/box/bs_kit/sawn_shotgun,
 					"Counselor Kit" = /obj/item/storage/box/m_kit/taser,
 					"Deckard Kit" = /obj/item/storage/box/m_kit/deckard,
 					"Zwang Kit" = /obj/item/storage/box/m_kit/zwang,
 					"Judge Kit" = /obj/item/storage/box/m_kit/judge)
-	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
+	var/selection = items[input(redeemer, "Pick your side-arm", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -325,10 +366,13 @@
 
 /obj/machinery/vending/marshal_kit/proc/RedeemWOSecondary(obj/item/voucher/voucher, mob/redeemer)
 	var/items = list(
+					"Mateba Kit" = /obj/item/storage/box/bs_kit/mateba,
+					"Argos Kit" = /obj/item/storage/box/bs_kit/gemini,
+					"Spider Rose Kit" = /obj/item/storage/box/bs_kit/spider,
 					"Mateba Kit" = /obj/item/storage/box/m_kit/mateba,
 					"Galaxy Kit" = /obj/item/storage/box/m_kit/galaxy,
 					"Amnesty Kit" = /obj/item/storage/box/m_kit/amnesty)
-	var/selection = items[input(redeemer, "Pick your side-arm", "Marshal Voucher Redemption") as null|anything in items]
+	var/selection = items[input(redeemer, "Pick your side-arm", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)
@@ -340,12 +384,14 @@
 	var/items = list(
 					"Standard Full Plate" = /obj/item/storage/box/m_kit/standard_armor,
 					"Webbing Standard Plate" = /obj/item/storage/box/m_kit/webbing_armor,
-					"Greatcoat" = /obj/item/storage/box/m_kit/armored_overcoat,
-					"Riot Armor Kit" = /obj/item/storage/box/m_kit/riot,
-					"Bullet-Proof Armor Kit" = /obj/item/storage/box/m_kit/bullet_proof,
-					"Ablative Armor Kit" = /obj/item/storage/box/m_kit/laser_armor
+					"Plate Armor Kit" = /obj/item/storage/box/bs_kit/standard_armor,
+					"Armored Overcoat Kit" = /obj/item/storage/box/bs_kit/militia_overcoat,
+					"Flak Armor Kit" = /obj/item/storage/box/bs_kit/flak_armor,
+					"Ablative Armor Kit" = /obj/item/storage/box/bs_kit/laser_armor,
+					"Bullet-Proof Armor Kit" = /obj/item/storage/box/bs_kit/bullet_armor
 					)
-	var/selection = items[input(redeemer, "Pick your armor", "Marshal Voucher Redemption") as null|anything in items]
+
+	var/selection = items[input(redeemer, "Pick your armor", "Ranger Voucher Redemption") as null|anything in items]
 	if(selection)
 		new selection(loc)
 		qdel(voucher)

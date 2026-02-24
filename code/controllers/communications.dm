@@ -74,7 +74,7 @@ Radio:
 1337 - Engineering
 1359 - Security
 1362 - Blackshield
-1363 - Marshalls
+1363 - Rangerls
 1341 - deathsquad
 1443 - Confession Intercom
 1347 - Cargo techs
@@ -148,8 +148,6 @@ var/list/radiochannels = list(
 	"Medical"		= MED_FREQ,
 	"Engineering"	= ENG_FREQ,
 	"Security" 		= SEC_FREQ,
-	"Blackshield"   = BLS_FREQ,
-	"Marshal"       = MAR_FREQ,
 	"Special Ops" 	= DTH_FREQ,
 	"Mercenary" 	= SYND_FREQ,
 	"Supply" 		= SUP_FREQ,

@@ -21,7 +21,7 @@
 
 //Guild Technician
 /obj/item/clothing/suit/storage/rank/cargo_jacket
-	name = "lonestar jacket"
+	name = "Frontier Logistics jacket"
 	desc = "Stylish jacket lined with pockets, padded for an inch of extra protection from harm."
 	icon_state = "cargo_jacket"
 	item_state = "cargo_jacket"
@@ -37,8 +37,8 @@
 	)
 
 /obj/item/clothing/suit/storage/rank/cargoclerk_jacket
-	name = "lonestar office jacket"
-	desc = "Stylish jacket lined for lonestar office workers, padded for an inch of extra protection from harm."
+	name = "Frontier Logistics winter coat"
+	desc = "A heavy jacket made from animal furs, synthetic fibers, and some very thick leather. It smells of dried meat and engine grease. This one has a Frontier Logistics patch on the shoulder."
 	icon_state = "cargoclerk_jacket"
 	item_state = "cargo_jacket"
 	blood_overlay_type = "coat"
@@ -53,8 +53,8 @@
 	)
 
 /obj/item/clothing/suit/storage/cargovest
-	name = "lonestar hazard vest"
-	desc = "A Lonestar hazard vest in grey and orange to be used in work zones."
+	name = "frontier logistics hazard vest"
+	desc = "A Frontier Logistics hazard vest in grey and orange to be used in work zones."
 	icon_state = "cargovest"
 	item_state = "hazard"
 	blood_overlay_type = "armor"
@@ -130,8 +130,8 @@
 
 //Civillian
 /obj/item/clothing/suit/storage/toggle/club
-	name = "surface operations manager's jacket"
-	desc = "A well tailored and rich jacket for the Surface Operations Manager."
+	name = "quartermaster's jacket"
+	desc = "A well tailored and rich jacket for the Quartermaster."
 	icon_state = "cm_coat"
 	item_state = "cm_coat"
 	icon_open = "cm_coat_open"
@@ -252,7 +252,7 @@
 //Detective
 /obj/item/clothing/suit/storage/rank/insp_trench
 	name = "ranger's armored trenchcoat"
-	desc = "Brown, armored trenchcoat. Designed and created by the Marshals. The coat is impact resistant - perfect for your next act of autodefenestration!"
+	desc = "Brown, armored trenchcoat. Designed and created by the Rangers. The coat is impact resistant - perfect for your next act of autodefenestration!"
 	icon_state = "rangercoat"
 	item_state = "rangercoat"
 	blood_overlay_type = "coat"

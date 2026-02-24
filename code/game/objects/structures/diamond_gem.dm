@@ -2,7 +2,7 @@
 	name = "Fragment of Amethyn"
 	desc = "A once in the galaxy formation of diamond and anomalous materials that took four weeks of painstaking chiseling to remove from its geode prison. \
 	This object is so valuable it is literally priceless, incapable of being sold on any market due to nobody have the money to buy it. So now Ryan keeps \
-	it in the Lonestar vault as an insurance policy."
+	it in the Frontier Logistics vault as an insurance policy."
 	icon = 'icons/obj/engine.dmi'
 	icon_state = "diamond"
 	anchored = 1
@@ -29,7 +29,7 @@
 
 /obj/structure/diamond/wealthy_shovel
 	name = "Gilded Rose Gold Shovel"
-	desc = "A rose gold made shovel stuck in a mount of diamonds to flaunt wealth over how LSS was able to corner and then oversaturate the tools market."
+	desc = "A rose gold made shovel stuck in a mount of diamonds to flaunt wealth over how FL was able to corner and then oversaturate the tools market."
 	icon = 'icons/obj/statue.dmi'
 	icon_state = "weathyshovel"
 	matter = list(MATERIAL_DIAMOND = 30, MATERIAL_GOLD = 20)

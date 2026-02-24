@@ -9,6 +9,7 @@
 
 	var/list/doors = list()
 	var/obj/structure/lift/button/ext_panel
+	var/turf/anchor_turf  // Reference turf for shuttle-style physical movement.
 
 /datum/turbolift_stop/proc/set_area_ref(var/ref)
 	var/area/turbolift/A = locate(ref)

@@ -26,7 +26,7 @@
 		STAT_VIG = 2
 	)
 	darksight = 2
-
+	blood_color = "#A10808"
 	perks = list(PERK_IWILLSURVIVE, PERK_BATTLECRY, PERK_TENACITY, PERK_DIVERSE_CULTURE)
 
 	spawn_flags = CAN_JOIN
@@ -66,8 +66,11 @@
 		STAT_VIG = 5
 	)
 
-	darksight = 3
+	cold_level_1 = 270
+	cold_discomfort_level = 280
 
+	darksight = 3
+	blood_color = "#A10808"
 	perks = list(PERK_SPLICER, PERK_DIVERSE_CULTURE)
 
 	has_limbs = list(
@@ -105,6 +108,7 @@
 	obligate_form = TRUE
 	unarmed_types = list(/datum/unarmed_attack/claws/strong, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite/strong, /datum/unarmed_attack/horns)
 	darksight = 8
+	blood_color = "#A10808"
 	num_alternate_languages = 2
 	name_language = null
 	min_age = 18
@@ -120,9 +124,9 @@
 	dark_color = "#00ff00"
 	light_color = "#008000"
 
-	cold_level_1 = 240 //Default 270
-	cold_level_2 = 215 //Default 230
-	cold_level_3 = 190  //Default 200
+	cold_level_1 = 220 //Default 270
+	cold_level_2 = 195 //Default 230
+	cold_level_3 = 170  //Default 200
 
 	heat_level_1 = 340 //Default 330
 	heat_level_2 = 400 //Default 380
@@ -182,6 +186,9 @@
 	default_form = FORM_MARQUA
 	obligate_form = TRUE
 	reagent_tag = IS_MARQUA
+	blood_reagent = "aquatic_blood"
+	blood_group = "aquatic"
+	blood_color = "#597DE8"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick)
 	darksight = 4
 	num_alternate_languages = 2
@@ -195,11 +202,17 @@
 	dark_color = "#afeeee"
 	light_color = "#20b2aa"
 
-	cold_level_1 = 230 //Default 270
-	cold_level_2 = 210 //Default 230
-	cold_level_3 = 190  //Default 200
+	cold_level_1 = 248 //T0C - 25
+	cold_level_2 = 228
+	cold_level_3 = 208
 
-	cold_discomfort_level = 230
+	heat_level_1 = 370 //Default 330
+	heat_level_2 = 430 //Default 380
+	heat_level_3 = 520 //Default 460
+
+	heat_discomfort_level = 370
+
+	cold_discomfort_level = 248
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -214,13 +227,13 @@
 	)
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART        = /obj/item/organ/internal/vital/heart,
-		OP_LUNGS        = /obj/item/organ/internal/vital/lungs,
-		OP_STOMACH      = /obj/item/organ/internal/stomach,
-		OP_LIVER        = /obj/item/organ/internal/liver,
-		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney,
-		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney,
-		BP_BRAIN        = /obj/item/organ/internal/vital/brain,
+		OP_HEART        = /obj/item/organ/internal/vital/heart/marqua,
+		OP_LUNGS        = /obj/item/organ/internal/vital/lungs/marqua,
+		OP_STOMACH      = /obj/item/organ/internal/stomach/marqua,
+		OP_LIVER        = /obj/item/organ/internal/liver/marqua,
+		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney/left/marqua,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/marqua,
+		BP_BRAIN        = /obj/item/organ/internal/vital/brain/marqua,
 		OP_APPENDIX     = /obj/item/organ/internal/appendix,
 		OP_EYES         = /obj/item/organ/internal/eyes/marqua
 	)
@@ -245,6 +258,7 @@
 	reagent_tag = IS_KRIOSAN
 	unarmed_types = list(/datum/unarmed_attack/needle, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	darksight = 4 //enhanced eyes dosnt mean perfected
+	blood_color = "#A10808"
 	num_alternate_languages = 2
 	name_language = null
 	min_age = 18
@@ -265,6 +279,11 @@
 		STAT_TGH = 5,
 		STAT_VIG = 5
 	)
+
+	cold_level_1 = 240
+	cold_level_2 = 215
+	cold_level_3 = 190
+	cold_discomfort_level = 240
 
 	permitted_ears  = list("Fennec Ears",
 		"Fox Ears",
@@ -305,6 +324,9 @@
 	default_form = FORM_AKULA
 	obligate_form = TRUE
 	reagent_tag = IS_AKULA
+	blood_reagent = "aquatic_blood"
+	blood_group = "aquatic"
+	blood_color = "#597DE8"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/tail, /datum/unarmed_attack/bite/strong)
 	darksight = 3
 	num_alternate_languages = 2
@@ -315,15 +337,25 @@
 	taste_sensitivity = TASTE_DULL
 	hunger_factor = 1.25
 
-	cold_level_1 = 240 //Default 270
-	cold_level_2 = 200 //Default 230
-	cold_level_3 = 170  //Default 200
+	cold_level_1 = 200 //Default 270
+	cold_level_2 = 175 //Default 230
+	cold_level_3 = 150  //Default 200
 
-	cold_discomfort_level = 240
+	heat_level_1 = 320 //Default 330
+	heat_level_2 = 370 //Default 380
+	heat_level_3 = 450 //Default 460
+
+	cold_discomfort_level = 200
+	heat_discomfort_level = 320
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
 		"Your chilly flesh stands out in goosebumps."
+		)
+	heat_discomfort_strings = list(
+		"You feel uncomfortably warm.",
+		"Your skin itches in the heat.",
+		"You feel like you're drying out."
 		)
 	spawn_flags = CAN_JOIN
 
@@ -357,7 +389,7 @@
 	slowdown = -0.5
 	blurb = "no."
 	darksight = 2
-
+	blood_color = "#A10808"
 	spawn_flags = CAN_JOIN
 
 	stat_modifiers = list(
@@ -385,6 +417,9 @@
 	default_form = FORM_OPIFEX
 	obligate_form = TRUE
 	reagent_tag = IS_OPIFEX
+	blood_reagent = "opifex_blood"
+	blood_group = "opifex"
+	blood_color = "#D7AE0E"
 	unarmed_types = list(/datum/unarmed_attack/claws, /datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	num_alternate_languages = 2
 	name_language = null
@@ -419,6 +454,18 @@
 
 	perks = list(PERK_OPIFEX_TURRET, PERK_OPIFEX_PATCHKIT)
 
+	has_process = list(
+		OP_HEART        = /obj/item/organ/internal/vital/heart/opifex,
+		OP_LUNGS        = /obj/item/organ/internal/vital/lungs/opifex,
+		OP_STOMACH      = /obj/item/organ/internal/stomach/opifex,
+		OP_LIVER        = /obj/item/organ/internal/liver/opifex,
+		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney/left/opifex,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/opifex,
+		BP_BRAIN        = /obj/item/organ/internal/vital/brain/opifex,
+		OP_EYES         = /obj/item/organ/internal/eyes/opifex,
+		OP_LUNGS        = /obj/item/organ/internal/vital/lungs/opifex
+	)
+
 /datum/species/vox/get_bodytype()
 	return "Opifex"
 
@@ -428,6 +475,9 @@
 	default_form = FORM_CHTMANT
 	obligate_form = TRUE
 	reagent_tag = IS_CHTMANT
+	blood_reagent = "chtmant_blood"
+	blood_group = "chtmant"
+	blood_color = "#3C7240"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	num_alternate_languages = 2
 	name_language = null
@@ -509,6 +559,17 @@
 		"Spider Legs"
 		)
 
+	has_process = list(
+		OP_HEART        = /obj/item/organ/internal/vital/heart/chtmant,
+		OP_LUNGS        = /obj/item/organ/internal/vital/lungs,
+		OP_STOMACH      = /obj/item/organ/internal/stomach/chtmant,
+		OP_LIVER        = /obj/item/organ/internal/liver/chtmant,
+		OP_KIDNEY_LEFT  = /obj/item/organ/internal/kidney/left/chtmant,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/chtmant,
+		BP_BRAIN        = /obj/item/organ/internal/vital/brain/chtmant,
+		OP_EYES         = /obj/item/organ/internal/eyes/chtmant
+	)
+
 /datum/species/chtmant/get_bodytype()
 	return "Cht'mant"
 
@@ -518,6 +579,9 @@
 	default_form = FORM_CINDAR
 	obligate_form = TRUE
 	reagent_tag = IS_CINDARITE
+	blood_reagent = "reptile_blood"
+	blood_group = "reptile"
+	blood_color = "#B0C01B"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite, /datum/unarmed_attack/tail)
 	num_alternate_languages = 2
 	blurb = "no"
@@ -536,9 +600,9 @@
 		STAT_TGH = 2
 	)
 
-	cold_level_1 = 290 //Default 270
-	cold_level_2 = 265 //Default 230
-	cold_level_3 = 240  //Default 200
+	cold_level_1 = 300 //Default 270
+	cold_level_2 = 275 //Default 230
+	cold_level_3 = 250  //Default 200
 
 	heat_level_1 = 370 //Default 330
 	heat_level_2 = 410 //Default 380
@@ -554,7 +618,7 @@
 	dark_color = "#660066"
 	light_color = "#660066"
 
-	cold_discomfort_level = 290
+	cold_discomfort_level = 300
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -562,15 +626,15 @@
 		)
 
 	has_process = list(    // which required-organ checks are conducted.
-		OP_HEART =    /obj/item/organ/internal/vital/heart,
-		OP_LUNGS =    /obj/item/organ/internal/vital/lungs,
-		OP_STOMACH =  /obj/item/organ/internal/stomach,
-		OP_LIVER =    /obj/item/organ/internal/liver,
+		OP_HEART =    /obj/item/organ/internal/vital/heart/cindarite,
+		OP_LUNGS =    /obj/item/organ/internal/vital/lungs/cindarite,
+		OP_STOMACH =  /obj/item/organ/internal/stomach/cindarite,
+		OP_LIVER =    /obj/item/organ/internal/liver/cindarite,
 		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left/cindarite,
 		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/cindarite,
-		BP_BRAIN =    /obj/item/organ/internal/vital/brain,
+		BP_BRAIN =    /obj/item/organ/internal/vital/brain/cindarite,
 		OP_APPENDIX = /obj/item/organ/internal/appendix,
-		OP_EYES =     /obj/item/organ/internal/eyes
+		OP_EYES =     /obj/item/organ/internal/eyes/cindarite
 		)
 
 	permitted_ears  = list("Frills, Aquatic",
@@ -604,6 +668,8 @@
 	obligate_name = TRUE
 	obligate_form = TRUE
 	reagent_tag = IS_TREE
+	blood_reagent = "plant_blood"
+	blood_group = "plant"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2
@@ -616,6 +682,7 @@
 	flags = NO_PAIN | IS_PLANT
 	taste_sensitivity = TASTE_NUMB
 	darksight = 4
+	blood_color = "#228B22"
 
 	dark_color = "#93eb9e"
 	light_color = "#93eb9e"
@@ -654,6 +721,8 @@
 	obligate_name = TRUE
 	obligate_form = TRUE
 	reagent_tag = IS_TREE
+	blood_reagent = "plant_blood"
+	blood_group = "plant"
 	unarmed_types = list(/datum/unarmed_attack/punch/hammer_fist, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "N/A"
 	num_alternate_languages = 2
@@ -664,6 +733,7 @@
 	slowdown = 0.3
 	hunger_factor = 1.3
 	darksight = 6
+	blood_color = "#228B22"
 
 	burn_mod = 2						// Burn damage multiplier.
 	light_dam = 1 // Same threshold as the Nightcrawler perk
@@ -713,6 +783,8 @@
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
 	radiation_mod = 0
 	total_health = 75
+	blood_reagent = "synthetic_blood"
+	blood_color = "#247CFF"
 	breath_type = null
 	poison_type = null
 	darksight = 2
@@ -759,6 +831,8 @@
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "no"
 	reagent_tag = IS_SYNTHETIC
+	blood_reagent = "synthetic_blood"
+	blood_color = "#247CFF"
 	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
@@ -802,7 +876,7 @@
 	return "Unbranded Full Body Prosthetic"
 
 /datum/species/soteria_synthetic
-	name = "Soteria Synthetic"
+	name = "Vesalius-Andra Synthetic"
 	name_plural = "synthetics"
 	default_form = FORM_SOTSYNTH
 	obligate_name = TRUE
@@ -815,6 +889,8 @@
 	max_age = 110
 	siemens_coefficient = 2
 	reagent_tag = IS_SYNTHETIC
+	blood_reagent = "synth_oil"
+	blood_color = "#0C0C0C"
 	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
@@ -863,7 +939,7 @@
 	spawn_flags = CAN_JOIN
 
 /datum/species/soteria_synthetic/get_bodytype()
-	return "Soteria Synthetic"
+	return "Vesalius-Andra Synthetic"
 
 /datum/species/artificer_guild_synthetic
 	name = "Artificer Guild Synthetic"
@@ -879,6 +955,8 @@
 	max_age = 110
 	siemens_coefficient = 0
 	reagent_tag = IS_SYNTHETIC
+	blood_reagent = "synth_oil"
+	blood_color = "#0C0C0C"
 	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
@@ -948,6 +1026,8 @@
 	breath_type = null
 	poison_type = null
 	total_health = 75
+	blood_reagent = "synth_oil"
+	blood_color = "#0C0C0C"
 	dark_color = "#FFFFFF"
 	light_color = "#000000"
 	darksight = 2
@@ -1002,6 +1082,8 @@
 	min_age = 18
 	max_age = 110
 	reagent_tag = IS_SYNTHETIC
+	blood_reagent = "synth_oil"
+	blood_color = "#0C0C0C"
 	injury_type =  INJURY_TYPE_UNLIVING
 	hunger_factor = 0
 	flags = NO_BREATHE | NO_PAIN | NO_BLOOD | NO_SCAN | NO_POISON | NO_MINOR_CUT
@@ -1070,6 +1152,8 @@
 	radiation_mod = 0
 	breath_type = null
 	poison_type = null
+	blood_reagent = "synth_oil"
+	blood_color = "#0C0C0C"
 	darksight = 3
 
 	dark_color = "#FFFFFF"
@@ -1116,6 +1200,8 @@
 	obligate_form = TRUE
 	reagent_tag = IS_SLIME
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/slime_glomp)
+	blood_reagent = "slimatic_fluid"
+	blood_group = "slime"
 	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
 	siemens_coefficient = 3 //conductive
 	darksight = 3
@@ -1129,6 +1215,7 @@
 	max_age = 200
 	injury_type =  INJURY_TYPE_HOMOGENOUS
 	taste_sensitivity = TASTE_SENSITIVE
+	blood_color = "#05FF9B"
 
 	nutrition_mod = 250 //Important for some perks
 

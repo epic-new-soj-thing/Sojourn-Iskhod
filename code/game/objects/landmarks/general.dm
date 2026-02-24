@@ -9,7 +9,7 @@
 /obj/landmark/IH_Armory_Gun_Serial_Printer/LateInitialize()
 	. = ..()
 	var/area/our_area = get_area(src)
-	var/text = "Marshal Armory gun serials \n"
+	var/text = "Ranger Armory gun serials \n"
 	for(var/obj/item/gun/firearm in our_area.contents)
 		if(firearm.serial_type)
 			text += "[firearm.serial_type] - [firearm.name] \n"

@@ -32,6 +32,8 @@
 	var/external_pressure_bound = EXTERNAL_PRESSURE_BOUND
 	var/internal_pressure_bound = INTERNAL_PRESSURE_BOUND
 
+	var/target_temperature = T20C
+
 	var/pressure_checks = PRESSURE_CHECKS
 	//1: Do not pass external_pressure_bound
 	//2: Do not pass internal_pressure_bound
@@ -182,6 +184,17 @@
 				power_draw += pump_gas(src, environment, air_contents, transfer_moles, power_rating)
 			transfer_happened = TRUE
 
+		if(environment.total_moles)
+			var/thermalChange = environment.get_thermal_energy_change(target_temperature)
+			if(abs(thermalChange) > 5) // Subtle threshold to avoid constant micro-adjustments
+				var/energy_used = min(abs(thermalChange), power_rating) // Use up to power_rating for HVAC
+				if(thermalChange > 0)
+					environment.add_thermal_energy(energy_used)
+				else
+					environment.add_thermal_energy(-energy_used)
+				power_draw += energy_used
+				transfer_happened = TRUE
+
 	if(transfer_happened)
 		last_power_draw = power_draw
 		use_power(power_draw)
@@ -225,6 +238,7 @@
 		"checks" = pressure_checks,
 		"internal" = internal_pressure_bound,
 		"external" = external_pressure_bound,
+		"target_temp" = target_temperature,
 		"timestamp" = world.time,
 		"sigtype" = "status",
 		"power_draw" = last_power_draw,
@@ -324,6 +338,9 @@
 			external_pressure_bound + text2num(signal.data["adjust_external_pressure"]),
 			ONE_ATMOSPHERE*50
 		)
+
+	if(signal.data["set_temperature"] != null)
+		target_temperature = text2num(signal.data["set_temperature"])
 
 	if(signal.data["init"] != null)
 		name = signal.data["init"]

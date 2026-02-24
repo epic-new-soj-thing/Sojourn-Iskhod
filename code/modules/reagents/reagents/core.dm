@@ -1,5 +1,5 @@
 /datum/reagent/organic/blood
-	data = new/list("donor" = null, "species" = "Human", "blood_DNA" = null, "blood_type" = null, "blood_colour" = "#A10808", "resistances" = null, "trace_chem" = null, "carrion" = null)
+	data = new/list("donor" = null, "species" = "Human", "blood_DNA" = null, "blood_type" = null, "blood_color" = "#A10808", "resistances" = null, "trace_chem" = null, "carrion" = null)
 	name = "Blood"
 	id = "blood"
 	reagent_state = LIQUID
@@ -17,9 +17,65 @@
 
 /datum/reagent/organic/blood/initialize_data(var/newdata)
 	..()
-	if(data && data["blood_colour"])
-		color = data["blood_colour"]
+	if(data && data["blood_color"])
+		color = data["blood_color"]
 	return
+
+/datum/reagent/organic/blood/synthetic
+	id = "synthetic_blood"
+	name = "Synthetic Blood"
+	description = "A blue, oxygen-carrying fluid used in full-body prosthetics."
+	color = "#365583ff"
+	data = new/list("donor" = null, "species" = "Synthetic", "blood_DNA" = null, "blood_type" = null, "blood_color" = "#247CFF", "resistances" = null, "trace_chem" = null, "carrion" = null)
+
+/datum/reagent/organic/blood/oil
+	id = "synth_oil"
+	name = "Synthetic Oil"
+	description = "A black, viscous lubricant used in synthetic lifeforms."
+	color = "#0C0C0C"
+	data = new/list("donor" = null, "species" = "Synthetic", "blood_DNA" = null, "blood_type" = null, "blood_color" = "#0C0C0C", "resistances" = null, "trace_chem" = null, "carrion" = null)
+
+/datum/reagent/organic/blood/aquatic
+	id = "aquatic_blood"
+	name = "Aquatic Blood"
+	description = "A specialized blood variant found in Mar'qua and Akula species."
+	color = "#8097dfff"
+	data = new/list("donor" = null, "species" = "Aquatic", "blood_DNA" = null, "blood_type" = null, "blood_color" = "#597DE8", "resistances" = null, "trace_chem" = null, "carrion" = null)
+
+/datum/reagent/organic/blood/opifex
+	id = "opifex_blood"
+	name = "Opifex Blood"
+	description = "A golden-hued blood variant found in Opifex and related nitrogen-breathing species."
+	color = "#d7910eff"
+	data = new/list("donor" = null, "species" = "Opifex", "blood_DNA" = null, "blood_type" = null, "blood_color" = "#D7AE0E", "resistances" = null, "trace_chem" = null, "carrion" = null)
+
+/datum/reagent/organic/blood/chtmant
+	id = "chtmant_blood"
+	name = "Cht'mant Blood"
+	description = "A thick, dark hemolymph found in Cht'mant species."
+	color = "#3c7240ff"
+	data = new/list("donor" = null, "species" = "Cht'mant", "blood_DNA" = null, "blood_type" = null, "blood_color" = "#3C7240", "resistances" = null, "trace_chem" = null, "carrion" = null)
+
+/datum/reagent/organic/blood/reptile
+	id = "reptile_blood"
+	name = "Reptile Blood"
+	description = "Cold-blooded reptile blood."
+	color = "#b0c01b"
+	data = new/list("donor" = null, "species" = "Reptile", "blood_DNA" = null, "blood_type" = null, "blood_color" = "#B0C01B", "resistances" = null, "trace_chem" = null, "carrion" = null)
+
+/datum/reagent/organic/blood/plant
+	id = "plant_blood"
+	name = "Plant Sap"
+	description = "A thick, greenish sap-like fluid found in plant-based species."
+	color = "#228B22"
+	data = new/list("donor" = null, "species" = "Plant", "blood_DNA" = null, "blood_type" = null, "blood_color" = "#228B22", "resistances" = null, "trace_chem" = null, "carrion" = null)
+
+/datum/reagent/organic/blood/slime
+	id = "slimatic_fluid"
+	name = "Slimatic Fluid"
+	description = "A viscous, neon-green fluid that serves as the lifeblood of Aulvae."
+	color = "#05FF9B"
+	data = new/list("donor" = null, "species" = "Slime", "blood_DNA" = null, "blood_type" = null, "blood_color" = "#05FF9B", "resistances" = null, "trace_chem" = null, "carrion" = null)
 
 /datum/reagent/organic/blood/get_data() // Just in case you have a reagent that handles data differently.
 	return data.Copy()

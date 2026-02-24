@@ -311,7 +311,7 @@ This function restores the subjects blood to max.
 	if(species.flags & NO_BLOOD)
 		return
 	if(vessel.total_volume < species.blood_volume)
-		vessel.add_reagent("blood", species.blood_volume - vessel.total_volume)
+		vessel.add_reagent(species.blood_reagent, species.blood_volume - vessel.total_volume)
 
 /*
 This function restores all organs.

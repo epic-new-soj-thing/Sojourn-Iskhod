@@ -220,7 +220,7 @@
 	icon = 'icons/turf/shuttlemining.dmi'
 	icon_state = "11,23"
 
-/turf/simulated/shuttle/wall/science //I guess this got repurposed into the Marshal shuttle soooooo-
+/turf/simulated/shuttle/wall/science //I guess this got repurposed into the Ranger shuttle soooooo-
 	name = "The Vasiliy"
 	icon = 'icons/turf/shuttlescience.dmi'
 	icon_state = "6,18"

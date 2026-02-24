@@ -85,9 +85,9 @@
 	server_file_path = 'news_articles/Whoever_fights_monsters.html'
 	archived = 1
 
-/datum/computer_file/data/news_article/Official_Marshal_communique
-	filename = "Official Marshal communique"
-	server_file_path = 'news_articles/Official_Marshal_communique.html'
+/datum/computer_file/data/news_article/Official_Ranger_communique
+	filename = "Official Ranger communique"
+	server_file_path = 'news_articles/Official_Ranger_communique.html'
 	archived = 1
 
 /datum/computer_file/data/news_article/kros_news

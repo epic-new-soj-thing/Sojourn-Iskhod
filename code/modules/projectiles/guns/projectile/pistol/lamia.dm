@@ -95,7 +95,7 @@
 
 /obj/item/gun/projectile/lamia/amnesty
 	name = "\"Amnesty\" heavy pistol"
-	desc = "The \"Amnesty\" pistol started as a prototype as parts from advanced heavy pistols found themselves converted to a cheaper, easier to procude format alongside improvements made to Marshal firearms. Chambered in .50 Kurz."
+	desc = "The \"Amnesty\" pistol started as a prototype as parts from advanced heavy pistols found themselves converted to a cheaper, easier to procude format alongside improvements made to Ranger firearms. Chambered in .50 Kurz."
 	icon = 'icons/obj/guns/projectile/amnesty.dmi'
 	icon_state = "amnesty"
 	item_state = "amnesty"

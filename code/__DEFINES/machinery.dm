@@ -40,7 +40,7 @@ var/global/defer_powernet_rebuild = 0      // True if net rebuild will be called
 #define NETWORK_CHURCH "Absolute Network"
 #define NETWORK_PROP "Prospector Network"
 #define NETWORK_GATE "Gate Network"
-#define NETWORK_CARGO "LSS Network"
+#define NETWORK_CARGO "FL Network"
 #define NETWORK_COMMAND "Command"
 #define NETWORK_ENGINE "Engine"
 #define NETWORK_ENGINEERING "Engineering"
@@ -183,7 +183,7 @@ var/list/restricted_camera_networks = list(NETWORK_MERCENARY, "Secret")
 #define RCON_YES	3
 
 #define MAX_TEMPERATURE 90
-#define MIN_TEMPERATURE -40
+#define MIN_TEMPERATURE -45
 
 ////////////////////////////////////////////
 

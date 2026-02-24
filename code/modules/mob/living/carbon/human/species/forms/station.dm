@@ -153,6 +153,7 @@
 	name = FORM_SABLEKYNE
 	base = 'icons/mob/human_races/r_sablekyne_white.dmi'
 	deform = 'icons/mob/human_races/r_def_sablekyne_white.dmi'
+	blood_color = "#A10808"
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR | DEFAULT_APPEARANCE_FLAGS
 
 /datum/species_form/marqua
@@ -160,6 +161,7 @@
 	name = FORM_MARQUA
 	base = 'icons/mob/human_races/r_marqua_vr.dmi'
 	deform = 'icons/mob/human_races/r_def_marqua.dmi'
+	blood_color = "#597DE8"
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR | DEFAULT_APPEARANCE_FLAGS
 
 /datum/species_form/kriosan
@@ -181,11 +183,13 @@
 	name = FORM_NARAMAD
 	base = 'icons/mob/human_races/r_sergal.dmi'
 	deform = 'icons/mob/human_races/r_def_sergal.dmi'
+	blood_color = "#A10808"
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR | DEFAULT_APPEARANCE_FLAGS
 
 /datum/species_form/chtmant
 	playable = FALSE
 	name = FORM_CHTMANT
+	blood_color = "#3c7240ff"
 	base = 'icons/mob/human_races/r_spider.dmi'
 	deform = 'icons/mob/human_races/r_def_spider.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_EYE_COLOR | HAS_SKIN_COLOR | HAS_UNDERWEAR | DEFAULT_APPEARANCE_FLAGS
@@ -207,7 +211,7 @@
 /datum/species_form/soteria_synthetic
 	playable = FALSE
 	name = FORM_SOTSYNTH
-	blood_color = "#191919"
+	blood_color = "#0C0C0C"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR | DEFAULT_APPEARANCE_FLAGS
@@ -218,7 +222,7 @@
 /datum/species_form/artificer_guild_synthetic
 	playable = FALSE
 	name = FORM_AGSYNTH
-	blood_color = "#191919"
+	blood_color = "#0C0C0C"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR | DEFAULT_APPEARANCE_FLAGS
@@ -229,7 +233,7 @@
 /datum/species_form/blackshield_synthetic
 	playable = FALSE
 	name = FORM_BSSYNTH
-	blood_color = "#191919"
+	blood_color = "#0C0C0C"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR | DEFAULT_APPEARANCE_FLAGS
@@ -240,7 +244,7 @@
 /datum/species_form/church_synthetic
 	playable = FALSE
 	name = FORM_CHURCHSYNTH
-	blood_color = "#191919"
+	blood_color = "#0C0C0C"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR | DEFAULT_APPEARANCE_FLAGS
@@ -251,7 +255,7 @@
 /datum/species_form/nashef_synthetic
 	playable = FALSE
 	name = FORM_NASHEF
-	blood_color = "#191919"
+	blood_color = "#0C0C0C"
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
 	appearance_flags = HAS_HAIR_COLOR | HAS_UNDERWEAR | DEFAULT_APPEARANCE_FLAGS
@@ -262,7 +266,7 @@
 /datum/species_form/full_body_prosthetic
 	playable = FALSE
 	name = FORM_FBP
-	blood_color = "#191919"
+	blood_color = "#247CFF"
 	colorable = TRUE
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'
@@ -274,7 +278,7 @@
 /datum/species_form/unbranded_synth
 	playable = FALSE
 	name = FORM_UNBRANDED
-	blood_color = "#191919"
+	blood_color = "#247CFF"
 	colorable = TRUE
 	base = 'icons/mob/human_races/r_human_white.dmi'
 	deform = 'icons/mob/human_races/r_def_human_white.dmi'

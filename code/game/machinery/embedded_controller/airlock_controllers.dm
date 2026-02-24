@@ -5,6 +5,8 @@
 	var/tag_exterior_door
 	var/tag_interior_door
 	var/tag_airpump
+	var/tag_airpump_ext // Secondary pump for exterior cycling
+	var/tag_scrubber    // Dedicated scrubber for fast cycling
 	var/tag_chamber_sensor
 	var/tag_exterior_sensor
 	var/tag_interior_sensor

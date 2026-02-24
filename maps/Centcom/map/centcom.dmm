@@ -5641,7 +5641,7 @@
 /area/centcom/evac)
 "qc" = (
 /obj/machinery/door/airlock/centcom{
-	name = "LSS Internal Affairs"
+	name = "FL Internal Affairs"
 	},
 /turf/simulated/floor/wood,
 /area/centcom/evac)
@@ -6839,6 +6839,10 @@
 /obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/carpet/blucarpet,
 /area/centcom/raider_base)
+"Cb" = (
+/obj/effect/shuttle_landmark/escape_pod/transit,
+/turf/space,
+/area/space)
 "Ce" = (
 /obj/structure/table/rack/shelf,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -26581,7 +26585,7 @@ qH
 pO
 qH
 qH
-qH
+Cb
 qH
 qH
 pO

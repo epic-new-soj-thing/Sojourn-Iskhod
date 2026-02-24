@@ -56,6 +56,10 @@
 		sync_organ_dna()
 
 	make_blood()
+	// apply species-specific blood colour right away
+	if(species)
+		blood_color = species.blood_color
+		hand_blood_color = blood_color
 
 	sanity = new(src)
 
@@ -286,7 +290,7 @@ var/list/rank_prefix = list(\
 	"Warrant Officer" = "Warrant Officer",\
 	"Supply Specialist" = "Specialist",\
 	"Ranger" = "Ranger",\
-	"Marshal Officer" = "Officer",\
+	"Ranger Officer" = "Officer",\
 	"Blackshield Commander" = "Commander",\
 	"Sergeant" = "Sergeant",\
 	"Corpsman" = "Corpsman",\
@@ -296,7 +300,7 @@ var/list/rank_prefix = list(\
 	"Guild Master" = "Master",\
 	"Chief Biolab Overseer" = "Overseer",\
 	"Chief Research Overseer" = "Overseer",\
-	"Surface Operations Manager" = "Manager",\
+	"Quartermaster" = "Quartermaster",\
 	"Prime" = "Prime",\
 	"Foreman" = "Foreman",\
 	"Lodge Hunt Master" = "Huntmaster",\
@@ -902,7 +906,7 @@ var/list/rank_prefix = list(\
 /mob/living/carbon/human/revive()
 
 	if(species && !(species.flags & NO_BLOOD))
-		vessel.add_reagent("blood",species.blood_volume-vessel.total_volume)
+		vessel.add_reagent(species.blood_reagent, species.blood_volume - vessel.total_volume)
 		fixblood()
 
 	if(!client || !key) //Don't boot out anyone already in the mob.
@@ -1080,43 +1084,59 @@ var/list/rank_prefix = list(\
 		to_chat(usr, SPAN_WARNING("You failed to check the pulse. Try again."))
 
 /mob/living/carbon/human/proc/set_species(var/new_species, var/default_color, var/rebuild_organs = TRUE)
-	if(!dna)
-		if(!new_species)
-			new_species = "Human"
-	else
-		if(!new_species)
+	if(!new_species)
+		if(dna)
 			new_species = dna.species
 		else
-			dna.species = new_species
+			new_species = SPECIES_HUMAN
 
-	// No more invisible screaming wheelchairs because of set_species() typos.
 	if(!all_species[new_species])
 		new_species = SPECIES_HUMAN
 
-	if(species)
+	if(species && species.name == new_species && !rebuild_organs)
+		return
 
-		if(species.name && species.name == new_species)
-			return
-		if(species.language)
-			remove_language(species.language)
-		if(species.default_language)
-			remove_language(species.default_language)
-		// Clear out their species abilities.
-		species.remove_inherent_verbs(src)
-		holder_type = null
-
+	var/datum/species/old_species = species
 	species = all_species[new_species]
+
+	if(dna)
+		dna.species = new_species
+
+	if(species.blood_color)
+		blood_color = species.blood_color
+		hand_blood_color = blood_color
+
+	if(old_species)
+		if(old_species.language)
+			remove_language(old_species.language)
+		if(old_species.default_language)
+			remove_language(old_species.default_language)
+		old_species.remove_inherent_verbs(src)
+
+	holder_type = species.holder_type
 
 	set_form(species.default_form, default_color)
 
 	if(species.language)
 		add_language(species.language)
-
 	if(species.default_language)
 		add_language(species.default_language)
 
-	if(species.holder_type)
-		holder_type = species.holder_type
+	species.add_inherent_verbs(src)
+
+	// migrate vessel contents if our blood reagent changed
+	if(vessel && old_species && old_species.blood_reagent && species.blood_reagent && old_species.blood_reagent != species.blood_reagent)
+		var/vol = vessel.get_reagent_amount(old_species.blood_reagent)
+		if(vol)
+			// remove old reagent and re-add under new type preserving data
+			vessel.remove_reagent(old_species.blood_reagent, vol)
+			vessel.add_reagent(species.blood_reagent, vol, get_blood_data())
+			vessel.update_total()
+
+	// if we somehow had no vessel (e.g. non-human->human conversion), create one now
+	if(!vessel)
+		make_blood()
+
 
 	icon_state = lowertext(species.name)
 
@@ -1136,12 +1156,15 @@ var/list/rank_prefix = list(\
 		if(QDELETED(src))	// Needed because mannequins will continue this proc and runtime after being qdel'd
 			return
 		regenerate_icons()
+		// ensure blood colour matches species after any change
+		blood_color = species.blood_color
+		hand_blood_color = blood_color
 		if(!QDELETED(src))
 			if(vessel.total_volume < species.blood_volume)
 				vessel.maximum_volume = species.blood_volume
-				vessel.add_reagent("blood", species.blood_volume - vessel.total_volume)
+				vessel.add_reagent(species.blood_reagent, species.blood_volume - vessel.total_volume)
 			else if(vessel.total_volume > species.blood_volume)
-				vessel.remove_reagent("blood", vessel.total_volume - species.blood_volume)
+				vessel.remove_reagent(species.blood_reagent, vessel.total_volume - species.blood_volume)
 				vessel.maximum_volume = species.blood_volume
 			fixblood()
 
@@ -1213,11 +1236,14 @@ var/list/rank_prefix = list(\
 		var/datum/body_modification/BM
 
 		for(var/tag in species.has_limbs)
-			BM = Pref.get_modification(tag)
 			var/datum/organ_description/OD = species.has_limbs[tag]
-			//var/datum/body_modification/PBM = Pref.get_modification(OD.parent_organ_base)
-			//if(PBM && (PBM.nature == MODIFICATION_SILICON || PBM.nature == MODIFICATION_REMOVED))
-			//	BM = PBM
+			var/datum/body_modification/PBM = Pref.get_modification(OD.parent_organ_base)
+
+			if(PBM && (PBM.nature == MODIFICATION_SILICON || PBM.nature == MODIFICATION_REMOVED))
+				BM = PBM
+			else
+				BM = Pref.get_modification(tag)
+
 			if(BM.is_allowed(tag, Pref, src))
 				BM.create_organ(src, OD, Pref.modifications_colors[tag])
 			else
@@ -1470,29 +1496,11 @@ var/list/rank_prefix = list(\
 	return
 
 //generates realistic-ish pulse output based on preset levels
-/mob/living/carbon/human/proc/get_pulse(var/method)	//method 0 is for hands, 1 is for machines, more accurate
-	var/temp = 0
-	switch(pulse())
-		if(PULSE_NONE)
-			return "0"
-		if(PULSE_SLOW)
-			temp = rand(40, 60)
-		if(PULSE_NORM)
-			temp = rand(60, 90)
-		if(PULSE_FAST)
-			temp = rand(90, 120)
-		if(PULSE_2FAST)
-			temp = rand(120, 160)
-		if(PULSE_THREADY)
-			return method ? ">250" : "extremely weak and fast, patient's artery feels like a thread"
-	return "[method ? temp : temp + rand(-10, 10)]"
-//			output for machines^	^^^^^^^output for people^^^^^^^^^
 
-/mob/living/carbon/human/proc/pulse()
+/mob/living/carbon/human/pulse()
 	if(stat == DEAD || !(organ_list_by_process(OP_HEART).len))
 		return PULSE_NONE
-	else
-		return pulse
+	return ..()
 
 /mob/living/carbon/human/verb/lookup()
 	set name = "Look up"

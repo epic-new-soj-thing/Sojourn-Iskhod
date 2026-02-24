@@ -16,7 +16,7 @@ Contains helper procs for airflow, handled in /connection_group.
 		to_chat(src, "<span class='notice'>Air suddenly rushes past you!</span>")
 		return FALSE
 	if(!lying)
-		to_chat(src, "<span class='warning'>The sudden rush of air knocks you over!</span>")
+		to_chat(src, "<span class='warning'>The sudden rush of air pushes you!</span>")
 	Weaken(5)
 	last_airflow_stun = world.time
 
@@ -102,6 +102,8 @@ Contains helper procs for airflow, handled in /connection_group.
 	playsound(src.loc, 'sound/weapons/smash.ogg', 25, 1, -1)
 	var/weak_amt = istype(A,/obj/item) ? A:w_class : rand(1,5) //Heheheh
 	Weaken(weak_amt)
+	if(airflow_speed >= 10)
+		Paralyse(10)
 	. = ..()
 
 /obj/airflow_hit(atom/A)
@@ -126,12 +128,6 @@ Contains helper procs for airflow, handled in /connection_group.
 	apply_damage(b_loss/3, BRUTE, BP_HEAD, used_weapon = "Airflow")
 	apply_damage(b_loss/3, BRUTE, BP_CHEST, used_weapon = "Airflow")
 	apply_damage(b_loss/3, BRUTE, BP_GROIN, used_weapon = "Airflow")
-
-	if(airflow_speed > 10)
-		Paralyse(round(airflow_speed * vsc.airflow_stun))
-		Stun(paralysis + 3)
-	else
-		Stun(round(airflow_speed * vsc.airflow_stun/2))
 	. = ..()
 
 /zone/proc/movables(list/origins)

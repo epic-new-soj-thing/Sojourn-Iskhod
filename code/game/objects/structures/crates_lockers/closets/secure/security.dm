@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/reinforced/captains
-	name = "premier's locker"
+	name = "governor's locker"
 	req_access = list(access_captain)
 	icon_state = "cap"
 
@@ -14,6 +14,8 @@
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/head/helmet(src)
 	new /obj/item/clothing/shoes/color/brown(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
+	new /obj/item/clothing/shoes/winter/command(src)
 	new /obj/item/device/radio/headset/heads/captain(src)
 	new /obj/item/clothing/gloves/captain(src)
 	new /obj/item/device/flash(src)
@@ -38,6 +40,8 @@
 	new /obj/item/clothing/under/rank/first_officer(src)
 	new /obj/item/clothing/head/rank/first_officer(src)
 	new /obj/item/clothing/suit/armor/vest(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
+	new /obj/item/clothing/shoes/winter/command(src)
 	new /obj/item/clothing/head/helmet(src)
 	new /obj/item/device/radio/headset/heads/hop(src)
 	new /obj/item/gun/projectile/colt/ten(src)
@@ -59,6 +63,8 @@
 	populated_contents = TRUE
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/clothing/head/rank/commander(src)
+	new /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat(src)
+	new /obj/item/clothing/shoes/winter/security(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/suit/armor/hos(src)
 	new /obj/item/clothing/suit/armor/platecarrier/hos(src)
@@ -99,6 +105,8 @@
 	new /obj/item/device/holowarrant(src)
 	new /obj/item/clothing/under/rank/warden(src)
 	new /obj/item/clothing/head/rank/warden/beret(src)
+	new /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat(src)
+	new /obj/item/clothing/shoes/winter/security(src)
 	new /obj/item/pc_part/drive/disk/design/exotic_ammo(src)
 	new /obj/item/pc_part/drive/disk/design/security/marshal_ammo(src)
 	new /obj/item/pc_part/drive/disk/design/gun_frames/marshal/surplus(src)
@@ -126,7 +134,7 @@
 	new /obj/item/voucher/marshal/armor(src)
 
 /obj/structure/closet/secure_closet/personal/security
-	name = "marshal officer's locker"
+	name = "ranger's locker"
 	req_access = list(access_hos)
 	access_occupy = list(access_brig)
 	icon_state = "sec"
@@ -144,6 +152,9 @@
 	new /obj/item/voucher/marshal/secondary(src)
 	new /obj/item/voucher/marshal/armor(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
+	new /obj/item/clothing/head/rank/ironhammer(src)
+	new /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat(src)
+	new /obj/item/clothing/shoes/winter/security(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
@@ -160,7 +171,7 @@
 	new /obj/item/device/t_scanner/advanced(src)
 
 /obj/structure/closet/secure_closet/personal/detective
-	name = "ranger's locker"
+	name = "detective's locker"
 	req_access = list(access_hos)
 	access_occupy = list(access_forensics_lockers) //So we can claim
 	icon_state = "cabinetdetective"
@@ -175,6 +186,8 @@
 	new /obj/item/clothing/head/rank/inspector(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/clothing/shoes/reinforced(src)
+	new /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat(src)
+	new /obj/item/clothing/shoes/winter/security(src)
 	new /obj/item/storage/box/evidence(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/storage/belt/security(src)

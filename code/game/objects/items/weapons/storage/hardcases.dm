@@ -178,7 +178,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ammo/ih
 	icon_state = "ammo_case_ih"
-	desc = "An ammo can for Marshals. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
+	desc = "An ammo can for Rangers. Can hold normal ammo magazines, packets, bullets, gun parts, a assortment of grenades and some gear. Alt+click to open and close."
 	can_hold = list(
 		/obj/item/ammo_magazine,
 		/obj/item/ammo_casing,
@@ -710,7 +710,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 
 /obj/item/gunbox/warrantofficer //credit goes to Hestia both for the idea of loadout gun box and for the code, and sprite.
-	name = "\improper Warrant Officers equipment kit"
+	name = "\improper Ranger Captain's equipment kit"
 	desc = "A secure box containing the Warrant Officers primary weapon."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "rifle_case"
@@ -721,6 +721,9 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	if(!stamped)
 		stamped = TRUE
 		var/list/options = list() // Moved the Galaxy to secondary selection
+		options["Longarm - marksman rifle"] = list(/obj/item/gun/projectile/automatic/omnirifle/scoped, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408, /obj/item/storage/pouch/ammo)
+		options["Hustler - Breacher Shotgun"] = list(/obj/item/gun/projectile/automatic/omnirifle/hustler, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/ammo_magazine/sbaw, /obj/item/storage/pouch/ammo)
+		options["Gleam - Assault Laser"] = list(/obj/item/gun/energy/lasercore/militia/blaster, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/cell/medium/high, /obj/item/storage/pouch/tubular)
 		options["Python - precision rifle"] = list(/obj/item/gun/projectile/automatic/mamba/python,/obj/item/ammo_magazine/heavy_rifle_408,/obj/item/ammo_magazine/heavy_rifle_408, /obj/item/ammo_magazine/heavy_rifle_408/rubber, /obj/item/storage/pouch/ammo)
 		options["SWAT - combat shotgun"] = list(/obj/item/gun/projectile/shotgun/pump/swat, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun, /obj/item/ammo_magazine/speed_loader_shotgun/beanbag, /obj/item/ammo_magazine/ammobox/c10x24_small, /obj/item/storage/pouch/tubular)
 		options["Ostwind - police carbine"] = list(/obj/item/gun/projectile/automatic/ostwind, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257, /obj/item/ammo_magazine/light_rifle_257/rubber/pepperball, /obj/item/storage/pouch/ammo)
@@ -769,7 +772,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/gearbox/traumatizedteam
 	name = "Lifeline Technician's equipment kit"
-	desc = "A secure box containing the heavy duty protective gear of the Soteria Lifeline Technicians."
+	desc = "A secure box containing the heavy duty protective gear of the Vesalius-Andra Lifeline Technicians."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "secure"
 
@@ -794,7 +797,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/gunbox/traumatizedteam
 	name = "Lifeline Technician's self-defense guncase"
-	desc = "A secure box containing the weapon of choice for the Soteria Lifeline Technician."
+	desc = "A secure box containing the weapon of choice for the Vesalius-Andra Lifeline Technician."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "medbriefcase"
 
@@ -806,7 +809,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 		var/list/options = list()
 		// Keeping this in case any other "sensible" option for a primary weapon for Lifeline Techs arrives, just add them as an option here.
 		options["SI \"MedTech\" .40 SMG with Rubber/HV ammo"] = list(/obj/item/gun/projectile/automatic/c20r/sci/med/preloaded,/obj/item/gun_upgrade/muzzle/silencer,/obj/item/ammo_magazine/smg_magnum_40/hv,/obj/item/ammo_magazine/smg_magnum_40/hv, /obj/item/ammo_magazine/smg_magnum_40/rubber, /obj/item/ammo_magazine/smg_magnum_40/rubber, /obj/item/ammo_magazine/smg_magnum_40/rubber, /obj/item/ammo_magazine/smg_magnum_40/rubber)
-		options["Soteria \"Sprocket\" laser carbine"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
+		options["Vesalius-Andra \"Sprocket\" laser carbine"] = list(/obj/item/gun/energy/cog/sprocket/preloaded,/obj/item/cell/medium/moebius/high)
 		options["SST \"Humility\" shotgun"] = list(/obj/item/gun/energy/sst/humility/preloaded,/obj/item/cell/medium/moebius/high)
 		var/choice = input(user,"Which gun will you take?") as null|anything in options
 		if(src && choice)
@@ -821,7 +824,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/gunbox/traumatizedteam_sidearm
 	name = "Lifeline Technician's sidearm guncase"
-	desc = "A secure box containing the weapon of choice for the Soteria Lifeline Technician."
+	desc = "A secure box containing the weapon of choice for the Vesalius-Andra Lifeline Technician."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "medbriefcase"
 
@@ -887,7 +890,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ert/marshal
 	name = "marshals imprinter hard case"
-	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Nadezhda Marshals."
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Iskhod Rangers."
 	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
 
 /obj/item/storage/hcases/ert/marshal/populate_contents()
@@ -903,7 +906,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/storage/hcases/ert/blackshield
 	name = "blackshield imprinter hard case"
-	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Nadezhda Blackshield Militia."
+	desc = "A hardcase containing a number of advanced mental imprinters. This one bears the badge of the Iskhod Blackshield Militia."
 	can_hold = list(/obj/item/device/mental_imprinter, /obj/item/device/mental_imprinter)
 
 /obj/item/storage/hcases/ert/marshal/populate_contents()

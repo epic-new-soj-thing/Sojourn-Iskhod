@@ -102,7 +102,9 @@
 					/obj/item/reagent_containers/blood/BPlus,
 					/obj/item/reagent_containers/blood/BMinus,
 					/obj/item/reagent_containers/blood/OPlus,
-					/obj/item/reagent_containers/blood/OMinus)
+					/obj/item/reagent_containers/blood/OMinus,
+					/obj/item/reagent_containers/blood/plant,
+					/obj/item/reagent_containers/blood/slime)
 	containertype = /obj/structure/closet/crate/freezer
 	crate_name = "blood freezer"
 	group = "Medical / Science"

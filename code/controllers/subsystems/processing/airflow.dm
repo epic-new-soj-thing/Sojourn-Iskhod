@@ -124,7 +124,7 @@
 		airflow_dest = null
 		return FALSE
 
-	airflow_speed = min(max(n * (9 / airflow_falloff), 1), 9)
+	airflow_speed = min(max(n * (9 / airflow_falloff), 1), 15)
 
 	airflow_od = 0
 

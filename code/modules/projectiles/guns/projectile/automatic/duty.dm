@@ -1,6 +1,6 @@
 /obj/item/gun/projectile/automatic/duty
 	name = "\"Duty\" carbine"
-	desc = "The Duty is a carbine designed by Marshal and Blackshield gunsmiths \
+	desc = "The Duty is a carbine designed by Ranger and Blackshield gunsmiths \
 	to supplement the ancient pattern boltguns as a standard issue rifle of Blackshield, \
 	boasting a faster rate of fire and more recoil control over other Blackshield weapons. \
 	The carbine is modernized with a 6,5mm caliber and a light polymer body balanced with heavy steel and plasteel. \

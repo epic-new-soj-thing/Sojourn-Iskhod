@@ -36,7 +36,17 @@
 
 	//Optional transition area
 	if(landmark_transition)
-		landmark_transition = locate(landmark_transition)
+		// Try to resolve the transition both by a direct locate() (some maps
+		// may name the instance) and by the registered shuttle landmark tag
+		// (what most shuttle data files provide). This makes shuttles more
+		// resilient to how maps specify their landmarks.
+		var/obj/effect/shuttle_landmark/land = locate(landmark_transition)
+		if(!istype(land))
+			land = SSshuttle.get_landmark(landmark_transition)
+		if(istype(land))
+			landmark_transition = land
+		else
+			landmark_transition = null
 
 /datum/shuttle/autodock/Destroy()
 	next_location = null
@@ -92,6 +102,9 @@
 			if(check_undocked())
 				//*** ready to go
 				process_launch()
+			else
+				// Debug: why aren't we launching? log useful state for troubleshooting
+				log_debug("Shuttle Process WAIT_LAUNCH blocked: shuttle=[src], next_location=[next_location], moving_status=[moving_status], in_use=[in_use], process_state=[process_state], active_docking_controller=[active_docking_controller]")
 
 		if (FORCE_LAUNCH)
 			process_launch()

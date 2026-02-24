@@ -5,7 +5,7 @@ GLOBAL_LIST_INIT(floating_chat_colors, list())
 /atom/movable
 	var/list/stored_chat_text
 
-/atom/movable/proc/animate_chat(message, datum/language/language, small, list/show_to, duration)
+/atom/movable/proc/animate_chat(message, datum/language/language, small, list/show_to, duration, mob/speaker)
 	set waitfor = FALSE
 
 	var/style	//additional style params for the message
@@ -30,7 +30,7 @@ GLOBAL_LIST_INIT(floating_chat_colors, list())
 
 	for(var/client/C in show_to)
 		if(!isdeaf(C.mob) && C.get_preference_value(/datum/client_preference/floating_messages) == GLOB.PREF_SHOW)
-			if(C.mob.say_understands(null, language))
+			if(C.mob.say_understands(speaker, language))
 				C.images += understood
 			else
 				C.images += gibberish

@@ -7,7 +7,7 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Boss Hogg"
+	supervisors = "the Governor and the Iskhod Council"
 	difficulty = "Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
@@ -38,7 +38,7 @@
 							 /datum/computer_file/program/camera_monitor,
 							 /datum/computer_file/program/reports)
 
-	perks = list(PERK_STALKER, PERK_PROSPECTOR_CONDITIONING)
+	perks = list(PERK_MEDICAL_EXPERT, PERK_STALKER, PERK_PROSPECTOR_CONDITIONING, PERK_JUNKBORN, PERK_MARKET_PROF)
 
 	description = "The foreman leads the prospectors, a group of independent scavengers seeking fortune from ruins and scrap.<br>\
 	Your goal is to lead your team into hostile locations and take everything of value that isn't nailed down - and the nails too!<br>\
@@ -88,12 +88,12 @@
 		STAT_BIO = 15
 	)
 
-	perks = list(PERK_STALKER, PERK_MARKET_PROF)
+	perks = list(PERK_STALKER, PERK_PROSPECTOR_CONDITIONING, PERK_JUNKBORN, PERK_MARKET_PROF)
 
-	description = "The Fence is a master of the prospector arsenal. Somewhere between gunsmith and trader, your job is to mete out the finds to buyers, and to \
-	make the rusted piles of junk at the bottom of the trash cart presentable enough for sale. \
-	You are a veteran prospector or salvager, one of Hogg's long timers, and you know your stuff. You're expected to help wrangle the newbies and to back up the Foremans word  \
-	Alongside this, you've got final say over the store from which you vend your (ill-)gotten gains. Remember, you're a veteran at this. \
+	description = "The Fence is a master of the prospector arsenal and second-in-command to the Foreman.<br>\
+	Somewhere between gunsmith and trader, your job is to mete out the finds to buyers, and to make the rusted piles of junk presentable enough for sale.<br>\
+	You are a veteran prospector, one of Hogg's long timers, and you know your stuff. You're expected to help wrangle the newbies and back up the Foreman's word.<br>\
+	Alongside this, you've got final say over the store from which you vend your (ill-)gotten gains.<br>\
 	You should be a reasonable voice amongst the hot headed field workers - Hogg wants a profit, not a dispute with the pigs."
 
 	duties = "Help your fellows prepare and procure everything they need for runs. \
@@ -108,7 +108,7 @@
 	join_tag = /datum/job/fence
 
 /datum/job/salvager
-	title = "Salvager"
+	title = "Prospector Specialist"
 	flag = SALVAGER
 	department = DEPARTMENT_PROSPECTOR
 	department_flag = PROSPECTORS
@@ -117,8 +117,9 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
+	playtimerequired = 300
 	noob_name = "Rookie Salvager"
-	alt_titles = list("Sawbones", "Rookie Salvager")
+	alt_titles = list("Sawbones", "Junk Technician")
 	//alt_perks = list("Sawbones"=list(PERK_MEDICAL_EXPERT, PERK_STALKER), "Junk Technician"=list(PERK_JUNKBORN, PERK_ROBOTICS_EXPERT))
 	selection_color = "#a7bbc6"
 	initial_balance = 500	//Should be enough to get by with basic meds, tools, and food round-start.
@@ -141,19 +142,19 @@
 		STAT_VIG = 10,
 		STAT_ROB = 10
 	)
-	perks = list(PERK_JUNKBORN, PERK_STALKER)
+	perks = list(PERK_MEDICAL_EXPERT, PERK_STALKER, PERK_PROSPECTOR_CONDITIONING, PERK_JUNKBORN)
 
-	description = "The Salvager is an informally trained specialist for the prospectors who functions as both an engineer and a doctor.<br>\
-	Your primary role is that of a field medic. Treat and stabilize the wounded on the combat backlines, and evacuate the critically injured.<br>\
-	Your secondary task is providing technical support to the team by breaching walls, building FOBs, repairing broken equipment, and extracting valuables from junk piles.<br>\
-	Remember that you are here to gain riches from the abandoned wilds. Don't waste time and resources mindlessly hunting creatures."
+	description = "The Prospector Specialist is a seasoned scavenger and survivalist, serving as a senior member of the crew under the Fence.<br>\
+	Your primary role is to venture deep into the unknown to recover valuable scrap, technology, and resources.<br>\
+	You are expected to be self-sufficient and capable of handling yourself in the field, while also mentoring the Rookies.<br>\
+	While you answer to the Fence and Foreman, your experience gives you a degree of autonomy in how you approach your work."
 
 	duties = "Extract resources for your employer. Use equipment to access new areas and gain a foothold in the wilderness.<br>\
 	Perform medical services on injured colleagues, from patching wounds to full field surgery.<br>\
 	Leave security duties to the hired muscle unless faced with no other option."
 
 /obj/landmark/join/start/salvager
-	name = "Salvager"
+	name = "Prospector Specialist"
 	icon_state = "player-blue"
 	join_tag = /datum/job/salvager
 
@@ -167,8 +168,9 @@
 	spawn_positions = 2
 	supervisors = "the Foreman"
 	difficulty = "Medium."
-	noob_name = "Rookie Prospector"
-	alt_titles = list("Rookie Prospector", "Hired Muscle")
+	playtimerequired = 100
+	noob_name = "Rookie"
+	alt_titles = list("Hired Muscle")
 	selection_color = "#a7bbc6"
 	initial_balance = 500	//Should be enough to get by with basic meds, tools, and food round start.
 	wage = WAGE_LABOUR
@@ -188,11 +190,12 @@
 		STAT_COG = 10
 	)
 
-	perks = list(PERK_MEDICAL_EXPERT, PERK_STALKER, PERK_PROSPECTOR_CONDITIONING)
+	perks = list(PERK_STALKER, PERK_PROSPECTOR_CONDITIONING)
 
-	description = "The Prospector serves as hired muscle to the Foreman, positioned somewhere between meat shield and exterminator.<br>\
-	Your job is to keep the Salvagers and anyone else with you protected, handling the fighting and being the first to enter dangerous areas. <br>\
-	While combat is your primary goal, you are still there to salvage valuable technology and make a profit selling said items to the colony."
+	description = "The Prospector is a capable field worker with several successful runs under their belt, standing above the rookies but still answering to the specialists.<br>\
+	Your job is to handle the standard salvaging operations and assist the specialists in more complex extractions.<br>\
+	You have proven you aren't just a meat shield, but you still have much to learn before you can lead your own expeditions.<br>\
+	Stay sharp, keep your team safe, and continue to prove your value to the guild."
 
 	duties = "Guard your peers from hostile creatures and other dangers that cross your path.<br>\
 	Use whatever measures necessary to ensure survival, but try not to soil the standing of your team.<br>\
@@ -200,6 +203,53 @@
 
 /obj/landmark/join/start/pro
 	name = "Prospector"
+	icon_state = "player-blue"
+	join_tag = /datum/job/pro
+
+/datum/job/pro_rookie
+	title = "Rookie Prospector"
+	flag = ROOKIE
+	department = DEPARTMENT_PROSPECTOR
+	department_flag = PROSPECTORS
+	faction = MAP_FACTION
+	total_positions = 3
+	spawn_positions = 2
+	supervisors = "all Prospectors"
+	difficulty = "Medium."
+	noob_name = "Rookie"
+	alt_titles = list("Hired Muscle")
+	selection_color = "#a7bbc6"
+	initial_balance = 500	//Should be enough to get by with basic meds, tools, and food round start.
+	wage = WAGE_LABOUR
+
+	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
+	outfit_type = /decl/hierarchy/outfit/job/pro
+	health_modifier = 10
+
+	access = list(
+		access_prospector, access_external_airlocks, access_eva, access_maint_tunnels
+	)
+
+	stat_modifiers = list(
+		STAT_TGH = 10,
+		STAT_VIG = 10,
+		STAT_ROB = 10,
+		STAT_COG = 5
+	)
+
+	perks = list(PERK_PROSPECTOR_CONDITIONING)
+
+	description = "The Rookie Prospector is the newest addition to the prospector team, serving as hired muscle and general labor.<br>\
+	Your job is to learn the ropes from the Prospectors, Prospector Specialists, and Fence while keeping the team safe from threats.<br>\
+	You are effectively a meat shield and pack mule until you prove your worth.<br>\
+	Listen to your superiors, watch your back, and maybe you'll survive long enough to get promoted."
+
+	duties = "Guard your peers from hostile creatures and other dangers that cross your path.<br>\
+	Use whatever measures necessary to ensure survival, but try not to soil the standing of your team.<br>\
+	Help with the more general salvaging and heavy lifting."
+
+/obj/landmark/join/start/pro_rookie
+	name = "Rookie Prospector"
 	icon_state = "player-blue"
 	join_tag = /datum/job/pro
 

@@ -35,6 +35,8 @@
 	var/radio_filter_out
 	var/radio_filter_in
 
+	var/target_temperature = T20C
+
 	var/welded = FALSE
 
 /obj/machinery/atmospherics/unary/vent_scrubber/on
@@ -109,6 +111,7 @@
 		"filter_co2" = ("carbon_dioxide" in scrubbing_gas),
 		"filter_plasma" = ("plasma" in scrubbing_gas),
 		"filter_n2o" = ("sleeping_agent" in scrubbing_gas),
+		"target_temp" = target_temperature,
 		"sigtype" = "status"
 	)
 	if(!initial_loc.air_scrub_names[id_tag])
@@ -167,6 +170,17 @@
 			//group_multiplier gets divided out here
 			power_draw += pump_gas(src, environment, air_contents, transfer_moles, power_rating)
 		transfer_happened = TRUE
+
+		if(environment.total_moles)
+			var/thermalChange = environment.get_thermal_energy_change(target_temperature)
+			if(abs(thermalChange) > 5)
+				var/energy_used = min(abs(thermalChange), power_rating)
+				if(thermalChange > 0)
+					environment.add_thermal_energy(energy_used)
+				else
+					environment.add_thermal_energy(-energy_used)
+				power_draw += energy_used
+				transfer_happened = TRUE
 
 	if(transfer_happened)
 		last_power_draw = power_draw
@@ -245,6 +259,9 @@
 		toggle += "sleeping_agent"
 
 	scrubbing_gas ^= toggle
+
+	if(signal.data["set_temperature"] != null)
+		target_temperature = text2num(signal.data["set_temperature"])
 
 	if(signal.data["init"] != null)
 		name = signal.data["init"]

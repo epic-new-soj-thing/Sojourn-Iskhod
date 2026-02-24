@@ -43,7 +43,7 @@
 	new /obj/item/tool/wrench(src)
 
 /obj/structure/closet/secure_closet/personal/doctor
-	name = "Soteria Doctor's locker"
+	name = "Vesalius-Andra Doctor's locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_medical_equip)
 	icon_state = "med"
@@ -70,12 +70,19 @@
 		if ("blue")
 			new /obj/item/clothing/under/scrubs(src)
 			new /obj/item/clothing/head/surgery(src)
+	switch(pick("blue", "green", "purple"))
+		if ("blue")
+			new /obj/item/clothing/under/scrubs(src)
+			new /obj/item/clothing/head/surgery(src)
 		if ("green")
 			new /obj/item/clothing/under/scrubs/green(src)
 			new /obj/item/clothing/head/surgery/green(src)
 		if ("purple")
 			new /obj/item/clothing/under/scrubs/purple(src)
 			new /obj/item/clothing/head/surgery/purple(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
+	new /obj/item/clothing/shoes/winter/medical(src)
+	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/clothing/under/rank/medical(src)
 	new /obj/item/clothing/gloves/latex/nitrile(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
@@ -91,7 +98,7 @@
 	new /obj/item/clothing/accessory/stethoscope(src)
 
 /obj/structure/closet/secure_closet/personal/paramedic
-	name = "Soteria Field Doctor's locker"
+	name = "Vesalius-Andra Field Doctor's locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_medical_equip)
 	icon_state = "med"
@@ -116,6 +123,8 @@
 			new /obj/item/clothing/under/scrubs/purple(src)
 			new /obj/item/clothing/head/surgery/purple(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
+	new /obj/item/clothing/shoes/winter/medical(src)
 	new /obj/item/clothing/head/soft/medical(src)
 	new /obj/item/device/flash(src)
 	new /obj/item/clothing/gloves/latex/nitrile(src)
@@ -124,7 +133,7 @@
 	new /obj/item/tool/crowbar(src)
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/clothing/shoes/reinforced(src)
-	new /obj/item/device/radio/headset/headset_med(src)
+	new /obj/item/device/radio/headset/headset_para(src)
 	new /obj/item/taperoll/medical(src)
 	new /obj/item/storage/belt/medical/emt(src)
 	new /obj/item/clothing/suit/storage/hazardvest(src)
@@ -134,7 +143,7 @@
 	new /obj/item/clothing/glasses/hud/health(src)
 
 /obj/structure/closet/secure_closet/personal/orderly
-	name = "soteria Lifeline Technician locker"
+	name = "vesalius-andra Lifeline Technician locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_orderly)
 	icon_state = "traumateam"
@@ -157,8 +166,10 @@
 	new /obj/item/tool/crowbar(src)
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/clothing/mask/gas(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
+	new /obj/item/clothing/shoes/winter/medical(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
-	new /obj/item/device/radio/headset/headset_med(src)
+	new /obj/item/device/radio/headset/headset_para(src)
 	new /obj/item/taperoll/medical(src)
 	new /obj/item/storage/belt/medical/emt(src)
 	new /obj/item/clothing/suit/storage/hazardvest(src)
@@ -172,7 +183,7 @@
 	new /obj/item/clothing/suit/storage/toggle/labcoat/medspec(src)
 
 /obj/structure/closet/secure_closet/reinforced/CMO
-	name = "Soteria Biolab Overseer's locker"
+	name = "vesalius-andra biolab overseer's locker"
 	req_access = list(access_cmo)
 	icon_state = "cmo"
 
@@ -202,6 +213,8 @@
 			new /obj/item/clothing/head/surgery/purple(src)
 	new /obj/item/clothing/under/rank/moebius_biolab_officer(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat/cmo(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
+	new /obj/item/clothing/shoes/winter/medical(src)
 	new /obj/item/clothing/gloves/latex(src)
 	new /obj/item/clothing/accessory/halfcape/cbo(src)
 	new /obj/item/clothing/accessory/job/cape/mbo(src) // Both versions of capes for consistency - Seb
@@ -222,6 +235,7 @@
 	new /obj/item/oddity/chem_book(src)
 	new /obj/item/storage/hcases/med(src)
 	new /obj/item/clothing/accessory/holster/saber/rapiermed/occupied(src)
+	new /obj/item/reagent_containers/enricher(src)
 
 /obj/structure/closet/secure_closet/animal
 	name = "animal control closet"

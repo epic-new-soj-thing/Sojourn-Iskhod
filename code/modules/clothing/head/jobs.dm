@@ -7,14 +7,14 @@
 
 //Cargo Tech
 /obj/item/clothing/head/rank/cargosoft
-	name = "lonestar cap"
-	desc = "A grey cap with the Lonestar logo on it."
+	name = "frontier logistics cap"
+	desc = "A grey cap with the Frontier Logistics logo on it."
 	icon_state = "cargosoft"
 
 //Captain
 
 /obj/item/clothing/head/rank/captain
-	name = "premier's hat"
+	name = "governor's hat"
 	icon_state = "captain"  //Sprites from Eris
 	desc = "It's good being the king."
 	item_state_slots = list(
@@ -203,12 +203,12 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 //Security
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"
-	desc = "A stylish beret, this one has markings of the Marshals."
+	desc = "A stylish beret, this one has markings of the Rangers."
 	icon_state = "policeberet"
 
 /obj/item/clothing/head/rank/commander
-	name = "warrant officer beret"
-	desc = "A grey warrant officer beret signifying a command position."
+	name = "captain's beret"
+	desc = "A grey beret signifying a command position within the rangers."
 	icon_state = "beret_navy_hos"
 
 /obj/item/clothing/head/rank/commander/verb/toggle_style()
@@ -221,9 +221,9 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["WO Beret"] = "beret_navy_hos"
-	options["WO Cap"] = "ihc_cap"
-	options["WO Default"] = "hoshat"
+	options["RC Beret"] = "beret_navy_hos"
+	options["RC Cap"] = "ihc_cap"
+	options["RC Default"] = "hoshat"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -238,11 +238,11 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 
 /obj/item/clothing/head/rank/warden/beret
 	name = "supply specialist beret"
-	desc = "A red marshal beret signifying a supply specialist position."
+	desc = "A red ranger beret signifying a supply specialist position."
 	icon_state = "beret_navy_warden"
 
 /obj/item/clothing/head/rank/janacap //fucking weaboos.
-	name = "marshal officers cap"
+	name = "ranger officers cap"
 	desc = "A stylish officers cap. Somewhere between a kepi and peaked officer cap, this style is popular amongst enforcement corps in some region of Solarian space."
 	icon_state = "police_cap"
 

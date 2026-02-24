@@ -52,7 +52,7 @@
 	id_type =  /obj/item/card/id/syndicate/ert/aa/medical_ert
 
 /decl/hierarchy/outfit/marshal_ert
-	name = "Marshal Agent"
+	name = "Ranger Agent"
 	l_ear  =/obj/item/device/radio/headset/heads/hos/bowman
 	uniform = /obj/item/clothing/under/rank/ih_commander
 	suit = /obj/item/clothing/suit/armor/vest/ironhammer/full

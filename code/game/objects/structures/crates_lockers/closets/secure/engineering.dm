@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/reinforced/engineering_chief
-	name = "guild master's locker"
+	name = "chief engineer's locker"
 	req_access = list(access_ce)
 	icon_state = "ce"
 
@@ -15,6 +15,8 @@
 	new /obj/item/clothing/under/rank/exultant(src)
 	new /obj/item/clothing/head/firefighter/chief(src)
 	new /obj/item/clothing/head/welding(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/engineering(src)
+	new /obj/item/clothing/shoes/winter/engineering(src)
 	new /obj/item/clothing/gloves/insulated(src)
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/clothing/accessory/halfcape/gm(src)
@@ -65,6 +67,7 @@
 	new /obj/item/tool/multitool(src)
 	new /obj/item/tool/multitool(src)
 	new /obj/item/tool/multitool(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/engineering(src)
 	new /obj/item/storage/hcases/parts(src)
 	new /obj/item/storage/hcases/engi(src)
 
@@ -87,6 +90,7 @@
 	new /obj/item/weldpack(src)
 	new /obj/item/weldpack(src)
 	new /obj/item/weldpack(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/engineering(src)
 	new /obj/item/tool_upgrade/augment/fuel_tank(src)
 	new /obj/item/tool_upgrade/augment/fuel_tank(src)
 	new /obj/item/tool_upgrade/augment/fuel_tank(src)
@@ -94,7 +98,7 @@
 	new /obj/item/storage/hcases/engi(src)
 
 /obj/structure/closet/secure_closet/personal/engineering_personal
-	name = "guild adept's locker"
+	name = "engineer's locker"
 	req_access = list(access_ce)
 	access_occupy = list(access_engine_equip)
 	icon_state = "eng"
@@ -116,6 +120,8 @@
 	new /obj/item/device/radio/headset/headset_eng(src)
 	new /obj/item/clothing/suit/storage/hazardvest(src)
 	new /obj/item/clothing/mask/gas/artificer(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/engineering(src)
+	new /obj/item/clothing/shoes/winter/engineering(src)
 	new /obj/item/clothing/glasses/powered/meson(src)
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/storage/hcases/parts(src)

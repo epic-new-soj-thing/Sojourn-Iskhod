@@ -1,5 +1,5 @@
 /obj/item/tool/omnitool
-	name = "\improper Lonestar \"Munchkin 5000\""
+	name = "\improper Frontier Logistics \"Munchkin 5000\""
 	desc = "A fuel-powered monster of a tool. Its welder part is the most advanced one, capable of welding things without harmful glow and sparks, so no protection needed. The complexity of this tool means that regular maintenance is required."
 	icon_state = "omnitool"
 	max_health = 200
@@ -16,7 +16,7 @@
 
 /obj/item/tool/polytool
 	name = "Artificer's Guild \"Jolly Co-operation\" polytool"
-	desc = "One of the few jointly designed tools by both Lonestar Shipping Solutions and the Artificer's Guild, a rather curious attempt at merging the munchkin 5000 of lonestar infamy and \
+	desc = "One of the few jointly designed tools by both Frontier Logistics and the Artificer's Guild, a rather curious attempt at merging the munchkin 5000 of lonestar infamy and \
 	designs taken directly from the guild arc welder. What it produced was a munchkin and arc welder combo with much finer tuned properties, efficient fuel economy, comfortable hand grips, and plenty of slots for tool augments."
 	icon_state = "polytool"
 	item_state = "polytool"
@@ -87,7 +87,7 @@
 	allow_greyson_mods = TRUE
 
 /obj/item/tool/medmultitool/medimplant
-	name = "Soteria medical omnitool implant"
+	name = "Vesalius-Andra medical omnitool implant"
 	desc = "An all-in-one medical tool based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a medium power cell."
 	icon_state = "medmulti_sci"
 	matter = null
@@ -108,7 +108,7 @@
 	max_upgrades = 1
 
 /obj/item/tool/medmultitool/medimplant/sci
-	name = "Soteria medical \"Minidoc\" omnitool"
+	name = "Vesalius-Andra medical \"Minidoc\" omnitool"
 	desc = "An all-in-one medical tool based on the legendary Greyson Positronic model. While convenient, it is less efficient than more advanced surgical tools, such as laser scalpels, and requires a small power cell. This one is a cheap copy of better versions."
 	icon_state = "medimplant"
 	matter = null //Nope

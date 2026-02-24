@@ -8,7 +8,7 @@
 	build_path = /obj/item/gun/energy/cog/sawn
 	category = CAT_WEAPON
 
-/*	// Unneeded with the introduction of the Sprocket, keeps this variant as Marshal exclusive
+/*	// Unneeded with the introduction of the Sprocket, keeps this variant as Ranger exclusive
 /datum/design/research/item/greyson/cog_gear
 	name = "GP \"Gear\" police laser carbine"
 	build_path = /obj/item/gun/energy/cog/gear
@@ -16,7 +16,7 @@
 */
 
 /datum/design/research/item/greyson/cog_sprocket
-	name = "Soteria \"Sprocket\" laser carbine"
+	name = "Vesalius-Andra \"Sprocket\" laser carbine"
 	build_path = /obj/item/gun/energy/cog/sprocket
 	category = CAT_WEAPON
 

@@ -147,7 +147,7 @@
 	research_value = 8500
 
 /mob/living/carbon/superior/psi/cerebral_crusher/marshal
-	name = "Marshal Benedictus"
+	name = "Ranger Benedictus"
 	desc = "He shall pry your secrets from your flesh and slice your mind to colorful bloodied ribbons."
 	emote_see = list("knocks a closed fist on his bone plates.", "mutters, \"They call themselves marshals, yet with no court? Hmph!\"", "grinds his knuckles along the ground, \"Not a loss, not a loss at all.\"")
 	research_value = 10000

@@ -473,7 +473,8 @@
 
 	unlocks_designs = list(/datum/design/research/circuit/ameridian_refinery,
 							/datum/design/research/circuit/liquid_ameridian_processor,
-							/datum/design/research/circuit/ameridian_analyzer
+							/datum/design/research/circuit/ameridian_analyzer,
+							/datum/design/research/item/ameridian_core
 							)
 
 

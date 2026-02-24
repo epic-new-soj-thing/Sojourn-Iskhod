@@ -66,10 +66,16 @@
 	for(var/source in turf_translation)
 		var/turf/target = turf_translation[source]
 		if(!target)
+			// Debug: null target (edge of map)
+			log_debug("Shuttle landmark check_collision: null target for source=[source] at expected dst coords")
 			return TRUE //collides with edge of map
 		if(target.loc != base_area)
+			// Debug: target in different area
+			log_debug("Shuttle landmark check_collision: target.loc (![target.loc]) != base_area (![base_area]) for source=[source]")
 			return TRUE //collides with another area
 		if(target.density)
+			// Debug: dense turf prevents docking
+			log_debug("Shuttle landmark check_collision: target turf dense at [target] for source=[source]")
 			return TRUE //dense turf
 	return FALSE
 

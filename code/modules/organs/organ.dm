@@ -154,7 +154,7 @@
 		if(reagents)
 			var/datum/reagent/organic/blood/B = locate(/datum/reagent/organic/blood) in reagents.reagent_list
 			if(B && prob(40))
-				reagents.remove_reagent("blood",0.1)
+				reagents.remove_reagent(src.species.blood_reagent,0.1)
 				blood_splatter(src,B,1)
 		if(config.organs_decay)
 			if(prob(5))

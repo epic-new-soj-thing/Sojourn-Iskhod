@@ -37,6 +37,7 @@
 		M.update_inv_belt()
 
 /obj/item/storage/belt/sci
+	name = "science belt"
 	icon_state = "scibelt"
 	item_state = "scibelt"
 
@@ -100,7 +101,7 @@
 	new /obj/item/stack/cable_coil/random(src)
 
 /obj/item/storage/belt/utility/full/guild
-	name = "guild adept tool belt"
+	name = "engineer tool belt"
 	desc = "Can hold various tools."
 	icon_state = "guildbelt"
 	item_state = "guildbelt"

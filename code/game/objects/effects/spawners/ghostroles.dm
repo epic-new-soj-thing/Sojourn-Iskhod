@@ -128,16 +128,16 @@
 
 /obj/effect/mob_spawn/human/marshal_ert
 	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Colonial Marshal"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Iskhod Colonial Ranger"
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/marshal_ert
 	ghost_role_perks = list(PERK_ASS_OF_CONCRETE, PERK_SMARTLINK, PERK_CODESPEAK, PERK_CHEM_CONTRABAND, PERK_TRUE_NAME)
-	short_desc = "You are a Marshal agent."
-	flavour_text = "Something has happend to the upper colony to warrant your deployment. Uphold the word of law and ensure peace is upkept in Nadezhda."
-	assignedrole = "Marshal Agent"
-	title = "Marshal Agent"
+	short_desc = "You are a Ranger agent."
+	flavour_text = "Something has happend to the upper colony to warrant your deployment. Uphold the word of law and ensure peace is upkept in Iskhod."
+	assignedrole = "Ranger Agent"
+	title = "Ranger Agent"
 	stat_modifiers = list(
 		STAT_ROB = 50,
 		STAT_TGH = 45,
@@ -149,7 +149,7 @@
 
 /obj/effect/mob_spawn/human/blackshield_ert
 	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Blackshield Specialist"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Iskhod Blackshield Specialist"
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -191,16 +191,16 @@
 
 /obj/effect/mob_spawn/human/lonestar_ert
 	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Lonestar IA Agent."
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Frontier Logistics IA Agent."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/lss_ert
 	ghost_role_perks = list(PERK_NO_OBFUSCATION, PERK_MARKET_PROF, PERK_TRUE_NAME)
 	short_desc = "You are an Internal Affairs Agent."
-	flavour_text = "Lonestar's surface operations have run into some troubles, and your job is to handle them. Speak to those involved, make decisions, keep the profits flowing."
-	assignedrole = "Lonestar Internal Affairs Agent"
-	title = "Lonestar Internal Affairs Agent"
+	flavour_text = "Frontier Logistics's surface operations have run into some troubles, and your job is to handle them. Speak to those involved, make decisions, keep the profits flowing."
+	assignedrole = "Frontier Logistics Internal Affairs Agent"
+	title = "Frontier Logistics Internal Affairs Agent"
 	stat_modifiers = list(
 		STAT_ROB = 45,
 		STAT_TGH = 45,
@@ -221,10 +221,10 @@
 	short_desc = "You are an Inquisitor."
 	flavour_text = "A member of the clergy on duty, most likely the Prime, has done something that requires investigation and possibly disciplinary action. \
 	Your job is to uphold the doctrine of the Church, and you are empowered to Reduce or Separate even a Prime. \
-	You are not a cop, but you may assist the Marshals in tracking down a renegade clergy member if necessary."
+	You are not a cop, but you may assist the Rangers in tracking down a renegade clergy member if necessary."
 	assignedrole = "Church Inquisitor"
 	title = "Church Inquisitor"
-	stat_modifiers = list( //Literally just Marshal agent stats, I'm lazy
+	stat_modifiers = list( //Literally just Ranger agent stats, I'm lazy
 		STAT_ROB = 50,
 		STAT_TGH = 45,
 		STAT_BIO = 10,
@@ -248,9 +248,9 @@
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/si_ert
 	ghost_role_perks = list(PERK_SURGICAL_MASTER, PERK_ROBOTICS_EXPERT, PERK_SI_SCI, PERK_CHEMIST, PERK_TRUE_NAME)
-	short_desc = "You are a member of the Soteria Ethics Committee."
-	flavour_text = "An accusation has been made against the Soteria Research Institute that besmirches our good name and committment to progress and the betterment of science. \
-	Identify the source of the issue and recommend resolutions if a member of Soteria is found to not acted in the best interests of the institutes mission."
+	short_desc = "You are a member of the Vesalius-Andra Ethics Committee."
+	flavour_text = "An accusation has been made against the Vesalius-Andra Research Institute that besmirches our good name and committment to progress and the betterment of science. \
+	Identify the source of the issue and recommend resolutions if a member of Vesalius-Andra is found to not acted in the best interests of the institutes mission."
 	assignedrole = "SRI Ethics Committee investigator"
 	title = "SRI Ethics Committee investigator"
 	stat_modifiers = list(

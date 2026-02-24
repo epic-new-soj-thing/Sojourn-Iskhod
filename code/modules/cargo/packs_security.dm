@@ -49,7 +49,7 @@
 	group = "Enforcement"
 
 /datum/supply_pack/longrevolver
-	name = "Lonestar Long Revolver Novelty Crate"
+	name = "Frontier Logistics Long Revolver Novelty Crate"
 	contains = list(/obj/item/gun/projectile/revolver/longboi)
 	cost = 1000 //Higher than normal since novelty item. -Kaz
 	containertype = /obj/structure/closet/crate/secure/weapon
@@ -348,7 +348,7 @@
 					/obj/machinery/deployable/barrier)
 	cost = 1600
 	containertype = /obj/structure/closet/crate/secure/gear
-	crate_name = "Marshal Enforcement barrier crate"
+	crate_name = "Ranger Enforcement barrier crate"
 	group = "Enforcement"
 
 /datum/supply_pack/Enforcementwallshield

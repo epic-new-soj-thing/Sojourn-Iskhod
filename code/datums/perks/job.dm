@@ -56,7 +56,7 @@
 
 /datum/perk/timeismoney
 	name = "Hyperzine Injections"
-	desc = "A standard issue injector hidden away that is designed for Surface Operations Managers that contains a small on-demand injection of Hyperzine. The injector itself is unable to be seen by prying scanners and comes in both \
+	desc = "A standard issue injector hidden away that is designed for Quartermasters that contains a small on-demand injection of Hyperzine. The injector itself is unable to be seen by prying scanners and comes in both \
 	metal and organic material designs to aid in remaining hidden. While useful, the chemical storage takes time to recharge after use."
 	icon_state = "adrenalineburst_tim"
 	active = FALSE
@@ -343,7 +343,7 @@
 
 /datum/perk/rezsickness
 	name = "Mild Revival Sickness"
-	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. As you were revived by Soteria, you can recover a lot quicker."
+	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. As you were revived by Vesalius-Andra, you can recover a lot quicker."
 	icon_state = "revivalsickness"
 
 /datum/perk/rezsickness/mild/assign(mob/living/L)
@@ -683,7 +683,7 @@
 
 /datum/perk/codespeak
 	name = "Codespeak"
-	desc = "You know Marshal codes."
+	desc = "You know Ranger codes."
 	icon_state = "codespeak" // https://game-icons.net/1x1/delapouite/police-officer-head.html
 	copy_protected = TRUE //Borers already grant omni language translation.
 	var/list/codespeak_procs = list(

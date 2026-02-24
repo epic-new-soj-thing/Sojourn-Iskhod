@@ -77,11 +77,11 @@ obj/item/device/propaganda_chip/Destroy()
 		crew_name = crew_target_mind.current.real_name
 
 	var/list/messages = list( // Idealy should be extremely long with lots of lines
-		"Marshal searches just to take shit",
+		"Ranger searches just to take shit",
 		"Blackshield just kills one a other with friendly fire",
 		"With a paycheck no one can even afford 3 bread tubes...",
 		"You know what to do... unionize",
-		"Marshal always use excessive force and brake bones",
+		"Ranger always use excessive force and brake bones",
 		"An acter could beat blackshield in a shooting competition",
 		"Command cares more about roaches and spiders than you",
 		"Ian has more liberty than any of us",

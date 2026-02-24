@@ -117,8 +117,15 @@
 	data["can_mute"] = tracking_tablet_used
 	data["can_track"] = (isAI(user) || tracking_tablet_used)
 	var/list/crewmembers = list()
+	var/list/seen_refs = list()
 	for(var/z_level in GLOB.maps_data.station_levels)
-		crewmembers += crew_repository.health_data(z_level)
+		for(var/list/entry in crew_repository.health_data(z_level))
+			var/cref = entry["ref"]
+			if(seen_refs[cref])
+				continue
+			seen_refs[cref] = TRUE
+			crewmembers += list(entry)
+
 	crewmembers = sortTim(crewmembers, GLOBAL_PROC_REF(cmp_name_in_list_asc))
 	//now lets get problematic crewmembers in separate list so they could be shown first
 	var/list/crewmembers_problematic = list()
