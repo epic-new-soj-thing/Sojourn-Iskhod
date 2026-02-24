@@ -37,7 +37,7 @@ So sometimes this event can result in people finding new and interesting things
 
 /datum/event/grid_check/announce()
 	command_announcement.Announce("Abnormal activity detected in the colony's powernet. As a precautionary measure, power will be shut off for an indeterminate duration.", "Automated Grid Check", new_sound = 'sound/AI/poweroff.ogg')
-
+*/
 
 
 /proc/power_failure(var/announce = 1, var/severity = 2, var/list/affected_z_levels)
@@ -88,4 +88,4 @@ So sometimes this event can result in people finding new and interesting things
 /proc/is_valid_smes(var/obj/machinery/power/smes/S)
 	var/area/A = get_area(S)
 	return !(A && (A.flags & AREA_FLAG_CRITICAL)) && isOnShipLevel(S)
-*/
+

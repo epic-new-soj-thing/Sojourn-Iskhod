@@ -44,7 +44,7 @@
 	if(!spin_effect)
 		spin_effect = new(null)
 
-	alarm_light_color =
+	alarm_light_color = color_rotation(angle, alarm_light_color)
 
 	set_dir(dir) //Set dir again so offsets update correctly
 
@@ -88,7 +88,7 @@
 
 	angle = 15
 	alarm_light_color = "#ff9524"
-	sound_file = 'sound/effects/matteralarm.ogg'
+	sound_file = 'sound/effects/supermatter.ogg'
 
 /obj/machinery/rotating_alarm/supermatter/Initialize()
 	. = ..()
