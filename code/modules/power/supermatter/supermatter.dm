@@ -48,6 +48,7 @@
 	var/public_alert = 0
 	var/warning_point = 100
 	var/warning_alert = "Danger! Crystal hyperstructure instability!"
+	var/code_orange_point = 500
 	var/emergency_point = 700
 	var/emergency_alert = "CRYSTAL DELAMINATION IMMINENT."
 	var/explosion_point = 1000
@@ -236,6 +237,9 @@
 	if(damage > emergency_point)
 		alert_msg = emergency_alert + alert_msg
 		lastwarning = world.timeofday - WARNING_DELAY * 4
+	else if(damage > code_orange_point)
+		alert_msg = "Danger! Crystal hyperstructure integrity below 50%!" + alert_msg
+		lastwarning = world.timeofday
 	else if(damage >= damage_archived)
 		safe_warned = 0
 		alert_msg = warning_alert + alert_msg
@@ -252,24 +256,34 @@
 			radio.autosay(alert_msg, "Supermatter Monitor", "Engineering")
 
 		//Public alerts
-		if((damage > emergency_point) && !public_alert)
+		if((damage > code_orange_point) && !public_alert)
 			if(radio)
-				radio.autosay("WARNING: SUPERMATTER CRYSTAL DELAMINATION IMMINENT! SAFEROOMS UNBOLTED.", "Supermatter Monitor")
+				radio.autosay("WARNING: SUPERMATTER CRYSTAL INTEGRITY BELOW 50%. CODE ORANGE IS NOW IN EFFECT.", "Supermatter Monitor")
 			public_alert = 1
-
-			// User request: Change all lighting to orange
-			for(var/obj/machinery/light/L in GLOB.machines)
-				if(L.z in GLOB.maps_data.station_levels)
-					L.set_light(L.light_range, L.light_power, "#FFA500") // Use set_light
 
 			for(var/mob/M in GLOB.player_list)
 				var/turf/T = get_turf(M)
 				if(T && (T.z in GLOB.maps_data.station_levels) && !istype(M,/mob/new_player) && !isdeaf(M))
 					sound_to(M, 'sound/effects/matteralarm.ogg')
 
-		else if(safe_warned && public_alert)
+			// Set alert level to code orange
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+			var/decl/security_level/orange = decls_repository.get_decl(/decl/security_level/default/code_orange)
+			if(security_state && orange && security_state.current_security_level_is_lower_than(orange))
+				security_state.set_security_level(orange)
+
+		if((damage > emergency_point) && public_alert < 2)
 			if(radio)
-				radio.autosay(alert_msg, "Supermatter Monitor")
+				radio.autosay("WARNING: SUPERMATTER CRYSTAL DELAMINATION IMMINENT! SAFEROOMS UNBOLTED.", "Supermatter Monitor")
+			public_alert = 2
+
+		else if(integrity > 50 && public_alert)
+			if(radio)
+				radio.autosay("Supermatter crystal has returned to safe operating levels. Reverting emergency lighting.", "Supermatter Monitor")
+
+			for(var/obj/machinery/light/L in GLOB.machines)
+				if(L.z in GLOB.maps_data.station_levels)
+					L.reset_color()
 			public_alert = 0
 
 /obj/machinery/power/supermatter/Process()
@@ -332,6 +346,9 @@
 		else
 			equilibrium_power = 250
 			icon_state = base_icon_state
+
+		if (damage > code_orange_point)
+			icon_state = "[base_icon_state]_glow"
 
 		temp_factor = ( (equilibrium_power/decay_factor)**3 )/800
 		power = max( (removed.temperature * temp_factor) * oxygen + power, 0)
@@ -535,6 +552,7 @@
 	base_icon_state = "supermatter_shard"
 
 	warning_point = 50
+	code_orange_point = 300
 	emergency_point = 400
 	explosion_point = 600
 
