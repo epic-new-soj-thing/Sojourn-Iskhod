@@ -16829,6 +16829,13 @@
 	icon_state = "11,4"
 	},
 /area/shuttle/vasiliy_shuttle_area)
+"ejv" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light{
+	brightness_power = 1
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/rnd/lab)
 "ejy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
@@ -37625,6 +37632,18 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
+"jvY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	brightness_power = 1
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/quartermaster)
 "jwa" = (
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/medical/morgue)
@@ -49093,13 +49112,6 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/security/armoryshop)
-"mrA" = (
-/obj/structure/table/reinforced,
-/obj/machinery/light{
-	brightness_power = 1
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/iskhod/rnd/lab)
 "mrK" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/red,
@@ -61609,14 +61621,6 @@
 	},
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/abandoned/barber)
-"pzy" = (
-/obj/machinery/repair_station,
-/obj/machinery/light{
-	brightness_power = 1;
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/iskhod/rnd/robotics)
 "pzN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/hologram/holopad,
@@ -77136,6 +77140,14 @@
 	},
 /turf/simulated/floor/fixed/hydrotile,
 /area/turret_protected/ai)
+"tAs" = (
+/obj/machinery/repair_station,
+/obj/machinery/light{
+	brightness_power = 1;
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/rnd/robotics)
 "tAx" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -118956,7 +118968,7 @@ ylj
 bda
 ylj
 ojm
-epo
+jvY
 vGv
 cZk
 iKw
@@ -119360,7 +119372,7 @@ ocS
 kCg
 ocS
 bEH
-epo
+jvY
 vGv
 eqB
 lvM
@@ -122173,7 +122185,7 @@ xfA
 kef
 buF
 wnu
-pzy
+tAs
 ick
 fWL
 sDp
@@ -123373,7 +123385,7 @@ uHc
 bgX
 wqR
 aAN
-mrA
+ejv
 oHv
 ciN
 gat
