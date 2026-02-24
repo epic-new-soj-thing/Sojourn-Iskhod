@@ -6,17 +6,21 @@
 	manifest.ui_interact(user)
 
 /proc/html_crew_manifest(var/monochrome, var/OOC)
-	var/list/dept_data = list(
-        list("names" = list(), "header" = DEPARTMENT_COMMAND,   "flag" = COMMAND),
-        list("names" = list(), "header" = DEPARTMENT_SECURITY,  "flag" = SECURITY),
-        list("names" = list(), "header" = DEPARTMENT_MEDICAL,   "flag" = MEDICAL),
-        list("names" = list(), "header" = DEPARTMENT_SCIENCE,   "flag" = SCIENCE),
-        list("names" = list(), "header" = DEPARTMENT_CHURCH,    "flag" = CHURCH),
-        list("names" = list(), "header" = DEPARTMENT_SUPPLY,    "flag" = FL),
+    var/list/dept_data = list(
+        list("names" = list(), "header" = DEPARTMENT_COMMAND,     "flag" = COMMAND),
+        list("names" = list(), "header" = DEPARTMENT_SECURITY,    "flag" = SECURITY),
+        list("names" = list(), "header" = DEPARTMENT_MEDICAL,     "flag" = MEDICAL),
+        list("names" = list(), "header" = DEPARTMENT_SCIENCE,     "flag" = SCIENCE),
+        list("names" = list(), "header" = DEPARTMENT_CHURCH,      "flag" = CHURCH),
+        list("names" = list(), "header" = DEPARTMENT_SUPPLY,      "flag" = FL),
         list("names" = list(), "header" = DEPARTMENT_ENGINEERING, "flag" = ENGINEERING),
-        list("names" = list(), "header" = DEPARTMENT_PROSPECTOR, "flag" = PROSPECTORS),
-        list("names" = list(), "header" = DEPARTMENT_CIVILIAN,  "flag" = CIVILIAN),
-        list("names" = list(), "header" = DEPARTMENT_LODGE,     "flag" = LODGE)
+        list("names" = list(), "header" = DEPARTMENT_PROSPECTOR,  "flag" = PROSPECTORS),
+        list("names" = list(), "header" = DEPARTMENT_CIVILIAN,    "flag" = CIVILIAN),
+        list("names" = list(), "header" = DEPARTMENT_SERVICE,     "flag" = SERVICE),
+        list("names" = list(), "header" = DEPARTMENT_INDEPENDENT, "flag" = INDEPENDENT),
+        list("names" = list(), "header" = DEPARTMENT_LODGE,       "flag" = LODGE),
+        list("names" = list(), "header" = "Silicon",              "flag" = SILICON),
+        list("names" = list(), "header" = "Miscellaneous",        "flag" = MISC)
     )
 
 	var/list/misc //Special departments for easier access
