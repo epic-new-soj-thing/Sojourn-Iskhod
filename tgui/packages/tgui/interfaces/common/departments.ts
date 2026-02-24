@@ -1,10 +1,11 @@
 export const departmentData = {
   heads: { name: 'Iskhod Council' },
-  sec: { name: 'Iskhod Rangers' },
+  sec: { name: 'Security - Rangers' },
+  bls: { name: 'Security - Blackshield' },
   med: { name: 'Vesalius-Andra Medical' },
   sci: { name: 'Vesalius-Andra Research' },
   chr: { name: 'Church of the Absolute' },
-  car: { name: 'Frontier Logistics' },
+  sup: { name: 'Frontier Logistics' },
   eng: { name: 'Artificer Guild' },
   pro: { name: 'Prospectors' },
   civ: { name: 'Contractors' },
