@@ -48,10 +48,10 @@
 	var/public_alert = 0
 	var/warning_point = 100
 	var/warning_alert = "Danger! Crystal hyperstructure instability!"
-	var/code_orange_point = 500
+	var/code_orange_point = 450
 	var/emergency_point = 700
-	var/code_red_point = 800
-	var/code_delta_point = 900
+	var/code_red_point = 750
+	var/code_delta_point = 850
 	var/emergency_alert = "CRYSTAL DELAMINATION IMMINENT."
 	var/explosion_point = 1000
 
