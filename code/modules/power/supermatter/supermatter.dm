@@ -85,6 +85,8 @@
 	var/aw_delam = FALSE
 	var/aw_EPR = FALSE
 
+	var/last_status = SUPERMATTER_INACTIVE
+
 /obj/machinery/power/supermatter/Initialize()
 	. = ..()
 	radio = new /obj/item/device/radio{channels=list("Engineering")}(src)
@@ -92,7 +94,7 @@
 
 /obj/machinery/power/supermatter/Destroy()
 	if(GLOB.supermatter_status)
-		GLOB.supermatter_status.raise_event(src, FALSE)
+		GLOB.supermatter_status.raise_event(src, SUPERMATTER_INACTIVE)
 	QDEL_NULL(radio)
 	. = ..()
 
@@ -152,6 +154,9 @@
 
 	if((get_integrity() < 100) || (air.temperature > critical_temperature))
 		return SUPERMATTER_WARNING
+
+	if(air.temperature > (critical_temperature * 0.8))
+		return SUPERMATTER_NOTIFY
 
 	if(power > 5)
 		return SUPERMATTER_NORMAL
@@ -260,7 +265,7 @@
 			for(var/mob/M in GLOB.player_list)
 				var/turf/T = get_turf(M)
 				if(T && (T.z in GLOB.maps_data.station_levels) && !istype(M,/mob/new_player) && !isdeaf(M))
-					sound_to(M, 'sound/machines/supermatter.ogg')
+					sound_to(M, 'sound/effects/matteralarm.ogg')
 
 		else if(safe_warned && public_alert)
 			if(radio)
@@ -293,12 +298,12 @@
 		supermatter_pull(src)
 
 	//Send state changed events
-	if (damage > warning_point)
-		if (damage > damage_archived && damage_archived < warning_point)
-			GLOB.supermatter_status.raise_event(src, TRUE)
-	if (damage < warning_point)
-		if (damage < damage_archived && damage_archived > warning_point)
-			GLOB.supermatter_status.raise_event(src, FALSE)
+	var/current_status = get_status()
+	if(current_status != last_status)
+		GLOB.supermatter_status.raise_event(src, current_status)
+		last_status = current_status
+
+	handle_admin_warnings()
 
 	var/datum/gas_mixture/removed = null
 	var/datum/gas_mixture/env = null

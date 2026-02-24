@@ -5,7 +5,7 @@
 //
 //		Arguments that the called proc should expect:
 //			/obj/machinery/power/supermatter: the shard
-//          danger : True or false depending on if shard has crossed warning treshold (or if it is being removed and no longer matters)
+//          status : The status level of the supermatter (SUPERMATTER_* define)
 
 GLOBAL_DATUM_INIT(supermatter_status, /decl/observ/supermatter_status, new)
 

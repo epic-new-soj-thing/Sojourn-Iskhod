@@ -115,7 +115,7 @@ datum/preferences
 /datum/category_item/player_setup_item/physical/furry/OnTopic(var/href,var/list/href_list, var/mob/user)
 	pref.categoriesChanged = "Furry"
 	var/datum/species/cspecies = global.all_species[pref.species]
-	var/datum/species_form/cform = GLOB.all_species_form_list[pref.species_form] // (unused but kept for future)
+	// var/datum/species_form/cform = GLOB.all_species_form_list[pref.species_form] // (unused but kept for future)
 	if(href_list["ears_type"])
 		var/valid_ears = cspecies.permitted_ears ? cspecies.permitted_ears : GLOB.ears_styles_list
 		var/new_e_style = input(user, "Choose your character's ears:", CHARACTER_PREFERENCE_INPUT_TITLE, pref.ears_style)   as null|anything in (list("Default" = null) + valid_ears)

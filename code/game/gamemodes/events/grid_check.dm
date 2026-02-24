@@ -7,6 +7,8 @@ become keenly aware of the limited battery supply in your flashlight
 All the doors being depowered means that people can crowbar their way into restricted places easily.
 So sometimes this event can result in people finding new and interesting things
 */
+
+/* disabled temporarily due to lag
 /datum/storyevent/grid_check
 	id = "gridcheck"
 	name = "Grid Check"
@@ -86,3 +88,4 @@ So sometimes this event can result in people finding new and interesting things
 /proc/is_valid_smes(var/obj/machinery/power/smes/S)
 	var/area/A = get_area(S)
 	return !(A && (A.flags & AREA_FLAG_CRITICAL)) && isOnShipLevel(S)
+*/
