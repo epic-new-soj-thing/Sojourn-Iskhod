@@ -148,7 +148,7 @@
 	frame_type = /obj/item/frame/supermatter_alarm
 
 	angle = 15
-	alarm_light_color = "#ff9524"
+	alarm_light_color = COLOR_ORANGE
 	sound_file = 'sound/machines/supermatter.ogg'
 
 /obj/machinery/rotating_alarm/supermatter/Initialize()
