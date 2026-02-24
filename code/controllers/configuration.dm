@@ -77,6 +77,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/automute_on = 0					//enables automuting/spam prevention
 	var/use_cortical_stacks = 0			//enables neural lace
 	var/empty_server_restart_time = 10	// Time in minutes before empty server will restart
+	var/log_directory = "data/logs"
 
 	var/character_slots = 20				// The number of available character slots
 	var/loadout_slots = 3					// The number of loadout slots per character
@@ -378,12 +379,15 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("log_runtime")
 					config.log_runtime = 1
-					var/newfilename = "data/logs/runtimes/runtime-[time2text(start_time, "YYYY-MM-DD")].log"
+					var/newfilename = "[GLOB.log_directory]/[game_id]-runtime.log"
 					var/newlog = file(newfilename)
 					if(runtime_diary != newlog)
-						world.log << "Now logging runtimes to data/logs/runtimes/runtime-[time2text(world.realtime, "YYYY-MM-DD")].log"
+						world.log << "Now logging runtimes to [newfilename]"
 						runtime_diary_filename = newfilename
 						runtime_diary = newlog
+
+				if ("log_directory")
+					config.log_directory = value
 
 				if ("generate_asteroid")
 					config.generate_asteroid = 1

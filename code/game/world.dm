@@ -16,6 +16,7 @@ var/global/datum/global_init/init = new ()
 
 /datum/global_init/New()
 	generate_gameid()
+	world.SetupLogs()
 	load_configuration()
 	makeDatumRefLists()
 
@@ -82,17 +83,22 @@ var/game_id
  */
 /world/New()
 	//logs
+	// SetupLogs() is now called in global_init/New() to be ready for config loading
+	start_time = world.realtime
+
 	var/date_string = time2text(world.realtime, "YYYY/MM-Month/DD-Day")
-	href_logfile = file("data/logs/[date_string] hrefs.htm")
-	diary = file("data/logs/[date_string].log")
+	href_logfile = file("[GLOB.log_directory]/[game_id]-hrefs.htm")
+	href_logfile_filename = "[GLOB.log_directory]/[game_id]-hrefs.htm"
+	diary = file("[GLOB.log_directory]/[game_id].log")
+	diary_filename = "[GLOB.log_directory]/[game_id].log"
 	diary << "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(world.timeofday, "hh:mm.ss")][log_end]\n---------------------[log_end]"
-	GLOB.tgui_log = file("data/logs/[date_string] tgui.log") // TODO: rustg logs
+	GLOB.tgui_log = file("[GLOB.log_directory]/[game_id]-tgui.log") // TODO: rustg logs
 
 	// TODO: globalize me
 	var/latest_changelog = file("html/changelogs/archive/" + time2text(world.timeofday, "YYYY-MM") + ".yml")
 	changelog_hash = fexists(latest_changelog) ? md5(latest_changelog) : 0 //for dtelling if the changelog has changed recently
 
-	world_qdel_log = file("data/logs/[date_string] qdel.log")	// GC Shutdown log
+	world_qdel_log = file("[GLOB.log_directory]/[game_id]-qdel.log")	// GC Shutdown log
 
 	if(byond_version < RECOMMENDED_VERSION)
 		log_world("Your server's byond version does not meet the recommended requirements for this server. Please update BYOND")
@@ -157,7 +163,7 @@ var/game_id
 	if(!override_dir)
 		var/realtime = world.realtime
 		var/texttime = time2text(realtime, "YYYY/MM/DD")
-		GLOB.log_directory = "data/logs/[texttime]/round-"
+		GLOB.log_directory = "data/logs/[texttime]/"
 		if(game_id)
 			GLOB.log_directory += "[game_id]"
 		else
