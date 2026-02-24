@@ -88,13 +88,13 @@
 /obj/machinery/rotating_alarm/set_dir(ndir) //Due to effect, offsets cannot be part of sprite, so need to set it for each dir
 	. = ..()
 	if(dir == NORTH)
-		pixel_y = 28
+		pixel_y = 15
 	if(dir == SOUTH)
-		pixel_y = -13
+		pixel_y = -15
 	if(dir == WEST)
-		pixel_x = -20
+		pixel_x = -15
 	if(dir == EAST)
-		pixel_x = 20
+		pixel_x = 15
 
 
 /obj/machinery/rotating_alarm/proc/set_color(color)
@@ -144,12 +144,11 @@
 /obj/machinery/rotating_alarm/supermatter
 	name = "supermatter alarm"
 	desc = "An industrial rotating alarm light. This one is used to monitor supermatter engines."
-
 	frame_type = /obj/item/frame/supermatter_alarm
-
 	angle = 15
 	alarm_light_color = COLOR_ORANGE
 	sound_file = 'sound/machines/supermatter.ogg'
+	var/last_status = SUPERMATTER_INACTIVE
 
 /obj/machinery/rotating_alarm/supermatter/Initialize()
 	. = ..()
@@ -159,11 +158,15 @@
 	GLOB.supermatter_status.unregister_global(src, PROC_REF(check_supermatter))
 	. = ..()
 
-/obj/machinery/rotating_alarm/supermatter/proc/check_supermatter(obj/machinery/power/supermatter/SM, last_status)
-	if (SM)
-		if (SM.z in GetConnectedZlevels(src.z))
-			if(last_status >= SUPERMATTER_NOTIFY)
-				set_on()
-			else
-				set_off()
-
+/obj/machinery/rotating_alarm/supermatter/proc/check_supermatter()
+	for(var/obj/machinery/power/supermatter/S in GLOB.machines)
+		if (S.z in GetConnectedZlevels(src.z))
+			var/new_status = max(S.get_status(), last_status)
+			if(last_status != new_status)
+				last_status = new_status
+				if(last_status >= SUPERMATTER_NOTIFY)
+					set_on()
+				else
+					set_off()
+		else
+			set_off()
