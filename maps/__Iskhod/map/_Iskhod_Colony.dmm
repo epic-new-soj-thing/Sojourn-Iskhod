@@ -3260,11 +3260,6 @@
 	id = "bar_shutters";
 	req_access = list(25)
 	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
 "aOD" = (
@@ -4108,26 +4103,11 @@
 /turf/simulated/floor/industrial,
 /area/iskhod/crew_quarters/techshop)
 "aZK" = (
-/obj/machinery/disposal/deliveryChute{
-	dir = 8;
-	name = "biowaste chute"
-	},
-/obj/machinery/conveyor/west{
-	id = "BIOWASTE"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/trunk{
-	dir = 4
-	},
-/obj/machinery/alarm{
-	pixel_y = 27
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
+/turf/simulated/mineral/planet,
+/area/iskhod/hallway/main/f1section1)
 "aZO" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
@@ -4399,18 +4379,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section4)
-"bcV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/table/woodentable,
-/obj/item/paper_bin,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/item/pen/multi,
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "bcY" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "2,3"
@@ -5975,11 +5943,6 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
 "bwI" = (
@@ -6065,26 +6028,6 @@
 /obj/random/closet_tech,
 /turf/simulated/floor/tiled/white/techfloor,
 /area/iskhod/waterfall/subsurface)
-"bxt" = (
-/obj/effect/floor_decal/spline/wood{
-	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/bar)
 "bxw" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
@@ -6587,12 +6530,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/enginehallway)
-"bEl" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/bar)
 "bEn" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -10348,15 +10285,8 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
 "czz" = (
-/obj/effect/floor_decal/corner_kafel/white/full,
 /obj/effect/floor_decal/corner_kafel/white{
 	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
@@ -10956,11 +10886,6 @@
 	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
-"cID" = (
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "cIL" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -11921,12 +11846,6 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
-"cVZ" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/simulated/wall/iskhod_green,
-/area/iskhod/medical/reception)
 "cWt" = (
 /obj/structure/table/woodentable,
 /obj/item/device/lighting/toggleable/lamp/green,
@@ -13365,20 +13284,12 @@
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
 "dpC" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
+/obj/structure/disposalpipe/junction{
+	dir = 8;
+	icon_state = "pipe-j2"
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/bar)
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/main/f1section1)
 "dpF" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -16430,30 +16341,6 @@
 "edm" = (
 /turf/simulated/open,
 /area/iskhod/pit/level2)
-"edt" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate_border{
-	dir = 1
-	},
-/obj/machinery/door/firedoor,
-/obj/machinery/door/airlock{
-	name = "Hospitality Manger's Office";
-	req_access = list(201)
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "edu" = (
 /obj/structure/multiz/stairs/enter{
 	dir = 4
@@ -20170,10 +20057,6 @@
 /turf/simulated/mineral/planet,
 /area/iskhod/maintenance/undergroundfloor2north)
 "faM" = (
-/obj/structure/bed/chair/office/light{
-	name = "Hospitality Manger seat";
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -20184,6 +20067,10 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/bed/chair/office/light{
+	name = "VIP";
+	dir = 4
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
@@ -20462,7 +20349,7 @@
 "fdi" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1;
-	name = "Head of Staff seat"
+	name = "Governor seat"
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
@@ -23926,12 +23813,6 @@
 	},
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/dungeon/outside/abandoned_outpost)
-"fWQ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/wall/iskhod_blue,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "fWX" = (
 /obj/structure/window/reinforced/iskhod,
 /obj/random/furniture/pottedplant,
@@ -29288,30 +29169,6 @@
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
-"hrO" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/conveyor/west{
-	id = "BIOWASTE"
-	},
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/danger,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "hrR" = (
 /obj/random/common_oddities,
 /turf/simulated/floor/rock/dark,
@@ -30379,12 +30236,6 @@
 /obj/random/rig_module,
 /turf/simulated/mineral/planet,
 /area/iskhod/maintenance/undergroundfloor2west)
-"hFn" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/bar)
 "hFq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 10
@@ -31253,15 +31104,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/cbo/quarters)
-"hRS" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 1
-	},
-/obj/landmark/join/start/hop,
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "hSa" = (
 /obj/structure/table/standard,
 /obj/machinery/librarypubliccomp,
@@ -32946,16 +32788,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/organ_lab)
-"ioZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/bar)
 "ipa" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -34939,11 +34771,8 @@
 /area/iskhod/security/maingate)
 "iMy" = (
 /obj/effect/decal/cleanable/rubble,
-/obj/structure/disposalpipe/segment,
-/turf/simulated/wall/iskhod_green,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
+/turf/simulated/mineral/planet,
+/area/iskhod/hallway/main/f1section1)
 "iMC" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/effect/floor_decal/industrial/caution{
@@ -35542,24 +35371,12 @@
 /area/iskhod/engineering/engine_room)
 "iUC" = (
 /obj/effect/decal/cleanable/rubble,
-/obj/machinery/disposal/deliveryChute{
-	dir = 1;
-	name = "biowaste chute"
-	},
-/obj/machinery/conveyor/south{
-	id = "BIOWASTE"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
+/turf/simulated/mineral/planet,
+/area/iskhod/hallway/main/f1section1)
 "iUG" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/firedoor,
@@ -38055,12 +37872,6 @@
 	temperature = 240
 	},
 /area/iskhod/outside/inside_colony/east)
-"jAa" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "jAb" = (
 /obj/item/toy/junk/inflatable_duck,
 /turf/open/pool,
@@ -40119,24 +39930,6 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/crew_quarters/cafeteria)
-"kaL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 6
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/table/woodentable,
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "kaT" = (
 /obj/machinery/alarm{
 	dir = 1;
@@ -42080,20 +41873,6 @@
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
-"kAg" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/alarm{
-	dir = 4;
-	pixel_x = -27;
-	req_one_access = newlist()
-	},
-/obj/item/modular_computer/console/preset/command{
-	dir = 4
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "kAi" = (
 /obj/structure/lattice,
 /obj/structure/railing{
@@ -43943,11 +43722,6 @@
 /obj/effect/floor_decal/corner_kafel/gray/diagonal,
 /obj/effect/floor_decal/corner_kafel/gray{
 	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
@@ -46466,11 +46240,6 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/corner_kafel/yellow,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
 "lFz" = (
@@ -47371,11 +47140,6 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /obj/landmark/join/start/clubmanager,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
 "lTE" = (
@@ -48761,23 +48525,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/hallway)
-"mjX" = (
-/obj/item/device/radio/intercom{
-	pixel_y = 25
-	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "West APC";
-	pixel_x = -28
-	},
-/obj/structure/cable/green{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "mkc" = (
 /obj/structure/window/basic/iskhod{
 	dir = 4
@@ -49305,19 +49052,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
-"mrt" = (
-/obj/machinery/conveyor/west{
-	id = "BIOWASTE"
-	},
-/obj/structure/plasticflaps,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/danger,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "mry" = (
 /obj/machinery/atm{
 	dir = 8;
@@ -50687,19 +50421,6 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
-"mJD" = (
-/obj/item/stool/custom/bar_special,
-/obj/effect/floor_decal/border/techfloor{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/wood/wild3,
-/area/iskhod/crew_quarters/bar)
 "mJF" = (
 /obj/machinery/alarm{
 	dir = 8;
@@ -52746,15 +52467,6 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/crew_quarters/cafeteria)
-"nlG" = (
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/obj/machinery/newscaster{
-	pixel_y = -34
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/hallway/main/f1section1)
 "nlI" = (
 /obj/machinery/light{
 	dir = 1
@@ -53295,11 +53007,6 @@
 	icon_state = "9,23"
 	},
 /area/iskhod/outside/inside_colony/east)
-"nro" = (
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "nrp" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue,
 /obj/effect/decal/cleanable/dirt,
@@ -53787,17 +53494,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/shop)
-"nwo" = (
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/bed/chair/office/dark,
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "nwp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -56472,13 +56168,6 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/fixed/hydrotile,
 /area/turret_protected/ai)
-"ogM" = (
-/obj/structure/disposalpipe/junction{
-	dir = 2;
-	icon_state = "pipe-j2"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/hallway/main/f1section1)
 "ogT" = (
 /obj/structure/barricade,
 /obj/effect/spider/stickyweb,
@@ -57362,18 +57051,6 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/main)
-"ord" = (
-/obj/machinery/door/airlock/maintenance_medical{
-	name = "Biowaste Storage";
-	req_access = list(5)
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "orh" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/corner_techfloor_gray/diagonal,
@@ -60138,29 +59815,6 @@
 	},
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
-"pcR" = (
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/door/window/iskhod{
-	dir = 2;
-	req_one_access = list(5,45,64);
-	name = "biowaste access"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/obj/machinery/atmospherics/unary/vent_pump,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "pcU" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -60589,16 +60243,11 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
@@ -62743,35 +62392,6 @@
 /obj/structure/flora/pottedplant/minitree,
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/command/bridge)
-"pKR" = (
-/obj/structure/closet/secure_closet/hospitality,
-/obj/item/clipboard,
-/obj/item/clothing/accessory/tie/redclip,
-/obj/item/clothing/accessory/tie/blueclip,
-/obj/item/clothing/accessory/holster/saber/saya/occupied,
-/obj/item/clothing/under/rank/hop,
-/obj/item/clothing/head/fedora,
-/obj/item/device/taperecorder,
-/obj/item/pen/multi,
-/obj/item/device/camera,
-/obj/item/device/camera_film,
-/obj/item/pc_part/drive/disk,
-/obj/item/pc_part/drive/disk,
-/obj/item/pc_part/drive/disk,
-/obj/item/storage/fancy/cigar,
-/obj/item/storage/fancy/cigar,
-/obj/item/flame/lighter/zippo,
-/obj/item/reagent_containers/drinks/bottle/whiskey,
-/obj/item/reagent_containers/drinks/bottle/whiskey,
-/obj/item/reagent_containers/drinks/bottle/whiskey,
-/obj/item/reagent_containers/drinks/bottle/whiskey,
-/obj/item/reagent_containers/drinks/drinkingglass/shot,
-/obj/item/reagent_containers/drinks/drinkingglass/shot,
-/obj/item/reagent_containers/drinks/drinkingglass/shot,
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "pLd" = (
 /obj/structure/table/woodentable{
 	layer = 2.6
@@ -62782,18 +62402,6 @@
 	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/absolutism/chapel)
-"pLl" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/table/woodentable,
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "pLn" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -63129,10 +62737,7 @@
 /turf/simulated/floor/carpet/bcarpet,
 /area/iskhod/pros/shop)
 "pPY" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
 "pQc" = (
@@ -64981,9 +64586,6 @@
 /obj/item/device/radio/intercom{
 	dir = 4;
 	pixel_x = -25
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 8
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
@@ -67431,14 +67033,6 @@
 /obj/machinery/camera/network/security,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/range)
-"qWN" = (
-/obj/structure/sign/warning/biohazard{
-	name = "MEDICAL WASTE DISPOSALS"
-	},
-/turf/simulated/wall/iskhod_green,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "qWS" = (
 /obj/structure/cable/yellow{
 	d2 = 4;
@@ -71412,9 +71006,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
 "rZE" = (
@@ -72003,16 +71594,6 @@
 /obj/random/booze/low_chance,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/storage/tech)
-"sgt" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
-	},
-/obj/structure/sign/warning/hazard_biohazard{
-	pixel_y = 32
-	},
-/turf/simulated/floor/rock/dark,
-/area/iskhod/hallway/main/f1section1)
 "sgu" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -74086,11 +73667,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
@@ -76362,13 +75938,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/rnd/robotics)
-"tnP" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/bar)
 "tnQ" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 /obj/effect/decal/cleanable/dirt,
@@ -78703,11 +78272,6 @@
 "tQS" = (
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/junk_tractor_beam)
-"tQT" = (
-/turf/simulated/wall/iskhod_green,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
 "tRd" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -78775,23 +78339,12 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/main/stairwell)
 "tRZ" = (
-/obj/structure/window/reinforced/iskhod,
-/obj/machinery/conveyor_switch{
-	id = "BIOWASTE";
-	pixel_y = 15;
-	name = "biowaste disposals control"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 4
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/wall/iskhod_green,
+/area/iskhod/medical/reception)
 "tSu" = (
 /obj/structure/computerframe{
 	anchored = 1;
@@ -83667,21 +83220,6 @@
 /obj/item/clothing/under/bathrobe,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/changing_room/pool)
-"vgE" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/bar)
 "vgS" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white/danger,
@@ -84753,6 +84291,7 @@
 "vwb" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/effect/floor_decal/corner/paleblue/border,
+/obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/reception)
 "vwd" = (
@@ -85306,11 +84845,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
 	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
@@ -86135,9 +85669,6 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/bioreactor)
 "vNu" = (
-/obj/machinery/conveyor/southwest/ccw{
-	id = "BIOWASTE"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -86146,14 +85677,8 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/disposalpipe/segment{
-	dir = 2;
-	icon_state = "pipe-c"
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
+/turf/simulated/mineral/planet,
+/area/iskhod/hallway/main/f1section1)
 "vNC" = (
 /obj/machinery/recharge_station,
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -86354,15 +85879,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section2)
-"vQH" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/machinery/atmospherics/unary/vent_scrubber,
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "vQI" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
@@ -88019,18 +87535,6 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/security/armoryshop)
-"wnz" = (
-/obj/effect/floor_decal/corner_kafel/white/full,
-/obj/effect/floor_decal/corner_kafel/white{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/crew_quarters/bar)
 "wnA" = (
 /obj/machinery/cryopod,
 /turf/simulated/shuttle/floor/science{
@@ -91951,6 +91455,9 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/structure/sign/levels/stairsdown{
+	pixel_x = -32
+	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
 "xou" = (
@@ -93834,23 +93341,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/medical/psych)
-"xPb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/structure/cable/green{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "xPg" = (
 /obj/structure/bed/chair/shuttle,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -94676,25 +94166,12 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/secrecroom)
 "xXT" = (
-/obj/machinery/conveyor/west{
-	id = "BIOWASTE"
-	},
-/obj/structure/cable/green{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/warning/hazard_biohazard{
-	pixel_y = 32
-	},
-/turf/simulated/floor/tiled/dark/danger,
-/area/outpost/research/disposal{
-	name = "Biolab Waste Disposal"
-	})
+/turf/simulated/mineral/planet,
+/area/iskhod/hallway/main/f1section1)
 "xXX" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
@@ -95566,16 +95043,6 @@
 /obj/effect/floor_decal/industrial/box/white,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/warden)
-"ykZ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light,
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 1
-	},
-/turf/simulated/floor/wood/wild2,
-/area/iskhod/crew_quarters/clownoffice{
-	name = "Hospitality Manager's Office"
-	})
 "ylc" = (
 /obj/structure/sink{
 	dir = 8;
@@ -112093,7 +111560,7 @@ kbe
 bNv
 mFH
 lhu
-ogM
+mlh
 vfM
 vfM
 oXh
@@ -112294,10 +111761,10 @@ mQt
 bPV
 ucg
 rMF
-qWN
-ord
-tQT
-tQT
+esA
+bPV
+bPV
+kbe
 kbe
 kbe
 kbe
@@ -112495,12 +111962,12 @@ kVv
 mQt
 csK
 wMF
-nlG
-tQT
+rMF
+bPV
 vNu
 iUC
 iMy
-sgt
+ivL
 kbe
 kbe
 ivL
@@ -112698,9 +112165,9 @@ mQt
 aLI
 jNU
 rMF
-tQT
-mrt
-qWN
+bPV
+xXT
+oln
 mrn
 oln
 xSN
@@ -112900,8 +112367,8 @@ fHY
 iRB
 wMF
 pRS
-tQT
-hrO
+bPV
+xXT
 tRZ
 lTI
 wxg
@@ -113102,9 +112569,9 @@ peg
 sPK
 jNU
 pRS
-tQT
+bPV
 xXT
-pcR
+tRZ
 pip
 nKQ
 nKs
@@ -113304,7 +112771,7 @@ mQt
 oUu
 kEP
 pRS
-tQT
+bPV
 aZK
 oln
 bpH
@@ -113507,7 +112974,7 @@ xbq
 oHj
 our
 oln
-cVZ
+oln
 oln
 njE
 vLf
@@ -114111,7 +113578,7 @@ aqQ
 mQt
 icW
 blp
-rMF
+dpC
 vwb
 pPY
 sWN
@@ -153343,11 +152810,11 @@ uyA
 uyA
 fVp
 fVp
-cID
-fWQ
-fWQ
-cID
-cID
+wUB
+oVb
+oVb
+oVb
+oVb
 oVb
 byg
 fTy
@@ -153545,11 +153012,11 @@ lhX
 uyA
 uyA
 uyA
-cID
-mjX
-bcV
-kAg
-cID
+wUB
+oVb
+oVb
+oVb
+oVb
 oVb
 fyL
 fyL
@@ -153747,11 +153214,11 @@ lhX
 lhX
 lhX
 lhX
-cID
-nwo
-pLl
-hRS
-cID
+wUB
+oVb
+oVb
+oVb
+oVb
 oVb
 fyL
 fyL
@@ -153949,11 +153416,11 @@ gYe
 gYe
 lhX
 lhX
-cID
-vQH
-kaL
-ykZ
-cID
+wUB
+oVb
+oVb
+oVb
+oVb
 oVb
 fyL
 fyL
@@ -154151,11 +153618,11 @@ aQB
 hMe
 vSw
 lhX
-cID
-nro
-xPb
-jAa
-fWQ
+wUB
+oVb
+oVb
+oVb
+oVb
 oVb
 fyL
 fyL
@@ -154353,11 +153820,11 @@ dhF
 jVf
 wUB
 gYe
-cID
-pKR
-xPb
-nro
-fWQ
+wUB
+oVb
+oVb
+oVb
+oVb
 wBr
 wBr
 wBr
@@ -154555,11 +154022,11 @@ oAn
 qvE
 pwy
 kur
-cID
-cID
-edt
-cID
-cID
+wUB
+wUB
+ftX
+wUB
+wUB
 wUB
 wUB
 wUB
@@ -154759,7 +154226,7 @@ aGd
 mUI
 mUI
 xot
-vgE
+mUI
 btC
 fWX
 gQc
@@ -154958,10 +154425,10 @@ nev
 tLa
 cxo
 vDa
-ioZ
+dcv
 bwH
 bwH
-dpC
+oZi
 mGj
 mTK
 eCk
@@ -155152,18 +154619,18 @@ oVb
 wUB
 aOv
 sKs
-wnz
+wxh
 czz
 lTr
 kVJ
 lFq
 vBy
-mJD
-bxt
+cxo
+wEO
 mju
 opE
 xlj
-hFn
+log
 mUI
 mTK
 qsm
@@ -155365,7 +154832,7 @@ ncx
 mju
 opE
 xlj
-tnP
+mUI
 pXf
 mTK
 riC
@@ -155567,7 +155034,7 @@ wEO
 mju
 opE
 xlj
-tnP
+mUI
 mUI
 mTK
 qsm
@@ -155769,7 +155236,7 @@ xRs
 dhF
 jyi
 jyi
-bEl
+iaY
 okt
 mTK
 lKm

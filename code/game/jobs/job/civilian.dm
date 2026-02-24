@@ -1,4 +1,4 @@
-/datum/job/hop
+/*/datum/job/hop
 	title = "Hospitality Manager"
 	flag = HOSP
 	department = DEPARTMENT_SERVICE
@@ -49,7 +49,7 @@
 	name = "Hospitality Manager"
 	icon_state = "player-grey-officer"
 	join_tag = /datum/job/hop
-
+*/
 /datum/job/clubmanager
 	title = "Bartender"
 	flag = CLUBMANAGER
@@ -58,7 +58,7 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Hospitality Manager"
+	supervisors = "the Governor"
 	difficulty = "Easy."
 	alt_titles = list("Barkeep","Barista","Mixologist")
 	selection_color = "#dddddd"
@@ -96,7 +96,7 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Hospitality Manager"
+	supervisors = "the Governor"
 	difficulty = "Easy."
 	alt_titles = list("Culinary Artist","Cook", "Line Chef")
 	selection_color = "#dddddd"
@@ -135,7 +135,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Hospitality Manager"
+	supervisors = "the Governor"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Hydroponicist")
@@ -176,7 +176,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Hospitality Manager"
+	supervisors = "the Governor"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre)
@@ -218,7 +218,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Hospitality Manager"
+	supervisors = "the Governor"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre, access_library)
