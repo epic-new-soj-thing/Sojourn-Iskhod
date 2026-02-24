@@ -100,6 +100,11 @@ var/game_id
 
 	world_qdel_log = file("[GLOB.log_directory]/[game_id]-qdel.log")	// GC Shutdown log
 
+	if(config.log_runtime)
+		runtime_diary_filename = "[GLOB.log_directory]/[game_id]-runtime.log"
+		runtime_diary = file(runtime_diary_filename)
+		world.log << "Now logging runtimes to [runtime_diary_filename]"
+
 	if(byond_version < RECOMMENDED_VERSION)
 		log_world("Your server's byond version does not meet the recommended requirements for this server. Please update BYOND")
 
