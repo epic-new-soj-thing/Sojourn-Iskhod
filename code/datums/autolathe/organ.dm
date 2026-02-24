@@ -184,13 +184,11 @@
 	name = "Left Reptilian Kidney"
 	materials = list(MATERIAL_BIOMATTER = 30)
 	build_path = /obj/item/organ/internal/kidney/left/cindarite
-	organ_efficiency = list(OP_KIDNEYS = 200)
 
 /datum/design/organ/cindarite/kidney_right
 	name = "Right Reptilian Kidney"
 	materials = list(MATERIAL_BIOMATTER = 30)
 	build_path = /obj/item/organ/internal/kidney/right/cindarite
-	organ_efficiency = list(OP_KIDNEYS = 200)
 
 /datum/design/organ/cindarite/stomach
 	name = "Reptilian Stomach"
