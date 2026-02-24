@@ -792,7 +792,7 @@
 	dir = 4;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techmaint_panels,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "ajd" = (
 /obj/structure/disposalpipe/segment{
@@ -1032,9 +1032,8 @@
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "aln" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/iskhod/dungeon/outside/abandoned_outpost)
+/turf/simulated/open,
+/area/iskhod/outside/inside_colony/east)
 "alq" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -1084,7 +1083,7 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "amq" = (
 /obj/structure/table/reinforced,
@@ -1288,7 +1287,7 @@
 /area/iskhod/pit/level3)
 "apQ" = (
 /obj/effect/spider/stickyweb,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "apU" = (
 /obj/structure/boulder{
@@ -2266,7 +2265,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/pros/foreman)
 "aBo" = (
@@ -4130,7 +4131,9 @@
 /obj/machinery/door/firedoor/multi_tile{
 	dir = 2
 	},
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/absolutism/chapel)
 "bap" = (
@@ -4193,7 +4196,7 @@
 /area/shuttle/vasiliy_shuttle_area)
 "bbi" = (
 /obj/machinery/constructable_frame/machine_frame,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "bbj" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -4738,9 +4741,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/rnd/robotics)
 "big" = (
-/obj/random/lathe_disk,
-/turf/unsimulated/mineral/cold,
-/area/colony)
+/obj/structure/flora/grass/brown,
+/turf/simulated/open,
+/area/iskhod/outside/inside_colony/east)
 "bih" = (
 /obj/structure/table/standard,
 /obj/item/tool/crowbar/improvised,
@@ -7965,7 +7968,7 @@
 /obj/structure/table/rack/shelf,
 /obj/random/lathe_disk/tools,
 /obj/random/lathe_disk/tools/low_chance,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "bWQ" = (
 /obj/structure/disposalpipe/segment{
@@ -8781,7 +8784,7 @@
 /area/iskhod/security/prison)
 "cfP" = (
 /obj/structure/closet/secure_closet/engineering_electrical,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "cga" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -9482,7 +9485,9 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /turf/simulated/floor/industrial/checker_large_fixed,
 /area/iskhod/service/changing_room)
 "cqq" = (
@@ -9599,7 +9604,9 @@
 /obj/machinery/door/firedoor/multi_tile{
 	dir = 2
 	},
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/absolutism/chapel)
 "crK" = (
@@ -10007,7 +10014,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "cvS" = (
 /turf/simulated/shuttle/wall/science{
@@ -10703,7 +10710,7 @@
 /obj/structure/table/rack/shelf,
 /obj/random/powercell/large_safe,
 /obj/random/powercell/low_chance,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "cGz" = (
 /obj/item/device/radio/intercom{
@@ -11717,7 +11724,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techmaint_panels,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "cTB" = (
 /obj/structure/disposalpipe/segment{
@@ -12281,7 +12288,7 @@
 /obj/structure/catwalk{
 	icon_state = "catwalk14-10"
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "daL" = (
 /obj/structure/cable/yellow{
@@ -12325,7 +12332,7 @@
 /area/iskhod/recreation/fight_club)
 "dbv" = (
 /obj/structure/salvageable/computer_os,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "dbD" = (
 /obj/machinery/porta_turret{
@@ -13012,7 +13019,7 @@
 /area/iskhod/engineering/engine_room)
 "dlB" = (
 /obj/machinery/recharge_station,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "dlL" = (
 /obj/effect/decal/cleanable/dirt,
@@ -13559,7 +13566,9 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_smes)
 "drQ" = (
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned)
@@ -13947,7 +13956,7 @@
 "dwb" = (
 /obj/structure/table/marble,
 /obj/machinery/reagentgrinder/portable,
-/turf/simulated/floor/industrial/cafe_large,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "dwg" = (
 /obj/machinery/portable_atmospherics/hydroponics,
@@ -14577,7 +14586,7 @@
 /area/iskhod/engineering/breakroom)
 "dDo" = (
 /obj/random/closet_tech,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "dDx" = (
 /obj/structure/disposalpipe/segment,
@@ -15184,7 +15193,7 @@
 /area/iskhod/command/hallway)
 "dLF" = (
 /obj/structure/salvageable/data_os,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "dLR" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -15349,7 +15358,7 @@
 /obj/structure/grille,
 /obj/structure/barricade,
 /obj/machinery/door/airlock/command,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "dOd" = (
 /obj/structure/bed/chair/office/dark{
@@ -15555,7 +15564,9 @@
 "dRB" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/absolutism/chapel)
 "dRS" = (
@@ -15914,7 +15925,7 @@
 /area/iskhod/security/interview)
 "dXa" = (
 /obj/random/scrap/dense_weighted,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "dXf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -16431,7 +16442,9 @@
 "eeu" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
@@ -16941,7 +16954,9 @@
 /obj/effect/floor_decal/corner/green/border{
 	dir = 8
 	},
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
 	d1 = 4;
@@ -17060,10 +17075,6 @@
 	},
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/outpost/abandoned)
-"emr" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/plating/under,
-/area/iskhod/dungeon/outside/abandoned_outpost)
 "emx" = (
 /obj/item/stool,
 /obj/effect/decal/cleanable/blood,
@@ -17107,7 +17118,7 @@
 /area/iskhod/hallway/side/f2section3)
 "emN" = (
 /obj/structure/burrow,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "enb" = (
 /obj/structure/cable/cyan{
@@ -17538,7 +17549,7 @@
 /obj/machinery/power/apc/inactive{
 	pixel_x = 28
 	},
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "erJ" = (
 /obj/machinery/door/window/iskhod{
@@ -19791,7 +19802,7 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/locker_room)
 "eVQ" = (
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techmaint_panels,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "eVT" = (
 /obj/structure/cable/green{
@@ -22231,7 +22242,8 @@
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/maintenance/undergroundfloor1west)
 "fAH" = (
-/turf/simulated/floor/industrial/navy_slates,
+/obj/structure/table/marble,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "fAK" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23145,7 +23157,7 @@
 /area/outpost/abandoned)
 "fNr" = (
 /obj/random/mob/spiders,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "fNs" = (
 /obj/effect/decal/cleanable/dirt,
@@ -23161,7 +23173,9 @@
 /obj/effect/floor_decal/corner/green/border{
 	dir = 4
 	},
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -24987,10 +25001,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
-"gmb" = (
-/obj/effect/step_trigger/swampcaves_to_riverforest_1_B,
-/turf/simulated/floor/rock/dark,
-/area/colony)
 "gmz" = (
 /obj/structure/boulder{
 	pixel_x = -1
@@ -26101,7 +26111,7 @@
 /area/iskhod/hallway/side/f2section2)
 "gyz" = (
 /obj/structure/salvageable/implant_container_os,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "gyL" = (
 /obj/random/spider_trap_burrowing,
@@ -27117,7 +27127,7 @@
 	dir = 1;
 	light_color = "#0892d0"
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "gNA" = (
 /obj/random/cluster/spiders/low_chance,
@@ -27515,7 +27525,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "gSb" = (
 /turf/simulated/wall/iskhod_red,
@@ -29434,7 +29444,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/industrial/cafe_large,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "hvi" = (
 /obj/machinery/door/airlock/hatch{
@@ -29877,7 +29887,7 @@
 "hAi" = (
 /mob/living/carbon/superior/spider/nurse/queen,
 /obj/effect/spider/stickyweb,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "hAm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -30479,7 +30489,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "hHC" = (
 /obj/machinery/door/firedoor,
@@ -30728,7 +30738,7 @@
 /area/iskhod/maintenance/undergroundfloor2west)
 "hLJ" = (
 /obj/structure/bed/chair/custom/onestar,
-/turf/simulated/floor/industrial/cafe_large,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "hLQ" = (
 /obj/structure/closet/secure_closet/armory_explosive,
@@ -36931,7 +36941,7 @@
 /obj/random/tool_upgrade,
 /obj/random/tool_upgrade,
 /obj/random/tool_upgrade,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "jmp" = (
 /obj/structure/catwalk,
@@ -37093,7 +37103,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock,
-/turf/simulated/floor/plating/under,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "jor" = (
 /obj/structure/cable/green{
@@ -37229,7 +37239,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "jpX" = (
 /obj/structure/table/gamblingtable,
@@ -38232,7 +38242,9 @@
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/abandoned/barber)
 "jCU" = (
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel,
@@ -39554,8 +39566,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned)
 "jUv" = (
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/iskhod/dungeon/outside/abandoned_outpost)
+/obj/structure/flora/tree/snow/four,
+/turf/simulated/open,
+/area/iskhod/outside/inside_colony/east)
 "jUz" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -40308,11 +40321,11 @@
 /area/iskhod/rnd/robotics)
 "kei" = (
 /obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "ken" = (
 /obj/effect/decal/cleanable/dirt,
@@ -40835,7 +40848,7 @@
 /obj/structure/table/rack/shelf,
 /obj/random/techpart,
 /obj/random/techpart/low_chance,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "klw" = (
 /obj/structure/disposalpipe/junction{
@@ -40897,7 +40910,9 @@
 /area/iskhod/absolutism/bioreactor)
 "kme" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
 	},
@@ -41653,7 +41668,7 @@
 	dir = 8;
 	icon_state = "tube1"
 	},
-/turf/simulated/floor/industrial/cafe_large,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "kuO" = (
 /obj/machinery/power/apc{
@@ -43898,7 +43913,9 @@
 /turf/simulated/floor/reinforced/nitrogen,
 /area/iskhod/engineering/atmos)
 "kWN" = (
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned)
 "kWU" = (
@@ -44242,7 +44259,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techmaint_panels,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "ldY" = (
 /turf/simulated/floor/industrial/fixed,
@@ -44437,7 +44454,7 @@
 /obj/structure/table/rack/shelf,
 /obj/random/material,
 /obj/random/material/low_chance,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "lgF" = (
 /obj/machinery/shower{
@@ -44861,7 +44878,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "lmt" = (
 /obj/structure/catwalk,
@@ -45782,7 +45799,7 @@
 "lye" = (
 /obj/random/mob/spiders,
 /obj/effect/spider/stickyweb,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "lyj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -45875,7 +45892,7 @@
 /obj/structure/catwalk{
 	icon_state = "catwalk14-10"
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/floor/plating/under,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "lzB" = (
 /turf/simulated/open,
@@ -46259,7 +46276,9 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/pit/level2)
 "lEw" = (
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /turf/simulated/floor/industrial/white_large_slates,
@@ -46883,7 +46902,7 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/port_gen/pacman/diesel/anchored,
-/turf/simulated/floor/plating/under,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "lOV" = (
 /obj/machinery/disposal,
@@ -47948,7 +47967,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "mbs" = (
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -49772,10 +49791,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/door/airlock/glass{
+/obj/machinery/door/unpowered/simple/wood{
 	name = "Sauna"
 	},
-/obj/structure/curtain/open/shower,
 /turf/simulated/floor/industrial/white_large_slates_fixed,
 /area/iskhod/service/sauna)
 "mzT" = (
@@ -50279,14 +50297,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2west)
-"mGd" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1";
-	pixel_y = 0
-	},
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/iskhod/dungeon/outside/abandoned_outpost)
 "mGf" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/crew_quarters/locker)
@@ -50672,7 +50682,9 @@
 	dir = 1
 	},
 /obj/machinery/door/firedoor,
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /turf/simulated/floor/tiled/cafe,
 /area/iskhod/command/gmaster/quarters)
 "mLt" = (
@@ -51373,7 +51385,7 @@
 	icon_state = "2-8"
 	},
 /obj/structure/reagent_dispensers/fueltank/huge,
-/turf/simulated/floor/plating/under,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "mVT" = (
 /obj/effect/decal/cleanable/dirt,
@@ -51669,7 +51681,7 @@
 /obj/structure/grille,
 /obj/structure/barricade,
 /obj/machinery/door/airlock/maintenance_interior,
-/turf/simulated/floor/plating/under,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "mZE" = (
 /obj/machinery/cryopod,
@@ -53205,7 +53217,7 @@
 /area/iskhod/storage/tech)
 "nrL" = (
 /obj/machinery/autolathe/mechfab,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "nrS" = (
 /obj/structure/bed/chair/shuttle{
@@ -56756,7 +56768,7 @@
 "omU" = (
 /obj/structure/table/onestar,
 /obj/random/tool,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "omZ" = (
 /obj/landmark/join/start/salvager,
@@ -58015,7 +58027,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/rock/manmade/asphalt,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/hallway/surface/section1)
 "oCY" = (
 /obj/structure/railing/grey{
@@ -58169,7 +58181,7 @@
 /area/iskhod/pros/prep)
 "oFq" = (
 /obj/effect/decal/mecha_wreckage/ripley,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "oFF" = (
 /obj/effect/decal/cleanable/dirt,
@@ -59107,10 +59119,6 @@
 /obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/iskhod/security/maintpost)
-"oSA" = (
-/obj/structure/table/onestar,
-/turf/simulated/floor/industrial/navy_slates,
-/area/iskhod/dungeon/outside/abandoned_outpost)
 "oSM" = (
 /obj/structure/table/bench/wooden,
 /obj/effect/decal/cleanable/dirt,
@@ -59120,7 +59128,7 @@
 /obj/structure/table/rack/shelf,
 /obj/random/powercell/small_safe,
 /obj/random/powercell/low_chance,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "oSQ" = (
 /obj/machinery/door/firedoor,
@@ -59646,7 +59654,7 @@
 /area/iskhod/hallway/surface/section2)
 "oYp" = (
 /obj/structure/closet/secure_closet/engineering_welding,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "oYF" = (
 /obj/structure/closet/secure_closet/brig,
@@ -59705,7 +59713,7 @@
 	dir = 1;
 	light_color = "#0892d0"
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "oZi" = (
 /obj/effect/decal/cleanable/dirt,
@@ -60964,7 +60972,7 @@
 /area/shuttle/vasiliy_shuttle_area)
 "ppA" = (
 /obj/structure/table/onestar,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "ppE" = (
 /obj/effect/decal/cleanable/dirt,
@@ -62603,7 +62611,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/spider/stickyweb,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "pMb" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue{
@@ -64737,7 +64745,7 @@
 /area/iskhod/abandoned/strip_club)
 "qoX" = (
 /obj/machinery/mech_recharger,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "qoY" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -64898,7 +64906,7 @@
 	},
 /obj/structure/closet/secure_closet/engineering_electrical,
 /obj/item/storage/toolbox/syndicate,
-/turf/simulated/floor/plating/under,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "qru" = (
 /turf/simulated/shuttle/wall/science{
@@ -66881,7 +66889,7 @@
 /obj/structure/salvageable/console_broken_os{
 	dir = 4
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "qUj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/black{
@@ -66996,7 +67004,7 @@
 	dir = 4;
 	pixel_y = 0
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "qUR" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -67110,10 +67118,6 @@
 /obj/structure/railing,
 /turf/simulated/open,
 /area/iskhod/pit/surface)
-"qWb" = (
-/obj/structure/salvageable/implant_container_os,
-/turf/simulated/floor/tiled/techmaint,
-/area/iskhod/dungeon/outside/abandoned_outpost)
 "qWc" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -67190,7 +67194,7 @@
 /obj/item/stock_parts/smes_coil,
 /obj/item/stock_parts/smes_coil/super_capacity,
 /obj/item/stock_parts/smes_coil/super_io,
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techmaint_panels,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "qWW" = (
 /obj/effect/decal/cleanable/dirt,
@@ -69882,7 +69886,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
-/turf/simulated/floor/tiled/techmaint,
+/turf/simulated/floor/tiled/techmaint_panels,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "rHh" = (
 /obj/random/scrap/dense_weighted,
@@ -70515,7 +70519,7 @@
 /area/colony)
 "rRc" = (
 /obj/machinery/vending/cola,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "rRm" = (
 /obj/machinery/optable,
@@ -71522,7 +71526,7 @@
 /area/iskhod/medical/surgeryobs)
 "scU" = (
 /obj/machinery/door/airlock/external,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "sdk" = (
 /obj/structure/cable/cyan{
@@ -71533,7 +71537,7 @@
 /obj/machinery/door/airlock/glass{
 	name = "Public Office"
 	},
-/turf/simulated/floor/industrial/cafe_large,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "sdl" = (
 /obj/structure/railing/grey{
@@ -73955,7 +73959,7 @@
 "sLA" = (
 /obj/effect/spider/stickyweb,
 /obj/effect/spider/eggcluster,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "sLE" = (
 /obj/structure/bed/chair/comfy/black,
@@ -74268,7 +74272,9 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
 	},
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/command/Priest/quarters)
 "sPJ" = (
@@ -75944,15 +75950,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
-"tmk" = (
-/obj/effect/step_trigger/surface_to_forest_1_B,
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472;
-	temperature = 240
-	},
-/area/iskhod/outside/inside_colony/west)
 "tms" = (
 /obj/effect/damagedfloor/rust,
 /obj/effect/floor_decal/rust,
@@ -77053,7 +77050,7 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "txN" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -77436,7 +77433,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/maintenance/undergroundfloor2west)
 "tCj" = (
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /turf/simulated/floor/carpet/blucarpet,
 /area/outpost/abandoned)
 "tCs" = (
@@ -77590,7 +77589,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/maintenance_engineering,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "tEZ" = (
 /obj/machinery/power/am_control_unit,
@@ -79386,7 +79385,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/storage/tech)
 "udk" = (
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild1,
@@ -79582,7 +79583,9 @@
 /area/iskhod/security/breakroom)
 "ugl" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/command/captain/quarters{
 	name = "\improper Command - Governor's Quarters"
@@ -79744,7 +79747,7 @@
 "uhU" = (
 /obj/structure/table/onestar,
 /obj/random/junk,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "uhW" = (
 /obj/structure/closet/wall_mounted/emcloset{
@@ -80059,7 +80062,7 @@
 "umg" = (
 /obj/structure/table/onestar,
 /obj/machinery/recharger,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "umh" = (
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -80477,7 +80480,7 @@
 /area/iskhod/hallway/side/f2section3)
 "utr" = (
 /obj/structure/closet/crate/trashcart,
-/turf/simulated/floor/industrial/cafe_large,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "utv" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -80761,7 +80764,7 @@
 /area/iskhod/hallway/side/f2section2)
 "uwA" = (
 /mob/living/carbon/superior/spider/nurse/orb_weaver,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "uwC" = (
 /obj/structure/disposalpipe/segment{
@@ -82330,7 +82333,7 @@
 /obj/machinery/door/airlock/multi_tile/metal/mait{
 	dir = 2
 	},
-/turf/simulated/floor/rock/manmade/asphalt,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/hallway/surface/section1)
 "uRm" = (
 /obj/effect/decal/cleanable/dirt,
@@ -82450,7 +82453,7 @@
 /area/iskhod/hallway/main/f1section2)
 "uTa" = (
 /obj/random/junk,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "uTC" = (
 /obj/structure/disposalpipe/segment{
@@ -83711,7 +83714,7 @@
 /obj/machinery/power/apc/inactive{
 	pixel_y = 24
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "vla" = (
 /obj/item/stool/custom/bar_special,
@@ -84471,7 +84474,7 @@
 /area/iskhod/maintenance/substation/sec)
 "vvC" = (
 /obj/machinery/vending/snack,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "vvI" = (
 /obj/structure/cable/yellow{
@@ -84824,10 +84827,6 @@
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/fixed/hydrotile,
 /area/turret_protected/ai_upload)
-"vzq" = (
-/obj/random/closet_tech,
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/iskhod/dungeon/outside/abandoned_outpost)
 "vzF" = (
 /obj/structure/catwalk,
 /obj/machinery/light{
@@ -85043,7 +85042,7 @@
 /obj/structure/bed/chair/custom/onestar{
 	dir = 1
 	},
-/turf/simulated/floor/industrial/cafe_large,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "vDa" = (
 /obj/effect/floor_decal/spline/wood{
@@ -85638,15 +85637,6 @@
 	icon_state = "9,23"
 	},
 /area/iskhod/hallway/surface/section5)
-"vJL" = (
-/obj/effect/step_trigger/surface_to_forest_1_A,
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472;
-	temperature = 240
-	},
-/area/iskhod/outside/inside_colony/west)
 "vJM" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -87222,7 +87212,7 @@
 /obj/machinery/power/apc/inactive{
 	pixel_y = -24
 	},
-/turf/simulated/floor/industrial/cafe_large,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "wfW" = (
 /turf/simulated/floor/tiled/white/techfloor,
@@ -87829,7 +87819,9 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
 	},
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/command/merchant)
 "woz" = (
@@ -88637,7 +88629,7 @@
 /obj/structure/table/rack/shelf,
 /obj/random/tool,
 /obj/random/tool/low_chance,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "wyF" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
@@ -89994,7 +89986,7 @@
 /obj/structure/salvageable/computer_os{
 	dir = 4
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "wPZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -90041,7 +90033,7 @@
 /area/iskhod/security/breakroom)
 "wQP" = (
 /obj/structure/salvageable/server_os,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "wQT" = (
 /turf/simulated/wall/iskhod_green,
@@ -90081,10 +90073,6 @@
 /obj/landmark/join/start/assistant,
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
-"wRi" = (
-/obj/random/junk,
-/turf/simulated/floor/tiled/techmaint,
-/area/iskhod/dungeon/outside/abandoned_outpost)
 "wRs" = (
 /obj/effect/floor_decal/industrial/box/red,
 /obj/structure/extinguisher_cabinet{
@@ -91362,7 +91350,7 @@
 /area/iskhod/medical/medbay/iso)
 "xkm" = (
 /obj/random/closet_maintloot,
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "xkx" = (
 /obj/random/junk,
@@ -91371,7 +91359,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "xkH" = (
 /obj/structure/invislight,
@@ -91486,7 +91474,7 @@
 	},
 /obj/structure/table/rack/shelf,
 /obj/item/reagent_containers/glass/bottle/petrel,
-/turf/simulated/floor/plating/under,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "xmn" = (
 /obj/structure/boulder{
@@ -91538,7 +91526,7 @@
 /obj/machinery/light{
 	light_color = "#b9e8ea"
 	},
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "xni" = (
 /obj/effect/decal/cleanable/dirt,
@@ -92383,7 +92371,6 @@
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/engineering/engine_monitoring)
 "xxn" = (
-/obj/effect/step_trigger/swampcaves_to_riverforest_1_A,
 /turf/simulated/floor/rock/dark,
 /area/colony)
 "xxr" = (
@@ -92550,7 +92537,7 @@
 /obj/structure/table/rack/shelf,
 /obj/random/powercell/medium_safe,
 /obj/random/powercell/low_chance,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "xAq" = (
 /obj/effect/decal/cleanable/dirt,
@@ -92659,7 +92646,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "xCe" = (
 /obj/structure/catwalk,
@@ -93009,9 +92996,9 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/outside/scave)
 "xHV" = (
-/obj/structure/table/onestar,
-/turf/simulated/floor/industrial/cafe_large,
-/area/iskhod/dungeon/outside/abandoned_outpost)
+/obj/structure/flora/tree/snow/three,
+/turf/simulated/open,
+/area/iskhod/outside/inside_colony/east)
 "xHX" = (
 /obj/random/cluster/roaches_hoard,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -93299,7 +93286,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/industrial/navy_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "xLl" = (
 /obj/structure/disposalpipe/segment,
@@ -93827,7 +93814,9 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/medical/genetics)
 "xSD" = (
-/obj/machinery/door/unpowered/simple/wood,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "Sauna"
+	},
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/wood,
@@ -94046,7 +94035,7 @@
 /obj/item/stack/material/plastic/random,
 /obj/item/stack/material/glass/ten,
 /obj/item/stack/material/glass/random,
-/turf/simulated/floor/industrial/navy_large_slates,
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "xUB" = (
 /obj/effect/floor_decal/floordetail/edgedrain,
@@ -94615,9 +94604,9 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
 "ybR" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/industrial/cafe_large,
-/area/iskhod/dungeon/outside/abandoned_outpost)
+/obj/structure/invislight,
+/turf/simulated/open,
+/area/iskhod/outside/inside_colony/east)
 "ybT" = (
 /obj/structure/railing,
 /obj/machinery/light{
@@ -99383,7 +99372,7 @@ jDL
 jDL
 jDL
 jDL
-big
+jDL
 jDL
 jDL
 jDL
@@ -176915,8 +176904,8 @@ cqi
 cqi
 cqi
 cqi
-vJL
-tmk
+qOA
+qOA
 cqi
 cqi
 cqi
@@ -193415,13 +193404,13 @@ eoy
 gOR
 gOR
 gOR
-gOR
+bmO
 oCQ
 uRd
-gOR
-gOR
-gOR
-gOR
+bmO
+bmO
+bmO
+bmO
 cqi
 ycV
 ycV
@@ -201405,7 +201394,7 @@ qwj
 qwj
 qwj
 qwj
-gmb
+xxn
 bwQ
 cqi
 jDL
@@ -206595,11 +206584,11 @@ fep
 fep
 fep
 fep
+qzn
 mZF
 mZF
 mZF
-mZF
-mZF
+qzn
 fep
 fep
 fep
@@ -206801,7 +206790,7 @@ mZF
 gVB
 hTa
 oyB
-mZF
+qzn
 fep
 fep
 fep
@@ -207003,7 +206992,7 @@ mZF
 mpR
 pcU
 eUV
-mZF
+qzn
 fep
 fep
 fep
@@ -207205,7 +207194,7 @@ mZF
 pqy
 pcU
 arU
-mZF
+qzn
 fep
 fep
 fep
@@ -207393,24 +207382,24 @@ cqi
 cqi
 fep
 fep
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
 jog
-mZF
-mZF
-mZF
-mZF
-mZF
+qzn
+qzn
+qzn
+qzn
+qzn
 mZF
 mZF
 mZF
@@ -207595,28 +207584,28 @@ mZF
 cqi
 fep
 fep
-mZF
+qzn
 xkm
 xkm
 amk
-fAH
-fAH
+qzn
+qzn
 dXa
 dXa
 dXa
 amk
 emN
-mZF
-dvp
-fxg
-mZF
+qzn
+kei
+uTa
+qzn
 dlB
 qTY
 ppA
 nrL
 wPU
 qoX
-mZF
+qzn
 fep
 fep
 fep
@@ -207797,28 +207786,28 @@ mZF
 cqi
 cqi
 fep
-mZF
+qzn
 apQ
 emN
 uwA
-fAH
+qzn
 apQ
 uTa
 apQ
 uTa
 apQ
-oSA
-aln
-dvp
-jUv
-aln
-jUv
-jUv
-jUv
-jUv
-jUv
+ppA
+jgT
+kei
+qzn
+jgT
+qzn
+qzn
+qzn
+qzn
+qzn
 oFq
-mZF
+qzn
 fep
 fep
 fep
@@ -207999,28 +207988,28 @@ cOl
 cOl
 mZF
 mZF
-mZF
+qzn
 apQ
 uTa
-fAH
+qzn
 dbv
 apQ
-fAH
+qzn
 bbi
 lye
 apQ
 uhU
-aln
-dvp
-jUv
-aln
+jgT
+kei
+qzn
+jgT
 oFq
-jUv
-jUv
-jUv
-fxg
-jUv
-aln
+qzn
+qzn
+qzn
+uTa
+qzn
+jgT
 fep
 fep
 fep
@@ -208201,7 +208190,7 @@ pks
 gfA
 bYA
 gMH
-emr
+jgT
 apQ
 apQ
 apQ
@@ -208210,19 +208199,19 @@ apQ
 hAi
 dLF
 sLA
-fAH
+qzn
 uhU
-aln
-dvp
-jUv
-aln
-jUv
-fxg
+jgT
+kei
+qzn
+jgT
+qzn
+uTa
 umg
 ppA
-jUv
-jUv
-aln
+qzn
+qzn
+jgT
 fep
 fep
 fep
@@ -208404,27 +208393,27 @@ hrv
 iya
 vVS
 mZD
-kei
+hvc
 xkx
 xCb
-kei
+hvc
 xCb
 xCb
 xCb
 hHx
-fAH
+qzn
 dDo
-mZF
+qzn
 oZe
-jUv
-aln
-fxg
-jUv
-jUv
-jUv
-jUv
-jUv
-aln
+qzn
+jgT
+uTa
+qzn
+qzn
+qzn
+qzn
+qzn
+jgT
 fep
 fep
 fep
@@ -208605,28 +208594,28 @@ cmJ
 cmJ
 pNP
 hkT
-emr
-fAH
-fAH
-fAH
+jgT
+qzn
+qzn
+qzn
 bbi
-fAH
+qzn
 uTa
 dLF
 pMa
-fAH
-fAH
-aln
+qzn
+qzn
+jgT
 lmj
-jUv
-mZF
+qzn
+qzn
 vkS
-jUv
-jUv
-jUv
-fxg
+qzn
+qzn
+qzn
+uTa
 xnd
-mZF
+qzn
 fep
 fep
 fep
@@ -208807,27 +208796,27 @@ qzn
 mZF
 mZF
 mZF
-mZF
+qzn
 emN
 sLA
 apQ
 wQP
 uTa
-fAH
+qzn
 dbv
 pMa
 uwA
 omU
-aln
+jgT
 mbq
-iik
+hvc
 jpL
 txI
-fxg
-jUv
-jUv
-jUv
-jUv
+uTa
+qzn
+qzn
+qzn
+qzn
 scU
 fep
 fep
@@ -209009,7 +208998,7 @@ cqi
 cqi
 cqi
 fep
-mZF
+qzn
 apQ
 lye
 apQ
@@ -209020,17 +209009,17 @@ emN
 pMa
 apQ
 omU
-aln
-dvp
-jUv
-mZF
+jgT
+kei
+qzn
+qzn
 gNz
-jUv
-jUv
-jUv
-fxg
-jUv
-mZF
+qzn
+qzn
+qzn
+uTa
+qzn
+qzn
 fep
 fep
 fep
@@ -209211,7 +209200,7 @@ cqi
 cqi
 fep
 fep
-mZF
+qzn
 gyz
 gyz
 xLi
@@ -209222,17 +209211,17 @@ xkx
 gRP
 xLi
 dDo
-mZF
-dvp
-jUv
-aln
-jUv
+qzn
+kei
+qzn
+jgT
+qzn
 klr
 wyB
 lgE
 lgE
-jUv
-aln
+qzn
+jgT
 fep
 fep
 fep
@@ -209413,28 +209402,28 @@ cqi
 cqi
 fep
 mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
 dOa
-mZF
-mZF
-mZF
-dvp
-jUv
-aln
-fxg
-jUv
-jUv
-jUv
-jUv
-jUv
-aln
+qzn
+qzn
+qzn
+kei
+qzn
+jgT
+uTa
+qzn
+qzn
+qzn
+qzn
+qzn
+jgT
 fep
 fep
 fep
@@ -209617,26 +209606,26 @@ fep
 mZF
 xmh
 qrk
-mZF
-qWb
-eVQ
-wRi
-aln
-jUv
-dvp
-fxg
-mGd
-jUv
-dvp
-jUv
-aln
-jUv
+qzn
+gyz
+qzn
+uTa
+jgT
+qzn
+kei
+uTa
+amk
+qzn
+kei
+qzn
+jgT
+qzn
 cGk
 xzY
 oSP
 bWO
-jUv
-aln
+qzn
+jgT
 fep
 fep
 fep
@@ -209826,19 +209815,19 @@ ldQ
 tEP
 iik
 ktI
-iik
-iik
-iik
+hvc
+hvc
+hvc
 txI
-fxg
-aln
-jUv
-jUv
-jUv
-jUv
-jUv
-jUv
-mZF
+uTa
+jgT
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
 fep
 fep
 fep
@@ -210018,29 +210007,29 @@ cqi
 cqi
 fep
 fep
-mZF
+qzn
 mVH
 daK
 cvx
 cTx
 ajc
 eVQ
-aln
+olR
 fxg
 dvp
-jUv
-fxg
-jUv
+qzn
+uTa
+qzn
 rRc
 vvC
-mZF
+qzn
 xUm
 jmo
 wyB
-vzq
+dDo
 cfP
 oYp
-mZF
+qzn
 fep
 fep
 fep
@@ -210220,29 +210209,29 @@ cqi
 fep
 fep
 fep
-mZF
+qzn
 lOD
 qUL
-mZF
+qzn
 mZF
 mZF
 mZF
 mZF
 mZF
 sdk
-mZF
-ybR
-ybR
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
-mZF
+qzn
+jgT
+jgT
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
+qzn
 fep
 fep
 fep
@@ -210422,10 +210411,10 @@ cqi
 cqi
 fep
 fep
-mZF
-mZF
-mZF
-mZF
+qzn
+qzn
+qzn
+qzn
 kys
 lRe
 cbj
@@ -210433,22 +210422,22 @@ kys
 iqK
 pgb
 kuH
-iqK
-dSF
-iqK
-mZF
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
+qzn
+uTa
+qzn
+qzn
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
 nmE
 fep
 fep
@@ -210635,22 +210624,22 @@ iqK
 dSF
 pgb
 hLJ
-xHV
-xHV
+ppA
+ppA
 vCD
-mZF
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
+qzn
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
 fep
 fep
 fep
@@ -210837,22 +210826,22 @@ iqK
 iqK
 pgb
 hLJ
-xHV
-xHV
+ppA
+ppA
 vCD
-mZF
-fep
-fep
-jzO
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-kLx
-fep
+qzn
+aln
+aln
+jUv
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+ybR
+aln
 fep
 fep
 fep
@@ -211042,19 +211031,19 @@ hvc
 hvc
 hvc
 wfT
-mZF
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-oiA
-fep
-fep
-fep
+qzn
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+big
+aln
+aln
+aln
 fep
 erV
 fep
@@ -211240,23 +211229,23 @@ wLZ
 kys
 tRT
 uVa
-kys
+fAH
 dwb
-kys
+fAH
 utr
-mZF
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
+qzn
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
 fep
 fep
 fep
@@ -211445,20 +211434,20 @@ mZF
 jgT
 jgT
 jgT
-mZF
-mZF
-fep
-fep
-fep
-fep
-xfs
-fep
-fep
-fep
-fep
-fep
-fep
-fep
+qzn
+qzn
+aln
+aln
+aln
+aln
+xHV
+aln
+aln
+aln
+aln
+aln
+aln
+aln
 fep
 fep
 fep
@@ -211649,18 +211638,18 @@ fep
 fep
 fep
 fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-xfs
-fep
-fep
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+aln
+xHV
+aln
+aln
 fep
 fep
 fep
