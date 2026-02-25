@@ -139,6 +139,21 @@
 	armor_list = list(melee = 6, bullet = 5, energy = 3, bomb = 20, bio = 0, rad = 0)
 	hoodtype = /obj/item/clothing/head/hood/winter/security
 
+/obj/item/clothing/suit/hooded/wintercoat/security/ranger
+	name = "Iskhod Ranger winter coat"
+	desc = "A heavy security jacket in Iskhod Ranger colors, designed for cold environments. Armor plating has been sewn into it."
+	icon_state = "coatfl"
+	item_state_slots = list(slot_r_hand_str = "coatfl", slot_l_hand_str = "coatfl")
+	hoodtype = /obj/item/clothing/head/hood/winter/security/ranger
+
+/obj/item/clothing/suit/hooded/wintercoat/security/captain
+	name = "Captain's winter coat"
+	desc = "A heavy security jacket with Captain's markings, designed for cold environments. Armor plating has been sewn into it."
+	icon_state = "coatfl"
+	item_state_slots = list(slot_r_hand_str = "coatfl", slot_l_hand_str = "coatfl")
+	armor_list = list(melee = 8, bullet = 6, energy = 4, bomb = 25, bio = 0, rad = 0)
+	hoodtype = /obj/item/clothing/head/hood/winter/security/captain
+
 /obj/item/clothing/suit/hooded/wintercoat/medical
 	name = "medical winter coat"
 	desc = "A heavy medical jacket designed for cold environments. The inner lining has been treated with a biomesh, giving some resistance to biological hazards."

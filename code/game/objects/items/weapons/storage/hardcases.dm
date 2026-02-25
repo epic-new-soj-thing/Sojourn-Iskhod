@@ -711,7 +711,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/gunbox/warrantofficer //credit goes to Hestia both for the idea of loadout gun box and for the code, and sprite.
 	name = "\improper Ranger Captain's equipment kit"
-	desc = "A secure box containing the Warrant Officers primary weapon."
+	desc = "A secure box containing the Captain's primary weapon."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "rifle_case"
 

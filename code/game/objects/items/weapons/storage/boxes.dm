@@ -15,7 +15,7 @@
  *		Handcuff, mousetrap, and pillbottle boxes,
  *		Snap-pops and matchboxes,
  *		Replacement light boxes,
- *		Blackshield uniform boxes.
+ *		Ranger uniform boxes.
  *
  *		For syndicate call-ins see uplink_kits.dm
  */
@@ -744,46 +744,45 @@ Boxes with clothing on them, unable to put them back if taken out because...
 ...well, boxes can't normally fit clothes on them!
 */
 
-/obj/item/storage/box/trooperuniform
-	name = "Trooper/Corpsman Service and Dress Kit"
-	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
+/obj/item/storage/box/rangeruniform
+	name = "Ranger/Detective Service and Dress Kit"
+	desc = "Box that contained a bluespace sealed Ranger Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
 	icon_state = "box"
 
 	New()
 		..()
-		new /obj/item/clothing/under/rank/trooper/service(src)
-		new /obj/item/clothing/suit/rank/trooper/service(src)
-		new /obj/item/clothing/suit/rank/trooper/dress(src)
-		new /obj/item/clothing/head/rank/trooperdress(src)
-		new /obj/item/clothing/accessory/tie/navy(src)
-		new /obj/item/clothing/shoes/laceup(src)
-		new /obj/item/clothing/accessory/armband/militia(src)
-		new /obj/item/clothing/accessory/armband/corpsman(src)
-
-/obj/item/storage/box/sergeantuniform
-	name = "Sergeant Service and Dress Kit"
-	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
-	icon_state = "box"
-
-	New()
-		..()
-		new /obj/item/clothing/under/rank/armorer/service(src)
-		new /obj/item/clothing/suit/rank/armorer/service(src)
-		new /obj/item/clothing/suit/rank/armorer/dress(src)
-		new /obj/item/clothing/head/rank/trooperdress(src)
+		new /obj/item/clothing/under/rank/ranger/service(src)
+		new /obj/item/clothing/suit/rank/ranger/service(src)
+		new /obj/item/clothing/suit/rank/ranger/dress(src)
+		new /obj/item/clothing/head/rank/ranger/beret/service(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
 
-/obj/item/storage/box/commanderuniform
-	name = "Commander Service and Dress Kit"
-	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
+/obj/item/storage/box/lieutenantuniform
+	name = "Lieutenant Service and Dress Kit"
+	desc = "Box that contained a bluespace sealed Ranger Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
 	icon_state = "box"
 
 	New()
 		..()
-		new /obj/item/clothing/under/rank/commander_service(src)
-		new /obj/item/clothing/suit/rank/commander_service(src)
-		new /obj/item/clothing/head/rank/commanderdress(src)
+		new /obj/item/clothing/under/rank/ranger/service/officer(src)
+		new /obj/item/clothing/suit/rank/ranger/service/officer(src)
+		new /obj/item/clothing/suit/rank/ranger/dress/officer(src)
+		new /obj/item/clothing/head/rank/ranger/beret/service/officer(src)
+		new /obj/item/clothing/accessory/tie/navy(src)
+		new /obj/item/clothing/shoes/laceup(src)
+
+/obj/item/storage/box/captainuniform
+	name = "Captain Service and Dress Kit"
+	desc = "Box that contained a bluespace sealed Ranger Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
+	icon_state = "box"
+
+	New()
+		..()
+		new /obj/item/clothing/under/rank/ranger/service/command(src)
+		new /obj/item/clothing/suit/rank/ranger/service/command(src)
+		new /obj/item/clothing/suit/rank/ranger/dress/command(src)
+		new /obj/item/clothing/head/rank/ranger/beret/service/command(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
 
@@ -794,13 +793,13 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 	New()
 		..()
-		new /obj/item/clothing/accessory/ranks/volunteer(src)
-		new /obj/item/clothing/accessory/ranks/volunteer(src)
-		new /obj/item/clothing/accessory/ranks/volunteer(src)
-		new /obj/item/clothing/accessory/ranks/volunteer(src)
-		new /obj/item/clothing/accessory/ranks/volunteer(src)
-		new /obj/item/clothing/accessory/ranks/volunteer(src)
-		new /obj/item/clothing/accessory/ranks/volunteer(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/blank(src)
 
 /obj/item/storage/box/team_support
 	name = "Box of Team Support"

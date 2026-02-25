@@ -586,6 +586,11 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 	item_state = "ushanka"
 	flags_inv = HIDEEARS
 
+/obj/item/clothing/head/ushanka/security
+	name = "security ushanka"
+	desc = "A warm, fur cap with a security insignia. The flaps are currently secured downwards for maximum warmth."
+	icon_state = "flushankadown"
+
 // No more bulky ushanka, no need for this.
 /*
 /obj/item/clothing/head/ushanka/attack_self(mob/user as mob)

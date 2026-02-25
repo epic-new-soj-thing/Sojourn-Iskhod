@@ -74,8 +74,8 @@
 /obj/item/clothing/under/overalls/utilitynavy
 	name = "navy utility jumpsuit"
 	desc = "A rugged navy jumpsuit designed for maintenance work."
-	icon_state = "navyutility"
-	item_state = "navyutility"
+	icon_state = "navyutility_1"
+	item_state = "navyutility_1"
 
 /obj/item/clothing/under/overalls
 	name = "tan utility jumpsuit"

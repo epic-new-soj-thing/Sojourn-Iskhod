@@ -22,6 +22,19 @@
 	name = "security winter hood"
 	armor_list = list(melee = 6, bullet = 20, energy = 3, bomb = 20, bio = 0, rad = 0)
 
+/obj/item/clothing/head/hood/winter/security/blackshield
+	name = "blackshield winter hood"
+	icon_state = "flushankadown"
+
+/obj/item/clothing/head/hood/winter/security/captain
+	name = "captain's winter hood"
+	icon_state = "flushankadown"
+	armor_list = list(melee = 8, bullet = 25, energy = 4, bomb = 25, bio = 0, rad = 0)
+
+/obj/item/clothing/head/hood/winter/security/ranger
+	name = "ranger winter hood"
+	armor_list = list(melee = 6, bullet = 20, energy = 3, bomb = 20, bio = 0, rad = 0)
+
 /obj/item/clothing/head/hood/winter/medical
 	name = "medical winter hood"
 	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 0, bio = 50, rad = 0)
