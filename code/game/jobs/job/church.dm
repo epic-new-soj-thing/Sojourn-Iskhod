@@ -7,7 +7,7 @@
 	head_position = 1
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Governor and the Iskhod Council"
+	supervisors = "the Facility Director and the Iskhod Council"
 	difficulty = "Medium."
 	selection_color = "#ecd37d"
 	ideal_character_age = 40
@@ -18,6 +18,7 @@
 	health_modifier = 10
 	access = list(access_nt_preacher, access_nt_disciple, access_morgue, access_chapel_office, access_crematorium, access_maint_tunnels, access_RC_announce, access_keycard_auth, access_heads, access_sec_doors, access_heads_vault)
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_NASHEF)
+	hud_icon = "prime"
 
 
 	wage = WAGE_COMMAND //The church has deep pockets
@@ -74,6 +75,8 @@
 	selection_color = "#ecd37d"
 	access = list(access_morgue, access_crematorium, access_maint_tunnels, access_nt_disciple)
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "vector"
+
 	outfit_type = /decl/hierarchy/outfit/job/church/acolyte
 	also_known_languages = list(LANGUAGE_LATIN = 100)
 	security_clearance = CLEARANCE_COMMON

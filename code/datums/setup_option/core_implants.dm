@@ -48,8 +48,7 @@
 		/datum/job/scistudent,
 		/datum/job/roboticist,
 		/datum/job/robostudent,
-		/datum/job/nurse,
-		/datum/job/chemist
+		/datum/job/nurse
 	) // The way to restrict this to one job could be done cleaner but this way easier so fuck it. -Kaz
 	allow_modifications = FALSE
 	restricted_depts = SECURITY | BLACKSHIELD | PROSPECTORS | ENGINEERING | CHURCH | INDEPENDENT | CIVILIAN | FL | LODGE

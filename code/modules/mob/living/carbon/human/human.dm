@@ -287,32 +287,25 @@
 //Trust me I'm an engineer
 //I think we'll put this shit right here
 var/list/rank_prefix = list(\
-	"Warrant Officer" = "Warrant Officer",\
-	"Supply Specialist" = "Specialist",\
-	"Ranger" = "Ranger",\
-	"Ranger Officer" = "Officer",\
-	"Blackshield Commander" = "Commander",\
-	"Sergeant" = "Sergeant",\
-	"Corpsman" = "Corpsman",\
-	"Blackshield Trooper" = "Trooper",\
-	"Premier" = "Premier",\
+	"Facility Director" = "Facility Director",\
 	"Steward" = "Steward",\
-	"Guild Master" = "Master",\
-	"Chief Biolab Overseer" = "Overseer",\
-	"Chief Research Overseer" = "Overseer",\
-	"Quartermaster" = "Quartermaster",\
-	"Prime" = "Prime",\
+	"Captain" = "Captain",\
+	"Operations Manager" = "Operations Manager",\
+	"Chief Engineer" = "Chief Engineer",\
+	"Medical Overseer" = "Medical Overseer",\
+	"Research Overseer" = "Research Overseer",\
+	"Cardinal" = "Cardinal",\
 	"Foreman" = "Foreman",\
-	"Lodge Hunt Master" = "Huntmaster",\
+	"Lieutenant" = "Lieutenant",\
+	"Detective" = "Detective",\
+	"Ranger" = "Ranger",\
+	"Junior Ranger" = "Junior Ranger",\
 	)
 
 /mob/living/carbon/human/proc/rank_prefix_name(name)
-	if(get_id_rank())
-		if(findtext(name, " "))
-			name = copytext(name, findtext(name, " "))
-		else
-			name = " [name]"
-		name = get_id_rank() + name
+	var/prefix = get_id_rank()
+	if(prefix)
+		return "[prefix] [name]"
 	return name
 
 

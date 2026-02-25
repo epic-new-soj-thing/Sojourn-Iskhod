@@ -1,5 +1,5 @@
 /datum/job/cmo
-	title = "Biolab Overseer"
+	title = "Medical Overseer"
 	flag = CBO
 	head_position = 1
 	department = DEPARTMENT_MEDICAL
@@ -7,11 +7,15 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Governor and the Iskhod Council"
+	supervisors = "the Facility Director and the Iskhod Council"
 	difficulty = "Stressful."
 	selection_color = "#94a87f"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
+	hud_icon = "medicaloverseer"
+
+
+
 	outfit_type = /decl/hierarchy/outfit/job/medical/cmo
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
@@ -41,7 +45,7 @@
 							 /datum/computer_file/program/chem_catalog,
 							 /datum/computer_file/program/reports)
 
-	description = "The Biolab Overseer is the head of the medical branch of Vesalius-Andra Biomechanics, preserving and improving lives.<br>\
+	description = "The Medical Overseer is the head of the medical branch of Vesalius-Andra Biomechanics, preserving and improving lives.<br>\
 	Your main responsibility is to keep everyone alive, as is the objective of your department. Prioritize health over most other concerns. <br>\
 	A variety of medical staff work under your command. Although these roles are clear-cut compared to the research branch, direct them appropriately.<br>\
 	Of course, remember that you are a doctor yourself - feel free to help with less specialized activities to ease the burden.<br>\
@@ -55,7 +59,7 @@
 	In times of crisis lock down the medbay to protect those within from outside threats."
 
 /obj/landmark/join/start/cmo
-	name = "Biolab Overseer"
+	name = "Medical Overseer"
 	icon_state = "player-green-officer"
 	join_tag = /datum/job/cmo
 
@@ -67,10 +71,13 @@
 	faction = MAP_FACTION
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Biolab Overseer"
+	supervisors = "the Medical Overseer"
 	difficulty = "Boring to Overwhelming."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "doctor"
+
+
 	minimum_character_age = 25
 	alt_titles = list("Emergency Physician"=/decl/hierarchy/outfit/job/medical/doctor/medERPhys, "Surgeon"=/decl/hierarchy/outfit/job/medical/doctor/medSurgeon)
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
@@ -107,6 +114,7 @@
 	icon_state = "player-green"
 	join_tag = /datum/job/doctor
 
+/*
 /datum/job/chemist
 	title = "Chemist"
 	flag = CHEMIST
@@ -115,7 +123,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Biolab Overseer and fellow Doctors"
+	supervisors = "the Medical Overseer and fellow Doctors"
 	difficulty = "Medium."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
@@ -155,6 +163,7 @@
 	name = "Chemist"
 	icon_state = "player-green"
 	join_tag = /datum/job/chemist
+*/
 
 /datum/job/medstudent
 	title = "Resident"
@@ -164,10 +173,14 @@
 	faction = MAP_FACTION
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the Biolab Overseer and more experienced Doctors"
+	supervisors = "the Medical Overseer and more experienced Doctors"
 	difficulty = "Boring to Overwhelming."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "resident"
+
+
+
 	minimum_character_age = 20
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor/medStudent
 	alt_titles = list("Medical Student"=/decl/hierarchy/outfit/job/medical/doctor/medNurse, "Medical Intern")
@@ -193,12 +206,10 @@
 	description = "The Doctor is a professional medic and surgeon dedicated to healing the sick and injured, at all costs.<br>\
 	A broad range of medical procedures fall under your purview - diagnostics, general treatment, surgery, and virology.<br>\
 	You are not expected to be an expert in all: specializing in an area is fine. Divide tasks amongst colleagues with CBO guidance.<br>\
-	Remember that chemistry has a dedicated specialist. Avoid this department unless it is notably short-staffed.<br>\
 	Due to the nature of your work, you may find yourself confined to the department for the shift majority. Don't abandon patients and learn to be just like a real Doctor."
 
 	duties = "Heal the sick and injured, whatever their complaint.<br>\
 		Diagnose illnesses, offer general services, perform surgery or even study viruses.<br>\
-		Fill in at chemistry if a Chemist is unavailable.<br>\
 		Learn how to be a real doctor."
 
 /obj/landmark/join/start/medstudent
@@ -214,10 +225,13 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Biolab Overseer and Doctors"
+	supervisors = "the Medical Overseer and Doctors"
 	difficulty = "Medium."
 	selection_color = "#a8b69a"
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "nurse"
+
+
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor/medNurse // Using existing nurse outfit
 	disallow_species = list(FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
@@ -260,11 +274,14 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Biolab Overseer and all other Biolab staff"
+	supervisors = "the Medical Overseer and all other Medical staff"
 	difficulty = "Ungratifying."
 	selection_color = "#a8b69a"
 	alt_titles = list("Emergency Recovery Specialist")
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "paramedic"
+
+
 	outfit_type = /decl/hierarchy/outfit/job/medical/recovery_team
 	disallow_species = list(FORM_AGSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
@@ -310,7 +327,10 @@
 	total_positions = 1
 	spawn_positions = 1
 	wage = WAGE_PROFESSIONAL
-	supervisors = "the Biolab Overseer exclusively"
+	hud_icon = "psychiatrist"
+
+
+	supervisors = "the Medical Overseer exclusively"
 	difficulty = "Soul Crushing."
 	selection_color = "#a8b69a"
 	alt_titles = list("Psychologist", "Empath")
@@ -341,7 +361,7 @@
 	In some ways you are a professional conversationalist. Despite knowing advanced therapy techniques, sometimes a mere chat can work wonders.<br>\
 	More eventful days may involve you having particularly unstable colonists sectioned or interviewing criminals in coordination with Security.<br>\
 	Remember that patient confidentiality is highly important in your profession. Keep sensitive information between you and the patient.<br>\
-	VA psychs are also one of the most psionically adept members of the colony with an innate understanding of how the mind works.<br>\
+	VA Medical psychs are also one of the most psionically adept members of the colony with an innate understanding of how the mind works.<br>\
 	If you become a psion you have a greater variety of beneficial powers which you can use to aid the colony."
 
 	duties = "Speak with anyone who desires help, no matter their rank or relation.<br>\

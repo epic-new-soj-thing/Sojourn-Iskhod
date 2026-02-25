@@ -7,11 +7,15 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Governor and the Iskhod Council"
+	supervisors = "the Facility Director and the Iskhod Council"
 	difficulty = "Medium."
 	selection_color = "#b39aaf"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
+	hud_icon = "researchoverseer"
+
+
+
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 
@@ -72,6 +76,8 @@
 	difficulty = "Medium."
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "scientist"
+
 //	noob_name = "Vesalius-Andra Research Student"
 	alt_titles = list("Xenobiologist", "Xenoarcheologist", "Xenobotanist", "Research Fabricator", "Geneticist")
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
@@ -121,6 +127,9 @@
 	alt_titles = list("Xenobiology Intern", "Xenoarcheology Intern", "Xenobotany Intern", "Genetics Intern")
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "intern"
+
+
 	disallow_species = list(FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 	outfit_type = /decl/hierarchy/outfit/job/science/scientist
@@ -170,6 +179,8 @@
 	alt_titles = list("Cyberneticist", "Mechanist", "Biomechanical Engineer")
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "roboticist"
+
 	department_account_access = TRUE
 	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 	playtimerequired = 240 //4 hours
@@ -221,6 +232,9 @@
 	alt_titles = list("Robotics Lab Assistant", "Cybernetics Intern", "Mechanics Intern", "Biomechanics Intern")
 	selection_color = "#bdb1bb"
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "robointern"
+
+
 	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
 

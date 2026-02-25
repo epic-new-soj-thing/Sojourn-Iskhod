@@ -1637,8 +1637,8 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/passport_sol
-	name = "old solarian passport"
-	desc = "An old passport issued to citizens of the Solarian Federation, this one seems to have been issued before the Bluespace Collapse. Why is it here? Is it a trinket?"
+	name = "solarian passport"
+	desc = "A passport issued to citizens of the Solarian Federation, this one seems to have been issued before the Bluespace Collapse. Why is it here? Is it a trinket?"
 	icon_state = "passport_sol"
 	item_state = "badge"
 

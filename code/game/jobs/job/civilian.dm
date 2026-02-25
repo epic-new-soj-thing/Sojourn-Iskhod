@@ -7,7 +7,7 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Governor and the Iskhod Council"
+	supervisors = "the Facility Director and the Iskhod Council"
 	difficulty = "Medium."
 	selection_color = "#dddddd"
 	req_admin_notify = 1
@@ -58,13 +58,15 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Governor"
+	supervisors = "the Facility Director"
 	difficulty = "Easy."
 	alt_titles = list("Barkeep","Barista","Mixologist")
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 3000
-	wage = WAGE_LABOUR_DUMB // Makes his own money via tips and selling drinks
+	wage = WAGE_LABOUR_DUMB
+	hud_icon = "bartender"
+ // Makes his own money via tips and selling drinks
 	health_modifier = -10
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -96,14 +98,16 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Governor"
+	supervisors = "the Facility Director"
 	difficulty = "Easy."
 	alt_titles = list("Culinary Artist","Cook", "Line Chef")
 	selection_color = "#dddddd"
 	health_modifier = -10
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 750
-	wage = WAGE_LABOUR_DUMB //They should get paid by making food.
+	wage = WAGE_LABOUR_DUMB
+	hud_icon = "chef"
+ //They should get paid by making food.
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 10,
@@ -135,14 +139,16 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Governor"
+	supervisors = "the Facility Director"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Hydroponicist")
 	health_modifier = -10
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
 	access = list(access_hydroponics, access_bar, access_kitchen)
-	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
+	wage = WAGE_LABOUR_DUMB
+	hud_icon = "gardener"
+ //The gardener can make money selling his fruits to the church or to the chef and bartender.
 
 	outfit_type = /decl/hierarchy/outfit/job/service/gardener
 	stat_modifiers = list(
@@ -177,7 +183,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Governor"
+	supervisors = "the Facility Director"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre)
@@ -211,6 +217,7 @@
 	join_tag = /datum/job/artist
 */
 
+/*
 /datum/job/journalist
 	title = "Journalist"
 	flag = JOURNALIST
@@ -219,7 +226,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Governor"
+	supervisors = "the Facility Director"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre, access_library)
@@ -250,4 +257,5 @@
 	name = "Journalist"
 	icon_state = "player-grey"
 	join_tag = /datum/job/journalist
+*/
 

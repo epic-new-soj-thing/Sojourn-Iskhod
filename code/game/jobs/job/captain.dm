@@ -1,7 +1,7 @@
 var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 /datum/job/premier
-	title = "Governor"
+	title = "Facility Director"
 	flag = PREMIER
 	department = DEPARTMENT_COMMAND
 	head_position = TRUE
@@ -16,6 +16,9 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	req_admin_notify = 1
 	playtimerequired = 2500
 	wage = WAGE_COMMAND
+	hud_icon = "director"
+
+
 
 	ideal_character_age = 50 // Old geezer captains ftw
 	minimum_character_age = 40
@@ -23,7 +26,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
 	perks = list(PERK_SOMELLIER)
 
-	description = "The Governor is the prime mediator of the colony itself, acting as a trusted diplomat and arbitrator of conflicts amongst their peers.<br>\
+	description = "The Facility Director is the prime mediator of the colony itself, acting as a trusted diplomat and arbitrator of conflicts amongst their peers.<br>\
 	You are trusted with control of the colony primary accounts and are also able to control access within and to the colony.<br>\
 	Your primary objective is to oversee council decisions, change access levels and act as both lawyer and consultant in various decisions.<br>\
 	You are not the supreme leader of the colony and your word is only advisory in nature. The only person you can give legal orders to is the Steward.<br>\
@@ -62,7 +65,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 		return get_all_station_access()
 
 /obj/landmark/join/start/premier
-	name = "Governor"
+	name = "Facility Director"
 	icon_state = "player-gold-officer"
 	join_tag = /datum/job/premier
 
@@ -76,24 +79,26 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Governor"
+	supervisors = "the Facility Director"
 	difficulty = "Hard."
 	selection_color = "#ddddff"
 	req_admin_notify = 1
 	playtimerequired = 0
 	wage = WAGE_COMMAND
+	hud_icon = "steward"
+
 	ideal_character_age = 35
 	minimum_character_age = 30
 
 	health_modifier = 5
 	description = "The Steward is a command role for the colony administration and command staff. Serving as a glorified secretary, ensure the smooth running of the colony.<br>\
 	Your primary, and perhaps only, responsibility is to ensure the smooth running of the colony - even if it costs your reputation. A good steward is not often well liked.<br>\
-	However, you are an advisor to the Governor as well as a secretary. Discreetly inform your superiors of mistakes. Make sure they follow the law and remain proper.<br>\
+	However, you are an advisor to the Facility Director as well as a secretary. Discreetly inform your superiors of mistakes. Make sure they follow the law and remain proper.<br>\
 	You may be assigned special tasks by Command for whatever reason. Ensure these orders are fulfilled to the best of your abilities.<br>\
 	Do not embarass them, and especially do not harm their relations with faction leaders. You may not do much talking, but you have great impact."
 
-	duties = "Act as an advisor and confidant to the Governor.<br>\
-	Perform tasks as assigned by the Governor and other command staff - such as filling paperwork or reassigning roles.<br>\
+	duties = "Act as an advisor and confidant to the Facility Director.<br>\
+	Perform tasks as assigned by the Facility Director and other command staff - such as filling paperwork or reassigning roles.<br>\
 	Demonstrate true loyalty and do not let your superior down."
 
 	outfit_type = /decl/hierarchy/outfit/job/hop

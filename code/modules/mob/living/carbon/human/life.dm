@@ -1090,7 +1090,11 @@
 		if(wear_id)
 			var/obj/item/card/id/I = wear_id.GetIdCard()
 			if(I)
-				holder.icon_state = "hud[ckey(I.GetJobName())]"
+				var/job_icon = I.GetJobName()
+				if(job_icon)
+					holder.icon_state = "hud[ckey(job_icon)]"
+				else
+					holder.icon_state = "hudunknown"
 			else
 				holder.icon_state = "hudunknown"
 		else

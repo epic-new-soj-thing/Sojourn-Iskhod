@@ -7,12 +7,15 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Governor and the Iskhod Council"
+	supervisors = "the Facility Director and the Iskhod Council"
 	difficulty = "Medium."
 	selection_color = "#c7b97b"
 	req_admin_notify = 1
 	playtimerequired = 1200
 	wage = WAGE_COMMAND
+	hud_icon = "chiefengineer"
+
+
 	ideal_character_age = 50
 	minimum_character_age = 30
 	health_modifier = 5
@@ -75,6 +78,8 @@
 	difficulty = "Medium."
 	selection_color = "#d5c88f"
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "engineer"
+
 	outfit_type = /decl/hierarchy/outfit/job/engineering/engineer
 	alt_titles = list("Electrician", "Mechanical Engineer")
 	access = list(
@@ -136,7 +141,7 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 		access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 		access_external_airlocks, access_construction, access_atmospherics
 	)
-
+	hud_icon = "apprentice"
 	disallow_species = list(FORM_SOTSYNTH, FORM_BSSYNTH, FORM_NASHEF)
 
 	stat_modifiers = list(
@@ -175,7 +180,7 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 	join_tag = /datum/job/apprentice
 
 /datum/job/janitor
-	title = "Janitor"
+	title = "Disposals Technician"
 	flag = JANITOR
 	department = DEPARTMENT_ENGINEERING
 	department_flag = ENGINEERING
@@ -190,7 +195,7 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 	wage = WAGE_LABOUR_HAZARD
 	health_modifier = 5
 	outfit_type = /decl/hierarchy/outfit/job/service/janitor
-
+	hud_icon = "janitor"
 	perks = list(PERK_MARKET_PROF, /datum/perk/job/jingle_jangle, /datum/perk/neat) //Union has revoked their chemistry privileges
 
 	stat_modifiers = list(
@@ -201,7 +206,7 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/camera_monitor)
-	description = "The lowly Janitor, well paid but rarely respected, nevertheless provides a valuable service.<br>\
+	description = "The Disposals Technician, well paid but rarely respected, nevertheless provides a valuable service.<br>\
 	You will trundle around the colony, armed with your trusty janicart full of cleaning supplies, disposing of trash and pests.<br>\
 	Some minor maintenance also falls within your duties. Fix lights, correct broken vendors, replace floor tiles - ease the guild burden.<br>\
 	Although your status is miserable, your knowledge of maintenance may lead you to some valuable salvage for some extra cash."
@@ -212,7 +217,7 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 		Deploy traps on burrows and do your best to handle the ongoing roach and spider problem."
 
 /obj/landmark/join/start/janitor
-	name = "Janitor"
+	name = "Disposals Technician"
 	icon_state = "player-black"
 	join_tag = /datum/job/janitor
 

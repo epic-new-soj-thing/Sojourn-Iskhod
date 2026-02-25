@@ -141,6 +141,8 @@
 	account_allowed = 0
 	create_record = 0
 	wage = WAGE_NONE
+	hud_icon = "outsider"
+
 //	minimal_access = list(access_maint_tunnels)
 	outfit_type = /decl/hierarchy/outfit/job/outsider
 	difficulty = "Impossible!"

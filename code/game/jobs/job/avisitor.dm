@@ -11,7 +11,7 @@
 	selection_color = "#dddddd"
 	initial_balance = 800
 	wage = WAGE_NONE //Get a job ya lazy bum
-
+	hud_icon = "visitor"
 	outfit_type = /decl/hierarchy/outfit/job/foreigner
 
 	stat_modifiers = list(

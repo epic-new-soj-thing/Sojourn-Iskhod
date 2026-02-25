@@ -7,11 +7,14 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Governor and the Iskhod Council"
+	supervisors = "the Facility Director and the Iskhod Council"
 	difficulty = "Very Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
+	hud_icon = "captain"
+
+
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
@@ -76,6 +79,9 @@
 	selection_color = "#a7bbc6"
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
+	hud_icon = "lieutenant"
+
+
 	minimum_character_age = 25
 	playtimerequired = 1200
 	health_modifier = 20
@@ -134,6 +140,9 @@
 	alt_titles = list("Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "detective"
+
+
 	playtimerequired = 1200
 	health_modifier = 5
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
@@ -193,6 +202,8 @@
 	alt_titles = list("Ranger Patrolman","Ranger Enforcer")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
+	hud_icon = "ranger"
+
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 	playtimerequired = 240
@@ -244,6 +255,9 @@
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_INTERN
+	hud_icon = "juniorranger"
+
+
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 
