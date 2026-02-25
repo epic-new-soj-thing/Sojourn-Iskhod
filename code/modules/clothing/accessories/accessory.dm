@@ -1637,13 +1637,13 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/passport_sol
-	name = "solarian passport"
+	name = "Solarian passport"
 	desc = "A passport issued to citizens of the Solarian Federation, this one seems to have been issued before the Bluespace Collapse. Why is it here? Is it a trinket?"
 	icon_state = "passport_sol"
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/passport_general
-	name = "passport"
+	name = "Iskhod passport"
 	desc = "A passport issued to Iskhod Colonists that live on Amethyn, in the Chromin 8 system."
 	icon_state = "passport_general"
 	item_state = "general_passport"
