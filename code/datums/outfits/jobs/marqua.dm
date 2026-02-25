@@ -9,7 +9,7 @@
 	back = /obj/item/storage/backpack/holding
 	id_type = /obj/item/card/id/marqua_scout
 	id_slot = slot_wear_id
-	belt = /obj/item/storage/belt/security/tactical
+	belt = /obj/item/storage/belt/holding
 	backpack_contents = list(
 		/obj/item/gun/energy/pulse/cassad/marqua/preloaded = 1,
 		/obj/item/gun/energy/pulse/cassad/marqua/pistol/preloaded = 1,
@@ -18,5 +18,8 @@
 		/obj/item/tool/polytool/marqua = 1,
 		/obj/item/tool/medmultitool/marqua = 1,
 		/obj/item/tool/shovel/combat/marqua = 1,
-		/obj/item/device/binoculars = 1
+		/obj/item/device/binoculars = 1,
+		/obj/item/storage/firstaid/adv = 1,
+		/obj/item/device/lighting/toggleable/flashlight = 1,
+		/obj/item/device/camera = 1
 	)

@@ -30,7 +30,7 @@
 	to lose this opportunity. Find a way to get out of this mess and back to where you rightfully belong - your [pick("house", "apartment", "spaceship", "station")]. There should be a teleporter somewhere, if it's still intact."
 
 /obj/effect/mob_spawn/human/scavenger
-	name = "storage sleeper"
+	name = "Scavenger Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in armor."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -270,7 +270,7 @@
 	)
 
 /obj/effect/mob_spawn/human/high_council_agent
-	name = "high council agent spawner"
+	name = "High Council Agent Sleeper"
 	desc = "A specialized sleeper for High Council Agents."
 	mob_name = "a High Council Agent"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -290,7 +290,7 @@
 	)
 
 /obj/effect/mob_spawn/human/high_council_agent/special
-	name = "high council special agent spawner"
+	name = "High Council Special Agent Sleeper"
 	outfit = null
 	mob_name = "a High Council Special Agent"
 	assignedrole = "High Council Special Agent"
@@ -390,7 +390,7 @@
 	)
 
 /obj/effect/mob_spawn/human/solfed_survivor_auxilliary //Bit less OP. No fucked up suit, no crazy stuff. Just some normal high end gear.
-	name = "deployment sleeper"
+	name = "Solarian Auxilliary Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be some kind of soldier."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
