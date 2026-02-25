@@ -669,7 +669,7 @@
 /obj/item/cell/large/marqua_big
 	name = "Mar'Quaian power cell (2500L)"
 	desc = "A massive Mar'Quaian power cell with unprecedented capacity, suitable for heavy machinery and large rigs."
-	icon_state = "mar_l_big"
+	icon_state = "mar_b_omega"
 	maxcharge = 2500
 	autorecharging = TRUE
 	autorecharge_rate = 0.2
