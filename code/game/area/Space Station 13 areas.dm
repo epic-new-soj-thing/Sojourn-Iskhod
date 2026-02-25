@@ -323,7 +323,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "\improper Centcom Control"
 
 /area/centcom/evac
-	name = "\improper Centcom Emergency Shuttle"\
+	name = "\improper Centcom Emergency Shuttle"
 
 /area/centcom/suppy
 	name = "\improper Centcom Supply Shuttle"
