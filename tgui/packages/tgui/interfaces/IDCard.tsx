@@ -171,7 +171,7 @@ export const IDCard = (props) => {
     dna_hash,
   } = data;
 
-  const info = JOB_INFO[assignment] || { base: assignment };
+  const info = displayName[assignment] || { base: assignment };
   const displayName = info.titled
     ? `${info.base} ${registered_name}`
     : registered_name;
