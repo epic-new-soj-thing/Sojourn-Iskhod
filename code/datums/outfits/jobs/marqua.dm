@@ -1,7 +1,7 @@
 /decl/hierarchy/outfit/marqua_scout_officer
 	name = "Mar'Quaian Scout Officer"
 	uniform = /obj/item/clothing/under/bodysuit/marqua
-	suit = /obj/item/clothing/suit/space/void/marqua // Note: This might be race restricted, but since the spawn is marqua, it's fine.
+	suit = /obj/item/clothing/suit/space/marqua // Note: This might be race restricted, but since the spawn is marqua, it's fine.
 	head = /obj/item/clothing/head/helmet/space/marqua
 	mask = /obj/item/clothing/mask/breathxeno/marqua
 	shoes = /obj/item/clothing/shoes/jackboots
