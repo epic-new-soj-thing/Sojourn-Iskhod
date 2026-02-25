@@ -436,6 +436,7 @@ var/const/NO_EMAG_ACT = -50
 	desc = flavor_data["desc"]
 	icon_state = flavor_data["icon"]
 	item_state = flavor_data["item"]
+	icon = 'icons/inventory/accessory/icon.dmi'
 	flavor_selected = TRUE
 
 	user.set_id_info(src)
