@@ -315,14 +315,15 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "\improper Centcom"
 	icon_state = "centcom"
 	requires_power = 0
-	dynamic_lighting = 1
+	luminosity = 1
+	dynamic_lighting = 0
 	vessel = "centcom"
 
 /area/centcom/control
 	name = "\improper Centcom Control"
 
 /area/centcom/evac
-	name = "\improper Centcom Emergency Shuttle"
+	name = "\improper Centcom Emergency Shuttle"\
 
 /area/centcom/suppy
 	name = "\improper Centcom Supply Shuttle"
