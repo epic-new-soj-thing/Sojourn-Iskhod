@@ -44,7 +44,7 @@
 	title = "Prospector Comission Scavenger"
 
 /obj/effect/mob_spawn/human/exl_civ
-	name = "storage sleeper"
+	name = "Excelsior Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in excelsior equipment."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -82,7 +82,7 @@
 	)
 
 /obj/effect/mob_spawn/human/void_wolf
-	name = "storage sleeper"
+	name = "Void Wolf Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in void wolf equipment."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -320,7 +320,7 @@
 	)
 
 /obj/effect/mob_spawn/human/kriosan_trooper
-	name = "deployment sleeper"
+	name = "Kriosan Trooper Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Kriosan trooper."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -344,7 +344,7 @@
 
 
 /obj/effect/mob_spawn/human/solfed_survivor //very OP. Fluff wise, this is some kinda recon/vanguard. Lightly armed and armored by the standards of SolFed but still dangerous via their special gear.
-	name = "deployment sleeper"
+	name = "Solfed Survivor Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be some kind of soldier."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -367,7 +367,7 @@
 	)
 
 /obj/effect/mob_spawn/human/solfed_survivor_medic
-	name = "deployment sleeper"
+	name = "Solfed Medic Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be some kind of soldier."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
