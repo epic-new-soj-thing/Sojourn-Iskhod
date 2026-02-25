@@ -22,7 +22,11 @@
 	id_type = /obj/item/card/id/hos
 	head = /obj/item/clothing/head/rank/commander
 	pda_type = /obj/item/modular_computer/pda/heads/hos
-	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/wo = 1)
+	backpack_contents = list(
+		/obj/item/storage/hcases/ammo/ih/wo = 1,
+		/obj/item/clothing/accessory/ranks/commander = 1,
+		/obj/item/clothing/accessory/patches/blackshield_commander = 1
+	)
 
 /decl/hierarchy/outfit/job/security/gunserg
 	name = OUTFIT_JOB_NAME("Iskhod Rangers - Lieutenant")
@@ -32,7 +36,11 @@
 	glasses = /obj/item/clothing/glasses/hud/security
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/stungloves
-	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/spec_officer = 1)
+	backpack_contents = list(
+		/obj/item/storage/hcases/ammo/ih/spec_officer = 1,
+		/obj/item/clothing/accessory/ranks/sergeant = 1,
+		/obj/item/clothing/accessory/patches/blackshield_sergeant = 1
+	)
 
 /decl/hierarchy/outfit/job/security/inspector
 	name = OUTFIT_JOB_NAME("Iskhod Rangers - Detective")
@@ -47,7 +55,11 @@
 	r_hand = /obj/item/storage/briefcase/crimekit
 	id_type = /obj/item/card/id/det
 	pda_type = /obj/item/modular_computer/pda/forensics
-	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/ranger_officer = 1)
+	backpack_contents = list(
+		/obj/item/storage/hcases/ammo/ih/ranger_officer = 1,
+		/obj/item/clothing/accessory/ranks/corpsman = 1,
+		/obj/item/clothing/accessory/patches/blackshield_corpsman = 1
+	)
 
 /decl/hierarchy/outfit/job/security/detective/New()
 	..()
@@ -61,8 +73,17 @@
 	glasses = /obj/item/clothing/glasses/sechud/tactical
 	head = /obj/item/clothing/head/seccap
 	gloves = /obj/item/clothing/gloves/stungloves
-	backpack_contents = list(/obj/item/storage/hcases/ammo/ih/marshal_officer = 1)
+	backpack_contents = list(
+		/obj/item/storage/hcases/ammo/ih/marshal_officer = 1,
+		/obj/item/clothing/accessory/ranks/trooper = 1,
+		/obj/item/clothing/accessory/patches/blackshield_trooper = 1
+	)
 
 //same as normal officer but different name
 /decl/hierarchy/outfit/job/security/ihoper/jr
 	name = OUTFIT_JOB_NAME("Iskhod Rangers - Junior Ranger")
+	backpack_contents = list(
+		/obj/item/storage/hcases/ammo/ih/marshal_officer = 1,
+		/obj/item/clothing/accessory/ranks/volunteer = 1,
+		/obj/item/clothing/accessory/patches/blackshield_volunteer = 1
+	)

@@ -789,18 +789,18 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/blankranks
 	name = "Box of Blank Ranks"
-	desc = "A box full of solid red, ''blank'' Blackshield ranks, for distribution to volunteers and cadets."
+	desc = "A box full of solid red, ''blank'' Iskhod Ranger ranks, for distribution to volunteers and cadets."
 	icon_state = "box"
 
 	New()
 		..()
-		new /obj/item/clothing/accessory/ranks/blank(src)
-		new /obj/item/clothing/accessory/ranks/blank(src)
-		new /obj/item/clothing/accessory/ranks/blank(src)
-		new /obj/item/clothing/accessory/ranks/blank(src)
-		new /obj/item/clothing/accessory/ranks/blank(src)
-		new /obj/item/clothing/accessory/ranks/blank(src)
-		new /obj/item/clothing/accessory/ranks/blank(src)
+		new /obj/item/clothing/accessory/ranks/volunteer(src)
+		new /obj/item/clothing/accessory/ranks/volunteer(src)
+		new /obj/item/clothing/accessory/ranks/volunteer(src)
+		new /obj/item/clothing/accessory/ranks/volunteer(src)
+		new /obj/item/clothing/accessory/ranks/volunteer(src)
+		new /obj/item/clothing/accessory/ranks/volunteer(src)
+		new /obj/item/clothing/accessory/ranks/volunteer(src)
 
 /obj/item/storage/box/team_support
 	name = "Box of Team Support"
