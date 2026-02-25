@@ -171,11 +171,6 @@ export const IDCard = (props) => {
     dna_hash,
   } = data;
 
-  const info = displayName[assignment] || { base: assignment };
-  const displayName = info.titled
-    ? `${info.base} ${registered_name}`
-    : registered_name;
-
   const dataIter = [
     { name: 'Sex', val: sex },
     { name: 'Age', val: age },
@@ -218,7 +213,7 @@ export const IDCard = (props) => {
             justify="space-around"
           >
             <Flex.Item>
-              <Box textAlign="center">{displayName}</Box>
+              <Box textAlign="center">{registered_name}</Box>
             </Flex.Item>
             <Flex.Item>
               <Box textAlign="center">
