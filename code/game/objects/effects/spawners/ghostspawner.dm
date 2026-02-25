@@ -21,6 +21,7 @@
 	var/ghost_usable = TRUE
 	// If the spawner is ready to function at the moment
 	var/ready = TRUE
+	var/ert_linked = FALSE
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/effect/mob_spawn/attack_ghost(mob/user)
@@ -63,6 +64,9 @@
 	return ..()*/
 
 /obj/effect/mob_spawn/proc/allowspawn(mob/user)
+	if(ert_linked && !GLOB.ert_authorized && !user.client.holder)
+		to_chat(user, SPAN_WARNING("An admin has not authorized this Emergency Response Team yet!"))
+		return FALSE
 	return TRUE
 
 /obj/effect/mob_spawn/proc/special(mob/M)

@@ -383,7 +383,7 @@ var/const/NO_EMAG_ACT = -50
 	desc = "You must select your ID before it is considered valid."
 	icon_state = "id"
 	assignment = "Outsider"
-
+	var/flavor_selected = FALSE
 	var/list/visa_flavors = list(
 		"New Damascus Passcard" = list("name" = "New Damascus passcard", "desc" = "A passcard card issued to citizens of New Damascus, once a bustling manufacturing world that was rich in oxygen and low in moisture. New Damascus is an arid world slowly bringing itself back from the brink of economic collapse.", "icon" = "passcard_new_damascus", "item" = "passport"),
 		"Outer Fringe Passcard" = list("name" = "Outer Fringe passcard", "desc" = "A passcard issued to citizens and colonists away from Sol space or Chromin itself. The look of this passcard may vary group to group, but no matter where it comes from, it's generally understood that whoever owns this passcard has never been a Solarian citizen.", "icon" = "passcard_coc", "item" = "badge"),
@@ -403,7 +403,6 @@ var/const/NO_EMAG_ACT = -50
 		"Kriosan Passport" = list("name" = "Kriosan passport", "desc" = "A passport issued to Kriosans by the Kriosan Government who are working or living on Amethyn, in the Chromin 8 system.", "icon" = "workvisa", "item" = "kuri")
 	)
 
-	var/flavor_selected = FALSE
 
 /obj/item/card/id/outsider/attack_self(mob/user)
 	if(!flavor_selected)
@@ -472,3 +471,13 @@ var/const/NO_EMAG_ACT = -50
 	name = "lock picks"
 	desc = "A set of lock picks used to open doors, sadly cant pick through \"deadbolts\"."
 	icon_state = "lockpick"
+
+/obj/item/card/id/marqua_scout
+	name = "Mar'Quaian Scout ID"
+	desc = "An ID card issued to Mar'Quaian Scout Officers."
+	icon = 'icons/inventory/accessory/icon.dmi'
+	icon_state = "passcard_marqua_homeworld"
+	assignment = "Scout Officer"
+	access = list(access_maint_tunnels, access_external_airlocks) // Basic scout access
+
+	var/flavor_selected = FALSE

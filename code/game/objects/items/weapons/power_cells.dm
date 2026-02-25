@@ -645,3 +645,33 @@
 	name = "handmade manual recharger"
 	desc = "A handmade manual crank charger. Barely capable of charging cells."
 	charge_per_cycle = 10
+
+/obj/item/cell/small/marqua
+	name = "Mar'Quaian power cell (500S)"
+	desc = "A compact, highly efficient Mar'Quaian power cell. Its internal arrays allow for rapid energy recovery."
+	icon_state = "mar_s_omega"
+	maxcharge = 500
+	autorecharging = TRUE
+	autorecharge_rate = 0.1
+	matter = list(MATERIAL_PLASTEEL = 1, MATERIAL_SILVER = 1, MATERIAL_GOLD = 1, MATERIAL_PLATINUM = 1, MATERIAL_URANIUM = 3)
+	price_tag = 500
+
+/obj/item/cell/medium/marqua
+	name = "Mar'Quaian power cell (2000M)"
+	desc = "A sleek, polished power cell of Mar'Quaian design. It utilizes advanced energy-capturing lattices to self-recharge at an impressive rate."
+	icon_state = "mar_m_omega"
+	maxcharge = 2000
+	autorecharging = TRUE
+	autorecharge_rate = 0.1
+	matter = list(MATERIAL_PLASTEEL = 2, MATERIAL_SILVER = 2, MATERIAL_GOLD = 2, MATERIAL_PLATINUM = 2, MATERIAL_URANIUM = 5)
+	price_tag =1000
+
+/obj/item/cell/large/marqua_big
+	name = "Mar'Quaian power cell (2500L)"
+	desc = "A massive Mar'Quaian power cell with unprecedented capacity, suitable for heavy machinery and large rigs."
+	icon_state = "mar_l_big"
+	maxcharge = 2500
+	autorecharging = TRUE
+	autorecharge_rate = 0.2
+	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_SILVER = 4, MATERIAL_GOLD = 4, MATERIAL_PLATINUM = 4, MATERIAL_URANIUM = 10)
+	price_tag = 1200

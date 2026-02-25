@@ -64,6 +64,8 @@
 	max_upgrades = 0
 	workspeed = 1.5
 	degradation = 0
+	use_power_cost = 1.5
+	suitable_cell = /obj/item/cell/medium
 	price_tag = 2875
 
 /obj/item/tool/shovel/combat/turbo
