@@ -110,7 +110,7 @@
 	name = "Fence"
 	icon_state = "player-blue"
 	join_tag = /datum/job/fence
-*/
+
 
 /datum/job/salvager
 	title = "Salvager"

@@ -44012,6 +44012,10 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/pool)
+"kYl" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/crew_quarters/sleep/cryo)
 "kYo" = (
 /obj/random/closet_maintloot,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -78948,10 +78952,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster)
-"tXZ" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/iskhod/crew_quarters/sleep/cryo)
 "tYb" = (
 /obj/machinery/light{
 	brightness_power = 1
@@ -108359,8 +108359,8 @@ qLA
 vsL
 aSp
 rQr
-tXZ
-tXZ
+kYl
+kYl
 eJG
 paS
 tVH
