@@ -8,7 +8,7 @@
 #define JOBS_SERVICE "Bartender","Chef","Gardener" //,"Artist","Journalist"
 #define JOBS_CIVILIAN "Colonist", "Visitor"
 #define JOBS_CHURCH "Priest", "Cardinal"
-#define JOBS_PROSPECTOR "Foreman","Salvager","Prospector","Rookie" //,"Fence"
+#define JOBS_PROSPECTOR "Foreman","Salvager","Prospector","Rookie","Fence"
 #define JOBS_NONHUMAN "AI","Robot","pAI"
 #define JOBS_LODGE "Lodge Hunt Master","Lodge Hunter","Lodge Herbalist",
 #define JOBS_INDEPENDENT "Outsider"

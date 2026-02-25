@@ -57,7 +57,7 @@
 	icon_state = "player-blue-officer"
 	join_tag = /datum/job/foreman
 
-/*
+
 /datum/job/fence
 	title = "Fence"
 	flag = FENCE
@@ -73,6 +73,7 @@
 	wage = WAGE_LABOUR_HAZARD
 	department_account_access = TRUE
 	health_modifier = 5
+	hud_icon = "foreman"
 
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
