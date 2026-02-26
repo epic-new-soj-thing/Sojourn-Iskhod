@@ -34,7 +34,7 @@
 	var/blood_volume = SPECIES_BLOOD_DEFAULT //560
 	var/always_blood = FALSE 						 // Can we process reagents without blood?
 	var/always_ingest = FALSE 		                               // Initial blood volume.
-	var/hunger_factor = DEFAULT_HUNGER_FACTOR            // Multiplier for hunger.
+	var/hunger_factor = 0.75           // Multiplier for hunger.
 	var/nutrition_mod = 0                                // Flat addition to max nutrition (Base is 400)
 	var/taste_sensitivity = TASTE_NORMAL                 // How sensitive the species is to minute tastes.
 	var/show_ssd = "fast asleep"
