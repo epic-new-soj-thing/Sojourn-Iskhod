@@ -334,7 +334,7 @@
 	icon_state = "whiteservice_flag"
 	item_state = "whiteservice_flag"
 
-/obj/item/clothing/under/rank/ranger/service
+/obj/item/clothing/suit/rank/ranger/service
 	name = "ranger dress uniform"
 	desc = "The full dress uniform of the Iskhod Rangers, reserved for the highest formal occasions."
 	icon_state = "blueservice"
