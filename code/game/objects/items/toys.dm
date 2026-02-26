@@ -636,7 +636,7 @@
 /*Command*/
 
 /obj/item/toy/figure/character/command/captain
-	name = "governoraction figure"
+	name = "Facility Director action figure"
 	desc = "The man who thinks he is in charge around here. Command 1/4."
 	icon_state = "captain"
 	toysay = "Polish my sabre, peasants."

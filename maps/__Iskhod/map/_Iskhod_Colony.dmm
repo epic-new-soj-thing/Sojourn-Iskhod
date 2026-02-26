@@ -13365,6 +13365,11 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/office)
+"dqj" = (
+/obj/structure/table/standard,
+/obj/item/device/eftpos/medical/roboticist,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/iskhod/rnd/robotics)
 "dqo" = (
 /obj/machinery/door/firedoor,
 /obj/structure/sign/levels/stairsup{
@@ -35769,6 +35774,7 @@
 	pixel_y = -3
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/device/eftpos/medical,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/reception)
 "iYi" = (
@@ -121481,7 +121487,7 @@ pDh
 wTT
 jJa
 nHv
-iqs
+dqj
 xAq
 rYd
 jmt

@@ -32,4 +32,4 @@
 		return
 	populated_contents = TRUE
 	new /obj/item/clothing/suit/hooded/wintercoat(src)
-	new /obj/item/clothing/shoes/winter(src)
+	new /obj/item/clothing/shoes/jackboots(src)

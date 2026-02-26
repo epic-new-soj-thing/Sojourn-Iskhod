@@ -46,7 +46,7 @@
 	response_harm   = "kicks"
 	colony_friend = TRUE
 	friendly_to_colony = TRUE
-	befriend_job = "Premier"
+	befriend_job = "Facility Director"
 	sanity_damage = -2 // ery cute , gives people a reason to carry him
 
 /mob/living/simple/corgi/Life()
@@ -286,3 +286,4 @@
 			return
 	// If nothing was ever triggered, continue as normal
 	..()
+

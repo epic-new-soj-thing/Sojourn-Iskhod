@@ -163,7 +163,7 @@
 	icon_state = "backpack_botanical"
 
 /obj/item/storage/backpack/captain
-	name = "governor's backpack"
+	name = "facility director's backpack"
 	desc = "It's a special backpack made exclusively for officers."
 	icon_state = "backpack_captain"
 
@@ -350,7 +350,7 @@
 	desc = "A green satchel for plant related work."
 
 /obj/item/storage/backpack/satchel/captain
-	name = "governor's satchel"
+	name = "facility director's satchel"
 	desc = "An exclusive satchel for officers."
 	icon_state = "satchel_captain"
 
@@ -417,3 +417,4 @@
 	max_storage_space = DEFAULT_HUGE_STORAGE * 1.5
 	matter = list(MATERIAL_BIOMATTER = 20, MATERIAL_PLASTIC = 3)
 	equip_access = FALSE
+

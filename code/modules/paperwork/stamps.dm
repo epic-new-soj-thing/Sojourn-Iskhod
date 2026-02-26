@@ -19,7 +19,7 @@
 	var/yminus	= -3	//Ditto for Y
 
 /obj/item/stamp/captain
-	name = "governor's rubber stamp"
+	name = "facility director's rubber stamp"
 	icon_state = "stamp-cap"
 	xplus = 0
 	yminus = -1
@@ -129,3 +129,4 @@
 			yplus = chosen_stamp.yplus
 			yminus = chosen_stamp.yminus
 			stamp_flags = chosen_stamp.stamp_flags & ~(STAMP_ADMIN | STAMP_DOCUMENT) //No cloning admin stamps, if we ever make any.
+

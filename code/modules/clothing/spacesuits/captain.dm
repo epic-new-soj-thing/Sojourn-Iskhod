@@ -15,7 +15,7 @@
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/suit/space/captain
-	name = "Premier's armor"
+	name = "Facility Director's armor"
 	desc = "A bulky, heavy-duty piece of exclusive armor."
 	icon_state = "caparmor"
 	item_state = "capspacesuit"

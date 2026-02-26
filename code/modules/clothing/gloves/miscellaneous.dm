@@ -1,6 +1,6 @@
 /obj/item/clothing/gloves/captain
 	desc = "A pair of regal blue gloves with a swanky gold trim."
-	name = "governor's gloves"  //Sprites from Eris
+	name = "facility director's gloves"  //Sprites from Eris
 	icon_state = "captain"
 	item_state = "captain"
 	armor_list = list(melee = 6, bullet = 2, energy = 6, bomb = 0, bio = 0, rad = 0)
@@ -335,3 +335,4 @@
 	siemens_coefficient = 0.2
 	permeability_coefficient = 0.05
 	price_tag = 50
+

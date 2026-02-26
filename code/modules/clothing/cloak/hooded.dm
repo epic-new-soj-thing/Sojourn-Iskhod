@@ -3,6 +3,7 @@
 //
 
 /obj/item/clothing/suit/hooded
+	parent_type = /obj/item/clothing/suit/storage
 	var/obj/item/clothing/head/hood/hood
 	var/hoodtype = null //So other clothing can override this.
 
@@ -114,98 +115,93 @@
 /obj/item/clothing/suit/hooded/wintercoat
 	name = "winter coat"
 	desc = "A heavy jacket designed for cold environments."
-	icon_state = "coatwinter"
-	item_state_slots = list(slot_r_hand_str = "coatwinter", slot_l_hand_str = "coatwinter")
+	icon_state = "coat_gen"
+	item_state_slots = list(slot_r_hand_str = "coat_gen", slot_l_hand_str = "coat_gen")
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 10, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter
+	hoodtype = /obj/item/clothing/head/ushanka/security
 	allowed = list (/obj/item/gun/projectile, /obj/item/gun/energy, /obj/item/device/flash, /obj/item/pen, /obj/item/paper, /obj/item/device/lighting/toggleable/flashlight,/obj/item/tank/emergency_oxygen, /obj/item/storage/fancy/cigarettes, /obj/item/storage/box/matches, /obj/item/reagent_containers/drinks/flask)
 
 /obj/item/clothing/suit/hooded/wintercoat/captain
-	name = "governor's winter coat"
-	desc = "A heavy governor's jacket designed for cold environments. Hidden armor plating is sewn into it."
-	icon_state = "coatcaptain"
-	item_state_slots = list(slot_r_hand_str = "coatcaptain", slot_l_hand_str = "coatcaptain")
+	name = "command winter coat"
+	desc = "A heavy command jacket designed for cold environments. Hidden armor plating is sewn into it."
+	icon_state = "coat_com"
+	item_state_slots = list(slot_r_hand_str = "coat_com", slot_l_hand_str = "coat_com")
 	armor_list = list(melee = 5, bullet = 3, energy = 2, bomb = 15, bio = 0, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter/captain
 
 /obj/item/clothing/suit/hooded/wintercoat/security
 	name = "security winter coat"
 	desc = "A heavy security jacket designed for cold environments. Armor plating has been sewn into it."
-	icon_state = "coatsecurity"
-	item_state_slots = list(slot_r_hand_str = "coatsecurity", slot_l_hand_str = "coatsecurity")
+	icon_state = "coat_sec"
+	item_state_slots = list(slot_r_hand_str = "coat_sec", slot_l_hand_str = "coat_sec")
 	armor_list = list(melee = 6, bullet = 5, energy = 3, bomb = 20, bio = 0, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter/security
 
 /obj/item/clothing/suit/hooded/wintercoat/security/ranger
 	name = "Iskhod Ranger winter coat"
 	desc = "A heavy security jacket in Iskhod Ranger colors, designed for cold environments. Armor plating has been sewn into it."
-	icon_state = "coatfl"
-	item_state_slots = list(slot_r_hand_str = "coatfl", slot_l_hand_str = "coatfl")
-	hoodtype = /obj/item/clothing/head/hood/winter/security/ranger
+	icon_state = "coat_sec"
+	item_state_slots = list(slot_r_hand_str = "coat_sec", slot_l_hand_str = "coat_sec")
 
 /obj/item/clothing/suit/hooded/wintercoat/security/captain
 	name = "Captain's winter coat"
-	desc = "A heavy security jacket with Captain's markings, designed for cold environments. Armor plating has been sewn into it."
-	icon_state = "coatfl"
-	item_state_slots = list(slot_r_hand_str = "coatfl", slot_l_hand_str = "coatfl")
+	desc = "A heavy security jacket with Ranger Captain's markings, designed for cold environments. Armor plating has been sewn into it."
+	icon_state = "coat_sec"
+	item_state_slots = list(slot_r_hand_str = "coat_sec", slot_l_hand_str = "coat_sec")
 	armor_list = list(melee = 8, bullet = 6, energy = 4, bomb = 25, bio = 0, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter/security/captain
 
 /obj/item/clothing/suit/hooded/wintercoat/medical
 	name = "medical winter coat"
 	desc = "A heavy medical jacket designed for cold environments. The inner lining has been treated with a biomesh, giving some resistance to biological hazards."
-	icon_state = "coatmedical"
-	item_state_slots = list(slot_r_hand_str = "coatmedical", slot_l_hand_str = "coatmedical")
+	icon_state = "coat_med"
+	item_state_slots = list(slot_r_hand_str = "coat_med", slot_l_hand_str = "coat_med")
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 50, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter/medical
 
 /obj/item/clothing/suit/hooded/wintercoat/science
 	name = "science winter coat"
 	desc = "A heavy science jacket designed for cold environments."
-	icon_state = "coatscience"
-	item_state_slots = list(slot_r_hand_str = "coatscience", slot_l_hand_str = "coatscience")
+	icon_state = "coat_sci"
+	item_state_slots = list(slot_r_hand_str = "coat_sci", slot_l_hand_str = "coat_sci")
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 10, bio = 0, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter/science
 
 /obj/item/clothing/suit/hooded/wintercoat/engineering
-	name = "artificer winter coat"
-	desc = "A heavy artificer's guild jacket designed for cold environments. The material is somewhat resistant to radiation."
-	icon_state = "coatengineer"
-	item_state_slots = list(slot_r_hand_str = "coatengineer", slot_l_hand_str = "coatengineer")
+	name = "engineering winter coat"
+	desc = "A heavy engineer's guild jacket designed for cold environments. The material is somewhat resistant to radiation."
+	icon_state = "coat_eng"
+	item_state_slots = list(slot_r_hand_str = "coat_eng", slot_l_hand_str = "coat_eng")
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 20)
-	hoodtype = /obj/item/clothing/head/hood/winter/engineering
 
 /obj/item/clothing/suit/hooded/wintercoat/engineering/atmos
 	name = "atmospherics winter coat"
 	desc = "A heavy atmospherics jacket designed for cold environments. This coat is quite old and doesn't seem to belong anywhere."
-	icon_state = "coatatmos"
+	icon_state = "coat_eng"
 	item_state_slots = list(slot_r_hand_str = "coatatmos", slot_l_hand_str = "coatatmos")
-	hoodtype = /obj/item/clothing/head/hood/winter/engineering/atmos
+
+/obj/item/clothing/suit/hooded/wintercoat/service
+	name = "service winter coat"
+	desc = "A heavy service jacket designed for cold environments."
+	icon_state = "coat_srv"
+	item_state_slots = list(slot_r_hand_str = "coat_srv", slot_l_hand_str = "coat_srv")
 
 /obj/item/clothing/suit/hooded/wintercoat/botany
 	name = "botany winter coat"
 	desc = "A heavy botany jacket designed for cold environments."
-	icon_state = "coathydro"
-	item_state_slots = list(slot_r_hand_str = "coathydro", slot_l_hand_str = "coathydro")
-	hoodtype = /obj/item/clothing/head/hood/winter/botany
+	icon_state = "coat_srv"
+	item_state_slots = list(slot_r_hand_str = "coat_srv", slot_l_hand_str = "coat_srv")
 
 /obj/item/clothing/suit/hooded/wintercoat/cargo
 	name = "cargo winter coat"
 	desc = "A heavy cargo jacket designed for cold environments."
-	icon_state = "coatcargo"
-	item_state_slots = list(slot_r_hand_str = "coatcargo", slot_l_hand_str = "coatcargo")
-	hoodtype = /obj/item/clothing/head/hood/winter/cargo
+	icon_state = "coat_sup"
+	item_state_slots = list(slot_r_hand_str = "coat_sup", slot_l_hand_str = "coat_sup")
 
 /obj/item/clothing/suit/hooded/wintercoat/cargo/miner
 	name = "mining winter coat"
 	desc = "A heavy mining jacket designed for cold environments. The leather is quite tough and provides a small amount of protection."
-	icon_state = "coatminer"
-	item_state_slots = list(slot_r_hand_str = "coatminer", slot_l_hand_str = "coatminer")
+	icon_state = "coat_sup"
+	item_state_slots = list(slot_r_hand_str = "coat_sup", slot_l_hand_str = "coat_sup")
 	armor_list = list(melee = 2, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-	hoodtype = /obj/item/clothing/head/hood/winter/cargo/miner
 
 /obj/item/clothing/suit/hooded/costume/techpriest
 	name = "techpriest cloak"
@@ -238,3 +234,4 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	flags_inv = HIDESUITSTORAGE
 	hoodtype = /obj/item/clothing/head/hood/absolutecloakhood
+

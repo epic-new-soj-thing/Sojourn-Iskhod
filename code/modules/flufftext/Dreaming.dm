@@ -62,7 +62,7 @@ var/list/dreams = list(
 	"the Vesalius-Andra Biolab Overseer","the Quartermaster","an Assistant","a Bartender","a Janitor","a Gardener",
 	"a Prime","an Entertainer","a Chef","a Doctor","a Psychologist","a Vesalius-Andra Paramedic",
 	"a Vesalius-Andra Chemist","a Vesalius-Andra Scientist","a Vesalius-Andra Roboticist","a Cyborg","a Cargo Technician","a Mining Technician",
-	"a Guild Adept", "a Ranger Officer","a Supply Specialist","a Ranger", "the Premier",
+	"a Guild Adept", "a Ranger Officer","a Supply Specialist","a Ranger", "the Facility Director",
 	"a Corpsman","a Trooper",
 
 //Races (Check Creatures Before Adding Stuff Here, There's Some Overlap!)
@@ -138,3 +138,4 @@ mob/living/carbon/proc/handle_dreams()
 		dream()
 
 mob/living/carbon/var/dreaming = 0
+

@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/reinforced/captains
-	name = "governor's locker"
+	name = "facility director's locker"
 	req_access = list(access_captain)
 	icon_state = "cap"
 
@@ -10,10 +10,10 @@
 	new /obj/item/storage/backpack/captain(src)
 	new /obj/item/storage/backpack/satchel/captain(src)
 	new /obj/item/clothing/under/rank/captain(src)
-	new /obj/item/clothing/accessory/halfcape/premier(src)
+	new /obj/item/clothing/accessory/halfcape/facility_director(src)
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/shoes/color/brown(src)
-	new /obj/item/clothing/shoes/winter/command(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/device/radio/headset/heads/captain(src)
 	new /obj/item/clothing/gloves/captain(src)
 	new /obj/item/device/flash(src)
@@ -41,7 +41,7 @@
 	new /obj/item/clothing/head/rank/first_officer(src)
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
-	new /obj/item/clothing/shoes/winter/command(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/device/radio/headset/heads/hop(src)
 	new /obj/item/gun/projectile/colt/ten(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
@@ -65,7 +65,7 @@
 	new /obj/item/device/t_scanner/advanced(src)
 	new /obj/item/clothing/head/rank/ranger/peaked/command(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
-	new /obj/item/clothing/shoes/winter/command(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/suit/armor/hos(src)
 	new /obj/item/clothing/suit/armor/platecarrier/hos(src)
@@ -114,7 +114,7 @@
 	new /obj/item/clothing/head/rank/warden/beret(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/security/ranger(src)
 	new /obj/item/clothing/head/ushanka/security(src)
-	new /obj/item/clothing/shoes/winter/security(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat(src)
 	new /obj/item/storage/box/lieutenantuniform(src)
 	new /obj/item/tool/baton(src)
@@ -168,7 +168,7 @@
 	new /obj/item/clothing/head/rank/ironhammer(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/security/ranger(src)
 	new /obj/item/clothing/head/ushanka/security(src)
-	new /obj/item/clothing/shoes/winter/security(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/storage/belt/security(src)
@@ -207,7 +207,7 @@
 	new /obj/item/clothing/shoes/reinforced(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/security/ranger(src)
 	new /obj/item/clothing/head/ushanka/security(src)
-	new /obj/item/clothing/shoes/winter/security(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/storage/box/evidence(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/storage/belt/security(src)
@@ -328,3 +328,4 @@
 		return
 	populated_contents = TRUE
 	new /obj/item/storage/box/syndie_kit/antimateriel_rifle(src)
+

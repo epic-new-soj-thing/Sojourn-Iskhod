@@ -15,7 +15,6 @@
 	new /obj/item/clothing/under/rank/scientist(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat/science(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/science(src)
-	new /obj/item/clothing/shoes/winter/science(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/gloves/membrane(src)
 	new /obj/item/device/radio/headset/headset_sci(src)
@@ -44,7 +43,7 @@
 	new /obj/item/clothing/suit/storage/rank/robotech_jacket(src)
 	new /obj/item/clothing/shoes/color/brown(src) // Changed from jackboots by edit
 	new /obj/item/clothing/suit/hooded/wintercoat/science(src) // Added by edit
-	new /obj/item/clothing/shoes/winter/science(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/glasses/regular(src) // Added by edit
 	new /obj/item/clothing/gloves/membrane(src)
 	new /obj/item/device/radio/headset/headset_sci(src)
@@ -75,7 +74,7 @@
 	new /obj/item/clothing/shoes/color(src) // Changed from color by edit
 	new /obj/item/clothing/shoes/leather(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/science(src) // Added by edit
-	new /obj/item/clothing/shoes/winter/science(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/glasses/regular(src) // Added by edit
 	new /obj/item/clothing/gloves/membrane(src)
 	new /obj/item/device/radio/headset/heads/rd(src)

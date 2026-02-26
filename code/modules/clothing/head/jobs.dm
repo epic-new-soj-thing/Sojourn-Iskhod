@@ -14,7 +14,7 @@
 //Captain
 
 /obj/item/clothing/head/rank/captain
-	name = "governor's hat"
+	name = "facility director's hat"
 	icon_state = "captain"  //Sprites from Eris
 	desc = "It's good being the king."
 	item_state_slots = list(
@@ -33,9 +33,9 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Premier's Hat"] = "captain"
-	options["Premier's old Hat"] = "captain-old"
-	options["Premier's Cap"] = "capcap"
+	options["Facility Director's Hat"] = "captain"
+	options["Facility Director's old Hat"] = "captain-old"
+	options["Facility Director's Cap"] = "capcap"
 	options["Parade Hat"] = "officercap"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -81,7 +81,7 @@
 	var/list/options = list()
 	options["Primes hat"] = "church_hat"
 	options["Primes visor"] = "nt_visor"
-	options["Primes trihat"] = "nt_trihat" //credit to Près de l'oiseau on Eris for all of these!
+	options["Primes trihat"] = "nt_trihat" //credit to PrÃ¨s de l'oiseau on Eris for all of these!
 	options["Primes visored trihat"] = "nt_trihat_visor"
 	options["Primes mitre"] = "nt_papalhat"
 	options["Primes visored mitre"] = "nt_papalhat_visor"
@@ -629,3 +629,4 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 	armor_list = list(melee = 2, bullet = 0, energy = 2, bomb = 0, bio = 0, rad = 0)
 	icon_state = "greenutility"
 	item_state = "greenutility"
+

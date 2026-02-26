@@ -24,6 +24,11 @@
 	// Budget for crew salaries. Summed up initial wages of department's personnel
 	var/budget_personnel = 0
 
+	var/insurance_limit = 500
+	var/insurance_premium = 50
+	var/elective_reduction = 0.5 // 50% discount on elective procedures
+	var/work_coverage = 0 // Percentage covered for work-related injuries
+
 
 	// How much account failed to pay to employees. Used for emails
 	var/total_debt = 0
@@ -49,7 +54,11 @@
 	to a much lower starting value
 	*/
 	account_initial_balance = 57800 //50k for emergencies, 7800 for the wages if both have nepotism to last 5 hour shift if it comes to it, shouldn't ever need any more.
-	jobs_in_department = list("/datum/job/premier","/datum/job/pg")
+	jobs_in_department = list("/datum/job/facility_director","/datum/job/pg")
+	insurance_limit = 2000
+	insurance_premium = 100
+	elective_reduction = 0.8
+	work_coverage = 0.8
 
 /*************
 	Retainers
@@ -61,6 +70,10 @@
 	//With nepotism a full team 21 125 in 5 hours
 	account_initial_balance = 25000 //Required to run a full roster with nepotism and almost 4k for expenses.
 	jobs_in_department = list("/datum/job/swo","/datum/job/supsec","/datum/job/inspector","/datum/job/officer","/datum/job/officerjr")
+	insurance_limit = 1500
+	insurance_premium = 40
+	elective_reduction = 0.6
+	work_coverage = 1.0
 
 /datum/department/blackshield
 	name = "Blackshield Division"
@@ -68,6 +81,10 @@
 	//With nepotism a full team 21 125 in 5 hours
 	account_initial_balance = 21200 //Required to run full roster with nepotism and basically nothing else.
 	jobs_in_department = list("/datum/job/swo","/datum/job/supsec","/datum/job/officer","/datum/job/officerjr")
+	insurance_limit = 1500
+	insurance_premium = 40
+	elective_reduction = 0.6
+	work_coverage = 1.0
 
 /datum/department/technomancers
 	name = "Artificer's Guild"
@@ -75,6 +92,10 @@
 	account_initial_balance = 17000 //17000 to cover some expenses but not that much
 	//Full team with nepotism in 5 hours is 15600
 	jobs_in_department = list("/datum/job/chief_engineer","/datum/job/technomancer","/datum/job/apprentice")
+	insurance_limit = 1200
+	insurance_premium = 40
+	elective_reduction = 0.5
+	work_coverage = 1.0
 
 
 /datum/department/civilian
@@ -83,6 +104,10 @@
 	account_initial_balance = 0
 	//No standing balance is kept in the account, this is just for paying gardener, janitor and actor
 	jobs_in_department = list("/datum/job/clubmanager","/datum/job/clubworker","/datum/job/hydro","/datum/job/artist","/datum/job/janitor")
+	insurance_limit = 500
+	insurance_premium = 50
+	elective_reduction = 0.4
+	work_coverage = 0.5
 
 /******************
 	Benefactors
@@ -94,6 +119,10 @@
 	//30225 in 5 hours with full crew + nepotism
 	account_initial_balance = 30250 //Covers crew-cost. Rest should be made up for by medical fees and chem sales.
 	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/paramedic","/datum/job/psychiatrist","/datum/job/medstudent")
+	insurance_limit = 1000000 // Effectively free
+	insurance_premium = 0
+	elective_reduction = 1 // 100% discount
+	work_coverage = 1.0
 
 /datum/department/moebius_research
 	name = "Vesalius-Andra Institution: Research Division"
@@ -101,6 +130,10 @@
 	//24375 in 5 hours with full crew + nepotism
 	account_initial_balance = 24500 //Covers wages of employees. Sell posis and whatever else to make up for material cost.
 	jobs_in_department = list("/datum/job/rd","/datum/job/scientist","/datum/job/roboticist","/datum/job/scistudent","/datum/job/robostudent")
+	insurance_limit = 800
+	insurance_premium = 60
+	elective_reduction = 0.6
+	work_coverage = 0.8
 
 /datum/department/church
 	name = "Church of the Absolute"
@@ -108,6 +141,10 @@
 	account_initial_balance = 17000 //17000 to cover some expenses but not that much
 	//Full team with nepotism in 5 hours is 15600
 	jobs_in_department = list ("/datum/job/chaplain","/datum/job/acolyte")
+	insurance_limit = 750
+	insurance_premium = 40
+	elective_reduction = 0.4
+	work_coverage = 0.5
 
 /******************
 	Independant
@@ -126,6 +163,10 @@
 	//Note: FL isnt accounted for wages when starting money as they have the easyest ways to make money
 	account_initial_balance = 18200 //Has a lot of workers to pay - but their /entire/ job is literally to make money. Should cover the base nessessities of hourly payment.
 	jobs_in_department = list("/datum/job/merchant","/datum/job/cargo_tech","/datum/job/mining")
+	insurance_limit = 600
+	insurance_premium = 50
+	elective_reduction = 0.4
+	work_coverage = 0.7
 
 /datum/department/prospector
 	name = "Prospectors"
@@ -138,6 +179,10 @@
 	name = "Independent Allied Factions"
 	id = DEPARTMENT_INDEPENDENT
 	jobs_in_department = list("/datum/job/outsider","/datum/job/assistant","/datum/job/foreigner")
+	insurance_limit = 200
+	insurance_premium = 80
+	elective_reduction = 0.2
+	work_coverage = 0.3
 
 /datum/department/lodge
 	name = "Lodge"
@@ -249,3 +294,4 @@
 	dept = DEPARTMENT_INDEPENDENT
 
 //No, there is no experience perk for the Premiere, as the point of the position is suffering.
+

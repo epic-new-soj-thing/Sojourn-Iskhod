@@ -97,17 +97,17 @@
 		pixel_x = 15
 
 
-/obj/machinery/rotating_alarm/proc/set_color(color)
+/obj/machinery/rotating_alarm/proc/set_color(new_color)
 	if (on)
 		vis_contents -= spin_effect
-	if (isnull(spinning_lights_cache["[color]"]))
-		spinning_lights_cache["[color]"] = new /obj/spinning_light()
-	spin_effect = spinning_lights_cache["[color]"]
-	alarm_light_color = color
+	if (isnull(spinning_lights_cache["[new_color]"]))
+		spinning_lights_cache["[new_color]"] = new /obj/spinning_light()
+	spin_effect = spinning_lights_cache["[new_color]"]
+	alarm_light_color = new_color
 	var/HSV = RGBtoHSV(alarm_light_color)
 	var/RGB = HSVtoRGB(RotateHue(HSV, angle))
 	alarm_light_color = RGB
-	spin_effect.set_color(color)
+	spin_effect.set_color(new_color)
 	if (on)
 		vis_contents += spin_effect
 

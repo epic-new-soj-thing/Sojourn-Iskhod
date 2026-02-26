@@ -35,15 +35,15 @@
 	sort_category = "Faction: Frontier Logistics"
 
 /datum/gear/factionlonestar/winterbootsguild
-	display_name = "winter boots, frontier logistics"
-	path = /obj/item/clothing/shoes/winter/supply
+	display_name = "jackboots"
+	path = /obj/item/clothing/shoes/jackboots
 	allowed_roles = list("Operations Manager","Technician","Miner","Bartender","Chef","Gardener","Disposals Technician")
 	slot = slot_shoes
 	sort_category = "Faction: Frontier Logistics"
 
 /datum/gear/factionlonestar/winterbootsguildminer
-	display_name = "winter boots, miner"
-	path = /obj/item/clothing/shoes/winter/mining
+	display_name = "jackboots"
+	path = /obj/item/clothing/shoes/jackboots
 	allowed_roles = list("Miner")
 	slot = slot_shoes
 	sort_category = "Faction: Frontier Logistics"

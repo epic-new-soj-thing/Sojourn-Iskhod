@@ -104,7 +104,7 @@
 	display_name = "Decorative Saber"
 	path = /obj/item/tool/sword/saber
 	cost = 2
-	allowed_roles = list("Governor","Steward","Captain","Warrant Officer")
+	allowed_roles = list("Facility Director","Steward","Captain","Warrant Officer")
 
 /datum/gear/armament/cheap_melee
 	display_name = "cheap melee selection"
@@ -122,3 +122,4 @@
 	path = /obj/item/tool/sword/nt/shortsword
 	allowed_roles = list(JOBS_CHURCH)
 	cost = 1
+

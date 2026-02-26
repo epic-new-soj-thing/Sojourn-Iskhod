@@ -17,6 +17,7 @@
 	var/wage_original // Value passed from job datum on account creation
 	var/wage_manual = FALSE // If wage have been set manually. Prevents wage auto update on players joining/leaving deparment
 	var/debt = 0 // How much money employer owe us
+	var/insurance_spent = 0 // How much insurance coverage used this shift
 	var/department_id // Easy identification for department accounts
 	var/can_make_accounts // Individual guild members and their departments authorized to register new accounts
 	var/security_level = 0	//0 - auto-identify from worn ID, require only account number

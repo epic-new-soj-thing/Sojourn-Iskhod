@@ -140,14 +140,14 @@
 
 /datum/gear/factionsoteria/winterbootsmedical
 	display_name = "winter boots, vesalius-andra medical"
-	path = /obj/item/clothing/shoes/winter/medical
+	path = /obj/item/clothing/shoes/jackboots
 	allowed_roles = list("Psychiatrist","Paramedic","Doctor","Medical Overseer")
 	slot = slot_shoes
 	sort_category = "Faction: Vesalius-Andra"
 
 /datum/gear/factionsoteria/winterbootsscience
 	display_name = "winter boots, vesalius-andra research"
-	path = /obj/item/clothing/shoes/winter/science
+	path = /obj/item/clothing/shoes/jackboots
 	allowed_roles = list(JOBS_SCIENCE)
 	slot = slot_shoes
 	sort_category = "Faction: Vesalius-Andra"

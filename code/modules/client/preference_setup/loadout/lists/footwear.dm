@@ -110,6 +110,3 @@
 	path = /obj/item/clothing/shoes/custom
 	flags = GEAR_HAS_COLOR_SELECTION
 
-/datum/gear/shoes/winterboots
-	display_name = "winter boots"
-	path = /obj/item/clothing/shoes/winter

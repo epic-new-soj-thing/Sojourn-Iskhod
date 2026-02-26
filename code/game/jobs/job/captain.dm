@@ -1,6 +1,6 @@
 var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 
-/datum/job/premier
+/datum/job/facility_director
 	title = "Facility Director"
 	flag = PREMIER
 	department = DEPARTMENT_COMMAND
@@ -64,10 +64,13 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	get_access()
 		return get_all_station_access()
 
-/obj/landmark/join/start/premier
+/obj/landmark/join/start/facility_director
 	name = "Facility Director"
 	icon_state = "player-gold-officer"
-	join_tag = /datum/job/premier
+	join_tag = /datum/job/facility_director
+
+/obj/landmark/join/start/premier
+	parent_type = /obj/landmark/join/start/facility_director
 
 /datum/job/pg
 	title = "Steward"
@@ -129,3 +132,4 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	name = "Steward"
 	icon_state = "player-gold"
 	join_tag = /datum/job/pg
+

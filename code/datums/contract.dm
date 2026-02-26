@@ -2,11 +2,11 @@ GLOBAL_LIST_EMPTY(various_antag_contracts)		// Contracts from "Various" employer
 GLOBAL_LIST_EMPTY(excel_antag_contracts)		// Excelsior contracts
 GLOBAL_LIST_EMPTY(blackshield_antag_contracts)	// Excelsior contracts
 GLOBAL_LIST_INIT(antag_item_targets,list(
-		"the governor's antique laser gun" = /obj/item/gun/energy/captain,
+		"the facility director's antique laser gun" = /obj/item/gun/energy/captain,
 		"a hand teleporter" = /obj/item/hand_tele,
 		"an RCD" = /obj/item/rcd,
 		"a jetpack" = /obj/item/tank/jetpack,
-		"a governor's jumpsuit" = /obj/item/clothing/under/rank/captain,
+		"a facility director's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a functional AI" = /obj/item/device/aicard,
 		"the Chief Engineer's advanced voidsuit control module" = /obj/item/rig/ce,
 		"the colony blueprints" = /obj/item/blueprints,
@@ -279,7 +279,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"a hand teleporter" = /obj/item/hand_tele,
 		"an RCD" = /obj/item/rcd,
 		"a jetpack" = /obj/item/tank/jetpack,
-		"a governor's jumpsuit" = /obj/item/clothing/under/rank/captain,
+		"a facility director's jumpsuit" = /obj/item/clothing/under/rank/captain,
 		"a functional AI" = /obj/item/device/aicard,
 		"the CE advanced voidsuit control module" = /obj/item/rig/ce,
 		"the station blueprints" = /obj/item/blueprints,
@@ -291,7 +291,7 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 		"a CO's jumpsuit" = /obj/item/clothing/under/rank/ih_commander,
 		"a Steward's jumpsuit" = /obj/item/clothing/under/rank/first_officer,
 		"the hypospray" = /obj/item/reagent_containers/hypospray,
-		// "the governor's pinpointer" = /obj/item/pinpointer, // DISABLED - pinpointer not available
+		// "the facility director's pinpointer" = /obj/item/pinpointer, // DISABLED - pinpointer not available
 		"an ablative armor vest" = /obj/item/clothing/suit/armor/laserproof,
 		"an Ironhammer hardsuit control module" = /obj/item/rig/combat/ironhammer
 	)
@@ -563,3 +563,4 @@ GLOBAL_LIST_INIT(blackshield_item_targets,list(
 
 /datum/antag_contract/blackshield/appropriate/can_place()
 	return ..() && target_type
+

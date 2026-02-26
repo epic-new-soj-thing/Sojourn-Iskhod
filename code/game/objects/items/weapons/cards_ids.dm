@@ -209,11 +209,11 @@ var/const/NO_EMAG_ACT = -50
 	group = "centcom"
 
 /obj/item/card/id/captains_spare
-	name = "governor's spare ID"
-	desc = "A golden and pompous spare ID, for when a new governoris elected or in the shameful case an existing one lost his original badge. The most stolen item on the colony."
+	name = "Facility Director's spare ID"
+	desc = "A golden and pompous spare ID, for when a new Facility Director is elected or in the shameful case an existing one lost his original badge. The most stolen item on the colony."
 	icon_state = MATERIAL_GOLD
 	item_state = "gold_id"
-	registered_name = "Premier"
+	registered_name = "Facility Director"
 	assignment = "Facility Director"
 	group = "golden"
 
@@ -481,3 +481,4 @@ var/const/NO_EMAG_ACT = -50
 	access = list(access_maint_tunnels, access_external_airlocks) // Basic scout access
 
 	var/flavor_selected = FALSE
+

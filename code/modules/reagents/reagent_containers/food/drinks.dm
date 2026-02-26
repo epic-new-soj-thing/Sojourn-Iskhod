@@ -358,8 +358,8 @@
 	center_of_mass = "x=16;y=7"
 
 /obj/item/reagent_containers/drinks/flask
-	name = "governor's flask"
-	desc = "A metal flask belonging to the Premier."
+	name = "facility director's flask"
+	desc = "A metal flask belonging to the Facility Director."
 	icon_state = "flask"
 	volume = 60
 	center_of_mass = list("x"=17, "y"=7)
@@ -565,3 +565,4 @@
 	desc = "A tall plastic cup of hot green tea."
 	icon_state = "greentea_v"
 	preloaded_reagents = list("greentea" = 30)
+

@@ -87,8 +87,8 @@
 	slot = slot_w_uniform
 
 /datum/gear/factionsecurity/winterbootssecurity
-	display_name = "winter boots, security"
-	path = /obj/item/clothing/shoes/winter/security
+	display_name = "jackboots"
+	path = /obj/item/clothing/shoes/jackboots
 	slot = slot_shoes
 
 /datum/gear/factionsecurity/secpatch

@@ -58,8 +58,8 @@
 	sort_category = "Faction: Artificer"
 
 /datum/gear/factionartificer/winterboots
-	display_name = "winter boots, artificer"
-	path = /obj/item/clothing/shoes/winter/engineering
+	display_name = "jackboots"
+	path = /obj/item/clothing/shoes/jackboots
 	allowed_roles = list("Chief Engineer","Engineer", "Apprentice")
 	slot = slot_shoes
 	sort_category = "Faction: Artificer"

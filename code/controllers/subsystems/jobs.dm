@@ -368,9 +368,9 @@ SUBSYSTEM_DEF(job)
 					return H.Robotize()
 				if("AI")
 					return H
-				if("Premier")
+				if("Facility Director")
 					var/sound/announce_sound = (SSticker.current_state <= GAME_STATE_SETTING_UP)? null : sound('sound/misc/boatswain.ogg', volume=20)
-					captain_announcement.Announce("Premier [H.real_name] has signed in.", new_sound=announce_sound)
+					captain_announcement.Announce("Facility Director [H.real_name] has signed in.", new_sound=announce_sound)
 
 		if(istype(H)) //give humans wheelchairs, if they need them.
 			var/obj/item/organ/external/l_leg = H.get_organ(BP_L_LEG)
@@ -759,3 +759,4 @@ SUBSYSTEM_DEF(job)
 	//The cache is also a copy of the original, so that people don't get the smart idea to hold the datum and update it elsewhere.
 	if(playtime_cache[ckey] == null) playtime_cache[ckey] = list() // This should never be true, but I don't trust you lot to make sure you read before writing.
 	playtime_cache[ckey][job_key] = new /datum/playtime(datum)
+

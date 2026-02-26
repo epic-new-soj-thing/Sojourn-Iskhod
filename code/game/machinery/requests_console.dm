@@ -253,9 +253,12 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	announcementConsole = 1 //Heads can make announcements
 	departmentType = RC_ASSIST|RC_INFO
 
+/obj/machinery/requests_console/preset/command/facility_director
+	name = "Facility Director Request Console"
+	department = "Facility Director's Desk"
+
 /obj/machinery/requests_console/preset/command/premier
-	name = "Governor Request Console"
-	department = "Governor's Desk"
+	parent_type = /obj/machinery/requests_console/preset/command/facility_director
 
 /obj/machinery/requests_console/preset/command/ceo
 	name = "QM Request Console"
@@ -289,3 +292,4 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 /obj/machinery/requests_console/preset/command/foreman
 	name = "Foreman Request Console"
 	department = "Foreman's Desk"
+

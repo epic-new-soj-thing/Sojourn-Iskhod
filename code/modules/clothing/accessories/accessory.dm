@@ -257,7 +257,7 @@
 
 /obj/item/clothing/accessory/medal/gold/captain
 	name = "medal of exceptional statecraft"
-	desc = "A golden medal awarded exclusively to those who show distinguished duty as a premier. \
+	desc = "A golden medal awarded exclusively to those who show distinguished duty as a facility director. \
 	It signifies the codified responsibilities of the position and their undisputable qualities within it."
 
 /obj/item/clothing/accessory/medal/gold/heroism
@@ -316,7 +316,7 @@
 
 // Head of Departments
 /obj/item/clothing/accessory/job/cape
-	name = "governor's cloak"
+	name = "facility director's cloak"
 	icon_state = "capcloak"
 	desc = "A green-ish cloak with golden lining."
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
@@ -404,9 +404,9 @@
 	icon_state = "half_ceo"
 
 
-/obj/item/clothing/accessory/halfcape/premier
-	name = "Premiers holo-mantle"
-	desc = "A fancy, holo-mantle made from fine silk and bearing the rank markings of the Premier. The classic color scheme, coniferous green and tinsel gold. "
+/obj/item/clothing/accessory/halfcape/facility_director
+	name = "Facility Director's holo-mantle"
+	desc = "A fancy, holo-mantle made from fine silk and bearing the rank markings of the Facility Director. The classic color scheme, coniferous green and tinsel gold. "
 	icon_state = "half_prem"
 
 
@@ -534,7 +534,7 @@
 
 /obj/item/clothing/accessory/kricape/rural
 	name = "farmer barons olive cape"
-	desc = "A cloak that define's one status as humble, as humble as a feudal land lord can try. This green, copper clad cloak is commonly worn by échevins-lord houses, those who own great swathes of colonial and rural territory. It's in actuality a self-defence mechanism, the knowledge that if they don't conceal their wealth, the vorhut countryvolk and jaeger frontiersmen they rule over will burn their estates and steal from their coffers."
+	desc = "A cloak that define's one status as humble, as humble as a feudal land lord can try. This green, copper clad cloak is commonly worn by ÃƒÂ©chevins-lord houses, those who own great swathes of colonial and rural territory. It's in actuality a self-defence mechanism, the knowledge that if they don't conceal their wealth, the vorhut countryvolk and jaeger frontiersmen they rule over will burn their estates and steal from their coffers."
 	icon_state = "pelinal_cape"
 
 /obj/item/clothing/accessory/kricape/bleublood
@@ -1745,3 +1745,4 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 	desc = ""
 	icon = 'icons/inventory/accessory/icon.dmi'
 	icon_state = "punk_over_samurai"
+
