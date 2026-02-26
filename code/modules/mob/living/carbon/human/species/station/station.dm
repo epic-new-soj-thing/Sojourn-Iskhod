@@ -11,7 +11,7 @@
 	interests, rampant cyber and bio-augmentation and secretive factions make life on most human \
 	worlds tumultuous at best in the far flung galactic rim."
 	num_alternate_languages = 2
-	hunger_factor = 0.75
+	hunger_factor = DEFAULT_HUNGER_FACTOR
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 110
@@ -206,9 +206,9 @@
 	dark_color = "#afeeee"
 	light_color = "#20b2aa"
 
-	cold_level_1 = 248 //T0C - 25
-	cold_level_2 = 228
-	cold_level_3 = 208
+	cold_level_1 = 290 //T0C - 25
+	cold_level_2 = 280
+	cold_level_3 = 260
 
 	heat_level_1 = 370 //Default 330
 	heat_level_2 = 430 //Default 380
