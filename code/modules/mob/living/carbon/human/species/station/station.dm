@@ -206,9 +206,9 @@
 	dark_color = "#afeeee"
 	light_color = "#20b2aa"
 
-	cold_level_1 = 290 //T0C - 25
-	cold_level_2 = 280
-	cold_level_3 = 260
+	cold_level_1 = 280 //T0C - 25
+	cold_level_2 = 260
+	cold_level_3 = 250
 
 	heat_level_1 = 370 //Default 330
 	heat_level_2 = 430 //Default 380
@@ -216,7 +216,7 @@
 
 	heat_discomfort_level = 370
 
-	cold_discomfort_level = 248
+	cold_discomfort_level = 390
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
