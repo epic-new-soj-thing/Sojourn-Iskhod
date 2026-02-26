@@ -55,6 +55,10 @@
 /obj/item/device/eftpos/medical/New()
 	..()
 
+/obj/item/device/eftpos/medical/Initialize()
+	..()
+	initialize_linked_account()
+
 /obj/item/device/eftpos/medical/initialize_linked_account()
 	// Connect to medical account by default if possible
 	for(var/i in department_accounts)
@@ -389,6 +393,10 @@ Patient's or Payer's Signature: <u>[signed_patient ? patient_name : "___________
 
 /obj/item/device/eftpos/medical/roboticist/New()
 	..()
+
+/obj/item/device/eftpos/medical/roboticist/Initialize()
+	..()
+	initialize_linked_account()
 
 /obj/item/device/eftpos/medical/roboticist/initialize_linked_account()
 	// Connect to science account by default if possible
