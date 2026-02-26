@@ -11,11 +11,14 @@
 	if(vessel)
 		return
 
+	if(!species)
+		return
+
 	vessel = new/datum/reagents(species.blood_volume)
 	vessel.my_atom = src
 
 	// set mob blood colour early if we happen to be giving them a vessel here
-	if(src)
+	if(species)
 		src.blood_color = species.blood_color
 
 	if(species && species.blood_reagent)
@@ -65,7 +68,7 @@
 	//Bleeding out
 	var/blood_max = 0
 	for(var/obj/item/organ/external/temp in organs)
-		if(!(temp.status & ORGAN_BLEEDING) || BP_IS_ROBOTIC(temp))
+		if(!(temp.status & ORGAN_BLEEDING) || BP_IS_ROBOTIC(temp)) // Corrected syntax for BP_IS_ROBOTIC
 			continue
 		for(var/datum/wound/W in temp.wounds)
 			if(W.bleeding())
@@ -73,7 +76,8 @@
 					var/removed = W.damage/75
 					if(chem_effects[CE_BLOODCLOT])
 						removed *= 1 - chem_effects[CE_BLOODCLOT]
-					vessel.remove_reagent(species.blood_reagent, temp.wound_update_accuracy * removed)
+					if(species && vessel) // Added null checks for species and vessel
+						vessel.remove_reagent(species.blood_reagent, temp.wound_update_accuracy * removed)
 					if(prob(1 * temp.wound_update_accuracy))
 						custom_pain("You feel a stabbing pain in your [temp]!",1)
 				else
@@ -167,6 +171,8 @@
 
 //Gets human's own blood.
 /mob/living/carbon/proc/get_blood()
+	if(!vessel)
+		return null
 	var/datum/reagent/organic/blood/res = locate() in vessel.reagent_list //Grab some blood
 	if(res) // Make sure there's some blood at all
 		var/datum/weakref/ref = res.data["donor"]

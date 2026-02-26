@@ -858,9 +858,6 @@ default behaviour is:
 	//Some mobs may need to create their stats datum farther up
 	if (!stats)
 		stats = new /datum/stat_holder(src)
-	if(istype(src, /mob/living/carbon))
-		var/mob/living/carbon/C = src
-		C.make_blood()
 
 
 	//Mutations populated through horrendous genetic tampering.
