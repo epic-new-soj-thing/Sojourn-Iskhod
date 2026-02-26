@@ -318,7 +318,6 @@
 
 /obj/item/clothing/under/rank/ranger/service/officer
 	name = "ranger officer's service uniform"
-	desc = "The service uniform of the Iskhod Ranger officers."
 	icon_state = "whiteservice_off"
 	item_state = "whiteservice_off"
 
@@ -347,13 +346,11 @@
 
 /obj/item/clothing/suit/rank/ranger/service/command
 	name = "ranger command dress uniform"
-	desc = "The service  uniform of the Iskhod Ranger command staff."
 	icon_state = "blueservice_off"
 	item_state = "blueservice_off"
 
 /obj/item/clothing/suit/rank/ranger/service/flag
 	name = "ranger flag officer dress uniform"
-	desc = "The service uniform of the Iskhod Ranger high command."
 	icon_state = "blueservice_flag"
 	item_state = "blueservice_flag"
 

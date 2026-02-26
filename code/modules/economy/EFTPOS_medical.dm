@@ -54,12 +54,51 @@
 
 /obj/item/device/eftpos/medical/New()
 	..()
+
+/obj/item/device/eftpos/medical/initialize_linked_account()
 	// Connect to medical account by default if possible
 	for(var/i in department_accounts)
 		var/datum/money_account/A = department_accounts[i]
 		if(A.department_id == DEPARTMENT_MEDICAL)
 			linked_account = A
 			break
+
+/obj/item/device/eftpos/medical/spawn_startup_items()
+	..()
+	print_price_list()
+
+/obj/item/device/eftpos/medical/create_manual()
+	var/obj/item/paper/R = new(src.loc)
+	R.name = "Medical Services Billing Guide"
+	R.info += "<b>Vesalius-Andra Medical Billing System Guide</b><hr>"
+	R.info += "1. Scan the patient's ID card to retrieve their account and insurance details.<br>"
+	R.info += "2. Select the services rendered from the treatment categories. Prices are set by Soteria policy.<br>"
+	R.info += "3. The system will automatically calculate subtotal and insurance coverage based on employment and service type.<br>"
+	R.info += "4. Toggle elective, emergency, or work-related flags as appropriate for maximum billing accuracy.<br>"
+	R.info += "5. Lock the transaction once all services are entered.<br>"
+	R.info += "6. Ask the patient (or responsible party) to swipe their ID and enter their PIN to finalize payment.<br>"
+	R.info += "7. Ensure both physician and patient sign the final receipt for audit compliance.<br>"
+
+	//stamp the paper
+	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+	stampoverlay.icon_state = "paper_stamp-cent"
+	R.add_overlay(stampoverlay)
+	R.stamps += "<HR><i>This paper has been stamped by the Medical EFTPOS.</i>"
+	R.stamped &= STAMP_DOCUMENT
+	return R
+
+/obj/item/device/eftpos/medical/proc/print_price_list()
+	var/obj/item/paper/P = new(loc)
+	P.name = "Medical Service Price List"
+	var/dat = "<b>[eftpos_name] - Service Pricing</b><br><hr>"
+	for(var/cat in medical_item_categories)
+		dat += "<i><b>[cat]</b></i><br>"
+		for(var/t in medical_item_categories[cat])
+			dat += "&nbsp;&nbsp;[t]: [medical_item_costs[t]]cr<br>"
+		dat += "<br>"
+	P.info = dat
+	P.update_icon()
+	return P
 
 /obj/item/device/eftpos/medical/attack_self(mob/user as mob)
 	if(get_dist(src,user) <= 1)
@@ -350,12 +389,32 @@ Patient's or Payer's Signature: <u>[signed_patient ? patient_name : "___________
 
 /obj/item/device/eftpos/medical/roboticist/New()
 	..()
+
+/obj/item/device/eftpos/medical/roboticist/initialize_linked_account()
 	// Connect to science account by default if possible
 	for(var/i in department_accounts)
 		var/datum/money_account/A = department_accounts[i]
 		if(A.department_id == DEPARTMENT_SCIENCE)
 			linked_account = A
 			break
+
+/obj/item/device/eftpos/medical/roboticist/create_manual()
+	var/obj/item/paper/R = new(src.loc)
+	R.name = "Biomechanical Services Fee Guide"
+	R.info += "<b>Vesalius-Andra Biomechanics Branch Service Guide</b><hr>"
+	R.info += "1. Scan patient ID to link their personal account.<br>"
+	R.info += "2. Itemize all implants, prosthetics, and surgical procedures performed.<br>"
+	R.info += "3. The scanner is pre-configured to link with VA Biomechanics (Research Division) department account.<br>"
+	R.info += "4. Finalize the bill and have the recipient authorize the transaction via PIN.<br>"
+	R.info += "5. Use the receipt for internal reporting to the Research Overseer.<br>"
+
+	//stamp the paper
+	var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+	stampoverlay.icon_state = "paper_stamp-cent"
+	R.add_overlay(stampoverlay)
+	R.stamps += "<HR><i>This paper has been stamped by the Biomechanical EFTPOS.</i>"
+	R.stamped &= STAMP_DOCUMENT
+	return R
 
 /obj/item/device/eftpos/medical/roboticist/print_medical_receipt()
 	var/obj/item/paper/P = new(loc)

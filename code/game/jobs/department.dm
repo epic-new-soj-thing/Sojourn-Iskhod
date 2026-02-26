@@ -114,7 +114,7 @@
 *******************/
 //Departments subsidised by an external organisation. These pay their own employees
 /datum/department/moebius_medical
-	name = "Vesalius-Andra Institution: Medical Division"
+	name = "Vesalius-Andra: Medical Division"
 	id = DEPARTMENT_MEDICAL
 	//30225 in 5 hours with full crew + nepotism
 	account_initial_balance = 30250 //Covers crew-cost. Rest should be made up for by medical fees and chem sales.
@@ -125,7 +125,7 @@
 	work_coverage = 1.0
 
 /datum/department/moebius_research
-	name = "Vesalius-Andra Institution: Research Division"
+	name = "Vesalius-Andra: Research Division"
 	id = DEPARTMENT_SCIENCE
 	//24375 in 5 hours with full crew + nepotism
 	account_initial_balance = 24500 //Covers wages of employees. Sell posis and whatever else to make up for material cost.
