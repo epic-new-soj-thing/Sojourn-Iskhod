@@ -4450,6 +4450,11 @@
 	dir = 8;
 	pixel_x = 27
 	},
+/obj/structure/sink/kitchen{
+	name = "utility sink";
+	dir = 8;
+	pixel_x = 20
+	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/eris/rnd/xenobiology/xenoflora)
 "Ha" = (
@@ -5316,6 +5321,10 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/eris/rnd/xenobiology/xenoflora)
+"OB" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/anomal)
 "OD" = (
 /obj/machinery/power/apc{
 	dir = 4;
@@ -5940,6 +5949,10 @@
 /obj/effect/floor_decal/industrial/road/curvebig1,
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/command/teleporter)
+"SB" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/simulated/floor/tiled/white/violetcorener,
+/area/eris/rnd/xenobiology/xenoflora)
 "SI" = (
 /turf/simulated/wall/iskhod,
 /area/mine/power)
@@ -15712,7 +15725,7 @@ oS
 Ub
 XS
 vO
-Fh
+OB
 eq
 ub
 jZ
@@ -18756,7 +18769,7 @@ ac
 QR
 mP
 dC
-Us
+SB
 gj
 nq
 JQ
