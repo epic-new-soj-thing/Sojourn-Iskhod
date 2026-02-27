@@ -102,6 +102,17 @@
 	vessel.remove_reagent(species.blood_reagent,amt)
 	blood_splatter(src,src)
 
+	if(amt >= 2 && prob(15)) // Severely bleeding
+		visible_message(SPAN_DANGER("Blood spurts out of [src]'s wounds!"))
+		var/turf/T = get_turf(src)
+		if(T)
+			var/spray_dir = pick(GLOB.alldirs)
+			var/turf/target = get_step(T, spray_dir)
+			if(target)
+				blood_splatter(target, src)
+	else if(amt >= 1 && prob(10))
+		visible_message(SPAN_DANGER("Blood drips heavily from [src]'s wounds."))
+
 /****************************************************
 				BLOOD TRANSFERS
 ****************************************************/

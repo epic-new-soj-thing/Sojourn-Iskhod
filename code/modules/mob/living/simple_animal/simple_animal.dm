@@ -44,6 +44,9 @@
 	var/list/special_parts = list()//Any special body parts.
 	var/list/rare_parts = list() //Rare body parts we want. Offered as an alternate for some critters. Will only drop special OR rare parts, but not both.
 
+	var/fleshcolor = null
+	var/bloodcolor = null
+
 	var/stop_automated_movement = FALSE //Use this to temporarely stop random movement or to if you write special movement code for animals.
 	var/wander = TRUE	// Does the mob wander around when idle?
 	var/stop_automated_movement_when_pulled = TRUE //When set to 1 this stops the animal from moving when someone is pulling it.
@@ -129,6 +132,8 @@
 
 /mob/living/simple/New()
 	..()
+	if(bloodcolor)
+		blood_color = bloodcolor
 	if(!icon_living)
 		icon_living = icon_state
 	if(!icon_dead)

@@ -15,39 +15,26 @@
 	base_color_override = "#FFFFFF"
 	reinf_color_override = "#bebebe"
 
-/turf/simulated/wall/iskhod_red //redmond mann
-	name = "reinforced wall"
-	desc = "A reinforced wall with a colored line painted on. It's shoddily done, however the wall itself looks solid."
-	icon = 'icons/turf/wall_masks.dmi'
+/turf/simulated/wall/iskhod/New(var/newloc)
+	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL)
+
+/turf/simulated/wall/iskhod/red //redmond mann
 	icon_state = "iskwall"
 	icon_base = "iskwall"
 	icon_base_override = "iskwall"
 	icon_base_reinf = "iskwall"
-	base_color_override = "#FFFFFF"
-	reinf_color_override = "#bebebe"
 
-
-/turf/simulated/wall/iskhod_green //greenmond mann
-	name = "reinforced wall"
-	desc = "A reinforced wall with a colored line painted on. It's shoddily done, however the wall itself looks solid."
-	icon = 'icons/turf/wall_masks.dmi'
+/turf/simulated/wall/iskhod/green //greenmond mann
 	icon_state = "iskwall_g"
 	icon_base = "iskwall_g"
 	icon_base_override = "iskwall_g"
 	icon_base_reinf = "iskwall_g"
-	base_color_override = "#FFFFFF"
-	reinf_color_override = "#bebebe"
 
-/turf/simulated/wall/iskhod_blue //blutarch mann
-	name = "reinforced wall"
-	desc = "A reinforced wall with a colored line painted on. It's shoddily done, however the wall itself looks solid."
-	icon = 'icons/turf/wall_masks.dmi'
+/turf/simulated/wall/iskhod/blue //blutarch mann
 	icon_state = "iskwall_b"
 	icon_base = "iskwall_b"
 	icon_base_override = "iskwall_b"
 	icon_base_reinf = "iskwall_b"
-	base_color_override = "#FFFFFF"
-	reinf_color_override = "#bebebe"
 
 /turf/simulated/wall/cult
 	icon_state = "cult"

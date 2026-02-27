@@ -1,6 +1,8 @@
 // superior_animal and definition moved to superior_defines.dm
 /mob/living/carbon/superior/New()
 	..()
+	blood_color = bloodcolor
+	flesh_color = fleshcolor
 	if(!icon_living)
 		icon_living = icon_state
 	if(!icon_dead)
@@ -19,6 +21,14 @@
 
 	for(var/language as anything in known_languages)
 		add_language(language)
+
+/mob/living/carbon/superior/get_blood_data()
+	var/data = ..()
+	data["species"] = type // Unique for each mob path
+	data["blood_group"] = "superior_animal" // Prevent matching with human groups
+	data["blood_DNA"] = md5("[type]")
+	data["blood_type"] = "A+" // Doesn't matter, species and group won't match, but provide fallback
+	return data
 
 /mob/living/carbon/superior/Initialize(var/mapload)
 	if (get_stat_modifier)
