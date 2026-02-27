@@ -178,7 +178,6 @@
 		if(abs(pressure_delta) > 0.5)
 			if(pressure_delta > 0) // Normal operation in the chosen direction
 				if(pump_direction) //internal -> external (Release)
-					var/transfer_moles = calculate_transfer_moles(air_contents, environment, pressure_delta)
 				else //external -> internal (Siphon)
 					var/transfer_moles = calculate_transfer_moles(environment, air_contents, pressure_delta, (network)? network.volume : 0)
 					transfer_moles = min(transfer_moles, environment.total_moles*air_contents.volume/environment.volume)
@@ -187,8 +186,6 @@
 				if(pump_direction) // Release mode, but too much pressure -> Siphon back
 					var/transfer_moles = calculate_transfer_moles(environment, air_contents, abs_delta, (network)? network.volume : 0)
 					transfer_moles = min(transfer_moles, environment.total_moles*air_contents.volume/environment.volume)
-				else // Siphon mode, but too little pressure -> Release back
-					var/transfer_moles = calculate_transfer_moles(air_contents, environment, abs_delta)
 			transfer_happened = TRUE
 
 	if(transfer_happened)
