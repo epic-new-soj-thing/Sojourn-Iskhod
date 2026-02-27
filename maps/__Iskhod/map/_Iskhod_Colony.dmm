@@ -6020,10 +6020,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/atmos)
-"bwQ" = (
-/obj/effect/step_trigger/surface_to_forest_1_B,
-/turf/unsimulated/mineral/transition,
-/area/colony)
 "bwR" = (
 /obj/effect/floor_decal/fact_plaque/med4,
 /obj/structure/cable/green{
@@ -11797,10 +11793,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
-"cUu" = (
-/obj/effect/step_trigger/surface_to_forest_1_A,
-/turf/unsimulated/mineral/transition,
-/area/colony)
 "cUN" = (
 /obj/structure/window/basic/iskhod{
 	dir = 8
@@ -13195,9 +13187,6 @@
 	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
-"dnR" = (
-/turf/unsimulated/mineral/transition,
-/area/iskhod/outside/inside_colony/west)
 "dnU" = (
 /obj/structure/boulder,
 /obj/effect/decal/cleanable/rubble,
@@ -16930,7 +16919,7 @@
 	name = "Supermatter Access";
 	id = "sm_access"
 	},
-/turf/space,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "ekm" = (
 /obj/structure/closet/wall_mounted/firecloset{
@@ -25027,7 +25016,6 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
 "gmb" = (
-/obj/effect/step_trigger/swampcaves_to_riverforest_1_B,
 /turf/simulated/floor/rock/dark,
 /area/colony)
 "gmz" = (
@@ -76052,15 +76040,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
-"tmk" = (
-/obj/effect/step_trigger/surface_to_forest_1_B,
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472;
-	temperature = 240
-	},
-/area/iskhod/outside/inside_colony/west)
 "tms" = (
 /obj/effect/damagedfloor/rust,
 /obj/effect/floor_decal/rust,
@@ -85742,15 +85721,6 @@
 	icon_state = "9,23"
 	},
 /area/iskhod/hallway/surface/section5)
-"vJL" = (
-/obj/effect/step_trigger/surface_to_forest_1_A,
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472;
-	temperature = 240
-	},
-/area/iskhod/outside/inside_colony/west)
 "vJM" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -92473,10 +92443,6 @@
 	},
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/engineering/engine_monitoring)
-"xxn" = (
-/obj/effect/step_trigger/swampcaves_to_riverforest_1_A,
-/turf/simulated/floor/rock/dark,
-/area/colony)
 "xxr" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/green_large_slates,
@@ -172890,7 +172856,7 @@ jDL
 jDL
 jDL
 jDL
-slZ
+jDL
 jDL
 jDL
 jDL
@@ -176809,8 +176775,8 @@ cqi
 cqi
 cqi
 cqi
-dnR
-dnR
+uJZ
+uJZ
 cqi
 cqi
 cqi
@@ -177011,8 +176977,8 @@ cqi
 cqi
 cqi
 cqi
-vJL
-tmk
+uJZ
+uJZ
 cqi
 cqi
 cqi
@@ -201299,8 +201265,8 @@ qwj
 qwj
 qwj
 qwj
-xxn
-cUu
+gmb
+gmb
 cqi
 jDL
 "}
@@ -201502,7 +201468,7 @@ qwj
 qwj
 qwj
 gmb
-bwQ
+gmb
 cqi
 jDL
 "}
