@@ -3510,6 +3510,15 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
+	},
+/obj/structure/cable/cyan{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/cargo)
 "aSd" = (
@@ -46459,6 +46468,12 @@
 /obj/random/traps,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor1east)
+"lFf" = (
+/obj/structure/table/standard,
+/obj/item/reagent_containers/glass/bucket,
+/obj/item/reagent_containers/glass/bucket,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/crew_quarters/hydroponics)
 "lFi" = (
 /obj/structure/table/woodentable,
 /obj/machinery/chemical_dispenser/coffee_master{
@@ -116519,7 +116534,7 @@ nuP
 qOS
 bDh
 bDh
-jkh
+lFf
 lyx
 jUq
 rQo
