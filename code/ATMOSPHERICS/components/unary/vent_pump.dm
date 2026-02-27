@@ -187,7 +187,6 @@
 				if(pump_direction) // Release mode, but too much pressure -> Siphon back
 					var/transfer_moles = calculate_transfer_moles(environment, air_contents, abs_delta, (network)? network.volume : 0)
 					transfer_moles = min(transfer_moles, environment.total_moles*air_contents.volume/environment.volume)
-					power_draw += pump_gas(src, environment, air_contents, transfer_moles, available_pumping_power)
 				else // Siphon mode, but too little pressure -> Release back
 					var/transfer_moles = calculate_transfer_moles(air_contents, environment, abs_delta)
 			transfer_happened = TRUE
@@ -213,7 +212,7 @@
 			if(pressure_delta > 0)
 				pressure_delta = min(pressure_delta, air_contents.return_pressure() - internal_pressure_bound)
 			else if(pressure_delta < 0)
-				pressure_delta = max(pressure_delta, -(internald_pressure_bound - air_contents.return_pressure()))
+				pressure_delta = max(pressure_delta, -(internal_pressure_bound - air_contents.return_pressure()))
 	else //external -> internal (Siphon)
 		if(pressure_checks & PRESSURE_CHECK_EXTERNAL)
 			pressure_delta = min(pressure_delta, environment_pressure - external_pressure_bound)
