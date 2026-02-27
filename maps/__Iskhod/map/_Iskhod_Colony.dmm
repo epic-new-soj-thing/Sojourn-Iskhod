@@ -17545,13 +17545,12 @@
 	dir = 8;
 	pixel_x = -4
 	},
-/obj/structure/cable/cyan{
-	d1 = 32;
-	d2 = 2;
-	icon_state = "32-2";
-	pixel_y = 20
-	},
 /obj/machinery/light/small,
+/obj/structure/cable/cyan,
+/obj/structure/cable/ender{
+	id = "surface2";
+	name = "surface grid cable"
+	},
 /turf/simulated/open,
 /area/iskhod/maintenance/substation/engineering)
 "erF" = (
@@ -91797,6 +91796,10 @@
 	icon_state = "16-0"
 	},
 /obj/structure/cable/cyan,
+/obj/structure/cable/ender{
+	id = "surface2";
+	name = "surface grid cable"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/engineering)
 "xoz" = (
