@@ -168,7 +168,6 @@
 					environment.add_thermal_energy(energy_used)
 				else
 					environment.add_thermal_energy(-energy_used)
-				power_draw += energy_used
 				transfer_happened = TRUE
 
 		if (!environment.total_moles && !air_contents.total_moles)
@@ -177,15 +176,12 @@
 		// 2. Gas Transfer & Pressure Regulation
 		var/pressure_delta = get_pressure_delta(environment)
 		if(abs(pressure_delta) > 0.5)
-			var/available_pumping_power = max(0, power_rating - power_draw)
 			if(pressure_delta > 0) // Normal operation in the chosen direction
 				if(pump_direction) //internal -> external (Release)
 					var/transfer_moles = calculate_transfer_moles(air_contents, environment, pressure_delta)
-					power_draw += pump_gas(src, air_contents, environment, transfer_moles, available_pumping_power)
 				else //external -> internal (Siphon)
 					var/transfer_moles = calculate_transfer_moles(environment, air_contents, pressure_delta, (network)? network.volume : 0)
 					transfer_moles = min(transfer_moles, environment.total_moles*air_contents.volume/environment.volume)
-					power_draw += pump_gas(src, environment, air_contents, transfer_moles, available_pumping_power)
 			else if(pressure_checks & PRESSURE_CHECK_EXTERNAL) // Negative delta means we've exceeded the target pressure, regulate!
 				var/abs_delta = -pressure_delta
 				if(pump_direction) // Release mode, but too much pressure -> Siphon back
@@ -194,7 +190,6 @@
 					power_draw += pump_gas(src, environment, air_contents, transfer_moles, available_pumping_power)
 				else // Siphon mode, but too little pressure -> Release back
 					var/transfer_moles = calculate_transfer_moles(air_contents, environment, abs_delta)
-					power_draw += pump_gas(src, air_contents, environment, transfer_moles, available_pumping_power)
 			transfer_happened = TRUE
 
 	if(transfer_happened)
@@ -218,7 +213,7 @@
 			if(pressure_delta > 0)
 				pressure_delta = min(pressure_delta, air_contents.return_pressure() - internal_pressure_bound)
 			else if(pressure_delta < 0)
-				pressure_delta = max(pressure_delta, -(internal_pressure_bound - air_contents.return_pressure()))
+				pressure_delta = max(pressure_delta, -(internald_pressure_bound - air_contents.return_pressure()))
 	else //external -> internal (Siphon)
 		if(pressure_checks & PRESSURE_CHECK_EXTERNAL)
 			pressure_delta = min(pressure_delta, environment_pressure - external_pressure_bound)
