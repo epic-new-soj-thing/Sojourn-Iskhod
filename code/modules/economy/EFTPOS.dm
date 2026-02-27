@@ -180,11 +180,16 @@
 					if (transaction_paid)
 						transaction_locked = 0
 						transaction_paid = 0
+						to_chat(usr, "\icon[src]<span class='info'>Transaction reset.</span>")
 					else
-						var/attempt_code = input("Enter EFTPOS access code", "Reset Transaction") as num
-						if(attempt_code == access_code)
-							transaction_locked = 0
-							transaction_paid = 0
+						var/attempt_code = input(usr, "Enter EFTPOS access code", "Reset Transaction") as num|null
+						if(attempt_code != null)
+							if(attempt_code == access_code)
+								transaction_locked = 0
+								transaction_paid = 0
+								to_chat(usr, "\icon[src]<span class='info'>Transaction unlocked.</span>")
+							else
+								to_chat(usr, "\icon[src]<span class='warning'>Incorrect code entered.</span>")
 				else if(linked_account)
 					transaction_locked = 1
 				else

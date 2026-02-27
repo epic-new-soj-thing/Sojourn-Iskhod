@@ -115,21 +115,44 @@
 			initialize_linked_account()
 
 		var/dat = "<b>[eftpos_name]</b><br>"
-		dat += "<i>Physician:</i> <a href='?src=\ref[src];choice=set_physician'>[physician_name]</a> <a href='?src=\ref[src];choice=sign_physician'>([signed_physician ? "Signed" : "Sign"])</a><br>"
-		dat += "<i>Patient:</i> [patient_account ? patient_account.owner_name : "Scan ID"] <a href='?src=\ref[src];choice=clear_patient'>(Clear)</a> <a href='?src=\ref[src];choice=sign_patient'>([signed_patient ? "Signed" : "Sign"])</a><br><hr>"
+		dat += "<i>Physician:</i> "
+		if(transaction_locked)
+			dat += "[physician_name] "
+		else
+			dat += "<a href='?src=\ref[src];choice=set_physician'>[physician_name]</a> "
+		dat += "<a href='?src=\ref[src];choice=sign_physician'>([signed_physician ? "Signed" : "Sign"])</a><br>"
+
+		dat += "<i>Patient:</i> [patient_account ? patient_account.owner_name : "Scan ID"] "
+		if(!transaction_locked)
+			dat += "<a href='?src=\ref[src];choice=clear_patient'>(Clear)</a> "
+		dat += "<a href='?src=\ref[src];choice=sign_patient'>([signed_patient ? "Signed" : "Sign"])</a><br><hr>"
 
 		dat += "<b>Treatment Selection:</b><br>"
 		for(var/cat in medical_item_categories)
-			dat += "<i>[cat]</i><br>"
+			var/cat_has_treatments = FALSE
+			var/cat_dat = "<i>[cat]</i><br>"
 			for(var/t in medical_item_categories[cat])
 				var/amount = treatments[t] || 0
-				dat += "&nbsp;&nbsp;[t] ([medical_item_costs[t]]cr): <a href='?src=\ref[src];choice=sub_treatment;type=[t]'>-</a> <a href='?src=\ref[src];choice=set_treatment;type=[t]'>[amount]</a> <a href='?src=\ref[src];choice=add_treatment;type=[t]'>+</a><br>"
+				if(transaction_locked)
+					if(amount > 0)
+						cat_dat += "&nbsp;&nbsp;[t] ([medical_item_costs[t]]cr): [amount]<br>"
+						cat_has_treatments = TRUE
+				else
+					cat_dat += "&nbsp;&nbsp;[t] ([medical_item_costs[t]]cr): <a href='?src=\ref[src];choice=sub_treatment;type=[t]'>-</a> <a href='?src=\ref[src];choice=set_treatment;type=[t]'>[amount]</a> <a href='?src=\ref[src];choice=add_treatment;type=[t]'>+</a><br>"
+					cat_has_treatments = TRUE
+			if(cat_has_treatments)
+				dat += cat_dat
 
 		dat += "<hr>"
 		dat += "<b>Options:</b><br>"
-		dat += "Elective Procedure: <a href='?src=\ref[src];choice=toggle_elective'>[is_elective ? "YES" : "NO"]</a><br>"
-		dat += "Emergency Procedure: <a href='?src=\ref[src];choice=toggle_emergency'>[is_emergency ? "YES" : "NO"]</a><br>"
-		dat += "Work Related: <a href='?src=\ref[src];choice=toggle_work'>[is_work_related ? "YES" : "NO"]</a><br>"
+		if(transaction_locked)
+			dat += "Elective Procedure: [is_elective ? "YES" : "NO"]<br>"
+			dat += "Emergency Procedure: [is_emergency ? "YES" : "NO"]<br>"
+			dat += "Work Related: [is_work_related ? "YES" : "NO"]<br>"
+		else
+			dat += "Elective Procedure: <a href='?src=\ref[src];choice=toggle_elective'>[is_elective ? "YES" : "NO"]</a><br>"
+			dat += "Emergency Procedure: <a href='?src=\ref[src];choice=toggle_emergency'>[is_emergency ? "YES" : "NO"]</a><br>"
+			dat += "Work Related: <a href='?src=\ref[src];choice=toggle_work'>[is_work_related ? "YES" : "NO"]</a><br>"
 
 		dat += "<hr>"
 		calculate_bill()
@@ -145,7 +168,7 @@
 					dat += "<i>PAID</i> - <a href='?src=\ref[src];choice=print_receipt'>Print Receipt</a><br>"
 					dat += "<a href='?src=\ref[src];choice=toggle_lock'>Reset</a>"
 				else
-					dat += "<b>Awaiting Payment...</b> <a href='?src=\ref[src];choice=toggle_lock'>Cancel</a>"
+					dat += "<b>Awaiting Payment...</b> <a href='?src=\ref[src];choice=toggle_lock'>Unlock (Requires EFTPOS Code)</a>"
 		else
 			dat += "<i>Scan patient ID to proceed</i>"
 
@@ -204,6 +227,11 @@
 
 /obj/item/device/eftpos/medical/Topic(href, href_list)
 	if(..()) return 1
+
+	switch(href_list["choice"])
+		if("set_physician", "clear_patient", "add_treatment", "sub_treatment", "set_treatment", "toggle_elective", "toggle_emergency", "toggle_work")
+			if(transaction_locked)
+				return 1
 
 	switch(href_list["choice"])
 		if("set_physician")
