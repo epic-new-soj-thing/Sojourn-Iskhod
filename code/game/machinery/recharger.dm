@@ -183,6 +183,5 @@
 	name = "wall recharger"
 	desc = "A wall-mounted weapon charging dock."
 	icon_state = "wrecharger"
-	allowed_devices = list(/obj/item/gun/energy, /obj/item/tool/baton)
 	portable = FALSE
 	circuit = null
