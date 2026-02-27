@@ -1649,6 +1649,12 @@
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	price_tag = 150
 
+/obj/item/clothing/head/helmet/faceshield/Initialize()
+	. = ..()
+	if(!base_state)
+		base_state = icon_state
+	refresh_upgrades()
+
 /obj/item/clothing/head/helmet/faceshield/attack_self()
 	if(!base_state)
 		base_state = icon_state

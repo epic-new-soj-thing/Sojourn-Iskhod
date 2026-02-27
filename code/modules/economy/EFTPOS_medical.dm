@@ -54,6 +54,7 @@
 
 /obj/item/device/eftpos/medical/New()
 	..()
+	initialize_linked_account()
 
 /obj/item/device/eftpos/medical/Initialize()
 	..()
@@ -61,6 +62,10 @@
 
 /obj/item/device/eftpos/medical/initialize_linked_account()
 	// Connect to medical account by default if possible
+	if(!economy_init)
+		addtimer(CALLBACK(src, .proc/initialize_linked_account), 5 SECONDS)
+		return
+
 	for(var/i in department_accounts)
 		var/datum/money_account/A = department_accounts[i]
 		if(A.department_id == DEPARTMENT_MEDICAL)
@@ -106,6 +111,9 @@
 
 /obj/item/device/eftpos/medical/attack_self(mob/user as mob)
 	if(get_dist(src,user) <= 1)
+		if(!linked_account)
+			initialize_linked_account()
+
 		var/dat = "<b>[eftpos_name]</b><br>"
 		dat += "<i>Physician:</i> <a href='?src=\ref[src];choice=set_physician'>[physician_name]</a> <a href='?src=\ref[src];choice=sign_physician'>([signed_physician ? "Signed" : "Sign"])</a><br>"
 		dat += "<i>Patient:</i> [patient_account ? patient_account.owner_name : "Scan ID"] <a href='?src=\ref[src];choice=clear_patient'>(Clear)</a> <a href='?src=\ref[src];choice=sign_patient'>([signed_patient ? "Signed" : "Sign"])</a><br><hr>"
@@ -393,6 +401,7 @@ Patient's or Payer's Signature: <u>[signed_patient ? patient_name : "___________
 
 /obj/item/device/eftpos/medical/roboticist/New()
 	..()
+	initialize_linked_account()
 
 /obj/item/device/eftpos/medical/roboticist/Initialize()
 	..()
@@ -400,6 +409,10 @@ Patient's or Payer's Signature: <u>[signed_patient ? patient_name : "___________
 
 /obj/item/device/eftpos/medical/roboticist/initialize_linked_account()
 	// Connect to science account by default if possible
+	if(!economy_init)
+		addtimer(CALLBACK(src, .proc/initialize_linked_account), 5 SECONDS)
+		return
+
 	for(var/i in department_accounts)
 		var/datum/money_account/A = department_accounts[i]
 		if(A.department_id == DEPARTMENT_SCIENCE)

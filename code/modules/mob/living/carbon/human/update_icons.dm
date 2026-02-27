@@ -982,7 +982,8 @@ mob/living/carbon/human/proc/get_wings_image()
 
 /mob/living/carbon/human/update_inv_head(var/update_icons=1)
 	overlays_standing[HEAD_LAYER]	= null
-	update_ears(update_icons)
+	update_hair(0)
+	update_ears(0)
 	if(head)
 		var/image/standing = null
 		//Determine the icon to use
@@ -1142,6 +1143,7 @@ mob/living/carbon/human/proc/get_wings_image()
 
 /mob/living/carbon/human/update_inv_wear_mask(var/update_icons=1)
 	overlays_standing[FACEMASK_LAYER] = null
+	update_hair(0)
 	if(check_draw_mask())
 
 		var/image/standing

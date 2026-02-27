@@ -105,9 +105,9 @@ This saves us from having to call add_fingerprint() any time something is put in
 		if(istype(W, /obj/item))
 			var/obj/item/I = W
 			if(I.flags_inv & (HIDEMASK|BLOCKHAIR|BLOCKHEADHAIR|BLOCKFACEHAIR))
-				update_hair(0)	//rebuild hair
-				update_inv_ears(0)
-				update_inv_wear_mask(0)
+		update_hair(0)	//rebuild hair
+		update_inv_ears(0)
+		update_inv_wear_mask(0)
 		update_inv_head()
 	else if (W == l_ear)
 		l_ear = null
@@ -126,14 +126,12 @@ This saves us from having to call add_fingerprint() any time something is put in
 		if(istype(W, /obj/item))
 			var/obj/item/I = W
 			if(I.flags_inv & (BLOCKHAIR|BLOCKHEADHAIR|BLOCKFACEHAIR))
-				update_hair(0)	//rebuild hair
-				update_inv_ears(0)
+		update_hair(0)	//rebuild hair
+		update_inv_ears(0)
 		if(HUDneed.Find("internal"))
 			var/obj/screen/HUDelm = HUDneed["internal"]
 			HUDelm.update_icon()
-/*			if(internals)
-				internals.icon_state = "internal0"*/
-			internal = null
+		internal = null
 		update_inv_wear_mask()
 	else if (W == wear_id)
 		wear_id = null
@@ -235,8 +233,8 @@ This saves us from having to call add_fingerprint() any time something is put in
 		if(slot_wear_mask)
 			src.wear_mask = W
 			if(wear_mask.flags_inv & (BLOCKHAIR|BLOCKHEADHAIR|BLOCKFACEHAIR))
-				update_hair(redraw_mob)	//rebuild hair
-				update_inv_ears(0)
+			update_hair(redraw_mob)	//rebuild hair
+			update_inv_ears(0)
 		if(slot_handcuffed)
 			src.handcuffed = W
 		if(slot_legcuffed)
@@ -279,9 +277,9 @@ This saves us from having to call add_fingerprint() any time something is put in
 		if(slot_head)
 			src.head = W
 			if(head.flags_inv & (BLOCKHAIR|BLOCKHEADHAIR|BLOCKFACEHAIR|HIDEMASK))
-				update_hair(redraw_mob)	//rebuild hair
-				update_inv_ears(0)
-				update_inv_wear_mask(0)
+			update_hair(redraw_mob)	//rebuild hair
+			update_inv_ears(0)
+			update_inv_wear_mask(0)
 		if(slot_shoes)
 			src.shoes = W
 		if(slot_wear_suit)
