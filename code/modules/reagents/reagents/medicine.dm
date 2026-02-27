@@ -734,10 +734,12 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/alkysine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/vital/brain/B = H.internal_organs_by_efficiency[BP_BRAIN]
-		if(!BP_IS_ROBOTIC(B) && prob(75))
+		var/obj/item/organ/internal/vital/brain/B = H.random_organ_by_process(BP_BRAIN)
+		if(B && !BP_IS_ROBOTIC(B) && prob(75))
 			M.add_chemical_effect(CE_PAINKILLER, 10)
-			M.add_chemical_effect(CE_BRAINHEAL, 1)
+			var/list/current_wounds = B.GetComponents(/datum/component/internal_wound)
+			if(LAZYLEN(current_wounds))
+				M.add_chemical_effect(CE_BRAINHEAL, 1)
 			// Direct brain damage healing - alkysine repairs neural tissue
 			M.adjustBrainLoss(-1.5 * effect_multiplier) // Heals 1.5 brain damage per tick
 

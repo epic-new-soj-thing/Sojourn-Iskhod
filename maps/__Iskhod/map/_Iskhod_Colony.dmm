@@ -4795,6 +4795,7 @@
 	dir = 1;
 	pixel_y = -25
 	},
+/obj/item/storage/firstaid/surgery,
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/medical/morgue)
 "biv" = (
@@ -16783,7 +16784,7 @@
 	dir = 2;
 	name = "Medical Lobby";
 	req_one_access = list(5,45,64);
-	id_tag = "medbay_exit"
+	id_tag = "medbay_door"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/reception)
@@ -35823,7 +35824,7 @@
 /obj/machinery/button/remote/airlock{
 	blue_ink_tk_blocker = 1;
 	desc = "A remote control switch.";
-	id = "medbay_exit";
+	id = "medbay_door";
 	name = "Medbay Exit Button";
 	dir = 8;
 	pixel_y = -3
@@ -41914,6 +41915,17 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/office)
+"kyT" = (
+/obj/machinery/button/remote/airlock{
+	blue_ink_tk_blocker = 1;
+	desc = "A remote control switch.";
+	id = "medbay_door";
+	name = "Medbay Exit Button";
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/iskhod/medical/medbay)
 "kzd" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 4;
@@ -70875,6 +70887,7 @@
 	dir = 8
 	},
 /obj/structure/table/glass,
+/obj/item/autopsy_scanner,
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/medical/morgue)
 "rVl" = (
@@ -114506,7 +114519,7 @@ cDu
 rNk
 dNS
 mIb
-krI
+kyT
 bqA
 buJ
 dOx

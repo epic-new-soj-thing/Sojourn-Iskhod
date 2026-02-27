@@ -335,9 +335,7 @@
 	attack_self(usr)
 
 /obj/item/device/eftpos/medical/proc/print_medical_receipt()
-	var/obj/item/paper/P = new(loc)
-	P.name = "Medical Receipt - [patient_name]"
-
+	var/turf/printing_loc = get_turf(src)
 	var/treatment_text = ""
 	for(var/t in treatments)
 		treatment_text += " - [t] x[treatments[t]]<br>"
@@ -365,12 +363,13 @@ Payment Notes:<br>
  - [is_work_related ? "Work-Related Injury Coverage Applied" : "Standard Insurance Coverage Applied"]<br>
 
 <hr>
-Attending Physician's Signature: <u>[signed_physician ? physician_name : "________________"]</u><br>
-Patient's or Payer's Signature: <u>[signed_patient ? patient_name : "________________"]</u><br>
+<b>Attending Physician's Signature:</b> [signed_physician ? physician_name : "________________"]<br>
+<b>Patient's or Payer's Signature:</b> [signed_patient ? patient_name : "________________"]<br>
 
 <hr><small>By signing this form, you confirm that all the above data is accurate to the best of your knowledge and ability, and waive the Soteria Institute of any liability for incorrect charges.</small><hr>
 "}
-	P.info = receipt_content
+
+	var/obj/item/paper/carbon/P = new /obj/item/paper/carbon(printing_loc, receipt_content, "Medical Receipt - [patient_name]")
 	P.update_icon()
 	to_chat(usr, SPAN_NOTICE("Receipt printed."))
 
@@ -438,9 +437,7 @@ Patient's or Payer's Signature: <u>[signed_patient ? patient_name : "___________
 	return R
 
 /obj/item/device/eftpos/medical/roboticist/print_medical_receipt()
-	var/obj/item/paper/P = new(loc)
-	P.name = "Maintenance Receipt - [patient_name]"
-
+	var/turf/printing_loc = get_turf(src)
 	var/treatment_text = ""
 	for(var/t in treatments)
 		treatment_text += " - [t] x[treatments[t]]<br>"
@@ -463,11 +460,12 @@ Payment Notes:<br>
  - [is_work_related ? "Work-Related Injury Coverage Applied" : "Standard Insurance Coverage Applied"]<br>
 
 <hr>
-Attending Roboticist's Signature: <u>[signed_physician ? physician_name : "________________"]</u><br>
-Patient's or Payer's Signature: <u>[signed_patient ? patient_name : "________________"]</u><br>
+<b>Attending Roboticist's Signature:</b> [signed_physician ? physician_name : "________________"]<br>
+<b>Patient's or Payer's Signature:</b> [signed_patient ? patient_name : "________________"]<br>
 
 <hr><small>By signing this form, you confirm that all the above data is accurate to the best of your knowledge and ability, and waive VA Biomechanics of any liability for incorrect charges.</small><hr>
 "}
-	P.info = receipt_content
+
+	var/obj/item/paper/carbon/P = new /obj/item/paper/carbon(printing_loc, receipt_content, "Maintenance Receipt - [patient_name]")
 	P.update_icon()
 	to_chat(usr, SPAN_NOTICE("Receipt printed."))
