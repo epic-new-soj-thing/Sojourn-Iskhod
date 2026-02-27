@@ -1903,6 +1903,7 @@
 	icon_state = "trauma_team"
 	item_state = "trauma_team"
 	flags_inv = HIDEEARS|BLOCKHAIR
+	flags_inv_up = HIDEEARS|BLOCKHAIR
 	item_flags = BLOCK_GAS_SMOKE_EFFECT|AIRTIGHT
 	tint_down = TINT_NONE
 	obscuration_down = LIGHT_OBSCURATION

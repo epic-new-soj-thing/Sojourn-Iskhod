@@ -63,7 +63,7 @@
 /obj/item/device/eftpos/medical/initialize_linked_account()
 	// Connect to medical account by default if possible
 	if(!economy_init)
-		addtimer(CALLBACK(src, .proc/initialize_linked_account), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(initialize_linked_account)), 5 SECONDS)
 		return
 
 	for(var/i in department_accounts)
@@ -410,7 +410,7 @@ Patient's or Payer's Signature: <u>[signed_patient ? patient_name : "___________
 /obj/item/device/eftpos/medical/roboticist/initialize_linked_account()
 	// Connect to science account by default if possible
 	if(!economy_init)
-		addtimer(CALLBACK(src, .proc/initialize_linked_account), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(initialize_linked_account)), 5 SECONDS)
 		return
 
 	for(var/i in department_accounts)
