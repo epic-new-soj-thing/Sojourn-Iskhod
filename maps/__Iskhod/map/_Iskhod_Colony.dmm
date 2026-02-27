@@ -1589,6 +1589,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/main/stairwell)
+"att" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -28;
+	pixel_y = 5
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -28;
+	pixel_y = -6
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/iskhod/medical/medbay)
 "aub" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 4
@@ -33503,6 +33515,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/foyer)
+"ixD" = (
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -28;
+	pixel_y = 5
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -28;
+	pixel_y = -6
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/iskhod/medical/medbay)
 "ixG" = (
 /obj/machinery/door_timer{
 	id = "Cell 2";
@@ -88539,6 +88568,14 @@
 	},
 /obj/item/pen/multi,
 /obj/item/folder/cyan,
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -28;
+	pixel_y = -6
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -28;
+	pixel_y = 5
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/reception)
 "wxh" = (
@@ -116083,7 +116120,7 @@ wLf
 glf
 bvQ
 cDR
-kbI
+att
 hhH
 qEq
 nGQ
@@ -116891,7 +116928,7 @@ krI
 pEW
 plB
 cDR
-sBF
+ixD
 wyN
 wyN
 sBF
