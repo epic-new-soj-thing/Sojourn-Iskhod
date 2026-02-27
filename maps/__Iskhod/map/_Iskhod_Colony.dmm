@@ -6533,6 +6533,14 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor1west)
+"bDy" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/abandoned/strip_club)
 "bDC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -15300,6 +15308,15 @@
 /obj/random/scrap/moderate_weighted,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor1east)
+"dNa" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/iskhod/abandoned/strip_club)
 "dNe" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
@@ -21362,6 +21379,15 @@
 	},
 /turf/simulated/floor/industrial,
 /area/iskhod/crew_quarters/techshop)
+"fqq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/abandoned/strip_club)
 "fqv" = (
 /obj/machinery/space_heater,
 /turf/simulated/floor/rock/dark,
@@ -23147,6 +23173,18 @@
 /obj/random/cluster/roaches,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2west)
+"fMB" = (
+/obj/effect/floor_decal/rust,
+/obj/effect/damagedfloor/rust,
+/obj/effect/floor_decal/rust/mono_rusted2,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/iskhod/abandoned/strip_club)
 "fMC" = (
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/command/Priest)
@@ -42661,6 +42699,15 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/industrial/ornate,
 /area/iskhod/absolutism/office)
+"kHp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2central)
 "kHr" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -46039,6 +46086,13 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
+"lAH" = (
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2central)
 "lAJ" = (
 /obj/structure/bed/chair/sofa/black/left,
 /turf/simulated/floor/tiled/dark/cargo,
@@ -50617,6 +50671,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
+"mIM" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/iskhod/abandoned/strip_club)
 "mIZ" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
@@ -56611,6 +56674,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/undergroundfloor2central)
@@ -62955,6 +63023,13 @@
 	pixel_x = -32
 	},
 /obj/random/scrap/moderate_weighted,
+/obj/machinery/power/apc/inactive{
+	pixel_y = 24
+	},
+/obj/structure/cable/green{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/undergroundfloor2central)
 "pPw" = (
@@ -69313,6 +69388,8 @@
 /obj/machinery/camera/network/medbay{
 	dir = 8
 	},
+/obj/structure/table/glass,
+/obj/item/storage/box/bodybags,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/morgue)
 "ryv" = (
@@ -70785,6 +70862,15 @@
 /obj/landmark/join/start/technomancer,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/workshop)
+"rTg" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/glass,
+/obj/item/bodybag,
+/obj/item/bodybag,
+/obj/item/bodybag,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/medical/morgue)
 "rTo" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -74735,9 +74821,14 @@
 /turf/simulated/floor/industrial/black_large_slates_fixed,
 /area/iskhod/medical/morgue)
 "sTn" = (
-/obj/machinery/vending/sovietsoda,
-/turf/simulated/floor/industrial/green_large_slates,
-/area/iskhod/maintenance/undergroundfloor2south)
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2central)
 "sTq" = (
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -75147,6 +75238,11 @@
 /obj/machinery/door/airlock/maintenance_engineering{
 	name = "Engineering Maintenance";
 	req_access = list(10)
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/undergroundfloor2central)
@@ -76091,6 +76187,11 @@
 /obj/effect/floor_decal/rust/mono_rusted2,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/steel/bar_dance,
 /area/iskhod/abandoned/strip_club)
 "tmB" = (
@@ -76931,6 +77032,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white,
 /area/outpost/abandoned)
+"tvx" = (
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2central)
 "tvy" = (
 /obj/structure/table/reinforced,
 /obj/effect/decal/cleanable/dirt,
@@ -77621,6 +77736,18 @@
 "tCG" = (
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/crew_quarters/library)
+"tCJ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2central)
 "tCR" = (
 /obj/landmark/join/start/AI,
 /obj/item/device/radio/intercom/private{
@@ -83786,6 +83913,14 @@
 /obj/effect/window_lwall_spawn,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/breakroom)
+"vka" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/turf/simulated/floor/tiled/steel/bar_dance,
+/area/iskhod/abandoned/strip_club)
 "vkb" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "1,21"
@@ -85137,6 +85272,13 @@
 /obj/item/ammo_casing/shotgun/spent,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2south)
+"vCb" = (
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2central)
 "vCl" = (
 /obj/structure/table/reinforced,
 /obj/item/gun/energy/slimegun,
@@ -86988,6 +87130,12 @@
 	icon_state = "6,3"
 	},
 /area/shuttle/vasiliy_shuttle_area)
+"waA" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/glass,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/medical/morgue)
 "waJ" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4;
@@ -91569,6 +91717,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/medical/genetics)
+"xlu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2central)
 "xlP" = (
 /turf/simulated/shuttle/wall/science{
 	icon_state = "7,13"
@@ -94813,6 +94971,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section2)
@@ -155763,7 +155926,7 @@ bSx
 fyL
 fyL
 oVb
-oVb
+aJI
 wUB
 uob
 wUB
@@ -156383,19 +156546,19 @@ hMe
 vSw
 lhX
 wUB
-wBr
-uAP
-wBr
-oVb
-wBr
-wBr
-wBr
-uAP
-uAP
-wBr
-wBr
-wBr
-fiB
+kHp
+xlu
+sTn
+gbP
+sTn
+sTn
+sTn
+xlu
+xlu
+sTn
+sTn
+sTn
+tvx
 gbP
 gbP
 gbP
@@ -156585,7 +156748,7 @@ iqe
 lhX
 lhX
 kJU
-wRa
+tCJ
 wBr
 oVb
 xHX
@@ -156787,7 +156950,7 @@ lhX
 lhX
 lhX
 wUB
-oVb
+lCq
 wBr
 iYV
 oVb
@@ -156976,7 +157139,7 @@ lox
 ovZ
 lLM
 oVb
-aJI
+oVb
 oVb
 wUB
 lhX
@@ -156989,7 +157152,7 @@ uyA
 uyA
 uyA
 wUB
-oVb
+lCq
 wBr
 kgU
 fyL
@@ -157191,7 +157354,7 @@ uyA
 bck
 bVy
 sfT
-oVb
+lAH
 mGV
 kgU
 fyL
@@ -157393,7 +157556,7 @@ vCv
 gZN
 ucq
 qms
-oVb
+vCb
 ffI
 kgU
 fyL
@@ -157591,11 +157754,11 @@ rNY
 oVr
 rNY
 ldF
-rNY
+mIM
 tms
-ucq
-qms
-oVb
+fqq
+bDy
+joQ
 kgU
 das
 fyL
@@ -157995,7 +158158,7 @@ gWG
 gWG
 gWG
 gWG
-rNY
+dNa
 wwl
 rNY
 epC
@@ -158197,7 +158360,7 @@ vEL
 gWG
 jZl
 eIp
-rNY
+dNa
 epC
 epC
 epC
@@ -158399,7 +158562,7 @@ eIp
 gWG
 gWG
 gWG
-djl
+fMB
 rNY
 epC
 epC
@@ -158601,7 +158764,7 @@ gWG
 sQh
 gWG
 gWG
-rNY
+vka
 lNh
 epC
 epC
@@ -158967,7 +159130,7 @@ jwa
 wAv
 olT
 duO
-cfj
+waA
 sgx
 mMv
 bio
@@ -159169,7 +159332,7 @@ jwa
 wAv
 olT
 duO
-cfj
+rTg
 sgx
 rje
 gSG
@@ -163309,7 +163472,7 @@ bqm
 kKw
 mmf
 sbK
-sTn
+bqm
 frw
 frw
 frw
@@ -166636,7 +166799,7 @@ jDL
 jDL
 jDL
 jDL
-jDL
+evF
 evF
 evF
 evF
@@ -166837,8 +167000,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+evF
+evF
 evF
 evF
 evF
@@ -167039,8 +167202,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+evF
+evF
 evF
 evF
 evF
@@ -167241,8 +167404,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+evF
+evF
 evF
 evF
 evF
@@ -167443,8 +167606,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+evF
+evF
 evF
 evF
 evF
@@ -167645,8 +167808,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+evF
+evF
 evF
 evF
 evF
@@ -167847,8 +168010,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+evF
+evF
 evF
 evF
 evF
@@ -168049,8 +168212,8 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
+evF
+evF
 evF
 evF
 evF
@@ -168252,7 +168415,7 @@ jDL
 jDL
 jDL
 jDL
-jDL
+evF
 evF
 evF
 evF
@@ -168454,7 +168617,7 @@ jDL
 jDL
 jDL
 jDL
-jDL
+evF
 evF
 evF
 evF
@@ -168656,7 +168819,7 @@ jDL
 jDL
 jDL
 jDL
-jDL
+evF
 evF
 evF
 evF
@@ -168858,7 +169021,7 @@ jDL
 jDL
 jDL
 jDL
-jDL
+evF
 evF
 evF
 evF
