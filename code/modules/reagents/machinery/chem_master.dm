@@ -1,4 +1,3 @@
-
 /obj/machinery/chem_master
 	name = "ChemMaster 3000"
 	density = TRUE
@@ -401,3 +400,15 @@
 	name = "CondiMaster 3000"
 	condi = TRUE
 	simple_machinery = TRUE
+
+/obj/machinery/chem_master/medical
+	name = "Medical ChemMaster 3000"
+
+/obj/machinery/chem_master/medical/Initialize()
+	. = ..()
+	for(var/obj/item/reagent_containers/glass/beaker/B in component_parts)
+		component_parts -= B
+		qdel(B)
+	component_parts += new /obj/item/reagent_containers/glass/beaker/large(src)
+	component_parts += new /obj/item/reagent_containers/glass/beaker/large(src)
+	RefreshParts()

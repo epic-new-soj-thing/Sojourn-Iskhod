@@ -115,8 +115,9 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/lockers)
 "aQ" = (
-/obj/effect/window_lwall_spawn/smartspawnplasma,
 /obj/machinery/atmospherics/pipe/simple/visible/green,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
 "aV" = (
@@ -958,6 +959,7 @@
 	name = "Toxins Lab";
 	req_access = list(7)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
 "ip" = (
@@ -1191,8 +1193,9 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/mine/atmos)
 "jS" = (
-/obj/effect/window_lwall_spawn/smartspawnplasma,
 /obj/machinery/atmospherics/pipe/simple/visible/black,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
 "jX" = (
@@ -1665,10 +1668,6 @@
 /obj/structure/closet/excavation,
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
-"nk" = (
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/turf/simulated/floor/tiled/white,
-/area/iskhod/rnd/mixing)
 "no" = (
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/anomalisoltwo{
@@ -2526,7 +2525,8 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/storage)
 "ti" = (
-/obj/effect/window_lwall_spawn/smartspawnplasma,
+/obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/reinforced,
 /area/iskhod/rnd/mixing)
 "tn" = (
@@ -2907,8 +2907,9 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/command/teleporter)
 "vU" = (
-/obj/effect/window_lwall_spawn/smartspawnplasma,
-/turf/space,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
 "vW" = (
 /turf/simulated/mineral/random,
@@ -6409,8 +6410,8 @@
 /turf/simulated/wall/iskhod,
 /area/mine/hallway)
 "WJ" = (
-/obj/effect/window_lwall_spawn/smartspawnplasma,
 /obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/reinforced,
 /area/iskhod/rnd/mixing)
 "WL" = (
@@ -6937,6 +6938,7 @@
 	name = "Toxins Lab";
 	req_access = list(7)
 	},
+/obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/mixing)
 
@@ -21764,10 +21766,10 @@ Xm
 Xm
 NM
 vU
-nk
-nk
-nk
-nk
+vU
+vU
+vU
+vU
 Bq
 Bl
 Bq
@@ -22171,7 +22173,7 @@ vU
 yT
 Ke
 yT
-nk
+vU
 FY
 Bq
 Bq
@@ -22572,10 +22574,10 @@ Vs
 Xm
 NM
 vU
-nk
-nk
-nk
-nk
+vU
+vU
+vU
+vU
 bA
 Bq
 Bq

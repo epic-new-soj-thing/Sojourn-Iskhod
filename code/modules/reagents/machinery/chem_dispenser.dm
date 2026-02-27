@@ -6,7 +6,7 @@
 //To do, make matter bins, do something
 
 /obj/machinery/chemical_dispenser
-	name = "chem dispenser"
+	name = "Chemical Dispenser"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "dispenser"
 	density = TRUE
@@ -285,7 +285,7 @@
 
 /obj/machinery/chemical_dispenser/soda
 	icon_state = "soda_dispenser"
-	name = "soda fountain"
+	name = "Soda Fountain"
 	desc = "A drink fabricating machine, capable of producing many sugary drinks with just one touch."
 	layer = OBJ_LAYER
 	ui_title = "Soda Dispens-o-matic"
@@ -339,7 +339,7 @@
 
 /obj/machinery/chemical_dispenser/coffee_master
 	icon_state = "coffee_master"
-	name = "coffee master"
+	name = "Coffee Master"
 	desc = "The only thing that can get some workers though the day."
 	layer = OBJ_LAYER
 	ui_title = "Coffee Master 3000"
@@ -365,7 +365,7 @@
 
 /obj/machinery/chemical_dispenser/beer
 	icon_state = "booze_dispenser"
-	name = "booze dispenser"
+	name = "Booze Dispenser"
 	layer = OBJ_LAYER
 	ui_title = "Booze Portal 9001"
 	fancy_hack = FALSE
@@ -409,7 +409,7 @@
 		return
 
 /obj/machinery/chemical_dispenser/meds_admin_debug
-	name = "mysterious chemical dispenser"
+	name = "Mysterious Chemical Dispenser"
 	desc = "A mysterious chemical dispenser that can produce all sorts of highly advanced medicines at the press of a button."
 	ui_title = "Cheat Synthesizer 1337"
 //Admin dispender gets nuffen
@@ -434,7 +434,7 @@
 	)
 
 /obj/machinery/chemical_dispenser/industrial
-	name = "industrial chem dispenser"
+	name = "Industrial Chem Dispenser"
 	icon = 'icons/obj/machines/chemistry.dmi'
 	icon_state = "industrial_dispenser"
 	ui_title = "Industrial Dispenser 4835"
@@ -457,7 +457,7 @@
 // Medical dispenser: a modification of the default chemical dispenser
 // Inherit the base lists and only override what's necessary.
 /obj/machinery/chemical_dispenser/medical
-	name = "chem dispenser"
+	name = "Chemical Dispenser"
 	fancy_hack = TRUE // start with extra chems unlocked
 	accept_beaker = TRUE
 	anchored = TRUE
@@ -468,41 +468,20 @@
 	// Keep the list empty at compile-time; instantiate parts at runtime in Initialize().
 	component_parts = list()
 
-	// Instantiate high-tier components at runtime to avoid using `new` at top-level (compile-time error).
-	Initialize()
-		// Call parent Initialize() so the dispenser's base initialization runs.
-		..()
+/obj/machinery/chemical_dispenser/medical/Initialize()
+	. = ..()
 
-		// If parts were placed by the map as default components, replace them with tier-3 parts.
-		// Detection heuristic: treat existing parts as "default" if every component is a stock_part or a cell.
-		if(component_parts && length(component_parts))
-			var/all_default = TRUE
-			for(var/obj/item/I in component_parts)
-				if(!I) continue
-				if(!(istype(I, /obj/item/stock_parts) || istype(I, /obj/item/cell)))
-					all_default = FALSE
-					break
+	// Remove basic stock parts to ensure we have the right ones
+	for(var/obj/item/I in component_parts)
+		if(istype(I, /obj/item/stock_parts) || istype(I, /obj/item/cell))
+			component_parts -= I
+			qdel(I)
 
-			if(all_default)
-				// Remove the map-spawned/default parts to avoid duplicates
-				for(var/obj/item/I2 in component_parts)
-					if(I2)
-						qdel(I2)
+	// Tier-3 parts
+	component_parts += new /obj/item/cell/medium/moebius/omega(null)
+	component_parts += new /obj/item/stock_parts/capacitor/super(null)
+	component_parts += new /obj/item/stock_parts/matter_bin/super(null)
+	component_parts += new /obj/item/stock_parts/matter_bin/super(null)
+	component_parts += new /obj/item/stock_parts/manipulator/pico(null)
 
-				component_parts = list()
-				component_parts += new /obj/item/cell/large/moebius/omega(null)
-				component_parts += new /obj/item/stock_parts/capacitor/super(null)
-				component_parts += new /obj/item/stock_parts/matter_bin/super(null)
-				component_parts += new /obj/item/stock_parts/manipulator/pico(null)
-
-		// If there were no parts at all, pre-fill with tier-3 components (same as replacement behavior).
-		else
-			component_parts = list()
-			component_parts += new /obj/item/cell/large/moebius/omega(null)
-			component_parts += new /obj/item/stock_parts/capacitor/super(null)
-			component_parts += new /obj/item/stock_parts/matter_bin/super(null)
-			component_parts += new /obj/item/stock_parts/manipulator/pico(null)
-
-		// Recalculate ratings and ensure UI/icon reflect parts
-		RefreshParts()
-
+	RefreshParts()

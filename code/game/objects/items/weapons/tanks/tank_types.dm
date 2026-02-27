@@ -37,6 +37,16 @@
 	item_state = "oxygen_fr"
 
 
+/obj/item/tank/oxygen/prechilled
+	name = "prechilled oxygen tank"
+	desc = "A tank of oxygen cooled to 30K."
+	icon_state = "oxygen_f"
+
+/obj/item/tank/oxygen/prechilled/spawn_gas()
+	air_contents.temperature = 30
+	..()
+
+
 /*
  * Anesthetic
  */
@@ -152,6 +162,15 @@
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 	default_pressure = 3*ONE_ATMOSPHERE
 	default_gas = "nitrogen"
+
+/obj/item/tank/nitrogen/prechilled
+	name = "prechilled nitrogen tank"
+	desc = "A tank of nitrogen cooled to 80K."
+	icon_state = "oxygen_f"
+
+/obj/item/tank/nitrogen/prechilled/spawn_gas()
+	air_contents.temperature = 80
+	..()
 
 /obj/item/tank/nitrogen/examine(mob/user)
 	if(..(user, 0) && air_contents.gas["nitrogen"] < 10)

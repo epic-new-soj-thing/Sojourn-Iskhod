@@ -21,6 +21,8 @@
 	var/tag_interior_sensor
 	var/tag_airlock_mech_sensor
 	var/tag_shuttle_mech_sensor
+	var/tag_purge
+	var/tag_secure
 
 	var/state = STATE_IDLE
 	var/target_state = TARGET_NONE
@@ -50,7 +52,13 @@
 		tag_interior_sensor = controller.tag_interior_sensor
 		tag_airlock_mech_sensor = controller.tag_airlock_mech_sensor? controller.tag_airlock_mech_sensor : "[id_tag]_airlock_mech"
 		tag_shuttle_mech_sensor = controller.tag_shuttle_mech_sensor? controller.tag_shuttle_mech_sensor : "[id_tag]_shuttle_mech"
-		memory["secure"] = controller.tag_secure
+		tag_purge = controller.tag_purge && istext(controller.tag_purge) ? controller.tag_purge : "[id_tag]_purge"
+		tag_secure = controller.tag_secure && istext(controller.tag_secure) ? controller.tag_secure : "[id_tag]_secure"
+		memory["secure"] = istext(controller.tag_secure) ? 0 : controller.tag_secure
+		memory["purge"] = istext(controller.tag_purge) ? 0 : controller.tag_purge
+
+		if(memory["purge"])
+			receive_user_command("purge")
 
 		spawn(10)
 			signalDoor(tag_exterior_door, "update")		//signals connected doors to update their status
@@ -83,6 +91,12 @@
 			memory["pump_status"] = signal.data["direction"]
 		else
 			memory["pump_status"] = "off"
+
+	else if(receive_tag==tag_purge)
+		receive_user_command("purge")
+
+	else if(receive_tag==tag_secure)
+		receive_user_command("secure")
 
 	else if(receive_tag==id_tag)
 		if(istype(master, /obj/machinery/embedded_controller/radio/airlock/access_controller))
