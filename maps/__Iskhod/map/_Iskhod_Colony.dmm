@@ -4212,6 +4212,9 @@
 "bbj" = (
 /obj/effect/floor_decal/industrial/hatch/red,
 /obj/structure/closet/secure_closet/freezer/blood,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/OMinus,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/iskhod/medical/medbay)
 "bbl" = (
@@ -9474,15 +9477,15 @@
 /area/iskhod/security/prison)
 "cpT" = (
 /obj/effect/floor_decal/industrial/warning/corner,
-/obj/structure/sign/department/telecoms{
-	pixel_x = -32
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/cyan{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/sign/department/telecoms{
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/locker_room)
@@ -16918,6 +16921,9 @@
 /obj/machinery/door/blast/regular{
 	name = "Supermatter Access";
 	id = "sm_access"
+	},
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -35262,6 +35268,8 @@
 "iSk" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/firstaid/regular/si,
+/obj/item/wheelchair,
+/obj/item/wheelchair,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemstor)
 "iSp" = (
@@ -37560,6 +37568,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section3)
 "jtq" = (
@@ -38619,6 +38632,15 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "jHT" = (
@@ -40873,9 +40895,9 @@
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/panic_room)
 "klq" = (
-/obj/landmark/join/start/apprentice,
-/turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/locker_room)
+/obj/machinery/light/small,
+/turf/simulated/floor/wood,
+/area/iskhod/command/gmaster/quarters)
 "klr" = (
 /obj/structure/table/rack/shelf,
 /obj/random/techpart,
@@ -40916,12 +40938,12 @@
 "klN" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc/inactive{
-	pixel_x = -28
-	},
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/inactive{
+	pixel_x = -28
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
@@ -43283,9 +43305,8 @@
 	dir = 1;
 	tag = "icon-railing0 (NORTH)"
 	},
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/simulated/open,
 /area/iskhod/engineering/enginehallway)
@@ -49197,8 +49218,11 @@
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "mqU" = (
-/turf/simulated/wall/iskhod_red,
-/area/iskhod/engineering/locker_room)
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/wood,
+/area/iskhod/command/gmaster/quarters)
 "mrg" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 4
@@ -49750,7 +49774,8 @@
 	id = "sm_blast_shield_interior";
 	dir = 4
 	},
-/turf/simulated/floor/plating/under,
+/obj/effect/floor_decal/industrial_plant/steel_grate_warning,
+/turf/simulated/floor/reinforced/airless,
 /area/iskhod/engineering/engine_room)
 "myt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -59557,6 +59582,7 @@
 	dir = 5
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/apprentice,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/locker_room)
 "oXb" = (
@@ -74473,6 +74499,11 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
 "sQX" = (
@@ -78632,6 +78663,11 @@
 	},
 /obj/machinery/light{
 	brightness_power = 1
+	},
+/obj/structure/sign/atmos/atmos_n2{
+	pixel_y = -30;
+	name = "DANGER - CRYOGENIC NITROGEN GAS";
+	desc = "EXTREMELY COLD LIQUID AND VAPOR; causes instant severe frostbite and tissue destruction on contact; contact with metal surfaces can cause skin to adhere and tear; rapidly expands to large volumes of gas creating intense pressure and explosion hazard; displaces oxygen and can cause sudden unconsciousness or death without warning (odorless, colorless asphyxiant); confined spaces can become lethal within seconds; containers may rupture violently if heated or damaged; use only with approved cryogenic equipment; wear insulated cryogenic gloves, full face shield, and protective clothing; use only in well-ventilated areas; never enter confined spaces without atmospheric monitoring; in case of exposure seek immediate emergency medical attention."
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/engineering/telecommonitor)
@@ -92804,11 +92840,6 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
-/obj/structure/sign/atmos/atmos_n2{
-	pixel_y = -30;
-	name = "DANGER - CRYOGENIC NITROGEN GAS";
-	desc = "EXTREMELY COLD LIQUID AND VAPOR; causes instant severe frostbite and tissue destruction on contact; contact with metal surfaces can cause skin to adhere and tear; rapidly expands to large volumes of gas creating intense pressure and explosion hazard; displaces oxygen and can cause sudden unconsciousness or death without warning (odorless, colorless asphyxiant); confined spaces can become lethal within seconds; containers may rupture violently if heated or damaged; use only with approved cryogenic equipment; wear insulated cryogenic gloves, full face shield, and protective clothing; use only in well-ventilated areas; never enter confined spaces without atmospheric monitoring; in case of exposure seek immediate emergency medical attention."
-	},
 /obj/machinery/access_button/airlock_interior{
 	master_tag = "telecomms_airlcok_con";
 	pixel_y = 20
@@ -94687,9 +94718,8 @@
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "ybT" = (
 /obj/structure/railing,
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+/obj/machinery/light/small{
+	dir = 4
 	},
 /turf/simulated/open,
 /area/iskhod/engineering/enginehallway)
@@ -113540,7 +113570,7 @@ cbt
 lGz
 yeh
 gEN
-mqU
+uLb
 eKc
 mBl
 heZ
@@ -116170,7 +116200,7 @@ uLb
 vQU
 fYN
 oWZ
-klq
+wJv
 bBK
 aSL
 fuu
@@ -155178,7 +155208,7 @@ jtK
 puw
 xqP
 qaF
-qaF
+mqU
 jtd
 mfq
 vBu
@@ -155584,7 +155614,7 @@ qxI
 cKZ
 xQQ
 hTN
-qaF
+klq
 vBu
 nKb
 nKb
