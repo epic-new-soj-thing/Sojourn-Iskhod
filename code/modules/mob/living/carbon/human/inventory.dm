@@ -102,9 +102,12 @@ This saves us from having to call add_fingerprint() any time something is put in
 		update_inv_glasses()
 	else if (W == head)
 		head = null
-		update_hair(0)	//rebuild hair
-		update_inv_ears(0)
-		update_inv_wear_mask(0)
+		if(istype(W, /obj/item))
+			var/obj/item/I = W
+			if(I.flags_inv & (HIDEMASK|BLOCKHAIR|BLOCKHEADHAIR|BLOCKFACEHAIR))
+				update_hair(0)	//rebuild hair
+				update_inv_ears(0)
+				update_inv_wear_mask(0)
 		update_inv_head()
 	else if (W == l_ear)
 		l_ear = null
@@ -120,12 +123,17 @@ This saves us from having to call add_fingerprint() any time something is put in
 		update_inv_belt()
 	else if (W == wear_mask)
 		wear_mask = null
-		update_hair(0)	//rebuild hair
-		update_inv_ears(0)
+		if(istype(W, /obj/item))
+			var/obj/item/I = W
+			if(I.flags_inv & (BLOCKHAIR|BLOCKHEADHAIR|BLOCKFACEHAIR))
+				update_hair(0)	//rebuild hair
+				update_inv_ears(0)
 		if(HUDneed.Find("internal"))
 			var/obj/screen/HUDelm = HUDneed["internal"]
 			HUDelm.update_icon()
-		internal = null
+/*			if(internals)
+				internals.icon_state = "internal0"*/
+			internal = null
 		update_inv_wear_mask()
 	else if (W == wear_id)
 		wear_id = null
@@ -226,8 +234,9 @@ This saves us from having to call add_fingerprint() any time something is put in
 			src.back = W
 		if(slot_wear_mask)
 			src.wear_mask = W
-			update_hair(redraw_mob)	//rebuild hair
-			update_inv_ears(0)
+			if(wear_mask.flags_inv & (BLOCKHAIR|BLOCKHEADHAIR|BLOCKFACEHAIR))
+				update_hair(redraw_mob)	//rebuild hair
+				update_inv_ears(0)
 		if(slot_handcuffed)
 			src.handcuffed = W
 		if(slot_legcuffed)
@@ -269,9 +278,10 @@ This saves us from having to call add_fingerprint() any time something is put in
 			src.gloves = W
 		if(slot_head)
 			src.head = W
-			update_hair(redraw_mob)	//rebuild hair
-			update_inv_ears(0)
-			update_inv_wear_mask(0)
+			if(head.flags_inv & (BLOCKHAIR|BLOCKHEADHAIR|BLOCKFACEHAIR|HIDEMASK))
+				update_hair(redraw_mob)	//rebuild hair
+				update_inv_ears(0)
+				update_inv_wear_mask(0)
 		if(slot_shoes)
 			src.shoes = W
 		if(slot_wear_suit)
