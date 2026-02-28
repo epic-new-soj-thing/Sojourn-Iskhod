@@ -366,26 +366,21 @@
 <small><i>See Soteria Medical Policies for Pricing</i></small></center><hr>
 <b>Attending Physician:</b> [physician_name]<br>
 <b>Patient's Name:</b> [patient_name]<br>
-
 <hr>
 <b>Treatment Rendered:</b><br>
 [treatment_text]
-
 Elective Treatment? (Y/N)
  - [is_elective ? "YES" : "NO"]<br>
 Emergency Treatment? (Y/N)
  - [is_emergency ? "YES" : "NO"]<br>
-
 <hr>
 <b>Credit Total:</b> [total_bill] cr<br>
 <b>Insurance Covered:</b> [insurance_coverage] cr<br>
 Payment Notes:<br>
  - [is_work_related ? "Work-Related Injury Coverage Applied" : "Standard Insurance Coverage Applied"]<br>
-
 <hr>
 <b>Attending Physician's Signature:</b> [signed_physician ? physician_name : "________________"]<br>
 <b>Patient's or Payer's Signature:</b> [signed_patient ? patient_name : "________________"]<br>
-
 <hr><small>By signing this form, you confirm that all the above data is accurate to the best of your knowledge and ability, and waive the Soteria Institute of any liability for incorrect charges.</small><hr>
 "}
 
@@ -463,21 +458,17 @@ Payment Notes:<br>
 <small><i>See VA Biomechanics Policies for Pricing</i></small></center><hr>
 <b>Attending Roboticist:</b> [physician_name]<br>
 <b>Patient's Name:</b> [patient_name]<br>
-
 <hr>
 <b>Services Rendered:</b><br>
 [treatment_text]
-
 <hr>
 <b>Credit Total:</b> [total_bill] cr<br>
 <b>Insurance Covered:</b> [insurance_coverage] cr<br>
 Payment Notes:<br>
  - [is_work_related ? "Work-Related Injury Coverage Applied" : "Standard Insurance Coverage Applied"]<br>
-
 <hr>
 <b>Attending Roboticist's Signature:</b> [signed_physician ? physician_name : "________________"]<br>
 <b>Patient's or Payer's Signature:</b> [signed_patient ? patient_name : "________________"]<br>
-
 <hr><small>By signing this form, you confirm that all the above data is accurate to the best of your knowledge and ability, and waive VA Biomechanics of any liability for incorrect charges.</small><hr>
 "}
 
