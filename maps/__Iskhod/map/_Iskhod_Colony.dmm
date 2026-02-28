@@ -34302,6 +34302,18 @@
 /obj/random/junk/cigbutt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/maintenance/undergroundfloor2west)
+"iFS" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -28;
+	pixel_y = 5
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -28;
+	pixel_y = -6
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/iskhod/medical/medbay)
 "iGa" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/carpet,
@@ -88720,6 +88732,14 @@
 	},
 /obj/item/pen/multi,
 /obj/item/folder/cyan,
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -28;
+	pixel_y = -6
+	},
+/obj/machinery/recharger/wallcharger{
+	pixel_x = -28;
+	pixel_y = 5
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/reception)
 "wxh" = (
@@ -116273,7 +116293,7 @@ wLf
 glf
 bvQ
 cDR
-kbI
+iFS
 hhH
 qEq
 nGQ
