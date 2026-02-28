@@ -39,6 +39,9 @@ see multiz/movement.dm for some info.
 	plane = OPENSPACE_PLANE
 	pathweight = 100000 //Seriously, don't try and path over this one numbnuts
 
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
+
 	var/open = FALSE
 	var/turf/below
 	is_hole = TRUE

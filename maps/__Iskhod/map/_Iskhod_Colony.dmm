@@ -35006,6 +35006,18 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemistry)
+"iNz" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/reinforced/iskhod{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/pros/shop)
 "iNK" = (
 /turf/simulated/wall/wood_old,
 /area/iskhod/outside/inside_colony/east)
@@ -80379,7 +80391,8 @@
 /turf/simulated/floor/tiled/steel/danger,
 /area/iskhod/command/panic_room)
 "umz" = (
-/turf/simulated/open,
+/obj/structure/window/reinforced/iskhod,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/shop)
 "umA" = (
 /obj/structure/railing{
@@ -90586,6 +90599,13 @@
 	icon_state = "9,23"
 	},
 /area/iskhod/crew_quarters/janitor)
+"wUp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/reinforced/iskhod{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/pros/shop)
 "wUq" = (
 /obj/machinery/light{
 	dir = 4;
@@ -203373,7 +203393,7 @@ snI
 dQN
 dLk
 dLk
-dLk
+ycV
 ycV
 ycV
 ycV
@@ -203574,8 +203594,8 @@ xEL
 xEL
 glI
 oKZ
-oKZ
-dLk
+ltw
+ycV
 ycV
 ycV
 ycV
@@ -203777,7 +203797,7 @@ jeM
 faX
 piu
 dLk
-dLk
+ycV
 ycV
 ycV
 ycV
@@ -203979,7 +203999,7 @@ vVE
 wmu
 piu
 dLk
-dLk
+ycV
 ycV
 ycV
 ycV
@@ -204181,7 +204201,7 @@ dLk
 dLk
 dLk
 dLk
-dLk
+ycV
 ycV
 ycV
 ycV
@@ -243973,8 +243993,8 @@ aFe
 aFe
 rGz
 rGz
-hmB
-rGz
+iNz
+wUp
 cGz
 aFe
 cIh
