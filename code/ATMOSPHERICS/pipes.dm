@@ -1142,7 +1142,7 @@
 /obj/machinery/atmospherics/pipe/tank/oxygen/prechilled/New()
 	..()
 	if(air_temporary)
-		air_temporary.temperature = 80
+		air_temporary.temperature = 30
 		air_temporary.gas["oxygen"] = (start_pressure)*(air_temporary.volume)/(R_IDEAL_GAS_EQUATION*air_temporary.temperature)
 		air_temporary.update_values()
 	icon_state = "o2_cryo"
