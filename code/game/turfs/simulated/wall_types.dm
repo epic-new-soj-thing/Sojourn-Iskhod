@@ -15,9 +15,6 @@
 	base_color_override = "#FFFFFF"
 	reinf_color_override = "#bebebe"
 
-/turf/simulated/wall/iskhod/New(var/newloc)
-	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL)
-
 /turf/simulated/wall/iskhod_red //redmond mann
 	name = "reinforced wall"
 	desc = "A reinforced wall with a colored line painted on. It's shoddily done, however the wall itself looks solid."
@@ -28,9 +25,6 @@
 	icon_base_reinf = "iskwall"
 	base_color_override = "#FFFFFF"
 	reinf_color_override = "#bebebe"
-
-/turf/simulated/wall/iskhod_red/New(var/newloc)
-	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL)
 
 /turf/simulated/wall/iskhod_green //greenmond mann
 	name = "reinforced wall"
@@ -43,9 +37,6 @@
 	base_color_override = "#FFFFFF"
 	reinf_color_override = "#bebebe"
 
-/turf/simulated/wall/iskhod_green/New(var/newloc)
-	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL)
-
 /turf/simulated/wall/iskhod_blue //blutarch mann
 	name = "reinforced wall"
 	desc = "A reinforced wall with a colored line painted on. It's shoddily done, however the wall itself looks solid."
@@ -56,9 +47,6 @@
 	icon_base_reinf = "iskwall_b"
 	base_color_override = "#FFFFFF"
 	reinf_color_override = "#bebebe"
-
-/turf/simulated/wall/iskhod_blue/New(var/newloc)
-	..(newloc, MATERIAL_PLASTEEL, MATERIAL_PLASTEEL)
 
 /turf/simulated/wall/cult
 	icon_state = "cult"
