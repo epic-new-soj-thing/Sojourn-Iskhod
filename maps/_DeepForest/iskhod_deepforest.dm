@@ -7,54 +7,44 @@
 
 /obj/map_data/nadezda_f
 	name = "Deep Forest"
-	is_station_level = FALSE
 	is_player_level = TRUE
 	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
-	generate_asteroid = TRUE
 	height = 2
 	digsites = "TECHNICAL"
 
 /obj/map_data/beast_cave
 	name = "Beast Cave"
-	is_station_level = FALSE
 	is_player_level = TRUE
 	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
-	generate_asteroid = TRUE
 	height = 1
 	digsites = "TEMPLE"
 
 /obj/map_data/greyson_field_offices
 	name = "Greyson Field Offices"
-	is_station_level = FALSE
 	is_player_level = TRUE
 	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
-	generate_asteroid = TRUE
 	height = 2
 
 /obj/map_data/the_vault //No longer currently used
 	name = "Bunker Vault"
-	is_station_level = FALSE
 	is_player_level = TRUE
 	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
-	generate_asteroid = TRUE
 	height = 1
 
 /obj/map_data/river_forest
 	name = "River Forest"
-	is_station_level = FALSE
 	is_player_level = TRUE
 	is_contact_level = FALSE
 	is_accessable_level = FALSE
 	is_sealed = TRUE
-	generate_asteroid = TRUE
 	height = 1
 	digsites = "Fossil"
 
