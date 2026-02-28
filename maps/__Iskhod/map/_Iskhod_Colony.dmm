@@ -2422,7 +2422,8 @@
 	dir = 8
 	},
 /obj/structure/window/basic/iskhod{
-	dir = 1
+	dir = 1;
+	layer = 3.3
 	},
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -4216,7 +4217,8 @@
 /area/iskhod/medical/medbay)
 "bbl" = (
 /obj/structure/window/basic/iskhod{
-	dir = 1
+	dir = 1;
+	layer = 3.3
 	},
 /obj/structure/window/basic/iskhod{
 	dir = 8
@@ -7989,7 +7991,10 @@
 /obj/structure/curtain/open/shower,
 /obj/machinery/door/window/iskhod{
 	dir = 2;
-	name = "Shower door"
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/service/showers/public)
@@ -11818,7 +11823,10 @@
 	},
 /obj/machinery/door/window/iskhod{
 	dir = 2;
-	name = "Shower door"
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/engineering/breakroom)
@@ -16575,7 +16583,8 @@
 /area/iskhod/pros/shuttle_landing_zone)
 "efL" = (
 /obj/structure/window/basic/iskhod{
-	dir = 1
+	dir = 1;
+	layer = 3.3
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/medical/morgue)
@@ -17988,7 +17997,8 @@
 /area/iskhod/security/locker)
 "exQ" = (
 /obj/structure/window/basic/iskhod{
-	dir = 1
+	dir = 1;
+	layer = 3.3
 	},
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -18259,7 +18269,10 @@
 	},
 /obj/machinery/door/window/iskhod{
 	dir = 2;
-	name = "Shower door"
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/engineering/breakroom)
@@ -30995,7 +31008,8 @@
 	},
 /obj/structure/flora/ausbushes/brflowers,
 /obj/structure/window/basic/iskhod{
-	dir = 1
+	dir = 1;
+	layer = 3.3
 	},
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/iskhod/absolutism/chapel)
@@ -43164,7 +43178,10 @@
 	},
 /obj/machinery/door/window/iskhod{
 	dir = 2;
-	name = "Shower door"
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/command/cbo/quarters)
@@ -51964,7 +51981,8 @@
 "ncf" = (
 /obj/effect/floor_decal/industrial/warning,
 /obj/structure/window/basic/iskhod{
-	dir = 1
+	dir = 1;
+	layer = 3.3
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/under,
@@ -53534,7 +53552,10 @@
 	},
 /obj/machinery/door/window/iskhod{
 	dir = 2;
-	name = "Shower door"
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
 	},
 /obj/machinery/shower{
 	pixel_y = 16
@@ -61666,7 +61687,8 @@
 	dir = 4
 	},
 /obj/structure/window/basic/iskhod{
-	dir = 1
+	dir = 1;
+	layer = 3.3
 	},
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/ausbushes/ppflowers,
@@ -68079,7 +68101,8 @@
 /area/shuttle/rocinante_shuttle_area)
 "rgb" = (
 /obj/structure/window/basic/iskhod{
-	dir = 1
+	dir = 1;
+	layer = 3.3
 	},
 /obj/structure/window/basic/iskhod{
 	dir = 4
@@ -71977,7 +72000,8 @@
 /area/iskhod/hallway/main/f1section4)
 "sgx" = (
 /obj/structure/window/basic/iskhod{
-	dir = 1
+	dir = 1;
+	layer = 3.3
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/grey_slates_long,
@@ -75623,7 +75647,10 @@
 	},
 /obj/machinery/door/window/iskhod{
 	dir = 2;
-	name = "Shower door"
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/pros/foreman)
@@ -79553,7 +79580,10 @@
 "ucu" = (
 /obj/machinery/door/window/iskhod{
 	dir = 2;
-	name = "Shower door"
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/command/swo/quarters)
@@ -82582,7 +82612,8 @@
 /area/iskhod/storage/tech)
 "uRn" = (
 /obj/structure/window/basic/iskhod{
-	dir = 1
+	dir = 1;
+	layer = 3.3
 	},
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -85686,7 +85717,10 @@
 	},
 /obj/machinery/door/window/iskhod{
 	dir = 2;
-	name = "Shower door"
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
 	},
 /obj/machinery/shower{
 	pixel_y = 16
@@ -86947,7 +86981,10 @@
 	},
 /obj/machinery/door/window/iskhod{
 	dir = 2;
-	name = "Shower door"
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
 	},
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/cargo/locker)
@@ -89897,7 +89934,10 @@
 "wLM" = (
 /obj/machinery/door/window/iskhod{
 	dir = 2;
-	name = "Shower door"
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
 	},
 /obj/structure/window/reinforced/iskhod{
 	dir = 4
