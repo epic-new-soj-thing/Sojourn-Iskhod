@@ -8051,7 +8051,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
 /obj/random/material/low_chance,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "bXe" = (
 /obj/structure/curtain/medical,
@@ -15579,7 +15579,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/tiled/dark/techfloor,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/pros/prep)
 "dQS" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
@@ -17280,7 +17280,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
 /obj/random/material/low_chance,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "eoe" = (
 /turf/simulated/wall/iskhod_red,
@@ -21449,7 +21449,7 @@
 /obj/random/gun_parts/frames,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "frl" = (
 /obj/structure/disposalpipe/segment,
@@ -26308,7 +26308,7 @@
 /obj/machinery/vending/engineering,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "gAH" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -31098,7 +31098,7 @@
 "hQk" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/landmark/join/start/salvager,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "hQu" = (
 /obj/machinery/power/terminal,
@@ -32222,6 +32222,16 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/iskhod/pros/shuttle_landing_zone)
+"iek" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/mining{
+	name = "Prospector Prep";
+	req_access = list(78)
+	},
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/pros/prep)
 "ies" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -35427,7 +35437,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/machinery/vending/cigarette,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "iTw" = (
 /obj/effect/floor_decal/industrial_plant,
@@ -36540,7 +36550,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "jgT" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -39402,7 +39412,7 @@
 /obj/item/tool/shovel/improvised,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "jQr" = (
 /obj/structure/multiz/stairs/enter{
@@ -40209,7 +40219,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "kbS" = (
 /obj/machinery/camera/network/security{
@@ -42759,7 +42769,7 @@
 /area/iskhod/engineering/engine_room)
 "kIe" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "kIl" = (
 /obj/effect/decal/cleanable/dirt,
@@ -42957,7 +42967,7 @@
 /obj/item/stock_parts/manipulator,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "kKD" = (
 /obj/structure/closet/crate/secure/weapon{
@@ -44503,7 +44513,7 @@
 "lfA" = (
 /obj/effect/floor_decal/industrial/botleft,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "lfD" = (
 /obj/structure/cable{
@@ -49449,7 +49459,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
 /obj/random/lathe_disk,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "mst" = (
 /obj/structure/bed/padded,
@@ -50255,7 +50265,7 @@
 	name = "Prospectors";
 	req_access = list(78)
 	},
-/turf/simulated/floor/tiled/dark/techfloor,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/shop)
 "mDO" = (
 /obj/structure/boulder,
@@ -60908,7 +60918,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "pmA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -64057,7 +64067,7 @@
 	dir = 8
 	},
 /obj/item/storage/box/cdeathalarm_kit,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "qcu" = (
 /obj/machinery/door/firedoor,
@@ -65221,7 +65231,7 @@
 	dir = 4
 	},
 /obj/machinery/disposal,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "qsy" = (
 /obj/effect/floor_decal/floordetail/edgedrain,
@@ -67159,7 +67169,7 @@
 /obj/structure/table/steel,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "qUA" = (
 /obj/machinery/newscaster{
@@ -69166,7 +69176,7 @@
 /obj/effect/floor_decal/industrial/botright,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/structure/reagent_dispensers/water_cooler,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "rtQ" = (
 /obj/effect/decal/cleanable/dirt,
@@ -70498,7 +70508,7 @@
 "rNJ" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "rNQ" = (
 /obj/structure/table/rack,
@@ -72639,7 +72649,7 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
 	},
-/turf/simulated/floor/tiled/dark/techfloor,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/pros/prep)
 "snO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -87447,7 +87457,7 @@
 /obj/structure/bookcase/guncase,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial/hatch,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "weG" = (
 /obj/machinery/power/hydrogen_gen{
@@ -90276,7 +90286,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "wPU" = (
 /obj/structure/salvageable/computer_os{
@@ -92254,7 +92264,7 @@
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/material/low_chance,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "xse" = (
 /obj/machinery/power/apc{
@@ -93364,7 +93374,7 @@
 /obj/item/stock_parts/matter_bin,
 /obj/effect/floor_decal/industrial/hatch,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
-/turf/simulated/floor/tiled/dark/cargo,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/pros/prep)
 "xJf" = (
 /obj/item/contraband/poster/placed/generic/funpolice{
@@ -201139,7 +201149,7 @@ tsj
 lrp
 whi
 jzM
-dLk
+lrp
 dLk
 ycV
 ycV
@@ -202143,9 +202153,9 @@ lrp
 whi
 whi
 gAF
-dLk
-dLk
-dLk
+lrp
+lrp
+lrp
 weE
 lrp
 gvw
@@ -203559,7 +203569,7 @@ chy
 chy
 xdU
 meH
-xdU
+iek
 xEL
 xEL
 glI
@@ -243760,7 +243770,7 @@ aFe
 aFe
 aFe
 fIL
-gtb
+rGz
 mDN
 aFe
 aFe
