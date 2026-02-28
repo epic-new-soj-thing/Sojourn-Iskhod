@@ -752,11 +752,11 @@
 		OP_HEART =    /obj/item/organ/internal/vital/heart/plant,
 		OP_STOMACH =  /obj/item/organ/internal/stomach/plant,
 		BP_BRAIN =    /obj/item/organ/internal/vital/brain/plant,
-		OP_EYES =     /obj/item/organ/internal/eyes,
-		OP_LUNGS =    /obj/item/organ/internal/vital/lungs,
-		OP_LIVER =    /obj/item/organ/internal/liver,
-		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left,
-		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right,
+		OP_LUNGS =    /obj/item/organ/internal/vital/lungs/plant,
+		OP_LIVER =    /obj/item/organ/internal/liver/plant,
+		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left/plant,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/plant,
+		OP_EYES =     /obj/item/organ/internal/eyes/plant,
 		)
 
 	perks = list(PERK_DARK_HEAL)

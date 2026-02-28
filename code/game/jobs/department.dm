@@ -173,7 +173,11 @@
 	id = DEPARTMENT_PROSPECTOR
 	//With only the Foreman currently being paid, after 8 hours, it totals to 4800 of payment, leaving an ample 1700 left.
 	account_initial_balance = 6500 //With how Prospectors no longer get paid, they no longer need such an inflated department balance
-	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro","/datm/job/fence")
+	jobs_in_department = list("/datum/job/foreman","/datum/job/salvager","/datum/job/pro","/datum/job/fence")
+	insurance_limit = 300
+	insurance_premium = 25
+	elective_reduction = 0.2
+	work_coverage = 0.5
 
 /datum/department/independent
 	name = "Independent Allied Factions"

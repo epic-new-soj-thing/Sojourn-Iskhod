@@ -94,6 +94,12 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 
 	station_account = department_accounts[DEPARTMENT_COMMAND]
 
+	for(var/obj/item/device/eftpos/medical/M in world)
+		M.initialize_linked_account()
+
+	for(var/obj/item/device/eftpos/medical/roboticist/R in world)
+		R.initialize_linked_account()
+
 	for(var/obj/machinery/vending/V in GLOB.machines)
 		if(V.vendor_department)
 			V.earnings_account = department_accounts[V.vendor_department]

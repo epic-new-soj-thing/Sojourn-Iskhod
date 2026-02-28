@@ -1119,6 +1119,12 @@ var/list/rank_prefix = list(\
 	if(dna)
 		dna.species = new_species
 
+	// Mycus, Folken and Aulvae use blood type X
+	if(species.name in list("Mycus", "Folken", "Aulvae"))
+		b_type = "X"
+		if(dna)
+			dna.b_type = "X"
+
 	if(species.blood_color)
 		blood_color = species.blood_color
 		hand_blood_color = blood_color
