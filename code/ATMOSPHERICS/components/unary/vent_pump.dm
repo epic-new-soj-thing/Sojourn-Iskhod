@@ -178,15 +178,33 @@
 		if(abs(pressure_delta) > 0.5)
 			if(pressure_delta > 0) // Normal operation in the chosen direction
 				if(pump_direction) //internal -> external (Release)
+					var/transfer_moles = calculate_transfer_moles(air_contents, environment, pressure_delta)
+					var/draw = pump_gas(src, air_contents, environment, transfer_moles, power_rating)
+					if(draw >= 0)
+						power_draw += draw
+						transfer_happened = TRUE
 				else //external -> internal (Siphon)
 					var/transfer_moles = calculate_transfer_moles(environment, air_contents, pressure_delta, (network)? network.volume : 0)
 					transfer_moles = min(transfer_moles, environment.total_moles*air_contents.volume/environment.volume)
-			else if(pressure_checks & PRESSURE_CHECK_EXTERNAL) // Negative delta means we've exceeded the target pressure, regulate!
+					var/draw = pump_gas(src, environment, air_contents, transfer_moles, power_rating)
+					if(draw >= 0)
+						power_draw += draw
+						transfer_happened = TRUE
+			else if(pressure_checks & PRESSURE_CHECK_EXTERNAL) // Negative delta: room off target, regulate
 				var/abs_delta = -pressure_delta
-				if(pump_direction) // Release mode, but too much pressure -> Siphon back
+				if(pump_direction) // Release mode, but room too high -> Siphon back into pipe
 					var/transfer_moles = calculate_transfer_moles(environment, air_contents, abs_delta, (network)? network.volume : 0)
 					transfer_moles = min(transfer_moles, environment.total_moles*air_contents.volume/environment.volume)
-			transfer_happened = TRUE
+					var/draw = pump_gas(src, environment, air_contents, transfer_moles, power_rating)
+					if(draw >= 0)
+						power_draw += draw
+						transfer_happened = TRUE
+				else // Siphon mode, but room too low -> Release from pipe to equalise
+					var/transfer_moles = calculate_transfer_moles(air_contents, environment, abs_delta)
+					var/draw = pump_gas(src, air_contents, environment, transfer_moles, power_rating)
+					if(draw >= 0)
+						power_draw += draw
+						transfer_happened = TRUE
 
 	if(transfer_happened)
 		last_power_draw = power_draw
