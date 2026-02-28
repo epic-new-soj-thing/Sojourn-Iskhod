@@ -13697,7 +13697,6 @@
 	},
 /area/iskhod/outside/inside_colony/east)
 "dsW" = (
-/obj/structure/medical_stand,
 /obj/effect/floor_decal/industrial/hatch,
 /obj/structure/window/basic/iskhod{
 	dir = 8
@@ -13707,6 +13706,7 @@
 	pixel_y = -28
 	},
 /obj/structure/cable/green,
+/obj/structure/bed/chair/wheelchair,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
 "dta" = (
@@ -35006,18 +35006,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemistry)
-"iNz" = (
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/window/reinforced/iskhod{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/iskhod/pros/shop)
 "iNK" = (
 /turf/simulated/wall/wood_old,
 /area/iskhod/outside/inside_colony/east)
@@ -35332,9 +35320,10 @@
 /area/iskhod/hallway/side/f2section3)
 "iSk" = (
 /obj/structure/table/reinforced,
+/obj/item/storage/firstaid/regular/si{
+	pixel_y = 10
+	},
 /obj/item/storage/firstaid/regular/si,
-/obj/item/wheelchair,
-/obj/item/wheelchair,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemstor)
 "iSp" = (
@@ -48137,12 +48126,12 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "mbs" = (
-/obj/effect/floor_decal/industrial/hatch/blue,
-/obj/structure/bed/roller,
 /obj/structure/window/basic/iskhod{
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/bed/chair/wheelchair,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
 "mbu" = (
@@ -52941,6 +52930,18 @@
 	},
 /turf/simulated/floor/fixed/hydrotile,
 /area/turret_protected/ai_upload)
+"noa" = (
+/obj/structure/cable/cyan{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/reinforced/iskhod{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/pros/shop)
 "noj" = (
 /obj/structure/invislight,
 /turf/simulated/floor/tiled/dark/cargo,
@@ -69267,6 +69268,13 @@
 	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prisoncells)
+"rvo" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/window/reinforced/iskhod{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/pros/shop)
 "rvq" = (
 /obj/structure/cable/green{
 	d1 = 2;
@@ -75096,12 +75104,12 @@
 /turf/simulated/floor/tiled,
 /area/iskhod/command/hallway)
 "sVO" = (
-/obj/effect/floor_decal/industrial/hatch/blue,
-/obj/structure/bed/roller,
 /obj/structure/window/basic/iskhod{
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/bed/chair/wheelchair,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
 "sVT" = (
@@ -90599,13 +90607,6 @@
 	icon_state = "9,23"
 	},
 /area/iskhod/crew_quarters/janitor)
-"wUp" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/window/reinforced/iskhod{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark,
-/area/iskhod/pros/shop)
 "wUq" = (
 /obj/machinery/light{
 	dir = 4;
@@ -93931,9 +93932,8 @@
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/dorm2)
 "xPB" = (
-/obj/structure/medical_stand,
 /obj/effect/floor_decal/industrial/hatch,
-/obj/effect/decal/cleanable/dirt,
+/obj/structure/bed/chair/wheelchair,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/iskhod/medical/medbay/uppercor)
 "xPE" = (
@@ -243993,8 +243993,8 @@ aFe
 aFe
 rGz
 rGz
-iNz
-wUp
+noa
+rvo
 cGz
 aFe
 cIh
