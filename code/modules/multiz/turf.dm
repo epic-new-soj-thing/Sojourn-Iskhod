@@ -38,7 +38,7 @@ see multiz/movement.dm for some info.
 	density = 0
 	plane = OPENSPACE_PLANE
 	pathweight = 100000 //Seriously, don't try and path over this one numbnuts
-
+	alpha = 140
 	oxygen = MOLES_O2STANDARD
 	nitrogen = MOLES_N2STANDARD
 
