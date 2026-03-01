@@ -1249,7 +1249,8 @@
 	})
 "kg" = (
 /obj/machinery/door/window/iskhod{
-	dir = 2
+	dir = 2;
+	req_access = list(5)
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/misc_lab)
@@ -2646,7 +2647,8 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/door/airlock/glass_research{
-	name = "E.A.R Study"
+	name = "E.A.R Study";
+	req_access = list(5)
 	},
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/cargo,
