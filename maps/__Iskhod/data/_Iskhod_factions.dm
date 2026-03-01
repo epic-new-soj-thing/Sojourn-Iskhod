@@ -13,20 +13,20 @@
 	faxable = TRUE
 
 /datum/faction/nadezhda/marshal
-	name = "Rangers - Boris Kilmeade"
+	name = "Iskhod Rangers"
 
-	fax_alert = "MARSHAL COMMUNIQUE"
+	fax_alert = "RANGERS COMMUNIQUE"
 	fax_response = "Ranger Order"
 
 	color = "#00b1e8"
 	darkcolor = "#026685"
 	lightcolor = "#7cdffe"
 
-	stamptext = "This paper has been authorized with the Provost Ranger Boris's Insignia"
+	stamptext = "This paper has been authorized with the Provost Ranger's Insignia."
 	stampshape = "paper_stamp-x"
 
 /datum/faction/nadezhda/militia
-	name = "Blackshield - Brigadier Ayanda Mwangi"
+	name = "Blackshield"
 
 	fax_alert = "BLACKSHIELD COMMUNIQUE"
 	fax_response = "Blackshield Order"
@@ -35,37 +35,37 @@
 	darkcolor = "#00580a"
 	lightcolor = "#47c156"
 
-	stamptext = "This paper has been authorized with the Brigadier Ayanda Mwangi's Insignia."
+	stamptext = "This paper has been authorized with the Brigadier's Insignia."
 	stampshape = "paper_stamp-x"
 
 /datum/faction/nadezhda/soteria
-	name = "VA Biomechanics - Nakharan Mkne"
+	name = "Vesalius-Andra"
 
-	fax_alert = "SOTERIA FAX"
+	fax_alert = "VESALIUS-ANDRA FAX"
 	fax_response = "Vesalius-Andra Transmission"
 
 	color = "#e903df"
 	darkcolor = "#870481"
 	lightcolor = "#ff8afa"
 
-	stamptext = "This paper has been embossed with the seal of Nakharan Mkne."
+	stamptext = "This paper has been embossed with the seal of Vesalius-Andra."
 	stampshape = "paper_stamp-dots"
 
 /datum/faction/nadezhda/lonestar
-	name = "Frontier Logistics, LLC - Robert Ryan"
+	name = "Frontier Logistics"
 
-	fax_alert = "LONESTAR REQUISITION FAX"
+	fax_alert = "FRONTIER LOGISTICS REQUISITION FAX"
 	fax_response = "Lonestars Reply"
 
 	color = "#ff8800"
 	darkcolor = "#be6602"
 	lightcolor = "#f9a94e"
 
-	stamptext = "This paper has been stamped with Robert Ryan's chairman Insignia."
+	stamptext = "This paper has been stamped with the Chairman's Insignia."
 	stampshape = "paper_stamp-dots"
 
 /datum/faction/nadezhda/prospectors
-	name = "Prospectors - Jeremiah Hogg"
+	name = "Prospectors"
 
 	fax_alert = "PROSPECTOR FAX"
 	fax_response = "Prospector Advisory"
@@ -74,11 +74,11 @@
 	darkcolor = "#ac0101"
 	lightcolor = "#fb5b4d"
 
-	stamptext = "This paper has been stamped with the notary of Jeremiah Hogg."
+	stamptext = "This paper has been stamped with the Prospector notary."
 	stampshape = "paper_stamp-dots"
 
 /datum/faction/nadezhda/artificer
-	name = "Artificer's Guild - Tacitus O'Connor"
+	name = "Artificer"
 
 	fax_alert = "ARTIFICER GUILD REQUISITION FAX"
 	fax_response = "Artificer Guild Advisory"
@@ -91,7 +91,7 @@
 	stampshape = "paper_stamp-dots"
 
 /datum/faction/nadezhda/church
-	name = "Church of the Absolute - Augstine Browne"
+	name = "Church"
 
 	fax_alert = "CHURCH FAX"
 	fax_response = "Church Decree"
@@ -100,11 +100,11 @@
 	darkcolor = "#051d66"
 	lightcolor = "#5b83ff"
 
-	stamptext = "This paper has been stamped with the sanctified symbol of Cartographer Augustine Browne."
+	stamptext = "This paper has been stamped with the sanctified symbol of the Cartographer."
 	stampshape = "paper_stamp-dots"
 
 /datum/faction/nadezhda/voidwolves
-	name = "Colony Allies - Void Wolf Coalition"
+	name = "Void Wolf Coalition"
 
 	fax_alert = "VOID WOLF FAX"
 	fax_response = "Encrypted Transmission"
@@ -117,10 +117,10 @@
 	stampshape = "paper_stamp-dots"
 
 /datum/faction/nadezhda/puppers
-	name = "Colony Allies - Kriosan Confederacy"
+	name = "Kriosan Confederacy"
 
 	fax_alert = "KRIOSAN CONFEDERACY FAX"
-	fax_response = "Enbarked Transmission"
+	fax_response = "Encrypted Transmission"
 
 	color = "#4dff00"
 	darkcolor = "#00a110"

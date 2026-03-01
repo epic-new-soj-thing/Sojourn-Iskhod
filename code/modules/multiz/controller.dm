@@ -185,6 +185,7 @@ var/datum/controller/process/open_space/OS_controller = null
 		var/image/over_OS_darkness = image('icons/turf/floors.dmi', "black_open")
 		over_OS_darkness.plane = OVER_OPENSPACE_PLANE
 		over_OS_darkness.layer = MOB_LAYER
+		over_OS_darkness.alpha = 140
 		add_overlay(over_OS_darkness)
 		return .
 
