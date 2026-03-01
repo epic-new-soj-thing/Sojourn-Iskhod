@@ -601,6 +601,9 @@
 		wearer.wearing_rig = src
 		update_icon()
 		rig_verb_giveith()
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.regenerate_icons()
 
 /obj/item/rig/proc/toggle_piece(piece, mob/initiator, deploy_mode, forced = FALSE)
 
@@ -744,6 +747,9 @@
 
 /obj/item/rig/dropped(mob/user)
 	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.regenerate_icons()
 	remove()
 
 /obj/item/rig/proc/retract(forced = FALSE)

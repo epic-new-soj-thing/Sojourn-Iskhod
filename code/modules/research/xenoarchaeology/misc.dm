@@ -50,6 +50,8 @@
 	New()
 		..()
 		new /obj/item/book/manual/excavation(src)
+		new /obj/item/book/manual/suspension(src)
+		new /obj/item/book/manual/radiocarbon_spectroscopy(src)
 		new /obj/item/book/manual/mass_spectrometry(src)
 		new /obj/item/book/manual/materials_chemistry_analysis(src)
 		new /obj/item/book/manual/anomaly_testing(src)

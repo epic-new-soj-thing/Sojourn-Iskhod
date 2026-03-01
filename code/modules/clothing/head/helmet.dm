@@ -1941,12 +1941,18 @@
 	. = ..()
 	schedule_scan()
 	START_PROCESSING(SSobj, src)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.regenerate_icons()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/dropped(mob/user)
 	. = ..()
 	remove_tracking_overlay()
 	remove_critical_overlay()
 	STOP_PROCESSING(SSobj, src)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.regenerate_icons()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/attack_self(mob/user)
 	if(!user.incapacitated())
@@ -2161,6 +2167,9 @@
 	remove_tracking_overlay()
 	remove_critical_overlay()
 	STOP_PROCESSING(SSobj, src)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.regenerate_icons()
 	if(medical_hud.loc != src)
 		if(ismob(medical_hud.loc))
 			var/mob/hud_loc = medical_hud.loc

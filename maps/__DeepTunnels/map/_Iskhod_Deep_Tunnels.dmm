@@ -183,7 +183,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "bA" = (
 /obj/structure/table/reinforced,
@@ -319,7 +319,7 @@
 "cC" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/visible/black,
-/obj/effect/window_lwall_spawn/reinforced,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolthree{
 	name = "Psionics Harvesting Lab"
@@ -529,7 +529,7 @@
 /obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolfour{
-	name = "Mass Spectroscopy Lab"
+	name = "Radiocarbon Spectroscopy Lab"
 	})
 "eq" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
@@ -638,7 +638,7 @@
 "fy" = (
 /turf/simulated/wall/iskhod,
 /area/iskhod/rnd/anomalisolfour{
-	name = "Mass Spectroscopy Lab"
+	name = "Radiocarbon Spectroscopy Lab"
 	})
 "fA" = (
 /turf/simulated/wall/iskhod,
@@ -913,7 +913,7 @@
 /area/iskhod/rnd/mixing)
 "hW" = (
 /obj/structure/reagent_dispensers/watertank,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "hY" = (
 /obj/structure/catwalk,
@@ -1552,14 +1552,14 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "mI" = (
-/obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolfour{
-	name = "Mass Spectroscopy Lab"
+	name = "Radiocarbon Spectroscopy Lab"
 	})
 "mL" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
@@ -1696,7 +1696,7 @@
 "nz" = (
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/anomalisolfour{
-	name = "Mass Spectroscopy Lab"
+	name = "Radiocarbon Spectroscopy Lab"
 	})
 "nB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -2102,7 +2102,7 @@
 /obj/structure/closet/radiation,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolfour{
-	name = "Mass Spectroscopy Lab"
+	name = "Radiocarbon Spectroscopy Lab"
 	})
 "qq" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -2124,12 +2124,16 @@
 /area/eris/rnd/xenobiology/xenoflora)
 "qu" = (
 /obj/effect/floor_decal/industrial/warningred/full,
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomal)
 "qx" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/visible/black,
-/obj/effect/window_lwall_spawn/reinforced,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisoltwo{
 	name = "Anomalous Energy Harvesting Lab"
@@ -2253,6 +2257,11 @@
 /obj/machinery/atmospherics/pipe/simple/visible/black{
 	dir = 10
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
 "rh" = (
@@ -2270,7 +2279,7 @@
 /area/iskhod/rnd/outpostmedical)
 "rm" = (
 /obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/reinforced,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisoltwo{
 	name = "Anomalous Energy Harvesting Lab"
@@ -2795,7 +2804,7 @@
 /area/iskhod/rnd/outpostgeneral)
 "ve" = (
 /obj/machinery/portable_atmospherics/canister/plasma,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "vh" = (
 /obj/machinery/atmospherics/omni/filter{
@@ -2952,7 +2961,7 @@
 /obj/structure/invislight,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/anomalisolfour{
-	name = "Mass Spectroscopy Lab"
+	name = "Radiocarbon Spectroscopy Lab"
 	})
 "wn" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
@@ -3233,7 +3242,7 @@
 /area/iskhod/rnd/mixing)
 "ye" = (
 /obj/machinery/space_heater,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "yg" = (
 /obj/machinery/vending/wallmed/lobby{
@@ -3254,6 +3263,11 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
@@ -3751,7 +3765,7 @@
 "BR" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/visible/black,
-/obj/effect/window_lwall_spawn/reinforced,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolone{
 	name = "Anomaly Analysis Lab"
@@ -4046,7 +4060,7 @@
 	dir = 1;
 	tag = "icon-emitter (NORTH)"
 	},
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "EC" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -4076,7 +4090,7 @@
 /area/eris/rnd/xenobiology/xenoflora)
 "EO" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "EP" = (
 /obj/structure/closet/secure_closet/freezer/fridge{
@@ -4118,7 +4132,7 @@
 	dir = 5
 	},
 /obj/machinery/suspension_gen,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "Fe" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -4155,6 +4169,11 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
@@ -4344,7 +4363,7 @@
 /area/iskhod/rnd/misc_lab)
 "GB" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "GC" = (
 /obj/effect/floor_decal/industrial/hatch/red,
@@ -4529,12 +4548,8 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/prep)
 "Ij" = (
-/obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/tiled/white/cargo,
-/area/iskhod/rnd/anomalisolfour{
-	name = "Mass Spectroscopy Lab"
-	})
+/turf/space,
+/area/mine/unexplored)
 "Il" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -4548,7 +4563,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "ID" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -4711,7 +4726,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "JD" = (
 /obj/machinery/atmospherics/unary/vent_pump{
@@ -5151,7 +5166,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "MV" = (
 /turf/simulated/mineral/random/high_chance,
@@ -5206,7 +5221,7 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolfour{
-	name = "Mass Spectroscopy Lab"
+	name = "Radiocarbon Spectroscopy Lab"
 	})
 "NI" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
@@ -5275,7 +5290,7 @@
 /area/iskhod/rnd/outpostgeneral)
 "Oi" = (
 /obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/reinforced,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolone{
 	name = "Anomaly Analysis Lab"
@@ -5377,7 +5392,7 @@
 /area/iskhod/rnd/outpostmedical)
 "OO" = (
 /obj/structure/reagent_dispensers/fueltank,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "OS" = (
 /obj/machinery/vending/hydronutrients,
@@ -5385,7 +5400,7 @@
 /area/eris/rnd/xenobiology/xenoflora)
 "OV" = (
 /obj/machinery/suspension_gen,
-/turf/simulated/floor/tiled/white,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "OZ" = (
 /obj/machinery/door/firedoor/multi_tile{
@@ -5750,7 +5765,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "Rb" = (
 /obj/turbolift_map_obj/turbolift_map_base/Nadezhda/Research,
@@ -5820,7 +5835,7 @@
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/electrical,
 /obj/item/inflatable_dispenser,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "Rx" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -5894,6 +5909,18 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/storage)
+"RZ" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/anomal)
 "Sa" = (
 /obj/machinery/artifact_harvester,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -5984,7 +6011,7 @@
 /obj/item/device/gps/science,
 /obj/item/device/gps/science,
 /obj/item/device/gps/science,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "SQ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -6219,7 +6246,7 @@
 	},
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/anomalisolfour{
-	name = "Mass Spectroscopy Lab"
+	name = "Radiocarbon Spectroscopy Lab"
 	})
 "Vl" = (
 /obj/structure/closet/wall_mounted/emcloset{
@@ -6250,7 +6277,7 @@
 /area/iskhod/rnd/mixing)
 "Vw" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "Vx" = (
 /obj/machinery/space_heater,
@@ -6555,6 +6582,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
 "Xu" = (
@@ -6628,11 +6660,11 @@
 /obj/structure/reagent_dispensers/coolanttank,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/anomalisolfour{
-	name = "Mass Spectroscopy Lab"
+	name = "Radiocarbon Spectroscopy Lab"
 	})
 "XS" = (
 /obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/reinforced,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolthree{
 	name = "Psionics Harvesting Lab"
@@ -6654,7 +6686,7 @@
 /area/mine/atmos)
 "XZ" = (
 /obj/machinery/portable_atmospherics/powered/pump,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "Yg" = (
 /obj/machinery/suit_storage_unit/engineering/atmos,
@@ -6716,7 +6748,7 @@
 /area/mine/medical)
 "Yx" = (
 /obj/structure/anomaly_container,
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "Yz" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black{
@@ -6844,12 +6876,12 @@
 	},
 /obj/machinery/door/airlock/external{
 	id_tag = "riso4";
-	name = "Mass Spectroscopy";
+	name = "Radiocarbon Spectroscopy";
 	req_access = list(65)
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolfour{
-	name = "Mass Spectroscopy Lab"
+	name = "Radiocarbon Spectroscopy Lab"
 	})
 "Zv" = (
 /obj/machinery/door/firedoor,
@@ -6886,7 +6918,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/simulated/floor/tiled/white/brown_platform,
+/turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/outpoststorage)
 "ZO" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
@@ -14518,7 +14550,7 @@ fN
 zJ
 Zv
 DF
-LJ
+RZ
 mN
 rY
 hF
@@ -15125,7 +15157,7 @@ MF
 qx
 yK
 qu
-eq
+Cg
 Fq
 xl
 Fh
@@ -16536,7 +16568,7 @@ fy
 XP
 nz
 eo
-Ij
+mI
 Fh
 Fh
 Fh
@@ -16740,7 +16772,7 @@ nz
 qo
 mI
 Fh
-qu
+Fh
 Fh
 Fe
 cr
@@ -21369,7 +21401,7 @@ vW
 MV
 MV
 MV
-MV
+Ij
 MV
 MV
 MV

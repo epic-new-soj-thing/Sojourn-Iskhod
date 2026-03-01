@@ -60,7 +60,7 @@
 				<ul>
 					<li><b>Depth Analysis Scanner</b> - Main tool for finding anomalies. Uses X-ray diffraction; comes with a reference log (coordinates and time of each scan).</li>
 					<li><b>Alden-Saraspova Counter</b> (Anomaly Scanner) - Detects exotic energy signatures. Use it first to find promising areas.</li>
-					<li><b>Excavation pick</b> - For precise digging; removes 2cm per use.</li>
+					<li><b>Excavation pick</b> (hand pickaxe) - For precise digging; each "depth" unit is 2cm (enter 1 for 2cm, or e.g. 30 to dig 60cm in one go).</li>
 					<li><b>Regular pickaxe</b> - For clearing normal rock.</li>
 					<li><b>Measuring tape</b> - Essential. Don't leave home without it; measure the depth you or someone else has dug.</li>
 					<li><b>Core sampler</b> - Take core samples from rock faces for the lab.</li>
@@ -97,8 +97,8 @@
 				<ul>
 					<li><b>Coordinates</b> - Exact location (format: X.x:Y.y:Z.z)</li>
 					<li><b>Time stamp</b> - When the scan was performed</li>
-					<li><b>Anomaly depth</b> - How deep the find is (in centimeters)</li>
-					<li><b>Clearance</b> - Size of the soft material bubble around the find (in centimeters)</li>
+					<li><b>Anomaly depth</b> - How deep the find is (in centimeters). Shown as "Anomaly depth" in the scanner.</li>
+					<li><b>Clearance</b> - Size of the soft material bubble around the find (in centimeters). Shown as "Clearance above anomaly depth" in the scanner.</li>
 					<li><b>Dissonance spread</b> - Affects suspension field settings</li>
 					<li><b>Material type</b> - Indicates find type and required field setting:
 					<ul>
@@ -293,6 +293,121 @@
 				<b>Never activate the field while digging to the bubble</b> - only for the final extraction. <b>The field must be active during bubble excavation</b> - artifacts will crumble without protection. Wrong field type can destroy finds. Ensure adequate power - field failure during extraction destroys the find. Clear the area before activation.<br>
 				<br>
 				After setting up and getting your settings ready, turn it on and finish your digging. Turn it off afterwards. Please be careful with the equipment - it's bulky and annoying to haul around, but there are only so many of them and they're needed for normal finds. Eventually you'll get the settings down; it's a memorization thing.<br>
+				<a href="#Contents">Contents</a>
+
+				</body>
+				</html>
+			"}
+
+/obj/item/book/manual/radiocarbon_spectroscopy
+	name = "Radiocarbon Spectroscopy: Operator's Guide"
+	icon_state = "analysis"
+	author = "Doctor Winton Rice, Institute of Applied Sciences on Arcadia; supplement for Iskhod Research use."
+	title = "Radiocarbon Spectroscopy: Operator's Guide"
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 18px; margin: 15px 0px 5px;}
+				h2 {font-size: 15px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+
+				<h1><a name="Contents">Contents</a></h1>
+				<ol>
+					<li><a href="#Overview">Overview</a></li>
+					<li><a href="#Samples">Samples and preparation</a></li>
+					<li><a href="#Loading">Loading the spectrometer</a></li>
+					<li><a href="#Seal">Seal integrity</a></li>
+					<li><a href="#Coolant">Coolant and heat management</a></li>
+					<li><a href="#Wavelength">Maser wavelength and scan efficiency</a></li>
+					<li><a href="#Radiation">Radiation and the rad shield</a></li>
+					<li><a href="#Running">Running a scan</a></li>
+					<li><a href="#Reports">Understanding the report</a></li>
+					<li><a href="#Research">Turning reports into research points</a></li>
+				</ol>
+				<br>
+
+				<h1><a name="Overview">Overview</a></h1>
+				The <b>Radiocarbon Spectrometer</b> (sometimes labelled as the high-resolution radiocarbon spectrometer) is a specialised analyser for gleaning detailed
+				information from small samples - in particular <b>rock slivers</b> from core sampling, and certain archaeological finds. It produces stamped analysis reports
+				that can be used for dating, composition analysis, and anomaly detection. Operation requires attention to seal integrity, coolant, wavelength matching, and radiation.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Samples">Samples and preparation</a></h1>
+				The most valuable inputs are <b>rock slivers</b> taken with the core sampler from mineral turfs (or from strange rock). Each sliver carries geological data;
+				the spectrometer reads that data and produces a formal report. Take the sliver out of its sample bag before inserting it into the machine. The spectrometer
+				can also accept other small items (e.g. some archaeological finds); these may yield limited or descriptive data only. Insert one item at a time; the machine
+				will not start with more than one sample loaded.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Loading">Loading the spectrometer</a></h1>
+				<ul>
+					<li><b>Inserting a sample</b> - Click a sample (e.g. rock sliver) on the spectrometer. The item is placed inside. You cannot load another until it is ejected or a scan completes.</li>
+					<li><b>Adding coolant</b> - Use a glass container (e.g. beaker) of coolant on the machine; choose "Add coolant" to transfer reagent into the spectrometer's internal reservoir (up to 500u).</li>
+					<li><b>Fixing the seal</b> - Use nanopaste on the machine and choose "Fix seal integrity" to repair the vacuum seal (see below).</li>
+					<li><b>Ejecting the sample</b> - Use the interface "Eject" button to remove the loaded item without scanning. The machine must not be scanning.</li>
+				</ul><br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Seal">Seal integrity</a></h1>
+				The analysis chamber is protected by a proprietary vacuum seal. Without an intact seal, the scan cannot be started. The seal <b>degrades over time during a scan</b>,
+				and degradation is faster at higher scanner temperatures. If seal integrity reaches zero during a run, the scan aborts and the machine buzzes. <b>Repair the seal with nanopaste</b>:
+				use a stack of nanopaste on the spectrometer and select "Fix seal integrity." Each unit of nanopaste restores 10% seal. Check the interface before each scan;
+				if the seal is at 0, the machine will refuse to start and prompt you to replace or repair the seal.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Coolant">Coolant and heat management</a></h1>
+				The scanner uses a gyro-rotational system. RPM varies during a scan and higher RPM produces more heat. Excess heat accelerates seal degradation and can trigger an emergency stop (around 1273 K). You must <b>add coolant</b> and set a <b>coolant usage rate</b> in the interface. Coolant is drawn from the internal reservoir during the scan and reduces temperature; higher usage rate and higher coolant purity cool more effectively. The machine tracks "unused coolant" and "coolant purity."<br>
+				<br>
+				<b>Coolant purity (approximate):</b> Pure coolant is best (100%). Cryoxadone and similar give around 90%. Many medical or beverage reagents (e.g. water, iced drinks, kelotane, sterilizine) work as substitutes at 50–70% purity. Lower purity means you need more volume or higher flow to keep temperature under control. Refill with glass containers (Add coolant / Empty coolant) as needed. Frequent scans or high-RPM runs will consume coolant quickly.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Wavelength">Maser wavelength and scan efficiency</a></h1>
+				Scan progress depends on <b>maser efficiency</b>, which is highest when the <b>maser wavelength</b> matches the <b>optimal wavelength</b>. The optimal wavelength is calculated automatically and drifts during the scan. Your job is to <b>adjust the maser wavelength</b> (interface buttons, typically in steps of 1000) so it stays as close as possible to the optimal value (range 1–10000). The closer the match, the higher the efficiency and the faster the scan completes. If you leave a large mismatch, progress slows. There is no need to compute the optimal value yourself - the interface shows both; simply tweak the maser to track the optimal value.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Radiation">Radiation and the rad shield</a></h1>
+				While the spectrometer is running it emits radiation, with <b>periodic radiation spikes</b> that can irradiate anyone nearby. Wear protective gear when operating or standing near the machine. The interface offers a <b>radiation shield</b> that blocks emissions when lowered. However, <b>when the shield is down, the scanner cannot make progress</b> - so use it only when you must (e.g. during a spike and you cannot step away). Leaving the shield down for long periods will prevent the scan from ever completing.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Running">Running a scan</a></h1>
+				<ol>
+					<li>Ensure the sample is loaded and the seal integrity is greater than 0. Add coolant if the reservoir is low.</li>
+					<li>Start the scan from the interface. The machine will chime when the scan completes.</li>
+					<li>During the run: adjust maser wavelength to follow the optimal wavelength; set and maintain coolant usage rate to control temperature; use the rad shield only when necessary.</li>
+					<li>When progress reaches 100%, the scan completes. A stamped <b>analysis report</b> (paper) is produced and the sample is ejected onto the machine's tile. The sample is not consumed.</li>
+				</ol>
+				If the seal fails or temperature exceeds safe limits, the scan stops automatically and the machine buzzes. Fix the seal with nanopaste, allow cooling if needed, then try again with a new or the same sample.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Reports">Understanding the report</a></h1>
+				Reports are printed as <b>Radiocarbon Spectrometer report #N: [sample name]</b>. For <b>rock slivers</b>, the report typically includes:<br>
+				<ul>
+					<li><b>Spectrometric type</b> - Mineral/sample type (e.g. trace organic cells, crystalline structures, metallic derivative).</li>
+					<li><b>Radiometric dating</b> - Age in years, millions of years, or billions of years.</li>
+					<li><b>Chromatographic analysis</b> - Materials present as percentages (e.g. phosphorus, mercury, chlorine, and find-related carriers).</li>
+					<li><b>Anomaly data</b> - If the sample was taken near an artifact, hyperspectral imaging may report an exotic energy wavelength (artifact ID) and approximate emission radius (distance).</li>
+					<li><b>Strange rock extraction hints</b> - If the sliver came from strange rock, the report may state how to extract the find: e.g. use a welder for packed sand, dig cobble for light cobble, or carefully excavate for hard rock.</li>
+				</ul>
+				If no anomaly is detected, the report will state "No anomalous data." Keep reports for records and for research point submission.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Research">Turning reports into research points</a></h1>
+				Analysis reports (geo_info papers) can be converted into research points for the R&D console. Use a <b>science tool</b> on the report to load its data (including odd-matter and age data) into the tool. Then take the science tool to the <b>R&D console</b> and upload the data. The console will credit research points accordingly. This makes radiocarbon spectroscopy part of the normal research pipeline alongside core sampling and find documentation.<br>
+				<br>
 				<a href="#Contents">Contents</a>
 
 				</body>

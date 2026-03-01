@@ -182,9 +182,9 @@
 		if(QUALITY_EXCAVATION)
 			var/excavation_amount = input("How deep are you going to dig?", "Excavation depth", 0)
 			if(excavation_amount)
-				to_chat(user, SPAN_NOTICE("You start exacavating [src]."))
+				to_chat(user, SPAN_NOTICE("You start excavating [src]."))
 				if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_COG))
-					to_chat(user, SPAN_NOTICE("You finish exacavating [src]."))
+					to_chat(user, SPAN_NOTICE("You finish excavating [src]."))
 					if(finds && finds.len)
 						var/datum/find/F = finds[1]
 						if(round(excavation_level + excavation_amount) == F.excavation_required)

@@ -22,6 +22,18 @@
 	qdel(referencecarmor)
 	..()
 
+/obj/item/clothing/suit/armor/equipped(mob/M, slot)
+	..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.regenerate_icons()
+
+/obj/item/clothing/suit/armor/dropped(mob/user)
+	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.regenerate_icons()
+
 /*
  * Vests
  */

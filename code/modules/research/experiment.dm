@@ -1,6 +1,6 @@
 // Contains everything related to earning research points
 #define AUTOPSY_WEAPON_PAMT rand(5,10) * 200 // 1000-2000 points for random weapon
-#define ARTIFACT_PAMT rand(5,10) * 1000 // 5000-10000 points for random artifact
+#define ARTIFACT_PAMT rand(18,42) * 1000 // 18000-42000 points for artifact scan (xenoarch is difficult)
 
 GLOBAL_LIST_EMPTY(explosion_watcher_list)
 
@@ -114,6 +114,10 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	if(!ignoreRepeat && !has_new_tech) // We are deconstucting the same items, cut the reward really hard
 		item_tech_points = min(item_tech_points, 400)
 
+	// Xenoarch finds are difficult to obtain; give a large bonus when deconstructing them
+	if(istype(I, /obj/item/archaeological_find))
+		item_tech_points += rand(6000, 12000)
+
 	return round(item_tech_points)
 
 /datum/experiment_data/proc/do_research_object(obj/item/I)
@@ -199,7 +203,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 		if(odd_matter in saved_odd_matter)
 			continue
 
-		var/given = rand (3000,3500) //Really odd data!
+		var/given = rand (10000,15000) // Really odd data - high reward for core samples / radiocarbon (xenoarch is difficult)
 		if(odd_matter in odd_matter)
 			points = given
 
@@ -209,14 +213,14 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	for(var/really_old in I.scanned_really_old)
 		if (really_old in saved_really_old)
 			continue
-		var/given = rand (4000,5000) //Really odd data
-		saved_odd_matter += really_old
+		var/given = rand (14000,22000) // Really old samples - high reward (xenoarch is difficult)
+		saved_really_old += really_old
 		points += given
 
 	for(var/rock_aged in I.scanned_rock_aged)
 		if (rock_aged in saved_rock_aged)
 			continue
-		var/given = rand (2000,3000) //Old rocks
+		var/given = rand (8000,14000) // Old rocks - high reward (xenoarch is difficult)
 		saved_rock_aged += rock_aged
 		points += given
 
