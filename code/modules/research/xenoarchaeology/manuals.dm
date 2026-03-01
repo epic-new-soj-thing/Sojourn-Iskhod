@@ -393,7 +393,7 @@
 				<a href="#Contents">Contents</a>
 
 				<h1><a name="Reports">Understanding the report</a></h1>
-				Reports are printed as <b>Radiocarbon Spectrometer report #N: [sample name]</b>. For <b>rock slivers</b>, the report typically includes:<br>
+				Reports are printed as <b>Radiocarbon Spectrometer report #N: \[sample name\]</b>. For <b>rock slivers</b>, the report typically includes:<br>
 				<ul>
 					<li><b>Spectrometric type</b> - Mineral/sample type (e.g. trace organic cells, crystalline structures, metallic derivative).</li>
 					<li><b>Radiometric dating</b> - Age in years, millions of years, or billions of years.</li>
