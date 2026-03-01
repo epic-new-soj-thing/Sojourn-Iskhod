@@ -71,7 +71,7 @@
 					<li><b>Research tape</b> - For securing dig sites.</li>
 					<li><b>Fossil bag</b> - For storing finds.</li>
 					<li><b>Flashlight, floodlights or portable light source</b> - Self-explanatory, I hope.</li>
-					<li><b>Anomaly suit</b> - Essential protection for dangerous artifacts. Biosealed, catalysis-resistant, with eye shielding and non-reactive gloves.</li>
+					<li><b>Anomaly suit</b> - Essential protection for dangerous artifacts and radiation. Heavily shielded against rads (e.g. from the radiocarbon spectrometer); biosealed, catalysis-resistant, with eye shielding and non-reactive gloves.</li>
 					<li><b>Environmental safety gear</b> - Enclosed footwear and a pack of internals could save your life.</li>
 					<li><b>Personal defence weapon</b> - Pirates, natives, ancient guardians, carnivorous wildlife - it pays in blood to be prepared.</li>
 				</ul><br>
@@ -377,7 +377,7 @@
 				<a href="#Contents">Contents</a>
 
 				<h1><a name="Radiation">Radiation and the rad shield</a></h1>
-				While the spectrometer is running it emits radiation, with <b>periodic radiation spikes</b> that can irradiate anyone nearby. Wear protective gear when operating or standing near the machine. The interface offers a <b>radiation shield</b> that blocks emissions when lowered. However, <b>when the shield is down, the scanner cannot make progress</b> - so use it only when you must (e.g. during a spike and you cannot step away). Leaving the shield down for long periods will prevent the scan from ever completing.<br>
+				The spectrometer is <b>extremely radioactive</b> while running - baseline emission and <b>periodic radiation spikes</b will quickly irradiate anyone nearby. <b>Wear radproof gear</b> (e.g. the anomaly suit) when operating or standing near the machine. The interface offers a <b>radiation shield</b> that blocks emissions when lowered. However, <b>when the shield is down, the scanner cannot make progress</b> - so use it only when you must (e.g. during a spike and you cannot step away). Leaving the shield down for long periods will prevent the scan from ever completing.<br>
 				<br>
 				<a href="#Contents">Contents</a>
 
