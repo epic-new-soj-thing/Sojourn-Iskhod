@@ -5,5 +5,5 @@
 //	appearance_flags = PLANE_MASTER
 	layer = ABOVE_LIGHTING_LAYER
 	blend_mode = BLEND_MULTIPLY
-	alpha = 140
+	alpha = 255
 	mouse_opacity = FALSE
