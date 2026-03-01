@@ -147,7 +147,10 @@
 	if(!air)
 		return SUPERMATTER_ERROR
 
-	if(grav_pulling || exploded)
+	// Once we're detonating, silence alarms (crystal is already gone)
+	if(exploded)
+		return SUPERMATTER_INACTIVE
+	if(grav_pulling)
 		return SUPERMATTER_DELAMINATING
 
 	if(get_integrity() < 25)
@@ -176,6 +179,8 @@
 	anchored = TRUE
 	grav_pulling = 1
 	exploded = 1
+	if(SSticker)
+		SSticker.shift_end(1 MINUTE)
 	sleep(pull_time)
 	var/turf/TS = get_turf(src)
 	if(!istype(TS))

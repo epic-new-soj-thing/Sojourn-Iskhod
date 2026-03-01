@@ -526,7 +526,7 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/reagent_containers/glass/bucket,
+/obj/item/book/manual/radiocarbon_spectroscopy,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/anomalisolfour{
 	name = "Radiocarbon Spectroscopy Lab"
@@ -2961,6 +2961,7 @@
 "wi" = (
 /obj/machinery/radiocarbon_spectrometer,
 /obj/structure/invislight,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/rnd/anomalisolfour{
 	name = "Radiocarbon Spectroscopy Lab"
@@ -4549,9 +4550,6 @@
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/prep)
-"Ij" = (
-/turf/space,
-/area/mine/unexplored)
 "Il" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -21403,7 +21401,7 @@ vW
 MV
 MV
 MV
-Ij
+MV
 MV
 MV
 MV
