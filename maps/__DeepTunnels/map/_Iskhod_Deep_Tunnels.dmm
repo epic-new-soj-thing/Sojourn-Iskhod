@@ -4117,6 +4117,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/machinery/suspension_gen,
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/outpoststorage)
 "Fe" = (
@@ -5382,6 +5383,10 @@
 /obj/machinery/vending/hydronutrients,
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/eris/rnd/xenobiology/xenoflora)
+"OV" = (
+/obj/machinery/suspension_gen,
+/turf/simulated/floor/tiled/white,
+/area/iskhod/rnd/outpoststorage)
 "OZ" = (
 /obj/machinery/door/firedoor/multi_tile{
 	dir = 2
@@ -14525,7 +14530,7 @@ dI
 Vr
 SO
 Fb
-Yx
+OV
 cd
 vW
 vW

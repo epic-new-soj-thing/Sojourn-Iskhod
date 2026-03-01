@@ -31,9 +31,12 @@
 /obj/item/pc_part/gps_sensor/proc/get_position_text()
 	var/text
 	if(!check_functionality())
-		text = "ERROR: Unable to recive GPS location."
+		text = "ERROR: Unable to receive GPS location."
 		return text
 	var/datum/coords/C = gps.get_coords()
+	if(!C)
+		text = "ERROR: Unable to receive GPS location."
+		return text
 	var/area/A = get_area(src)
 	text = "[C.x_pos]:[C.y_pos]:[C.z_pos] - [strip_improper(A.name)]"
 	return text
