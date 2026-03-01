@@ -174,7 +174,7 @@
 /datum/ritual/cruciform/priest/scrying
 	name = "Scrying"
 	phrase = "Quo ibo a spiritu tuo? et quo a facie tua fugiam?" //"Where can I go from your Spirit? Where can I flee from your presence?"
-	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom. Requires power that only Primes and Crusaders possess."
+	desc = "Look into the world from the eyes of another believer. Strenuous and can only be maintained for half a minute. The target will sense they are being watched, but not by whom. Requires power that only Penitents and Crusaders possess."
 	power = 100
 	category = "Episcopal"
 
@@ -184,7 +184,7 @@
 		return FALSE
 
 	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_CRUSADER))
-		fail("Only Primes and Crusaders have the authority to Scry.", user, C)
+		fail("Only Penitents and Crusaders have the authority to Scry.", user, C)
 		return FALSE
 
 	var/mob/living/M = pick_disciple_global(user, TRUE)
@@ -225,7 +225,7 @@
 
 /datum/ritual/cruciform/priest/announcement/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_CRUSADER))
-		fail("Only Primes and Crusaders have the authority to address the flock.", user, C)
+		fail("Only Penitents and Mouths have the authority to address the flock.", user, C)
 		return FALSE
 	var/text = input(user, "What message will you speak to the Church? The message will be recieved by their cruciforms and heard in their mind.", "Sending a message") as text|null
 	if (!text)
@@ -307,7 +307,7 @@
 /datum/ritual/cruciform/priest/epiphany
 	name = "Epiphany"
 	phrase = "Satus iter ad infinitum." //"Begin your journey to infinity."*
-	desc = "The Absolute's principal sacrament is a ritual of baptism and merging with cruciform. A person with a cruciform attached by Commitment must be placed on an altar."
+	desc = "The sect's principal sacrament is a ritual of baptism and merging with cruciform. A person with a cruciform attached by Commitment must be placed on an altar."
 	power = 25
 
 /datum/ritual/cruciform/priest/epiphany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
@@ -732,8 +732,8 @@
 /datum/ritual/targeted/cruciform/priest/upgrade_kit
 	name = "Prepare the Way"
 	phrase = "Vox clamantis in deserto: Parate viam Domini, rectas facite in solitudine semitas Dei nostri." //"A voice of one calling: 'In the wilderness prepare the way for the Lord; make straight in the desert a highway for our God.'"
-	desc = "Request an upgrade kit that enables a cruciform to be Consecrated, elevating the individual to a Prime. The actual ritual of Consecration must be performed by a Prime."
-	power = 50 //You can have a Vector get you the upgrade as part of preparing for a consecration.
+	desc = "Request an upgrade kit that enables a cruciform to be Consecrated, elevating the individual to a Penitent. The actual ritual of Consecration must be performed by a Penitent."
+	power = 50 //You can have a Hand get you the upgrade as part of preparing for a consecration.
 	success_message = "On the verge of audibility you hear pleasant music, the alter slides open and a devout upgrade circuit slips out."
 
 /datum/ritual/targeted/cruciform/priest/upgrade_kit/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
@@ -756,7 +756,7 @@
 /datum/ritual/cruciform/priest/initiation
 	name = "Consecration"
 	phrase = "Sollicite cura teipsum probabilem exhibere Deo, operarium inconfusibilem, recte tractantem verbum veritatis." //"Do your best to present yourself to God as one approved, a worker who does not need to be ashamed and who correctly handles the word of truth."
-	desc = "The second stage of granting a promotion to a disciple, upgrading them to a Prime. The devout ascension kit is the first step. This litany requires power that only Primes and Crusaders have."
+	desc = "The second stage of granting a promotion to a disciple, upgrading them to a Penitent. The devout ascension kit is the first step. This litany requires power that only Penitents and Crusaders have."
 	power = 100
 	category = "Episcopal"
 
@@ -768,11 +768,11 @@
 		return FALSE
 
 	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_CRUSADER))
-		fail("Only Primes and Crusaders have the authority to Consecrate.", user, C)
+		fail("Only Penitents and Crusaders have the authority to Consecrate.", user, C)
 		return FALSE
 
 	if(CI.get_module(CRUCIFORM_PRIME))
-		fail("The target is already a Prime.",user,C)
+		fail("The target is already a Penitent.",user,C)
 		return FALSE
 
 	var/datum/core_module/activatable/cruciform/priest_convert/PC = CI.get_module(CRUCIFORM_PRIEST_CONVERT)
@@ -788,7 +788,7 @@
 /datum/ritual/cruciform/priest/ordination
 	name = "Ordination"
 	phrase = "Si quis episcopatum desiderat, bonum opus desiderat." //"Whoever aspires to be an overseer desires a noble task."
-	desc = "Grants target disciple access to Vector litanies. Should be accompanied by Adoption in the case of full promotions."
+	desc = "Grants target disciple access to Hand litanies. Should be accompanied by Adoption in the case of full promotions."
 	power = 50
 
 /datum/ritual/cruciform/priest/ordination/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
@@ -801,19 +801,19 @@
 	var/mob/living/carbon/human/H = CI.wearer
 
 	if(CI.get_module(CRUCIFORM_CLERGY))
-		fail("Disciple is already a Vector.", user, C)
+		fail("Disciple is already a Hand.", user, C)
 		return FALSE
 	else
-		CI.make_vector()
+		CI.make_hand()
 		to_chat(H, SPAN_NOTICE("You feel divine power growing within your cruciform as you are ordained."))
 		to_chat(user, SPAN_NOTICE("The cruciform of [H] thrums with a power only you can feel as they are ordained."))
-		log_and_message_admins("[user] has given [H] access to Vector litanies with Ordination.")
+		log_and_message_admins("[user] has given [H] access to Hand litanies with Ordination.")
 	return TRUE
 
 /datum/ritual/cruciform/priest/reduction
 	name = "Reduction"
 	phrase = "Nolite plures magistri fieri fratres mei, scientes quoniam majus judicium sumitis." //"Not many of you should become teachers, my fellow believers, because you know that we who teach will be judged more strictly."
-	desc = "Returns a Vector or Prime cruciform to its lay state. Can only be performed by Primes and Inquisitors. Reducing a Prime can only be done by an Inquisitor."
+	desc = "Returns a Hand or Penitent cruciform to its lay state. Can only be performed by Penitents and Inquisitors. Reducing a Penitent can only be done by an Inquisitor."
 	power = 100
 	category = "Episcopal"
 
@@ -825,7 +825,7 @@
 		return FALSE
 
 	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR)) //Power requirement *and* status check because we don't want Crusaders using this
-		fail("Only Primes have the authority to perform Reduction.", user, C)
+		fail("Only Penitents have the authority to perform Reduction.", user, C)
 
 	if(CI.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_OMNI)) //Considering both Inquisitors and Omnis should be admin-spawn only I don't know why this would ever pass, but here it is
 		fail("Only the Cartographer and the Fundamentals may reduce an Inquisitor.", user, C)
@@ -844,7 +844,7 @@
 /datum/ritual/cruciform/priest/separation
 	name = "Separation"
 	phrase = "Si autem ecclesiam non audierit, sit tibi sicut ethnicus et publicanus." //"If they refuse to listen even to the church, treat them as you would a pagan or a tax collector."
-	desc = "Deactivates and removes a cruciform from the target. Can only be performed by Primes and Inquisitors. Separating a Prime can only be done by an Inquisitor."
+	desc = "Deactivates and removes a cruciform from the target. Can only be performed by Penitents and Inquisitors. Separating a Penitent can only be done by an Inquisitor."
 	power = 100
 	category = "Episcopal"
 
@@ -855,15 +855,15 @@
 		return FALSE
 	var/mob/living/carbon/human/H = CI.wearer
 	if(!C.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR)) //Power requirement *and* status check because we don't want Crusaders using this
-		fail("Only Primes have the authority to perform Separation.", user, C)
+		fail("Only Penitents have the authority to perform Separation.", user, C)
 		return FALSE
 	else if (CI.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR))
-		fail("Only Inquisitors have the authority to perform Separation on another Prime.", user, C)
+		fail("Only Inquisitors have the authority to perform Separation on another Penitent.", user, C)
 	else
 		CI.name = "[H]'s Cruciform"
 		CI.deactivate()
 		CI.uninstall()
-		to_chat(H, SPAN_DANGER("You feel a cold emptiness as you are cut off from the Absolute and the faithful. Your cruciform falls from your chest and down to the floor, lifeless."))
+		to_chat(H, SPAN_DANGER("You feel a cold emptiness as you are cut off from the sect and the faithful. Your cruciform falls from your chest and down to the floor, lifeless."))
 		H.visible_message("The cruciform of [H] falls to the ground, inactive.")
 		log_and_message_admins("removed [H]'s cruciform with the Separation litany.")
 		return TRUE
@@ -883,13 +883,13 @@
 
 	var/mob/living/carbon/human/H = CI.wearer
 
-	var/designation = alert("Do you wish to give access to common or clergy (Prime) doors?", "Litany of Adoption", "Common","Clergy")
+	var/designation = alert("Do you wish to give access to common or clergy (Penitent) doors?", "Litany of Adoption", "Common","Clergy")
 	if(designation == "Common")
 		CI.security_clearance = CLEARANCE_COMMON
 		to_chat(H, SPAN_NOTICE("You feel paths open before you as you are granted access to the common doors of the Church."))
 		log_and_message_admins("[user] has given [H] access to common Church doors with Adoption.")
 	else if(designation == "Clergy")
-		if(C.security_clearance < CLEARANCE_CLERGY) //No more Vectors letting each other into the Prime's office
+		if(C.security_clearance < CLEARANCE_CLERGY) //No more Hands letting each other into the Penitent's office
 			fail("You cannot give access to doors you yourself lack access to.", user, C)
 			return FALSE
 		else
@@ -912,7 +912,7 @@
 		fail("Cruciform not found.", user, C)
 		return FALSE
 
-	if((CI.get_module(CRUCIFORM_CLERGY) && !C.get_module(CRUCIFORM_PRIME)) || (CI.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR)) || (CI.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_OMNI))) //This can't be used on someone of the same or higher rank. Vectors can't use it on each other, only Inquisitors can use it on Primes, and only Apostles can use it on inquisitors
+	if((CI.get_module(CRUCIFORM_CLERGY) && !C.get_module(CRUCIFORM_PRIME)) || (CI.get_module(CRUCIFORM_PRIME) && !C.get_module(CRUCIFORM_INQUISITOR)) || (CI.get_module(CRUCIFORM_INQUISITOR) && !C.get_module(CRUCIFORM_OMNI))) //This can't be used on someone of the same or higher rank. Hands can't use it on each other, only Inquisitors can use it on Penitents, and only Apostles can use it on inquisitors
 		fail("You lack the authority to perform this on this person.", user, C)
 		return FALSE
 

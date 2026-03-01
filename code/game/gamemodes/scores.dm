@@ -55,9 +55,6 @@ GLOBAL_VAR_INIT(neotheology_objectives_score, 0)
 GLOBAL_VAR_INIT(score_neotheology_faction_item_loss, 0)
 GLOBAL_VAR_INIT(neotheology_faction_item_loss, 0)
 
-GLOBAL_VAR_INIT(dirt_areas, 0) // dirt areas
-GLOBAL_VAR_INIT(score_mess, 0)
-
 GLOBAL_VAR_INIT(biomatter_neothecnology_amt, 0)
 GLOBAL_VAR_INIT(biomatter_score, 0)
 
@@ -77,11 +74,24 @@ GLOBAL_VAR_INIT(guild_objectives_score, 0)
 GLOBAL_VAR_INIT(guild_faction_item_loss, 0)
 GLOBAL_VAR_INIT(score_guild_faction_item_loss, 0)
 
+GLOBAL_VAR_INIT(dirt_areas, 0) // janitorial: areas with uncleaned mess
+GLOBAL_VAR_INIT(score_mess, 0) // janitorial score applied to guild
+
 GLOBAL_VAR_INIT(supply_profit, 0)
 GLOBAL_VAR_INIT(guild_profit_score, 0)
 
 GLOBAL_VAR_INIT(guild_shared_gears_score, 0)
 GLOBAL_VAR_INIT(guild_shared_gears, 0)
+
+//PROSPECTORS
+GLOBAL_VAR_INIT(prospector_score, 0)
+GLOBAL_VAR_INIT(initial_prospector_score, 0)
+
+GLOBAL_VAR_INIT(prospector_objectives_completed, 0)
+GLOBAL_VAR_INIT(prospector_objectives_score, 0)
+
+GLOBAL_VAR_INIT(prospector_faction_item_loss, 0)
+GLOBAL_VAR_INIT(score_prospector_faction_item_loss, 0)
 
 //TECHNOMANCERS
 GLOBAL_VAR_INIT(technomancer_score, 0)
@@ -249,6 +259,11 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 
 	GLOB.guild_score = GLOB.initial_guild_score + GLOB.guild_objectives_score + GLOB.guild_profit_score + GLOB.score_mess
 
+	//Prospectors score
+	GLOB.score_prospector_faction_item_loss -= 150 * GLOB.prospector_faction_item_loss
+	GLOB.prospector_objectives_score = GLOB.prospector_objectives_completed * 25
+
+	GLOB.prospector_score = GLOB.initial_prospector_score + GLOB.prospector_objectives_score + GLOB.score_prospector_faction_item_loss
 
 	for(var/mob/E in GLOB.player_list)
 		E.scorestats()
@@ -299,16 +314,16 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	<b>Final Vesalius-Andra Institution score:</b> [get_color_score(GLOB.moebius_score, GLOB.moebius_score)] Points<br><br>
 	"}
 
-	//Church
+	//Naturalists
 	dat += {"
-	<u>Church of Absolute scores</u><br>
+	<u>Naturalists scores</u><br>
 	<b>Base score:</b> [green_text(GLOB.initial_neotheology_score)]<br>
 	<b>Lost faction items:</b> [GLOB.neotheology_faction_item_loss] ([to_score_color(GLOB.score_neotheology_faction_item_loss)] Points)<br>
 	<b>Faction objectives completed:</b> [GLOB.neotheology_objectives_completed] ([to_score_color(GLOB.neotheology_objectives_score)] Points)<br>
 	<b>Biomatter produced:</b> [GLOB.biomatter_neothecnology_amt] ([to_score_color(GLOB.biomatter_score)] Points)<br>
 	<b>Total of conversions:</b> [GLOB.new_neothecnology_convert] ([to_score_color(GLOB.new_neothecnology_convert_score)] Points)<br>
 	<b>Group rituals performed:</b> [GLOB.grup_ritual_performed] ([to_score_color(GLOB.grup_ritual_score)] Points)<br>
-	<b>Final Church of Absolute score:</b> [get_color_score(GLOB.neotheology_score, GLOB.neotheology_score)] Points<br><br>
+	<b>Final Naturalists score:</b> [get_color_score(GLOB.neotheology_score, GLOB.neotheology_score)] Points<br><br>
 	"}
 
 	//Frontier Logistics
@@ -319,7 +334,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	<b>Faction objectives completed:</b> [GLOB.guild_objectives_completed] ([to_score_color(GLOB.guild_objectives_score)] Points)<br>
 	<b>Profit profits:</b> [GLOB.supply_profit] ([to_score_color(GLOB.guild_profit_score)] Points)<br>
 	<b>Crew with items distributed by the Frontier Logistics:</b> [GLOB.guild_shared_gears] ([to_score_color(GLOB.guild_shared_gears_score)] Points)<br>
-	<b>Dirty areas:</b> [GLOB.dirt_areas] ([to_score_color(GLOB.score_mess)] Points)<br>
+	<b>Guild janitorial (dirty areas):</b> [GLOB.dirt_areas] ([to_score_color(GLOB.score_mess)] Points)<br>
 	<b>Final Frontier Logistics score:</b> [get_color_score(GLOB.guild_score, GLOB.guild_score)] Points<br><br><br>
 	"}
 
@@ -334,6 +349,15 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 	<b>Unpowered areas:</b> [GLOB.area_powerloss] ([to_score_color(GLOB.score_powerloss)] Points)<br>
 	<b>Areas with atmospheric problems:</b> [GLOB.area_fireloss] ([to_score_color(GLOB.score_fireloss)] Points)<br>
 	<b>Final Artificer's Guild score:</b> [get_color_score(GLOB.technomancer_score, GLOB.technomancer_score)] Points<br><br>
+	"}
+
+	//Prospectors
+	dat += {"
+	<u>Prospectors scores</u><br>
+	<b>Base score:</b> [green_text(GLOB.initial_prospector_score)]<br>
+	<b>Lost faction items:</b> [GLOB.prospector_faction_item_loss] ([to_score_color(GLOB.score_prospector_faction_item_loss)] Points)<br>
+	<b>Faction objectives completed:</b> [GLOB.prospector_objectives_completed] ([to_score_color(GLOB.prospector_objectives_score)] Points)<br>
+	<b>Final Prospectors score:</b> [get_color_score(GLOB.prospector_score, GLOB.prospector_score)] Points<br><br>
 	"}
 
 	dat += "<br><hr>"
@@ -379,6 +403,8 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 			return GLOB.guild_score
 		else if(mind.assigned_job.department == DEPARTMENT_CHURCH)
 			return GLOB.neotheology_score
+		else if(mind.assigned_job.department == DEPARTMENT_PROSPECTOR)
+			return GLOB.prospector_score
 
 /mob/proc/is_scored_departmen()
 	. = FALSE
@@ -395,4 +421,6 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 			if(DEPARTMENT_SERVICE)
 				. = TRUE
 			if(DEPARTMENT_CHURCH)
+				. = TRUE
+			if(DEPARTMENT_PROSPECTOR)
 				. = TRUE

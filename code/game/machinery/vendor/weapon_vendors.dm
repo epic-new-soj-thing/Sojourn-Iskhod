@@ -230,7 +230,7 @@
 	auto_price = FALSE
 
 /obj/machinery/vending/theomat
-	name = "Church of Absolute Theo-Mat"
+	name = "Naturalist Theo-Mat"
 	desc = "A church dispensary for disciples and new converts."
 	product_slogans = "Find peace through faith.;Help humanity ascend, join your brethren today!;Come and seek a new life!;Safety in brotherhood!"
 	product_ads = "Praise!;Pray!;Only for the faithful!;Ascend!;Seek a new life!;Better living through technology!"

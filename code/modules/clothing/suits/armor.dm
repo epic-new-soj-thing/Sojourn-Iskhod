@@ -343,8 +343,8 @@
 		return 1
 
 /obj/item/clothing/suit/armor/vest/acolyte
-	name = "vector armor"
-	desc = "Worn, heavy, steadfast in the name of the Absolute."
+	name = "hand armor"
+	desc = "Worn, heavy, steadfast in the name of the precepts."
 	icon_state = "acolyte"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -361,7 +361,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["vector default"] = "acolyte"
+	options["hand default"] = "acolyte"
 	options["tangent plate armor"] = "tangent_plate_armor"
 	options["greater heart armor"] = "greater_heart"
 	options["lemniscate armor"] = "lemniscate_armor"
@@ -369,7 +369,7 @@
 	options["monomial armor"] = "monomial_armor"
 	options["divisor armor"] = "divisor_armor"
 	options["tessellate armor"] = "tessellate_armor"
-	options["vector breastplate"] = "absolute_breast"
+	options["hand breastplate"] = "absolute_breast"
 	options["vinculum dress garbs"] = "vinculum_cassock"
 	options["tessellate plague garbs"] = "tessellate_plague_garbs"
 	options["tessellate dark plague garbs"] = "tessellate_plague_garbs_dark"
@@ -386,7 +386,7 @@
 
 /obj/item/clothing/suit/armor/vest/path //No path ?
 	name = "vinculum cassock"
-	desc = "A heavy Cassock meant for the Vectors that possess no vows. This garb has no armor plating but the sturdy fabric offers more protection than a gambeson. Usually worn for ceremonial purposes, it can save a life in an emergency."
+	desc = "A heavy Cassock meant for Hands who possess no vows. This garb has no armor plating but the sturdy fabric offers more protection than a gambeson. Usually worn for ceremonial purposes, it can save a life in an emergency."
 	icon_state = "vinculum_cassock"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -600,8 +600,8 @@
 		return 1
 
 /obj/item/clothing/suit/armor/vest/prime
-	name = "prime armor"
-	desc = "The armor of a Prime, adorned with different markings and decorations only fit for the most devout."
+	name = "Penitent armor"
+	desc = "The armor of a Penitent, adorned with different markings and decorations only fit for the most devout."
 	icon_state = "prime"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -619,11 +619,11 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["prime dark"] = "prime"
-	options["prime royal"] = "prime_alt"
-	options["prime saint"] = "prime_saint"
-	options["prime paladin"] = "prime_paladin"
-	options["prime paladin alt"] = "prime_paladin_alt"
+	options["Penitent dark"] = "prime"
+	options["Penitent royal"] = "prime_alt"
+	options["Penitent saint"] = "prime_saint"
+	options["Penitent paladin"] = "prime_paladin"
+	options["Penitent paladin alt"] = "prime_paladin_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 

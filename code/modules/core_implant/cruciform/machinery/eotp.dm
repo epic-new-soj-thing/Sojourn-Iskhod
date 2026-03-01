@@ -5,7 +5,7 @@ var/global/obj/machinery/power/eotp/eotp
 	name = "Will of the Protector"
 	desc = "A specialized obelisk designed to supply the surface church with absolutist design disks and blessings from the lower temples. By making offerings of supplies or materials readily produced \
 	by the church, disciples can obtain disks and other goods. The obelisk also provides various blessings and monitors areas protected by obelisks for potential threats to the colony, marked by its \
-	observation level, letting it warn primes and vectors ahead of time. Additionally, it passively gains power before unleashing various blessings to followers."
+	observation level, letting it warn Penitents and Hands ahead of time. Additionally, it passively gains power before unleashing various blessings to followers."
 	icon = 'icons/obj/eotp.dmi'
 	icon_state = "wotp"
 
@@ -158,7 +158,7 @@ var/global/obj/machinery/power/eotp/eotp
 
 		else
 			for(var/mob/living/carbon/human/H in disciples)
-				if(H.mind && istype(H.mind.assigned_job, /datum/job/chaplain))
+				if(H.mind && istype(H.mind.assigned_job, /datum/job/penitent))
 					preacher = H
 
 			if(!preacher && length(disciples))
@@ -174,7 +174,7 @@ var/global/obj/machinery/power/eotp/eotp
 				H.adjustOxyLoss(-50)
 				H.adjustBruteLoss(-10)
 				H.adjustFireLoss(-10)
-				to_chat(H, SPAN_NOTICE("You feel a wave of calm pass over you. The Absolute is watching over you. Your cruciform does a quick routine maintenance, patching some wounds across your body."))
+				to_chat(H, SPAN_NOTICE("You feel a wave of calm pass over you. The precepts watch over you. Your cruciform does a quick routine maintenance, patching some wounds across your body."))
 /*
 	else if(type_release == ODDITY)
 		var/oddity_reward = pick(subtypesof(/obj/item/oddity/nt))

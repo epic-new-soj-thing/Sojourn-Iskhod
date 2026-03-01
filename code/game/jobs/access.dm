@@ -163,7 +163,7 @@
 		if(ACCESS_REGION_SUPPLY) //supply
 			return "Supply"
 		if(ACCESS_REGION_CHURCH) //Neotheo
-			return "Church"
+			return "Naturalists"
 		if(ACCESS_REGION_PROSPECTOR) //Prospectors
 			return "Prospector"
 

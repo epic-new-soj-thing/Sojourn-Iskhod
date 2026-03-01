@@ -1,7 +1,7 @@
 /obj/random/turret
 	name = "random advanced turret (66% to be a frame)"
 	icon = 'icons/misc/landmarks.dmi'
-	icon_state = "artifact-orange-low"
+	icon_state = "artifact-blue"
 
 /obj/random/turret/item_to_spawn()
 		return pickweight(list(
@@ -12,7 +12,7 @@
 /obj/random/turret/os
 	name = "random One Star turret (0% to be a frame)"
 	icon = 'icons/misc/landmarks.dmi'
-	icon_state = "artifact-orange-low"
+	icon_state = "artifact-blue"
 
 /obj/random/turret/os/item_to_spawn()
 		return pickweight(list(

@@ -279,10 +279,10 @@ obj/item/organ/external/robotic/synthskin/groin
 	default_description = /datum/organ_description/head
 	max_damage = 200
 
-// Church of the Absolute
+// Naturalists
 /obj/item/organ/external/robotic/church
 	name = "\"Absolute\""
-	desc = "Gold and black prosthetics designed by the Church of the Absolute."
+	desc = "Gold and black prosthetics of pre-Exodus design, still used by some Naturalists despite the sect's preference for simpler tools."
 	force_icon = 'icons/mob/human_races/cyberlimbs/church.dmi'
 	model = "church"
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_BIOMATTER = 30)

@@ -224,11 +224,11 @@
 	outfit = /decl/hierarchy/outfit/church_ert
 	ghost_role_perks = list(PERK_NEAT, PERK_GREENTHUMB, PERK_CHANNELING, PERK_TRUE_NAME)
 	short_desc = "You are an Inquisitor."
-	flavour_text = "A member of the clergy on duty, most likely the Prime, has done something that requires investigation and possibly disciplinary action. \
-	Your job is to uphold the doctrine of the Church, and you are empowered to Reduce or Separate even a Prime. \
-	You are not a cop, but you may assist the Rangers in tracking down a renegade clergy member if necessary."
-	assignedrole = "Absolutist Inquisitor"
-	title = "Absolutist Inquisitor"
+	flavour_text = "A member of the Naturalists on duty, most likely the Penitent, has done something that requires investigation and possibly disciplinary action. \
+	Your job is to uphold the precepts of the sect, and you are empowered to Reduce or Separate even a Penitent. \
+	You are not a cop, but you may assist the Rangers in tracking down a renegade sect member if necessary."
+	assignedrole = "Naturalist Inquisitor"
+	title = "Naturalist Inquisitor"
 	ert_linked = TRUE
 	stat_modifiers = list( //Literally just Ranger agent stats, I'm lazy
 		STAT_ROB = 50,

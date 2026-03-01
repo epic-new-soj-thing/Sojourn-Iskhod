@@ -1,19 +1,19 @@
 //Jobs depatment lists for use in constant expressions
 #define JOBS_SECURITY "Captain","Lieutenant","Detective","Ranger","Junior Ranger"
-#define JOBS_COMMAND "Facility Director","Steward","Captain","Operations Manager","Chief Engineer","Medical Overseer","Research Overseer","Cardinal","Foreman"
+#define JOBS_COMMAND "Facility Director","Steward","Captain","Operations Manager","Chief Engineer","Medical Overseer","Research Overseer","Penitent","Foreman"
 #define JOBS_ENGINEERING "Chief Engineer","Engineer","Apprentice","Disposals Technician"
 #define JOBS_MEDICAL "Medical Overseer","Doctor","Psychiatrist","Nurse","Paramedic","Resident" //,"Chemist"
 #define JOBS_SCIENCE "Research Overseer","Scientist","Roboticist","Science Intern","Robotics Intern"
 #define JOBS_SUPPLY "Operations Manager","Technician","Miner"
 #define JOBS_SERVICE "Bartender","Chef","Gardener" //,"Artist","Journalist"
 #define JOBS_CIVILIAN "Colonist", "Visitor"
-#define JOBS_CHURCH "Priest", "Cardinal"
+#define JOBS_CHURCH "Hand", "Mouth", "Penitent"
 #define JOBS_PROSPECTOR "Foreman","Salvager","Prospector","Rookie","Fence"
 #define JOBS_NONHUMAN "AI","Robot","pAI"
 #define JOBS_LODGE "Lodge Hunt Master","Lodge Hunter","Lodge Herbalist",
 #define JOBS_INDEPENDENT "Outsider"
 
-#define JOBS_ANTI_HIVEMIND "Captain","Lieutenant","Detective","Ranger","Junior Ranger","Cardinal","Priest","Foreman","Rookie","Salvager","Prospector","Steward","AI","Paramedic","Roboticist","Miner"
+#define JOBS_ANTI_HIVEMIND "Captain","Lieutenant","Detective","Ranger","Junior Ranger","Penitent","Mouth","Hand","Foreman","Rookie","Salvager","Prospector","Steward","AI","Paramedic","Roboticist","Miner"
 
 #define HOSP "Hospitality Manager"
 #define CHEMIST "Chemist"
@@ -33,7 +33,7 @@
 #define DEPARTMENT_SUPPLY "Frontier Logistics"
 #define DEPARTMENT_SERVICE "Independent Contractors"
 #define DEPARTMENT_CIVILIAN	"Contractors"
-#define DEPARTMENT_CHURCH	"Church of the Absolute"
+#define DEPARTMENT_CHURCH	"The Naturalists"
 #define DEPARTMENT_PROSPECTOR "Prospectors"
 #define DEPARTMENT_LODGE "Lodge"
 #define DEPARTMENT_INDEPENDENT "Independant"

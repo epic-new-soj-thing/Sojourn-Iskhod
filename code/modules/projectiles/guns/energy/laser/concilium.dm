@@ -3,7 +3,7 @@
 	desc = "Produced by the New Testament, made to pin down enemies with rapid shots.\
 	The low per-shot damage and poor accuracy of the gun is made up for by its rapid rate of fire and large energy capacity, \
 	allowing the user to sustain long periods of fire, forcing enemies to seek cover or be torn apart by a rain of laserfire. Takes large power cells. \
-	It bears a tau cross marking it as produced by the Church of the Absolute's New Testament weapons division."
+	It bears a tau cross from the old Testament; such arms are still used by Naturalists when the bunker must be defended."
 	icon = 'icons/obj/guns/energy/concilium.dmi'
 	icon_state = "concilium"
 	item_state = null	//so the human update icon uses the icon_state instead.

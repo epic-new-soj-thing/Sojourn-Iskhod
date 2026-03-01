@@ -351,7 +351,7 @@
 	high_color = "#EADB83"
 	shield_health = 300
 	max_shield_health = 300
-	size_x = 2 //but the Prime? We protect are own!
+	size_x = 2 //but the Penitent? We protect our own!
 	size_y = 2
 
 /obj/item/shield_projector/rectangle/borg_personal

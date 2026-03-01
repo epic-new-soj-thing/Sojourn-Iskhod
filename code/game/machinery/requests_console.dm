@@ -282,8 +282,8 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	department = "Ranger Captain's Desk"
 
 /obj/machinery/requests_console/preset/command/prime
-	name = "Prime Request Console"
-	department = "Prime's Desk"
+	name = "Penitent Request Console"
+	department = "Penitent's Desk"
 
 /obj/machinery/requests_console/preset/command/gm
 	name = "GM Request Console"

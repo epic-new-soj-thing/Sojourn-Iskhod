@@ -125,9 +125,34 @@
 	new /obj/item/holyvacuum(src)
 
 /obj/structure/closet/acolyte
-	name = "vector closet"
-	desc = "A closet for those that work with the machines of god."
+	name = "hand closet"
+	desc = "A closet for Hands who work with the sect's machines."
 	icon_state = "acolyte"
+
+/obj/structure/closet/hand
+	parent_type = /obj/structure/closet/acolyte
+	name = "hand closet"
+	desc = "A closet for Hands who work with the sect's machines."
+
+/obj/structure/closet/mouth
+	parent_type = /obj/structure/closet/acolyte
+	name = "mouth closet"
+	desc = "A closet for the Mouth—the chief giver of the Word."
+	icon_state = "acolyte"
+
+/obj/structure/closet/mouth/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
+	..()
+	// Priest-specific: Word and ritual
+	new /obj/item/book/ritual/cruciform/priest(src)
+	new /obj/item/clothing/accessory/cross(src)
+	new /obj/item/storage/fancy/candle_box(src)
+	new /obj/item/storage/fancy/candle_box(src)
+	new /obj/item/deck/tarot(src)
+	new /obj/item/tool/knife/neotritual(src)
+	new /obj/item/clothing/suit/storage/chaplain/mouth(src)
 
 /obj/structure/closet/acolyte/populate_contents()
 	if(populated_contents)

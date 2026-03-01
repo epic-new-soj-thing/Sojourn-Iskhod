@@ -100,8 +100,8 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 
 /obj/item/clothing/under/rank/preacher
-	desc = "A red ceremonial shirt tailored for Primes."
-	name = "prime's uniform"
+	desc = "A red ceremonial shirt tailored for Penitents."
+	name = "Penitent's uniform"
 	icon_state = "preacher"
 	item_state = "w_suit"
 
@@ -132,8 +132,8 @@
 		return 1
 
 /obj/item/clothing/under/rank/acolyte
-	desc = "Ceremonial garb of the Absolute's vectors."
-	name = "vector's vestments"
+	desc = "Ceremonial garb of the Naturalists' Hands."
+	name = "Hand's vestments"
 	icon_state = "acolyte"
 	item_state = "acolyte"
 

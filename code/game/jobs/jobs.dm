@@ -76,6 +76,7 @@ var/const/FENCE				=(1<<14)
 
 var/const/CHAPLAIN			=(1<<0)
 var/const/ACOLYTE			=(1<<1)
+var/const/MOUTH				=(1<<2)
 
 var/const/OUTSIDER			=(1<<0)
 

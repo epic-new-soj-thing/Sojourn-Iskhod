@@ -136,11 +136,11 @@
 	work_coverage = 0.8
 
 /datum/department/church
-	name = "Church of the Absolute"
+	name = "The Naturalists"
 	id = DEPARTMENT_CHURCH
 	account_initial_balance = 17000 //17000 to cover some expenses but not that much
 	//Full team with nepotism in 5 hours is 15600
-	jobs_in_department = list ("/datum/job/chaplain","/datum/job/acolyte")
+	jobs_in_department = list ("/datum/job/penitent","/datum/job/mouth","/datum/job/hand")
 	insurance_limit = 750
 	insurance_premium = 40
 	elective_reduction = 0.4

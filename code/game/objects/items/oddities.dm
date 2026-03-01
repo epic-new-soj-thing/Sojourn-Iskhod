@@ -691,7 +691,7 @@
 
 /obj/item/oddity/nt/seal
 	name = "Cartographer's Seal"
-	desc = "A badge carrying the seal of the cartographer of the Church of the Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight, as many of these seals are thought to be lost. Merely holding one is said to inspire divine right. The church would be immensely interested in this."
+	desc = "A pre-Exodus badge carrying the seal of the cartographer of the Church of the Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight after the fall of Nadezhda; many such seals were lost in the schism. The Naturalists would treat it as a precious relic of the old faith."
 	icon_state = "nt_seal"
 	oddity_stats = list(
 		STAT_TGH = 12,
@@ -703,7 +703,7 @@
 
 /obj/item/oddity/nt/pyramid
 	name = "Pyramid"
-	desc = "A small sandstone pyramid, covered in bizzare engravings. The Cartographer of the Church of the Absolute has declared relics like this holy beyond any doubt, though none know exactly why."
+	desc = "A small sandstone pyramid, covered in bizarre engravings. Before the Exodus, the Cartographer of the Church of the Absolute declared relics like this holy beyond any doubt. The Naturalists still treat such finds with reverence, though none know exactly why they were deemed sacred."
 	icon_state = "pyramid"
 	oddity_stats = list(
 		STAT_TGH = 16
