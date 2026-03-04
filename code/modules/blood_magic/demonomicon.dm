@@ -308,7 +308,7 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 	if(!current_reader || !current_reader.sanity)
 		current_reader = null
 		return
-	current_reader.sanity.changeLevel(-6, TRUE)
+	current_reader.sanity.changeLevel(-4, TRUE)
 	if(current_reader)
 		schedule_reading_drain()
 
