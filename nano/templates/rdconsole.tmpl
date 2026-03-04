@@ -284,7 +284,7 @@
 	{{:helper.link("Back", 'arrowreturn-1-w', {'go_screen' : 'main'},null,'fixedLeft')}}
 
 	<span class="average">Research points:</span> {{:data.research_points}} <span class="average">{{:data.tech_tree_name}} level:</span> {{:data.tech_tree_level}}
-	{{:helper.link("Research All", 'search', {'research_all' : 1}, data.can_research ? null : 'disabled')}}
+	{{:helper.link(data.research_all_count ? "Research All (" + data.research_all_count + " nodes, " + data.research_all_total_cost + " pts)" : "Research All", 'search', {'research_all' : 1}, (!data.can_research || (data.research_all_count > 0 && !data.research_all_affordable)) ? 'disabled' : null)}}
 	</div>
 	<div class='item'>
 

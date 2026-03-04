@@ -700,7 +700,7 @@
 	icon_state = "door_locked";
 	id_tag = "xeno_airlock_exterior";
 	locked = 1;
-	name = "Xenobiology External Airlock";
+	name = "Xenogenetics External Airlock";
 	req_access = list(55)
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -17787,7 +17787,7 @@
 	icon_state = "door_locked";
 	id_tag = "xeno_airlock_interior";
 	locked = 1;
-	name = "Xenobiology Internal Airlock";
+	name = "Xenofauna Internal Airlock";
 	req_access = list(55)
 	},
 /turf/simulated/floor/tiled/dark/panels,
@@ -29446,7 +29446,7 @@
 	},
 /obj/machinery/embedded_controller/radio/airlock/access_controller{
 	id_tag = "xeno_airlock_control";
-	name = "Xenobiology Access Console";
+	name = "Xenofauna Access Console";
 	tag_exterior_door = "xeno_airlock_exterior";
 	tag_interior_door = "xeno_airlock_interior";
 	pixel_x = 26;
@@ -49968,6 +49968,11 @@
 	name = "R&D Reception Shutters";
 	id = "research_desk_shutters"
 	},
+/obj/machinery/door/window/iskhod{
+	dir = 2;
+	name = "science desk";
+	req_access = list(5)
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/rnd/lab)
 "myC" = (
@@ -51388,13 +51393,10 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/techstorage)
 "mSc" = (
-/obj/machinery/access_button{
-	command = "cycle_interior";
-	frequency = 1379;
-	master_tag = "xeno_airlock_control";
-	name = "Xenobiology Access Button";
-	pixel_x = 26;
-	req_access = list(55)
+/obj/machinery/access_button/airlock_interior{
+	pixel_x = 25;
+	name = "Xenobiology access button";
+	master_tag = "xeno_airlock_control"
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/docking)
@@ -54219,6 +54221,11 @@
 	pixel_x = -20
 	},
 /obj/effect/floor_decal/industrial/warning,
+/obj/machinery/access_button/airlock_exterior{
+	master_tag = "xeno_airlock_control";
+	name = "Xenobiology access button";
+	pixel_x = -25
+	},
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/medical/genetics)
 "nAk" = (
@@ -55217,6 +55224,11 @@
 /obj/machinery/door/blast/shutters{
 	name = "Robotics Reception Shutters";
 	id = "robotics_desk_shutters"
+	},
+/obj/machinery/door/window/iskhod{
+	dir = 2;
+	name = "robotics desk";
+	req_access = list(29)
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/rnd/robotics)
@@ -77403,7 +77415,7 @@
 	icon_state = "door_locked";
 	id_tag = "xeno_airlock_exterior";
 	locked = 1;
-	name = "Xenobiology External Airlock";
+	name = "Xenogenetics External Airlock";
 	req_access = list(55)
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -78653,7 +78665,7 @@
 	dir = 1
 	},
 /obj/structure/sign/warning/hazard_biohazard{
-	pixel_y = 32
+	pixel_x = 32
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/docking)
@@ -86525,6 +86537,11 @@
 /obj/machinery/light{
 	brightness_power = 1;
 	dir = 8
+	},
+/obj/machinery/access_button/airlock_exterior{
+	master_tag = "xeno_airlock_control";
+	name = "Xenofauna access button";
+	pixel_x = -25
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/xenobiology)

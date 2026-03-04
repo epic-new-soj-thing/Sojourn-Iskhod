@@ -39,6 +39,11 @@
 	catalysts = list("plasma" = 5)
 	result_amount = 1
 
+/datum/chemical_reaction/vecuronium_bromide
+	result = "vecuronium_bromide"
+	required_reagents = list("ethanol" = 1, "mercury" = 2, "hydrazine" = 2)
+	result_amount = 1
+
 /datum/chemical_reaction/toxin
 	result = "toxin"
 	required_reagents = list("ammonia" = 1, "mercury" = 1, "ethanol" = 1)

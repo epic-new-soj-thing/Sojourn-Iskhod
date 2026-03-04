@@ -496,12 +496,16 @@
 	if(was_bloodied && !fluorescent)
 		fluorescent = 1
 		blood_color = COLOR_LUMINOL
-		blood_overlay.color = COLOR_LUMINOL
+		if(!blood_overlay)
+			generate_blood_overlay()
+		if(blood_overlay)
+			blood_overlay.color = COLOR_LUMINOL
 	//	update_icon()
 
 /obj/item/add_blood(mob/living/carbon/human/M as mob)
 	if(!..())
 		return 0
+	blood_visually_cleaned = FALSE
 
 	if(istype(src, /obj/item/melee/energy))
 		return

@@ -180,17 +180,25 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		if(tech_tree && tech_tree.shown)
 			selected_tech_tree = tech_tree
 			selected_technology = null
-	if(href_list["research_all"]) // Research everything feasible
-		var/can_continue = TRUE
-		var/max_iterations = 50 // Fail-safe to prevent infinite loops, though unlikely
-		while(can_continue && max_iterations > 0)
-			can_continue = FALSE
-			max_iterations--
-			for(var/t in SSresearch.all_tech_nodes)
-				var/datum/technology/tech_node = t
-				if(!files.IsResearched(tech_node) && files.CanResearch(tech_node))
-					files.UnlockTechology(tech_node)
-					can_continue = TRUE
+	if(href_list["research_all"]) // Research everything feasible (all nodes including covert if shown)
+		var/list/cost_data = files.get_research_all_cost()
+		var/total_cost = cost_data[1]
+		var/count = cost_data[2]
+		if(count > 0 && files.research_points < total_cost)
+			to_chat(usr, SPAN_WARNING("Not enough research points. Need [total_cost] to unlock all [count] nodes (you have [files.research_points])."))
+		else if(count > 0)
+			var/can_continue = TRUE
+			var/max_iterations = 200 // Fail-safe; one pass per node at most
+			while(can_continue && max_iterations > 0)
+				can_continue = FALSE
+				max_iterations--
+				for(var/datum/technology/tech_node in SSresearch.all_tech_nodes)
+					if(!files.IsResearched(tech_node) && files.CanResearch(tech_node))
+						files.UnlockTechology(tech_node)
+						can_continue = TRUE
+			to_chat(usr, SPAN_NOTICE("Unlocked all available research ([count] nodes)."))
+		else
+			to_chat(usr, SPAN_NOTICE("No further nodes available to research."))
 		SSnano.update_uis(src)
 
 	if(href_list["select_technology"]) // User selected a technology node.
@@ -627,6 +635,10 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		data["lines"] = line_list
 		data["selected_tech_tree"] = "\ref[selected_tech_tree]"
 		data["research_points"] = files.research_points
+		var/list/research_all_data = files.get_research_all_cost()
+		data["research_all_total_cost"] = research_all_data[1]
+		data["research_all_count"] = research_all_data[2]
+		data["research_all_affordable"] = (files.research_points >= research_all_data[1])
 
 		data["selected_technology_id"] = ""
 		if(selected_technology)

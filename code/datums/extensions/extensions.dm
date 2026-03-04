@@ -43,6 +43,7 @@
 	var/list/datum/extension/extensions
 
 /datum/Destroy()
+	SSnano.close_uis(src)
 	if(extensions)
 		for(var/expansion_key in extensions)
 			var/list/expansion = extensions[expansion_key]

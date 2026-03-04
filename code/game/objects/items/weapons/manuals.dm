@@ -15,16 +15,24 @@
 /obj/item/book/manual/engineering_construction/New()
 	..()
 	dat = {"
-
 		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
 		</head>
-
 		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]Construction&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src="[config.wikiurl]Construction" frameborder="0"></iframe>
 		</body>
-
 		</html>
-
 		"}
 
 /obj/item/book/manual/supermatter_engine
@@ -36,9 +44,22 @@
 /obj/item/book/manual/supermatter_engine/New()
 	..()
 	dat = {"
-		<html><head></head>
+		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
+		</head>
 		<body>
-		<iframe width='100%' height='97%' src='[config.wikiurl]Supermatter_Engine&printable=yes&remove_links=1' frameborder='0' id='main_frame'></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src='[config.wikiurl]Supermatter_Engine' frameborder="0"></iframe>
 		</body>
 		</html>
 		"}
@@ -53,9 +74,22 @@
 /obj/item/book/manual/engineering_particle_accelerator/New()
 	..()
 	dat = {"
-		<html><head></head>
+		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
+		</head>
 		<body>
-		<iframe width='100%' height='97%' src='[config.wikiurl]Supermatter_Engine&printable=yes&remove_links=1' frameborder='0' id='main_frame'></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src='[config.wikiurl]Supermatter_Engine' frameborder="0"></iframe>
 		</body>
 		</html>
 		"}
@@ -69,9 +103,22 @@
 /obj/item/book/manual/engineering_antimatter_engine/New()
 	..()
 	dat = {"
-		<html><head></head>
+		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
+		</head>
 		<body>
-		<iframe width='100%' height='97%' src='[config.wikiurl]Supermatter_Engine&printable=yes&remove_links=1' frameborder='0' id='main_frame'></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src='[config.wikiurl]Supermatter_Engine' frameborder="0"></iframe>
 		</body>
 		</html>
 		"}
@@ -85,16 +132,24 @@
 /obj/item/book/manual/engineering_hacking/New()
 	..()
 	dat = {"
-
 		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
 		</head>
-
 		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]Guide_to_Hacking&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src="[config.wikiurl]Guide_to_Hacking" frameborder="0"></iframe>
 		</body>
-
 		</html>
-
 		"}
 
 /obj/item/book/manualshield_generator_guide
@@ -541,9 +596,22 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 /obj/item/book/manual/research_and_development/New()
 	..()
 	dat = {"
-		<html><head></head>
+		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
+		</head>
 		<body>
-		<iframe width='100%' height='97%' src='[config.wikiurl]Guide_to_Research_and_Development&printable=yes&remove_links=1' frameborder='0' id='main_frame'></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src='[config.wikiurl]Guide_to_Research_and_Development' frameborder="0"></iframe>
 		</body>
 		</html>
 		"}
@@ -558,9 +626,22 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 /obj/item/book/manual/robotics_cyborgs/New()
 	..()
 	dat = {"
-		<html><head></head>
+		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
+		</head>
 		<body>
-		<iframe width='100%' height='97%' src='[config.wikiurl]Guide_to_Robotics&printable=yes&remove_links=1' frameborder='0' id='main_frame'></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src='[config.wikiurl]Guide_to_Robotics' frameborder="0"></iframe>
 		</body>
 		</html>
 		"}
@@ -696,16 +777,24 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 /obj/item/book/manual/security_space_law/New()
 	..()
 	dat = {"
-
 		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
 		</head>
-
 		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]Laws&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src="[config.wikiurl]Laws" frameborder="0"></iframe>
 		</body>
-
 		</html>
-
 		"}
 
 
@@ -722,12 +811,15 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	dat = {"<html>
 				<head>
 				<style>
+				html, body { margin: 0; padding: 0; height: 100%; width: 100%; }
 				h1 {font-size: 18px; margin: 15px 0px 5px;}
 				h2 {font-size: 15px; margin: 15px 0px 5px;}
 				li {margin: 2px 0px 2px 15px;}
 				ul {margin: 5px; padding: 0px;}
 				ol {margin: 5px; padding: 0px 15px;}
 				body {font-size: 13px; font-family: Verdana;}
+				#iframe { display: none; width: 100%; height: 70%; border: none; min-height: 300px; }
+				#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 				</style>
 				</head>
 				<body>
@@ -751,7 +843,14 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 				<HR COLOR="steelblue" WIDTH="60%" ALIGN="LEFT">
 
-				<iframe width='100%' height='100%' src="[config.wikiurl]Guide_to_Medicine&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+				<script type="text/javascript">
+					function pageloaded(myframe) {
+						document.getElementById("loading").style.display = "none";
+						myframe.style.display = "block";
+					}
+				</script>
+				<p id='loading'>You start skimming through the manual...</p>
+				<iframe id="iframe" onload="pageloaded(this)" src="[config.wikiurl]Guide_to_Medicine" frameborder="0"></iframe>
 				</body>
 			</html>
 
@@ -767,15 +866,24 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 /obj/item/book/manual/engineering_guide/New()
 	..()
 	dat = {"
-
 		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
 		</head>
-
 		<body>
-		<iframe width='100%' height='100%' src="[config.wikiurl]Construction&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>		</body>
-
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src="[config.wikiurl]Construction" frameborder="0"></iframe>
+		</body>
 		</html>
-
 		"}
 
 
@@ -788,9 +896,22 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 /obj/item/book/manual/chef_recipes/New()
 	..()
 	dat = {"
-		<html><head></head>
+		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
+		</head>
 		<body>
-		<iframe width='100%' height='97%' src='[config.wikiurl]Guide_to_Food&printable=yes&remove_links=1' frameborder='0' id='main_frame'></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src='[config.wikiurl]Guide_to_Food' frameborder="0"></iframe>
 		</body>
 		</html>
 		"}
@@ -805,9 +926,22 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 /obj/item/book/manual/barman_recipes/New()
 	..()
 	dat = {"
-		<html><head></head>
+		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
+		</head>
 		<body>
-		<iframe width='100%' height='97%' src='[config.wikiurl]Guide_to_Drinks&printable=yes&remove_links=1' frameborder='0' id='main_frame'></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src='[config.wikiurl]Guide_to_Drinks' frameborder="0"></iframe>
 		</body>
 		</html>
 		"}
@@ -916,9 +1050,22 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 /obj/item/book/manual/atmospipes/New()
 	..()
 	dat = {"
-		<html><head></head>
+		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
+		</head>
 		<body>
-		<iframe width='100%' height='97%' src='[config.wikiurl]Guide_to_Atmospherics&printable=yes&remove_links=1' frameborder='0' id='main_frame'></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src='[config.wikiurl]Guide_to_Atmospherics' frameborder="0"></iframe>
 		</body>
 		</html>
 		"}
@@ -932,9 +1079,22 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 /obj/item/book/manual/evaguide/New()
 	..()
 	dat = {"
-		<html><head></head>
+		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
+		</head>
 		<body>
-		<iframe width='100%' height='97%' src='[config.wikiurl]Guide_to_EVA' frameborder='0' id='main_frame'></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src='[config.wikiurl]Guide_to_EVA' frameborder="0"></iframe>
 		</body>
 		</html>
 		"}
@@ -1708,9 +1868,22 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 /obj/item/book/manual/xenobio_recipies/New()
 	..()
 	dat = {"
-		<html><head></head>
+		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
+		</head>
 		<body>
-		<iframe width='100%' height='97%' src='[config.wikiurl]Guide_to_Xenobiology&printable=yes&remove_links=1' frameborder='0' id='main_frame'></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src='[config.wikiurl]Guide_to_Xenobiology' frameborder="0"></iframe>
 		</body>
 		</html>
 		"}
@@ -1860,9 +2033,22 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	..()
 	if(config.wikiurl)
 		dat = {"
-			<html><head></head>
+			<html><head>
+			<style>
+				html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+				#iframe { display: none; width: 100%; height: 100%; border: none; }
+				#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+			</style>
+			</head>
 			<body>
-			<iframe width='100%' height='97%' src='[config.wikiurl]Guide_to_Xenoflora&printable=yes&remove_links=1' frameborder='0' id='main_frame'></iframe>
+			<script type="text/javascript">
+				function pageloaded(myframe) {
+					document.getElementById("loading").style.display = "none";
+					myframe.style.display = "block";
+				}
+			</script>
+			<p id='loading'>You start skimming through the manual...</p>
+			<iframe id="iframe" onload="pageloaded(this)" src='[config.wikiurl]Guide_to_Xenoflora' frameborder="0"></iframe>
 			</body>
 			</html>
 			"}

@@ -9,6 +9,8 @@
 	var/fingerprintslast
 	var/list/blood_DNA
 	var/was_bloodied
+	/// If TRUE, visible blood overlay was cleaned but was_bloodied/DNA preserved for forensics (luminol still shows).
+	var/blood_visually_cleaned = FALSE
 	var/blood_color
 	var/last_bumped = 0
 	var/pass_flags = 0
@@ -710,6 +712,7 @@ its easier to just keep the beam vertical.
 
 /atom/proc/clean_blood()
 	was_bloodied = FALSE
+	blood_visually_cleaned = FALSE
 	fluorescent = 0
 	if(istype(blood_DNA, /list))
 		blood_DNA = null
@@ -729,13 +732,14 @@ its easier to just keep the beam vertical.
 	if(clean_dna && istype(blood_DNA, /list))
 		blood_DNA = null
 		. = TRUE
-	// If this atom has an item-style blood overlay image, remove it
+	// If this atom has an item-style blood overlay image, remove it (look clean but keep was_bloodied)
 	if(istype(src, /obj/item))
 		var/obj/item/I = src
 		if(I.blood_overlay)
 			I.cut_overlay(I.blood_overlay)
 			I.blood_overlay = null
 			. = TRUE
+		I.blood_visually_cleaned = TRUE
 	return .
 
 /atom/proc/get_global_map_pos()

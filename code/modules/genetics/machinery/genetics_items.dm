@@ -34,6 +34,9 @@ This is a bugtesting item, please forgive the memes.
 		scan_data = soteria_scan(held_mutations)
 		user.show_message(scan_data)
 	else if(user.a_intent == I_HURT)
+		if(!held_mutations)
+			to_chat(user, SPAN_WARNING("No genetic data loaded. Scan a subject first (help intent)."))
+			return
 		to_chat(user, SPAN_NOTICE("\The [src] injects a sample into \the [target]"))
 		held_mutations.inject_mutations(target)
 
@@ -367,12 +370,14 @@ Can also be loaded into a (Syringe probably) and injected into people. But that 
 		var/obj/item/genetics/sample/incoming_sample = I
 
 		if(loaded_sample)
-			to_chat(user, SPAN_NOTICE("The mutagenic injector is already loaded!"))
+			to_chat(user, SPAN_WARNING("The mutagenic injector is already loaded!"))
+			return
 
-		if(!loaded_sample && user.unEquip(incoming_sample, src))
-			to_chat(user, SPAN_NOTICE("You load the mutagenic injector with a sample plate."))
+		if(user.unEquip(incoming_sample, src))
 			loaded_sample = incoming_sample
+			to_chat(user, SPAN_NOTICE("You load the mutagenic injector with a sample plate."))
 			icon_state = "dna_injector_1"
+		return
 
 /obj/item/genetics/mut_injector/attack_self(var/mob/user)
 	if(!loaded_sample)

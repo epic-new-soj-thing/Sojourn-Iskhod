@@ -54,7 +54,7 @@
 	cost = 750
 
 	unlocks_designs = list(	/datum/design/research/circuit/smes_cell,
-							/datum/design/research/item/part/smes_coil/weak)
+							/datum/design/research/item/part/smes_coil)
 
 /datum/technology/energy_distribution
 	name = "Energy Distribution"

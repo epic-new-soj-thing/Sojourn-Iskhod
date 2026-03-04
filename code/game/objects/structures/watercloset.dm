@@ -555,6 +555,34 @@
 	else if(istype(O, /obj/item/mop))
 		return
 
+	// Using soap in the sink: wash hands (and optionally held item) with soap for a full forensic clean.
+	else if(istype(O, /obj/item/soap))
+		if(!Adjacent(user))
+			return
+		user.visible_message(
+			SPAN_NOTICE("[user] starts washing their hands with [O] using [src]."),
+			SPAN_NOTICE("You start washing your hands with [O] using [src].")
+		)
+		playsound(loc, 'sound/effects/watersplash.ogg', 100, 1)
+		busy = TRUE
+		if(!do_after(user, 40, src))
+			busy = FALSE
+			return
+		busy = FALSE
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.clean_blood(1)
+			H.update_inv_gloves()
+			H.update_inv_l_hand(0)
+			H.update_inv_r_hand(0)
+		else
+			user.clean_blood()
+		user.visible_message(
+			SPAN_NOTICE("[user] washes their hands with [O] using [src]."),
+			SPAN_NOTICE("You wash your hands with [O] using [src].")
+		)
+		return 1
+
 	var/turf/location = user.loc
 	if(!isturf(location)) return
 
@@ -586,16 +614,29 @@
 	if(user.get_active_hand() != I)
 		return		//Person has switched hands or the item in their hands
 
-	// Latex and nitrile gloves are washed completely clean of forensic traces.
-	if(istype(O, /obj/item/clothing/gloves/latex))
+	// Soap in the other hand or latex gloves: full forensic clean (removes was_bloodied). Otherwise preserve for luminol.
+	var/using_soap = istype(user.get_inactive_hand(), /obj/item/soap)
+	if(istype(O, /obj/item/clothing/gloves/latex) || using_soap)
 		O.clean_blood()
 	else
 		O.clean_blood_preserve_was()
 
-	user.visible_message(
-		SPAN_NOTICE("[user] washes \a [I] using \the [src]."),
-		SPAN_NOTICE("You wash \a [I] using \the [src].")
-	)
+	// Refresh appearance (held item and, if re-equipped later, worn slots use blood_visually_cleaned).
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.update_inv_l_hand(0)
+		H.update_inv_r_hand(0)
+
+	if(using_soap)
+		user.visible_message(
+			SPAN_NOTICE("[user] washes \a [I] with soap using \the [src]."),
+			SPAN_NOTICE("You wash \a [I] with soap using \the [src].")
+		)
+	else
+		user.visible_message(
+			SPAN_NOTICE("[user] washes \a [I] using \the [src]."),
+			SPAN_NOTICE("You wash \a [I] using \the [src].")
+		)
 
 /obj/structure/sink/AltClick(var/mob/living/user)
 	var/H = user.get_active_hand()

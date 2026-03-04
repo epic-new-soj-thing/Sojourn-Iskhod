@@ -15,16 +15,24 @@
 /obj/item/book/manual/engineering_construction/New()
 	..()
 	dat = {"
-
 		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
 		</head>
-
 		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]Construction?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src="[config.wikiurl]Construction" frameborder="0"></iframe>
 		</body>
-
 		</html>
-
 		"}
 
 /obj/item/book/manual/supermatter_engine
@@ -109,16 +117,24 @@
 /obj/item/book/manual/engineering_hacking/New()
 	..()
 	dat = {"
-
 		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
 		</head>
-
 		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]Guide_to_Hacking?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src="[config.wikiurl]Guide_to_Hacking" frameborder="0"></iframe>
 		</body>
-
 		</html>
-
 		"}
 
 
@@ -627,16 +643,24 @@
 /obj/item/book/manual/security_space_law/New()
 	..()
 	dat = {"
-
 		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
 		</head>
-
 		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]Laws?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src="[config.wikiurl]Laws" frameborder="0"></iframe>
 		</body>
-
 		</html>
-
 		"}
 
 
@@ -653,12 +677,15 @@
 	dat = {"<html>
 				<head>
 				<style>
+				html, body { margin: 0; padding: 0; height: 100%; width: 100%; }
 				h1 {font-size: 18px; margin: 15px 0px 5px;}
 				h2 {font-size: 15px; margin: 15px 0px 5px;}
 				li {margin: 2px 0px 2px 15px;}
 				ul {margin: 5px; padding: 0px;}
 				ol {margin: 5px; padding: 0px 15px;}
 				body {font-size: 13px; font-family: Verdana;}
+				#iframe { display: none; width: 100%; height: 70%; border: none; min-height: 300px; }
+				#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 				</style>
 				</head>
 				<body>
@@ -682,7 +709,14 @@
 
 				<HR COLOR="steelblue" WIDTH="60%" ALIGN="LEFT">
 
-				<iframe width='100%' height='100%' src="[config.wikiurl]Guide_to_Medicine?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+				<script type="text/javascript">
+					function pageloaded(myframe) {
+						document.getElementById("loading").style.display = "none";
+						myframe.style.display = "block";
+					}
+				</script>
+				<p id='loading'>You start skimming through the manual...</p>
+				<iframe id="iframe" onload="pageloaded(this)" src="[config.wikiurl]Guide_to_Medicine" frameborder="0"></iframe>
 				</body>
 			</html>
 
@@ -698,15 +732,24 @@
 /obj/item/book/manual/engineering_guide/New()
 	..()
 	dat = {"
-
 		<html><head>
+		<style>
+			html, body { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; }
+			#iframe { display: none; width: 100%; height: 100%; border: none; }
+			#loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+		</style>
 		</head>
-
 		<body>
-		<iframe width='100%' height='100%' src="[config.wikiurl]Construction?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>		</body>
-
+		<script type="text/javascript">
+			function pageloaded(myframe) {
+				document.getElementById("loading").style.display = "none";
+				myframe.style.display = "block";
+			}
+		</script>
+		<p id='loading'>You start skimming through the manual...</p>
+		<iframe id="iframe" onload="pageloaded(this)" src="[config.wikiurl]Construction" frameborder="0"></iframe>
+		</body>
 		</html>
-
 		"}
 
 
@@ -1254,6 +1297,14 @@
 	author = "Vesalius-Andra Research"
 	title = "Chemistry"
 	page_link = "Guide_to_Chemistry"
+
+/obj/item/book/manual/wiki/surgery_guide
+	name = "Guide to Surgical Procedures"
+	desc = "A practitioner's reference for surgical tools, incision and closure, and step-by-step procedures."
+	icon_state = "medicalbook"
+	author = "Vesalius-Andra Medical"
+	title = "Guide to Surgical Procedures"
+	page_link = "Guide_to_Surgery"
 
 //neotheology
 /obj/item/book/manual/wiki/neotheology_cloning //TODO: Completely change this to be NT-oriented.

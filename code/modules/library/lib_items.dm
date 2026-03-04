@@ -204,6 +204,7 @@
 		new /obj/item/book/manual/wiki/medical_guide(src)
 		new /obj/item/book/manual/wiki/medical_guide(src)
 		new /obj/item/book/manual/wiki/medical_chemistry(src)
+		new /obj/item/book/manual/wiki/surgery_guide(src)
 		new /obj/item/book/manual/wiki/infections_guide(src)
 		new /obj/item/book/manual/wiki/cytology_textbook(src)
 		new /obj/item/book/manual/wiki/xenogenetics_guide(src)

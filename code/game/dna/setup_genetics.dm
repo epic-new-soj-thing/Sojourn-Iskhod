@@ -37,7 +37,22 @@
 	CLUMSYBLOCK        = getAssignedBlock("CLUMSY",        numsToAssign)
 	FAKEBLOCK          = getAssignedBlock("FAKE",          numsToAssign)
 	REMOTETALKBLOCK    = getAssignedBlock("REMOTETALK",    numsToAssign, DNA_HARDER_BOUNDS)
-	MONKEYBLOCK = DNA_SE_LENGTH
+	// Blocks used by premade DNA injectors and /datum/dna/gene (must be assigned or injectors/genes use block 0)
+	NOBREATHBLOCK      = getAssignedBlock("NOBREATH",      numsToAssign)
+	REMOTEVIEWBLOCK    = getAssignedBlock("REMOTEVIEW",    numsToAssign)
+	REGENERATEBLOCK    = getAssignedBlock("REGENERATE",    numsToAssign)
+	INCREASERUNBLOCK   = getAssignedBlock("INCREASERUN",   numsToAssign)
+	MORPHBLOCK         = getAssignedBlock("MORPH",         numsToAssign)
+	NOPRINTSBLOCK      = getAssignedBlock("NOPRINTS",      numsToAssign)
+	SHOCKIMMUNITYBLOCK = getAssignedBlock("SHOCKIMMUNITY", numsToAssign)
+	SMALLSIZEBLOCK     = getAssignedBlock("SMALLSIZE",    numsToAssign)
+	HEADACHEBLOCK      = getAssignedBlock("HEADACHE",      numsToAssign)
+	COUGHBLOCK         = getAssignedBlock("COUGH",         numsToAssign)
+	TWITCHBLOCK        = getAssignedBlock("TWITCH",        numsToAssign)
+	NERVOUSBLOCK       = getAssignedBlock("NERVOUS",       numsToAssign)
+	GLASSESBLOCK       = getAssignedBlock("GLASSES",       numsToAssign)
+	HALLUCINATIONBLOCK = getAssignedBlock("HALLUCINATION", numsToAssign)
+	MONKEYBLOCK        = DNA_SE_LENGTH
 
 	// And the genes that actually do the work. (domutcheck improvements)
 	var/list/blocks_assigned[DNA_SE_LENGTH]

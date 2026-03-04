@@ -588,6 +588,34 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
 		M.Stun(5)
 
+/datum/reagent/medicine/vecuronium_bromide
+	name = "Vecuronium Bromide"
+	id = "vecuronium_bromide"
+	description = "A neuromuscular blocking agent (paralytic). Fully incapacitates the target—they remain conscious and can only speak in a whisper, but cannot move. Used when a patient refuses general anaesthesia but must stay still for surgery. Pair with pain relief (e.g. Oxycodone). Overdose can cause dangerous respiratory depression."
+	taste_description = "metallic bitterness"
+	reagent_state = LIQUID
+	color = "#e46cd4"
+	metabolism = REM * 2
+	overdose = REAGENTS_OVERDOSE * 0.5
+	scannable = TRUE
+	nerve_system_accumulations = 20
+
+/datum/reagent/medicine/vecuronium_bromide/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	var/effective_dose = dose
+	if(issmall(M))
+		effective_dose *= 2
+	// Full paralysis: cannot move, remain conscious
+	if(effective_dose >= 0.5)
+		M.paralysis = max(M.paralysis, 6)
+	// Reduce speech to a whisper (default CE_SPEECH_VOLUME is 2; 1 = whisper)
+	M.add_chemical_effect(CE_SPEECH_VOLUME, 1)
+
+/datum/reagent/medicine/vecuronium_bromide/overdose(mob/living/carbon/M, alien)
+	..()
+	M.paralysis = max(M.paralysis, 8)
+	M.add_chemical_effect(CE_OXYGENATED, -0.5) // Respiratory depression
+	M.adjustOxyLoss(1)
+
 /* Church related chemicals */
 /datum/reagent/medicine/nepenthe  //Monomial super-painkiller
 	name = "Nepenthe"

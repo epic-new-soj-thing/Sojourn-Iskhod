@@ -27,6 +27,29 @@
 	Cleaning
 */
 
+// Thresholds for mop/cleaner contents: same behaviour as space cleaner and sterilizine
+#define STERILIZINE_FULL_CLEAN_RATIO 0.1   // At least 10% sterilizine → full forensic wipe (erase was_bloodied and DNA)
+#define CLEANER_ERASE_DNA_RATIO      0.1   // At least 10% space cleaner → erase DNA but leave was_bloodied (luminol still works)
+
+/// Returns "full", "cleaner_dna", or "preserve" based on source's reagent ratios. Returns "dry" if not cleanable.
+/turf/proc/get_clean_type_from_source(atom/source)
+	if(!source?.reagents || source.reagents.total_volume < 1)
+		return "dry"
+	var/total = source.reagents.total_volume
+	if(total <= 0)
+		return "dry"
+	var/sterilizine = source.reagents.get_reagent_amount("sterilizine")
+	var/cleaner = source.reagents.get_reagent_amount("cleaner")
+	if(sterilizine >= total * STERILIZINE_FULL_CLEAN_RATIO)
+		return "full"
+	if(cleaner >= total * CLEANER_ERASE_DNA_RATIO)
+		return "cleaner_dna"
+	return "preserve"
+
+/// Only water or holywater wets the tile (slippery). 100% space cleaner or 100% sterilizine does not wet.
+/turf/proc/source_has_water_or_holywater(atom/source)
+	return source?.reagents && (source.reagents.get_reagent_amount("water") >= 1 || source.reagents.get_reagent_amount("holywater") >= 1)
+
 /turf/simulated/clean_blood()
 	// Preserve the was_bloodied marker on the turf while removing visible
 	// blood decals/overlays. Individual decals will be removed below; call
@@ -35,22 +58,22 @@
 		B.clean_blood()
 	..()
 
-//expects an atom containing the reagents used to clean the turf
+//expects an atom containing the reagents used to clean the turf (e.g. mop). Uses same logic as space cleaner/sterilizine by content ratio.
 /turf/proc/clean(atom/source, mob/user)
 	var/amt = 0  // Amount of filth collected (for holy vacuum cleaner)
+	if(!source?.reagents || source.reagents.total_volume < 1)
+		to_chat(user, SPAN_WARNING("\The [source] is too dry to wash that."))
+		return amt
 	if(source.reagents.has_reagent("water", 1) || source.reagents.has_reagent("cleaner", 1) || source.reagents.has_reagent("holywater", 1) || source.reagents.has_reagent("sterilizine", 1))
-		// If the cleaning source contains sterilizine, perform a full clean
-		// (sterilizine intentionally clears forensic traces). Otherwise,
-		// perform a preserve-clean: remove visible decals/overlays but keep
-		// the turf's `was_bloodied` flag intact so luminol traces still work.
-		var/full_clean = source.reagents.has_reagent("sterilizine", 1)
-		if(full_clean)
-			clean_blood()
-		else
-			// Preserve the forensic marker on the turf while removing visible overlays.
-			// The turf's own clean_blood is conservative, but we call a preserve helper
-			// to be explicit and future-proof.
-			src.clean_blood_preserve_was()
+		var/clean_type = get_clean_type_from_source(source)
+		// At least 10% sterilizine → full forensic wipe. At least 10% space cleaner → erase DNA but leave was_bloodied. Otherwise preserve both.
+		switch(clean_type)
+			if("full")
+				clean_blood()
+			if("cleaner_dna")
+				src.clean_blood_preserve_was(TRUE)  // Erase DNA, keep was_bloodied for luminol
+			if("preserve", "dry")
+				src.clean_blood_preserve_was()     // Remove only visible blood; keep was_bloodied and DNA
 
 		for(var/obj/effect/O in src)
 			if(istype(O,/obj/effect/decal/cleanable) || istype(O,/obj/effect/overlay) && !istype(O,/obj/effect/overlay/water))
@@ -62,9 +85,11 @@
 					var/mob/living/carbon/human/H = user
 					if(H.sanity)
 						H.sanity.changeLevel(0.5)
+		// Only water/holywater wets the tile (slippery). 100% space cleaner or 100% sterilizine does not wet.
+		if(source_has_water_or_holywater(source))
+			source.reagents.trans_to_turf(src, 1, 10)	// wet the floor
 	else
 		to_chat(user, SPAN_WARNING("\The [source] is too dry to wash that."))
-	source.reagents.trans_to_turf(src, 1, 10)	//10 is the multiplier for the reaction effect. probably needed to wet the floor properly.
 	return amt
 
 /turf/proc/clean_ultimate(var/mob/user)
@@ -73,7 +98,7 @@
 		if(istype(O,/obj/effect/decal/cleanable))
 			qdel(O)
 
-//As above, but has limitations. Instead of cleaning the tile completely, it just cleans [count] number of things
+//As above, but has limitations. Instead of cleaning the tile completely, it just cleans [count] number of things. Uses same sterilizine/cleaner thresholds as clean().
 /turf/proc/clean_partial(atom/source, mob/user, var/count = 1)
 	if (!count)
 		return
@@ -83,11 +108,26 @@
 		clean(source, user)
 		return
 
-	if(source.reagents.has_reagent("water", 1) || source.reagents.has_reagent("cleaner", 1))
-		source.reagents.trans_to_turf(src, 1, 10)
+	if(!source?.reagents || source.reagents.total_volume < 1)
+		to_chat(user, SPAN_WARNING("\The [source] is too dry to wash that."))
+		return
+	if(source.reagents.has_reagent("water", 1) || source.reagents.has_reagent("cleaner", 1) || source.reagents.has_reagent("holywater", 1) || source.reagents.has_reagent("sterilizine", 1))
+		// Only water/holywater wets the tile; 100% cleaner or 100% sterilizine does not.
+		if(source_has_water_or_holywater(source))
+			source.reagents.trans_to_turf(src, 1, 10)
 	else
 		to_chat(user, SPAN_WARNING("\The [source] is too dry to wash that."))
 		return
+
+	// Apply same forensic logic as clean(): 10%+ sterilizine = full wipe, 10%+ cleaner = erase DNA only, else preserve
+	var/clean_type = get_clean_type_from_source(source)
+	switch(clean_type)
+		if("full")
+			clean_blood()
+		if("cleaner_dna")
+			src.clean_blood_preserve_was(TRUE)
+		if("preserve", "dry")
+			src.clean_blood_preserve_was()
 
 	for (count;count > 0;count--)
 		var/cleanedsomething = FALSE
@@ -164,12 +204,12 @@
 		luminol_trace.update_icon()
 
 
-// Like clean_blood but preserves the turf's was_bloodied flag and blood_DNA.
-// Removes visible decals/overlays and fluorescent state but does not clear
-// forensic markers. Returns TRUE if any visible overlays/decals were removed.
-/turf/simulated/clean_blood_preserve_was()
+// Like clean_blood but preserves the turf's was_bloodied flag (luminol still works).
+// If clean_dna is TRUE, DNA is cleared (e.g. space cleaner). Do NOT set was_bloodied = FALSE here.
+/turf/simulated/clean_blood_preserve_was(var/clean_dna = FALSE)
 	if(!simulated)
 		return
+	. = ..(clean_dna)
 	fluorescent = 0
-	// were decals removed? Caller handles that, but we ensure the flags are set to indicate "cleaned"
+	// was_bloodied is intentionally NOT cleared - only clean_blood() (e.g. 10%+ sterilizine) does that
 	return
