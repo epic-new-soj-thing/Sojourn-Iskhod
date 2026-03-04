@@ -1218,6 +1218,14 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	title = "Chemistry"
 	page_link = "Guide_to_Chemistry"
 
+/obj/item/book/manual/wiki/surgery_guide
+	name = "Guide to Surgical Procedures"
+	desc = "A practitioner's reference for surgical tools, incision and closure, and step-by-step procedures."
+	icon_state = "medicalbook"
+	author = "Vesalius-Andra Medical"
+	title = "Guide to Surgical Procedures"
+	page_link = "Guide_to_Surgery"
+
 //neotheology
 
 //service
