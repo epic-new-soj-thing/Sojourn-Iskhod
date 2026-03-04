@@ -6,6 +6,25 @@
 #define NON_NEARSIGHTED_FAIL_CHANCE 10  // If not nearsighted, this % chance the ritual fails (on top of any other checks).
 #define FAILURE_BLOOD_COST 12  // Blood drawn from caster when a rune invocation fails (pen binding or nearsighted focus; max health is not drained).
 
+/// Effective maxhp for reduction: blood percentage + maxhp until 50% of total; above 50% only maxhp applies.
+/mob/living/carbon/human/proc/get_effective_maxhp()
+	var/total = species ? species.total_health : 100
+	if(maxHealth >= total * 0.5)
+		return maxHealth
+	return min(get_blood_volume() + maxHealth, total * 0.5)
+
+/// Applies a max HP (and current health) cost using effective maxhp; never reduces below 25% of total.
+/mob/living/carbon/human/proc/apply_max_hp_cost(cost)
+	var/total = species ? species.total_health : 100
+	var/ritual_floor = total * 0.25
+	var/effective = get_effective_maxhp()
+	var/actual = min(cost, effective - ritual_floor, maxHealth - ritual_floor)
+	actual = max(0, actual)
+	maxHealth -= actual
+	health -= actual
+	if(health > maxHealth)
+		health = maxHealth
+
 /obj/effect/decal/cleanable/blood_rune
 	name = "rune"
 	desc = "A blood rune."
@@ -68,6 +87,10 @@
 		cost = max(1, round(cost / 4))
 	cost = max(1, round(cost * get_soulstone_ritual_discount(M)))
 	return cost
+
+/// Applies a max HP (and current health) cost, using effective maxhp; delegates to the human proc.
+/obj/effect/decal/cleanable/blood_rune/proc/apply_max_hp_cost(mob/living/carbon/human/M, cost)
+	M.apply_max_hp_cost(cost)
 
 /obj/effect/decal/cleanable/blood_rune/Destroy()
 	..()
@@ -229,8 +252,7 @@
 			// Demonomicon use below 25% sanity: drain health, max HP, and blood
 			if(use_demonomicon && M.sanity && M.sanity.level < M.sanity.max_level * 0.25)
 				M.adjustBruteLoss(10)
-				M.maxHealth = max(30, M.maxHealth - 3)
-				M.health = min(M.health, M.maxHealth)
+				M.apply_max_hp_cost(8)
 				if(B)
 					B.remove_self(12)
 				to_chat(M, SPAN_DANGER("The tome's grip on you tightens; your blood and vitality waver."))
@@ -594,7 +616,8 @@
 		pass = FALSE
 	if(M.get_blood_volume() < 50)
 		pass = FALSE
-	if(M.maxHealth <= 30)
+	var/ritual_floor = M.species ? (M.species.total_health * 0.25) : 25
+	if(M.maxHealth <= ritual_floor)
 		to_chat(M, "<span class='info'>Your hand is shaking, your concentration too shattered. The ritual cannot proceed with your constitution as frail as it is.</span>")
 		return FALSE
 	if(!pass && !blind)

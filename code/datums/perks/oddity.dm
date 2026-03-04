@@ -339,52 +339,6 @@
 	lose_text = "Speed is king."
 	icon_state = "tank_resiliance"
 
-/datum/perk/oddity/demonomicon
-	name = "Bound to the Tome"
-	desc = "You focused upon the Demonomicon and internalized its alien clarity. Your cognition and vigilance are sharpened, but the tome's grip on you never fully fades: you take more sanity damage from harm, shock, and the world, and recover sanity more slowly."
-	gain_text = "The script has written itself into you; you see the art of blood and rune with terrible clarity."
-	lose_text = "The tome's hold on your mind loosens."
-	icon_state = "brain"
-
-/datum/perk/oddity/demonomicon/assign(mob/living/L)
-	if(!..())
-		return
-	if(!ishuman(L))
-		return
-	var/mob/living/carbon/human/H = L
-	if(H.sanity)
-		H.sanity.sanity_passive_gain_multiplier *= 0.6
-		H.sanity.view_damage_threshold = max(5, H.sanity.view_damage_threshold - 10)
-	H.stats.changeStat(STAT_VIG, 15)
-	H.stats.changeStat(STAT_COG, 15)
-	H.stats.changeStat(STAT_BIO, 10)
-	H.stats.changeStat(STAT_MEC, 10)
-	H.stats.changeStat(STAT_ROB, 10)
-	H.stats.changeStat(STAT_TGH, 10)
-	H.stats.changeStat(STAT_VIV, 5)
-	H.stats.changeStat(STAT_ANA, 5)
-	H.maxHealth += 20
-	H.health += 20
-
-/datum/perk/oddity/demonomicon/remove()
-	if(holder && ishuman(holder))
-		var/mob/living/carbon/human/H = holder
-		if(H.sanity)
-			H.sanity.sanity_passive_gain_multiplier /= 0.6
-			H.sanity.view_damage_threshold += 10
-		H.stats.changeStat(STAT_COG, -5)
-		H.stats.changeStat(STAT_VIG, -5)
-		H.stats.changeStat(STAT_BIO, -10)
-		H.stats.changeStat(STAT_MEC, -10)
-		H.stats.changeStat(STAT_ROB, -10)
-		H.stats.changeStat(STAT_TGH, -10)
-		H.stats.changeStat(STAT_VIV, -5)
-		H.stats.changeStat(STAT_ANA, -5)
-		H.maxHealth -= 20
-		H.health -= 20
-	..()
-
-
 ///////////////////////////////////////
 //////// JOB ODDITYS PERKS ////////////
 ///////////////////////////////////////

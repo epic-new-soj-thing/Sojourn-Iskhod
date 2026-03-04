@@ -88,7 +88,9 @@
 	item_state = "hunt_knife[amount]"
 
 /obj/item/stack/thrown/blood_knives/launchAt(atom/target, mob/living/carbon/M)
-	var/hp_throwing_damage = ((200 - max(M.maxHealth, 30)) / 5) // At 60 hp we do about 28 damage. Caps at 34 damage.
+	var/total_maxhp = M.species ? M.species.total_health : 100
+	var/hp_floor = total_maxhp * 0.25
+	var/hp_throwing_damage = ((200 - max(M.maxHealth, hp_floor)) / 5) // At 60 hp we do about 28 damage. Caps at 34 damage.
 	throwforce = hp_throwing_damage
 	..()
 

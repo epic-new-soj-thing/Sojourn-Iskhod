@@ -98,8 +98,7 @@
 	to_chat(M, "<span class='warning'>Your head throbs like a maddening heartbeat, eldritch knowledge gnawing open the doors of your psyche and crawling inside, granting you a glimpse of languages older than time itself. The heart pounds in synchrony, making up for the price of blood in exchange.</span>")
 	playsound(M, 'sound/effects/singlebeat.ogg', 100)
 	var/cost = src.health_spell_cost(M, 20)
-	M.maxHealth -= cost
-	M.health -= cost
+	src.apply_max_hp_cost(M, cost)
 	src.charge_blood(M, 25)
 	M.sanity.changeLevel(-5, TRUE)
 	M.unnatural_mutations.total_instability += 15
@@ -113,8 +112,7 @@
 	M.psi_blocking_additive = 20
 	to_chat(M, "<span class='warning'>Your mind feels like an impenetrable fortress against psionic assaults. Your heart is beating like a drum, exerting itself to recover the blood paid for your boon.</span>")
 	var/cost = src.health_spell_cost(M, 5)
-	M.maxHealth -= cost
-	M.health -= cost
+	src.apply_max_hp_cost(M, cost)
 	src.charge_blood(M, 25)
 	M.sanity.changeLevel(-35, TRUE)
 	return
@@ -128,7 +126,8 @@
 		if(!able_to_cast)
 			return
 
-		if(M.maxHealth > 30)
+		var/ritual_floor = M.species ? (M.species.total_health * 0.25) : 25
+		if(M.maxHealth > ritual_floor)
 			to_chat(M, "<span class='warning'>Gung vf abg qrnq juvpu pna rgreany yvr, naq jvgu fgenatr nrbaf rira qrngu znl qvr.</span>") // Guess the language and the phrase.
 			greater.revive()
 			greater.colony_friend = TRUE
@@ -138,8 +137,7 @@
 			greater.maxHealth *= 0.5
 			greater.health *= 0.5
 			var/cost = src.health_spell_cost(M, 25)
-			M.maxHealth -= cost
-			M.health -= cost
+			src.apply_max_hp_cost(M, cost)
 			src.charge_blood(M, 18)
 			M.sanity.changeLevel(-10, TRUE)
 			return
@@ -152,7 +150,8 @@
 		if(!able_to_cast)
 			return
 
-		if(M.maxHealth > 30)
+		var/ritual_floor_lesser = M.species ? (M.species.total_health * 0.25) : 25
+		if(M.maxHealth > ritual_floor_lesser)
 			to_chat(M, "<span class='info'>Gung vf abg qrnq juvpu pna rgreany yvr, naq jvgu fgenatr nrbaf rira qrngu znl qvr.</span>")
 			lesser.revive()
 			lesser.colony_friend = TRUE
@@ -161,8 +160,7 @@
 			lesser.maxHealth *= 0.5
 			lesser.health *= 0.5
 			var/cost = src.health_spell_cost(M, 25)
-			M.maxHealth -= cost
-			M.health -= cost
+			src.apply_max_hp_cost(M, cost)
 			src.charge_blood(M, 25)
 			M.sanity.changeLevel(-10, TRUE)
 			return
@@ -176,8 +174,7 @@
 
 	to_chat(M, "<span class='warning'>Your blood runs thin as you catch a glimpse of forbidden aeons, shortening your lifespan as you come to terms with your feeble inconsequentiality on the greater scheme of things.</span>")
 	var/cost = src.health_spell_cost(M, 5)
-	M.maxHealth -= cost
-	M.health -= cost
+	src.apply_max_hp_cost(M, cost)
 	src.charge_blood(M, 10)
 	M.sanity.breakdown(TRUE)
 	M.sanity.changeLevel(30)
@@ -203,8 +200,7 @@
 /obj/effect/decal/cleanable/blood_rune/proc/paradox_spell(mob/living/carbon/human/M)
 	to_chat(M, "<span class='warning'>The air around you grows hot, your heart races as a feeling of dread washes over you. You hear a faint whisper in the back of your head, \"Upside, downside... all cardinal directions, an illusion...\"</span>")
 	var/cost = src.health_spell_cost(M, 25)
-	M.maxHealth -= cost
-	M.health -= cost
+	src.apply_max_hp_cost(M, cost)
 	src.charge_blood(M, 50)
 	M.sanity.breakdown(TRUE)
 	sleep(30)
@@ -292,8 +288,7 @@
 		to_chat(M, SPAN_WARNING("The paths of the Alchemist and the Tome Binder are mutually exclusive."))
 		return
 	var/cost = src.health_spell_cost(M, 25)
-	M.maxHealth -= cost
-	M.health -= cost
+	src.apply_max_hp_cost(M, cost)
 	src.charge_blood(M, 25)
 	M.stats.addPerk(PERK_ALCHEMY)
 	M.sanity.changeLevel(15)
@@ -306,8 +301,7 @@
 		return
 
 	var/cost = src.health_spell_cost(M, 10)
-	M.maxHealth -= cost
-	M.health -= cost
+	src.apply_max_hp_cost(M, cost)
 	for(var/obj/item/reagent_containers/snacks/grown/G in oview(5))
 
 		if(!body_checks(M))
@@ -328,8 +322,7 @@
 		return
 
 	var/cost = src.health_spell_cost(M, 5)
-	M.maxHealth -= cost
-	M.health -= cost
+	src.apply_max_hp_cost(M, cost)
 	for(var/obj/item/oddity/common/book_omega/opened/BOOK in oview(3))
 		to_chat(M, "<span class='info'>A cold voice creeks. </span><span class='angelsay'> With this messy canvas, I can only provide you a glance of that.</span>")
 		if(!body_checks(M))
@@ -447,8 +440,7 @@
 		M.sanity.changeLevel(20)
 		src.charge_blood(M, 50)
 		var/cost = src.health_spell_cost(M, 25)
-		M.maxHealth -= cost
-		M.health -= cost
+		src.apply_max_hp_cost(M, cost)
 		to_chat(M, "<span class='warning'>Your head throbs like a heartbeat, the sudden insight of knowledge on how to pen down your dissasociated thoughts into scrolls fogs your eyes, until you can see no more.</span>")
 		qdel(P)
 	return
@@ -497,8 +489,7 @@
 			new /obj/item/tool/knife/ritual/sickle(knifey.loc)
 			src.charge_blood(M, 50)
 			var/cost = src.health_spell_cost(M, 5)
-			M.maxHealth -= cost
-			M.health -= cost
+			src.apply_max_hp_cost(M, cost)
 			M.sanity.changeLevel(-5, TRUE)
 			qdel(knifey)
 		if(istype(knifey, /obj/item/tool/knife/ritual/sickle) && !istype(knifey, /obj/item/tool/knife/ritual/blade))
@@ -507,8 +498,7 @@
 			new /obj/item/tool/knife/ritual/blade(knifey.loc)
 			src.charge_blood(M, 50)
 			var/cost = src.health_spell_cost(M, 5)
-			M.maxHealth -= cost
-			M.health -= cost
+			src.apply_max_hp_cost(M, cost)
 			M.sanity.changeLevel(-10, TRUE)
 			qdel(knifey)
 	return

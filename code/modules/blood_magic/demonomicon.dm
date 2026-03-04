@@ -42,7 +42,7 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 				<div class="toc"><b>Contents</b> &mdash; I. Prerequisites &amp; Prohibitions &bull; II. The Blood Rune &bull; III. Inscribing the Working &bull; IV. Candles &amp; Invocation &bull; V. The Tongues &bull; VI. Book Spells &bull; VII. Knife Spells &bull; VIII. Scrolls &amp; Traps (incl. scroll spell table) &bull; IX. The Blood Basin &bull; X. Alchemy &bull; XI. Tomes (incl. sanity, cost of reading) &bull; XII. Soulstones (incl. purification) &bull; XIII. On Rifts &bull; XIV. On This Tome</div>
 
 				<h2>I. Prerequisites &amp; Prohibitions</h2>
-				<p>Blood magic is closed to the faithful: those who bear the cruciform cannot draw runes in blood nor channel the rituals described herein. Synthetics and slimes are likewise unable to perform these arts. The practitioner must be of flesh, with blood in their veins: no less than fifty measures of blood remain in the body, and the constitution must not be broken (the tome speaks of a threshold of thirty in strength of form). Nearsightedness is not required, but some texts suggest it may sharpen focus: those who are <b>not</b> nearsighted face an additional one-in-ten chance that the ritual fails when invoked (the focus wavers and the working does not take). Whenever a ritual fails&#8212;whether from weak binding or lost focus&#8212;the caster still pays a cost in blood (twelve measures).</p>
+				<p>Blood magic is closed to the faithful: those who bear the cruciform cannot draw runes in blood nor channel the rituals described herein. Synthetics and slimes are likewise unable to perform these arts. The practitioner must be of flesh, with blood in their veins: no less than fifty measures of blood remain in the body, and the constitution must not be broken (the tome speaks of a threshold of a quarter of one's strength of form). When paying costs in vigour, blood and vigour count together until half one's natural vigour; below that, only vigour is reduced. Nearsightedness is not required, but some texts suggest it may sharpen focus: those who are <b>not</b> nearsighted face an additional one-in-ten chance that the ritual fails when invoked (the focus wavers and the working does not take). Whenever a ritual fails&#8212;whether from weak binding or lost focus&#8212;the caster still pays a cost in blood (twelve measures).</p>
 
 				<h2>II. The Blood Rune</h2>
 				<h3>How to make a blood rune</h3>
@@ -60,10 +60,10 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 				<div class="page">
 				<h2>III. Inscribing the Working</h2><p>The ritual reads the <b>name of the spell</b> from <b>paper</b> only. The rune must be a <b>blood rune on the floor</b> (drawn with the ritual knife); the words must be inscribed on paper in <b>blood or pen</b>, in the <b>required language</b> for that spell, and placed within <b>three tiles</b> of the rune when you invoke. Writing the spell name in blood upon the floor does <b>not</b> work&mdash;the rune will not read it.</p>
 				<h3>How to inscribe the spell on paper</h3>
-				<p>Inscribe the spell name on <b>paper</b> using a <b>pen</b> (or crayon), or in <b>blood on the paper</b> (you must <b>cut your palm</b> with the ritual knife in hand to bloody your hands for writing&mdash;dipping in a blood pool or basin only stains the hands and does not allow the working; then use the <b>Write in blood</b> verb on the paper). Each cut allows up to five such inscriptions before you must cut again.</p>
+				<p>Inscribe the spell name on <b>paper</b> using a <b>pen</b> (or crayon), or in <b>blood on the paper</b> (you must <b>cut your palm</b> with the ritual knife in hand to bloody your hands for writing&mdash;dipping in a blood pool or basin only stains the hands and does not allow the working; then use the <b>Write in blood</b> verb on the paper). Each cut costs five measures of blood and allows up to five such inscriptions before you must cut again.</p>
 				<p>Set the paper&rsquo;s writing language to the <b>required tongue</b>: <b>book</b> spells (Section VI) and <b>scroll</b> inscriptions (Section VIII) require the <b>Cult</b> language; <b>knife</b> spells (Section VII) require the <b>Occult</b> language. Place the paper within three tiles of the blood rune. Spell names are case-sensitive and must end with a full stop.</p>
-				<p><b>Blood and pen:</b> Inscriptions written in <b>blood on the paper</b> bind truly; the ritual proceeds as normal. Inscriptions written with a <b>pen</b> or <b>crayon</b> lack the binding and have a <b>chance of failure</b> when invoked&mdash;the rune may flicker and the working may not take. Red <b>crayon</b> (crayon only, not red pen) is said to hold the intent somewhat better and enjoys a higher chance of success than other pen or crayon work. Whenever an invocation fails&#8212;whether the ink lacked binding or the caster&rsquo;s focus wavered&#8212;<b>twelve measures of blood</b> are still drawn from the caster.</p>
-				<p><b>Summary:</b> Blood rune on the floor (ritual knife). Spell name on paper (blood or pen/crayon), in the required language (Cult for book/scroll, Occult for knife). Place the paper near the rune. Blood on the paper is reliable; pen and crayon have a chance of failure (red crayon fares better). Non-nearsighted casters face an extra chance of focus failure. Failed rituals cost twelve measures of blood.</p>
+				<p><b>Blood and pen:</b> Inscriptions written in <b>blood on the paper</b> bind truly; the ritual proceeds as normal. Inscriptions written with a <b>pen</b> or <b>crayon</b> lack the binding and have a <b>chance of failure</b> when invoked&mdash;the rune may flicker and the working may not take. Red <b>crayon</b> (crayon only, not red pen) is said to hold the intent somewhat better and enjoys a higher chance of success than other pen or crayon work. Whenever an invocation fails&#8212;whether the ink lacked binding or the caster&rsquo;s focus wavered&#8212;<b>twelve measures of blood</b> are still drawn from the caster (an <b>energized purified soulstone</b> reduces this to three measures).</p>
+				<p><b>Summary:</b> Blood rune on the floor (ritual knife). Spell name on paper (blood or pen/crayon), in the required language (Cult for book/scroll, Occult for knife). Place the paper near the rune. Blood on the paper is reliable; pen and crayon have a chance of failure (red crayon fares better). Non-nearsighted casters face an extra chance of focus failure. Failed rituals cost twelve measures of blood (three if you carry an energized purified soulstone).</p>
 				<h2>IV. Candles &amp; Invocation</h2>
 				<p>Place <b>candles</b> within three tiles of the rune. When you invoke the rune, any unlit candles in that range may catch flame. Each ritual demands a minimum number of candles (given below). Count only candles within three tiles.</p>
 				<h3>Which books work for spells</h3>
@@ -135,9 +135,9 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 				<tr><td class="spell">Mightier.</td><td class="candles">3</td><td class="candles">25</td><td>Create throwing projectiles that grow stronger the lower your max health.</td></tr>
 				<tr><td class="spell">Purify.</td><td class="candles">6</td><td class="candles">55</td><td>Turn a soulstone on the rune into a purified soulstone.</td></tr>
 				<tr><td class="spell">Mystic.</td><td class="candles">8</td><td class="candles">75</td><td>Turn a purified soulstone on the rune into a mystic soulstone.</td></tr>
-				<tr><td class="spell">Rift.</td><td class="candles">5</td><td class="candles">40</td><td>Open a temporary rift to deep maintenance at the rune; it closes after a short time.</td></tr>
+				<tr><td class="spell">Rift.</td><td class="candles">5</td><td class="candles">40 or 80</td><td>Open a temporary rift at the rune (40 blood to deep maintenance; 80 if you choose a destination&mdash;dangerous).</td></tr>
 				</tbody></table>
-				<p><b>Rift.</b> (5 candles, 40 blood): Invoke with the ritual knife or the Demonomicon to tear open a rift at the rune. The rift leads to a random floor tile in <b>deep maintenance</b> and disappears after a short while. Stepping through carries the traveller to the depths.</p>
+				<p><b>Rift.</b> (5 candles, 40 blood): Invoke with the ritual knife or the Demonomicon to tear open a rift at the rune. By default the rift leads to a random floor tile in <b>deep maintenance</b> and disappears after a short while. You may instead choose a destination area at a prompt; that path costs <b>eighty measures of blood</b>, heavier tolls on sanity and entropy, and carries a risk of death or severe harm. Stepping through carries the traveller to the destination.</p>
 				</div>
 
 				<hr>
@@ -169,7 +169,7 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 				<tr><td class="spell">Charger.</td><td class="candles">10</td><td>Spawn ball lightning anomalies in nearby tiles.</td></tr>
 				</tbody></table>
 				<p>Seal a scroll with bee wax to carry it safely; unseal before burning. Trap runes (blood runes converted by <b>Caprice.</b> or other means) may trigger scroll or rune effects on those who cross and do not speak the tongues.</p>
-				<h2>IX. The Blood Basin</h2><p>Invoke <b>Fountain.</b> with a water tank adjacent to the rune to create a blood basin. Dipping bare hands in it stains them with blood at a cost to insight, but <b>writing in blood</b> requires <b>cutting your palm</b> with the ritual knife&mdash;wet hands alone cannot inscribe the working. To write in blood: <b>use the ritual knife on yourself</b> (use it in hand) to cut your palm and coat your fingers; each cut allows up to five inscriptions (on the floor or on paper) before you must cut again.</p>
+				<h2>IX. The Blood Basin</h2><p>Invoke <b>Fountain.</b> with a water tank adjacent to the rune to create a blood basin. Dipping bare hands in it stains them with blood at a cost to insight, but <b>writing in blood</b> requires <b>cutting your palm</b> with the ritual knife&mdash;wet hands alone cannot inscribe the working. To write in blood: <b>use the ritual knife on yourself</b> (use it in hand) to cut your palm and coat your fingers; each cut costs five measures of blood and allows up to five inscriptions (on the floor or on paper) before you must cut again.</p>
 				<h2>X. Alchemy</h2>
 				<p>The art of binding and condensing liquids in the alembic is closed to all but those who have invoked <b>Brew.</b> at a blood rune (2 candles). <b>Alchemist, Scribe, and Tome Binder are mutually exclusive</b>&mdash;you may have only one of the three.</p>
 				<h3>The Alembic</h3>
@@ -267,14 +267,14 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 				<thead><tr><th>Tier</th><th>When carried</th><th>When energized (inventory or on rune)</th></tr></thead>
 				<tbody>
 				<tr><td class="spell">Base</td><td>Steadies the mind slightly.</td><td>Rune ritual blood and health cost reduced (about 15% less).</td></tr>
-				<tr><td class="spell">Purified</td><td>Steadies the mind; failed invocations cost only a few measures of blood instead of twelve.</td><td>Ritual cost reduced further (about 28% less).</td></tr>
+				<tr><td class="spell">Purified</td><td>Steadies the mind; failed invocations cost only three measures of blood instead of twelve.</td><td>Ritual cost reduced further (about 28% less).</td></tr>
 				<tr><td class="spell">Mystic</td><td>Stifles psionics and cruciform rites in others within two tiles; bearer is not affected.</td><td>Strongest ritual cost reduction (about 40% less).</td></tr>
 				</tbody></table>
 				<h2>XIII. On Rifts</h2>
-				<p>The spell <b>Rift.</b> (knife or this tome, 5 candles, 40 blood) tears open a temporary passage at the rune to <b>deep maintenance</b>. The rift closes after a short time; those who step through are carried into the depths. Use it to reach places otherwise sealed, or to leave a door that soon seals behind you.</p>
+				<p>The spell <b>Rift.</b> (knife or this tome, 5 candles, 40 blood) tears open a temporary passage at the rune to <b>deep maintenance</b>. The rift closes after a short time; those who step through are carried into the depths. Choosing a specific destination at the ritual&rsquo;s prompt costs eighty measures of blood and is dangerous&mdash;the caster may be wounded, maimed, or unmade. Use the default path to reach the depths, or the chosen path at your peril.</p>
 				<h2>XIV. On This Tome</h2>
-				<p>This Demonomicon is not a passive manual. <b>Using</b> it&mdash;reading it or invoking a rune with it&mdash;drains the bearer&rsquo;s sanity; the script weighs on the mind. When sanity falls <b>below a quarter</b> of its fullness, each such use also wounds the user (eight when reading, ten when invoking at a rune), weakens their constitution (reducing maximum vigour by three, to no less than thirty), and draws blood (six measures when reading, twelve when invoking), as the tome&rsquo;s grip tightens.</p>
-				<p>Like certain anomalous curios, this tome may be used as an <b>inspiration</b> when insight is fulfilled: after resting and completing the prompt, choose &ldquo;Focus on an oddity&rdquo; and select the Demonomicon. Doing so grants stat growth (Cognition, Vigilance) and a single, lasting benefit&mdash;the <b>Bound to the Tome</b> perk&mdash;at a <b>grave expense</b>: the bond sharpens the mind but leaves it more vulnerable to shock and the world, and sanity recovers more slowly. Moreover, <b>each time</b> you focus upon this tome, it exacts a heavy toll in health, sanity, and blood. Weigh the cost before you bind yourself to its wisdom.</p>
+				<p>This Demonomicon is not a passive manual. <b>Using</b> it&mdash;reading it or invoking a rune with it&mdash;drains the bearer&rsquo;s sanity; the script weighs on the mind. When sanity falls <b>below a quarter</b> of its fullness, each such use also wounds the user (eight when reading, ten when invoking at a rune), weakens their constitution (reducing maximum vigour by six when reading, eight when invoking at a rune, to no less than a quarter of one's vigour), and draws blood (six measures when reading, twelve when invoking), as the tome&rsquo;s grip tightens.</p>
+				<p>Like certain anomalous curios, this tome may be used as an <b>inspiration</b> when insight is fulfilled: after resting and completing the prompt, choose &ldquo;Focus on an oddity&rdquo; and select the Demonomicon. Doing so grants stat growth (Cognition, Vigilance) and a single, lasting benefit&mdash;the <b>Bound to the Tome</b> perk&mdash;at a <b>grave expense</b>: the bond sharpens the mind but leaves it more vulnerable to shock and the world, and sanity recovers more slowly. Moreover, <b>each time</b> you focus upon this tome, it exacts fifteen wounds, twenty-five sanity, and sixty measures of blood. Weigh the cost before you bind yourself to its wisdom.</p>
 				<p>Those <b>Bound to the Tome</b> find that blood rituals take a lesser toll upon the body: the <b>max health</b> paid when casting (Babel, Voice, Life, Brew, Scribe, and the like) is <b>quartered</b>&mdash;one fourth of the usual cost&mdash;so that the bond, for all its price, eases the sacrifice demanded by the art.</p>
 				<blockquote>Thus is the art of blood magic set down: by rune, candle, and exact word. Let the practitioner take heed of the prohibitions and the price in blood and sanity.</blockquote>
 				</div>
@@ -303,7 +303,7 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 		H.sanity.changeLevel(-25, TRUE)
 	var/datum/reagent/organic/blood/B = H.get_blood()
 	if(B)
-		B.remove_self(10)
+		B.remove_self(60)
 	to_chat(H, SPAN_DANGER("The Demonomicon exacts its price; your blood and sanity waver."))
 
 /obj/item/book/manual/demonomicon/attack_self(mob/user)
@@ -326,8 +326,7 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 				if(B)
 					B.remove_self(6)
 				H.adjustBruteLoss(8)
-				H.maxHealth = max(30, H.maxHealth - 3)
-				H.health = min(H.health, H.maxHealth)
+				H.apply_max_hp_cost(6)
 				to_chat(H, SPAN_DANGER("The tome's grip on you tightens; your blood and vitality waver."))
 	..()
 	// Register so we get Topic when window is closed; drain sanity periodically while the window stays open

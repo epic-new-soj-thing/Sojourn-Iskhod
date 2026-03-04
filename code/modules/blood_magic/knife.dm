@@ -110,8 +110,7 @@
 	to_chat(M, "<span class='warning'>Your head throbs like a maddening heartbeat, eldritch knowledge gnawing open the doors of your psyche and crawling inside, granting you a glimpse of languages older than time itself. The heart pounds in synchrony, making up for the price of blood in exchange.</span>")
 	playsound(M, 'sound/effects/singlebeat.ogg', 80)
 	var/cost = src.health_spell_cost(M, 20)
-	M.maxHealth -= cost
-	M.health -= cost
+	src.apply_max_hp_cost(M, cost)
 	src.charge_blood(M, 25)
 	M.unnatural_mutations.total_instability += 15
 	M.sanity.changeLevel(-20, TRUE)
@@ -299,8 +298,7 @@
 		src.charge_blood(M, 25) //pay da cost BEFORE we do the living check
 		if(!able_to_cast) //punishment for not being able to cast
 			var/cost = src.health_spell_cost(M, 1)
-			M.maxHealth -= cost
-			M.health -= cost
+			src.apply_max_hp_cost(M, cost)
 			M.unnatural_mutations.total_instability += 1 //A soft cap
 
 		success = TRUE
@@ -316,8 +314,7 @@
 		src.charge_blood(M, 25)
 		if(!able_to_cast)
 			var/cost = src.health_spell_cost(M, 1)
-			M.maxHealth -= cost
-			M.health -= cost
+			src.apply_max_hp_cost(M, cost)
 			M.unnatural_mutations.total_instability += 1
 
 		success = TRUE
@@ -538,8 +535,7 @@
 			stat_amount += 2  //We give quite a bit for
 			M.max_nutrition -= 20
 			var/cost = src.health_spell_cost(M, 5)
-			M.maxHealth -= cost
-			M.health -= cost
+			src.apply_max_hp_cost(M, cost)
 		else
 			to_chat(M, "<span class='info'>Your basin has run dry.</span>")
 			src.charge_blood(M, 5) //Still cost ya to manifest the blood gathering

@@ -176,65 +176,6 @@
 		H.metabolism_effects.calculate_nsa()
 	..()
 
-/datum/perk/alchemist
-	name = "Alchemy"
-	desc = "Whether from fun study or natural talent in the field of brewing random things together you know how to gather basic chemical compounds. \
-			Your NSA also has been slightly improved due to self experimentation. You can also see all reagents in beakers."
-	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
-
-/datum/perk/alchemist/assign(mob/living/L)
-	..()
-	if(ishuman(holder))
-		var/mob/living/carbon/human/H = holder
-		H.metabolism_effects.nsa_mult += 0.05
-		H.metabolism_effects.calculate_nsa()
-
-/datum/perk/alchemist/remove()
-	if(ishuman(holder))
-		var/mob/living/carbon/human/H = holder
-		H.metabolism_effects.nsa_mult -= 0.05
-		H.metabolism_effects.calculate_nsa()
-	..()
-
-/datum/perk/scribe
-	name = "Scribe"
-	desc = "Your ability to turn experiences into words knows no bounds. Paper at this point is hardly able to hold the power of your writing."
-	copy_protected = TRUE
-
-/datum/perk/scribe/assign(mob/living/L)
-	..()
-	if(holder)
-		holder.sdisabilities|=BLIND
-
-/datum/perk/scribe/remove()
-	if(holder)
-		holder.sdisabilities&=BLIND
-	..()
-
-/datum/perk/tome_binder
-	name = "Tome Binder"
-	desc = "You have learned to bind ritual knowledge into thematic tomes at a blood rune. Mutually exclusive with Scribe and Alchemist."
-	copy_protected = TRUE
-
-/datum/perk/tome_binder/assign(mob/living/L)
-	..()
-
-/datum/perk/tome_binder/remove()
-	..()
-
-/datum/perk/cooldown/reveal //perk to give thermal vision. Meant to only last a few moments before ending and removing itself.
-	name = "Peak-A-Boo"
-	perk_lifetime = 3 SECONDS
-	gain_text = "The scroll's smoke fills your eyes. Whats moving in the walls?"
-	lose_text = "Your eyes sting but you don't see the pain anymore."
-	copy_protected = TRUE
-
-/datum/perk/cooldown/reveal/assign(mob/living/L)
-	..()
-	if(holder)
-		//give thermal vision
-		holder.sight |= SEE_MOBS
-
 /datum/perk/bartender
 	name = "Bar Menu"
 	desc = "You know how to mix a drink, and flip a burger. You can identify the ingredients that went into food and how much was used."
