@@ -6399,9 +6399,8 @@
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "xg" = (
-/obj/structure/table/marble,
 /obj/item/seeds/tomatoseed,
-/obj/item/reagent_containers/snacks/dollop,
+/obj/machinery/cooking/deepfrier,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "xl" = (
@@ -7658,11 +7657,9 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "IF" = (
-/obj/structure/curtain/open/shower/security,
-/obj/machinery/door/unpowered/simple/wood{
-	name = "blood magic study"
-	},
-/turf/simulated/floor/wood/wild1,
+/obj/structure/table/marble,
+/obj/item/reagent_containers/snacks/dollop,
+/turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "II" = (
 /obj/structure/table/rack/shelf,
@@ -7990,6 +7987,13 @@
 	name = "Inquisitors Office"
 	},
 /turf/simulated/floor/wood/wild3,
+/area/centcom/evac)
+"LO" = (
+/obj/structure/curtain/open/shower/security,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "blood magic study"
+	},
+/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "LW" = (
 /obj/structure/bed/chair/wood{
@@ -16326,7 +16330,7 @@ MH
 MH
 MH
 MH
-IF
+LO
 cN
 hy
 Ks
@@ -25030,7 +25034,7 @@ FM
 FM
 Yf
 wx
-UC
+IF
 UC
 ho
 hY
