@@ -10,7 +10,8 @@
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_PLASTIC = 15)
 	can_hold = list(
-		/obj/item/stack/medical/bruise_pack/greyson
+		/obj/item/stack/medical/bruise_pack/greyson,
+		/obj/item/device/scanner/health/greyson
 		)
 	var/kit_type = "brute"
 	var/opened = FALSE
@@ -112,7 +113,8 @@
 	icon_state = "medigel_case_burn_preview"
 	real_item_state = "medigel_case_burn"
 	can_hold = list(
-		/obj/item/stack/medical/ointment/greyson
+		/obj/item/stack/medical/ointment/greyson,
+		/obj/item/device/scanner/health/greyson
 		)
 	kit_type = "burn"
 
@@ -141,7 +143,8 @@
     matter = list(MATERIAL_PLASTIC = 20)
     can_hold = list(
         /obj/item/stack/medical/bruise_pack/greyson,
-        /obj/item/stack/medical/ointment/greyson
+        /obj/item/stack/medical/ointment/greyson,
+        /obj/item/device/scanner/health/greyson
     )
     opened = FALSE
 

@@ -608,12 +608,14 @@ ADMIN_VERB_ADD(/datum/admins/proc/restart, R_SERVER, FALSE)
 	if(confirm == "Cancel")
 		return
 	if(confirm == "Yes")
+		var/run_update = (alert("Run server update before restart? (Linux: runs byond_update script)", "Restart", "Yes", "No - restart only") == "Yes")
 		to_chat(world, "<span class='danger'>Restarting world!</span> <span class='notice'>Initiated by [usr.client.holder.fakekey ? "Admin" : usr.key]!</span>")
-		log_admin("[key_name(usr)] initiated a reboot.")
-
-
+		log_admin("[key_name(usr)] initiated a reboot[run_update ? " (with update)" : " (no update)"].\n")
 		sleep(50)
-		world.Reboot()
+		if(run_update)
+			RunPendingUpdateAndReboot()
+		else
+			world.Reboot()
 
 
 ADMIN_VERB_ADD(/datum/admins/proc/announce, R_ADMIN, FALSE)
@@ -840,14 +842,14 @@ ADMIN_VERB_ADD(/datum/admins/proc/adrev, R_SERVER, FALSE)
 ADMIN_VERB_ADD(/datum/admins/proc/immreboot, R_SERVER, FALSE)
 /datum/admins/proc/immreboot()
 	set category = "Server"
-	set desc="Reboots the server post haste"
+	set desc="Reboots the server immediately with no update"
 	set name="Immediate Reboot"
 	if(!usr.client.holder)
 		return
-	if( alert("Reboot server?",,"Yes","No") == "No")
+	if(alert("Reboot server immediately? (No update will run.)", "Immediate Reboot", "Yes", "No") == "No")
 		return
 	to_chat(world, "\red <b>Rebooting world!</b> \blue Initiated by [usr.client.holder.fakekey ? "Admin" : usr.key]!")
-	log_admin("[key_name(usr)] initiated an immediate reboot.")
+	log_admin("[key_name(usr)] initiated an immediate reboot (no update).\n")
 	world.Reboot()
 
 

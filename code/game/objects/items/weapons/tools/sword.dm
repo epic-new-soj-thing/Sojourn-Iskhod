@@ -269,7 +269,7 @@
 
 					M.dust()
 					add_points(points_to_award)
-					add_overlay(image('icons/obj/cwj_cooking/scan.dmi', icon_state="scan_person", layer=ABOVE_WINDOW_LAYER))
+					add_overlay(image('icons/obj/cooking/scan.dmi', icon_state="scan_person", layer=ABOVE_WINDOW_LAYER))
 					addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 11)
 					return
 
@@ -369,7 +369,7 @@
 
 /obj/item/tool/knife/ritual/blade
 	name = "awakened blade"
-	desc = "The last stage of ascension a ritual knife, its latent powers fully awoken by the crayons' magic. \
+	desc = "The last stage of ascension of a ritual knife, its latent powers fully awoken by blood magic. \
 			Suspiciously glowing runes are drawn on its surface that glow at random intervals."
 	icon_state = "crayon_blade"
 	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 2, MATERIAL_DIAMOND = 1)

@@ -88,26 +88,26 @@
 /obj/machinery/rotating_alarm/set_dir(ndir) //Due to effect, offsets cannot be part of sprite, so need to set it for each dir
 	. = ..()
 	if(dir == NORTH)
-		pixel_y = 28
+		pixel_y = 15
 	if(dir == SOUTH)
-		pixel_y = -13
+		pixel_y = -15
 	if(dir == WEST)
-		pixel_x = -20
+		pixel_x = -15
 	if(dir == EAST)
-		pixel_x = 20
+		pixel_x = 15
 
 
-/obj/machinery/rotating_alarm/proc/set_color(color)
+/obj/machinery/rotating_alarm/proc/set_color(new_color)
 	if (on)
 		vis_contents -= spin_effect
-	if (isnull(spinning_lights_cache["[color]"]))
-		spinning_lights_cache["[color]"] = new /obj/spinning_light()
-	spin_effect = spinning_lights_cache["[color]"]
-	alarm_light_color = color
+	if (isnull(spinning_lights_cache["[new_color]"]))
+		spinning_lights_cache["[new_color]"] = new /obj/spinning_light()
+	spin_effect = spinning_lights_cache["[new_color]"]
+	alarm_light_color = new_color
 	var/HSV = RGBtoHSV(alarm_light_color)
 	var/RGB = HSVtoRGB(RotateHue(HSV, angle))
 	alarm_light_color = RGB
-	spin_effect.set_color(color)
+	spin_effect.set_color(new_color)
 	if (on)
 		vis_contents += spin_effect
 
@@ -144,26 +144,34 @@
 /obj/machinery/rotating_alarm/supermatter
 	name = "supermatter alarm"
 	desc = "An industrial rotating alarm light. This one is used to monitor supermatter engines."
-
 	frame_type = /obj/item/frame/supermatter_alarm
-
 	angle = 15
 	alarm_light_color = COLOR_ORANGE
 	sound_file = 'sound/machines/supermatter.ogg'
+	var/last_status = SUPERMATTER_INACTIVE
 
 /obj/machinery/rotating_alarm/supermatter/Initialize()
 	. = ..()
-	GLOB.supermatter_status.register_global(src, PROC_REF(check_supermatter))
+	START_PROCESSING(SSmachines, src)
 
 /obj/machinery/rotating_alarm/supermatter/Destroy()
-	GLOB.supermatter_status.unregister_global(src, PROC_REF(check_supermatter))
 	. = ..()
 
-/obj/machinery/rotating_alarm/supermatter/proc/check_supermatter(obj/machinery/power/supermatter/SM, last_status)
-	if (SM)
-		if (SM.z in GetConnectedZlevels(src.z))
-			if(last_status >= SUPERMATTER_NOTIFY)
-				set_on()
-			else
-				set_off()
+/obj/machinery/rotating_alarm/supermatter/Process(seconds_per_tick)
+    var/found_sm = FALSE
+    var/highest_status = 0
 
+    for(var/obj/machinery/power/supermatter/S in GLOB.machines)
+        // Check if SM is on a connected Z-level
+        if (S.z in GetConnectedZlevels(z))
+            found_sm = TRUE
+            highest_status = max(S.get_status(), highest_status)
+
+    // If no SM was found at all, or if the status is safe, turn off
+    if(!found_sm || highest_status < SUPERMATTER_NOTIFY)
+        if(last_status != 0) // Only update if state actually changed
+            last_status = 0
+            set_off()
+    else if(last_status != highest_status)
+        last_status = highest_status
+        set_on()

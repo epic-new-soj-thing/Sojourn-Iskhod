@@ -22,6 +22,8 @@
 		"docking_status" = docking_program.get_docking_status(),
 		"airlock_disabled" = !(docking_program.undocked() || docking_program.override_enabled),
 		"override_enabled" = docking_program.override_enabled,
+		"purge" = airlock_program.memory["purge"],
+		"secure" = airlock_program.memory["secure"]
 	)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -41,7 +43,7 @@
 
 	var/clean = FALSE
 	switch(href_list["command"])
-		if("cycle_ext", "cycle_int", "force_ext", "force_int", "abort", "toggle_override")
+		if("cycle_ext", "cycle_int", "force_ext", "force_int", "abort", "toggle_override", "purge", "secure")
 			clean = TRUE
 
 	if(clean)

@@ -1,0 +1,10 @@
+author: AMcilraith
+changes:
+  - add: Added tier-3 default components for the chem dispenser when no parts 
+      are placed.
+  - tweak: Chem dispenser now replaces default parts with tier-3 components if 
+      all parts are stock parts or cells.
+  - fix: Fixed issue where components might duplicate when initializing the chem
+      dispenser.
+date: '2025-08-31'
+delete-after: false

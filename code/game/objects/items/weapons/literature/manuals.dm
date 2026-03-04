@@ -8,8 +8,8 @@
 
 /obj/item/book/manual/engineering_construction
 	name = "Station Repairs and Construction"
-	icon_state ="book_construction"
-	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
+	icon_state = "bookEngineering"
+	author = "Artificer's Guild"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Station Repairs and Construction"
 
 /obj/item/book/manual/engineering_construction/New()
@@ -20,64 +20,17 @@
 		</head>
 
 		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]Guide_to_construction&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<iframe width='100%' height='97%' src="[config.wikiurl]Construction?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 		</body>
 
 		</html>
 
 		"}
 
-/obj/item/book/manual/engineering_particle_accelerator
-	name = "Particle Accelerator User's Guide"
-	icon_state ="bookParticleAccelerator"
-	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
-	title = "Particle Accelerator User's Guide"
-
-/obj/item/book/manual/engineering_particle_accelerator/New()
-	..()
-	dat = {"<html>
-				<head>
-				<style>
-				h1 {font-size: 18px; margin: 15px 0px 5px;}
-				h2 {font-size: 15px; margin: 15px 0px 5px;}
-				h3 {font-size: 13px; margin: 15px 0px 5px;}
-				li {margin: 2px 0px 2px 15px;}
-				ul {margin: 5px; padding: 0px;}
-				ol {margin: 5px; padding: 0px 15px;}
-				body {font-size: 13px; font-family: Verdana;}
-				</style>
-				</head>
-				<body>
-
-				<h1>Experienced User's Guide</h1>
-
-				<h2>Setting up the accelerator</h2>
-
-				<ol>
-					<li><b>Wrench</b> all pieces to the floor</li>
-					<li>Add <b>wires</b> to all the pieces</li>
-					<li>Close all the panels with your <b>screwdriver</b></li>
-				</ol>
-
-				<h2>Using the accelerator</h2>
-
-				<ol>
-					<li>Open the control panel</li>
-					<li>Set the speed to 2</li>
-					<li>Start firing at the singularity generator</li>
-					<li><font color='red'><b>When the singularity reaches a large enough size so it starts moving on it's own set the speed down to 0, but don't shut it off</b></font></li>
-					<li>Remember to wear a radiation suit when working with this machine... we did tell you that at the start, right?</li>
-				</ol>
-
-				</body>
-			</html>
-			"}
-
-
 /obj/item/book/manual/supermatter_engine
 	name = "Supermatter Engine Operating Manual"
-	icon_state = "book_supermatter"
-	author = "Central Engineering Division"
+	icon_state = "bookParticleAccelerator"
+	author = "Artificer's Guild"
 	title = "Supermatter Engine Operating Manual"
 
 /obj/item/book/manual/supermatter_engine/New()
@@ -149,8 +102,8 @@
 
 /obj/item/book/manual/engineering_hacking
 	name = "Hacking"
-	icon_state ="book_hacking"
-	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
+	icon_state = "bookHacking"
+	author = "Artificer's Guild"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Hacking"
 
 /obj/item/book/manual/engineering_hacking/New()
@@ -161,7 +114,7 @@
 		</head>
 
 		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]Hacking&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<iframe width='100%' height='97%' src="[config.wikiurl]Guide_to_Hacking?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 		</body>
 
 		</html>
@@ -171,8 +124,8 @@
 
 /obj/item/book/manual/engineering_singularity_safety
 	name = "Singularity Safety in Special Circumstances"
-	icon_state ="book_singularity"
-	author = "Engineering Encyclopedia"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
+	icon_state = "bookEngineering2"
+	author = "Artificer's Guild"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Singularity Safety in Special Circumstances"
 
 	dat = {"<html>
@@ -222,8 +175,8 @@
 
 /obj/item/book/manual/medical_cloning
 	name = "Cloning Techniques of the 26th Century"
-	icon_state ="book_cloning"
-	author = "Medical Journal, volume 3"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
+	icon_state = "bookCloning"
+	author = "Vesalius-Andra Medical"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Cloning Techniques of the 26th Century"
 
 	dat = {"<html>
@@ -315,7 +268,7 @@
 
 /obj/item/book/manual/ripley_build_and_repair
 	name = "APLU \"Ripley\" Construction and Operation Manual"
-	icon_state ="book"
+	icon_state = "borgbook"
 	author = "Randall Varn, Einstein Engines Senior Mechanic"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "APLU \"Ripley\" Construction and Operation Manual"
 
@@ -392,8 +345,8 @@
 
 /obj/item/book/manual/research_and_development
 	name = "Research and Development 101"
-	icon_state = "book_research"
-	author = "Dr. L. Ight"
+	icon_state = "rdbook"
+	author = "Vesalius-Andra Research"
 	title = "Research and Development 101"
 
 	dat = {"<html>
@@ -461,8 +414,8 @@
 
 /obj/item/book/manual/robotics_cyborgs
 	name = "Cyborgs for Dummies"
-	icon_state = "book_robotics"
-	author = "XISC"
+	icon_state = "borgbook"
+	author = "Vesalius-Andra Robotics"
 	title = "Cyborgs for Dummies"
 
 	dat = {"<html>
@@ -665,11 +618,11 @@
 
 
 /obj/item/book/manual/security_space_law
-	name = "Corporate Regulations"
-	desc = "A set of corporate guidelines for keeping law and order on privately-owned space stations."
+	name = "Space Law and Corporate Regulations"
+	desc = "A set of corporate guidelines and space law for keeping law and order on settlements."
 	icon_state = "bookSpaceLaw"
-	author = "The Company"
-	title = "Corporate Regulations"
+	author = "Corporate Liaison"
+	title = "Space Law and Corporate Regulations"
 
 /obj/item/book/manual/security_space_law/New()
 	..()
@@ -679,7 +632,7 @@
 		</head>
 
 		<body>
-		<iframe width='100%' height='97%' src="[config.wikiurl]Corporate_Regulations&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+		<iframe width='100%' height='97%' src="[config.wikiurl]Laws?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 		</body>
 
 		</html>
@@ -691,8 +644,8 @@
 /obj/item/book/manual/medical_diagnostics_manual
 	name = "Medical Diagnostics Manual"
 	desc = "First, do no harm. A detailed medical practitioner's guide."
-	icon_state = "book_medical"
-	author = "Medical Department"
+	icon_state = "medicalbook"
+	author = "Vesalius-Andra Medical"
 	title = "Medical Diagnostics Manual"
 
 /obj/item/book/manual/medical_diagnostics_manual/New()
@@ -729,7 +682,7 @@
 
 				<HR COLOR="steelblue" WIDTH="60%" ALIGN="LEFT">
 
-				<iframe width='100%' height='100%' src="[config.wikiurl]Guide_to_Medicine&printable=yes&removelinks=1" frameborder="0" id="main_frame"></iframe>
+				<iframe width='100%' height='100%' src="[config.wikiurl]Guide_to_Medicine?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
 				</body>
 			</html>
 
@@ -738,8 +691,8 @@
 
 /obj/item/book/manual/engineering_guide
 	name = "Engineering Textbook"
-	icon_state ="book_engineering"
-	author = "Engineering Encyclopedia"
+	icon_state = "bookEngineering"
+	author = "Artificer's Guild"
 	title = "Engineering Textbook"
 
 /obj/item/book/manual/engineering_guide/New()
@@ -750,7 +703,7 @@
 		</head>
 
 		<body>
-		<iframe width='100%' height='100%' src="[config.wikiurl]Guide_to_Engineering&printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>		</body>
+		<iframe width='100%' height='100%' src="[config.wikiurl]Construction?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>		</body>
 
 		</html>
 
@@ -760,7 +713,7 @@
 /obj/item/book/manual/chef_recipes
 	name = "Chef Recipes"
 	icon_state = "cooked_book"
-	author = "Victoria Ponsonby"
+	author = "Frontier Logistics Service"
 	title = "Chef Recipes"
 
 	dat = {"<html>
@@ -819,7 +772,7 @@
 /obj/item/book/manual/barman_recipes
 	name = "Barman Recipes"
 	icon_state = "barbook"
-	author = "Sir John Rose"
+	author = "Frontier Logistics Service"
 	title = "Barman Recipes"
 
 	dat = {"<html>
@@ -837,6 +790,7 @@
 				<body>
 
 				<h1>Drinks for Dummies</h1>
+				<p><b>Note from Server Maintainers:</b> Your PDA and Tablet have access to a program called <b>SIRC</b> which has every chemical recipe. Use that as your main reference and consult this book if something isn't working.</p>
 				Here's a guide for some basic drinks.
 
 				<h3>Black Russian:</h3>
@@ -846,25 +800,28 @@
 				Mix milk and coffee into a glass.
 
 				<h3>Classic Martini:</h3>
-				Mix vermouth and gin into a glass.
+				Mix 2 parts gin and 1 part vermouth into a glass.
 
-				<h3>Gin Tonic:</h3>
-				Mix gin and tonic into a glass.
+				<h3>Gin and Tonic:</h3>
+				Mix 2 parts gin and 1 part tonic into a glass.
 
 				<h3>Grog:</h3>
 				Mix rum and water into a glass.
 
 				<h3>Irish Cream:</h3>
-				Mix cream and whiskey into a glass.
+				Mix 2 parts whiskey and 1 part cream into a glass.
 
 				<h3>The Manly Dorf:</h3>
-				Mix ale and beer into a glass.
+				Mix 1 part beer and 2 parts ale into a glass.
 
 				<h3>Mead:</h3>
-				Mix enzyme, water, and sugar into a glass.
+				Mix 1 honey, 1 water, and 5 enzyme (catalyst) into a container.
 
 				<h3>Screwdriver:</h3>
-				Mix vodka and orange juice into a glass.
+				Mix 2 parts vodka and 1 part orange juice into a glass.
+
+				<h3>Black Russian:</h3>
+				Mix 2 parts vodka and 1 part Kahlua into a glass.
 
 				</body>
 			</html>
@@ -873,8 +830,8 @@
 
 /obj/item/book/manual/detective
 	name = "The Film Noir: Proper Procedures for Investigations"
-	icon_state ="book_forensics"
-	author = "The Company"
+	icon_state = "bookDetective"
+	author = "Corporate Liaison"
 	title = "The Film Noir: Proper Procedures for Investigations"
 
 	dat = {"<html>
@@ -916,7 +873,7 @@
 
 /obj/item/book/manual/nuclear
 	name = "Fission Mailed: Nuclear Sabotage 101"
-	icon_state ="book_nuclear"
+	icon_state = "bookNuclear"  // Nuclear self-destruct operations
 	author = "Syndicate"
 	title = "Fission Mailed: Nuclear Sabotage 101"
 
@@ -967,8 +924,8 @@
 
 /obj/item/book/manual/atmospipes
 	name = "Pipes and You: Getting To Know Your Scary Tools"
-	icon_state = "book_atmos"
-	author = "Maria Crash, Senior Atmospherics Technician"
+	icon_state = "plumbingbook"
+	author = "Artificer's Guild"
 	title = "Pipes and You: Getting To Know Your Scary Tools"
 	dat = {"<html>
 				<head>
@@ -1075,8 +1032,8 @@
 
 /obj/item/book/manual/evaguide
 	name = "EVA Gear and You: Not Spending All Day Inside"
-	icon_state = "book_eva"
-	author = "Maria Crash, Senior Atmospherics Technician"
+	icon_state = "book4"
+	author = "Artificer's Guild"
 	title = "EVA Gear and You: Not Spending All Day Inside"
 	dat = {"<html>
 				<head>
@@ -1162,7 +1119,7 @@
 
 /obj/item/book/manual/wiki
 	var/page_link = ""
-	window_size = "970x710"
+	window_size = "1280x900"
 
 /obj/item/book/manual/wiki/attack_self()
 	if(!dat)
@@ -1174,8 +1131,24 @@
 		dat = {"
 			<html><head>
 			<style>
-				iframe {
+				html, body {
+					margin: 0;
+					padding: 0;
+					height: 100%;
+					width: 100%;
+					overflow: hidden;
+				}
+				#iframe {
 					display: none;
+					width: 100%;
+					height: 100%;
+					border: none;
+				}
+				#loading {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
 				}
 			</style>
 			</head>
@@ -1183,11 +1156,11 @@
 			<script type="text/javascript">
 				function pageloaded(myframe) {
 					document.getElementById("loading").style.display = "none";
-					myframe.style.display = "inline";
+					myframe.style.display = "block";
     			}
 			</script>
 			<p id='loading'>You start skimming through the manual...</p>
-			<iframe width='100%' height='97%' onload="pageloaded(this)" src="[config.wikiurl]/[page_link]_Eris[config.language]?printable=yes&remove_links=1" frameborder="0" id="main_frame"></iframe>
+			<iframe id="iframe" onload="pageloaded(this)" src="[config.wikiurl][page_link]" frameborder="0"></iframe>
 			</body>
 			</html>
 			"}
@@ -1195,120 +1168,120 @@
 //engineering
 /obj/item/book/manual/wiki/engineering_guide
 	name = "Engineering Textbook"
-	icon_state = "book_engineering"
-	author = "Engineering Encyclopedia"
+	icon_state = "bookEngineering"
+	author = "Artificer's Guild"
 	title = "Engineering Textbook"
-	page_link = "Guide_to_Engineering"
+	page_link = "Construction"
 
 /obj/item/book/manual/wiki/engineering_construction
 	name = "Station Repairs and Construction"
-	icon_state ="book_construction"
-	author = "Engineering Encyclopedia"
+	icon_state = "bookEngineering"
+	author = "Artificer's Guild"
 	title = "Station Repairs and Construction"
-	page_link = "Guide_to_Construction"
+	page_link = "Construction"
 
 /obj/item/book/manual/wiki/engineering_atmos
 	name = "Pipes and You: Getting To Know Your Scary Tools"
-	icon_state = "book_atmos"
-	author = "Maria Crash, Senior Atmospherics Technician"
+	icon_state = "plumbingbook"
+	author = "Artificer's Guild"
 	title = "Pipes and You: Getting To Know Your Scary Tools"
 	page_link = "Guide_to_Atmospherics"
 
 /obj/item/book/manual/wiki/engineering_hacking
 	name = "Hacking"
-	icon_state ="book_hacking"
-	author = "Engineering Encyclopedia"
+	icon_state = "bookHacking"
+	author = "Artificer's Guild"
 	title = "Hacking"
 	page_link = "Guide_to_Hacking"
 
 /obj/item/book/manual/wiki/engineering_singularity
 	name = "Singularity Safety in Special Circumstances"
-	icon_state ="book_singularity"
-	author = "Engineering Encyclopedia"
+	icon_state = "bookEngineering2"
+	author = "Artificer's Guild"
 	title = "Singularity Safety in Special Circumstances"
-	page_link = "Guide_to_Singularity"
+	page_link = "Guide_to_Power"
 
 /obj/item/book/manual/wiki/engineering_supermatter
 	name = "Supermatter Engine Operating Manual"
-	icon_state = "book_supermatter"
-	author = "Central Engineering Division"
+	icon_state = "bookParticleAccelerator"
+	author = "Artificer's Guild"
 	title = "Supermatter Engine Operating Manual"
-	page_link = "Guide_to_Supermatter"
+	page_link = "Supermatter_Engine"
 
 //science
 /obj/item/book/manual/wiki/science_research
 	name = "Research and Development 101"
-	icon_state = "book_rnd"
-	author = "Dr. L. Ight"
+	icon_state = "rdbook"
+	author = "Vesalius-Andra Research"
 	title = "Research and Development 101"
 	page_link = "Guide_to_Research_and_Development"
 
 /obj/item/book/manual/wiki/science_robotics
 	name = "Cyborgs for Dummies"
-	icon_state = "book_borg"
-	author = "XISC"
+	icon_state = "borgbook"
+	author = "Vesalius-Andra Robotics"
 	title = "Cyborgs for Dummies"
 	page_link = "Guide_to_Robotics"
 
 //security
 /obj/item/book/manual/wiki/security_ironparagraphs
-	name = "Ironhammer Paragraphs"
-	desc = "A set of corporate guidelines for keeping order on privately-owned space assets."
-	icon_state = "book_ironparagraphs"
-	author = "Ironhammer Security"
-	title = "Ironhammer Paragraphs"
-	page_link = "Ironhammer_Paragraphs"
+	name = "Ranger Paragraphs"
+	desc = "Outpost laws and regulations upheld by the Iskhod Rangers."
+	icon_state = "bookSpaceLaw"
+	author = "Iskhod Rangers"
+	title = "Ranger Paragraphs"
+	page_link = "Laws"
 
 /obj/item/book/manual/wiki/security_detective
 	name = "The Film Noir: Proper Procedures for Investigations"
-	icon_state = "book_forensics"
-	author = "Ironhammer Security"
+	icon_state = "bookDetective"
+	author = "Iskhod Rangers"
 	title = "The Film Noir: Proper Procedures for Investigations"
-	page_link = "Guide_to_Forensics"
+	page_link = "Guide_to_Security"
 
 //medical
 /obj/item/book/manual/wiki/medical_guide
 	name = "Medical Diagnostics Manual"
 	desc = "First, do no harm. A detailed medical practitioner's guide."
-	icon_state = "book_medical"
-	author = "Medical Journal, volume 1"
+	icon_state = "medicalbook"
+	author = "Vesalius-Andra Medical"
 	title = "Medical Diagnostics Manual"
-	page_link = "Guide_to_Medical"
+	page_link = "Guide_to_Medicine"
 
 /obj/item/book/manual/wiki/medical_chemistry
 	name = "Chemistry Textbook"
-	icon_state = "book"//TODO: Add icon
-	author = "Medical Journal, volume 2"
+	icon_state = "chemistrybook"
+	author = "Vesalius-Andra Research"
 	title = "Chemistry"
 	page_link = "Guide_to_Chemistry"
 
 //neotheology
 /obj/item/book/manual/wiki/neotheology_cloning //TODO: Completely change this to be NT-oriented.
 	name = "Cloning Rituals"
-	icon_state = "book"//TODO: Add icon
-	author = "The Church"
+	icon_state = "bookCloning"
+	author = "Church of the Absolute"
 	title = "Cloning Rituals"
-	page_link = "Guide_to_Cloning"
+	page_link = "Guide_to_Genetics"
 
 //service
 /obj/item/book/manual/wiki/barman_recipes
 	name = "Barman Recipes"
-	icon_state = "book"
-	author = "Sir John Rose"
+	icon_state = "barbook"
+	author = "Frontier Logistics Service"
 	title = "Barman Recipes"
-	page_link = "Guide_to_Food_and_Drinks"
+	page_link = "Guide_to_Drinks"
 
 /obj/item/book/manual/wiki/chef_recipes
 	name = "Chef Recipes"
-	icon_state = "chefbook"
-	author = "Victoria Ponsonby"
+	icon_state = "cooked_book"
+	author = "Frontier Logistics Service"
 	title = "Chef Recipes"
-	page_link = "Guide_to_Food_and_Drinks"
+	page_link = "Guide_to_Food"
 
 /obj/item/book/manual/h_book
 	name = "Holy Book"
 	desc = "An undescript book for an unnamed religion."
-	icon_state = "h_book"
+	icon_state = "biblep"
 	author = "Unknown"
 
 /obj/item/book/manual/classic/bleakhouse
@@ -1324,3 +1297,182 @@
 		</body>
 		</html>
 		"}
+
+/obj/item/book/manual/chemistry_guide
+	name = "Laboratory Chemistry Guide"
+	desc = "A complete guide to laboratory chemistry: containers, transfer tools, and all chemistry machines."
+	icon_state = "chemistrybook"
+	author = "Vesalius-Andra Research"
+	title = "Laboratory Chemistry Guide"
+	unique = TRUE
+
+/obj/item/book/manual/chemistry_guide/New()
+	..()
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 18px; margin: 15px 0px 5px;}
+				h2 {font-size: 15px; margin: 15px 0px 5px;}
+				h3 {font-size: 13px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+
+				<h1>Laboratory Chemistry Guide</h1>
+				<p>This guide outlines all standard chemistry equipment: containers and transfer tools first, then each machine. Many machines require a beaker in a specific slot; use the interface or Alt+Click to insert or eject.</p>
+
+				<h2>Equipment overview</h2>
+				<p><b>Containers:</b> Beakers (standard, large, cryostasis, bluespace, vial), glass bottles. <b>Transfer tools:</b> Dropper (1&ndash;5u), syringe (draw/inject, 15u). <b>Machines:</b> Chemical dispenser, ChemMaster, chemical heater, mass spectrometer (HPLC), centrifuge, electrolyzer, All-In-One grinder.</p>
+
+				<h2>Safety &amp; best practices</h2>
+				<h3>General</h3>
+				<ul>
+					<li><b>Do not ingest</b> unknown or unlabelled chemicals. Many reagents are toxic, caustic, or otherwise harmful.</li>
+					<li><b>Label</b> bottles and vials when storing or handing them off. Use the container's label or a pen so others know the contents.</li>
+					<li>Keep <b>food and drink</b> away from the lab. Never use chemistry containers for consumables unless they are clearly designated and clean.</li>
+				</ul>
+				<h3>Exposure &amp; protection</h3>
+				<ul>
+					<li>Acids, toxins, and strong reagents can cause injury on contact or if splashed. Wear appropriate <b>gloves and eye protection</b> when handling hazardous or unknown mixtures.</li>
+					<li>Droppers and syringes can squirt or inject reagents into eyes or skin. Use care with <b>transfer amount</b> and aim; avoid pointing at yourself or others.</li>
+					<li>If someone is exposed to a dangerous chemical, move them from the source, flush affected areas if safe to do so, and seek medical help. Note the reagent name if known.</li>
+				</ul>
+				<h3>Syringes &amp; injections</h3>
+				<ul>
+					<li>Always confirm <b>mode</b> (draw vs. inject) before use. Injecting the wrong reagent or dose can be fatal.</li>
+					<li>Use a fresh or properly cleaned syringe when drawing blood or injecting patients to avoid <b>cross-contamination</b> or infection.</li>
+					<li>Only personnel with appropriate <b>training or certification</b> should perform injections. Untrained use can cause overdose, allergic reaction, or misuse of controlled substances.</li>
+				</ul>
+				<h3>Machine safety</h3>
+				<ul>
+					<li>Do not <b>remove beakers</b> from machines while they are running (e.g. centrifuge, mass spec, electrolyzer). Eject or wait for the cycle to finish to avoid spills and damage.</li>
+					<li>Chemical heaters can produce <b>hot vessels</b>. Allow beakers to cool before handling when possible, or use care when removing them.</li>
+					<li>Keep the area around dispensers, grinders, and other powered machines clear of clutter to avoid accidental activation or spills.</li>
+				</ul>
+				<h3>Spills &amp; disposal</h3>
+				<ul>
+					<li>Clean up <b>spills</b> promptly. Some reagents react with floors or objects; use appropriate cleaner or absorbent if available.</li>
+					<li>Dispose of waste chemicals and used containers according to local policy. Do not pour unknown or hazardous mixtures into general drains without checking regulations.</li>
+				</ul>
+
+				<h2>1. Containers &amp; transfer tools</h2>
+				<h3>Beakers and bottles</h3>
+				<ul>
+					<li><b>Beaker:</b> 60u. Standard mixing vessel; accepted by all chemistry machines.</li>
+					<li><b>Large beaker:</b> 120u. Same use, larger capacity.</li>
+					<li><b>Cryostasis beaker:</b> 60u. Contents do not react; use for storage or when reactions must be paused.</li>
+					<li><b>Bluespace beaker:</b> 300u. High capacity; may have special handling.</li>
+					<li><b>Vial:</b> Small glass vial. Good for single samples or small batches.</li>
+					<li><b>Glass bottle:</b> 60u. Often used for finished products (e.g. from ChemMaster). Some have lids; open before refilling or draining.</li>
+				</ul>
+				<h3>Transfer amount</h3>
+				<p>Most containers have a <b>transfer amount</b> (units per use). <b>Alt+Click</b> the container to set it from a list (e.g. 1, 5, 10, 30). Affects how much you pour, draw, or dispense in one action.</p>
+				<h3>Dropper</h3>
+				<p>Holds 5u; transfer 1&ndash;5u per use (set via Alt+Click). Click a container or open beaker to <b>draw</b> from it, then click another container (or a mob's eyes) to <b>transfer</b>. Used for precise small doses and for squirting reagents into eyes. Does not inject into bloodstream.</p>
+				<h3>Syringe</h3>
+				<p>Holds 15u. <b>Toggle mode</b> (e.g. attack self): <b>Draw</b> from containers or blood, <b>Inject</b> into containers or mobs (bloodstream). Used for blood samples, injections, and transfers. Requires basic biology or training to use safely.</p>
+
+				<h2>2. Chemical Dispenser (ChemDispenser)</h2>
+				<p>Dispenses <b>base reagents</b> directly into a beaker. Powered by an internal cell that recharges from the grid when idle. Better manipulators unlock more advanced chemicals.</p>
+				<h3>Setup</h3>
+				<ul>
+					<li>Place a beaker on the dispenser (click with beaker in hand or MouseDrop). Only beakers are accepted on standard units.</li>
+					<li><b>Alt+Click</b> to eject the beaker. Replace the cell via the panel when needed.</li>
+				</ul>
+				<h3>Use</h3>
+				<ol>
+					<li>Set the <b>amount</b> per dose (how many units each click dispenses).</li>
+					<li>Click a chemical name to dispense that reagent into the beaker. Each dose uses cell charge; the machine recharges when idle.</li>
+					<li>Unlocked chemicals depend on <b>manipulator</b> upgrades: base set (water, sugar, ethanol, etc.), then higher tiers add oil, toxin, sodium chloride, mutagen, inaprovaline, and others.</li>
+				</ol>
+				<p><i>Mini dispenser:</i> Compact version with fewer matter bins and a small cell; same use, smaller capacity.</p>
+
+				<h2>3. ChemMaster</h2>
+				<p>Transfers reagents between a <b>beaker</b> and an internal <b>buffer</b>, then turns the buffer into <b>pills</b>, <b>bottles</b>, or <b>syrettes</b>. Requires sufficient biology knowledge or medical/nerd training.</p>
+				<h3>Setup</h3>
+				<ul>
+					<li>Insert one beaker (attack with beaker or MouseDrop). Eject from the interface when done.</li>
+					<li>The machine has an internal buffer; you move reagents between beaker and buffer.</li>
+				</ul>
+				<h3>Transfer (beaker &harr; buffer)</h3>
+				<ul>
+					<li><b>Toggle mode</b> to choose direction: beaker &rarr; buffer, or buffer &rarr; beaker.</li>
+					<li>Select a reagent and amount, then transfer. Repeat to build the mix you want in the buffer.</li>
+					<li>Use <b>Analyze</b> on a reagent (e.g. blood) for detailed info.</li>
+				</ul>
+				<h3>Creating products</h3>
+				<ul>
+					<li><b>Pills:</b> Choose by number of pills or by volume per pill. Optionally create a pill bottle. Pills are filled from the buffer.</li>
+					<li><b>Bottle:</b> Creates a single bottle (e.g. 60u) from the buffer. Name it as prompted.</li>
+					<li><b>Syrette / advanced syrette:</b> Single-dose injectable from the buffer.</li>
+				</ul>
+				<p>Pick the sprite (pill shape, bottle style, etc.) in the interface before printing. The buffer is shared for all products.</p>
+
+				<h2>4. Chemical heater</h2>
+				<p>Heats or cools a single <b>beaker</b> to a <b>target temperature</b>. Many reactions depend on temperature; use the interface to set the target (in Kelvin) and turn the heater on. Add a beaker (attack or MouseDrop), Alt+Click to eject. Better micro-lasers improve heating/cooling speed.</p>
+
+				<h2>5. High-Performance Liquid Chromatography (Mass Spectrometer)</h2>
+				<p>Separates reagents by <b>mass</b>. Reagents have a mass value; only those within your chosen range are moved from input to output.</p>
+				<h3>Setup</h3>
+				<ul>
+					<li><b>Input beaker:</b> Click with a container to insert. Alt+Click to eject. Put your mixture here.</li>
+					<li><b>Output beaker:</b> Use the machine's interface (Insert/Eject in the Output section). Receives reagents in the selected mass range.</li>
+				</ul>
+				<h3>Mass range (three sliders)</h3>
+				<ul>
+					<li><b>Left slider:</b> Lower bound of the range (minimum mass included).</li>
+					<li><b>Right slider:</b> Upper bound (maximum mass included).</li>
+					<li><b>Center slider:</b> Moves the whole range left or right without changing its width. Use it to \"slide\" your selection along the mass scale.</li>
+				</ul>
+				<h3>Use</h3>
+				<ol>
+					<li>Insert input beaker (with mixed reagents) and output beaker.</li>
+					<li>Set the mass range so only the reagent(s) you want fall inside it. The input table shows each reagent's mass; rows in range are highlighted.</li>
+					<li>Press <b>Start</b>. The machine runs for the shown ETA, then transfers matching reagents to the output beaker.</li>
+				</ol>
+
+				<h2>6. Centrifuge</h2>
+				<p>Separates a mixture by moving the <b>dominant reagent</b> into the main beaker and the rest into separation beakers, or runs reactions (synthesis mode).</p>
+				<h3>Setup</h3>
+				<ul>
+					<li><b>Main beaker (slot 0):</b> Your mixture. Add first via attack or MouseDrop.</li>
+					<li><b>Separation beakers:</b> Up to several slots. Receive the other reagents when separating. Add after the main beaker.</li>
+				</ul>
+				<h3>Modes</h3>
+				<ul>
+					<li><b>Separating:</b> Moves the main/most abundant reagent into the main beaker and distributes the rest into separation beakers. Run for the set cycle time.</li>
+					<li><b>Synthesising:</b> Spins the main beaker to promote reactions. No separation; use for mixing recipes.</li>
+					<li><b>Isolating:</b> Longer run (e.g. 60 s) for finer separation.</li>
+				</ul>
+				<h3>Use</h3>
+				<ol>
+					<li>Add main beaker and at least one separation beaker (for separating).</li>
+					<li>Choose mode and, if needed, cycle time.</li>
+					<li>Start the cycle. The machine pings when done. Eject beakers when stopped.</li>
+				</ol>
+
+				<h2>7. Electrolyzer</h2>
+				<p>Breaks a <b>single</b> electrolysis-capable reagent back into its recipe ingredients. Only one reagent type in the primary beaker; it must have a reaction that supports electrolysis.</p>
+				<h3>Setup</h3>
+				<ul>
+					<li><b>Primary beaker:</b> Contains only one reagent type that can be electrolyzed (e.g. water into hydrogen and oxygen).</li>
+					<li><b>Separation beaker:</b> Receives the products of electrolysis.</li>
+				</ul>
+				<h3>Use</h3>
+				<ol>
+					<li>Put a single electrolysis-capable reagent in the primary beaker. Add an empty separation beaker.</li>
+					<li>Turn the machine on. It runs until the reagent is consumed or the separation beaker is full.</li>
+					<li>It pings when finished or buzzes on error (e.g. wrong reagent, no space). Turn off and remove beakers when done.</li>
+				</ol>
+
+				<h2>8. All-In-One Grinder</h2>
+				<p>Grinds <b>plants, produce, and other items</b> into reagents, which are collected in a single beaker. Add items (e.g. from a produce bag) and a beaker; run the grinder. Useful for extracting chemicals from plants or breaking down sheets (e.g. metal) into reagent form. Capacity and speed improve with better manipulators.</p>
+
+				<br>
+				<p><i>Keep this guide in the lab or by the machines for quick reference.</i></p>
+				</body>
+			</html>"}

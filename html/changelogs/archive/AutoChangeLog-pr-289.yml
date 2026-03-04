@@ -1,0 +1,33 @@
+author: AMcilraith
+changes:
+  - add: 'New atmospheric gases: chlorine; hydrogen, deuterium, tritium; helium, argon,
+      krypton, neon, xenon'
+  - add: Steam gas system with condensation mechanics and burn reagent 
+      integration
+  - add: Comprehensive gas-to-reagent inhalation system for breathing effects
+  - add: Enhanced health analyzer UI showing blood pressure, oxygenation, and 
+      shock levels (using default medical system)
+  - add: Body scanner console with modern UI template
+  - add: Blood pack MouseDrop functionality for easier IV connection to patients
+      and medical stands
+  - add: Systemic organ failure warnings when 3+ vital organs are critically 
+      wounded
+  - add: Improved medical scanner readouts with better damage categorization and
+      organ status
+  - add: Body scanner now displays detailed organ wounds and rejection status
+  - tweak: Nitrous Oxide now properly functions as oxidizer with anesthetic 
+      properties
+  - tweak: Health scanner distinguishes between brain death (when dead) and 
+      critical brain damage (when alive)
+  - tweak: Medical UIs adapted with enhanced layouts and color-coded health 
+      indicators
+  - tweak: Gas mask filtering now properly contains filtered gases instead of 
+      releasing them to atmosphere
+  - fix: Medical scanner compilation errors and undefined variable references
+  - fix: Health scanner properly displaying shock stages using default system
+  - fix: Blood pack direct IV connections and medical stand integration
+  - fix: Gas inhalation and breathing product calculations
+  - soundadd: Medical scanner beep and printer sound effects for body scanner 
+      console
+date: '2025-12-10'
+delete-after: false

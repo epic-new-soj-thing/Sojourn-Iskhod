@@ -343,7 +343,6 @@
 //Outside natural areas
 
 /area/iskhod/outside
-	area_light_color = COLOR_LIGHTING_DEFAULT_BRIGHT
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 	dynamic_lighting = FALSE
 	flags = null
@@ -355,18 +354,23 @@
 	name = "Greyson Positronic Base"
 	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen13.ogg', 'sound/ambience/ambigen14.ogg', 'sound/ambience/ambimalf.ogg')
-	dynamic_lighting = TRUE
+	dynamic_lighting = FALSE
+	luminosity = 1
 	requires_power = FALSE
 	flags = AREA_FLAG_RAD_SHIELDED
+	base_turf = /turf/simulated/floor/asteroid/grass
 
 /area/iskhod/outside/one_star/fo_outside
 	name = "Greyson Grounds"
 	icon_state = "erisgreen"
 	dynamic_lighting = FALSE
+	luminosity = 1
+	base_turf = /turf/simulated/floor/asteroid/grass
 
 /area/iskhod/outside/one_star/fo_internal
 	name = "Greyson Field Offices"
 	icon_state = "erisblue"
+	base_turf = /turf/simulated/floor/tiled
 
 /area/iskhod/outside/dcave
 	name = "Tengolo Cave East"

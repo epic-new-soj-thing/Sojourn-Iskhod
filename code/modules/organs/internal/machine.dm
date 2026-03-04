@@ -90,6 +90,9 @@
 
 /obj/item/organ/internal/cell/replaced_mob(mob/living/carbon/human/target)
 	..()
+	// Do not allow reviving FBPs/synths by re-inserting the cell; they must be revived with a jumper cable kit or similar.
+	if(owner.isSynthetic())
+		return
 	// This is very ghetto way of rebooting an IPC. TODO better way.
 	if(owner.stat == DEAD)
 		/* Code stolen from 'modules/mob/living/living.dm' after line 428. We can't directly call the revive() proc, because that heal everything, but we can take some parts of it.

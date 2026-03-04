@@ -1,0 +1,42 @@
+author: addi-4th, MsRandylicious, Yeen
+changes:
+  - add: New Iskhod Colony map; colony renamed to Iskhod Outpost.
+  - add: Iskhod Deep Tunnels, Excel Compound, Isk mines, and space port maps.
+  - add: "Deep Forest integration with POIs: Greyson field office, prepper bunker, river forest, and related areas."
+  - add: Turbolifts and elevators across the colony and to the mines.
+  - add: Holodeck and cryogenics on the colony; disposals and telesci additions.
+  - add: Snow and outdoor tiles; compound and winter map variants where applicable.
+  - add: Species-specific blood for each species ("the great bloodening").
+  - add: New organ system with Cindarite and Marqua organ sprites and organ bay assets.
+  - add: Ranger uniforms and loadout; Ranger service uniform sprites.
+  - add: Major job and role changes; spawnable roles and loadout tweaks.
+  - add: Security, medical, civilian, and science outfit updates; Marqua outfit additions.
+  - add: Supermatter alarm and delam handling; new SM and matter alarm sounds.
+  - add: Vent pump and scrubber behaviour improvements; atmos and map gas fixes.
+  - add: Changelog generation from PRs (GitHub Actions + local tools).
+  - add: BYOND update admin verb for server ops.
+  - add: Advanced defibrillator and jumper cable kit.
+  - tweak: Hunger system and hunger factor for humans; food and cold interaction.
+  - tweak: "Economy: eftpos locking, medical economy, and receipt handling."
+  - tweak: Prospector and xenoarchaeology behaviour; GPS and xenobot fixes.
+  - tweak: Crew manifest and Discord manifest; ID card TGUI and department colours.
+  - tweak: Grid check, prison break, and other events; supermatter observation/status.
+  - tweak: Corpsman disabled/removed; outsider spawn and ID fixes.
+  - tweak: Science point yields and calculation; xenoarch adjustments.
+  - tweak: TGUI, minimap, and skin updates; restart and update notification behaviour.
+  - fix: Atmos, airless tiles, and initial gas across the colony.
+  - fix: APC and power across colony, mining outpost, research outpost, toxins, and HVAC.
+  - fix: Wiring and power draw fixes; elevator and turbolift behaviour.
+  - fix: Organ rejection and mycus-related behaviour; xenoflora fixes.
+  - fix: Defibrillator behaviour and missing sprites (anomaly containers, toxins APC).
+  - fix: Numerous mapping errors and runtime fixes.
+  - soundadd: Supermatter alarm sound.
+  - soundadd: Matter alarm sound.
+  - imageadd: Ranger service uniform and Ranger-related sprites.
+  - imageadd: Organ bay and Cindarite/Marqua organ sprites.
+  - imageadd: Ladon and marqua pistol sprites; decals and flooring updates.
+  - imageadd: Engine and xenoarch sprite adjustments.
+  - code: Changelog generator (merged PRs only, base-branch filter, verbose option) and describe-PR tool.
+  - code: Various code cleanups and config updates.
+date: '2026-03-02'
+delete-after: false

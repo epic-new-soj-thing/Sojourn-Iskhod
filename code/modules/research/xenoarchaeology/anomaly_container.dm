@@ -5,7 +5,14 @@
 	icon_state = "anomaly_container"
 	density = 1
 
-	var/obj/machinery/artifact/contained
+	var/atom/movable/contained
+
+	/// Item types that count as anomaly-related and can be stored in the container (in addition to artifacts).
+	var/static/list/allowed_anomaly_items = list(
+		/obj/item/archaeological_find,
+		/obj/item/oddity,
+		/obj/item/stack/ore/strangerock
+	)
 
 /obj/structure/anomaly_container/Initialize()
 	. = ..()
@@ -21,7 +28,7 @@
 		to_chat(user, SPAN_NOTICE("Click on the container to release the contained anomaly."))
 	else
 		to_chat(user, SPAN_NOTICE("The container is empty."))
-		to_chat(user, SPAN_NOTICE("Drag an anomaly onto this container to contain it."))
+		to_chat(user, SPAN_NOTICE("Drag an anomaly or xenoarchaeological find onto this container to contain it, or use one in hand on it."))
 
 /obj/structure/anomaly_container/attack_hand(var/mob/user)
 	if(contained)
@@ -33,29 +40,64 @@
 	if(Adjacent(user))
 		attack_hand(user)
 
-/obj/structure/anomaly_container/proc/contain(var/obj/machinery/artifact/artifact, var/mob/user)
+/obj/structure/anomaly_container/proc/can_contain(var/atom/movable/thing)
+	if(istype(thing, /obj/machinery/artifact))
+		return TRUE
+	if(istype(thing, /obj/item))
+		for(var/path in allowed_anomaly_items)
+			if(istype(thing, path))
+				return TRUE
+	return FALSE
+
+/obj/structure/anomaly_container/attackby(obj/item/W, mob/user)
+	if(contained)
+		to_chat(user, SPAN_WARNING("The container already contains \a [contained]."))
+		return
+	if(can_contain(W))
+		if(!user.unEquip(W))
+			return
+		contain(W, user)
+	else
+		to_chat(user, SPAN_WARNING("You can only put artifacts or xenoarchaeological finds in this container."))
+
+/obj/structure/anomaly_container/MouseDrop(var/atom/movable/dropped)
+	if(dropped == src || !usr.Adjacent(src))
+		return
+	if(contained)
+		to_chat(usr, SPAN_WARNING("The container already contains \a [contained]."))
+		return
+	if(can_contain(dropped))
+		if(ismob(dropped.loc))
+			var/mob/M = dropped.loc
+			if(!M.unEquip(dropped))
+				return
+		else if(!dropped.Adjacent(usr))
+			return
+		contain(dropped, usr)
+
+/obj/structure/anomaly_container/proc/contain(var/atom/movable/thing, var/mob/user)
 	if(contained)
 		if(user)
 			to_chat(user, SPAN_WARNING("The container already contains \a [contained]."))
 		return FALSE
 
-	if(!istype(artifact))
+	if(!can_contain(thing))
 		if(user)
-			to_chat(user, SPAN_WARNING("You can only contain artifacts in this container."))
+			to_chat(user, SPAN_WARNING("You can only contain artifacts or xenoarchaeological finds in this container."))
 		return FALSE
 
-	contained = artifact
-	artifact.forceMove(src)
+	contained = thing
+	thing.forceMove(src)
 
 	// Stop the artifact from processing while contained
-	if(artifact in SSobj.processing)
-		STOP_PROCESSING(SSobj, artifact)
+	if(istype(thing, /obj/machinery/artifact) && (thing in SSobj.processing))
+		STOP_PROCESSING(SSobj, thing)
 
 	update_icon()
 
 	if(user)
-		to_chat(user, SPAN_NOTICE("You successfully contain \the [artifact] in \the [src]."))
-		user.visible_message(SPAN_NOTICE("[user] places \the [artifact] into \the [src]."))
+		to_chat(user, SPAN_NOTICE("You successfully contain \the [thing] in \the [src]."))
+		user.visible_message(SPAN_NOTICE("[user] places \the [thing] into \the [src]."))
 
 	desc = "Used to safely contain and move anomalies. \The [contained] is safely contained within."
 	return TRUE
@@ -66,11 +108,11 @@
 			to_chat(user, SPAN_WARNING("The container is empty."))
 		return FALSE
 
-	var/obj/machinery/artifact/releasing = contained
-	contained.forceMove(get_turf(src))
+	var/atom/movable/releasing = contained
+	releasing.forceMove(get_turf(src))
 
-	// Restart artifact processing
-	if(!(releasing in SSobj.processing))
+	// Restart artifact processing only for machinery artifacts
+	if(istype(releasing, /obj/machinery/artifact) && !(releasing in SSobj.processing))
 		START_PROCESSING(SSobj, releasing)
 
 	contained = null

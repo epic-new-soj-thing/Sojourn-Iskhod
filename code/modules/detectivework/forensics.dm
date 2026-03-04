@@ -26,9 +26,14 @@ atom/proc/add_fibers(mob/living/carbon/human/M)
 	var/suit_coverage = 0
 	if(M.wear_suit)
 		fibertext = "Material from \a [M.wear_suit]."
-		if(prob(30*item_multiplier) && !(fibertext in suit_fibers))
+		var/obj/item/clothing/suit/S = M.wear_suit
+		if(S.transfer_fibers && prob(30*item_multiplier) && !(fibertext in suit_fibers))
 			suit_fibers += fibertext
-		suit_coverage = M.wear_suit.body_parts_covered
+		suit_coverage = S.body_parts_covered
+
+	// Full biosuit (suit + hood) provides a complete seal against fiber transfer.
+	if(istype(M.wear_suit, /obj/item/clothing/suit/bio_suit) && istype(M.head, /obj/item/clothing/head/bio_hood))
+		return
 
 	if(M.w_uniform && (M.w_uniform.body_parts_covered & ~suit_coverage))
 		fibertext = "Fibers from \a [M.w_uniform]."
@@ -36,9 +41,11 @@ atom/proc/add_fibers(mob/living/carbon/human/M)
 			suit_fibers += fibertext
 
 	if(M.gloves && (M.gloves.body_parts_covered & ~suit_coverage))
-		fibertext = "Material from a pair of [M.gloves.name]."
-		if(prob(60*item_multiplier) && !(fibertext in suit_fibers))
-			suit_fibers += "Material from a pair of [M.gloves.name]."
+		var/obj/item/clothing/gloves/G = M.gloves
+		if(G.transfer_fibers)
+			fibertext = "Material from a pair of [G.name]."
+			if(prob(60*item_multiplier) && !(fibertext in suit_fibers))
+				suit_fibers += "Material from a pair of [G.name]."
 
 /datum/data/record/forensic
 	name = "forensic data"

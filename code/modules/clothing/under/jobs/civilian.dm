@@ -13,10 +13,10 @@
 	item_state = "gy_suit"
 
 /obj/item/clothing/under/rank/hop
-	desc = "A specialized uniform dedicated to the Hospitality Manager."
+	desc = "A specialized suit and tie dedicated to the Hospitality Manager."
 	name = "hospitality manager's uniform"
-	icon_state = "hop"
-	item_state = "hop"
+	icon_state = "really_black_suit"
+	item_state = "really_black_suit"
 
 /obj/item/clothing/under/rank/bartender
 	desc = "An expensive shirt and tie with tailored pants."
@@ -52,8 +52,8 @@
 
 
 /obj/item/clothing/under/rank/captain //Alright, technically not a 'civilian' but its better then giving a .dm file for a single define.
-	desc = "An authoritative green uniform with gold flair denoting the rank of Premier."
-	name = "governor's uniform"
+	desc = "An authoritative green uniform with gold flair denoting the rank of Facility Director."
+	name = "facility director's uniform"
 	icon_state = "captain"  //Sprites from Eris
 	item_state = "b_suit"
 
@@ -67,9 +67,9 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["governor's uniform"] = "captain"
-	options["governor's old uniform"] = "captain-old"
-	options["governor's formal uniform"] = "captain_formal"
+	options["facility director's uniform"] = "captain"
+	options["facility director's old uniform"] = "captain-old"
+	options["facility director's formal uniform"] = "captain_formal"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -320,4 +320,5 @@
 	desc = "A cheap but charming outfit, perfect for looking presentable while chasing a scoop."
 	icon_state = "colony"
 	item_state = "colony"
+
 

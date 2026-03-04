@@ -5,13 +5,10 @@ import { Box, LabeledList, Section, Slider, Stack } from 'tgui-core/components';
 import { round } from 'tgui-core/math';
 import { BooleanLike } from 'tgui-core/react';
 
-import {
-  ColoredSecurityLevel,
-  SecurityLevelEnum,
-} from './common/ColoredSecurityLevel';
+import { ColoredSecurityLevel } from './common/ColoredSecurityLevel';
 
 type Data = {
-  seclevel: SecurityLevelEnum;
+  seclevel: string;
   time: number;
   timing: BooleanLike;
   active: BooleanLike;

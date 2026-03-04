@@ -1,0 +1,8 @@
+author: AMcilraith
+changes:
+  - add: Admins can now receive and respond to adminhelp messages on IRC, 
+      improving communication.
+  - fix: Server will automatically restart after a defined timeout if no players
+      are present.
+date: '2025-07-22'
+delete-after: false

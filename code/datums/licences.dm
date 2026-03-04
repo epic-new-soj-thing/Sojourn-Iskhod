@@ -23,6 +23,10 @@
 	name = "CC BY-NC-SA 3.0"
 	url = "https://creativecommons.org/licenses/by-nc-sa/3.0/"
 
+/decl/licence/cc_by_nc_sa_4_0
+	name = "CC BY-NC-SA 4.0"
+	url = "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+
 /decl/licence/cc_by_nc_nd_4_0
 	name = "CC BY-NC-ND 4.0"
 	url = "https://creativecommons.org/licenses/by-nc-nd/4.0/"

@@ -29,7 +29,7 @@
 /obj/item/gun/energy/pulse/cassad/marqua
 	name = "\"Railroad\" Pulse Carbine"
 	desc = "A Mar'quaian long smooth-alloyed carbine, loading M-cells. Channels the energy along its lengthy rails, forming a burning arc before releasing it forth towards its target. Often with deadly accuracy."
-	icon = 'icons/obj/guns/plasma/marqua.dmi'
+	icon = 'icons/obj/guns/plasma/marqua_carbine.dmi'
 	icon_state = "skrell_carbine"
 	item_state = "skrell_carbine"
 	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 6)
@@ -43,6 +43,7 @@
 	zoom_factors = list()
 	damage_multiplier = 1.3
 	slot_flags = SLOT_BACK
+	suitable_cell = /obj/item/cell/medium/marqua
 	init_firemodes = list(
 		list(mode_name="rapid fire", mode_desc="Light rapid plasma bolts", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=1, icon="stun", projectile_color = "#00FFFF"),
 		list(mode_name="armor penetrating", mode_desc="Harder hitting plasma bolts to reduce armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=3, icon="kill", projectile_color = "#00AAFF"),
@@ -52,4 +53,79 @@
 	can_dual = FALSE
 	serial_type = "MAR"
 
+/obj/item/gun/energy/pulse/cassad/marqua/preloaded
+	name = "\"Railroad\" Pulse Carbine"
+	desc = "A Mar'quaian long smooth-alloyed carbine, loading M-cells. Channels the energy along its lengthy rails, forming a burning arc before releasing it forth towards its target. Often with deadly accuracy."
+	icon = 'icons/obj/guns/plasma/marqua_carbine.dmi'
+	icon_state = "skrell_carbine"
+	item_state = "skrell_carbine"
+	matter = list(MATERIAL_PLASTEEL = 18, MATERIAL_PLASTIC = 8, MATERIAL_SILVER = 6, MATERIAL_URANIUM = 6)
+	fire_sound = 'sound/weapons/energy/pulse.ogg'
+	projectile_type = /obj/item/projectile/beam/pulse
+	sel_mode = 1
+	charge_cost = 90 // almost 7 shots out of a 600M due to DM rounding (6.666667)
+	init_recoil = CARBINE_RECOIL(0.3)
+	origin_tech = list(TECH_COMBAT = 7, TECH_PLASMA = 2)
+	price_tag = 2400
+	zoom_factors = list()
+	damage_multiplier = 1.3
+	slot_flags = SLOT_BACK
+	suitable_cell = /obj/item/cell/medium/marqua
+	init_firemodes = list(
+		list(mode_name="rapid fire", mode_desc="Light rapid plasma bolts", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=1, icon="stun", projectile_color = "#00FFFF"),
+		list(mode_name="armor penetrating", mode_desc="Harder hitting plasma bolts to reduce armor", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=3, icon="kill", projectile_color = "#00AAFF"),
+	)
+	gun_tags = list(GUN_ENERGY, GUN_SCOPE)
+	twohanded = TRUE
+	can_dual = FALSE
+	serial_type = "MAR"
 
+/obj/item/gun/energy/pulse/cassad/marqua/preloaded/New()
+	cell = new /obj/item/cell/medium/marqua(src)
+	. = ..()
+	update_icon()
+
+
+/obj/item/gun/energy/pulse/cassad/marqua/pistol
+	name = "\"Side-Rail\" Pulse Pistol"
+	desc = "A Mar'quaian smooth-alloyed pistol, loading S-cells. It serves as a reliable sidearm, utilizing scaled-down rail technology to deliver precise energy bolts."
+	icon = 'icons/obj/guns/plasma/marqua_pistol.dmi'
+	icon_state = "skrell_pistol"
+	item_state = "skrell_pistol"
+	w_class = ITEM_SIZE_SMALL
+	force = WEAPON_FORCE_NORMAL
+	twohanded = FALSE
+	charge_cost = 40
+	damage_multiplier = 1.1
+	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	suitable_cell = /obj/item/cell/small/marqua
+	init_firemodes = list(
+		list(mode_name="stun shot", mode_desc="A strong bolt of electricty, capable of taking down targets with only minor long-lasting damage.", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=5, icon="stun", projectile_color = "#dfdc39"),
+		list(mode_name="rapid fire", mode_desc="Light rapid plasma bolts", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=1, icon="kill", projectile_color = "#00FFFF"),
+		list(mode_name="precise shot", mode_desc="A slower, more focused bolt for accuracy", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=5, icon="charge", projectile_color = "#00AAFF"),
+	)
+
+/obj/item/gun/energy/pulse/cassad/marqua/pistol/preloaded
+	name = "\"Side-Rail\" Pulse Pistol"
+	desc = "A Mar'quaian smooth-alloyed pistol, loading S-cells. It serves as a reliable sidearm, utilizing scaled-down rail technology to deliver precise energy bolts."
+	icon = 'icons/obj/guns/plasma/marqua_pistol.dmi'
+	icon_state = "skrell_pistol"
+	item_state = "skrell_pistol"
+	w_class = ITEM_SIZE_SMALL
+	force = WEAPON_FORCE_NORMAL
+	twohanded = FALSE
+	charge_cost = 40
+	damage_multiplier = 1.1
+	slot_flags = SLOT_BELT|SLOT_HOLSTER
+	suitable_cell = /obj/item/cell/small/marqua
+	init_firemodes = list(
+		list(mode_name="stun shot", mode_desc="A strong bolt of electricty, capable of taking down targets with only minor long-lasting damage.", projectile_type=/obj/item/projectile/energy/electrode, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=5, icon="stun", projectile_color = "#dfdc39"),
+		list(mode_name="rapid fire", mode_desc="Light rapid plasma bolts", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/Taser.ogg', fire_delay=1, icon="kill", projectile_color = "#00FFFF"),
+		list(mode_name="precise shot", mode_desc="A slower, more focused bolt for accuracy", projectile_type=/obj/item/projectile/plasma, fire_sound='sound/weapons/energy/Laser.ogg', fire_delay=5, icon="charge", projectile_color = "#00AAFF"),
+
+	)
+
+/obj/item/gun/energy/pulse/cassad/marqua/pistol/preloaded/New()
+	cell = new /obj/item/cell/small/marqua(src)
+	. = ..()
+	update_icon()

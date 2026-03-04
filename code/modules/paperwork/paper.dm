@@ -37,6 +37,7 @@
 	var/datum/language/language = LANGUAGE_COMMON // Language the paper was written in. Editable by users up until something's actually written
 
 	var/crayon_pen = FALSE
+	var/blood_pen = FALSE  // Written in blood (e.g. from basin); runes accept this for spell inscriptions.
 
 	var/deffont = "Verdana"
 	var/signfont = "Times New Roman"

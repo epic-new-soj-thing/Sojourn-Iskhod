@@ -1,0 +1,14 @@
+author: AMcilraith
+changes:
+  - balance: Increased health of the Durand mecha from 1200 to 1400.
+  - balance: Increased health of the Combat Hoverpod from 200 to 250.
+  - balance: Adjusted rocket consumption logic to only mark rockets as spent 
+      when successfully fired.
+  - balance: SABLE projectiles now deal severe damage, capable of destroying 
+      mechs in one hit.
+  - balance: SPEAR projectiles now deal high damage to various mob types, 
+      including gibbings for lower health simple mobs.
+  - add: Added new utility platform weapon "SI-BS SABLE" with enhanced targeting
+      and firepower.
+date: '2025-08-08'
+delete-after: false

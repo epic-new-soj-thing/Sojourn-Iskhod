@@ -64,7 +64,11 @@
 		if(W.loc != Target)
 			W.do_putdown_animation(Target, src)
 			W.forceMove(Target, drop_flag)
-		update_icons()
+		if(istype(src, /mob/living/carbon/human))
+			var/mob/living/carbon/human/H = src
+			H.regenerate_icons()
+		else
+			update_icons()
 		return TRUE
 	return FALSE
 

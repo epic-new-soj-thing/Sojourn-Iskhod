@@ -1,0 +1,10 @@
+author: AMcilraith
+changes:
+  - add: Notifies players when their BYOND version is too old or too new to 
+      connect.
+  - fix: Ensures players receive appropriate messages about version 
+      compatibility issues.
+  - tweak: Players are advised to downgrade their BYOND version if it's newer 
+      than recommended.
+date: '2025-08-07'
+delete-after: false

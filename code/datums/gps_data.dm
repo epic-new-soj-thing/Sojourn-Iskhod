@@ -43,5 +43,5 @@ GLOBAL_LIST_EMPTY(gps_trackers)
 /proc/get_gps_data_by_serial(var/serial)
 	for(var/datum/gps_data/gps in GLOB.gps_trackers)
 		if(gps.serialNumber == serial)
-			return serial
+			return gps
 	return FALSE

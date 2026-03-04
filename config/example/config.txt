@@ -197,7 +197,8 @@ GUEST_BAN
 ## forum address
 # FORUMURL http://example.com
 
-## Wiki address
+## Wiki address (must end with / so in-game books append page names, e.g. .../index.php/Guide_to_Medicine)
+## Example: WIKIURL https://ss13.addi-bot.ca/wiki/index.php/
 # WIKIURL http://example.com
 
 ## Ban appeals URL - usually for a forum or wherever people should go to contact your admins.

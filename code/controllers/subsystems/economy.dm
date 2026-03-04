@@ -70,12 +70,17 @@ SUBSYSTEM_DEF(economy)
 		if(R)
 			nepotism = R.get_nepotismMod()
 
+		var/datum/department/ED = GLOB.all_departments[A.employer]
 		var/amount_to_pay = A.debt + (A.wage * nepotism)
+		if(ED)
+			amount_to_pay -= ED.insurance_premium
 
 		if(amount_to_pay <= 0)
 			continue
 
-		var/datum/department/ED = GLOB.all_departments[A.employer]
+		if(!ED)
+			continue
+
 		var/datum/money_account/EA = department_accounts[ED.id]
 
 

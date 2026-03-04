@@ -16,6 +16,7 @@
 							/datum/design/research/item/medical/autopsy_scanner,
 							/datum/design/research/item/beaker/smoll,
 							/datum/design/research/item/beaker/big,
+							/datum/design/research/item/medical/micropipetter,
 							/datum/design/research/item/implant/pad,
 							/datum/design/research/item/implant/track
 						)
@@ -180,6 +181,7 @@
 	unlocks_designs = list(	/datum/design/research/item/medical/mass_spectrometer,
 							/datum/design/research/item/medical/reagent_scanner,
 							/datum/design/research/item/medical/defibs,
+							/datum/design/research/item/medical/jumper_kit,
 							/datum/design/research/item/scalpel_laser,
 							/datum/design/research/item/clothing/health,
 							/datum/design/research/item/bonegel,

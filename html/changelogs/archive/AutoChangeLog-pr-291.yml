@@ -1,0 +1,15 @@
+author: AMcilraith
+changes:
+  - tweak: Adjusted behaviour of storage pouches to properly manage holstered 
+      items.
+  - tweak: Improved item sliding out behavior for pouches with holster 
+      functionality.
+  - tweak: Modified visuals for storage pouches to reflect holstered items 
+      accurately.
+  - tweak: Enhanced user notifications when holstering or unholstering items.
+  - balance: Pouches now require holsterable items for proper storage 
+      functionality.
+  - fix: Resolved issues with holster slots not updating correctly when items 
+      are added or removed.
+date: '2025-12-10'
+delete-after: false

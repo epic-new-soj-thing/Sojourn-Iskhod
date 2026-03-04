@@ -1,0 +1,7 @@
+author: AMcilraith
+changes:
+  - del: Removed outdated CI suite and map building documentation
+  - add: Added dependency installation for better compatibility on CI
+  - fix: Fixed potential installation issues with Rust dependencies in CI
+date: '2025-12-11'
+delete-after: false

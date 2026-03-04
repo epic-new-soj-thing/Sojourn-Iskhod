@@ -26,7 +26,6 @@
 	base_color_override = "#FFFFFF"
 	reinf_color_override = "#bebebe"
 
-
 /turf/simulated/wall/iskhod_green //greenmond mann
 	name = "reinforced wall"
 	desc = "A reinforced wall with a colored line painted on. It's shoddily done, however the wall itself looks solid."
@@ -105,6 +104,27 @@
 	desc = "A wall of rocks."
 	icon = 'icons/turf/wall_masks.dmi'
 	icon_state = "rockold"
+
+/turf/simulated/wall/rock/New(var/newloc)
+	..(newloc, MATERIAL_SANDSTONE)
+
+/turf/simulated/wall/rock/Initialize(var/mapload)
+	. = ..()
+	name = initial(name)
+	desc = initial(desc)
+
+/turf/simulated/wall/rock/update_material(var/update = TRUE)
+	..()
+	name = initial(name)
+	desc = initial(desc)
+
+/turf/simulated/wall/rock/attackby(obj/item/I, mob/user)
+	if(user.a_intent != I_HURT)
+		var/list/usable_qualities = list(QUALITY_BOLT_TURNING, QUALITY_WELDING, QUALITY_PRYING, QUALITY_WIRE_CUTTING, QUALITY_SCREW_DRIVING)
+		if(I.get_tool_type(user, usable_qualities, src))
+			to_chat(user, SPAN_WARNING("You can't deconstruct \the [src] with tools! It's solid rock."))
+			return
+	return ..()
 
 /turf/simulated/wall/rock/snow
 	name = "snowy rock face"

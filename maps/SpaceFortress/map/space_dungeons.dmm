@@ -243,8 +243,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/outpost/abandoned_fortress/powered)
 "br" = (
-/obj/machinery/cooking_with_jane/grill,
-/obj/item/reagent_containers/cwj/container/grill_grate,
+/obj/machinery/cooking/grill,
+/obj/item/reagent_containers/cooking/container/grill_grate,
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate7)
 "bt" = (
@@ -5450,8 +5450,8 @@
 /turf/simulated/floor/tiled/steel,
 /area/outpost/abandoned_fortress/powered)
 "Cd" = (
-/obj/item/reagent_containers/cwj/container/pot,
-/obj/item/reagent_containers/cwj/container/bowl,
+/obj/item/reagent_containers/cooking/container/pot,
+/obj/item/reagent_containers/cooking/container/bowl,
 /obj/structure/table/steel,
 /obj/item/storage/box/donkpockets,
 /turf/simulated/floor/tiled/cafe,
@@ -8127,7 +8127,7 @@
 /area/outpost/abandoned_fortress/powered)
 "Pz" = (
 /obj/structure/table/steel,
-/obj/item/reagent_containers/cwj/container/board,
+/obj/item/reagent_containers/cooking/container/board,
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate7)
 "PB" = (
@@ -8766,7 +8766,7 @@
 /area/outpost/abandoned_fortress/powered)
 "SH" = (
 /obj/structure/table/steel,
-/obj/item/reagent_containers/cwj/container/pan,
+/obj/item/reagent_containers/cooking/container/pan,
 /obj/item/reagent_containers/condiment/saltshaker{
 	pixel_x = 4
 	},
@@ -9985,7 +9985,7 @@
 /area/awaymission/spacebattle/syndicate1)
 "YG" = (
 /obj/structure/table/marble,
-/obj/machinery/cooking_with_jane/stove,
+/obj/machinery/cooking/stove,
 /obj/item/spatula,
 /turf/simulated/floor/tiled/cafe,
 /area/awaymission/spacebattle/syndicate7)

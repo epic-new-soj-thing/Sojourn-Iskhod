@@ -95,7 +95,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 			author = null
 		author = sanitizeSQL(author)
 	if(href_list["search"])
-		SQLquery = "SELECT author, title, category, id FROM library WHERE "
+		SQLquery = "SELECT author, title, category, id FROM books WHERE "
 		if(category == "Any")
 			SQLquery += "author LIKE '%[author]%' AND title LIKE '%[title]%'"
 		else
@@ -192,7 +192,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 				dat += {"<A href='?src=\ref[src];orderbyid=1'>(Order book by SS<sup>13</sup>BN)</A><BR><BR>
 				<table>
 				<tr><td><A href='?src=\ref[src];sort=author>AUTHOR</A></td><td><A href='?src=\ref[src];sort=title>TITLE</A></td><td><A href='?src=\ref[src];sort=category>CATEGORY</A></td><td></td></tr>"}
-				var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, category FROM library ORDER BY [sortby]")
+				var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, category FROM books ORDER BY [sortby]")
 				query.Execute()
 
 				while(query.NextRow())
@@ -316,39 +316,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	if(href_list["upload"])
 		if(scanner)
 			if(scanner.cache)
-				var/choice = input("Are you certain you wish to upload this title to the Archive?") in list("Confirm", "Abort")
-				if(choice == "Confirm")
-					if(scanner.cache.unique)
-						alert("This book has been rejected from the database. Aborting!")
-					else
-						establish_db_connection()
-						if(!dbcon.IsConnected())
-							alert("Connection to Archive has been severed. Aborting.")
-						else
-							/*
-							var/sqltitle = dbcon.Quote(scanner.cache.name)
-							var/sqlauthor = dbcon.Quote(scanner.cache.author)
-							var/sqlcontent = dbcon.Quote(scanner.cache.dat)
-							var/sqlcategory = dbcon.Quote(upload_category)
-							*/
-							var/sqltitle = sanitizeSQL(scanner.cache.name)
-							var/sqlauthor = sanitizeSQL(scanner.cache.author)
-							var/sqlcontent = sanitizeSQL(scanner.cache.dat)
-							var/sqlcategory = sanitizeSQL(upload_category)
-
-							var/author_id = null
-							var/DBQuery/get_author_id = dbcon.NewQuery("SELECT id FROM players WHERE ckey='[usr.ckey]'")
-							get_author_id.Execute()
-							if(get_author_id.NextRow())
-								author_id = get_author_id.item[1]
-
-							var/DBQuery/query = dbcon.NewQuery("INSERT INTO library (`author`, `title`, `content`, `category`, `author_id`) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]', [author_id])")
-							if(!query.Execute())
-								to_chat(usr, query.ErrorMsg())
-							else
-								log_and_message_admins("has uploaded the book titled [scanner.cache.name], [length(scanner.cache.dat)] signs")
-								log_game("[usr.name]/[usr.key] has uploaded the book titled [scanner.cache.name], [length(scanner.cache.dat)] signs")
-								alert("Upload Complete.")
+				alert("Add books to the archive by scanning them at the book scanner.")
 
 	if(href_list["targetid"])
 		var/sqlid = sanitizeSQL(href_list["targetid"])
@@ -362,7 +330,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 			bibledelay = 1
 			spawn(60)
 				bibledelay = 0
-			var/DBQuery/query = dbcon.NewQuery("SELECT * FROM library WHERE id=[sqlid]")
+			var/DBQuery/query = dbcon.NewQuery("SELECT * FROM books WHERE id=[sqlid]")
 			query.Execute()
 
 			while(query.NextRow())
@@ -420,6 +388,24 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	user << browse(HTML_SKELETON_TITLE("Scanner Control Interface",dat), "window=scanner")
 	onclose(user, "scanner")
 
+/obj/machinery/libraryscanner/proc/try_auto_upload_to_archive(obj/item/book/B)
+	if(!B || B.unique)
+		return
+	establish_db_connection()
+	if(!dbcon || !dbcon.IsConnected())
+		return
+	var/check_title = B.title ? B.title : B.name
+	var/check_author = B.author ? B.author : "Anonymous"
+	var/sqltitle = sanitizeSQL(check_title)
+	var/sqlauthor = sanitizeSQL(check_author)
+	var/DBQuery/check = dbcon.NewQuery("SELECT id FROM books WHERE title='[sqltitle]' AND author='[sqlauthor]' LIMIT 1")
+	if(!check.Execute() || check.NextRow())
+		return
+	var/sqlcontent = sanitizeSQL(B.dat ? B.dat : "")
+	var/sqlcategory = sanitizeSQL("Fiction")
+	var/DBQuery/ins = dbcon.NewQuery("INSERT INTO books (author, title, content, category, author_id, created_at, updated_at) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]', NULL, Now(), Now())")
+	ins.Execute()
+
 /obj/machinery/libraryscanner/Topic(href, href_list)
 	if(..())
 		usr << browse(null, "window=scanner")
@@ -429,6 +415,10 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	if(href_list["scan"])
 		for(var/obj/item/book/B in contents)
 			cache = B
+			// If book is not a wikibook/manual (not unique), ensure it exists in the archive
+			if(!B.unique)
+				spawn(0)
+					try_auto_upload_to_archive(B)
 			break
 	if(href_list["clear"])
 		cache = null

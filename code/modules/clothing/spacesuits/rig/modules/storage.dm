@@ -219,6 +219,12 @@
 	return
 
 
+/obj/item/rig_module/storage/Destroy()
+	if(container)
+		for(var/obj/item/reagent_containers/enricher/E in container.contents)
+			E.forceMove(get_turf(src))
+	. = ..()
+
 /*****************************
 	'modular' storage
 *****************************/

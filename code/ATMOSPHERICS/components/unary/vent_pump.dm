@@ -144,13 +144,7 @@
 		use_power = NO_POWER_USE
 		return
 
-	if(!use_power)
-		return 0
-
-	if(stat & (NOPOWER|BROKEN))
-		return 0
-
-	if(welded)
+	if(!use_power || (stat & (NOPOWER|BROKEN)) || welded)
 		return 0
 
 	var/list/environments = get_target_environments(src, expanded_range)
@@ -165,25 +159,7 @@
 		if (!environment)
 			continue
 
-		if (!environment.total_moles && !air_contents.total_moles)
-			continue
-
-		//Figure out the target pressure difference
-		var/pressure_delta = get_pressure_delta(environment)
-		//src.visible_message("DEBUG >>> [src]: pressure_delta = [pressure_delta]")
-
-		if(pressure_delta > 0.5)
-			if(pump_direction) //internal -> external
-				var/transfer_moles = calculate_transfer_moles(air_contents, environment, pressure_delta)
-				power_draw += pump_gas(src, air_contents, environment, transfer_moles, power_rating)
-			else //external -> internal
-				var/transfer_moles = calculate_transfer_moles(environment, air_contents, pressure_delta, (network)? network.volume : 0)
-
-				//limit flow rate from turfs
-				transfer_moles = min(transfer_moles, environment.total_moles*air_contents.volume/environment.volume)	//group_multiplier gets divided out here
-				power_draw += pump_gas(src, environment, air_contents, transfer_moles, power_rating)
-			transfer_happened = TRUE
-
+		// 1. HVAC - Handle heating/cooling first so pressure changes are detected in the same tick
 		if(environment.total_moles)
 			var/thermalChange = environment.get_thermal_energy_change(target_temperature)
 			if(abs(thermalChange) > 5) // Subtle threshold to avoid constant micro-adjustments
@@ -192,8 +168,43 @@
 					environment.add_thermal_energy(energy_used)
 				else
 					environment.add_thermal_energy(-energy_used)
-				power_draw += energy_used
 				transfer_happened = TRUE
+
+		if (!environment.total_moles && !air_contents.total_moles)
+			continue
+
+		// 2. Gas Transfer & Pressure Regulation
+		var/pressure_delta = get_pressure_delta(environment)
+		if(abs(pressure_delta) > 0.5)
+			if(pressure_delta > 0) // Normal operation in the chosen direction
+				if(pump_direction) //internal -> external (Release)
+					var/transfer_moles = calculate_transfer_moles(air_contents, environment, pressure_delta)
+					var/draw = pump_gas(src, air_contents, environment, transfer_moles, power_rating)
+					if(draw >= 0)
+						power_draw += draw
+						transfer_happened = TRUE
+				else //external -> internal (Siphon)
+					var/transfer_moles = calculate_transfer_moles(environment, air_contents, pressure_delta, (network)? network.volume : 0)
+					transfer_moles = min(transfer_moles, environment.total_moles*air_contents.volume/environment.volume)
+					var/draw = pump_gas(src, environment, air_contents, transfer_moles, power_rating)
+					if(draw >= 0)
+						power_draw += draw
+						transfer_happened = TRUE
+			else if(pressure_checks & PRESSURE_CHECK_EXTERNAL) // Negative delta: room off target, regulate
+				var/abs_delta = -pressure_delta
+				if(pump_direction) // Release mode, but room too high -> Siphon back into pipe
+					var/transfer_moles = calculate_transfer_moles(environment, air_contents, abs_delta, (network)? network.volume : 0)
+					transfer_moles = min(transfer_moles, environment.total_moles*air_contents.volume/environment.volume)
+					var/draw = pump_gas(src, environment, air_contents, transfer_moles, power_rating)
+					if(draw >= 0)
+						power_draw += draw
+						transfer_happened = TRUE
+				else // Siphon mode, but room too low -> Release from pipe to equalise
+					var/transfer_moles = calculate_transfer_moles(air_contents, environment, abs_delta)
+					var/draw = pump_gas(src, air_contents, environment, transfer_moles, power_rating)
+					if(draw >= 0)
+						power_draw += draw
+						transfer_happened = TRUE
 
 	if(transfer_happened)
 		last_power_draw = power_draw
@@ -207,18 +218,28 @@
 	var/pressure_delta = DEFAULT_PRESSURE_DELTA
 	var/environment_pressure = environment.return_pressure()
 
-	if(pump_direction) //internal -> external
+	if(pump_direction) //internal -> external (Release)
 		if(pressure_checks & PRESSURE_CHECK_EXTERNAL)
-			pressure_delta = min(pressure_delta, external_pressure_bound - environment_pressure) //increasing the pressure here
+			pressure_delta = min(pressure_delta, external_pressure_bound - environment_pressure)
 		if(pressure_checks & PRESSURE_CHECK_INTERNAL)
-			pressure_delta = min(pressure_delta, air_contents.return_pressure() - internal_pressure_bound) //decreasing the pressure here
-	else //external -> internal
+			// If we are releasing (delta > 0), don't empty pipe below bound.
+			// If we are regulating/siphoning (delta < 0), don't overfill pipe above bound.
+			if(pressure_delta > 0)
+				pressure_delta = min(pressure_delta, air_contents.return_pressure() - internal_pressure_bound)
+			else if(pressure_delta < 0)
+				pressure_delta = max(pressure_delta, -(internal_pressure_bound - air_contents.return_pressure()))
+	else //external -> internal (Siphon)
 		if(pressure_checks & PRESSURE_CHECK_EXTERNAL)
-			pressure_delta = min(pressure_delta, environment_pressure - external_pressure_bound) //decreasing the pressure here
+			pressure_delta = min(pressure_delta, environment_pressure - external_pressure_bound)
 		if(pressure_checks & PRESSURE_CHECK_INTERNAL)
-			pressure_delta = min(pressure_delta, internal_pressure_bound - air_contents.return_pressure()) //increasing the pressure here
+			// If we are siphoning (delta > 0), don't overfill pipe above bound.
+			// If we are regulating/releasing (delta < 0), don't empty pipe below bound.
+			if(pressure_delta > 0)
+				pressure_delta = min(pressure_delta, internal_pressure_bound - air_contents.return_pressure())
+			else if(pressure_delta < 0)
+				pressure_delta = max(pressure_delta, -(air_contents.return_pressure() - internal_pressure_bound))
 
-	return pressure_delta
+	return clamp(pressure_delta, -DEFAULT_PRESSURE_DELTA, DEFAULT_PRESSURE_DELTA)
 
 /obj/machinery/atmospherics/unary/vent_pump/proc/broadcast_status()
 	if(!radio_connection)

@@ -16,6 +16,10 @@ jobs:
       cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
       - name: Restore SpacemanDMM cache
         uses: actions/cache@v4
         with:
@@ -221,6 +225,9 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Setup directory
         run: mkdir -p artifacts
       - name: Download screenshot tests
@@ -237,6 +244,7 @@ jobs:
       - name: Save PR ID
         if: failure() && github.event.pull_request
         run: |
+          mkdir -p artifacts/screenshot_comparisons
           echo ${{ github.event.pull_request.number }} > artifacts/screenshot_comparisons/pull_request_number.txt
       - name: Upload bad screenshots
         if: failure()
@@ -244,6 +252,7 @@ jobs:
         with:
           name: bad-screenshots
           path: artifacts/screenshot_comparisons
+        continue-on-error: true
 #   test_windows:
 #     if: ${{ !contains(github.event.head_commit.message, '[ci skip]') }}
 #     name: Windows Build

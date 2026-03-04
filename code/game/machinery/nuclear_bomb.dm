@@ -759,6 +759,7 @@ if(!N.lighthack)
 /obj/item/storage/secure/briefcase/nukedisk/Initialize()
 	. = ..()
 	new /obj/item/disk/nuclear(src)
+	new /obj/item/pinpointer/nukeop(src)
 	new /obj/item/folder/envelope/nuke_instructions(src)
 
 /obj/item/folder/envelope/nuke_instructions
@@ -778,7 +779,7 @@ if(!N.lighthack)
 		3) Request the nuclear disk from the High Council via secure fax channels.<br>\
 		4) Proceed to the self-destruct chamber once approval and the authentication disk has been received.<br>\
 		5) Authenticate with two Department Heads' approval using the secure terminals on either side of the room to retrieve the authorization code.<br>\
-		6) Remove all nuclear cylinders from their slots in the storage compartment after unlocking it with a premier-level ID.<br>\
+		6) Remove all nuclear cylinders from their slots in the storage compartment after unlocking it with a facility director-level ID.<br>\
 		7) Insert the nuclear cylinders into their slots and arm them by lowering the locking mechanism.<br>\
 		8) Insert the nuclear authentication disk into the self-destruct terminal.<br>\
 		9) Enter the authentication code into the self-destruct terminal.<br>\
@@ -871,3 +872,4 @@ if(!N.lighthack)
 			update_icon()
 		SSnano.update_uis(src)
 		return
+

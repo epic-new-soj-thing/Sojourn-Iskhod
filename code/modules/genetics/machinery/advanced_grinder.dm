@@ -35,8 +35,8 @@ list(
 	anchor_direction = WEST //Direction the bidon can should be anchored in
 	anchor_type = /obj/structure/reagent_dispensers/bidon //Allows a bidon can to be anchored to this.
 
-	var/output_side = NORTH
-	var/input_side = SOUTH //Direction input comes from
+	var/output_side = NORTH  // Bottle output is always on top (north)
+	var/input_side = SOUTH   // NORTH or SOUTH - direction objects are taken from
 
 
 	var/list/bidon_filter = list() //Which reagents we are loading into the bidon, instead of keeping in the machine
@@ -145,6 +145,8 @@ list(
 	data["bidon_full"] = bidon_full
 
 	data["bidon_filter"] = bidon_filter
+
+	data["input_side"] = capitalize(dir2text(input_side))
 	return data
 
 /obj/machinery/reagentgrinder/advanced/Topic(href, href_list)
@@ -186,6 +188,13 @@ list(
 
 	if(href_list["purge"])
 		src.reagents.del_reagent(href_list["purge"])
+
+	if(href_list["setside_input"])
+		var/new_side = text2dir(href_list["setside_input"])
+		if(new_side == NORTH || new_side == SOUTH)
+			input_side = new_side
+			SSnano.update_uis(src)
+
 	return 1
 
 /obj/machinery/reagentgrinder/advanced/proc/bottle(id)

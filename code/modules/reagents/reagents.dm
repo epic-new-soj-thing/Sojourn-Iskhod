@@ -19,6 +19,7 @@
 	var/reagent_state = SOLID
 	var/list/data = null
 	var/volume = 0
+	var/mass = 1 // Relative mass for HPLC/mass spectrometry separation (used by chemical mass spectrometer)
 	var/metabolism = REM // This would be 0.2 normally
 	var/ingest_met = 0
 	var/touch_met = 0

@@ -48,7 +48,10 @@
 	var/public_alert = 0
 	var/warning_point = 100
 	var/warning_alert = "Danger! Crystal hyperstructure instability!"
+	var/code_orange_point = 450
 	var/emergency_point = 700
+	var/code_red_point = 750
+	var/code_delta_point = 850
 	var/emergency_alert = "CRYSTAL DELAMINATION IMMINENT."
 	var/explosion_point = 1000
 
@@ -86,6 +89,7 @@
 	var/aw_EPR = FALSE
 
 	var/last_status = SUPERMATTER_INACTIVE
+	var/delam_test_running = FALSE
 
 /obj/machinery/power/supermatter/Initialize()
 	. = ..()
@@ -143,7 +147,10 @@
 	if(!air)
 		return SUPERMATTER_ERROR
 
-	if(grav_pulling || exploded)
+	// Once we're detonating, silence alarms (crystal is already gone)
+	if(exploded)
+		return SUPERMATTER_INACTIVE
+	if(grav_pulling)
 		return SUPERMATTER_DELAMINATING
 
 	if(get_integrity() < 25)
@@ -172,6 +179,8 @@
 	anchored = TRUE
 	grav_pulling = 1
 	exploded = 1
+	if(SSticker)
+		SSticker.shift_end(1 MINUTE)
 	sleep(pull_time)
 	var/turf/TS = get_turf(src)
 	if(!istype(TS))
@@ -236,6 +245,9 @@
 	if(damage > emergency_point)
 		alert_msg = emergency_alert + alert_msg
 		lastwarning = world.timeofday - WARNING_DELAY * 4
+	else if(damage > code_orange_point)
+		alert_msg = "Danger! Crystal hyperstructure integrity below 50%!" + alert_msg
+		lastwarning = world.timeofday
 	else if(damage >= damage_archived)
 		safe_warned = 0
 		alert_msg = warning_alert + alert_msg
@@ -252,24 +264,52 @@
 			radio.autosay(alert_msg, "Supermatter Monitor", "Engineering")
 
 		//Public alerts
-		if((damage > emergency_point) && !public_alert)
+		if((damage > code_orange_point) && !public_alert)
 			if(radio)
-				radio.autosay("WARNING: SUPERMATTER CRYSTAL DELAMINATION IMMINENT! SAFEROOMS UNBOLTED.", "Supermatter Monitor")
+				radio.autosay("WARNING: SUPERMATTER CRYSTAL INTEGRITY BELOW 50%. CODE ORANGE IS NOW IN EFFECT.", "Supermatter Monitor")
 			public_alert = 1
-
-			// User request: Change all lighting to orange
-			for(var/obj/machinery/light/L in GLOB.machines)
-				if(L.z in GLOB.maps_data.station_levels)
-					L.set_light(L.light_range, L.light_power, "#FFA500") // Use set_light
 
 			for(var/mob/M in GLOB.player_list)
 				var/turf/T = get_turf(M)
 				if(T && (T.z in GLOB.maps_data.station_levels) && !istype(M,/mob/new_player) && !isdeaf(M))
 					sound_to(M, 'sound/effects/matteralarm.ogg')
 
-		else if(safe_warned && public_alert)
+			// Set alert level to code orange
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+			var/decl/security_level/orange = decls_repository.get_decl(/decl/security_level/default/code_orange)
+			if(security_state && orange && security_state.current_security_level_is_lower_than(orange))
+				security_state.set_security_level(orange)
+
+		if((damage > code_red_point) && public_alert < 2)
 			if(radio)
-				radio.autosay(alert_msg, "Supermatter Monitor")
+				radio.autosay("WARNING: SUPERMATTER CRYSTAL INTEGRITY CRITICAL. CODE RED IN EFFECT.", "Supermatter Monitor")
+			public_alert = 2
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+			var/decl/security_level/red = decls_repository.get_decl(/decl/security_level/default/code_red)
+			if(security_state && red && security_state.current_security_level_is_lower_than(red))
+				security_state.set_security_level(red, TRUE)
+
+		if((damage > code_delta_point) && public_alert < 3)
+			if(radio)
+				radio.autosay("CRITICAL WARNING: SUPERMATTER CRYSTAL INTEGRITY FAILURE IMMINENT. CODE DELTA IN EFFECT.", "Supermatter Monitor")
+			public_alert = 3
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+			var/decl/security_level/delta = decls_repository.get_decl(/decl/security_level/default/code_delta)
+			if(security_state && delta && security_state.current_security_level_is_lower_than(delta))
+				security_state.set_security_level(delta, TRUE)
+
+		if((damage > emergency_point) && public_alert < 1.5) // Just a marker for the delam imminent message
+			if(radio)
+				radio.autosay("WARNING: SUPERMATTER CRYSTAL DELAMINATION IMMINENT! SAFEROOMS UNBOLTED.", "Supermatter Monitor")
+			// We don't increment public_alert higher than its threshold above unless it clears
+
+		else if(integrity > 50 && public_alert)
+			if(radio)
+				radio.autosay("Supermatter crystal has returned to safe operating levels. Reverting emergency lighting.", "Supermatter Monitor")
+
+			for(var/obj/machinery/light/L in GLOB.machines)
+				if(L.z in GLOB.maps_data.station_levels)
+					L.reset_color()
 			public_alert = 0
 
 /obj/machinery/power/supermatter/Process()
@@ -332,6 +372,9 @@
 		else
 			equilibrium_power = 250
 			icon_state = base_icon_state
+
+		if (damage > code_orange_point)
+			icon_state = "[base_icon_state]_glow"
 
 		temp_factor = ( (equilibrium_power/decay_factor)**3 )/800
 		power = max( (removed.temperature * temp_factor) * oxygen + power, 0)
@@ -535,7 +578,10 @@
 	base_icon_state = "supermatter_shard"
 
 	warning_point = 50
+	code_orange_point = 300
 	emergency_point = 400
+	code_red_point = 480
+	code_delta_point = 540
 	explosion_point = 600
 
 	gasefficency = 0.125
@@ -575,3 +621,31 @@
 	phoron_release_modifier = 100000000000
 	oxygen_release_modifier = 100000000000
 	radiation_release_modifier = 1
+
+/obj/machinery/power/supermatter/verb/test_delamination()
+	set name = "Test Delamination"
+	set category = "Debug"
+	set src in view()
+
+	if(!usr.client || !check_rights(R_ADMIN))
+		return
+
+	if(delam_test_running)
+		delam_test_running = FALSE
+		damage = 0
+		to_chat(usr, SPAN_NOTICE("Stopping delamination test on [src] and restoring integrity."))
+		return
+
+	delam_test_running = TRUE
+	to_chat(usr, SPAN_NOTICE("Initiating slow delamination test on [src]..."))
+	message_admins("[key_name_admin(usr)] initiated a slow delamination test on [src] at [x],[y],[z].")
+
+	spawn(0)
+		while(src && delam_test_running && damage < explosion_point)
+			damage = min(damage + 5, explosion_point)
+			sleep(1 SECONDS)
+		if(src)
+			delam_test_running = FALSE
+			if(damage < explosion_point)
+				damage = 0
+			to_chat(usr, SPAN_NOTICE("Delamination test complete, stopped, or crystal destroyed. Integrity restored."))

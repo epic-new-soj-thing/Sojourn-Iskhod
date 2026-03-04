@@ -1,0 +1,17 @@
+author: ryuu-dragon
+changes:
+  - fix: Fixed issues with music tape song selection when playlists or tracks 
+      are empty.
+  - fix: Corrected power regeneration calculation for core implants when 
+      disciples are present.
+  - fix: Ensured dinosaur targeting correctly checks for job department flags.
+  - fix: Improved item movement handling for structures to avoid errors when 
+      target location is null.
+  - fix: Fixed potential issues when fetching a body modification that might be 
+      absent.
+  - fix: Prevented errors when handling folder contents to ensure the folder 
+      interaction behaves correctly.
+  - fix: Enhanced projectile handling to avoid errors when accessing attributes 
+      of potentially null objects.
+date: '2025-06-19'
+delete-after: false

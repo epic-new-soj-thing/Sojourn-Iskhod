@@ -48,6 +48,7 @@ SUBSYSTEM_DEF(ticker)
     var/automatic_restart_time_lobby_sound_cooldown = 0
 
 /datum/controller/subsystem/ticker/Initialize(start_timeofday)
+	setup_genetics() // Old DNA modifier / SE injector system (Hulk, TELE, etc.)
 	if(!syndicate_code_phrase)
 		syndicate_code_phrase = generate_code_phrase()
 	if(!syndicate_code_response)
@@ -125,7 +126,7 @@ SUBSYSTEM_DEF(ticker)
 						automatic_restart_time_lobby_sound_cooldown = world.time + 10
 						SEND_SOUND(world, sound('sound/AI/annoucement_dings.ogg'))
 					sleep(60 SECONDS)
-					world.Reboot()
+					RunPendingUpdateAndReboot(skip_backup = TRUE)
 
 		if(GAME_STATE_SETTING_UP)
 			if(!setup())
@@ -146,7 +147,7 @@ SUBSYSTEM_DEF(ticker)
 					log_game("Server: No players were on the server for [src.empty_server_restart_timeout] minutes, restarting server...")
 					to_chat(world, "<span class='danger'>Server restarting due to inactivity (no players for [src.empty_server_restart_timeout] minutes).</span>")
 					send2mainirc("Server restarting: No players for [src.empty_server_restart_timeout] minutes during active round.")
-					world.Reboot()
+					RunPendingUpdateAndReboot(skip_backup = TRUE)
 					return
 			else
 				// If players appeared, reset the timer
@@ -165,6 +166,13 @@ SUBSYSTEM_DEF(ticker)
 				spawn(50)
 					callHook("roundend")
 
+					// Check GitHub and pull at end of round (if automatic_update enabled); also checks testmerges file. Notify when new changes pulled.
+					if(config.automatic_update && world.system_type == UNIX)
+						var/pull_result = byond_update_run_check_and_pull()
+						if(pull_result == 2)
+							var/restart_phrase = byond_update_next_restart_phrase()
+							to_chat(world, span_boldannounce("New updates have been pulled from GitHub for the current branch. On next restart: [restart_phrase]. They will apply then."))
+
 					if(universe_has_ended)
 						if(!delay_end)
 							to_chat(world, SPAN_NOTICE("<b>Rebooting due to destruction of station in [restart_timeout/10] seconds</b>"))
@@ -177,7 +185,7 @@ SUBSYSTEM_DEF(ticker)
 						sleep(restart_timeout)
 						if(!delay_end)
 							send2mainirc("Server restarting: Round has ended.")
-							world.Reboot()
+							RunPendingUpdateAndReboot(skip_backup = TRUE)
 						else
 							to_chat(world, SPAN_NOTICE("<b>An admin has delayed the round end</b>"))
 					else
@@ -209,7 +217,7 @@ SUBSYSTEM_DEF(ticker)
                     src.last_player_left_timestamp = 0
                     log_game("Server: No players were on a server last [src.empty_server_restart_timeout] minutes, restarting server...")
                     send2adminirc("Server restarting: No players for [src.empty_server_restart_timeout] minutes during active round.")
-                    world.Reboot()
+                    RunPendingUpdateAndReboot(skip_backup = TRUE)
                     return FALSE
         if(GAME_STATE_PREGAME)
             if(!clients.len)
@@ -535,7 +543,7 @@ SUBSYSTEM_DEF(ticker)
 	if(captainless)
 		for(var/mob/M in GLOB.player_list)
 			if(!isnewplayer(M))
-				to_chat(M, "Premier role not forced on anyone.")
+				to_chat(M, "Facility Director role not forced on anyone.")
 
 /datum/controller/subsystem/ticker/proc/move_characters_to_spawnpoints()
 	for(var/mob/living/carbon/human/player in GLOB.player_list)
@@ -651,3 +659,4 @@ SUBSYSTEM_DEF(ticker)
 			Master.SetRunLevel(RUNLEVEL_GAME)
 		if(GAME_STATE_FINISHED)
 			Master.SetRunLevel(RUNLEVEL_POSTGAME)
+

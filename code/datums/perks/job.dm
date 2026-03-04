@@ -211,6 +211,17 @@
 		holder.sdisabilities&=BLIND
 	..()
 
+/datum/perk/tome_binder
+	name = "Tome Binder"
+	desc = "You have learned to bind ritual knowledge into thematic tomes at a blood rune. Mutually exclusive with Scribe and Alchemist."
+	copy_protected = TRUE
+
+/datum/perk/tome_binder/assign(mob/living/L)
+	..()
+
+/datum/perk/tome_binder/remove()
+	..()
+
 /datum/perk/cooldown/reveal //perk to give thermal vision. Meant to only last a few moments before ending and removing itself.
 	name = "Peak-A-Boo"
 	perk_lifetime = 3 SECONDS

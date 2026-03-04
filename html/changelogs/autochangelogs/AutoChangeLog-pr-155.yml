@@ -1,0 +1,12 @@
+author: AMcilraith
+changes:
+  - fix: Nuclear bombs can now only be anchored, preventing players from 
+      unanchoring them.
+  - add: Instructions for the nuclear device are now included in the game when 
+      examining the nuclear football.
+  - add: A new abort option is available for players during the nuclear sequence
+      if they have authorization.
+  - tweak: The user interface indicates when it is locked due to an expired 
+      abort window.
+date: '2025-08-06'
+delete-after: false

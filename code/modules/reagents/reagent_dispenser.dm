@@ -226,7 +226,7 @@
 	anchored = 1
 	density = 0
 	amount_per_transfer_from_this = 45
-	volume = 1000
+	volume = 10000
 	starting_reagent = "condensedcapsaicin"
 
 /obj/structure/reagent_dispensers/ammonia
@@ -236,8 +236,30 @@
 	anchored = 1
 	density = 0
 	amount_per_transfer_from_this = 10
-	volume = 1000
+	volume = 10000
+	starting_reagent = "ammonia"
+	possible_transfer_amounts = list(1,5,10,25,50,100)
+
+/obj/structure/reagent_dispensers/cleaner
+	name = "cleaner dispenser"
+	desc = "Contains space cleaner used for janitorial purposes."
+	icon_state = "cleanertank"
+	anchored = 1
+	density = 0
+	amount_per_transfer_from_this = 10
+	volume = 10000
 	starting_reagent = "cleaner"
+	possible_transfer_amounts = list(1,5,10,25,50,100)
+
+/obj/structure/reagent_dispensers/sterilizine
+	name = "sterilizine dispenser"
+	desc = "Contains sterilizine used for janitorial purposes."
+	icon_state = "sterilizertank"
+	anchored = 1
+	density = 0
+	amount_per_transfer_from_this = 10
+	volume = 10000
+	starting_reagent = "sterilizine"
 	possible_transfer_amounts = list(1,5,10,25,50,100)
 
 /obj/structure/reagent_dispensers/water_cooler
@@ -323,7 +345,7 @@
 	amount_per_transfer_from_this = 10
 	anchored = 1
 	density = 0
-	volume = 1000
+	volume = 10000
 	starting_reagent = "sacid"
 
 /obj/structure/reagent_dispensers/premiumwhiskey

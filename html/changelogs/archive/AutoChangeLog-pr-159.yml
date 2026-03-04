@@ -1,0 +1,17 @@
+author: AMcilraith
+changes:
+  - add: Introduced a nuclear bomb that players can interact with to initiate a 
+      self-destruct sequence.
+  - tweak: The abort window and evacuation phase durations are now 2 minutes and
+      30 seconds each.
+  - tweak: Players can now abort the nuclear sequence during both the abort 
+      window and evacuation phase.
+  - add: Admins can manually initiate the nuclear countdown with a new command.
+  - fix: The interface is now locked only during the final countdown, allowing 
+      for more interaction during earlier stages.
+  - fix: Random explosions will occur every 15 seconds during the final 
+      countdown phase.
+  - balance: Adjusted the criteria for aborting the nuclear sequence to include 
+      both abort and evacuation phases.
+date: '2025-08-06'
+delete-after: false

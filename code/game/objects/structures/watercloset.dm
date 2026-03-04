@@ -278,11 +278,11 @@
 	if(iscarbon(O))
 		var/mob/living/carbon/M = O
 		if(M.r_hand)
-			M.r_hand.clean_blood()
+			M.r_hand.clean_blood_preserve_was()
 		if(M.l_hand)
-			M.l_hand.clean_blood()
+			M.l_hand.clean_blood_preserve_was()
 		if(M.back)
-			if(M.back.clean_blood())
+			if(M.back.clean_blood_preserve_was())
 				M.update_inv_back(0)
 
 
@@ -315,44 +315,44 @@
 					washglasses = !(H.wear_mask.flags_inv & HIDEEYES)
 
 			if(H.head)
-				if(H.head.clean_blood())
+				if(H.head.clean_blood_preserve_was())
 					H.update_inv_head(0)
 			if(H.wear_suit)
-				if(H.wear_suit.clean_blood())
+				if(H.wear_suit.clean_blood_preserve_was())
 					H.update_inv_wear_suit(0)
 			else if(H.w_uniform)
-				if(H.w_uniform.clean_blood())
+				if(H.w_uniform.clean_blood_preserve_was())
 					H.update_inv_w_uniform(0)
 			if(H.gloves && washgloves)
-				if(H.gloves.clean_blood())
+				if(H.gloves.clean_blood_preserve_was())
 					H.update_inv_gloves(0)
 			if(H.shoes && washshoes)
-				if(H.shoes.clean_blood())
+				if(H.shoes.clean_blood_preserve_was())
 					H.update_inv_shoes(0)
 			if(H.wear_mask && washmask)
-				if(H.wear_mask.clean_blood())
+				if(H.wear_mask.clean_blood_preserve_was())
 					H.update_inv_wear_mask(0)
 			if(H.glasses && washglasses)
-				if(H.glasses.clean_blood())
+				if(H.glasses.clean_blood_preserve_was())
 					H.update_inv_glasses(0)
 			if(H.l_ear && washears)
-				if(H.l_ear.clean_blood())
+				if(H.l_ear.clean_blood_preserve_was())
 					H.update_inv_ears(0)
 			if(H.r_ear && washears)
-				if(H.r_ear.clean_blood())
+				if(H.r_ear.clean_blood_preserve_was())
 					H.update_inv_ears(0)
 			if(H.belt)
-				if(H.belt.clean_blood())
+				if(H.belt.clean_blood_preserve_was())
 					H.update_inv_belt(0)
-			H.clean_blood(washshoes)
+			H.clean_blood_preserve_was(washshoes)
 			H.update_icons()
 		else
 			if(M.wear_mask)						//if the mob is not human, it cleans the mask without asking for bitflags
-				if(M.wear_mask.clean_blood())
+				if(M.wear_mask.clean_blood_preserve_was())
 					M.update_inv_wear_mask(0)
-			M.clean_blood()
+			M.clean_blood_preserve_was()
 	else
-		O.clean_blood()
+		O.clean_blood_preserve_was()
 
 	if(isturf(loc))
 		var/turf/tile = loc
@@ -490,10 +490,16 @@
 	busy = FALSE
 
 //	amount_of_reagents -= 40
-	user.clean_blood()
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		// Latex and nitrile gloves are washed completely clean of forensic traces.
+		if(H.gloves && istype(H.gloves, /obj/item/clothing/gloves/latex))
+			H.clean_blood()
+		else
+			H.clean_blood_preserve_was()
 		H.update_inv_gloves()
+	else
+		user.clean_blood_preserve_was()
 
 	user.visible_message(
 		SPAN_NOTICE("[user] washes their hands using [src]."),
@@ -505,7 +511,7 @@
 		to_chat(user, SPAN_WARNING("Someone's already washing here."))
 		return
 
-	if(istype(O, /obj/item/reagent_containers/cwj))
+	if(istype(O, /obj/item/reagent_containers/cooking))
 		to_chat(user, SPAN_WARNING("The [O] doesn‘t seem to accept water directly from the tap. Use a beaker or other proxy to add reagents."))
 		return
 
@@ -580,7 +586,12 @@
 	if(user.get_active_hand() != I)
 		return		//Person has switched hands or the item in their hands
 
-	O.clean_blood()
+	// Latex and nitrile gloves are washed completely clean of forensic traces.
+	if(istype(O, /obj/item/clothing/gloves/latex))
+		O.clean_blood()
+	else
+		O.clean_blood_preserve_was()
+
 	user.visible_message(
 		SPAN_NOTICE("[user] washes \a [I] using \the [src]."),
 		SPAN_NOTICE("You wash \a [I] using \the [src].")

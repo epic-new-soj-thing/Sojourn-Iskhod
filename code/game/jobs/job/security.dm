@@ -7,11 +7,14 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Governor and the Iskhod Council"
+	supervisors = "the Facility Director and the Iskhod Council"
 	difficulty = "Very Hard."
 	selection_color = "#97b0be"
 	req_admin_notify = 1
 	wage = WAGE_COMMAND
+	hud_icon = "captain"
+
+
 	ideal_character_age = 40
 	minimum_character_age = 30
 	department_account_access = TRUE
@@ -24,7 +27,7 @@
 	access = list(
 		access_security, access_eva, access_sec_doors, access_brig, access_armory, access_medspec,
 		access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
-		access_moebius, access_engine, access_mining, access_construction, access_mailsorting,
+		access_moebius, access_engine, access_engine_equip, access_mining, access_construction, access_mailsorting,
 		access_heads, access_hos, access_RC_announce, access_keycard_auth, access_gateway, access_sec_shop,
 		access_external_airlocks, access_research_equipment, access_prospector, access_tcomsat, access_hydroponics,
 		access_bar, access_kitchen, access_medical_suits, access_heads_vault
@@ -76,6 +79,9 @@
 	selection_color = "#a7bbc6"
 	department_account_access = TRUE
 	wage = WAGE_LABOUR_HAZARD
+	hud_icon = "lieutenant"
+
+
 	minimum_character_age = 25
 	playtimerequired = 1200
 	health_modifier = 20
@@ -130,10 +136,13 @@
 	spawn_positions = 2
 	supervisors = "the Captain"
 	difficulty = "Hard."
-	noob_name = "Junior Ranger"
+	noob_name = "Junior Detective"
 	alt_titles = list("Forensics Specialist")
 	selection_color = "#a7bbc6"
 	wage = WAGE_PROFESSIONAL
+	hud_icon = "detective"
+
+
 	playtimerequired = 1200
 	health_modifier = 5
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
@@ -193,6 +202,8 @@
 	alt_titles = list("Ranger Patrolman","Ranger Enforcer")
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_HAZARD
+	hud_icon = "ranger"
+
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 	playtimerequired = 240
@@ -244,6 +255,9 @@
 	difficulty = "Hard."
 	selection_color = "#a7bbc6"
 	wage = WAGE_LABOUR_INTERN
+	hud_icon = "juniorranger"
+
+
 	health_modifier = 10
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_NASHEF)
 

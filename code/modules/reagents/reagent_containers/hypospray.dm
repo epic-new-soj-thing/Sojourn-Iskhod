@@ -259,8 +259,8 @@
 
 
 /obj/item/reagent_containers/hypospray/vial
-	name = "SI medical hypospray"
-	desc = "The Vesalius-Andra medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients for convenience and efficiency. Uses a replaceable 30u vial and can inject through armour."
+	name = "VA medical hypospray"
+	desc = "A VA branded Vesalius-Andra medical hypospray: a sterile, air-needle autoinjector for rapid administration of drugs to patients for convenience and efficiency. Uses a replaceable 30u vial and can inject through armour."
 	item_state = "hypo"
 	icon_state = "hypo"
 	possible_transfer_amounts = list(1,2,5,10,15,20,30)
@@ -271,6 +271,8 @@
 	var/single_use = FALSE
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	var/obj/item/reagent_containers/glass/beaker/vial/loaded_vial
+
+
 
 
 /obj/item/reagent_containers/hypospray/vial/attack(mob/living/M as mob, mob/user as mob)
@@ -300,8 +302,7 @@
 	loaded_vial = new /obj/item/reagent_containers/glass/beaker/vial(src)
 	volume = loaded_vial.volume
 	reagents.maximum_volume = loaded_vial.reagents.maximum_volume
-	// adopt the vial's transfer amount so each injection uses the expected quantity
-	amount_per_transfer_from_this = loaded_vial.amount_per_transfer_from_this
+	// Keep default 5u injection amount; do not adopt from vial so the counter is not reset on vial swap
 
 	// Ensure the icon reflects the newly-loaded vial
 	update_icon()
@@ -387,9 +388,8 @@
 			W.update_icon()
 		loaded_vial = W
 		reagents.maximum_volume = loaded_vial.reagents.maximum_volume
-		// adopt the vial's volume and transfer amount so each injection uses the expected quantity
+		// adopt the vial's volume only; do not reset injection amount when inserting a vial
 		volume = loaded_vial.volume
-		amount_per_transfer_from_this = loaded_vial.amount_per_transfer_from_this
 		loaded_vial.reagents.trans_to_holder(reagents, volume)
 		user.visible_message(SPAN_NOTICE("[user] has loaded [W] into \the [src]."),SPAN_NOTICE("[usermessage]"))
 		update_icon()
@@ -432,8 +432,8 @@
 
 /obj/item/reagent_containers/hypospray/vial/combat
 	// Combat variant of the vial hypospray: different icons for loaded/empty
-	name = "SI combat hypospray"
-	desc = "The Vesalius-Andra combat hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients while under hostile fire. Uses a replaceable 30u vial and can inject through armour, in addition to being much faster than other models."
+	name = "VA combat hypospray"
+	desc = "A VA branded Vesalius-Andra combat hypospray: a sterile, air-needle autoinjector for rapid administration of drugs to patients while under hostile fire. Uses a replaceable 30u vial and can inject through armour, in addition to being much faster than other models."
 	icon_state = "combat_hypo"
 	item_state = "combat_hypo"
 	time = 0 // faster inject time for combat variant (seconds)

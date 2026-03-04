@@ -208,13 +208,13 @@
 /obj/machinery/atmospherics/binary/dp_vent_pump/receive_signal(datum/signal/signal)
 	if(!signal.data["tag"] || (signal.data["tag"] != id) || (signal.data["sigtype"]!="command"))
 		return 0
-	if(signal.data["power"])
+	if(signal.data["power"] != null)
 		use_power = text2num(signal.data["power"])
 
 	if(signal.data["power_toggle"])
 		use_power = !use_power
 
-	if(signal.data["direction"])
+	if(signal.data["direction"] != null)
 		pump_direction = text2num(signal.data["direction"])
 
 	if(signal.data["checks"])

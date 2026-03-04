@@ -1,0 +1,15 @@
+author: AMcilraith
+changes:
+  - add: Introduced a new export points system to unlock trade stations.
+  - add: Players can now unlock additional stations by accumulating export 
+      points from trade activities.
+  - tweak: Initial high-value trade stations are unlocked at roundstart for 
+      player access.
+  - add: A random selection of non-start trade stations will now be discovered 
+      at the beginning of rounds.
+  - add: Players have the option to force unlock stations regardless of 
+      recommendation requirements.
+  - tweak: Improved the weight-based system for unlocking stations, considering 
+      inventory value and base income.
+date: '2025-10-16'
+delete-after: false

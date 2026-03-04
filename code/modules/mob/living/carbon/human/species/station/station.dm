@@ -3,6 +3,7 @@
 	name_plural = "Humans"
 	default_form = FORM_HUMAN
 	obligate_name = FALSE
+	blood_group = "mammalian"
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
 	blurb = "Humanity originated in the Sol system, and over the last five centuries has spread \
 	colonies across a wide swathe of space. They hold a wide range of forms and creeds.<br/><br/> \
@@ -10,6 +11,7 @@
 	interests, rampant cyber and bio-augmentation and secretive factions make life on most human \
 	worlds tumultuous at best in the far flung galactic rim."
 	num_alternate_languages = 2
+	hunger_factor = DEFAULT_HUNGER_FACTOR
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 110
@@ -38,6 +40,7 @@
 /datum/species/exalt_human
 	name = "Exalt Human"
 	name_plural = "Exalt Humans"
+	blood_group = "mammalian"
 	default_form = FORM_EXALT_HUMAN
 	obligate_name = FALSE
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/bite)
@@ -51,7 +54,7 @@
 	name_language = null // Use the first-name last-name generator rather than a language scrambler
 	min_age = 18
 	max_age = 200 //Effectively ageless, but human history is only so long.
-	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.1
+	hunger_factor = DEFAULT_HUNGER_FACTOR * 1.5
 	nutrition_mod = 100
 
 	dark_color = "#ffffff"
@@ -103,6 +106,7 @@
 /datum/species/sablekyne
 	name = "Sablekyne"
 	name_plural = "Sablekynes"
+	blood_group = "mammalian"
 	default_form = FORM_SABLEKYNE
 	reagent_tag = IS_TAJ
 	obligate_form = TRUE
@@ -202,9 +206,9 @@
 	dark_color = "#afeeee"
 	light_color = "#20b2aa"
 
-	cold_level_1 = 248 //T0C - 25
-	cold_level_2 = 228
-	cold_level_3 = 208
+	cold_level_1 = 280 //T0C - 25
+	cold_level_2 = 260
+	cold_level_3 = 250
 
 	heat_level_1 = 370 //Default 330
 	heat_level_2 = 430 //Default 380
@@ -212,7 +216,7 @@
 
 	heat_discomfort_level = 370
 
-	cold_discomfort_level = 248
+	cold_discomfort_level = 390
 	list/cold_discomfort_strings = list(
 		"You feel chilly.",
 		"You shiver suddenly.",
@@ -253,6 +257,7 @@
 /datum/species/kriosan
 	name = "Kriosan"
 	name_plural = "Kriosans"
+	blood_group = "mammalian"
 	default_form = FORM_KRIOSAN
 	obligate_form = TRUE
 	reagent_tag = IS_KRIOSAN
@@ -378,6 +383,7 @@
 /datum/species/naramad
 	name = "Naramad"
 	name_plural = "Naramadi"
+	blood_group = "mammalian"
 	default_form = FORM_NARAMAD
 	obligate_form = TRUE
 	reagent_tag = IS_NARAMAD
@@ -746,11 +752,11 @@
 		OP_HEART =    /obj/item/organ/internal/vital/heart/plant,
 		OP_STOMACH =  /obj/item/organ/internal/stomach/plant,
 		BP_BRAIN =    /obj/item/organ/internal/vital/brain/plant,
-		OP_EYES =     /obj/item/organ/internal/eyes,
-		OP_LUNGS =    /obj/item/organ/internal/vital/lungs,
-		OP_LIVER =    /obj/item/organ/internal/liver,
-		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left,
-		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right,
+		OP_LUNGS =    /obj/item/organ/internal/vital/lungs/plant,
+		OP_LIVER =    /obj/item/organ/internal/liver/plant,
+		OP_KIDNEY_LEFT =  /obj/item/organ/internal/kidney/left/plant,
+		OP_KIDNEY_RIGHT = /obj/item/organ/internal/kidney/right/plant,
+		OP_EYES =     /obj/item/organ/internal/eyes/plant,
 		)
 
 	perks = list(PERK_DARK_HEAL)

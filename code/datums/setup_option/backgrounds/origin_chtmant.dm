@@ -44,7 +44,7 @@
 
 /datum/category_item/setup_option/background/ethnicity/chtmantra
 	name = "Ra Caste"
-	desc = "Ra are the warriors and sentries of the hives. Numbering in the hundreds they would tower over Ru�s and even \
+	desc = "Ra are the warriors and sentries of the hives. Numbering in the hundreds they would tower over Ruï¿½s and even \
 			most workers, the Ro. Their bodies were highly adapted for combat and they know only loyalty unto death for the good of \
 			the hive. Due to this, and the existence of the Ru, they often heavily lack any cognitive thinking skills and would \
 			rely on winning battles by sheer weight of numbers or pure attrition. The severe lack of intelligence they exhibit also bars them from most medical roles and all of science, engineering, and command roles."
@@ -52,7 +52,7 @@
 	restricted_to_species = list(FORM_CHTMANT)
 	allow_modifications = FALSE
 	restricted_depts = SCIENCE | ENGINEERING
-	restricted_jobs = list(/datum/job/cmo, /datum/job/rd, /datum/job/swo, /datum/job/swo, /datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/premier, /datum/job/pg, /datum/job/chief_engineer, /datum/job/chaplain, /datum/job/merchant, /datum/job/medstudent)
+	restricted_jobs = list(/datum/job/cmo, /datum/job/rd, /datum/job/swo, /datum/job/swo, /datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/facility_director, /datum/job/pg, /datum/job/chief_engineer, /datum/job/chaplain, /datum/job/merchant, /datum/job/medstudent)
 
 	perks = list(PERK_CHITINARMOR)
 	racial_implants = (/obj/item/organ_module/active/simple/cht_mant_claws)
@@ -85,3 +85,4 @@
 		STAT_MEC = 0,
 		STAT_COG = 0
 	)
+

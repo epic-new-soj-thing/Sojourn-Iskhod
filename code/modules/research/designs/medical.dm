@@ -80,6 +80,12 @@
 	desc = "A compact defibrillator built into a belt for ease of carrying. This one has their safety protocols turned off, allowing for stronger, yet controlled shocks that can bypass the interference of hardsuits and body armors."
 	build_path = /obj/item/device/defib_kit/compact/combat
 
+/datum/design/research/item/medical/jumper_kit
+	name = "Jumper Cable Kit"
+	desc = "A device that delivers powerful shocks to detachable jumper cables capable of reviving synthetic and prosthetic chests. Useless on organic patients."
+	build_path = /obj/item/device/defib_kit/jumper_kit/loaded
+	build_type = PROTOLATHE | MECHFAB
+
 //Storage
 
 /datum/design/research/item/medical/cryobag
@@ -119,6 +125,12 @@
 /datum/design/research/item/beaker/big
 	name = "Large glass beaker"
 	build_path = /obj/item/reagent_containers/glass/beaker/large
+
+/datum/design/research/item/medical/micropipetter
+	name = "Micropipetter"
+	desc = "A precision micropipette for small-volume transfers. Holds 1 unit max."
+	build_path = /obj/item/reagent_containers/dropper/micropipetter
+	category = "Medical"
 
 /datum/design/research/item/fire_kit
 	name = "Empty Fire Firstaid Kit"

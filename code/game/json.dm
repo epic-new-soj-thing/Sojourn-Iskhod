@@ -79,7 +79,7 @@ proc/makejson()
 	message_admins("Compiling...")
 	shell("./recompile")
 	message_admins("Done")
-	world.Reboot("Switching to [newmap]")
+	RunPendingUpdateAndReboot("Switching to [newmap]")
 
 obj/mapinfo
 	invisibility = 101

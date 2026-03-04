@@ -1,0 +1,14 @@
+author: Dimasw99
+changes:
+  - fix: Fixed fuel cell functionality to ensure correct power generation and 
+      usage.
+  - balance: Increased power generation of solar cells from 1 W to 30 W in 
+      optimal lighting conditions.
+  - balance: Reduced power drain of large tesla power relays from 2 kW to 1 kW.
+  - tweak: Adjusted fuel consumption rates for various chemicals in chemical 
+      cells.
+  - add: Implemented injector bypass feature for more flexible injecting 
+      mechanics.
+  - fix: Resolved issues preventing proper power cells from being recognized.
+date: '2025-08-08'
+delete-after: false

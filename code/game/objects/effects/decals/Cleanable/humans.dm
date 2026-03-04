@@ -23,6 +23,33 @@ var/global/list/image/splatter_cache=list()
 	var/should_dry = TRUE
 	// List of are shoe prints we got
 	var/list/shoe_types = list()
+	// Prefix for name (e.g. "drips of " for drip subtype); the fluid name (blood, oil, etc.) is appended
+	var/fluid_name_prefix = ""
+
+/obj/effect/decal/cleanable/blood/proc/set_blood_type_text()
+	var/fluid_name
+	var/dried_name
+	var/fluid_desc
+	var/dried_desc
+	if(basecolor == "#0C0C0C" || basecolor == "#030303")
+		fluid_name = "oil"
+		dried_name = "dried oil"
+		fluid_desc = "It's black and viscous. Synthetic lubricant."
+		dried_desc = "Dried synthetic oil."
+	else if(basecolor == "#247CFF")
+		fluid_name = "synthetic blood"
+		dried_name = "dried synthetic blood"
+		fluid_desc = "It's blue and fluid. Synthetic circulatory fluid."
+		dried_desc = "Dried synthetic blood."
+	else
+		fluid_name = "blood"
+		dried_name = "dried blood"
+		fluid_desc = "It's thick and gooey. Perhaps it's the chef's cooking?"
+		dried_desc = "It's dry and crusty. Someone is not doing their job."
+	name = fluid_name_prefix + fluid_name
+	dryname = fluid_name_prefix + dried_name
+	desc = fluid_desc
+	drydesc = dried_desc
 
 /obj/effect/decal/cleanable/blood/bearfoot
 	name = "bearfoot"
@@ -77,6 +104,7 @@ var/global/list/image/splatter_cache=list()
 /obj/effect/decal/cleanable/blood/update_icon()
 	if(basecolor == "rainbow") basecolor = get_random_colour(1)
 	color = basecolor
+	set_blood_type_text()
 
 /obj/effect/decal/cleanable/blood/Crossed(mob/living/carbon/human/perp)
 	if (!istype(perp))
@@ -146,6 +174,7 @@ var/global/list/image/splatter_cache=list()
 		user.hand_blood_color = basecolor
 		user.update_inv_gloves(1)
 		add_verb(user, /mob/living/carbon/human/proc/bloody_doodle)
+		add_verb(user, /mob/living/carbon/human/proc/bloody_write_paper)
 
 /obj/effect/decal/cleanable/blood/splatter
 	random_icon_states = list("mgibbl1", "mgibbl2", "mgibbl3", "mgibbl4", "mgibbl5")
@@ -159,6 +188,7 @@ var/global/list/image/splatter_cache=list()
 	name = "drips of blood"
 	desc = "It's red."
 	gender = PLURAL
+	fluid_name_prefix = "drips of "
 	icon = 'icons/effects/drip.dmi'
 	icon_state = "1"
 	random_icon_states = list("1","2","3","4","5")

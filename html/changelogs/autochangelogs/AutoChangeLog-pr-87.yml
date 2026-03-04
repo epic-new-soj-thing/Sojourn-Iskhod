@@ -1,0 +1,8 @@
+author: CFWMagic
+changes:
+  - add: Introduced the ability for Borgs to change their LED light color.
+  - fix: Ensured Borgs retain their custom LED color when igniting or 
+      extinguishing.
+  - fix: Prevented offline Borgs from changing their LED color.
+date: '2025-05-24'
+delete-after: false

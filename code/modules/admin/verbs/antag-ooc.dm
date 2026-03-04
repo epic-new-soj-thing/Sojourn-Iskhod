@@ -4,7 +4,8 @@ ADMIN_VERB_ADD(/client/proc/aooc, R_ADMIN, FALSE)
 	set name = "AOOC"
 	set desc = "Antagonist OOC"
 
-	if(!check_rights(R_ADMIN))	return
+	if(!check_rights(R_ADMIN) && !(mob?.mind?.antagonist?.len))
+		return
 
 	msg = sanitize(msg)
 	if(!msg)	return

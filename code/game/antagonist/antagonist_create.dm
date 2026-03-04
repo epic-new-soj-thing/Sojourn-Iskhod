@@ -41,6 +41,9 @@
 	if(announce)
 		greet()
 
+	if(target.current?.client)
+		add_verb(target.current.client, /client/proc/aooc)
+
 	log_admin("[key_name(target)] became the [role_text].")
 
 	return TRUE
@@ -114,6 +117,8 @@
 		BITSET(owner.current.hud_updateflag, SPECIALROLE_HUD)
 
 	owner.antagonist.Remove(src)
+	if(!owner.antagonist.len && owner.current?.client)
+		remove_verb(owner.current.client, /client/proc/aooc)
 	owner = null
 	return TRUE
 

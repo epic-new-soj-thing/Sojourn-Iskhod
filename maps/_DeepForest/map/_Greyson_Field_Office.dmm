@@ -6083,10 +6083,6 @@
 /obj/random/powercell,
 /turf/simulated/floor/tiled/derelict,
 /area/iskhod/outside/one_star/fo_internal)
-"Vs" = (
-/obj/map_data/greyson_field_offices,
-/turf/unsimulated/mineral,
-/area/iskhod/outside/one_star/fo_internal)
 "Vv" = (
 /obj/structure/bed/chair/custom/onestar/red{
 	dir = 8
@@ -6099,6 +6095,10 @@
 	dir = 1
 	},
 /turf/simulated/floor/reinforced,
+/area/iskhod/outside/one_star/fo_outside)
+"VA" = (
+/obj/map_data/greyson_field_offices,
+/turf/unsimulated/mineral,
 /area/iskhod/outside/one_star/fo_outside)
 "VB" = (
 /obj/structure/bed/chair/custom/onestar/red{
@@ -6875,7 +6875,7 @@ wD
 wD
 wD
 wD
-Vs
+wD
 "}
 (2,1,1) = {"
 wD
@@ -26032,7 +26032,7 @@ wD
 (128,1,1) = {"
 qn
 qn
-qn
+VA
 qn
 qn
 qn

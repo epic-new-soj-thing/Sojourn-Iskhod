@@ -582,9 +582,14 @@ obj/item/clothing/head/sunhat/verb/toggle_style()
 /obj/item/clothing/head/ushanka
 	name = "ushanka"
 	desc = "A warm, black fur cap with a soviet design."
-	icon_state = "ushanka"
-	item_state = "ushanka"
+	icon_state = "flushankadown"
+	item_state = "flushankadown"
 	flags_inv = HIDEEARS
+
+/obj/item/clothing/head/ushanka/security
+	name = "ushanka"
+	desc = "A warm, fur cap. The flaps are currently secured downwards for maximum warmth."
+	armor_list = list(melee = 6, bullet = 5, energy = 3, bomb = 20, bio = 0, rad = 0) // Matching base wintercoat security armor
 
 // No more bulky ushanka, no need for this.
 /*

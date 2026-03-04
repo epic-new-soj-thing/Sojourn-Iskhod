@@ -18,7 +18,6 @@
 	var/static/list/initiator_card = list()
 	var/static/next_countdown
 	var/static/list/event_names = list(
-		redalert = "red alert",
 		pods = "spacecraft abandonment"
 	)
 	var/static/datum/announcement/priority/kcad_announcement = new(do_log = 1, new_sound = sound('sound/misc/notice1.ogg'), do_newscast = 1)
@@ -31,7 +30,7 @@
 	var/static/global_dual_auth_active = FALSE         // Whether dual auth is in progress
 	var/static/global_pending_event = ""               // Event waiting for dual auth
 	var/static/global_auth_initiator = null            // Device that started the auth process
-	var/static/countdown = 100                         // Timer for countdowns
+	var/static/countdown = 50                          // Timer for countdowns
 	var/static/cooldown = 600                          // Cooldown between events
 
 /obj/machinery/keycard_auth/attack_ai(mob/user as mob)
@@ -66,7 +65,7 @@
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
-		ui = new(user, src, ui_key, "keycard authentication.tmpl", "Keycard Authentication Device", 440, 300)
+		ui = new(user, src, ui_key, "keycard authentication.tmpl", "Keycard Authentication Device", 600, 450)
 		ui.set_initial_data(data)
 		ui.open()
 		ui.set_auto_update(1)
@@ -123,9 +122,6 @@
 
 /obj/machinery/keycard_auth/proc/countdown_finished(event)
 	switch(event)
-		if("redalert")
-			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
-			security_state.set_security_level(security_state.high_security_level)
 		if("pods")
 			evacuation_controller.call_evacuation(null, TRUE)
 	if(event)
@@ -175,8 +171,8 @@
 			to_chat(user, "<span class='notice'>Authentication accepted ([global_auth_users.len]/2).</span>")
 
 			if(global_auth_users.len == 1)
-				visible_message("<span class='notice'>[user] swipes their card on [src]. Waiting for second authorization on a different device...</span>")
-				to_chat(world, "<span class='notice'>Dual keycard authentication in progress. First authorization received. Second authorization required on a different keycard authenticator within [global_auth_timer/10] seconds.</span>")
+				for(var/obj/machinery/keycard_auth/KAD in world)
+					KAD.visible_message("<span class='notice'>First authorization received! A second authorization is required on a different device within [global_auth_timer/10] seconds!</span>")
 			else if(global_auth_users.len >= 2)
 				visible_message("<span class='notice'>[user] provides the second authorization on [src]. Dual authentication complete!</span>")
 				// Determine which type of authentication completion to use
@@ -197,7 +193,8 @@
 	global_dual_auth_active = TRUE
 	global_auth_initiator = initiator
 
-	to_chat(world, "<span class='notice'>Dual keycard authentication required for [global_pending_event]. Please swipe two authorized cards on different keycard authenticators within 5 seconds.</span>")
+	for(var/obj/machinery/keycard_auth/KAD in world)
+		KAD.visible_message("<span class='notice'>Dual keycard authentication required for [global_pending_event]. Please swipe an authorized card on this device.</span>")
 
 	spawn()
 		while(global_auth_timer > 0 && global_dual_auth_active)
@@ -205,7 +202,8 @@
 			global_auth_timer--
 
 		if(global_dual_auth_active && global_auth_users.len < 2)
-			to_chat(world, "<span class='warning'>Dual authentication timeout. Authentication failed.</span>")
+			for(var/obj/machinery/keycard_auth/KAD in world)
+				KAD.visible_message("<span class='warning'>Dual authentication timeout. Authentication failed.</span>")
 			reset_global_auth()
 
 /obj/machinery/keycard_auth/proc/reset_global_auth()
@@ -222,10 +220,6 @@
 
 		// Execute the pending event after successful dual auth
 		switch(global_pending_event)
-			if("redalert")
-				kcad_announcement.Announce("Dual authentication successful on separate devices. Initiating [event_names[global_pending_event]] countdown.")
-				ongoing_countdowns[global_pending_event] = addtimer(CALLBACK(global_auth_initiator, PROC_REF(countdown_finished), global_pending_event), countdown, TIMER_UNIQUE | TIMER_STOPPABLE)
-				next_countdown = world.time + cooldown
 			if("pods")
 				kcad_announcement.Announce("Dual authentication successful on separate devices. Initiating [event_names[global_pending_event]] countdown.")
 				ongoing_countdowns[global_pending_event] = addtimer(CALLBACK(global_auth_initiator, PROC_REF(countdown_finished), global_pending_event), countdown, TIMER_UNIQUE | TIMER_STOPPABLE)
@@ -240,34 +234,10 @@
 		sleep(10)
 		reset_global_auth()
 
-var/global/maint_all_access = 0
-
-/proc/make_maint_all_access()
-	maint_all_access = 1
-	to_chat(world, "<font size=4 color='red'>Attention!</font>")
-	to_chat(world, "<font color='red'>The maintenance access requirement has been revoked on all airlocks.</font>")
-
-/proc/revoke_maint_all_access()
-	maint_all_access = 0
-	to_chat(world, "<font size=4 color='red'>Attention!</font>")
-	to_chat(world, "<font color='red'>The maintenance access requirement has been readded on all maintenance airlocks.</font>")
-
-/obj/machinery/door/airlock/allowed(mob/M)
-	if(maint_all_access && src.check_access_list(list(access_maint_tunnels)))
-		return 1
-	return ..(M)
-
 //====Enhanced keycard authentication device====
 /obj/machinery/keycard_auth/enhanced
 	name = "enhanced keycard authentication device"
 	desc = "This device is used to trigger high security events. It requires the simultaneous swipe of two high-level ID cards on different devices."
-
-/obj/machinery/keycard_auth/enhanced/Process()
-	if(global_dual_auth_active && global_auth_timer > 0)
-		// Update the UI for anyone viewing this device
-		for(var/mob/user in range(3, src))
-			if(user.machine == src && user.client)
-				attack_hand(user)
 
 /obj/machinery/keycard_auth/enhanced/attack_hand(mob/user)
 	if(inoperable())
@@ -294,18 +264,10 @@ var/global/maint_all_access = 0
 	if(screen == 1)
 		dat += "Select an event to trigger:<br>"
 
-		var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
-		if(security_state.current_security_level == security_state.severe_security_level)
-			dat += "Cannot modify the alert level at this time: [security_state.severe_security_level.name] engaged.<br>"
-		else
-			if(security_state.current_security_level == security_state.high_security_level)
-				dat += "<A href='?src=\ref[src];triggerevent=Revert alert'>Disengage [security_state.high_security_level.name]</A><br>"
-			else
-				dat += "<A href='?src=\ref[src];triggerevent=Red alert'>Engage [security_state.high_security_level.name]</A><br>"
-
 		dat += "<A href='?src=\ref[src];triggerevent=Grant Emergency Maintenance Access'>Grant Emergency Maintenance Access</A><br>"
 		dat += "<A href='?src=\ref[src];triggerevent=Revoke Emergency Maintenance Access'>Revoke Emergency Maintenance Access</A><br>"
 		dat += "<A href='?src=\ref[src];triggerevent=Grant Nuclear Authorization Code'>Grant Nuclear Authorization Code</A><br>"
+		dat += "<A href='?src=\ref[src];triggerevent=Disable Delta Alert'>Disable Delta Alert</A><br>"
 		dat += "<a href='?src=\ref[src];triggerevent=Evacuate'>Initiate Evacuation Procedures</a><br>"
 	if(screen == 2)
 		if(global_dual_auth_active && global_auth_timer > 0)
@@ -323,7 +285,7 @@ var/global/maint_all_access = 0
 		dat += "<p><A href='?src=\ref[src];reset=1'>Back</A>"
 
 	// Update existing browser or create new one
-	var/datum/browser/popup = new(user, "kad_window", "Enhanced Keycard Authentication Device", 500, 250)
+	var/datum/browser/popup = new(user, "kad_window", "Enhanced Keycard Authentication Device", 750, 550)
 	popup.set_content(jointext(dat, ""))
 	popup.open()
 	return
@@ -385,7 +347,8 @@ var/global/maint_all_access = 0
 			to_chat(user, "<span class='notice'>Authentication accepted ([global_auth_users.len]/2).</span>")
 
 			if(global_auth_users.len == 1)
-				visible_message("<span class='notice'>[user] swipes their card on [src]. Waiting for second authorization on a different device...</span>")
+				for(var/obj/machinery/keycard_auth/KAD in world)
+					KAD.visible_message("<span class='notice'>First authorization received! A second authorization is required on a different device within [global_auth_timer/10] seconds!</span>")
 			else if(global_auth_users.len >= 2)
 				visible_message("<span class='notice'>[user] provides the second authorization on [src]. Dual authentication complete!</span>")
 				// Determine which type of authentication completion to use
@@ -407,7 +370,8 @@ var/global/maint_all_access = 0
 	global_pending_event = event
 	global_auth_initiator = src
 
-	to_chat(world, "<span class='notice'>Enhanced dual keycard authentication required for [event]. Please swipe two authorized cards on different keycard authenticators within 5 seconds.</span>")
+	for(var/obj/machinery/keycard_auth/KAD in world)
+		KAD.visible_message("<span class='notice'>Enhanced dual keycard authentication required for [event]. Please swipe an authorized card on this device.</span>")
 
 	spawn()
 		while(global_auth_timer > 0 && global_dual_auth_active)
@@ -415,7 +379,8 @@ var/global/maint_all_access = 0
 			global_auth_timer--
 
 		if(global_dual_auth_active && global_auth_users.len < 2)
-			to_chat(world, "<span class='warning'>Enhanced dual authentication timeout. Authentication failed.</span>")
+			for(var/obj/machinery/keycard_auth/KAD in world)
+				KAD.visible_message("<span class='warning'>Enhanced dual authentication timeout. Authentication failed.</span>")
 			reset_global_auth()
 
 /obj/machinery/keycard_auth/enhanced/proc/execute_enhanced_authenticated_event()
@@ -430,20 +395,6 @@ var/global/maint_all_access = 0
 	var/datum/announcement/priority/security/auth_announcement = new(do_log = 1, do_newscast = 1, new_sound = sound('sound/misc/notice1.ogg'))
 
 	switch(event)
-		if("Red alert")
-			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
-			security_state.set_security_level(security_state.high_security_level)
-			auth_announcement.Announce("SECURITY ALERT: Red alert status has been activated via dual keycard authentication on separate devices.", "Keycard Authentication Control")
-
-		if("Revert alert")
-			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
-			if(security_state.stored_security_level)
-				security_state.set_security_level(security_state.stored_security_level)
-			else
-				// Fallback to first security level if no stored level
-				security_state.set_security_level(security_state.all_security_levels[1])
-			auth_announcement.Announce("SECURITY UPDATE: Alert status has been reverted via dual keycard authentication on separate devices.", "Keycard Authentication Control")
-
 		if("Grant Emergency Maintenance Access")
 			make_maint_all_access()
 			auth_announcement.Announce("MAINTENANCE ALERT: Emergency maintenance access has been granted to all personnel via dual keycard authentication on separate devices. All maintenance areas are now accessible.", "Keycard Authentication Control")
@@ -478,6 +429,16 @@ var/global/maint_all_access = 0
 				to_chat(usr, "The nuclear authorization code is [nuke.r_code]")
 			else
 				to_chat(usr, "No self destruct terminal found.")
+
+		if("Disable Delta Alert")
+			var/decl/security_state/security_state = decls_repository.get_decl(GLOB.maps_data.security_state)
+			if(security_state.current_security_level_is_same_or_higher_than(security_state.severe_security_level))
+				var/severe_index = security_state.all_security_levels.Find(security_state.severe_security_level)
+				var/decl/security_level/lower_level = severe_index > 1 ? security_state.all_security_levels[severe_index - 1] : security_state.all_security_levels[1]
+				security_state.set_security_level(lower_level, TRUE)
+				auth_announcement.Announce("SECURITY ALERT: Delta alert has been disarmed via dual keycard authentication on separate devices. Security level reduced to [lower_level.name].", "Keycard Authentication Control")
+			else
+				auth_announcement.Announce("NOTICE: Delta alert is not currently active. No change to security level.", "Keycard Authentication Control")
 
 		if("Evacuate")
 			evacuation_controller.call_evacuation(null, TRUE)

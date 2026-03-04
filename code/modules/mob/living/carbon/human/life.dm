@@ -704,8 +704,6 @@
 		return //too busy for pesky metabolic regulation
 
 	if(bodytemperature < species.cold_level_1) //260.15 is 310.15 - 50, the temperature where you start to feel effects.
-		if(nutrition >= 2) //If we are very, very cold we'll use up quite a bit of nutriment to heat us up.
-			nutrition -= 2
 		frost += 0.5
 		var/recovery_amt = max((body_temperature_difference / BODYTEMP_AUTORECOVERY_DIVISOR), BODYTEMP_AUTORECOVERY_MINIMUM)
 		//world << "Cold. Difference = [body_temperature_difference]. Recovering [recovery_amt]"
@@ -1090,7 +1088,11 @@
 		if(wear_id)
 			var/obj/item/card/id/I = wear_id.GetIdCard()
 			if(I)
-				holder.icon_state = "hud[ckey(I.GetJobName())]"
+				var/job_icon = I.GetJobName()
+				if(job_icon)
+					holder.icon_state = "hud[ckey(job_icon)]"
+				else
+					holder.icon_state = "hudunknown"
 			else
 				holder.icon_state = "hudunknown"
 		else

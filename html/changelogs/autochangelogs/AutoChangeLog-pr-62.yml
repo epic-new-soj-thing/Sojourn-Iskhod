@@ -1,0 +1,8 @@
+author: CFWMagic
+changes:
+  - add: Added support for diagonal movement, allowing players to move in corner
+      directions.
+  - tweak: Movement speed is slightly reduced when moving diagonally to prevent 
+      faster movement.
+date: '2025-04-29'
+delete-after: false

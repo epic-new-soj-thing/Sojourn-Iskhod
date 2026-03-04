@@ -54,7 +54,7 @@
 
 //new iskhod tileset
 /obj/structure/low_wall/iskhod
-	name = "Iskhod low wall"
+	name = "low wall"
 	wall_color = "#FFFFFF"
 	icon_state = "iskhod"
 

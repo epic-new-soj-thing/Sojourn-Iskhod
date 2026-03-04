@@ -104,10 +104,27 @@
 /obj/item/reagent_containers/dropper/industrial
 	name = "industrial dropper"
 	desc = "A large dropper. Transfers 10 units."
+	icon_state = "dropper_ind"
 	matter = list(MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 1)
 	amount_per_transfer_from_this = 10
 	possible_transfer_amounts = list(1,2,3,4,5,6,7,8,9,10)
 	volume = 10
+
+/obj/item/reagent_containers/dropper/micropipetter
+	name = "micropipetter"
+	desc = "A precision micropipette for small-volume transfers. Holds 1 unit max."
+	icon_state = "dropper_pip"
+	matter = list(MATERIAL_PLASTIC = 1, MATERIAL_STEEL = 1)
+	amount_per_transfer_from_this = 1
+	possible_transfer_amounts = list(1, 0.5, 0.2, 0.1)
+	volume = 1
+
+/obj/item/reagent_containers/dropper/micropipetter/update_icon()
+	cut_overlays()
+	if(reagents.total_volume)
+		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "pipetter")
+		filling.color = reagents.get_color()
+		add_overlay(filling)
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Droppers. END

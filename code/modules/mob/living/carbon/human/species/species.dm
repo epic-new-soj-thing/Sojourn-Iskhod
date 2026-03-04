@@ -320,6 +320,9 @@
 		H.see_in_dark += H.equipment_darkness_modifier
 		H.see_in_dark += H.additional_darksight //Done like this for sake of easier to read
 
+		if(CE_DARKSIGHT in H.chem_effects)
+			H.see_in_dark = max(H.see_in_dark, 8)
+
 		if(H.see_in_dark <= 0)
 			H.see_in_dark = 1
 

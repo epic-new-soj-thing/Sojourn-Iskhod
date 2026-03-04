@@ -11,11 +11,14 @@
 	if(vessel)
 		return
 
+	if(!species)
+		return
+
 	vessel = new/datum/reagents(species.blood_volume)
 	vessel.my_atom = src
 
 	// set mob blood colour early if we happen to be giving them a vessel here
-	if(src)
+	if(species)
 		src.blood_color = species.blood_color
 
 	if(species && species.blood_reagent)
@@ -65,7 +68,7 @@
 	//Bleeding out
 	var/blood_max = 0
 	for(var/obj/item/organ/external/temp in organs)
-		if(!(temp.status & ORGAN_BLEEDING) || BP_IS_ROBOTIC(temp))
+		if(!(temp.status & ORGAN_BLEEDING) || BP_IS_ROBOTIC(temp)) // Corrected syntax for BP_IS_ROBOTIC
 			continue
 		for(var/datum/wound/W in temp.wounds)
 			if(W.bleeding())
@@ -73,7 +76,8 @@
 					var/removed = W.damage/75
 					if(chem_effects[CE_BLOODCLOT])
 						removed *= 1 - chem_effects[CE_BLOODCLOT]
-					vessel.remove_reagent(species.blood_reagent, temp.wound_update_accuracy * removed)
+					if(species && vessel) // Added null checks for species and vessel
+						vessel.remove_reagent(species.blood_reagent, temp.wound_update_accuracy * removed)
 					if(prob(1 * temp.wound_update_accuracy))
 						custom_pain("You feel a stabbing pain in your [temp]!",1)
 				else
@@ -97,6 +101,38 @@
 
 	vessel.remove_reagent(species.blood_reagent,amt)
 	blood_splatter(src,src)
+
+	var/turf/T = get_turf(src)
+
+	// Arterial bleeding: very high blood loss - always notify and spray blood in multiple directions
+	if(amt >= 4)
+		to_chat(src, SPAN_DANGER("Blood is spurting violently from your wounds!"))
+		visible_message(SPAN_DANGER("Blood spurts violently from [src]'s wounds!"))
+		if(T)
+			for(var/d in GLOB.alldirs)
+				var/turf/spray_turf = get_step(T, d)
+				if(spray_turf && prob(60))
+					blood_splatter(spray_turf, src, 1)
+	// Severe bleeding: blood spurting - notify victim and nearby, spray blood
+	else if(amt >= 2)
+		if(prob(35))
+			to_chat(src, SPAN_DANGER("Blood is spurting out of your wounds!"))
+			visible_message(SPAN_DANGER("Blood spurts out of [src]'s wounds!"))
+			if(T)
+				var/spray_dir = pick(GLOB.alldirs)
+				var/turf/target = get_step(T, spray_dir)
+				if(target)
+					blood_splatter(target, src, 1)
+				// Chance to hit a second direction
+				if(prob(50))
+					target = get_step(T, pick(GLOB.alldirs))
+					if(target)
+						blood_splatter(target, src, 1)
+	// Heavy bleeding: notify victim and observers
+	else if(amt >= 1)
+		if(prob(20))
+			to_chat(src, SPAN_WARNING("You're bleeding heavily!"))
+			visible_message(SPAN_DANGER("Blood drips heavily from [src]'s wounds."))
 
 /****************************************************
 				BLOOD TRANSFERS
@@ -158,7 +194,7 @@
 	if (!injected || !our)
 		return
 	if(blood_incompatible(injected.data["blood_type"],our.data["blood_type"],injected.data["species"],our.data["species"],injected.data["blood_group"],our.data["blood_group"]) && !(bloodstr.has_reagent("nosfernium") || (VAMPIRE in mutations)))
-		reagents.add_reagent("toxin",amount * 0.5)
+		reagents.add_reagent("toxin", amount * 3)
 		reagents.update_total()
 	else
 		vessel.add_reagent(species.blood_reagent, amount, injected.data)
@@ -167,6 +203,8 @@
 
 //Gets human's own blood.
 /mob/living/carbon/proc/get_blood()
+	if(!vessel)
+		return null
 	var/datum/reagent/organic/blood/res = locate() in vessel.reagent_list //Grab some blood
 	if(res) // Make sure there's some blood at all
 		var/datum/weakref/ref = res.data["donor"]
@@ -183,8 +221,7 @@ proc/blood_incompatible(donor,receiver,donor_species,receiver_species,donor_grou
 	if(donor_group && receiver_group)
 		if(donor_group != receiver_group)
 			return 1
-
-	if(donor_species && receiver_species)
+	else if(donor_species && receiver_species)
 		if(donor_species != receiver_species)
 			return 1
 
@@ -211,9 +248,12 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 	var/turf/T = get_turf(target)
 
 	// convert any mob into its blood reagent so we can read colour/data correctly
+	var/datum/reagent/organic/blood/B_tmp = null
 	if(istype(source, /mob/living/carbon))
 		var/mob/living/carbon/M = source
-		source = M.get_blood()
+		B_tmp = M.get_blood()
+	else if(istype(source, /datum/reagent/organic/blood))
+		B_tmp = source
 
 	// Are we dripping or splattering?
 	var/list/drips = list()
@@ -234,22 +274,30 @@ proc/blood_splatter(var/target,var/datum/reagent/organic/blood/source,var/large)
 		drop.add_overlay(drips)
 		drop.drips |= drips
 
-	// If there's no data to copy, call it quits here.
-	if(!source)
+	// If it's a mob (possibly non-carbon), we can still try to get some data
+	if(isliving(source))
+		var/mob/living/L = source
+		B.basecolor = L.blood_color ? L.blood_color : COLOR_BLOOD_HUMAN
+		B.add_blood(L)
+		B.update_icon()
 		return B
 
-	// Update appearance.
-	if(source.data["blood_color"])
-		B.basecolor = source.data["blood_color"]
-		B.update_icon()
+	// If we have a reagent source, use its data
+	if(B_tmp)
+		if(B_tmp.data["blood_color"])
+			B.basecolor = B_tmp.data["blood_color"]
+			B.update_icon()
 
-	// Update blood information.
-	if(source.data["blood_DNA"])
-		B.blood_DNA = list()
-		if(source.data["blood_type"])
-			B.blood_DNA[source.data["blood_DNA"]] = source.data["blood_type"]
-		else
-			B.blood_DNA[source.data["blood_DNA"]] = "O+"
+		if(B_tmp.data["blood_DNA"])
+			if(!B.blood_DNA)
+				B.blood_DNA = list()
+			if(B_tmp.data["blood_type"])
+				B.blood_DNA[B_tmp.data["blood_DNA"]] = B_tmp.data["blood_type"]
+			else
+				B.blood_DNA[B_tmp.data["blood_DNA"]] = "O+"
+		return B
+
+	return B
 
 	B.fluorescent  = 0
 	B.invisibility = 0

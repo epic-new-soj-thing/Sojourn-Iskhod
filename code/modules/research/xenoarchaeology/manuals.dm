@@ -20,117 +20,177 @@
 				<h1><a name="Contents">Contents</a></h1>
 				<ol>
 					<li><a href="#Prep">Prepping the expedition</a></li>
-					<li><a href="#Tools">Knowing your tools</a></li>
-					<li><a href="#Find">Finding the dig</a></li>
-					<li><a href="#Analyse">Analysing deposits</a></li>
-					<li><a href="#Excavate">Extracting your first find</a></li>
-					<li><a href="#Math">Every ones least favorite, Math</a></li>
+					<li><a href="#Tools">Equipment you'll need</a></li>
+					<li><a href="#Survey">Initial site survey</a></li>
+					<li><a href="#Scan">Depth analysis scanning</a></li>
+					<li><a href="#Read">Reading scanner data</a></li>
+					<li><a href="#Math">Excavation mathematics (critical!)</a></li>
+					<li><a href="#Setup">Setting up excavation</a></li>
+					<li><a href="#Excavate">The excavation process</a></li>
+					<li><a href="#Special">Special cases</a></li>
+					<li><a href="#Finds">Types of finds</a></li>
+					<li><a href="#Safety">Safety and best practices</a></li>
+					<li><a href="#Research">Research and documentation</a></li>
+					<li><a href="#Emergency">Emergency procedures</a></li>
+					<li><a href="#Advanced">Advanced techniques</a></li>
 				</ol>
+				<br>
+
+				<h2>Overview</h2>
+				The <b>Depth Analysis Scanner</b> (also called X-ray diffractor) is the crucial tool in xenoarchaeology. It uses X-ray diffraction to locate anomalous
+				densities in rock, indicating archaeological deposits. This guide will teach you how to use it effectively to uncover ancient artifacts and anomalies.<br>
 				<br>
 
 				<h1><a name="Prep">Prepping the expedition</a></h1>
 				Every digsite I've been to, someone has forgotten something and I've never yet been to a dig that hasn't had me hiking to get to it - so gather your gear
-				and get it to the site the first time. And most importantly if possible bring others. Share the workload and make an adventure that you and others can
-				talk about later. Someone capable of doing medical work, Someone capable of protecting the group and of course. Someone able to dig up finds.<br>
+				and get it to the site the first time. Most importantly, if possible bring others. Share the workload and make an adventure that you and others can
+				talk about later: someone capable of medical work, someone capable of protecting the group, and of course someone able to dig up finds.<br>
 				<ul>
-					<li>Communication Equipment (HAM radios. These are your lifelines!)</li>
-					<li>Medicinal Supplies (Someone always gets injured in someway.)</li>
+					<li>Communication equipment (HAM radios - your lifelines!)</li>
+					<li>Medicinal supplies (Someone always gets injured somehow.)</li>
 					<li>Suspension Field Generator (No field generator means little to no finds.)</li>
-					<li>Crates or Other Transport (You'll have alot to haul.)</li>
-					<li>Weapons and Ammo (You'll need it.)</li>
-					<li>Food (You will be crawling back starved without this.)
-					<li>Base Camp Equipment (Only needed if actually staying out. Power supply Solars ect.)
+					<li>Crates or other transport (You'll have a lot to haul.)</li>
+					<li>Weapons and ammo (You'll need it.)</li>
+					<li>Food (You will be crawling back starved without this.)</li>
+					<li>Base camp equipment (Only needed if actually staying out - power supply, solars, etc.)</li>
 				</ul><br>
 
-				<h1><a name="Tools">Knowing your tools</a></h1>
-				Every archaeologist has a plethora of tools at their disposal, but here's the important ones:<br>
+				<h1><a name="Tools">Equipment you'll need</a></h1>
+				Every archaeologist has a plethora of tools at their disposal. From the excavation kit, the important ones are:<br>
 				<ul>
-					<li><b>Picks and pickaxes</b> - The bread and butter of your digging utensils. The big one works well on digging through rocks. While
-					The small one works well on actually excavating things.</li>
-					<li><b>Measuring tape</b> - don't leave home without it, you can use it to measure the depth you or someone else has dug.</li>
-					<li><b>GPS</b> - helps others to find you if something bad happens.</li>
-					<li><b>Core sampler</b> - use this to take core samples from rock faces, which you can then run to the lab for analysis.</li>
-					<li><b>Depth scanner</b> - uses X-ray diffraction to locate anomalous densities in rock, indicating archaeological deposits.
-						Comes with a handy reference log containing coordinates and time of each scan.</li>
-					<li><b>Alden-Saraspova counter</b> - uses a patented application of Fourier Transform analysis to determine the difference between background and
-						exotic radiation. Use it to determine how far you are from anomalous energy sources.</li>
-					<li><b>Optical Mesons</b> - YOU WILL WANT THESE. These allow you to see far into the rocks. Helps to find the markings that stand out.
-					Without these your basically digging blind till your right up on a find. They take small battery cells.</li>
-					<li><b>Flashlight, floodlights or portable light source</b> - Self explanatory, I hope.</li>
-					<li><b>Environmental safety gear</b> - This one's dependent on the environment you're working in, but enclosed footwear and a pack of internals
-						could save your life.</li>
-					<li><b>Anomaly safety gear</b> - A biosealed and catalysis-resistant suit along with eye shielding, tinted hood, and non-reactive disposable gloves are
-					the best kind of protection you can hope for from the errors our forebears may have unleashed.</li>
-					<li><b>Personal defence weapon</b> - Never know what you'll find on the dig: pirates, natives, ancient guardians, carnivorous wildlife...
-						it pays in blood to be prepared.</li>
+					<li><b>Depth Analysis Scanner</b> - Main tool for finding anomalies. Uses X-ray diffraction; comes with a reference log (coordinates and time of each scan).</li>
+					<li><b>Alden-Saraspova Counter</b> (Anomaly Scanner) - Detects exotic energy signatures. Use it first to find promising areas.</li>
+					<li><b>Excavation pick</b> (hand pickaxe) - For precise digging; each "depth" unit is 2cm (enter 1 for 2cm, or e.g. 30 to dig 60cm in one go).</li>
+					<li><b>Regular pickaxe</b> - For clearing normal rock.</li>
+					<li><b>Measuring tape</b> - Essential. Don't leave home without it; measure the depth you or someone else has dug.</li>
+					<li><b>Core sampler</b> - Take core samples from rock faces for the lab.</li>
+					<li><b>Suspension Field Generator</b> - Critical for extracting finds safely.</li>
+					<li><b>Meson goggles</b> - YOU WILL WANT THESE. See through rock; find markings that stand out. Without them you're basically digging blind. They take small battery cells.</li>
+					<li><b>GPS</b> - For navigation and safety; helps others find you if something bad happens.</li>
+					<li><b>Hand labeler</b> - For marking finds.</li>
+					<li><b>Research tape</b> - For securing dig sites.</li>
+					<li><b>Fossil bag</b> - For storing finds.</li>
+					<li><b>Flashlight, floodlights or portable light source</b> - Self-explanatory, I hope.</li>
+					<li><b>Anomaly suit</b> - Essential protection for dangerous artifacts and radiation. Heavily shielded against rads (e.g. from the radiocarbon spectrometer); biosealed, catalysis-resistant, with eye shielding and non-reactive gloves.</li>
+					<li><b>Environmental safety gear</b> - Enclosed footwear and a pack of internals could save your life.</li>
+					<li><b>Personal defence weapon</b> - Pirates, natives, ancient guardians, carnivorous wildlife - it pays in blood to be prepared.</li>
 				</ul><br>
 
-				<h1><a name="Find">Finding the dig</a></h1>
-				Wouldn't be an archaeologist without their dig, but everyone has to start somewhere.<br>
+				<h1><a name="Survey">Initial site survey</a></h1>
+				Wouldn't be an archaeologist without your dig, but everyone has to start somewhere.<br>
 				<ul>
-					<li>Double <b>check your gear</b> then triple check it. Digs are a long walk away. Its not fun to find out you forgot something.</li>
-					<li><b>Check with others</b> to see if someone would like to come with for expiditions outside. Less likly to happen when working the mines.</li>
-					<li>Make sure to <b>notify your department</b> at the least that your heading out. Always let someone know where you are going.</li>
-					<li><b>Do some digging.</b> - the earth mother isn't in the habit of displaying her secrets to the world (although sometimes you get lucky).
-						Dig and clear away a bit of surface rock here and there, you never know what might be lurking below the surface.</li>
-					<li><b>Tips on unearthing a deposit</b> - How do you know when you're golden? Look for telltale white strata that looks strange or out of place, or if
-						something has broken under your pick while you're digging. Your depth scanner is your best friend, but even it can't distinguish between
-						ordinary minerals and ancient leavings, if in doubt then err on the side of caution.</li>
+					<li><b>Use the Alden-Saraspova Counter first</b> - Detects exotic energy signatures within range; gives wavelength IDs and approximate distances. Helps identify promising areas for detailed scanning.</li>
+					<li><b>Survey the terrain</b> - Look for unusual rock formations, white strata or out-of-place geology. Clear away surface debris with the regular pickaxe.</li>
+					<li>Double <b>check your gear</b> then triple check it. Digs are a long walk away.</li>
+					<li><b>Notify your department</b> - Always let someone know where you are going. Check with others to see if someone would like to come along.</li>
 				</ul><br>
 
-				<h1><a name="Analyse">Analysing the contents of a dig</a></h1>
-				You've found some unusual strata, but it's not all peaches from here. This is where most xenoarcheologists find trouble their first few times.<br>
+				<h1><a name="Scan">Depth analysis scanning</a></h1>
 				<ul>
-					<li><b>Take core samples</b> - These are taken back to anomaly research to be scanned and turned into research points.</li>
-					<li><b>Clear around any potential finds</b> - Clear away ordinary rock, leaving your prizes reachable in a clearly marked area.</li>
-					<li><b>Haul off excess rock</b> - It's easy for a dig to get cluttered, and a neat archaeologist is a successful archaeologist.</li>
-					<li><b>Don't be afraid to be cautious</b> - It's slower sometimes, but the extra time will be worth the payoff when you find a relic.</li>
-					<li><b>Secure your site.</b> - Be vary careful of what is around you when your working. A voidwolf, animal or golem coming up on you when
-						your working could spell a vary bad day.</li>
-					<li><b>Double check your depth scanner</b> - The depth scanner can be misread if you start to press for speed. And you only get one to three
-						finds at any particular site. Its better to slow down and recover all the finds at a location then to break half and have to look for more.</li>
+					<li>Equip the Depth Analysis Scanner and <b>click on mineral turfs</b> (rock surfaces) to scan them.</li>
+					<li><b>Listen for audio feedback</b> - The scanner will ping if it detects something interesting; different pings indicate different finds.</li>
+					<li><b>Check the scanner interface</b> - Click the scanner to open its log; successful scans are automatically recorded.</li>
+				</ul><br>
+
+				<h1><a name="Read">Reading scanner data</a></h1>
+				The scanner logs contain critical information. Don't skip this.<br>
+				<ul>
+					<li><b>Coordinates</b> - Exact location (format: X.x:Y.y:Z.z)</li>
+					<li><b>Time stamp</b> - When the scan was performed</li>
+					<li><b>Anomaly depth</b> - How deep the find is (in centimeters). Shown as "Anomaly depth" in the scanner.</li>
+					<li><b>Clearance</b> - Size of the soft material bubble around the find (in centimeters). Shown as "Clearance above anomaly depth" in the scanner.</li>
+					<li><b>Dissonance spread</b> - Affects suspension field settings</li>
+					<li><b>Material type</b> - Indicates find type and required field setting:
+					<ul>
+						<li><b>Carbon</b> - Organic materials, fossils, remains</li>
+						<li><b>Iron</b> - Metal objects, weapons, tools</li>
+						<li><b>Plasma</b> - High-energy artifacts, dangerous items</li>
+						<li><b>Mercury</b> - Unknown or exotic materials</li>
+					</ul></li>
 				</ul><br>
 				<a href="#Contents">Contents</a>
 
-				<h1><a name="Excavate">Extracting your first find</a></h1>
+				<h1><a name="Math">Excavation mathematics (critical!)</a></h1>
+				All scanner data is in <b>centimeters (cm)</b>. Each excavation pick use removes <b>2cm of depth</b>. You must divide measurements by 2 to get pick uses needed.<br>
+				<br>
+				<b>First dig (to reach the bubble):</b><br>
+				(Find Depth - Current Dug Depth - Clearance) ÷ 2 = Pick uses needed<br>
+				<br>
+				<b>Second dig (into the bubble, with suspension field on):</b><br>
+				Clearance ÷ 2 = Pick uses needed<br>
+				<br>
+				<b>Example:</b> Find Depth 80cm, Clearance 20cm, currently dug 0cm.<br>
+				First dig: (80 - 0 - 20) ÷ 2 = 30 pick uses. Second dig: 20 ÷ 2 = 10 pick uses.<br>
+				<br>
 				<ul>
-					<li><b>Scan the rock</b> - Use a depth scanner to determine the find's depth and clearance. DON'T FORGET THESE.</li>
-					<li><b>Choose stasis field</b> - The suspension field generator should be wrenched into place, facing the find and set to the appropriate field.
-						A book on which setting is for which material type is provided by the lockers in the lower outpost.</li>
-					<li><b>Do the math</b> - Here comes where most people have issues. The math. I will further explain it below in the next section. Please
-						double check your math if you feel it might be off. You only get once chance at digging finds out.</li>
-					<li><b>Digging to the bubble</b> - finds are generally in a softer bubble that you will dig to. The first section of math should bring you to this.</li>
-					<li><b>Bracing the bubble. Getting the find.</b> - The suspension field will have to be turned on for this part. Once on, you want to dig the rest of
-						the way to the anomaly. THIS MUST BE DONE IN ONE SHOT. If you don't do it in one shot you will get a strange rock or worse. Break the find.</li>
-					<li><b>The dangerous ones.</b> - Sometimes, you'll chance upon something big, both literally and figuratively. Giant statues and functioning remnants of Precursor
-						technology are just as exciting, to the right buyers. If your digging leaves a large boulder behind, dig into it bit by bit. But wear
-						your anomaly suit and get ready. Anomalies can go off from the air once dug up.</li>
+					<li><b>Find Depth</b> - How far down the object we're trying to dig out is.</li>
+					<li><b>Current Dug Depth</b> - How far we've already dug. Use the measuring tape.</li>
+					<li><b>Clearance</b> - The bubble of soft material around the find. We dig to the edge of it, THEN dig the bubble itself only after the suspension field is on.</li>
+					<li><b>Why divide by 2?</b> - Each use of the excavation pick removes 2cm. So we divide by two to get the number of pick uses.</li>
+					<li><b>OH NO I MESSED UP!</b> - Wrong math happens. Too far and you've broken your find. Not far enough, or two separate digs into the bubble, and you'll get a strange rock. A welder, brush or pick might still save it - but it could crumble. Won't know till you try.</li>
+					<li><b>But wait there's more!</b> - Multiple finds at a site? If the scanner shows something at 200cm depth, congratulations - you've found an anomaly. Dig to 200cm and it may break into a boulder. Excavate 2cm by 2cm. Wear your anomaly suit. Seriously.</li>
+				</ul><br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Setup">Setting up excavation</a></h1>
+				<ul>
+					<li><b>Position the suspension field generator</b> - Face it toward the dig site. Wrench it into place for stability. Configure field type based on material (see the suspension manual).</li>
+					<li><b>Clear the excavation area</b> - Remove surface rocks with the regular pickaxe; create a clean workspace; mark the area clearly.</li>
+					<li><b>Prepare safety measures</b> - Put on the anomaly suit for dangerous finds; have GPS active for emergency location; ensure good lighting.</li>
 				</ul><br>
 
-				<h1><a name="Maths">Every ones least favorite, Math</a></h1>
+				<h1><a name="Excavate">The excavation process</a></h1>
 				<ul>
-					<li><b>The first dig</b> - The formula for the overall process is below. You might have to look at the page a little differently to see it.</li>
-					<li>(Find Depth - Depth Dug - Clerance)</li>
-					<li>___________________________________</li>
-					<li>------Divide the top part by 2-----</li>
-					<li><b>The second dig</b> - For this part, The suspension field should be set and on. You'll dig this, then turn the field off.</li>
-					<li>--Clerance---</li>
-					<li>_____________</li>
-					<li>-Divide by 2-</li>
-					<li><b>But why?</b> - So why do we use this formula you might ask? Well lets go over it bit by bit for understanding.</li>
-					<li><b>Depth</b> -  Depth of the find is how far the object we are trying to dig out is.</li>
-					<li><b>Dug Depth</b> - Is how far we dug. Use the tape measure to find this one out.</li>
-					<li><b>Clearance</b> - Is how big the bubble of soft material around the find is. We don't want it collapsing so we dig to this part,
-						THEN dig the bubble itself only after we have started the suspension field.</li>
-					<li><b>But why do we divide?</b> - All data on our depth scanner comes in CM. But the smallest amount we can dig with the pick is 2cm
-						So to make sure we don't dig to far with the picks. We divide by two. Sense each "use" of the pick removes 2cm at a time.</li>
-					<li><b>OH NO I MESSED UP!</b> - Sometimes you'll do your math wrong. It happens. If you went to far you might have broken your find.
-						Not far enough or attempting to do two seperate digs into the bubble and you'll get a strange rock.
-						Using a welder on it still might save it! But it could also crumble away. Wont know till you try.</li>
-					<li><b>But wait theres more!</b> - If you dig out multiple finds and it suddenly shows something weird at 200 depth. Congrads.
-						You found a anomaly! Dig to 200CM and it should break into a boulder. Excavate 2cm by 2cm till it crumbles away to reveal your
-						potential death. Seriously. Wear your anomaly suit for this.</li>
+					<li><b>First dig (to the bubble)</b> - Use the excavation pick the calculated number of times. Do NOT turn on the suspension field yet. Use the measuring tape to verify depth. You should be at: Find Depth minus Clearance.</li>
+					<li><b>Verify your depth</b> - If wrong, recalculate before proceeding.</li>
+					<li><b>Activate the suspension field</b> - Turn on the generator. Verify the field is active and stable. Configure to match material type.</li>
+					<li><b>Second dig (into the bubble)</b> - MUST be done in one continuous action. Use the excavation pick for the calculated clearance uses. Cannot be split into multiple sessions - or you get a strange rock or break the find.</li>
+					<li><b>Extract the find</b> - Turn off the suspension field. Carefully remove the artifact. Label and document immediately.</li>
 				</ul><br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Special">Special cases</a></h1>
+				<ul>
+					<li><b>Large anomalies (boulders)</b> - If excavation produces a large boulder, it contains a major artifact. Dig into the boulder 2cm at a time with the excavation pick. Wear the anomaly suit - these can be extremely dangerous. Artifacts may activate when exposed to air.</li>
+					<li><b>Strange rocks</b> - Result from improper excavation (wrong depth, broken field, etc.). May still contain salvageable finds. Try welder, brush or pick based on rock type. Success not guaranteed - may crumble completely.</li>
+					<li><b>Multiple finds</b> - Single locations may contain multiple artifacts. Scan thoroughly after each extraction. Look for additional depth readings, especially around 200cm - that often indicates major anomalous artifacts.</li>
+				</ul><br>
+
+				<h1><a name="Finds">Types of finds</a></h1>
+				<b>Common:</b> Weapons (ancient guns, blades, tools), cultural items (bowls, urns, statuettes, coins), technology (circuit boards, strange devices), organic (fossils, plant remains, humanoid remains).<br>
+				<b>Rare and dangerous:</b> Precursor technology, anomalous artifacts, cultist items, unknown materials with unknown properties.<br>
+				<br>
+
+				<h1><a name="Safety">Safety and best practices</a></h1>
+				<b>Critical rules:</b> Always wear the anomaly suit for unknown or large finds. Never dig into the bubble without an active suspension field. Double-check all calculations - you only get one chance. Mark dig sites clearly. Use GPS so others can locate you. Work with a partner when possible.<br>
+				<br>
+				<b>Tips:</b> Take your time - rushing leads to broken finds. Verify measurements twice before digging. Keep detailed notes. Take core samples for research. Clear excess rock regularly. Watch for wildlife - dig sites attract dangerous creatures.<br>
+				<br>
+				<b>Mistakes to avoid:</b> Wrong math; digging too far (breaks the find); not digging far enough (creates strange rock); splitting the bubble dig into multiple actions; wrong suspension field (can destroy delicate finds); no safety gear (anomalies can be lethal when exposed).<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Research">Research and documentation</a></h1>
+				<b>Core sampling</b> - Use the core sampler on rock faces before excavation. Submit samples to the research lab for analysis; provides research points and geological data; can reveal additional finds.<br>
+				<br>
+				<b>Find documentation</b> - Label all finds immediately after extraction. Record coordinates, depth and conditions. Submit to research for analysis and points. Some finds are extremely valuable to traders.<br>
+				<br>
+				<b>Analysis equipment</b> - Artifact Analyser (studies emissions of anomalous materials), Geosample Scanner (rock composition and dating), Radiocarbon Spectrometer (age of organic materials).<br>
+				<br>
+
+				<h1><a name="Emergency">Emergency procedures</a></h1>
+				<b>If something goes wrong:</b> Activate GPS immediately. Call for backup if dealing with a dangerous anomaly. Evacuate the area if an artifact shows signs of instability. Report incidents to the research department. Seal dangerous sites until proper containment is available.<br>
+				<br>
+				<b>Equipment failure:</b> Suspension field failure - evacuate immediately; may cause collapse. Scanner malfunction - recalibrate or replace before continuing. Communication loss - return to base; don't work alone.<br>
+				<br>
+
+				<h1><a name="Advanced">Advanced techniques</a></h1>
+				<b>Multi-find sites</b> - Scan large areas thoroughly for multiple anomalies. Excavate systematically from easiest to hardest. Some sites contain artifact clusters; major sites may have central high-value pieces.<br>
+				<br>
+				<b>Anomaly prediction</b> - Learn to recognize geological patterns. Certain rock formations favor specific find types. Experience helps predict difficulty and value. Weather and atmospheric conditions can affect scans.<br>
+				<br>
+				Xenoarchaeology is both science and art. The depth analysis scanner is your window into the past, but proper technique, careful mathematics and safety awareness are what turn ancient secrets into valuable discoveries. Take your time, stay safe, and happy digging!<br>
+				<br>
 				<a href="#Contents">Contents</a>
 
 				</body>
@@ -159,67 +219,195 @@
 				<ol>
 					<li><a href="#Prep">Knowing your tool</a></li>
 					<li><a href="#Setup">Setting up your generator</a></li>
-					<li><a href="#Settings">Getting your settings right</a></li>
-					<li><a href="#End">Footnotes</a></li>
+					<li><a href="#Settings">Field types and material correspondence</a></li>
+					<li><a href="#Advanced">Additional field types</a></li>
+					<li><a href="#Operation">Field operation</a></li>
+					<li><a href="#Effects">Field effects on different targets</a></li>
+					<li><a href="#End">Critical safety notes</a></li>
 				</ol>
 				<br>
 
 				<h1><a name="Prep">Knowing your tool</a></h1>
-				The suspension field is quite the bulky tool. Hated or loved by many, it's a critical piece for us to do xenoarch correctly.
-				Xenoarch tends to be divided into types of actual finds. Our normal finds. Which we will simply continue to call such. And
-				anomalies, which can be far more dangerous and due to not needing a suspension field wont be covered in this guide.
+				The suspension field generator is quite the bulky tool. Hated or loved by many, it's critical for doing xenoarch correctly. It creates a protective
+				energy field that prevents artifacts from collapsing during final excavation. Xenoarch tends to be divided into normal finds (which need this field)
+				and anomalies, which can be far more dangerous and don't need a suspension field - so they won't be covered in this guide.
 
-				The suspension field generator is capable of producing a net like field that holds things in place. We use this to keep our finds
-				from collapsing in on itself while we finish the final part of digging it out. To accomplish this we must understand how we can interact
-				with our equipment. The generator itself can be wrenched into place. And is powered by a large cell that it should have prepped inside
-				at the beginning of the shift. Its locked to various ID's and will have to be swipped by your ID to unlock it. And finally, its got alot
-				of various settings when unlocked. We will cover those below.
-				Overall, it's a complicated piece with a lot of value.
-				In my workplace we only have three of them. So, if your workplace is like mine, make sure to not lose them to the wildlife.
-				Normally we keep two of them below ground near anomaly research's mine entrance. And one uptop by expidition prep.<br>
+				The generator produces a net-like field that holds things in place. We use it to keep our finds from collapsing while we finish digging them out.
+				It can be wrenched into place, is powered by a large cell (have one prepped at the start of the shift), is locked until you swipe your ID to unlock it,
+				and has a lot of settings when unlocked - we'll cover those below. It's a complicated piece with a lot of value. In my workplace we only have three of them.
+				If yours is like mine, don't lose them to the wildlife. Normally we keep two below ground near anomaly research's mine entrance and one up top by expedition prep.<br>
 				<ul>
-					<li>Heavy and Bulky.</li>
-					<li>Requires wrench to get legs into place.</li>
-					<li>Must be facing the right direction.</li>
-					<li>Has to be unlocked with ID to get to settings.</li>
-					<li>Requires a large cell in it. Make sure you have one in.</li>
+					<li>Heavy and bulky.</li>
+					<li>Requires a wrench to get its legs into place.</li>
+					<li>Must be facing the right direction (toward the dig).</li>
+					<li>Has to be unlocked with your ID to access settings.</li>
+					<li>Requires a large cell. Make sure you have one in.</li>
 					<li>Valuable piece of equipment. Don't lose it!</li>
 				</ul><br>
 				<a href="#Contents">Contents</a>
 
 				<h1><a name="Setup">Setting up your generator</a></h1>
-				Now let's assume you dragged that bulky generator all the way out to your digsite. Congrats, it's heavy.
-				But now we have to get it against the dig itself. Make sure you have space for both the suspension field
-				and you by the digsite. You'll have to dig a little more once its turned on after all. And of course, it
-				should be facing the dig. Once in place wrench its legs down to brace it. And go ahead and swipe your ID
-				to unlock it if you havn't already. Make sure to check your depth scanner for what to set it too. And
-				if your not sure which setting is which. I have notes below for that.<br>
-				<ul>
+				So you've dragged that bulky generator all the way out to your digsite. Congrats, it's heavy. Now get it against the dig. Make sure you have space for
+				both the suspension field and yourself - you'll have to dig a little more once it's on. Face it toward the dig. Once in place, wrench its legs down to brace it.
+				Swipe your ID to unlock it if you haven't already. Check your depth scanner for which setting to use; the table below tells you which field matches which material.<br>
+				<br>
+				<a href="#Contents">Contents</a>
 
+				<h1><a name="Settings">Field types and material correspondence</a></h1>
+				The scanner identifies the material type of your find. You must match it to the correct suspension field setting. Wrong field type can destroy finds - double-check your scanner reading.<br>
+				<ul>
+					<li><b>Carbon</b> (scanner reading) → <b>Diffracted Carbon Dioxide Laser</b>. For organic materials: fossils, plant remains, humanoid remains, xeno remains, gas masks, trace organic cells.</li>
+					<li><b>Iron</b> → <b>Iron Wafer Conduction Field</b>. For metallic objects: weapons (guns, lasers, katanas, claymores), metal rods, metallic composites.</li>
+					<li><b>Mercury</b> → <b>Mercury Dispersion Wave</b>. For unknown or exotic materials, metallic derivatives.</li>
+					<li><b>Potassium</b> → <b>Potassium Refrigerant Cloud</b>. For crystalline or energy objects: cult robes, stock parts, long exposure particles.</li>
+					<li><b>Nitrogen</b> → <b>Nitrogen Tracer Field</b>. For crystalline structures: soul stones, crystal shards, crystalline structures.</li>
+					<li><b>Plasma</b> → <b>Plasma Saturated Field</b>. For high-energy or dangerous artifacts; the default fallback when in doubt.</li>
+				</ul>
+				Don't mix the metals up - derivative takes Mercury, composite takes Iron. If you get "Unknown" on the scanner, something may be wrong; make a note for the right people.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Advanced">Additional field types</a></h1>
+				Calcium Binary Deoxidiser and Chlorine Diffusion Emissions exist for specialized applications in other fields; for xenoarch you'll rarely need them. The six above are the ones to learn.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Operation">Field operation</a></h1>
+				<ol>
+					<li>Position the generator facing your dig site.</li>
+					<li>Wrench it into place for stability (must be anchored before activation).</li>
+					<li>Swipe your ID to unlock the console.</li>
+					<li>Select the correct field type based on the scanner's material reading.</li>
+					<li>Activate the field only when you're ready for the final excavation - not while digging to the bubble.</li>
+					<li>Monitor power levels; fields consume energy continuously.</li>
+					<li>Deactivate immediately after extraction to save power.</li>
+				</ol><br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Effects">Field effects on different targets</a></h1>
+				The carbon field immobilizes organic creatures and humans. The iron field affects silicon-based lifeforms (such as robots). All fields suspend and protect items during excavation - but clear the area before activation; the field affects everything in front of the generator.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="End">Critical safety notes</a></h1>
+				<b>Never activate the field while digging to the bubble</b> - only for the final extraction. <b>The field must be active during bubble excavation</b> - artifacts will crumble without protection. Wrong field type can destroy finds. Ensure adequate power - field failure during extraction destroys the find. Clear the area before activation.<br>
+				<br>
+				After setting up and getting your settings ready, turn it on and finish your digging. Turn it off afterwards. Please be careful with the equipment - it's bulky and annoying to haul around, but there are only so many of them and they're needed for normal finds. Eventually you'll get the settings down; it's a memorization thing.<br>
+				<a href="#Contents">Contents</a>
+
+				</body>
+				</html>
+			"}
+
+/obj/item/book/manual/radiocarbon_spectroscopy
+	name = "Radiocarbon Spectroscopy: Operator's Guide"
+	icon_state = "analysis"
+	author = "Doctor Winton Rice, Institute of Applied Sciences on Arcadia; supplement for Iskhod Research use."
+	title = "Radiocarbon Spectroscopy: Operator's Guide"
+	dat = {"<html>
+				<head>
+				<style>
+				h1 {font-size: 18px; margin: 15px 0px 5px;}
+				h2 {font-size: 15px; margin: 15px 0px 5px;}
+				li {margin: 2px 0px 2px 15px;}
+				ul {margin: 5px; padding: 0px;}
+				ol {margin: 5px; padding: 0px 15px;}
+				body {font-size: 13px; font-family: Verdana;}
+				</style>
+				</head>
+				<body>
+
+				<h1><a name="Contents">Contents</a></h1>
+				<ol>
+					<li><a href="#Overview">Overview</a></li>
+					<li><a href="#Samples">Samples and preparation</a></li>
+					<li><a href="#Loading">Loading the spectrometer</a></li>
+					<li><a href="#Seal">Seal integrity</a></li>
+					<li><a href="#Coolant">Coolant and heat management</a></li>
+					<li><a href="#Wavelength">Maser wavelength and scan efficiency</a></li>
+					<li><a href="#Radiation">Radiation and the rad shield</a></li>
+					<li><a href="#Running">Running a scan</a></li>
+					<li><a href="#Reports">Understanding the report</a></li>
+					<li><a href="#Research">Turning reports into research points</a></li>
+				</ol>
+				<br>
+
+				<h1><a name="Overview">Overview</a></h1>
+				The <b>Radiocarbon Spectrometer</b> (sometimes labelled as the high-resolution radiocarbon spectrometer) is a specialised analyser for gleaning detailed
+				information from small samples - in particular <b>rock slivers</b> from core sampling, and certain archaeological finds. It produces stamped analysis reports
+				that can be used for dating, composition analysis, and anomaly detection. Operation requires attention to seal integrity, coolant, wavelength matching, and radiation.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Samples">Samples and preparation</a></h1>
+				The most valuable inputs are <b>rock slivers</b> taken with the core sampler from mineral turfs (or from strange rock). Each sliver carries geological data;
+				the spectrometer reads that data and produces a formal report. Take the sliver out of its sample bag before inserting it into the machine. The spectrometer
+				can also accept other small items (e.g. some archaeological finds); these may yield limited or descriptive data only. Insert one item at a time; the machine
+				will not start with more than one sample loaded.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Loading">Loading the spectrometer</a></h1>
+				<ul>
+					<li><b>Inserting a sample</b> - Click a sample (e.g. rock sliver) on the spectrometer. The item is placed inside. You cannot load another until it is ejected or a scan completes.</li>
+					<li><b>Adding coolant</b> - Use a glass container (e.g. beaker) of coolant on the machine; choose "Add coolant" to transfer reagent into the spectrometer's internal reservoir (up to 500u).</li>
+					<li><b>Fixing the seal</b> - Use nanopaste on the machine and choose "Fix seal integrity" to repair the vacuum seal (see below).</li>
+					<li><b>Ejecting the sample</b> - Use the interface "Eject" button to remove the loaded item without scanning. The machine must not be scanning.</li>
 				</ul><br>
 				<a href="#Contents">Contents</a>
 
-				<h1><a name="Settings">Getting your settings right</a></h1>
-				So now that we have a long list of settings, which one do we pick? Well, this takes a little memory. Or a handy guide on hand.
-				For each outcome of what we find on our depth scanner there is a corresponding setting we put the Suspension Field Generator too.
-				Below you'll see I have labeled six of them. But why only six? 'Cause that's the only ones you'll ever need. The others are for other
-				fields of science that won't be covered on a xenoarch focused setup guide. Please take your time to learn these. Eventually you
-				won't even need a book to reference!<br>
-				<ul>
-					<li><b>Trace Organic Cells</b> - We use a Diffracted <b>Carbon Dioxide Laser</b>.</li>
-					<li><b>Long Exposure Particles</b> - We slow the particles down with a <b>Potassium Refrigerant Cloud</b>.</li>
-					<li><b>Crystalline Structures</b> - Trace around the crystals with a <b>Nitrogen Tracer Field</b>.</li>
-					<li><b>Metallic Derivative</b> - Make sure you don't mix the two metals up. <b>Derivative takes Mercury Dispersion Waves</b>.</li>
-					<li><b>Metallic Composite</b> - Make sure you don't mix the two metals up. <b>Iron Wafer Conduction for composites</b>.</li>
-					<li><b>Unknown</b> - If you picked up unknown then something is normally wrong. Make sure to make a note for Mkne.</li>
-				</ul><br>
+				<h1><a name="Seal">Seal integrity</a></h1>
+				The analysis chamber is protected by a proprietary vacuum seal. Without an intact seal, the scan cannot be started. The seal <b>degrades over time during a scan</b>,
+				and degradation is faster at higher scanner temperatures. If seal integrity reaches zero during a run, the scan aborts and the machine buzzes. <b>Repair the seal with nanopaste</b>:
+				use a stack of nanopaste on the spectrometer and select "Fix seal integrity." Each unit of nanopaste restores 10% seal. Check the interface before each scan;
+				if the seal is at 0, the machine will refuse to start and prompt you to replace or repair the seal.<br>
+				<br>
 				<a href="#Contents">Contents</a>
 
-				<h1><a name="End">Footnotes</a></h1>
-				After setting up and getting your settings ready, go ahead and turn it on and finish your digging. Make sure to turn it off afterwards.
-				But overall, please be careful with the equipment. It's bulky and heavy and annoying to haul around,
-				but there is only so many of them. And they are needed for normal finds.
-				Eventually youll get the settings down. Its a memorization thing.<br>
+				<h1><a name="Coolant">Coolant and heat management</a></h1>
+				The scanner uses a gyro-rotational system. RPM varies during a scan and higher RPM produces more heat. Excess heat accelerates seal degradation and can trigger an emergency stop (around 1273 K). You must <b>add coolant</b> and set a <b>coolant usage rate</b> in the interface. Coolant is drawn from the internal reservoir during the scan and reduces temperature; higher usage rate and higher coolant purity cool more effectively. The machine tracks "unused coolant" and "coolant purity."<br>
+				<br>
+				<b>Coolant purity (approximate):</b> Pure coolant is best (100%). Cryoxadone and similar give around 90%. Many medical or beverage reagents (e.g. water, iced drinks, kelotane, sterilizine) work as substitutes at 50–70% purity. Lower purity means you need more volume or higher flow to keep temperature under control. Refill with glass containers (Add coolant / Empty coolant) as needed. Frequent scans or high-RPM runs will consume coolant quickly.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Wavelength">Maser wavelength and scan efficiency</a></h1>
+				Scan progress depends on <b>maser efficiency</b>, which is highest when the <b>maser wavelength</b> matches the <b>optimal wavelength</b>. The optimal wavelength is calculated automatically and drifts during the scan. Your job is to <b>adjust the maser wavelength</b> (interface buttons, typically in steps of 1000) so it stays as close as possible to the optimal value (range 1–10000). The closer the match, the higher the efficiency and the faster the scan completes. If you leave a large mismatch, progress slows. There is no need to compute the optimal value yourself - the interface shows both; simply tweak the maser to track the optimal value.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Radiation">Radiation and the rad shield</a></h1>
+				The spectrometer is <b>extremely radioactive</b> while running - baseline emission and <b>periodic radiation spikes</b will quickly irradiate anyone nearby. <b>Wear radproof gear</b> (e.g. the anomaly suit) when operating or standing near the machine. The interface offers a <b>radiation shield</b> that blocks emissions when lowered. However, <b>when the shield is down, the scanner cannot make progress</b> - so use it only when you must (e.g. during a spike and you cannot step away). Leaving the shield down for long periods will prevent the scan from ever completing.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Running">Running a scan</a></h1>
+				<ol>
+					<li>Ensure the sample is loaded and the seal integrity is greater than 0. Add coolant if the reservoir is low.</li>
+					<li>Start the scan from the interface. The machine will chime when the scan completes.</li>
+					<li>During the run: adjust maser wavelength to follow the optimal wavelength; set and maintain coolant usage rate to control temperature; use the rad shield only when necessary.</li>
+					<li>When progress reaches 100%, the scan completes. A stamped <b>analysis report</b> (paper) is produced and the sample is ejected onto the machine's tile. The sample is not consumed.</li>
+				</ol>
+				If the seal fails or temperature exceeds safe limits, the scan stops automatically and the machine buzzes. Fix the seal with nanopaste, allow cooling if needed, then try again with a new or the same sample.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Reports">Understanding the report</a></h1>
+				Reports are printed as <b>Radiocarbon Spectrometer report #N: \[sample name\]</b>. For <b>rock slivers</b>, the report typically includes:<br>
+				<ul>
+					<li><b>Spectrometric type</b> - Mineral/sample type (e.g. trace organic cells, crystalline structures, metallic derivative).</li>
+					<li><b>Radiometric dating</b> - Age in years, millions of years, or billions of years.</li>
+					<li><b>Chromatographic analysis</b> - Materials present as percentages (e.g. phosphorus, mercury, chlorine, and find-related carriers).</li>
+					<li><b>Anomaly data</b> - If the sample was taken near an artifact, hyperspectral imaging may report an exotic energy wavelength (artifact ID) and approximate emission radius (distance).</li>
+					<li><b>Strange rock extraction hints</b> - If the sliver came from strange rock, the report may state how to extract the find: e.g. use a welder for packed sand, dig cobble for light cobble, or carefully excavate for hard rock.</li>
+				</ul>
+				If no anomaly is detected, the report will state "No anomalous data." Keep reports for records and for research point submission.<br>
+				<br>
+				<a href="#Contents">Contents</a>
+
+				<h1><a name="Research">Turning reports into research points</a></h1>
+				Analysis reports (geo_info papers) can be converted into research points for the R&D console. Use a <b>science tool</b> on the report to load its data (including odd-matter and age data) into the tool. Then take the science tool to the <b>R&D console</b> and upload the data. The console will credit research points accordingly. This makes radiocarbon spectroscopy part of the normal research pipeline alongside core sampling and find documentation.<br>
+				<br>
 				<a href="#Contents">Contents</a>
 
 				</body>

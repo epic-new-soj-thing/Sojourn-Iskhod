@@ -22,7 +22,7 @@
 		rad = 0
 	)
 	flags_inv = HIDEEARS
-	cold_protection = HEAD
+	cold_protection = HEAD | EARS
 	min_cold_protection_temperature = HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	heat_protection = HEAD
 	max_heat_protection_temperature = HELMET_MAX_HEAT_PROTECTION_TEMPERATURE
@@ -396,6 +396,7 @@
 	item_state = "bs_fullhelm"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
+	cold_protection = HEAD|FACE|EARS
 	obscuration = LIGHT_OBSCURATION
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 4
@@ -536,6 +537,7 @@
 	icon_state = "helmet_marshal"
 	armor_list = list(melee =7, bullet = 7, energy = 6, bomb = 25, bio = 70, rad = 0)
 	body_parts_covered = HEAD|EARS
+	cold_protection = HEAD|EARS
 
 /obj/item/clothing/head/helmet/marshal/verb/toggle_style()
 	set name = "Adjust Style"
@@ -571,6 +573,7 @@
 	armor_list = list(melee =7, bullet = 7,energy = 6, bomb = 25, bio = 70, rad = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|BLOCKHAIR
 	body_parts_covered = HEAD|FACE|EARS
+	cold_protection = HEAD|FACE|EARS
 	action_button_name = "Toggle Headlamp"
 	brightness_on = 5
 	light_overlay = "m_fullhelm"
@@ -624,6 +627,7 @@
 	brightness_on = 6
 	light_overlay = "m_fullhelm"
 	armor_list = list(melee = 12, bullet = 12, energy = 7, bomb = 10, bio = 100, rad = 0)
+	cold_protection = HEAD|FACE|EARS
 
 /obj/item/clothing/head/helmet/warrant_officer/update_icon()
 	if(on)
@@ -1897,7 +1901,11 @@
 	icon_state = "trauma_team"
 	item_state = "trauma_team"
 	flags_inv = HIDEEARS|BLOCKHAIR
+	flags_inv_up = HIDEEARS|BLOCKHAIR
 	item_flags = BLOCK_GAS_SMOKE_EFFECT|AIRTIGHT
+	body_parts_covered = HEAD|EARS|FACE|EYES
+	cold_protection = HEAD|EARS|FACE|EYES
+	min_cold_protection_temperature = SPACE_HELMET_MIN_COLD_PROTECTION_TEMPERATURE
 	tint_down = TINT_NONE
 	obscuration_down = LIGHT_OBSCURATION
 	matter = list(
@@ -1933,12 +1941,18 @@
 	. = ..()
 	schedule_scan()
 	START_PROCESSING(SSobj, src)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.regenerate_icons()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/dropped(mob/user)
 	. = ..()
 	remove_tracking_overlay()
 	remove_critical_overlay()
 	STOP_PROCESSING(SSobj, src)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.regenerate_icons()
 
 /obj/item/clothing/head/helmet/faceshield/paramedic/attack_self(mob/user)
 	if(!user.incapacitated())
@@ -2153,6 +2167,9 @@
 	remove_tracking_overlay()
 	remove_critical_overlay()
 	STOP_PROCESSING(SSobj, src)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.regenerate_icons()
 	if(medical_hud.loc != src)
 		if(ismob(medical_hud.loc))
 			var/mob/hud_loc = medical_hud.loc

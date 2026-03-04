@@ -257,7 +257,7 @@
 
 /obj/item/clothing/accessory/medal/gold/captain
 	name = "medal of exceptional statecraft"
-	desc = "A golden medal awarded exclusively to those who show distinguished duty as a premier. \
+	desc = "A golden medal awarded exclusively to those who show distinguished duty as a facility director. \
 	It signifies the codified responsibilities of the position and their undisputable qualities within it."
 
 /obj/item/clothing/accessory/medal/gold/heroism
@@ -316,7 +316,7 @@
 
 // Head of Departments
 /obj/item/clothing/accessory/job/cape
-	name = "governor's cloak"
+	name = "facility director's cloak"
 	icon_state = "capcloak"
 	desc = "A green-ish cloak with golden lining."
 	slot_flags = SLOT_OCLOTHING | SLOT_ACCESSORY_BUFFER
@@ -352,8 +352,8 @@
 	desc = "A brown cloak with blue and orange lining."
 
 /obj/item/clothing/accessory/halfcape
-	name = "Blackshield Commanders holo-mantle"
-	desc = "A fancy holographic mantle cape made from dark fabric and bearing the rank markings of the Blackshield Commander. Despite skillful repair, the signs of multiple back-facing \
+	name = "Captain's holo-mantle"
+	desc = "A fancy holographic mantle cape made from dark fabric and bearing the rank markings of the Ranger Captain. Despite skillful repair, the signs of multiple back-facing \
 	perforations give no doubt as to who this cloak belongs to."
 	icon_state = "half_co"
 	slot_flags = SLOT_ACCESSORY_BUFFER
@@ -404,9 +404,9 @@
 	icon_state = "half_ceo"
 
 
-/obj/item/clothing/accessory/halfcape/premier
-	name = "Premiers holo-mantle"
-	desc = "A fancy, holo-mantle made from fine silk and bearing the rank markings of the Premier. The classic color scheme, coniferous green and tinsel gold. "
+/obj/item/clothing/accessory/halfcape/facility_director
+	name = "Facility Director's holo-mantle"
+	desc = "A fancy, holo-mantle made from fine silk and bearing the rank markings of the Facility Director. The classic color scheme, coniferous green and tinsel gold. "
 	icon_state = "half_prem"
 
 
@@ -477,45 +477,45 @@
 	desc = "A blue, navy cloak."
 
 /obj/item/clothing/accessory/job/cape/blackshield
-	name = "grey Blackshield cloak"
+	name = "grey Ranger cloak"
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a brooding grey."
 	icon_state = "blackshieldcloak"
 
 /obj/item/clothing/accessory/job/cape/blackshield/green
-	name = "green Blackshield cloak"
+	name = "green Ranger cloak"
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a fetching green."
 	icon_state = "blackshieldcloak_green"
 
 /obj/item/clothing/accessory/job/cape/blackshield/tan
-	name = "tan Blackshield cloak"
+	name = "tan Ranger cloak"
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a light tan."
 	icon_state = "blackshieldcloak_tan"
 
 /obj/item/clothing/accessory/job/cape/blackshield/camo
-	name = "camo Blackshield cloak"
+	name = "camo Ranger cloak"
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in a tactical camo pattern."
 	icon_state = "blackshieldcloak_camo"
 
 /obj/item/clothing/accessory/job/cape/blackshield/whitecamo
-	name = "white camo Blackshield cloak"
+	name = "white camo Ranger cloak"
 	desc = "A simple, durable cloak for protecting you in any weather conditions! This one comes in an urban tactical camo pattern."
 	icon_state = "blackshieldcloak_whitecamo"
 
 /obj/item/clothing/accessory/cape/sergeant_cape
-	name = "Sergeants mantle"
-	desc = "A shoulder-mantlee made from black and silver fabric, denoting the position of Sergeant. Allows for identification at a glance."
+	name = "Lieutenant's mantle"
+	desc = "A shoulder-mantle made from black and silver fabric, denoting the position of Lieutenant. Allows for identification at a glance."
 	icon_state = "half_sarg"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/halfcape/corpsman
-	name = "Corpsman mantle"
-	desc = "A half-cape made from blue and black fabric denoting that they are a corpsman, to be easily seen in the jungle."
+	name = "Detective's mantle"
+	desc = "A half-cape made from red and black fabric denoting the rank of Detective, to be easily seen in the jungle."
 	icon_state = "half_corp"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
 /obj/item/clothing/accessory/halfcape/trooper_cape
-	name = "Troopers mantle"
-	desc = "A half-cape made from blue and white fabric denoting the rank of Trooper. Allows for identification at a glance"
+	name = "Ranger's mantle"
+	desc = "A half-cape made from red and white fabric denoting the rank of Ranger. Allows for identification at a glance"
 	icon_state = "half_troop"
 	slot_flags = SLOT_ACCESSORY_BUFFER
 
@@ -534,7 +534,7 @@
 
 /obj/item/clothing/accessory/kricape/rural
 	name = "farmer barons olive cape"
-	desc = "A cloak that define's one status as humble, as humble as a feudal land lord can try. This green, copper clad cloak is commonly worn by échevins-lord houses, those who own great swathes of colonial and rural territory. It's in actuality a self-defence mechanism, the knowledge that if they don't conceal their wealth, the vorhut countryvolk and jaeger frontiersmen they rule over will burn their estates and steal from their coffers."
+	desc = "A cloak that define's one status as humble, as humble as a feudal land lord can try. This green, copper clad cloak is commonly worn by ÃƒÂ©chevins-lord houses, those who own great swathes of colonial and rural territory. It's in actuality a self-defence mechanism, the knowledge that if they don't conceal their wealth, the vorhut countryvolk and jaeger frontiersmen they rule over will burn their estates and steal from their coffers."
 	icon_state = "pelinal_cape"
 
 /obj/item/clothing/accessory/kricape/bleublood
@@ -1163,112 +1163,116 @@
 
 
 /*Ranks*/
-
 /obj/item/clothing/accessory/ranks/blank
-	name = "shoulderboards (blank)"
-	desc = "Blank red shoulderboards denoting a Blackshield cadet, or, rarely, an emergency volunteer or an off-duty Blackshield Trooper given provisional duty in an emergency."
+	name = "blank shoulderboards"
+	desc = "Blank red shoulderboards denoting a Junior Ranger of the Iskhod Rangers. Also used by provisionally active reserves."
 	icon_state = "blank_tabs"
 	item_state = "blank_tabs"
+/obj/item/clothing/accessory/ranks/volunteer
+	name = "junior ranger shoulderboards"
+	desc = "Black, Blue, and silver shoulderboards denoting a Junior Ranger of the Iskhod Rangers. Also used by provisionally active reserves."
+	icon_state = "volunteer_tabs"
+	item_state = "volunteer_tabs"
 
 /obj/item/clothing/accessory/ranks/trooper
-	name = "shoulderboards (trooper)"
-	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Trooper."
+	name = "ranger shoulderboards"
+	desc = "Black, Blue, and silver shoulderboards denoting a Ranger of the Iskhod Rangers."
 	icon_state = "trooper_tabs"
 	item_state = "trooper_tabs"
 
 /obj/item/clothing/accessory/ranks/corpsman
-	name = "shoulderboards (corpsman)"
-	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Corpsman."
+	name = "detective shoulderboards"
+	desc = "Black, Blue, and silver shoulderboards denoting a Detective of the Iskhod Rangers."
 	icon_state = "corps_tabs"
 	item_state = "corps_tabs"
 
 /obj/item/clothing/accessory/ranks/sergeant
-	name = "shoulderboards (sergeant)"
-	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Sergeant."
+	name = "lieutenant shoulderboards"
+	desc = "Black, Blue, and silver shoulderboards denoting a Lieutenant of the Iskhod Rangers."
 	icon_state = "sergeant_tabs"
 	item_state = "sergeant_tabs"
 
 /obj/item/clothing/accessory/ranks/sergeantmajor
-	name = "shoulderboards (sergeant major)"
-	desc = "Red and silver shoulderboards denoting a Blackshield soldier with the rank of Sergeant Major."
+	name = "senior lieutenant shoulderboards"
+	desc = "Black, Blue, gold, and silver shoulderboards denoting a Senior Lieutenant of the Iskhod Rangers."
 	icon_state = "sergeantm_tabs"
 	item_state = "sergeantm_tabs"
 
 /obj/item/clothing/accessory/ranks/commander
-	name = "shoulderboards (commander)"
-	desc = "Red and gold shoulderboards denoting a Blackshield soldier with the rank of Commander."
+	name = "captain shoulderboards"
+	desc = "Black, Blue, and gold shoulderboards denoting the Captain of the Iskhod Rangers."
 	icon_state = "commander_tabs"
 	item_state = "commander_tabs"
 
 /obj/item/clothing/accessory/ranks/major
-	name = "shoulderboards (major)"
-	desc = "Red and gold shoulderboards denoting a Blackshield soldier with the rank of Major."
+	name = "ranger major shoulderboards"
+	desc = "Black, Blue, and gold shoulderboards denoting a Major of the Iskhod Rangers."
 	icon_state = "major_tabs"
 	item_state = "major_tabs"
 
 /obj/item/clothing/accessory/ranks/brigadier
-	name = "shoulderboards (brigadier)"
-	desc = "Red, gold, and silver shoulderboards denoting the Brigadier."
+	name = "Brigadier shoulderboards"
+	desc = "Black, Blue, gold, and silver shoulderboards denoting the Brigadier of the Iskhod Rangers."
 	icon_state = "brigadier_tabs"
 	item_state = "brigadier_tabs"
 
 /obj/item/clothing/accessory/patches/blackshield
-	name = "blackshield patch"
-	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
+	name = "general ranger patch"
+	desc = "A red, black, and silver patch made to represent the Iskhod Rangers."
 	icon_state = "blackshieldpatch"
 	item_state = "blackshieldpatch"
 
 /obj/item/clothing/accessory/patches/blackshield_blank
-	name = "blackshield blank patch"
-	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
+	name = "ranger blank patch"
+	desc = "A red, black, and silver patch made to represent the Iskhod Rangers. For use on uniforms when active, or other clothing in other positions."
 	icon_state = "bs_blank"
 	item_state = "bs_blank"
 
 /obj/item/clothing/accessory/patches/blackshield_volunteer
-	name = "blackshield volunteer patch"
-	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
+	name = "junior ranger patch"
+	desc = "A red, black, and silver patch denoting a Junior Ranger of the Iskhod Rangers."
 	icon_state = "bs_volunteer"
 	item_state = "bs_volunteer"
 
 /obj/item/clothing/accessory/patches/blackshield_trooper
-	name = "blackshield trooper patch"
-	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
+	name = "ranger patch"
+	desc = "A red, black, and silver patch denoting a Ranger of the Iskhod Rangers."
 	icon_state = "bs_trooper"
 	item_state = "bs_trooper"
 
 /obj/item/clothing/accessory/patches/blackshield_corpsman
-	name = "blackshield corpsman patch"
-	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
+	name = "detective patch"
+	desc = "A red, black, and silver patch denoting a Detective of the Iskhod Rangers."
 	icon_state = "bs_corpsman"
 	item_state = "bs_corpsman"
 
 /obj/item/clothing/accessory/patches/blackshield_sergeant
-	name = "blackshield sergeant patch"
-	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
+	name = "lieutenant patch"
+	desc = "A red, black, and silver patch denoting a Lieutenant of the Iskhod Rangers."
 	icon_state = "bs_sergeant"
 	item_state = "bs_sergeant"
 
 /obj/item/clothing/accessory/patches/blackshield_sergeantmajor
-	name = "blackshield sergeant major patch"
-	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
+	name = "senior lieutenant patch"
+	desc = "A red, black, silver, and gold patch denoting a Senior Lieutenant of the Iskhod Rangers."
 	icon_state = "bs_sergeantm"
 	item_state = "bs_sergeantm"
 
 /obj/item/clothing/accessory/patches/blackshield_commander
-	name = "blackshield commander patch"
-	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
+	name = "captain patch"
+	desc = "A red, black, silver, and gold patch denoting the Captain of the Iskhod Rangers."
 	icon_state = "bs_commander"
 	item_state = "bs_commander"
 
 /obj/item/clothing/accessory/patches/blackshield_major
-	name = "blackshield major patch"
-	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
+	name = "ranger major patch"
+	desc = "A red, black, silver, and gold patch denoting a Major of the Iskhod Rangers."
 	icon_state = "bs_major"
 	item_state = "bs_major"
 
 /obj/item/clothing/accessory/patches/blackshield_brigadier
-	name = "blackshield brigadier patch"
-	desc = "A black, blue, and silver patch made to represent the Blackshield regiment. For use on uniforms when active, or other clothing in other positions."
+	name = "ranger brigadier patch"
+	desc = "A red, black, silver, and gold patch denoting the Brigadier of the Iskhod Rangers."
 	icon_state = "bs_brigadier"
 	item_state = "bs_brigadier"
 
@@ -1369,13 +1373,13 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 
 /obj/item/clothing/accessory/choker/gold_tag
 	name = "Leather Collar (Gold Tag)"
-	desc = "A band of supple leather with a locked clasp. A gold-plated dogtag has been attached to show solidarity with our strong, proud, Blackshield militia."
+	desc = "A band of supple leather with a locked clasp. A gold-plated dogtag has been attached to show solidarity with our strong, proud, Iskhod Rangers."
 	icon_state = "collar_gold_tag"
 	overlay_state = "collar_gold"
 
 /obj/item/clothing/accessory/choker/silver_tag
 	name = "Leather Collar (Silver Tag)"
-	desc = "A band of supple leather with a locked clasp. A silver-plated dogtag has been attached to show solidarity with our strong, proud, Blackshield militia."
+	desc = "A band of supple leather with a locked clasp. A silver-plated dogtag has been attached to show solidarity with our strong, proud, Iskhod Rangers."
 	icon_state = "collar_silver_tag"
 	overlay_state = "collar_silver"
 
@@ -1633,13 +1637,13 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/passport_sol
-	name = "old solarian passport"
-	desc = "An old passport issued to citizens of the Solarian Federation, this one seems to have been issued before the Bluespace Collapse. Why is it here? Is it a trinket?"
+	name = "Solarian passport"
+	desc = "A passport issued to citizens of the Solarian Federation, this one seems to have been issued before the Bluespace Collapse. Why is it here? Is it a trinket?"
 	icon_state = "passport_sol"
 	item_state = "badge"
 
 /obj/item/clothing/accessory/passcard/passport_general
-	name = "passport"
+	name = "Iskhod passport"
 	desc = "A passport issued to Iskhod Colonists that live on Amethyn, in the Chromin 8 system."
 	icon_state = "passport_general"
 	item_state = "general_passport"
@@ -1741,3 +1745,4 @@ Anyone wearing it can open public church doors. You should do your best to keep 
 	desc = ""
 	icon = 'icons/inventory/accessory/icon.dmi'
 	icon_state = "punk_over_samurai"
+

@@ -215,7 +215,7 @@
 	ks2type = /obj/item/device/encryptionkey/headset_com
 
 /obj/item/device/radio/headset/heads/captain
-	name = "governor's headset"
+	name = "facility director's headset"
 	desc = "The headset of the arbiter and man with less power than he pretends he has."
 	icon_state = "com_headset"
 	item_state = "headset"
@@ -494,3 +494,4 @@
 			radio_text += ", "
 
 	radio_desc = radio_text
+

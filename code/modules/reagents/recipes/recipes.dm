@@ -213,12 +213,6 @@
 	catalysts = list("plasma" = 5)
 	result_amount = 5
 
-/datum/chemical_reaction/nanobad
-	result = "nanobad"
-	required_reagents = list("nanoblood" = 1)
-	minimum_temperature = 323 // aprox the temp at which blood breaks down, gotta be careful when making it!
-	result_amount = 4 //a little bit of it breaks down in to biofilm and other gross gunk
-
 /datum/chemical_reaction/hyperzine
 	result = "hyperzine"
 	required_reagents = list("sugar" = 1, "blattedin" = 1, "sulfur" = 1)

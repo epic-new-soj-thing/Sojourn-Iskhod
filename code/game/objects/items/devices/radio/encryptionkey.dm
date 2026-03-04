@@ -84,7 +84,7 @@
 	channels = list("Command" = 1)
 
 /obj/item/device/encryptionkey/heads/captain
-	name = "governor's encryption key"
+	name = "facility director's encryption key"
 	icon_state = "cap_cypherkey"
 	channels = list("Command" = 1, "Prospector" = 1,  "Engineering" = 0, "Church" = 0, "Science" = 0, "Medical" = 1, "Medical(I)" = 1, "Supply" = 0, "Service" = 0, "Security(I)" = 1, "Security" = 1, "Plasmatag B" = 0, "Plasmatag R" = 0, "Plasmatag G" = 0, "Plasmatag Y" = 0)
 
@@ -174,3 +174,4 @@
 /obj/item/device/encryptionkey/headset_greenteam
 	name = "entertainment radio key"
 	channels = list("Plasmatag G" = 1)
+

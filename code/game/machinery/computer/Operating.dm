@@ -7,6 +7,7 @@
 	icon_keyboard = "med_key"
 	icon_screen = "crew"
 	circuit = /obj/item/circuitboard/operating
+	browser_window_id = "op"
 	var/mob/living/carbon/human/victim = null
 	var/obj/machinery/optable/table = null
 

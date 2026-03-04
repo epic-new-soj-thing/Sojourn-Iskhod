@@ -479,22 +479,17 @@
 /datum/reagent/drug/nanoblood
 	name = "Nanoblood"
 	id = "nanoblood"
-	description =  "A highly dangerous and highly advanced Erythropoiesis-stimulant. Typically reserved for high-end paramedic services or military hospitals - any instance where the \
-	low LD-50 and difficulty of synthesis can be considered acceptable in the face of its rapid effectiveness even in low doses. Must be stored at temperatures not significantly higher\
-	than the human body."
+	description =  "A highly advanced universal Erythropoiesis-stimulant. Functions as universal blood substitute at a 2:1 ratio (1 unit nanoblood restores as much as 2 units of blood). \
+	Typically reserved for high-end paramedic services or military hospitals. Must be stored at temperatures not significantly higher than the human body."
 	taste_description = "copper and batteries"
 	reagent_state = LIQUID
 	metabolism = REM
-	overdose = REAGENTS_OVERDOSE/10
+	overdose = 0
 	color = "#492626"
 
 /datum/reagent/drug/nanoblood/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_BLOODRESTORE, 4.5 * effect_multiplier)
-
-/datum/reagent/drug/nanoblood/overdose(var/mob/living/carbon/M, var/alien)
-	M.add_side_effect("Headache", 11) //hypertension
-	M.add_chemical_effect(CE_PULSE, 2)
-	M.adjustCloneLoss(6) //rapidly growing cancer, it was nice knowing you friend.
+	// 2:1 blood to nanoblood ratio - 1 unit nanoblood = 2 units blood restoration
+	M.add_chemical_effect(CE_BLOODRESTORE, 2 * effect_multiplier)
 
 
 /datum/reagent/drug/nanobad

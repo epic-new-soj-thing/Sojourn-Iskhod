@@ -510,7 +510,8 @@ GLOBAL_LIST_EMPTY(asset_datums)
 
 /datum/asset/changelog_item/New(date)
 	item_filename = sanitize_filename("[date].yml")
-	SSassets.transport.register_asset(item_filename, file("html/changelogs/archive/" + item_filename))
+	var/base_path = "html/changelogs/autochangelogs/"
+	SSassets.transport.register_asset(item_filename, file(base_path + item_filename))
 
 /datum/asset/changelog_item/send(client)
 	if (!item_filename)

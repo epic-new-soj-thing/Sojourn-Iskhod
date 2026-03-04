@@ -365,8 +365,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	send_resources()
 
-	if(prefs.lastchangelog != changelog_hash) //bolds the changelog button on the interface so we know there are updates.
-		to_chat(src, span_info("You have unread updates in the changelog."))
+	if(prefs.lastchangelog != changelog_hash) // Highlight the changelog button so players know there are updates.
+		to_chat(src, span_notice("You have unread updates in the changelog. Click the Changelog button to see what's new."))
+		winset(src, "rpane.changelog", "background-color=#3e6189;font-style=bold")
 		if(config.aggressive_changelog)
 			changelog()
 

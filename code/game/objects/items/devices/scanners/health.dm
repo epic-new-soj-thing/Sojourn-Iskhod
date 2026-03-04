@@ -15,6 +15,7 @@
 	var/mode = 1
 	var/advanced = FALSE
 	var/stat_locking = TRUE
+	var/scans_synthetics = FALSE
 	var/flicker = "health2"
 
 	window_width = 600
@@ -37,6 +38,7 @@
 
 	advanced = TRUE
 	stat_locking = TRUE
+	scans_synthetics = TRUE
 
 	//Do to being advanced you need more space to see all the information.
 	window_height = 650
@@ -77,11 +79,14 @@
 /proc/medical_scan_action(atom/target, mob/living/user, obj/scanner, mode, stat_locking = FALSE, advanced = FALSE)
 	// If a health scanner instance was passed, respect its flags
 	var/obj/item/device/scanner/health/health_scanner = scanner
+	var/allow_synthetics = FALSE
 	if(istype(scanner, /obj/item/device/scanner/health))
 		if(health_scanner.stat_locking)
 			stat_locking = TRUE
 		if(health_scanner.advanced)
 			advanced = TRUE
+		if(health_scanner.scans_synthetics)
+			allow_synthetics = TRUE
 
 	if (!user.IsAdvancedToolUser())
 		to_chat(user, SPAN_WARNING("You are not nimble enough to use this device."))
@@ -122,19 +127,19 @@
 	if(!scan_subject)
 		return
 
-	if (scan_subject.isSynthetic())
+	if (scan_subject.isSynthetic() && !allow_synthetics)
 		to_chat(user, SPAN_WARNING("\The [scanner] is designed for organic humanoid patients only."))
 		return
 
 	user.visible_message(SPAN_NOTICE("[user] has analyzed [target]'s vitals."),SPAN_NOTICE("You have analyzed [target]'s vitals."))
-	. = medical_scan_results(scan_subject, mode, advanced)
+	. = medical_scan_results(scan_subject, mode, advanced, allow_synthetics)
 
 // Has to be living/carbon for the NSA check as metabolism_effects is inherent to them
 // Analyzers are meant to work only on humans (and monkeys) anyways so this virtually changes nothing.
-/proc/medical_scan_results(var/mob/living/carbon/M, var/mode, var/advanced = FALSE)
+/proc/medical_scan_results(var/mob/living/carbon/M, var/mode, var/advanced = FALSE, var/allow_synthetics = FALSE)
 	. = list()
 	var/dat = list()
-	if (M.isSynthetic())
+	if (M.isSynthetic() && !allow_synthetics)
 		//these sensors are designed for organic life
 		. += "<h2>Analyzing Results for ERROR:\n\t Overall Status: ERROR</h2>"
 		. += span("highlight", "    Key: <font color='#0080ff'>Suffocation</font>/<font color='green'>Toxin</font>/<font color='#FFA500'>Burns</font>/<font color='red'>Brute</font>")

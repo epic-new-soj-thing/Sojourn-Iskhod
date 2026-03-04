@@ -50,6 +50,7 @@
 	s["host"] = host ? host : null
 	s["revision"] = GLOB.revdata.commit
 	s["revision_date"] = GLOB.revdata.date
+	s["round_id"] = game_id
 
 	// This is dumb, but spacestation13.com's banners break if player count isn't the 8th field of the reply, so... this has to go here.
 	s["players"] = 0
@@ -89,6 +90,29 @@
 	if(!key_invalid)
 		GLOB.topic_status_cache = .
 	return s
+
+
+/datum/world_topic/revision
+	keyword = "revision"
+	log = FALSE
+
+/datum/world_topic/revision/Run(list/input)
+	return GLOB.revdata.commit
+
+
+/datum/world_topic/roundid
+	keyword = "roundid"
+	log = FALSE
+
+/datum/world_topic/roundid/Run(list/input)
+	return game_id
+
+/datum/world_topic/round_id
+	keyword = "round_id"
+	log = FALSE
+
+/datum/world_topic/round_id/Run(list/input)
+	return game_id
 
 
 /datum/world_topic/manifest

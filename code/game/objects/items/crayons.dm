@@ -1,3 +1,27 @@
+// Normal crayons — base type, color subtypes, and drawing/eating logic.
+// Blood-magic runes are in code/modules/blood_magic (decals, not items).
+
+/obj/item/pen/crayon
+	name = "crayon"
+	desc = "A colourful crayon. Please refrain from eating it or putting it in your nose."
+	icon = 'icons/obj/crayons.dmi'
+	icon_state = "crayonred"
+	w_class = ITEM_SIZE_TINY
+	attack_verb = list("attacked", "coloured")
+	colour = "#FF0000"
+	var/shade_color = "#220000"
+	var/uses = 30
+	var/instant = 0
+	var/color_name = "red"
+	var/grindable = TRUE
+
+/obj/item/pen/crayon/New()
+	name = "[color_name] crayon"
+	if(grindable)
+		create_reagents(20)
+		reagents.add_reagent("crayon_dust_[color_name]", 20)
+	..()
+
 // Crayon Colors
 /obj/item/pen/crayon/red
 	icon_state = "crayonred"
@@ -64,29 +88,57 @@
 	uses = 0
 	grindable = FALSE
 
+// Graffiti decal (crayon drawings only; blood runes are /obj/effect/decal/cleanable/blood_rune in blood_magic).
+// Crayon runes and drawings never deal sanity loss.
+/obj/effect/decal/cleanable/crayon
+	name = "graffiti"
+	desc = "A drawing in wax."
+	icon = 'icons/obj/rune.dmi'
+	layer = TURF_DECAL_LAYER
+	anchored = TRUE
+	random_rotation = 0
+	sanity_damage = 0
+
+/obj/effect/decal/cleanable/crayon/New(location, main = "#FFFFFF", shade = "#000000", type = "graffiti")
+	..()
+	loc = location
+	var/is_fake_rune = (type == "rune")
+	switch(type)
+		if("graffiti")
+			type = pick("amyjon","face","matt","revolution","engie","guy","end","dwarf","uboa")
+		if("rune")
+			type = "rune[rand(1,6)]"
+	if(is_fake_rune)
+		name = "rune"
+		desc = "A rune drawn in wax. It cannot channel blood magic."
+	else
+		name = type
+	var/icon/mainOverlay = new/icon('icons/effects/crayondecal.dmi',"[type]",2.1)
+	var/icon/shadeOverlay = new/icon('icons/effects/crayondecal.dmi',"[type]s",2.1)
+	mainOverlay.Blend(main,ICON_ADD)
+	shadeOverlay.Blend(shade,ICON_ADD)
+	add_overlay(mainOverlay)
+	add_overlay(shadeOverlay)
+	add_hiddenprint(usr)
+
 // Crayon Logic
 /obj/item/pen/crayon/afterattack(atom/target, mob/user as mob, proximity)
 	if(!proximity) return
 	if(istype(target,/turf/simulated/floor))
-		var/drawtype = input("Choose what you'd like to draw.", "Crayon scribbles") in list("graffiti","rune","letter","arrow")
-		var/link_to_rune = FALSE
+		var/drawtype = input("Choose what you'd like to draw.", "Crayon scribbles") in list("graffiti","letter","arrow","rune")
 		switch(drawtype)
 			if("letter")
 				drawtype = input("Choose the letter.", "Crayon scribbles") in list("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z")
 				to_chat(user, "You start drawing a letter on the [target.name].")
 			if("graffiti")
 				to_chat(user, "You start drawing graffiti on the [target.name].")
-			if("rune")
-				to_chat(user, "You start drawing a rune on the [target.name].")
-				link_to_rune = TRUE
 			if("arrow")
 				drawtype = input("Choose the arrow.", "Crayon scribbles") in list("left", "right", "up", "down")
 				to_chat(user, "You start drawing an arrow on the [target.name].")
+			if("rune")
+				to_chat(user, "You start drawing a fake rune on the [target.name].")
 		if(instant || do_after(user, 50))
-			//This looks bad do to needing to cross-reference 2 paths thare are related
-			var/obj/effect/decal/cleanable/crayon/drawing_to_spawn = new /obj/effect/decal/cleanable/crayon(target,colour,shade_color,drawtype)
-			if(link_to_rune)
-				drawing_to_spawn.follow_crayon = src
+			new /obj/effect/decal/cleanable/crayon(target,colour,shade_color,drawtype)
 			to_chat(user, "You finish drawing.")
 			target.add_fingerprint(user)		// Adds their fingerprints to the floor the crayon is drawn on.
 			if(uses)

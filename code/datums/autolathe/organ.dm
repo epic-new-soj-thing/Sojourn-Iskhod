@@ -238,3 +238,49 @@
 	materials = list(MATERIAL_BIOMATTER = 20)
 	build_path = /obj/item/organ/internal/eyes/chtmant
 
+// --- PLANT ORGANS (Folken & Mycus) ---
+
+/datum/design/organ/plant
+	category = "Plant"
+	starts_unlocked = TRUE
+
+/datum/design/organ/plant/heart
+	name = "Plant Heart"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/vital/heart/plant
+
+/datum/design/organ/plant/lungs
+	name = "Plant Lungs"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/vital/lungs/plant
+
+/datum/design/organ/plant/liver
+	name = "Plant Liver"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/liver/plant
+
+/datum/design/organ/plant/kidney_left
+	name = "Left Plant Kidney"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/kidney/left/plant
+
+/datum/design/organ/plant/kidney_right
+	name = "Right Plant Kidney"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/kidney/right/plant
+
+/datum/design/organ/plant/stomach
+	name = "Plant Stomach"
+	materials = list(MATERIAL_BIOMATTER = 10)
+	build_path = /obj/item/organ/internal/stomach/plant
+
+/datum/design/organ/plant/brain
+	name = "Plant Brain"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/vital/brain/plant
+
+/datum/design/organ/plant/eyes
+	name = "Plant Eyes"
+	materials = list(MATERIAL_BIOMATTER = 10)
+	build_path = /obj/item/organ/internal/eyes/plant
+

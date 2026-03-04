@@ -11,15 +11,26 @@
 /obj/item/clothing/head/hood/winter
 	name = "winter hood"
 	desc = "A hood attached to a heavy winter jacket."
-	icon_state = "generic_hood"
+	icon_state = "flushankadown"
 	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 
 /obj/item/clothing/head/hood/winter/captain
-	name = "governor's winter hood"
+	name = "facility director's winter hood"
 	armor_list = list(melee = 20, bullet = 15, energy = 10, bomb = 15, bio = 0, rad = 0)
 
 /obj/item/clothing/head/hood/winter/security
 	name = "security winter hood"
+	armor_list = list(melee = 6, bullet = 20, energy = 3, bomb = 20, bio = 0, rad = 0)
+
+/obj/item/clothing/head/hood/winter/security/blackshield
+	name = "blackshield winter hood"
+
+/obj/item/clothing/head/hood/winter/security/captain
+	name = "captain's winter hood"
+	armor_list = list(melee = 8, bullet = 25, energy = 4, bomb = 25, bio = 0, rad = 0)
+
+/obj/item/clothing/head/hood/winter/security/ranger
+	name = "ranger winter hood"
 	armor_list = list(melee = 6, bullet = 20, energy = 3, bomb = 20, bio = 0, rad = 0)
 
 /obj/item/clothing/head/hood/winter/medical
@@ -31,7 +42,7 @@
 	armor_list = list(melee = 0, bullet = 0,energy = 0, bomb = 10, bio = 0, rad = 0)
 
 /obj/item/clothing/head/hood/winter/engineering
-	name = "guild winter hood"
+	name = "engineering winter hood"
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 20)
 
 /obj/item/clothing/head/hood/winter/engineering/atmos
@@ -42,6 +53,9 @@
 
 /obj/item/clothing/head/hood/winter/cargo
 	name = "cargo winter hood"
+
+/obj/item/clothing/head/hood/winter/service
+	name = "service winter hood"
 
 /obj/item/clothing/head/hood/winter/cargo/miner
 	name = "mining winter hood"
@@ -90,3 +104,4 @@
 	)
 	icon_state = "absolutecloakhood"
 	item_state = "absolutecloakhood"
+

@@ -35,7 +35,7 @@
 		/datum/job/doctor,
 		/datum/job/paramedic,
 		/datum/job/medstudent,
-		/datum/job/premier,
+		/datum/job/facility_director,
 		/datum/job/pg,
 		/datum/job/chaplain,
 		/datum/job/chief_engineer,
@@ -48,11 +48,10 @@
 		/datum/job/scistudent,
 		/datum/job/roboticist,
 		/datum/job/robostudent,
-		/datum/job/nurse,
-		/datum/job/chemist
+		/datum/job/nurse
 	) // The way to restrict this to one job could be done cleaner but this way easier so fuck it. -Kaz
 	allow_modifications = FALSE
-	restricted_depts = SECURITY | BLACKSHIELD | PROSPECTORS | ENGINEERING | CHURCH | INDEPENDENT | CIVILIAN | FL | LODGE
+	restricted_depts = SECURITY | BLACKSHIELD | PROSPECTORS | ENGINEERING | CHURCH | INDEPENDENT | CIVILIAN | FL | LODGE | SERVICE
 	restricted_to_species = list(FORM_HUMAN, FORM_EXALT_HUMAN, FORM_SABLEKYNE, FORM_KRIOSAN, FORM_AKULA, FORM_MARQUA, FORM_NARAMAD, FORM_CINDAR, FORM_MYCUS, FORM_FOLKEN, FORM_CHTMANT)
 
 /datum/category_item/setup_option/core_implant/nanogate
@@ -73,7 +72,7 @@
 	implant_organ_type = "artificer nanogate"
 	restricted_jobs = list(
 		/datum/job/outsider, // Nanogates are only available to colonist or allies.
-		/datum/job/premier,
+		/datum/job/facility_director,
 		/datum/job/pg,
 		/datum/job/chaplain,
 		/datum/job/cmo,
@@ -129,3 +128,4 @@
 	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Factorial, disciples who apprentice themselves to the machines and technology \
 	of the church, so that they may improve upon the foundations of faith. This cruciform is similar to the standard model in power and reserves, but is mainly favored by church aligned synthetics."
 	implant_type = /obj/item/implant/core_implant/cruciform/factorial
+

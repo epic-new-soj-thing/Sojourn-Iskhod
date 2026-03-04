@@ -103,7 +103,15 @@
 		/datum/design/organ/eyes,
 		/datum/design/organ/nerves,
 		/datum/design/organ/muscle,
-		/datum/design/organ/blood_vessel
+		/datum/design/organ/blood_vessel,
+		/datum/design/organ/plant/heart,
+		/datum/design/organ/plant/lungs,
+		/datum/design/organ/plant/liver,
+		/datum/design/organ/plant/kidney_left,
+		/datum/design/organ/plant/kidney_right,
+		/datum/design/organ/plant/stomach,
+		/datum/design/organ/plant/brain,
+		/datum/design/organ/plant/eyes
 	)
 
 /obj/item/pc_part/drive/disk/design/surgery

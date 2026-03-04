@@ -58,10 +58,10 @@
 /obj/item/pc_part/drive/disk/design/deimos/launchers
 	name = "Deimos Armaments Solutions: Launcher Pack"
 	icon_state = "deimos"
-	license = 5
+	license = 12
 	designs = list(
-		/datum/design/autolathe/gun/deimos/golok = 2,     // sabul-type
-		/datum/design/autolathe/gun/deimos/parang = 2,   // parang (mabul)
+		/datum/design/autolathe/gun/deimos/golok = 4,     // sabul-type
+		/datum/design/autolathe/gun/deimos/parang = 6,   // parang (mabul)
 		// grenade ammo designs
 		/datum/design/autolathe/ammo/grenade = 1,
 		/datum/design/autolathe/ammo/grenade/blast = 1,

@@ -12,6 +12,8 @@
 	req_admin_notify = 1
 	account_allowed = 0
 	wage = WAGE_NONE
+	hud_icon = "ai"
+
 	outfit_type = /decl/hierarchy/outfit/job/silicon/ai
 
 	description = "The AI serves as the all-seeing eye of the colony, possessing influence over machines and synthetics.<br>\
@@ -55,6 +57,8 @@
 	selection_color = "#cdcfe0"
 	account_allowed = 0
 	wage = WAGE_NONE
+	hud_icon = "cyborg"
+
 
 	outfit_type = /decl/hierarchy/outfit/job/silicon/cyborg
 

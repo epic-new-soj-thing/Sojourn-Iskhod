@@ -159,10 +159,10 @@
 
 // Cooking Catalog
 /datum/tgui_module/catalog/cooking
-	name = "Frontier Logistics (and Vesalius-Andra) Presents: Victoria's Incredible Kitchen Assistant"
+	name = "Frontier Logistics (and Vesalius-Andra) Presents: Very Incredible Kitchen Assistant"
 	catalog_key = CATALOG_COOKING
 
-	front_page_name = "Victoria's Incredible Kitchen Assistant"
+	front_page_name = "Very Incredible Kitchen Assistant"
 	front_page_desc = "Welcome~"
 	front_page_icon = "The_B.png"
 

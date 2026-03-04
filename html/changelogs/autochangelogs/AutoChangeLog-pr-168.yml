@@ -1,0 +1,8 @@
+author: AMcilraith
+changes:
+  - fix: Fixed issues with vending machine product icons not displaying 
+      correctly.
+  - fix: Improved fallback handling for icon generation, ensuring transparent 
+      placeholders are used when icons are missing.
+date: '2025-08-07'
+delete-after: false

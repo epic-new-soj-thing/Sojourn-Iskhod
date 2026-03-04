@@ -1136,6 +1136,17 @@
 	..()
 	icon_state = "o2"
 
+/obj/machinery/atmospherics/pipe/tank/oxygen/prechilled
+	name = "Pressure Tank (Oxygen, Prechilled)"
+	icon_state = "o2_cryo_map"
+/obj/machinery/atmospherics/pipe/tank/oxygen/prechilled/New()
+	..()
+	if(air_temporary)
+		air_temporary.temperature = 80
+		air_temporary.gas["oxygen"] = (start_pressure)*(air_temporary.volume)/(R_IDEAL_GAS_EQUATION*air_temporary.temperature)
+		air_temporary.update_values()
+	icon_state = "o2_cryo"
+
 /obj/machinery/atmospherics/pipe/tank/nitrogen
 	name = "Pressure Tank (Nitrogen)"
 	icon_state = "n2_map"
@@ -1150,6 +1161,17 @@
 	..()
 	icon_state = "n2"
 
+/obj/machinery/atmospherics/pipe/tank/nitrogen/prechilled
+	name = "Pressure Tank (Nitrogen, Prechilled)"
+	icon_state = "n2_cryo_map"
+
+/obj/machinery/atmospherics/pipe/tank/nitrogen/prechilled/New()
+	..()
+	if(air_temporary)
+		air_temporary.temperature = 80
+		air_temporary.gas["nitrogen"] = (start_pressure)*(air_temporary.volume)/(R_IDEAL_GAS_EQUATION*air_temporary.temperature)
+		air_temporary.update_values()
+	icon_state = "n2_cryo"
 /obj/machinery/atmospherics/pipe/tank/carbon_dioxide
 	name = "Pressure Tank (Carbon Dioxide)"
 	icon_state = "co2_map"

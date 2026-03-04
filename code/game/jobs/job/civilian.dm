@@ -1,13 +1,13 @@
-/datum/job/hop
+/*/datum/job/hop
 	title = "Hospitality Manager"
-	flag = HOP
+	flag = HOSP
 	department = DEPARTMENT_SERVICE
 	head_position = TRUE
 	department_flag = SERVICE | COMMAND
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Governor and the Iskhod Council"
+	supervisors = "the Facility Director and the Iskhod Council"
 	difficulty = "Medium."
 	selection_color = "#dddddd"
 	req_admin_notify = 1
@@ -16,17 +16,32 @@
 
 	access = list(
 		access_hydroponics, access_bar, access_kitchen, access_janitor, access_theatre, access_library,
-		access_RC_announce, access_keycard_auth, access_heads, access_sec_doors, access_heads_vault
+		access_RC_announce, access_keycard_auth, access_heads, access_sec_doors, access_heads_vault, access_hosp
 	)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/hop
+	health_modifier = 5
+
+	stat_modifiers = list(
+		STAT_ROB = 5,
+		STAT_TGH = 10,
+		STAT_VIG = 10,
+		STAT_COG = 20
+	)
+
+	perks = list(PERK_MARKET_PROF, /datum/perk/bartender, PERK_SOMELLIER)
+
+	software_on_spawn = list(/datum/computer_file/program/comm,
+							 /datum/computer_file/program/camera_monitor,
+							 /datum/computer_file/program/reports,
+							 /datum/computer_file/program/wordprocessor)
 
 	description = "The Hospitality Manager is the head of Ivaris Hospitality Services, ensuring the comfort and entertainment of the colony.<br>\
 	You oversee the bar, kitchen, hydroponics, and all entertainment services.<br>\
 	Ensure your staff are profitable and keeping the crew happy.<br>\
 	You also serve as a member of the Iskhod Council, representing the civilian and service sectors."
 
-	duties = "Manage the Ivaris Hospitality staff.<br>\
+	duties = "Manage the Independent Recreation staff.<br>\
 	Ensure the colony is fed and entertained.<br>\
 	Advise the Council on civilian matters."
 
@@ -34,22 +49,24 @@
 	name = "Hospitality Manager"
 	icon_state = "player-grey-officer"
 	join_tag = /datum/job/hop
-
+*/
 /datum/job/clubmanager
 	title = "Bartender"
 	flag = CLUBMANAGER
 	department = DEPARTMENT_SERVICE
-	department_flag = FL
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Hospitality Manager"
+	supervisors = "the Facility Director"
 	difficulty = "Easy."
 	alt_titles = list("Barkeep","Barista","Mixologist")
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 3000
-	wage = WAGE_LABOUR_DUMB // Makes his own money via tips and selling drinks
+	wage = WAGE_LABOUR_DUMB
+	hud_icon = "bartender"
+ // Makes his own money via tips and selling drinks
 	health_modifier = -10
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -60,7 +77,7 @@
 	perks = list(PERK_MARKET_PROF, /datum/perk/bartender)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
-	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment under Ivaris Hospitality Services.<br>\
+	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment as an independent contractor.<br>\
 	Working with the Chef and Gardener, you make the big decisions. Run your business well - perhaps seek to maximise profits.<br>\
 	Although tips are a good source of income, your wider business acumen will truly decide your prosperity here."
 
@@ -77,18 +94,20 @@
 	title = "Chef"
 	flag = CLUBWORKER
 	department = DEPARTMENT_SERVICE
-	department_flag = FL
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Hospitality Manager"
+	supervisors = "the Facility Director"
 	difficulty = "Easy."
 	alt_titles = list("Culinary Artist","Cook", "Line Chef")
 	selection_color = "#dddddd"
 	health_modifier = -10
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 750
-	wage = WAGE_LABOUR_DUMB //They should get paid by making food.
+	wage = WAGE_LABOUR_DUMB
+	hud_icon = "chef"
+ //They should get paid by making food.
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 10,
@@ -116,18 +135,20 @@
 	title = "Gardener"
 	flag = BOTANIST
 	department = DEPARTMENT_SERVICE
-	department_flag = FL
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Hospitality Manager"
+	supervisors = "the Facility Director"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Hydroponicist")
 	health_modifier = -10
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
 	access = list(access_hydroponics, access_bar, access_kitchen)
-	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
+	wage = WAGE_LABOUR_DUMB
+	hud_icon = "gardener"
+ //The gardener can make money selling his fruits to the church or to the chef and bartender.
 
 	outfit_type = /decl/hierarchy/outfit/job/service/gardener
 	stat_modifiers = list(
@@ -138,7 +159,7 @@
 
 	perks = list(PERK_MARKET_PROF, /datum/perk/greenthumb, /datum/perk/bartender)
 
-	description = "The Gardener toils in Ivaris Hospitality hydroponics - utilising seeds, tools and fertilisers to grow bountiful crops.<br>\
+	description = "The Gardener toils in Independent Recreation hydroponics - utilising seeds, tools and fertilisers to grow bountiful crops.<br>\
 	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
 	You are the go-to expert for flora destruction - use shovels and hatchets, or seek more advanced equipment like flamethrowers and chainsaws.<br>\
 	Remember that your goods come with a cost and more exotic crops can command a higher price."
@@ -153,15 +174,16 @@
 	icon_state = "player-black"
 	join_tag = /datum/job/hydro
 
+/*
 /datum/job/artist
 	title = "Artist"
 	flag = ARTIST
 	department = DEPARTMENT_SERVICE
-	department_flag = FL
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Hospitality Manager"
+	supervisors = "the Facility Director"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre)
@@ -193,17 +215,18 @@
 	name = "Artist"
 	icon_state = "player-grey"
 	join_tag = /datum/job/artist
+*/
 
-
+/*
 /datum/job/journalist
 	title = "Journalist"
 	flag = JOURNALIST
 	department = DEPARTMENT_SERVICE
-	department_flag = FL
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Hospitality Manager"
+	supervisors = "the Facility Director"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre, access_library)
@@ -221,7 +244,7 @@
 							 /datum/computer_file/program/reports,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Journalist is a member of the press for Ivaris Hospitality Services, documenting life in the colony.<br>\
+	description = "The Journalist is a member of the press for as an independent contractor, documenting life in the colony.<br>\
 	Your duty is to report the news, good or bad, to the populace. Interviews, investigations, and photography are your tools.<br>\
 	Stay out of trouble, but don't be afraid to ask the hard questions. Ideally, you should be ensuring the truth gets out.<br>\
 	You report to the Hospitality Manager, but your loyalty is to the truth."
@@ -234,4 +257,5 @@
 	name = "Journalist"
 	icon_state = "player-grey"
 	join_tag = /datum/job/journalist
+*/
 

@@ -8586,7 +8586,7 @@
 /area/iskhod/dungeon/outside/prepper/delta)
 "fTu" = (
 /obj/structure/table/marble,
-/obj/machinery/cooking_with_jane/stove{
+/obj/machinery/cooking/stove{
 	desc = "A set of four burners for cooking food. \nCtrl+Click: Set Temperatures / Timers \nShift+Ctrl+Click: Turn on a burner."
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -12871,7 +12871,7 @@
 /obj/structure/table/marble,
 /obj/item/tool/knife/butch,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/cwj/container/board,
+/obj/item/reagent_containers/cooking/container/board,
 /turf/simulated/floor/tiled/cafe,
 /area/iskhod/dungeon/outside/prepper/lima)
 "iBq" = (
@@ -16976,7 +16976,7 @@
 "luY" = (
 /obj/structure/table/marble,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/cwj/container/pan,
+/obj/item/reagent_containers/cooking/container/pan,
 /turf/simulated/floor/tiled/cafe,
 /area/iskhod/dungeon/outside/prepper/lima)
 "lvi" = (
@@ -17575,7 +17575,7 @@
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/iskhod/dungeon/outside/prepper/vault/floor3)
 "lSx" = (
-/obj/machinery/cooking_with_jane/oven,
+/obj/machinery/cooking/oven,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/cafe,
 /area/iskhod/dungeon/outside/prepper/lima)
@@ -17944,8 +17944,8 @@
 "mfT" = (
 /obj/structure/table/marble,
 /obj/effect/decal/cleanable/dirt,
-/obj/item/reagent_containers/cwj/container/pot,
-/obj/item/reagent_containers/cwj/container/oven,
+/obj/item/reagent_containers/cooking/container/pot,
+/obj/item/reagent_containers/cooking/container/oven,
 /turf/simulated/floor/tiled/cafe,
 /area/iskhod/dungeon/outside/prepper/lima)
 "mfY" = (

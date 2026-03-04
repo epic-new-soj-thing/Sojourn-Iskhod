@@ -134,6 +134,10 @@
 			to_chat(user, SPAN_DANGER("You cannot install a naked organ into a robotic body part."))
 			return FALSE
 
+		if(owner?.species && (owner.species.name in list("Cht'mant", "Aulvae", "Mycus", "Folken")) && BP_IS_ROBOTIC(organ))
+			to_chat(user, SPAN_WARNING("[owner.species.name] biology cannot accept prosthetic organs."))
+			return FALSE
+
 		if(total_volume + organ.specific_organ_size > max_volume)
 			to_chat(user, SPAN_DANGER("There isn't enough space in [get_surgery_name()]!"))
 			return FALSE
@@ -155,6 +159,10 @@
 
 		// Can't attach a stump
 		if(limb.is_stump())
+			return FALSE
+
+		if(owner?.species && (owner.species.name in list("Cht'mant", "Aulvae", "Mycus", "Folken")) && BP_IS_ROBOTIC(limb))
+			to_chat(user, SPAN_WARNING("[owner.species.name] biology cannot accept prosthetic limbs."))
 			return FALSE
 
 		var/o_a =  (limb.gender == PLURAL) ? "" : "a "
@@ -211,11 +219,19 @@
 	// Internal organs
 	else if(istype(I, /obj/item/organ/internal))
 		var/obj/item/organ/organ = I
+		if(owner?.species && (owner.species.name in list("Cht'mant", "Aulvae", "Mycus", "Folken")) && BP_IS_ROBOTIC(organ))
+			to_chat(user, SPAN_WARNING("[owner.species.name] biology cannot accept prosthetic organs."))
+			user.put_in_hands(organ)
+			return
 		organ.replaced(src)
 
 	// Limbs
 	else if(istype(I, /obj/item/organ/external))
 		var/obj/item/organ/external/limb = I
+		if(owner?.species && (owner.species.name in list("Cht'mant", "Aulvae", "Mycus", "Folken")) && BP_IS_ROBOTIC(limb))
+			to_chat(user, SPAN_WARNING("[owner.species.name] biology cannot accept prosthetic limbs."))
+			user.put_in_hands(limb)
+			return
 
 		var/obj/item/organ/external/existing_limb = owner.get_organ(limb.organ_tag)
 		var/obj/item/organ/external/target_limb = owner.get_organ(limb.parent_organ_base)

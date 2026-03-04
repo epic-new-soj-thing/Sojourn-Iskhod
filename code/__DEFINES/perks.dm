@@ -44,6 +44,7 @@
 #define PERK_OVERBREATH /datum/perk/oddity/overbreath
 #define PERK_RESILIENCE /datum/perk/oddity/resilience
 #define PERK_TANK_RESILIENCE /datum/perk/oddity/tank_resilience
+#define PERK_DEMONOMICON /datum/perk/oddity/demonomicon
 
 //roundstart perks (job / backgrounds)
 #define PERK_NOBLE /datum/perk/noble
@@ -194,6 +195,7 @@
 // Crayon Mage Perks
 #define PERK_ALCHEMY /datum/perk/alchemist
 #define PERK_SCRIBE /datum/perk/scribe
+#define PERK_TOME_BINDER /datum/perk/tome_binder
 #define PERK_REVEAL /datum/perk/cooldown/reveal
 
 // Imprinter Perks

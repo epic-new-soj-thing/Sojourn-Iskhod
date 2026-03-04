@@ -77,7 +77,7 @@
 		return
 	amount_per_transfer_from_this = next_list_item(amount_per_transfer_from_this, possible_transfer_amounts)
 	spray_size = next_list_item(spray_size, spray_sizes)
-	to_chat(user, SPAN_NOTICE("You adjusted the pressure nozzle. You'll now use [amount_per_transfer_from_this] units per spray."))
+	to_chat(user, SPAN_NOTICE("You adjusted the pressure nozzle."))
 
 /obj/item/reagent_containers/spray/examine(mob/user)
 	if(..(user, 0) && loc == user)

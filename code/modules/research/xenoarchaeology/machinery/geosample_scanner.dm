@@ -188,7 +188,9 @@
 			//each unit of coolant
 			scanner_temperature += scanner_rpm * deltaT * 0.05
 
-			//radiation
+			//radiation - extremely radioactive while scanning; wear anomaly suit or keep rad shield up
+			if(!rad_shield)
+				PulseRadiation(src, 55, 9)
 			t_left_radspike -= deltaT
 			if(t_left_radspike > 0)
 				//ordinary radiation
@@ -198,8 +200,8 @@
 				if(t_left_radspike > -5)
 					radiation = rand() * 15 + 85
 					if(!rad_shield)
-						//irradiate nearby mobs
-						PulseRadiation(src, radiation / 25, 7)
+						//irradiate nearby mobs (spike)
+						PulseRadiation(src, radiation / 2, 9)
 				else
 					t_left_radspike = pick(10,15,25)
 

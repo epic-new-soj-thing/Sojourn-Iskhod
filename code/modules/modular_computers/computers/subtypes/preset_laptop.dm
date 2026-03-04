@@ -3,8 +3,6 @@
 /obj/item/modular_computer/laptop/preset/custom_loadout/cheap/install_default_hardware()
 	..()
 	processor_unit = new/obj/item/pc_part/processor_unit/small(src)
-	hard_drive = new/obj/item/pc_part/drive(src)
-	network_card = new/obj/item/pc_part/network_card(src)
 	printer = new/obj/item/pc_part/printer(src)
 	card_slot = new/obj/item/pc_part/card_slot(src)
 
@@ -18,12 +16,16 @@
 
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced/install_default_hardware()
 	..()
-	processor_unit = new/obj/item/pc_part/processor_unit(src)
+	processor_unit = new/obj/item/pc_part/processor_unit/adv(src)
 	tesla_link = new/obj/item/pc_part/tesla_link(src) //Only the advanced laptop gets a tesla link
 	hard_drive = new/obj/item/pc_part/drive/advanced(src)
 	network_card = new/obj/item/pc_part/network_card/advanced(src)
 	printer = new/obj/item/pc_part/printer(src)
 	card_slot = new/obj/item/pc_part/card_slot(src)
+
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced
+	name = "advanced laptop"
+	desc = "A portable clamshell computer with high-end components and tesla link. Kitaro Scientific model."
 
 /obj/item/modular_computer/laptop/preset/custom_loadout/install_default_programs()
 	..()
@@ -114,20 +116,38 @@
 	hard_drive.store_file(new/datum/computer_file/program/chem_catalog())
 	hard_drive.store_file(new/datum/computer_file/program/cook_catalog())
 
-/obj/item/modular_computer/laptop/preset/custom_loadout/cheap/elbrus4kk
-	name = "elbrus4kk laptop"
-	desc = "A portable clamshell computer made by \"Institute of Computer Engineering\" company. This one is advertized as tougher than other models on the market."
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard/elbrus4kk
+	name = "military laptop"
+	desc = "A rugged portable clamshell computer made by \"Institute of Computer Engineering\". Advertised as tougher than other models on the market."
 	icon_state = "elbrus4kk"
 	icon_state_unpowered = "elbrus4kk"
 
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard/elbrus4kk/install_default_hardware()
+	..()
+	hard_drive = new/obj/item/pc_part/drive/advanced(src)
+	network_card = new/obj/item/pc_part/network_card/advanced(src)
+
 /obj/item/modular_computer/laptop/preset/custom_loadout/standard/xenoware
-	name = "xenoware laptop"
+	name = "gaming laptop"
 	desc = "A portable clamshell computer made by \"Xenoware\". You will feel like a real hacker with those lights."
 	icon_state = "xenoware"
 	icon_state_unpowered = "xenoware"
 
+/obj/item/modular_computer/laptop/preset/custom_loadout/standard/xenoware/install_default_hardware()
+	..()
+	// Same as standard but with advanced drive and better CPU - a step up from consumer, not full advanced
+	processor_unit = new/obj/item/pc_part/processor_unit/adv(src)
+	hard_drive = new/obj/item/pc_part/drive/advanced(src)
+
 /obj/item/modular_computer/laptop/preset/custom_loadout/advanced/golden
-	name = "golden laptop"
-	desc = "A portable clamshell computer with \"Kitaro Scientific\" label on the back."
+	name = "premium laptop"
+	desc = "A portable clamshell computer with \"Kitaro Scientific\" label on the back. Top of the line components and tesla link in a distinctive gold finish."
 	icon_state = "golden"
 	icon_state_unpowered = "golden"
+
+/obj/item/modular_computer/laptop/preset/custom_loadout/advanced/golden/install_default_hardware()
+	..()
+	// Premium: every part one step up from advanced (adv→super CPU, advanced→super drive)
+	processor_unit = new/obj/item/pc_part/processor_unit/super(src)
+	hard_drive = new/obj/item/pc_part/drive/super(src)
+	network_card = new/obj/item/pc_part/network_card/advanced(src)

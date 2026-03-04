@@ -2,7 +2,7 @@
 	name = "Rituals book"
 	desc = "Contains all the rituals a disciple needs."
 	icon = 'icons/obj/library.dmi'
-	icon_state = "book"
+	icon_state = "tome"
 	var/has_reference = FALSE
 	slot_flags = SLOT_BELT
 	var/list/excluded_categories = null

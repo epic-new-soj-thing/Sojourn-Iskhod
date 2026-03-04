@@ -199,9 +199,14 @@
 	New()
 		..()
 		new /obj/item/book/manual/medical_cloning(src)
+		new /obj/item/book/manual/medical_diagnostics_manual(src)
 		new /obj/item/book/manual/wiki/medical_guide(src)
 		new /obj/item/book/manual/wiki/medical_guide(src)
 		new /obj/item/book/manual/wiki/medical_guide(src)
+		new /obj/item/book/manual/wiki/medical_chemistry(src)
+		new /obj/item/book/manual/wiki/infections_guide(src)
+		new /obj/item/book/manual/wiki/cytology_textbook(src)
+		new /obj/item/book/manual/wiki/xenogenetics_guide(src)
 		update_icon()
 
 
@@ -214,6 +219,11 @@
 		new /obj/item/book/manual/wiki/engineering_hacking(src)
 		new /obj/item/book/manual/wiki/engineering_atmos(src)
 		new /obj/item/book/manual/evaguide(src)
+		new /obj/item/book/manual/atmospipes(src)
+		new /obj/item/book/manual/engineering_guide(src)
+		new /obj/item/book/manual/engineering_singularity_safety(src)
+		new /obj/item/book/manual/ripley_build_and_repair(src)
+		new /obj/item/book/manual/wiki/electronic_primer(src)
 		new /obj/item/book/manualshield_generator_guide(src)
 		update_icon()
 
@@ -223,7 +233,73 @@
 	New()
 		..()
 		new /obj/item/book/manual/research_and_development(src)
+		new /obj/item/book/manual/wiki/science_toxins(src)
+		new /obj/item/book/manual/wiki/science_research(src)
+		new /obj/item/book/manual/wiki/science_robotics(src)
+		new /obj/item/book/manual/robotics_cyborgs(src)
+		new /obj/item/book/manual/robotics_catalogue(src)
+		new /obj/item/book/manual/xenobio_recipies(src)
 		update_icon()
+
+/obj/structure/bookcase/manuals/fiction
+	name = "Fiction bookcase"
+
+	New()
+		..()
+		for(var/book_type in subtypesof(/obj/item/book/manual/fiction))
+			new book_type(src)
+		update_icon()
+
+/obj/structure/bookcase/manuals/nonfiction
+	name = "Non-Fiction bookcase"
+
+	New()
+		..()
+		for(var/book_type in subtypesof(/obj/item/book/manual/nonfiction))
+			new book_type(src)
+		update_icon()
+
+/obj/structure/bookcase/archive
+	name = "Archive bookcase"
+	desc = "A wooden shelving unit that is periodically stocked with random books from the external archive."
+
+	New()
+		..()
+		spawn(5)
+			populate_from_archive()
+
+/obj/structure/bookcase/archive/proc/populate_from_archive()
+	// Sometimes spawn a single Demonomicon in one archive bookcase per round (library archival shelf)
+	if(!GLOB.demonomicon_spawned_this_round && prob(3))
+		new /obj/item/book/manual/demonomicon(src)
+		GLOB.demonomicon_spawned_this_round = TRUE
+
+	establish_db_connection()
+	if(!dbcon || !dbcon.IsConnected())
+		update_icon()
+		return
+	var/DBQuery/id_query = dbcon.NewQuery("SELECT id FROM books ORDER BY RAND() LIMIT 10")
+	if(!id_query.Execute())
+		update_icon()
+		return
+	var/list/ids = list()
+	while(id_query.NextRow())
+		ids += id_query.item[1]
+	for(var/id in ids)
+		var/DBQuery/row_query = dbcon.NewQuery("SELECT author, title, content FROM books WHERE id=[id] LIMIT 1")
+		if(!row_query.Execute())
+			continue
+		if(row_query.NextRow())
+			var/author = row_query.item[1]
+			var/title = row_query.item[2]
+			var/content = row_query.item[3]
+			var/obj/item/book/B = new(src)
+			B.name = "Book: [title]"
+			B.title = title
+			B.author = author
+			B.dat = content
+			B.icon_state = "book[rand(1,7)]"
+	update_icon()
 
 
 /obj/structure/bookcase/guncase
@@ -262,7 +338,7 @@
 /obj/item/book
 	name = "book"
 	icon = 'icons/obj/library.dmi'
-	icon_state ="book"
+	icon_state = "book"
 	throw_speed = 1
 	throw_range = 5
 	w_class = ITEM_SIZE_NORMAL		 //upped to three because books are, y'know, pretty big. (and you could hide them inside eachother recursively forever)

@@ -9,6 +9,8 @@
 	var/sharp = 0		// whether this object cuts
 	var/edge = 0		// whether this object is more likely to dismember
 	var/in_use = 0 // If we have a user using us, this will be set on. We will check if the user has stopped using us, and thus stop updating and LAGGING EVERYTHING!
+	/// If set, browser UIs (e.g. surgery console) with this window id are auto-closed when the user becomes unable to use us (out of range, machine broken, etc.)
+	var/browser_window_id = null
 	var/damtype = BRUTE
 	var/armor_divisor = 1
 	var/corporation = null
@@ -125,6 +127,19 @@
 						is_in_use = 1
 						src.attack_hand(usr)
 		in_use = is_in_use
+
+/// Returns TRUE if the user can still use this object's browser UI. When FALSE, the window will be auto-closed. Used for surgery consoles, etc.
+/obj/proc/can_use_browser_ui(mob/user)
+	if(!user)
+		return FALSE
+	if(istype(src, /obj/machinery))
+		var/obj/machinery/M = src
+		if(M.stat & (BROKEN|NOPOWER))
+			return FALSE
+	// Silicons (AI, cyborgs) often can use machines from range
+	if(issilicon(user))
+		return TRUE
+	return get_dist(src, user) <= 1
 
 /obj/proc/updateDialog()
 	// Check that people are actually using the machine. If not, don't update anymore.

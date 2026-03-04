@@ -39,7 +39,8 @@ The answer was five and a half years -ZeroBits
 		if(!dbcon.IsConnected())
 			error_message = "Unable to contact External Archive. Please contact your system administrator for assistance."
 		else
-			var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, category FROM library ORDER BY "+sanitizeSQL(sort_by))
+			var/order_col = (sort_by in list("id", "author", "title", "category", "created_at", "updated_at")) ? sort_by : "id"
+			var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, category FROM books ORDER BY [order_col]")
 			query.Execute()
 
 			while(query.NextRow())
@@ -106,29 +107,8 @@ The answer was five and a half years -ZeroBits
 		if(!B.title)
 			B.title = "Untitled"
 
-		var/choice = input(usr, "Upload [B.name] by [B.author] to the External Archive?") in list("Yes", "No")
-		if(choice == "Yes")
-			establish_db_connection()
-			if(!dbcon.IsConnected())
-				error_message = "Network Error: Connection to the Archive has been severed."
-				return 1
-
-			var/upload_category = input(usr, "Upload to which category?") in list("Fiction", "Non-Fiction", "Reference", "Religion")
-
-			var/sqltitle = sanitizeSQL(B.name)
-			var/sqlauthor = sanitizeSQL(B.author)
-			var/sqlcontent = sanitizeSQL(B.dat)
-			var/sqlcategory = sanitizeSQL(upload_category)
-			var/DBQuery/query = dbcon.NewQuery("INSERT INTO library (author, title, content, category) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]')")
-			if(!query.Execute())
-				to_chat(usr, query.ErrorMsg())
-				error_message = "Network Error: Unable to upload to the Archive. Contact your system Administrator for assistance."
-				return 1
-			else
-				log_and_message_admins("has uploaded the book titled [B.name], [length(B.dat)] signs")
-				log_game("[usr.name]/[usr.key] has uploaded the book titled [B.name], [length(B.dat)] signs")
-				alert("Upload Complete.")
-			return 1
+		error_message = "Add books to the archive by scanning them at the book scanner."
+		return 1
 
 		return 0
 
@@ -177,7 +157,7 @@ The answer was five and a half years -ZeroBits
 		error_message = "Network Error: Connection to the Archive has been severed."
 		return 1
 
-	var/DBQuery/query = dbcon.NewQuery("SELECT * FROM library WHERE id=[sqlid]")
+	var/DBQuery/query = dbcon.NewQuery("SELECT * FROM books WHERE id=[sqlid]")
 	query.Execute()
 
 	while(query.NextRow())

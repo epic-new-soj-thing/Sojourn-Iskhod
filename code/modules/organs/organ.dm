@@ -170,14 +170,36 @@
 /obj/item/organ/proc/handle_rejection()
 	// Process unsuitable transplants. TODO: consider some kind of
 	// immunosuppressant that changes transplant data to make it match.
+	// Prosthetic organs skip rejection; Cht'mant, Aulvae, Mycus and Folken are exempt from species-mismatch rejection.
+	var/owner_exempt_from_species_rejection = owner.species && (owner.species.name in list("Cht'mant", "Aulvae", "Mycus", "Folken"))
+	var/species_mismatch = species && owner.species && species != owner.species
+
 	if(dna)
 		if(!rejecting)
 			if(blood_incompatible(dna.b_type, owner.dna.b_type, species, owner.species))
 				rejecting = 1
+			else if(!owner_exempt_from_species_rejection && species_mismatch)
+				rejecting = 1
 		else
 			rejecting++ //Rejection severity increases over time.
-			if(rejecting % 10 == 0) //Only fire every ten rejection ticks.
-				take_damage(round(rejecting / 50), TOX)		// Will cause toxin accumulation wounds
+			if(rejecting % 5 == 0) //Fire every five rejection ticks.
+				var/rejection_damage = max(2, round(rejecting / 5))
+				take_damage(rejection_damage, TOX)
+				if(owner && ishuman(owner))
+					var/mob/living/carbon/human/H = owner
+					H.adjustToxLoss(rejection_damage * 2)
+	else if(!owner_exempt_from_species_rejection && species_mismatch)
+		// Non-prosthetic organ with no DNA but wrong species (e.g. generic/orphan organ) still rejects
+		if(!rejecting)
+			rejecting = 1
+		else
+			rejecting++
+			if(rejecting % 5 == 0)
+				var/rejection_damage = max(2, round(rejecting / 5))
+				take_damage(rejection_damage, TOX)
+				if(owner && ishuman(owner))
+					var/mob/living/carbon/human/H = owner
+					H.adjustToxLoss(rejection_damage * 2)
 
 /obj/item/organ/proc/receive_chem(chemical as obj)
 	return FALSE

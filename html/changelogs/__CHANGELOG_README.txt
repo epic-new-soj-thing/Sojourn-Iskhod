@@ -1,4 +1,4 @@
-Changelogs are included with commits as text .yml files created individually by the committer. If you want to create a changelog entry you create a .yml file in the /changelogs directory; nothing else needs to be touched unless you are a maintainer.
+Changelogs are included with commits as text .yml files created individually by the committer. If you want to create a changelog entry you create a .yml file in the /changelogs directory; nothing else needs to be touched unless you are a maintainer. Auto-generated PR changelogs (AutoChangeLog-pr-*.yml) are stored in the autochangelogs/ subfolder and are read by the changelog generator along with top-level .yml files.
 
 #######################################################
 

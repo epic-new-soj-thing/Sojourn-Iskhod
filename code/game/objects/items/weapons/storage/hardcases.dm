@@ -14,10 +14,12 @@
 	price_tag = 120
 
 /obj/item/storage/hcases/Destroy()
-
+	var/turf/T = get_turf(src)
 	for (var/obj/held_item in contents) //if we find storage is harddelling move this down to that destroy
-		qdel(held_item)
-
+		if(istype(held_item, /obj/item/reagent_containers/enricher))
+			held_item.forceMove(T)
+		else
+			qdel(held_item)
 	..()
 	return QDEL_HINT_QUEUE //just to be safe
 
@@ -651,7 +653,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/device/scanner/health(src)
 	//Has medicals items inside it to save on spawn storage.
 	new /obj/item/storage/firstaid/soteria/large(src)
-	new /obj/item/modular_computer/tablet/moebius/preset(src)
+	new /obj/item/modular_computer/tablet/moebius/preset/cbo(src)
 
 /obj/item/storage/hcases/med/medical_job_trama
 	exspand_when_spawned = FALSE //No exspanding cheats
@@ -711,7 +713,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 
 /obj/item/gunbox/warrantofficer //credit goes to Hestia both for the idea of loadout gun box and for the code, and sprite.
 	name = "\improper Ranger Captain's equipment kit"
-	desc = "A secure box containing the Warrant Officers primary weapon."
+	desc = "A secure box containing the Captain's primary weapon."
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "rifle_case"
 

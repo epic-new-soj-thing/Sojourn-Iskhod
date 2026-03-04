@@ -98,7 +98,11 @@ var/list/medical_positions = list(JOBS_MEDICAL)
 var/list/science_positions = list(JOBS_SCIENCE)
 
 //BS12 EDIT
-var/list/cargo_positions = list(JOBS_SERVICE)
+var/list/cargo_positions = list(JOBS_SUPPLY)
+
+
+var/list/service_positions = list(JOBS_SERVICE)
+
 
 
 var/list/prospector_positions = list(JOBS_PROSPECTOR)
@@ -119,7 +123,14 @@ var/list/blackshield_positions = list(JOBS_SECURITY)
 var/list/nonhuman_positions = list(JOBS_NONHUMAN)
 
 
+var/list/independent_positions = list(JOBS_INDEPENDENT)
+
+
 var/list/offcolony_positions = list(JOBS_INDEPENDENT)
+
+
+var/list/department_outsider = list("Outsider")
+
 
 
 var/list/lodge_positions = list(JOBS_LODGE)

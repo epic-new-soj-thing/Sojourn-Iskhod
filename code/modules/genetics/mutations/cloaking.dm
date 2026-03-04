@@ -5,6 +5,7 @@
 	desc = "Causes light to bend around the affected target, making them see-through and harder to hit with ranged attacks."
 	gain_text = "Your hands turn see-though..."
 	instability = 30
+	gene_research_value = 3000
 	exclusive_type = MUT_TYPE_SKIN
 	var/mutation = CLOAKING
 

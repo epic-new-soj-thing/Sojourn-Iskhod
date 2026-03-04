@@ -82,6 +82,13 @@ var/global/list/modifications_types = list(
 			return FALSE // Psions cannot use synthetic modifications
 		// For organic modifications, continue with normal checks
 
+	// Cht'mant, Aulvae, Mycus and Folken cannot take prosthetics
+	if(H && H.species && (H.species.name in list("Cht'mant", "Aulvae", "Mycus", "Folken")))
+		if(nature == MODIFICATION_SILICON || nature == MODIFICATION_LIFELIKE)
+			if(usr && ismob(usr))
+				to_chat(usr, SPAN_WARNING("[H.species.name] biology cannot accept prosthetic modifications."))
+			return FALSE
+
 	// Find parent organ (if any) and validate parent-child constraints
 	var/parent_organ = null
 	for(var/organ_parent in organ_structure)

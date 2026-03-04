@@ -226,7 +226,10 @@ cannot isolate or combine desired genes.
 				for(var/mut_key in known_mutations)
 					if(!console.known_mutations[mut_key])
 						console.known_mutations[mut_key] = known_mutations[mut_key]
-						awarding_points += known_mutations[mut_key]
+						var/base_value = known_mutations[mut_key]
+						// Buff genetics: base 1.5x, advanced genes (higher gene_research_value) scale further
+						var/advanced_mult = (base_value > 1000) ? (1.0 + (base_value - 1000) / 2000) : 1.0
+						awarding_points += round(base_value * 1.5 * advanced_mult)
 
 				if(awarding_points > 0)
 					console.files.adjust_research_points(awarding_points) // Give the points

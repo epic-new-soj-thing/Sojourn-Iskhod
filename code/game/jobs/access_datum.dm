@@ -127,7 +127,7 @@
 /var/const/access_captain = 20
 /datum/access/captain
 	id = access_captain
-	desc = "Premier"
+	desc = "Facility Director"
 	region = ACCESS_REGION_COMMAND
 
 /var/const/access_all_personal_lockers = 21
@@ -247,13 +247,13 @@
 /var/const/access_cmo = 40
 /datum/access/cmo
 	id = access_cmo
-	desc = "Vesalius-Andra Biolab Overseer"
+	desc = "Vesalius-Andra Medical Overseer"
 	region = ACCESS_REGION_COMMAND
 
 /var/const/access_merchant = 41
 /datum/access/merchant
 	id = access_merchant
-	desc = "Quartermaster"
+	desc = "Operations Manager"
 	region = ACCESS_REGION_SUPPLY
 
 /var/const/access_network = 42
@@ -582,3 +582,9 @@
 /datum/access/crate_cash
 	id = access_crate_cash
 	access_type = ACCESS_TYPE_NONE
+
+/var/const/access_hosp = 201
+/datum/access/hosp
+	id = access_hosp
+	desc = "Steward"
+	region = ACCESS_REGION_COMMAND

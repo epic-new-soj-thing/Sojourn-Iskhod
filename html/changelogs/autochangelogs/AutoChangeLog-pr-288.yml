@@ -1,0 +1,9 @@
+author: AMcilraith
+changes:
+  - del: Removed old GitHub workflows and templates.
+  - add: Added new workflows for compiling changelogs and generating 
+      documentation.
+  - tweak: Improved pull request template for better clarity on changes.
+  - admin: Added checks for merge conflicts on pushes.
+date: '2025-10-16'
+delete-after: false

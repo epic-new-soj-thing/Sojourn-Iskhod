@@ -182,6 +182,9 @@
 		var/mob/m = loc
 		m.u_equip(src)
 		remove_hud_actions(m)
+		if(istype(m, /mob/living/carbon/human))
+			var/mob/living/carbon/human/H = m
+			H.regenerate_icons()
 		loc = null
 	if(hud_actions)
 		for(var/action in hud_actions)

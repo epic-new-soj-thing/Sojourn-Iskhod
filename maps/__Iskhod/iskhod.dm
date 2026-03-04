@@ -24,12 +24,6 @@
 	height = 4
 	digsites = "HOUSE"
 
-/obj/map_data/admin
-	name = "Admin Level"
-	is_admin_level = TRUE
-	is_accessable_level = FALSE
-	height = 1
-
 /obj/map_data/hunting_lodge
 	name = "Hunting Lodge"
 	is_station_level = FALSE

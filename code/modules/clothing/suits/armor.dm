@@ -22,6 +22,18 @@
 	qdel(referencecarmor)
 	..()
 
+/obj/item/clothing/suit/armor/equipped(mob/M, slot)
+	..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.regenerate_icons()
+
+/obj/item/clothing/suit/armor/dropped(mob/user)
+	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.regenerate_icons()
+
 /*
  * Vests
  */
@@ -49,6 +61,7 @@
 	item_state = "armor_fullbody"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/vest/full/verb/toggle_style()
@@ -255,6 +268,7 @@
 	icon_state = "armor_ih_fullbody"
 	item_state = "armor_ih_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/vest/ironhammer/full/verb/toggle_style()
@@ -286,6 +300,8 @@
 	name = "security armored coat"
 	desc = "An armored winter coat with vest that protects against some damage. This one has been done in security colors. Not designed for serious operations. You're pretty sure the coat is just thick enough to keep warm, and that's all. Why you would want that on a planet like Amethyn is beyond thought."
 	icon_state = "coatsecurity_long"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 ////////////
 
@@ -687,6 +703,7 @@
 	icon_state = "bulletproof_fullbody"
 	item_state = "bulletproof_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.20 // Heavier since it now covers more of the body //actually who thought this was acceptable? .6 on specialized gear is ridiculous.
 
@@ -694,6 +711,7 @@
 	name = "security bulletproof suit"
 	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage."
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.2 // Heavier since it now covers more of the body
 	icon_state = "bulletproof_ironhammer"
@@ -1259,6 +1277,7 @@
 	item_state = "platecarrier_fullbody"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/full/toggle_style()
@@ -1351,6 +1370,7 @@
 	icon_state = "platecarrier_mil_fullbody"
 	item_state = "platecarrier_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/militia/full/toggle_style()
@@ -1419,6 +1439,7 @@
 	item_state = "platecarrier_corpsman_fullbody"
 	armor_list = list(melee = 8, bullet = 11, energy = 5, bomb = 10, bio = 20, rad = 0) // Just in case it doesn't inherit armor qualities
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman/full/toggle_style()
@@ -1490,6 +1511,7 @@
 	item_state = "platecarrier_ih_fullbody"
 //	slowdown = 0.15 //bit surprised this wasn't here, but okay
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 
 /obj/item/clothing/suit/armor/platecarrier/hos/full/toggle_style()
@@ -1528,6 +1550,7 @@
 	icon_state = "hos"
 	item_state = "hos"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	armor_list = list(
 		melee = 10,
 		bullet = 10,
@@ -1816,6 +1839,8 @@
 		rad = 50
 	)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	action_button_name = "Toggle Acceleration"
 	var/speed_boost_ready = TRUE
 	var/speed_boost_active = FALSE

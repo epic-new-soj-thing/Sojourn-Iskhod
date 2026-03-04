@@ -287,32 +287,25 @@
 //Trust me I'm an engineer
 //I think we'll put this shit right here
 var/list/rank_prefix = list(\
-	"Warrant Officer" = "Warrant Officer",\
-	"Supply Specialist" = "Specialist",\
-	"Ranger" = "Ranger",\
-	"Ranger Officer" = "Officer",\
-	"Blackshield Commander" = "Commander",\
-	"Sergeant" = "Sergeant",\
-	"Corpsman" = "Corpsman",\
-	"Blackshield Trooper" = "Trooper",\
-	"Premier" = "Premier",\
+	"Facility Director" = "Facility Director",\
 	"Steward" = "Steward",\
-	"Guild Master" = "Master",\
-	"Chief Biolab Overseer" = "Overseer",\
-	"Chief Research Overseer" = "Overseer",\
-	"Quartermaster" = "Quartermaster",\
-	"Prime" = "Prime",\
+	"Captain" = "Captain",\
+	"Operations Manager" = "Operations Manager",\
+	"Chief Engineer" = "Chief Engineer",\
+	"Medical Overseer" = "Medical Overseer",\
+	"Research Overseer" = "Research Overseer",\
+	"Cardinal" = "Cardinal",\
 	"Foreman" = "Foreman",\
-	"Lodge Hunt Master" = "Huntmaster",\
+	"Lieutenant" = "Lieutenant",\
+	"Detective" = "Detective",\
+	"Ranger" = "Ranger",\
+	"Junior Ranger" = "Junior Ranger",\
 	)
 
 /mob/living/carbon/human/proc/rank_prefix_name(name)
-	if(get_id_rank())
-		if(findtext(name, " "))
-			name = copytext(name, findtext(name, " "))
-		else
-			name = " [name]"
-		name = get_id_rank() + name
+	var/prefix = get_id_rank()
+	if(prefix)
+		return "[prefix] [name]"
 	return name
 
 
@@ -922,16 +915,13 @@ var/list/rank_prefix = list(\
 
 	..()
 
-/mob/living/carbon/human/add_blood(mob/living/carbon/human/M)
+/mob/living/carbon/human/add_blood(mob/living/L)
 	if(!..())
 		return 0
-	//if this blood isn't already in the list, add it
-	if(istype(M))
-		if(!blood_DNA[M.dna.unique_enzymes])
-			blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
 	hand_blood_color = blood_color
 	src.update_inv_gloves()	//handles bloody hands over-lays and updating
 	add_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+	add_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
 	return 1 //we applied blood to the item
 
 /mob/living/carbon/human/proc/get_full_print()
@@ -941,8 +931,36 @@ var/list/rank_prefix = list(\
 		return md5(chem_effects[CE_DYNAMICFINGERS])
 	return md5(dna.uni_identity)
 
+/mob/living/carbon/human/clean_blood_preserve_was(var/clean_feet)
+	. = ..()
+
+	if(gloves)
+		if(gloves.clean_blood_preserve_was())
+			update_inv_gloves()
+			. = TRUE
+	else
+		if(bloody_hands)
+			bloody_hands = 0
+			update_inv_gloves()
+			. = TRUE
+
+	gunshot_residue = null
+
+	if(clean_feet)
+		if(shoes)
+			if(shoes.clean_blood_preserve_was())
+				update_inv_shoes()
+				. = TRUE
+		else
+			if(feet_blood_color)
+				feet_blood_color = null
+				update_inv_shoes()
+				. = TRUE
+
+	return .
+
 /mob/living/carbon/human/clean_blood(var/clean_feet)
-	.=..()
+	. = ..()
 
 	if(gloves)
 		if(gloves.clean_blood())
@@ -1101,6 +1119,12 @@ var/list/rank_prefix = list(\
 
 	if(dna)
 		dna.species = new_species
+
+	// Mycus, Folken and Aulvae use blood type X
+	if(species.name in list("Mycus", "Folken", "Aulvae"))
+		b_type = "X"
+		if(dna)
+			dna.b_type = "X"
 
 	if(species.blood_color)
 		blood_color = species.blood_color
@@ -1331,6 +1355,8 @@ var/list/rank_prefix = list(\
 
 	if (!bloody_hands)
 		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
+		return
 
 	if (src.gloves)
 		to_chat(src, SPAN_WARNING("Your [src.gloves] are getting in the way."))
@@ -1372,6 +1398,52 @@ var/list/rank_prefix = list(\
 		W.update_icon()
 		W.message = message
 		W.add_fingerprint(src)
+		if (!bloody_hands)
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
+
+/mob/living/carbon/human/proc/bloody_write_paper()
+	set category = "IC"
+	set name = "Write in blood on paper"
+	set desc = "Use blood on your hands to inscribe a spell name or message on a sheet of paper you are holding."
+
+	if (src.stat)
+		return
+	if (usr != src)
+		return
+	if (!bloody_hands)
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
+		return
+	if (src.gloves)
+		to_chat(src, SPAN_WARNING("Your [src.gloves] are getting in the way."))
+		return
+	var/obj/item/paper/P = null
+	if (istype(get_active_hand(), /obj/item/paper))
+		P = get_active_hand()
+	else if (istype(get_inactive_hand(), /obj/item/paper))
+		P = get_inactive_hand()
+	if (!P)
+		to_chat(src, SPAN_WARNING("Hold a sheet of paper in your hand to inscribe it in blood."))
+		return
+	if (P.crumpled)
+		to_chat(src, SPAN_WARNING("\The [P] is too crumpled to write on."))
+		return
+	var/max_length = bloody_hands * 30
+	var/message = sanitize(input(src, "Inscribe a message (e.g. a spell name like Babel. or Mist.). Max [max_length] characters.", "Write in blood on paper", "") as text, max_length)
+	if (!message)
+		return
+	var/used_blood_amount = max(1, round(length(message) / 30, 1))
+	bloody_hands = max(0, bloody_hands - used_blood_amount)
+	P.blood_pen = TRUE
+	var/blood_html = "<font color=\"[hand_blood_color ? hand_blood_color : "#A10808"]\">[html_encode(message)]</font>"
+	P.info = (P.info ? P.info + "<BR>" : "") + blood_html
+	P.updateinfolinks()
+	P.update_icon()
+	to_chat(src, SPAN_NOTICE("You inscribe [message] on the paper in blood."))
+	if (!bloody_hands)
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
 
 /mob/living/carbon/human/can_inject(var/mob/user, var/error_msg, var/target_zone)
 	. = 1

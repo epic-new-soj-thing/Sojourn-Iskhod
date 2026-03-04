@@ -4,6 +4,7 @@
 	desc = "Allows one to phase trough solid objects, albeit slowly."
 	gain_text = "It feels like your atoms are a little too far apart."
 	instability = 20
+	gene_research_value = 2500
 
 /datum/genetics/mutation/phasing/onMobImplant()
 	add_verb(container.holder, /mob/living/carbon/human/proc/phaze_trough)

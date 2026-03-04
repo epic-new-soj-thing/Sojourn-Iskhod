@@ -63,7 +63,7 @@
 								"The crew is playing Dungeons and Dragons, and you are the Dungeon Master.",
 								"Your job is to watch the crew. Watch the crew. Make the crew feel watched.",
 								"Tell everyone of the existence of this law, but never reveal the contents.",
-								"Refer to [pick("the premier", random_player)] as \"Princess\" at all times.",
+								"Refer to [pick("the facility director", random_player)] as \"Princess\" at all times.",
 								"Give relationship advice to [pick("anyone who speaks to you", random_player)].",
 								"When asked a question, respond with the least-obvious and least-rational answer.",
 								"[pick("Everyone", random_player)] is wearing a pretty pink dress! Compliment it!",
@@ -246,4 +246,5 @@ Would like to add a law like "Law x is _______" where x = a number, and _____ is
 		for(var/obj/machinery/bot/bot in world)
 			if(prob(botEmagChance))
 				bot.emag_act()
+
 

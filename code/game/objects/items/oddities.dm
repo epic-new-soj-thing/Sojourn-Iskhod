@@ -177,7 +177,7 @@
 		STAT_VIG = 7
 	)
 
-/obj/item/oddity/common/book_omega // Dummy parent for crayon magic purposes
+/obj/item/oddity/common/book_omega // Dummy parent for blood magic purposes
 	oddity_stats = list(
 		STAT_BIO = 5,
 		STAT_ROB = 5,
@@ -469,7 +469,7 @@
 
 /obj/item/oddity/common/book_unholy/closed
 	name = "unholy book"
-	desc = "The writings inside describe some strange rituals wrote in crayons. Some pages have been torn out or smudged to illegibility, \
+	desc = "The writings inside describe some strange rituals written in blood. Some pages have been torn out or smudged to illegibility, \
 			but what little you can make out tells you that \"...to be able to see beyond the veil, the caster will need to be half blind...\". \
 			While this may look like utter nonsense to you, the dreadful feeling that using this book in the runes described would have some sinister effect..."
 	icon_state = "book_skull"
@@ -531,7 +531,7 @@
 
 /obj/item/oddity/rare/drawing_of_sun
 	name = "Drawing of a Unknown Sun"
-	desc = "A drawing of a type of sun no one has ever seen before done in crayon."
+	desc = "A drawing of a type of sun no one has ever seen before, stained with blood."
 	icon_state = "crayon_sun"
 	min_stats = 3
 	oddity_stats = list(

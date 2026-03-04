@@ -1,0 +1,8 @@
+author: AMcilraith
+changes:
+  - fix: Fixed an issue preventing the output directory from being created if it
+      didn't exist.
+  - fix: Corrected the path resolution for new screenshots to ensure they are 
+      properly handled.
+date: '2025-12-11'
+delete-after: false

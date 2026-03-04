@@ -5,6 +5,7 @@
  *		Ironhammer Commander
  */
 
+
 /*
  * Security
  */
@@ -48,7 +49,7 @@
 	body_parts_covered = 0
 
 /obj/item/clothing/under/rank/security
-	name = "ranger's jumpsuit"
+	name = "ranger jumpsuit"
 	desc = "A durable officer's jumpsuit, designed to provide moderate combat protection."
 	icon_state = "security"
 	item_state = "ba_suit"
@@ -91,7 +92,7 @@
 	siemens_coefficient = 0.8
 
 /obj/item/clothing/under/rank/bdu/marshal
-	name = "ranger's BDU"
+	name = "ranger BDU"
 	desc = "A durable officer's Battle Dress Uniform, designed to provide moderate combat protection."
 	icon_state = "bdumarshal"
 	item_state = "bdumarshal"
@@ -128,7 +129,7 @@
  * Detective
  */
 /obj/item/clothing/under/rank/inspector
-	name = "ranger's turtleneck"
+	name = "ranger turtleneck"
 	desc = "A casual turtleneck and jeans serving as civilian ranger clothing."
 	icon_state = "insp_under"
 	item_state = "insp_under"
@@ -144,7 +145,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Ranger's Turtleneck"] = "detective"
+	options["ranger Turtleneck"] = "detective"
 	options["Patrol Uniform"] = "det_corporate"
 	options["Detective Pants"] = "detective"
 	options["Detective Skirt"] = "detective_f"
@@ -255,6 +256,166 @@
 	icon_state = "hoshat"
 	body_parts_covered = 0
 	siemens_coefficient = 0.6
+
+/obj/item/clothing/under/rank/ranger
+	name = "ranger utility uniform"
+	desc = "The standard utility uniform of the Iskhod Rangers, made from a durable, insulated material."
+	icon_state = "navyutility"
+	item_state = "navyutility"
+	siemens_coefficient = 0.8
+
+/obj/item/clothing/under/rank/ranger/officer
+	name = "ranger officer's utility uniform"
+	icon_state = "navyutility_com"
+	item_state = "navyutility_com"
+
+/obj/item/clothing/under/rank/ranger/command
+	name = "ranger command utility uniform"
+	icon_state = "navyutility_com"
+	item_state = "navyutility_com"
+
+/obj/item/clothing/under/rank/ranger/flag
+	name = "ranger flag officer utility uniform"
+	icon_state = "navyutility_flag"
+	item_state = "navyutility_flag"
+
+/obj/item/clothing/under/rank/ranger/fatigues
+	name = "ranger field fatigues"
+	desc = "An alternative utility uniform of the Iskhod Rangers, designed for field operations where mobility is key."
+	icon_state = "navycombat"
+	item_state = "navycombat"
+
+/obj/item/clothing/under/rank/ranger/service
+	name = "ranger service uniform"
+	desc = "The service uniform of the Iskhod Rangers, made from immaculate white fabric for formal duties."
+	icon_state = "whiteservice"
+	item_state = "whiteservice"
+
+/obj/item/clothing/under/rank/ranger/service/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["standard uniform"] = initial(icon_state)
+	options["feminine uniform"] = "[initial(icon_state)]_fem"
+
+	var/choice = input(M,"What kind of style want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		item_state = options[choice]
+		item_state_slots = null
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/under/rank/ranger/service/officer
+	name = "ranger officer's service uniform"
+	icon_state = "whiteservice_off"
+	item_state = "whiteservice_off"
+
+/obj/item/clothing/under/rank/ranger/service/command
+	name = "ranger command service uniform"
+	desc = "The service uniform of the Iskhod Ranger command staff, featuring additional gold embellishments."
+	icon_state = "whiteservice_comm" // Reusing com if officer isn't distinct, or if there's a specific 'com'
+	item_state = "whiteservice_comm"
+
+/obj/item/clothing/under/rank/ranger/service/flag
+	name = "ranger flag officer service uniform"
+	desc = "The service uniform of the Iskhod Ranger high command, featuring extensive gold trimmings."
+	icon_state = "whiteservice_flag"
+	item_state = "whiteservice_flag"
+
+/obj/item/clothing/suit/rank/ranger/service
+	name = "ranger dress uniform"
+	desc = "The full dress uniform of the Iskhod Rangers, reserved for the highest formal occasions."
+	icon_state = "blueservice"
+	item_state = "blueservice"
+
+/obj/item/clothing/suit/rank/ranger/service/officer
+	name = "ranger lieutenant's dress uniform"
+	icon_state = "blueservice_snco"
+	item_state = "blueservice_snco"
+
+/obj/item/clothing/suit/rank/ranger/service/command
+	name = "ranger command dress uniform"
+	icon_state = "blueservice_off"
+	item_state = "blueservice_off"
+
+/obj/item/clothing/suit/rank/ranger/service/flag
+	name = "ranger flag officer dress uniform"
+	icon_state = "blueservice_flag"
+	item_state = "blueservice_flag"
+
+/obj/item/clothing/under/rank/ranger/pt
+	name = "ranger pt uniform"
+	desc = "A lightweight uniform for physical training and leisure."
+	icon_state = "fleetpt"
+	item_state = "fleetpt"
+
+
+/obj/item/clothing/under/rank/ranger/dress
+	name = "ranger dress uniform"
+	desc = "The full dress uniform of the Iskhod Rangers, reserved for the highest formal occasions."
+	icon_state = "whitedress"
+	item_state = "whitedress"
+
+/obj/item/clothing/suit/rank/ranger/service
+	name = "ranger service jacket"
+	desc = "A modern dark blue service jacket."
+	icon_state = "blueservice"
+	item_state = "blueservice"
+
+/obj/item/clothing/suit/rank/ranger/service/officer
+	name = "ranger lieutenant's service jacket"
+	icon_state = "blueservice_snco"
+	item_state = "blueservice_snco"
+
+/obj/item/clothing/suit/rank/ranger/service/command
+	name = "ranger captain's service jacket"
+	icon_state = "blueservice_comm"
+	item_state = "blueservice_comm"
+
+/obj/item/clothing/suit/rank/ranger/service/flag
+	name = "ranger flag officer service jacket"
+	icon_state = "blueservice_flag"
+	item_state = "blueservice_flag"
+
+/obj/item/clothing/suit/rank/ranger/dress
+	name = "ranger dress jacket"
+	desc = "A modern white dress jacket."
+	icon_state = "whitedress"
+	item_state = "whitedress"
+
+/obj/item/clothing/suit/rank/ranger/dress/officer
+	name = "ranger lieutenant's dress uniform"
+	icon_state = "whitedress_snco"
+	item_state = "whitedress_snco"
+
+/obj/item/clothing/suit/rank/ranger/dress/command
+	name = "ranger command dress uniform"
+	desc = "The full dress uniform of the Iskhod Ranger command staff."
+	icon_state = "whitedress_off"
+	item_state = "whitedress_off"
+
+/obj/item/clothing/suit/rank/ranger/dress/flag
+	name = "ranger flag officer dress uniform"
+	desc = "The full dress uniform of the Iskhod Ranger high command."
+	icon_state = "whitedress_flag"
+	item_state = "whitedress_flag"
+
+/obj/item/clothing/under/rank/ranger/pt
+	name = "ranger pt uniform"
+	desc = "A lightweight uniform for physical training and leisure."
+	icon_state = "fleetpt"
+	item_state = "fleetpt"
 
 //Jensen cosplay gear
 /obj/item/clothing/under/rank/jensen

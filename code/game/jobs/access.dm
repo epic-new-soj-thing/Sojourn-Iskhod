@@ -3,8 +3,19 @@
 /obj/var/list/req_access = null
 /obj/var/list/req_one_access = null
 
+var/global/maint_all_access = 0
+
+/proc/make_maint_all_access()
+	maint_all_access = 1
+
+/proc/revoke_maint_all_access()
+	maint_all_access = 0
+
 //returns 1 if this mob has sufficient access to use this object
 /obj/proc/allowed(mob/M)
+	// When emergency maint is granted, any object that requires access_maint_tunnels allows everyone through
+	if(maint_all_access && ((req_access && (access_maint_tunnels in req_access)) || (req_one_access && (access_maint_tunnels in req_one_access))))
+		return 1
 	//check if it doesn't require any access at all
 	if(src.check_access(null))
 		return 1
@@ -249,17 +260,20 @@ proc/get_all_job_icons() //For all existing HUD icons
 	var/obj/item/card/id/I = GetIdCard()
 
 	if(I)
-		var/job_icons = get_all_job_icons()
-		if(I.assignment	in job_icons) //Check if the job has a hud icon
-			return I.assignment
-		if(I.rank in job_icons)
-			return I.rank
+		var/datum/job/J = SSjob.GetJob(I.assignment)
+		if(J && J.hud_icon)
+			return J.hud_icon
+		J = SSjob.GetJob(I.rank)
+		if(J && J.hud_icon)
+			return J.hud_icon
 
 		var/centcom = get_all_centcom_jobs()
-		if(I.assignment	in centcom) //Return with the NT logo if it is a Centcom job
-			return "Centcom"
-		if(I.rank in centcom)
-			return "Centcom"
+		if((I.assignment in centcom) || (I.rank in centcom))
+			return "Agent"
+
+		// Default fallback to assignment if no hud_icon found (e.g. for non-standard roles)
+		if(I.assignment)
+			return I.assignment
 	else
 		return
 
