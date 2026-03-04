@@ -46,7 +46,7 @@
 		<p>The ritual reads the <b>name of the spell</b> from <b>paper</b> only. The rune must be a <b>blood rune on the floor</b> (drawn with the ritual knife); the words must be inscribed on paper in <b>blood or pen</b>, in the <b>required language</b> for that spell, and placed within <b>three tiles</b> of the rune when you invoke. Writing the spell name in blood upon the floor does <b>not</b> work&mdash;the rune will not read it.</p>
 
 		<h3>How to inscribe the spell on paper</h3>
-		<p>Inscribe the spell name on <b>paper</b> using a <b>pen</b> (or crayon), or in <b>blood on the paper</b> (get bloody hands from a blood pool or a blood basin, then use the <b>Write in blood</b> verb on the paper). Set the paper&rsquo;s writing language to the <b>required tongue</b>: <b>book</b> spells (Section VI) and <b>scroll</b> inscriptions (Section VIII) require the <b>Cult</b> language; <b>knife</b> spells (Section VII) require the <b>Occult</b> language. Place the paper within three tiles of the blood rune. Spell names are case-sensitive and must end with a full stop.</p>
+		<p>Inscribe the spell name on <b>paper</b> using a <b>pen</b> (or crayon), or in <b>blood on the paper</b> (you must <b>cut your palm</b> with the ritual knife in hand to bloody your hands for writing&mdash;dipping in a blood pool or basin only stains the hands and does not allow the working; then use the <b>Write in blood</b> verb on the paper). Each cut allows up to five such inscriptions before you must cut again. Set the paper&rsquo;s writing language to the <b>required tongue</b>: <b>book</b> spells (Section VI) and <b>scroll</b> inscriptions (Section VIII) require the <b>Cult</b> language; <b>knife</b> spells (Section VII) require the <b>Occult</b> language. Place the paper within three tiles of the blood rune. Spell names are case-sensitive and must end with a full stop.</p>
 		<p><b>Blood and pen:</b> Inscriptions written in <b>blood on the paper</b> bind truly; the ritual proceeds as normal. Inscriptions written with a <b>pen</b> or <b>crayon</b> lack the binding and have a <b>chance of failure</b> when invoked&mdash;the rune may flicker and the working may not take. Red <b>crayon</b> (crayon only, not red pen) is said to hold the intent somewhat better and enjoys a higher chance of success than other pen or crayon work. Whenever an invocation fails&#8212;whether the ink lacked binding or the caster&rsquo;s focus wavered&#8212;<b>twelve measures of blood</b> are still drawn from the caster.</p>
 
 		<p><b>Summary:</b> Blood rune on the floor (ritual knife). Spell name on paper (blood or pen/crayon), in the required language (Cult for book/scroll, Occult for knife). Place the paper near the rune. Blood on the paper is reliable; pen and crayon have a chance of failure (red crayon fares better). Non-nearsighted casters face an extra chance of focus failure. Failed rituals cost twelve measures of blood.</p>
@@ -88,6 +88,8 @@
 		<tr><td class="spell">The End.</td><td class="candles">1</td><td class="candles">75</td><td>Strip Cult and Occult from the mind; purge blood-magic gifts.</td></tr>
 		<tr><td class="spell">Brew.</td><td class="candles">2</td><td class="candles">25</td><td>Grant the Alchemist perk; mutually exclusive with Scribe and Binder.</td></tr>
 		<tr><td class="spell">Recipe.</td><td class="candles">1</td><td class="candles">10</td><td>Alchemist only: turn paper into alchemy recipe paper.</td></tr>
+		<tr><td class="spell">Condense.</td><td class="candles">5</td><td class="candles">40</td><td>Turn a shard on the rune into a soulstone; requires both Cult and Occult and a path (Scribe, Binder, or Alchemist).</td></tr>
+		<tr><td class="spell">Form.</td><td class="candles">5</td><td class="candles">35</td><td>Turn sandstone on the rune into a soulstone; requires a path (Scribe, Binder, or Alchemist).</td></tr>
 		<tr><td class="spell">Bees.</td><td class="candles">4</td><td class="candles">18 each</td><td>Turn sunflowers in range into wasps.</td></tr>
 		<tr><td class="spell">Sky.</td><td class="candles">1</td><td class="candles">70</td><td>Transform an open Omega book or this Demonomicon into a Drawing of the Sun (skill-cap oddity).</td></tr>
 		<tr><td class="spell">Scribe.</td><td class="candles">7</td><td class="candles">50</td><td>Grant the Scribe perk; requires paper on rune; for scrolls only; mutually exclusive with Alchemist and Binder.</td></tr>
@@ -95,7 +97,7 @@
 		<tr><td class="spell">Pouch.</td><td class="candles">2</td><td class="candles">25</td><td>Turn a dice bag on the rune into a shared blood pouch.</td></tr>
 		<tr><td class="spell">Escape.</td><td class="candles">1</td><td class="candles">18</td><td>Remove the caster from the world; leave a mirror fragment.</td></tr>
 		<tr><td class="spell">Awaken.</td><td class="candles">7</td><td class="candles">50</td><td>Evolve ritual knife to bloodletter, then to full blade.</td></tr>
-		<tr><td class="spell">Satchel.</td><td class="candles">5</td><td class="candles">25</td><td>Alchemist only: turn a pouch into an alchemy satchel.</td></tr>
+		<tr><td class="spell">Satchel.</td><td class="candles">5</td><td class="candles">25</td><td>Alchemist only: turn a blood pouch on the rune into an alchemy satchel.</td></tr>
 		<tr><td class="spell">Cessation.</td><td class="candles">1+</td><td class="candles">&#189;&#215; candles</td><td>Remove the caster from the world for a time; duration scales with candles.</td></tr>
 		</tbody></table>
 		<p>Tome spells (Fireball., Smoke., Blind., etc.) are invoked the same way but create thematic tomes; see <b>Section XI. Tomes</b>.</p>
@@ -123,7 +125,33 @@
 		<tr><td class="spell">Veil.</td><td class="candles">5</td><td class="candles">40</td><td>Turn a blindfold on the rune into an enchanted blindfold (vision aid in dark).</td></tr>
 		<tr><td class="spell">Caprice.</td><td class="candles">3</td><td class="candles">5&#8211;10 per rune</td><td>Convert blood runes in view to trap runes; with tongues, may send them to maints or deepmaint.</td></tr>
 		<tr><td class="spell">Mightier.</td><td class="candles">3</td><td class="candles">25</td><td>Create throwing projectiles that grow stronger the lower your max health.</td></tr>
+		<tr><td class="spell">Purify.</td><td class="candles">6</td><td class="candles">55</td><td>Turn a soulstone on the rune into a purified soulstone.</td></tr>
+		<tr><td class="spell">Mystic.</td><td class="candles">8</td><td class="candles">75</td><td>Turn a purified soulstone on the rune into a mystic soulstone.</td></tr>
+		<tr><td class="spell">Rift.</td><td class="candles">5</td><td class="candles">40</td><td>Open a temporary rift to deep maintenance at the rune; it closes after a short time.</td></tr>
 		</tbody></table>
+		<p><b>Rift.</b> (5 candles, 40 blood): Invoke with the ritual knife or the Demonomicon to tear open a rift at the rune. The rift leads to a random floor tile in <b>deep maintenance</b> and disappears after a short while. Stepping through carries the traveller to the depths.</p>
+		<h3>Soulstones</h3>
+		<p><b>Soulstones</b> are dark crystalline shards that resonate with blood and ritual. They can be carried in a slot (pocket or hand). When <b>dormant</b>, the base soulstone still steadies the mind slightly when carried; when <b>energized</b> (see below), a soulstone takes on a brighter aspect and grants tier-specific abilities.</p>
+		<h4>Creation (endgame)</h4>
+		<p>Soulstones are endgame foci; each tier is <b>progressively much harder</b> to obtain, but still achievable with preparation.</p>
+		<p><b>Base soulstone:</b> Three ways. You must have chosen a <b>path</b>&mdash;Scribe, Binder (Tome Binder), or Alchemist&mdash;to create one by ritual; xenoarchaeology has no such requirement. (1) <b>Xenoarchaeology:</b> Soulstones rarely appear in digs at <b>temple</b> or <b>war</b> sites where the nitrogen tracer responds (crystalline structures, soul stones, crystal shards). Excavate the strange rock and reveal the find&mdash;the roll is unforgiving. (2) <b>Condense.</b> (book spell): You must know <b>both</b> the Cult and the Occult tongue (Babel. and Voice.) and have a path. Place a <b>crystal or plasma shard</b> on the blood rune. Inscribe <i>Condense.</i> on paper (Cult), place the paper within three tiles of the rune, and invoke with a book or the Demonomicon: <b>5 candles, 40 blood</b>. The shard is consumed and a soulstone appears. (3) <b>Form.</b> (book spell): Place <b>sandstone</b> on the blood rune. Inscribe <i>Form.</i> on paper (Cult), place the paper within three tiles of the rune, and invoke with a book or the Demonomicon: <b>5 candles, 35 blood</b>. One unit of sandstone and blood are consumed; a soulstone appears.</p>
+		<p><b>Purified soulstone:</b> Place a <b>soulstone</b> on the rune. Inscribe <i>Purify.</i> (Cult or Occult), then invoke with the ritual knife or the Demonomicon: <b>6 candles, 55 blood</b>. Heavy toll on body and mind; the soulstone is replaced by a purified soulstone.</p>
+		<p><b>Mystic soulstone:</b> The pinnacle. Place a <b>purified soulstone</b> on the rune. Inscribe <i>Mystic.</i> (Cult or Occult), then invoke with the ritual knife or the Demonomicon: <b>8 candles, 75 blood</b>. The ritual is punishing; the purified soulstone is replaced by a mystic soulstone.</p>
+		<h4>Types</h4>
+		<ul>
+			<li><b>Soulstone</b> (base): A dark shard that drinks the light. When energized, it lowers the blood and health cost of rune rituals for the bearer (or when placed on the rune).</li>
+			<li><b>Purified soulstone:</b> Washed in blood and candle-flame; clearer and holds intent more readily. When energized, it reduces ritual cost further and, while carried, steadies the mind (faster sanity recovery).</li>
+			<li><b>Mystic soulstone:</b> Refined through a second ritual; hums with latent power. When energized, it reduces ritual cost the most and, while carried, stifles psionics and cruciform rites in <b>others</b> nearby&mdash;the bearer is not affected and may still use psionics.</li>
+		</ul>
+		<h4>Energizing</h4>
+		<p>Use the soulstone <b>on the blood rune</b> (click the soulstone on the rune). You need at least <b>one candle</b> within three tiles of the rune and <b>15 blood</b>. The soulstone absorbs blood and candle-light and becomes <b>energized</b>; its appearance shifts to a brighter, glowing form. Energizing is permanent until the stone is lost or destroyed. An already-energized soulstone cannot be energized again.</p>
+		<h4>Abilities (when energized)</h4>
+		<p>Each tier has <b>distinct</b> effects; they are not the same ability strengthened.</p>
+		<ul>
+			<li><b>Soulstone (base):</b> When energized and <b>in your inventory or on the rune</b>, <b>blood and health costs of rune rituals are reduced</b> (about 15% less). No effect on psionics.</li>
+			<li><b>Purified soulstone:</b> Same ritual cost reduction (about 28% less). When energized and <b>carried in a slot</b>, it <b>steadies the mind</b>&mdash;you recover sanity slightly faster. No effect on psionics.</li>
+			<li><b>Mystic soulstone:</b> Strongest ritual cost reduction (about 40% less). When energized and carried, it creates a <b>field that stifles psionics and cruciform litanies in others</b> within two tiles&mdash;but <b>not in you</b>; the bearer can still use psionics and is not blocked. Those in the field find their cruciform cold and unresponsive, and their psionic powers inhibited.</li>
+		</ul>
 		</div>
 
 		<hr>
@@ -159,7 +187,7 @@
 		<p>Seal a scroll with bee wax to carry it safely; unseal before burning. Trap runes (blood runes converted by <b>Caprice.</b> or other means) may trigger scroll or rune effects on those who cross and do not speak the tongues.</p>
 
 		<h2>IX. The Blood Basin</h2>
-		<p>Invoke <b>Fountain.</b> with a water tank adjacent to the rune to create a blood basin. Those who dip bare hands in it may gain bloody hands for writing, at a cost to insight. The basin is said to fill with blood; the script calls it an inkwell for writing in blood.</p>
+		<p>Invoke <b>Fountain.</b> with a water tank adjacent to the rune to create a blood basin. Dipping bare hands in it stains them with blood at a cost to insight, but <b>writing in blood</b> requires <b>cutting your palm</b> with the ritual knife&mdash;wet hands alone cannot inscribe the working. To write in blood: <b>use the ritual knife on yourself</b> (use it in hand) to cut your palm and coat your fingers; each cut allows up to five inscriptions (on the floor or on paper) before you must cut again.</p>
 
 		<h2>X. Alchemy</h2>
 		<p>The art of binding and condensing liquids in the alembic is closed to all but those who have invoked <b>Brew.</b> at a blood rune (2 candles). <b>Alchemist, Scribe, and Tome Binder are mutually exclusive</b>&mdash;you may have only one of the three.</p>
@@ -176,7 +204,7 @@
 		<ul>
 			<li><b>Alembic phial</b>: A small bulb-like bottle; the only vessel in which reagents can be mixed inside the alembic. It holds little liquid and does not react until the alembic is used to trigger the reaction.</li>
 			<li><b>Throwing flask</b>: A fragile conical flask that can be filled with beneficial or harmful chemicals and thrown at a target; it shatters on impact and spills its contents.</li>
-			<li><b>Alchemy satchel</b>: Obtained by invoking <b>Satchel.</b> at a rune (5 candles, Alchemist only) with a dice bag on the rune. A belt-worn satchel that holds throwing flasks and alembic phials; it must be opened before use.</li>
+			<li><b>Alchemy satchel</b>: Obtained by invoking <b>Satchel.</b> at a rune (5 candles, Alchemist only) with a blood pouch on the rune. A belt-worn satchel that holds throwing flasks and alembic phials; it must be opened before use.</li>
 		</ul>
 
 		<h3>Recipe Paper</h3>

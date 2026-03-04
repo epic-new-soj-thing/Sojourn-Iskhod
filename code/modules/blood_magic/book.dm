@@ -1,23 +1,112 @@
-// Blood Magic module - book (type 3) spell procs.
+// Blood Magic module - books (Omega, Unholy, Ascension.) and book (type 3) spell procs.
+
+// Ascension: "Opens" your current book (Occult or Unholy) and "transforms" it into an improved version
+// They have slightly better stats than their stock counterparts and can be used for rituals
+/obj/effect/decal/cleanable/blood_rune/proc/ascension_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
+	var/datum/reagent/organic/blood/_B = M.get_blood()
+	if(!able_to_cast)
+		return
+
+	for(var/obj/item/oddity/common/O in oview(1))
+
+		if(!body_checks(M))
+			return
+
+		if(istype(O, /obj/item/oddity/common/book_omega/closed))
+			to_chat(M, "<span class='info'>The book floats before you and opens, new information within being written as your eyes pour over it!</span>")
+			_B.remove_self(40)
+			M.sanity.breakdown() // You are driven insane
+			M.sanity.changeLevel(-30, TRUE)
+			playsound(loc, 'sound/bureaucracy/bookopen.ogg')
+			new /obj/item/oddity/common/book_omega/opened(O.loc)
+			qdel(O)
+		if(istype(O, /obj/item/oddity/common/book_unholy/closed))
+			to_chat(M, "<span class='info'>The book floats before you and opens, new information within being written as your eyes pour over it!</span>")
+			_B.remove_self(40)
+			M.sanity.breakdown() // You are driven insane
+			M.sanity.changeLevel(-30, TRUE)
+			playsound(loc, 'sound/bureaucracy/bookopen.ogg')
+			new /obj/item/oddity/common/book_unholy/opened(O.loc)
+			qdel(O)
+		else
+			to_chat(M, "<span class='info'>This oddity is not a book, knowledge on how to improve it is beyond your grasp.</span>")
+	return
+
+// Omega and Unholy book oddities - used with blood runes and the Ascension. spell
+/obj/item/oddity/common/book_omega // Dummy parent for blood magic purposes
+	oddity_stats = list(
+		STAT_BIO = 5,
+		STAT_ROB = 5,
+		STAT_VIG = 5
+	)
+
+/obj/item/oddity/common/book_omega/closed
+	name = "occult book"
+	desc = "Most of the stories in this book seem to be the ramblings of an insane cultist, but at least the stories are interesting. \
+			Some of the phrases are written in a language that makes sense at times, but becomes intelligible to you a second after. Something about candles around a magic circle on the floor...\
+			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
+	icon_state = "book_eyes" // This sprite fits better an occult book, swapped with the observer one.
+	prob_perk = 15 //old wrighting with the madmans ink allows the mind to go a bit more wild then just a single paper
+
+/obj/item/oddity/common/book_omega/opened
+	name = "open occult book"
+	icon_state = "book_eyes_open"
+	item_state = "book_eyes_open" // Yes, it HAS spooky on-hand sprites!
+	desc = "The book floats open in your hands, infinite forbidden knowledge and non-euclidean geometry contained within at your disposal. \
+			The anomaly has been strengthened in its odd nature by forces unknown, but is still perfectly functional for your rituals..."
+	oddity_stats = list(
+		STAT_BIO = 9,
+		STAT_ROB = 9,
+		STAT_VIG = 9
+	)
+
+/obj/item/oddity/common/book_unholy // Parent so that we can benefit from rituals
+
+/obj/item/oddity/common/book_unholy/closed
+	name = "unholy book"
+	desc = "The writings inside describe some strange rituals written in blood. Some pages have been torn out or smudged to illegibility, \
+			but what little you can make out tells you that \"...to be able to see beyond the veil, the caster will need to be half blind...\". \
+			While this may look like utter nonsense to you, the dreadful feeling that using this book in the runes described would have some sinister effect..."
+	icon_state = "book_skull"
+	prob_perk = 80 //Cult around this gives it great power
+	oddity_stats = list(
+		STAT_COG = 3,
+		STAT_MEC = 7
+	)
+
+/obj/item/oddity/common/book_unholy/opened
+	name = "awakened unholy book"
+	desc = "The book floats open in your hands, infinite forbidden knowledge and non-euclidean geometry contained within at your disposal. \
+			The anomaly has been strengthened in its odd nature by forces unknown, but is still perfectly functional for your rituals..."
+	icon_state = "book_skull_open"
+	item_state = "book_skull_open"
+	oddity_stats = list(
+		STAT_COG = 6,
+		STAT_MEC = 9
+	)
+
+// --- Book (type 3) spell procs ---
+
+/// Returns TRUE if the human has chosen a magic path (Scribe, Tome Binder, or Alchemist). Required for soulstone creation rituals.
+/obj/effect/decal/cleanable/blood_rune/proc/has_magic_path(mob/living/carbon/human/M)
+	return M && M.stats && (M.stats.getPerk(PERK_SCRIBE) || M.stats.getPerk(PERK_TOME_BINDER) || M.stats.getPerk(PERK_ALCHEMY))
 
 // Babel: Grants you knowledge of the Cult language.
 // This is a requirement for the ritual spells.
 /obj/effect/decal/cleanable/blood_rune/proc/babel_spell(mob/living/carbon/human/M)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	M.add_language(LANGUAGE_CULT)
 	to_chat(M, "<span class='warning'>Your head throbs like a maddening heartbeat, eldritch knowledge gnawing open the doors of your psyche and crawling inside, granting you a glimpse of languages older than time itself. The heart pounds in synchrony, making up for the price of blood in exchange.</span>")
 	playsound(M, 'sound/effects/singlebeat.ogg', 100)
 	var/cost = src.health_spell_cost(M, 20)
 	M.maxHealth -= cost
 	M.health -= cost
-	B.remove_self(25)
+	src.charge_blood(M, 25)
 	M.sanity.changeLevel(-5, TRUE)
 	M.unnatural_mutations.total_instability += 15
 	return
 
 // Ignorance: Basically become impervious to telepathic messages from psions. Will stop you from being able to use psionics if you have them.
 /obj/effect/decal/cleanable/blood_rune/proc/ignorance_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 
@@ -26,13 +115,12 @@
 	var/cost = src.health_spell_cost(M, 5)
 	M.maxHealth -= cost
 	M.health -= cost
-	B.remove_self(25)
+	src.charge_blood(M, 25)
 	M.sanity.changeLevel(-35, TRUE)
 	return
 
 // Life: Revives a dead animal on top of the rune.
 /obj/effect/decal/cleanable/blood_rune/proc/life_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	for(var/mob/living/carbon/superior/greater in oview(1)) // Must be on the spell circle
 
 		if(!body_checks(M))
@@ -52,7 +140,7 @@
 			var/cost = src.health_spell_cost(M, 25)
 			M.maxHealth -= cost
 			M.health -= cost
-			B.remove_self(18)
+			src.charge_blood(M, 18)
 			M.sanity.changeLevel(-10, TRUE)
 			return
 		return
@@ -75,7 +163,7 @@
 			var/cost = src.health_spell_cost(M, 25)
 			M.maxHealth -= cost
 			M.health -= cost
-			B.remove_self(25)
+			src.charge_blood(M, 25)
 			M.sanity.changeLevel(-10, TRUE)
 			return
 		return
@@ -83,7 +171,6 @@
 
 // Madness: Become weaker, and cause a sanity breakdown upon yourself.
 /obj/effect/decal/cleanable/blood_rune/proc/madness_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 
@@ -91,7 +178,7 @@
 	var/cost = src.health_spell_cost(M, 5)
 	M.maxHealth -= cost
 	M.health -= cost
-	B.remove_self(10)
+	src.charge_blood(M, 10)
 	M.sanity.breakdown(TRUE)
 	M.sanity.changeLevel(30)
 	return
@@ -99,7 +186,6 @@
 // Sight: Removes your Nearsighted and blind disabilities, if you have them
 // Removes nearsightedness (and optionally blindness). Nearsightedness is not required for blood magic but aids efficacy.
 /obj/effect/decal/cleanable/blood_rune/proc/sight_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 
@@ -108,19 +194,18 @@
 	if(M.disabilities&BLIND)
 		M.disabilities &= ~BLIND
 	to_chat(M, "<span class='warning'>Your vision is impaired no more, your heart stresses itself to recover the blood paid for your blinding to the dark arts. The eyes deceive, true perception will be achieved without their hindrance.</span>")
-	B.remove_self(75)
+	src.charge_blood(M, 75)
 	M.sanity.changeLevel(30)
 	return
 
 // Paradox: Literally kill yourself. No really, this removes a lot of blood, causes a sanity breakdown upon the character
 // And on top of it causes an explosion centered on the rune, most likly totally gibbing them.
 /obj/effect/decal/cleanable/blood_rune/proc/paradox_spell(mob/living/carbon/human/M)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	to_chat(M, "<span class='warning'>The air around you grows hot, your heart races as a feeling of dread washes over you. You hear a faint whisper in the back of your head, \"Upside, downside... all cardinal directions, an illusion...\"</span>")
 	var/cost = src.health_spell_cost(M, 25)
 	M.maxHealth -= cost
 	M.health -= cost
-	B.remove_self(50)
+	src.charge_blood(M, 50)
 	M.sanity.breakdown(TRUE)
 	sleep(30)
 	explosion(loc, 3, 5, 7, 5)
@@ -132,13 +217,12 @@
 // The End: Removes your nearsighted disability, but also your knowledge of cult and occult languages
 // Basically wiping yourself clean of everything caused by blood magic, but making you unable to cast spells again
 /obj/effect/decal/cleanable/blood_rune/proc/end_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 
 	to_chat(M, "<span class='warning'>The truth of the universe flashes before your eyes at a sickening speed, eldritch knowledge being forcefully vacuumed out of your psyche. The light! It burns! IT BURNS!!!</span>")
 	M.disabilities &= ~NEARSIGHTED | ~BLIND
-	B.remove_self(75)
+	src.charge_blood(M, 75)
 	M.sanity.breakdown(TRUE)
 	M.sanity.changeLevel(5)
 	for(var/datum/language/L in M.languages)
@@ -155,13 +239,12 @@
 // Flux: Causes additional bluespace entropy upon the world. Truly devilish.
 // Causes more entropy if you know both Cult and Occult language
 /obj/effect/decal/cleanable/blood_rune/proc/flux_spell(mob/living/carbon/human/M)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	var/area/my_area = get_area(src)
 	to_chat(M, "<span class='warning'>Reality itself fluctuates around you as a canvas of impending doom. The truth behind the heat death of the universe draws ever nearer, thugged by your strings...</span>")
 	my_area.bluespace_hazard_threshold -= 1
 	GLOB.bluespace_hazard_threshold -= 1
 	bluespace_entropy(1, get_turf(src), TRUE)
-	B.remove_self(25)
+	src.charge_blood(M, 25)
 	M.sanity.changeLevel(15)
 	playsound(loc, 'sound/effects/cascade.ogg') // Fitting.
 	log_and_message_admins("[M] has used the Flux spell, increasing the world's bluespace entropy")
@@ -179,13 +262,12 @@
 // Negentropy: Increases the threshold at which bluespace related incidents ocurr, and reduces bluespace entropy slightly
 // Those with knowledge of Occult and Cult languages give it an extra bonus
 /obj/effect/decal/cleanable/blood_rune/proc/negentropy_spell(mob/living/carbon/human/M)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	var/area/my_area = get_area(src)
 	to_chat(M, "<span class='info'>The threads of creation itself are spun anew, a feeling of inextricable tranquility permeates your thoughts. For reasons perhaps unbeknownst to you, the death heat of the universe strays further away...</span>")
 	my_area.bluespace_hazard_threshold += 1
 	GLOB.bluespace_hazard_threshold += 1
 	bluespace_entropy(-5, get_turf(src))
-	B.remove_self(30) //Takes more to heal then harm
+	src.charge_blood(M, 30) //Takes more to heal then harm
 	M.sanity.changeLevel(-15, TRUE)
 	for(var/datum/language/L in M.languages)
 		if(L.name == LANGUAGE_CULT)
@@ -200,7 +282,6 @@
 
 // Brew: Grants you the Alchemist perk, and access to all the recipes required by it
 /obj/effect/decal/cleanable/blood_rune/proc/brew_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 
@@ -213,7 +294,7 @@
 	var/cost = src.health_spell_cost(M, 25)
 	M.maxHealth -= cost
 	M.health -= cost
-	B.remove_self(25)
+	src.charge_blood(M, 25)
 	M.stats.addPerk(PERK_ALCHEMY)
 	M.sanity.changeLevel(15)
 	to_chat(M, "<span class='warning'>Your mind expands with knowledge of alchemical components, recipes for crafts lost to time, forbidden transmutations. Your body feels extremely weak...</span>")
@@ -221,7 +302,6 @@
 
 // Bees: NOT THE BEES!! Invokes a gigantic bee per sunflower on a five-tiles radius around the spell circle
 /obj/effect/decal/cleanable/blood_rune/proc/bees_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 
@@ -236,7 +316,7 @@
 		if(G.name == "sunflower") // Apply all costs ONLY if the plant is the correct one!!!
 			to_chat(M, "<span class='info'>Distant voices scream in agony from every direction: NOT THE BEES!</span>")
 			new /mob/living/carbon/superior/vox/wasp(G.loc)
-			B.remove_self(18)
+			src.charge_blood(M, 18)
 			M.sanity.changeLevel(4)
 			qdel(G)
 	return
@@ -244,7 +324,6 @@
 // Sky: / Above:
 // Converts a open omega book (or fully-awakened demonomicon) into a drawing of the sun, a oddity with a perk that exspands the skill cap by 30 points.
 /obj/effect/decal/cleanable/blood_rune/proc/sun_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 
@@ -259,7 +338,7 @@
 			return
 		to_chat(M, "<span class='info'>The pages of [BOOK.name] slowly turn into paint.</span>")
 		new /obj/item/oddity/rare/drawing_of_sun(BOOK.loc)
-		B.remove_self(70) //Base is 540
+		src.charge_blood(M, 70) //Base is 540
 		qdel(BOOK)
 		return
 	for(var/obj/item/book/manual/demonomicon/BOOK in oview(3))
@@ -270,7 +349,7 @@
 			return
 		to_chat(M, "<span class='info'>The pages of [BOOK.name] slowly turn into paint.</span>")
 		new /obj/item/oddity/rare/drawing_of_sun(BOOK.loc)
-		B.remove_self(70)
+		src.charge_blood(M, 70)
 		qdel(BOOK)
 		return
 	return
@@ -278,14 +357,13 @@
 // Pouch: Spawns a pouch with a dimensional-linked shared storage. Every person holding one of these can access the same storage from anywhere.
 // Works only if the pouch is opened, and accessed while being held in-hand
 /obj/effect/decal/cleanable/blood_rune/proc/pouch_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 
 	for(var/obj/item/storage/pill_bottle/dice/frodo in oview(1))
 		if(!body_checks(M)) //inside cause we have a reocuring blood cost inside.
 			return
-		B.remove_self(25)
+		src.charge_blood(M, 25)
 		M.sanity.changeLevel(-50, TRUE) //not always going to break you. But will tank your sanity.
 		to_chat(M, "<span class='warning'>The dice bag gives a loud pop.</span>")
 		new /obj/item/blood_pouch(frodo.loc)
@@ -294,9 +372,8 @@
 
 // Escape: Deletes and kicks you out of the game
 /obj/effect/decal/cleanable/blood_rune/proc/escape_spell(mob/living/carbon/human/M)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	var/obj/item/oddity/common/mirror/doodle/ocm = new /obj/item/oddity/common/mirror/doodle(src.loc)
-	B.remove_self(18) //We still take some blood for this
+	src.charge_blood(M, 18) //We still take some blood for this
 	to_chat(M, "<span class='warning'>[M.real_name] stepped into a fragment of a mirror.</span>")
 	ocm.name = "[M.real_name]'s fragments."
 	ocm.desc = "A thousand doodles of [M.real_name] in blood stare back at you as you examine the trinket."
@@ -350,7 +427,6 @@
 
 // Scribe: Gives you the Scribe perk. This is a requirement for inscribing scrolls with the spells below. Incompatible with Alchemist.
 /obj/effect/decal/cleanable/blood_rune/proc/scribe_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 
@@ -369,7 +445,7 @@
 			return
 		M.stats.addPerk(PERK_SCRIBE)
 		M.sanity.changeLevel(20)
-		B.remove_self(50)
+		src.charge_blood(M, 50)
 		var/cost = src.health_spell_cost(M, 25)
 		M.maxHealth -= cost
 		M.health -= cost
@@ -379,7 +455,6 @@
 
 // Binder: Gives you the Tome Binder perk. Required to create thematic tomes at the rune. Can be taken alongside Alchemist.
 /obj/effect/decal/cleanable/blood_rune/proc/binder_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 
@@ -397,7 +472,7 @@
 			to_chat(M, SPAN_WARNING("You already know how to bind tomes."))
 			return
 		M.stats.addPerk(PERK_TOME_BINDER)
-		B.remove_self(30)
+		src.charge_blood(M, 30)
 		M.sanity.changeLevel(-8, TRUE)
 		to_chat(M, "<span class='info'>The rune imprints the art of binding knowledge into lasting form. You may now create thematic tomes with an opened book or the Demonomicon.</span>")
 		qdel(P)
@@ -408,7 +483,6 @@
 // Awaken: Evolve our Ritual Knife into a greater form.
 // It can be used once more upon the harvester for it to become a blade
 /obj/effect/decal/cleanable/blood_rune/proc/awaken_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 
@@ -421,7 +495,7 @@
 			to_chat(M, "<span class='warning'>Your weapon twists its form, metal bending as if it were flesh with a sickening crunch!</span>")
 			playsound(loc, 'sound/items/biotransform.ogg', 50)
 			new /obj/item/tool/knife/ritual/sickle(knifey.loc)
-			B.remove_self(50)
+			src.charge_blood(M, 50)
 			var/cost = src.health_spell_cost(M, 5)
 			M.maxHealth -= cost
 			M.health -= cost
@@ -431,7 +505,7 @@
 			to_chat(M, "<span class='warning'>Your weapon twists its form, metal bending as if it were flesh with a sickening crunch as is ascends into its final form!</span>")
 			playsound(loc, 'sound/items/biotransform.ogg', 50)
 			new /obj/item/tool/knife/ritual/blade(knifey.loc)
-			B.remove_self(50)
+			src.charge_blood(M, 50)
 			var/cost = src.health_spell_cost(M, 5)
 			M.maxHealth -= cost
 			M.health -= cost
@@ -443,9 +517,58 @@
 /*ALCHEMY SPELLS PROCS START*/
 /****************************/
 
+// Condense.: Consume a crystal shard on the rune to create a soulstone. Requires 5 candles, 40 blood, both Cult and Occult, and a chosen path (Scribe, Binder, or Alchemist).
+/obj/effect/decal/cleanable/blood_rune/proc/condense_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
+	if(!able_to_cast)
+		return
+	if(!has_magic_path(M))
+		to_chat(M, SPAN_WARNING("You must have chosen a path—Scribe, Binder, or Alchemist—to condense a soulstone. Learn one at a rune first."))
+		return
+	var/has_cult = FALSE
+	var/has_occult = FALSE
+	for(var/datum/language/L in M.languages)
+		if(L.name == LANGUAGE_CULT)
+			has_cult = TRUE
+		if(L.name == LANGUAGE_OCCULT)
+			has_occult = TRUE
+	if(!has_cult || !has_occult)
+		to_chat(M, SPAN_WARNING("Condensing a soulstone demands mastery of both the Cult and the Occult tongue. Learn Babel. and Voice. first."))
+		return
+	for(var/obj/item/material/shard/S in oview(1))
+		if(!body_checks(M))
+			return
+		src.charge_blood(M, 40)
+		M.sanity.changeLevel(-8, TRUE)
+		to_chat(M, SPAN_NOTICE("The shard drinks blood and candle-light; it darkens and becomes a soulstone."))
+		new /obj/item/soulstone(S.loc)
+		qdel(S)
+		return
+	to_chat(M, SPAN_WARNING("Place a crystal or plasma shard on the rune to condense it into a soulstone."))
+
+// Form.: Consume sandstone and blood on the rune to create a soulstone. Requires 5 candles, 35 blood, sandstone on the rune, and a chosen path (Scribe, Binder, or Alchemist).
+/obj/effect/decal/cleanable/blood_rune/proc/form_soulstone_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
+	var/datum/reagent/organic/blood/_B = M.get_blood()
+	if(!able_to_cast)
+		return
+	if(!has_magic_path(M))
+		to_chat(M, SPAN_WARNING("You must have chosen a path—Scribe, Binder, or Alchemist—to form a soulstone from blood and sand. Learn one at a rune first."))
+		return
+	for(var/obj/item/stack/material/sandstone/S in oview(1))
+		if(!body_checks(M))
+			return
+		if(!_B || _B.volume < 35)
+			to_chat(M, SPAN_WARNING("You need at least 35 blood to form a soulstone from sand."))
+			return
+		S.use(1)
+		src.charge_blood(M, 35)
+		M.sanity.changeLevel(-8, TRUE)
+		to_chat(M, SPAN_NOTICE("Blood and candle-light bind the sand; the rune yields a dark crystalline soulstone."))
+		new /obj/item/soulstone(S.loc)
+		return
+	to_chat(M, SPAN_WARNING("Place sandstone on the rune and invoke Form. with at least 35 blood to crystallize a soulstone."))
+
 // Recipe: Uses a piece of paper on the rune to invoke writings of alchemical reactions written on it.
 /obj/effect/decal/cleanable/blood_rune/proc/recipe_spell(mob/living/carbon/human/M, alchemist = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	for(var/obj/item/paper/P in oview(1)) // Must be on the spell circle
 
 		if(!body_checks(M))
@@ -454,7 +577,7 @@
 		if(alchemist)
 			to_chat(M, "<span class='info'>The echoing sound of scribbling fills the air.</span>")
 			playsound(loc, 'sound/bureaucracy/pen1.ogg')
-			B.remove_self(10)
+			src.charge_blood(M, 10)
 			M.sanity.changeLevel(-2, TRUE)
 			var/obj/item/paper/alchemy_recipes/S = new /obj/item/paper/alchemy_recipes
 			S.loc = P.loc
@@ -467,7 +590,6 @@
 // Tome: Binder-only. Consumes a paper on the rune to create a thematic tome (path: /obj/item/book/tome/[effect]).
 // Only an opened book (Omega or Unholy) or the Demonomicon may be used to create tomes.
 /obj/effect/decal/cleanable/blood_rune/proc/tome_spell(mob/living/carbon/human/M, tome_path, able_to_cast = FALSE, obj/item/book_or_oddity = null)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 	var/can_bind = M.stats.getPerk(PERK_TOME_BINDER) || istype(book_or_oddity, /obj/item/book/manual/demonomicon)
@@ -482,7 +604,7 @@
 			return
 		to_chat(M, "<span class='info'>The rune drinks from the paper; script flows from the page into something heavier.</span>")
 		playsound(loc, 'sound/bureaucracy/pen1.ogg', 50)
-		B.remove_self(20)
+		src.charge_blood(M, 20)
 		M.sanity.changeLevel(-5, TRUE)
 		var/obj/item/book/tome/T = new tome_path(P.loc)
 		T.loc = P.loc
@@ -492,13 +614,12 @@
 
 // Satchel: Alchemist only - turn a blood pouch into an alchemy satchel
 /obj/effect/decal/cleanable/blood_rune/proc/satchel_spell(mob/living/carbon/human/M, able_to_cast = FALSE)
-	var/datum/reagent/organic/blood/B = M.get_blood()
 	if(!able_to_cast)
 		return
 	for(var/obj/item/blood_pouch/pouch in oview(1))
 		if(!body_checks(M))
 			return
-		B.remove_self(25)
+		src.charge_blood(M, 25)
 		M.sanity.changeLevel(-30, TRUE)
 		to_chat(M, "<span class='warning'>The pouch warps and stiffens into a leather satchel.</span>")
 		new /obj/item/storage/pouch/alchemy(pouch.loc)

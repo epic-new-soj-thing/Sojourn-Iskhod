@@ -17,11 +17,57 @@
 	var/is_rune = FALSE
 	var/drawn_in_blood = FALSE  // Only runes drawn in blood with a ritual knife can be used for casting.
 
-/// Returns the effective max health/health cost for a spell; quartered if the caster has the Demonomicon perk.
+/// Returns blood cost when a ritual invocation fails. Reduced if caster has an energized purified soulstone (ritualist's safeguard).
+/obj/effect/decal/cleanable/blood_rune/proc/get_ritual_failure_blood_cost(mob/living/carbon/human/M)
+	if(!M)
+		return FAILURE_BLOOD_COST
+	for(var/obj/item/soulstone/purified/S in M.get_contents())
+		if(S.energized)
+			return 3  // purified: failed rituals cost only 3 blood instead of 12
+	return FAILURE_BLOOD_COST
+
+/// Returns the ritual cost multiplier from soulstones (caster inventory or on rune). Best soulstone wins: base 0.85, purified 0.72, mystic 0.60.
+/obj/effect/decal/cleanable/blood_rune/proc/get_soulstone_ritual_discount(mob/living/carbon/human/M)
+	if(!M)
+		return 1.0
+	var/best = 1.0
+	for(var/obj/item/soulstone/S in M.get_contents())
+		if(!S.energized)
+			continue
+		if(istype(S, /obj/item/soulstone/mystic))
+			best = min(best, 0.60)
+		else if(istype(S, /obj/item/soulstone/purified))
+			best = min(best, 0.72)
+		else if(istype(S, /obj/item/soulstone))
+			best = min(best, 0.85)
+	for(var/obj/item/soulstone/S in oview(1))
+		if(!S.energized)
+			continue
+		if(istype(S, /obj/item/soulstone/mystic))
+			best = min(best, 0.60)
+		else if(istype(S, /obj/item/soulstone/purified))
+			best = min(best, 0.72)
+		else if(istype(S, /obj/item/soulstone))
+			best = min(best, 0.85)
+	return best
+
+/// Charge blood for a ritual; reduced by soulstone discount. Use instead of B.remove_self(amount) in spell procs.
+/obj/effect/decal/cleanable/blood_rune/proc/charge_blood(mob/living/carbon/human/M, amount)
+	if(!M)
+		return
+	var/datum/reagent/organic/blood/B = M.get_blood()
+	if(!B)
+		return
+	var/actual = max(1, round(amount * get_soulstone_ritual_discount(M)))
+	B.remove_self(actual)
+
+/// Returns the effective max health/health cost for a spell; quartered if Demonomicon perk, reduced by soulstones.
 /obj/effect/decal/cleanable/blood_rune/proc/health_spell_cost(mob/living/carbon/human/M, nominal_cost)
+	var/cost = nominal_cost
 	if(M && M.stats && M.stats.getPerk(PERK_DEMONOMICON))
-		return max(1, round(nominal_cost / 4))
-	return nominal_cost
+		cost = max(1, round(cost / 4))
+	cost = max(1, round(cost * get_soulstone_ritual_discount(M)))
+	return cost
 
 /obj/effect/decal/cleanable/blood_rune/Destroy()
 	..()
@@ -145,6 +191,28 @@
 	for(var/datum/language/L in M.languages)
 		if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
 			able_to_cast = TRUE
+	// Energize soulstone: use soulstone on rune with at least 1 candle, 15 blood
+	if(istype(I, /obj/item/soulstone))
+		var/obj/item/soulstone/S = I
+		if(!S.energized && is_rune && drawn_in_blood && body_checks(M))
+			var/candle_amount = 0
+			for(var/obj/item/flame/candle/mage_candle in oview(3))
+				candle_amount += 1
+			if(candle_amount >= 1)
+				var/datum/reagent/organic/blood/B = M.get_blood()
+				if(B && B.volume >= 15)
+					B.remove_self(15)
+					M.sanity.changeLevel(-3, TRUE)
+					S.energized = TRUE
+					S.update_icon()
+					to_chat(M, SPAN_NOTICE("You hold the soulstone to the rune; blood and candle-light flow into it. It grows warm and begins to glow."))
+				else
+					to_chat(M, SPAN_WARNING("You need at least 15 blood to energize the soulstone."))
+			else
+				to_chat(M, SPAN_WARNING("At least one candle must be within three tiles of the rune to energize a soulstone."))
+		else if(S.energized)
+			to_chat(M, SPAN_NOTICE("The soulstone is already energized."))
+		return
 	if(istype(I, /obj/item/oddity/common/book_unholy) || istype(I, /obj/item/oddity/common/book_omega) || istype(I, /obj/item/book/manual/demonomicon))
 		if(M.get_core_implant(/obj/item/implant/core_implant/cruciform))
 			rejected_playmate_faithful(M)
@@ -182,7 +250,7 @@
 						if(nearsighted_ritual_fail(M))
 							var/datum/reagent/organic/blood/B_fail = M.get_blood()
 							if(B_fail)
-								B_fail.remove_self(FAILURE_BLOOD_COST)
+								B_fail.remove_self(get_ritual_failure_blood_cost(M))
 							to_chat(M, SPAN_WARNING("Your focus wavers; the ritual fails."))
 							continue
 						spell_index(M, spell.message, spell_type, I, able_to_cast, candle_amount, alchemist)
@@ -195,7 +263,7 @@
 							if(!prob(pen_success))
 								var/datum/reagent/organic/blood/B_fail = M.get_blood()
 								if(B_fail)
-									B_fail.remove_self(FAILURE_BLOOD_COST)
+									B_fail.remove_self(get_ritual_failure_blood_cost(M))
 								to_chat(M, SPAN_WARNING("The rune flickers; the ink on the page lacks the binding. The ritual fails."))
 								continue
 						var/spell_type = use_demonomicon ? get_demonomicon_spell_type(spell.info) : 3
@@ -203,7 +271,7 @@
 							if(nearsighted_ritual_fail(M))
 								var/datum/reagent/organic/blood/B_fail = M.get_blood()
 								if(B_fail)
-									B_fail.remove_self(FAILURE_BLOOD_COST)
+									B_fail.remove_self(get_ritual_failure_blood_cost(M))
 								to_chat(M, SPAN_WARNING("Your focus wavers; the ritual fails."))
 								continue
 							spell_index(M, spell.info, spell_type, I, able_to_cast, candle_amount, alchemist)
@@ -231,7 +299,7 @@
 					if(nearsighted_ritual_fail(M))
 						var/datum/reagent/organic/blood/B_fail = M.get_blood()
 						if(B_fail)
-							B_fail.remove_self(FAILURE_BLOOD_COST)
+							B_fail.remove_self(get_ritual_failure_blood_cost(M))
 						to_chat(M, SPAN_WARNING("Your focus wavers; the ritual fails."))
 						continue
 					spell_index(M, spell.message, 6, I, able_to_cast, candle_amount)
@@ -244,13 +312,13 @@
 							if(!prob(pen_success))
 								var/datum/reagent/organic/blood/B_fail = M.get_blood()
 								if(B_fail)
-									B_fail.remove_self(FAILURE_BLOOD_COST)
+									B_fail.remove_self(get_ritual_failure_blood_cost(M))
 								to_chat(M, SPAN_WARNING("The rune flickers; the ink on the page lacks the binding. The ritual fails."))
 								continue
 						if(nearsighted_ritual_fail(M))
 							var/datum/reagent/organic/blood/B_fail = M.get_blood()
 							if(B_fail)
-								B_fail.remove_self(FAILURE_BLOOD_COST)
+								B_fail.remove_self(get_ritual_failure_blood_cost(M))
 							to_chat(M, SPAN_WARNING("Your focus wavers; the ritual fails."))
 							continue
 						spell_index(M, spell.info, 6, I, able_to_cast, candle_amount)
@@ -290,7 +358,7 @@
 				if(nearsighted_ritual_fail(M))
 					var/datum/reagent/organic/blood/B_fail = M.get_blood()
 					if(B_fail)
-						B_fail.remove_self(FAILURE_BLOOD_COST)
+						B_fail.remove_self(get_ritual_failure_blood_cost(M))
 					to_chat(M, SPAN_WARNING("Your focus wavers; the ritual fails."))
 					continue
 				spell_index(M, spell.message, 2, I, candle_amount, alchemist)
@@ -303,13 +371,13 @@
 						if(!prob(pen_success))
 							var/datum/reagent/organic/blood/B_fail = M.get_blood()
 							if(B_fail)
-								B_fail.remove_self(FAILURE_BLOOD_COST)
+								B_fail.remove_self(get_ritual_failure_blood_cost(M))
 							to_chat(M, SPAN_WARNING("The rune flickers; the ink on the page lacks the binding. The ritual fails."))
 							continue
 					if(nearsighted_ritual_fail(M))
 						var/datum/reagent/organic/blood/B_fail = M.get_blood()
 						if(B_fail)
-							B_fail.remove_self(FAILURE_BLOOD_COST)
+							B_fail.remove_self(get_ritual_failure_blood_cost(M))
 						to_chat(M, SPAN_WARNING("Your focus wavers; the ritual fails."))
 						continue
 					spell_index(M, spell.info, 2, I, candle_amount, alchemist)
@@ -323,11 +391,15 @@
 		return 6
 	if(findtext(spell_text, "Fountain.") || findtext(spell_text, "Ascension.") || findtext(spell_text, "Veil.") || findtext(spell_text, "Caprice.") || findtext(spell_text, "Mightier."))
 		return 6
+	if(findtext(spell_text, "Purify.") || findtext(spell_text, "Mystic."))
+		return 6
+	if(findtext(spell_text, "Rift."))
+		return 6
 	if(findtext(spell_text, "Babel.") || findtext(spell_text, "Ignorance.") || findtext(spell_text, "Flux.") || findtext(spell_text, "Negentropy.") || findtext(spell_text, "Life."))
 		return 3
 	if(findtext(spell_text, "Madness.") || findtext(spell_text, "Insanity.") || findtext(spell_text, "Sight.") || findtext(spell_text, "Paradox."))
 		return 3
-	if(findtext(spell_text, "The End.") || findtext(spell_text, "The Beginning.") || findtext(spell_text, "Brew.") || findtext(spell_text, "Recipe.") || findtext(spell_text, "Bees.") || findtext(spell_text, "Bees!"))
+	if(findtext(spell_text, "The End.") || findtext(spell_text, "The Beginning.") || findtext(spell_text, "Brew.") || findtext(spell_text, "Recipe.") || findtext(spell_text, "Bees.") || findtext(spell_text, "Bees!") || findtext(spell_text, "Condense.") || findtext(spell_text, "Form."))
 		return 3
 	if(findtext(spell_text, "Sky.") || findtext(spell_text, "Above.") || findtext(spell_text, "Scribe.") || findtext(spell_text, "Binder.") || findtext(spell_text, "Pouch.") || findtext(spell_text, "Escape.") || findtext(spell_text, "Awaken.") || findtext(spell_text, "Satchel."))
 		return 3
@@ -385,6 +457,10 @@
 			brew_spell(M, able_to_cast)
 		if(findtext(spell, "Recipe.") && candle_amount >= 1)
 			recipe_spell(M, alchemist)
+		if(findtext(spell, "Condense.") && candle_amount >= 5)
+			condense_spell(M, able_to_cast)
+		if(findtext(spell, "Form.") && candle_amount >= 5)
+			form_soulstone_spell(M, able_to_cast)
 		if(findtext(spell, "Bees.") || findtext(spell, "Bees!") && candle_amount >= 4)
 			bees_spell(M, able_to_cast)
 		if(findtext(spell, "Sky.") || findtext(spell, "Above.") && candle_amount >= 1)
@@ -453,6 +529,12 @@
 			caprice_spell(M, able_to_cast)
 		if(findtext(spell, "Mightier.") && candle_amount >= 3)
 			mightier_spell(M, able_to_cast)
+		if(findtext(spell, "Purify.") && candle_amount >= 6)
+			purify_spell(M, able_to_cast)
+		if(findtext(spell, "Mystic.") && candle_amount >= 8)
+			mystic_spell(M, able_to_cast)
+		if(findtext(spell, "Rift.") && candle_amount >= 5)
+			rift_spell(M, able_to_cast)
 		return
 	return
 

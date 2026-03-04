@@ -104,56 +104,6 @@
 	armor_divisor = ARMOR_PEN_EXTREME //Should be countered be embedding
 	embed_mult = 1.5 //This is designed for embedding
 
-/obj/item/tool/knife/ritual
-	name = "ritual knife"
-	desc = "The unearthly energies that once powered this blade are now dormant. It can be used on the floor to draw runes in your blood."
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "render"
-	force = WEAPON_FORCE_PAINFUL
-	armor_divisor = ARMOR_PEN_MODERATE
-	max_upgrades = 3
-	backstab_damage = 14
-	price_tag = 7
-
-/obj/item/tool/knife/ritual/afterattack(atom/target, mob/user, proximity)
-	if(!proximity || !istype(target, /turf/simulated/floor))
-		return ..()
-	if(!ishuman(user))
-		return ..()
-	var/mob/living/carbon/human/H = user
-	if(H.get_core_implant(/obj/item/implant/core_implant/cruciform))
-		to_chat(H, SPAN_WARNING("Your faith prevents you from drawing blood runes."))
-		return
-	var/datum/reagent/organic/blood/B = H.get_blood()
-	if(!B || H.get_blood_volume() < 25)
-		to_chat(H, SPAN_WARNING("You need more blood to draw a rune."))
-		return
-	to_chat(H, SPAN_NOTICE("You slice your palm and trace a rune on the floor in blood."))
-	if(do_after(H, 50, target))
-		B = H.get_blood()
-		if(!B || H.get_blood_volume() < 25)
-			to_chat(H, SPAN_WARNING("You don't have enough blood left."))
-			return
-		B.remove_self(25)
-		new /obj/effect/decal/cleanable/blood_rune(target, "#A10808", "#400000", "rune", TRUE)
-		to_chat(H, SPAN_NOTICE("You finish drawing the blood rune."))
-	return
-
-/obj/item/tool/knife/ritual/sickle
-	name = "bloodletter"
-	desc = "A ritual knife, its latent unearthly energies partly awoken by forces unknown. \
-			The curved blade cuts deep into flesh, drawing blood for rituals with ease."
-	icon_state = "render_awakened"
-	hitsound = 'sound/weapons/renderslash.ogg'
-	force = WEAPON_FORCE_DANGEROUS
-	armor_divisor = ARMOR_PEN_DEEP
-	max_upgrades = 2
-	hitsound = 'sound/weapons/renderslash.ogg'
-	backstab_damage = 8 // Not so much for stabbing as it is for cutting.
-	tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 10)
-	attack_verb = list("slashed", "sliced", "ripped", "diced", "cut")
-	embed_mult = 1.5 // Careful not to lose it!
-
 /obj/item/tool/knife/butch
 	name = "butcher's cleaver"
 	icon_state = "butch"

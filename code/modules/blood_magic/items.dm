@@ -131,8 +131,7 @@
 		user.bloody_hands += 5
 		user.hand_blood_color = "#A10808"
 		user.update_inv_gloves(1)
-		add_verb(user, /mob/living/carbon/human/proc/bloody_doodle)
-		add_verb(user, /mob/living/carbon/human/proc/bloody_write_paper)
+		// Writing in blood requires cutting your palm; dipping in the basin does not grant the write verbs.
 
 /obj/structure/sink/basin/blood/attackby(obj/item/I, mob/user)
 	if(I.has_quality(QUALITY_BOLT_TURNING))

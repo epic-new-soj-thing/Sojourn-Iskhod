@@ -367,24 +367,6 @@
 		slot_back_str = "renderslayer"
 		)
 
-/obj/item/tool/knife/ritual/blade
-	name = "awakened blade"
-	desc = "The last stage of ascension of a ritual knife, its latent powers fully awoken by blood magic. \
-			Suspiciously glowing runes are drawn on its surface that glow at random intervals."
-	icon_state = "crayon_blade"
-	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 2, MATERIAL_DIAMOND = 1)
-	force = WEAPON_FORCE_ROBUST + 4 // 30 damage
-	armor_divisor = ARMOR_PEN_MASSIVE // More balanced than psi weapons with psi mania perk.
-	w_class = ITEM_SIZE_BULKY
-	max_upgrades = 2
-	slot_flags = SLOT_BELT|SLOT_BACK
-	hitsound = 'sound/weapons/renderslash.ogg' // Snowflake
-	item_icons = list(
-		slot_back_str = 'icons/inventory/back/mob.dmi')
-	item_state_slots = list(
-		slot_back_str = "crayon_blade"
-		)
-
 /obj/item/tool/sword/machete
 	name = "machete"
 	desc = "An explorer's best friend and trust back up plan. Or primary plan for those who like to get in there personally."

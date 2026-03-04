@@ -328,7 +328,16 @@
 			new_item.force = 10
 			item_type = new_item.name
 			new_item.price_tag = rand(550,1100)
-		if(21 to 22)
+		if(21)
+			// ARCHAEO_SOULSTONE - soulstone for blood magic
+			new_item = new /obj/item/soulstone(src.loc)
+			item_type = "soulstone"
+			additional_desc = "A dark crystalline shard that seems to drink the light; it resonates faintly with blood and ritual."
+			apply_prefix = 0
+			apply_image_decorations = 0
+			apply_material_decorations = 0
+			new_item.price_tag = rand(300, 500)
+		if(22)
 			if(prob(50))
 				new_item = new /obj/item/material/shard(src.loc)
 			else

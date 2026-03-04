@@ -920,8 +920,7 @@ var/list/rank_prefix = list(\
 		return 0
 	hand_blood_color = blood_color
 	src.update_inv_gloves()	//handles bloody hands over-lays and updating
-	add_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
-	add_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
+	// Writing in blood requires cutting your palm; getting hands wet with blood does not grant the write verbs.
 	return 1 //we applied blood to the item
 
 /mob/living/carbon/human/proc/get_full_print()
@@ -939,8 +938,11 @@ var/list/rank_prefix = list(\
 			update_inv_gloves()
 			. = TRUE
 	else
-		if(bloody_hands)
+		if(bloody_hands || blood_writes_remaining)
 			bloody_hands = 0
+			blood_writes_remaining = 0
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
 			update_inv_gloves()
 			. = TRUE
 
@@ -966,8 +968,11 @@ var/list/rank_prefix = list(\
 		if(gloves.clean_blood())
 			update_inv_gloves()
 	else
-		if(bloody_hands)
+		if(bloody_hands || blood_writes_remaining)
 			bloody_hands = 0
+			blood_writes_remaining = 0
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
 			update_inv_gloves()
 
 	gunshot_residue = null
@@ -1353,7 +1358,7 @@ var/list/rank_prefix = list(\
 	if (usr != src)
 		return 0 //something is terribly wrong
 
-	if (!bloody_hands)
+	if (!blood_writes_remaining)
 		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
 		remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
 		return
@@ -1381,24 +1386,26 @@ var/list/rank_prefix = list(\
 		to_chat(src, SPAN_WARNING("There is no space to write on!"))
 		return
 
-	var/max_length = bloody_hands * 30 //tweeter style
-
-	var/message = sanitize(input("Write a message. It cannot be longer than [max_length] characters.","Blood writing", ""))
+	// One write per cut, max 30 characters per write; 5 writes per palm cut.
+	var/max_length = 30
+	var/message = sanitize(input("Write a message. It cannot be longer than [max_length] characters. ([blood_writes_remaining] writes left this cut).","Blood writing", ""))
 
 	if (message)
-		var/used_blood_amount = round(length(message) / 30, 1)
-		bloody_hands = max(0, bloody_hands - used_blood_amount) //use up some blood
-
 		if (length(message) > max_length)
-			message += "-"
-			to_chat(src, SPAN_WARNING("You ran out of blood to write with!"))
+			message = copytext(message, 1, max_length + 1)
+			to_chat(src, SPAN_WARNING("You only have enough blood for [max_length] characters this write."))
+		blood_writes_remaining--
+		bloody_hands = max(0, bloody_hands - 1)
+		update_inv_gloves(1)
 
 		var/obj/effect/decal/cleanable/blood/writing/W = new(T)
 		W.basecolor = (hand_blood_color) ? hand_blood_color : "#A10808"
 		W.update_icon()
 		W.message = message
 		W.add_fingerprint(src)
-		if (!bloody_hands)
+		if (!blood_writes_remaining)
+			bloody_hands = 0
+			update_inv_gloves(1)
 			remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
 			remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
 
@@ -1411,7 +1418,7 @@ var/list/rank_prefix = list(\
 		return
 	if (usr != src)
 		return
-	if (!bloody_hands)
+	if (!blood_writes_remaining)
 		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
 		remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
 		return
@@ -1429,19 +1436,25 @@ var/list/rank_prefix = list(\
 	if (P.crumpled)
 		to_chat(src, SPAN_WARNING("\The [P] is too crumpled to write on."))
 		return
-	var/max_length = bloody_hands * 30
-	var/message = sanitize(input(src, "Inscribe a message (e.g. a spell name like Babel. or Mist.). Max [max_length] characters.", "Write in blood on paper", "") as text, max_length)
+	// One write per cut, max 30 characters per write; 5 writes per palm cut.
+	var/max_length = 30
+	var/message = sanitize(input(src, "Inscribe a message (e.g. a spell name like Babel. or Mist.). Max [max_length] characters. ([blood_writes_remaining] writes left this cut).", "Write in blood on paper", "") as text, max_length)
 	if (!message)
 		return
-	var/used_blood_amount = max(1, round(length(message) / 30, 1))
-	bloody_hands = max(0, bloody_hands - used_blood_amount)
+	if (length(message) > max_length)
+		message = copytext(message, 1, max_length + 1)
+	blood_writes_remaining--
+	bloody_hands = max(0, bloody_hands - 1)
+	update_inv_gloves(1)
 	P.blood_pen = TRUE
 	var/blood_html = "<font color=\"[hand_blood_color ? hand_blood_color : "#A10808"]\">[html_encode(message)]</font>"
 	P.info = (P.info ? P.info + "<BR>" : "") + blood_html
 	P.updateinfolinks()
 	P.update_icon()
 	to_chat(src, SPAN_NOTICE("You inscribe [message] on the paper in blood."))
-	if (!bloody_hands)
+	if (!blood_writes_remaining)
+		bloody_hands = 0
+		update_inv_gloves(1)
 		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
 		remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
 
