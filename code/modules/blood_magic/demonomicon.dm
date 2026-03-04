@@ -39,7 +39,7 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 
 				<h1>On the Art of Blood Magic</h1><blockquote>This tome describes the binding of will to blood, and the use of runes and ritual to channel forces that lie outside common understanding.</blockquote>
 
-				<div class="toc"><b>Contents</b> &mdash; I. Prerequisites &amp; Prohibitions &bull; II. The Blood Rune &bull; III. Inscribing the Working &bull; IV. Candles &amp; Invocation &bull; V. The Tongues &bull; VI. Book Spells &bull; VII. Knife Spells &bull; VIII. Scrolls &amp; Traps (incl. scroll spell table) &bull; IX. The Blood Basin &bull; X. Alchemy &bull; XI. Tomes &amp; Soulstones (incl. sanity, cost of reading, purification) &bull; XII. On Rifts &bull; XIII. On This Tome</div>
+				<div class="toc"><b>Contents</b> &mdash; I. Prerequisites &amp; Prohibitions &bull; II. The Blood Rune &bull; III. Inscribing the Working &bull; IV. Candles &amp; Invocation &bull; V. The Tongues &bull; VI. Book Spells &bull; VII. Knife Spells &bull; VIII. Scrolls &amp; Traps (incl. scroll spell table) &bull; IX. The Blood Basin &bull; X. Alchemy &bull; XI. Tomes (incl. sanity, cost of reading) &bull; XII. Soulstones (incl. purification) &bull; XIII. On Rifts &bull; XIV. On This Tome</div>
 
 				<h2>I. Prerequisites &amp; Prohibitions</h2>
 				<p>Blood magic is closed to the faithful: those who bear the cruciform cannot draw runes in blood nor channel the rituals described herein. Synthetics and slimes are likewise unable to perform these arts. The practitioner must be of flesh, with blood in their veins: no less than fifty measures of blood remain in the body, and the constitution must not be broken (the tome speaks of a threshold of thirty in strength of form). Nearsightedness is not required, but some texts suggest it may sharpen focus: those who are <b>not</b> nearsighted face an additional one-in-ten chance that the ritual fails when invoked (the focus wavers and the working does not take). Whenever a ritual fails&#8212;whether from weak binding or lost focus&#8212;the caster still pays a cost in blood (twelve measures).</p>
@@ -235,11 +235,11 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 				</tbody></table>
 				<h3>Sanity and the cost of reading</h3>
 				<p>Every time you <b>read</b> a thematic tome (the Cinder Codex, Ember&rsquo;s Veil, the Oculus Obscura, and the rest), the working exacts a toll upon the mind: your <b>sanity</b> is drained (six when above half, two when below). The binding in those books is not inert; it answers the reader at a cost. So long as your sanity remains above <b>half</b> of its fullness, that cost is paid in sanity alone. Once your sanity has fallen <b>below half</b>, each reading also <b>draws blood</b> (twelve measures)&#8212;the tome begins to take from the body when the mind can no longer bear the full weight. Practitioners who read recklessly may find themselves both broken in spirit and drained of blood.</p>
-				<p>Losing too much sanity is dangerous. A mind worn thin is more vulnerable to shock, to breakdown, and to the influence of the unnatural. Rest and stability can restore sanity, but the art of blood magic&#8212;and the use of the tomes it produces&#8212;steadily erodes it. Weigh each reading against your reserves. This Demonomicon itself obeys a harsher law: see <b>Section XII. On This Tome</b> for the price of using it.</p>
+				<p>Losing too much sanity is dangerous. A mind worn thin is more vulnerable to shock, to breakdown, and to the influence of the unnatural. Rest and stability can restore sanity, but the art of blood magic&#8212;and the use of the tomes it produces&#8212;steadily erodes it. Weigh each reading against your reserves. This Demonomicon itself obeys a harsher law: see <b>Section XIV. On This Tome</b> for the price of using it.</p>
 				<p><b>Flow summary:</b> Binder perk (once) &rarr; blood rune + 3 candles + 20 blood + paper inscribed with tome name on rune &rarr; use <b>opened</b> book or Demonomicon on rune &rarr; paper consumed, tome created.</p>
-				<h3>Soulstones</h3>
+				<h2>XII. Soulstones</h2>
 				<p>Soulstones are dark crystalline shards that resonate with blood and ritual. Carried in a slot, the base stone steadies the mind slightly even when dormant. To <b>energize</b> a stone: use it on the blood rune with at least one candle and 15 blood; the stone takes on a brighter aspect and thereafter eases the cost of rune rituals for the bearer (or when placed on the rune). Energizing is permanent until the stone is lost or destroyed. Only a dormant stone may be energized.</p>
-				<h4>Obtaining a base soulstone</h4>
+				<h3>Obtaining a base soulstone</h3>
 				<p>Ritual creation requires a <b>path</b> (Scribe, Binder, or Alchemist). Xenoarchaeology has no such requirement.</p>
 				<table>
 				<thead><tr><th>Method</th><th>Requirements</th><th class="candles">Candles</th><th class="candles">Blood</th><th>Result</th></tr></thead>
@@ -248,13 +248,13 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 				<tr><td class="spell">Condense.</td><td>Path; both Cult and Occult. Crystal or plasma shard on rune. Inscribe <i>Condense.</i> on paper (Cult), paper within 3 tiles. Invoke with book or this tome.</td><td class="candles">5</td><td class="candles">40</td><td>Shard consumed; soulstone appears.</td></tr>
 				<tr><td class="spell">Form.</td><td>Path. Sandstone on rune. Inscribe <i>Form.</i> on paper (Cult), paper within 3 tiles. Invoke with book or this tome.</td><td class="candles">5</td><td class="candles">35</td><td>One sandstone + blood consumed; soulstone appears.</td></tr>
 				</tbody></table>
-				<h4>How to purify and ascend soulstones</h4>
+				<h3>How to purify and ascend soulstones</h3>
 				<p>Upgrading consumes the stone on the rune and produces the next tier in its place. Inscribe the spell name on paper (Cult or Occult for Purify. and Mystic.), place the paper within three tiles of the rune, then invoke with the <b>ritual knife</b> or this tome.</p>
 				<ol>
 				<li><b>Base &rarr; Purified:</b> Place a <b>base soulstone</b> on the blood rune. Inscribe <i>Purify.</i> on paper, place the paper within three tiles. Place at least <b>6 candles</b> within three tiles. Use the ritual knife or this tome on the rune to invoke. Cost: 55 blood. The soulstone is consumed and replaced by a purified soulstone.</li>
 				<li><b>Purified &rarr; Mystic:</b> Place a <b>purified soulstone</b> on the blood rune. Inscribe <i>Mystic.</i> on paper, place the paper within three tiles. Place at least <b>8 candles</b> within three tiles. Use the ritual knife or this tome on the rune to invoke. Cost: 75 blood. The purified soulstone is consumed and replaced by a mystic soulstone.</li>
 				</ol>
-				<h4>Purification and ascent chart</h4>
+				<h3>Purification and ascent chart</h3>
 				<p>One stone on the rune per invocation. Inscribe on paper <i>exactly</i> the spell name (Cult or Occult), place paper within three tiles, then invoke with knife or this tome.</p>
 				<table>
 				<thead><tr><th>Inscribe on paper</th><th>Place on rune</th><th class="candles">Candles</th><th class="candles">Blood</th><th>Result</th></tr></thead>
@@ -262,7 +262,7 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 				<tr><td class="spell">Purify.</td><td>Soulstone (base)</td><td class="candles">6</td><td class="candles">55</td><td>Purified soulstone.</td></tr>
 				<tr><td class="spell">Mystic.</td><td>Purified soulstone</td><td class="candles">8</td><td class="candles">75</td><td>Mystic soulstone.</td></tr>
 				</tbody></table>
-				<h4>Effect by tier (when energized)</h4>
+				<h3>Effect by tier (when energized)</h3>
 				<table>
 				<thead><tr><th>Tier</th><th>When carried</th><th>When energized (inventory or on rune)</th></tr></thead>
 				<tbody>
@@ -270,9 +270,9 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 				<tr><td class="spell">Purified</td><td>Steadies the mind; failed invocations cost only a few measures of blood instead of twelve.</td><td>Ritual cost reduced further (about 28% less).</td></tr>
 				<tr><td class="spell">Mystic</td><td>Stifles psionics and cruciform rites in others within two tiles; bearer is not affected.</td><td>Strongest ritual cost reduction (about 40% less).</td></tr>
 				</tbody></table>
-				<h2>XII. On Rifts</h2>
+				<h2>XIII. On Rifts</h2>
 				<p>The spell <b>Rift.</b> (knife or this tome, 5 candles, 40 blood) tears open a temporary passage at the rune to <b>deep maintenance</b>. The rift closes after a short time; those who step through are carried into the depths. Use it to reach places otherwise sealed, or to leave a door that soon seals behind you.</p>
-				<h2>XIII. On This Tome</h2>
+				<h2>XIV. On This Tome</h2>
 				<p>This Demonomicon is not a passive manual. <b>Using</b> it&mdash;reading it or invoking a rune with it&mdash;drains the bearer&rsquo;s sanity; the script weighs on the mind. When sanity falls <b>below a quarter</b> of its fullness, each such use also wounds the user (eight when reading, ten when invoking at a rune), weakens their constitution (reducing maximum vigour by three, to no less than thirty), and draws blood (six measures when reading, twelve when invoking), as the tome&rsquo;s grip tightens.</p>
 				<p>Like certain anomalous curios, this tome may be used as an <b>inspiration</b> when insight is fulfilled: after resting and completing the prompt, choose &ldquo;Focus on an oddity&rdquo; and select the Demonomicon. Doing so grants stat growth (Cognition, Vigilance) and a single, lasting benefit&mdash;the <b>Bound to the Tome</b> perk&mdash;at a <b>grave expense</b>: the bond sharpens the mind but leaves it more vulnerable to shock and the world, and sanity recovers more slowly. Moreover, <b>each time</b> you focus upon this tome, it exacts a heavy toll in health, sanity, and blood. Weigh the cost before you bind yourself to its wisdom.</p>
 				<p>Those <b>Bound to the Tome</b> find that blood rituals take a lesser toll upon the body: the <b>max health</b> paid when casting (Babel, Voice, Life, Brew, Scribe, and the like) is <b>quartered</b>&mdash;one fourth of the usual cost&mdash;so that the bond, for all its price, eases the sacrifice demanded by the art.</p>
