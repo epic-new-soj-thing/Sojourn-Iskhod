@@ -5432,13 +5432,13 @@
 /area/centcom/evac)
 "oT" = (
 /obj/structure/table/marble,
-/obj/item/stack/material/wood/full,
-/obj/item/spatula,
+/obj/machinery/cooking/bunson,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oU" = (
 /obj/structure/table/marble,
 /obj/machinery/cooking/grill,
+/obj/item/spatula,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oV" = (
@@ -6245,6 +6245,11 @@
 /obj/item/clothing/glasses/binoclard_lenses/dark,
 /obj/item/device/camera/blood_scribe,
 /turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
+"vp" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/snacks/dollop,
+/turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "vB" = (
 /obj/structure/railing,
@@ -7657,9 +7662,11 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "IF" = (
-/obj/structure/table/marble,
-/obj/item/reagent_containers/snacks/dollop,
-/turf/simulated/floor/tiled/cafe,
+/obj/structure/curtain/open/shower/security,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "blood magic study"
+	},
+/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "II" = (
 /obj/structure/table/rack/shelf,
@@ -7989,11 +7996,11 @@
 /turf/simulated/floor/wood/wild3,
 /area/centcom/evac)
 "LO" = (
-/obj/structure/curtain/open/shower/security,
-/obj/machinery/door/unpowered/simple/wood{
-	name = "blood magic study"
-	},
-/turf/simulated/floor/wood/wild1,
+/obj/structure/table/marble,
+/obj/item/stack/material/wood/full,
+/obj/item/stack/material/wood/full,
+/obj/item/stack/material/wood/full,
+/turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "LW" = (
 /obj/structure/bed/chair/wood{
@@ -16330,7 +16337,7 @@ MH
 MH
 MH
 MH
-LO
+IF
 cN
 hy
 Ks
@@ -25034,8 +25041,8 @@ FM
 FM
 Yf
 wx
-IF
-UC
+vp
+LO
 ho
 hY
 aD
