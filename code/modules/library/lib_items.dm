@@ -330,7 +330,8 @@
 		/obj/item/book/manual/demonomicon
 	)
 	for(var/i in 1 to 8)
-		new pick(oddity_books)(src)
+		var/picked_type = pick(oddity_books)
+		new picked_type(src)
 	update_icon()
 
 // Bookcase pre-stocked only with blood magic tomes (Cinder Codex, Ember's Veil, etc.).
