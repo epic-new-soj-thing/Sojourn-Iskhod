@@ -213,7 +213,6 @@
 "aP" = (
 /obj/structure/table/woodentable,
 /obj/item/device/camera_film,
-/obj/item/pack_card_carp,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "aQ" = (
@@ -5742,6 +5741,7 @@
 /area/centcom/evac)
 "rm" = (
 /obj/structure/bookcase/scrolls,
+/obj/item/storage/pouch/scroll,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "rp" = (
@@ -6395,7 +6395,7 @@
 /area/centcom/evac)
 "wY" = (
 /obj/structure/table/woodentable,
-/obj/item/oddity/common/book_omega/closed,
+/obj/item/soap/bluespase,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "xg" = (
@@ -7658,7 +7658,10 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "IF" = (
-/obj/item/storage/pouch/scroll,
+/obj/structure/curtain/open/shower/security,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "blood magic study"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "II" = (
@@ -7730,6 +7733,7 @@
 /obj/structure/bookcase/tomes{
 	name = "blood magic tomes bookcase"
 	},
+/obj/item/storage/pouch/tome,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Jm" = (
@@ -7987,10 +7991,6 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/centcom/evac)
-"LO" = (
-/obj/effect/decal/cleanable/crayon,
-/turf/simulated/floor/wood/wild1,
-/area/centcom/evac)
 "LW" = (
 /obj/structure/bed/chair/wood{
 	dir = 1
@@ -8101,8 +8101,11 @@
 /area/centcom/merc_base)
 "Ne" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/fancy/crayons,
-/obj/item/soap/bluespase,
+/obj/item/pack_card_carp,
+/obj/item/pack_card_carp,
+/obj/item/pack_card_carp,
+/obj/item/pack_card_carp,
+/obj/item/pack_card_carp,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Nf" = (
@@ -16317,13 +16320,13 @@ qH
 qH
 KR
 ho
+MH
+MH
+MH
+MH
+MH
+MH
 IF
-MH
-MH
-MH
-MH
-Nf
-ho
 cN
 hy
 Ks
@@ -16519,10 +16522,10 @@ qH
 qH
 KR
 ho
-JN
-JN
-JN
 MH
+JN
+JN
+JN
 MH
 rm
 ho
@@ -16721,10 +16724,10 @@ qH
 qH
 KR
 ho
-JN
-LO
+Nf
 JN
 MH
+JN
 MH
 LY
 ho
@@ -16923,10 +16926,10 @@ qH
 qH
 KR
 ho
-JN
-JN
-JN
 MH
+JN
+JN
+JN
 MH
 Ji
 ho
