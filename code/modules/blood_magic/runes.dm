@@ -116,14 +116,20 @@
 		sanity_damage = drawn_in_blood ? 0.4 : 0
 	name = type
 	desc = drawn_in_blood ? "A blood rune, drawn with a ritual blade. It can channel rituals." : "A [type] drawn in wax. It cannot channel blood magic."
+	var/main_state
+	var/shade_state
 	switch(type)
 		if("rune")
-			type = "rune[rand(1,6)]"
+			var/rune_n = rand(1, 6)
+			main_state = "main[rune_n]"
+			shade_state = "shade[rune_n]"
 			is_rune = TRUE
 		if("graffiti")
 			type = pick("amyjon","face","matt","revolution","engie","guy","end","dwarf","uboa")
-	var/icon/mainOverlay = new/icon('icons/effects/crayondecal.dmi',"[type]",2.1)
-	var/icon/shadeOverlay = new/icon('icons/effects/crayondecal.dmi',"[type]s",2.1)
+			main_state = type
+			shade_state = "[type]s"
+	var/icon/mainOverlay = new/icon('icons/effects/crayondecal.dmi', main_state || "[type]", 2.1)
+	var/icon/shadeOverlay = new/icon('icons/effects/crayondecal.dmi', shade_state || "[type]s", 2.1)
 	mainOverlay.Blend(main,ICON_ADD)
 	shadeOverlay.Blend(shade,ICON_ADD)
 	add_overlay(mainOverlay)

@@ -301,6 +301,77 @@
 			B.icon_state = "book[rand(1,7)]"
 	update_icon()
 
+// Bookcase pre-stocked with omega/oddity books and one Demonomicon. Does not use the archive DB.
+/obj/structure/bookcase/oddity_demonomicon
+	name = "blood magic oddities bookcase"
+	desc = "A wooden shelving unit stocked with oddity books and a single Demonomicon."
+	allowed_book_items = list(
+		/obj/item/oddity/common/book_eyes,
+		/obj/item/oddity/common/book_omega,
+		/obj/item/oddity/common/book_bible,
+		/obj/item/oddity/common/book_log,
+		/obj/item/oddity/common/book_unholy,
+		/obj/item/oddity/common/paper_omega,
+		/obj/item/book/manual/demonomicon
+	)
+
+/obj/structure/bookcase/oddity_demonomicon/New()
+	..()
+	new /obj/item/book/manual/demonomicon(src)
+	var/list/oddity_books = list(
+		/obj/item/oddity/common/book_omega/closed,
+		/obj/item/oddity/common/book_omega/opened,
+		/obj/item/oddity/common/book_unholy/closed,
+		/obj/item/oddity/common/book_unholy/opened,
+		/obj/item/oddity/common/book_eyes,
+		/obj/item/oddity/common/book_bible,
+		/obj/item/oddity/common/book_log,
+		/obj/item/oddity/common/paper_omega,
+		/obj/item/book/manual/demonomicon
+	)
+	for(var/i in 1 to 8)
+		new pick(oddity_books)(src)
+	update_icon()
+
+// Bookcase pre-stocked only with blood magic tomes (Cinder Codex, Ember's Veil, etc.).
+/obj/structure/bookcase/tomes
+	name = "blood magic tomes bookcase"
+	desc = "A wooden shelving unit that holds only blood magic tomes."
+	allowed_book_items = list(/obj/item/book/tome)
+
+/obj/structure/bookcase/tomes/New()
+	..()
+	for(var/tome_type in subtypesof(/obj/item/book/tome))
+		new tome_type(src)
+	update_icon()
+
+// Bookcase pre-stocked only with blood magic scrolls; all spawn filled (inscribed with a spell). Sealed scrolls included.
+/obj/structure/bookcase/scrolls
+	name = "blood magic scrolls bookcase"
+	desc = "A wooden shelving unit that holds only blood magic scrolls—blank, inscribed, and sealed."
+	allowed_book_items = list(/obj/item/scroll, /obj/item/scroll/sealed)
+
+/obj/structure/bookcase/scrolls/New()
+	..()
+	var/static/list/scroll_spells = list(
+		"Mist.", "Shimmer.", "Smoke.", "Oil.", "Floor Seal.", "Light.",
+		"Gaia.", "Eta.", "Reveal.", "Entangle.", "Joke.", "Charger."
+	)
+	// Blank (empty) scrolls
+	for(var/i in 1 to 5)
+		new /obj/item/scroll(src)
+	// Filled scrolls (inscribed with a spell)
+	for(var/i in 1 to 8)
+		var/obj/item/scroll/S = new /obj/item/scroll(src)
+		S.message = pick(scroll_spells)
+		S.name = "inscribed scroll"
+		S.desc = "A scroll covered in various glyphs and runes."
+	// Sealed scrolls (filled and sealed with wax)
+	for(var/i in 1 to 6)
+		var/obj/item/scroll/sealed/SE = new /obj/item/scroll/sealed(src)
+		SE.message = pick(scroll_spells)
+	update_icon()
+
 
 /obj/structure/bookcase/guncase
 	name = "gunparts locker"

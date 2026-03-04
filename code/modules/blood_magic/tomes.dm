@@ -170,7 +170,7 @@
 /obj/item/book/tome/knock
 	name = "The Key That Was Lost"
 	desc = "Lock mechanisms and the art of opening that which is sealed. The author was a locksmith who learned that some doors open to the right words."
-	icon_state = "bookknoc"
+	icon_state = "bookknock"
 	author = "Vale the Unlocked"
 	title = "The Key That Was Lost"
 	dat = {"<html><head></head><body>

@@ -103,18 +103,24 @@
 	..()
 	loc = location
 	var/is_fake_rune = (type == "rune")
+	var/main_state
+	var/shade_state
 	switch(type)
 		if("graffiti")
 			type = pick("amyjon","face","matt","revolution","engie","guy","end","dwarf","uboa")
+			main_state = type
+			shade_state = "[type]s"
 		if("rune")
-			type = "rune[rand(1,6)]"
+			var/rune_n = rand(1, 6)
+			main_state = "main[rune_n]"
+			shade_state = "shade[rune_n]"
 	if(is_fake_rune)
 		name = "rune"
 		desc = "A rune drawn in wax. It cannot channel blood magic."
 	else
 		name = type
-	var/icon/mainOverlay = new/icon('icons/effects/crayondecal.dmi',"[type]",2.1)
-	var/icon/shadeOverlay = new/icon('icons/effects/crayondecal.dmi',"[type]s",2.1)
+	var/icon/mainOverlay = new/icon('icons/effects/crayondecal.dmi', main_state || "[type]", 2.1)
+	var/icon/shadeOverlay = new/icon('icons/effects/crayondecal.dmi', shade_state || "[type]s", 2.1)
 	mainOverlay.Blend(main,ICON_ADD)
 	shadeOverlay.Blend(shade,ICON_ADD)
 	add_overlay(mainOverlay)

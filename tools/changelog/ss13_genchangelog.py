@@ -64,7 +64,8 @@ validPrefixes = [
     'balance',
     'admin',
     'server',
-    'fix'
+    'fix',
+    'code_imp',
 ]
 
 # Placeholder lines from PR template / generated reports - never show in changelog

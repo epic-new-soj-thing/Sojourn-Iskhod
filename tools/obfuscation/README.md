@@ -30,6 +30,8 @@ Have the raw content in a file (e.g. HTML in `demonomicon_raw.html`). This is th
 
 ### 2. Encode to base64
 
+**Important (Demonomicon / BYOND):** The game displays book HTML as a single-byte (Latin-1) string. If the source contains UTF-8 multi-byte characters (e.g. en-dash, curly quotes), they will render as garbage in-game. Use **ASCII-only** content: in your HTML use entities like `&mdash;`, `&rsquo;`, `&#8217;` instead of raw Unicode.
+
 ```bash
 python -m tools.obfuscation.b64_encode demonomicon_raw.html
 ```

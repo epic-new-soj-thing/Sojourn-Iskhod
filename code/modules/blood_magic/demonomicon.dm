@@ -32,7 +32,9 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 	icon_state = "demonomicon"
 	author = "Unknown"
 	title = "Demonomicon"
-
+	window_size = "900x600"  // Wider than tall for the long blood-magic guide text
+	var/mob/living/carbon/human/current_reader  // Who has the book window open; sanity drains until they close it
+	var/reading_drain_timer                     // Timer id for repeating sanity drain while window is open
 
 /obj/item/book/manual/demonomicon/Initialize()
 	. = ..()
@@ -64,16 +66,20 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 	to_chat(H, SPAN_DANGER("The Demonomicon exacts its price; your blood and sanity waver."))
 
 /obj/item/book/manual/demonomicon/attack_self(mob/user)
+	// Already open for this user: don't drain again or re-open (prevents spam for sanity/drain)
+	if(current_reader == user)
+		return
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.sanity)
+			// One-time sanity drain when opening
 			if(H.sanity.level >= H.sanity.max_level * 0.25)
 				H.sanity.changeLevel(-4, TRUE)
 			else
 				H.sanity.changeLevel(-2, TRUE)
 			if(prob(35))
 				to_chat(H, SPAN_WARNING("The script seems to shift on the page as you look away."))
-			// Below 25% sanity: also drains blood, damages health, and reduces max HP
+			// Blood/health only when opening or using (e.g. at rune), not while the window is open
 			if(H.sanity.level < H.sanity.max_level * 0.25)
 				var/datum/reagent/organic/blood/B = H.get_blood()
 				if(B)
@@ -83,3 +89,31 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 				H.health = min(H.health, H.maxHealth)
 				to_chat(H, SPAN_DANGER("The tome's grip on you tightens; your blood and vitality waver."))
 	..()
+	// Register so we get Topic when window is closed; drain sanity periodically while the window stays open
+	if(dat && ishuman(user))
+		var/mob/living/carbon/human/H = user
+		onclose(H, "book", src)
+		current_reader = H
+		schedule_reading_drain()
+
+/obj/item/book/manual/demonomicon/proc/schedule_reading_drain()
+	if(reading_drain_timer)
+		deltimer(reading_drain_timer)
+	reading_drain_timer = addtimer(CALLBACK(src, PROC_REF(drain_sanity_while_open)), 20 SECONDS, TIMER_STOPPABLE)
+
+/obj/item/book/manual/demonomicon/proc/drain_sanity_while_open()
+	if(!current_reader || !current_reader.sanity)
+		current_reader = null
+		return
+	current_reader.sanity.changeLevel(-2, TRUE)
+	if(current_reader)
+		schedule_reading_drain()
+
+/obj/item/book/manual/demonomicon/Topic(href, href_list)
+	if(href_list["close"])
+		current_reader = null
+		if(reading_drain_timer)
+			deltimer(reading_drain_timer)
+			reading_drain_timer = null
+		return
+	return ..()

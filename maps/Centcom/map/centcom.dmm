@@ -5740,6 +5740,10 @@
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
+"rm" = (
+/obj/structure/bookcase/scrolls,
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
 "rp" = (
 /obj/machinery/computer/teleporter,
 /turf/simulated/floor/wood/wild3,
@@ -7722,6 +7726,12 @@
 /obj/structure/sign/warning/nosmoking/small,
 /turf/simulated/wall/r_wall,
 /area/centcom/evac)
+"Ji" = (
+/obj/structure/bookcase/tomes{
+	name = "blood magic tomes bookcase"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
 "Jm" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Deployment Teleporter"
@@ -7984,6 +7994,12 @@
 "LW" = (
 /obj/structure/bed/chair/wood{
 	dir = 1
+	},
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
+"LY" = (
+/obj/structure/bookcase/oddity_demonomicon{
+	name = "blood magic oddities bookcase"
 	},
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
@@ -8776,11 +8792,6 @@
 "Sl" = (
 /obj/machinery/vending/security,
 /turf/simulated/floor/tiled/dark/golden,
-/area/centcom/evac)
-"Sv" = (
-/obj/structure/bookcase,
-/obj/item/scroll,
-/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Sx" = (
 /obj/machinery/light/small,
@@ -16510,10 +16521,10 @@ KR
 ho
 JN
 JN
+JN
 MH
 MH
-MH
-Sv
+rm
 ho
 cN
 hy
@@ -16712,10 +16723,10 @@ KR
 ho
 JN
 LO
+JN
 MH
 MH
-MH
-Sv
+LY
 ho
 cN
 hy
@@ -16914,10 +16925,10 @@ KR
 ho
 JN
 JN
+JN
 MH
 MH
-MH
-Sv
+Ji
 ho
 dj
 hy
