@@ -361,6 +361,8 @@ var/bomb_set
 				to_chat(usr, SPAN_WARNING("Final countdown has begun - abort is no longer possible. Random explosions will begin shortly."))
 			else if(!timing)
 				to_chat(usr, SPAN_WARNING("No nuclear sequence is currently active."))
+			else if(wires.IsIndexCut(NUCLEARBOMB_WIRE_LOCKOUT))
+				to_chat(usr, SPAN_WARNING("Abort circuit is locked out. The abort lockout wire may have been cut."))
 			else
 				// Abort the sequence
 				if(abort_nuclear_sequence())
@@ -410,12 +412,15 @@ var/bomb_set
 				safety = !safety
 
 				if(safety && !old_safety && timing)
-					// Safety was re-engaged during active countdown - abort sequence
-					to_chat(usr, SPAN_NOTICE("Safety re-engaged. Nuclear sequence automatically aborted."))
-					if(abort_nuclear_sequence())
-						log_and_message_admins("aborted a nuclear bomb sequence by re-engaging safety")
+					// Safety was re-engaged during active countdown - abort sequence (unless lockout wire is cut)
+					if(wires.IsIndexCut(NUCLEARBOMB_WIRE_LOCKOUT))
+						to_chat(usr, SPAN_WARNING("Abort circuit is locked out. Re-engaging safety did not stop the sequence."))
 					else
-						secure_device()
+						to_chat(usr, SPAN_NOTICE("Safety re-engaged. Nuclear sequence automatically aborted."))
+						if(abort_nuclear_sequence())
+							log_and_message_admins("aborted a nuclear bomb sequence by re-engaging safety")
+						else
+							secure_device()
 				else if(safety)
 					secure_device()
 			if (href_list["anchor"])

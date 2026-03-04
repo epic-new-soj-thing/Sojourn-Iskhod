@@ -241,46 +241,48 @@
 /datum/reagent/toxin/potassium_chloride
 	name = "Potassium Chloride"
 	id = "potassium_chloride"
-	description = "A delicious salt that arrests the heart if injected there."
+	description = "A salt used in lethal injection. Stops the heart; even small doses are deadly when in the bloodstream."
 	taste_description = "salt"
 	reagent_state = SOLID
 	color = "#FFFFFF"
-	strength = 0
-	overdose = REAGENTS_OVERDOSE
+	strength = 2
+	overdose = 5
 	nerve_system_accumulations = 45
+
+/datum/reagent/toxin/potassium_chloride/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.stat != DEAD)
+			M.add_chemical_effect(CE_NOPULSE, 1)
+			H.Weaken(3)
 
 /datum/reagent/toxin/potassium_chloride/overdose(mob/living/carbon/M, alien)
 	..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.stat != 1)
-			if(H.losebreath >= 10)
-				H.losebreath = max(10, H.losebreath - 10)
-			H.adjustOxyLoss(2)
-			H.Weaken(10)
-		M.add_chemical_effect(CE_NOPULSE, 1)
+		if(H.stat != DEAD)
+			M.add_chemical_effect(CE_NOPULSE, 1)
+			H.adjustOxyLoss(8)
+			H.Weaken(8)
 
 
 /datum/reagent/toxin/potassium_chlorophoride
 	name = "Potassium Chlorophoride"
 	id = "potassium_chlorophoride"
-	description = "A specific chemical based on Potassium Chloride to arrest the heart for surgery."
+	description = "A specific chemical based on Potassium Chloride to arrest the heart for surgery. Stops the heart without causing oxygen deprivation."
 	taste_description = "salt"
 	reagent_state = SOLID
 	color = "#FFFFFF"
-	strength = 1
+	strength = 0
 	overdose = 20
 	nerve_system_accumulations = 85
 
 /datum/reagent/toxin/potassium_chlorophoride/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(H.stat != 1)
-			if(H.losebreath >= 10)
-				H.losebreath = max(10, M.losebreath-10)
-			H.adjustOxyLoss(2)
-			H.Weaken(10)
+			H.Weaken(5)
 		M.add_chemical_effect(CE_NOPULSE, 1)
 
 /datum/reagent/toxin/zombiepowder

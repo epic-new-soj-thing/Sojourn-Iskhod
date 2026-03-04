@@ -11,6 +11,21 @@ var/const/WIRE_MOTOR2 = 32		//
 var/const/WIRE_REMOTE_RX = 64		// remote recv functions
 var/const/WIRE_REMOTE_TX = 128	// remote trans status
 var/const/WIRE_BEACON_RX = 256	// beacon ping recv
+var/const/WIRE_MULEBOT_SPARE = 512
+
+/datum/wires/mulebot
+	descriptions = list(
+		new /datum/wire_description(WIRE_POWER1, "Main power"),
+		new /datum/wire_description(WIRE_POWER2, "Auxiliary power"),
+		new /datum/wire_description(WIRE_AVOIDANCE, "Mob avoidance"),
+		new /datum/wire_description(WIRE_LOADCHECK, "Load check"),
+		new /datum/wire_description(WIRE_MOTOR1, "Motor"),
+		new /datum/wire_description(WIRE_MOTOR2, "Motor"),
+		new /datum/wire_description(WIRE_REMOTE_RX, "Remote receiver"),
+		new /datum/wire_description(WIRE_REMOTE_TX, "Remote transmitter"),
+		new /datum/wire_description(WIRE_BEACON_RX, "Beacon receiver"),
+		new /datum/wire_description(WIRE_MULEBOT_SPARE, "Spare")
+	)
 
 /datum/wires/mulebot/CanUse(var/mob/living/L)
 	var/obj/machinery/bot/mulebot/M = holder

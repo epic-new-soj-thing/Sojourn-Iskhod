@@ -222,3 +222,53 @@
 /datum/tgui_module/catalog/all/silicon
 /datum/tgui_module/catalog/all/silicon/ui_state(mob/user)
 	return GLOB.self_state
+
+/*********************/
+/* Catalog Book       */
+/* Same data as catalog but opens in book-style TGUI (table of contents + pages) */
+/*********************/
+
+/datum/tgui_module/catalog_book
+	parent_type = /datum/tgui_module/catalog
+	tgui_id = "CatalogBook"
+	// Start with list (table of contents) visible; no separate "front page" in book mode
+	var/start_in_list = TRUE
+
+/datum/tgui_module/catalog_book/New(new_host)
+	. = ..()
+	if(start_in_list && catalog_browse_stage == CATALOG_BROWSE_STAGE_NONE)
+		catalog_browse_stage = CATALOG_BROWSE_STAGE_LIST
+
+/datum/tgui_module/catalog_book/ui_data(mob/user)
+	var/list/data = ..()
+	// Book UI always needs entries for the table of contents, even when viewing a page
+	if(catalog_browse_stage == CATALOG_BROWSE_STAGE_ENTRY && catalog)
+		var/list/toc = catalog.ui_data(user, catalog_search)
+		data["entries"] = toc["entries"]
+	return data
+
+// Books are just paper — no power required. Silicons can read them even with a dead cell.
+/datum/tgui_module/catalog_book/ui_state(mob/user)
+	return GLOB.always_state
+
+/datum/tgui_module/catalog_book/cooking
+	name = "Chef Recipes"
+	catalog_key = CATALOG_COOKING
+	front_page_name = "Chef Recipes"
+	front_page_desc = "A collection of recipes from Frontier Logistics."
+
+/datum/tgui_module/catalog_book/cooking/ui_assets(mob/user)
+	. = ..()
+	. += get_asset_datum(/datum/asset/spritesheet/cooking_icons)
+
+/datum/tgui_module/catalog_book/drinks
+	name = "Barman Recipes"
+	catalog_key = CATALOG_DRINKS
+	front_page_name = "Barman Recipes"
+	front_page_desc = "Drinks and cocktails for the discerning bartender."
+
+/datum/tgui_module/catalog_book/chemistry
+	name = "Laboratory Chemistry Guide"
+	catalog_key = CATALOG_CHEMISTRY
+	front_page_name = "Vesalius-Andra Reagent Catalog"
+	front_page_desc = "A complete guide to laboratory chemistry and reagents."

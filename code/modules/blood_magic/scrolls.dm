@@ -40,27 +40,6 @@
 		/obj/item/device/camera_film)
 	cant_hold = list(/obj/item/tool/knife/ritual/blade) // ...but not the sword. No cheating!
 
-// Tome version of the scroll bag: holds thematic tomes and ritual items for binding.
-/obj/item/storage/pouch/tome
-	name = "tome bag"
-	desc = "Can hold thematic tomes and ritual items."
-	icon_state = "large_leather"
-	item_state = "large_leather"
-	w_class = ITEM_SIZE_BULKY
-	slot_flags = SLOT_BELT | SLOT_DENYPOCKET
-	max_w_class = ITEM_SIZE_NORMAL
-	storage_slots = 5
-	max_storage_space = DEFAULT_NORMAL_STORAGE
-	can_hold = list(
-		/obj/item/book/tome,
-		/obj/item/book/manual/demonomicon,
-		/obj/item/oddity/common/book_unholy,
-		/obj/item/oddity/common/book_omega,
-		/obj/item/tool/knife/ritual,
-		/obj/item/paper/alchemy_recipes,
-		/obj/item/paper)
-	cant_hold = list(/obj/item/tool/knife/ritual/blade)
-
 /obj/item/scroll/proc/ScrollBurn()
 	var/mob/living/M = loc
 	if(istype(M))

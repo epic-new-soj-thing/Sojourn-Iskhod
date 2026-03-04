@@ -516,31 +516,32 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	say_time = world.time + SANITY_COOLDOWN_SAY
 	changeLevel(SANITY_GAIN_SAY)
 
-/datum/sanity/proc/changeLevel(amount, external_cause = FALSE)
+/datum/sanity/proc/changeLevel(amount, external_cause = FALSE, grant_insight = TRUE)
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
 		return
 	if(sanity_invulnerability && amount < 0)
 		return
-	updateLevel(level + amount, external_cause)
+	updateLevel(level + amount, external_cause, grant_insight)
 
-/datum/sanity/proc/setLevel(amount, external_cause = FALSE)
+/datum/sanity/proc/setLevel(amount, external_cause = FALSE, grant_insight = TRUE)
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
 		return
 	if(sanity_invulnerability)
 		restoreLevel(amount)
 		return
-	updateLevel(amount, external_cause)
+	updateLevel(amount, external_cause, grant_insight)
 
 /datum/sanity/proc/restoreLevel(amount)
 	if(level <= amount)
 		return
 	updateLevel(amount)
 
-/datum/sanity/proc/updateLevel(new_level, external_cause = FALSE)
+/datum/sanity/proc/updateLevel(new_level, external_cause = FALSE, grant_insight = TRUE)
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
 		return
 	new_level = CLAMP(new_level, 0, max_level)
-	level_change += abs(new_level - level)
+	if(grant_insight)
+		level_change += abs(new_level - level)
 	level = new_level
 	// External cause (death, blood magic, tomes, toxin): all breakdown types. Otherwise: only positive or common.
 	if(level == 0 && world.time >= breakdown_time)

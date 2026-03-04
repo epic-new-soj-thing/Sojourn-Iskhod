@@ -8,7 +8,7 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 	icon_state = "demonomicon"
 	author = "Unknown"
 	title = "Demonomicon"
-	w_class = ITEM_SIZE_SMALL
+	w_class = ITEM_SIZE_BULKY
 	window_size = "900x600"  // Wider than tall for the long blood-magic guide text
 	var/mob/living/carbon/human/current_reader  // Who has the book window open; sanity drains until they close it
 	var/reading_drain_timer  // Timer id for repeating sanity drain while window is open
@@ -286,12 +286,16 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 /obj/item/book/manual/demonomicon/Initialize()
 	. = ..()
 	AddComponent(/datum/component/atom_sanity, 1, "")
-	AddComponent(/datum/component/inspiration, list(STAT_COG = 5, STAT_VIG = 5, STAT_MEC = 3), /datum/perk/oddity/demonomicon, FALSE)
+	AddComponent(/datum/component/inspiration, list(), /datum/perk/oddity/demonomicon, FALSE)
 	RegisterSignal(src, COMSIG_ODDITY_USED, PROC_REF(on_focus_used))
 
 /obj/item/book/manual/demonomicon/examine(mob/user, distance)
 	. = ..()
-	if(distance <= 1)
+	if(istype(loc, /obj/structure/bookcase))
+		. += SPAN_NOTICE("It sits among the other volumes; its spine shows no author and the leather seems to catch the light oddly.")
+	if(distance > 1)
+		. += SPAN_NOTICE("From here you can only make out a thick, leather-bound tome. The spine bears no title.")
+	else
 		. += SPAN_NOTICE("The runes on the cover seem to shift when you look away. It feels heavier than it looks.")
 
 /obj/item/book/manual/demonomicon/proc/on_focus_used()
@@ -300,7 +304,7 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 		return
 	H.adjustBruteLoss(15)
 	if(H.sanity)
-		H.sanity.changeLevel(-25, TRUE)
+		H.sanity.changeLevel(-25, TRUE, FALSE)
 	var/datum/reagent/organic/blood/B = H.get_blood()
 	if(B)
 		B.remove_self(60)
@@ -312,12 +316,13 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 		return
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		to_chat(H, SPAN_WARNING("Keeping the tome open weighs on your mind; it hurts to read."))
 		if(H.sanity)
 			// One-time sanity drain when opening
 			if(H.sanity.level >= H.sanity.max_level * 0.25)
-				H.sanity.changeLevel(-4, TRUE)
+				H.sanity.changeLevel(-4, TRUE, FALSE)
 			else
-				H.sanity.changeLevel(-2, TRUE)
+				H.sanity.changeLevel(-2, TRUE, FALSE)
 			if(prob(35))
 				to_chat(H, SPAN_WARNING("The script seems to shift on the page as you look away."))
 			// Blood/health only when opening or using (e.g. at rune), not while the window is open
@@ -349,7 +354,7 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 	if(!current_reader || !current_reader.sanity)
 		current_reader = null
 		return
-	current_reader.sanity.changeLevel(-4, TRUE)
+	current_reader.sanity.changeLevel(-4, TRUE, FALSE)
 	if(current_reader)
 		schedule_reading_drain()
 

@@ -11,6 +11,19 @@
 var/const/AUTOLATHE_HACK_WIRE = 1
 var/const/AUTOLATHE_SHOCK_WIRE = 2
 var/const/AUTOLATHE_DISABLE_WIRE = 4
+var/const/AUTOLATHE_WIRE_SPARE1 = 8
+var/const/AUTOLATHE_WIRE_SPARE2 = 16
+var/const/AUTOLATHE_WIRE_SPARE3 = 32
+
+/datum/wires/autolathe
+	descriptions = list(
+		new /datum/wire_description(AUTOLATHE_HACK_WIRE, "Safety"),
+		new /datum/wire_description(AUTOLATHE_SHOCK_WIRE, "Shock"),
+		new /datum/wire_description(AUTOLATHE_DISABLE_WIRE, "Power"),
+		new /datum/wire_description(AUTOLATHE_WIRE_SPARE1, "Spare"),
+		new /datum/wire_description(AUTOLATHE_WIRE_SPARE2, "Spare"),
+		new /datum/wire_description(AUTOLATHE_WIRE_SPARE3, "Spare")
+	)
 
 /datum/wires/autolathe/get_status(mob/living/user)
 	var/obj/machinery/autolathe/A = holder

@@ -7,7 +7,9 @@
 		new /datum/wire_description(CAMERA_WIRE_FOCUS, "Focus"),
 		new /datum/wire_description(CAMERA_WIRE_POWER, "Power"),
 		new /datum/wire_description(CAMERA_WIRE_LIGHT, "Light"),
-		new /datum/wire_description(CAMERA_WIRE_ALARM, "Alarm")
+		new /datum/wire_description(CAMERA_WIRE_ALARM, "Alarm"),
+		new /datum/wire_description(CAMERA_WIRE_NOTHING1, "Spare"),
+		new /datum/wire_description(CAMERA_WIRE_NOTHING2, "Spare")
 	)
 
 /datum/wires/camera/get_status(mob/living/user)

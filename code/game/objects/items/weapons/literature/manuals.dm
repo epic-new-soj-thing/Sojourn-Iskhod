@@ -1314,7 +1314,7 @@
 	title = "Cloning Rituals"
 	page_link = "Guide_to_Genetics"
 
-//service
+//service — open in TGUI as book (table of contents + pages)
 /obj/item/book/manual/wiki/barman_recipes
 	name = "Barman Recipes"
 	icon_state = "barbook"
@@ -1322,12 +1322,36 @@
 	title = "Barman Recipes"
 	page_link = "Guide_to_Drinks"
 
+/obj/item/book/manual/wiki/barman_recipes/ui_host()
+	return src
+
+/obj/item/book/manual/wiki/barman_recipes/ui_close(mob/user)
+	return
+
+/obj/item/book/manual/wiki/barman_recipes/attack_self(mob/user)
+	playsound(src.loc, pick('sound/items/BOOK_Turn_Page_1.ogg', 'sound/items/BOOK_Turn_Page_2.ogg', 'sound/items/BOOK_Turn_Page_3.ogg', 'sound/items/BOOK_Turn_Page_4.ogg'), rand(40,80), 1)
+	var/datum/tgui_module/catalog_book/TM = new /datum/tgui_module/catalog_book/drinks(src)
+	TM.ui_interact(user)
+	user.visible_message("[user] opens a book titled \"[src.title]\" and begins reading intently.")
+
 /obj/item/book/manual/wiki/chef_recipes
 	name = "Chef Recipes"
 	icon_state = "cooked_book"
 	author = "Frontier Logistics Service"
 	title = "Chef Recipes"
 	page_link = "Guide_to_Food"
+
+/obj/item/book/manual/wiki/chef_recipes/ui_host()
+	return src
+
+/obj/item/book/manual/wiki/chef_recipes/ui_close(mob/user)
+	return
+
+/obj/item/book/manual/wiki/chef_recipes/attack_self(mob/user)
+	playsound(src.loc, pick('sound/items/BOOK_Turn_Page_1.ogg', 'sound/items/BOOK_Turn_Page_2.ogg', 'sound/items/BOOK_Turn_Page_3.ogg', 'sound/items/BOOK_Turn_Page_4.ogg'), rand(40,80), 1)
+	var/datum/tgui_module/catalog_book/TM = new /datum/tgui_module/catalog_book/cooking(src)
+	TM.ui_interact(user)
+	user.visible_message("[user] opens a book titled \"[src.title]\" and begins reading intently.")
 
 /obj/item/book/manual/h_book
 	name = "Holy Book"
@@ -1351,11 +1375,36 @@
 
 /obj/item/book/manual/chemistry_guide
 	name = "Laboratory Chemistry Guide"
-	desc = "A complete guide to laboratory chemistry: containers, transfer tools, and all chemistry machines."
+	desc = "A complete guide to laboratory chemistry: containers, transfer tools, and all chemistry machines. Opens to a table of contents and reagent pages."
 	icon_state = "chemistrybook"
 	author = "Vesalius-Andra Research"
 	title = "Laboratory Chemistry Guide"
 	unique = TRUE
+
+/obj/item/book/manual/chemistry_guide/ui_host()
+	return src
+
+/obj/item/book/manual/chemistry_guide/ui_close(mob/user)
+	return
+
+/obj/item/book/manual/chemistry_guide/attack_self(mob/user)
+	playsound(src.loc, pick('sound/items/BOOK_Turn_Page_1.ogg',\
+		'sound/items/BOOK_Turn_Page_2.ogg',\
+		'sound/items/BOOK_Turn_Page_3.ogg',\
+		'sound/items/BOOK_Turn_Page_4.ogg',\
+		), rand(40,80), 1)
+	if(carved)
+		if(store)
+			to_chat(user, SPAN_NOTICE("[store] falls out of [title]!"))
+			store.loc = get_turf(src.loc)
+			store = null
+			return
+		else
+			to_chat(user, SPAN_NOTICE("The pages of [title] have been cut out!"))
+			return
+	var/datum/tgui_module/catalog_book/TM = new /datum/tgui_module/catalog_book/chemistry(src)
+	TM.ui_interact(user)
+	user.visible_message("[user] opens a book titled \"[src.title]\" and begins reading intently.")
 
 /obj/item/book/manual/chemistry_guide/New()
 	..()
@@ -1527,3 +1576,57 @@
 				<p><i>Keep this guide in the lab or by the machines for quick reference.</i></p>
 				</body>
 			</html>"}
+
+// Physical books that open their respective catalog in TGUI as a book (table of contents + pages)
+/obj/item/book/manual/catalog_book
+	unique = TRUE
+	var/catalog_module_type = /datum/tgui_module/catalog_book
+
+/obj/item/book/manual/catalog_book/ui_host()
+	return src
+
+/obj/item/book/manual/catalog_book/ui_close(mob/user)
+	return
+
+/obj/item/book/manual/catalog_book/attack_self(mob/user)
+	playsound(src.loc, pick('sound/items/BOOK_Turn_Page_1.ogg',\
+		'sound/items/BOOK_Turn_Page_2.ogg',\
+		'sound/items/BOOK_Turn_Page_3.ogg',\
+		'sound/items/BOOK_Turn_Page_4.ogg',\
+		), rand(40,80), 1)
+	if(carved)
+		if(store)
+			to_chat(user, SPAN_NOTICE("[store] falls out of [title]!"))
+			store.loc = get_turf(src.loc)
+			store = null
+			return
+		else
+			to_chat(user, SPAN_NOTICE("The pages of [title] have been cut out!"))
+			return
+	var/datum/tgui_module/catalog_book/TM = new catalog_module_type(src)
+	TM.ui_interact(user)
+	user.visible_message("[user] opens a book titled \"[src.title]\" and begins reading intently.")
+
+/obj/item/book/manual/catalog_book/cooking
+	name = "Chef Recipes"
+	icon_state = "cooked_book"
+	author = "Frontier Logistics Service"
+	title = "Chef Recipes"
+	desc = "A bound collection of cooking recipes. Opens to a table of contents and recipe pages."
+	catalog_module_type = /datum/tgui_module/catalog_book/cooking
+
+/obj/item/book/manual/catalog_book/drinks
+	name = "Barman Recipes"
+	icon_state = "barbook"
+	author = "Frontier Logistics Service"
+	title = "Barman Recipes"
+	desc = "A bound collection of drink and cocktail recipes. Opens to a table of contents and recipe pages."
+	catalog_module_type = /datum/tgui_module/catalog_book/drinks
+
+/obj/item/book/manual/catalog_book/chemistry
+	name = "Laboratory Chemistry Guide"
+	icon_state = "chemistrybook"
+	author = "Vesalius-Andra Research"
+	title = "Laboratory Chemistry Guide"
+	desc = "A complete guide to laboratory chemistry reagents and reactions. Opens to a table of contents and reagent pages."
+	catalog_module_type = /datum/tgui_module/catalog_book/chemistry

@@ -903,8 +903,7 @@ const Recipe = (props: { recipe_data: RecipeData }) => {
   } else if (maximum_temperature) {
     temperature = (
       <Box>
-        At temperatures belo
-        {maximum_temperature}K
+        At temperatures below {maximum_temperature}K
       </Box>
     );
   }
@@ -969,5 +968,42 @@ const Recipe = (props: { recipe_data: RecipeData }) => {
       )}
       <Box>Results in {result_amount} of substance</Box>
     </Box>
+  );
+};
+
+/** Renders a single catalog entry (cooking/drinks/reagent). Exported for use in CatalogBook. */
+export const CatalogEntryContent = (props: {
+  selected_entry: SharedRecipeData | null;
+}) => {
+  const { selected_entry } = props;
+  if (!selected_entry) {
+    return null;
+  }
+  if (selected_entry.id.startsWith('/datum/cooking/recipe')) {
+    return (
+      <CatalogEntryCooking
+        selected_entry={selected_entry as CatalogEntryCookingData}
+      />
+    );
+  }
+  if (
+    selected_entry.id.startsWith('/datum/reagent/drink') ||
+    selected_entry.id.startsWith('/datum/reagent/ethanol')
+  ) {
+    return (
+      <CatalogEntryDrinks
+        selected_entry={selected_entry as CatalogEntryDrinksData}
+      />
+    );
+  }
+  if (selected_entry.id.startsWith('/datum/reagent')) {
+    return (
+      <CatalogEntryReagents
+        selected_entry={selected_entry as CatalogEntryReagentsData}
+      />
+    );
+  }
+  return (
+    <Box color="bad">Unknown recipe type {selected_entry.id}</Box>
   );
 };

@@ -22,6 +22,7 @@
 	icon = 'icons/obj/library.dmi'
 	unique = TRUE
 	due_date = 0
+	w_class = ITEM_SIZE_BULKY
 
 	// Drains sanity when read; below 50% sanity also drains blood and less sanity. Returns TRUE if user is valid and cost was paid.
 /obj/item/book/tome/proc/tome_consume_resource(mob/living/carbon/human/H)
@@ -389,3 +390,24 @@
 
 /obj/random/tome/item_to_spawn()
 	return pickweight(tome_spawn_weights())
+
+// Pouch for thematic tomes and ritual items (demonomicon, tomes, oddity books, ritual knife, etc.).
+/obj/item/storage/pouch/tome
+	name = "tome bag"
+	desc = "Can hold thematic tomes and ritual items."
+	icon_state = "large_leather"
+	item_state = "large_leather"
+	w_class = ITEM_SIZE_BULKY
+	slot_flags = SLOT_BELT | SLOT_DENYPOCKET
+	max_w_class = ITEM_SIZE_BULKY
+	storage_slots = 5
+	max_storage_space = DEFAULT_HUGE_STORAGE  // Enough for several bulky tomes/demonomicon (bulky = 8 each)
+	can_hold = list(
+		/obj/item/book/tome,
+		/obj/item/book/manual/demonomicon,
+		/obj/item/oddity/common/book_unholy,
+		/obj/item/oddity/common/book_omega,
+		/obj/item/tool/knife/ritual,
+		/obj/item/paper/alchemy_recipes,
+		/obj/item/paper)
+	cant_hold = list(/obj/item/tool/knife/ritual/blade)
