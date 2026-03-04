@@ -370,6 +370,16 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 
 /obj/machinery/libraryscanner/attackby(obj/O, mob/user)
 	if(istype(O, /obj/item/book))
+		if(istype(O, /obj/item/book/manual/demonomicon))
+			if(isliving(user))
+				var/mob/living/L = user
+				L.flash(5, FALSE, TRUE, TRUE)
+			visible_message(SPAN_DANGER("\The [O] blazes with a sickly light as it rejects the scanner! The runes on its cover seem to glare."))
+			to_chat(user, SPAN_DANGER("Your vision whites out as the tome vents its fury — something in you knows it will not be copied, bound, or archived. Your eyes sting."))
+			return
+		if(istype(O, /obj/item/book/manual))
+			to_chat(user, SPAN_WARNING("The scanner refuses to accept manual or reference books; they cannot be uploaded to the archive."))
+			return
 		user.drop_item()
 		O.loc = src
 

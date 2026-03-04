@@ -314,8 +314,11 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 
 /obj/item/book/manual/demonomicon/Topic(href, href_list)
 	if(href_list["close"])
-		if(current_reader && current_reader.sanity)
-			current_reader.sanity.sanity_passive_gain_multiplier = saved_sanity_gain_multiplier
+		if(current_reader)
+			if(current_reader.sanity)
+				current_reader.sanity.sanity_passive_gain_multiplier = saved_sanity_gain_multiplier
+				current_reader.sanity.changeLevel(8, TRUE)
+				to_chat(current_reader, SPAN_NOTICE("Closing the tome eases the weight on your mind; you feel a measure of clarity return."))
 		current_reader = null
 		if(reading_drain_timer)
 			deltimer(reading_drain_timer)
