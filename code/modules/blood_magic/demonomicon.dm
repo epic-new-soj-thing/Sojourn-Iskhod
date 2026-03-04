@@ -1,5 +1,5 @@
 // Demonomicon — blood magic guide. Part of the blood_magic module.
-// GLOB.demonomicon_spawned_this_round is set when the archive bookcase spawns one (lib_items.dm) or when a common_oddities spawner spawns one (oddities.dm). Common_oddities is used for oddity spawns and for trash piles that summon oddities (e.g. scrap science/poor in scrap.dm, pack/rare in packs.dm). At most one Demonomicon is spawned per round from these sources; manual spawns and direct map placement do not set it.
+// GLOB.demonomicon_spawned_this_round is set when the roundstart hook spawns one on an archive shelf (below) or when a common_oddities spawner spawns one (oddities.dm). At most one Demonomicon is spawned per round from these sources; manual spawns and direct map placement do not set it.
 GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 
 /obj/item/book/manual/demonomicon
@@ -366,3 +366,19 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 			reading_drain_timer = null
 		return
 	return ..()
+
+// Once per round: 3% chance to spawn one Demonomicon on a random archive bookcase.
+/hook/roundstart/proc/distribute_archive_demonomicon()
+	spawn(10)
+		if(GLOB.demonomicon_spawned_this_round)
+			return TRUE
+		if(!prob(3))
+			return TRUE
+		var/list/archive_shelves = list()
+		for(var/obj/structure/bookcase/archive/A in world)
+			archive_shelves += A
+		if(archive_shelves.len)
+			var/obj/structure/bookcase/archive/target = pick(archive_shelves)
+			new /obj/item/book/manual/demonomicon(target)
+			GLOB.demonomicon_spawned_this_round = TRUE
+	return TRUE

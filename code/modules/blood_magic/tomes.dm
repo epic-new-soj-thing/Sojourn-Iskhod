@@ -3,6 +3,21 @@
 // Each tome has a unique title, author, and a wondrous effect when read.
 // Using a tome drains sanity and has a small chance of failure.
 
+// Single source of tome spawn weights (archive shelf + random oddity). Stronger tomes rarer (lower weight).
+/proc/tome_spawn_weights()
+	return list(
+		/obj/item/book/tome/knock = 1,
+		/obj/item/book/tome/mindswap = 1,
+		/obj/item/book/tome/forcewall = 1,
+		/obj/item/book/tome/horses = 1,
+		/obj/item/book/tome/sacred_flame = 1,
+		/obj/item/book/tome/fireball = 2,
+		/obj/item/book/tome/smoke = 2,
+		/obj/item/book/tome/charge = 2,
+		/obj/item/book/tome/summons = 2,
+		/obj/item/book/tome/blind = 3
+	)
+
 /obj/item/book/tome
 	icon = 'icons/obj/library.dmi'
 	unique = TRUE
@@ -341,3 +356,36 @@
 			if(H.sanity)
 				H.sanity.changeLevel(-12, TRUE)
 	..()
+
+// Once per round: roll tome count, pick one random archive shelf, spawn tomes there (by weight).
+/hook/roundstart/proc/distribute_archive_tomes()
+	spawn(10)
+		var/list/archive_shelves = list()
+		for(var/obj/structure/bookcase/archive/A in world)
+			archive_shelves += A
+		if(!archive_shelves.len)
+			return
+		var/roll = rand(1, 100)
+		var/tome_count = 0
+		if(roll <= 70)
+			tome_count = 0
+		else if(roll <= 75)
+			tome_count = 1
+		else if(roll <= 85)
+			tome_count = 2
+		else
+			tome_count = 3
+		if(tome_count > 0)
+			var/obj/structure/bookcase/archive/target = pick(archive_shelves)
+			for(var/i in 1 to tome_count)
+				var/tome_type = pickweight(tome_spawn_weights())
+				new tome_type(target)
+	return TRUE
+
+// Random oddity loot: one thematic tome by strength weight (same as archive distribution).
+/obj/random/tome
+	name = "random thematic tome"
+	icon_state = "techloot-grey"
+
+/obj/random/tome/item_to_spawn()
+	return pickweight(tome_spawn_weights())

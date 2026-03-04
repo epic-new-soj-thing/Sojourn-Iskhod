@@ -6,7 +6,6 @@
  *		Barcode Scanner
  */
 
-
 /*
  * Bookcase
  */
@@ -270,11 +269,6 @@
 			populate_from_archive()
 
 /obj/structure/bookcase/archive/proc/populate_from_archive()
-	// Sometimes spawn a single Demonomicon in one archive bookcase per round (library archival shelf)
-	if(!GLOB.demonomicon_spawned_this_round && prob(3))
-		new /obj/item/book/manual/demonomicon(src)
-		GLOB.demonomicon_spawned_this_round = TRUE
-
 	establish_db_connection()
 	if(!dbcon || !dbcon.IsConnected())
 		update_icon()

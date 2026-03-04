@@ -42,7 +42,7 @@
 		/obj/item/oddity/common/disk = 2,
 		/obj/item/oddity/common/redbrick = 2,
 		/obj/item/oddity/rare/eldritch_tie = 0.01, //SO RARE
-		/obj/random/tome = 0.3, //Occasionally spawns a tome of blood magic
+		/obj/random/tome = 0.3, // Blood magic tome; defined in blood_magic/tomes.dm
 	)
 	if(!GLOB.demonomicon_spawned_this_round)
 		weighted[/obj/item/book/manual/demonomicon] = 0.03
@@ -217,21 +217,3 @@
 				/obj/item/oddity/ls/puzzlebox = 0.5,
 				/obj/item/oddity/ls/starprojector = 0.5,
 				/obj/item/oddity/ls/inertdetonator = 0.5))
-
-/obj/random/tome
-	name = "random thematic tome"
-	icon_state = "techloot-grey"
-
-/obj/random/tome/item_to_spawn()
-	return pickweight(list(
-		/obj/item/book/tome/fireball = 3,
-		/obj/item/book/tome/smoke = 3,
-		/obj/item/book/tome/blind = 2,
-		/obj/item/book/tome/mindswap = 1,
-		/obj/item/book/tome/forcewall = 2,
-		/obj/item/book/tome/knock = 2,
-		/obj/item/book/tome/horses = 2,
-		/obj/item/book/tome/charge = 2,
-		/obj/item/book/tome/summons = 2,
-		/obj/item/book/tome/sacred_flame = 2
-	))
