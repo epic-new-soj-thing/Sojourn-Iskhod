@@ -302,13 +302,13 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 /obj/item/book/manual/demonomicon/proc/schedule_reading_drain()
 	if(reading_drain_timer)
 		deltimer(reading_drain_timer)
-	reading_drain_timer = addtimer(CALLBACK(src, PROC_REF(drain_sanity_while_open)), 12 SECONDS, TIMER_STOPPABLE)
+	reading_drain_timer = addtimer(CALLBACK(src, PROC_REF(drain_sanity_while_open)), 3 SECONDS, TIMER_STOPPABLE)
 
 /obj/item/book/manual/demonomicon/proc/drain_sanity_while_open()
 	if(!current_reader || !current_reader.sanity)
 		current_reader = null
 		return
-	current_reader.sanity.changeLevel(-4, TRUE)
+	current_reader.sanity.changeLevel(-6, TRUE)
 	if(current_reader)
 		schedule_reading_drain()
 
