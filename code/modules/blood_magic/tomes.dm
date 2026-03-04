@@ -316,9 +316,22 @@
 			to_chat(H, SPAN_WARNING("The script blurs; the binding does not take."))
 			..()
 			return
+		var/is_blood_practitioner = FALSE
+		for(var/datum/language/L in H.languages)
+			if(L.name == LANGUAGE_CULT || L.name == LANGUAGE_OCCULT)
+				is_blood_practitioner = TRUE
+				break
+		// Bypasses cruciform: harms the faithful. Blood practitioners (Cult/Occult) receive aid; others may suffer sanity loss.
 		if(H.get_core_implant(/obj/item/implant/core_implant/cruciform))
 			if(prob(26))
-				to_chat(H, SPAN_NOTICE("The liturgy steadies you; the flame on the page warms your spirit and mends your flesh."))
+				to_chat(H, SPAN_DANGER("The liturgy turns against you; the flame on the page sears spirit and flesh."))
+				H.adjustBruteLoss(14)
+				H.adjustFireLoss(14)
+				if(H.sanity)
+					H.sanity.changeLevel(-12, TRUE)
+		else if(is_blood_practitioner)
+			if(prob(26))
+				to_chat(H, SPAN_NOTICE("The liturgy answers the art; the flame on the page steadies your spirit and mends your flesh."))
 				H.adjustBruteLoss(-14)
 				H.adjustFireLoss(-14)
 				if(H.sanity)
