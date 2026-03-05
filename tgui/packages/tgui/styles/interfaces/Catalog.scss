@@ -81,6 +81,13 @@
     border: none !important;
     border-radius: 0 !important;
   }
+
+  /* Labels and values in black (Product Name, Product Count, Recipe, etc.) */
+  .LabeledList__label,
+  .LabeledList__cell,
+  .Box {
+    color: #000 !important;
+  }
 }
 
 /* CatalogBook front page (equipment/how-to) */
