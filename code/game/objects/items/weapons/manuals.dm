@@ -1202,6 +1202,14 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	title = "Ranger Paragraphs"
 	page_link = "Guide_to_Security"
 
+/obj/item/book/manual/wiki/laws
+	name = "Legal Paragraphs"
+	desc = "A reference linking to the colony and corporate laws."
+	icon_state = "bookSpaceLaw"
+	author = "Iskhod High Council"
+	title = "Legal Paragraphs"
+	page_link = "Laws"
+
 //medical
 /obj/item/book/manual/wiki/medical_guide
 	name = "Medical Diagnostics Manual"
@@ -2112,5 +2120,59 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	dat = {"<html><head></head><body>
 		<p>When we first set down here, the rules were simple: secure water, secure power, secure the perimeter. Everything else came after.</p>
 		</body></html>"}
+
+// Physical books that open their respective catalog in TGUI as a book (table of contents + pages)
+/obj/item/book/manual/catalog_book
+	unique = TRUE
+	var/catalog_module_type = /datum/tgui_module/catalog_book
+
+/obj/item/book/manual/catalog_book/ui_host()
+	return src
+
+/obj/item/book/manual/catalog_book/ui_close(mob/user)
+	return
+
+/obj/item/book/manual/catalog_book/attack_self(mob/user)
+	playsound(src.loc, pick('sound/items/BOOK_Turn_Page_1.ogg',\
+		'sound/items/BOOK_Turn_Page_2.ogg',\
+		'sound/items/BOOK_Turn_Page_3.ogg',\
+		'sound/items/BOOK_Turn_Page_4.ogg',\
+		), rand(40,80), 1)
+	if(carved)
+		if(store)
+			to_chat(user, SPAN_NOTICE("[store] falls out of [title]!"))
+			store.loc = get_turf(src.loc)
+			store = null
+			return
+		else
+			to_chat(user, SPAN_NOTICE("The pages of [title] have been cut out!"))
+			return
+	var/datum/tgui_module/catalog_book/TM = new catalog_module_type(src)
+	TM.ui_interact(user)
+	user.visible_message("[user] opens a book titled \"[src.title]\" and begins reading intently.")
+
+/obj/item/book/manual/catalog_book/cooking
+	name = "Chef Recipes"
+	icon_state = "cooked_book"
+	author = "Frontier Logistics Service"
+	title = "Chef Recipes"
+	desc = "A bound collection of cooking recipes. Opens to a table of contents and recipe pages."
+	catalog_module_type = /datum/tgui_module/catalog_book/cooking
+
+/obj/item/book/manual/catalog_book/drinks
+	name = "Barman Recipes"
+	icon_state = "barbook"
+	author = "Frontier Logistics Service"
+	title = "Barman Recipes"
+	desc = "A bound collection of drink and cocktail recipes. Opens to a table of contents and recipe pages."
+	catalog_module_type = /datum/tgui_module/catalog_book/drinks
+
+/obj/item/book/manual/catalog_book/chemistry
+	name = "Laboratory Chemistry Guide"
+	icon_state = "chemistrybook"
+	author = "Vesalius-Andra Research"
+	title = "Laboratory Chemistry Guide"
+	desc = "A complete guide to laboratory chemistry reagents and reactions. Opens to a table of contents and reagent pages."
+	catalog_module_type = /datum/tgui_module/catalog_book/chemistry
 
 // Thematic tomes moved to code/modules/blood_magic/tomes.dm (path: /obj/item/book/tome/[effect]). Obtain via oddity loot or Scribe ritual.

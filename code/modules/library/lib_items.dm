@@ -200,11 +200,10 @@
 		new /obj/item/book/manual/medical_cloning(src)
 		new /obj/item/book/manual/medical_diagnostics_manual(src)
 		new /obj/item/book/manual/wiki/medical_guide(src)
-		new /obj/item/book/manual/wiki/medical_guide(src)
-		new /obj/item/book/manual/wiki/medical_guide(src)
-		new /obj/item/book/manual/wiki/medical_chemistry(src)
+		new /obj/item/book/manual/catalog_book/chemistry(src)
 		new /obj/item/book/manual/wiki/surgery_guide(src)
 		new /obj/item/book/manual/wiki/infections_guide(src)
+		new /obj/item/book/manual/infections_guide(src)
 		new /obj/item/book/manual/wiki/cytology_textbook(src)
 		new /obj/item/book/manual/wiki/xenogenetics_guide(src)
 		update_icon()
@@ -218,12 +217,15 @@
 		new /obj/item/book/manual/wiki/engineering_construction(src)
 		new /obj/item/book/manual/wiki/engineering_hacking(src)
 		new /obj/item/book/manual/wiki/engineering_atmos(src)
+		new /obj/item/book/manual/wiki/electronic_primer(src)
 		new /obj/item/book/manual/evaguide(src)
 		new /obj/item/book/manual/atmospipes(src)
 		new /obj/item/book/manual/engineering_guide(src)
 		new /obj/item/book/manual/engineering_singularity_safety(src)
+		new /obj/item/book/manual/supermatter_engine(src)
+		new /obj/item/book/manual/engineering_particle_accelerator(src)
+		new /obj/item/book/manual/engineering_antimatter_engine(src)
 		new /obj/item/book/manual/ripley_build_and_repair(src)
-		new /obj/item/book/manual/wiki/electronic_primer(src)
 		new /obj/item/book/manualshield_generator_guide(src)
 		update_icon()
 
@@ -239,6 +241,32 @@
 		new /obj/item/book/manual/robotics_cyborgs(src)
 		new /obj/item/book/manual/robotics_catalogue(src)
 		new /obj/item/book/manual/xenobio_recipies(src)
+		update_icon()
+
+/obj/structure/bookcase/manuals/security
+	name = "Security and Laws bookcase"
+	desc = "A bookcase stocked with law and security procedure manuals."
+
+	New()
+		..()
+		new /obj/item/book/manual/security_space_law(src)
+		new /obj/item/book/manual/wiki/laws(src)
+		new /obj/item/book/manual/wiki/security_ironparagraphs(src)
+		new /obj/item/book/manual/wiki/cqc_manual(src)
+		new /obj/item/book/manual/wiki/stealth_manual(src)
+		new /obj/item/book/manual/detective(src)
+		update_icon()
+
+/obj/structure/bookcase/manuals/kitchen
+	name = "Kitchen and Bar Manuals bookcase"
+	desc = "A bookcase stocked with cooking and drink recipe catalogs."
+
+	New()
+		..()
+		new /obj/item/book/manual/catalog_book/cooking(src)
+		new /obj/item/book/manual/catalog_book/cooking(src)
+		new /obj/item/book/manual/catalog_book/drinks(src)
+		new /obj/item/book/manual/catalog_book/drinks(src)
 		update_icon()
 
 /obj/structure/bookcase/manuals/fiction

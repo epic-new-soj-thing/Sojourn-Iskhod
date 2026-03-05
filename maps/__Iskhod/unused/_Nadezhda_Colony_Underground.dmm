@@ -5016,7 +5016,7 @@
 /area/iskhod/crew_quarters/cafeteria)
 "akW" = (
 /obj/structure/table/marble,
-/obj/item/book/manual/wiki/chef_recipes,
+/obj/item/book/manual/catalog_book/cooking,
 /turf/simulated/floor/tiled/cafe,
 /area/iskhod/crew_quarters/kitchen)
 "akX" = (
@@ -16234,8 +16234,8 @@
 /area/iskhod/maintenance/undergroundfloor1east)
 "aHC" = (
 /obj/structure/bookcase,
-/obj/item/book/manual/barman_recipes,
-/obj/item/book/manual/chef_recipes,
+/obj/item/book/manual/catalog_book/drinks,
+/obj/item/book/manual/catalog_book/cooking,
 /obj/item/book/manual/engineering_construction,
 /obj/item/book/manual/engineering_guide,
 /obj/item/book/manual/engineering_hacking,
@@ -28270,7 +28270,7 @@
 /area/iskhod/crew_quarters/sleep/cryo2)
 "bpV" = (
 /obj/structure/table/marble,
-/obj/item/book/manual/wiki/barman_recipes,
+/obj/item/book/manual/catalog_book/drinks,
 /obj/structure/sign/painting/paintingsnow{
 	pixel_y = 32
 	},
@@ -56142,8 +56142,8 @@
 /area/iskhod/rnd/docking)
 "txp" = (
 /obj/structure/bookcase/metal,
-/obj/item/book/manual/barman_recipes,
-/obj/item/book/manual/chef_recipes,
+/obj/item/book/manual/catalog_book/drinks,
+/obj/item/book/manual/catalog_book/cooking,
 /obj/item/book/manual/engineering_construction,
 /obj/item/book/manual/engineering_guide,
 /obj/item/book/manual/security_space_law,
