@@ -378,6 +378,23 @@
 /proc/cmp_shelf_pair_asc(list/a, list/b)
 	return sorttext(a[1], b[1])
 
+/// Returns a list of printable manual book entries for the library UI. Each entry is list("name" = display name, "path" = type path as string). Excludes demonomicon.
+/proc/get_printable_manuals()
+	var/static/list/printable_manual_entries
+	if(!printable_manual_entries)
+		var/list/pairs = list()
+		for(var/book_type in subtypesof(/obj/item/book/manual))
+			if(book_type == /obj/item/book/manual/demonomicon)
+				continue
+			var/obj/item/book/manual/temp = new book_type(null)
+			pairs += list(list(temp.shelf_category, temp.name || temp.title || "[book_type]", book_type))
+			qdel(temp)
+		sortTim(pairs, GLOBAL_PROC_REF(cmp_shelf_pair_asc))
+		printable_manual_entries = list()
+		for(var/pair in pairs)
+			printable_manual_entries += list(list("name" = pair[2], "path" = "[pair[3]]"))
+	return printable_manual_entries
+
 /obj/structure/bookcase/archive
 	name = "Archive bookcase"
 	desc = "A wooden shelving unit that is periodically stocked with a random assortment of all books from the external archive."

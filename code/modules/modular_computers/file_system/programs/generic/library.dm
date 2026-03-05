@@ -67,6 +67,14 @@ The answer was five and a half years -ZeroBits
 		data["scanner"] = can_manage && istype(scanner)
 		data["upload_category"] = upload_category
 
+		// Printable in-game manuals (default books like engineering guides, medical manuals, etc.)
+		var/list/manual_entries = get_printable_manuals()
+		var/list/printable_manuals = list()
+		for(var/i in 1 to manual_entries.len)
+			var/list/entry = manual_entries[i]
+			printable_manuals.Add(list(list("name" = entry["name"], "index" = i)))
+		data["printable_manuals"] = printable_manuals
+
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "library.tmpl", "Library Program", 575, 700, state = state)
@@ -158,6 +166,37 @@ The answer was five and a half years -ZeroBits
 
 		//Regular printing
 		print_text("<i>Author: [current_book["author"]]<br>USBN: [current_book["id"]]</i><br><h3>[current_book["title"]]</h3><br>[current_book["content"]]", usr)
+		return 1
+
+	if(href_list["printmanual"])
+		var/idx = text2num(href_list["printmanual"])
+		var/list/manual_entries = get_printable_manuals()
+		if(!idx || idx < 1 || idx > manual_entries.len)
+			error_message = "Software Error: Invalid manual selection."
+			return 1
+		var/list/entry = manual_entries[idx]
+		var/path_str = entry["path"]
+		var/book_type = text2path(path_str)
+		if(!ispath(book_type, /obj/item/book/manual) || book_type == /obj/item/book/manual/demonomicon)
+			error_message = "Software Error: Cannot print that manual."
+			return 1
+		if(!nano_host())
+			return 1
+		for(var/d in GLOB.cardinal)
+			var/obj/machinery/bookbinder/bndr = locate(/obj/machinery/bookbinder, get_step(nano_host(), d))
+			if(bndr && bndr.anchored)
+				var/obj/item/book/manual/M = new book_type(bndr.loc)
+				var/obj/machinery/librarycomp/comp = get_library_comp_in_area(get_area(nano_host()))
+				if(comp && !(M in comp.inventory))
+					comp.inventory += M
+				bndr.visible_message("\The [bndr] whirs as it prints and binds a new book.")
+				return 1
+		// No binder adjacent; spawn at computer
+		var/obj/item/book/manual/M = new book_type(get_turf(nano_host()))
+		var/obj/machinery/librarycomp/comp = get_library_comp_in_area(get_area(nano_host()))
+		if(comp && !(M in comp.inventory))
+			comp.inventory += M
+		error_message = "Printed (no binder nearby; book dropped at terminal)."
 		return 1
 	if(href_list["sortby"])
 		sort_by = href_list["sortby"]
