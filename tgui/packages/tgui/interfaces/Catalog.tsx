@@ -57,7 +57,7 @@ type Data = {
 export const Catalog = (props) => {
   return (
     <Window width={640} height={700}>
-      <Window.Content className="Catalog">
+      <Window.Content>
         <CatalogContent />
       </Window.Content>
     </Window>
@@ -109,15 +109,11 @@ const CatalogFrontPage = (props) => {
   );
 };
 
-const CatalogHeader = (props: {
-  showSearch?: boolean;
-  showBack?: boolean;
-  showFrontPage?: boolean;
-}) => {
+const CatalogHeader = (props: { showSearch?: boolean; showBack?: boolean }) => {
   const { act, data } = useBackend<Data>();
   const { catalog_search, front_page_name, front_page_icon, last_entry } = data;
 
-  const { showSearch, showBack, showFrontPage } = props;
+  const { showSearch, showBack } = props;
 
   return (
     <Stack height="120px" align="center" justify="space-around">
@@ -149,9 +145,9 @@ const CatalogHeader = (props: {
               </Stack>
             </Stack.Item>
           )}
-          {(showBack || showFrontPage) && (
+          {showBack && (
             <Stack.Item>
-              {showBack && !!last_entry && (
+              {!!last_entry && (
                 <Button
                   fluid
                   icon="chevron-left"
@@ -160,24 +156,13 @@ const CatalogHeader = (props: {
                   Back to {last_entry}
                 </Button>
               )}
-              {showBack && (
-                <Button
-                  fluid
-                  icon="home"
-                  onClick={() => act('state_machine_enter_list')}
-                >
-                  Return To List {last_entry ? '(Erase History)' : ''}
-                </Button>
-              )}
-              {showFrontPage && (
-                <Button
-                  fluid
-                  icon="book"
-                  onClick={() => act('state_machine_enter_front')}
-                >
-                  Front page
-                </Button>
-              )}
+              <Button
+                fluid
+                icon="home"
+                onClick={() => act('state_machine_enter_list')}
+              >
+                Return To List {last_entry ? '(Erase History)' : ''}
+              </Button>
             </Stack.Item>
           )}
         </Stack>
@@ -218,7 +203,7 @@ const CatalogList = (props) => {
 
   return (
     <Section fill height="100%">
-      <CatalogHeader showSearch showFrontPage />
+      <CatalogHeader showSearch />
       <Divider />
       {catalogListContent}
     </Section>
@@ -274,8 +259,8 @@ const CatalogListCooking = (props: { entries: CookingEntry[] }) => {
               <Stack.Item basis="40%">
                 <Button
                   color="transparent"
-                  textColor="black"
-                  style={{ borderBottom: '1px dashed #555' }}
+                  textColor="white"
+                  style={{ borderBottom: '1px dashed #fff' }}
                   onClick={() =>
                     act('state_machine_enter_entry', { entry: entry.id })
                   }
@@ -326,8 +311,8 @@ const CatalogListDrinks = (props: { entries: DrinkEntry[] }) => {
               <Stack.Item basis="70%">
                 <Button
                   color="transparent"
-                  textColor="black"
-                  style={{ borderBottom: '1px dashed #555' }}
+                  textColor="white"
+                  style={{ borderBottom: '1px dashed #fff' }}
                   onClick={() =>
                     act('state_machine_enter_entry', { entry: entry.id })
                   }
@@ -373,8 +358,8 @@ const CatalogListReagents = (props: { entries: ReagentEntry[] }) => {
               <Stack.Item basis="40%">
                 <Button
                   color="transparent"
-                  textColor="black"
-                  style={{ borderBottom: '1px dashed #555' }}
+                  textColor="white"
+                  style={{ borderBottom: '1px dashed #fff' }}
                   onClick={() =>
                     act('state_machine_enter_entry', { entry: entry.id })
                   }
@@ -416,8 +401,8 @@ const CatalogListAll = (props: { entries: Partial<ReagentEntry>[] }) => {
               <Stack.Item basis="40%">
                 <Button
                   color="transparent"
-                  textColor="black"
-                  style={{ borderBottom: '1px dashed #555' }}
+                  textColor="white"
+                  style={{ borderBottom: '1px dashed #fff' }}
                   onClick={() =>
                     act('state_machine_enter_entry', { entry: entry.id })
                   }
@@ -460,7 +445,7 @@ const CatalogEntry = (props) => {
 
   // We do not use catalog_key here because linked navigation can introduce things from outside of our catalog
   // that we should always display correctly.
-  if (selected_entry.id.startsWith('/datum/cooking/recipe')) {
+  if (selected_entry.id.startsWith('/datum/cooking_with_jane/recipe')) {
     entryView = (
       <CatalogEntryCooking
         selected_entry={selected_entry as CatalogEntryCookingData}
@@ -486,7 +471,7 @@ const CatalogEntry = (props) => {
 
   return (
     <Section fill>
-      <CatalogHeader showBack showFrontPage />
+      <CatalogHeader showBack />
       <Divider />
       {entryView}
     </Section>
@@ -524,7 +509,7 @@ const CatalogEntryCooking = (props: {
   } = selected_entry;
 
   return (
-    <Section fill style={{ height: '100%', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+    <Section fill height="80%" style={{ overflowY: 'auto' }}>
       <Stack align="center" justify="space-around">
         <Stack.Item grow>
           <Box fontSize={2} bold>
@@ -563,7 +548,15 @@ const CatalogEntryCooking = (props: {
         )}
         {!!recipe_guide && (
           <LabeledList.Item label="Recipe">
-            <Box className="Catalog-entryBox" p={1}>
+            <Box
+              style={{
+                borderRadius: '5px',
+                border: '1px solid #4972a1',
+                overflowY: 'auto',
+              }}
+              p={1}
+              height={10}
+            >
               {/* Safety: This is compile time specified HTML, no player input. */}
               {/* eslint-disable react/no-danger */}
               <div dangerouslySetInnerHTML={{ __html: recipe_guide }} />
@@ -632,7 +625,16 @@ const CatalogEntryDrinks = (props: {
         {!!recipe_data && (
           <LabeledList.Item label="Recipe">
             {recipe_data.map((data, index) => (
-              <Box key={index} className="Catalog-entryBox" p={1}>
+              <Box
+                key={index}
+                style={{
+                  borderRadius: '5px',
+                  border: '1px solid #4972a1',
+                  overflowY: 'auto',
+                }}
+                p={1}
+                height={10}
+              >
                 <Recipe recipe_data={data} />
               </Box>
             ))}
@@ -668,6 +670,8 @@ type CatalogEntryReagentsData = SharedRecipeData &
 const CatalogEntryReagents = (props: {
   selected_entry: CatalogEntryReagentsData;
 }) => {
+  const { act } = useBackend();
+
   const { selected_entry } = props;
   const {
     name,
@@ -747,11 +751,22 @@ const CatalogEntryReagents = (props: {
             label={`Decomposition Above ${heating_point}K`}
             labelColor="red"
           >
-            <Box className="Catalog-entryBox" p={1}>
+            <Box
+              p={1}
+              style={{
+                borderRadius: '5px',
+                border: '1px solid #4972a1',
+              }}
+            >
               {heating_decompose.types.map((typ) => (
-                <Box key={typ.type} inline style={{ marginRight: '0.5em' }}>
+                <Button
+                  key={typ.type}
+                  onClick={() =>
+                    act('state_machine_enter_entry', { entry: typ.type })
+                  }
+                >
                   {typ.name}
-                </Box>
+                </Button>
               ))}
             </Box>
           </LabeledList.Item>
@@ -761,22 +776,44 @@ const CatalogEntryReagents = (props: {
             label={`Decomposition Below ${chilling_point}K`}
             labelColor="blue"
           >
-            <Box className="Catalog-entryBox" p={1}>
+            <Box
+              p={1}
+              style={{
+                borderRadius: '5px',
+                border: '1px solid #4972a1',
+              }}
+            >
               {chilling_decompose.types.map((typ) => (
-                <Box key={typ.type} inline style={{ marginRight: '0.5em' }}>
+                <Button
+                  key={typ.type}
+                  onClick={() =>
+                    act('state_machine_enter_entry', { entry: typ.type })
+                  }
+                >
                   {typ.name}
-                </Box>
+                </Button>
               ))}
             </Box>
           </LabeledList.Item>
         )}
         {!!result_of_decomposition_in && (
           <LabeledList.Item label="Result Of Decomposition">
-            <Box className="Catalog-entryBox" p={1}>
+            <Box
+              p={1}
+              style={{
+                borderRadius: '5px',
+                border: '1px solid #4972a1',
+              }}
+            >
               {result_of_decomposition_in.map((decomp) => (
-                <Box key={decomp.type} inline style={{ marginRight: '0.5em' }}>
+                <Button
+                  key={decomp.type}
+                  onClick={() =>
+                    act('state_machine_enter_entry', { entry: decomp.type })
+                  }
+                >
                   {decomp.name}
-                </Box>
+                </Button>
               ))}
             </Box>
           </LabeledList.Item>
@@ -784,7 +821,16 @@ const CatalogEntryReagents = (props: {
         {!!recipe_data && (
           <LabeledList.Item label="Recipe">
             {recipe_data.map((data, index) => (
-              <Box key={index} className="Catalog-entryBox" p={1}>
+              <Box
+                key={index}
+                style={{
+                  borderRadius: '5px',
+                  border: '1px solid #4972a1',
+                  overflowY: 'auto',
+                }}
+                p={1}
+                height={10}
+              >
                 <Recipe recipe_data={data} />
               </Box>
             ))}
@@ -792,11 +838,22 @@ const CatalogEntryReagents = (props: {
         )}
         {!!can_be_used_in && (
           <LabeledList.Item label="Takes Part In Reactions">
-            <Box className="Catalog-entryBox" p={1}>
+            <Box
+              p={1}
+              style={{
+                borderRadius: '5px',
+                border: '1px solid #4972a1',
+              }}
+            >
               {can_be_used_in.map((r) => (
-                <Box key={r.type} inline style={{ marginRight: '0.5em' }}>
+                <Button
+                  key={r.type}
+                  onClick={() =>
+                    act('state_machine_enter_entry', { entry: r.type })
+                  }
+                >
                   {r.name}
-                </Box>
+                </Button>
               ))}
             </Box>
           </LabeledList.Item>
@@ -818,6 +875,8 @@ type RecipeData = {
 };
 
 const Recipe = (props: { recipe_data: RecipeData }) => {
+  const { act } = useBackend();
+
   const { recipe_data } = props;
   const {
     reagents,
@@ -844,7 +903,8 @@ const Recipe = (props: { recipe_data: RecipeData }) => {
   } else if (maximum_temperature) {
     temperature = (
       <Box>
-        At temperatures below {maximum_temperature}K
+        At temperatures belo
+        {maximum_temperature}K
       </Box>
     );
   }
@@ -854,22 +914,54 @@ const Recipe = (props: { recipe_data: RecipeData }) => {
       {!!reagents &&
         reagents.map((v) => (
           <Box key={v.reagent}>
-            {v.parts} of {v.reagent}
+            {v.parts} of{' '}
+            <Button
+              onClick={() =>
+                act('state_machine_enter_entry', { entry: v.type })
+              }
+            >
+              {v.reagent}
+            </Button>
           </Box>
         ))}
       {!!catalyst &&
         catalyst.map((v) => (
           <Box key={v.reagent}>
-            In presence of {v.units}u of {v.reagent}
+            In presence of {v.units}u of{' '}
+            <Button
+              onClick={() =>
+                act('state_machine_enter_entry', { entry: v.type })
+              }
+            >
+              {v.reagent}
+            </Button>
           </Box>
         ))}
       {!!inhibitors &&
         inhibitors.map((v) => (
-          <Box key={v.reagent}>Without presence of {v.reagent}</Box>
+          <Box key={v.reagent}>
+            Without presence of
+            <Button
+              onClick={() =>
+                act('state_machine_enter_entry', { entry: v.type })
+              }
+            >
+              {v.reagent}
+            </Button>
+          </Box>
         ))}
       {!!byproducts &&
         byproducts.map((v) => (
-          <Box key={v.reagent}>Additional Creation of {v.reagent}</Box>
+          <Box key={v.reagent}>
+            Additional Creation of
+            <Button
+              onClick={() =>
+                act('state_machine_enter_entry', { entry: v.type })
+              }
+            >
+              {v.reagent}
+            </Button>
+          </Box>
         ))}
       {temperature}
       {required_object && (
@@ -877,42 +969,5 @@ const Recipe = (props: { recipe_data: RecipeData }) => {
       )}
       <Box>Results in {result_amount} of substance</Box>
     </Box>
-  );
-};
-
-/** Renders a single catalog entry (cooking/drinks/reagent). Exported for use in CatalogBook. */
-export const CatalogEntryContent = (props: {
-  selected_entry: SharedRecipeData | null;
-}) => {
-  const { selected_entry } = props;
-  if (!selected_entry) {
-    return null;
-  }
-  if (selected_entry.id.startsWith('/datum/cooking/recipe')) {
-    return (
-      <CatalogEntryCooking
-        selected_entry={selected_entry as CatalogEntryCookingData}
-      />
-    );
-  }
-  if (
-    selected_entry.id.startsWith('/datum/reagent/drink') ||
-    selected_entry.id.startsWith('/datum/reagent/ethanol')
-  ) {
-    return (
-      <CatalogEntryDrinks
-        selected_entry={selected_entry as CatalogEntryDrinksData}
-      />
-    );
-  }
-  if (selected_entry.id.startsWith('/datum/reagent')) {
-    return (
-      <CatalogEntryReagents
-        selected_entry={selected_entry as CatalogEntryReagentsData}
-      />
-    );
-  }
-  return (
-    <Box color="bad">Unknown recipe type {selected_entry.id}</Box>
   );
 };
