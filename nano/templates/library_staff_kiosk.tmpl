@@ -3,7 +3,105 @@
 		<h2>Book Inventory Management</h2>
 	</div>
 	<div class="itemContent" style="width: 100%; background-color: #2c2c2c; padding: 8px;">
-		{{ out += data.content; }}
+		{{if data.screenstate === 0}}
+			{{:helper.link("1. View General Inventory", null, {switchscreen: 1})}}
+			{{:helper.link("2. View Checked Out Inventory", null, {switchscreen: 2})}}
+			{{:helper.link("3. Check out a Book", null, {switchscreen: 3})}}
+			{{:helper.link("4. Connect to External Archive", null, {switchscreen: 4})}}
+			{{:helper.link("5. Upload New Title to Archive", null, {switchscreen: 5})}}
+			{{if data.emagged}}
+				{{:helper.link("6. Access the Forbidden Lore Vault", null, {switchscreen: 6})}}
+			{{/if}}
+			<br><br><b>Barcode scanner:</b> Use the scanner on this computer to associate.<br>
+			Mode 1 = Set book for check-out (then enter recipient on screen 3).<br>
+			Mode 2 = Check in (scan book to clear its checkout).<br>
+			Mode 3 = Add scanned book to registered inventory.<br>
+		{{/if}}
+		{{if data.screenstate === 1}}
+			<h3>Registered Inventory (for check-out)</h3><br>
+			{{for data.inventory}}
+				{{:value.name}} {{:helper.link("Delete", null, {delbook: value.ref})}}<br>
+			{{/for}}
+			<br><h3>Physical Inventory (all books in library)</h3><br>
+			{{for data.physical_inventory}}
+				{{:value.name}}{{if value.author}} by {{:value.author}}{{/if}} - {{:value.where}}<br>
+			{{/for}}
+			<br>{{:helper.link("Return to main menu", null, {switchscreen: 0})}}
+		{{/if}}
+		{{if data.screenstate === 2}}
+			<h3>Checked Out Books</h3><br>
+			{{for data.checkouts}}
+				"{{:value.bookname}}", Checked out to: {{:value.mobname}}<br>
+				--- Taken: {{:value.timetaken}} minutes ago, Due: {{if value.overdue}}<span class="bad">{{:value.timedue}}</span>{{else}}{{:value.timedue}}{{/if}}<br>
+				{{:helper.link("Check In", null, {checkin: value.ref})}}<br><br>
+			{{/for}}
+			{{:helper.link("Return to main menu", null, {switchscreen: 0})}}
+		{{/if}}
+		{{if data.screenstate === 3}}
+			<h3>Check Out a Book</h3><br>
+			<i>Scan a book with the barcode scanner (mode 1) to set the book title, or edit below.</i><br>
+			Book: {{:data.buffer_book || ""}} {{:helper.link("Edit", null, {editbook: 1})}}<br>
+			Recipient: {{:data.buffer_mob || ""}} {{:helper.link("Edit", null, {editmob: 1})}}<br>
+			Checkout Date : {{:data.checkout_time}}<br>
+			Due Date: {{:data.due_time}}<br>
+			(Checkout Period: {{:data.checkoutperiod}} minutes) {{:helper.link("+", null, {increasetime: 1})}} {{:helper.link("-", null, {decreasetime: 1})}}<br>
+			{{:helper.link("Commit Entry", null, {checkout: 1})}}
+			{{:helper.link("Return to main menu", null, {switchscreen: 0})}}
+		{{/if}}
+		{{if data.screenstate === 4}}
+			<h3>External Archive</h3>
+			{{if data.archive_error}}
+				<span class="bad">ERROR: {{:data.archive_error}}</span>
+			{{else}}
+				{{:helper.link("Order book by SS13BN", null, {orderbyid: 1})}}<br><br>
+				<table>
+					<tr>
+						<td>{{:helper.link("AUTHOR", null, {sort: "author"})}}</td>
+						<td>{{:helper.link("TITLE", null, {sort: "title"})}}</td>
+						<td>{{:helper.link("CATEGORY", null, {sort: "category"})}}</td>
+						<td>USBN</td>
+						<td></td>
+					</tr>
+					{{for data.archive_results}}
+						<tr>
+							<td>{{:value.author}}</td>
+							<td>{{:value.title}}</td>
+							<td>{{:value.category}}</td>
+							<td>{{:value.id}}</td>
+							<td>{{:helper.link("View", null, {viewbookid: value.id})}} {{:helper.link("Order", null, {targetid: value.id})}}</td>
+						</tr>
+					{{/for}}
+				</table>
+			{{/if}}
+			<br>{{:helper.link("Return to main menu", null, {switchscreen: 0})}}
+		{{/if}}
+		{{if data.screenstate === 5}}
+			<h3>Upload a New Title</h3>
+			{{if data.upload_no_scanner}}
+				<span class="bad">No scanner found within wireless network range.</span><br>
+			{{else data.upload_no_cache}}
+				<span class="bad">No data found in scanner memory.</span><br>
+			{{else}}
+				<span>Data marked for upload...</span><br>
+				<span>Title: </span>{{:data.upload_scanner_title}}<br>
+				<span>Author: </span>{{:helper.link(data.upload_scanner_author, null, {setauthor: 1})}}<br>
+				<span>Category: </span>{{:helper.link(data.upload_category, null, {setcategory: 1})}}<br>
+				{{:helper.link("Upload", null, {upload: 1})}}
+			{{/if}}
+			{{:helper.link("Return to main menu", null, {switchscreen: 0})}}
+		{{/if}}
+		{{if data.screenstate === 7}}
+			<h3>Archive Book</h3>
+			{{if data.view_book}}
+				<b>{{:data.view_book.title}}</b><br>
+				<i>by {{:data.view_book.author || "Unknown"}}</i> (USBN: {{:data.view_book.id}})<br><br>
+				<div style="white-space: pre-wrap; background: #eee; padding: 8px; max-height: 400px; overflow-y: auto; color: #333;">{{:data.view_book.content || "(No content)"}}</div><br>
+			{{else}}
+				<span class="bad">No book loaded.</span><br>
+			{{/if}}
+			{{:helper.link("Back to Archive", null, {backfromview: 1})}}
+			{{:helper.link("Return to main menu", null, {switchscreen: 0})}}
+		{{/if}}
 	</div>
 </div>
 <br><br><hr><i>NTOS v2.0.4b Copyright NanoTrasen 2557 - 2561</i>

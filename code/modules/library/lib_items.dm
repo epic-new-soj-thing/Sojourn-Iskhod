@@ -323,18 +323,48 @@
 			for(var/obj/structure/bookcase/B in nonfiction_shelves)
 				B.populate_from_archive_by_category("Non-Fiction", 6)
 				B.update_icon()
-		// Populate library check-in computer inventory from all bookcases in the same area so the console shows current holdings
-		for(var/obj/machinery/librarycomp/comp in world)
-			var/area/comp_area = get_area(comp)
-			if(!comp_area)
-				continue
-			for(var/obj/structure/bookcase/bookcase in world)
-				if(get_area(bookcase) != comp_area)
-					continue
-				for(var/obj/item/book/b in bookcase.contents)
-					if(!(b in comp.inventory))
-						comp.inventory += b
+		// Distribute archive fiction/nonfiction manuals across all archive shelves of the same type
+		var/list/archive_fiction_shelves = list()
+		var/list/archive_nonfiction_shelves = list()
+		for(var/obj/structure/bookcase/archive/fiction/AF in world)
+			archive_fiction_shelves += AF
+		for(var/obj/structure/bookcase/archive/nonfiction/AN in world)
+			archive_nonfiction_shelves += AN
+		if(archive_fiction_shelves.len)
+			var/list/arch_fiction_types = sortList(subtypesof(/obj/item/book/manual/fiction))
+			var/arch_fiction_per_shelf = max(1, round(arch_fiction_types.len / archive_fiction_shelves.len))
+			for(var/i = 1; i <= arch_fiction_types.len; i++)
+				var/shelf_idx = min(1 + round((i - 1) / arch_fiction_per_shelf - 0.49), archive_fiction_shelves.len)
+				new arch_fiction_types[i](archive_fiction_shelves[shelf_idx])
+			for(var/obj/structure/bookcase/B in archive_fiction_shelves)
+				B.update_icon()
+		if(archive_nonfiction_shelves.len)
+			var/list/arch_nonfiction_types = sortList(subtypesof(/obj/item/book/manual/nonfiction))
+			var/arch_nonfiction_per_shelf = max(1, round(arch_nonfiction_types.len / archive_nonfiction_shelves.len))
+			for(var/i = 1; i <= arch_nonfiction_types.len; i++)
+				var/shelf_idx = min(1 + round((i - 1) / arch_nonfiction_per_shelf - 0.49), archive_nonfiction_shelves.len)
+				new arch_nonfiction_types[i](archive_nonfiction_shelves[shelf_idx])
+			for(var/obj/structure/bookcase/B in archive_nonfiction_shelves)
+				B.update_icon()
+		// Populate the check-in computer's inventory list (not the external DB) from all bookcases so Registered Inventory and Physical Inventory show checked-in books and books on active shelves, including manuals
+		sync_library_comp_inventory_from_bookcases()
+		// Run again after delayed bookcase population (e.g. spawn(5) on some bookcases) so the inventory list stays complete
+		spawn(10)
+			sync_library_comp_inventory_from_bookcases()
 	return TRUE
+
+/// Syncs each library check-in computer's in-memory inventory list with all books in bookcases in the same area. Only touches comp.inventory (no SQL). Ensures manual books and other on-shelf books appear in Registered Inventory.
+/proc/sync_library_comp_inventory_from_bookcases()
+	for(var/obj/machinery/librarycomp/comp in world)
+		var/area/comp_area = get_area(comp)
+		if(!comp_area)
+			continue
+		for(var/obj/structure/bookcase/bookcase in world)
+			if(get_area(bookcase) != comp_area)
+				continue
+			for(var/obj/item/book/b in bookcase.contents)
+				if(!(b in comp.inventory))
+					comp.inventory += b
 
 /// Populate this bookcase with books from the archive DB by category. Called by manual bookcases and the archive.
 /obj/structure/bookcase/proc/populate_from_archive_by_category(archive_category, limit = 10)
@@ -432,7 +462,7 @@
 		added++
 	update_icon()
 
-/// Add in-game manuals that match the given shelf_category (e.g. "technical", "reference"). Used by category-specific archive bookcases so SQL books and manuals go to the correct shelf.
+/// Add in-game manuals that match the given shelf_category (e.g. "technical", "reference"). Used by category-specific archive bookcases so SQL books and manuals go to the correct shelf. Limit <= 0 means add all manuals in that category.
 /obj/structure/bookcase/archive/proc/populate_with_manuals_by_shelf(shelf_category, limit = 6)
 	var/static/list/manual_types_by_shelf
 	if(!manual_types_by_shelf)
@@ -459,7 +489,7 @@
 	var/added = 0
 	for(var/pair in pairs)
 		var/book_type = pair[2]
-		if(added >= limit)
+		if(limit > 0 && added >= limit)
 			break
 		new book_type(src)
 		added++
@@ -554,7 +584,7 @@
 	desc = "A wooden shelving unit stocked with fiction from the external archive."
 	New()
 		..()
-		populate_with_manuals_by_shelf("Fiction", 6)
+		// Manuals are distributed across all fiction archive shelves at roundstart (distribute_library_books)
 		spawn(5)
 			populate_from_archive_by_category("Fiction", 10)
 
@@ -563,7 +593,7 @@
 	desc = "A wooden shelving unit stocked with non-fiction from the external archive."
 	New()
 		..()
-		populate_with_manuals_by_shelf("Non-Fiction", 6)
+		// Manuals are distributed across all nonfiction archive shelves at roundstart (distribute_library_books)
 		spawn(5)
 			populate_from_archive_by_category("Non-Fiction", 10)
 

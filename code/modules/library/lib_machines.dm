@@ -54,56 +54,46 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 
 /obj/machinery/librarypubliccomp/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = list()
-	data["content"] = get_visitor_ui_content()
+	data["screenstate"] = screenstate
+	data["title"] = title
+	data["category"] = category
+	data["author"] = author
+	data["search_error"] = null
+	data["search_results"] = list()
+	data["view_book"] = null
+
+	switch(screenstate)
+		if(0)
+			// Search settings - template uses helper.link() for all buttons
+			null
+		if(1)
+			establish_db_connection()
+			if(!dbcon || !dbcon.IsConnected())
+				data["search_error"] = "Unable to contact External Archive. Please contact your system administrator for assistance."
+			else if(!SQLquery)
+				data["search_error"] = "Malformed search request. Please contact your system administrator for assistance."
+			else
+				var/DBQuery/query = dbcon.NewQuery(SQLquery)
+				if(query.Execute())
+					while(query.NextRow())
+						data["search_results"] += list(list(
+							"author" = query.item[1],
+							"title" = query.item[2],
+							"category" = query.item[3],
+							"id" = query.item[4]
+						))
+				else
+					data["search_error"] = "Archive search failed. Check that the books table exists."
+		if(2)
+			if(view_book_data && view_book_data["title"] != null)
+				data["view_book"] = view_book_data.Copy()
+
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, "library_visitor_kiosk.tmpl", "Library Visitor", 500, 600)
 		ui.set_window_options("focus=0;can_close=1;can_minimize=0;can_maximize=0;can_resize=1;titlebar=1;")
 		ui.set_initial_data(data)
 		ui.open()
-
-/obj/machinery/librarypubliccomp/proc/get_visitor_ui_content()
-	var/dat = ""
-	switch(screenstate)
-		if(0)
-			dat += {"<h2>Search Settings</h2><br>
-			<A href='?src=\ref[src];settitle=1'>Filter by Title: [title]</A><BR>
-			<A href='?src=\ref[src];setcategory=1'>Filter by Category: [category]</A><BR>
-			<A href='?src=\ref[src];setauthor=1'>Filter by Author: [author]</A><BR>
-			<A href='?src=\ref[src];search=1'>\[Start Search\]</A><BR>"}
-		if(1)
-			establish_db_connection()
-			if(!dbcon || !dbcon.IsConnected())
-				dat += "<font color=red><b>ERROR</b>: Unable to contact External Archive. Please contact your system administrator for assistance.</font><BR>"
-			else if(!SQLquery)
-				dat += "<font color=red><b>ERROR</b>: Malformed search request. Please contact your system administrator for assistance.</font><BR>"
-			else
-				dat += {"<table>
-				<tr><td>AUTHOR</td><td>TITLE</td><td>CATEGORY</td><td>SS<sup>13</sup>BN</td><td></td></tr>"}
-
-				var/DBQuery/query = dbcon.NewQuery(SQLquery)
-				if(query.Execute())
-					while(query.NextRow())
-						var/author = query.item[1]
-						var/title = query.item[2]
-						var/category = query.item[3]
-						var/id = query.item[4]
-						dat += "<tr><td>[author]</td><td>[title]</td><td>[category]</td><td>[id]</td><td><A href='?src=\ref[src];viewbookid=[id]'>\[View\]</A></td></tr>"
-				else
-					dat += "<tr><td colspan='5'><font color=red>Archive search failed. Check that the books table exists.</font></td></tr>"
-				dat += "</table><BR>"
-			dat += "<A href='?src=\ref[src];back=1'>\[Go Back\]</A><BR>"
-		if(2)
-			dat += "<h3>Archive Book</h3>"
-			if(view_book_data && view_book_data["title"] != null)
-				dat += "<b>[view_book_data["title"]]</b><BR>"
-				dat += "<i>by [view_book_data["author"] || "Unknown"]</i> (USBN: [view_book_data["id"]])<BR><BR>"
-				dat += "<div style=\"white-space: pre-wrap; background: #eee; padding: 8px; max-height: 400px; overflow-y: auto;\">[view_book_data["content"] || "(No content)"]</div><BR>"
-				dat += "<A href='?src=\ref[src];printbook=1'>\[Print and add to library\]</A><BR>"
-			else
-				dat += "<font color=red>No book loaded.</font><BR>"
-			dat += "<A href='?src=\ref[src];backfromview=1'>\[Back to Search Results\]</A><BR>"
-	return dat
 
 /obj/machinery/librarypubliccomp/CanUseTopic(mob/user)
 	if(stat & NOPOWER)
@@ -215,36 +205,30 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 
 /obj/machinery/librarycomp/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS)
 	var/list/data = list()
-	data["content"] = get_staff_ui_content()
-	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
-	if(!ui)
-		ui = new(user, src, ui_key, "library_staff_kiosk.tmpl", "Book Inventory Management", 500, 600)
-		ui.set_window_options("focus=0;can_close=1;can_minimize=0;can_maximize=0;can_resize=1;titlebar=1;")
-		ui.set_initial_data(data)
-		ui.open()
+	data["screenstate"] = screenstate
+	data["emagged"] = emagged
+	data["buffer_book"] = buffer_book
+	data["buffer_mob"] = buffer_mob
+	data["checkoutperiod"] = checkoutperiod
+	data["checkout_time"] = round(world.time / 600)
+	data["due_time"] = round((world.time + (checkoutperiod * 600)) / 600)
+	data["sortby"] = sortby
+	data["upload_category"] = upload_category
+	data["inventory"] = list()
+	data["physical_inventory"] = list()
+	data["checkouts"] = list()
+	data["archive_error"] = null
+	data["archive_results"] = list()
+	data["view_book"] = null
+	data["upload_scanner_author"] = null
+	data["upload_scanner_title"] = null
+	data["upload_no_scanner"] = FALSE
+	data["upload_no_cache"] = FALSE
 
-/obj/machinery/librarycomp/proc/get_staff_ui_content()
-	var/dat = ""
 	switch(screenstate)
-		if(0)
-			// Main Menu
-			dat += {"<A href='?src=\ref[src];switchscreen=1'>1. View General Inventory</A><BR>
-			<A href='?src=\ref[src];switchscreen=2'>2. View Checked Out Inventory</A><BR>
-			<A href='?src=\ref[src];switchscreen=3'>3. Check out a Book</A><BR>
-			<A href='?src=\ref[src];switchscreen=4'>4. Connect to External Archive</A><BR>
-			<A href='?src=\ref[src];switchscreen=5'>5. Upload New Title to Archive</A><BR>"}
-			if(src.emagged)
-				dat += "<A href='?src=\ref[src];switchscreen=6'>6. Access the Forbidden Lore Vault</A><BR>"
-			dat += "<BR><b>Barcode scanner:</b> Use the scanner on this computer to associate.<BR>"
-			dat += "Mode 1 = Set book for check-out (then enter recipient on screen 3).<BR>"
-			dat += "Mode 2 = Check in (scan book to clear its checkout).<BR>"
-			dat += "Mode 3 = Add scanned book to registered inventory.<BR>"
 		if(1)
-			// Registered inventory (for check-out tracking)
-			dat += "<H3>Registered Inventory (for check-out)</H3><BR>"
 			for(var/obj/item/book/b in inventory)
-				dat += "[b.name] <A href='?src=\ref[src];delbook=\ref[b]'>(Delete)</A><BR>"
-			dat += "<BR><H3>Physical Inventory (all books in library)</H3><BR>"
+				data["inventory"] += list(list("name" = b.name, "ref" = "\ref[b]"))
 			var/area/comp_area = get_area(src)
 			if(comp_area)
 				for(var/obj/item/book/b in world)
@@ -252,97 +236,59 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 						var/where = "on floor"
 						if(b.loc && istype(b.loc, /obj/structure/bookcase))
 							where = "in bookcase"
-						dat += "[b.name][b.author ? " by [b.author]" : ""] - [where]<BR>"
-			dat += "<BR><A href='?src=\ref[src];switchscreen=0'>(Return to main menu)</A><BR>"
+						data["physical_inventory"] += list(list("name" = b.name, "author" = b.author, "where" = where))
 		if(2)
-			// Checked Out
-			dat += "<h3>Checked Out Books</h3><BR>"
 			for(var/datum/borrowbook/b in checkouts)
-				var/timetaken = world.time - b.getdate
-				//timetaken *= 10
-				timetaken /= 600
-				timetaken = round(timetaken)
-				var/timedue = b.duedate - world.time
-				//timedue *= 10
-				timedue /= 600
-				if(timedue <= 0)
-					timedue = "<font color=red><b>(OVERDUE)</b> [timedue]</font>"
-				else
-					timedue = round(timedue)
-				dat += {"\"[b.bookname]\", Checked out to: [b.mobname]<BR>--- Taken: [timetaken] minutes ago, Due: in [timedue] minutes<BR>
-				<A href='?src=\ref[src];checkin=\ref[b]'>(Check In)</A><BR><BR>"}
-			dat += "<A href='?src=\ref[src];switchscreen=0'>(Return to main menu)</A><BR>"
-		if(3)
-			// Check Out a Book
-			dat += {"<h3>Check Out a Book</h3><BR>
-			<i>Scan a book with the barcode scanner (mode 1) to set the book title, or edit below.</i><BR>
-			Book: [src.buffer_book]
-			<A href='?src=\ref[src];editbook=1'>\[Edit\]</A><BR>
-			Recipient: [src.buffer_mob]
-			<A href='?src=\ref[src];editmob=1'>\[Edit\]</A><BR>
-			Checkout Date : [world.time/600]<BR>
-			Due Date: [(world.time + checkoutperiod)/600]<BR>
-			(Checkout Period: [checkoutperiod] minutes) (<A href='?src=\ref[src];increasetime=1'>+</A>/<A href='?src=\ref[src];decreasetime=1'>-</A>)
-			<A href='?src=\ref[src];checkout=1'>(Commit Entry)</A><BR>
-			<A href='?src=\ref[src];switchscreen=0'>(Return to main menu)</A><BR>"}
+				var/timetaken = round((world.time - b.getdate) / 600)
+				var/timedue = (b.duedate - world.time) / 600
+				var/timedue_display = (timedue <= 0) ? "(OVERDUE) [round(timedue)]" : "in [round(timedue)] minutes"
+				data["checkouts"] += list(list(
+					"bookname" = b.bookname,
+					"mobname" = b.mobname,
+					"timetaken" = timetaken,
+					"timedue" = timedue_display,
+					"overdue" = (timedue <= 0),
+					"ref" = "\ref[b]"
+				))
 		if(4)
-			dat += "<h3>External Archive</h3>"
 			establish_db_connection()
 			if(!dbcon || !dbcon.IsConnected())
-				dat += "<font color=red><b>ERROR</b>: Unable to contact External Archive. Please contact your system administrator for assistance.</font>"
+				data["archive_error"] = "Unable to contact External Archive. Please contact your system administrator for assistance."
 			else
-				dat += {"<A href='?src=\ref[src];orderbyid=1'>(Order book by SS<sup>13</sup>BN)</A><BR><BR>
-				<table>
-				<tr><td><A href='?src=\ref[src];sort=author>AUTHOR</A></td><td><A href='?src=\ref[src];sort=title>TITLE</A></td><td><A href='?src=\ref[src];sort=category>CATEGORY</A></td><td>USBN</td><td></td></tr>"}
 				var/sort_col = (sortby in list("id", "author", "title", "category")) ? sortby : "id"
 				var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, category FROM books ORDER BY [sort_col]")
 				if(query.Execute())
 					while(query.NextRow())
-						var/id = query.item[1]
-						var/author = query.item[2]
-						var/title = query.item[3]
-						var/category = query.item[4]
-						dat += "<tr><td>[author]</td><td>[title]</td><td>[category]</td><td>[id]</td><td><A href='?src=\ref[src];viewbookid=[id]'>\[View\]</A> <A href='?src=\ref[src];targetid=[id]'>\[Order\]</A></td></tr>"
+						data["archive_results"] += list(list(
+							"id" = query.item[1],
+							"author" = query.item[2],
+							"title" = query.item[3],
+							"category" = query.item[4]
+						))
 				else
-					dat += "<tr><td colspan='5'><font color=red>Archive query failed. Check that the books table exists.</font></td></tr>"
-				dat += "</table>"
-			dat += "<BR><A href='?src=\ref[src];switchscreen=0'>(Return to main menu)</A><BR>"
-		if(7)
-			dat += "<h3>Archive Book</h3>"
-			if(view_book_data && view_book_data["title"] != null)
-				dat += "<b>[view_book_data["title"]]</b><BR>"
-				dat += "<i>by [view_book_data["author"] || "Unknown"]</i> (USBN: [view_book_data["id"]])<BR><BR>"
-				dat += "<div style=\"white-space: pre-wrap; background: #eee; padding: 8px; max-height: 400px; overflow-y: auto;\">[view_book_data["content"] || "(No content)"]</div><BR>"
-			else
-				dat += "<font color=red>No book loaded.</font><BR>"
-			dat += "<A href='?src=\ref[src];backfromview=1'>\[Back to Archive\]</A><BR>"
-			dat += "<A href='?src=\ref[src];switchscreen=0'>(Return to main menu)</A><BR>"
+					data["archive_error"] = "Archive query failed. Check that the books table exists."
 		if(5)
-			dat += "<H3>Upload a New Title</H3>"
 			if(!scanner)
 				for(var/obj/machinery/libraryscanner/S in range(9))
 					scanner = S
 					break
 			if(!scanner)
-				dat += "<FONT color=red>No scanner found within wireless network range.</FONT><BR>"
+				data["upload_no_scanner"] = TRUE
 			else if(!scanner.cache)
-				dat += "<FONT color=red>No data found in scanner memory.</FONT><BR>"
+				data["upload_no_cache"] = TRUE
 			else
-				dat += {"<TT>Data marked for upload...</TT><BR>
-				<TT>Title: </TT>[scanner.cache.name]<BR>"}
-				if(!scanner.cache.author)
-					scanner.cache.author = "Anonymous"
-				dat += {"<TT>Author: </TT><A href='?src=\ref[src];setauthor=1'>[scanner.cache.author]</A><BR>
-				<TT>Category: </TT><A href='?src=\ref[src];setcategory=1'>[upload_category]</A><BR>
-				<A href='?src=\ref[src];upload=1'>\[Upload\]</A><BR>"}
-			dat += "<A href='?src=\ref[src];switchscreen=0'>(Return to main menu)</A><BR>"
-		if(6)
-			dat += {"<h3>Accessing Forbidden Lore Vault v 1.3</h3>
-			Are you absolutely sure you want to proceed? EldritchTomes Inc. takes no responsibilities for loss of sanity resulting from this action.<p>
-			<A href='?src=\ref[src];arccheckout=1'>Yes.</A><BR>
-			<A href='?src=\ref[src];switchscreen=0'>No.</A><BR>"}
+				data["upload_scanner_title"] = scanner.cache.name
+				data["upload_scanner_author"] = scanner.cache.author ? scanner.cache.author : "Anonymous"
+		if(7)
+			if(view_book_data && view_book_data["title"] != null)
+				data["view_book"] = view_book_data.Copy()
 
-	return dat
+	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
+	if(!ui)
+		ui = new(user, src, ui_key, "library_staff_kiosk.tmpl", "Book Inventory Management", 500, 600)
+		ui.set_window_options("focus=0;can_close=1;can_minimize=0;can_maximize=0;can_resize=1;titlebar=1;")
+		ui.set_initial_data(data)
+		ui.open()
 
 /obj/machinery/librarycomp/CanUseTopic(mob/user)
 	if(stat & NOPOWER)
