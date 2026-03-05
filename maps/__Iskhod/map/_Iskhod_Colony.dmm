@@ -4512,6 +4512,12 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/iskhod/hallway/main/f1section4)
+"bdR" = (
+/obj/structure/bed/chair/wood/wings,
+/turf/simulated/floor/industrial/fixed,
+/area/iskhod/crew_quarters/librarybackroom{
+	name = "Library Office"
+	})
 "bdT" = (
 /obj/structure/railing/grey{
 	dir = 4
@@ -7632,13 +7638,6 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/crew_quarters/locker)
-"bQV" = (
-/obj/structure/table/woodentable,
-/obj/item/device/lighting/toggleable/lamp/green,
-/turf/simulated/floor/industrial/fixed,
-/area/iskhod/crew_quarters/librarybackroom{
-	name = "Library Office"
-	})
 "bQW" = (
 /obj/structure/table/marble,
 /obj/machinery/recharger,
@@ -43444,12 +43443,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section2)
-"kPH" = (
-/obj/structure/bed/chair/wood/wings,
-/turf/simulated/floor/industrial/fixed,
-/area/iskhod/crew_quarters/librarybackroom{
-	name = "Library Office"
-	})
 "kPM" = (
 /obj/structure/railing{
 	dir = 1;
@@ -57949,6 +57942,13 @@
 	},
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/bridge)
+"owq" = (
+/obj/structure/table/woodentable,
+/obj/item/device/lighting/toggleable/lamp/green,
+/turf/simulated/floor/industrial/fixed,
+/area/iskhod/crew_quarters/librarybackroom{
+	name = "Library Office"
+	})
 "owt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/flora/pottedplant/dead{
@@ -60610,12 +60610,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
-"pfz" = (
-/obj/machinery/papershredder,
-/turf/simulated/floor/industrial/fixed,
-/area/iskhod/crew_quarters/librarybackroom{
-	name = "Library Office"
-	})
 "pfL" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -69649,6 +69643,12 @@
 "rxq" = (
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/maintenance/substation/sec)
+"rxu" = (
+/obj/machinery/papershredder,
+/turf/simulated/floor/industrial/fixed,
+/area/iskhod/crew_quarters/librarybackroom{
+	name = "Library Office"
+	})
 "rxw" = (
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor1north)
@@ -152350,7 +152350,7 @@ mzF
 cPC
 cPC
 aCx
-bQV
+owq
 hDB
 biD
 aCx
@@ -152553,7 +152553,7 @@ ken
 dZk
 aCx
 yaV
-kPH
+bdR
 xEX
 aCx
 fyL
@@ -152956,7 +152956,7 @@ frF
 bPo
 rcZ
 aCx
-pfz
+rxu
 lnK
 acr
 aCx
