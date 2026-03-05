@@ -1,5 +1,40 @@
-.CatalogList > * > * > * > * > *:nth-child(odd) {
-  background-color: rgba(0, 0, 0, 0.25);
+/* Single background for entire catalogue and console; all text black */
+.Catalog {
+  background-color: #e0ddd8 !important;
+  color: #000;
+
+  .Section {
+    background-color: #e0ddd8 !important;
+    color: #000;
+  }
+  .Section__title {
+    border-bottom-color: #6b635b !important;
+  }
+  .Divider--horizontal:not(.Divider--hidden) {
+    border-top-color: #6b635b !important;
+  }
+  .Section__titleText,
+  .LabeledList__label,
+  .LabeledList__cell,
+  .Box,
+  .Input,
+  .Button {
+    color: #000 !important;
+  }
+  /* Muted label colours for decomposition (textbook-style, not bright theme colours) */
+  .LabeledList__cell.color-red {
+    color: #8b3a3a !important;
+  }
+  .LabeledList__cell.color-blue {
+    color: #2a3a5c !important;
+  }
+  /* Error/corrupt messages: dark red, readable on light background */
+  .color-bad {
+    color: #5c2020 !important;
+  }
+  .CatalogList > * > * > * > * > *:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
 }
 
 /* CatalogBook paper theme: aged paper, book-like */

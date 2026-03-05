@@ -99,7 +99,14 @@
 		return
 
 	switch(action)
-		// No transition back to NONE
+		// Valid transitions:
+		//  - LIST -> NONE
+		//  - ENTRY -> NONE
+		if("state_machine_enter_front")
+			selected_entry = null
+			entry_history.Cut()
+			catalog_browse_stage = CATALOG_BROWSE_STAGE_NONE
+			. = TRUE
 
 		// Valid transitions:
 		//  - NONE -> LIST

@@ -165,6 +165,11 @@ Procs:
 			var/datum/technology/T = tech
 			if(UnlockTechology(T, force = TRUE))
 				. = TRUE // we actually updated something
+
+	// Copy known designs (e.g. starting_designs like basic robot arms) that aren't from tech unlocks
+	for(var/datum/design/D in O.known_designs)
+		AddDesign2Known(D)
+
 	known_research_file_ids |= O.known_research_file_ids
 	experiments.merge_with(O.experiments)
 
