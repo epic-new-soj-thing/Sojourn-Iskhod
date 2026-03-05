@@ -18,8 +18,6 @@
 	if(populated_contents)
 		return
 	populated_contents = TRUE
-	new /obj/item/clothing/head/tophat(src)
-	new /obj/item/clothing/head/tophat(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/clothing/head/hairflower

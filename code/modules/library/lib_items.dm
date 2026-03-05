@@ -286,7 +286,7 @@
 		..()
 		update_icon()
 
-/// At roundstart: fill all fiction and nonfiction bookcases with one copy of each book from their category, shuffled across all shelves, plus books from the archive DB.
+/// At roundstart: fill all fiction and nonfiction bookcases with one copy of each book from their category, grouped by type so each shelf gets a contiguous section of types.
 /hook/roundstart/proc/distribute_library_books()
 	spawn(0)
 		var/list/fiction_shelves = list()
@@ -296,21 +296,36 @@
 		for(var/obj/structure/bookcase/manuals/nonfiction/N in world)
 			nonfiction_shelves += N
 		if(fiction_shelves.len)
-			var/list/fiction_types = shuffle(subtypesof(/obj/item/book/manual/fiction))
-			for(var/book_type in fiction_types)
-				var/obj/structure/bookcase/target = pick(fiction_shelves)
-				new book_type(target)
+			var/list/fiction_types = sortList(subtypesof(/obj/item/book/manual/fiction))
+			var/fiction_types_per_shelf = max(1, round(fiction_types.len / fiction_shelves.len))
+			for(var/i = 1; i <= fiction_types.len; i++)
+				var/shelf_index = min(1 + round((i - 1) / fiction_types_per_shelf - 0.49), fiction_shelves.len)
+				var/obj/structure/bookcase/shelf = fiction_shelves[shelf_index]
+				new fiction_types[i](shelf)
 			for(var/obj/structure/bookcase/B in fiction_shelves)
 				B.populate_from_archive_by_category("Fiction", 6)
 				B.update_icon()
 		if(nonfiction_shelves.len)
-			var/list/nonfiction_types = shuffle(subtypesof(/obj/item/book/manual/nonfiction))
-			for(var/book_type in nonfiction_types)
-				var/obj/structure/bookcase/target = pick(nonfiction_shelves)
-				new book_type(target)
+			var/list/nonfiction_types = sortList(subtypesof(/obj/item/book/manual/nonfiction))
+			var/nonfiction_types_per_shelf = max(1, round(nonfiction_types.len / nonfiction_shelves.len))
+			for(var/i = 1; i <= nonfiction_types.len; i++)
+				var/shelf_index = min(1 + round((i - 1) / nonfiction_types_per_shelf - 0.49), nonfiction_shelves.len)
+				var/obj/structure/bookcase/shelf = nonfiction_shelves[shelf_index]
+				new nonfiction_types[i](shelf)
 			for(var/obj/structure/bookcase/B in nonfiction_shelves)
 				B.populate_from_archive_by_category("Non-Fiction", 6)
 				B.update_icon()
+		// Populate library check-in computer inventory from all bookcases in the same area so the console shows current holdings
+		for(var/obj/machinery/librarycomp/comp in world)
+			var/area/comp_area = get_area(comp)
+			if(!comp_area)
+				continue
+			for(var/obj/structure/bookcase/bookcase in world)
+				if(get_area(bookcase) != comp_area)
+					continue
+				for(var/obj/item/book/b in bookcase.contents)
+					if(!(b in comp.inventory))
+						comp.inventory += b
 	return TRUE
 
 /// Populate this bookcase with books from the archive DB by category. Called by manual bookcases and the archive.

@@ -1,0 +1,26 @@
+<h2>Book Scanner</h2>
+<div class="item">
+	<div class="itemLabel">
+		Status:
+	</div>
+	<div class="itemContent">
+		{{if data.has_cache}}
+			<span style="color: #005500;">Data stored in memory.</span>
+		{{else}}
+			No data stored in memory.
+		{{/if}}
+	</div>
+</div>
+<div class="item">
+	<div class="itemLabel">
+		Commands:
+	</div>
+	<div class="itemContent">
+		{{:helper.link("Scan", null, {'scan' : 1})}}
+		{{if data.has_cache}}
+			{{:helper.link("Clear Memory", null, {'clear' : 1})}}
+			{{:helper.link("Remove Book", null, {'eject' : 1})}}
+		{{/if}}
+	</div>
+</div>
+<br><br><hr><i>Library book scanner — upload literature to the archive</i>

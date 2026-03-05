@@ -16,7 +16,6 @@
 /decl/hierarchy/outfit/job/service/bartender
 	name = OUTFIT_JOB_NAME("Ivaris - Bartender")
 	uniform = /obj/item/clothing/under/rank/bartender
-	head = /obj/item/clothing/head/tophat
 	id_type = /obj/item/card/id/white
 	pda_type = /obj/item/modular_computer/pda/club_worker
 

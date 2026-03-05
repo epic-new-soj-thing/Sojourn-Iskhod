@@ -143,7 +143,7 @@ Position: \[field\]
 Message: \[field\]
 ==============================================================
 Signed: \[signfield\]"}))
-
+	CatOf += 2
 	T += list(list("name" = "Personnel Page Request", "content" = {"\[center\] \[h2\]PERSONNEL PAGE REQUEST \[/h2\]\[small\]\[time\] | \[date\]\[/small\]\[/center\]
 \[hr\]\[b\]Sender's Name:\[/b\] \[field\]
 \[b\]Sender's Position:\[/b\] \[field\]
@@ -218,7 +218,7 @@ Notes:\[field\]
 \[b\]Recipient Signature:\[/b\] \[signfield\]
 \[b\]Frontier Logistics Employee Signature:\[/b\] \[signfield\]
 \[i\]\[small\]Please stamp below to confirm.\[/small\]\[/i\]"}))
-
+	CatOf += 3
 	T += list(list("name" = "Lonestar Shipping Invoice", "content" = {"\[center\]\[h1\]\[u\]Lonestar Shipping LLC Sales Invoice\[/u\]\[/h1\]\[b\]\[field\]\[small\](Time)\[/small\] on \[field\]\[small\](Date)\[/small\]\[/b\]
 \[i\]\[small\]\[b\]For Internal Use Only\[/b\]\[/small\]\[/i\]\[/center\]
 \[hr\]
@@ -405,7 +405,7 @@ Stamp of the Warrant Officer (if applicable):\[field\]\[hr\]"}))
 \[center\]\[small\](Office to fill)\[/small\]\[/center\]
 \[b\]Approval Name:\[/b\] \[field\]\[hr\]
 \[b\]\[center\]Approval's Signature:\[/b\] \[u\]\[i\]\[signfield\]\[/i\]\[/u\]\[/center\]\[hr\]"}))
-
+	CatOf += 6
 	T += list(list("name" = "Armory Item Deployment Form", "content" = {"\[center\]\[b\]\[u\]Armory Item Deployment Form\[/b\]\[/u\]\[/center\]\[hr\]\[small\]\[i\]The following item(s) are issued from the Armory to the recipient for use in accordance with standing security protocols.\[/i\]\[/small\]\[hr\]\[b\]Item(s) issued: \[/b\]\[field\]\[br\]
 \[b\]Issued by: \[/b\]\[field\]
 \[b\]Reason: \[/b\]\[field\]
@@ -428,7 +428,7 @@ Stamp of the Warrant Officer (if applicable):\[field\]\[hr\]"}))
 \[b\]Sentence interval (if applicable): \[/b\]\[field\]
 \[b\]Sentenced by: \[/b\]\[field\]
 \[b\]Signature: \[/b\]\[signfield\]\[hr\]"}))
-
+	CatOf += 6
 	T += list(list("name" = "Search Warrant", "content" = {"\[center\]\[b\]\[u\]Search Warrant\[/b\]\[/u\]\[/center\]\[small\]\[i\]The Security Officer(s) bearing this Warrant are hereby authorized to conduct a one time lawful search.\[/i\]\[/small\]\[hr\]
 \[b\]Suspect's Name*: \[/b\]\[field\]
 \[b\]Suspect's Title*: \[/b\]\[field\]

@@ -4514,6 +4514,11 @@
 /area/iskhod/hallway/main/f1section4)
 "bdR" = (
 /obj/structure/bed/chair/wood/wings,
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom{
 	name = "Library Office"
@@ -17952,6 +17957,10 @@
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/abandoned/barber)
+"ewt" = (
+/obj/structure/bookcase/archive/fiction,
+/turf/simulated/floor/industrial/fixed,
+/area/iskhod/crew_quarters/library)
 "ewy" = (
 /obj/structure/table/rack/shelf,
 /obj/random/lowkeyrandom,
@@ -21662,6 +21671,12 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
 "fsu" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom)
 "fsz" = (
@@ -30287,6 +30302,11 @@
 "hDt" = (
 /obj/effect/decal/cleanable/generic,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom)
 "hDv" = (
@@ -30329,6 +30349,15 @@
 	pixel_y = 3
 	},
 /obj/item/pen/multi,
+/obj/machinery/power/apc{
+	dir = 8;
+	name = "West APC";
+	pixel_x = -28
+	},
+/obj/structure/cable/green{
+	d2 = 4;
+	icon_state = "0-4"
+	},
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom{
 	name = "Library Office"
@@ -35105,6 +35134,14 @@
 /obj/item/clothing/under/bathrobe,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/changing_room/pool)
+"iNk" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/fixed,
+/area/iskhod/crew_quarters/librarybackroom)
 "iNs" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
@@ -44988,6 +45025,11 @@
 	name = "Librarian's Office";
 	req_access = list(44)
 	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom{
 	name = "Library Office"
@@ -48612,6 +48654,11 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom)
@@ -62173,6 +62220,11 @@
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial_plant,
 /obj/landmark/join/start/librarian,
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom)
 "pzR" = (
@@ -63687,6 +63739,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
 	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom)
 "pUL" = (
@@ -64203,6 +64260,11 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom)
 "qbb" = (
@@ -64368,6 +64430,7 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/command/merchant)
 "qcI" = (
+/obj/structure/bookcase/archive/nonfiction,
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/library)
 "qcM" = (
@@ -64500,6 +64563,16 @@
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
+"qeq" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/fixed,
+/area/iskhod/crew_quarters/librarybackroom{
+	name = "Library Office"
+	})
 "qex" = (
 /obj/structure/table/steel_reinforced,
 /turf/simulated/floor/industrial/blue_slates,
@@ -73075,6 +73148,16 @@
 "soT" = (
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/command/bridge)
+"soZ" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/industrial/fixed,
+/area/iskhod/crew_quarters/librarybackroom{
+	name = "Library Office"
+	})
 "spg" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/simulated/floor/industrial/ornate,
@@ -150761,7 +150844,7 @@ egq
 qtY
 iUS
 mQj
-qcI
+ewt
 tCG
 qDn
 tCG
@@ -150963,7 +151046,7 @@ egq
 qtY
 mta
 tCG
-qcI
+ewt
 tCG
 uWl
 cjN
@@ -152785,10 +152868,10 @@ fsu
 pzN
 hDt
 mfV
-fsu
+iNk
 lkq
-xEX
-xEX
+qeq
+soZ
 xEX
 aCx
 fyL
