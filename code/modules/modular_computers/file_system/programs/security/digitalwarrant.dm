@@ -256,11 +256,11 @@ LEGACY_RECORD_STRUCTURE(all_warrants, warrant)
 /datum/nano_module/digitalwarrant/proc/build_warrant_paper_text(datum/computer_file/data/warrant/W)
 	if(!W || !W.fields)
 		return ""
-	var/namew = W.fields["namewarrant"] || "[field]"
-	var/jobw = W.fields["jobwarrant"] || "[field]"
-	var/charges = W.fields["charges"] || "[field]"
-	var/auth = W.fields["auth"] || "[field]"
+	var/namew = W.fields["namewarrant"] || "\[field\]"
+	var/jobw = W.fields["jobwarrant"] || "\[field\]"
+	var/charges = W.fields["charges"] || "\[field\]"
+	var/auth = W.fields["auth"] || "\[field\]"
 	if(W.fields["arrestsearch"] == "arrest")
-		return "[center][b][large] Arrest Warrant [/center][/b][/large][hr]I, " + auth + ", with the rank [field] hereby declare that " + namew + " is to be arrested for the following crimes, according to Outpost Law:[i] " + charges + "[/i][hr]Their sentence is to be no less than [field] minutes, with the following modifiers (if applicable): [i][field][/i][hr]They will be arrested by any security personnel that spots him/her and that is authorized and/or carrying this warrant.[br]Signature of the Authorizing Individual: [field]Stamp of the Warrant Officer (if applicable):[field][hr]"
+		return "\[center\]\[b\]\[large\] Arrest Warrant \[/center\]\[/b\]\[/large\]\[hr\]I, " + auth + ", with the rank \[field\] hereby declare that " + namew + " is to be arrested for the following crimes, according to Outpost Law:\[i\] " + charges + "\[/i\]\[hr\]Their sentence is to be no less than \[field\] minutes, with the following modifiers (if applicable): \[i\]\[field\]\[/i\]\[hr\]They will be arrested by any security personnel that spots him/her and that is authorized and/or carrying this warrant.\[br\]Signature of the Authorizing Individual: \[field\]Stamp of the Warrant Officer (if applicable):\[field\]\[hr\]"
 	// search warrant
-	return "[center][b][u]Search Warrant[/b][/u][/center][small][i]The Security Officer(s) bearing this Warrant are hereby authorized to conduct a one time lawful search.[/i][/small][hr][b]Suspect's Name*: [/b]" + namew + "[br][b]Suspect's Title*: [/b]" + jobw + "[br][b]Department: [/b][field][br][b]Suspected Crime(s): [/b]" + charges + "[br][b]Extent of search: [/b][field][br][b]Warrant issued by: [/b]" + auth + "[br][b]Signature: [/b][field][hr][b]Search conducted by: [/b][field][br][b]Item(s) taken as evidence: [/b][field][br][b]Notes: [/b][field][br][b]Signature: [/b][field][hr]"
+	return "\[center\]\[b\]\[u\]Search Warrant\[/b\]\[/u\]\[/center\]\[small\]\[i\]The Security Officer(s) bearing this Warrant are hereby authorized to conduct a one time lawful search.\[/i\]\[/small\]\[hr\]\[b\]Suspect's Name*: \[/b\]" + namew + "\[br\]\[b\]Suspect's Title*: \[/b\]" + jobw + "\[br\]\[b\]Department: \[/b\]\[field\]\[br\]\[b\]Suspected Crime(s): \[/b\]" + charges + "\[br\]\[b\]Extent of search: \[/b\]\[field\]\[br\]\[b\]Warrant issued by: \[/b\]" + auth + "\[br\]\[b\]Signature: \[/b\]\[field\]\[hr\]\[b\]Search conducted by: \[/b\]\[field\]\[br\]\[b\]Item(s) taken as evidence: \[/b\]\[field\]\[br\]\[b\]Notes: \[/b\]\[field\]\[br\]\[b\]Signature: \[/b\]\[field\]\[hr\]"

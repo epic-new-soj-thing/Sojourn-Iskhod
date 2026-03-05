@@ -461,10 +461,10 @@
 		var/field_id = (id != "end") ? text2num(id) : 0
 		if(field_id && (field_id in signature_field_indices))
 			if(istype(i, /obj/item/pen/chameleon))
-				t = i.get_signature(usr)
+				t = get_signature(i, usr)
 			else
-				var/obj/item/card/id/id = usr.GetIdCard()
-				t = (id && id.registered_name) ? id.registered_name : (usr.real_name || "Anonymous")
+				var/obj/item/card/id/id_card = usr.GetIdCard()
+				t = (id_card && id_card.registered_name) ? id_card.registered_name : (usr.real_name || "Anonymous")
 		else
 			t = sanitize(input("Enter what you want to write:", "Write", null, null) as message, free_space, extra = 0)
 			if(!t)
