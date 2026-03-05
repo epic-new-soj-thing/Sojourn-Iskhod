@@ -1,3 +1,51 @@
 .CatalogList > * > * > * > * > *:nth-child(odd) {
   background-color: rgba(0, 0, 0, 0.25);
 }
+
+/* CatalogBook paper theme: aged paper, book-like */
+.CatalogBook--paper {
+  background-color: #e8dfd0 !important;
+  background-image: linear-gradient(to bottom, #ebe3d5 0%, #e0d6c5 100%);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.CatalogBook--paper .CatalogBook-Sidebar {
+  background-color: #f2ebe0 !important;
+  border-right: 1px solid #b8a990;
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.06);
+}
+
+.CatalogBook--paper .CatalogBook-Page {
+  background-color: #faf6ef !important;
+  box-shadow: inset 0 0 40px rgba(139, 119, 101, 0.08);
+  border-left: 1px solid #d4c9b8;
+}
+
+/* CatalogBook front page (equipment/how-to) */
+.CatalogBook-FrontPage {
+  h2 {
+    font-size: 1.15rem;
+    margin: 1rem 0 0.5rem;
+    color: #2c2416;
+    border-bottom: 1px solid #c4b8a8;
+    padding-bottom: 0.25rem;
+  }
+  h3 {
+    font-size: 1rem;
+    margin: 0.75rem 0 0.35rem;
+    color: #3d3528;
+  }
+  p {
+    margin: 0.35rem 0;
+    text-align: left;
+    color: #2c2416;
+  }
+  ul {
+    margin: 0.35rem 0;
+    padding-left: 1.25rem;
+    color: #2c2416;
+  }
+  li {
+    margin: 0.15rem 0;
+  }
+}

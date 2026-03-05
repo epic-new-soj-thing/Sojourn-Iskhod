@@ -1,10 +1,10 @@
 /**
- * Book-style catalog UI: tabs (table of contents) on the left, current page on the right.
- * White background, readable text — like a real book.
+ * Book-style catalog UI: table of contents on the left, page on the right.
+ * Plain, book-like appearance; entries are link-style text, no fancy buttons.
  */
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
-import { Box, Button, Input, Section, Stack, VirtualList } from 'tgui-core/components';
+import { Box, Input, Stack, VirtualList } from 'tgui-core/components';
 import { CatalogEntryContent } from './Catalog';
 
 type Entry = {
@@ -14,14 +14,15 @@ type Entry = {
 
 type Data = {
   front_page_name: string;
+  front_page_content: string;
   catalog_search: string;
   entries: Entry[];
   selected_entry: Record<string, unknown> | null;
 };
 
 const BOOK_PAGE_STYLE = {
-  backgroundColor: '#ffffff',
-  color: '#1a1a1a',
+  backgroundColor: '#faf6ef',
+  color: '#2c2416',
   fontFamily: 'Georgia, "Times New Roman", serif',
   fontSize: '1rem',
   lineHeight: 1.5,
@@ -30,15 +31,24 @@ const BOOK_PAGE_STYLE = {
   overflowY: 'auto' as const,
 };
 
+const LINK_STYLE = {
+  display: 'block',
+  color: '#1a3a5c',
+  textDecoration: 'none',
+  cursor: 'pointer',
+  fontFamily: 'Georgia, "Times New Roman", serif',
+  fontSize: '0.9rem',
+  padding: '0.2rem 0',
+  background: 'none',
+  border: 'none',
+  textAlign: 'left' as const,
+  width: '100%',
+};
+
 export const CatalogBook = (props) => {
   return (
-    <Window width={800} height={600}>
-      <Window.Content
-        backgroundColor="#f5f5f0"
-        style={{
-          fontFamily: 'Georgia, "Times New Roman", serif',
-        }}
-      >
+    <Window width={800} height={600} className="CatalogBook--paper">
+      <Window.Content className="CatalogBook--paper" backgroundColor="#e8dfd0">
         <CatalogBookContent />
       </Window.Content>
     </Window>
@@ -47,102 +57,86 @@ export const CatalogBook = (props) => {
 
 const CatalogBookContent = (props) => {
   const { act, data } = useBackend<Data>();
-  const { front_page_name, catalog_search = '', entries = [], selected_entry } = data;
+  const { front_page_content = '', catalog_search = '', entries = [], selected_entry } = data;
 
   return (
     <Stack fill height="100%" align="stretch">
-      {/* Left: Tabs (table of contents) */}
+      {/* Left: Table of contents */}
       <Stack.Item
-        basis="32%"
+        basis="30%"
+        className="CatalogBook-Sidebar"
         style={{
-          backgroundColor: '#fff',
-          borderRight: '1px solid #ccc',
-          padding: '0.5rem 0',
+          backgroundColor: '#f2ebe0',
+          borderRight: '1px solid #b8a990',
+          padding: '0.75rem',
           minWidth: 0,
+          overflowY: 'auto',
         }}
       >
-        <Box
-          style={{
-            color: '#1a1a1a',
-            padding: '0 0.75rem 0.5rem',
-            borderBottom: '1px solid #ddd',
-            fontSize: '0.8rem',
-            fontFamily: 'Georgia, "Times New Roman", serif',
-          }}
-        >
-          <Box bold fontSize="0.95rem" mb={0.5}>
-            Contents
-          </Box>
-          <Box color="#555" mb={0.25}>
-            Find in this volume
-          </Box>
-          <Input
-            fluid
-            placeholder="Look up a subject…"
-            value={catalog_search}
-            onChange={(e, search) => act('set_catalog_search', { search })}
-            style={{
-              fontFamily: 'Georgia, "Times New Roman", serif',
-              fontSize: '0.9rem',
-              backgroundColor: '#fafaf8',
-              border: '1px solid #ccc',
-              color: '#1a1a1a',
-            }}
-          />
+        <Box style={{ color: '#1a1a1a', marginBottom: '0.5rem', fontSize: '0.85rem' }}>
+          Contents
         </Box>
-        <Section scrollable fill style={{ backgroundColor: 'transparent', border: 'none' }}>
-          {entries.length === 0 ? (
-            <Box
-              style={{
-                color: '#666',
-                fontStyle: 'italic',
-                padding: '1rem 0.75rem',
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontSize: '0.9rem',
-              }}
-            >
-              {catalog_search
-                ? 'No such heading in this volume. Try another word from the index.'
-                : 'This volume is empty.'}
-            </Box>
-          ) : (
-            <VirtualList>
-              {entries.map((entry: Entry) => (
-                <Box key={entry.id}>
-                  <Button
-                    fluid
-                    textAlign="left"
-                    color="transparent"
-                    style={{
-                      color: '#1a1a1a',
-                      fontWeight: selected_entry?.id === entry.id ? 'bold' : 'normal',
-                      backgroundColor:
-                        selected_entry?.id === entry.id ? '#e8e8e8' : 'transparent',
-                      borderLeft:
-                        selected_entry?.id === entry.id
-                          ? '3px solid #333'
-                          : '3px solid transparent',
-                      padding: '0.4rem 0.75rem',
-                      fontFamily: 'Georgia, "Times New Roman", serif',
-                    }}
-                    onClick={() =>
-                      act('state_machine_enter_entry', { entry: entry.id })
+        <Box style={{ marginBottom: '0.35rem', fontSize: '0.8rem', color: '#555' }}>
+          Find in this volume
+        </Box>
+        <Input
+          fluid
+          placeholder="Look up a subject…"
+          value={catalog_search}
+          onChange={(e, search) => act('set_catalog_search', { search })}
+          style={{
+            fontFamily: 'Georgia, serif',
+            fontSize: '0.85rem',
+            backgroundColor: '#fff',
+            border: '1px solid #c4b8a8',
+            color: '#1a1a1a',
+            marginBottom: '0.5rem',
+          }}
+        />
+        {entries.length === 0 ? (
+          <Box style={{ color: '#666', fontStyle: 'italic', fontSize: '0.9rem' }}>
+            {catalog_search ? 'No such heading in this volume.' : 'This volume is empty.'}
+          </Box>
+        ) : (
+          <VirtualList style={{ border: 'none', background: 'none' }}>
+            {entries.map((entry: Entry) => (
+              <Box key={entry.id} style={{ marginBottom: '0.1rem' }}>
+                <span
+                  role="button"
+                  tabIndex={0}
+                  style={{
+                    ...LINK_STYLE,
+                    fontWeight: selected_entry?.id === entry.id ? 'bold' : 'normal',
+                    textDecoration: selected_entry?.id === entry.id ? 'underline' : 'none',
+                  }}
+                  onClick={() => act('state_machine_enter_entry', { entry: entry.id })}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      act('state_machine_enter_entry', { entry: entry.id });
                     }
-                  >
-                    {entry.name}
-                  </Button>
-                </Box>
-              ))}
-            </VirtualList>
-          )}
-        </Section>
+                  }}
+                >
+                  {entry.name}
+                </span>
+              </Box>
+            ))}
+          </VirtualList>
+        )}
       </Stack.Item>
 
-      {/* Right: Page (white, text) */}
-      <Stack.Item basis="68%" style={{ minWidth: 0 }}>
+      {/* Right: Page */}
+      <Stack.Item basis="70%" style={{ minWidth: 0 }} className="CatalogBook-Page">
         {selected_entry ? (
           <Box style={BOOK_PAGE_STYLE}>
             <CatalogEntryContent selected_entry={selected_entry} />
+          </Box>
+        ) : front_page_content ? (
+          <Box style={BOOK_PAGE_STYLE} className="CatalogBook-FrontPage">
+            <div
+              dangerouslySetInnerHTML={{ __html: front_page_content }}
+              style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '0.95rem' }}
+            />
           </Box>
         ) : (
           <Box

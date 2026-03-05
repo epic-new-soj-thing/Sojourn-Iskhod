@@ -315,11 +315,11 @@
 		return
 	handle_timer(usr)
 
-/obj/machinery/cooking/deepfrier/verb/toggle_lid()
+/obj/machinery/cooking/deepfrier/verb/remove_basket_verb()
 	set src in view(1)
-	set name = "Deep fryer - Open/Close"
+	set name = "Deep fryer - Remove basket"
 	set category = "Object"
-	set desc = "Remove the basket from the deep fryer if one is present."
+	set desc = "Take the basket out of the deep fryer."
 	if(!ishuman(usr) && !isrobot(usr))
 		return
 	if(items)
