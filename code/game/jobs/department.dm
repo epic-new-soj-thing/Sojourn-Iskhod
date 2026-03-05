@@ -103,7 +103,7 @@
 	id = DEPARTMENT_CIVILIAN
 	account_initial_balance = 0
 	//No standing balance is kept in the account, this is just for paying gardener, janitor and actor
-	jobs_in_department = list("/datum/job/clubmanager","/datum/job/clubworker","/datum/job/hydro","/datum/job/artist","/datum/job/janitor")
+	jobs_in_department = list("/datum/job/clubmanager","/datum/job/clubworker","/datum/job/hydro","/datum/job/artist","/datum/job/janitor","/datum/job/librarian")
 	insurance_limit = 500
 	insurance_premium = 50
 	elective_reduction = 0.4

@@ -315,6 +315,12 @@
 	icon_state = "ls_gorka"
 	item_state = "ls_gorka"
 
+/obj/item/clothing/under/rank/librarian
+	name = "archivist's uniform"
+	desc = "A neat, comfortable outfit suitable for long hours among the stacks or out on assignment."
+	icon_state = "colony"
+	item_state = "colony"
+
 /obj/item/clothing/under/rank/journalist
 	name = "journalist's uniform"
 	desc = "A cheap but charming outfit, perfect for looking presentable while chasing a scoop."

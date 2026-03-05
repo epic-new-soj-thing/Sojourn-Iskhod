@@ -189,6 +189,19 @@ Sword holsters
 	sound_out = 'sound/effects/sheathout.ogg'
 	sheath_arts = TRUE
 
+/obj/item/clothing/accessory/holster/saber/facility_director
+	name = "Facility Director's scabbard"
+	desc = "A brown leather scabbard with golden lining, made for the Facility Director's ceremonial saber."
+	icon_state = "saber_holster"
+	overlay_state = "saber"
+
+/obj/item/clothing/accessory/holster/saber/facility_director/occupied
+	var/holstered_spawn = /obj/item/tool/sword/saber/militiacommander/facility_director
+
+/obj/item/clothing/accessory/holster/saber/facility_director/occupied/Initialize()
+	holstered = new holstered_spawn
+	update_icon()
+
 /obj/item/clothing/accessory/holster/saber/militiacommander
 	name = "blackshield Commander's scabbard"
 	desc = "A brown leather Scabbard with golden lining, on it the emblem of Blackshield, This one is designed for the Commander's Saber."

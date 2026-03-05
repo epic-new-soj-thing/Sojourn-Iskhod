@@ -35,11 +35,14 @@
   .CatalogBook-PageContent {
     flex: 1;
     min-height: 0;
+    background-color: #faf6ef !important;
   }
 
   .Section,
   .Box,
-  .LabeledList {
+  .LabeledList,
+  .Section__content,
+  .LabeledList__contents {
     background-color: transparent !important;
   }
 

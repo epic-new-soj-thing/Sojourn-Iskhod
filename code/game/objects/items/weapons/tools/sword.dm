@@ -191,6 +191,12 @@
 	armor_divisor = ARMOR_PEN_SHALLOW
 	price_tag = 350
 
+/obj/item/tool/sword/saber/militiacommander/facility_director
+	name = "Facility Director's ceremonial saber"
+	desc = "A masterfully forged saber carried by the Facility Director as a symbol of office. Primarily for ceremonial use, though it can serve in combat if need be."
+	force = WEAPON_FORCE_BRUTAL
+	degradation = 0
+
 /obj/item/tool/sword/saber/militiasergeant
 	name = "Sergeant's Saber"
 	desc = "An Saber made for the Senior Enlisted of Blackshield, Usually used for Ceremonial usage but can also be used in combat, Preferably used by a maniac who likes to charge into battle without helmet or armor."

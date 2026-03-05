@@ -26,6 +26,7 @@
 	new /obj/item/clothing/suit/hooded/wintercoat/security/captain(src)
 	new /obj/item/clothing/head/ushanka/security(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
+	new /obj/item/clothing/accessory/holster/saber/facility_director/occupied(src)
 
 /obj/structure/closet/secure_closet/reinforced/hop
 	name = "Steward's locker"

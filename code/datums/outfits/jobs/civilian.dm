@@ -48,6 +48,15 @@
 	//backpack_overrides[/decl/backpack_outfit/satchel]       = /obj/item/storage/backpack/satchel/hyd;
 
 
+/decl/hierarchy/outfit/job/service/librarian
+	name = OUTFIT_JOB_NAME("Ivaris - Archivist")
+	uniform = /obj/item/clothing/under/rank/librarian
+	shoes = /obj/item/clothing/shoes/color/black
+	id_type = /obj/item/card/id/white
+	pda_type = /obj/item/modular_computer/pda
+	l_ear = /obj/item/device/radio/headset/headset_service
+	backpack_contents = list(/obj/item/barcodescanner = 1)
+
 /decl/hierarchy/outfit/job/service/janitor
 	name = OUTFIT_JOB_NAME("Artificer - Janitor")
 	uniform = /obj/item/clothing/under/rank/janitor

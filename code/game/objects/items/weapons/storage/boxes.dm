@@ -169,6 +169,21 @@
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/glass/bottle(src)
 
+/obj/item/storage/box/pen_protector
+	name = "pen protector"
+	desc = "A sturdy sleeve for keeping pens safe and to hand. Favoured by archivists and clerks."
+	icon_state = "box"
+	item_state = "box"
+	illustration = "writing"
+	storage_slots = 6
+	can_hold = list(/obj/item/pen)
+	max_w_class = ITEM_SIZE_TINY
+
+/obj/item/storage/box/pen_protector/populate_contents()
+	new /obj/item/pen(src)
+	new /obj/item/pen/blue(src)
+	new /obj/item/pen/red(src)
+
 /obj/item/storage/box/bodybags
 	name = "body bags"
 	desc = "This box contains a number of body bags."

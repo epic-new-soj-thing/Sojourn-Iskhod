@@ -71,7 +71,8 @@ var/const/SALVAGER			=(1<<11)
 var/const/PROSPECTOR		=(1<<12)
 var/const/VISITOR			=(1<<13)
 var/const/FENCE				=(1<<14)
-
+var/const/JOURNALIST			=(1<<15)
+var/const/LIBRARIAN			=(1<<16)
 
 
 var/const/CHAPLAIN			=(1<<0)

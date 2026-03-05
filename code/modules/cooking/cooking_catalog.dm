@@ -72,6 +72,10 @@
 	thing_type = our_recipe.type
 	title = our_recipe.name
 	recipe = our_recipe
+	thing_nature = our_recipe.product_name ? "Food" : (our_recipe.reagent_name ? "Reagent" : "Other")
+
+/datum/catalog_entry/cooking/include_in_toc()
+	return recipe && recipe.recipe_guide
 
 /datum/catalog_entry/cooking/catalog_ui_data(mob/user)
 	var/list/data = ..()

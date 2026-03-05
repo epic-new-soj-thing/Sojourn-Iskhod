@@ -58,7 +58,7 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Facility Director"
+	supervisors = "Facility Command"
 	difficulty = "Easy."
 	alt_titles = list("Barkeep","Barista","Mixologist")
 	selection_color = "#dddddd"
@@ -98,7 +98,7 @@
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Facility Director"
+	supervisors = "Facility Command"
 	difficulty = "Easy."
 	alt_titles = list("Culinary Artist","Cook", "Line Chef")
 	selection_color = "#dddddd"
@@ -139,7 +139,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Facility Director"
+	supervisors = "Facility Command"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Hydroponicist")
@@ -183,7 +183,7 @@
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Facility Director"
+	supervisors = "Facility Command"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre)
@@ -217,45 +217,43 @@
 	join_tag = /datum/job/artist
 */
 
-/*
-/datum/job/journalist
-	title = "Journalist"
-	flag = JOURNALIST
+/datum/job/librarian
+	title = "Archivist"
+	flag = LIBRARIAN
 	department = DEPARTMENT_SERVICE
 	department_flag = SERVICE
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the Facility Director"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Facility Command"
 	difficulty = "Easy."
+	alt_titles = list("Librarian", "Journalist", "Reporter", "Cameraman", "Photographer")
 	selection_color = "#dddddd"
-	access = list(access_theatre, access_library)
-	outfit_type = /decl/hierarchy/outfit/job/cargo/journalist
+	access = list(access_library, access_theatre)
+	outfit_type = /decl/hierarchy/outfit/job/service/librarian
 	wage = WAGE_LABOUR_DUMB
-	alt_titles = list("Reporter", "Cameraman", "Photographer")
+	hud_icon = "writer"
 	stat_modifiers = list(
-		STAT_TGH = 10,
-		STAT_COG = 20,
+		STAT_TGH = 5,
+		STAT_COG = 15,
 		STAT_VIG = 10
 	)
 
-	perks = list(PERK_MARKET_PROF)
+	perks = list(PERK_MARKET_PROF, PERK_WELL_READ)
 	software_on_spawn = list(/datum/computer_file/program/wordprocessor,
 							 /datum/computer_file/program/reports,
 							 /datum/computer_file/program/camera_monitor)
 
-	description = "The Journalist is a member of the press for as an independent contractor, documenting life in the colony.<br>\
-	Your duty is to report the news, good or bad, to the populace. Interviews, investigations, and photography are your tools.<br>\
-	Stay out of trouble, but don't be afraid to ask the hard questions. Ideally, you should be ensuring the truth gets out.<br>\
-	You report to the Hospitality Manager, but your loyalty is to the truth."
+	description = "The Archivist maintains the colony library and archive and documents colony life as the press.<br>\
+	You run the library scanner and check-in computer, upload and catalogue books, and help visitors find titles.<br>\
+	You also report the news: interviews, investigations, and photography. Your loyalty is to the collection and to the truth."
 
-	duties = "Document events and news within the colony.<br>\
-	Interview key figures and write reports.<br>\
-	Ensure the colony stays informed."
+	duties = "Maintain the library and archive; upload and catalogue books via the scanner.<br>\
+		Help visitors find books and order titles from the archive.<br>\
+		Document events and news; interview key figures and write reports."
 
-/obj/landmark/join/start/journalist
-	name = "Journalist"
+/obj/landmark/join/start/librarian
+	name = "Archivist"
 	icon_state = "player-grey"
-	join_tag = /datum/job/journalist
-*/
+	join_tag = /datum/job/librarian
 

@@ -593,6 +593,13 @@
 /datum/perk/job/butcher/remove()
 	..()
 
+/datum/perk/job/well_read
+	name = "Well-Read"
+	desc = "Years among the stacks have made reading second nature. Opening and reading a book soothes your mind; you gain a small amount of sanity whenever you read a book."
+	icon_state = "book" // use a book icon if it exists; otherwise 'missing_perk_icon' or pick an existing one
+	gain_text = "You feel at home among the written word."
+	lose_text = "The words seem a little less welcoming."
+
 /datum/perk/job/master_herbalist
 	name = "Naturalist"
 	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \

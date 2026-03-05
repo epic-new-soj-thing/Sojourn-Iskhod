@@ -109,10 +109,38 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	var/list/data = list()
 	var/list/entries_data = list()
 	for(var/datum/catalog_entry/E in entry_list)
+		if(!E.include_in_toc())
+			continue
 		if(!search_value || E.search_value(search_value))
 			entries_data.Add(list(E.catalog_ui_data(user)))
+	entries_data = sort_catalog_entries_for_toc(entries_data)
 	data["entries"] = entries_data
 	return data
+
+/// Sort entries for table of contents: by section (thing_nature), Unknown last, then alphabetically by name within each section.
+/proc/sort_catalog_entries_for_toc(var/list/entries_data)
+	return sortTim(entries_data, GLOBAL_PROC_REF(cmp_catalog_toc_entry))
+
+/proc/catalog_toc_section_order(var/section_name)
+	if(!section_name || section_name == "Unknown")
+		return 999
+	switch(section_name)
+		if("Food") return 1
+		if("Reagent") return 2
+		if("Drink") return 3
+		if("Alchohol drink") return 4
+		if("Atom") return 5
+		if("Other") return 6
+		else return 500
+
+/proc/cmp_catalog_toc_entry(var/list/a, var/list/b)
+	var/section_a = a["thing_nature"]
+	var/section_b = b["thing_nature"]
+	var/order_a = catalog_toc_section_order(section_a)
+	var/order_b = catalog_toc_section_order(section_b)
+	if(order_a != order_b)
+		return order_a > order_b
+	return sorttext(a["name"], b["name"])
 
 /datum/catalog_entry
 	var/thing_type
@@ -127,8 +155,12 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 /datum/catalog_entry/proc/search_value(var/value)
 	if(findtext(title, value))
 		return TRUE
-	if(findtext(thing_nature, value))
+	if(thing_nature && findtext(thing_nature, value))
 		return TRUE
+
+/// Whether this entry should appear in the book index (has steps/recipe). Override in subtypes.
+/datum/catalog_entry/proc/include_in_toc()
+	return TRUE
 
 /datum/catalog_entry/ui_data(mob/user)
 	var/list/data = list()
@@ -256,6 +288,9 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 		addiction_chance = V.addiction_threshold ? "high" : V.addiction_chance <= 10 ? "Low" : V.addiction_chance <= 25 ? "Moderate" : "High"
 		addiction_threshold = V.addiction_threshold
 
+/datum/catalog_entry/reagent/include_in_toc()
+	return recipe_data && length(recipe_data) > 0
+
 /datum/catalog_entry/reagent/catalog_ui_data(mob/user)
 	var/list/data = ..()
 	data["reagent_state"] = reagent_state
@@ -294,6 +329,9 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 	return data
 
 /datum/catalog_entry/atom
+
+/datum/catalog_entry/atom/include_in_toc()
+	return FALSE
 
 /datum/catalog_entry/atom/New(var/atom/V)
 	if(!istype(V))
@@ -364,6 +402,9 @@ GLOBAL_LIST_EMPTY(all_catalog_entries_by_type)
 		recipe_data = list()
 		for(var/datum/chemical_reaction/R in recipes)
 			recipe_data += list(R.nano_ui_data())
+
+/datum/catalog_entry/drink/include_in_toc()
+	return recipe_data && length(recipe_data) > 0
 
 /datum/catalog_entry/drink/ui_data(mob/user)
 	var/list/data = ..()

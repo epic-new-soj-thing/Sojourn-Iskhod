@@ -103,6 +103,7 @@
 		//  - LIST -> NONE
 		//  - ENTRY -> NONE
 		if("state_machine_enter_front")
+			SEND_SOUND(usr, sound(pick(page_sound), volume = 40))
 			selected_entry = null
 			entry_history.Cut()
 			catalog_browse_stage = CATALOG_BROWSE_STAGE_NONE
@@ -140,6 +141,7 @@
 				log_debug("TGUI Catalog attempted to load bad entry [entry_id]")
 				return TRUE
 
+			SEND_SOUND(usr, sound(pick(page_sound), volume = 40))
 			set_selected_entry(usr, E)
 			. = TRUE
 
@@ -266,8 +268,9 @@
 	catalog_key = CATALOG_COOKING
 	front_page_name = "Chef Recipes"
 	front_page_desc = "A collection of recipes from Frontier Logistics."
-	front_page_content = {"<h2>Kitchen Equipment and How to Use It</h2>
-<p>Your PDA has a program (VIKA) with every cooking recipe and step-by-step instructions. Use this section for equipment, controls, and supplies.</p>
+	front_page_content = {"<p>This book contains the same recipes and step-by-step instructions as the electronic catalog program, but in printed form. It lacks some features (such as search and cross-linking between entries) and cannot be updated remotely. It needs no power and works anywhere—use it when a terminal or PDA is unavailable or unpowered.</p>
+<h2>Kitchen Equipment and How to Use It</h2>
+<p>Use this section for equipment, controls, and supplies.</p>
 <h3>The step-based cooking system</h3>
 <p>Recipes are done one step at a time in a <b>cooking container</b>. Add ingredients by using them on the container in the order the recipe requires. Pour reagents (flour, water, oil, milk) into the container. Some steps require cooking: on the stove (High/Medium/Low for a set time), on the grill, in the oven, in the deep fryer, or in the oven with an air fryer basket. Doing each step correctly—right amounts, correct heat, correct order—improves quality. Wrong heat or skipping steps can reduce quality or ruin the result. Use a <b>spatula</b> on a full container to empty it and start over.</p>
 <h3>Containers and which appliance</h3>
@@ -279,7 +282,7 @@
 <li><b>Pot:</b> Boiling, soups. Use on the stovetop like a pan.</li>
 <li><b>Deep fryer basket:</b> Only for the deep fryer. Put food in the basket, then place the basket in the deep fryer.</li>
 <li><b>Air fryer basket:</b> Used inside the <b>oven</b> for air-fried recipes (no separate air fryer machine). Place in the oven like an oven tray.</li></ul>
-<p>Recipes that allow \"deep fry or air fry\" can be made in either the deep fryer or the oven with an air fryer basket; VIKA states which.</p>
+<p>Recipes that allow \"deep fry or air fry\" can be made in either the deep fryer or the oven with an air fryer basket; each recipe in this book states which.</p>
 <h3>Setting temperature and timer</h3>
 <p><b>Stovetop:</b> Four burners. Ctrl+Click the stove to set temperature (High/Medium/Low) or timer for the selected burner. Shift+Ctrl+Click to turn that burner on or off. Put a pan or pot on the burner before starting.</p>
 <p><b>Grill:</b> Two slots. Ctrl+Click to set temperature or timer for a slot. Shift+Ctrl+Click to turn that slot on or off. Feed wood into the hopper for fuel.</p>
@@ -292,7 +295,7 @@
 <p><b>Chickens:</b> Feed wheat to get them to lay eggs. Unattended eggs may hatch; any egg that is touched by anyone will not hatch.</p>
 <p><b>Church of the Absolute:</b> Can provide basic kitchen stock (meat, milk, garden produce).</p>
 <p><b>Cargo:</b> Order protein, chickens, and other ingredients. Prospectors and Blackshield can supply meat.</p>
-<p>Not following recipes leads to a broken microwave, burned mess, or failed dish. Use VIKA for exact step-by-step instructions and cooking times.</p>"}
+<p>Not following recipes leads to a broken microwave, burned mess, or failed dish. Use the recipe pages in this book for exact step-by-step instructions and cooking times.</p>"}
 
 /datum/tgui_module/catalog_book/cooking/ui_assets(mob/user)
 	. = ..()
@@ -303,8 +306,9 @@
 	catalog_key = CATALOG_DRINKS
 	front_page_name = "Barman Recipes"
 	front_page_desc = "Drinks and cocktails for the discerning bartender."
-	front_page_content = {"<h2>Bar Equipment and How to Use It</h2>
-<p>Your PDA has a program with every bartending recipe. Use it as your main reference; this section covers equipment, ingredients, and serving.</p>
+	front_page_content = {"<p>This book contains the same recipes and information as the electronic catalog program, but in printed form. It lacks some features (such as search and cross-linking) and cannot be updated remotely. It needs no power and works anywhere—use it when a terminal or PDA is unavailable or unpowered.</p>
+<h2>Bar Equipment and How to Use It</h2>
+<p>This section covers equipment, ingredients, and serving.</p>
 <h3>Equipment</h3>
 <p><b>Drinking glass:</b> Holds only 30 units. Many cocktails need more than 30u of mixed ingredients, so mixing in the glass alone is often not enough.</p>
 <p><b>Drink shaker:</b> Use the shaker to mix cocktails before pouring into a glass. Add each ingredient (pour reagents, use bottles or containers) into the shaker, then pour the result into a glass. This lets you fit full recipes into one drink.</p>
@@ -319,15 +323,16 @@
 <h3>Alcohol strength and effects</h3>
 <p>Each drink has a strength value; lower numbers mean stronger. Drinking too much causes slurring, dizziness, stumbling, and passing out. Drinking slowly reduces the effect. Some species react strongly: Skrell treat any alcohol as very strong and get drunk quickly. Humans can take liver damage from overuse, often around the point they pass out. Non-alcoholic options are available for staff who must stay sober.</p>
 <h3>Workflow</h3>
-<p>For mixed drinks: gather ingredients (juices, spirits, reagents), add them to the drink shaker in the correct parts or order as per the recipe, then pour into a glass. For poured drinks: dispense from the Booze-o-Mat or bottle into a glass. Presentation matters—a skilled bartender knows both recipes and how to serve them. This book's contents list every recipe in the catalog for when the PDA is unavailable.</p>"}
+<p>For mixed drinks: gather ingredients (juices, spirits, reagents), add them to the drink shaker in the correct parts or order as per the recipe, then pour into a glass. For poured drinks: dispense from the Booze-o-Mat or bottle into a glass. Presentation matters—a skilled bartender knows both recipes and how to serve them. This book's contents list every recipe in the catalog.</p>"}
 
 /datum/tgui_module/catalog_book/chemistry
 	name = "Laboratory Chemistry Guide"
 	catalog_key = CATALOG_CHEMISTRY
 	front_page_name = "Vesalius-Andra Reagent Catalog"
 	front_page_desc = "A complete guide to laboratory chemistry and reagents."
-	front_page_content = {"<h2>Laboratory Chemistry: Equipment and Use</h2>
-<p>Your PDA program (SIRC) lists every chemical recipe. Use this section for equipment, controls, and safety.</p>
+	front_page_content = {"<p>This book contains the same recipes and information as the electronic catalog program, but in printed form. It lacks some features (such as search and cross-linking between reagents) and cannot be updated remotely. It needs no power and works anywhere—use it when a terminal or PDA is unavailable or unpowered.</p>
+<h2>Laboratory Chemistry: Equipment and Use</h2>
+<p>Use this section for equipment, controls, and safety.</p>
 <h3>Safety and best practices</h3>
 <ul><li>Do not ingest unknown or unlabelled chemicals. Label bottles and vials when storing or handing them off. Keep food and drink out of the lab.</li>
 <li>Do not remove beakers from machines while they are running (centrifuge, mass spectrometer, electrolyzer). Wait for the cycle to finish or stop the machine first.</li>

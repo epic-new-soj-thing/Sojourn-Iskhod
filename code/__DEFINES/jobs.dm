@@ -5,7 +5,7 @@
 #define JOBS_MEDICAL "Medical Overseer","Doctor","Psychiatrist","Nurse","Paramedic","Resident" //,"Chemist"
 #define JOBS_SCIENCE "Research Overseer","Scientist","Roboticist","Science Intern","Robotics Intern"
 #define JOBS_SUPPLY "Operations Manager","Technician","Miner"
-#define JOBS_SERVICE "Bartender","Chef","Gardener" //,"Artist","Journalist"
+#define JOBS_SERVICE "Bartender","Chef","Gardener","Archivist" //,"Artist"
 #define JOBS_CIVILIAN "Colonist", "Visitor"
 #define JOBS_CHURCH "Priest", "Cardinal"
 #define JOBS_PROSPECTOR "Foreman","Salvager","Prospector","Rookie","Fence"

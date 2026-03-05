@@ -81,7 +81,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 			title = null
 		title = sanitizeSQL(title)
 	if(href_list["setcategory"])
-		var/newcategory = input("Choose a category to search for:") in list("Any", "Fiction", "Non-Fiction", "Adult", "Reference", "Religion")
+		var/newcategory = input("Choose a category to search for:") in list("Any", "Fiction", "Non-Fiction", "Adult", "Reference", "Religion", "Technical", "Other")
 		if(newcategory)
 			category = sanitize(newcategory)
 		else
@@ -310,13 +310,13 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 		if(newauthor)
 			scanner.cache.author = newauthor
 	if(href_list["setcategory"])
-		var/newcategory = input("Choose a category: ") in list("Fiction", "Non-Fiction", "Adult", "Reference", "Religion")
+		var/newcategory = input("Choose a category: ") in list("Fiction", "Non-Fiction", "Adult", "Reference", "Religion", "Technical", "Other")
 		if(newcategory)
 			upload_category = newcategory
 	if(href_list["upload"])
-		if(scanner)
-			if(scanner.cache)
-				alert("Add books to the archive by scanning them at the book scanner.")
+		if(scanner && scanner.cache)
+			scanner.try_auto_upload_to_archive(scanner.cache, upload_category)
+			src.updateUsrDialog()
 
 	if(href_list["targetid"])
 		var/sqlid = sanitizeSQL(href_list["targetid"])
@@ -354,6 +354,9 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	if(href_list["sort"] in list("author", "title", "category"))
 		sortby = href_list["sort"]
 	src.updateUsrDialog()
+	// Ensure the user who clicked always gets the updated UI (updateUsrDialog only refreshes for viewers(1, src))
+	if(usr && usr.client && usr.machine == src)
+		src.attack_hand(usr)
 	return
 
 /*
@@ -377,9 +380,6 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 			visible_message(SPAN_DANGER("\The [O] blazes with a sickly light as it rejects the scanner! The runes on its cover seem to glare."))
 			to_chat(user, SPAN_DANGER("Your vision whites out as the tome vents its fury — something in you knows it will not be copied, bound, or archived. Your eyes sting."))
 			return
-		if(istype(O, /obj/item/book/manual))
-			to_chat(user, SPAN_WARNING("The scanner refuses to accept manual or reference books; they cannot be uploaded to the archive."))
-			return
 		user.drop_item()
 		O.loc = src
 
@@ -398,8 +398,11 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	user << browse(HTML_SKELETON_TITLE("Scanner Control Interface",dat), "window=scanner")
 	onclose(user, "scanner")
 
-/obj/machinery/libraryscanner/proc/try_auto_upload_to_archive(obj/item/book/B)
-	if(!B || B.unique)
+/obj/machinery/libraryscanner/proc/try_auto_upload_to_archive(obj/item/book/B, category = "Fiction")
+	if(!B || istype(B, /obj/item/book/manual/demonomicon))
+		return
+	// Skip non-manual unique books (e.g. wikibooks); allow all manuals except demonomicon into the archive
+	if(B.unique && !istype(B, /obj/item/book/manual))
 		return
 	establish_db_connection()
 	if(!dbcon || !dbcon.IsConnected())
@@ -412,7 +415,8 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	if(!check.Execute() || check.NextRow())
 		return
 	var/sqlcontent = sanitizeSQL(B.dat ? B.dat : "")
-	var/sqlcategory = sanitizeSQL("Fiction")
+	var/sqlcategory = sanitizeSQL(category)
+	// ss13gamedb.books: id, author, title, content, category, author_id, created_at, updated_at (id is AUTO_INCREMENT)
 	var/DBQuery/ins = dbcon.NewQuery("INSERT INTO books (author, title, content, category, author_id, created_at, updated_at) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]', NULL, Now(), Now())")
 	ins.Execute()
 

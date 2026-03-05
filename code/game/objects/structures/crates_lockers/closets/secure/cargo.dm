@@ -779,6 +779,40 @@
 	new /obj/item/storage/pouch/grow_a_gun(src)
 	new /obj/item/toy/badtothebone(src) // They should be able to use this just as much.
 
+/obj/structure/closet/secure_closet/personal/librarian
+	name = "archivist's locker"
+	req_access = list(access_library)
+	access_occupy = list(access_library)
+	icon_state = "cabinet"
+	icon_lock = "cabinet"
+
+/obj/structure/closet/secure_closet/personal/librarian/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
+	new /obj/item/barcodescanner(src)
+	new /obj/item/storage/box/pen_protector(src)
+	new /obj/item/device/camera(src)
+	new /obj/item/device/camera_film(src)
+	new /obj/item/device/camera_film(src)
+	new /obj/item/device/taperecorder(src)
+	new /obj/item/pen(src)
+	new /obj/item/pen/blue(src)
+	new /obj/item/pen/red(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/folder(src)
+	new /obj/item/folder(src)
+	new /obj/item/folder(src)
+	new /obj/item/stamp(src)
+	new /obj/item/clothing/accessory/badge/press(src)
+	new /obj/item/device/radio/headset/headset_service(src)
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/clothing/under/rank/librarian(src)
+
 /obj/structure/closet/wardrobe/color/pink/artist
 
 /obj/structure/closet/wardrobe/color/pink/artist/populate_contents()

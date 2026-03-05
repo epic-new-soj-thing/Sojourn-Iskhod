@@ -512,11 +512,11 @@ Technomancer RIG
 		/obj/item/rig_module/grenade_launcher,
 		/obj/item/rig_module/mounted/taser
 		)
-/obj/item/rig/hazard/steward
-	name = "stewards hardsuit control module"
-	desc = "A modification of the traditional combat rig built for equal parts utility and defense. Marked with a seal of two Armstrong rifles crossing each other in a X at the base of the neck."
+/obj/item/rig/hazard/facility_director
+	name = "facility director's hardsuit control module"
+	desc = "A modification of the traditional combat rig built for equal parts utility and defense. Marked with the colony authority seal of the Facility Director."
 	icon_state = "security_rig"
-	suit_type = "stewards hardsuit"
+	suit_type = "facility director's hardsuit"
 	armor_list = list(
 		melee = 10,
 		bullet = 10,
@@ -532,7 +532,7 @@ Technomancer RIG
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/hazard
 	max_upgrades = 1
-	req_access = list(access_hop)
+	req_access = list(access_captain)
 	req_one_access = null
 
 

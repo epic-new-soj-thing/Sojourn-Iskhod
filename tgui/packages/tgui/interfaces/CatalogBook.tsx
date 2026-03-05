@@ -18,7 +18,31 @@ import {
 type Entry = {
   id: string;
   name: string;
+  thing_nature?: string;
 };
+
+const TOC_SECTION_ORDER = ['Food', 'Reagent', 'Drink', 'Alchohol drink', 'Atom', 'Other', 'Unknown'];
+
+function groupEntriesBySection(entries: Entry[]): { section: string; entries: Entry[] }[] {
+  const bySection = new Map<string, Entry[]>();
+  for (const e of entries) {
+    const section = e.thing_nature && e.thing_nature.trim() ? e.thing_nature : 'Unknown';
+    if (!bySection.has(section)) bySection.set(section, []);
+    bySection.get(section)!.push(e);
+  }
+  const result: { section: string; entries: Entry[] }[] = [];
+  for (const section of TOC_SECTION_ORDER) {
+    if (bySection.has(section)) {
+      result.push({ section, entries: bySection.get(section)! });
+    }
+  }
+  Array.from(bySection.entries()).forEach(([section, list]) => {
+    if (!TOC_SECTION_ORDER.includes(section)) {
+      result.push({ section, entries: list });
+    }
+  });
+  return result;
+}
 
 type Data = {
   front_page_name: string;
@@ -83,18 +107,29 @@ const CatalogBookContent = (props) => {
           overflowY: 'auto',
         }}
       >
-        <Button
-          fluid
+        <Box
+          as="span"
+          role="button"
+          tabIndex={0}
           mb={0.5}
           style={{
-            fontFamily: 'Georgia, serif',
-            fontSize: '0.9rem',
-            justifyContent: 'flex-start',
+            ...TOC_ENTRY_STYLE,
+            marginBottom: '0.5rem',
           }}
-          onClick={() => act('state_machine_enter_front')}
+          onClick={(e) => {
+            (e.target as HTMLElement)?.blur?.();
+            act('state_machine_enter_front');
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              (e.target as HTMLElement)?.blur?.();
+              act('state_machine_enter_front');
+            }
+          }}
         >
           Return to main
-        </Button>
+        </Box>
         <Box style={{ color: '#000', marginBottom: '0.5rem', fontSize: '0.85rem' }}>
           Contents
         </Box>
@@ -121,33 +156,58 @@ const CatalogBookContent = (props) => {
           </Box>
         ) : (
           <VirtualList style={{ border: 'none', background: 'none' }}>
-            {entries.map((entry: Entry) => (
-              <Box key={entry.id} style={{ marginBottom: '0.1rem' }}>
-                <span
-                  role="button"
-                  tabIndex={0}
+            {groupEntriesBySection(entries).map(({ section, entries: sectionEntries }) => (
+              <Box key={section} style={{ marginBottom: '0.75rem' }}>
+                <Box
                   style={{
-                    ...TOC_ENTRY_STYLE,
-                    fontWeight: selected_entry?.id === entry.id ? 'bold' : 'normal',
-                    textDecoration: selected_entry?.id === entry.id ? 'underline' : 'none',
-                  }}
-                  onClick={() => act('state_machine_enter_entry', { entry: entry.id })}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                      e.preventDefault();
-                      act('state_machine_enter_entry', { entry: entry.id });
-                    }
+                    color: '#000',
+                    fontSize: '0.8rem',
+                    fontWeight: 'bold',
+                    marginBottom: '0.25rem',
+                    borderBottom: '1px solid #c4b8a8',
+                    paddingBottom: '0.15rem',
                   }}
                 >
-                  {entry.name}
-                </span>
+                  {section}
+                </Box>
+                {sectionEntries.map((entry: Entry) => (
+                  <Box key={entry.id} style={{ marginBottom: '0.1rem' }}>
+                    <span
+                      role="button"
+                      tabIndex={0}
+                      style={{
+                        ...TOC_ENTRY_STYLE,
+                        fontWeight: selected_entry?.id === entry.id ? 'bold' : 'normal',
+                        textDecoration: selected_entry?.id === entry.id ? 'underline' : 'none',
+                      }}
+                      onClick={() => act('state_machine_enter_entry', { entry: entry.id })}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          act('state_machine_enter_entry', { entry: entry.id });
+                        }
+                      }}
+                    >
+                      {entry.name}
+                    </span>
+                  </Box>
+                ))}
               </Box>
             ))}
           </VirtualList>
         )}
       </Stack.Item>
 
-      <Stack.Item basis="70%" style={{ minWidth: 0, display: 'flex', minHeight: 0 }} className="CatalogBook-Page">
+      <Stack.Item
+        basis="70%"
+        style={{
+          minWidth: 0,
+          display: 'flex',
+          minHeight: 0,
+          backgroundColor: '#faf6ef',
+        }}
+        className="CatalogBook-Page"
+      >
         {selected_entry ? (
           <Box style={BOOK_PAGE_STYLE} className="CatalogBook-PageContent">
             <BookEntryView selected_entry={selected_entry} />

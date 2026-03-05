@@ -194,9 +194,10 @@
 
 /obj/structure/bookcase/manuals/medical
 	name = "Medical Manuals bookcase"
-
 	New()
 		..()
+		spawn(5)
+			populate_from_archive_by_category("Reference", 6)
 		new /obj/item/book/manual/medical_cloning(src)
 		new /obj/item/book/manual/medical_diagnostics_manual(src)
 		new /obj/item/book/manual/wiki/medical_guide(src)
@@ -211,9 +212,10 @@
 
 /obj/structure/bookcase/manuals/engineering
 	name = "Engineering Manuals bookcase"
-
 	New()
 		..()
+		spawn(5)
+			populate_from_archive_by_category("Technical", 6)
 		new /obj/item/book/manual/wiki/engineering_construction(src)
 		new /obj/item/book/manual/wiki/engineering_hacking(src)
 		new /obj/item/book/manual/wiki/engineering_atmos(src)
@@ -231,9 +233,10 @@
 
 /obj/structure/bookcase/manuals/research_and_development
 	name = "R&D Manuals bookcase"
-
 	New()
 		..()
+		spawn(5)
+			populate_from_archive_by_category("Technical", 6)
 		new /obj/item/book/manual/research_and_development(src)
 		new /obj/item/book/manual/wiki/science_toxins(src)
 		new /obj/item/book/manual/wiki/science_research(src)
@@ -246,9 +249,10 @@
 /obj/structure/bookcase/manuals/security
 	name = "Security and Laws bookcase"
 	desc = "A bookcase stocked with law and security procedure manuals."
-
 	New()
 		..()
+		spawn(5)
+			populate_from_archive_by_category("Reference", 6)
 		new /obj/item/book/manual/security_space_law(src)
 		new /obj/item/book/manual/wiki/laws(src)
 		new /obj/item/book/manual/wiki/security_ironparagraphs(src)
@@ -260,9 +264,10 @@
 /obj/structure/bookcase/manuals/kitchen
 	name = "Kitchen and Bar Manuals bookcase"
 	desc = "A bookcase stocked with cooking and drink recipe catalogs."
-
 	New()
 		..()
+		spawn(5)
+			populate_from_archive_by_category("Reference", 6)
 		new /obj/item/book/manual/catalog_book/cooking(src)
 		new /obj/item/book/manual/catalog_book/cooking(src)
 		new /obj/item/book/manual/catalog_book/drinks(src)
@@ -271,46 +276,69 @@
 
 /obj/structure/bookcase/manuals/fiction
 	name = "Fiction bookcase"
-
 	New()
 		..()
-		for(var/book_type in subtypesof(/obj/item/book/manual/fiction))
-			new book_type(src)
 		update_icon()
 
 /obj/structure/bookcase/manuals/nonfiction
 	name = "Non-Fiction bookcase"
-
 	New()
 		..()
-		for(var/book_type in subtypesof(/obj/item/book/manual/nonfiction))
-			new book_type(src)
 		update_icon()
 
-/obj/structure/bookcase/archive
-	name = "Archive bookcase"
-	desc = "A wooden shelving unit that is periodically stocked with random books from the external archive."
+/// At roundstart: fill all fiction and nonfiction bookcases with one copy of each book from their category, shuffled across all shelves, plus books from the archive DB.
+/hook/roundstart/proc/distribute_library_books()
+	spawn(0)
+		var/list/fiction_shelves = list()
+		var/list/nonfiction_shelves = list()
+		for(var/obj/structure/bookcase/manuals/fiction/F in world)
+			fiction_shelves += F
+		for(var/obj/structure/bookcase/manuals/nonfiction/N in world)
+			nonfiction_shelves += N
+		if(fiction_shelves.len)
+			var/list/fiction_types = shuffle(subtypesof(/obj/item/book/manual/fiction))
+			for(var/book_type in fiction_types)
+				var/obj/structure/bookcase/target = pick(fiction_shelves)
+				new book_type(target)
+			for(var/obj/structure/bookcase/B in fiction_shelves)
+				B.populate_from_archive_by_category("Fiction", 6)
+				B.update_icon()
+		if(nonfiction_shelves.len)
+			var/list/nonfiction_types = shuffle(subtypesof(/obj/item/book/manual/nonfiction))
+			for(var/book_type in nonfiction_types)
+				var/obj/structure/bookcase/target = pick(nonfiction_shelves)
+				new book_type(target)
+			for(var/obj/structure/bookcase/B in nonfiction_shelves)
+				B.populate_from_archive_by_category("Non-Fiction", 6)
+				B.update_icon()
+	return TRUE
 
-	New()
-		..()
-		spawn(5)
-			populate_from_archive()
-
-/obj/structure/bookcase/archive/proc/populate_from_archive()
-	establish_db_connection()
-	if(!dbcon || !dbcon.IsConnected())
+/// Populate this bookcase with books from the archive DB by category. Called by manual bookcases and the archive.
+/obj/structure/bookcase/proc/populate_from_archive_by_category(archive_category, limit = 10)
+	log_debug("Library archive: populate_by_category category=[archive_category] limit=[limit] for [src.type]")
+	if(!establish_db_connection())
+		log_debug("Library archive: DB connection failed (establish_db_connection returned 0)")
 		update_icon()
 		return
-	var/DBQuery/id_query = dbcon.NewQuery("SELECT id FROM books ORDER BY RAND() LIMIT 10")
+	if(!dbcon || !dbcon.IsConnected())
+		log_debug("Library archive: dbcon not connected. ErrorMsg: [dbcon ? dbcon.ErrorMsg() : "no dbcon"]")
+		update_icon()
+		return
+	log_debug("Library archive: DB connected, querying books category=[archive_category]")
+	var/sqlcat = sanitizeSQL(archive_category)
+	var/DBQuery/id_query = dbcon.NewQuery("SELECT id FROM books WHERE category='[sqlcat]' ORDER BY RAND() LIMIT [limit]")
 	if(!id_query.Execute())
+		log_debug("Library archive: id_query Execute() failed. ErrorMsg: [id_query.ErrorMsg()]")
 		update_icon()
 		return
 	var/list/ids = list()
 	while(id_query.NextRow())
 		ids += id_query.item[1]
+	log_debug("Library archive: category=[archive_category] returned [ids.len] book id(s)")
 	for(var/id in ids)
 		var/DBQuery/row_query = dbcon.NewQuery("SELECT author, title, content FROM books WHERE id=[id] LIMIT 1")
 		if(!row_query.Execute())
+			log_debug("Library archive: row_query failed for id=[id]. ErrorMsg: [row_query.ErrorMsg()]")
 			continue
 		if(row_query.NextRow())
 			var/author = row_query.item[1]
@@ -323,6 +351,133 @@
 			B.dat = content
 			B.icon_state = "book[rand(1,7)]"
 	update_icon()
+
+/obj/structure/bookcase/archive
+	name = "Archive bookcase"
+	desc = "A wooden shelving unit that is periodically stocked with a random assortment of all books from the external archive."
+
+	New()
+		..()
+		populate_with_manuals(6)
+		// Only the generic archive fetches all books; category subtypes (reference, adult, etc.) use their own populate in their New()
+		if(type == /obj/structure/bookcase/archive)
+			spawn(5)
+				populate_from_archive()
+
+/// Add a random selection of in-game manual books (excluding demonomicon). Used by archive bookcases so they spawn with existing manuals too.
+/obj/structure/bookcase/archive/proc/populate_with_manuals(limit = 6)
+	var/static/list/manual_types
+	if(!manual_types)
+		manual_types = list()
+		for(var/book_type in subtypesof(/obj/item/book/manual))
+			if(book_type == /obj/item/book/manual/demonomicon)
+				continue
+			manual_types += book_type
+	if(!manual_types.len)
+		return
+	var/list/picked = shuffle(manual_types)
+	var/added = 0
+	for(var/book_type in picked)
+		if(added >= limit)
+			break
+		new book_type(src)
+		added++
+	update_icon()
+
+/// Random assortment of ALL books in the archive (no category filter).
+/obj/structure/bookcase/archive/proc/populate_from_archive()
+	log_debug("Library archive: populate_from_archive (all books) for [src.type]")
+	if(!establish_db_connection())
+		log_debug("Library archive: DB connection failed (establish_db_connection returned 0)")
+		update_icon()
+		return
+	if(!dbcon || !dbcon.IsConnected())
+		log_debug("Library archive: dbcon not connected. ErrorMsg: [dbcon ? dbcon.ErrorMsg() : "no dbcon"]")
+		update_icon()
+		return
+	log_debug("Library archive: DB connected, querying all books ORDER BY RAND() LIMIT 25")
+	var/DBQuery/id_query = dbcon.NewQuery("SELECT id FROM books ORDER BY RAND() LIMIT 25")
+	if(!id_query.Execute())
+		log_debug("Library archive: id_query Execute() failed. ErrorMsg: [id_query.ErrorMsg()]")
+		update_icon()
+		return
+	var/list/ids = list()
+	while(id_query.NextRow())
+		ids += id_query.item[1]
+	log_debug("Library archive: all-books query returned [ids.len] book id(s)")
+	for(var/id in ids)
+		var/DBQuery/row_query = dbcon.NewQuery("SELECT author, title, content FROM books WHERE id=[id] LIMIT 1")
+		if(!row_query.Execute())
+			log_debug("Library archive: row_query failed for id=[id]. ErrorMsg: [row_query.ErrorMsg()]")
+			continue
+		if(row_query.NextRow())
+			var/author = row_query.item[1]
+			var/title = row_query.item[2]
+			var/content = row_query.item[3]
+			var/obj/item/book/B = new(src)
+			B.name = "Book: [title]"
+			B.title = title
+			B.author = author
+			B.dat = content
+			B.icon_state = "book[rand(1,7)]"
+	update_icon()
+
+// Category-specific archive bookcases: stock from the archive DB by category.
+/obj/structure/bookcase/archive/reference
+	name = "Reference archive bookcase"
+	desc = "A wooden shelving unit stocked with reference books from the external archive."
+	New()
+		..()
+		spawn(5)
+			populate_from_archive_by_category("Reference", 10)
+
+/obj/structure/bookcase/archive/adult
+	name = "Adult archive bookcase"
+	desc = "A wooden shelving unit stocked with adult books from the external archive."
+	New()
+		..()
+		spawn(5)
+			populate_from_archive_by_category("Adult", 10)
+
+/obj/structure/bookcase/archive/other
+	name = "Other archive bookcase"
+	desc = "A wooden shelving unit stocked with miscellaneous books from the external archive."
+	New()
+		..()
+		spawn(5)
+			populate_from_archive_by_category("Other", 10)
+
+/obj/structure/bookcase/archive/technical
+	name = "Technical archive bookcase"
+	desc = "A wooden shelving unit stocked with technical manuals from the external archive."
+	New()
+		..()
+		spawn(5)
+			populate_from_archive_by_category("Technical", 10)
+
+/obj/structure/bookcase/archive/religion
+	name = "Religion archive bookcase"
+	desc = "A wooden shelving unit stocked with religious texts from the external archive."
+	New()
+		..()
+		spawn(5)
+			populate_from_archive_by_category("Religion", 10)
+
+/obj/structure/bookcase/archive/fiction
+	name = "Fiction archive bookcase"
+	desc = "A wooden shelving unit stocked with fiction from the external archive."
+	New()
+		..()
+		spawn(5)
+			populate_from_archive_by_category("Fiction", 10)
+
+/obj/structure/bookcase/archive/nonfiction
+	name = "Non-Fiction archive bookcase"
+	desc = "A wooden shelving unit stocked with non-fiction from the external archive."
+	New()
+		..()
+		spawn(5)
+			populate_from_archive_by_category("Non-Fiction", 10)
 
 // Bookcase pre-stocked with omega/oddity books and one Demonomicon. Does not use the archive DB.
 /obj/structure/bookcase/oddity_demonomicon
@@ -465,6 +620,10 @@
 	if(src.dat)
 		user << browse(HTML_SKELETON_TITLE("Penned by [author]",dat), "window=book[window_size != null ? ";size=[window_size]" : ""]")
 		user.visible_message("[user] opens a book titled \"[src.title]\" and begins reading intently.")
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			if(H.sanity && H.stats.getPerk(PERK_WELL_READ))
+				H.sanity.changeLevel(3)
 		onclose(user, "book")
 	else
 		to_chat(user, "This book is completely blank!")
