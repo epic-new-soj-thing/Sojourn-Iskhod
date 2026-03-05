@@ -35,6 +35,12 @@
   .CatalogList > * > * > * > * > *:nth-child(odd) {
     background-color: rgba(0, 0, 0, 0.06);
   }
+
+  /* Bordered content boxes in catalog (PDA/console) */
+  .Catalog-entryBox {
+    border: 1px solid #6b635b;
+    border-radius: 5px;
+  }
 }
 
 /* CatalogBook paper theme: aged paper, book-like */
@@ -51,9 +57,30 @@
 }
 
 .CatalogBook--paper .CatalogBook-Page {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   background-color: #faf6ef !important;
   box-shadow: inset 0 0 40px rgba(139, 119, 101, 0.08);
   border-left: 1px solid #d4c9b8;
+
+  .CatalogBook-PageContent {
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* Keep entry content (Section, etc.) same cream background as the page, not theme grey */
+  .Section,
+  .Box,
+  .LabeledList {
+    background-color: transparent !important;
+  }
+
+  /* Book style: no box borders on entry content */
+  .Catalog-entryBox {
+    border: none !important;
+    border-radius: 0 !important;
+  }
 }
 
 /* CatalogBook front page (equipment/how-to) */

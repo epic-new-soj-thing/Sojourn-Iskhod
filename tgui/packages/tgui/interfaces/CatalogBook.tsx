@@ -27,7 +27,10 @@ const BOOK_PAGE_STYLE = {
   fontSize: '1rem',
   lineHeight: 1.5,
   padding: '1.25rem 1.5rem',
-  height: '100%' as const,
+  height: '100%',
+  minHeight: '100%',
+  display: 'flex',
+  flexDirection: 'column',
   overflowY: 'auto' as const,
 };
 
@@ -47,7 +50,7 @@ const LINK_STYLE = {
 
 export const CatalogBook = (props) => {
   return (
-    <Window width={800} height={600} className="CatalogBook--paper">
+    <Window width={960} height={720} className="CatalogBook--paper">
       <Window.Content className="CatalogBook--paper" backgroundColor="#e8dfd0">
         <CatalogBookContent />
       </Window.Content>
@@ -125,14 +128,14 @@ const CatalogBookContent = (props) => {
         )}
       </Stack.Item>
 
-      {/* Right: Page */}
-      <Stack.Item basis="70%" style={{ minWidth: 0 }} className="CatalogBook-Page">
+      {/* Right: Page - fills entire column */}
+      <Stack.Item basis="70%" style={{ minWidth: 0, display: 'flex', minHeight: 0 }} className="CatalogBook-Page">
         {selected_entry ? (
-          <Box style={BOOK_PAGE_STYLE}>
+          <Box style={BOOK_PAGE_STYLE} className="CatalogBook-PageContent">
             <CatalogEntryContent selected_entry={selected_entry} />
           </Box>
         ) : front_page_content ? (
-          <Box style={BOOK_PAGE_STYLE} className="CatalogBook-FrontPage">
+          <Box style={BOOK_PAGE_STYLE} className="CatalogBook-PageContent CatalogBook-FrontPage">
             <div
               dangerouslySetInnerHTML={{ __html: front_page_content }}
               style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '0.95rem' }}
@@ -142,7 +145,6 @@ const CatalogBookContent = (props) => {
           <Box
             style={{
               ...BOOK_PAGE_STYLE,
-              display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: '#666',

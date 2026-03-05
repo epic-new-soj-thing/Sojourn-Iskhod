@@ -524,7 +524,7 @@ const CatalogEntryCooking = (props: {
   } = selected_entry;
 
   return (
-    <Section fill height="80%" style={{ overflowY: 'auto' }}>
+    <Section fill style={{ height: '100%', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
       <Stack align="center" justify="space-around">
         <Stack.Item grow>
           <Box fontSize={2} bold>
@@ -563,15 +563,7 @@ const CatalogEntryCooking = (props: {
         )}
         {!!recipe_guide && (
           <LabeledList.Item label="Recipe">
-            <Box
-              style={{
-                borderRadius: '5px',
-                border: '1px solid #6b635b',
-                overflowY: 'auto',
-              }}
-              p={1}
-              height={10}
-            >
+            <Box className="Catalog-entryBox" p={1}>
               {/* Safety: This is compile time specified HTML, no player input. */}
               {/* eslint-disable react/no-danger */}
               <div dangerouslySetInnerHTML={{ __html: recipe_guide }} />
@@ -640,16 +632,7 @@ const CatalogEntryDrinks = (props: {
         {!!recipe_data && (
           <LabeledList.Item label="Recipe">
             {recipe_data.map((data, index) => (
-              <Box
-                key={index}
-                style={{
-                  borderRadius: '5px',
-                  border: '1px solid #6b635b',
-                  overflowY: 'auto',
-                }}
-                p={1}
-                height={10}
-              >
+              <Box key={index} className="Catalog-entryBox" p={1}>
                 <Recipe recipe_data={data} />
               </Box>
             ))}
@@ -764,13 +747,7 @@ const CatalogEntryReagents = (props: {
             label={`Decomposition Above ${heating_point}K`}
             labelColor="red"
           >
-            <Box
-              p={1}
-              style={{
-                borderRadius: '5px',
-                border: '1px solid #6b635b',
-              }}
-            >
+            <Box className="Catalog-entryBox" p={1}>
               {heating_decompose.types.map((typ) => (
                 <Box key={typ.type} inline style={{ marginRight: '0.5em' }}>
                   {typ.name}
@@ -784,13 +761,7 @@ const CatalogEntryReagents = (props: {
             label={`Decomposition Below ${chilling_point}K`}
             labelColor="blue"
           >
-            <Box
-              p={1}
-              style={{
-                borderRadius: '5px',
-                border: '1px solid #6b635b',
-              }}
-            >
+            <Box className="Catalog-entryBox" p={1}>
               {chilling_decompose.types.map((typ) => (
                 <Box key={typ.type} inline style={{ marginRight: '0.5em' }}>
                   {typ.name}
@@ -801,13 +772,7 @@ const CatalogEntryReagents = (props: {
         )}
         {!!result_of_decomposition_in && (
           <LabeledList.Item label="Result Of Decomposition">
-            <Box
-              p={1}
-              style={{
-                borderRadius: '5px',
-                border: '1px solid #6b635b',
-              }}
-            >
+            <Box className="Catalog-entryBox" p={1}>
               {result_of_decomposition_in.map((decomp) => (
                 <Box key={decomp.type} inline style={{ marginRight: '0.5em' }}>
                   {decomp.name}
@@ -819,16 +784,7 @@ const CatalogEntryReagents = (props: {
         {!!recipe_data && (
           <LabeledList.Item label="Recipe">
             {recipe_data.map((data, index) => (
-              <Box
-                key={index}
-                style={{
-                  borderRadius: '5px',
-                  border: '1px solid #6b635b',
-                  overflowY: 'auto',
-                }}
-                p={1}
-                height={10}
-              >
+              <Box key={index} className="Catalog-entryBox" p={1}>
                 <Recipe recipe_data={data} />
               </Box>
             ))}
@@ -836,13 +792,7 @@ const CatalogEntryReagents = (props: {
         )}
         {!!can_be_used_in && (
           <LabeledList.Item label="Takes Part In Reactions">
-            <Box
-              p={1}
-              style={{
-                borderRadius: '5px',
-                border: '1px solid #6b635b',
-              }}
-            >
+            <Box className="Catalog-entryBox" p={1}>
               {can_be_used_in.map((r) => (
                 <Box key={r.type} inline style={{ marginRight: '0.5em' }}>
                   {r.name}
