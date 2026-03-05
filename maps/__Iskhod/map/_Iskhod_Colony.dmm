@@ -6578,6 +6578,9 @@
 /area/iskhod/security/detectives_office)
 "bDv" = (
 /obj/structure/filingcabinet,
+/obj/machinery/requests_console/preset/command/cro{
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/cro)
 "bDx" = (
@@ -8782,11 +8785,11 @@
 /turf/simulated/floor/tiled,
 /area/iskhod/command/hallway)
 "ceb" = (
+/obj/effect/decal/cleanable/dirt,
 /obj/structure/filingcabinet{
 	density = 0;
 	pixel_y = 20
 	},
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
 "cej" = (
@@ -10348,6 +10351,10 @@
 /area/shuttle/rocinante_shuttle_area)
 "czk" = (
 /obj/machinery/autolathe/loaded,
+/obj/machinery/requests_console/preset{
+	name = "Science Requests Console";
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
 "czu" = (
@@ -19376,6 +19383,10 @@
 /obj/item/modular_computer/console/preset/security/records{
 	dir = 4;
 	pixel_x = -5
+	},
+/obj/machinery/requests_console/preset{
+	name = "Security Requests Consoel";
+	pixel_x = -32
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
@@ -42359,6 +42370,10 @@
 	dir = 8
 	},
 /obj/machinery/disposal,
+/obj/machinery/requests_console/preset{
+	name = "Engineering Requests Consoel";
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/foyer)
 "kCv" = (
@@ -45701,6 +45716,10 @@
 /obj/machinery/photocopier,
 /obj/machinery/camera/network/cargo{
 	dir = 4
+	},
+/obj/machinery/requests_console/preset{
+	name = "Logistics Requests Consoel";
+	pixel_y = 32
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/quartermaster/office)
@@ -55127,6 +55146,10 @@
 /obj/machinery/camera/network/colony_underground{
 	dir = 4
 	},
+/obj/machinery/requests_console/preset{
+	name = "Kitchen Requests Consoel";
+	pixel_x = -32
+	},
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
 "nKL" = (
@@ -60799,6 +60822,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
+/obj/machinery/requests_console/preset{
+	name = "Medical Requests Consoel";
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
 "piq" = (
@@ -62731,6 +62758,10 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/requests_console/preset{
+	name = "Bar Requests Consoel";
+	pixel_y = 32
+	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
 "pHd" = (
