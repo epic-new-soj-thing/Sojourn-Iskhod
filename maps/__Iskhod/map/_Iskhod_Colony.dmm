@@ -25680,6 +25680,11 @@
 /obj/item/clothing/accessory/medal/conduct,
 /obj/item/clothing/accessory/medal/bronze_heart,
 /obj/item/reagent_containers/atomic_distillery,
+/obj/machinery/button/remote/blast_door{
+	id = "col_disp_shutters";
+	pixel_y = 26;
+	name = "facility director armament shutters"
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
 	name = "\improper Command - Facility Director's Quarters"
@@ -82518,17 +82523,14 @@
 /area/iskhod/security/armory)
 "uKH" = (
 /obj/structure/table/woodentable,
-/obj/item/card/id/captains_spare{
-	pixel_y = 10
-	},
 /obj/item/storage/secure/briefcase/nukedisk{
 	pixel_y = 4
 	},
-/obj/item/gun/energy/captain,
 /obj/machinery/door/blast/shutters/glass{
 	name = "colony showcase";
 	id = "col_disp_shutters"
 	},
+/obj/item/card/id/captains_spare,
 /turf/simulated/floor/wood,
 /area/iskhod/command/captain/quarters{
 	name = "\improper Command - Facility Director's Quarters"

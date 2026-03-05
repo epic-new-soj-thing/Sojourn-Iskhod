@@ -70,7 +70,7 @@
 	icon_state = "caplaser"
 	item_state = "caplaser"
 	item_charge_meter = TRUE
-	desc = "This self-recharging weapon is old, yet still robust and reliable. It's marked with an old Greyson Positronic brand, a distant reminder of what this corporation was before it fell to ruin. Also has the ablity to have a Master Unmaker integrated into it."
+	desc = "This self-recharging weapon is old, yet still robust and reliable. It's marked with an old Greyson Positronic brand, a distant reminder of what this corporation was before it fell to ruin. It can switch between laser, stun, ion, and plasma settings. Also has the ablity to have a Master Unmaker integrated into it."
 	force = WEAPON_FORCE_PAINFUL
 	fire_sound = 'sound/weapons/energy/laser_pistol.ogg'
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_HOLSTER
@@ -79,10 +79,17 @@
 	projectile_type = /obj/item/projectile/beam
 	origin_tech = null
 	self_recharge = TRUE
+	suitable_cell = /obj/item/cell/large
+	cell_type = /obj/item/cell/large/high
+	recharge_time = 2
+	recharge_amount = 100
 	price_tag = 2250
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
-		WEAPON_NORMAL,
+		list(mode_name="laser", mode_desc="Standard lethal laser", projectile_type=/obj/item/projectile/beam, fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost=100, icon="kill"),
+		list(mode_name="stun", mode_desc="Stun beam to disable targets", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound='sound/weapons/energy/Taser.ogg', charge_cost=100, icon="stun"),
+		list(mode_name="ion", mode_desc="Ion bolt to disrupt electronics", projectile_type=/obj/item/projectile/ion, fire_sound='sound/weapons/energy/pulsegunfire.ogg', charge_cost=150, icon="stun"),
+		list(mode_name="plasma", mode_desc="Plasma bolt", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/vaporize.ogg', charge_cost=80, icon="destroy"),
 		WEAPON_CHARGE
 	)
 	twohanded = FALSE
