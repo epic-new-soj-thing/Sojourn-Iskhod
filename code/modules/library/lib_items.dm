@@ -375,8 +375,8 @@
 			B.icon_state = "book[rand(1,7)]"
 	update_icon()
 
-/proc/cmp_manual_shelf_category(type_a, type_b)
-	return sorttext(initial(type_a.shelf_category), initial(type_b.shelf_category))
+/proc/cmp_shelf_pair_asc(list/a, list/b)
+	return sorttext(a[1], b[1])
 
 /obj/structure/bookcase/archive
 	name = "Archive bookcase"
@@ -394,14 +394,19 @@
 /obj/structure/bookcase/archive/proc/populate_with_manuals(limit = 6)
 	var/static/list/manual_types
 	if(!manual_types)
-		manual_types = list()
+		var/list/pairs = list()
 		for(var/book_type in subtypesof(/obj/item/book/manual))
 			if(book_type == /obj/item/book/manual/demonomicon)
 				continue
-			manual_types += book_type
+			var/obj/item/book/manual/temp = new book_type(null)
+			pairs += list(list(temp.shelf_category, book_type))
+			qdel(temp)
+		sortTim(pairs, GLOBAL_PROC_REF(cmp_shelf_pair_asc))
+		manual_types = list()
+		for(var/pair in pairs)
+			manual_types += pair[2]
 	if(!manual_types.len)
 		return
-	sortTim(manual_types, GLOBAL_PROC_REF(cmp_manual_shelf_category))
 	var/added = 0
 	for(var/book_type in manual_types)
 		if(added >= limit)
@@ -418,7 +423,9 @@
 		for(var/book_type in subtypesof(/obj/item/book/manual))
 			if(book_type == /obj/item/book/manual/demonomicon)
 				continue
-			var/shelf = initial(book_type.shelf_category)
+			var/obj/item/book/manual/temp = new book_type(null)
+			var/shelf = temp.shelf_category
+			qdel(temp)
 			if(!manual_types_by_shelf[shelf])
 				manual_types_by_shelf[shelf] = list()
 			manual_types_by_shelf[shelf] += book_type
@@ -426,9 +433,15 @@
 	if(!types || !types.len)
 		update_icon()
 		return
-	sortTim(types, GLOBAL_PROC_REF(cmp_manual_shelf_category))
-	var/added = 0
+	var/list/pairs = list()
 	for(var/book_type in types)
+		var/obj/item/book/manual/temp = new book_type(null)
+		pairs += list(list(temp.shelf_category, book_type))
+		qdel(temp)
+	sortTim(pairs, GLOBAL_PROC_REF(cmp_shelf_pair_asc))
+	var/added = 0
+	for(var/pair in pairs)
+		var/book_type = pair[2]
 		if(added >= limit)
 			break
 		new book_type(src)
