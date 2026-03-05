@@ -276,6 +276,97 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 	message_admins("[key_name_admin(usr)] has lifted [ckey]'s ban.")
 
 
+/datum/admins/proc/DB_import_bans_from_file()
+	if(!check_rights(R_MOD, 0) && !check_rights(R_ADMIN))
+		return
+
+	establish_db_connection()
+	if(!dbcon.IsConnected())
+		to_chat(usr, "\red Failed to establish database connection. Cannot import bans.")
+		return
+
+	if(!Banlist)
+		LoadBans()
+	if(!Banlist)
+		to_chat(usr, "\red Could not load banlist file (data/banlist.bdb).")
+		return
+
+	if(!Banlist.dir.Find("base"))
+		to_chat(usr, "\red Banlist file has no 'base' directory. Nothing to import.")
+		return
+
+	UpdateTime()
+	Banlist.cd = "/base"
+
+	var/imported = 0
+	var/skipped_not_in_db = 0
+	var/skipped_expired = 0
+	var/skipped_invalid = 0
+
+	for(var/entry in Banlist.dir)
+		Banlist.cd = "/base/[entry]"
+		var/key
+		var/id
+		var/ip
+		var/reason
+		var/temp
+		var/minutes
+		Banlist["key"] >> key
+		Banlist["id"] >> id
+		Banlist["ip"] >> ip
+		Banlist["reason"] >> reason
+		Banlist["temp"] >> temp
+		if(temp)
+			Banlist["minutes"] >> minutes
+
+		if(!key || !id)
+			skipped_invalid++
+			continue
+		key = ckey(key)
+		if(IsGuestKey(key))
+			skipped_invalid++
+			continue
+		if(!reason)
+			reason = "No reason recorded (imported from legacy ban file)"
+
+		if(temp)
+			if(!isnum(minutes) || !GetExp(minutes))
+				skipped_expired++
+				continue
+			// Remaining duration in minutes
+			var/duration = max(1, round(minutes - CMinutes))
+			var/DBQuery/check_query = dbcon.NewQuery("SELECT id FROM players WHERE ckey = '[sanitizeSQL(key)]'")
+			check_query.Execute()
+			if(!check_query.NextRow())
+				skipped_not_in_db++
+				continue
+			DB_ban_record(BANTYPE_TEMP, null, duration, reason, "", key, ip ? sanitizeSQL(ip) : null, id ? sanitizeSQL(id) : null)
+			imported++
+		else
+			var/DBQuery/check_query = dbcon.NewQuery("SELECT id FROM players WHERE ckey = '[sanitizeSQL(key)]'")
+			check_query.Execute()
+			if(!check_query.NextRow())
+				skipped_not_in_db++
+				continue
+			DB_ban_record(BANTYPE_PERMA, null, -1, reason, "", key, ip ? sanitizeSQL(ip) : null, id ? sanitizeSQL(id) : null)
+			imported++
+
+	Banlist.cd = "/base"
+	to_chat(usr, "\blue Import complete: [imported] ban(s) imported to database. Skipped: [skipped_not_in_db] (player not in DB), [skipped_expired] (expired temp), [skipped_invalid] (invalid/guest).")
+	message_admins("[key_name_admin(usr)] imported [imported] ban(s) from the bans file to the database. Skipped: [skipped_not_in_db] not in DB, [skipped_expired] expired, [skipped_invalid] invalid.")
+
+
+ADMIN_VERB_ADD(/client/proc/DB_import_bans_from_file, R_ADMIN|R_MOD, TRUE)
+/client/proc/DB_import_bans_from_file()
+	set category = "Admin"
+	set name = "Import Bans From File"
+	set desc = "Import bans from data/banlist.bdb into the ban database"
+
+	if(!holder)
+		return
+	holder.DB_import_bans_from_file()
+
+
 /client/proc/DB_ban_panel()
 	set category = "Admin"
 	set name = "Banning Panel"

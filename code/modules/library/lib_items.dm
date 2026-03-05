@@ -196,7 +196,7 @@
 	name = "Medical Manuals bookcase"
 	New()
 		..()
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Reference", 6)
 		new /obj/item/book/manual/medical_cloning(src)
 		new /obj/item/book/manual/medical_diagnostics_manual(src)
@@ -214,7 +214,7 @@
 	name = "Engineering Manuals bookcase"
 	New()
 		..()
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Technical", 6)
 		new /obj/item/book/manual/wiki/engineering_construction(src)
 		new /obj/item/book/manual/wiki/engineering_hacking(src)
@@ -235,7 +235,7 @@
 	name = "R&D Manuals bookcase"
 	New()
 		..()
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Technical", 6)
 		new /obj/item/book/manual/research_and_development(src)
 		new /obj/item/book/manual/wiki/science_toxins(src)
@@ -251,7 +251,7 @@
 	desc = "A bookcase stocked with law and security procedure manuals."
 	New()
 		..()
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Reference", 6)
 		new /obj/item/book/manual/security_space_law(src)
 		new /obj/item/book/manual/wiki/laws(src)
@@ -266,7 +266,7 @@
 	desc = "A bookcase stocked with cooking and drink recipe catalogs."
 	New()
 		..()
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Reference", 6)
 		new /obj/item/book/manual/catalog_book/cooking(src)
 		new /obj/item/book/manual/catalog_book/cooking(src)
@@ -288,70 +288,92 @@
 
 /// At roundstart: fill all fiction and nonfiction bookcases with one copy of each book from their category, grouped by type so each shelf gets a contiguous section of types.
 /hook/roundstart/proc/distribute_library_books()
-	spawn(0)
-		var/list/fiction_shelves = list()
-		var/list/nonfiction_shelves = list()
-		for(var/obj/structure/bookcase/manuals/fiction/F in world)
-			fiction_shelves += F
-		for(var/obj/structure/bookcase/manuals/nonfiction/N in world)
-			nonfiction_shelves += N
-		if(fiction_shelves.len)
-			var/list/fiction_types = sortList(subtypesof(/obj/item/book/manual/fiction))
+	// Run after a short delay so the map and all book types are fully available
+	spawn(5)
+		distribute_library_books_impl()
+	// Retry later in case the first run was too early (e.g. empty shelves or types)
+	spawn(15)
+		distribute_library_books_impl()
+	// Final sync for check-in computer inventory (after manual and archive fiction/nonfiction)
+	spawn(20)
+		sync_library_comp_inventory_from_bookcases()
+	// Delayed sync so archive shelves that populate from DB (reference, technical, etc.) are included in general inventory
+	spawn(45)
+		sync_library_comp_inventory_from_bookcases()
+	return TRUE
+
+/// Implementation: populate fiction/nonfiction manual bookcases and archive shelves, then sync computer inventory.
+/proc/distribute_library_books_impl()
+	var/list/fiction_shelves = list()
+	var/list/nonfiction_shelves = list()
+	for(var/obj/structure/bookcase/manuals/fiction/F in world)
+		fiction_shelves.Add(F)
+	for(var/obj/structure/bookcase/manuals/nonfiction/N in world)
+		nonfiction_shelves.Add(N)
+	if(fiction_shelves.len)
+		var/list/fiction_types = sortList(subtypesof(/obj/item/book/manual/fiction))
+		if(fiction_types.len)
 			var/fiction_types_per_shelf = max(1, round(fiction_types.len / fiction_shelves.len))
 			var/list/fiction_created = list()
 			for(var/i = 1; i <= fiction_types.len; i++)
-				var/shelf_index_f
-				shelf_index_f = min(1 + round((i - 1) / fiction_types_per_shelf - 0.49), fiction_shelves.len)
-				fiction_created += new fiction_types[i](fiction_shelves[shelf_index_f])
+				var/shelf_index_f = min(1 + round((i - 1) / fiction_types_per_shelf - 0.49), fiction_shelves.len)
+				var/obj/item/book/created = new fiction_types[i](fiction_shelves[shelf_index_f])
+				if(fiction_created.Add(created))
+					;
 			for(var/obj/item/book/b in fiction_created)
 				if(b.loc)
 					b.loc.update_icon()
-			for(var/obj/structure/bookcase/B in fiction_shelves)
-				B.populate_from_archive_by_category("Fiction", 6)
-				B.update_icon()
-		if(nonfiction_shelves.len)
-			var/list/nonfiction_types = sortList(subtypesof(/obj/item/book/manual/nonfiction))
+		for(var/obj/structure/bookcase/B in fiction_shelves)
+			B.populate_from_archive_by_category("Fiction", 6)
+			B.update_icon()
+	if(nonfiction_shelves.len)
+		var/list/nonfiction_types = sortList(subtypesof(/obj/item/book/manual/nonfiction))
+		if(nonfiction_types.len)
 			var/nonfiction_types_per_shelf = max(1, round(nonfiction_types.len / nonfiction_shelves.len))
 			var/list/nonfiction_created = list()
 			for(var/i = 1; i <= nonfiction_types.len; i++)
-				var/shelf_index_n
-				shelf_index_n = min(1 + round((i - 1) / nonfiction_types_per_shelf - 0.49), nonfiction_shelves.len)
-				nonfiction_created += new nonfiction_types[i](nonfiction_shelves[shelf_index_n])
+				var/shelf_index_n = min(1 + round((i - 1) / nonfiction_types_per_shelf - 0.49), nonfiction_shelves.len)
+				var/obj/item/book/created = new nonfiction_types[i](nonfiction_shelves[shelf_index_n])
+				if(nonfiction_created.Add(created))
+					;
 			for(var/obj/item/book/b in nonfiction_created)
 				if(b.loc)
 					b.loc.update_icon()
-			for(var/obj/structure/bookcase/B in nonfiction_shelves)
-				B.populate_from_archive_by_category("Non-Fiction", 6)
-				B.update_icon()
-		// Distribute archive fiction/nonfiction manuals across all archive shelves of the same type
-		var/list/archive_fiction_shelves = list()
-		var/list/archive_nonfiction_shelves = list()
-		for(var/obj/structure/bookcase/archive/fiction/AF in world)
-			archive_fiction_shelves += AF
-		for(var/obj/structure/bookcase/archive/nonfiction/AN in world)
-			archive_nonfiction_shelves += AN
-		if(archive_fiction_shelves.len)
-			var/list/arch_fiction_types = sortList(subtypesof(/obj/item/book/manual/fiction))
+		for(var/obj/structure/bookcase/B in nonfiction_shelves)
+			B.populate_from_archive_by_category("Non-Fiction", 6)
+			B.update_icon()
+	// Distribute archive fiction/nonfiction manuals across all archive shelves of the same type
+	var/list/archive_fiction_shelves = list()
+	var/list/archive_nonfiction_shelves = list()
+	for(var/obj/structure/bookcase/archive/fiction/AF in world)
+		archive_fiction_shelves.Add(AF)
+	for(var/obj/structure/bookcase/archive/nonfiction/AN in world)
+		archive_nonfiction_shelves.Add(AN)
+	if(archive_fiction_shelves.len)
+		var/list/arch_fiction_types = sortList(subtypesof(/obj/item/book/manual/fiction))
+		if(arch_fiction_types.len)
 			var/arch_fiction_per_shelf = max(1, round(arch_fiction_types.len / archive_fiction_shelves.len))
+			var/list/arch_fiction_created = list()
 			for(var/i = 1; i <= arch_fiction_types.len; i++)
 				var/shelf_idx = min(1 + round((i - 1) / arch_fiction_per_shelf - 0.49), archive_fiction_shelves.len)
-				new arch_fiction_types[i](archive_fiction_shelves[shelf_idx])
-			for(var/obj/structure/bookcase/B in archive_fiction_shelves)
-				B.update_icon()
-		if(archive_nonfiction_shelves.len)
-			var/list/arch_nonfiction_types = sortList(subtypesof(/obj/item/book/manual/nonfiction))
+				var/obj/item/book/created = new arch_fiction_types[i](archive_fiction_shelves[shelf_idx])
+				if(arch_fiction_created.Add(created))
+					;
+		for(var/obj/structure/bookcase/B in archive_fiction_shelves)
+			B.update_icon()
+	if(archive_nonfiction_shelves.len)
+		var/list/arch_nonfiction_types = sortList(subtypesof(/obj/item/book/manual/nonfiction))
+		if(arch_nonfiction_types.len)
 			var/arch_nonfiction_per_shelf = max(1, round(arch_nonfiction_types.len / archive_nonfiction_shelves.len))
+			var/list/arch_nonfiction_created = list()
 			for(var/i = 1; i <= arch_nonfiction_types.len; i++)
 				var/shelf_idx = min(1 + round((i - 1) / arch_nonfiction_per_shelf - 0.49), archive_nonfiction_shelves.len)
-				new arch_nonfiction_types[i](archive_nonfiction_shelves[shelf_idx])
-			for(var/obj/structure/bookcase/B in archive_nonfiction_shelves)
-				B.update_icon()
-		// Populate the check-in computer's inventory list (not the external DB) from all bookcases so Registered Inventory and Physical Inventory show checked-in books and books on active shelves, including manuals
-		sync_library_comp_inventory_from_bookcases()
-		// Run again after delayed bookcase population (e.g. spawn(5) on some bookcases) so the inventory list stays complete
-		spawn(10)
-			sync_library_comp_inventory_from_bookcases()
-	return TRUE
+				var/obj/item/book/created = new arch_nonfiction_types[i](archive_nonfiction_shelves[shelf_idx])
+				if(arch_nonfiction_created.Add(created))
+					;
+		for(var/obj/structure/bookcase/B in archive_nonfiction_shelves)
+			B.update_icon()
+	sync_library_comp_inventory_from_bookcases()
 
 /// Syncs each library check-in computer's in-memory inventory list with all books in bookcases in the same area. Only touches comp.inventory (no SQL). Ensures manual books and other on-shelf books appear in Registered Inventory.
 /proc/sync_library_comp_inventory_from_bookcases()
@@ -364,7 +386,7 @@
 				continue
 			for(var/obj/item/book/b in bookcase.contents)
 				if(!(b in comp.inventory))
-					comp.inventory += b
+					comp.inventory.Add(b)
 
 /// Populate this bookcase with books from the archive DB by category. Called by manual bookcases and the archive.
 /obj/structure/bookcase/proc/populate_from_archive_by_category(archive_category, limit = 10)
@@ -434,7 +456,7 @@
 		// Only the generic archive gets a mixed set of manuals; category subtypes get manuals by shelf in their own New()
 		if(type == /obj/structure/bookcase/archive)
 			populate_with_manuals(6)
-			spawn(5)
+			spawn(15)
 				populate_from_archive()
 
 /// Add a random selection of in-game manual books (excluding demonomicon). Sorted by shelf_category. Used by the generic archive only.
@@ -540,7 +562,7 @@
 	New()
 		..()
 		populate_with_manuals_by_shelf("Reference", 6)
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Reference", 10)
 
 /obj/structure/bookcase/archive/adult
@@ -549,7 +571,7 @@
 	New()
 		..()
 		populate_with_manuals_by_shelf("Adult", 6)
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Adult", 10)
 
 /obj/structure/bookcase/archive/other
@@ -558,7 +580,7 @@
 	New()
 		..()
 		populate_with_manuals_by_shelf("Other", 6)
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Other", 10)
 
 /obj/structure/bookcase/archive/technical
@@ -567,7 +589,7 @@
 	New()
 		..()
 		populate_with_manuals_by_shelf("Technical", 6)
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Technical", 10)
 
 /obj/structure/bookcase/archive/religion
@@ -576,7 +598,7 @@
 	New()
 		..()
 		populate_with_manuals_by_shelf("Religion", 6)
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Religion", 10)
 
 /obj/structure/bookcase/archive/fiction
@@ -585,7 +607,7 @@
 	New()
 		..()
 		// Manuals are distributed across all fiction archive shelves at roundstart (distribute_library_books)
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Fiction", 10)
 
 /obj/structure/bookcase/archive/nonfiction
@@ -594,7 +616,7 @@
 	New()
 		..()
 		// Manuals are distributed across all nonfiction archive shelves at roundstart (distribute_library_books)
-		spawn(5)
+		spawn(15)
 			populate_from_archive_by_category("Non-Fiction", 10)
 
 // Bookcase pre-stocked with omega/oddity books and one Demonomicon. Does not use the archive DB.

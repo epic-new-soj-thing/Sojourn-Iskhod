@@ -65,7 +65,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	switch(screenstate)
 		if(0)
 			// Search settings - template uses helper.link() for all buttons
-			null
+			;
 		if(1)
 			establish_db_connection()
 			if(!dbcon || !dbcon.IsConnected())
@@ -110,27 +110,25 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 			title = sanitize(newtitle)
 		else
 			title = null
-		title = sanitizeSQL(title)
 	if(href_list["setcategory"])
 		var/newcategory = input("Choose a category to search for:") in list("Any", "Fiction", "Non-Fiction", "Adult", "Reference", "Religion", "Technical", "Other")
 		if(newcategory)
 			category = sanitize(newcategory)
 		else
 			category = "Any"
-		category = sanitizeSQL(category)
 	if(href_list["setauthor"])
 		var/newauthor = input("Enter an author to search for:") as text|null
 		if(newauthor)
 			author = sanitize(newauthor)
 		else
 			author = null
-		author = sanitizeSQL(author)
 	if(href_list["search"])
 		SQLquery = "SELECT author, title, category, id FROM books WHERE "
 		if(category == "Any")
-			SQLquery += "author LIKE '%[author]%' AND title LIKE '%[title]%'"
+			SQLquery += "author LIKE '%[sanitizeSQL(author)]%' AND title LIKE '%[sanitizeSQL(title)]%'"
 		else
-			SQLquery += "author LIKE '%[author]%' AND title LIKE '%[title]%' AND category='[category]'"
+			var/sqlcat = (category in list("Fiction", "Non-Fiction", "Adult", "Reference", "Religion", "Technical", "Other")) ? sanitizeSQL(category) : "Other"
+			SQLquery += "author LIKE '%[sanitizeSQL(author)]%' AND title LIKE '%[sanitizeSQL(title)]%' AND category='[sqlcat]'"
 		screenstate = 1
 
 	if(href_list["back"])
@@ -215,10 +213,10 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	data["sortby"] = sortby
 	data["upload_category"] = upload_category
 	data["inventory"] = list()
-	data["physical_inventory"] = list()
 	data["checkouts"] = list()
 	data["archive_error"] = null
 	data["archive_results"] = list()
+	data["printable_manuals"] = list()
 	data["view_book"] = null
 	data["upload_scanner_author"] = null
 	data["upload_scanner_title"] = null
@@ -227,16 +225,9 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 
 	switch(screenstate)
 		if(1)
+			sync_library_comp_inventory_from_bookcases()
 			for(var/obj/item/book/b in inventory)
-				data["inventory"] += list(list("name" = b.name, "ref" = "\ref[b]"))
-			var/area/comp_area = get_area(src)
-			if(comp_area)
-				for(var/obj/item/book/b in world)
-					if(get_area(b) == comp_area)
-						var/where = "on floor"
-						if(b.loc && istype(b.loc, /obj/structure/bookcase))
-							where = "in bookcase"
-						data["physical_inventory"] += list(list("name" = b.name, "author" = b.author, "where" = where))
+				data["inventory"].Add(list("name" = b.name, "ref" = "\ref[b]"))
 		if(2)
 			for(var/datum/borrowbook/b in checkouts)
 				var/timetaken = round((world.time - b.getdate) / 600)
@@ -251,6 +242,10 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 					"ref" = "\ref[b]"
 				))
 		if(4)
+			var/list/manual_entries = get_printable_manuals()
+			for(var/i in 1 to manual_entries.len)
+				var/list/entry = manual_entries[i]
+				data["printable_manuals"].Add(list("name" = entry["name"], "index" = i))
 			establish_db_connection()
 			if(!dbcon || !dbcon.IsConnected())
 				data["archive_error"] = "Unable to contact External Archive. Please contact your system administrator for assistance."
@@ -259,7 +254,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 				var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, category FROM books ORDER BY [sort_col]")
 				if(query.Execute())
 					while(query.NextRow())
-						data["archive_results"] += list(list(
+						data["archive_results"].Add(list(
 							"id" = query.item[1],
 							"author" = query.item[2],
 							"title" = query.item[3],
@@ -399,8 +394,8 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 		var/sqlid = sanitizeSQL(href_list["targetid"])
 		establish_db_connection()
 		if(!dbcon || !dbcon.IsConnected())
-			alert("Connection to Archive has been severed. Aborting.")
-		if(bibledelay)
+			to_chat(usr, SPAN_WARNING("Connection to Archive has been severed. Aborting."))
+		else if(bibledelay)
 			for (var/mob/V in hearers(src))
 				V.show_message("<b>[src]</b>'s monitor flashes, \"Printer unavailable. Please allow a short time before attempting to print.\"")
 		else
@@ -419,19 +414,30 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 				B.dat = content
 				B.icon_state = "book[rand(1,7)]"
 				if(!(B in src.inventory))
-					src.inventory += B
+					src.inventory.Add(B)
 				src.visible_message("[src]'s printer hums as it produces a completely bound book. How did it do that?")
 	if(href_list["orderbyid"])
-		var/orderid = input("Enter your order:") as num|null
-		if(orderid)
-			if(isnum(orderid))
-				var/nhref = "src=\ref[src];targetid=[orderid]"
-				spawn() src.Topic(nhref, params2list(nhref), src)
+		var/orderid = input(usr, "Enter the book ID (SS13BN) to order:") as num|null
+		if(orderid != null && isnum(orderid))
+			var/list/fake_list = list("targetid" = "[orderid]")
+			src.Topic("", fake_list)
+	if(href_list["printmanual"])
+		var/idx = text2num(href_list["printmanual"])
+		var/list/manual_entries = get_printable_manuals()
+		if(idx && idx >= 1 && idx <= manual_entries.len)
+			var/list/entry = manual_entries[idx]
+			var/path_str = entry["path"]
+			var/book_type = text2path(path_str)
+			if(ispath(book_type, /obj/item/book/manual) && book_type != /obj/item/book/manual/demonomicon)
+				var/obj/item/book/manual/M = new book_type(src.loc)
+				if(!(M in src.inventory))
+					src.inventory.Add(M)
+				src.visible_message("[src]'s printer hums as it produces a completely bound book.")
 	if(href_list["sort"] in list("author", "title", "category"))
 		sortby = href_list["sort"]
 	src.updateUsrDialog()
 	SSnano.update_uis(src)
-	return
+	return 1
 
 /*
  * Library Scanner
