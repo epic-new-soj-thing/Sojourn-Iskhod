@@ -5,6 +5,8 @@
 	due_date = 0 // Game time in 1/10th seconds
 	unique = TRUE   // FALSE - Normal book, TRUE - Should not be treated as normal book, unable to be copied, unable to be modified
 	window_size = "1280x900"
+	/// Shelf/category for library spawning; must match archive/DB categories: "Reference", "Technical", "Fiction", "Non-Fiction", "Religion", "Other", "Adult"
+	var/shelf_category = "Reference"
 
 
 /obj/item/book/manual/engineering_construction
@@ -12,6 +14,7 @@
 	icon_state = "bookEngineering"
 	author = "Artificer's Guild"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Colony Repairs and Construction"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/engineering_construction/New()
 	..()
@@ -41,6 +44,7 @@
 	icon_state = "bookParticleAccelerator"
 	author = "Artificer's Guild"
 	title = "Supermatter Engine Operating Manual"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/supermatter_engine/New()
 	..()
@@ -71,6 +75,7 @@
 	icon_state = "bookParticleAccelerator"
 	author = "Artificer's Guild"
 	title = "Supermatter Engine Operating Manual"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/engineering_particle_accelerator/New()
 	..()
@@ -100,6 +105,7 @@
 	icon_state = "bookParticleAccelerator"
 	author = "Artificer's Guild"
 	title = "Antimatter Engine Operating Manual"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/engineering_antimatter_engine/New()
 	..()
@@ -129,6 +135,7 @@
 	icon_state = "bookHacking"
 	author = "Artificer's Guild"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Hacking"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/engineering_hacking/New()
 	..()
@@ -369,6 +376,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/engineering_singularity_safety
 	name = "Singularity Safety in Special Circumstances"
+	shelf_category = "Technical"
 	icon_state = "bookEngineering2"
 	author = "Artificer's Guild"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Singularity Safety in Special Circumstances"
@@ -420,6 +428,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/medical_cloning
 	name = "Cloning Techniques of the 26th Century"
+	shelf_category = "Reference"
 	icon_state = "bookCloning"
 	author = "Vesalius-Andra Medical"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Cloning Techniques of the 26th Century"
@@ -513,6 +522,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/ripley_build_and_repair
 	name = "APLU \"Ripley\" Construction and Operation Manual"
+	shelf_category = "Technical"
 	icon_state = "borgbook"
 	author = "Randall Varn, Einstein Engines Senior Mechanic"		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "APLU \"Ripley\" Construction and Operation Manual"
@@ -590,6 +600,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/research_and_development
 	name = "Research and Development 101"
+	shelf_category = "Technical"
 	icon_state = "rdbook"
 	author = "Vesalius-Andra Research"
 	title = "Research and Development 101"
@@ -620,6 +631,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/robotics_cyborgs
 	name = "Cyborgs for Dummies"
+	shelf_category = "Technical"
 	icon_state = "borgbook"
 	author = "Vesalius-Andra Robotics"
 	title = "Cyborgs for Dummies"
@@ -650,6 +662,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/robotics_catalogue
 	name = "Vesalius-Andra Cyborg Catalogue 2652"
+	shelf_category = "Technical"
 	icon_state = "borgbook"
 	author = "Vesalius-Andra Robotics"
 	title = "Vesalius-Andra Cyborg Catalogue 2652"
@@ -770,6 +783,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/security_space_law
 	name = "Space Law and Corporate Regulations"
+	shelf_category = "Reference"
 	desc = "A set of corporate guidelines and space law for keeping law and order on settlements."
 	icon_state = "bookSpaceLaw"
 	author = "Corporate Liaison"
@@ -802,6 +816,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/medical_diagnostics_manual
 	name = "Medical Diagnostics Manual"
+	shelf_category = "Reference"
 	desc = "First, do no harm. A detailed medical practitioner's guide."
 	icon_state = "medicalbook"
 	author = "Vesalius-Andra Medical"
@@ -860,6 +875,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/engineering_guide
 	name = "Engineering Textbook"
+	shelf_category = "Technical"
 	icon_state = "bookEngineering"
 	author = "Artificer's Guild"
 	title = "Engineering Textbook"
@@ -890,6 +906,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/chef_recipes
 	name = "Chef Recipes"
+	shelf_category = "Other"
 	icon_state = "cooked_book"
 	author = "Frontier Logistics Service"
 	title = "Chef Recipes"
@@ -920,6 +937,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/barman_recipes
 	name = "Barman Recipes"
+	shelf_category = "Other"
 	icon_state = "barbook"
 	author = "Frontier Logistics Service"
 	title = "Barman Recipes"
@@ -950,6 +968,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/detective
 	name = "The Film Noir: Proper Procedures for Investigations"
+	shelf_category = "Reference"
 	icon_state = "bookDetective"
 	author = "Corporate Liaison"
 	title = "The Film Noir: Proper Procedures for Investigations"
@@ -993,6 +1012,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/nuclear
 	name = "Fission Mailed: Nuclear Sabotage 101"
+	shelf_category = "Reference"
 	icon_state = "bookNuclear"  // Nuclear self-destruct operations
 	author = "Syndicate"
 	title = "Fission Mailed: Nuclear Sabotage 101"
@@ -1044,6 +1064,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/atmospipes
 	name = "Pipes and You: Getting To Know Your Scary Tools"
+	shelf_category = "Technical"
 	icon_state = "plumbingbook"
 	author = "Artificer's Guild"
 	title = "Pipes and You: Getting To Know Your Scary Tools"
@@ -1073,6 +1094,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 
 /obj/item/book/manual/evaguide
 	name = "EVA Gear and You: Not Spending All Day Inside"
+	shelf_category = "Technical"
 	icon_state = "book4"
 	author = "Artificer's Guild"
 	title = "EVA Gear and You: Not Spending All Day Inside"
@@ -1103,6 +1125,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 /obj/item/book/manual/wiki
 	var/page_link = ""
 	window_size = "1280x900"
+	shelf_category = "Reference"
 
 /obj/item/book/manual/wiki/attack_self()
 	if(!dat)
@@ -1156,6 +1179,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Artificer's Guild"
 	title = "Colony Repairs and Construction"
 	page_link = "Construction"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/wiki/engineering_atmos
 	name = "Pipes and You: Getting To Know Your Scary Tools"
@@ -1163,6 +1187,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Artificer's Guild"
 	title = "Pipes and You: Getting To Know Your Scary Tools"
 	page_link = "Guide_to_Atmospherics"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/wiki/engineering_hacking
 	name = "Hacking"
@@ -1170,6 +1195,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Artificer's Guild"
 	title = "Hacking"
 	page_link = "Guide_to_Hacking"
+	shelf_category = "Technical"
 
 //science
 /obj/item/book/manual/wiki/science_research
@@ -1178,6 +1204,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Vesalius-Andra Research"
 	title = "Research and Development 101"
 	page_link = "Guide_to_Research_and_Development"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/wiki/science_robotics
 	name = "Cyborgs for Dummies"
@@ -1185,6 +1212,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Vesalius-Andra Robotics"
 	title = "Cyborgs for Dummies"
 	page_link = "Guide_to_Robotics"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/wiki/science_toxins
 	name = "Toxins Laboratory Guide"
@@ -1193,6 +1221,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Vesalius-Andra Research"
 	title = "Toxins Laboratory Guide"
 	page_link = "Guide_to_Toxins"
+	shelf_category = "Technical"
 
 //security
 /obj/item/book/manual/wiki/security_ironparagraphs
@@ -1202,6 +1231,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Iskhod Rangers"
 	title = "Ranger Paragraphs"
 	page_link = "Guide_to_Security"
+	shelf_category = "Reference"
 
 /obj/item/book/manual/wiki/laws
 	name = "Legal Paragraphs"
@@ -1210,6 +1240,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Iskhod High Council"
 	title = "Legal Paragraphs"
 	page_link = "Laws"
+	shelf_category = "Reference"
 
 //medical
 /obj/item/book/manual/wiki/medical_guide
@@ -1219,6 +1250,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Medical Journal, volume 1"
 	title = "Medical Diagnostics Manual"
 	page_link = "Guide_to_Medicine"
+	shelf_category = "Reference"
 
 /obj/item/book/manual/wiki/medical_chemistry
 	name = "Chemistry Textbook"
@@ -1226,6 +1258,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Vesalius-Andra Research"
 	title = "Chemistry"
 	page_link = "Guide_to_Chemistry"
+	shelf_category = "Reference"
 
 /obj/item/book/manual/wiki/surgery_guide
 	name = "Guide to Surgical Procedures"
@@ -1234,6 +1267,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Vesalius-Andra Medical"
 	title = "Guide to Surgical Procedures"
 	page_link = "Guide_to_Surgery"
+	shelf_category = "Reference"
 
 //neotheology
 
@@ -1244,6 +1278,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Frontier Logistics Service"
 	title = "Barman Recipes"
 	page_link = "Guide_to_Drinks"
+	shelf_category = "Other"
 
 /obj/item/book/manual/wiki/chef_recipes
 	name = "Chef Recipes"
@@ -1251,6 +1286,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Frontier Logistics Service"
 	title = "Chef Recipes"
 	page_link = "Guide_to_Food"
+	shelf_category = "Other"
 
 // Wiki variants of new manuals (load from wiki when available)
 /obj/item/book/manual/wiki/infections_guide
@@ -1260,6 +1296,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Vesalius-Andra Biocontainment"
 	title = "Infections and Pathogens Guide"
 	page_link = "Guide_to_Medicine"
+	shelf_category = "Reference"
 
 /obj/item/book/manual/wiki/cqc_manual
 	name = "Close Quarters Combat Manual"
@@ -1268,6 +1305,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Blackshield Training Division"
 	title = "Close Quarters Combat Manual"
 	page_link = "Combat"
+	shelf_category = "Reference"
 
 /obj/item/book/manual/wiki/stealth_manual
 	name = "Stealth and Infiltration"
@@ -1276,6 +1314,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Iskhod Rangers"
 	title = "Stealth and Infiltration"
 	page_link = "Tips"
+	shelf_category = "Reference"
 
 /obj/item/book/manual/wiki/cytology_textbook
 	name = "Cytology Textbook"
@@ -1284,6 +1323,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Vesalius-Andra Research"
 	title = "Cytology Textbook"
 	page_link = "Guide_to_Genetics"
+	shelf_category = "Reference"
 
 /obj/item/book/manual/wiki/fishing_guide
 	name = "Fishing and Xenofauna Guide"
@@ -1292,6 +1332,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Prospector's Handbook"
 	title = "Fishing and Xenofauna Guide"
 	page_link = "Critters"
+	shelf_category = "Reference"
 
 /obj/item/book/manual/wiki/xenogenetics_guide
 	name = "Xenogenetics"
@@ -1300,6 +1341,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Vesalius-Andra Research"
 	title = "Xenogenetics"
 	page_link = "Guide_to_Genetics"
+	shelf_category = "Reference"
 
 /obj/item/book/manual/wiki/electronic_primer
 	name = "Electronic Systems Primer"
@@ -1308,6 +1350,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Artificer's Guild"
 	title = "Electronic Systems Primer"
 	page_link = "Guide_to_Hacking"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/wiki/boneworking_guide
 	name = "Boneworking Guide"
@@ -1316,6 +1359,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Artificer's Guild"
 	title = "Boneworking Guide"
 	page_link = "Basic_Construction"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/wiki/hydroponics_pod_people
 	name = "Guide to Xenoflora"
@@ -1324,6 +1368,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Vesalius-Andra Xenobotany"
 	title = "Guide to Xenoflora"
 	page_link = "Guide_to_Xenoflora"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/wiki/sweets_guide
 	name = "Sweet Recipes"
@@ -1332,6 +1377,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Frontier Logistics Service"
 	title = "Sweet Recipes"
 	page_link = "Guide_to_Food"
+	shelf_category = "Other"
 
 /obj/item/book/manual/wiki/frozen_treats_guide
 	name = "Frozen Treats Guide"
@@ -1340,6 +1386,10 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	author = "Frontier Logistics Service"
 	title = "Frozen Treats Guide"
 	page_link = "Guide_to_Food"
+	shelf_category = "Other"
+
+/obj/item/book/manual/religion
+	shelf_category = "Religion"
 
 /obj/item/book/manual/religion/c_bible
 	name = "Christian Bible"
@@ -1394,6 +1444,9 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	desc = "An undescript book for an unnamed religion."
 	icon_state = "biblep"
 	author = "Unknown"
+
+/obj/item/book/manual/fiction
+	shelf_category = "Fiction"
 
 /obj/item/book/manual/fiction/ataleoftwocities
 	name = "A Tale of Two Cities"
@@ -1711,6 +1764,9 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 		"}
 
 
+/obj/item/book/manual/nonfiction
+	shelf_category = "Non-Fiction"
+
 /obj/item/book/manual/nonfiction/metaphysics
 	name = "Metaphysics"
 	desc = "A complex philosophical work about existence, change, and understanding the world."
@@ -1881,6 +1937,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "rdbook"
 	author = "Leoric M."		 // Who wrote the thing, can be changed by pen or PC. It is not automatically assigned
 	title = "Slime plorts and reactions"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/xenobio_recipies/New()
 	..()
@@ -1912,6 +1969,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "random_book"
 	author = "Unknown"
 	title = "Unidentified Manual"
+	shelf_category = "Reference"
 	dat = {"<html><head></head><body>
 		<p>The pages are water-damaged and mostly unreadable. You can make out a few diagrams and the words &quot;refer to appropriate department&quot;.</p>
 		</body></html>"}
@@ -1942,6 +2000,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "bookinfections"
 	author = "Vesalius-Andra Biocontainment"
 	title = "Infections and Pathogens Guide"
+	shelf_category = "Reference"
 	dat = {"<html><head></head><body>
 		<h1>Containment Protocols</h1>
 		<p>In case of suspected outbreak: isolate affected individuals, don appropriate PPE, and contact Medical. Do not attempt to treat unknown pathogens without diagnostics.</p>
@@ -1953,6 +2012,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "cqcmanual"
 	author = "Blackshield Training Division"
 	title = "Close Quarters Combat Manual"
+	shelf_category = "Reference"
 	dat = {"<html><head></head><body>
 		<h1>CQC Basics</h1>
 		<p>Disarm, disable, detain. Use minimum force necessary. This manual is a supplement to certified Ranger training only.</p>
@@ -1964,6 +2024,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "stealthmanual"
 	author = "Redacted"
 	title = "Stealth and Infiltration"
+	shelf_category = "Reference"
 	dat = {"<html><head></head><body>
 		<p>Stay in the shadows. Watch the patrol routes. Never run when you can walk.</p>
 		</body></html>"}
@@ -1974,6 +2035,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "origamibook"
 	author = "Frontier Logistics Service"
 	title = "Origami for Beginners"
+	shelf_category = "Reference"
 	dat = {"<html><head></head><body>
 		<h1>Paper Crane</h1>
 		<p>Fold the square in half diagonally. Then fold again&hellip;</p>
@@ -1985,6 +2047,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "cooking_learning_sweets"
 	author = "Frontier Logistics Service"
 	title = "Sweet Recipes"
+	shelf_category = "Other"
 	dat = {"<html><head></head><body>
 		<p>Add dough and sugar to the microwave for donuts. For cakes, combine flour, egg, and sugar.</p>
 		</body></html>"}
@@ -1995,6 +2058,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "cooking_learning_ice"
 	author = "Frontier Logistics Service"
 	title = "Frozen Treats Guide"
+	shelf_category = "Other"
 	dat = {"<html><head></head><body>
 		<p>Ice cream requires a few basic ingredients and a cold environment. Perfect for the colony heat.</p>
 		</body></html>"}
@@ -2005,6 +2069,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "cytologybook"
 	author = "Vesalius-Andra Sciences"
 	title = "Cytology Textbook"
+	shelf_category = "Reference"
 	dat = {"<html><head></head><body>
 		<p>Understanding cellular structure is fundamental to genetics, xenobiology, and medical diagnostics.</p>
 		</body></html>"}
@@ -2015,6 +2080,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "fishbook"
 	author = "Prospector's Handbook"
 	title = "Fishing and Xenofauna Guide"
+	shelf_category = "Reference"
 	dat = {"<html><head></head><body>
 		<p>Local waters and sealed environments may contain edible or hazardous fauna. Identify before handling.</p>
 		</body></html>"}
@@ -2025,6 +2091,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "ebook"
 	author = "Artificer's Guild"
 	title = "Electronic Systems Primer"
+	shelf_category = "Technical"
 	dat = {"<html><head></head><body>
 		<p>For authorised personnel. Covers basic wiring, access systems, and when to call a qualified technician.</p>
 		</body></html>"}
@@ -2035,6 +2102,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "boneworking_learning"
 	author = "Guild Archives"
 	title = "Boneworking Guide"
+	shelf_category = "Technical"
 	dat = {"<html><head></head><body>
 		<p>Bone and chitin can be worked into tools and components where metal is scarce. Requires a steady hand.</p>
 		</body></html>"}
@@ -2045,6 +2113,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "bookHydroponicsPodPeople"
 	author = "Vesalius-Andra Xenobotany"
 	title = "Guide to Xenoflora"
+	shelf_category = "Technical"
 
 /obj/item/book/manual/hydroponics_pod_people/New()
 	..()
@@ -2080,6 +2149,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "bookmime"
 	author = "Frontier Logistics Service"
 	title = "The Art of Mime"
+	shelf_category = "Reference"
 	dat = {"<html><head></head><body>
 		<p>...</p>
 		<p><i>(The rest of the book is blank.)</i></p>
@@ -2100,6 +2170,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	icon_state = "basic_bible"
 	author = "Church of the Absolute"
 	title = "Basic Scripture"
+	shelf_category = "Religion"
 	dat = {"<html><head></head><body>
 		<p>Selected readings for daily reflection. Consult clergy for full canon.</p>
 		</body></html>"}
@@ -2126,6 +2197,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 /obj/item/book/manual/catalog_book
 	unique = TRUE
 	var/catalog_module_type = /datum/tgui_module/catalog_book
+	shelf_category = "Reference"
 
 /obj/item/book/manual/catalog_book/ui_host()
 	return src
@@ -2159,6 +2231,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	title = "Chef Recipes"
 	desc = "A bound collection of cooking recipes. Opens to a table of contents and recipe pages."
 	catalog_module_type = /datum/tgui_module/catalog_book/cooking
+	shelf_category = "Other"
 
 /obj/item/book/manual/catalog_book/drinks
 	name = "Barman Recipes"
@@ -2167,6 +2240,7 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	title = "Barman Recipes"
 	desc = "A bound collection of drink and cocktail recipes. Opens to a table of contents and recipe pages."
 	catalog_module_type = /datum/tgui_module/catalog_book/drinks
+	shelf_category = "Other"
 
 /obj/item/book/manual/catalog_book/chemistry
 	name = "Laboratory Chemistry Guide"
@@ -2175,5 +2249,6 @@ The guild has a lot of fuel tanks in storage, and more can be ordered for rather
 	title = "Laboratory Chemistry Guide"
 	desc = "A complete guide to laboratory chemistry reagents and reactions. Opens to a table of contents and reagent pages."
 	catalog_module_type = /datum/tgui_module/catalog_book/chemistry
+	shelf_category = "Reference"
 
 // Thematic tomes moved to code/modules/blood_magic/tomes.dm (path: /obj/item/book/tome/[effect]). Obtain via oddity loot or Scribe ritual.

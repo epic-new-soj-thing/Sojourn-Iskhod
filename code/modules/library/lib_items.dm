@@ -300,7 +300,8 @@
 			var/fiction_types_per_shelf = max(1, round(fiction_types.len / fiction_shelves.len))
 			var/list/fiction_created = list()
 			for(var/i = 1; i <= fiction_types.len; i++)
-				var/shelf_index_f = min(1 + round((i - 1) / fiction_types_per_shelf - 0.49), fiction_shelves.len)
+				var/shelf_index_f
+				shelf_index_f = min(1 + round((i - 1) / fiction_types_per_shelf - 0.49), fiction_shelves.len)
 				fiction_created += new fiction_types[i](fiction_shelves[shelf_index_f])
 			for(var/obj/item/book/b in fiction_created)
 				if(b.loc)
@@ -313,7 +314,8 @@
 			var/nonfiction_types_per_shelf = max(1, round(nonfiction_types.len / nonfiction_shelves.len))
 			var/list/nonfiction_created = list()
 			for(var/i = 1; i <= nonfiction_types.len; i++)
-				var/shelf_index_n = min(1 + round((i - 1) / nonfiction_types_per_shelf - 0.49), nonfiction_shelves.len)
+				var/shelf_index_n
+				shelf_index_n = min(1 + round((i - 1) / nonfiction_types_per_shelf - 0.49), nonfiction_shelves.len)
 				nonfiction_created += new nonfiction_types[i](nonfiction_shelves[shelf_index_n])
 			for(var/obj/item/book/b in nonfiction_created)
 				if(b.loc)
@@ -347,7 +349,7 @@
 		return
 	log_debug("Library archive: DB connected, querying books category=[archive_category]")
 	var/sqlcat = sanitizeSQL(archive_category)
-	var/DBQuery/id_query = dbcon.NewQuery("SELECT id FROM books WHERE category='[sqlcat]' ORDER BY RAND() LIMIT [limit]")
+	var/DBQuery/id_query = dbcon.NewQuery("SELECT id FROM books WHERE category='[sqlcat]' ORDER BY title LIMIT [limit]")
 	if(!id_query.Execute())
 		log_debug("Library archive: id_query Execute() failed. ErrorMsg: [id_query.ErrorMsg()]")
 		update_icon()
@@ -373,19 +375,22 @@
 			B.icon_state = "book[rand(1,7)]"
 	update_icon()
 
+/proc/cmp_manual_shelf_category(type_a, type_b)
+	return sorttext(initial(type_a.shelf_category), initial(type_b.shelf_category))
+
 /obj/structure/bookcase/archive
 	name = "Archive bookcase"
 	desc = "A wooden shelving unit that is periodically stocked with a random assortment of all books from the external archive."
 
 	New()
 		..()
-		populate_with_manuals(6)
-		// Only the generic archive fetches all books; category subtypes (reference, adult, etc.) use their own populate in their New()
+		// Only the generic archive gets a mixed set of manuals; category subtypes get manuals by shelf in their own New()
 		if(type == /obj/structure/bookcase/archive)
+			populate_with_manuals(6)
 			spawn(5)
 				populate_from_archive()
 
-/// Add a random selection of in-game manual books (excluding demonomicon). Used by archive bookcases so they spawn with existing manuals too.
+/// Add a random selection of in-game manual books (excluding demonomicon). Sorted by shelf_category. Used by the generic archive only.
 /obj/structure/bookcase/archive/proc/populate_with_manuals(limit = 6)
 	var/static/list/manual_types
 	if(!manual_types)
@@ -396,9 +401,34 @@
 			manual_types += book_type
 	if(!manual_types.len)
 		return
-	var/list/picked = shuffle(manual_types)
+	sortTim(manual_types, GLOBAL_PROC_REF(cmp_manual_shelf_category))
 	var/added = 0
-	for(var/book_type in picked)
+	for(var/book_type in manual_types)
+		if(added >= limit)
+			break
+		new book_type(src)
+		added++
+	update_icon()
+
+/// Add in-game manuals that match the given shelf_category (e.g. "technical", "reference"). Used by category-specific archive bookcases so SQL books and manuals go to the correct shelf.
+/obj/structure/bookcase/archive/proc/populate_with_manuals_by_shelf(shelf_category, limit = 6)
+	var/static/list/manual_types_by_shelf
+	if(!manual_types_by_shelf)
+		manual_types_by_shelf = list()
+		for(var/book_type in subtypesof(/obj/item/book/manual))
+			if(book_type == /obj/item/book/manual/demonomicon)
+				continue
+			var/shelf = initial(book_type.shelf_category)
+			if(!manual_types_by_shelf[shelf])
+				manual_types_by_shelf[shelf] = list()
+			manual_types_by_shelf[shelf] += book_type
+	var/list/types = manual_types_by_shelf[shelf_category]
+	if(!types || !types.len)
+		update_icon()
+		return
+	sortTim(types, GLOBAL_PROC_REF(cmp_manual_shelf_category))
+	var/added = 0
+	for(var/book_type in types)
 		if(added >= limit)
 			break
 		new book_type(src)
@@ -416,8 +446,8 @@
 		log_debug("Library archive: dbcon not connected. ErrorMsg: [dbcon ? dbcon.ErrorMsg() : "no dbcon"]")
 		update_icon()
 		return
-	log_debug("Library archive: DB connected, querying all books ORDER BY RAND() LIMIT 25")
-	var/DBQuery/id_query = dbcon.NewQuery("SELECT id FROM books ORDER BY RAND() LIMIT 25")
+	log_debug("Library archive: DB connected, querying all books ORDER BY category, title LIMIT 25")
+	var/DBQuery/id_query = dbcon.NewQuery("SELECT id FROM books ORDER BY category, title LIMIT 25")
 	if(!id_query.Execute())
 		log_debug("Library archive: id_query Execute() failed. ErrorMsg: [id_query.ErrorMsg()]")
 		update_icon()
@@ -443,12 +473,13 @@
 			B.icon_state = "book[rand(1,7)]"
 	update_icon()
 
-// Category-specific archive bookcases: stock from the archive DB by category.
+// Category-specific archive bookcases: in-game manuals by shelf_category, then SQL/archive DB books by matching category. DB category must match (Reference, Technical, Fiction, etc.) so SQL books spawn on the correct shelf.
 /obj/structure/bookcase/archive/reference
 	name = "Reference archive bookcase"
 	desc = "A wooden shelving unit stocked with reference books from the external archive."
 	New()
 		..()
+		populate_with_manuals_by_shelf("Reference", 6)
 		spawn(5)
 			populate_from_archive_by_category("Reference", 10)
 
@@ -457,6 +488,7 @@
 	desc = "A wooden shelving unit stocked with adult books from the external archive."
 	New()
 		..()
+		populate_with_manuals_by_shelf("Adult", 6)
 		spawn(5)
 			populate_from_archive_by_category("Adult", 10)
 
@@ -465,6 +497,7 @@
 	desc = "A wooden shelving unit stocked with miscellaneous books from the external archive."
 	New()
 		..()
+		populate_with_manuals_by_shelf("Other", 6)
 		spawn(5)
 			populate_from_archive_by_category("Other", 10)
 
@@ -473,6 +506,7 @@
 	desc = "A wooden shelving unit stocked with technical manuals from the external archive."
 	New()
 		..()
+		populate_with_manuals_by_shelf("Technical", 6)
 		spawn(5)
 			populate_from_archive_by_category("Technical", 10)
 
@@ -481,6 +515,7 @@
 	desc = "A wooden shelving unit stocked with religious texts from the external archive."
 	New()
 		..()
+		populate_with_manuals_by_shelf("Religion", 6)
 		spawn(5)
 			populate_from_archive_by_category("Religion", 10)
 
@@ -489,6 +524,7 @@
 	desc = "A wooden shelving unit stocked with fiction from the external archive."
 	New()
 		..()
+		populate_with_manuals_by_shelf("Fiction", 6)
 		spawn(5)
 			populate_from_archive_by_category("Fiction", 10)
 
@@ -497,6 +533,7 @@
 	desc = "A wooden shelving unit stocked with non-fiction from the external archive."
 	New()
 		..()
+		populate_with_manuals_by_shelf("Non-Fiction", 6)
 		spawn(5)
 			populate_from_archive_by_category("Non-Fiction", 10)
 

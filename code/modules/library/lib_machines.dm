@@ -58,7 +58,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, "library_visitor_kiosk.tmpl", "Library Visitor", 500, 600)
-		ui.set_window_options("focus=0;can_close=0;can_minimize=0;can_maximize=0;can_resize=1;titlebar=1;")
+		ui.set_window_options("focus=0;can_close=1;can_minimize=0;can_maximize=0;can_resize=1;titlebar=1;")
 		ui.set_initial_data(data)
 		ui.open()
 
@@ -219,7 +219,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if(!ui)
 		ui = new(user, src, ui_key, "library_staff_kiosk.tmpl", "Book Inventory Management", 500, 600)
-		ui.set_window_options("focus=0;can_close=0;can_minimize=0;can_maximize=0;can_resize=1;titlebar=1;")
+		ui.set_window_options("focus=0;can_close=1;can_minimize=0;can_maximize=0;can_resize=1;titlebar=1;")
 		ui.set_initial_data(data)
 		ui.open()
 
