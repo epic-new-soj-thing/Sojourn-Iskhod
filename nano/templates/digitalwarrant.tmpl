@@ -62,6 +62,9 @@
 				{{/if}}
 				<tr><td>{{:helper.link('Authorize', null, {'editwarrantauth' : 1})}}
 				<tr><td>{{:helper.link('Save', null, {'savewarrant' : 1})}}
+				{{if data.have_printer}}
+				<td>{{:helper.link('Print', null, {'printwarrant' : 1})}}
+				{{/if}}
 				<td>{{:helper.link('Delete', 'trash', {'deletewarrant' : 1})}}
 				<tr><td>{{:helper.link('Back to Menu', null, {'back' : 1})}}
 			</table>

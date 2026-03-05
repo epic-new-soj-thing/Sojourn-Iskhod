@@ -812,6 +812,25 @@ ADMIN_VERB_ADD(/datum/admins/proc/resume, R_SERVER, FALSE)
 	to_chat(world, "<b>The game will start soon.</b>")
 	log_admin("[key_name(usr)] removed the delay.")
 
+ADMIN_VERB_ADD(/datum/admins/proc/end_round, R_SERVER, FALSE)
+/datum/admins/proc/end_round()
+	set category = "Server"
+	set desc="End the round now without a vote (normal round end, no immediate restart)"
+	set name="End Round"
+
+	if(!check_rights(R_SERVER))
+		return
+	if(SSticker.current_state != GAME_STATE_PLAYING)
+		to_chat(usr, "<span class='warning'>The round is not in progress.</span>")
+		return
+	if(SSticker.scheduled_restart && SSticker.scheduled_restart < world.time)
+		to_chat(usr, "<span class='warning'>The round is already ending.</span>")
+		return
+	SSticker.scheduled_restart = world.time
+	log_admin("[key_name(usr)] has manually ended the round.")
+	message_admins("\blue [key_name(usr)] has manually ended the round.", 1)
+	to_chat(world, SPAN_NOTICE("<b>An admin has ended the round.</b>"))
+
 ADMIN_VERB_ADD(/datum/admins/proc/adjump, R_SERVER, FALSE)
 /datum/admins/proc/adjump()
 	set category = "Server"

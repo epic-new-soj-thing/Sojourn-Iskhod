@@ -42,6 +42,7 @@
 	var/deffont = "Verdana"
 	var/signfont = "Times New Roman"
 	var/crayonfont = "Comic Sans MS"
+	var/list/signature_field_indices = list()  // 1-based field IDs that use signature style (not easily replicated)
 
 /obj/item/paper/ui_host(mob/user)
 	if(istype(loc, /obj/structure/noticeboard))
@@ -111,6 +112,18 @@
 		name = title
 	info = html_encode(text)
 	info = parsepencode(text)
+	signature_field_indices = list()
+	var/laststart = 1
+	var/idx = 0
+	while(idx < MAX_FIELDS)
+		var/istart = findtext(info, "<span class=\"paper_field", laststart)
+		if(istart == 0)
+			break
+		idx++
+		var/span_tag = copytext(info, istart, min(istart + 60, length(info) + 1))
+		if(findtext(span_tag, "paper_signature"))
+			signature_field_indices += idx
+		laststart = istart + 1
 	update_icon()
 	update_space(info)
 	updateinfolinks()
@@ -319,6 +332,12 @@
 			textindex = iend
 			break
 
+	if (!links && (id in signature_field_indices))
+		// Signature field: render written text in signfont + italic so it cannot be easily replicated
+		var/start = findtext(text, ">") + 1
+		var/end = findtext(text, "</font>")
+		var/inner = (start > 1 && end) ? copytext(text, start, end) : text
+		text = "<font face=\"[signfont]\"><i>[inner]</i></font>"
 	if (links)
 		var/before = copytext(info_links, 1, textindex)
 		var/after = copytext(info_links, textindex)
@@ -428,24 +447,28 @@
 
 	if(href_list["write"])
 		var/id = href_list["write"]
-		//var/t = strip_html_simple(input(usr, "What text do you wish to add to " + (id=="end" ? "the end of the paper" : "field "+id) + "?", "[name]", null),8192) as message
 
 		if(free_space <= 0)
 			to_chat(usr, "<span class='info'>There isn't enough space left on \the [src] to write anything.</span>")
 			return
 
-		var/t =  sanitize(input("Enter what you want to write:", "Write", null, null) as message, free_space, extra = 0)
-
-		if(!t)
-			return
-
-		var/obj/item/i = usr.get_active_hand() // Check to see if he still got that darn pen, also check if he's using a crayon or pen.
-		var/iscrayon = 0
+		var/obj/item/i = usr.get_active_hand()
 		if(!istype(i, /obj/item/pen))
 			return
+		var/iscrayon = istype(i, /obj/item/pen/crayon)
 
-		if(istype(i, /obj/item/pen/crayon))
-			iscrayon = 1
+		var/t
+		var/field_id = (id != "end") ? text2num(id) : 0
+		if(field_id && (field_id in signature_field_indices))
+			if(istype(i, /obj/item/pen/chameleon))
+				t = i.get_signature(usr)
+			else
+				var/obj/item/card/id/id = usr.GetIdCard()
+				t = (id && id.registered_name) ? id.registered_name : (usr.real_name || "Anonymous")
+		else
+			t = sanitize(input("Enter what you want to write:", "Write", null, null) as message, free_space, extra = 0)
+			if(!t)
+				return
 
 
 		// if paper is not in usr, then it must be near them, or in a clipboard or folder, which must be in or near usr

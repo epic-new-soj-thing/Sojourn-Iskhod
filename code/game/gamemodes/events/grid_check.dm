@@ -83,11 +83,16 @@ So sometimes this event can result in people finding new and interesting things
 	for(var/obj/machinery/power/smes/S in GLOB.smes_list)
 		S.failure_timer = 0
 		S.charge = S.capacity
-		S.output_level = S.output_level_max
+		S.input_level = min(200000, S.input_level_max)
+		S.output_level = min(250000, S.output_level_max)
 		S.output_attempt = 1
 		S.input_attempt = 1
 		S.update_icon()
 		S.power_change()
+		CHECK_TICK
+	for(var/obj/machinery/power/breakerbox/B in GLOB.machines)
+		if(isOnShipLevel(B) && !B.on)
+			B.set_state(1)
 		CHECK_TICK
 
 
