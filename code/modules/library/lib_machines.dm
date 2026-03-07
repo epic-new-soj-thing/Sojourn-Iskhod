@@ -227,7 +227,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 		if(1)
 			sync_library_comp_inventory_from_bookcases()
 			for(var/obj/item/book/b in inventory)
-				data["inventory"].Add(list("name" = b.name, "ref" = "\ref[b]"))
+				data["inventory"] += list(list("name" = b.name, "ref" = "\ref[b]"))
 		if(2)
 			for(var/datum/borrowbook/b in checkouts)
 				var/timetaken = round((world.time - b.getdate) / 600)
@@ -255,7 +255,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 						log_debug("Library archive query failed: [dbcon.ErrorMsg()]")
 				else
 					while(query.NextRow())
-						data["archive_results"].Add(list(
+						data["archive_results"] += list(list(
 							"id" = query.item[1],
 							"author" = query.item[2],
 							"title" = query.item[3],
@@ -264,7 +264,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 			var/list/manual_entries = get_printable_manuals()
 			for(var/i in 1 to manual_entries.len)
 				var/list/entry = manual_entries[i]
-				data["printable_manuals"].Add(list("name" = entry["name"], "index" = i))
+				data["printable_manuals"] += list(list("name" = entry["name"], "index" = i))
 		if(5)
 			if(!scanner)
 				for(var/obj/machinery/libraryscanner/S in range(9))
