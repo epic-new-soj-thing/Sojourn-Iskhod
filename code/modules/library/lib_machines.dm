@@ -242,17 +242,18 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 					"ref" = "\ref[b]"
 				))
 		if(4)
-			var/list/manual_entries = get_printable_manuals()
-			for(var/i in 1 to manual_entries.len)
-				var/list/entry = manual_entries[i]
-				data["printable_manuals"].Add(list("name" = entry["name"], "index" = i))
+			// Fetch both DB archive and printable manuals like the modular computer library program
 			establish_db_connection()
 			if(!dbcon || !dbcon.IsConnected())
 				data["archive_error"] = "Unable to contact External Archive. Please contact your system administrator for assistance."
 			else
 				var/sort_col = (sortby in list("id", "author", "title", "category")) ? sortby : "id"
-				var/DBQuery/query = dbcon.NewQuery("SELECT `id`, `author`, `title`, `category` FROM `books` ORDER BY `[sort_col]`")
-				if(query.Execute())
+				var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, category FROM books ORDER BY [sort_col]")
+				if(!query.Execute())
+					data["archive_error"] = "Archive query failed. The books table may be missing or the database schema may differ. Check server logs."
+					if(dbcon && dbcon.ErrorMsg())
+						log_debug("Library archive query failed: [dbcon.ErrorMsg()]")
+				else
 					while(query.NextRow())
 						data["archive_results"].Add(list(
 							"id" = query.item[1],
@@ -260,8 +261,10 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 							"title" = query.item[3],
 							"category" = query.item[4]
 						))
-				else
-					data["archive_error"] = "Archive query failed. [query.ErrorMsg()]"
+			var/list/manual_entries = get_printable_manuals()
+			for(var/i in 1 to manual_entries.len)
+				var/list/entry = manual_entries[i]
+				data["printable_manuals"].Add(list("name" = entry["name"], "index" = i))
 		if(5)
 			if(!scanner)
 				for(var/obj/machinery/libraryscanner/S in range(9))
@@ -377,36 +380,63 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 	if(href_list["viewbookid"])
 		var/sqlid = sanitizeSQL(href_list["viewbookid"])
 		establish_db_connection()
-		if(dbcon && dbcon.IsConnected())
+		if(!dbcon || !dbcon.IsConnected())
+			to_chat(usr, SPAN_WARNING("Network Error: Connection to the Archive has been severed."))
+		else
 			var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, content FROM books WHERE id=[sqlid] LIMIT 1")
-			if(query.Execute() && query.NextRow())
+			if(!query.Execute())
+				to_chat(usr, SPAN_WARNING("Failed to fetch book from archive."))
+			else if(query.NextRow())
 				view_book_data = list(
 					"id" = query.item[1],
-					"author" = query.item[2],
-					"title" = query.item[3],
-					"content" = query.item[4]
+					"author" = query.item[2] || "Unknown",
+					"title" = query.item[3] || "Untitled",
+					"content" = query.item[4] || ""
 				)
 				screenstate = 7
+			else
+				to_chat(usr, SPAN_WARNING("Book not found in archive."))
 	if(href_list["backfromview"])
 		view_book_data = null
 		screenstate = 4
+	if(href_list["printarchivebook"])
+		if(view_book_data && view_book_data["title"] != null)
+			if(bibledelay)
+				for(var/mob/V in hearers(src))
+					V.show_message("<b>[src]</b>'s monitor flashes, \"Printer unavailable. Please allow a short time before attempting to print.\"")
+			else
+				bibledelay = 1
+				spawn(60)
+					bibledelay = 0
+				var/obj/item/book/B = new(src.loc)
+				B.name = "Book: [view_book_data["title"]]"
+				B.title = view_book_data["title"]
+				B.author = view_book_data["author"] || "Unknown"
+				B.dat = view_book_data["content"] || ""
+				B.icon_state = "book[rand(1,7)]"
+				if(!(B in src.inventory))
+					src.inventory.Add(B)
+				src.visible_message("[src]'s printer hums as it produces a completely bound book. How did it do that?")
+				to_chat(usr, SPAN_NOTICE("Printed: [B.name]"))
 	if(href_list["targetid"])
 		var/sqlid = sanitizeSQL(href_list["targetid"])
 		establish_db_connection()
 		if(!dbcon || !dbcon.IsConnected())
-			to_chat(usr, SPAN_WARNING("Connection to Archive has been severed. Aborting."))
+			to_chat(usr, SPAN_WARNING("Network Error: Connection to the Archive has been severed."))
 		else if(bibledelay)
-			for (var/mob/V in hearers(src))
+			for(var/mob/V in hearers(src))
 				V.show_message("<b>[src]</b>'s monitor flashes, \"Printer unavailable. Please allow a short time before attempting to print.\"")
 		else
-			bibledelay = 1
-			spawn(60)
-				bibledelay = 0
 			var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, content FROM books WHERE id=[sqlid] LIMIT 1")
-			if(query.Execute() && query.NextRow())
-				var/author = query.item[2]
-				var/title = query.item[3]
-				var/content = query.item[4]
+			if(!query.Execute())
+				to_chat(usr, SPAN_WARNING("Failed to fetch book from archive."))
+			else if(query.NextRow())
+				var/author = query.item[2] || "Unknown"
+				var/title = query.item[3] || "Untitled"
+				var/content = query.item[4] || ""
+				bibledelay = 1
+				spawn(60)
+					bibledelay = 0
 				var/obj/item/book/B = new(src.loc)
 				B.name = "Book: [title]"
 				B.title = title
@@ -416,6 +446,9 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 				if(!(B in src.inventory))
 					src.inventory.Add(B)
 				src.visible_message("[src]'s printer hums as it produces a completely bound book. How did it do that?")
+				to_chat(usr, SPAN_NOTICE("Printed: [B.name]"))
+			else
+				to_chat(usr, SPAN_WARNING("Book not found in archive."))
 	if(href_list["orderbyid"])
 		var/orderid = input(usr, "Enter the book ID (SS13BN) to order:") as num|null
 		if(orderid != null && isnum(orderid))

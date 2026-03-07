@@ -99,7 +99,7 @@
 								<td style="padding: 4px 6px; border: 1px solid #444;">{{:value.title}}</td>
 								<td style="padding: 4px 6px; border: 1px solid #444;">{{:value.category}}</td>
 								<td style="padding: 4px 6px; border: 1px solid #444;">{{:value.id}}</td>
-								<td style="padding: 4px 6px; border: 1px solid #444;">{{:helper.link("View", null, {viewbookid: value.id})}} {{:helper.link("Order", null, {targetid: value.id})}}</td>
+								<td style="padding: 4px 6px; border: 1px solid #444;">{{:helper.link("View", null, {viewbookid: value.id})}} {{:helper.link("Print", null, {targetid: value.id})}}</td>
 							</tr>
 						{{/for}}
 					</table>
@@ -131,7 +131,7 @@
 			{{else}}
 				<span class="bad">No book loaded.</span><br>
 			{{/if}}
-			<div style="margin-top: 0.5em;">{{:helper.link("Back to Archive", null, {backfromview: 1})}} &nbsp; {{:helper.link("Return to main menu", null, {switchscreen: 0})}}</div>
+			<div style="margin-top: 0.5em;">{{:helper.link("Print", null, {printarchivebook: 1})}} &nbsp; {{:helper.link("Back to Archive", null, {backfromview: 1})}} &nbsp; {{:helper.link("Return to main menu", null, {switchscreen: 0})}}</div>
 		{{/if}}
 	</div>
 </div>
