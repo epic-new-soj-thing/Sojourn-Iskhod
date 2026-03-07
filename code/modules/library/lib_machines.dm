@@ -251,7 +251,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 				data["archive_error"] = "Unable to contact External Archive. Please contact your system administrator for assistance."
 			else
 				var/sort_col = (sortby in list("id", "author", "title", "category")) ? sortby : "id"
-				var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, category FROM books ORDER BY [sort_col]")
+				var/DBQuery/query = dbcon.NewQuery("SELECT `id`, `author`, `title`, `category` FROM `books` ORDER BY `[sort_col]`")
 				if(query.Execute())
 					while(query.NextRow())
 						data["archive_results"].Add(list(
@@ -261,7 +261,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 							"category" = query.item[4]
 						))
 				else
-					data["archive_error"] = "Archive query failed. Check that the books table exists."
+					data["archive_error"] = "Archive query failed. [query.ErrorMsg()]"
 		if(5)
 			if(!scanner)
 				for(var/obj/machinery/libraryscanner/S in range(9))
@@ -428,11 +428,12 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 			var/list/entry = manual_entries[idx]
 			var/path_str = entry["path"]
 			var/book_type = text2path(path_str)
-			if(ispath(book_type, /obj/item/book/manual) && book_type != /obj/item/book/manual/demonomicon)
+			if(book_type && ispath(book_type, /obj/item/book/manual) && book_type != /obj/item/book/manual/demonomicon)
 				var/obj/item/book/manual/M = new book_type(src.loc)
 				if(!(M in src.inventory))
 					src.inventory.Add(M)
 				src.visible_message("[src]'s printer hums as it produces a completely bound book.")
+				to_chat(usr, SPAN_NOTICE("Printed: [M.name]."))
 	if(href_list["sort"] in list("author", "title", "category"))
 		sortby = href_list["sort"]
 	src.updateUsrDialog()

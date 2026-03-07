@@ -297,6 +297,9 @@
 	// Final sync for check-in computer inventory (after manual and archive fiction/nonfiction)
 	spawn(20)
 		sync_library_comp_inventory_from_bookcases()
+	// Retry distribution for late-loaded archive fiction/nonfiction shelves (e.g. dynamic submaps)
+	spawn(45)
+		distribute_library_books_impl()
 	// Delayed sync so archive shelves that populate from DB (reference, technical, etc.) are included in general inventory
 	spawn(45)
 		sync_library_comp_inventory_from_bookcases()
@@ -375,14 +378,16 @@
 			B.update_icon()
 	sync_library_comp_inventory_from_bookcases()
 
-/// Syncs each library check-in computer's in-memory inventory list with all books in bookcases in the same area. Only touches comp.inventory (no SQL). Ensures manual books and other on-shelf books appear in Registered Inventory.
+/// Syncs each library check-in computer's in-memory inventory list with all books in bookcases (same area type, or same Z if no match). Only touches comp.inventory (no SQL). Ensures manual books and other on-shelf books appear in Registered Inventory.
 /proc/sync_library_comp_inventory_from_bookcases()
 	for(var/obj/machinery/librarycomp/comp in world)
 		var/area/comp_area = get_area(comp)
-		if(!comp_area)
-			continue
+		var/comp_z = get_turf(comp)?.z
 		for(var/obj/structure/bookcase/bookcase in world)
-			if(get_area(bookcase) != comp_area)
+			var/area/bookcase_area = get_area(bookcase)
+			var/same_area = comp_area && bookcase_area && (bookcase_area.type == comp_area.type)
+			var/same_z = comp_z && get_turf(bookcase)?.z == comp_z
+			if(!same_area && !same_z)
 				continue
 			for(var/obj/item/book/b in bookcase.contents)
 				if(!(b in comp.inventory))
@@ -431,6 +436,7 @@
 	return sorttext(a[1], b[1])
 
 /// Returns a list of printable manual book entries for the library UI. Each entry is list("name" = display name, "path" = type path as string). Excludes demonomicon.
+/// Uses initial() to avoid instantiating manuals (some New() may assume a valid loc and runtime with null).
 /proc/get_printable_manuals()
 	var/static/list/printable_manual_entries
 	if(!printable_manual_entries)
@@ -438,9 +444,11 @@
 		for(var/book_type in subtypesof(/obj/item/book/manual))
 			if(book_type == /obj/item/book/manual/demonomicon)
 				continue
-			var/obj/item/book/manual/temp = new book_type(null)
-			pairs += list(list(temp.shelf_category, temp.name || temp.title || "[book_type]", book_type))
-			qdel(temp)
+			var/display_name = initial(book_type.name) || initial(book_type.title)
+			if(!display_name)
+				display_name = "[book_type]"
+			var/shelf_cat = initial(book_type.shelf_category) || "Other"
+			pairs += list(list(shelf_cat, display_name, book_type))
 		sortTim(pairs, GLOBAL_PROC_REF(cmp_shelf_pair_asc))
 		printable_manual_entries = list()
 		for(var/pair in pairs)
@@ -606,7 +614,7 @@
 	desc = "A wooden shelving unit stocked with fiction from the external archive."
 	New()
 		..()
-		// Manuals are distributed across all fiction archive shelves at roundstart (distribute_library_books)
+		populate_with_manuals_by_shelf("Fiction", 6)
 		spawn(15)
 			populate_from_archive_by_category("Fiction", 10)
 
@@ -615,7 +623,7 @@
 	desc = "A wooden shelving unit stocked with non-fiction from the external archive."
 	New()
 		..()
-		// Manuals are distributed across all nonfiction archive shelves at roundstart (distribute_library_books)
+		populate_with_manuals_by_shelf("Non-Fiction", 6)
 		spawn(15)
 			populate_from_archive_by_category("Non-Fiction", 10)
 
