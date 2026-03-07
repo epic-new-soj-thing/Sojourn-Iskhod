@@ -382,9 +382,11 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 	for(var/I = msg_buffer.len; I >= 1; I--)
 		var/m = msg_buffer[I]
-		var/datum/feed_channel/FC = channel_by_id["[m["channel_id"]]"]
+		var/ch_id = m["channel_id"]
+		var/msg_id = m["id"]
+		var/datum/feed_channel/FC = channel_by_id["[ch_id]"]
 		if(!FC)
-			log_debug("Newscaster: message [m["id"]] references unknown/missing channel ID [m["channel_id"]]; skipping")
+			log_debug("Newscaster: message [msg_id] references unknown/missing channel ID [ch_id]; skipping")
 			continue
 		var/datum/feed_message/newMsg = new /datum/feed_message
 		// Normalize DB-loaded fields: some DB rows may have surrounding single quotes
