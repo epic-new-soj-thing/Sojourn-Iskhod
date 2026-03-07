@@ -812,6 +812,11 @@
 	new /obj/item/device/radio/headset/headset_service(src)
 	new /obj/item/modular_computer/pda(src)
 	new /obj/item/clothing/under/rank/librarian(src)
+	// Occult ritual supplies
+	new /obj/item/reagent_containers/blood/nanoblood(src)
+	new /obj/item/storage/fancy/candle_box(src)
+	new /obj/item/storage/fancy/candle_box(src)
+	new /obj/item/tool/knife/ritual(src)
 
 /obj/structure/closet/wardrobe/color/pink/artist
 

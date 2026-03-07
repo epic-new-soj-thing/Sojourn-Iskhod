@@ -462,4 +462,13 @@
 	blood_species = "Slime"
 	blood_type = "X"
 
+/obj/item/reagent_containers/blood/nanoblood
+	name = "bag of nanoblood"
+	desc = "A bag of universal blood substitute. Functions as universal blood at a 2:1 ratio."
+	blood_type = null
+
+/obj/item/reagent_containers/blood/nanoblood/Initialize()
+	. = ..()
+	reagents.add_reagent("nanoblood", 200)
+
 /obj/item/reagent_containers/blood/empty

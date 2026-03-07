@@ -3,6 +3,16 @@
 		<h2 style="margin: 0 0 0.5em 0;">Book Inventory Management</h2>
 	</div>
 	<div class="itemContent" style="width: 100%; min-height: 320px; box-sizing: border-box; background-color: #2c2c2c; padding: 12px;">
+		{{if data.confirm_forbidden}}
+			<div style="margin-bottom: 1em; padding: 10px; border: 2px solid #666; background: #1e1e1e;">
+				<p style="margin: 0 0 0.5em 0;"><b>Confirm print</b></p>
+				<p style="margin: 0 0 0.5em 0;">Remaining Prints: {{:data.confirm_forbidden.remaining}}</p>
+				<p style="margin: 0 0 0.75em 0;">Print &quot;{{:data.confirm_forbidden.name}}&quot;?</p>
+				{{:helper.link("Confirm", null, {confirmforbidden: data.confirm_forbidden.id})}}
+				<span style="margin-left: 0.5em;"></span>
+				{{:helper.link("Cancel", null, {cancelforbidden: 1})}}
+			</div>
+		{{/if}}
 		{{if data.screenstate === 0}}
 			<table style="width: 100%; border: 0;">
 				<tr><td style="padding: 4px 0; border: 0; vertical-align: top;">{{:helper.link("1. View General Inventory", null, {switchscreen: 1})}}</td></tr>
@@ -121,6 +131,52 @@
 				{{:helper.link("Upload", null, {upload: 1})}}
 			{{/if}}
 			<div style="margin-top: 0.5em;">{{:helper.link("Return to main menu", null, {switchscreen: 0})}}</div>
+		{{/if}}
+		{{if data.screenstate === 6}}
+			<h3 style="margin: 0 0 0.35em 0;">Forbidden Lore Vault</h3>
+			<p style="margin: 0 0 0.5em 0; font-size: 92%;">Select a category to print. One minute cooldown between prints.</p>
+			<div style="width: 100%; max-height: 320px; overflow-y: auto; overflow-x: hidden; border: 1px solid #444; background: #1a1a1a; margin-bottom: 0.75em;">
+				<table style="width: 100%; border-collapse: collapse; table-layout: fixed;">
+					{{for data.forbidden_menu}}
+						<tr>
+							<td style="padding: 6px 8px; border-bottom: 1px solid #333; width: 140px;">Remaining Prints: {{:value.remaining}}</td>
+							<td style="padding: 6px 8px; border-bottom: 1px solid #333;">{{:value.name}}</td>
+							<td style="padding: 6px 8px; border-bottom: 1px solid #333; width: 110px; white-space: nowrap;">{{if value.submenu}}{{:helper.link("Select type...", null, {switchscreen: value.submenu})}}{{else}}{{:helper.link("Print", null, {printforbidden: value.id})}}{{/if}}</td>
+						</tr>
+					{{/for}}
+				</table>
+			</div>
+			<div style="margin-top: 0.5em;">{{:helper.link("Return to main menu", null, {switchscreen: 0})}}</div>
+		{{/if}}
+		{{if data.screenstate === 8}}
+			<h3 style="margin: 0 0 0.35em 0;">Thematic Tome</h3>
+			<p style="margin: 0 0 0.5em 0; font-size: 92%;">Remaining Prints: {{:data.forbidden_remaining}}</p>
+			<div style="width: 100%; max-height: 320px; overflow-y: auto; overflow-x: hidden; border: 1px solid #444; background: #1a1a1a; margin-bottom: 0.75em;">
+				<table style="width: 100%; border-collapse: collapse; table-layout: fixed;">
+					{{for data.forbidden_tome_list}}
+						<tr>
+							<td style="padding: 4px 8px; border-bottom: 1px solid #333;">{{:value.name}}</td>
+							<td style="padding: 4px 8px; border-bottom: 1px solid #333; width: 70px; white-space: nowrap;">{{if value.remaining}}{{:helper.link("Print", null, {printforbidden: value.id})}}{{/if}}</td>
+						</tr>
+					{{/for}}
+				</table>
+			</div>
+			<div style="margin-top: 0.5em;">{{:helper.link("Back to Forbidden Lore", null, {switchscreen: 6})}} &nbsp; {{:helper.link("Return to main menu", null, {switchscreen: 0})}}</div>
+		{{/if}}
+		{{if data.screenstate === 9}}
+			<h3 style="margin: 0 0 0.35em 0;">Scroll</h3>
+			<p style="margin: 0 0 0.5em 0; font-size: 92%;">Remaining Prints: {{:data.forbidden_remaining}}</p>
+			<div style="width: 100%; max-height: 320px; overflow-y: auto; overflow-x: hidden; border: 1px solid #444; background: #1a1a1a; margin-bottom: 0.75em;">
+				<table style="width: 100%; border-collapse: collapse; table-layout: fixed;">
+					{{for data.forbidden_scroll_list}}
+						<tr>
+							<td style="padding: 4px 8px; border-bottom: 1px solid #333;">{{:value.name}}</td>
+							<td style="padding: 4px 8px; border-bottom: 1px solid #333; width: 70px; white-space: nowrap;">{{if value.remaining}}{{:helper.link("Print", null, {printforbidden: value.id})}}{{/if}}</td>
+						</tr>
+					{{/for}}
+				</table>
+			</div>
+			<div style="margin-top: 0.5em;">{{:helper.link("Back to Forbidden Lore", null, {switchscreen: 6})}} &nbsp; {{:helper.link("Return to main menu", null, {switchscreen: 0})}}</div>
 		{{/if}}
 		{{if data.screenstate === 7}}
 			<h3 style="margin: 0 0 0.35em 0;">Archive Book</h3>

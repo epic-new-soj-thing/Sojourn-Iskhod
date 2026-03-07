@@ -167,8 +167,6 @@
 /obj/effect/mob_spawn/human/Initialize()
 	if(ispath(outfit))
 		outfit = new outfit()
-	if(!outfit)
-		outfit = new outfit
 	return ..()
 
 /obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H)

@@ -9,6 +9,15 @@
 			{{:helper.link("Filter by Category: " + (data.category || "Any"), null, {setcategory: 1})}}
 			{{:helper.link("Filter by Author: " + (data.author || ""), null, {setauthor: 1})}}
 			{{:helper.link("Start Search", null, {search: 1})}}
+			{{if data.hacked && data.printable_manuals && data.printable_manuals.length}}
+				<br><br>
+				<h3 style="margin-top: 0.5em;">Printable manuals</h3>
+				<table>
+					{{for data.printable_manuals}}
+						<tr><td>{{:value.name}}</td><td>{{:helper.link("Print", null, {printmanual: value.index})}}</td></tr>
+					{{/for}}
+				</table>
+			{{/if}}
 		{{/if}}
 		{{if data.screenstate === 1}}
 			{{if data.search_error}}
@@ -31,7 +40,7 @@
 				<b>{{:data.view_book.title}}</b><br>
 				<i>by {{:data.view_book.author || "Unknown"}}</i> (USBN: {{:data.view_book.id}})<br><br>
 				<div style="white-space: pre-wrap; background: #eee; padding: 8px; max-height: 400px; overflow-y: auto; color: #333;">{{:data.view_book.content || "(No content)"}}</div><br>
-				{{:helper.link("Print and add to library", null, {printbook: 1})}}
+				{{if data.hacked}}{{:helper.link("Print and add to library", null, {printbook: 1})}}{{/if}}
 			{{else}}
 				<span class="bad">No book loaded.</span><br>
 			{{/if}}

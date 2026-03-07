@@ -305,6 +305,12 @@
 		sync_library_comp_inventory_from_bookcases()
 	return TRUE
 
+/// Creates one manual book on a shelf and updates the shelf icon. Used to avoid no-effect warnings on bare new/assign in callers.
+/proc/create_library_manual_on_shelf(book_type, atom/shelf)
+	var/obj/item/book/created = new book_type(shelf)
+	if(created.loc)
+		created.loc.update_icon()
+
 /// Implementation: populate fiction/nonfiction manual bookcases and archive shelves, then sync computer inventory.
 /proc/distribute_library_books_impl()
 	var/list/fiction_shelves = list()
@@ -317,15 +323,9 @@
 		var/list/fiction_types = sortList(subtypesof(/obj/item/book/manual/fiction))
 		if(fiction_types.len)
 			var/fiction_types_per_shelf = max(1, round(fiction_types.len / fiction_shelves.len))
-			var/list/fiction_created = list()
 			for(var/i = 1; i <= fiction_types.len; i++)
 				var/shelf_index_f = min(1 + round((i - 1) / fiction_types_per_shelf - 0.49), fiction_shelves.len)
-				var/obj/item/book/created = new fiction_types[i](fiction_shelves[shelf_index_f])
-				if(fiction_created.Add(created))
-					;
-			for(var/obj/item/book/b in fiction_created)
-				if(b.loc)
-					b.loc.update_icon()
+				create_library_manual_on_shelf(fiction_types[i], fiction_shelves[shelf_index_f])
 		for(var/obj/structure/bookcase/B in fiction_shelves)
 			B.populate_from_archive_by_category("Fiction", 6)
 			B.update_icon()
@@ -333,15 +333,9 @@
 		var/list/nonfiction_types = sortList(subtypesof(/obj/item/book/manual/nonfiction))
 		if(nonfiction_types.len)
 			var/nonfiction_types_per_shelf = max(1, round(nonfiction_types.len / nonfiction_shelves.len))
-			var/list/nonfiction_created = list()
 			for(var/i = 1; i <= nonfiction_types.len; i++)
 				var/shelf_index_n = min(1 + round((i - 1) / nonfiction_types_per_shelf - 0.49), nonfiction_shelves.len)
-				var/obj/item/book/created = new nonfiction_types[i](nonfiction_shelves[shelf_index_n])
-				if(nonfiction_created.Add(created))
-					;
-			for(var/obj/item/book/b in nonfiction_created)
-				if(b.loc)
-					b.loc.update_icon()
+				create_library_manual_on_shelf(nonfiction_types[i], nonfiction_shelves[shelf_index_n])
 		for(var/obj/structure/bookcase/B in nonfiction_shelves)
 			B.populate_from_archive_by_category("Non-Fiction", 6)
 			B.update_icon()
@@ -356,24 +350,18 @@
 		var/list/arch_fiction_types = sortList(subtypesof(/obj/item/book/manual/fiction))
 		if(arch_fiction_types.len)
 			var/arch_fiction_per_shelf = max(1, round(arch_fiction_types.len / archive_fiction_shelves.len))
-			var/list/arch_fiction_created = list()
 			for(var/i = 1; i <= arch_fiction_types.len; i++)
 				var/shelf_idx = min(1 + round((i - 1) / arch_fiction_per_shelf - 0.49), archive_fiction_shelves.len)
-				var/obj/item/book/created = new arch_fiction_types[i](archive_fiction_shelves[shelf_idx])
-				if(arch_fiction_created.Add(created))
-					;
+				create_library_manual_on_shelf(arch_fiction_types[i], archive_fiction_shelves[shelf_idx])
 		for(var/obj/structure/bookcase/B in archive_fiction_shelves)
 			B.update_icon()
 	if(archive_nonfiction_shelves.len)
 		var/list/arch_nonfiction_types = sortList(subtypesof(/obj/item/book/manual/nonfiction))
 		if(arch_nonfiction_types.len)
 			var/arch_nonfiction_per_shelf = max(1, round(arch_nonfiction_types.len / archive_nonfiction_shelves.len))
-			var/list/arch_nonfiction_created = list()
 			for(var/i = 1; i <= arch_nonfiction_types.len; i++)
 				var/shelf_idx = min(1 + round((i - 1) / arch_nonfiction_per_shelf - 0.49), archive_nonfiction_shelves.len)
-				var/obj/item/book/created = new arch_nonfiction_types[i](archive_nonfiction_shelves[shelf_idx])
-				if(arch_nonfiction_created.Add(created))
-					;
+				create_library_manual_on_shelf(arch_nonfiction_types[i], archive_nonfiction_shelves[shelf_idx])
 		for(var/obj/structure/bookcase/B in archive_nonfiction_shelves)
 			B.update_icon()
 	sync_library_comp_inventory_from_bookcases()
@@ -427,7 +415,7 @@
 			var/title = row_query.item[2]
 			var/content = row_query.item[3]
 			var/obj/item/book/B = new(src)
-			B.name = "Book: [title]"
+			B.name = title
 			B.title = title
 			B.author = author
 			B.dat = content
@@ -474,7 +462,7 @@
 	if(!manual_types)
 		var/list/pairs = list()
 		for(var/book_type in subtypesof(/obj/item/book/manual))
-			if(book_type == /obj/item/book/manual/demonomicon)
+			if(book_type == /obj/item/book/manual/demonomicon || book_type == /obj/item/book/manual/wiki)
 				continue
 			var/obj/item/book/manual/temp = new book_type(null)
 			pairs += list(list(temp.shelf_category, book_type))
@@ -499,7 +487,7 @@
 	if(!manual_types_by_shelf)
 		manual_types_by_shelf = list()
 		for(var/book_type in subtypesof(/obj/item/book/manual))
-			if(book_type == /obj/item/book/manual/demonomicon)
+			if(book_type == /obj/item/book/manual/demonomicon || book_type == /obj/item/book/manual/wiki)
 				continue
 			var/obj/item/book/manual/temp = new book_type(null)
 			var/shelf = temp.shelf_category
@@ -557,7 +545,7 @@
 			var/title = row_query.item[2]
 			var/content = row_query.item[3]
 			var/obj/item/book/B = new(src)
-			B.name = "Book: [title]"
+			B.name = title
 			B.title = title
 			B.author = author
 			B.dat = content

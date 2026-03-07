@@ -59,6 +59,8 @@ var/list/outfits_decls_by_type_
 
 	if(is_hidden_category())
 		return
+	if(!outfits_decls_root_)
+		init_outfit_decls()
 	outfits_decls_by_type_[type] = src
 	dd_insertObjectList(outfits_decls_, src)
 

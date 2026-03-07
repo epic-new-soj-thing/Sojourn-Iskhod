@@ -393,6 +393,9 @@ var/failed_old_db_connections = 0
 /hook/startup/proc/connectDB()
 	if(!setup_database_connection())
 		log_debug("Your server failed to establish a connection with the feedback database.")
+		if(config && config.sql_enabled)
+			config.sql_enabled = 0
+			log_debug("SQL functions disabled for this run due to database connection failure.")
 	else
 		log_debug("Feedback database connection established.")
 		if(news_network)
@@ -427,11 +430,18 @@ var/failed_old_db_connections = 0
 //This proc ensures that the connection to the feedback database (global variable dbcon) is established
 /proc/establish_db_connection()
 	if(failed_db_connections > FAILED_DB_CONNECTION_CUTOFF)
+		if(config && config.sql_enabled)
+			config.sql_enabled = 0
+			log_debug("SQL functions disabled: database connection failed repeatedly.")
 		return 0
 
 	// Ensure dbcon exists before calling methods on it to avoid runtime errors
 	if(!dbcon || !dbcon.IsConnected())
-		return setup_database_connection()
+		. = setup_database_connection()
+		if(!. && config && config.sql_enabled && failed_db_connections >= FAILED_DB_CONNECTION_CUTOFF)
+			config.sql_enabled = 0
+			log_debug("SQL functions disabled: database connection failed repeatedly.")
+		return .
 	return 1
 
 /world/proc/incrementMaxZ()
