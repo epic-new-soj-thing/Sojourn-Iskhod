@@ -239,7 +239,8 @@
 		list(COOKING_ADD_REAGENT, "sodiumchloride", 1),
 		list(COOKING_ADD_REAGENT, "blackpepper", 1),
 		list(COOKING_USE_DEEPFRIER, J_HI, 10 SECONDS),
-		list(COOKING_ADD_PRODUCE_OPTIONAL, "chili", add_price = 2)
+		list(COOKING_ADD_PRODUCE_OPTIONAL, "chili", add_price = 2),
+		list(COOKING_ADD_REAGENT, "blackpepper", 1)
 	)
 
 /datum/cooking/recipe/friedchikin_airfried
@@ -253,7 +254,8 @@
 		list(COOKING_ADD_REAGENT, "sodiumchloride", 1),
 		list(COOKING_ADD_REAGENT, "blackpepper", 1),
 		list(COOKING_USE_DEEPFRIER, J_HI, 10 SECONDS),
-		list(COOKING_ADD_PRODUCE_OPTIONAL, "chili", add_price = 2)
+		list(COOKING_ADD_PRODUCE_OPTIONAL, "chili", add_price = 2),
+		list(COOKING_ADD_REAGENT, "blackpepper", 1)
 	)
 
 /datum/cooking/recipe/mashpotato

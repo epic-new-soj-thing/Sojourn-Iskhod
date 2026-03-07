@@ -368,6 +368,8 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 	// Messages were selected newest-first; insert them so channels end up in chronological order
 	var/list/msg_buffer = list()
 	while(q2.NextRow())
+		if(q2.item.len < 7)
+			continue
 		var/msgrec = list(
 			"id" = text2num(q2.item[1]),
 			"channel_id" = text2num(q2.item[2]),

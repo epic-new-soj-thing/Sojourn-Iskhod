@@ -17,6 +17,7 @@ var/list/outfits_decls_by_type_
 		return
 	outfits_decls_ = list()
 	outfits_decls_by_type_ = list()
+	outfits_decls_root_ = 1  // Prevent recursion when creating root outfit
 	outfits_decls_root_ = new/decl/hierarchy/outfit()
 
 /decl/hierarchy/outfit

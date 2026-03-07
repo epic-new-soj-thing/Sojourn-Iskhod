@@ -282,7 +282,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 /obj/machinery/requests_console/preset
 	name = ""
 	department = ""
-	departmentType = ""
+	departmentType = 0
 	announcementConsole = 0
 //Todo: presets and mapping for more non-command RCs
 
