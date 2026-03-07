@@ -438,7 +438,6 @@
 	return sorttext(a[1], b[1])
 
 /// Returns a list of printable manual book entries for the library UI. Each entry is list("name" = display name, "path" = type path as string). Excludes demonomicon.
-/// Uses initial() to avoid instantiating manuals (some New() may assume a valid loc and runtime with null).
 /proc/get_printable_manuals()
 	var/static/list/printable_manual_entries
 	if(!printable_manual_entries)
@@ -446,11 +445,11 @@
 		for(var/book_type in subtypesof(/obj/item/book/manual))
 			if(book_type == /obj/item/book/manual/demonomicon)
 				continue
-			var/display_name = initial(book_type.name) || initial(book_type.title)
-			if(!display_name)
-				display_name = "[book_type]"
-			var/shelf_cat = initial(book_type.shelf_category) || "Other"
+			var/obj/item/book/manual/temp = new book_type(null)
+			var/display_name = temp.name || temp.title || "[book_type]"
+			var/shelf_cat = temp.shelf_category || "Other"
 			pairs += list(list(shelf_cat, display_name, book_type))
+			qdel(temp)
 		sortTim(pairs, GLOBAL_PROC_REF(cmp_shelf_pair_asc))
 		printable_manual_entries = list()
 		for(var/pair in pairs)
