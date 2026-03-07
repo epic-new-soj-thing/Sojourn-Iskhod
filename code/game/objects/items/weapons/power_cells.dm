@@ -267,6 +267,16 @@
 	maxcharge = 1000
 	price_tag = 250
 
+/obj/item/cell/medium/destiny
+	name = "GP-SI \"Destiny\" 2500M"
+	desc = "An M-standardized power cell with Atomcell-style self-recharge. Used in the \"Destiny\" energy pistol."
+	icon_state = "meb_m_nu"
+	autorecharging = TRUE
+	autorecharge_rate = 0.03
+	recharge_time = 4
+	maxcharge = 2500
+	price_tag = 0
+
 /obj/item/cell/medium/greyson
 	name = "GP-SI \"Posi-cell 1600M\""
 	desc = "GP-SI branded rechargeable M-standardized power cell that recharges itself over time. This type has yet to hit the market!"

@@ -78,18 +78,16 @@
 	can_dual = TRUE
 	projectile_type = /obj/item/projectile/beam
 	origin_tech = null
-	self_recharge = TRUE
-	suitable_cell = /obj/item/cell/large
-	cell_type = /obj/item/cell/large/high
-	recharge_time = 2
-	recharge_amount = 100
+	self_recharge = FALSE
+	suitable_cell = /obj/item/cell/medium
+	cell_type = /obj/item/cell/medium/destiny // 2500 M-cell, Atomcell recharge rate
 	price_tag = 2250
 	gun_tags = list(GUN_LASER, GUN_ENERGY, GUN_SCOPE)
 	init_firemodes = list(
-		list(mode_name="laser", mode_desc="Standard lethal laser", projectile_type=/obj/item/projectile/beam, fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost=100, icon="kill"),
-		list(mode_name="stun", mode_desc="Stun beam to disable targets", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound='sound/weapons/energy/Taser.ogg', charge_cost=100, icon="stun"),
-		list(mode_name="ion", mode_desc="Ion bolt to disrupt electronics", projectile_type=/obj/item/projectile/ion, fire_sound='sound/weapons/energy/pulsegunfire.ogg', charge_cost=150, icon="stun"),
-		list(mode_name="plasma", mode_desc="Plasma bolt", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/vaporize.ogg', charge_cost=80, icon="destroy"),
+		list(mode_name="laser", mode_desc="Standard lethal laser", projectile_type=/obj/item/projectile/beam/midlaser, fire_sound='sound/weapons/energy/laser_pistol.ogg', charge_cost=100, icon="kill"),
+		list(mode_name="stun", mode_desc="Stun beam to disable targets", projectile_type=/obj/item/projectile/energy/electrode/stunshot, fire_sound='sound/weapons/energy/Taser.ogg', charge_cost=200, icon="stun"),
+		list(mode_name="ion", mode_desc="Ion bolt to disrupt electronics", projectile_type=/obj/item/projectile/ion, fire_sound='sound/weapons/energy/pulsegunfire.ogg', charge_cost=400, icon="stun"),
+		list(mode_name="plasma", mode_desc="Plasma bolt", projectile_type=/obj/item/projectile/plasma/light, fire_sound='sound/weapons/energy/vaporize.ogg', charge_cost=200, icon="destroy"),
 		WEAPON_CHARGE
 	)
 	twohanded = FALSE
@@ -98,6 +96,12 @@
 
 	wield_delay = 0.3 SECOND
 	wield_delay_factor = 0.2 // 20 vig
+
+/obj/item/gun/energy/captain/Initialize()
+	. = ..()
+	if(!cell)
+		cell = new cell_type(src)
+	update_icon()
 
 /obj/item/gun/energy/zwang
 	name = "\"Zwang\" energy revolver"
