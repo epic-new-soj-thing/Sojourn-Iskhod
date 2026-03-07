@@ -196,8 +196,6 @@
 	name = "Medical Manuals bookcase"
 	New()
 		..()
-		spawn(15)
-			populate_from_archive_by_category("Reference", 6)
 		new /obj/item/book/manual/medical_cloning(src)
 		new /obj/item/book/manual/medical_diagnostics_manual(src)
 		new /obj/item/book/manual/wiki/medical_guide(src)
@@ -214,8 +212,6 @@
 	name = "Engineering Manuals bookcase"
 	New()
 		..()
-		spawn(15)
-			populate_from_archive_by_category("Technical", 6)
 		new /obj/item/book/manual/wiki/engineering_construction(src)
 		new /obj/item/book/manual/wiki/engineering_hacking(src)
 		new /obj/item/book/manual/wiki/engineering_atmos(src)
@@ -235,8 +231,6 @@
 	name = "R&D Manuals bookcase"
 	New()
 		..()
-		spawn(15)
-			populate_from_archive_by_category("Technical", 6)
 		new /obj/item/book/manual/research_and_development(src)
 		new /obj/item/book/manual/wiki/science_toxins(src)
 		new /obj/item/book/manual/wiki/science_research(src)
@@ -251,8 +245,6 @@
 	desc = "A bookcase stocked with law and security procedure manuals."
 	New()
 		..()
-		spawn(15)
-			populate_from_archive_by_category("Reference", 6)
 		new /obj/item/book/manual/security_space_law(src)
 		new /obj/item/book/manual/wiki/laws(src)
 		new /obj/item/book/manual/wiki/security_ironparagraphs(src)
@@ -266,8 +258,6 @@
 	desc = "A bookcase stocked with cooking and drink recipe catalogs."
 	New()
 		..()
-		spawn(15)
-			populate_from_archive_by_category("Reference", 6)
 		new /obj/item/book/manual/catalog_book/cooking(src)
 		new /obj/item/book/manual/catalog_book/cooking(src)
 		new /obj/item/book/manual/catalog_book/drinks(src)
@@ -327,7 +317,6 @@
 				var/shelf_index_f = min(1 + round((i - 1) / fiction_types_per_shelf - 0.49), fiction_shelves.len)
 				create_library_manual_on_shelf(fiction_types[i], fiction_shelves[shelf_index_f])
 		for(var/obj/structure/bookcase/B in fiction_shelves)
-			B.populate_from_archive_by_category("Fiction", 6)
 			B.update_icon()
 	if(nonfiction_shelves.len)
 		var/list/nonfiction_types = sortList(subtypesof(/obj/item/book/manual/nonfiction))
@@ -337,7 +326,6 @@
 				var/shelf_index_n = min(1 + round((i - 1) / nonfiction_types_per_shelf - 0.49), nonfiction_shelves.len)
 				create_library_manual_on_shelf(nonfiction_types[i], nonfiction_shelves[shelf_index_n])
 		for(var/obj/structure/bookcase/B in nonfiction_shelves)
-			B.populate_from_archive_by_category("Non-Fiction", 6)
 			B.update_icon()
 	// Distribute archive fiction/nonfiction manuals across all archive shelves of the same type
 	var/list/archive_fiction_shelves = list()
@@ -383,8 +371,11 @@
 				if(!(b in comp.inventory))
 					comp.inventory.Add(b)
 
-/// Populate this bookcase with books from the archive DB by category. Called by manual bookcases and the archive.
+/// Populate this bookcase with books from the archive DB by category. Only archive (non-departmental) shelves get DB books.
 /obj/structure/bookcase/proc/populate_from_archive_by_category(archive_category, limit = 10)
+	if(!istype(src, /obj/structure/bookcase/archive))
+		update_icon()
+		return
 	log_debug("Library archive: populate_by_category category=[archive_category] limit=[limit] for [src.type]")
 	if(!establish_db_connection())
 		log_debug("Library archive: DB connection failed (establish_db_connection returned 0)")

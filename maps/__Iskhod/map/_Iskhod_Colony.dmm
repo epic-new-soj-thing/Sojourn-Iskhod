@@ -7075,9 +7075,7 @@
 /turf/simulated/floor/wood/wild4,
 /area/iskhod/outside/inside_colony/east)
 "bKE" = (
-/obj/effect/mist{
-	opacity = 80
-	},
+/obj/effect/mist,
 /obj/structure/railing/grey{
 	dir = 8
 	},
@@ -38815,6 +38813,7 @@
 	dir = 1
 	},
 /obj/effect/overlay/water/top,
+/obj/effect/mist,
 /turf/simulated/floor/pool,
 /area/iskhod/service/sauna)
 "jHf" = (
@@ -39618,9 +39617,7 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
 "jQX" = (
-/obj/effect/mist{
-	opacity = 80
-	},
+/obj/effect/mist,
 /turf/open/pool,
 /area/iskhod/service/sauna)
 "jRa" = (
@@ -66366,9 +66363,7 @@
 	},
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
-/obj/effect/mist{
-	opacity = 80
-	},
+/obj/effect/mist,
 /turf/simulated/floor/fixed/hydrotile,
 /area/iskhod/waterfall/subsurface)
 "qET" = (
@@ -82997,9 +82992,7 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "uQb" = (
-/obj/effect/mist{
-	opacity = 80
-	},
+/obj/effect/mist,
 /obj/effect/overlay/water,
 /obj/effect/overlay/water/top,
 /turf/simulated/floor/fixed/hydrotile,

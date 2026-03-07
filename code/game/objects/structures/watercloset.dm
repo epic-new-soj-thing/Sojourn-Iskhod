@@ -154,6 +154,7 @@
 	layer = FLY_LAYER
 	anchored = 1
 	mouse_opacity = 0
+	opacity = 0
 
 /obj/machinery/shower
 	name = "shower"

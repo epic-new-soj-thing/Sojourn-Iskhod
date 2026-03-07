@@ -182,10 +182,10 @@
 		else if (danger_level > 0) // HAZARD (Bad Air/Temp/Pressure)
 			// Vents ON (Regulate pressure/gas/temp)
 			for(var/device_id in alarm_area.air_vent_names)
-				send_signal(device_id, list("power"= 1, "checks"= "default", "set_external_pressure"= "default") )
+				send_signal(device_id, list("power"= 1, "checks"= "default", "set_external_pressure"= "default", "set_temperature"= target_temperature) )
 			// Scrubbers ON (Filter contaminants)
 			for(var/device_id in alarm_area.air_scrub_names)
-				send_signal(device_id, list("power"= 1, "co2_scrub"= 1, "scrubbing"= 1, "panic_siphon"= 0) )
+				send_signal(device_id, list("power"= 1, "co2_scrub"= 1, "scrubbing"= 1, "panic_siphon"= 0, "set_temperature"= target_temperature) )
 			apply_mode(AALARM_MODE_SCRUBBING)
 
 	if (mode==AALARM_MODE_CYCLE && environment.return_pressure()<ONE_ATMOSPHERE*0.05)
@@ -417,6 +417,7 @@
 		return
 	spawn (10)
 		send_signal(m_id, list("init" = new_name) )
+		send_signal(m_id, list("set_temperature" = target_temperature) )
 
 /obj/machinery/alarm/proc/refresh_all()
 	for(var/id_tag in alarm_area.air_vent_names)
@@ -464,9 +465,9 @@
 		if(AALARM_MODE_SCRUBBING)
 			to_chat(usr, "Air Alarm mode changed to Filtering.")
 			for(var/device_id in alarm_area.air_scrub_names)
-				send_signal(device_id, list("power"= 1, "co2_scrub"= 1, "scrubbing"= 1, "panic_siphon"= 0) )
+				send_signal(device_id, list("power"= 1, "co2_scrub"= 1, "scrubbing"= 1, "panic_siphon"= 0, "set_temperature"= target_temperature) )
 			for(var/device_id in alarm_area.air_vent_names)
-				send_signal(device_id, list("power"= 1, "checks"= "default", "set_external_pressure"= "default") )
+				send_signal(device_id, list("power"= 1, "checks"= "default", "set_external_pressure"= "default", "set_temperature"= target_temperature) )
 
 		if(AALARM_MODE_PANIC, AALARM_MODE_CYCLE)
 			if(mode == AALARM_MODE_PANIC)
@@ -481,16 +482,16 @@
 		if(AALARM_MODE_REPLACEMENT)
 			to_chat(usr, "Air Alarm mode changed to Replace Air.")
 			for(var/device_id in alarm_area.air_scrub_names)
-				send_signal(device_id, list("power"= 1, "panic_siphon"= 1) )
+				send_signal(device_id, list("power"= 1, "panic_siphon"= 1, "set_temperature"= target_temperature) )
 			for(var/device_id in alarm_area.air_vent_names)
-				send_signal(device_id, list("power"= 1, "checks"= "default", "set_external_pressure"= "default") )
+				send_signal(device_id, list("power"= 1, "checks"= "default", "set_external_pressure"= "default", "set_temperature"= target_temperature) )
 
 		if(AALARM_MODE_FILL)
 			to_chat(usr, "Air Alarm mode changed to Fill.")
 			for(var/device_id in alarm_area.air_scrub_names)
 				send_signal(device_id, list("power"= 0) )
 			for(var/device_id in alarm_area.air_vent_names)
-				send_signal(device_id, list("power"= 1, "checks"= "default", "set_external_pressure"= "default") )
+				send_signal(device_id, list("power"= 1, "checks"= "default", "set_external_pressure"= "default", "set_temperature"= target_temperature) )
 
 		if(AALARM_MODE_OFF)
 			to_chat(usr, "Air Alarm mode changed to Off.")
