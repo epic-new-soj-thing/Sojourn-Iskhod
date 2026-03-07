@@ -15,11 +15,23 @@
 
 // Run all strings to be used in an SQL query through this proc first to properly escape out injection attempts.
 /proc/sanitizeSQL(var/t as text)
-	var/sqltext = dbcon.Quote(t);
-	// dbcon.Quote wraps input in single quotes: 'text'
-	// Return the inner text without the surrounding quotes.
-	// copytext(start=2, end=length-1) strips both leading and trailing quotes.
-	return copytext(sqltext, 2, length(sqltext) - 1) // Quote() adds quotes around input, we already do that
+	var/sqltext = dbcon.Quote(t)
+	var/first
+	var/last
+	// Strip any single or double quote at the start and/or end so callers can embed in '[result]'.
+	while(length(sqltext) >= 1)
+		first = copytext(sqltext, 1, 2)
+		if(first == "'" || first == "\"")
+			sqltext = copytext(sqltext, 2)
+		else
+			break
+	while(length(sqltext) >= 1)
+		last = copytext(sqltext, length(sqltext))
+		if(last == "'" || last == "\"")
+			sqltext = copytext(sqltext, 1, length(sqltext))
+		else
+			break
+	return sqltext
 
 /proc/generateRandomString(length)
 	. = list()
