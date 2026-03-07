@@ -96,6 +96,11 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 			to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the maintenance hatch of \the [src]."))
 			update_icon()
 		return
+	if(istype(W, /obj/item/tool/multitool))
+		if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+			hacked = !hacked
+			to_chat(user, hacked ? SPAN_NOTICE("You reroute the printer circuit on \the [src]. It can now print books from the archive.") : SPAN_NOTICE("You restore the printer circuit on \the [src]. Printing from the archive is disabled."))
+		return
 	if(panel_open && (QUALITY_PULSING in W.tool_qualities))
 		if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
 			if(!hacked)
@@ -288,6 +293,7 @@ datum/borrowbook // Datum used to keep track of who has borrowed what when and f
 /obj/machinery/librarycomp/New()
 	..()
 	wires = new /datum/wires/librarycomp(src)
+	set_extension(src, /datum/extension/multitool, /datum/extension/multitool/store)
 
 /obj/machinery/librarycomp/proc/get_forbidden_confirm_data(id)
 	if(!id)

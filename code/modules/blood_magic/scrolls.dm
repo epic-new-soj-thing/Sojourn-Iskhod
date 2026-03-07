@@ -254,6 +254,10 @@
 
 	if(isflamesource(I)) //casts effects or just burns away if no spell works.
 
+		if(!M.stats?.getPerk(PERK_SCRIBE) && !M.stats?.getPerk(PERK_DEMONOMICON))
+			to_chat(M, SPAN_WARNING("The script is meaningless to you; only those versed in the Scribe's art can invoke it."))
+			return
+
 		if(M.species?.reagent_tag == IS_SYNTHETIC || M.species?.reagent_tag == IS_SLIME)
 			to_chat(M, "<span class='warning'>You ignite the scroll. But nothing happens.</span>")
 			ScrollBurn()

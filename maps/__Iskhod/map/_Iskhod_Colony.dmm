@@ -16942,15 +16942,6 @@
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/medical/genetics)
-"ejJ" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/industrial/checker_large,
-/area/iskhod/crew_quarters/kitchen)
 "ejV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/effect/decal/cleanable/dirt,
@@ -38382,6 +38373,7 @@
 /obj/item/reagent_containers/spray/cleaner,
 /obj/item/device/lightreplacer,
 /obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/iskhod/medical/medbay)
 "jBY" = (
@@ -40674,7 +40666,8 @@
 	name = "Supermatter External Airlock";
 	autoclose = 0;
 	id_tag = "sm_airlock_interior";
-	frequency = 1245
+	frequency = 1245;
+	locked = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_airlock)
@@ -61734,7 +61727,8 @@
 	name = "Telecommunications";
 	req_access = list(61);
 	id_tag = "telecomms_airlcok_int";
-	frequency = 1379
+	frequency = 1379;
+	locked = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -68227,7 +68221,8 @@
 	name = "Telecommunications";
 	req_access = list(61);
 	id_tag = "telecomms_airlcok_ext";
-	frequency = 1379
+	frequency = 1379;
+	locked = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/command/tcommsat/chamber)
@@ -92420,7 +92415,8 @@
 	name = "Supermatter Internal Airlock";
 	autoclose = 0;
 	frequency = 1245;
-	id_tag = "sm_airlock_exterior"
+	id_tag = "sm_airlock_exterior";
+	locked = 1
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_airlock)
@@ -114682,7 +114678,7 @@ sLT
 sLT
 eSn
 eSn
-ejJ
+fHp
 fHp
 nco
 vwx

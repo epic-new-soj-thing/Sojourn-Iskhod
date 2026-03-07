@@ -42,6 +42,15 @@
 /obj/item/book/tome/proc/tome_roll_failure()
 	return prob(12)
 
+	// Must have Tome Binder perk to invoke the tome's effect. Returns FALSE and notifies if not allowed.
+/obj/item/book/tome/proc/tome_require_binder(mob/living/carbon/human/H)
+	if(!H || !istype(H))
+		return FALSE
+	if(!H.stats?.getPerk(PERK_TOME_BINDER) && !H.stats?.getPerk(PERK_DEMONOMICON))
+		to_chat(H, SPAN_WARNING("The script is incomprehensible; only those bound to the art can invoke it."))
+		return FALSE
+	return TRUE
+
 // ——— The Cinder Codex (Fireball) ———
 /obj/item/book/tome/fireball
 	name = "The Cinder Codex"
@@ -57,6 +66,8 @@
 /obj/item/book/tome/fireball/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		if(!tome_require_binder(H))
+			return
 		tome_consume_resource(H)
 		if(tome_roll_failure())
 			to_chat(H, SPAN_WARNING("The script blurs; the binding does not take."))
@@ -83,6 +94,8 @@
 /obj/item/book/tome/smoke/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		if(!tome_require_binder(H))
+			return
 		tome_consume_resource(H)
 		if(tome_roll_failure())
 			to_chat(H, SPAN_WARNING("The script blurs; the binding does not take."))
@@ -114,6 +127,8 @@
 /obj/item/book/tome/blind/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		if(!tome_require_binder(H))
+			return
 		tome_consume_resource(H)
 		if(tome_roll_failure())
 			to_chat(H, SPAN_WARNING("The script blurs; the binding does not take."))
@@ -142,6 +157,8 @@
 /obj/item/book/tome/mindswap/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		if(!tome_require_binder(H))
+			return
 		tome_consume_resource(H)
 		if(tome_roll_failure())
 			to_chat(H, SPAN_WARNING("The script blurs; the binding does not take."))
@@ -170,6 +187,8 @@
 /obj/item/book/tome/forcewall/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		if(!tome_require_binder(H))
+			return
 		tome_consume_resource(H)
 		if(tome_roll_failure())
 			to_chat(H, SPAN_WARNING("The script blurs; the binding does not take."))
@@ -197,6 +216,8 @@
 /obj/item/book/tome/knock/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		if(!tome_require_binder(H))
+			return
 		tome_consume_resource(H)
 		if(tome_roll_failure())
 			to_chat(H, SPAN_WARNING("The script blurs; the binding does not take."))
@@ -239,6 +260,8 @@
 /obj/item/book/tome/horses/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		if(!tome_require_binder(H))
+			return
 		tome_consume_resource(H)
 		if(tome_roll_failure())
 			to_chat(H, SPAN_WARNING("The script blurs; the binding does not take."))
@@ -275,6 +298,8 @@
 /obj/item/book/tome/charge/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		if(!tome_require_binder(H))
+			return
 		tome_consume_resource(H)
 		if(tome_roll_failure())
 			to_chat(H, SPAN_WARNING("The script blurs; the binding does not take."))
@@ -301,6 +326,8 @@
 /obj/item/book/tome/summons/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		if(!tome_require_binder(H))
+			return
 		tome_consume_resource(H)
 		if(tome_roll_failure())
 			to_chat(H, SPAN_WARNING("The script blurs; the binding does not take."))
@@ -327,6 +354,8 @@
 /obj/item/book/tome/sacred_flame/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		if(!tome_require_binder(H))
+			return
 		tome_consume_resource(H)
 		if(tome_roll_failure())
 			to_chat(H, SPAN_WARNING("The script blurs; the binding does not take."))
