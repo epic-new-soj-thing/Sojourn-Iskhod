@@ -382,11 +382,13 @@
 /proc/sync_library_comp_inventory_from_bookcases()
 	for(var/obj/machinery/librarycomp/comp in world)
 		var/area/comp_area = get_area(comp)
-		var/comp_z = get_turf(comp)?.z
+		var/turf/T_comp = get_turf(comp)
+		var/comp_z = T_comp ? T_comp.z : null
 		for(var/obj/structure/bookcase/bookcase in world)
 			var/area/bookcase_area = get_area(bookcase)
 			var/same_area = comp_area && bookcase_area && (bookcase_area.type == comp_area.type)
-			var/same_z = comp_z && get_turf(bookcase)?.z == comp_z
+			var/turf/T_bc = get_turf(bookcase)
+			var/same_z = comp_z && T_bc && (T_bc.z == comp_z)
 			if(!same_area && !same_z)
 				continue
 			for(var/obj/item/book/b in bookcase.contents)
