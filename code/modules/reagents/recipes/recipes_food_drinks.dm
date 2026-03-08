@@ -380,6 +380,22 @@
 	required_reagents = list("gin" = 2, "tonic" = 1)
 	result_amount = 3
 
+// Mar'qua drinks (from Bay: Qokk'Hrona; hrukhza mixes)
+/datum/chemical_reaction/qokkhrona
+	result = "qokkhrona"
+	required_reagents = list("qokkloa" = 2, "wine" = 1)
+	result_amount = 3
+
+/datum/chemical_reaction/hrukhza_tonic
+	result = "hrukhza_tonic"
+	required_reagents = list("hrukhzaextract" = 1, "sodawater" = 1)
+	result_amount = 2
+
+/datum/chemical_reaction/hrukhza_blend
+	result = "hrukhza_blend"
+	required_reagents = list("hrukhzaextract" = 1, "thoom" = 1)
+	result_amount = 2
+
 /datum/chemical_reaction/cuba_libre
 	result = "cubalibre"
 	required_reagents = list("rum" = 2, "cola" = 1)

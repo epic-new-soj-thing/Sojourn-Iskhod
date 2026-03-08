@@ -86,7 +86,10 @@
 		/obj/item/seeds/towermycelium = 3,
 		/obj/item/seeds/watermelonseed = 3,
 		/obj/item/seeds/wheatseed = 3,
-		/obj/item/seeds/whitebeetseed = 3
+		/obj/item/seeds/whitebeetseed = 3,
+		/obj/item/seeds/qerrbalakseed = 3,
+		/obj/item/seeds/qokkloaseed = 3,
+		/obj/item/seeds/aghrasshseed = 3
 	)
 
 /obj/machinery/seed_storage/xenobotany
@@ -149,6 +152,9 @@
 		/obj/item/seeds/thaadra = 2,
 		/obj/item/seeds/moontearseed = 2,
 		/obj/item/seeds/spacealocasiaseed = 2,
+		/obj/item/seeds/qerrbalakseed = 2,
+		/obj/item/seeds/qokkloaseed = 2,
+		/obj/item/seeds/aghrasshseed = 2,
 		/obj/item/seeds/random = 6
 	)
 

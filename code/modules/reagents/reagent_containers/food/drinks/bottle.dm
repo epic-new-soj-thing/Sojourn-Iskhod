@@ -405,6 +405,28 @@
 	isGlass = 0
 	preloaded_reagents = list("pineapplejuice" = 100)
 
+// Mar'qua drinks (from Baystation12)
+
+/obj/item/reagent_containers/drinks/bottle/thoom
+	name = "th'oom juice carton"
+	desc = "It's th'oom juice. Strangely sweet and savory!"
+	icon_state = "thoom"
+	item_state = "carton"
+	center_of_mass = list("x"=16, "y"=8)
+	isGlass = 0
+	volume = 50
+	preloaded_reagents = list("thoom" = 50)
+
+/obj/item/reagent_containers/drinks/bottle/hrukhzaextract
+	name = "hrukhza extract carton"
+	desc = "Concentrated Mar'qua hrukhza extract. Bitter and herbal!"
+	icon_state = "hrukhzaextract"
+	item_state = "carton"
+	center_of_mass = list("x"=16, "y"=8)
+	isGlass = 0
+	volume = 50
+	preloaded_reagents = list("hrukhzaextract" = 50)
+
 //Small bottles
 /obj/item/reagent_containers/drinks/bottle/small
 	volume = 50

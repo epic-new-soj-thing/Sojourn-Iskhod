@@ -133,6 +133,7 @@
 			   "cognac", "ale", "mead", "water", "sugar", "ice", "tea", "greentea", "icetea", \
 			   "icegreentea", "cola", "spacemountainwind", "dr_gibb", "space_up", "tonic", "sodawater", \
 			   "lemon_lime", "orangejuice", "limejuice", "watermelonjuice", "lemonjuice", "honey", "milk", "fernet", \
+			   "thoom", "qokkloa", "hrukhzaextract", \
 			   "coffee","hot_coco","espresso", "cream", "pineapplejuice", "sodiumchloride") //Salt for rims
 
 /obj/item/reagent_containers/borghypo/service/attack(var/mob/M, var/mob/user)

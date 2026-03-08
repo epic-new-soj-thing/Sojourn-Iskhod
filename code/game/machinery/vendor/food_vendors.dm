@@ -208,6 +208,9 @@
 					/obj/item/seeds/watermelonseed = 5,
 					/obj/item/seeds/wheatseed = 5,
 					/obj/item/seeds/whitebeetseed = 5,
+					/obj/item/seeds/qerrbalakseed = 3,
+					/obj/item/seeds/qokkloaseed = 3,
+					/obj/item/seeds/aghrasshseed = 3,
 					)
 
 	contraband = list(
@@ -276,6 +279,9 @@
 					/obj/item/seeds/watermelonseed = 5,
 					/obj/item/seeds/wheatseed = 5,
 					/obj/item/seeds/whitebeetseed = 5,
+					/obj/item/seeds/qerrbalakseed = 5,
+					/obj/item/seeds/qokkloaseed = 5,
+					/obj/item/seeds/aghrasshseed = 5,
 					)
 
 	contraband = list(

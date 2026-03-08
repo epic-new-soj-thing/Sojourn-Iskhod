@@ -67,6 +67,8 @@
 	for(var/i in 1 to 2)
 		new /obj/item/storage/fancy/egg_box(src)
 		new /obj/item/reagent_containers/condiment/cookingoil(src)
+	new /obj/item/reagent_containers/drinks/bottle/thoom(src)
+	new /obj/item/reagent_containers/drinks/bottle/hrukhzaextract(src)
 
 /obj/structure/closet/secure_closet/freezer/money
 	name = "freezer"
