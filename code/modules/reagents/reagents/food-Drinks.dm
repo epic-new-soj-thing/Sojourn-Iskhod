@@ -3576,8 +3576,8 @@
 	description = "Don't make eye contact, a favorite of the Mar qua."
 	taste_description = "fresh mint and inspiration"
 	taste_tag = list(TASTE_REFRESHING)
-	color = "#E0CE8A" // rgb(88, 81, 54)
-	strength = 30
+	color = "#E0CE8A"
+	strength = 8
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "Marquadrink"

@@ -1716,6 +1716,9 @@
 /area/iskhod/derelict/abandoned_area)
 "awg" = (
 /obj/structure/bed/chair/sofa/black/right,
+/obj/machinery/requests_console/preset/command/prime{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/command/Priest)
 "awj" = (
@@ -6506,6 +6509,9 @@
 /obj/item/stack/material/plastic{
 	amount = 120
 	},
+/obj/machinery/requests_console/preset/department/research{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
 "bCQ" = (
@@ -6583,9 +6589,6 @@
 /area/iskhod/security/detectives_office)
 "bDv" = (
 /obj/structure/filingcabinet,
-/obj/machinery/requests_console/preset/command/cro{
-	pixel_y = 32
-	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/cro)
 "bDx" = (
@@ -10354,10 +10357,6 @@
 /area/shuttle/rocinante_shuttle_area)
 "czk" = (
 /obj/machinery/autolathe/loaded,
-/obj/machinery/requests_console/preset{
-	name = "Science Requests Console";
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
 "czu" = (
@@ -12666,7 +12665,8 @@
 "dfb" = (
 /obj/machinery/camera/network/command,
 /obj/machinery/requests_console/preset/command/premier{
-	pixel_y = 32
+	pixel_y = 32;
+	department = "Command Control Room"
 	},
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/bridge)
@@ -19138,6 +19138,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/requests_console/preset/department/church{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/office)
 "eLq" = (
@@ -19381,10 +19384,6 @@
 /obj/item/modular_computer/console/preset/security/records{
 	dir = 4;
 	pixel_x = -5
-	},
-/obj/machinery/requests_console/preset{
-	name = "Security Requests Consoel";
-	pixel_x = -32
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
@@ -19731,6 +19730,14 @@
 	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/absolutism/chapel)
+"eTN" = (
+/obj/structure/disposalpipe/segment,
+/obj/machinery/requests_console/preset/command/gm{
+	dir = 8;
+	pixel_x = -32
+	},
+/turf/simulated/floor/wood,
+/area/iskhod/command/gmaster)
 "eTR" = (
 /obj/random/scrap/dense_weighted,
 /obj/effect/decal/cleanable/dirt,
@@ -29648,6 +29655,9 @@
 	icon_state = "tube1";
 	pixel_y = 0
 	},
+/obj/machinery/requests_console/preset/command/cro{
+	pixel_x = -32
+	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/cro)
 "hvy" = (
@@ -35152,6 +35162,10 @@
 /obj/machinery/vending/cart,
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/machinery/requests_console/preset/command/facility_director{
+	pixel_y = 35;
+	department = "Steward's Desk"
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/fo{
@@ -42402,10 +42416,6 @@
 	dir = 8
 	},
 /obj/machinery/disposal,
-/obj/machinery/requests_console/preset{
-	name = "Engineering Requests Consoel";
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/foyer)
 "kCv" = (
@@ -45753,10 +45763,6 @@
 /obj/machinery/photocopier,
 /obj/machinery/camera/network/cargo{
 	dir = 4
-	},
-/obj/machinery/requests_console/preset{
-	name = "Logistics Requests Consoel";
-	pixel_y = 32
 	},
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/quartermaster/office)
@@ -55188,10 +55194,6 @@
 /obj/machinery/camera/network/colony_underground{
 	dir = 4
 	},
-/obj/machinery/requests_console/preset{
-	name = "Kitchen Requests Consoel";
-	pixel_x = -32
-	},
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
 "nKL" = (
@@ -60864,10 +60866,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 6
 	},
-/obj/machinery/requests_console/preset{
-	name = "Medical Requests Consoel";
-	pixel_y = 32
-	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
 "piq" = (
@@ -62806,9 +62804,10 @@
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/requests_console/preset{
-	name = "Bar Requests Consoel";
-	pixel_y = 32
+/obj/machinery/requests_console/preset/department/civilian{
+	pixel_y = 32;
+	name = "Bar Requests Console";
+	department = "Bar"
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/bar)
@@ -63785,6 +63784,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/propis{
 	dir = 4
+	},
+/obj/machinery/requests_console/preset/command/foreman{
+	dir = 8;
+	pixel_x = -32
 	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/pros/foreman)
@@ -66521,6 +66524,9 @@
 /obj/machinery/camera/network/colony_surface,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section2)
+"qGT" = (
+/turf/space,
+/area/iskhod/medical/medbay)
 "qGY" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -69114,6 +69120,9 @@
 "rnL" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk,
+/obj/machinery/requests_console/preset/command/ceo{
+	pixel_y = 32
+	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/command/merchant)
 "rod" = (
@@ -81847,6 +81856,15 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section3)
+"uBh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/requests_console/preset/department/civilian{
+	department = "Kitchen";
+	name = "Kitchen Requests Console";
+	pixel_y = 32
+	},
+/turf/simulated/floor/industrial/checker_large,
+/area/iskhod/crew_quarters/kitchen)
 "uBk" = (
 /obj/structure/railing,
 /turf/simulated/open,
@@ -87505,6 +87523,9 @@
 /obj/random/closet/low_chance,
 /obj/effect/floor_decal/industrial/outline/blue,
 /obj/machinery/camera/network/cargo,
+/obj/machinery/requests_console/preset/department/cargo{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/quartermaster/supplydock)
 "vZu" = (
@@ -88395,6 +88416,10 @@
 /obj/item/modular_computer/console/preset/command{
 	dir = 8;
 	pixel_x = 5
+	},
+/obj/machinery/requests_console/preset/command/wo{
+	dir = 4;
+	pixel_x = 32
 	},
 /turf/simulated/floor/wood/wild3,
 /area/iskhod/command/swo)
@@ -114678,7 +114703,7 @@ sLT
 sLT
 eSn
 eSn
-fHp
+uBh
 fHp
 nco
 vwx
@@ -116273,7 +116298,7 @@ tfU
 esA
 wGP
 tcn
-kbI
+qGT
 ikc
 qYR
 cDR
@@ -155754,7 +155779,7 @@ nxJ
 jTv
 tIN
 nVA
-hzK
+eTN
 hzK
 bMy
 puw

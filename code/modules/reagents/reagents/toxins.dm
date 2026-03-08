@@ -82,6 +82,59 @@
 	heating_point = 523
 	heating_products = list("toxin")
 
+/datum/reagent/toxin/amatoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.species?.reagent_tag == IS_MARQUA)
+			// Powerful psychedelic for Marqua instead of toxin
+			M.hallucination(80 * effect_multiplier, 75 * effect_multiplier)
+			M.druggy = max(M.druggy, 40 * effect_multiplier)
+			M.make_jittery(5 * effect_multiplier)
+			if(prob(8))
+				M.emote(pick("twitch", "giggle", "laugh"))
+			return
+	..()
+	// Liver damage for species amatoxin hurts (blood: mild)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+		if(L && !BP_IS_ROBOTIC(L))
+			L.take_damage(2 * effect_multiplier, TOX)
+
+/datum/reagent/toxin/amatoxin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.species?.reagent_tag == IS_MARQUA)
+			M.hallucination(100 * effect_multiplier, 80 * effect_multiplier)
+			M.druggy = max(M.druggy, 50 * effect_multiplier)
+			M.make_jittery(8 * effect_multiplier)
+			if(prob(12))
+				M.emote(pick("twitch", "giggle", "laugh"))
+			return
+	..()
+	// Liver damage for species amatoxin hurts (ingestion hits liver harder)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+		if(L && !BP_IS_ROBOTIC(L))
+			L.take_damage(4 * effect_multiplier, TOX)
+
+/datum/reagent/toxin/amatoxin/overdose(mob/living/carbon/M, alien)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.species?.reagent_tag == IS_MARQUA)
+			// Intensified trip at overdose, but liver still takes damage
+			var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+			if(L && !BP_IS_ROBOTIC(L))
+				L.take_damage(4, TOX)
+			M.hallucination(150, 100)
+			M.druggy = max(M.druggy, 80)
+			M.make_jittery(15)
+			if(prob(20))
+				M.emote(pick("twitch", "giggle", "laugh", "smile"))
+			return
+	..()
+
 /datum/reagent/toxin/carpotoxin
 	name = "Carpotoxin"
 	id = "carpotoxin"

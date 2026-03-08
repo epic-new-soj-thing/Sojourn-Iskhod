@@ -284,7 +284,6 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	department = ""
 	departmentType = 0
 	announcementConsole = 0
-//Todo: presets and mapping for more non-command RCs
 
 /obj/machinery/requests_console/preset/steward
 	name = "Steward Request Console"
@@ -336,4 +335,67 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 /obj/machinery/requests_console/preset/command/foreman
 	name = "Foreman Request Console"
 	department = "Foreman's Desk"
+
+// ----- Department request consoles (place one in each department's area) -----
+// departmentType: RC_ASSIST = receive assistance requests, RC_SUPPLY = receive supply requests, RC_INFO = receive relayed info
+
+/obj/machinery/requests_console/preset/department/medical
+	name = "Medical Requests Console"
+	department = "Vesalius-Andra: Medical Division"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/research
+	name = "Research Requests Console"
+	department = "Vesalius-Andra: Research Division"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/rangers
+	name = "Iskhod Rangers Requests Console"
+	department = "Iskhod Rangers"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/blackshield
+	name = "Blackshield Requests Console"
+	department = "Blackshield Division"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/engineering
+	name = "Artificer's Guild Requests Console"
+	department = "Artificer's Guild"
+	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO
+
+/obj/machinery/requests_console/preset/department/cargo
+	name = "Frontier Logistics Requests Console"
+	department = "Frontier Logistics"
+	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO
+
+/obj/machinery/requests_console/preset/department/church
+	name = "Church Requests Console"
+	department = "Church of the Absolute"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/civilian
+	name = "Iskhod Contractors Requests Console"
+	department = "Iskhod Contractors"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/prospector
+	name = "Prospectors Requests Console"
+	department = "Prospectors"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/independent
+	name = "Independent Allied Factions Requests Console"
+	department = "Independent Allied Factions"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/lodge
+	name = "Lodge Requests Console"
+	department = "Lodge"
+	departmentType = RC_INFO
+
+/obj/machinery/requests_console/preset/department/greyson
+	name = "Greyson Positronic Requests Console"
+	department = "Greyson Positronic"
+	departmentType = RC_INFO
 
