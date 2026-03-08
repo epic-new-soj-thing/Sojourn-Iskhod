@@ -211,8 +211,8 @@
 	required_reagents = list("hyperzine" = 1, "blattedin" = 2, "tramadol" = 1)
 	result_amount = 2
 
-/datum/chemical_reaction/nanoblood
-	result = "nanoblood"
+/datum/chemical_reaction/nanofluid
+	result = "nanofluid"
 	required_reagents = list("blood" = 3, "uncap nanites" = 5, "sanguinum" = 2)
 	maximum_temperature = 314 //within about 5 degrees of bloods natural temp in the body
 	catalysts = list("plasma" = 5)

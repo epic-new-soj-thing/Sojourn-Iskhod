@@ -13,6 +13,12 @@
 	build_path = /obj/item/device/makeshift_centrifuge
 	category = "Medical"
 
+/datum/design/research/item/medical/hypospray
+	name = "Hypospray"
+	desc = "The Vesalius-Andra medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
+	build_path = /obj/item/reagent_containers/hypospray
+	category = "Medical"
+
 /datum/design/research/item/medical/roller_bed
 	name = "Roller Bed"
 	desc = "A foldable roller bed that can be carried around."

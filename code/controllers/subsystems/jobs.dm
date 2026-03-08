@@ -345,7 +345,10 @@ SUBSYSTEM_DEF(job)
 
 		if(H.mind && (job.head_position || job.department_account_access))
 			var/remembered_info = ""
-			var/datum/money_account/department_account = department_accounts[job.department]
+			var/dept_id = job.department
+			if(dept_id == DEPARTMENT_SUPPLY)
+				dept_id = DEPARTMENT_SERVICE // Frontier Logistics account is keyed under SERVICE
+			var/datum/money_account/department_account = department_accounts[dept_id]
 			if(department_account)
 				remembered_info += "<b>Your department's account number is:</b> #[department_account.account_number]<br>"
 				remembered_info += "<b>Your department's account pin is:</b> [department_account.remote_access_pin]<br>"

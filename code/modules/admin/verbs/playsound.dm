@@ -19,7 +19,10 @@ ADMIN_VERB_ADD(/client/proc/play_sound, R_SOUND, FALSE)
 	message_admins("[key_name_admin(src)] played sound [S]", 1)
 	for(var/mob/M in GLOB.player_list)
 		if(M.get_preference_value(/datum/client_preference/play_admin_midis) == GLOB.PREF_YES)
-			sound_to(M, sound(uploaded_sound, repeat = 0, wait = 0, volume = 100, channel = GLOB.admin_sound_channel))
+			var/vol = 100
+			if(M.client?.prefs)
+				vol = M.client.prefs.music_volume * M.client.prefs.master_volume / 100
+			sound_to(M, sound(uploaded_sound, repeat = 0, wait = 0, volume = vol, channel = GLOB.admin_sound_channel))
 
 
 

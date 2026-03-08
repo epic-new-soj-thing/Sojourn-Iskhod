@@ -651,6 +651,7 @@ obj/item/storage/hcases/attackby(obj/item/W, mob/user)
 	new /obj/item/stack/medical/splint(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
 	new /obj/item/device/scanner/health(src)
+	new /obj/item/reagent_containers/hypospray/vial/combat/cbo(src)
 	//Has medicals items inside it to save on spawn storage.
 	new /obj/item/storage/firstaid/soteria/large(src)
 	new /obj/item/modular_computer/tablet/moebius/preset/cbo(src)

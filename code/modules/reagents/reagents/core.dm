@@ -71,8 +71,8 @@
 	data = new/list("donor" = null, "species" = "Plant", "blood_DNA" = null, "blood_type" = null, "blood_color" = "#228B22", "resistances" = null, "trace_chem" = null, "carrion" = null)
 
 /datum/reagent/organic/blood/slime
-	id = "slimatic_fluid"
-	name = "Slimatic Fluid"
+	id = "aulvatic_fluid"
+	name = "Aulvatic Fluid"
 	description = "A viscous, neon-green fluid that serves as the lifeblood of Aulvae."
 	color = "#05FF9B"
 	data = new/list("donor" = null, "species" = "Slime", "blood_DNA" = null, "blood_type" = null, "blood_color" = "#05FF9B", "resistances" = null, "trace_chem" = null, "carrion" = null)

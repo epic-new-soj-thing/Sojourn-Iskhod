@@ -133,7 +133,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 					GLOB.captured_or_dead_antags++
 				else if(isOnAdminLevel(M.current))
 					GLOB.ironhammer_escaped_antagonists++
-			else if(M.assigned_job && M.assigned_job.department == DEPARTMENT_SERVICE && ishuman(M.current))
+			else if(M.assigned_job && (M.assigned_job.department == DEPARTMENT_SERVICE || M.assigned_job.department == DEPARTMENT_SUPPLY) && ishuman(M.current))
 				var/mob/living/carbon/human/H = M.current
 				guild_fingerprints += H.get_full_print()
 
@@ -144,7 +144,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 				L.client.escaped = TRUE
 		if(ishuman(L))
 			var/mob/living/carbon/human/H = L
-			if(H.mind && H.mind.assigned_job && H.mind.assigned_job.faction == "CEV Eris" && H.mind.assigned_job.department != DEPARTMENT_SERVICE && !H.mind.antagonist.len)
+			if(H.mind && H.mind.assigned_job && H.mind.assigned_job.faction == "CEV Eris" && H.mind.assigned_job.department != DEPARTMENT_SERVICE && H.mind.assigned_job.department != DEPARTMENT_SUPPLY && !H.mind.antagonist.len)
 				for(var/obj/item/I in H.GetAllContents())
 					var/full_print = H.get_full_print()
 					if(full_print in guild_fingerprints)
@@ -375,7 +375,7 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 			return GLOB.ironhammer_score
 		else if(mind.assigned_job.department == DEPARTMENT_ENGINEERING)
 			return GLOB.technomancer_score
-		else if(mind.assigned_job.department == DEPARTMENT_SERVICE)
+		else if(mind.assigned_job.department == DEPARTMENT_SERVICE || mind.assigned_job.department == DEPARTMENT_SUPPLY)
 			return GLOB.guild_score
 		else if(mind.assigned_job.department == DEPARTMENT_CHURCH)
 			return GLOB.neotheology_score
@@ -393,6 +393,8 @@ GLOBAL_VAR_INIT(score_technomancer_faction_item_loss, 0)
 			if(DEPARTMENT_ENGINEERING)
 				. = TRUE
 			if(DEPARTMENT_SERVICE)
+				. = TRUE
+			if(DEPARTMENT_SUPPLY)
 				. = TRUE
 			if(DEPARTMENT_CHURCH)
 				. = TRUE

@@ -57,6 +57,10 @@
 	update_icon()
 	price_tag = 0
 
+/obj/item/reagent_containers/syringe/CtrlClick(mob/user, params)
+	attack_self(user)
+	return TRUE
+
 /obj/item/reagent_containers/syringe/attack_hand()
 	..()
 	update_icon()

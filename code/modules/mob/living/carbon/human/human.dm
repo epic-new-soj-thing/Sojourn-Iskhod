@@ -1263,28 +1263,33 @@ var/list/rank_prefix = list(\
 			return
 
 		var/datum/body_modification/BM
+		var/static/list/limb_creation_order = list(BP_CHEST, BP_GROIN, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 
-		for(var/tag in species.has_limbs)
-			var/datum/organ_description/OD = species.has_limbs[tag]
+		for(var/limb_tag in limb_creation_order)
+			if(!(limb_tag in species.has_limbs))
+				continue
+			var/datum/organ_description/OD = species.has_limbs[limb_tag]
 			var/datum/body_modification/PBM = Pref.get_modification(OD.parent_organ_base)
 
 			if(PBM && (PBM.nature == MODIFICATION_SILICON || PBM.nature == MODIFICATION_REMOVED))
 				BM = PBM
 			else
-				BM = Pref.get_modification(tag)
+				BM = Pref.get_modification(limb_tag)
 
-			if(BM.is_allowed(tag, Pref, src))
-				BM.create_organ(src, OD, Pref.modifications_colors[tag])
+			if(!BM || !(limb_tag in BM.body_parts))
+				OD.create_organ(src)
+			else if(BM.is_allowed(limb_tag, Pref, src))
+				BM.create_organ(src, OD, Pref.modifications_colors[limb_tag])
 			else
 				OD.create_organ(src)
 
 		for(var/tag in species.has_process)
 			BM = Pref.get_modification(tag)
-			if(BM.is_allowed(tag, Pref, src))
-				BM.create_organ(src, species.has_process[tag], Pref.modifications_colors[tag])
-			else
+			if(!BM || !BM.is_allowed(tag, Pref, src))
 				var/organ_type = species.has_process[tag]
 				new organ_type(src)
+			else
+				BM.create_organ(src, species.has_process[tag], Pref.modifications_colors[tag])
 
 		var/datum/category_item/setup_option/core_implant/I = Pref.get_option("Core implant")
 		if(I)
@@ -1312,8 +1317,11 @@ var/list/rank_prefix = list(\
 
 	else
 		var/organ_type
+		var/static/list/limb_creation_order = list(BP_CHEST, BP_GROIN, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 
-		for(var/limb_tag in species.has_limbs)
+		for(var/limb_tag in limb_creation_order)
+			if(!(limb_tag in species.has_limbs))
+				continue
 			var/datum/organ_description/OD = species.has_limbs[limb_tag]
 			var/obj/item/I = organs_by_name[limb_tag]
 			if(I && I.type == OD.default_type)
@@ -1338,6 +1346,16 @@ var/list/rank_prefix = list(\
 					C.access.Add(mind.assigned_job.cruciform_access)
 					C.install_default_modules_by_path(mind.assigned_job)
 					C.security_clearance = mind.assigned_job.security_clearance
+
+	for(var/limb_tag in species.has_limbs)
+		var/obj/item/organ/external/E = organs_by_name[limb_tag]
+		if(!E)
+			log_debug("rebuild_organs: [src] ([src.ckey]) missing limb [limb_tag] after rebuild.")
+			continue
+		if(limb_tag != BP_CHEST && E.parent_organ_base)
+			var/obj/item/organ/external/parent_organ = get_organ(E.parent_organ_base)
+			if(!parent_organ || parent_organ.owner != src)
+				log_debug("rebuild_organs: [src] ([src.ckey]) limb [limb_tag] has invalid parent [E.parent_organ_base] after rebuild.")
 
 	for(var/obj/item/organ/internal/carrion/C in organs_to_readd)
 		C.replaced(get_organ(C.parent_organ_base))

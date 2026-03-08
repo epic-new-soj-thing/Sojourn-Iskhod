@@ -72,12 +72,18 @@
 	if(!musicTrack)
 		return
 	if(C.get_preference_value(/datum/client_preference/play_lobby_music) == GLOB.PREF_YES)
-		sound_to(C, sound(musicTrack, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))
+		var/vol = 100
+		if(C.prefs)
+			vol = C.prefs.music_volume * C.prefs.master_volume / 100
+		sound_to(C, sound(musicTrack, repeat = 0, wait = 0, volume = vol, channel = GLOB.lobby_sound_channel))
 
 /datum/lobbyscreen/proc/stop_music(client/C)
 	if(!musicTrack)
 		return
-	sound_to(C, sound(null, repeat = 0, wait = 0, volume = 85, channel = GLOB.lobby_sound_channel))
+	var/vol = 100
+	if(C.prefs)
+		vol = C.prefs.music_volume * C.prefs.master_volume / 100
+	sound_to(C, sound(null, repeat = 0, wait = 0, volume = vol, channel = GLOB.lobby_sound_channel))
 
 
 /datum/lobbyscreen/proc/show_titlescreen(client/C)

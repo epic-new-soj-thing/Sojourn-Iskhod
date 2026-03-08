@@ -127,7 +127,7 @@
 
 /obj/item/reagent_containers/enricher
 	name = "Molitor-Riedel Enricher"
-	desc = "An extremely rare technology often said to be an anomaly in nature. It can create synthetic blood using nutriment."
+	desc = "An extremely rare technology often said to be an anomaly in nature. It can create synthetic blood using nutriment or protein."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "enricher"
 	item_state = "enricher"
@@ -140,7 +140,6 @@
 	origin_tech = list(TECH_BIO = 9, TECH_MATERIAL = 9, TECH_PLASMA = 3)
 	unacidable = TRUE //glass doesn't dissolve in acid
 	matter = list(MATERIAL_GLASS = 3, MATERIAL_STEEL = 2, MATERIAL_PLASMA = 5, MATERIAL_BIOMATTER = 50)
-	var/blood_amount = 0
 
 /obj/item/reagent_containers/enricher/New()
 	..()
@@ -160,27 +159,25 @@
 
 /obj/item/reagent_containers/enricher/attack_self()
 	if(reagents.total_volume)
+		var/nano_units = 0
 		for(var/datum/reagent/reagent in reagents.reagent_list)
-			var/reagent_amount = 0
-			if(istype(reagent, /datum/reagent/organic/nutriment))
-				var/datum/reagent/organic/nutriment/N = reagent
-				reagent_amount = N.volume
-				N.remove_self(reagent_amount)
-				blood_amount += reagent_amount
+			var/reagent_amount = reagent.volume
+			if(istype(reagent, /datum/reagent/organic/nutriment/protein))
+				nano_units += reagent_amount / 2 // Protein at 2:1 to nanofluid
+				reagent.remove_self(reagent_amount)
+			else if(istype(reagent, /datum/reagent/organic/nutriment))
+				nano_units += reagent_amount / 4 // Nutriment at 4:1 to nanofluid
+				reagent.remove_self(reagent_amount)
 			else
-				reagent_amount = reagent.volume
-				reagent.remove_self(reagent_amount) //Purge useless reagents out
+				reagent.remove_self(reagent_amount) // Purge useless reagents out
 
-		if(blood_amount)
-			// Convert nutriment into nanoblood at a 2:1 ratio
-			var/obj/item/reagent_containers/blood/empty/blood_pack = new /obj/item/reagent_containers/blood/empty(get_turf(src))
-			var/nano_units = blood_amount / 2 //2:1 ratio to make it a bit more efficient
-			// Add nanoblood reagent (drug)
-			blood_pack.reagents.add_reagent("nanoblood", nano_units)
-			blood_amount = 0
+		if(nano_units)
+			var/obj/item/reagent_containers/blood/nanoblood/blood_pack = new /obj/item/reagent_containers/blood/nanoblood(get_turf(src))
+			blood_pack.reagents.remove_any(blood_pack.reagents.total_volume)
+			blood_pack.reagents.add_reagent("nanofluid", nano_units)
 			visible_message(SPAN_NOTICE("[src] drop [blood_pack]."))
 		else
-			visible_message("\The [src] beeps, \"Not enough nutriment to produce blood.\".")
+			visible_message("\The [src] beeps, \"Not enough nutriment or protein to produce blood.\".")
 	else
 		visible_message("\The [src] beeps, \"Insufficient reagents to produce blood.\".")
 

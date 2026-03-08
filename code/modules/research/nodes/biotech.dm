@@ -54,7 +54,8 @@
 
 	unlocks_designs = list(	/datum/design/research/circuit/med_data,
 							/datum/design/research/circuit/operating,
-							/datum/design/research/item/medical/roller_bed
+							/datum/design/research/item/medical/roller_bed,
+							/datum/design/research/item/medical/hypospray
 						)
 /*
 /datum/technology/virology

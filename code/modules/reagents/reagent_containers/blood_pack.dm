@@ -15,7 +15,7 @@
 
 /obj/item/reagent_containers/blood
 	name = "blood pack"
-	desc = "Contains blood used for transfusion."
+	desc = "An IV drip pack of blood used for transfusion. Ensure species and blood type factors match before transfusing."
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
 	volume = 200
@@ -76,7 +76,10 @@
 		else
 			name = base
 	else
-		name = initial(name)
+		if(blood_type)
+			name = "[initial(name)] ([blood_type])"
+		else
+			name = initial(name)
 
 /obj/item/reagent_containers/blood/examine(mob/user)
 	. = ..()
@@ -436,6 +439,7 @@
 
 /obj/item/reagent_containers/blood/oil
 	name = "bag of synthetic oil"
+	desc = "An IV drip pack of synthetic oil used to maintain synthetic and robotic circulatory systems. Not compatible with non-synthetic blood types."
 	blood_reagent = "synth_oil"
 	blood_group = "synth"
 	blood_species = "Synthetic"
@@ -443,6 +447,7 @@
 
 /obj/item/reagent_containers/blood/synthetic
 	name = "bag of synthetic blood"
+	desc = "An IV drip pack of lab-grown synthetic blood for full-body prosthetics and synthetic organisms. Not compatible with non-synthetic blood types."
 	blood_reagent = "synthetic_blood"
 	blood_group = "fbp"
 	blood_species = "Synthetic"
@@ -450,25 +455,27 @@
 
 /obj/item/reagent_containers/blood/plant
 	name = "sap pack"
+	desc = "An IV drip pack of plant sap and botanical circulatory fluid for plant-based lifeforms. Not compatible with standard organic blood types."
 	blood_reagent = "plant_blood"
 	blood_group = "plant"
 	blood_species = "Plant"
 	blood_type = "X"
 
 /obj/item/reagent_containers/blood/slime
-	name = "slimatic fluid pack"
-	blood_reagent = "slimatic_fluid"
+	name = "aulvatic fluid pack"
+	desc = "An IV drip pack of aulvatic fluid used for Aulvae transfusion. Not compatible with standard organic blood types."
+	blood_reagent = "aulvatic_fluid"
 	blood_group = "slime"
 	blood_species = "Slime"
 	blood_type = "X"
 
 /obj/item/reagent_containers/blood/nanoblood
-	name = "bag of nanoblood"
-	desc = "A bag of universal blood substitute. Functions as universal blood at a 2:1 ratio."
-	blood_type = null
+	name = "Nanofluid pack"
+	desc = "An IV drip pack of nanofluid. Functions as a universal substitute to replace circulatory fluids at a 2:1 ratio."
+	blood_type = "U"
 
 /obj/item/reagent_containers/blood/nanoblood/Initialize()
 	. = ..()
-	reagents.add_reagent("nanoblood", 200)
+	reagents.add_reagent("nanofluid", 200)
 
 /obj/item/reagent_containers/blood/empty

@@ -194,8 +194,34 @@
 	if (!injected || !our)
 		return
 	if(blood_incompatible(injected.data["blood_type"],our.data["blood_type"],injected.data["species"],our.data["species"],injected.data["blood_group"],our.data["blood_group"]) && !(bloodstr.has_reagent("nosfernium") || (VAMPIRE in mutations)))
-		reagents.add_reagent("toxin", amount * 3)
+		// X-type and other wrong blood: severity depends on reagent type
+		var/tox_amount = amount * 2
+		if(istype(injected, /datum/reagent/organic/blood/plant) || istype(injected, /datum/reagent/organic/blood/slime))
+			tox_amount = amount * 4 // Significant toxicity for plant and aulvatic in non-host
+		if(istype(injected, /datum/reagent/organic/blood/synthetic) || istype(injected, /datum/reagent/organic/blood/oil))
+			tox_amount = amount * 6 // Significant toxicity for synthetic and oil in non-host
+		reagents.add_reagent("toxin", tox_amount)
 		reagents.update_total()
+		// Internal bleeding only when blood group differs (e.g. mammalian vs plant/synth), not for same-group wrong type (e.g. A+ vs O-)
+		var/donor_group = injected.data["blood_group"]
+		if(donor_group && donor_group != our.data["blood_group"])
+			var/list/candidates = internal_organs.Copy()
+			if(internal_organs_by_efficiency[BP_BRAIN])
+				candidates -= internal_organs_by_efficiency[BP_BRAIN]
+			if(internal_organs_by_efficiency[OP_BONE])
+				candidates -= internal_organs_by_efficiency[OP_BONE]
+			if(LAZYLEN(candidates))
+				var/obj/item/organ/internal/I = pick(candidates)
+				if(I && !(I.status & ORGAN_DEAD) && BP_IS_ORGANIC(I))
+					I.add_wound(/datum/component/internal_wound/organic/blunt/hemorrhage, "transfusion sickness")
+		if(istype(injected, /datum/reagent/organic/blood/synthetic))
+			adjustOxyLoss(amount * 2) // Synthetic blood causes suffocation in non-host
+		if(istype(injected, /datum/reagent/organic/blood/oil))
+			adjustOxyLoss(amount * 4) // Oil causes suffocation in non-host
+		if(istype(injected, /datum/reagent/organic/blood/slime))
+			adjustOxyLoss(amount * 2) // Aulvatic fluid causes suffocation in non-host
+			adjustHalLoss(amount * 2) // Aulvatic fluid causes halotoxicity in non-host
+			apply_damage(amount * 1, CLONE) // Aulvatic fluid causes genetic damage in non-host
 	else
 		vessel.add_reagent(species.blood_reagent, amount, injected.data)
 		vessel.update_total()

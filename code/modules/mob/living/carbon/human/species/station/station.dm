@@ -1206,7 +1206,7 @@
 	obligate_form = TRUE
 	reagent_tag = IS_SLIME
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/stomp,  /datum/unarmed_attack/kick, /datum/unarmed_attack/slime_glomp)
-	blood_reagent = "slimatic_fluid"
+	blood_reagent = "aulvatic_fluid"
 	blood_group = "slime"
 	flags = NO_SLIP | NO_BREATHE | NO_BLOOD | NO_SCAN | NO_MINOR_CUT
 	siemens_coefficient = 3 //conductive

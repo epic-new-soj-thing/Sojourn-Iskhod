@@ -2,7 +2,7 @@
 /datum/job/merchant
 	title = "Operations Manager"
 	flag = MERCHANT
-	department = DEPARTMENT_SERVICE
+	department = DEPARTMENT_SUPPLY
 	head_position = TRUE
 	aster_guild_member = TRUE
 	department_flag = FL | COMMAND

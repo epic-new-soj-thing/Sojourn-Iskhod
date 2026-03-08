@@ -120,12 +120,16 @@
 							secondDept = selectedDept
 			if (target.mind.assigned_job)
 				var/datum/job/checkedJob = target.mind.assigned_job
-				if ((checkedJob.department == selectedDept.id) && ((checkedJob.department == topDept.id) || (checkedJob.department == secondDept.id)))
+				var/job_dept = checkedJob.department
+				var/matches_dept = (job_dept == selectedDept.id) || (selectedDept.id == DEPARTMENT_SERVICE && job_dept == DEPARTMENT_SUPPLY)
+				var/matches_top = (job_dept == topDept.id) || (topDept.id == DEPARTMENT_SERVICE && job_dept == DEPARTMENT_SUPPLY)
+				var/matches_second = secondDept && ((job_dept == secondDept.id) || (secondDept.id == DEPARTMENT_SERVICE && job_dept == DEPARTMENT_SUPPLY))
+				if (matches_dept && (matches_top || matches_second))
 					to_chat(world, SPAN_DANGER("Huzzah."))
 					var/list/paths = subtypesof(/datum/perk/experienced)
 					for (var/T in paths)
 						var/datum/perk/experienced/pathCheck = new T
-						if ((!pathCheck.subPerk) && (target.mind.assigned_job.department == pathCheck.dept))// Also, you can only have two of these Perks, so you can only have the Perks
+						if ((!pathCheck.subPerk) && (target.mind.assigned_job.department == pathCheck.dept || (pathCheck.dept == DEPARTMENT_SERVICE && target.mind.assigned_job.department == DEPARTMENT_SUPPLY))) // Also, you can only have two of these Perks, so you can only have the Perks
 							perks += list(pathCheck.type)																		// for two highest played departments.
 
 /////////////////////////////////////////

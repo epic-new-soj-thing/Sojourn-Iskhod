@@ -3,6 +3,7 @@
 	desc = "Prosthesis with white polymer casing with blue holo-displays."
 	force_icon = 'icons/mob/human_races/cyberlimbs/bishop.dmi'
 	model = "bishop"
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 100, rad = 100)
 	price_tag = 200
 
 /obj/item/organ/external/robotic/hesphaistos
@@ -10,6 +11,7 @@
 	desc = "Prosthesis with militaristic black and green casing with gold stripes."
 	force_icon = 'icons/mob/human_races/cyberlimbs/hesphaistos.dmi'
 	model = "hesphaistos"
+	armor_list = list(melee = 3, bullet = 3, energy = 3, bomb = 20, bio = 100, rad = 100)
 	price_tag = 200
 
 /obj/item/organ/external/robotic/hesphaistos/athena
@@ -23,6 +25,7 @@
 	desc = "Prosthesis with rubbery fleshtone covering with visible seams."
 	force_icon = 'icons/mob/human_races/cyberlimbs/zenghu.dmi'
 	model = "zenghu"
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 100, rad = 100)
 	price_tag = 200
 
 /obj/item/organ/external/robotic/xion
@@ -30,6 +33,7 @@
 	desc = "Prosthesis with minimalist black and red casing."
 	force_icon = 'icons/mob/human_races/cyberlimbs/xion.dmi'
 	model = "xion"
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 100, rad = 100)
 	price_tag = 200
 
 /obj/item/organ/external/robotic/ward
@@ -37,6 +41,7 @@
 	desc = "Sleek prosthesis with white casing."
 	force_icon = 'icons/mob/human_races/cyberlimbs/ward.dmi'
 	model = "ward"
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 5, bio = 100, rad = 100)
 	price_tag = 200
 
 /obj/item/organ/external/robotic/ward/spirit
@@ -53,6 +58,7 @@
 	desc = "Generic gray prostesis for everyday use."
 	force_icon = 'icons/mob/human_races/cyberlimbs/asters.dmi' //Sprites were done by Kirov on request
 	model = "asters"
+	armor_list = list(melee = 2, bullet = 2, energy = 2, bomb = 15, bio = 100, rad = 100)
 	price_tag = 300
 
 /obj/item/organ/external/robotic/serbian
@@ -60,6 +66,7 @@
 	desc = "Battle hardened green and brown prosthesis rebranded several times."
 	force_icon = 'icons/mob/human_races/cyberlimbs/serbian.dmi' //Sprites were done by Kirov on request
 	model = "serbian"
+	armor_list = list(melee = 2, bullet = 2, energy = 2, bomb = 15, bio = 100, rad = 100)
 	price_tag = 400
 
 /obj/item/organ/external/robotic/serbian/l_arm
@@ -79,6 +86,7 @@
 	desc = "Tactical \"Holland & Sullivan\" blue and gray prosthesis for dangerous environment."
 	force_icon = 'icons/mob/human_races/cyberlimbs/frozen_star.dmi'
 	model = "frozen_star"
+	armor_list = list(melee = 3, bullet = 3, energy = 3, bomb = 20, bio = 100, rad = 100)
 
 /obj/item/organ/external/robotic/frozen_star/l_arm
 	default_description = /datum/organ_description/arm/left
@@ -98,6 +106,7 @@
 	desc = "Artificer Guild \"branded\" \"functional\" prosthesis."
 	force_icon = 'icons/mob/human_races/cyberlimbs/technomancer.dmi' //Sprites were done by Kirov on request
 	model = "technomancer"
+	armor_list = list(melee = 3, bullet = 3, energy = 3, bomb = 20, bio = 100, rad = 100)
 	price_tag = 300
 
 /obj/item/organ/external/robotic/technomancer/l_arm
@@ -133,6 +142,7 @@
 	desc = "A full body prosthetic with \"realistic\" synth skin."
 	force_icon = 'icons/mob/human_races/cyberlimbs/fbp.dmi'
 	model = "fbp"
+	armor_list = list(melee = 4, bullet = 4, energy = 4, bomb = 25, bio = 100, rad = 100)
 
 obj/item/organ/external/robotic/synthskin/groin
 	name = "Full Body Prosthetic \"Synth-Skin\" Groin"
@@ -155,6 +165,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "A full body prosthetic skeleton frame."
 	force_icon = 'icons/mob/human_races/cyberlimbs/unmarked_1.dmi'
 	model = "fbp"
+	armor_list = list(melee = 4, bullet = 4, energy = 4, bomb = 25, bio = 100, rad = 100)
 
 /obj/item/organ/external/robotic/full_body_prosthetic/groin
 	name = "Prosthetic Groin"
@@ -177,7 +188,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "Custom tooled and held together by hope and duct tape."
 	force_icon = 'icons/mob/human_races/cyberlimbs/advanced_ghetto.dmi' //Sprites were done by Kirov on request
 	model = "ghetto"
-	armor_list = list(melee = 2, bullet = 2, energy = 2, bomb = -5, bio = 100, rad = 100)
+	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = -10, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 3, MATERIAL_PLASTIC = 1)
 	min_broken_damage = 30
 	min_malfunction_damage = 15
@@ -207,7 +218,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "Reinforced purple and white prosthesis designed for space exploration and light combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/moebius.dmi'
 	model = "moebius"
-	armor_list = list(melee = 7, bullet = 7, energy = 7, bomb = 30, bio = 100, rad = 100)
+	armor_list = list(melee = 4, bullet = 4, energy = 4, bomb = 25, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTIC = 2, MATERIAL_PLASTEEL = 1)
 	max_damage = 60
 	min_broken_damage = 40
@@ -246,7 +257,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "Reinforced dark prosthesis designed for heavy combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/blackshield.dmi'
 	model = "blackshield"
-	armor_list = list(melee = 7, bullet = 7, energy = 7, bomb = 35, bio = 100, rad = 100)
+	armor_list = list(melee = 4, bullet = 4, energy = 4, bomb = 30, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_PLASTEEL = 10)
 	max_damage = 60
 	min_broken_damage = 40
@@ -285,6 +296,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "Gold and black prosthetics designed by the Church of the Absolute."
 	force_icon = 'icons/mob/human_races/cyberlimbs/church.dmi'
 	model = "church"
+	armor_list = list(melee = 4, bullet = 4, energy = 4, bomb = 25, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 15, MATERIAL_PLASTIC = 5, MATERIAL_BIOMATTER = 30)
 	price_tag = 400
 
@@ -320,7 +332,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "Plasma reinforced black prosthesis designed for heavy combat."
 	force_icon = 'icons/mob/human_races/cyberlimbs/excelsior.dmi' //Sprites were done by Kirov on request
 	model = "excelsior"
-	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 50, bio = 100, rad = 100)
+	armor_list = list(melee = 7, bullet = 7, energy = 7, bomb = 45, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 2, MATERIAL_PLASTEEL = 1, MATERIAL_PLASMA = 0.5) //Plasma needed as a material that excelsiors can't teleport in
 	max_damage = 65
 	min_broken_damage = 45
@@ -353,7 +365,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "Advanced, extremely resilient and mobile prosthetic. Inscribed with \"Made in\" followed by gibberish, must have been lost to time."
 	force_icon = 'icons/mob/human_races/cyberlimbs/one_star.dmi'
 	model = "one_star"
-	armor_list = list(melee = 10, bullet = 10, energy = 10, bomb = 65, bio = 100, rad = 100)
+	armor_list = list(melee = 7, bullet = 7, energy = 7, bomb = 60, bio = 100, rad = 100)
 	matter = list(MATERIAL_STEEL = 1, MATERIAL_PLASTIC = 4, MATERIAL_PLATINUM = 2)
 	max_damage = 70
 	min_broken_damage = 50
@@ -377,7 +389,7 @@ obj/item/organ/external/robotic/synthskin/groin
 	desc = "A robotic limb crafted from metallic hydrogen and gold"
 	force_icon = 'icons/mob/human_races/cyberlimbs/nashef-agunabi.dmi'
 	model = "nashef-agunabi"
-	armor_list = list(melee = 5, bullet = 5, energy = 2, bomb = 30, bio = 100, rad = 100)
+	armor_list = list(melee = 2, bullet = 2, energy = 0, bomb = 25, bio = 100, rad = 100)
 	matter = list(MATERIAL_HYDROGEN = 5, MATERIAL_GOLD = 4, MATERIAL_PLATINUM = 2)
 	max_damage = 70
 	min_broken_damage = 50

@@ -46,12 +46,14 @@
 		return A && is_environment(A.sound_env) ? A.sound_env : sound.environment
 
 
-datum/sound_token/instrument/add_listener(var/atom/listener)
+/datum/sound_token/instrument/add_listener(var/atom/listener)
 	var/mob/m = listener
 	if(istype(m))
 		if(m.get_preference_value(/datum/client_preference/play_instruments) != GLOB.PREF_YES)
 			return
-	return ..()
+	..()
+	// Re-send with listener's volume preference (parent sent unscaled)
+	update_listener(listener)
 
 
 /datum/sound_token/instrument/update_listener(var/listener)
@@ -60,7 +62,18 @@ datum/sound_token/instrument/add_listener(var/atom/listener)
 		if(m.get_preference_value(/datum/client_preference/play_instruments) != GLOB.PREF_YES)
 			remove_listener(listener)
 			return
-	return ..()
+	var/sound/S = new(sound)
+	S.environment = get_environment(listener)
+	S.status = status | listener_status[listener] | SOUND_UPDATE
+	S.x = sound.x
+	S.y = sound.y
+	S.z = sound.z
+	S.priority = sound.priority
+	var/vol = sound.volume
+	if(m?.client?.prefs)
+		vol = vol * (m.client.prefs.instrument_volume / 100) * (m.client.prefs.master_volume / 100)
+	S.volume = vol
+	sound_to(listener, S)
 
 /datum/sound_token/instrument/stop()
 	player.unsubscribe(src)
