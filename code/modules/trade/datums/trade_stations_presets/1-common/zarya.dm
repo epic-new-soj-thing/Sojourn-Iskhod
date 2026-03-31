@@ -59,7 +59,10 @@
 
 	hidden_inventory = list(
 		"Sverkhmateriya" = list(
-			/obj/machinery/power/supermatter = good_data("supermatter", list(1, 2), 8500) //The 'unsolicited supermatter shipment' play has gone on long enough. It's time we end it. -Wilson
+			/obj/machinery/power/supermatter = good_data("supermatter", list(1, 2), 8500), //The 'unsolicited supermatter shipment' play has gone on long enough. It's time we end it. -Wilson
+			/obj/item/am_containment = good_data("Antimatter Fuel Jar", list(3, 5), 500),
+			/obj/structure/closet/crate/secure/am_shielding_kit = good_data("Antimatter Shielding Crate", list(1, 3), 2250),
+			/obj/machinery/power/am_control_unit = good_data("Antimatter Control Unit", list(1, 2), 1200)
 		),
 
 		"Bystroye Stroitel'stvo" = list(
@@ -70,11 +73,11 @@
 
 		"Antiveshchestvo" = list(
 			/obj/item/am_containment = good_data("Antimatter Fuel Jar", list(3, 5), 500),
-			/obj/item/am_shielding_container = good_data("Antimatter Shielding Kit", list(3, 5), 300)
+			/obj/structure/closet/crate/secure/am_shielding_kit = good_data("Antimatter Shielding Crate", list(1, 3), 2250)
 		),
 		"Plokhiye Idei" = list(
 			/obj/item/am_containment = good_data("Antimatter Fuel Jar", list(3, 5), 500),
-			/obj/item/am_shielding_container = good_data("Antimatter Shielding Kit", list(3, 5), 300),
+			/obj/structure/closet/crate/secure/am_shielding_kit = good_data("Antimatter Shielding Crate", list(1, 3), 2250),
 			/obj/machinery/power/emitter,
 			/obj/machinery/field_generator,
 			/obj/machinery/shieldwallgen,

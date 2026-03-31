@@ -222,3 +222,15 @@
 		return
 	else
 		return ..()
+
+/obj/structure/closet/crate/secure/am_shielding_kit
+	name = "antimatter shielding crate"
+	desc = "A secure crate of packaged antimatter reactor sections."
+
+/obj/structure/closet/crate/secure/am_shielding_kit/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
+	// Matches /datum/supply_pack/engine/am_shielding contains list length.
+	for(var/i in 1 to 9)
+		new /obj/item/am_shielding_container(src)
