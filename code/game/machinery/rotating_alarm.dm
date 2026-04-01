@@ -162,10 +162,11 @@
     var/highest_status = 0
 
     for(var/obj/machinery/power/supermatter/S in GLOB.machines)
-        // Check if SM is on a connected Z-level
+        // Check if SM is on a connected Z-level. Use S.last_status (committed end-of-tick state)
+        // so the alarm does not react ahead of the crystal; stays off when last_status is 0 or 1.
         if (S.z in GetConnectedZlevels(z))
             found_sm = TRUE
-            highest_status = max(S.get_status(), highest_status)
+            highest_status = max(S.last_status, highest_status)
 
     // If no SM was found at all, or if the status is safe, turn off
     if(!found_sm || highest_status < SUPERMATTER_NOTIFY)
