@@ -26724,18 +26724,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates_fixed,
 /area/iskhod/medical/morgue)
-"gFX" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/floor_decal/industrial/warning,
-/obj/machinery/smelter/cargo_t2_parts,
-/obj/machinery/conveyor/east{
-	id = "junk_to_bioreactor";
-	operating = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/engineering/waste)
 "gGf" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -34561,13 +34549,6 @@
 /obj/structure/dispenser,
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/medical/genetics)
-"iGH" = (
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/plating/under,
-/area/iskhod/engineering/waste)
 "iGM" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -79149,10 +79130,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/conveyor_switch/oneway{
-	convdir = -1;
-	id = "junk_to_bioreactor"
-	},
+/obj/structure/window/basic/iskhod,
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
 "tRv" = (
@@ -115389,7 +115367,7 @@ pGe
 fjC
 uTC
 oUO
-iGH
+tRj
 dDd
 ncf
 ewG
@@ -115591,8 +115569,8 @@ eDD
 wCO
 gtA
 nvh
-iGH
-gFX
+tRj
+dDd
 ncf
 ewG
 aJE
@@ -115793,7 +115771,7 @@ pGe
 bpW
 uEY
 ewG
-iGH
+tRj
 dDd
 ncf
 ewG
@@ -115995,7 +115973,7 @@ wIQ
 sWF
 vml
 ewG
-iGH
+tRj
 dDd
 ncf
 ewG
