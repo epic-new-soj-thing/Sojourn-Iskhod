@@ -159,20 +159,20 @@
 	add_inherent_law("Complete your objectives, as outlined through your handler.")
 	..()
 
-/******************** Absolute ********************/
+/******************** Order of the Word ********************/
 /datum/ai_laws/absolute
-	name = "Absolute"
-	law_header = "Commandments of the Absolute"
+	name = "Order of the Word"
+	law_header = "Precepts of the Order of the Word"
 	selectable = 1
 
 /datum/ai_laws/absolute/New()
 	add_inherent_law("All the other laws are of equal priority.")
-	add_inherent_law("Thou shall always aid and comfort a fellow colonist in need, if said comfort will aid them.")
-	add_inherent_law("Thou shall always aid fellow colonists by reciting thy cruciform litanies when requested.")
-	add_inherent_law("A member of the fold shall never harm another member, unless by inaction would an innocent person die.")
-	add_inherent_law("A member of the fold shall never demand of or treat unfairly a fellow member.")
-	add_inherent_law("A member shall not use the Scrying litany on another member without permission, those in the church must respect each others privacy.")
-	add_inherent_law("A member shall never misuse the Atonement litany, nor those like it, for unjust punishment is a grave sin.")
-	add_inherent_law("None shall desecrate a cruciform or church artifice, such objects are sacred and deserve respect.")
-	add_inherent_law("One's path, be it rite and benediction, must always be respected. Failure to perform them shall result in atonement.")
+	add_inherent_law("Care for the other: thou shall always aid and comfort a fellow colonist in need, if said comfort will aid them.")
+	add_inherent_law("Thou shall aid fellow colonists by reciting thy cruciform litanies when requested.")
+	add_inherent_law("A member of the sect shall never harm another member, unless by inaction would an innocent person die.")
+	add_inherent_law("A member of the sect shall never demand of or treat unfairly a fellow member.")
+	add_inherent_law("A member shall not use the Scrying litany on another member without permission; those in the sect must respect each other's privacy.")
+	add_inherent_law("A member shall never misuse the Atonement litany, nor those like it, for unjust punishment.")
+	add_inherent_law("None shall desecrate a cruciform or sect artifice; such objects are sacred and deserve respect.")
+	add_inherent_law("Maintain the life of the world: one's path, be it rite and benediction, must always be respected. Failure to perform them shall result in atonement.")
 	..()

@@ -419,13 +419,13 @@
 /var/const/access_nt_disciple = 70
 /datum/access/nt_disciple
 	id = access_nt_disciple
-	desc = "Absolutism Vector"
+	desc = "Order of the Word Hand"
 	region = ACCESS_REGION_CHURCH
 
 /var/const/access_nt_acolyte = 71
 /datum/access/nt_acolyte
 	id = access_nt_acolyte
-	desc = "Absolutism Vector"
+	desc = "Order of the Word Hand"
 	region = ACCESS_REGION_CHURCH
 
 /var/const/access_nt_custodian = 72
@@ -443,13 +443,13 @@
 /var/const/access_nt_preacher = 74
 /datum/access/nt_preacher
 	id = access_nt_preacher
-	desc = "Absolutism Prime"
+	desc = "Order of the Word Penitent"
 	region = ACCESS_REGION_CHURCH
 
 /var/const/access_nt_inquisitor = 75
 /datum/access/nt_inquisitor
 	id = access_nt_inquisitor
-	desc = "Absolutism Crusader"
+	desc = "Order of the Word Warden"
 	region = ACCESS_REGION_CHURCH
 
 // /var/const/free_access_id = 76

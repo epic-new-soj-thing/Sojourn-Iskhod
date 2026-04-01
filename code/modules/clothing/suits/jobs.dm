@@ -200,8 +200,8 @@
 	item_state_slots = list(slot_r_hand_str = "labcoat", slot_l_hand_str = "labcoat")
 
 /obj/item/clothing/suit/storage/chaplain/coat
-	name = "preacher coat"
-	desc = "The Prime's vestments come in many different forms, all of them regal and richly adorned."
+	name = "Penitent's coat"
+	desc = "The Penitent's vestments come in many different forms, all of them regal and richly adorned."
 	icon_state = "church_coat"
 	item_state = "church_coat"
 
@@ -215,12 +215,42 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Primes coat"] = "church_coat"
-	options["Primes vestments"] = "nt_minister"//credit to Près de l'oiseau on Eris for all of these!
-	options["Primes dark vestmentts"] = "nt_minister_dark"
-	options["Primes robes"] = "nt_robe_down"
-	options["Primes mantled robes"] = "nt_robe"
-	options["Primes habit"] = "nt_habit"
+	options["Penitent's coat"] = "church_coat"
+	options["Penitent's vestments"] = "nt_minister"//credit to Près de l'oiseau on Eris for all of these!
+	options["Penitent's dark vestments"] = "nt_minister_dark"
+	options["Penitent's robes"] = "nt_robe_down"
+	options["Penitent's mantled robes"] = "nt_robe"
+	options["Penitent's habit"] = "nt_habit"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/storage/chaplain/mouth
+	name = "Mouth's coat"
+	desc = "Vestments for the chief giver of the Word—sober and dignified, suited to leading the flock in the precepts."
+	icon_state = "nt_minister"
+	item_state = "nt_minister"
+
+/obj/item/clothing/suit/storage/chaplain/mouth/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Mouth's vestments"] = "nt_minister"
+	options["Mouth's dark vestments"] = "nt_minister_dark"
+	options["Mouth's robes"] = "nt_robe_down"
+	options["Mouth's habit"] = "nt_habit"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))

@@ -57,7 +57,7 @@ A small pool of thematically appropriate religious items that are generally chea
 //A priest cruciform implant, allows field promotion of a disciple to a preacher.
 //This also requires an inquisitor ritual to complete the process, so it can't be done by anyone else
 /datum/uplink_item/item/neotheology/priest
-	name = "Prime Ascension Kit"
+	name = "Penitent Ascension Kit"
 	item_cost = 3
 	path = /obj/item/coreimplant_upgrade/cruciform/priest
 

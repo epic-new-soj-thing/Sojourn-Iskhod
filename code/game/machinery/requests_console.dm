@@ -325,8 +325,8 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	department = "Ranger Captain's Desk"
 
 /obj/machinery/requests_console/preset/command/prime
-	name = "Prime Request Console"
-	department = "Prime's Desk"
+	name = "Penitent Request Console"
+	department = "Penitent's Desk"
 
 /obj/machinery/requests_console/preset/command/gm
 	name = "GM Request Console"
@@ -370,8 +370,8 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO
 
 /obj/machinery/requests_console/preset/department/church
-	name = "Church Requests Console"
-	department = "Church of the Absolute"
+	name = "Order of the Word Requests Console"
+	department = "Order of the Word"
 	departmentType = RC_ASSIST|RC_INFO
 
 /obj/machinery/requests_console/preset/department/civilian

@@ -174,7 +174,7 @@ var/global/maint_all_access = 0
 		if(ACCESS_REGION_SUPPLY) //supply
 			return "Supply"
 		if(ACCESS_REGION_CHURCH) //Neotheo
-			return "Church"
+			return "Order of the Word"
 		if(ACCESS_REGION_PROSPECTOR) //Prospectors
 			return "Prospector"
 

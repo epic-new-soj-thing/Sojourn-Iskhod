@@ -98,7 +98,7 @@
 	stat_buff = STAT_BIO
 
 /datum/ritual/group/cruciform/robustness
-	name = "Strength of the Absolute"
+	name = "Strength of the Precepts"
 	desc = "Boosts Robustness stat by 3 + 2 for each participant permanently, if god wills it."
 	phrase = "Audi Israhel tu transgredieris hodie Iordanem ut possideas nationes maximas et fortiores te civitates ingentes et ad caelum usque muratas." //Dueteronomy 9:1-6
 	phrases = list(

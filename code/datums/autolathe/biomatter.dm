@@ -136,7 +136,7 @@
 	materials = list(MATERIAL_BIOMATTER = 20)
 
 /datum/design/bioprinter/nt_clothes/acolyte_armor
-	name = "Vector Armor"
+	name = "Hand Armor"
 	build_path = /obj/item/clothing/suit/armor/vest/acolyte
 
 /datum/design/bioprinter/nt_clothes/agrolyte_armor
@@ -152,7 +152,7 @@
 	build_path = /obj/item/clothing/suit/armor/vest/rosaria
 
 /datum/design/bioprinter/nt_clothes/acolyte_armor_helm
-	name = "Vector Helmet"
+	name = "Hand Helmet"
 	build_path = /obj/item/clothing/head/helmet/acolyte
 
 /datum/design/bioprinter/nt_clothes/agrolyte_armor_helm
@@ -172,7 +172,7 @@
 	build_path = /obj/item/clothing/suit/storage/neotheosports
 
 /datum/design/bioprinter/nt_clothes/acolyte_uniform
-	name = "Vector Garment"
+	name = "Hand Garment"
 	build_path = /obj/item/clothing/under/rank/acolyte
 
 /datum/design/bioprinter/nt_clothes/church_uniform

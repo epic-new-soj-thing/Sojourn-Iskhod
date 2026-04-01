@@ -194,6 +194,7 @@
 		fluorescent = 1
 		blood_color = COLOR_LUMINOL
 		update_icon()
+		update_icon()
 	return
 
 /atom/proc/assume_air(datum/gas_mixture/giver)
@@ -667,7 +668,8 @@ its easier to just keep the beam vertical.
 	if(A.fingerprints && fingerprints)
 		A.fingerprints |= fingerprints.Copy()            //detective
 	if(A.fingerprintshidden && fingerprintshidden)
-		A.fingerprintshidden |= fingerprintshidden.Copy()    //admin	A.fingerprintslast = fingerprintslast
+		A.fingerprintshidden |= fingerprintshidden.Copy()    //admin
+	A.fingerprintslast = fingerprintslast
 
 
 //returns 1 if made bloody, returns 0 otherwise

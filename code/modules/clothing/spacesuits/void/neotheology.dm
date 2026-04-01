@@ -1,5 +1,5 @@
 /obj/item/clothing/head/helmet/space/void/acolyte
-	name = "vector hood"
+	name = "hand hood"
 	desc = "Even the most devout deserve head protection."
 	icon_state = "acolyte"
 	item_state = "acolyte"
@@ -13,7 +13,7 @@
 	)
 
 /obj/item/clothing/suit/space/void/acolyte
-	name = "vector armor"
+	name = "hand armor"
 	desc = "Worn, heavy, steadfast in the name of God."
 	icon_state = "acolyte"
 	item_state = "acolyte"
