@@ -6155,11 +6155,9 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/maintenance/undergroundfloor2west)
 "bxI" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/obj/landmark/join/start/chaplain,
-/turf/simulated/floor/wood/wild1,
-/area/iskhod/absolutism/chapel)
+/obj/structure/closet/secure_closet/personal/agrolyte,
+/turf/simulated/floor/industrial/ornate,
+/area/iskhod/absolutism/vectorrooms)
 "bxK" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -6260,10 +6258,10 @@
 	},
 /area/shuttle/vasiliy_shuttle_area)
 "bzl" = (
-/obj/structure/table/rack,
 /obj/machinery/camera/network/church{
 	dir = 1
 	},
+/obj/structure/closet/custodial,
 /turf/simulated/floor/industrial/ornate,
 /area/iskhod/absolutism/vectorrooms)
 "bzp" = (
@@ -15153,6 +15151,14 @@
 	},
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
+"dKl" = (
+/obj/effect/decal/cleanable/cobweb2,
+/obj/structure/closet/mouth,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/wood/wild1,
+/area/iskhod/absolutism/chapel)
 "dKq" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
@@ -26772,10 +26778,11 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/maintenance/undergroundfloor2east)
 "gGz" = (
-/obj/landmark/join/start/acolyte,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/golden,
-/area/iskhod/absolutism/office)
+/obj/machinery/door/holy{
+	name = "Church"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/iskhod/absolutism/chapel)
 "gGI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -38860,11 +38867,11 @@
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/rnd/xenobiology)
 "jHY" = (
-/obj/structure/closet/secure_closet/personal/agrolyte,
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 25
 	},
+/obj/structure/closet/acolyte,
 /turf/simulated/floor/industrial/ornate,
 /area/iskhod/absolutism/vectorrooms)
 "jIj" = (
@@ -44589,7 +44596,6 @@
 /obj/structure/bed/chair/office/dark{
 	dir = 4
 	},
-/obj/landmark/join/start/chaplain,
 /turf/simulated/floor/carpet/bcarpet,
 /area/iskhod/command/Priest)
 "lfc" = (
@@ -51214,11 +51220,9 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/maintenance/undergroundfloor2east)
 "mOh" = (
-/obj/landmark/join/start/acolyte,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark/golden,
-/area/iskhod/absolutism/bioreactor)
+/obj/landmark/join/start/mouth,
+/turf/simulated/floor/wood/wild1,
+/area/iskhod/absolutism/chapel)
 "mOk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -51531,8 +51535,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/landmark/join/start/acolyte,
 /obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/hand,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/vectorrooms)
 "mSK" = (
@@ -51675,6 +51679,7 @@
 "mVe" = (
 /obj/structure/table/woodentable,
 /obj/machinery/camera/network/church,
+/obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/bioreactor)
 "mVh" = (
@@ -58411,6 +58416,19 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/atmos)
+"oCF" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/hand,
+/turf/simulated/floor/tiled/dark/golden,
+/area/iskhod/absolutism/vectorrooms)
 "oCH" = (
 /obj/structure/table/rack,
 /obj/item/towel/random,
@@ -67811,6 +67829,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/hand,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/office)
 "qYQ" = (
@@ -72487,6 +72506,7 @@
 	icon_state = "2-4"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/penitent,
 /turf/simulated/floor/carpet/bcarpet,
 /area/iskhod/command/Priest/quarters)
 "she" = (
@@ -83796,7 +83816,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/landmark/join/start/acolyte,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/vectorrooms)
@@ -87463,7 +87482,6 @@
 /area/iskhod/engineering/breakroom)
 "vXL" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/landmark/join/start/acolyte,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/office)
@@ -95369,11 +95387,11 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/workshop)
 "yan" = (
-/obj/structure/closet/acolyte,
 /obj/machinery/atmospherics/unary/vent_scrubber,
 /obj/machinery/firealarm{
 	pixel_y = 32
 	},
+/obj/structure/closet/acolyte,
 /turf/simulated/floor/industrial/ornate,
 /area/iskhod/absolutism/vectorrooms)
 "yaF" = (
@@ -95438,8 +95456,8 @@
 /turf/simulated/floor/reinforced,
 /area/iskhod/hallway/main/f1section4)
 "ybq" = (
-/obj/structure/closet/secure_closet/personal/agrolyte,
 /obj/machinery/atmospherics/unary/vent_pump,
+/obj/structure/closet/acolyte,
 /turf/simulated/floor/industrial/ornate,
 /area/iskhod/absolutism/vectorrooms)
 "ybu" = (
@@ -111230,7 +111248,7 @@ qOR
 qOR
 heW
 qSm
-bxI
+cYM
 abJ
 uka
 kWr
@@ -111630,7 +111648,7 @@ ull
 bPV
 qOR
 qOR
-qOR
+gGz
 qOR
 nhB
 tCe
@@ -111830,9 +111848,9 @@ tKh
 cIL
 ull
 bPV
-bPV
-bPV
-bPV
+qOR
+dKl
+mOh
 qOR
 aXg
 tfO
@@ -112032,9 +112050,9 @@ hHs
 gaq
 ull
 esA
-bPV
-bPV
-bPV
+qOR
+qOR
+qOR
 qOR
 qOR
 fNZ
@@ -162993,7 +163011,7 @@ evF
 slW
 nHb
 azM
-nHb
+bxI
 cSh
 dNC
 cKS
@@ -163195,7 +163213,7 @@ fMC
 slW
 yan
 mSA
-nHb
+bxI
 cSh
 dNC
 fDL
@@ -163598,7 +163616,7 @@ leV
 tMH
 slW
 nHb
-naV
+oCF
 bzl
 slW
 dil
@@ -164211,7 +164229,7 @@ eLm
 gqy
 gqy
 gqy
-gGz
+gqy
 wGs
 gqy
 dqg
@@ -164613,7 +164631,7 @@ nYX
 gqy
 eYp
 xMq
-gGz
+gqy
 vJx
 gqy
 wGs
@@ -167244,7 +167262,7 @@ idS
 vWK
 jPV
 iiO
-mOh
+iiO
 gut
 dLT
 eam

@@ -65,7 +65,7 @@
 
 /obj/item/clothing/head/preacher
 	name = "preacher hat"
-	desc = "A Prime's headdress that comes in many forms. It also serves to hide their distain for the faithless."
+	desc = "A Penitent's headdress that comes in many forms. It also serves to hide their disdain for the faithless."
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 100, rad = 0)
 	icon_state = "church_hat"
 
@@ -79,16 +79,16 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Primes hat"] = "church_hat"
-	options["Primes visor"] = "nt_visor"
-	options["Primes trihat"] = "nt_trihat" //credit to PrÃ¨s de l'oiseau on Eris for all of these!
-	options["Primes visored trihat"] = "nt_trihat_visor"
-	options["Primes mitre"] = "nt_papalhat"
-	options["Primes visored mitre"] = "nt_papalhat_visor"
-	options["Primes illuminant mitre"] = "nt_papalhat_illuminati"
-	options["Primes visored habit"] = "nt_habithat_visor"
-	options["Primes masked habit"] = "nt_habithat_mask"
-	options["Primes hood"] = "nt_robe_hood"
+	options["Penitent's hat"] = "church_hat"
+	options["Penitent's visor"] = "nt_visor"
+	options["Penitent's trihat"] = "nt_trihat" //credit to Près de l'oiseau on Eris for all of these!
+	options["Penitent's visored trihat"] = "nt_trihat_visor"
+	options["Penitent's mitre"] = "nt_papalhat"
+	options["Penitent's visored mitre"] = "nt_papalhat_visor"
+	options["Penitent's illuminant mitre"] = "nt_papalhat_illuminati"
+	options["Penitent's visored habit"] = "nt_habithat_visor"
+	options["Penitent's masked habit"] = "nt_habithat_mask"
+	options["Penitent's hood"] = "nt_robe_hood"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))

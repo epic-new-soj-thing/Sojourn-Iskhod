@@ -678,8 +678,8 @@
 		return 1
 
 /obj/item/clothing/head/helmet/acolyte
-	name = "vector hood"
-	desc = "Helmet for every faithful of the Absolute. Even the most devout need protection."
+	name = "hand hood"
+	desc = "Helmet for every faithful of the sect. Even the most devout need protection."
 	icon_state = "acolyte"
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
@@ -699,7 +699,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["vector default"] = "acolyte"
+	options["hand default"] = "acolyte"
 	options["tangent ridge helmet"] = "tangent_ridge_helmet_switched"
 	options["tangent ridge helmet open"] = "tangent_ridge_helmet"
 	options["greater heart helmet"] = "greater_heart"
@@ -876,7 +876,7 @@
 
 /obj/item/clothing/head/helmet/rosaria
 	name = "rosaria great helm"
-	desc = "The rosaria protects. The Absolute wills it!"
+	desc = "The rosaria protects. The precepts guide the hand."
 	icon_state = "rosaria_helm"
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
@@ -910,8 +910,8 @@
 		return 1
 
 /obj/item/clothing/head/helmet/prime
-	name = "prime hood"
-	desc = "A visored helmet with a cloth hood covering it. The craftsmanship and decorations are only fit for a Prime of the Absolute"
+	name = "Penitent hood"
+	desc = "A visored helmet with a cloth hood covering it. The craftsmanship and decorations are only fit for a Penitent of the Order of the Word."
 	icon_state = "prime"
 	action_button_name = "Toggle Helmet Light"
 	light_overlay = "helmet_light"
@@ -931,17 +931,17 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["prime dark"] = "prime"
-	options["prime royal"] = "prime_alt"
-	options["prime saint"] = "prime_saint"
-	options["prime paladin"] = "prime_paladin"
-	options["prime laurel"] = "laurel_g"
+	options["Penitent dark"] = "prime"
+	options["Penitent royal"] = "prime_alt"
+	options["Penitent saint"] = "prime_saint"
+	options["Penitent paladin"] = "prime_paladin"
+	options["Penitent laurel"] = "laurel_g"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
 		icon_state = options[choice]
-		if(choice == "prime saint" || choice ==  "prime laurel")
+		if(choice == "Penitent saint" || choice ==  "Penitent laurel")
 			flags_inv = HIDEEARS
 		else
 			flags_inv = HIDEMASK|HIDEEARS|HIDEEYES

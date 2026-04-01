@@ -221,7 +221,7 @@
 /obj/item/clothing/suit/hooded/absolutecloak
 	name = "absolutist cloak"
 	icon_state = "absolutecloak"
-	desc = "A simple charcoal cloak with gold livery for showing off your Absolute devotion. Comes with a large hood."
+	desc = "A simple charcoal cloak with gold livery for showing off your devotion to the sect. Comes with a large hood."
 	w_class = ITEM_SIZE_SMALL
 	armor_list = list(
 		melee = 0,

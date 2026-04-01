@@ -1,6 +1,6 @@
 /datum/category_item/setup_option/core_implant/cruciform
 	name = "Vinculum Cruciform"
-	desc = "The implant given to every disciple of the Absolute. This one is a standard Vinculum design, having the base-line of a normal cruciform."
+	desc = "The implant given to every member of the Order of the Word. This one is a standard Vinculum design, having the base-line of a normal cruciform."
 	implant_type = /obj/item/implant/core_implant/cruciform
 	restricted_jobs = list(
 		/datum/job/rd,
@@ -37,7 +37,7 @@
 		/datum/job/medstudent,
 		/datum/job/facility_director,
 		/datum/job/pg,
-		/datum/job/chaplain,
+		/datum/job/penitent,
 		/datum/job/chief_engineer,
 		/datum/job/merchant,
 		/datum/job/swo,
@@ -74,7 +74,7 @@
 		/datum/job/outsider, // Nanogates are only available to colonist or allies.
 		/datum/job/facility_director,
 		/datum/job/pg,
-		/datum/job/chaplain,
+		/datum/job/penitent,
 		/datum/job/cmo,
 		/datum/job/merchant,
 		/datum/job/rd,
@@ -101,31 +101,30 @@
 
 /datum/category_item/setup_option/core_implant/cruciform/tessellate
 	name = "Tessellate Cruciform"
-	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Tessellate, disciples who promote unity and healing, it charges slightly faster \
+	desc = "The implant given to every member of the Order of the Word. This one is made for those who walk the path of the Tessellate—promoting unity and healing. It charges slightly faster \
 	but has a smaller power reserve."
 	implant_type = /obj/item/implant/core_implant/cruciform/tessellate
 
 /datum/category_item/setup_option/core_implant/cruciform/lemniscate
 	name = "Lemniscate Cruciform"
-	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Lemniscate, disciples who promote the idea that change is itself circular in \
-	nature and only through team work and the desire to work together can people prosper. This has the smallest power reserves but the fastest charge of any cruciform."
+	desc = "The implant given to every member of the Order of the Word. This one is made for those who walk the path of the Lemniscate—change is circular in nature; only through teamwork can people prosper. \
+	This has the smallest power reserves but the fastest charge of any cruciform."
 	implant_type = /obj/item/implant/core_implant/cruciform/lemniscate
 
 /datum/category_item/setup_option/core_implant/cruciform/monomial
 	name = "Monomial Cruciform"
-	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Monomial, disciples who promote personal improvement and aesthetic living, \
-	focusing more on personal self improvement. This has the largest power reserves of any cruciform but has an incredibly slow charge."
+	desc = "The implant given to every member of the Order of the Word. This one is made for those who walk the path of the Monomial—personal improvement and aesthetic living. \
+	This has the largest power reserves of any cruciform but has an incredibly slow charge."
 	implant_type = /obj/item/implant/core_implant/cruciform/monomial
 
 /datum/category_item/setup_option/core_implant/cruciform/divisor
 	name = "Divisor Cruciform"
-	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Divisor, disciples who promote security of the church and its members, \
-	those who walk this path desire to protect the flock through arms, functioning as an internal guard to the Absolute."
+	desc = "The implant given to every member of the Order of the Word. This one is made for those who walk the path of the Divisor—the sect has no enforcement wing, but some Hands still take up arms to protect the flock when the bunker is threatened."
 	implant_type = /obj/item/implant/core_implant/cruciform/divisor
 
 /datum/category_item/setup_option/core_implant/cruciform/factorial
 	name = "Factorial Cruciform"
-	desc = "The implant given to every disciple of the Absolute. This one is made for those who walk the path of the Factorial, disciples who apprentice themselves to the machines and technology \
-	of the church, so that they may improve upon the foundations of faith. This cruciform is similar to the standard model in power and reserves, but is mainly favored by church aligned synthetics."
+	desc = "The implant given to every member of the Order of the Word. This one is made for those who walk the path of the Factorial—tending the sect's machines and technology so that life in the bunker may be maintained. \
+	This cruciform is similar to the standard model in power and reserves, but is mainly favored by sect-aligned synthetics."
 	implant_type = /obj/item/implant/core_implant/cruciform/factorial
 

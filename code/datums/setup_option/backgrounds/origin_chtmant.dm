@@ -52,7 +52,7 @@
 	restricted_to_species = list(FORM_CHTMANT)
 	allow_modifications = FALSE
 	restricted_depts = SCIENCE | ENGINEERING
-	restricted_jobs = list(/datum/job/cmo, /datum/job/rd, /datum/job/swo, /datum/job/swo, /datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/facility_director, /datum/job/pg, /datum/job/chief_engineer, /datum/job/chaplain, /datum/job/merchant, /datum/job/medstudent)
+	restricted_jobs = list(/datum/job/cmo, /datum/job/rd, /datum/job/swo, /datum/job/swo, /datum/job/cmo, /datum/job/doctor, /datum/job/psychiatrist, /datum/job/facility_director, /datum/job/pg, /datum/job/chief_engineer, /datum/job/penitent, /datum/job/merchant, /datum/job/medstudent)
 
 	perks = list(PERK_CHITINARMOR)
 	racial_implants = (/obj/item/organ_module/active/simple/cht_mant_claws)

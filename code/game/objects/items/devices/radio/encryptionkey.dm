@@ -131,7 +131,7 @@
 	channels = list("Supply" = 1, "Command" = 1, "Service" = 1)
 
 /obj/item/device/encryptionkey/heads/preacher
-	name = "prime's radio encryption key"
+	name = "Penitent's radio encryption key"
 	icon_state = "preach_cypherkey"
 	channels = list("Church" = 1, "Command" = 1)
 

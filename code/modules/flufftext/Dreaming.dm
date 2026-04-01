@@ -60,7 +60,7 @@ var/list/dreams = list(
 //Ranks
 	"the Steward","the Warrant Officer","the Blackshield Commander","the Guild Master","the Vesalius-Andra Research Overseer",
 	"the Vesalius-Andra Biolab Overseer","the Quartermaster","an Assistant","a Bartender","a Janitor","a Gardener",
-	"a Prime","an Entertainer","a Chef","a Doctor","a Psychologist","a Vesalius-Andra Paramedic",
+	"a Penitent","an Entertainer","a Chef","a Doctor","a Psychologist","a Vesalius-Andra Paramedic",
 	"a Vesalius-Andra Chemist","a Vesalius-Andra Scientist","a Vesalius-Andra Roboticist","a Cyborg","a Cargo Technician","a Mining Technician",
 	"a Guild Adept", "a Ranger Officer","a Supply Specialist","a Ranger", "the Facility Director",
 	"a Corpsman","a Trooper",

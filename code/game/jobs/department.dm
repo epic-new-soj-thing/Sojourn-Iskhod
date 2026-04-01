@@ -29,7 +29,6 @@
 	var/elective_reduction = 0.5 // 50% discount on elective procedures
 	var/work_coverage = 0 // Percentage covered for work-related injuries
 
-
 	// How much account failed to pay to employees. Used for emails
 	var/total_debt = 0
 
@@ -118,7 +117,7 @@
 	id = DEPARTMENT_MEDICAL
 	//30225 in 5 hours with full crew + nepotism
 	account_initial_balance = 30250 //Covers crew-cost. Rest should be made up for by medical fees and chem sales.
-	jobs_in_department = list("datum/job/cmo","/datum/job/doctor","/datum/job/paramedic","/datum/job/psychiatrist","/datum/job/medstudent")
+	jobs_in_department = list("/datum/job/cmo","/datum/job/doctor","/datum/job/paramedic","/datum/job/psychiatrist","/datum/job/medstudent")
 	insurance_limit = 1000000 // Effectively free
 	insurance_premium = 0
 	elective_reduction = 1 // 100% discount
@@ -136,11 +135,11 @@
 	work_coverage = 0.8
 
 /datum/department/church
-	name = "Church of the Absolute"
+	name = "Order of the Word"
 	id = DEPARTMENT_CHURCH
 	account_initial_balance = 17000 //17000 to cover some expenses but not that much
 	//Full team with nepotism in 5 hours is 15600
-	jobs_in_department = list ("/datum/job/chaplain","/datum/job/acolyte")
+	jobs_in_department = list("/datum/job/penitent","/datum/job/mouth","/datum/job/hand")
 	insurance_limit = 750
 	insurance_premium = 40
 	elective_reduction = 0.4
@@ -298,4 +297,5 @@
 	dept = DEPARTMENT_INDEPENDENT
 
 //No, there is no experience perk for the Premiere, as the point of the position is suffering.
+
 

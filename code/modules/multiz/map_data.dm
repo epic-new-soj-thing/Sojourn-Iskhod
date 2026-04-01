@@ -19,6 +19,7 @@ GLOBAL_DATUM_INIT(maps_data, /datum/maps_data, new)
 
 /proc/isContactLevel(var/level)
 	return level in GLOB.maps_data.contact_levels
+	return level in GLOB.maps_data.contact_levels
 
 /proc/isOnContactLevel(var/atom/A)
 	var/turf/T = get_turf(A)
@@ -114,7 +115,7 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 						/datum/job/cargo_tech, /datum/job/mining, /datum/job/merchant,
 						/datum/job/salvager, /datum/job/pro, /datum/job/pro_rookie,
 						/datum/job/clubworker, /datum/job/clubmanager,
-						/datum/job/chaplain, /datum/job/acolyte, /datum/job/janitor, /datum/job/hydro,
+						/datum/job/penitent, /datum/job/mouth, /datum/job/hand, /datum/job/janitor, /datum/job/hydro,
 						/datum/job/scientist, /datum/job/roboticist, /datum/job/scistudent, /datum/job/robostudent,
 						/datum/job/ai, /datum/job/cyborg,
 						/datum/job/assistant, /datum/job/foreigner,
@@ -273,4 +274,5 @@ ADMIN_VERB_ADD(/client/proc/test_MD, R_DEBUG, null)
 		GLOB.maps_data.registrate(src)
 
 		add_z_level(z_level_r, original_level, height)
+
 

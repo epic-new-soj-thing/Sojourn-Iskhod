@@ -142,3 +142,5 @@
 		GLOB.guild_objectives_completed++
 	else if(DEPARTMENT_ENGINEERING in req_department)
 		GLOB.technomancer_objectives_completed++
+	else if(DEPARTMENT_PROSPECTOR in req_department)
+		GLOB.prospector_objectives_completed++
