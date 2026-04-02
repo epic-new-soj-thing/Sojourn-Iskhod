@@ -153,6 +153,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/show_player_panel, null, TRUE)
 		<A href='?src=\ref[src];newban=\ref[M]'>Ban</A> |
 		<A href='?src=\ref[src];jobban2=\ref[M]'>Jobban</A> |
 		<A href='?src=\ref[src];notes=show;mob=\ref[M]'>Notes</A> |
+		[(config.centcom_api_enabled && M.ckey) ? "<A href='?src=\ref[src];centcom_bans=\ref[M]'>CentCom</A> | " : ""]
 		<A href='?src=\ref[src];adminpmhistory=\ref[M]'>AdminPM History</A>
 
 	"}

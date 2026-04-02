@@ -919,6 +919,30 @@
 	source.show_player_panel(M)
 
 
+/datum/admin_topic/centcom_bans
+	keyword = "centcom_bans"
+	require_perms = list(R_MOD|R_ADMIN)
+
+/datum/admin_topic/centcom_bans/Run(list/input)
+	var/mob/M = locate(input["centcom_bans"])
+	if(!ismob(M) || !M.ckey)
+		to_chat(usr, "Invalid mob or no ckey.")
+		return
+	source.show_centcom_bans(M)
+
+
+/datum/admin_topic/centcom_bans_all
+	keyword = "centcom_bans_all"
+	require_perms = list(R_MOD|R_ADMIN)
+
+/datum/admin_topic/centcom_bans_all/Run(list/input)
+	var/ckey_text = input["ckey"]
+	if(!ckey_text)
+		return
+	log_admin("[key_name(usr)] viewed CentCom bans (including inactive) for [ckey(ckey_text)]")
+	source.centcom_bans_browse(ckey_text, FALSE)
+
+
 /datum/admin_topic/adminobservejump
 	keyword = "adminobservejump"
 	require_perms = list(R_MENTOR|R_MOD|R_ADMIN)
