@@ -57,21 +57,6 @@
 	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/hut_cell1)
-"aaT" = (
-/obj/machinery/light/floor{
-	dir = 8
-	},
-/obj/structure/railing{
-	dir = 8;
-	tag = "icon-railing0 (WEST)"
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/reinforced,
-/area/shuttle/vasiliy_shuttle_area)
 "aaW" = (
 /obj/structure/table/rack,
 /obj/item/stock_parts/subspace/analyzer,
@@ -2079,9 +2064,6 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2";
-	dir = 1
-	},
-/obj/machinery/light/floor{
 	dir = 1
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
@@ -5191,18 +5173,6 @@
 /obj/effect/floor_decal/industrial/outline/red,
 /turf/simulated/floor/light,
 /area/iskhod/security/armory)
-"bmk" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor{
-	dir = 8
-	},
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/security/maintpost)
 "bml" = (
 /obj/machinery/telecomms/bus/preset_cent,
 /turf/simulated/floor/greengrid/airless,
@@ -5552,12 +5522,6 @@
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
-"bqw" = (
-/obj/machinery/light/floor{
-	dir = 4
-	},
-/turf/simulated/floor/reinforced,
-/area/shuttle/vasiliy_shuttle_area)
 "bqA" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/medical/ward)
@@ -5804,18 +5768,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom)
-"btP" = (
-/obj/structure/catwalk,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light/floor{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/security/maintpost)
 "btS" = (
 /obj/structure/catwalk{
 	icon_state = "catwalk3-0"
@@ -6271,7 +6223,6 @@
 /area/iskhod/security/warden)
 "bzw" = (
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
-/obj/machinery/light/floor,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section3)
 "bzx" = (
@@ -23486,18 +23437,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/iskhod/holodeck/control)
-"fQf" = (
-/obj/structure/catwalk,
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/light/floor{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/security/maintpost)
 "fQl" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial,
@@ -26630,18 +26569,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor2south)
-"gFo" = (
-/obj/structure/catwalk,
-/obj/structure/cable/cyan{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/light/floor{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/pros/shuttle)
 "gFt" = (
 /obj/structure/table/woodentable,
 /obj/machinery/newscaster{
@@ -36758,13 +36685,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/patient_wing)
-"jid" = (
-/obj/effect/floor_decal/industrial/warningdust/fulltile,
-/obj/machinery/light/floor{
-	dir = 1
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/hallway/surface/section3)
 "jij" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -37814,13 +37734,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster)
-"jtP" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/security/maintpost)
 "jtX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -39637,9 +39550,6 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
-	},
-/obj/machinery/light/floor{
-	dir = 1
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section3)
@@ -44538,18 +44448,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section3)
-"lei" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/structure/catwalk,
-/obj/machinery/light/floor{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/pros/shuttle)
 "leC" = (
 /obj/machinery/atm{
 	dir = 4;
@@ -47118,13 +47016,6 @@
 	},
 /turf/simulated/floor/carpet,
 /area/iskhod/security/interview)
-"lNe" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/pros/shuttle)
 "lNh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cyberplant{
@@ -47145,9 +47036,6 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
-	},
-/obj/machinery/light/floor{
-	dir = 4
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/hallway/surface/section3)
@@ -48758,13 +48646,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
-"mhg" = (
-/obj/effect/floor_decal/industrial/warningdust/fulltile,
-/obj/machinery/light/floor{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/iskhod/hallway/surface/section3)
 "mhk" = (
 /obj/machinery/camera/network/engineering,
 /turf/simulated/floor/reinforced/airmix,
@@ -49100,13 +48981,6 @@
 	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/command/bridge)
-"mlw" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/pros/shuttle)
 "mlK" = (
 /obj/machinery/mech_recharger,
 /obj/structure/sign/department/medbay{
@@ -49837,9 +49711,6 @@
 /area/iskhod/security/prisoncells)
 "mvD" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
-/obj/machinery/light/floor{
-	dir = 1
-	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/outside/inside_colony)
 "mvI" = (
@@ -53803,9 +53674,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/light/floor{
-	dir = 1
-	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/pros/shuttle_landing_zone)
 "ntJ" = (
@@ -55016,18 +54884,6 @@
 	icon_state = "11,10"
 	},
 /area/shuttle/rocinante_shuttle_area)
-"nIQ" = (
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light/floor{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/pros/shuttle)
 "nIT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -55114,7 +54970,6 @@
 /turf/simulated/floor/tiled/steel/cyancorner,
 /area/outpost/abandoned)
 "nKa" = (
-/obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/iskhod/security/maingate)
 "nKb" = (
@@ -58673,9 +58528,6 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/floor{
-	dir = 1
-	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/outside/inside_colony)
 "oGE" = (
@@ -60867,13 +60719,6 @@
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
-"piq" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/security/maintpost)
 "pit" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/blast/regular{
@@ -65985,18 +65830,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
-"qyg" = (
-/obj/structure/catwalk,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/light/floor{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/pros/shuttle)
 "qyi" = (
 /obj/structure/table/woodentable,
 /obj/random/credits,
@@ -68393,7 +68226,6 @@
 "rfm" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/iskhod/security/maingate)
 "rfn" = (
@@ -68488,18 +68320,6 @@
 /obj/random/ammo,
 /turf/simulated/floor/asteroid,
 /area/iskhod/maintenance/northcave)
-"rgg" = (
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/catwalk,
-/obj/machinery/light/floor{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/pros/shuttle)
 "rgq" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -74990,9 +74810,6 @@
 "sQB" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
-/obj/machinery/light/floor{
-	dir = 1
-	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/outside/inside_colony)
 "sQC" = (
@@ -75359,13 +75176,6 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/medbay)
-"sUH" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/pros/shuttle_landing_zone)
 "sUK" = (
 /obj/machinery/optable/altar,
 /turf/simulated/floor/industrial/ornate,
@@ -76839,7 +76649,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/machinery/light/floor,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section3)
 "tob" = (
@@ -80260,9 +80069,6 @@
 	icon_state = "1-2";
 	dir = 1
 	},
-/obj/machinery/light/floor{
-	dir = 1
-	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/outside/inside_colony)
 "ugg" = (
@@ -82067,12 +81873,6 @@
 	},
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/scient)
-"uEm" = (
-/obj/machinery/light/floor{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/brown_platform,
-/area/iskhod/security/maingate)
 "uEv" = (
 /obj/machinery/light{
 	dir = 1
@@ -82375,9 +82175,6 @@
 /area/iskhod/maintenance/undergroundfloor1east)
 "uHW" = (
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
-/obj/machinery/light/floor{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/surface/section3)
 "uHY" = (
@@ -86666,16 +86463,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/patient_wing)
-"vOi" = (
-/obj/machinery/light/floor{
-	dir = 4
-	},
-/obj/structure/railing{
-	dir = 4;
-	tag = "icon-railing0 (EAST)"
-	},
-/turf/simulated/floor/reinforced,
-/area/shuttle/vasiliy_shuttle_area)
 "vOk" = (
 /obj/structure/lattice,
 /obj/structure/railing/grey{
@@ -87791,18 +87578,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/engineering)
-"wdi" = (
-/obj/structure/catwalk,
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light/floor{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/pros/shuttle)
 "wdj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -89680,9 +89455,6 @@
 /area/iskhod/engineering/atmos)
 "wCi" = (
 /obj/structure/catwalk,
-/obj/machinery/light/floor{
-	dir = 8
-	},
 /obj/structure/cable/cyan{
 	d1 = 4;
 	d2 = 8;
@@ -89989,13 +89761,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/panels,
 /area/shuttle/rocinante_shuttle_area)
-"wFM" = (
-/obj/structure/catwalk,
-/obj/machinery/light/floor{
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/security/maintpost)
 "wFW" = (
 /obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
@@ -90400,17 +90165,6 @@
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/medical/patient_wing)
-"wLo" = (
-/obj/machinery/light/floor{
-	dir = 8
-	},
-/obj/structure/cable/cyan{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/reinforced,
-/area/shuttle/vasiliy_shuttle_area)
 "wLA" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -190266,7 +190020,7 @@ nsV
 tIG
 rfm
 dNN
-uEm
+nKa
 qBV
 qrA
 rkV
@@ -190468,7 +190222,7 @@ vzZ
 lsd
 nKa
 saP
-uEm
+nKa
 qBV
 vzZ
 rkV
@@ -202544,7 +202298,7 @@ stq
 eFh
 eFh
 eFh
-mhg
+uHW
 ycV
 ycV
 ycV
@@ -202740,13 +202494,13 @@ tED
 sQB
 wIr
 bzw
-jid
+bzw
 wIr
 uGX
 eFh
 eFh
 eFh
-mhg
+uHW
 ycV
 ycV
 ycV
@@ -227030,8 +226784,8 @@ cIh
 cIh
 cIh
 gMg
-wFM
-wFM
+uVB
+uVB
 gMg
 cIh
 cIh
@@ -227838,8 +227592,8 @@ cIh
 cIh
 cIh
 gMg
-wFM
-wFM
+uVB
+uVB
 gMg
 cIh
 cIh
@@ -232846,7 +232600,7 @@ cIh
 cIh
 cIh
 fct
-mlw
+sch
 fct
 cIh
 cIh
@@ -233654,7 +233408,7 @@ cqi
 cqi
 cqi
 fct
-mlw
+sch
 fct
 cIh
 cqi
@@ -233898,8 +233652,8 @@ cIh
 cIh
 cIh
 gMg
-bmk
-jtP
+wfw
+uVB
 gMg
 cIh
 cIh
@@ -235918,8 +235672,8 @@ cIh
 cIh
 cIh
 gMg
-bmk
-jtP
+wfw
+uVB
 gMg
 cIh
 cIh
@@ -236711,7 +236465,6 @@ tuk
 uVB
 uVB
 uVB
-piq
 uVB
 uVB
 uVB
@@ -236719,11 +236472,12 @@ uVB
 uVB
 uVB
 uVB
-piq
 uVB
 uVB
 uVB
-piq
+uVB
+uVB
+uVB
 uVB
 uVB
 wfw
@@ -236913,7 +236667,6 @@ ogk
 cbN
 cbN
 cbN
-btP
 cbN
 cbN
 cbN
@@ -236921,11 +236674,12 @@ cbN
 cbN
 cbN
 cbN
-btP
 cbN
 cbN
 cbN
-btP
+cbN
+cbN
+cbN
 cbN
 cbN
 wNU
@@ -237938,8 +237692,8 @@ cIh
 cIh
 cIh
 gMg
-fQf
-jtP
+wfw
+uVB
 gMg
 cIh
 cIh
@@ -238664,7 +238418,7 @@ cIh
 cIh
 cIh
 fct
-mlw
+sch
 fct
 cIh
 cIh
@@ -239107,8 +238861,8 @@ sye
 sye
 sye
 fct
-mlw
-qyg
+sch
+nUQ
 fct
 cqi
 cqi
@@ -239306,7 +239060,7 @@ sch
 sch
 sch
 sch
-lNe
+sch
 sch
 sch
 sch
@@ -239508,7 +239262,7 @@ sch
 hOc
 mkn
 mkn
-nIQ
+mkn
 mkn
 mkn
 mkn
@@ -239706,8 +239460,8 @@ cqi
 cqi
 cqi
 fct
-mlw
-qyg
+sch
+nUQ
 fct
 pdE
 pdE
@@ -239958,8 +239712,8 @@ cIh
 cIh
 cIh
 gMg
-fQf
-jtP
+wfw
+uVB
 gMg
 cIh
 cIh
@@ -240684,7 +240438,7 @@ cqi
 cqi
 cqi
 fct
-mlw
+sch
 fct
 cIh
 cIh
@@ -240918,8 +240672,8 @@ cqi
 cqi
 cqi
 fct
-mlw
-gFo
+sch
+gcV
 fct
 cIh
 cIh
@@ -241978,8 +241732,8 @@ cqi
 cqi
 cqi
 gMg
-fQf
-jtP
+wfw
+uVB
 gMg
 cqi
 cqi
@@ -242534,8 +242288,8 @@ cIh
 cIh
 mfU
 fct
-mlw
-rgg
+sch
+liF
 fct
 mfU
 cIh
@@ -242927,7 +242681,6 @@ xAc
 sch
 sch
 sch
-lNe
 sch
 sch
 sch
@@ -242936,7 +242689,8 @@ sch
 sch
 sch
 sch
-lNe
+sch
+sch
 sch
 sch
 liF
@@ -243129,7 +242883,7 @@ oWI
 eyj
 eyj
 eyj
-wdi
+eyj
 eyj
 eyj
 eyj
@@ -243138,7 +242892,7 @@ eyj
 jtJ
 jtJ
 jtJ
-lei
+jtJ
 jtJ
 jtJ
 aMu
@@ -244604,8 +244358,8 @@ cIh
 cIh
 cIh
 gMg
-fQf
-jtP
+wfw
+uVB
 gMg
 cIh
 cIh
@@ -246389,18 +246143,18 @@ cIh
 kNH
 tbq
 sOi
-wLo
 aYb
 aYb
 aYb
 aYb
 aYb
-wLo
+aYb
+aYb
 aYb
 aYb
 mAm
 mAm
-aaT
+mAm
 mZo
 dls
 bzS
@@ -246408,7 +246162,7 @@ bcK
 aYb
 aYb
 aYb
-wLo
+aYb
 eEu
 jPD
 kNH
@@ -246624,8 +246378,8 @@ cIh
 cIh
 cIh
 gMg
-fQf
-jtP
+wfw
+uVB
 gMg
 cIh
 cIh
@@ -247634,8 +247388,8 @@ cIh
 cIh
 cIh
 gMg
-fQf
-jtP
+wfw
+uVB
 gMg
 cIh
 cIh
@@ -248036,7 +247790,7 @@ cbN
 cbN
 cbN
 cbN
-btP
+cbN
 cbN
 uOA
 uVB
@@ -248229,7 +247983,7 @@ cfx
 hIW
 lQz
 jON
-sUH
+tks
 uVB
 uVB
 uVB
@@ -248238,7 +247992,7 @@ uVB
 uVB
 uVB
 uVB
-piq
+uVB
 uVB
 uVB
 uVB
@@ -249823,18 +249577,18 @@ cIh
 kNH
 jON
 tIP
-bqw
 hIW
 hIW
 hIW
 hIW
 hIW
-bqw
+hIW
+hIW
 hIW
 hIW
 xNk
 xNk
-vOi
+xNk
 hIW
 hIW
 hIW
@@ -249842,7 +249596,7 @@ hIW
 hIW
 hIW
 hIW
-bqw
+hIW
 lQz
 jON
 kNH
