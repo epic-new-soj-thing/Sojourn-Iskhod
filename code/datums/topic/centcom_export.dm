@@ -36,7 +36,9 @@
 		return "[]"
 	if(!isnum(cursor_id))
 		cursor_id = 0
-	var/list/out = list()
+	// Per-row json_encode() into chunks — encoding the whole list at once can make every
+	// entry share the last row's nested lists (cKey shows up identical for all bans).
+	var/list/json_chunks = list()
 	var/DBQuery/q = dbcon.NewQuery({"
 		SELECT b.id, b.type, b.reason, b.time, b.expiration_time, b.job, b.unbanned,
 			t.ckey, a.ckey, u.ckey
@@ -59,18 +61,23 @@
 		var/expiration = q.item[5]
 		var/job = q.item[6]
 		var/unbanned = q.item[7]
-		var/target_ckey = q.item[8]
-		var/admin_ckey = q.item[9]
-		var/unbanner_ckey = q.item[10]
+		// Snapshot text so DB row refs cannot bleed across iterations
+		var/target_ckey = "[q.item[8]]"
+		var/admin_ckey = "[q.item[9]]"
+		var/unbanner_ckey = q.item[10] ? "[q.item[10]]" : null
 
-		var/list/entry = list(
-			"id" = text2num(id),
-			"banType" = (btype == "JOB_PERMABAN" || btype == "JOB_TEMPBAN") ? "Job" : "Server",
-			"cKey" = list("canonicalKey" = ckey(target_ckey)),
-			"bannedOn" = centcom_sql_datetime_to_iso(btime),
-			"bannedBy" = list("canonicalKey" = ckey(admin_ckey)),
-			"reason" = reason,
-		)
+		var/list/ckey_target = list()
+		ckey_target["canonicalKey"] = ckey(target_ckey)
+		var/list/ckey_admin = list()
+		ckey_admin["canonicalKey"] = ckey(admin_ckey)
+
+		var/list/entry = list()
+		entry["id"] = text2num(id)
+		entry["banType"] = (btype == "JOB_PERMABAN" || btype == "JOB_TEMPBAN") ? "Job" : "Server"
+		entry["cKey"] = ckey_target
+		entry["bannedOn"] = centcom_sql_datetime_to_iso(btime)
+		entry["bannedBy"] = ckey_admin
+		entry["reason"] = reason
 		if(btype == "TEMPBAN" || btype == "JOB_TEMPBAN")
 			entry["expires"] = centcom_sql_datetime_to_iso(expiration)
 		else
@@ -83,19 +90,17 @@
 				entry["jobBans"] = list()
 
 		if(unbanned && unbanner_ckey)
-			entry["unbannedBy"] = list("canonicalKey" = ckey(unbanner_ckey))
+			var/list/ckey_un = list()
+			ckey_un["canonicalKey"] = ckey(unbanner_ckey)
+			entry["unbannedBy"] = ckey_un
 		else
 			entry["unbannedBy"] = null
 
-		out.Add(entry)
+		json_chunks.Add(json_encode(entry))
 
-	// CentCom deserializes as List<RestBan>; BYOND json_encode() can emit a lone {...} for a
-	// one-element /list, which breaks System.Text.Json. Always use a JSON array.
-	if(!out.len)
+	if(!json_chunks.len)
 		return "[]"
-	if(out.len == 1)
-		return "[" + json_encode(out[1]) + "]"
-	return json_encode(out)
+	return "[" + jointext(json_chunks, ",") + "]"
 
 /datum/world_topic/centcom_export_bans
 	keyword = "centcom_export_bans"
