@@ -251,6 +251,15 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/webhook_url
 	var/webhook_key
 
+	/// Query https://centcom.melonmesa.com (CentCom aggregated public SS13 bans) from admin tools.
+	var/centcom_api_enabled = FALSE
+	var/centcom_api_url = "https://centcom.melonmesa.com"
+
+	/// Expose SQL bans via world topic for CentCom StandardProviderService (see code/datums/topic/centcom_export.dm).
+	/// CentCom RoleplayLevel for Sojourn is High (set in CentCom standardSources, not here).
+	var/centcom_export_enabled = FALSE
+	var/centcom_export_key = null
+
 	var/message_announce_new_game = "A new round has begun!"	// SOJOURN: discord bot configuration
 	var/message_announce_round_end = "The round is almost over! Get ready for the next one."	// SOJOURN: discord bot configuration
 	var/channel_announce_new_game	// SOJOURN: discord bot configuration
@@ -836,6 +845,18 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if("webhook_url")
 					config.webhook_url = value
+
+				if("centcom_api_enabled")
+					config.centcom_api_enabled = TRUE
+
+				if("centcom_api_url")
+					config.centcom_api_url = value
+
+				if("centcom_export_enabled")
+					config.centcom_export_enabled = TRUE
+
+				if("centcom_export_key")
+					config.centcom_export_key = value
 
 				if("cache_assets")
 					config.cache_assets = TRUE

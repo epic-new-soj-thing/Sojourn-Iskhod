@@ -342,6 +342,13 @@ BORDER_CONTROL 0
 WEBHOOK_URL http://localhost:44303/webhook/en
 WEBHOOK_KEY testkey
 
+## CentCom (https://github.com/bobbah/CentCom) — admin lookup + optional ban export for aggregation
+## When adding Sojourn to CentCom standardSources, set RoleplayLevel to High (not configured in this file).
+#CENTCOM_API_ENABLED
+#CENTCOM_API_URL https://centcom.melonmesa.com
+#CENTCOM_EXPORT_ENABLED
+#CENTCOM_EXPORT_KEY your_secret_here
+
 ## Text-to-speech stuff ##
 #TTS_BEARER Bearer *lotsa symbols*
 #TTS_ENABLED 1
