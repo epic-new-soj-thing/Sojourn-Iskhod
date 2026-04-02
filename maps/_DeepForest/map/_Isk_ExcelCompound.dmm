@@ -8,26 +8,30 @@
 	temperature = 278.15
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"ai" = (
-/obj/structure/table/steel,
-/obj/item/device/scanner/price,
-/turf/simulated/floor/tiled/dark/cargo,
+"ah" = (
+/obj/machinery/holosign,
+/turf/simulated/wall/iron,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "al" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/sink/puddle,
 /turf/simulated/floor/asteroid/grass,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"ap" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/tool_upgrade/rare/low_chance,
-/obj/random/lathe_disk/advanced/excelsior/safe,
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "av" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"az" = (
+/obj/item/construct/conveyor,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"aA" = (
+/obj/structure/table/steel,
+/obj/item/paper_bin{
+	pixel_y = 3
+	},
+/obj/item/pen/multi,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "aC" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -65,24 +69,12 @@
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/landing_zone)
-"aQ" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/tool_upgrade/rare/low_chance,
-/obj/random/tool_upgrade,
-/obj/random/lathe_disk/advanced/excelsior,
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/cargo,
+"aR" = (
+/obj/machinery/vending/assist,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"bh" = (
-/obj/structure/closet/crate/excelsior,
-/turf/simulated/floor/industrial/green_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"bk" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/pouch/low_chance,
-/obj/random/pouch/low_chance,
-/obj/random/pouch/low_chance,
-/obj/structure/closet/crate,
+"aS" = (
+/obj/machinery/photocopier,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "bz" = (
@@ -123,10 +115,14 @@
 	},
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"bZ" = (
-/obj/structure/table/steel,
-/obj/item/stamp,
-/turf/simulated/floor/tiled/dark/cargo,
+"cb" = (
+/obj/structure/table/rack,
+/obj/item/clothing/under/excelsior/orange,
+/obj/item/clothing/under/excelsior/orange,
+/obj/item/clothing/head/helmet/space/void/excelsior,
+/obj/item/clothing/head/helmet/space/void/excelsior,
+/obj/item/clothing/suit/space/void/excelsior,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "cg" = (
 /obj/effect/decal/cleanable/vomit,
@@ -150,12 +146,11 @@
 /obj/landmark/corpse/excelsior,
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"cy" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/storage/greatcoat/overcoatblack/brown,
-/obj/item/clothing/head/helmet/space/void/excelsior,
-/obj/item/clothing/head/helmet/space/void/excelsior,
-/obj/item/clothing/suit/space/void/excelsior,
+"cq" = (
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/obj/random/mob/excelsior,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "cJ" = (
@@ -177,6 +172,11 @@
 	},
 /obj/random/mob/excelsior,
 /turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"da" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/closet/crate/excelsior,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "dr" = (
 /obj/structure/railing/grey{
@@ -210,6 +210,10 @@
 /obj/structure/barricade,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"dN" = (
+/obj/machinery/papershredder,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "dS" = (
 /obj/item/clothing/suit/costume/misc/snowman,
 /turf/simulated/floor/snow/smooth{
@@ -218,10 +222,6 @@
 	nitrogen = 82.1472;
 	temperature = 240
 	},
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"dX" = (
-/obj/machinery/photocopier,
-/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "ec" = (
 /obj/random/mob/excelsior,
@@ -244,8 +244,10 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "el" = (
-/obj/structure/closet/crate/trashcart,
-/turf/simulated/floor/industrial/black_large_slates,
+/obj/effect/floor_decal/industrial/outline,
+/obj/random/tool_upgrade,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "eo" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
@@ -254,12 +256,26 @@
 /obj/machinery/door/blast/regular/open,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"ep" = (
+/obj/machinery/button/toggle/door{
+	dir = 1;
+	pixel_y = -25
+	},
+/obj/structure/coatrack,
+/obj/item/clothing/suit/storage/boxer_jacket,
+/obj/item/clothing/suit/storage/boxer_jacket,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ez" = (
 /obj/effect/floor_decal/industrial/outline,
-/obj/effect/floor_decal/industrial/hatch,
-/obj/effect/floor_decal/industrial/box/white,
-/obj/structure/closet/crate/secure/large,
+/obj/random/medical_lowcost,
+/obj/random/medical_lowcost,
+/obj/structure/closet/crate,
 /turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"eJ" = (
+/obj/item/construct/conveyor_switch,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "eO" = (
 /obj/machinery/door/airlock/multi_tile/glass{
@@ -281,6 +297,15 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"fa" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/closet/crate,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot/low_chance,
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "fe" = (
 /obj/machinery/suit_storage_unit/excelsior,
 /turf/simulated/floor/industrial/green_large_slates,
@@ -291,19 +316,16 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"fD" = (
-/obj/effect/floor_decal/industrial/outline,
-/turf/simulated/floor/tiled/dark/cargo,
+"fC" = (
+/obj/item/construct/conveyor,
+/turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "fF" = (
 /obj/random/mob/excelsior,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"fR" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/random/mob/excelsior,
+"fP" = (
+/obj/structure/closet/random_miscellaneous,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "fX" = (
@@ -311,17 +333,9 @@
 /obj/structure/barricade,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"ge" = (
-/obj/item/construct/conveyor,
-/obj/machinery/door/morgue{
-	dir = 8
-	},
-/obj/machinery/door/blast/regular/open,
-/obj/machinery/rotating_alarm/start_on{
-	dir = 4;
-	pixel_x = -15
-	},
-/turf/simulated/floor/industrial/black_large_slates,
+"gl" = (
+/obj/structure/filingcabinet/chestdrawer,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "gn" = (
 /obj/random/mob/excelsior,
@@ -343,13 +357,18 @@
 "gw" = (
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/landing_zone)
-"gy" = (
+"gx" = (
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold{
+	name = "pine tree";
+	desc = "Something about it seems rather important, you should probably leave this one alone."
+	},
+/turf/simulated/mineral/planet,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"gA" = (
 /obj/effect/floor_decal/industrial/outline,
-/obj/structure/closet/crate,
-/obj/random/tool,
-/obj/random/tool,
-/obj/random/tool,
-/obj/random/toolbox,
+/obj/effect/floor_decal/industrial/box/white,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/closet/crate/secure/large,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "gI" = (
@@ -372,17 +391,18 @@
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"hj" = (
-/obj/structure/scrap_cube,
-/turf/simulated/floor/rock/manmade/road,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"hD" = (
-/obj/machinery/vending/cola,
+"gV" = (
+/obj/structure/low_wall,
+/obj/machinery/door/blast/regular/open,
+/obj/item/clothing/accessory/passcard/passport_sol,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"hE" = (
-/obj/item/construct/conveyor,
-/turf/simulated/floor/industrial/black_large_slates,
+"hy" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/item/tool_upgrade/augment/ai_tool_excelsior,
+/obj/random/lathe_disk/advanced/excelsior,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "hF" = (
 /obj/machinery/door/airlock/multi_tile/metal,
@@ -404,17 +424,16 @@
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/landing_zone)
-"ia" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/closet/crate,
-/obj/random/pack/tech_loot,
-/obj/random/pack/tech_loot,
-/obj/random/pack/tech_loot/low_chance,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ic" = (
 /obj/structure/table/rack,
 /obj/structure/bedsheetbin,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"ig" = (
+/obj/item/modular_computer/console/preset/trade_orders{
+	dir = 4;
+	pixel_x = -5
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "ij" = (
@@ -429,20 +448,16 @@
 /obj/structure/bonfire/permanent,
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"ir" = (
-/obj/machinery/button/toggle/door{
-	dir = 1;
-	pixel_y = -25
-	},
-/obj/structure/coatrack,
-/obj/item/clothing/suit/storage/boxer_jacket,
-/obj/item/clothing/suit/storage/boxer_jacket,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "it" = (
 /obj/effect/shuttle_landmark/surface_transport,
 /turf/simulated/floor/rock/manmade/road,
 /area/shuttle/surface_transport_lz)
+"iv" = (
+/obj/item/construct/conveyor,
+/obj/item/cutlery/fork,
+/obj/item/storage/briefcase,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ix" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
@@ -458,15 +473,16 @@
 	temperature = 278.15
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"iM" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "iR" = (
 /obj/machinery/door/blast/regular/open,
 /turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"iS" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/random/tool/advanced,
+/obj/structure/closet/crate,
+/obj/random/toolbox,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "jb" = (
 /obj/structure/table/steel,
@@ -489,6 +505,35 @@
 /obj/structure/railing/grey,
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"jm" = (
+/obj/random/mob/excelsior/low_chance,
+/turf/simulated/floor/industrial/cafe_large,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"jt" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/random/powercell/low_chance,
+/obj/item/cell/large/excelsior,
+/obj/item/cell/medium/excelsior,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"jy" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/effect/floor_decal/industrial/box/white,
+/obj/structure/closet/random_milsupply,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"jA" = (
+/obj/structure/closet/oldstyle,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"jE" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/storage/boxer_jacket,
+/obj/item/clothing/under/excelsior/orange,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "jL" = (
 /obj/effect/floor_decal/industrial/danger,
 /obj/effect/floor_decal/industrial/danger{
@@ -500,6 +545,27 @@
 "jQ" = (
 /obj/structure/showcase,
 /turf/simulated/floor/industrial/cafe_large,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"jV" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"ki" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/effect/floor_decal/industrial/box/white,
+/obj/structure/closet/random_miscellaneous,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"kn" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/closet/crate,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/tool,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "kq" = (
 /obj/structure/scrap/food,
@@ -519,21 +585,6 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"kM" = (
-/obj/item/construct/conveyor,
-/obj/machinery/rotating_alarm/start_on{
-	dir = 4;
-	pixel_x = -15
-	},
-/turf/simulated/floor/industrial/navy_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"kW" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/obj/random/mob/excelsior,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "kX" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -551,27 +602,6 @@
 /obj/item/tool_upgrade/broken_plasma_injector,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"lz" = (
-/obj/structure/table/steel,
-/obj/item/tray,
-/obj/item/tray,
-/obj/item/tray,
-/obj/item/tray,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"lB" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/tool_upgrade,
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"lP" = (
-/obj/item/modular_computer/console/preset/trade_orders{
-	dir = 4;
-	pixel_x = -5
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "lR" = (
 /obj/structure/sign/departmentold/restroom{
 	pixel_y = -32
@@ -585,6 +615,22 @@
 /obj/structure/railing/grey,
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"lX" = (
+/obj/structure/table/steel,
+/obj/machinery/door/blast/shutters{
+	dir = 2;
+	name = "shutter"
+	},
+/obj/structure/barricade,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"lY" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/random/tool/advanced/low_chance,
+/obj/random/tool/advanced,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "mf" = (
 /obj/effect/floor_decal/industrial/road/straight4,
 /turf/simulated/floor/rock/manmade/road,
@@ -597,15 +643,6 @@
 /obj/structure/table/steel,
 /obj/item/tray,
 /turf/simulated/floor/industrial/ceramic,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"mo" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/closet/crate,
-/obj/random/tool,
-/obj/random/tool,
-/obj/random/tool,
-/obj/item/rcd/excelsior,
-/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "mr" = (
 /obj/machinery/floodlight,
@@ -626,22 +663,18 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"mD" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/storage/boxer_jacket,
-/obj/item/clothing/under/excelsior/orange,
-/turf/simulated/floor/industrial/black_large_slates,
+"mw" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/random/tool_upgrade,
+/obj/random/tool_upgrade,
+/obj/random/lathe_disk/advanced/excelsior,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "mE" = (
 /obj/structure/scrap/vehicle/large,
 /obj/structure/table/steel,
 /turf/simulated/floor/rock/manmade/road,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"mJ" = (
-/obj/structure/low_wall,
-/obj/machinery/door/blast/regular/open,
-/obj/item/clothing/accessory/passcard/passport_sol,
-/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "mL" = (
 /obj/structure/sign/warning/secure_area,
@@ -651,6 +684,13 @@
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/landing_zone)
+"mT" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/random/mob/excelsior,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "mY" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4;
@@ -658,11 +698,6 @@
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/landing_zone)
-"mZ" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/scrap/vehicle,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "nb" = (
 /obj/structure/table/rack/shelf,
 /obj/item/cell/medium/excelsior,
@@ -677,6 +712,14 @@
 /obj/structure/table/rack,
 /obj/item/flame/lighter/zippo/excelsior,
 /turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"ng" = (
+/obj/item/construct/conveyor,
+/obj/machinery/rotating_alarm/start_on{
+	dir = 4;
+	pixel_x = -15
+	},
+/turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "np" = (
 /obj/structure/closet/crate/excelsior,
@@ -713,18 +756,8 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"nO" = (
-/obj/effect/floor_decal/industrial/loading{
-	dir = 1
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "nU" = (
 /obj/effect/decal/cleanable/liquid_fuel,
-/turf/simulated/floor/rock/manmade/road,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"nX" = (
-/obj/random/mob/excelsior/low_chance,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "od" = (
@@ -748,12 +781,24 @@
 /obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"os" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/closet/crate,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot,
+/obj/random/pack/tech_loot/low_chance,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ou" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/machinery/door/blast/shutters{
 	dir = 2;
 	name = "shutter"
 	},
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"oD" = (
+/obj/structure/scrap_cube,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "oE" = (
@@ -786,26 +831,35 @@
 /obj/structure/closet/toolcloset,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"pB" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/tool/advanced,
-/obj/structure/closet/crate,
-/obj/random/toolbox,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"pL" = (
-/obj/structure/filingcabinet/chestdrawer,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "pS" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
 /turf/simulated/floor/tiled/white{
 	temperature = 278.15
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"pZ" = (
+/obj/item/construct/conveyor,
+/obj/machinery/door/morgue{
+	dir = 8
+	},
+/obj/machinery/door/blast/regular/open,
+/obj/machinery/rotating_alarm/start_on{
+	dir = 4;
+	pixel_x = -15
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "qd" = (
 /obj/effect/floor_decal/industrial/road/curve3,
 /turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"qw" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/random/tool_upgrade/rare/low_chance,
+/obj/random/tool_upgrade,
+/obj/random/lathe_disk/advanced/excelsior,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "qy" = (
 /obj/structure/table/bench/steel,
@@ -821,11 +875,23 @@
 "qJ" = (
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"qX" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/random/pouch/low_chance,
+/obj/random/pouch/low_chance,
+/obj/random/pouch/low_chance,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "rb" = (
 /obj/structure/table/steel,
 /obj/item/tray,
 /obj/item/scrap_lump,
 /turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"rd" = (
+/obj/landmark/corpse/excelsior,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "rn" = (
 /obj/structure/closet/random_hostilemobs,
@@ -882,17 +948,17 @@
 /obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"sd" = (
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/random/mob/excelsior,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "sf" = (
 /obj/structure/table/steel,
 /obj/item/ammo_kit,
 /turf/simulated/floor/asteroid/dirt/flood,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"sm" = (
-/obj/structure/bed/chair{
-	dir = 4
-	},
-/obj/random/mob/excelsior,
-/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "sn" = (
 /obj/structure/table/rack/shelf,
@@ -904,11 +970,6 @@
 /obj/item/clothing/head/helmet/faceshield/altyn/excelsior,
 /obj/item/clothing/head/exceslior/excelsior_officer,
 /turf/simulated/floor/industrial/green_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"so" = (
-/obj/machinery/door/airlock/hatch,
-/obj/structure/barricade,
-/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "ss" = (
 /obj/structure/multiz/stairs/active/bottom{
@@ -925,11 +986,6 @@
 /obj/item/tool/baton/excelbaton,
 /obj/item/tool/baton/excelbaton,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"sx" = (
-/obj/structure/bed/chair,
-/obj/random/mob/excelsior,
-/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "sA" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -981,29 +1037,9 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"tC" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/tool_upgrade/rare/low_chance,
-/obj/random/tool_upgrade,
-/obj/item/tool_upgrade/augment/ai_tool_excelsior,
-/obj/random/lathe_disk/advanced/excelsior,
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "tF" = (
 /obj/random/mob/excelsior,
 /turf/simulated/floor/asteroid/grass,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"tL" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/effect/floor_decal/industrial/box/white,
-/obj/effect/floor_decal/industrial/hatch,
-/obj/structure/closet/random_miscellaneous,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"tO" = (
-/obj/structure/closet/random_milsupply,
-/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "tQ" = (
 /turf/simulated/floor/asteroid/grass,
@@ -1019,26 +1055,22 @@
 /obj/structure/table/steel,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"ua" = (
+/obj/structure/closet/random_milsupply,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ub" = (
 /obj/structure/flora/small/snow/rock2,
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"uf" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold{
-	name = "pine tree";
-	desc = "Something about it seems rather important, you should probably leave this one alone."
-	},
-/turf/simulated/mineral/planet,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"ul" = (
-/obj/structure/multiz/stairs/active{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"um" = (
-/obj/structure/closet/oldstyle,
-/turf/simulated/floor/industrial/black_large_slates,
+"uo" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/closet/crate,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/toolbox,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "us" = (
 /obj/structure/railing/grey{
@@ -1055,26 +1087,26 @@
 /obj/machinery/porta_turret/excelsior/preloaded,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"uy" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/closet/crate,
-/obj/random/tool,
-/obj/random/tool,
-/obj/random/tool,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "uM" = (
 /turf/simulated/mineral/planet,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"uP" = (
+/obj/structure/table/steel,
+/obj/item/device/scanner/price,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"vh" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/random/tool_upgrade/rare/low_chance,
+/obj/random/lathe_disk/advanced/excelsior/safe,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "vq" = (
 /turf/simulated/floor/rock/manmade/road,
 /area/shuttle/vasiliy_shuttle_area)
 "vw" = (
 /turf/simulated/floor/asteroid/dirt/flood,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"vD" = (
-/obj/item/construct/conveyor,
-/turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "wy" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -1090,17 +1122,13 @@
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/landing_zone)
-"wG" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/tool_upgrade,
-/obj/random/tool_upgrade,
-/obj/random/lathe_disk/advanced/excelsior,
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "wR" = (
 /obj/structure/low_wall,
 /turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"wX" = (
+/obj/random/mob/excelsior/low_chance,
+/turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "wZ" = (
 /obj/effect/floor_decal/industrial_plant/steel_stayclear,
@@ -1112,6 +1140,12 @@
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "xo" = (
 /turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"xr" = (
+/obj/machinery/button/toggle/door{
+	pixel_y = 25
+	},
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "xs" = (
 /obj/structure/table/steel,
@@ -1130,12 +1164,9 @@
 /obj/structure/urinal,
 /turf/simulated/wall/iron,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"yc" = (
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/random/mob/excelsior,
-/turf/simulated/floor/industrial/black_large_slates,
+"xG" = (
+/obj/effect/floor_decal/industrial/outline,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "yj" = (
 /obj/structure/closet/secure_closet/rare_loot,
@@ -1146,16 +1177,16 @@
 /obj/item/clothing/under/excelsior/orange,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"yo" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/storage/cargovest,
-/obj/item/clothing/under/excelsior/orange,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "yr" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/barricade,
 /turf/simulated/floor/tiled/dark/brown_platform,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"yQ" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/storage/cargovest,
+/obj/item/clothing/under/excelsior/orange,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "yZ" = (
 /obj/machinery/door/airlock/freezer,
@@ -1182,19 +1213,6 @@
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"zt" = (
-/obj/structure/table/rack,
-/obj/item/clothing/under/excelsior/orange,
-/obj/item/clothing/under/excelsior/orange,
-/obj/item/clothing/head/helmet/space/void/excelsior,
-/obj/item/clothing/head/helmet/space/void/excelsior,
-/obj/item/clothing/suit/space/void/excelsior,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"zy" = (
-/obj/random/mob/excelsior/low_chance,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "zH" = (
 /obj/machinery/door/airlock/multi_tile/metal{
 	dir = 2
@@ -1202,27 +1220,18 @@
 /obj/structure/barricade,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"zQ" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/item/tool_upgrade/augment/ai_tool_excelsior,
-/obj/random/lathe_disk/advanced/excelsior,
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "zS" = (
 /obj/structure/sign/security/showers{
 	pixel_y = -30
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"Af" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/closet/crate,
-/obj/random/pack/tech_loot,
-/obj/random/pack/tech_loot,
-/obj/random/pack/tech_loot/low_chance,
-/obj/random/pack/tech_loot/low_chance,
-/turf/simulated/floor/tiled/dark/cargo,
+"Ah" = (
+/obj/machinery/button/toggle/door{
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Aj" = (
 /obj/structure/sink{
@@ -1241,13 +1250,6 @@
 /obj/structure/flora/ausbushes/brflowers,
 /turf/simulated/floor/asteroid/grass,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"AH" = (
-/obj/machinery/button/toggle/door{
-	dir = 1;
-	pixel_y = -25
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "AM" = (
 /obj/structure/closet/secure_closet/engineering_welding,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -1261,13 +1263,6 @@
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "AV" = (
 /obj/effect/floor_decal/industrial/road/warning3,
-/turf/simulated/floor/rock/manmade/road,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Bd" = (
-/obj/effect/floor_decal/industrial/road/curve1,
-/obj/machinery/button/toggle/door{
-	pixel_y = 25
-	},
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Bf" = (
@@ -1291,10 +1286,6 @@
 /obj/structure/sign/faction/excelsior,
 /turf/simulated/wall/iron,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"BA" = (
-/obj/landmark/corpse/excelsior,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "BB" = (
 /obj/structure/flora/tree/snow/three,
 /turf/simulated/floor/snow/smooth{
@@ -1303,6 +1294,11 @@
 	nitrogen = 82.1472;
 	temperature = 240
 	},
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"BC" = (
+/obj/machinery/door/airlock/multi_tile/metal,
+/obj/structure/barricade,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "BD" = (
 /obj/machinery/door/airlock/multi_tile/metal,
@@ -1343,11 +1339,13 @@
 /obj/structure/barricade,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"Dd" = (
+"CO" = (
 /obj/effect/floor_decal/industrial/outline,
-/obj/random/tool/advanced/low_chance,
-/obj/random/tool/advanced,
 /obj/structure/closet/crate,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/tool,
+/obj/item/rcd/excelsior,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ds" = (
@@ -1384,49 +1382,20 @@
 /obj/structure/scrap/food,
 /turf/simulated/floor/industrial/ceramic,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"DZ" = (
-/obj/item/construct/conveyor,
-/obj/machinery/rotating_alarm/start_on{
-	dir = 8;
-	pixel_x = 15
-	},
-/turf/simulated/floor/industrial/navy_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Ec" = (
-/obj/structure/coatrack,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/hooded/wintercoat,
-/obj/item/clothing/suit/storage/greatcoat/overcoatblack/crimson,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ee" = (
 /obj/structure/table/rack,
 /obj/item/tool/hammer/excelsior_hammer,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"Ej" = (
-/obj/machinery/door/morgue,
+"Eo" = (
+/obj/machinery/door/morgue{
+	dir = 8
+	},
 /obj/machinery/door/blast/regular/open,
 /obj/effect/floor_decal/industrial/loading{
 	dir = 1
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Eq" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/medical_lowcost,
-/obj/random/medical_lowcost,
-/obj/random/medical_lowcost,
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Es" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/lathe_disk/advanced/excelsior,
-/obj/random/lathe_disk/advanced/excelsior/safe,
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ev" = (
 /obj/random/mob/excelsior,
@@ -1434,6 +1403,13 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"Ey" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/effect/floor_decal/industrial/box/white,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/closet/random_milsupply,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "EA" = (
 /obj/structure/railing/grey{
@@ -1444,39 +1420,24 @@
 	},
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"ED" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/random/tool/advanced/low_chance,
+/obj/random/tool/advanced/low_chance,
+/obj/random/tool/advanced,
+/obj/structure/closet/crate,
+/obj/item/rcd/excelsior,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "EK" = (
 /obj/structure/railing/grey{
 	dir = 1
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"EO" = (
-/obj/machinery/button/toggle/door{
-	dir = 1;
-	pixel_y = -25
-	},
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Fd" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/medical_lowcost,
-/obj/random/medical_lowcost,
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Fe" = (
 /obj/structure/sign/neon/beer,
 /turf/simulated/wall/iron,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Ff" = (
-/obj/machinery/door/morgue{
-	dir = 8
-	},
-/obj/machinery/door/blast/regular/open,
-/obj/effect/floor_decal/industrial/loading{
-	dir = 1
-	},
-/turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Fg" = (
 /obj/structure/bed/psych{
@@ -1508,13 +1469,16 @@
 /obj/item/towel/random,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"FX" = (
+/obj/machinery/button/toggle/door{
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Gd" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Ge" = (
-/obj/structure/scrap/vehicle,
-/turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Gn" = (
 /obj/effect/floor_decal/industrial/danger{
@@ -1524,10 +1488,9 @@
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/landing_zone)
-"Gw" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/structure/closet/crate/excelsior,
-/turf/simulated/floor/tiled/dark/cargo,
+"Gq" = (
+/obj/machinery/vending/cola,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "GC" = (
 /obj/item/tool_upgrade/cracked_fuel,
@@ -1563,6 +1526,13 @@
 /obj/effect/decal/cleanable/vomit,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"GY" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/effect/floor_decal/industrial/box/white,
+/obj/structure/closet/crate/secure/large,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "GZ" = (
 /obj/structure/railing/grey{
 	dir = 8
@@ -1584,9 +1554,17 @@
 	},
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"Ht" = (
-/obj/structure/closet/random_miscellaneous,
+"Hl" = (
+/obj/structure/bed/chair{
+	dir = 4
+	},
+/obj/random/mob/excelsior,
 /turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"Hq" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/closet/crate/secure/loot,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Hy" = (
 /obj/structure/table/steel,
@@ -1600,9 +1578,9 @@
 	},
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/landing_zone)
-"HK" = (
-/obj/random/furniture/pottedplant,
-/turf/simulated/floor/tiled/dark/cargo,
+"HD" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "HL" = (
 /obj/structure/barricade,
@@ -1645,6 +1623,9 @@
 /obj/structure/sink/kitchen,
 /turf/simulated/wall/iron,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"Iv" = (
+/turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ID" = (
 /obj/effect/floor_decal/industrial/loading{
 	dir = 4
@@ -1670,6 +1651,14 @@
 "IP" = (
 /turf/unsimulated/mineral/cold,
 /area/space)
+"IS" = (
+/obj/item/construct/conveyor,
+/obj/machinery/rotating_alarm/start_on{
+	dir = 8;
+	pixel_x = 15
+	},
+/turf/simulated/floor/industrial/navy_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ja" = (
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
@@ -1692,11 +1681,6 @@
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"JM" = (
-/obj/machinery/door/airlock/multi_tile/metal,
-/obj/structure/barricade,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "JN" = (
 /obj/effect/floor_decal/industrial_plant/steel_stayclear{
 	dir = 1
@@ -1710,17 +1694,21 @@
 	},
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"JS" = (
+/obj/structure/scrap/vehicle,
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"JV" = (
+/obj/effect/floor_decal/industrial/loading{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "JY" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
 	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Kb" = (
-/obj/machinery/button/toggle/door{
-	pixel_y = 25
-	},
-/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Kh" = (
 /obj/structure/table/rack/shelf,
@@ -1735,11 +1723,36 @@
 /obj/effect/shuttle_landmark/rocinante_excel_compound,
 /turf/simulated/floor/rock/manmade/road,
 /area/shuttle/rocinante_shuttle_area)
+"KN" = (
+/obj/machinery/door/morgue,
+/obj/machinery/door/blast/regular/open,
+/obj/effect/floor_decal/industrial/loading{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "KO" = (
 /obj/structure/closet/secure_closet/freezer/blood,
 /turf/simulated/floor/tiled/white{
 	temperature = 278.15
 	},
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"KQ" = (
+/obj/structure/table/rack,
+/obj/random/lowkeyrandom,
+/obj/random/lowkeyrandom,
+/obj/random/lowkeyrandom,
+/obj/random/lowkeyrandom,
+/obj/random/lowkeyrandom,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"KV" = (
+/obj/structure/table/rack,
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack/brown,
+/obj/item/clothing/head/helmet/space/void/excelsior,
+/obj/item/clothing/head/helmet/space/void/excelsior,
+/obj/item/clothing/suit/space/void/excelsior,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "KZ" = (
 /obj/structure/flora/tree/pine,
@@ -1755,12 +1768,6 @@
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Lm" = (
 /obj/item/mine/excelsior,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Lx" = (
-/obj/item/construct/conveyor,
-/obj/item/cutlery/fork,
-/obj/item/storage/briefcase,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "LA" = (
@@ -1794,6 +1801,10 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"Mu" = (
+/obj/structure/closet/crate/trashcart,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Mz" = (
 /obj/structure/railing/grey,
 /turf/simulated/floor/snow/smooth{
@@ -1802,10 +1813,6 @@
 	nitrogen = 82.1472;
 	temperature = 240
 	},
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"MH" = (
-/obj/machinery/vending/assist,
-/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "MK" = (
 /obj/structure/table/steel,
@@ -1823,13 +1830,13 @@
 /obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"Nd" = (
+"MZ" = (
 /obj/effect/floor_decal/industrial/outline,
+/obj/random/tool_upgrade/rare/low_chance,
+/obj/random/tool_upgrade,
+/obj/item/tool_upgrade/augment/ai_tool_excelsior,
+/obj/random/lathe_disk/advanced/excelsior,
 /obj/structure/closet/crate,
-/obj/random/tool,
-/obj/random/tool,
-/obj/random/tool,
-/obj/random/tool,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Nw" = (
@@ -1861,6 +1868,13 @@
 /obj/item/weldpack/canister/oil,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"NV" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/random/lathe_disk/advanced/excelsior,
+/obj/random/lathe_disk/advanced/excelsior/safe,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ob" = (
 /obj/effect/floor_decal/industrial/road/straight1,
 /turf/simulated/floor/rock/manmade/road,
@@ -1881,12 +1895,12 @@
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Oj" = (
-/obj/structure/table/rack,
-/obj/random/lowkeyrandom,
-/obj/random/lowkeyrandom,
-/obj/random/lowkeyrandom,
-/obj/random/lowkeyrandom,
-/obj/random/lowkeyrandom,
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/closet/crate,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/tool,
+/obj/random/tool,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ok" = (
@@ -1910,13 +1924,11 @@
 /obj/effect/floor_decal/industrial/transit,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"OK" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/powercell/low_chance,
-/obj/item/cell/large/excelsior,
-/obj/item/cell/medium/excelsior,
-/obj/structure/closet/crate,
-/turf/simulated/floor/tiled/dark/cargo,
+"OM" = (
+/obj/structure/multiz/stairs/active{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "ON" = (
 /obj/structure/flora/tree/snow/four,
@@ -1932,10 +1944,6 @@
 	pixel_y = -30
 	},
 /obj/machinery/suit_storage_unit/excelsior,
-/turf/simulated/floor/industrial/green_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Po" = (
-/obj/structure/table/steel,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Pz" = (
@@ -1978,6 +1986,11 @@
 /obj/effect/floor_decal/industrial/stand_clear,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"QF" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/structure/scrap/vehicle,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "QH" = (
 /obj/structure/table/steel,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -2009,26 +2022,10 @@
 /obj/landmark/corpse/excelsior,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"RC" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/effect/floor_decal/industrial/box/white,
-/obj/effect/floor_decal/industrial/hatch,
-/obj/structure/closet/random_milsupply,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "RG" = (
 /obj/machinery/door/airlock/hatch,
 /obj/item/mine/excelsior,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"RI" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/random/tool/advanced/low_chance,
-/obj/random/tool/advanced/low_chance,
-/obj/random/tool/advanced,
-/obj/structure/closet/crate,
-/obj/item/rcd/excelsior,
-/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "RO" = (
 /obj/structure/railing/grey,
@@ -2047,12 +2044,17 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"St" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/effect/floor_decal/industrial/box/white,
-/obj/effect/floor_decal/industrial/hatch,
-/obj/structure/closet/crate/secure/large,
-/turf/simulated/floor/tiled/dark/cargo,
+"Sk" = (
+/obj/structure/table/steel,
+/obj/item/tray,
+/obj/item/tray,
+/obj/item/tray,
+/obj/item/tray,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"So" = (
+/obj/random/mob/excelsior/low_chance,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Sw" = (
 /turf/simulated/floor/rock/manmade/road,
@@ -2118,6 +2120,11 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"TE" = (
+/obj/structure/bed/chair,
+/obj/random/mob/excelsior,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "TF" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4;
@@ -2137,15 +2144,10 @@
 	},
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"TH" = (
+"TL" = (
 /obj/effect/floor_decal/industrial/outline,
-/obj/structure/closet/crate/secure/loot,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"TJ" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/effect/floor_decal/industrial/hatch,
 /obj/effect/floor_decal/industrial/box/white,
+/obj/effect/floor_decal/industrial/hatch,
 /obj/structure/closet/random_miscellaneous,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
@@ -2178,6 +2180,13 @@
 /obj/effect/floor_decal/industrial/box/red,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"Uc" = (
+/obj/effect/floor_decal/industrial/road/curve1,
+/obj/machinery/button/toggle/door{
+	pixel_y = 25
+	},
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ud" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/industrial/navy_slates,
@@ -2199,18 +2208,15 @@
 /obj/structure/closet/secure_closet/engineering_electrical,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"UB" = (
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"UD" = (
-/obj/machinery/holosign,
-/turf/simulated/wall/iron,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "UE" = (
 /obj/effect/shuttle_landmark/vasiliy_excel_compound,
 /turf/simulated/floor/rock/manmade/road,
 /area/shuttle/vasiliy_shuttle_area)
+"UY" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/barricade,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Vc" = (
 /obj/structure/flora/small/snow/rock1,
 /turf/simulated/floor/snow/smooth{
@@ -2229,32 +2235,24 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"Vp" = (
+/obj/structure/table/steel,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Vs" = (
 /obj/structure/table/rack,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"VA" = (
-/obj/random/mob/excelsior/low_chance,
-/turf/simulated/floor/industrial/cafe_large,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "VD" = (
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"VL" = (
-/obj/effect/floor_decal/industrial/outline,
-/obj/effect/floor_decal/industrial/hatch,
-/obj/effect/floor_decal/industrial/box/white,
-/obj/structure/closet/random_milsupply,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Wf" = (
-/obj/structure/table/steel,
-/obj/machinery/door/blast/shutters{
-	dir = 2;
-	name = "shutter"
-	},
-/obj/structure/barricade,
-/turf/simulated/floor/tiled/dark/cargo,
+"VX" = (
+/obj/structure/coatrack,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/hooded/wintercoat,
+/obj/item/clothing/suit/storage/greatcoat/overcoatblack/crimson,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Wj" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
@@ -2270,6 +2268,22 @@
 /obj/structure/table/steel,
 /obj/item/reagent_containers/snacks/beetsoup,
 /turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"WB" = (
+/obj/random/furniture/pottedplant,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"WH" = (
+/obj/structure/closet/crate/excelsior,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"WI" = (
+/obj/effect/floor_decal/industrial/outline,
+/obj/random/medical_lowcost,
+/obj/random/medical_lowcost,
+/obj/random/medical_lowcost,
+/obj/structure/closet/crate,
+/turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Xd" = (
 /obj/effect/floor_decal/industrial/outline,
@@ -2312,14 +2326,9 @@
 /obj/effect/floor_decal/industrial/box/red,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"XW" = (
-/obj/structure/table/steel,
-/obj/item/paper_bin{
-	pixel_y = 3
-	},
-/obj/item/pen/multi,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
+"XR" = (
+/turf/simulated/wall/iron,
+/area/space)
 "Ya" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/effect/floor_decal/industrial/box/white,
@@ -2327,9 +2336,6 @@
 /obj/structure/closet/gimmick/russian,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"Yu" = (
-/turf/simulated/wall/iron,
-/area/space)
 "YF" = (
 /obj/structure/toilet{
 	pixel_y = 10
@@ -2348,10 +2354,6 @@
 	},
 /turf/simulated/floor/asteroid/grass,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"YK" = (
-/obj/item/construct/conveyor_switch,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "YS" = (
 /obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold{
 	name = "pine tree";
@@ -2364,9 +2366,6 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"Zb" = (
-/turf/simulated/floor/industrial/green_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Zd" = (
 /obj/structure/table/steel,
 /turf/simulated/floor/rock/manmade/road,
@@ -2375,8 +2374,9 @@
 /obj/random/mob/excelsior,
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"ZG" = (
-/obj/machinery/papershredder,
+"ZW" = (
+/obj/structure/table/steel,
+/obj/item/stamp,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 
@@ -10697,11 +10697,11 @@ gs
 gs
 gs
 gs
-Yu
-Yu
-Yu
-Yu
-Yu
+XR
+XR
+XR
+XR
+XR
 gs
 gs
 gs
@@ -10849,11 +10849,11 @@ gs
 gs
 gs
 gs
-Yu
+XR
 gs
 gs
 gs
-Yu
+XR
 gs
 gs
 gs
@@ -11001,11 +11001,11 @@ gs
 gs
 gs
 gs
-Yu
+XR
 gs
 gs
 gs
-Yu
+XR
 gs
 gs
 gs
@@ -11153,11 +11153,11 @@ gs
 gs
 gs
 gs
-Yu
+XR
 gs
 gs
 gs
-Yu
+XR
 gs
 gs
 gs
@@ -29243,9 +29243,9 @@ Ja
 Ja
 AA
 fe
-Po
-Po
-Po
+Vp
+Vp
+Vp
 Pa
 AA
 sD
@@ -30699,9 +30699,9 @@ NQ
 NQ
 NQ
 NQ
-EO
+FX
 AA
-Bd
+Uc
 xt
 xt
 xt
@@ -30847,9 +30847,9 @@ Ja
 Ja
 Rd
 NQ
-RC
+Ey
 JL
-tL
+TL
 JL
 NQ
 Up
@@ -30986,21 +30986,21 @@ AA
 XE
 Ja
 Ja
-Fd
-Eq
-Fd
-TH
+ez
+WI
+ez
+Hq
 Ja
-gy
-uy
-Nd
-mo
+uo
+kn
+Oj
+CO
 Ja
 Ja
 Rd
 NQ
 JL
-St
+gA
 JL
 Ya
 NQ
@@ -31138,15 +31138,15 @@ AA
 TW
 Ja
 Ja
-Gw
-Fd
-Eq
-Fd
+da
+ez
+WI
+ez
 Ja
-Dd
-RI
-TH
-pB
+lY
+ED
+Hq
+iS
 Ja
 Ja
 Rd
@@ -31213,11 +31213,11 @@ AO
 AO
 AO
 AA
-bh
+WH
 Ja
-bh
+WH
 Ja
-bh
+WH
 Ja
 Ja
 Ja
@@ -31307,9 +31307,9 @@ NQ
 NQ
 NQ
 NQ
-EO
+FX
 AA
-Bd
+Uc
 xt
 xt
 xt
@@ -31442,23 +31442,23 @@ AA
 TW
 Ja
 Ja
-fD
-fD
-fD
-fD
+xG
+xG
+xG
+xG
 Ja
-Gw
-ia
-ia
-ia
+da
+os
+os
+os
 Ja
 Ja
 Rd
 NQ
 JL
-St
+gA
 Ya
-St
+gA
 NQ
 Up
 OC
@@ -31517,11 +31517,11 @@ AO
 AO
 AO
 AA
-bh
+WH
 Ja
-bh
+WH
 Ja
-bh
+WH
 Ja
 Ja
 Xn
@@ -31594,23 +31594,23 @@ AA
 TW
 Ja
 Ja
-fD
-fD
-TH
-fD
+xG
+xG
+Hq
+xG
 Ja
-Af
-ia
-TH
-ia
+fa
+os
+Hq
+os
 Ja
 Ja
 Rd
 NQ
-RC
+Ey
 JL
 JL
-tL
+TL
 NQ
 Up
 OC
@@ -31898,15 +31898,15 @@ AA
 Ja
 Ja
 Ja
-fD
-Gw
-TH
-fD
+xG
+da
+Hq
+xG
 Ja
-bk
-bk
-bk
-bk
+qX
+qX
+qX
+qX
 Ja
 Ja
 Rd
@@ -31915,9 +31915,9 @@ NQ
 NQ
 NQ
 NQ
-EO
+FX
 AA
-Bd
+Uc
 xt
 xt
 xt
@@ -32050,15 +32050,15 @@ AA
 Ja
 Ja
 Ja
-fD
-fD
-fD
-fD
+xG
+xG
+xG
+xG
 Ja
-TH
-bk
-Gw
-bk
+Hq
+qX
+da
+qX
 Ja
 Ja
 Rd
@@ -32066,7 +32066,7 @@ NQ
 Xd
 Pz
 Xd
-ez
+GY
 NQ
 Up
 OC
@@ -32125,21 +32125,21 @@ AO
 AO
 AO
 AA
-bh
+WH
 Ja
-bh
+WH
 Ja
-bh
+WH
 Ja
 Ja
 np
 Ja
 Ja
-bh
+WH
 Ja
-bh
+WH
 Ja
-bh
+WH
 AA
 GN
 GN
@@ -32216,8 +32216,8 @@ Ja
 Rd
 NQ
 Xd
-TJ
-VL
+ki
+jy
 Xd
 NQ
 Up
@@ -32351,22 +32351,22 @@ GN
 GN
 GN
 AA
-fD
+xG
 Ja
 Ja
-fD
-fD
-fD
-fD
+xG
+xG
+xG
+xG
 Ja
-OK
-TH
-OK
-OK
+jt
+Hq
+jt
+jt
 Ja
-AH
+Ah
 AA
-Kb
+xr
 NQ
 NQ
 NQ
@@ -32429,21 +32429,21 @@ AO
 AO
 AO
 AA
-bh
+WH
 Ja
-bh
+WH
 Ja
-bh
+WH
 Ja
 Ja
 np
 Ja
 Ja
-bh
+WH
 Ja
-bh
+WH
 Ja
-bh
+WH
 AA
 GN
 GN
@@ -32503,18 +32503,18 @@ GN
 GN
 GN
 AA
-fD
+xG
 Ja
 Ja
-fD
-TH
-fD
-fD
+xG
+Hq
+xG
+xG
 Ja
-OK
-OK
-OK
-TH
+jt
+jt
+jt
+Hq
 Ja
 Ja
 Bw
@@ -32655,7 +32655,7 @@ GN
 GN
 GN
 AA
-fD
+xG
 Ja
 Ja
 Ja
@@ -32676,12 +32676,12 @@ Ja
 Ja
 Ja
 AA
-um
+jA
 Uq
 Uq
-um
+jA
 DN
-el
+Mu
 AA
 AO
 AO
@@ -32807,18 +32807,18 @@ rM
 KZ
 GN
 AA
-fD
+xG
 Ja
 Ja
-fD
-fD
-Gw
-fD
+xG
+xG
+da
+xG
 Ja
-Es
-tC
-TH
-zQ
+NV
+MZ
+Hq
+hy
 Ja
 Ja
 Ja
@@ -32962,28 +32962,28 @@ AA
 Ja
 Ja
 Ja
-fD
-fD
-fD
-TH
+xG
+xG
+xG
+Hq
 Ja
-lB
-wG
-aQ
-ap
-Ja
-Ja
+el
+mw
+qw
+vh
 Ja
 Ja
 Ja
 Ja
 Ja
 Ja
-JM
 Ja
 Ja
-mD
-yo
+BC
+Ja
+Ja
+jE
+yQ
 Ja
 Ja
 hF
@@ -33037,21 +33037,21 @@ AO
 AO
 AO
 AA
-bh
+WH
 Ja
-bh
+WH
 Ja
-bh
+WH
 Ja
-Zb
+Iv
 MP
-Zb
+Iv
 Ja
-bh
+WH
 Ja
-bh
+WH
 Ja
-bh
+WH
 AA
 GN
 GN
@@ -33111,7 +33111,7 @@ GN
 GN
 Vc
 AA
-mZ
+QF
 Ja
 Ja
 Ja
@@ -33134,8 +33134,8 @@ Ja
 Cv
 Ja
 Ja
-zt
-cy
+cb
+KV
 Ja
 Ja
 st
@@ -33263,7 +33263,7 @@ GN
 GN
 GN
 AA
-mZ
+QF
 Ja
 Ja
 Ja
@@ -33285,7 +33285,7 @@ Ja
 Ja
 AA
 Ja
-BA
+rd
 Ja
 Ja
 Ja
@@ -33341,21 +33341,21 @@ AO
 AO
 AO
 AA
-bh
+WH
 Ja
-bh
+WH
 Ja
-bh
+WH
 Ja
-Zb
+Iv
 MP
-Zb
+Iv
 Ja
-bh
+WH
 Ja
-bh
+WH
 Ja
-bh
+WH
 AA
 GN
 GN
@@ -33415,7 +33415,7 @@ GN
 GN
 GN
 AA
-mZ
+QF
 Ja
 Ja
 Ja
@@ -33437,11 +33437,11 @@ Ja
 Ja
 AA
 Uq
-um
+jA
 Uq
-um
+jA
 DN
-el
+Mu
 AA
 AO
 AO
@@ -33567,7 +33567,7 @@ GN
 BB
 GN
 AA
-mZ
+QF
 Ja
 Ja
 Ja
@@ -33729,12 +33729,12 @@ Ja
 Ja
 Ja
 AA
-dX
-iM
-XW
-bZ
+aS
+jV
+aA
+ZW
 AA
-lP
+ig
 Ja
 Ja
 mj
@@ -33742,10 +33742,10 @@ mj
 mj
 mj
 AA
-tO
-um
-el
-el
+ua
+jA
+Mu
+Mu
 AA
 AO
 AO
@@ -33871,7 +33871,7 @@ GN
 GN
 GN
 AA
-fD
+xG
 Ja
 Ja
 Ja
@@ -33880,12 +33880,12 @@ Ja
 Ja
 Ja
 Ja
-so
+UY
 NQ
 NQ
-ai
-sx
-Wf
+uP
+TE
+lX
 NQ
 Ja
 Ja
@@ -34023,7 +34023,7 @@ GN
 GN
 GN
 AA
-fD
+xG
 Ja
 Ja
 Ja
@@ -34037,12 +34037,12 @@ NQ
 NQ
 NQ
 NQ
-Wf
+lX
 NQ
 Ja
 Ja
 Ja
-BA
+rd
 Ja
 Ja
 Ja
@@ -34175,7 +34175,7 @@ GN
 KZ
 GN
 AA
-fD
+xG
 Ja
 Ja
 Ja
@@ -34185,10 +34185,10 @@ Ja
 Ja
 Ja
 AA
-HK
+WB
 NQ
 NQ
-ir
+ep
 AA
 Ja
 Ja
@@ -34327,7 +34327,7 @@ La
 La
 La
 AA
-fD
+xG
 Ja
 Ja
 Ja
@@ -34337,11 +34337,11 @@ Ja
 Ja
 Ja
 AA
-ZG
+dN
 NQ
 NQ
 NQ
-so
+UY
 Ja
 Ja
 Ja
@@ -34353,7 +34353,7 @@ Ja
 Ja
 Ja
 Ja
-um
+jA
 AA
 AO
 AO
@@ -34489,23 +34489,23 @@ Ja
 Ja
 Ja
 AA
-pL
+gl
 NQ
-Oj
-Oj
+KQ
+KQ
 AA
 Ja
 Ja
 Ja
 Ja
-hD
-UB
-MH
+Gq
+HD
+aR
 AA
-el
-el
+Mu
+Mu
 Ja
-Ht
+fP
 AA
 AO
 AO
@@ -36503,7 +36503,7 @@ Ja
 Ja
 AA
 nE
-mJ
+gV
 nE
 AA
 Ja
@@ -39577,7 +39577,7 @@ AO
 AO
 AO
 AO
-nX
+wX
 AO
 AO
 AO
@@ -39733,7 +39733,7 @@ AO
 AO
 AO
 AO
-nX
+wX
 AO
 AO
 AO
@@ -41859,7 +41859,7 @@ Ja
 qy
 xs
 NM
-VA
+jm
 NM
 jQ
 NM
@@ -42176,7 +42176,7 @@ xo
 xs
 xo
 NM
-VA
+jm
 NM
 NM
 NM
@@ -42688,7 +42688,7 @@ AO
 AO
 AO
 mf
-Ge
+JS
 AO
 Zd
 AA
@@ -42939,7 +42939,7 @@ NM
 NM
 NM
 NM
-VA
+jm
 NM
 kq
 kq
@@ -43384,7 +43384,7 @@ Ja
 Ja
 Ja
 Ja
-zy
+So
 Ja
 Ja
 Ja
@@ -44155,7 +44155,7 @@ NM
 NM
 NM
 NM
-VA
+jm
 NM
 NM
 NM
@@ -44673,7 +44673,7 @@ AO
 AO
 AO
 AO
-hj
+oD
 AA
 AO
 AO
@@ -59151,8 +59151,8 @@ Ja
 Ja
 Ja
 AA
-YK
-sm
+eJ
+Hl
 QH
 AA
 Ja
@@ -59297,7 +59297,7 @@ qJ
 qJ
 qJ
 AA
-fR
+mT
 rV
 Ja
 Ja
@@ -59449,21 +59449,21 @@ qJ
 qJ
 qJ
 AA
-ul
-ul
+OM
+OM
 EK
 Ja
 Ma
-Ff
-vD
-DZ
-vD
-Ff
+Eo
+fC
+IS
+fC
+Eo
 Qv
 Ja
 Ja
 Ja
-Ec
+VX
 AA
 Hd
 Hd
@@ -59608,7 +59608,7 @@ Ja
 Ja
 AA
 AA
-UD
+ah
 AA
 AA
 Ja
@@ -59758,11 +59758,11 @@ Ja
 Ja
 Ja
 Ja
-nO
-hE
-ge
-Lx
-nO
+JV
+az
+pZ
+iv
+JV
 Ja
 Ja
 Ja
@@ -59911,9 +59911,9 @@ Ja
 Ja
 Ja
 gn
-YK
+eJ
 mL
-lz
+Sk
 Ja
 Ja
 Ja
@@ -60064,7 +60064,7 @@ Ja
 Ja
 AA
 AA
-UD
+ah
 AA
 AA
 Ja
@@ -60214,11 +60214,11 @@ tA
 EK
 Ja
 Ma
-Ej
-vD
-kM
-vD
-Ej
+KN
+fC
+ng
+fC
+KN
 Qv
 Ja
 Ja
@@ -60361,7 +60361,7 @@ qJ
 qJ
 qJ
 AA
-yc
+sd
 nG
 Ja
 Ja
@@ -60519,8 +60519,8 @@ Ja
 Ja
 Ja
 AA
-YK
-kW
+eJ
+cq
 QH
 AA
 Ja
@@ -60608,7 +60608,7 @@ uM
 uM
 uM
 uM
-uf
+gx
 uM
 uM
 uM
