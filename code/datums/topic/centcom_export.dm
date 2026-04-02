@@ -29,11 +29,14 @@
 		time = "00:00:00"
 	return "[date]T[time]Z"
 
+/proc/centcom_json_empty_array()
+	return ascii2text(91) + ascii2text(93)
+
 /proc/centcom_export_build_json(var/cursor_id)
 	if(!config || config.ban_legacy_system || !config.sql_enabled)
-		return "[]"
+		return centcom_json_empty_array()
 	if(!establish_db_connection() || !dbcon || !dbcon.IsConnected())
-		return "[]"
+		return centcom_json_empty_array()
 	if(!isnum(cursor_id))
 		cursor_id = 0
 	// Per-row json_encode() into chunks — encoding the whole list at once can make every
@@ -52,7 +55,7 @@
 		"})
 	if(!q.Execute())
 		log_world("centcom_export_build_json: [q.ErrorMsg()]")
-		return "[]"
+		return centcom_json_empty_array()
 	while(q.NextRow())
 		var/id = q.item[1]
 		var/btype = q.item[2]
@@ -99,8 +102,8 @@
 		json_chunks.Add(json_encode(entry))
 
 	if(!json_chunks.len)
-		return "[]"
-	return "[" + jointext(json_chunks, ",") + "]"
+		return centcom_json_empty_array()
+	return ascii2text(91) + jointext(json_chunks, ascii2text(44)) + ascii2text(93)
 
 /datum/world_topic/centcom_export_bans
 	keyword = "centcom_export_bans"
@@ -108,7 +111,7 @@
 
 /datum/world_topic/centcom_export_bans/TryRun(list/input)
 	if(!config || !config.centcom_export_enabled)
-		return "[]"
+		return centcom_json_empty_array()
 	if(config.centcom_export_key)
 		if(!input["export_key"] || input["export_key"] != config.centcom_export_key)
 			return "Unauthorized"
