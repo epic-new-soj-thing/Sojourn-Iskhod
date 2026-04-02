@@ -163,6 +163,21 @@ ADMIN_VERB_ADD(/client/proc/unban_panel, R_ADMIN, TRUE)
 		else
 			holder.DB_ban_panel()
 
+ADMIN_VERB_ADD(/client/proc/cmd_admin_centcom_lookup, R_MOD|R_ADMIN, TRUE)
+/client/proc/cmd_admin_centcom_lookup()
+	set name = "CentCom Ban Lookup"
+	set category = "Admin"
+	set desc = "Query Melonmesa CentCom for public bans on a ckey"
+	if(!holder)
+		return
+	if(!config.centcom_api_enabled)
+		to_chat(src, "CentCom API is disabled. Add CENTCOM_API_ENABLED to config/config.txt and restart.")
+		return
+	var/ckey_in = input(src, "Enter ckey to look up:", "CentCom Ban Lookup") as null|text
+	if(!length(ckey_in))
+		return
+	holder.show_centcom_bans_ckey(ckey_in)
+
 ADMIN_VERB_ADD(/client/proc/game_panel, R_ADMIN, FALSE)
 // Game panel, allows to change game-mode etc
 /client/proc/game_panel()
