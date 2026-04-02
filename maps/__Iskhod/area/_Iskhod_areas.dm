@@ -1888,6 +1888,64 @@ area/nadezhda/medical/medbaymeeting
 	area_light_color = COLOR_LIGHTING_MAINT_DARK
 	is_dungeon_lootable = TRUE
 
+//Excel Compound
+/area/iskhod/dungeon/outside/excel_compound
+	name = "Excel Compound"
+	icon_state = "erisgreen"
+	dynamic_lighting = TRUE
+	is_maintenance = FALSE
+	ship_area = FALSE
+	is_dungeon_lootable = TRUE
+
+/area/iskhod/dungeon/outside/excel_compound/bar
+	name = "Compound Bar"
+	icon_state = "bar"
+
+/area/iskhod/dungeon/outside/excel_compound/cafeteria
+	name = "Compound Cafeteria"
+	icon_state = "erisyellow"
+
+/area/iskhod/dungeon/outside/excel_compound/garage
+	name = "Compound Garage"
+	icon_state = "erisblue"
+
+/area/iskhod/dungeon/outside/excel_compound/warehouse
+	name = "Compound Warehouse"
+	icon_state = "erisgreen"
+
+/area/iskhod/dungeon/outside/excel_compound/barracks
+	name = "Compound Barracks"
+	icon_state = "erisblue"
+
+/area/iskhod/dungeon/outside/excel_compound/command
+	name = "Compound Command Room"
+	icon_state = "bridge"
+
+/area/iskhod/dungeon/outside/excel_compound/bunker
+	name = "Compound Bunker"
+	icon_state = "erisred"
+
+/area/iskhod/dungeon/outside/excel_compound/landing_zone
+	name = "Compound Landing Zone"
+	icon_state = "shuttle"
+	dynamic_lighting = FALSE
+	luminosity = 1
+
+/area/iskhod/dungeon/outside/excel_compound/unknown
+	name = "Compound - Unknown"
+	icon_state = "erisblue"
+
+/area/iskhod/dungeon/outside/excel_compound/sickbay
+	name = "Compound Sickbay"
+	icon_state = "erisgreen"
+
+//Excel Compound
+/area/iskhod/dungeon/outside/excel_compound/exterior
+	name = "Excel Compound Outside"
+	icon_state = "erisgreen"
+	dynamic_lighting = FALSE
+	luminosity = 1
+
 //Shuttle Landing Zones
 /area/iskhod/pros/shuttle_landing_zone
 	name = "\improper Shuttle Landing Zone"

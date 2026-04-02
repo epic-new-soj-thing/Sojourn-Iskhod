@@ -6,7 +6,7 @@
 	shuttle_area = /area/shuttle/surface_transport_lz
 	current_location = "nav_pad_surface_transport"
 	landmark_transition = "nav_transit_surface_transport"
-	destination_tags = list("nav_pad_surface_transport", "nav_hunting_lodge", "nav_deep_forest", "nav_swamps", "nav_river_forest", "nav_space_0", "nav_greyson_field")
+	destination_tags = list("nav_pad_surface_transport", "nav_hunting_lodge", "nav_deep_forest", "nav_swamps", "nav_river_forest", "nav_space_0", "nav_greyson_field", "nav_emergency_shuttle_excel_compound")
 
 /obj/effect/shuttle_landmark/surface_transport
 	name = "Surface Transport Shuttle Pad"
@@ -48,6 +48,12 @@
 	name = "Greyson Field Office Landing Zone"
 	landmark_tag = "nav_greyson_field"
 	base_turf = /turf/simulated/floor/tiled/dark/cargo
+	autoset = TRUE
+
+/obj/effect/shuttle_landmark/emergency_shuttle_excel_compound
+	name = "Excel Compound Emergency Shuttle Dock"
+	landmark_tag = "nav_emergency_shuttle_excel_compound"
+	base_turf = /turf/simulated/floor/reinforced
 	autoset = TRUE
 
 //Area code
@@ -192,7 +198,7 @@
 	shuttle_area = /area/shuttle/rocinante_shuttle_area
 	current_location = "nav_rocinante_homebase"
 	landmark_transition = "nav_rocinante_transit"
-	destination_tags = list("nav_rocinante_homebase", "nav_rocinante_river", "nav_rocinante_swamp", "nav_rocinante_graysonfield", "nav_space_1")//, "nav_rocinante_spacefort"
+	destination_tags = list("nav_rocinante_homebase", "nav_rocinante_river", "nav_rocinante_swamp", "nav_rocinante_graysonfield", "nav_rocinante_excel_compound", "nav_space_1")//, "nav_rocinante_spacefort"
 
 /obj/effect/shuttle_landmark/rocinante_home
 	name = "The Rocinante Home Pad "
@@ -224,6 +230,12 @@
 	base_turf = /turf/simulated/floor/reinforced
 	autoset = TRUE
 
+/obj/effect/shuttle_landmark/rocinante_excel_compound
+	name = "Excel Compound Dock"
+	landmark_tag = "nav_rocinante_excel_compound"
+	base_turf = /turf/simulated/floor/reinforced
+	autoset = TRUE
+
 /obj/effect/shuttle_landmark/rocinante_spacefort
 	name = "Local Space Station Dock"
 	landmark_tag = "nav_rocinante_spacefort"
@@ -251,7 +263,7 @@
 	shuttle_area = /area/shuttle/vasiliy_shuttle_area
 	current_location = "nav_vasiliy_homebase"
 	landmark_transition = "nav_vasiliy_transit"
-	destination_tags = list("nav_vasiliy_homebase", "nav_vasiliy_deep_forest", "nav_vasiliy_swamps", "nav_vasiliy_river_forest", "nav_vasiliy_graysonfield", "nav_space_2") //, "nav_vasiliy_spacefort"
+	destination_tags = list("nav_vasiliy_homebase", "nav_vasiliy_deep_forest", "nav_vasiliy_swamps", "nav_vasiliy_river_forest", "nav_vasiliy_graysonfield", "nav_vasiliy_excel_compound", "nav_space_2") //, "nav_vasiliy_spacefort"
 
 //, "nav_vasiliy_spacefort"
 
@@ -288,6 +300,12 @@
 /obj/effect/shuttle_landmark/vasiliy_field_office
 	name = "Greyson Field Office Dock"
 	landmark_tag = "nav_vasiliy_graysonfield"
+	base_turf = /turf/simulated/floor/reinforced
+	autoset = TRUE
+
+/obj/effect/shuttle_landmark/vasiliy_excel_compound
+	name = "Excel Compound Dock"
+	landmark_tag = "nav_vasiliy_excel_compound"
 	base_turf = /turf/simulated/floor/reinforced
 	autoset = TRUE
 
