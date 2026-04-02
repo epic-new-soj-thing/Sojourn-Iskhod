@@ -89,6 +89,12 @@
 
 		out.Add(entry)
 
+	// CentCom deserializes as List<RestBan>; BYOND json_encode() can emit a lone {...} for a
+	// one-element /list, which breaks System.Text.Json. Always use a JSON array.
+	if(!out.len)
+		return "[]"
+	if(out.len == 1)
+		return "[" + json_encode(out[1]) + "]"
 	return json_encode(out)
 
 /datum/world_topic/centcom_export_bans
