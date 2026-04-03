@@ -1420,6 +1420,13 @@
 	},
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"EB" = (
+/obj/structure/lift/button{
+	dir = 1;
+	pixel_y = -30
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ED" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/random/tool/advanced/low_chance,
@@ -1432,6 +1439,12 @@
 "EK" = (
 /obj/structure/railing/grey{
 	dir = 1
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"EY" = (
+/obj/structure/sign/directions/elevator{
+	pixel_x = -30
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
@@ -1946,6 +1959,10 @@
 /obj/machinery/suit_storage_unit/excelsior,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"Pg" = (
+/obj/machinery/door/airlock/lift,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Pz" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/effect/floor_decal/industrial/hatch,
@@ -2191,6 +2208,10 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"Uf" = (
+/obj/machinery/door/airlock/lift,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Up" = (
 /obj/machinery/door/blast/shutters{
 	dir = 2;
@@ -2212,6 +2233,11 @@
 /obj/effect/shuttle_landmark/vasiliy_excel_compound,
 /turf/simulated/floor/rock/manmade/road,
 /area/shuttle/vasiliy_shuttle_area)
+"UJ" = (
+/obj/item/construct/conveyor,
+/obj/machinery/door/airlock/hatch,
+/turf/simulated/floor/industrial/navy_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "UY" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/barricade,
@@ -26575,13 +26601,13 @@ Ja
 Ja
 Ja
 Ja
+EY
 Ja
 Ja
-Ja
-Ja
-Ja
-Ja
-Ja
+Pg
+VD
+VD
+VD
 AA
 uM
 uM
@@ -26730,10 +26756,10 @@ Ja
 Ja
 Ja
 Ja
-Ja
-Ja
-Ja
-Ja
+Pg
+VD
+VD
+VD
 AA
 uM
 uM
@@ -26882,10 +26908,10 @@ Ja
 Ja
 Ja
 Ja
-Ja
-Ja
-Ja
-Ja
+Pg
+VD
+VD
+VD
 AA
 uM
 uM
@@ -27033,11 +27059,11 @@ Ja
 Ja
 Ja
 Ja
-Ja
-Ja
-Ja
-Ja
-Ja
+EB
+AA
+AA
+AA
+AA
 AA
 uM
 uM
@@ -49379,10 +49405,10 @@ Ja
 Ja
 Ja
 Ja
-Ja
-Ja
-Ja
-Ja
+Uf
+qJ
+qJ
+qJ
 AA
 qJ
 qJ
@@ -49531,10 +49557,10 @@ Ja
 Ja
 Ja
 Ja
-Ja
-Ja
-Ja
-Ja
+Uf
+qJ
+qJ
+qJ
 AA
 qJ
 qJ
@@ -49683,10 +49709,10 @@ Ja
 Ja
 Ja
 Ja
-Ja
-Ja
-Ja
-Ja
+Uf
+qJ
+qJ
+qJ
 AA
 qJ
 qJ
@@ -49834,11 +49860,11 @@ Ja
 Ja
 Ja
 Ja
-Ja
-Ja
-Ja
-Ja
-Ja
+EB
+AA
+AA
+AA
+AA
 AA
 qJ
 qJ
@@ -59455,7 +59481,7 @@ EK
 Ja
 Ma
 Eo
-fC
+UJ
 IS
 fC
 Eo
