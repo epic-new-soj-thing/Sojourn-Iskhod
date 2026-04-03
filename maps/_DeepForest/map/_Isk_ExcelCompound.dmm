@@ -358,11 +358,8 @@
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/landing_zone)
 "gx" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil/cold{
-	name = "pine tree";
-	desc = "Something about it seems rather important, you should probably leave this one alone."
-	},
-/turf/simulated/mineral/planet,
+/obj/machinery/door/airlock/lift,
+/turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "gA" = (
 /obj/effect/floor_decal/industrial/outline,
@@ -720,6 +717,10 @@
 	pixel_x = -15
 	},
 /turf/simulated/floor/industrial/navy_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"nn" = (
+/obj/machinery/door/airlock/lift,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "np" = (
 /obj/structure/closet/crate/excelsior,
@@ -1339,6 +1340,12 @@
 /obj/structure/barricade,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"CB" = (
+/obj/structure/sign/directions/elevator{
+	pixel_x = -30
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "CO" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/structure/closet/crate,
@@ -1420,13 +1427,6 @@
 	},
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"EB" = (
-/obj/structure/lift/button{
-	dir = 1;
-	pixel_y = -30
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ED" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/random/tool/advanced/low_chance,
@@ -1439,12 +1439,6 @@
 "EK" = (
 /obj/structure/railing/grey{
 	dir = 1
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"EY" = (
-/obj/structure/sign/directions/elevator{
-	pixel_x = -30
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
@@ -1952,16 +1946,19 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"OT" = (
+/obj/structure/lift/button{
+	dir = 1;
+	pixel_y = -30
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Pa" = (
 /obj/structure/sign/security/showers{
 	pixel_y = -30
 	},
 /obj/machinery/suit_storage_unit/excelsior,
 /turf/simulated/floor/industrial/green_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Pg" = (
-/obj/machinery/door/airlock/lift,
-/turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Pz" = (
 /obj/effect/floor_decal/industrial/outline,
@@ -2208,10 +2205,6 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"Uf" = (
-/obj/machinery/door/airlock/lift,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Up" = (
 /obj/machinery/door/blast/shutters{
 	dir = 2;
@@ -2233,11 +2226,6 @@
 /obj/effect/shuttle_landmark/vasiliy_excel_compound,
 /turf/simulated/floor/rock/manmade/road,
 /area/shuttle/vasiliy_shuttle_area)
-"UJ" = (
-/obj/item/construct/conveyor,
-/obj/machinery/door/airlock/hatch,
-/turf/simulated/floor/industrial/navy_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "UY" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/barricade,
@@ -2294,6 +2282,11 @@
 /obj/structure/table/steel,
 /obj/item/reagent_containers/snacks/beetsoup,
 /turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"WA" = (
+/obj/item/construct/conveyor,
+/obj/machinery/door/airlock/hatch,
+/turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "WB" = (
 /obj/random/furniture/pottedplant,
@@ -26601,10 +26594,10 @@ Ja
 Ja
 Ja
 Ja
-EY
+CB
 Ja
 Ja
-Pg
+gx
 VD
 VD
 VD
@@ -26756,7 +26749,7 @@ Ja
 Ja
 Ja
 Ja
-Pg
+gx
 VD
 VD
 VD
@@ -26908,7 +26901,7 @@ Ja
 Ja
 Ja
 Ja
-Pg
+gx
 VD
 VD
 VD
@@ -27059,7 +27052,7 @@ Ja
 Ja
 Ja
 Ja
-EB
+OT
 AA
 AA
 AA
@@ -49405,7 +49398,7 @@ Ja
 Ja
 Ja
 Ja
-Uf
+nn
 qJ
 qJ
 qJ
@@ -49557,7 +49550,7 @@ Ja
 Ja
 Ja
 Ja
-Uf
+nn
 qJ
 qJ
 qJ
@@ -49709,7 +49702,7 @@ Ja
 Ja
 Ja
 Ja
-Uf
+nn
 qJ
 qJ
 qJ
@@ -49860,7 +49853,7 @@ Ja
 Ja
 Ja
 Ja
-EB
+OT
 AA
 AA
 AA
@@ -59481,7 +59474,7 @@ EK
 Ja
 Ma
 Eo
-UJ
+WA
 IS
 fC
 Eo
@@ -60634,7 +60627,7 @@ uM
 uM
 uM
 uM
-gx
+uM
 uM
 uM
 uM
