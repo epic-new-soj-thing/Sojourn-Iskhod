@@ -181,22 +181,21 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 			selected_tech_tree = tech_tree
 			selected_technology = null
 	if(href_list["research_all"]) // Research everything feasible (all nodes including covert if shown)
-		var/list/cost_data = files.get_research_all_cost()
-		var/total_cost = cost_data[1]
-		var/count = cost_data[2]
+		var/list/plan = files.get_research_all_plan()
+		var/total_cost = plan[1]
+		var/count = plan[2]
+		var/list/queue = plan[3]
 		if(count > 0 && files.research_points < total_cost)
 			to_chat(usr, SPAN_WARNING("Not enough research points. Need [total_cost] to unlock all [count] nodes (you have [files.research_points])."))
 		else if(count > 0)
-			var/can_continue = TRUE
-			var/max_iterations = 200 // Fail-safe; one pass per node at most
-			while(can_continue && max_iterations > 0)
-				can_continue = FALSE
-				max_iterations--
-				for(var/datum/technology/tech_node in SSresearch.all_tech_nodes)
-					if(!files.IsResearched(tech_node) && files.CanResearch(tech_node))
-						files.UnlockTechology(tech_node)
-						can_continue = TRUE
-			to_chat(usr, SPAN_NOTICE("Unlocked all available research ([count] nodes)."))
+			var/unlocked = 0
+			for(var/datum/technology/tech_node in queue)
+				if(files.UnlockTechology(tech_node))
+					unlocked++
+			if(unlocked < count)
+				to_chat(usr, SPAN_WARNING("Research incomplete: unlocked [unlocked] of [count] planned nodes (requirements or points changed mid-action)."))
+			else
+				to_chat(usr, SPAN_NOTICE("Unlocked all available research ([count] nodes)."))
 		else
 			to_chat(usr, SPAN_NOTICE("No further nodes available to research."))
 		SSnano.update_uis(src)

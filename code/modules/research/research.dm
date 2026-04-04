@@ -100,8 +100,9 @@ Procs:
 
 	return TRUE
 
-/// Returns list(total_cost, count) for all nodes that would be unlocked by "Research All", including covert tree if shown.
-/datum/research/proc/get_research_all_cost()
+/// Ordered queue of nodes "Research All" would unlock (same logic as cost); covert tree included if shown.
+/// Returns list(total_cost, count, list_of_nodes).
+/datum/research/proc/get_research_all_plan()
 	var/list/simulated_levels = list()
 	for(var/tree in researched_tech)
 		var/datum/tech/T = tree
@@ -150,7 +151,12 @@ Procs:
 	var/total_cost = 0
 	for(var/datum/technology/T in to_unlock)
 		total_cost += T.cost
-	return list(total_cost, to_unlock.len)
+	return list(total_cost, to_unlock.len, to_unlock)
+
+/// Returns list(total_cost, count) for all nodes that would be unlocked by "Research All", including covert tree if shown.
+/datum/research/proc/get_research_all_cost()
+	var/list/plan = get_research_all_plan()
+	return list(plan[1], plan[2])
 
 /datum/research/proc/download_from(datum/research/O)
 	for(var/t in O.researched_tech)

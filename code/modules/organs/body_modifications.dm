@@ -1,6 +1,6 @@
 var/global/list/body_modifications = list()
 var/global/list/modifications_types = list(
-	BP_CHEST = "",  "chest2" = "", BP_HEAD = "",   BP_GROIN = "",
+	BP_CHEST = "", BP_HEAD = "",   BP_GROIN = "",
 	BP_L_ARM  = "", BP_R_ARM  = "", BP_L_LEG  = "", BP_R_LEG  = "",
 	OP_HEART  = "", OP_LUNGS  = "", OP_LIVER  = "", OP_EYES   = "",
 	OP_KIDNEY_LEFT = "", OP_KIDNEY_RIGHT = "" , OP_STOMACH = "", BP_BRAIN = "", OP_APPENDIX = ""
@@ -48,7 +48,7 @@ var/global/list/modifications_types = list(
 	return new/icon('icons/mob/human.dmi', "blank")
 
 
-/datum/body_modification/proc/is_allowed(organ = "", datum/preferences/P, mob/living/carbon/human/H)
+/datum/body_modification/proc/is_allowed(organ = "", datum/preferences/P, mob/living/carbon/human/H, var/silent = FALSE)
 	// Basic validation
 	if(!organ || !(organ in body_parts))
 		return FALSE
@@ -68,15 +68,10 @@ var/global/list/modifications_types = list(
 
 	// Allow psions to remove organs/limbs but not get synthetic ones
 	if(has_psionic_organ)
-		// Debug output to see what's happening
-		if(usr && ismob(usr))
-			log_debug("PSIONIC DEBUG: Checking modification '[name]' (ID: [id]) with nature [nature] for organ [organ] - User: [usr.ckey]")
-
 		if(nature == MODIFICATION_REMOVED)
 			return TRUE // Psions can remove organs/limbs
 		else if(nature == MODIFICATION_SILICON || nature == MODIFICATION_LIFELIKE)
-			// Show message only once to prevent spam
-			if(usr && ismob(usr) && (!usr.last_psionic_warning || world.time > usr.last_psionic_warning + 30))
+			if(!silent && usr && ismob(usr) && (!usr.last_psionic_warning || world.time > usr.last_psionic_warning + 30))
 				to_chat(usr, "Your psionic organ prevents you from using synthetic modifications ([name]).")
 				usr.last_psionic_warning = world.time
 			return FALSE // Psions cannot use synthetic modifications
@@ -85,7 +80,7 @@ var/global/list/modifications_types = list(
 	// Cht'mant, Aulvae, Mycus and Folken cannot take prosthetics
 	if(H && H.species && (H.species.name in list("Cht'mant", "Aulvae", "Mycus", "Folken")))
 		if(nature == MODIFICATION_SILICON || nature == MODIFICATION_LIFELIKE)
-			if(usr && ismob(usr))
+			if(!silent && usr && ismob(usr))
 				to_chat(usr, SPAN_WARNING("[H.species.name] biology cannot accept prosthetic modifications."))
 			return FALSE
 
@@ -99,7 +94,8 @@ var/global/list/modifications_types = list(
 	if(parent_organ)
 		var/datum/body_modification/parent = P?.get_modification(parent_organ)
 		if(parent.nature > nature)
-			to_chat(usr, "[name] can't be attached to [parent.name]")
+			if(!silent)
+				to_chat(usr, "[name] can't be attached to [parent.name]")
 			return FALSE
 
 	// Department restriction check
@@ -109,7 +105,8 @@ var/global/list/modifications_types = list(
 			if(!department)
 				return FALSE
 			if(!department_specific.Find(department))
-				to_chat(usr, "This body-mod does not match your chosen department.")
+				if(!silent)
+					to_chat(usr, "This body-mod does not match your chosen department.")
 				return FALSE
 		else if(P)
 			var/datum/job/J
@@ -119,12 +116,14 @@ var/global/list/modifications_types = list(
 				J = SSjob.GetJob(P.job_high)
 
 			if(!J || !department_specific.Find(J.department))
-				to_chat(usr, "This body-mod does not match your highest-priority department.")
+				if(!silent)
+					to_chat(usr, "This body-mod does not match your highest-priority department.")
 				return FALSE
 
 	// Non-transhuman (cruciform) protection. Most NT changes are blocked if wearer has a cruciform.
 	if(!allow_nt && H?.get_core_implant(/obj/item/implant/core_implant/cruciform))
-		to_chat(usr, "Your cruciform prevents you from using this modification.")
+		if(!silent)
+			to_chat(usr, "Your cruciform prevents you from using this modification.")
 		return FALSE
 	return TRUE
 
