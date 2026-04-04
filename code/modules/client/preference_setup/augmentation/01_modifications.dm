@@ -1,13 +1,9 @@
 /datum/preferences
-	/// Body parts — left of preview (classic chargen layout).
-	var/global/list/augmentation_col_left = list(
-		BP_HEAD, BP_R_ARM, BP_R_LEG,
+	/// Limbs & outer body — full-width category (same UI row as eyes/organs).
+	var/global/list/augmentation_limbs_row = list(
+		BP_HEAD, BP_R_ARM, BP_R_LEG, BP_L_ARM, BP_GROIN, BP_L_LEG,
 	)
-	/// Body parts — right of preview.
-	var/global/list/augmentation_col_right = list(
-		BP_L_ARM, BP_GROIN, BP_L_LEG,
-	)
-	/// Full-width row below (eyes + internal organs).
+	/// Eyes & internal organs — full-width category below limbs.
 	var/global/list/augmentation_internal_row = list(
 		BP_EYES, OP_HEART, OP_KIDNEY_LEFT, OP_KIDNEY_RIGHT, OP_STOMACH, BP_BRAIN, OP_LUNGS, OP_LIVER, OP_APPENDIX,
 	)
@@ -37,7 +33,7 @@
 	pref.modifications_data -= "chest2"
 	pref.modifications_colors -= "chest2"
 
-	var/list/all_tags = pref.augmentation_col_left | pref.augmentation_col_right | pref.augmentation_internal_row
+	var/list/all_tags = pref.augmentation_limbs_row | pref.augmentation_internal_row
 	if(!(pref.current_organ in all_tags))
 		pref.current_organ = BP_HEAD
 
@@ -202,11 +198,11 @@
 	dat += "<style type=\"text/css\">"
 	dat += ".aug_wrap{font-family:Verdana,Geneva,sans-serif;font-size:12px;max-width:920px;margin:0 auto;}"
 	dat += ".aug_main_table{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:6px;}"
-	dat += ".aug_preview_cell{text-align:center;vertical-align:top;width:26%;padding:4px 8px;}"
+	dat += ".aug_preview_cell{text-align:center;vertical-align:top;padding:4px 8px;}"
 	dat += ".aug_preview_cell img{border:1px solid #40628a;background:#000;padding:4px;}"
-	dat += ".aug_side_cell{vertical-align:top;width:37%;padding:4px 6px;line-height:1.35;}"
 	dat += ".aug_detail_row{background:#000;border:1px solid #40628a;padding:10px 12px;margin-top:6px;}"
-	dat += ".aug_internal_row{padding:10px 4px 4px 4px;line-height:1.65;border-top:1px solid #40628a;margin-top:8px;}"
+	dat += ".aug_category_row{padding:10px 4px 4px 4px;line-height:1.65;margin-top:6px;}"
+	dat += ".aug_detail_row+.aug_category_row{border-top:1px solid #40628a;margin-top:10px;padding-top:12px;}"
 	dat += "span.color_holder_box{display:inline-block;width:20px;height:12px;border:1px solid #161616;padding:0;vertical-align:middle;margin-left:6px;}"
 	dat += "#aug_live_desc{margin-top:8px;padding:8px 10px;background:#000;border:1px solid #40628a;min-height:2.5em;font-size:11px;line-height:1.45;white-space:pre-wrap;}"
 	dat += ".aug_color_row{margin-top:8px;padding-top:6px;border-top:1px solid #40628a;}"
@@ -221,19 +217,15 @@
 	dat += "</script>"
 
 	dat += "<div class=\"aug_wrap\">"
-	dat += "<table class=\"aug_main_table\"><tr>"
-	dat += "<td class=\"aug_side_cell\">"
-	for(var/organ in pref.augmentation_col_left)
-		dat += build_organ_row(organ)
-	dat += "</td>"
-	dat += "<td class=\"aug_preview_cell\"><b>Preview</b><br>"
+	dat += "<table class=\"aug_main_table\"><tr><td class=\"aug_preview_cell\"><b>Preview</b><br>"
 	dat += "<img src=new_previewicon[pref.preview_dir].png width=96 height=96 alt=\"Character preview\">"
 	dat += "<div class=\"aug_rotate\"><a href='?src=\ref[src];rotate=right'>&#9664;</a>"
-	dat += "<a href='?src=\ref[src];rotate=left'>&#9654;</a></div></td>"
-	dat += "<td class=\"aug_side_cell\">"
-	for(var/organ in pref.augmentation_col_right)
-		dat += build_organ_row(organ)
-	dat += "</td></tr></table>"
+	dat += "<a href='?src=\ref[src];rotate=left'>&#9654;</a></div></td></tr></table>"
+
+	dat += "<div class=\"aug_category_row\"><b>Limbs &amp; body</b><br>"
+	for(var/organ in pref.augmentation_limbs_row)
+		dat += build_organ_row(organ, TRUE)
+	dat += "</div>"
 
 	dat += "<div class=\"aug_detail_row\">"
 	var/organ_title = capitalize(organ_tag_to_name[pref.current_organ] || "organ")
@@ -255,7 +247,7 @@
 
 	dat += "</div>"
 
-	dat += "<div class=\"aug_internal_row\"><b>Eyes &amp; internal organs</b><br>"
+	dat += "<div class=\"aug_category_row\"><b>Eyes &amp; internal organs</b><br>"
 	for(var/organ in pref.augmentation_internal_row)
 		dat += build_organ_row(organ, TRUE)
 	dat += "</div>"
