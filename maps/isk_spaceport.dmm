@@ -46,6 +46,18 @@
 	},
 /turf/space,
 /area/space)
+"bH" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/blue_slates,
+/area/space)
+"ce" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/wood/wild1,
+/area/space)
 "cO" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/simulated/floor/asteroid/grass,
@@ -54,13 +66,16 @@
 /obj/structure/sign/security/showers{
 	pixel_y = 30
 	},
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
 "eK" = (
 /obj/structure/sign/departmentold/restroom{
 	pixel_y = 32
 	},
-/turf/simulated/floor/industrial/black_large_slates,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
 "eL" = (
 /obj/structure/railing,
@@ -90,6 +105,9 @@
 /area/space)
 "gI" = (
 /obj/machinery/media/jukebox,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/wood/wild1,
 /area/space)
 "hM" = (
@@ -125,6 +143,12 @@
 	},
 /turf/simulated/floor/hull,
 /area/space)
+"lr" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/space)
 "lK" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/simulated/floor/asteroid/grass,
@@ -136,6 +160,7 @@
 /area/space)
 "mE" = (
 /obj/structure/flora/pottedplant/orientaltree,
+/obj/machinery/light/small,
 /turf/simulated/floor/wood/wild1,
 /area/space)
 "mM" = (
@@ -149,7 +174,7 @@
 /obj/structure/sign/neon/bar{
 	pixel_x = 32
 	},
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
 "ng" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -162,6 +187,13 @@
 "po" = (
 /obj/machinery/embedded_controller/radio/airlock/access_controller,
 /turf/simulated/wall,
+/area/space)
+"pN" = (
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/wood/wild1,
 /area/space)
 "qg" = (
 /obj/effect/floor_decal/industrial/warningred{
@@ -203,6 +235,12 @@
 	dir = 1
 	},
 /turf/simulated/floor/airless,
+/area/space)
+"sR" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
 "td" = (
 /obj/effect/floor_decal/industrial/warningred{
@@ -261,7 +299,16 @@
 /area/space)
 "zx" = (
 /obj/structure/coatrack,
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/wood/wild1,
+/area/space)
+"zZ" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
 "AB" = (
 /obj/structure/table/marble,
@@ -293,6 +340,10 @@
 	},
 /turf/simulated/floor/airless,
 /area/space)
+"Dn" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
 "Du" = (
 /obj/structure/lattice,
 /turf/space,
@@ -302,7 +353,11 @@
 	pixel_x = 32;
 	light_range = 2
 	},
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"DE" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
 "En" = (
 /obj/random/flora/jungle_tree/low,
@@ -370,6 +425,9 @@
 /area/space)
 "Ho" = (
 /obj/machinery/vending/boozeomat,
+/obj/machinery/light/small{
+	dir = 1
+	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/space)
 "Hs" = (
@@ -451,6 +509,13 @@
 /obj/machinery/porta_turret/prepper,
 /turf/simulated/floor/hull,
 /area/space)
+"Nx" = (
+/obj/machinery/door/airlock{
+	name = "Unisex Restrooms"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/industrial/blue_slates,
+/area/space)
 "NM" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -505,6 +570,12 @@
 /obj/effect/meteor/dust,
 /turf/space,
 /area/space)
+"Tf" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
 "Tz" = (
 /obj/structure/table/marble,
 /turf/simulated/floor/carpet/sblucarpet,
@@ -535,6 +606,16 @@
 "UD" = (
 /obj/structure/flora/ausbushes/genericbush,
 /turf/simulated/floor/asteroid/grass,
+/area/space)
+"UM" = (
+/obj/random/flora/jungle_tree/low,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"UX" = (
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
 "Vj" = (
 /obj/structure/railing,
@@ -4774,10 +4855,10 @@ ng
 ng
 ng
 tj
-Sg
+ce
 Hl
 Hl
-Sg
+ce
 tj
 ng
 ng
@@ -4977,21 +5058,21 @@ Ft
 fR
 cO
 FA
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
+Tf
+UX
+UX
+UX
+UX
+Tf
 En
 FA
 gE
 gE
-En
+UM
 gE
 gE
 gE
-Hl
+UX
 tj
 tj
 Du
@@ -5076,25 +5157,25 @@ Hl
 tj
 FA
 En
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
 gE
 FA
 gE
 fR
 gE
-Hl
-Hl
+UX
+UX
 ng
 GL
 GL
@@ -5178,18 +5259,18 @@ Hl
 tj
 cO
 fR
-Hl
-Hl
-Hl
-Hl
-Hl
+UX
+UX
+UX
+UX
+UX
 Ly
 lK
-Hl
-Hl
-Hl
-Hl
-Hl
+UX
+UX
+UX
+UX
+UX
 hM
 gE
 gE
@@ -5280,8 +5361,8 @@ Hl
 tj
 tj
 Ly
-Hl
-Hl
+UX
+UX
 tj
 tj
 tj
@@ -5290,8 +5371,8 @@ tj
 tj
 tj
 tj
-Hl
-Hl
+UX
+UX
 hM
 fR
 gE
@@ -5381,9 +5462,9 @@ Hl
 Hl
 Hl
 tj
-Hl
-Hl
-Hl
+UX
+UX
+DE
 tj
 SE
 NM
@@ -5393,7 +5474,7 @@ QE
 QE
 tj
 eK
-Hl
+UX
 gE
 gE
 gE
@@ -5483,26 +5564,26 @@ Hl
 Hl
 Hl
 tj
-Hl
-Hl
-Hl
+UX
+UX
+UX
 tj
 tj
 tj
 tj
-Sk
+bH
 Sk
 Sk
 aj
-Hl
-Hl
+UX
+UX
 cO
 gE
 Ly
 gE
 gE
 gE
-gE
+Dn
 tj
 po
 tj
@@ -5585,9 +5666,9 @@ Hl
 Hl
 Hl
 GY
-Hl
-Hl
-Hl
+UX
+UX
+UX
 tj
 SE
 NM
@@ -5597,14 +5678,14 @@ Sk
 Sk
 tj
 dA
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
 FP
 JH
 JH
@@ -5687,26 +5768,26 @@ Hl
 Hl
 Hl
 Hl
-Hl
-Hl
-Hl
+UX
+UX
+UX
 tj
 tj
 tj
 tj
-BS
-Sk
-Sk
 tj
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
+Nx
+tj
+tj
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
 FP
 JH
 JH
@@ -5789,9 +5870,9 @@ Hl
 Hl
 Hl
 tj
-Hl
-Hl
-Hl
+UX
+UX
+UX
 tj
 vc
 vc
@@ -5800,15 +5881,15 @@ Lo
 Sk
 jI
 tj
-Hl
-Hl
+UX
+UX
 En
 gE
 gE
 gE
 gE
 cO
-gE
+Dn
 po
 tj
 tj
@@ -5891,19 +5972,19 @@ Hl
 Hl
 Hl
 tj
-Hl
-Hl
-Hl
+UX
+UX
+DE
 tj
 Sk
+NM
 Sk
 Sk
-Sk
-Sk
-jI
+NM
+BS
 tj
-Hl
-Hl
+sR
+UX
 gE
 gE
 gE
@@ -5994,8 +6075,8 @@ Hl
 tj
 tj
 FA
-Hl
-Hl
+UX
+UX
 tj
 tj
 tj
@@ -6004,8 +6085,8 @@ tj
 tj
 tj
 tj
-Hl
-Hl
+UX
+UX
 hM
 cO
 gE
@@ -6096,18 +6177,18 @@ Hl
 tj
 fR
 En
-Hl
-Hl
-Hl
-Hl
-Hl
+UX
+UX
+UX
+UX
+UX
 lK
 wj
-Hl
-Hl
-Hl
-Hl
-Hl
+UX
+UX
+UX
+UX
+UX
 hM
 gE
 En
@@ -6198,25 +6279,25 @@ Hl
 tj
 cO
 fR
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
-Hl
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
+UX
 gE
 fR
 gE
 gE
 FA
-Hl
-Hl
+UX
+UX
 ng
 GL
 GL
@@ -6303,21 +6384,21 @@ Ft
 gE
 fR
 cO
-Hl
+zZ
 DB
-Hl
-Hl
+UX
+UX
 mT
-Hl
+zZ
 cO
 gE
 gE
 gE
-gE
+lr
 gE
 gE
 cO
-Hl
+UX
 tj
 tj
 Du
@@ -7220,14 +7301,14 @@ GL
 tj
 tj
 Sg
-Sg
+pN
 Sg
 Sg
 Ng
 Tz
 tn
 Sg
-Sg
+pN
 jN
 tj
 tj
