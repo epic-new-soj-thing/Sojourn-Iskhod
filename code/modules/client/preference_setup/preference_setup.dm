@@ -15,6 +15,14 @@ var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 	update_preview_icon = TRUE
 	category_item_type = /datum/category_item/player_setup_item/augmentation
 
+/// Core implant UI is embedded in the modifications panel; skip the standalone implant row.
+/datum/category_group/player_setup_category/augmentation/content(var/mob/user)
+	. = ""
+	for(var/datum/category_item/player_setup_item/PI in items)
+		if(istype(PI, /datum/category_item/player_setup_item/augmentation/implant))
+			continue
+		. += "[PI.content(user)]<br>"
+
 /datum/category_group/player_setup_category/background_preferences
 	name = "Background"
 	sort_order = 3
