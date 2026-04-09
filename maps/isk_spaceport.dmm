@@ -1,10 +1,28 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ah" = (
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/space,
+/area/space)
 "aj" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock{
 	name = "Unisex Restrooms"
 	},
 /turf/simulated/floor/industrial/blue_slates,
+/area/space)
+"al" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
 "as" = (
 /obj/effect/floor_decal/industrial/warningred{
@@ -15,7 +33,502 @@
 	},
 /turf/simulated/floor/hull,
 /area/space)
-"av" = (
+"aF" = (
+/obj/machinery/power/tracker,
+/obj/structure/cable,
+/turf/simulated/floor/plating/under,
+/area/space)
+"aK" = (
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/turf/simulated/floor/hull,
+/area/space)
+"be" = (
+/obj/machinery/vending/props,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"bh" = (
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/space)
+"bo" = (
+/obj/machinery/power/apc/hyper{
+	dir = 1;
+	environ = 1;
+	equipment = 1;
+	pixel_y = 26
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"br" = (
+/obj/structure/sign/security/showers{
+	pixel_y = 30
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 10
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"bs" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"bv" = (
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"bz" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5;
+	tag = "icon-intact (NORTHEAST)"
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"bH" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/blue_slates,
+/area/space)
+"bJ" = (
+/obj/machinery/vending/propis_loot_box,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"bU" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"ce" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/wood/wild1,
+/area/space)
+"cr" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"cM" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"cO" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"cY" = (
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"dk" = (
+/obj/structure/lattice,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/turf/space,
+/area/space)
+"dl" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"dx" = (
+/obj/machinery/door/firedoor/multi_tile,
+/obj/machinery/door/airlock/multi_tile/metal/mait,
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"dA" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"eo" = (
+/obj/machinery/door/firedoor/multi_tile{
+	dir = 2
+	},
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 2;
+	name = "Blossom Bar"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/space)
+"er" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"et" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"eF" = (
+/obj/machinery/vending/cola,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"eI" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 6
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"eK" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"eL" = (
+/obj/machinery/disposal,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"eY" = (
+/obj/structure/flora/ausbushes/lavendergrass,
+/obj/structure/flora/small/trailrockb5,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"fh" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/railing/grey,
+/turf/space,
+/area/space)
+"fl" = (
+/obj/machinery/vending/coffee,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"fw" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"fE" = (
+/obj/structure/windoor_assembly{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"fG" = (
+/obj/machinery/vending/containers,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"fR" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"gd" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/space,
+/area/space)
+"ge" = (
+/turf/unsimulated/mask,
+/area/space)
+"gE" = (
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"gI" = (
+/obj/machinery/media/jukebox,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild1,
+/area/space)
+"gX" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/space)
+"hl" = (
+/obj/structure/multiz/stairs/active/bottom{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"hy" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 10
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"hC" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"hM" = (
+/obj/structure/table/bench/wooden,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"hN" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"hU" = (
+/turf/simulated/floor/plating/under,
+/area/space)
+"hW" = (
+/obj/structure/table/marble,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"il" = (
+/obj/machinery/power/apc{
+	name = "South APC";
+	pixel_y = -28
+	},
+/obj/structure/cable,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"ir" = (
+/obj/effect/meteor/big,
+/turf/space,
+/area/space)
+"iz" = (
+/obj/structure/sink{
+	dir = 1;
+	pixel_y = 24
+	},
+/turf/simulated/floor/wood/wild1,
+/area/space)
+"iD" = (
+/obj/random/flora/jungle_tree,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"iZ" = (
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"jj" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"jF" = (
+/obj/effect/floor_decal/industrial/warningred,
+/turf/simulated/floor/hull,
+/area/space)
+"jI" = (
+/obj/machinery/washing_machine,
+/turf/simulated/floor/industrial/blue_slates,
+/area/space)
+"jN" = (
+/obj/machinery/disposal,
+/turf/simulated/floor/wood/wild1,
+/area/space)
+"kl" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"kD" = (
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 4
+	},
+/turf/simulated/floor/hull,
+/area/space)
+"kS" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"lr" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"ls" = (
+/obj/machinery/vending/fitness,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"lK" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"lO" = (
+/obj/item/stack/ore/strangerock,
+/turf/space,
+/area/space)
+"mq" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"mB" = (
+/obj/structure/table/marble,
+/obj/machinery/chemical_dispenser/soda,
+/turf/simulated/floor/carpet/sblucarpet,
+/area/space)
+"mE" = (
+/obj/structure/flora/pottedplant/orientaltree,
+/obj/machinery/light/small,
+/turf/simulated/floor/wood/wild1,
+/area/space)
+"mM" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"mT" = (
+/obj/structure/sign/neon/bar{
+	pixel_x = 32
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"ng" = (
+/obj/effect/window_lwall_spawn/reinforced,
+/turf/simulated/floor/plating/under,
+/area/space)
+"nj" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 9
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"nH" = (
+/obj/machinery/atmospherics/pipe/zpipe/down{
+	dir = 8
+	},
+/turf/simulated/open,
+/area/space)
+"oh" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"oi" = (
 /obj/machinery/vending/boozeomat,
 /obj/machinery/light/small{
 	dir = 1
@@ -33,538 +546,21 @@
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/space)
-"aF" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"aK" = (
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
-	},
-/turf/simulated/floor/hull,
-/area/space)
-"aT" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate,
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
-	},
-/obj/machinery/door/airlock/external,
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"bb" = (
-/obj/machinery/vending/fitness,
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"be" = (
-/obj/machinery/vending/props,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"bh" = (
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/space)
-"bs" = (
-/obj/machinery/power/solar,
-/obj/structure/cable,
-/turf/simulated/floor/plating/under,
-/area/space)
-"bH" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/industrial/blue_slates,
-/area/space)
-"bN" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/structure/railing/grey,
-/turf/space,
-/area/space)
-"ce" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor/wood/wild1,
-/area/space)
-"cg" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 9
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"cE" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"cO" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"dr" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"dv" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"dA" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/wood/wild1,
-/area/space)
-"dG" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 8
-	},
+"oD" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"dI" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 10
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"eg" = (
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/turf/space,
-/area/space)
-"es" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"ew" = (
-/obj/machinery/atmospherics/pipe/zpipe/down{
-	dir = 8
-	},
-/turf/simulated/open,
-/area/space)
-"eE" = (
-/obj/structure/flora/small/trailrocka1,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"eG" = (
-/obj/random/flora/jungle_tree,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"eK" = (
-/obj/machinery/atmospherics/pipe/tank/plasma{
-	dir = 8;
-	description_antag = "Will bldddddind people if they do not wear face-covering gear";
-	start_pressure = 15000
-	},
-/turf/simulated/floor/reinforced,
-/area/space)
-"eL" = (
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/turf/space,
-/area/space)
-"fl" = (
-/obj/structure/railing/grey,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"fA" = (
-/obj/machinery/vending/coffee,
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"fF" = (
-/obj/machinery/atmospherics/portables_connector,
-/turf/simulated/floor/plating/under,
-/area/space)
-"fR" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"fU" = (
-/obj/structure/multiz/stairs/enter/bottom{
+/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
 	dir = 4
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"fX" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"gb" = (
-/obj/structure/multiz/stairs/enter{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"ge" = (
-/turf/unsimulated/mask,
-/area/space)
-"gj" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"gE" = (
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"gG" = (
-/obj/structure/lattice,
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/turf/space,
-/area/space)
-"gI" = (
-/obj/machinery/media/jukebox,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/simulated/floor/wood/wild1,
-/area/space)
-"hd" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/turf/space,
-/area/space)
-"hx" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 4
-	},
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"hM" = (
-/obj/structure/table/bench/wooden,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"hO" = (
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/turf/space,
-/area/space)
-"il" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"ip" = (
-/obj/machinery/door/airlock/maintenance_interior,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"ir" = (
-/obj/effect/meteor/big,
-/turf/space,
-/area/space)
-"iz" = (
-/obj/structure/sink{
-	dir = 1;
-	pixel_y = 24
-	},
-/turf/simulated/floor/wood/wild1,
-/area/space)
-"iD" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate,
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/effect/floor_decal/industrial/warningred,
-/obj/machinery/door/airlock/external,
+"pf" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"iE" = (
-/obj/structure/railing/grey,
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/turf/space,
-/area/space)
-"iH" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"jw" = (
-/obj/machinery/vending/propis_loot_box,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"jC" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 9
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"jE" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"jF" = (
-/obj/effect/floor_decal/industrial/warningred,
-/turf/simulated/floor/hull,
-/area/space)
-"jI" = (
-/obj/machinery/washing_machine,
-/turf/simulated/floor/industrial/blue_slates,
-/area/space)
-"jN" = (
-/obj/machinery/disposal,
-/turf/simulated/floor/wood/wild1,
-/area/space)
-"jP" = (
-/obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"kD" = (
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 4
-	},
-/turf/simulated/floor/hull,
-/area/space)
-"kK" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 10
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"li" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"lr" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"lw" = (
-/obj/structure/sign/departmentold/restroom{
-	pixel_y = 32
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"lJ" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate,
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/effect/floor_decal/industrial/warningred{
-	dir = 1
-	},
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"lK" = (
-/obj/structure/flora/ausbushes/sparsegrass,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"md" = (
-/obj/machinery/atmospherics/pipe/zpipe/up{
-	dir = 8
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"mB" = (
-/obj/structure/table/marble,
-/obj/machinery/chemical_dispenser/soda,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/space)
-"mE" = (
-/obj/structure/flora/pottedplant/orientaltree,
-/obj/machinery/light/small,
-/turf/simulated/floor/wood/wild1,
-/area/space)
-"mH" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 5
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"mM" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"mP" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/space)
-"mT" = (
-/obj/structure/sign/neon/bar{
-	pixel_x = 32
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"mZ" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 9
-	},
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"ng" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/turf/simulated/floor/plating/under,
-/area/space)
-"nh" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 4
-	},
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"nn" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"no" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"nH" = (
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/small/trailrockb5,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"nP" = (
-/obj/structure/multiz/stairs/active{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"oZ" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/turf/space,
 /area/space)
 "pj" = (
 /obj/item/stool/custom/bar_special,
@@ -574,17 +570,6 @@
 /obj/machinery/embedded_controller/radio/airlock/access_controller,
 /turf/simulated/wall,
 /area/space)
-"ps" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/flora/small/trailrockb5,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"pv" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 6
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
 "pN" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -592,13 +577,9 @@
 	},
 /turf/simulated/floor/wood/wild1,
 /area/space)
-"pT" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating/under,
+"qd" = (
+/obj/machinery/door/airlock/maintenance_interior,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/space)
 "qg" = (
 /obj/effect/floor_decal/industrial/warningred{
@@ -607,47 +588,58 @@
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/hull,
 /area/space)
+"qr" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/effect/floor_decal/industrial/warningred{
+	dir = 1
+	},
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
 "qz" = (
 /obj/structure/windoor_assembly{
 	dir = 4
 	},
 /turf/simulated/floor/wood/wild1,
 /area/space)
-"qM" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+"qL" = (
 /obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
 	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"qN" = (
-/obj/structure/railing/grey{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"qZ" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 1
+"qS" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/industrial/black_large_slates,
+/obj/structure/table/marble,
+/turf/simulated/floor/wood/wild1,
+/area/space)
+"rk" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5;
+	tag = "icon-intact (NORTHEAST)"
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
 /area/space)
 "rl" = (
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/airless,
-/area/space)
-"rs" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating/under,
 /area/space)
 "ry" = (
 /obj/effect/floor_decal/industrial/danger{
@@ -655,6 +647,38 @@
 	tag = "icon-danger (EAST)"
 	},
 /turf/simulated/floor/airless,
+/area/space)
+"rA" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 5
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"rD" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"rI" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 9
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"rM" = (
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
 /area/space)
 "rX" = (
 /obj/structure/window/reinforced/iskhod,
@@ -673,27 +697,34 @@
 	},
 /turf/simulated/floor/airless,
 /area/space)
-"sl" = (
-/obj/machinery/door/airlock/maintenance_interior,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+"sn" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 6
 	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"sy" = (
+/obj/machinery/door/airlock/maintenance_interior,
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"su" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate,
-/obj/effect/floor_decal/industrial/warning/fulltile,
-/obj/effect/floor_decal/industrial/warningred,
-/obj/machinery/door/airlock/external,
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+"sM" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
+	},
+/obj/structure/railing/grey{
+	dir = 4
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
 "sR" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 8
+	dir = 10
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
@@ -712,56 +743,38 @@
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/space)
-"tt" = (
-/obj/structure/multiz/stairs/active/bottom{
+"tu" = (
+/obj/structure/railing/grey{
 	dir = 4
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"tx" = (
+"tG" = (
 /obj/structure/railing/grey{
 	dir = 8
 	},
-/turf/simulated/floor/industrial/black_large_slates,
+/obj/structure/railing/grey,
+/turf/space,
 /area/space)
-"tz" = (
-/obj/machinery/door/firedoor/multi_tile{
-	dir = 2
+"ud" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
-/obj/machinery/door/airlock/multi_tile/glass{
-	dir = 2;
-	name = "Blossom Bar"
-	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"uj" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/carpet/sblucarpet,
-/area/space)
-"tE" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"tR" = (
-/obj/structure/table/marble,
-/turf/simulated/floor/wood/wild1,
-/area/space)
-"tT" = (
-/obj/structure/lattice,
+"ul" = (
 /obj/structure/railing/grey{
-	dir = 4
-	},
-/turf/space,
-/area/space)
-"tV" = (
-/obj/structure/multiz/stairs/active{
-	dir = 4
+	dir = 8
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
@@ -769,57 +782,11 @@
 /obj/machinery/vending/style,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"uA" = (
-/obj/machinery/power/solar_control{
-	dir = 4;
-	pixel_x = -5
-	},
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"uC" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 9
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
 "uK" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 8
 	},
 /turf/simulated/floor/carpet/sblucarpet,
-/area/space)
-"uS" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 6
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"uV" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 8
-	},
-/turf/simulated/floor/reinforced,
-/area/space)
-"vb" = (
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/structure/railing/grey,
-/turf/space,
 /area/space)
 "vc" = (
 /obj/effect/floor_decal/floordetail/edgedrain{
@@ -833,34 +800,44 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/space)
 "vi" = (
+/obj/machinery/power/apc/hyper{
+	dir = 1;
+	environ = 1;
+	equipment = 1;
+	pixel_y = 26
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2";
+	pixel_y = 0
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 10
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"vu" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"vV" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 9
+	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/wood/wild1,
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
-"vn" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
+"vX" = (
+/obj/structure/railing/grey{
+	dir = 8
 	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"vS" = (
-/obj/machinery/door/firedoor/multi_tile{
-	dir = 2
-	},
-/obj/machinery/door/airlock/multi_tile/glass{
-	dir = 2
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/space,
 /area/space)
 "vZ" = (
 /obj/structure/table/marble,
@@ -869,69 +846,61 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/space)
-"wb" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate,
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+"wa" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"wb" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 6
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
 /area/space)
 "wj" = (
 /obj/structure/flora/ausbushes/pointybush,
 /turf/simulated/floor/asteroid/grass,
 /area/space)
-"wp" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 8
-	},
-/turf/simulated/floor/reinforced,
-/area/space)
-"wO" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/carpet/sblucarpet,
-/area/space)
-"xc" = (
+"wo" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
 	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"wq" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
 /obj/structure/cable{
-	d1 = 2;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "4-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/space)
-"xz" = (
+"wr" = (
 /obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/structure/railing/grey{
-	dir = 8
+	dir = 4
 	},
 /turf/space,
 /area/space)
-"xN" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/turf/simulated/floor/plating/under,
+"ww" = (
+/obj/machinery/vending/kink,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"xS" = (
-/obj/random/flora/jungle_tree,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"xU" = (
+"wX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 8
+	dir = 10
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -940,40 +909,7 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"xX" = (
-/obj/machinery/power/apc{
-	name = "South APC";
-	pixel_y = -28
-	},
-/obj/structure/cable,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"yL" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"yX" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"za" = (
+"xc" = (
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 4;
@@ -986,62 +922,27 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/space)
-"zd" = (
-/obj/item/stool/custom/bar_special,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+"xh" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 6
 	},
-/turf/simulated/floor/carpet/sblucarpet,
-/area/space)
-"zx" = (
-/obj/structure/coatrack,
-/obj/machinery/light/small{
-	dir = 8
-	},
-/turf/simulated/floor/wood/wild1,
-/area/space)
-"zJ" = (
-/obj/machinery/cash_register,
-/obj/structure/table/marble,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"zK" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"zZ" = (
-/obj/machinery/light/small{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"Ak" = (
-/obj/item/material/ashtray,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"Am" = (
 /obj/structure/cable{
 	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	d2 = 8;
+	icon_state = "2-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 8
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"Ay" = (
+"xr" = (
+/obj/structure/flora/small/trailrockb4,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"xA" = (
 /obj/structure/cable/ender{
 	id = "ssolar"
 	},
@@ -1052,6 +953,94 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
+"xN" = (
+/obj/machinery/power/apc{
+	name = "South APC";
+	pixel_y = -28
+	},
+/obj/structure/cable,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"xQ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 6
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"yk" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/effect/floor_decal/industrial/warningred,
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"yv" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/space,
+/area/space)
+"yz" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"zc" = (
+/obj/machinery/power/apc{
+	name = "South APC";
+	pixel_y = -28
+	},
+/obj/structure/cable,
+/turf/simulated/floor/plating/under,
+/area/space)
+"zx" = (
+/obj/structure/coatrack,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/wood/wild1,
+/area/space)
+"zZ" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"Ah" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/space)
+"Am" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 9
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
 "AB" = (
 /obj/structure/table/marble,
 /obj/machinery/chemical_dispenser/coffee_master{
@@ -1059,58 +1048,54 @@
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/space)
-"AL" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/turf/space,
-/area/space)
 "AN" = (
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/wood/wild1,
 /area/space)
-"AY" = (
+"BI" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/mob/living/bot/secbot/ed209,
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"Bd" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"BG" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	dir = 8
-	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
 "BS" = (
 /obj/structure/undies_wardrobe,
 /turf/simulated/floor/industrial/blue_slates,
 /area/space)
+"BX" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/wood/wild1,
+/area/space)
 "BZ" = (
 /obj/machinery/vending/drip,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"Cl" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 5
+"Cd" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
-"CE" = (
+"Cf" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"Cy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 8
 	},
@@ -1124,20 +1109,34 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"CI" = (
+"CL" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
+	dir = 9
 	},
-/obj/machinery/meter,
+/obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 4;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "4-8"
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/space)
 "CM" = (
 /turf/simulated/floor/airless,
+/area/space)
+"CY" = (
+/obj/item/stool/custom/bar_special,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/space)
+"De" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/obj/structure/flora/small/trailrockb5,
+/turf/simulated/floor/asteroid/grass,
 /area/space)
 "Di" = (
 /obj/effect/floor_decal/industrial/danger,
@@ -1166,12 +1165,6 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/space)
-"DX" = (
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
 "En" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -1185,40 +1178,69 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"Eo" = (
-/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	dir = 4
+"Ez" = (
+/obj/structure/cable/ender{
+	id = "ssolar"
+	},
+/obj/structure/cable{
+	d2 = 2;
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"Fe" = (
-/obj/machinery/disposal,
-/turf/simulated/floor/industrial/green_large_slates,
+"ET" = (
+/obj/structure/railing/grey,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"Fn" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 5;
-	tag = "icon-intact (NORTHEAST)"
+"EV" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/space)
+"Fg" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/space)
+"Fq" = (
+/obj/machinery/door/airlock/maintenance_interior,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"Fr" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/structure/catwalk,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
 /turf/simulated/floor/plating/under,
 /area/space)
-"Fr" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
 "Ft" = (
-/obj/structure/multiz/stairs/active/bottom{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/black_large_slates,
+/obj/structure/railing/grey,
+/turf/space,
 /area/space)
 "FA" = (
 /obj/structure/flora/ausbushes/grassybush,
 /turf/simulated/floor/asteroid/grass,
+/area/space)
+"FD" = (
+/obj/item/material/ashtray,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"FI" = (
+/obj/structure/multiz/stairs/active{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
 /area/space)
 "FJ" = (
 /obj/effect/floor_decal/industrial/warningred{
@@ -1243,15 +1265,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"Ge" = (
-/obj/structure/sign/security/showers{
-	pixel_y = 30
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 10
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
 "Gj" = (
 /obj/structure/table/marble,
 /obj/item/reagent_containers/drinks/shaker,
@@ -1264,14 +1277,20 @@
 /turf/simulated/floor/wood/wild1,
 /area/space)
 "Gr" = (
-/turf/simulated/floor/plating/under,
-/area/space)
-"GA" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	dir = 8
+/obj/machinery/atmospherics/pipe/tank/plasma{
+	dir = 8;
+	description_antag = "Will bldddddind people if they do not wear face-covering gear";
+	start_pressure = 15000
 	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/reinforced,
+/area/space)
+"Gu" = (
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
 /area/space)
 "GI" = (
 /turf/simulated/floor/carpet/sblucarpet,
@@ -1291,16 +1310,35 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
+"Hh" = (
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
 "Hl" = (
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
 "Ho" = (
-/obj/structure/flora/small/trailrockb4,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"Hp" = (
-/obj/machinery/vending/cola,
-/turf/simulated/floor/industrial/green_large_slates,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/plating/under,
 /area/space)
 "Hs" = (
 /obj/effect/floor_decal/industrial/danger{
@@ -1312,48 +1350,19 @@
 	},
 /turf/simulated/floor/airless,
 /area/space)
-"HC" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+"HP" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"Ii" = (
+/obj/machinery/atmospherics/pipe/tank/plasma{
 	dir = 4;
-	tag = "icon-map (EAST)"
+	description_antag = "Will bldddddind people if they do not wear face-covering gear";
+	start_pressure = 15000
 	},
-/obj/structure/catwalk,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"HE" = (
-/obj/machinery/power/apc/hyper{
-	dir = 1;
-	environ = 1;
-	equipment = 1;
-	pixel_y = 26
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 0
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 10
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"HH" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/reinforced,
 /area/space)
 "Is" = (
 /obj/effect/floor_decal/industrial/warningred,
@@ -1362,36 +1371,41 @@
 	},
 /turf/simulated/floor/hull,
 /area/space)
-"Ix" = (
+"Iw" = (
+/obj/structure/table/marble,
 /obj/structure/cable{
 	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/space)
+"Jw" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	d1 = 2;
 	d2 = 4;
-	icon_state = "1-4"
+	icon_state = "2-4"
 	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/turf/simulated/floor/industrial/black_large_slates,
+/turf/simulated/floor/plating/under,
 /area/space)
-"IA" = (
+"JC" = (
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 8
-	},
-/turf/simulated/floor/reinforced,
-/area/space)
-"JC" = (
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 4
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
@@ -1404,13 +1418,35 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"JL" = (
-/obj/structure/cable/ender{
-	id = "ssolar"
+"JX" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/universal{
+	dir = 4
+	},
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"JY" = (
+/obj/machinery/atmospherics/pipe/zpipe/up{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"Ka" = (
+/obj/machinery/power/solar_control{
+	dir = 4;
+	pixel_x = -5
 	},
 /obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2"
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"Kj" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
+	dir = 8
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
@@ -1422,10 +1458,45 @@
 /obj/machinery/chemical_dispenser/beer,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/space)
+"Ko" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/machinery/meter,
+/turf/simulated/floor/plating/under,
+/area/space)
+"Kz" = (
+/obj/machinery/atmospherics/portables_connector,
+/turf/simulated/floor/plating/under,
+/area/space)
+"KM" = (
+/obj/machinery/vending/cigarette,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"KP" = (
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/space,
+/area/space)
 "Lh" = (
 /obj/structure/table/marble,
 /obj/item/material/ashtray,
 /turf/simulated/floor/carpet/sblucarpet,
+/area/space)
+"Lk" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/turf/simulated/floor/plating/under,
 /area/space)
 "Lo" = (
 /obj/structure/table/rack,
@@ -1435,11 +1506,23 @@
 /turf/simulated/floor/industrial/blue_slates,
 /area/space)
 "Lr" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/power/solar,
+/obj/structure/cable,
+/turf/simulated/floor/plating/under,
+/area/space)
+"Ly" = (
+/obj/structure/flora/ausbushes/fernybush,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"LU" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8;
+	tag = "icon-danger (WEST)"
 	},
+/turf/simulated/floor/airless,
+/area/space)
+"Mb" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable{
 	d1 = 2;
 	d2 = 4;
@@ -1450,100 +1533,72 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"Ly" = (
-/obj/structure/flora/ausbushes/fernybush,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"LR" = (
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/plating/under,
-/area/space)
-"LT" = (
-/obj/machinery/door/firedoor/multi_tile,
-/obj/machinery/door/airlock/multi_tile/metal/mait,
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"LU" = (
-/obj/effect/floor_decal/industrial/danger{
-	dir = 8;
-	tag = "icon-danger (WEST)"
-	},
-/turf/simulated/floor/airless,
-/area/space)
-"Mr" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 9
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"Ms" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 10
-	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
 /turf/simulated/floor/industrial/green_large_slates,
 /area/space)
-"Mu" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+"Mf" = (
+/obj/machinery/vending/neko,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"Mg" = (
+/obj/machinery/atmospherics/pipe/zpipe/up{
+	dir = 4
 	},
 /turf/simulated/floor/plating/under,
 /area/space)
-"MQ" = (
-/obj/machinery/atmospherics/pipe/tank/plasma{
-	dir = 4;
-	description_antag = "Will bldddddind people if they do not wear face-covering gear";
-	start_pressure = 15000
+"Mi" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/plating/under,
 /area/space)
-"MZ" = (
-/obj/machinery/door/airlock/maintenance_interior,
+"Mu" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/space,
+/area/space)
+"MK" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
+	dir = 4
+	},
 /turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"MQ" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"MY" = (
+/obj/machinery/door/firedoor/multi_tile{
+	dir = 2
+	},
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 2
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"Nd" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
 "Ng" = (
 /obj/structure/bed/chair/comfy/blue,
 /turf/simulated/floor/carpet/sblucarpet,
 /area/space)
-"Nh" = (
-/obj/structure/table/marble,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/carpet/sblucarpet,
-/area/space)
 "Nt" = (
 /obj/machinery/porta_turret/prepper,
 /turf/simulated/floor/hull,
-/area/space)
-"Nw" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/universal{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/black_large_slates,
 /area/space)
 "Nx" = (
 /obj/machinery/door/airlock{
@@ -1552,12 +1607,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/industrial/blue_slates,
 /area/space)
-"NJ" = (
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
 "NM" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -1565,30 +1614,42 @@
 	},
 /turf/simulated/floor/industrial/blue_slates,
 /area/space)
-"Oo" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 6
-	},
+"Ox" = (
+/obj/structure/table/marble,
 /obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/turf/simulated/floor/industrial/green_large_slates,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"PA" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 6
+"OT" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
 	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"Pf" = (
+/obj/structure/lattice,
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/space,
+/area/space)
+"PO" = (
+/obj/machinery/cash_register,
+/obj/structure/table/marble,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
 "Qi" = (
 /obj/structure/artwork_statue,
 /turf/simulated/floor/wood/wild1,
 /area/space)
-"Qs" = (
-/obj/structure/windoor_assembly{
-	dir = 8
+"Ql" = (
+/obj/structure/multiz/stairs/enter{
+	dir = 4
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
@@ -1600,16 +1661,6 @@
 	pixel_y = 0
 	},
 /turf/simulated/floor/plating/under,
-/area/space)
-"QA" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate,
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
 /area/space)
 "QE" = (
 /obj/structure/sink{
@@ -1623,40 +1674,126 @@
 	},
 /turf/simulated/floor/industrial/blue_slates,
 /area/space)
-"QV" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"Rb" = (
+"QO" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 6
+	dir = 5
 	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"Rp" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/effect/floor_decal/industrial/warningred,
+/obj/machinery/door/airlock/external,
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"Rs" = (
 /obj/structure/cable{
-	d1 = 2;
+	d1 = 1;
 	d2 = 8;
-	icon_state = "2-8"
+	icon_state = "1-8"
 	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"RE" = (
+/obj/structure/multiz/stairs/active/bottom{
+	dir = 8
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"RF" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
+"RQ" = (
+/obj/random/flora/jungle_tree,
+/obj/machinery/light/small{
+	dir = 8
 	},
-/obj/structure/table/marble,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"Sg" = (
 /turf/simulated/floor/wood/wild1,
 /area/space)
-"RG" = (
+"Sk" = (
+/turf/simulated/floor/industrial/blue_slates,
+/area/space)
+"Sl" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 8;
+	tag = "icon-danger (WEST)"
+	},
+/obj/effect/floor_decal/industrial/danger,
+/turf/simulated/floor/airless,
+/area/space)
+"SE" = (
+/obj/structure/toilet{
+	pixel_y = 10
+	},
+/turf/simulated/floor/industrial/blue_slates,
+/area/space)
+"SF" = (
+/obj/effect/meteor/dust,
+/turf/space,
+/area/space)
+"SJ" = (
+/obj/structure/multiz/stairs/active{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"Tf" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/green_large_slates,
+/area/space)
+"Tx" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"Tz" = (
+/obj/structure/table/marble,
+/turf/simulated/floor/carpet/sblucarpet,
+/area/space)
+"TB" = (
+/obj/effect/floor_decal/industrial/danger{
+	dir = 4;
+	tag = "icon-danger (EAST)"
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1
+	},
+/turf/simulated/floor/airless,
+/area/space)
+"TT" = (
+/obj/structure/railing/grey,
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/turf/space,
+/area/space)
+"Us" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"Uy" = (
+/turf/simulated/wall/rock,
+/area/space)
+"UD" = (
+/obj/structure/flora/ausbushes/genericbush,
+/turf/simulated/floor/asteroid/grass,
+/area/space)
+"UJ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 5
 	},
@@ -1677,146 +1814,18 @@
 	},
 /turf/simulated/floor/industrial/green_large_slates,
 /area/space)
-"RR" = (
-/obj/item/stack/ore/strangerock,
-/turf/space,
-/area/space)
-"RT" = (
-/obj/machinery/power/apc/hyper{
-	dir = 1;
-	environ = 1;
-	equipment = 1;
-	pixel_y = 26
-	},
-/obj/structure/cable{
-	d2 = 2;
-	icon_state = "0-2";
-	pixel_y = 0
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"Se" = (
-/obj/structure/table/marble,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"Sg" = (
-/turf/simulated/floor/wood/wild1,
-/area/space)
-"Sj" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 4;
-	icon_state = "2-4"
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"Sk" = (
-/turf/simulated/floor/industrial/blue_slates,
-/area/space)
-"Sl" = (
-/obj/effect/floor_decal/industrial/danger{
-	dir = 8;
-	tag = "icon-danger (WEST)"
-	},
-/obj/effect/floor_decal/industrial/danger,
-/turf/simulated/floor/airless,
-/area/space)
-"SA" = (
-/obj/machinery/vending/cigarette,
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"SC" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/obj/machinery/meter,
-/turf/simulated/floor/plating/under,
-/area/space)
-"SE" = (
-/obj/structure/toilet{
-	pixel_y = 10
-	},
-/turf/simulated/floor/industrial/blue_slates,
-/area/space)
-"SF" = (
-/obj/effect/meteor/dust,
-/turf/space,
-/area/space)
-"Tf" = (
-/obj/machinery/light/small{
+"UM" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 8
 	},
 /turf/simulated/floor/industrial/green_large_slates,
 /area/space)
-"Tz" = (
-/obj/structure/table/marble,
-/turf/simulated/floor/carpet/sblucarpet,
-/area/space)
-"TB" = (
-/obj/effect/floor_decal/industrial/danger{
+"UR" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
 	dir = 4;
-	tag = "icon-danger (EAST)"
-	},
-/obj/effect/floor_decal/industrial/danger{
-	dir = 1
-	},
-/turf/simulated/floor/airless,
-/area/space)
-"TE" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/hidden/yellow{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"TF" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 5;
-	tag = "icon-intact (NORTHEAST)"
+	tag = "icon-map (EAST)"
 	},
 /obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/space)
-"TI" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/space)
-"TP" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"Ua" = (
-/obj/machinery/power/apc{
-	name = "South APC";
-	pixel_y = -28
-	},
-/obj/structure/cable,
-/turf/simulated/floor/industrial/green_large_slates,
-/area/space)
-"Uf" = (
-/obj/machinery/power/tracker,
-/obj/structure/cable,
-/turf/simulated/floor/plating/under,
-/area/space)
-"Us" = (
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
-	},
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
@@ -1824,49 +1833,43 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/space)
-"Uy" = (
-/turf/simulated/wall/rock,
-/area/space)
-"UD" = (
-/obj/structure/flora/ausbushes/genericbush,
-/turf/simulated/floor/asteroid/grass,
-/area/space)
-"UM" = (
-/obj/structure/railing/grey,
-/turf/space,
+"UV" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
 /area/space)
 "UX" = (
 /turf/simulated/floor/industrial/green_large_slates,
 /area/space)
-"UZ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 9
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
 "Vj" = (
-/obj/structure/table/marble,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"Vs" = (
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable{
 	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
+	d2 = 2;
+	icon_state = "1-2"
 	},
-/obj/structure/cable{
-	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/turf/simulated/floor/plating/under,
+/mob/living/bot/secbot/ed209,
+/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
-"Vw" = (
+"Vs" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/turf/space,
+/area/space)
+"WN" = (
+/obj/structure/sign/departmentold/restroom{
+	pixel_y = 32
+	},
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -1875,53 +1878,9 @@
 	},
 /turf/simulated/floor/industrial/green_large_slates,
 /area/space)
-"Vy" = (
-/obj/machinery/atmospherics/pipe/zpipe/down{
-	dir = 4
-	},
-/turf/simulated/open,
-/area/space)
-"VJ" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
-	dir = 10
-	},
-/obj/structure/cable{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"VP" = (
+"WX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"VR" = (
-/obj/machinery/power/apc{
-	name = "South APC";
-	pixel_y = -28
-	},
-/obj/structure/cable,
-/turf/simulated/floor/plating/under,
-/area/space)
-"VV" = (
-/obj/structure/multiz/stairs/enter{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"Wx" = (
-/obj/machinery/vending/neko,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/space)
-"WG" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/turf/simulated/floor/industrial/green_large_slates,
 /area/space)
 "Xf" = (
 /obj/machinery/atm{
@@ -1930,28 +1889,71 @@
 	},
 /turf/simulated/floor/wood/wild1,
 /area/space)
-"Xw" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/structure/railing/grey{
+"Xg" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4
 	},
-/turf/space,
-/area/space)
-"XQ" = (
+/obj/structure/catwalk,
 /obj/structure/cable{
-	d1 = 1;
+	d1 = 4;
 	d2 = 8;
-	icon_state = "1-8"
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"Xk" = (
+/obj/structure/multiz/stairs/enter{
+	dir = 8
 	},
 /turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"XA" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 9
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/space)
+"XB" = (
+/obj/machinery/atmospherics/pipe/zpipe/down{
+	dir = 4
+	},
+/turf/simulated/open,
+/area/space)
+"XH" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/machinery/meter,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating/under,
+/area/space)
+"XI" = (
+/obj/structure/flora/small/trailrocka1,
+/turf/simulated/floor/asteroid/grass,
 /area/space)
 "Ym" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 4
 	},
 /turf/simulated/floor/carpet/sblucarpet,
+/area/space)
+"YA" = (
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/carpet/sblucarpet,
+/area/space)
+"YD" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/turf/simulated/floor/plating/under,
 /area/space)
 "YJ" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate,
@@ -1965,20 +1967,26 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
-"Zt" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
-/obj/structure/cable{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/industrial/green_large_slates,
+"Zj" = (
+/obj/structure/table/marble,
+/turf/simulated/floor/wood/wild1,
 /area/space)
 "ZL" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/space)
+"ZW" = (
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/space)
@@ -5087,28 +5095,28 @@ GL
 GL
 GL
 Qt
-HH
-bs
+Lk
+Lr
 GL
 Qt
-HH
-bs
+Lk
+Lr
 GL
 Qt
-HH
-bs
+Lk
+Lr
 GL
 Qt
-HH
-bs
+Lk
+Lr
 GL
 Qt
-HH
-bs
+Lk
+Lr
 GL
 Qt
-HH
-bs
+Lk
+Lr
 GL
 GL
 GL
@@ -5189,28 +5197,28 @@ GL
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -5291,28 +5299,28 @@ GL
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -5393,28 +5401,28 @@ GL
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -5495,28 +5503,28 @@ GL
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -5597,28 +5605,28 @@ GL
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -5699,28 +5707,28 @@ GL
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -5801,28 +5809,28 @@ GL
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -5903,28 +5911,28 @@ GL
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -6005,28 +6013,28 @@ GL
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -6107,28 +6115,28 @@ GL
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -6209,28 +6217,28 @@ GL
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -6311,28 +6319,28 @@ td
 qg
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -6379,8 +6387,8 @@ GL
 tj
 tj
 Hl
-fl
-jP
+ET
+Mg
 tj
 Hl
 Hl
@@ -6399,7 +6407,7 @@ Hl
 tj
 Hl
 Hl
-uA
+Ka
 Hl
 Hl
 tj
@@ -6413,28 +6421,28 @@ Nt
 jF
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -6482,7 +6490,7 @@ tj
 Hl
 Hl
 Hl
-nh
+JX
 tj
 tj
 tj
@@ -6491,7 +6499,7 @@ tj
 tj
 tj
 tj
-MZ
+qd
 tj
 tj
 tj
@@ -6501,7 +6509,7 @@ tj
 tj
 Hl
 Hl
-ZL
+uj
 Hl
 Hl
 Hl
@@ -6515,28 +6523,28 @@ kD
 Is
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -6584,26 +6592,26 @@ Hl
 Hl
 Hl
 Hl
-sR
+eK
 Hl
 tj
 Hl
-MQ
-MQ
-MQ
-MQ
+Ii
+Ii
+Ii
+Ii
 Hl
 Hl
 Hl
-MQ
-MQ
-MQ
-MQ
+Ii
+Ii
+Ii
+Ii
 Hl
 tj
 Hl
 Hl
-ZL
+uj
 Hl
 Hl
 Hl
@@ -6617,28 +6625,28 @@ Du
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -6682,29 +6690,29 @@ GL
 GL
 GL
 tj
-DX
-qN
+iZ
+MQ
 Hl
 Hl
-Am
-xX
+qL
+xN
 tj
 Hl
-IA
-wp
-wp
-wp
-QV
-QV
-QV
-wp
-wp
-wp
-wp
-QV
-sl
-QV
-QV
+mM
+UV
+UV
+UV
+OT
+OT
+OT
+UV
+UV
+UV
+UV
+OT
+Fq
+OT
+OT
 En
 Hl
 Hl
@@ -6719,28 +6727,28 @@ Du
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -6784,30 +6792,30 @@ GL
 GL
 GL
 tj
-Ft
-qN
+RE
+MQ
 Hl
 Hl
-mM
-Hl
-tj
-Hl
-mM
-sR
-sR
-sR
-Hl
-Hl
-Hl
-sR
-sR
-sR
-sR
+JC
 Hl
 tj
 Hl
+JC
+eK
+eK
+eK
 Hl
-ZL
+Hl
+Hl
+eK
+eK
+eK
+eK
+Hl
+tj
+Hl
+Hl
+uj
 Hl
 Hl
 Hl
@@ -6821,28 +6829,28 @@ Du
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -6886,30 +6894,30 @@ GL
 GL
 GL
 tj
-tx
+ul
 Hl
 Hl
 Hl
-mM
-Hl
-tj
-PA
-TE
-Eo
-Eo
-Eo
-VP
-qZ
-VP
-Eo
-Eo
-Eo
-UZ
+JC
 Hl
 tj
+xQ
+oD
+MK
+MK
+MK
+WX
+Tx
+WX
+MK
+MK
+MK
+XA
+Hl
+tj
 Hl
 Hl
-ZL
+uj
 Hl
 Hl
 Hl
@@ -6923,28 +6931,28 @@ Du
 GL
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 Qt
-Lr
 bs
+Lr
 GL
 GL
 GL
@@ -6992,11 +7000,11 @@ Hl
 Hl
 Hl
 Hl
-kK
-qZ
+sR
+Tx
 GY
-Mr
-yL
+rI
+ZW
 Hl
 Hl
 Hl
@@ -7009,44 +7017,44 @@ Hl
 Hl
 Hl
 tj
-RT
-QV
-no
-QV
-Ix
-QV
+bo
+OT
+er
+OT
+jj
+OT
 FP
 JH
 JH
 YJ
-Mu
-Mu
-Mu
-Mu
-Mu
-Mu
-zK
-Mu
-Mu
-Mu
-zK
-Mu
-Mu
-Mu
-zK
-Mu
-Mu
-Mu
-zK
-Mu
-Mu
-Mu
-zK
-Mu
-Mu
-Mu
-gj
-Uf
+dA
+dA
+dA
+dA
+dA
+dA
+Rs
+dA
+dA
+dA
+Rs
+dA
+dA
+dA
+Rs
+dA
+dA
+dA
+Rs
+dA
+dA
+dA
+Rs
+dA
+dA
+dA
+Jw
+aF
 GL
 GL
 GL
@@ -7094,11 +7102,11 @@ Hl
 Hl
 Hl
 Hl
-PA
-qZ
-dv
-Cl
-ZL
+xQ
+Tx
+pf
+rA
+uj
 Hl
 Hl
 Hl
@@ -7113,42 +7121,42 @@ Hl
 tj
 Hl
 Hl
-ZL
+uj
 Hl
-vn
-QV
+Gu
+OT
 FP
 JH
 JH
 YJ
-Mu
-Mu
-Mu
-Mu
-Mu
-Mu
-Us
-Mu
-Mu
-Mu
-Us
-Mu
-Mu
-Mu
-Us
-Mu
-Mu
-Mu
-Us
-Mu
-Mu
-Mu
-Us
-Mu
-Mu
-Mu
-za
-Gr
+dA
+dA
+dA
+dA
+dA
+dA
+yz
+dA
+dA
+dA
+yz
+dA
+dA
+dA
+yz
+dA
+dA
+dA
+yz
+dA
+dA
+dA
+yz
+dA
+dA
+dA
+xc
+hU
 GL
 GL
 GL
@@ -7192,30 +7200,30 @@ GL
 GL
 GL
 tj
-NJ
+tu
 Hl
 Hl
 Hl
-sR
-Hl
-tj
-HE
-Bd
-BG
-BG
-BG
-VP
-qZ
-VP
-BG
-BG
-BG
-Cl
+eK
 Hl
 tj
-Ay
-QV
-XQ
+vi
+kl
+Kj
+Kj
+Kj
+WX
+Tx
+WX
+Kj
+Kj
+Kj
+rA
+Hl
+tj
+xA
+OT
+wo
 Hl
 Hl
 Hl
@@ -7229,28 +7237,28 @@ Du
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -7294,25 +7302,25 @@ GL
 GL
 GL
 tj
-tt
-qN
+hl
+MQ
 Hl
 Hl
-sR
+eK
 Hl
 tj
 Hl
-sR
-sR
-sR
-sR
+eK
+eK
+eK
+eK
 Hl
 Hl
 Hl
-sR
-sR
-sR
-sR
+eK
+eK
+eK
+eK
 Hl
 tj
 Hl
@@ -7331,28 +7339,28 @@ Du
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -7396,27 +7404,27 @@ GL
 GL
 GL
 tj
-fU
-qN
+rM
+MQ
 Hl
 Hl
-sR
+eK
 Hl
 tj
 Hl
-uV
-uV
-uV
-uV
+ZL
+ZL
+ZL
+ZL
 Hl
 Hl
 Hl
-uV
-uV
-uV
-uV
+ZL
+ZL
+ZL
+ZL
 Hl
-ip
+sy
 Hl
 Hl
 Hl
@@ -7433,28 +7441,28 @@ Du
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -7502,21 +7510,21 @@ Hl
 Hl
 Hl
 Hl
-sR
+eK
 Hl
 tj
 Hl
-eK
-eK
-eK
-eK
+Gr
+Gr
+Gr
+Gr
 Hl
 Hl
 Hl
-eK
-eK
-eK
-eK
+Gr
+Gr
+Gr
+Gr
 Hl
 tj
 Hl
@@ -7535,28 +7543,28 @@ Du
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -7604,7 +7612,7 @@ tj
 Hl
 Hl
 Hl
-hx
+sM
 tj
 tj
 tj
@@ -7613,7 +7621,7 @@ tj
 tj
 tj
 tj
-MZ
+qd
 tj
 tj
 tj
@@ -7637,28 +7645,28 @@ td
 qg
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -7705,8 +7713,8 @@ GL
 tj
 tj
 Hl
-fl
-md
+ET
+JY
 tj
 Hl
 Hl
@@ -7739,28 +7747,28 @@ Nt
 jF
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -7841,28 +7849,28 @@ kD
 Is
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -7943,28 +7951,28 @@ GL
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -8045,28 +8053,28 @@ GL
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -8120,7 +8128,7 @@ tj
 Hl
 Hl
 Hl
-Ak
+FD
 Hl
 Hl
 Hl
@@ -8147,28 +8155,28 @@ GL
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -8249,28 +8257,28 @@ GL
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -8324,7 +8332,7 @@ tj
 Hl
 Hl
 Hl
-Ak
+FD
 Hl
 Hl
 Hl
@@ -8351,28 +8359,28 @@ GL
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -8453,28 +8461,28 @@ GL
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -8555,28 +8563,28 @@ GL
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -8657,28 +8665,28 @@ GL
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -8759,28 +8767,28 @@ GL
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -8861,28 +8869,28 @@ GL
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -8963,28 +8971,28 @@ GL
 GL
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 Qt
-Vs
-bs
+Ho
+Lr
 GL
 GL
 GL
@@ -9065,28 +9073,28 @@ GL
 GL
 GL
 Qt
-xc
-bs
+Cf
+Lr
 GL
 Qt
-xc
-bs
+Cf
+Lr
 GL
 Qt
-xc
-bs
+Cf
+Lr
 GL
 Qt
-xc
-bs
+Cf
+Lr
 GL
 Qt
-xc
-bs
+Cf
+Lr
 GL
 Qt
-xc
-bs
+Cf
+Lr
 GL
 GL
 GL
@@ -15318,12 +15326,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -15420,12 +15428,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -15522,12 +15530,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -15624,12 +15632,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -15668,16 +15676,16 @@ GL
 GL
 tj
 tj
-Vj
-Vj
-Vj
+ww
+hW
+hW
 Hl
-Vj
-Vj
+hW
+hW
 Hl
-Vj
-Vj
-Vj
+hW
+hW
+fG
 tj
 tj
 GL
@@ -15726,12 +15734,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -15828,12 +15836,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -15881,9 +15889,9 @@ Hl
 Sg
 Sg
 Sg
-Vj
-Qs
-Vj
+hW
+fE
+hW
 tj
 Du
 Du
@@ -15906,8 +15914,8 @@ GL
 GL
 tj
 tj
-oZ
-oZ
+wr
+wr
 tj
 tj
 GL
@@ -15930,12 +15938,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -15974,16 +15982,16 @@ GL
 tj
 uq
 Hl
-Vj
+hW
 Sg
 Sg
-tR
+Zj
 Hl
 Hl
-tR
+Zj
 Sg
 Sg
-Vj
+hW
 Hl
 Hl
 tj
@@ -16007,10 +16015,10 @@ GL
 GL
 GL
 tj
-Gr
-Gr
-LR
-VR
+hU
+hU
+et
+zc
 tj
 GL
 ir
@@ -16032,12 +16040,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -16076,18 +16084,18 @@ GL
 tj
 be
 Hl
-Vj
+hW
 Sg
 Sg
-tR
+Zj
 Hl
-il
-RF
-vi
-vi
-Se
-QV
-xX
+wa
+qS
+gX
+gX
+Ox
+OT
+xN
 tj
 GL
 GL
@@ -16108,12 +16116,12 @@ GL
 GL
 GL
 GL
-UM
-Gr
-Gr
-pT
-Gr
-AL
+Ft
+hU
+hU
+hN
+hU
+Mu
 GL
 GL
 GL
@@ -16134,12 +16142,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -16176,18 +16184,18 @@ GL
 GL
 GL
 tj
-jw
+bJ
 Hl
-Vj
+hW
 Sg
 Sg
-tR
+Zj
 Hl
-ZL
-tR
+uj
+Zj
 Sg
 Sg
-Vj
+hW
 Hl
 Hl
 tj
@@ -16210,12 +16218,12 @@ GL
 GL
 GL
 GL
-UM
-fF
-Fn
-uS
-dr
-AL
+Ft
+Kz
+bz
+wb
+vu
+Mu
 GL
 GL
 GL
@@ -16236,12 +16244,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -16278,18 +16286,18 @@ GL
 GL
 GL
 tj
-Wx
+Mf
 Hl
 Hl
 Sg
 Sg
 Sg
 Hl
-ZL
+uj
 Sg
 Sg
 Sg
-zJ
+PO
 Hl
 Hl
 tj
@@ -16312,12 +16320,12 @@ GL
 GL
 GL
 GL
-UM
-Gr
-li
-jE
-Gr
-AL
+Ft
+hU
+YD
+wq
+hU
+Mu
 GL
 GL
 GL
@@ -16338,12 +16346,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -16387,7 +16395,7 @@ ng
 tj
 ce
 Hl
-ZL
+uj
 ce
 tj
 ng
@@ -16415,10 +16423,10 @@ GL
 GL
 GL
 GL
-eg
-SC
-CI
-xz
+KP
+Ko
+XH
+yv
 GL
 GL
 GL
@@ -16440,12 +16448,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -16482,14 +16490,14 @@ tj
 tj
 tj
 tj
-Hp
+eF
 UD
 fR
-xS
+iD
 tj
 tj
 Hl
-vS
+MY
 tj
 tj
 fR
@@ -16517,10 +16525,10 @@ GL
 GL
 GL
 GL
-UM
-xN
-rs
-AL
+Ft
+HP
+mq
+Mu
 GL
 GL
 GL
@@ -16542,12 +16550,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -16580,25 +16588,25 @@ GL
 tj
 tj
 Hl
-fl
-Vy
+ET
+XB
 tj
-fA
-Fe
-nH
+fl
+eL
+De
 cO
 FA
 Tf
 UX
 UX
-Fr
+cr
 UX
 Tf
-xS
+iD
 FA
 gE
 gE
-eG
+RQ
 gE
 gE
 gE
@@ -16619,10 +16627,10 @@ GL
 GL
 GL
 GL
-UM
-xN
-rs
-AL
+Ft
+HP
+mq
+Mu
 GL
 GL
 GL
@@ -16644,12 +16652,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -16683,27 +16691,27 @@ tj
 Hl
 Hl
 Hl
-JC
+bv
 tj
 FA
-xS
-Oo
-WG
-WG
-WG
-AY
-WG
-Zt
-nn
-nn
-nn
-mH
+iD
+eI
+rD
+rD
+rD
+Vj
+rD
+oh
+hC
+hC
+hC
+QO
 UX
 gE
 FA
 gE
 fR
-TP
+cY
 UX
 UX
 ng
@@ -16721,10 +16729,10 @@ GL
 GL
 GL
 GL
-UM
-xN
-rs
-AL
+Ft
+HP
+mq
+Mu
 GL
 GL
 GL
@@ -16746,12 +16754,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -16781,15 +16789,15 @@ GL
 GL
 GL
 tj
-NJ
+tu
 Hl
 Hl
 Hl
-sR
+eK
 tj
 cO
 fR
-dG
+cM
 UX
 UX
 UX
@@ -16799,7 +16807,7 @@ lK
 UX
 UX
 UX
-es
+UM
 UX
 hM
 gE
@@ -16823,10 +16831,10 @@ GL
 GL
 GL
 GL
-UM
-xN
-rs
-AL
+Ft
+HP
+mq
+Mu
 GL
 GL
 GL
@@ -16848,12 +16856,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -16883,15 +16891,15 @@ GL
 GL
 GL
 tj
-nP
-qN
+SJ
+MQ
 Hl
 Hl
-CE
+Cy
 tj
 tj
 Ly
-dG
+cM
 UX
 tj
 tj
@@ -16901,14 +16909,14 @@ tj
 tj
 tj
 tj
-es
+UM
 UX
 hM
 fR
 gE
-xS
+iD
 cO
-eE
+XI
 gE
 ng
 GL
@@ -16925,10 +16933,10 @@ GL
 GL
 GL
 GL
-UM
-xN
-rs
-AL
+Ft
+HP
+mq
+Mu
 GL
 GL
 GL
@@ -16950,12 +16958,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -16985,15 +16993,15 @@ GL
 GL
 GL
 tj
-VV
-qN
+Xk
+MQ
 Hl
 Hl
-xU
+bU
 Hl
 tj
 UX
-dG
+cM
 DE
 tj
 SE
@@ -17003,61 +17011,61 @@ Sk
 QE
 QE
 tj
-lw
+WN
 UX
 gE
-xS
+iD
 gE
 FA
 gE
 fR
-xS
+iD
 ng
 GL
 GL
 GL
 GL
-oZ
-tT
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-bN
-xN
-rs
-hd
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-oZ
-iE
+wr
+dk
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+fh
+HP
+mq
+gd
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+TT
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -17091,11 +17099,11 @@ Hl
 Hl
 Hl
 Hl
-xU
+bU
 Hl
 tj
 UX
-dG
+cM
 UX
 tj
 tj
@@ -17105,7 +17113,7 @@ bH
 Sk
 Sk
 aj
-es
+UM
 UX
 cO
 gE
@@ -17118,7 +17126,7 @@ tj
 po
 tj
 po
-iE
+TT
 bh
 bh
 bh
@@ -17130,20 +17138,8 @@ bh
 bh
 bh
 bh
-TI
-yX
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+Ah
+Xg
 bh
 bh
 bh
@@ -17159,7 +17155,19 @@ bh
 bh
 bh
 bh
-AL
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+Mu
 GL
 GL
 GL
@@ -17193,11 +17201,11 @@ Hl
 Hl
 Hl
 Hl
-VJ
-VP
-LT
-nn
-uC
+wX
+WX
+dx
+hC
+Am
 UX
 tj
 SE
@@ -17207,33 +17215,33 @@ Sk
 Sk
 Sk
 tj
-Ge
-Sj
-WG
-WG
-WG
-WG
-WG
-WG
-WG
-lJ
-QA
-QA
-iD
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-aF
-HC
-mZ
+br
+al
+rD
+rD
+rD
+rD
+rD
+rD
+rD
+qr
+dl
+dl
+yk
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+Fr
+UR
+CL
 bh
 bh
 bh
@@ -17261,7 +17269,7 @@ bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -17293,14 +17301,14 @@ GL
 tj
 Hl
 Hl
+wa
+OT
+xh
+Us
+Us
+rD
+UJ
 il
-QV
-Rb
-tE
-tE
-WG
-RG
-Ua
 tj
 tj
 tj
@@ -17309,33 +17317,33 @@ tj
 Nx
 tj
 tj
-pv
-qM
-nn
-nn
-nn
-nn
-nn
-nn
-nn
-aT
-wb
-wb
-su
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-mP
-GA
-TF
+sn
+Cd
+hC
+hC
+hC
+hC
+hC
+hC
+hC
+kS
+BI
+BI
+Rp
+Fg
+Fg
+Fg
+Fg
+Fg
+Fg
+Fg
+Fg
+Fg
+Fg
+Fg
+Fg
+EV
+rk
 bh
 bh
 bh
@@ -17363,7 +17371,7 @@ bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -17395,13 +17403,13 @@ GL
 tj
 Hl
 Hl
-ZL
+uj
 Hl
-sR
+eK
 Hl
 tj
 UX
-dG
+cM
 UX
 tj
 vc
@@ -17411,9 +17419,9 @@ Lo
 Sk
 jI
 tj
-es
-Fr
-xS
+UM
+cr
+iD
 gE
 gE
 gE
@@ -17424,7 +17432,7 @@ po
 tj
 tj
 tj
-vb
+tG
 bh
 bh
 bh
@@ -17436,20 +17444,8 @@ bh
 bh
 bh
 bh
-TI
-TI
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+Ah
+Ah
 bh
 bh
 bh
@@ -17465,7 +17461,19 @@ bh
 bh
 bh
 bh
-AL
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+bh
+Mu
 GL
 GL
 GL
@@ -17495,15 +17503,15 @@ GL
 GL
 GL
 tj
-gb
-qN
-ZL
+Ql
+MQ
+uj
 Hl
-sR
+eK
 Hl
 tj
 UX
-dG
+cM
 DE
 tj
 Sk
@@ -17513,10 +17521,10 @@ Sk
 NM
 BS
 tj
-Vw
-Fr
+Nd
+cr
 gE
-Ho
+xr
 gE
 fR
 gE
@@ -17527,47 +17535,47 @@ GL
 GL
 GL
 GL
-eL
-gG
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-vb
-xN
-xN
-hO
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eL
-eg
+vX
+Pf
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+tG
+HP
+HP
+ah
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+vX
+KP
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -17597,15 +17605,15 @@ GL
 GL
 GL
 tj
-tV
-qN
-ZL
+FI
+MQ
+uj
 Hl
-sR
+eK
 tj
 tj
 FA
-dG
+cM
 UX
 tj
 tj
@@ -17615,14 +17623,14 @@ tj
 tj
 tj
 tj
-es
-Fr
+UM
+cr
 hM
 cO
 gE
 gE
 gE
-xS
+iD
 fR
 ng
 GL
@@ -17639,10 +17647,10 @@ GL
 GL
 GL
 GL
-UM
-xN
-xN
-AL
+Ft
+HP
+HP
+Mu
 GL
 GL
 GL
@@ -17664,12 +17672,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -17699,15 +17707,15 @@ GL
 GL
 GL
 tj
-tx
+ul
 Hl
-ZL
+uj
 Hl
-sR
+eK
 tj
 fR
-xS
-dG
+iD
+cM
 UX
 UX
 UX
@@ -17717,11 +17725,11 @@ wj
 UX
 UX
 UX
-es
-Fr
+UM
+cr
 hM
 gE
-xS
+iD
 Ly
 gE
 gE
@@ -17741,10 +17749,10 @@ GL
 GL
 GL
 GL
-UM
-xN
-xN
-AL
+Ft
+HP
+HP
+Mu
 GL
 GL
 GL
@@ -17766,12 +17774,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -17802,25 +17810,25 @@ GL
 GL
 tj
 tj
-JL
-XQ
+Ez
+wo
 Hl
-Nw
+Hh
 tj
 cO
 fR
-Ms
-WG
-WG
-WG
-WG
-WG
-cE
-WG
-WG
-WG
-cg
-iH
+hy
+rD
+rD
+rD
+rD
+rD
+Mb
+rD
+rD
+rD
+vV
+ud
 gE
 fR
 gE
@@ -17843,10 +17851,10 @@ GL
 GL
 GL
 GL
-UM
-xN
-xN
-AL
+Ft
+HP
+HP
+Mu
 GL
 GL
 GL
@@ -17868,12 +17876,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -17906,18 +17914,18 @@ GL
 tj
 tj
 Hl
-fl
-ew
+ET
+nH
 tj
-SA
-Fe
+KM
+eL
 gE
 fR
-ps
+eY
 zZ
 DB
 UX
-Fr
+cr
 mT
 zZ
 cO
@@ -17945,10 +17953,10 @@ GL
 GL
 GL
 GL
-UM
-xN
-xN
-AL
+Ft
+HP
+HP
+Mu
 GL
 GL
 GL
@@ -17970,12 +17978,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -18012,20 +18020,20 @@ tj
 tj
 tj
 tj
-bb
+ls
 FA
-xS
+iD
 fR
 tj
 tj
 GI
-tz
+eo
 tj
 tj
 gE
 fR
 gE
-xS
+iD
 tj
 ng
 ng
@@ -18047,10 +18055,10 @@ GL
 GL
 GL
 GL
-UM
-xN
-xN
-AL
+Ft
+HP
+HP
+Mu
 GL
 GL
 GL
@@ -18072,12 +18080,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -18121,7 +18129,7 @@ ng
 tj
 gI
 GI
-wO
+YA
 zx
 tj
 ng
@@ -18149,10 +18157,10 @@ GL
 GL
 GL
 GL
-iE
-SC
-SC
-Xw
+TT
+Ko
+Ko
+Vs
 GL
 GL
 GL
@@ -18174,12 +18182,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -18216,14 +18224,14 @@ GL
 GL
 GL
 tj
-av
-vi
-vi
-Nh
-zd
-vi
-vi
-dA
+oi
+gX
+gX
+Iw
+CY
+gX
+gX
+BX
 Sg
 Xf
 Sg
@@ -18250,12 +18258,12 @@ GL
 GL
 GL
 GL
-UM
-Gr
-fX
-fX
-Gr
-AL
+Ft
+hU
+fw
+fw
+hU
+Mu
 GL
 GL
 GL
@@ -18276,12 +18284,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -18352,12 +18360,12 @@ GL
 GL
 GL
 GL
-UM
-fF
-jC
-dI
-dr
-AL
+Ft
+Kz
+nj
+Mi
+vu
+Mu
 GL
 GL
 GL
@@ -18378,12 +18386,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -18454,12 +18462,12 @@ GL
 GL
 GL
 GL
-UM
-Gr
-Gr
-Gr
-Gr
-AL
+Ft
+hU
+hU
+hU
+hU
+Mu
 GL
 GL
 GL
@@ -18480,12 +18488,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -18557,10 +18565,10 @@ GL
 GL
 GL
 tj
-Gr
-Gr
-Gr
-Gr
+hU
+hU
+hU
+hU
 tj
 GL
 GL
@@ -18582,12 +18590,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -18660,8 +18668,8 @@ GL
 GL
 tj
 tj
-eL
-eL
+vX
+vX
 tj
 tj
 GL
@@ -18684,12 +18692,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -18786,12 +18794,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -18888,12 +18896,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -18990,12 +18998,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -19092,12 +19100,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -19194,12 +19202,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -19296,12 +19304,12 @@ GL
 GL
 GL
 GL
-UM
+Ft
 bh
 bh
 bh
 bh
-AL
+Mu
 GL
 GL
 GL
@@ -19458,7 +19466,7 @@ GL
 GL
 GL
 GL
-RR
+lO
 GL
 GL
 GL
