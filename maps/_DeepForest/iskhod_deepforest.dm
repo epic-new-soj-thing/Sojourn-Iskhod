@@ -7,6 +7,7 @@
 
 #include "map/_Isk_DeepForest.dmm"
 #include "map/_Isk_ExcelCompound.dmm"
+#include "map/_Isk_Spaceport.dmm"
 
 /obj/map_data/iskhod_df
 	name = "Deep Forest"
@@ -28,6 +29,17 @@
 	is_sealed = TRUE
 	generate_asteroid = TRUE
 	height = 3
+	digsites = "TECHNICAL"
+
+/obj/map_data/iskhod_spaceport
+	name = "Spaceport"
+	is_station_level = FALSE
+	is_player_level = TRUE
+	is_contact_level = FALSE
+	is_accessable_level = FALSE
+	is_sealed = TRUE
+	generate_asteroid = TRUE
+	height = 2
 	digsites = "TECHNICAL"
 
 /*

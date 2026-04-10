@@ -79,7 +79,7 @@
 	shuttle_area = /area/shuttle/skipjack_area
 	current_location = "nav_skipjack_homebase"
 	landmark_transition = "nav_skipjack_transit"
-	destination_tags = list("nav_skipjack_homebase", "nav_skipjack_colony", "nav_skipjack_forest", "nav_skipjack_river") // "nav_skipjack_spacefortress" was lost
+	destination_tags = list("nav_skipjack_homebase", "nav_skipjack_colony", "nav_skipjack_forest", "nav_skipjack_river", "nav_skipjack_spaceport") // "nav_skipjack_spacefortress" was lost
 
 /obj/effect/shuttle_landmark/skipjack_home
 	name = "Skipjack Homebase"
@@ -111,6 +111,12 @@
 	base_turf = /turf/simulated/floor/asteroid/grass
 	autoset = TRUE
 
+/obj/effect/shuttle_landmark/skipjack_spaceport
+	name = "Spaceport Skipjack Landing Zone"
+	landmark_tag = "nav_skipjack_spaceport"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/shuttle/spaceport_skipjack_pad
+
 /obj/effect/shuttle_landmark/skipjack_space_fortress
 	name = "Space Fortress Dock"
 	landmark_tag = "nav_skipjack_spacefortress"
@@ -130,6 +136,13 @@
 	requires_power = FALSE
 	dynamic_lighting = TRUE
 	base_turf = /turf/space
+
+/area/shuttle/spaceport_skipjack_pad
+	name = "Spaceport Skipjack Pad"
+	icon_state = "shuttle"
+	requires_power = FALSE
+	dynamic_lighting = FALSE
+	base_turf = /turf/simulated/floor/reinforced
 
 //Merc shuttle Code
 /datum/shuttle/autodock/multi/mercshuttle
@@ -199,7 +212,7 @@
 	shuttle_area = /area/shuttle/rocinante_shuttle_area
 	current_location = "nav_rocinante_homebase"
 	landmark_transition = "nav_rocinante_transit"
-	destination_tags = list("nav_rocinante_homebase", "nav_rocinante_river", "nav_rocinante_swamp", "nav_rocinante_graysonfield", "nav_rocinante_excel_compound", "nav_space_1")//, "nav_rocinante_spacefort"
+	destination_tags = list("nav_rocinante_homebase", "nav_rocinante_river", "nav_rocinante_swamp", "nav_rocinante_graysonfield", "nav_rocinante_excel_compound", "nav_space_1", "nav_rocinante_spaceport")//, "nav_rocinante_spacefort"
 
 /obj/effect/shuttle_landmark/rocinante_home
 	name = "The Rocinante Home Pad "
@@ -237,6 +250,12 @@
 	base_turf = /turf/simulated/floor/reinforced
 	autoset = TRUE
 
+/obj/effect/shuttle_landmark/rocinante_spaceport
+	name = "Spaceport Rocinante Landing Zone"
+	landmark_tag = "nav_rocinante_spaceport"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/shuttle/spaceport_rocinante_pad
+
 /obj/effect/shuttle_landmark/rocinante_spacefort
 	name = "Local Space Station Dock"
 	landmark_tag = "nav_rocinante_spacefort"
@@ -257,6 +276,13 @@
 	dynamic_lighting = FALSE
 	base_turf = /turf/simulated/floor/reinforced
 
+/area/shuttle/spaceport_rocinante_pad
+	name = "Spaceport Rocinante Pad"
+	icon_state = "shuttle"
+	requires_power = FALSE
+	dynamic_lighting = FALSE
+	base_turf = /turf/simulated/floor/reinforced
+
 //Ranger shuttle
 /datum/shuttle/autodock/multi/vasiliy
 	name = "The Vasiliy"
@@ -264,7 +290,7 @@
 	shuttle_area = /area/shuttle/vasiliy_shuttle_area
 	current_location = "nav_vasiliy_homebase"
 	landmark_transition = "nav_vasiliy_transit"
-	destination_tags = list("nav_vasiliy_homebase", "nav_vasiliy_deep_forest", "nav_vasiliy_swamps", "nav_vasiliy_river_forest", "nav_vasiliy_graysonfield", "nav_vasiliy_excel_compound", "nav_space_2") //, "nav_vasiliy_spacefort"
+	destination_tags = list("nav_vasiliy_homebase", "nav_vasiliy_deep_forest", "nav_vasiliy_swamps", "nav_vasiliy_river_forest", "nav_vasiliy_graysonfield", "nav_vasiliy_excel_compound", "nav_space_2", "nav_vasiliy_spaceport") //, "nav_vasiliy_spacefort"
 
 //, "nav_vasiliy_spacefort"
 
@@ -310,6 +336,12 @@
 	base_turf = /turf/simulated/floor/reinforced
 	autoset = TRUE
 
+/obj/effect/shuttle_landmark/vasiliy_spaceport
+	name = "Spaceport Vasiliy Landing Zone"
+	landmark_tag = "nav_vasiliy_spaceport"
+	base_turf = /turf/simulated/floor/reinforced
+	base_area = /area/shuttle/spaceport_vasiliy_pad
+
 /* Pretty sure this isn't even active?
 /obj/effect/shuttle_landmark/vasiliy_spacefort
 	name = "Local Space Station Dock"
@@ -326,6 +358,13 @@
 //Area code
 /area/shuttle/vasiliy_shuttle_area
 	name = "The Vasiliy Landing Pad"
+	icon_state = "shuttle"
+	requires_power = FALSE
+	dynamic_lighting = FALSE
+	base_turf = /turf/simulated/floor/reinforced
+
+/area/shuttle/spaceport_vasiliy_pad
+	name = "Spaceport Vasiliy Pad"
 	icon_state = "shuttle"
 	requires_power = FALSE
 	dynamic_lighting = FALSE

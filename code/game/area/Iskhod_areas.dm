@@ -96,6 +96,47 @@
 	name = "Holodeck Control Room"
 	icon_state = "holodeck"
 
+// Spaceport
+/area/iskhod/spaceport
+	name = "Spaceport"
+	icon_state = "supply"
+
+/area/iskhod/spaceport/landing/skipjack
+	name = "Skipjack Landing Zone"
+	icon_state = "shuttle"
+
+/area/iskhod/spaceport/landing/rocinante
+	name = "Rocinante Landing Zone"
+	icon_state = "shuttle"
+
+/area/iskhod/spaceport/fuel_depot
+	name = "Fuel Depot"
+	icon_state = "supply"
+
+/area/iskhod/spaceport/shops
+	name = "Spaceport Shops"
+	icon_state = "green"
+
+/area/iskhod/spaceport/shops/clothes_store
+	name = "Clothes Store"
+	icon_state = "green"
+
+/area/iskhod/spaceport/shops/military_surplus
+	name = "Military Surplus"
+	icon_state = "security"
+
+/area/iskhod/spaceport/shops/bar
+	name = "Spaceport Bar"
+	icon_state = "bar"
+
+/area/iskhod/spaceport/solars
+	name = "Spaceport Solars"
+	icon_state = "engine"
+
+/area/iskhod/spaceport/maintenance
+	name = "Spaceport Maintenance"
+	icon_state = "maintcentral"
+
 // Cargo / Frontier Logistics
 /area/iskhod/cargo/elevator
 	name = "Cargo Elevator"
