@@ -2044,6 +2044,12 @@
 /obj/effect/shuttle_landmark/rocinante_excel_compound,
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
+"Ku" = (
+/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
+	invisibility = 101
+	},
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
 "KD" = (
 /obj/vehicle/train/cargo/trolley,
 /obj/effect/floor_decal/industrial/box/red,
@@ -11961,7 +11967,7 @@ DV
 DV
 DV
 XR
-gs
+Ku
 gs
 gs
 XR
