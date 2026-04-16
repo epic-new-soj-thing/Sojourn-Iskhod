@@ -8707,6 +8707,14 @@
 	icon_state = "9,23"
 	},
 /area/turbolift/ElevatorTwo/midlevelTwo)
+"cck" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/security/sechall)
 "ccn" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -26885,6 +26893,7 @@
 /obj/structure/bed/chair/office/light{
 	dir = 4
 	},
+/obj/landmark/join/start/chemist,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemistry)
 "gHN" = (
@@ -58105,6 +58114,15 @@
 /obj/structure/multiz/stairs/enter,
 /turf/simulated/open,
 /area/iskhod/security/sechall)
+"owz" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 4;
+	pixel_y = 0
+	},
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/security/sechall)
 "owB" = (
 /obj/machinery/light{
 	dir = 8;
@@ -85402,6 +85420,13 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
+"vvu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/security/sechall)
 "vvz" = (
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 1
@@ -93513,6 +93538,7 @@
 /obj/structure/bed/chair/office/light{
 	dir = 8
 	},
+/obj/landmark/join/start/chemist,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/chemistry)
 "xym" = (
@@ -141390,7 +141416,7 @@ rlu
 xDC
 vhe
 vhe
-vhe
+vvu
 gLd
 skt
 ojK
@@ -141998,7 +142024,7 @@ gWj
 rlu
 xDC
 eMy
-jef
+cck
 ojK
 gjJ
 rXQ
@@ -142604,7 +142630,7 @@ xDC
 xDC
 xDC
 vhe
-jef
+cck
 ojK
 gMm
 kti
@@ -143003,11 +143029,11 @@ mbc
 iQv
 kwP
 axN
-axN
+owz
 axN
 iQv
 axN
-axN
+owz
 mjm
 ojK
 nKL
