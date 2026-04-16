@@ -124,8 +124,6 @@
 		hackedcheck = FALSE
 		return
 
-
-
 /obj/machinery/chemical_dispenser/Initialize()
 	. = ..()
 	dispensable_reagents = sortList(dispensable_reagents)
@@ -519,25 +517,3 @@
 	anchored = TRUE
 	density = TRUE
 	simple_machinery = FALSE
-
-	// Provide Tier-3 components by default so the dispenser behaves as a high-end unit
-	// Keep the list empty at compile-time; instantiate parts at runtime in Initialize().
-	component_parts = list()
-
-/obj/machinery/chemical_dispenser/medical/Initialize()
-	. = ..()
-
-	// Remove basic stock parts to ensure we have the right ones
-	for(var/obj/item/I in component_parts)
-		if(istype(I, /obj/item/stock_parts) || istype(I, /obj/item/cell))
-			component_parts -= I
-			qdel(I)
-
-	// Tier-3 parts
-	component_parts += new /obj/item/cell/medium/moebius/omega(null)
-	component_parts += new /obj/item/stock_parts/capacitor/super(null)
-	component_parts += new /obj/item/stock_parts/matter_bin/super(null)
-	component_parts += new /obj/item/stock_parts/matter_bin/super(null)
-	component_parts += new /obj/item/stock_parts/manipulator/pico(null)
-
-	RefreshParts()
