@@ -2,7 +2,7 @@
 #define JOBS_SECURITY "Captain","Lieutenant","Detective","Ranger","Junior Ranger"
 #define JOBS_COMMAND "Facility Director","Steward","Captain","Operations Manager","Chief Engineer","Medical Overseer","Research Overseer","Penitent","Foreman"
 #define JOBS_ENGINEERING "Chief Engineer","Engineer","Apprentice","Disposals Technician"
-#define JOBS_MEDICAL "Medical Overseer","Doctor","Psychiatrist","Nurse","Paramedic","Resident" //,"Chemist"
+#define JOBS_MEDICAL "Medical Overseer","Doctor","Psychiatrist","Nurse","Paramedic","Resident","Chemist"
 #define JOBS_SCIENCE "Research Overseer","Scientist","Roboticist","Science Intern","Robotics Intern"
 #define JOBS_SUPPLY "Operations Manager","Technician","Miner"
 #define JOBS_SERVICE "Bartender","Chef","Gardener","Archivist" //,"Artist"

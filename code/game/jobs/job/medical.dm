@@ -114,7 +114,6 @@
 	icon_state = "player-green"
 	join_tag = /datum/job/doctor
 
-/*
 /datum/job/chemist
 	title = "Chemist"
 	flag = CHEMIST
@@ -163,7 +162,6 @@
 	name = "Chemist"
 	icon_state = "player-green"
 	join_tag = /datum/job/chemist
-*/
 
 /datum/job/medstudent
 	title = "Resident"
