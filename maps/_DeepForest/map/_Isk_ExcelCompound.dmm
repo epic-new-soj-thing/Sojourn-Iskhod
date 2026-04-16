@@ -2044,12 +2044,6 @@
 /obj/effect/shuttle_landmark/rocinante_excel_compound,
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
-"Ku" = (
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
-	invisibility = 101
-	},
-/turf/simulated/floor/rock/manmade/road,
-/area/iskhod/dungeon/outside/excel_compound/bunker)
 "KD" = (
 /obj/vehicle/train/cargo/trolley,
 /obj/effect/floor_decal/industrial/box/red,
@@ -2486,15 +2480,6 @@
 /obj/random/mob/excelsior/low_chance,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/cafeteria)
-"St" = (
-/obj/structure/railing{
-	dir = 8
-	},
-/obj/machinery/portable_atmospherics/powered/scrubber/yggdrasil{
-	invisibility = 101
-	},
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/bunker)
 "Sw" = (
 /turf/simulated/floor/reinforced,
 /area/shuttle/rocinante_shuttle_area)
@@ -11967,7 +11952,7 @@ DV
 DV
 DV
 XR
-Ku
+gs
 gs
 gs
 XR
@@ -21551,7 +21536,7 @@ DV
 DV
 XR
 XR
-St
+am
 am
 DV
 DV
