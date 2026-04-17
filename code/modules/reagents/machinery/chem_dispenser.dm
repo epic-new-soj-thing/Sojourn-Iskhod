@@ -518,12 +518,3 @@
 	anchored = TRUE
 	density = TRUE
 	simple_machinery = FALSE
-
-// Override recharge to increase base recharge rate for medical variant
-/obj/machinery/chemical_dispenser/medical/proc/recharge()
-	if(stat & (BROKEN|NOPOWER)) return
-	// Increased recharge rate: 2x the normal rate
-	var/addenergy = cell.give(clamp(((cell.maxcharge*cell.max_chargerate) + (cell_charger_additon*20)) + 50, 0, cell.maxcharge))
-	if(addenergy)
-		use_power(addenergy / CELLRATE)
-		SStgui.update_uis(src)
