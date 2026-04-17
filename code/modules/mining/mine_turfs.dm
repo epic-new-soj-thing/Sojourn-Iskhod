@@ -500,6 +500,13 @@
 		if (mineral_name && (mineral_name in ore_data))
 			mineral = ore_data[mineral_name]
 			UpdateMineral()
+/******************* Glacier and Cold Rock *****************************/
+/turf/simulated/mineral/glacierice
+	mined_turf = /turf/simulated/floor/icewater
+	icon_state = "glacier"
+
+/turf/simulated/mineral/frostyrock
+	icon_state = "rock-frosty"
 
 /********************** Planet **************************/
 

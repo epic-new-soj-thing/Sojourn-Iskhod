@@ -175,7 +175,13 @@
 
 /area/iskhod/dungeon/outside/trashcave
 	name = "Trash Cave"
-	icon_state = "nadezhdagreen"
+	icon_state = "erisgreen"
+	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
+	dynamic_lighting = TRUE
+
+/area/iskhod/dungeon/outside/caverns
+	name = "Serpentbelly Caverns"
+	icon_state = "erisgreen"
 	ambience = list('sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg', 'sound/ambience/ambigen11.ogg', 'sound/ambience/ambigen12.ogg')
 	dynamic_lighting = TRUE
 
