@@ -43,6 +43,10 @@
 	var/obj/item/reagent_containers/beaker = null
 	/// TRUE when the cell is charging (recharging reagents); used for active icon state
 	var/is_recharging = FALSE
+	/// Multiplier applied to the base recharge amount.
+	var/recharge_rate_multiplier = 1
+	/// Flat bonus applied after the multiplier.
+	var/recharge_flat_bonus = 0
 
 /obj/machinery/chemical_dispenser/update_icon()
 	cut_overlays()
@@ -90,7 +94,9 @@
 /obj/machinery/chemical_dispenser/proc/recharge()
 	if(stat & (BROKEN|NOPOWER)) return
 	//Calculates the charge rate. 800 battery starts at 48 which is high. So we pull that back a bit.
-	var/addenergy = cell.give(clamp((cell.maxcharge*cell.max_chargerate) / 2 + (cell_charger_additon*20 / 2),0,cell.maxcharge))
+	var/base_recharge = (cell.maxcharge*cell.max_chargerate) / 2 + (cell_charger_additon*20 / 2)
+	var/total_recharge = base_recharge * recharge_rate_multiplier + recharge_flat_bonus
+	var/addenergy = cell.give(clamp(total_recharge,0,cell.maxcharge))
 	if(addenergy)
 		use_power(addenergy / CELLRATE)
 		SStgui.update_uis(src)
@@ -514,6 +520,8 @@
 	desc = "A medical-grade chemical dispenser preloaded with pharmaceutical reagents. Used for mixing medicines and treatment compounds."
 	ui_title = "MediChem 3500"
 	fancy_hack = TRUE // start with extra chems unlocked
+	recharge_rate_multiplier = 2
+	recharge_flat_bonus = 50
 	accept_beaker = TRUE
 	anchored = TRUE
 	density = TRUE
