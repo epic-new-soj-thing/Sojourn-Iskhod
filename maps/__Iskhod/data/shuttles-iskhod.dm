@@ -254,7 +254,6 @@
 	name = "Spaceport Rocinante Landing Zone"
 	landmark_tag = "nav_rocinante_spaceport"
 	base_turf = /turf/simulated/floor/reinforced
-	base_area = /area/shuttle/spaceport_rocinante_pad
 
 /obj/effect/shuttle_landmark/rocinante_spacefort
 	name = "Local Space Station Dock"
