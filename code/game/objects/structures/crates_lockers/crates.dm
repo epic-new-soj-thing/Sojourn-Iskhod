@@ -383,24 +383,15 @@
 	name = "Secure metallic crate"
 	icon_state = "serbcrate_gray"
 
-#define SEMI_TRANSPARENT 30
-
 /obj/structure/closet/crate/excelsior
 	name = "suspicious looking crate"
-	alpha = SEMI_TRANSPARENT
 
 /obj/structure/closet/crate/excelsior/close()
 	. = ..()
 	if(!.)
 		return FALSE
 
-	alpha = SEMI_TRANSPARENT
-
 /obj/structure/closet/crate/excelsior/open()
 	. = ..()
 	if(!.)
 		return FALSE
-
-	alpha = 255
-
-#undef SEMI_TRANSPARENT
