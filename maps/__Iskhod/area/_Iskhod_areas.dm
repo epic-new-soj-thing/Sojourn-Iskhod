@@ -1895,7 +1895,7 @@ area/nadezhda/medical/medbaymeeting
 	dynamic_lighting = TRUE
 	is_maintenance = FALSE
 	ship_area = FALSE
-	is_dungeon_lootable = TRUE
+	is_dungeon_lootable = FALSE
 
 /area/iskhod/dungeon/outside/excel_compound/bar
 	name = "Compound Bar"

@@ -508,6 +508,7 @@
 
 // Medical dispenser: a modification of the default chemical dispenser
 // Inherit the base lists and only override what's necessary.
+
 /obj/machinery/chemical_dispenser/medical
 	name = "MediChem 3500"
 	desc = "A medical-grade chemical dispenser preloaded with pharmaceutical reagents. Used for mixing medicines and treatment compounds."
@@ -517,3 +518,12 @@
 	anchored = TRUE
 	density = TRUE
 	simple_machinery = FALSE
+
+// Override recharge to increase base recharge rate for medical variant
+/obj/machinery/chemical_dispenser/medical/proc/recharge()
+	if(stat & (BROKEN|NOPOWER)) return
+	// Increased recharge rate: 2x the normal rate
+	var/addenergy = cell.give(clamp(((cell.maxcharge*cell.max_chargerate) + (cell_charger_additon*20)) + 50, 0, cell.maxcharge))
+	if(addenergy)
+		use_power(addenergy / CELLRATE)
+		SStgui.update_uis(src)
