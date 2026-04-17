@@ -6,7 +6,7 @@
 	shuttle_area = /area/shuttle/surface_transport_lz
 	current_location = "nav_pad_surface_transport"
 	landmark_transition = "nav_transit_surface_transport"
-	destination_tags = list("nav_pad_surface_transport", "nav_hunting_lodge", "nav_deep_forest", "nav_swamps", "nav_river_forest", "nav_space_0", "nav_greyson_field", "nav_surface_transport_excel_compound")
+	destination_tags = list("nav_pad_surface_transport", "nav_hunting_lodge", "nav_deep_forest", "nav_swamps", "nav_river_forest", "nav_space_0", "nav_greyson_field", "nav_surface_transport_excel_compound", "nav_surface_transport_spaceport")
 
 /obj/effect/shuttle_landmark/surface_transport
 	name = "Surface Transport Shuttle Pad"
@@ -54,6 +54,12 @@
 /obj/effect/shuttle_landmark/surface_transport_excel_compound
 	name = "Excel Compound Emergency Pad (Surface Transport)"
 	landmark_tag = "nav_surface_transport_excel_compound"
+	base_turf = /turf/simulated/floor/reinforced
+	autoset = TRUE
+
+/obj/effect/shuttle_landmark/surface_transport_spaceport
+	name = "Spaceport Emergency Pad (Surface Transport)"
+	landmark_tag = "nav_surface_transport_spaceport"
 	base_turf = /turf/simulated/floor/reinforced
 	autoset = TRUE
 

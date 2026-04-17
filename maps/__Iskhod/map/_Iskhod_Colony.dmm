@@ -23697,10 +23697,10 @@
 /obj/machinery/door/airlock/multi_tile/metal{
 	frequency = 1380;
 	icon_state = "door_locked";
-	id_tag = "roci_door_int";
+	id_tag = "roci_door_ext";
 	locked = 1;
 	name = "Rocinante External Access";
-	tag = "roci_door_int"
+	tag = "roci_door_ext"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /turf/simulated/shuttle/floor/mining{
@@ -61108,9 +61108,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 9
 	},
-/obj/machinery/atmospherics/unary/vent_pump{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/rnd/server)
 "pkb" = (
@@ -67282,7 +67279,8 @@
 	req_access = list(30);
 	id_tag = "rnd_door_int";
 	frequency = 1379;
-	locked = 1
+	locked = 1;
+	tag = "rnd_door_int"
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
@@ -93820,7 +93818,8 @@
 	},
 /obj/machinery/access_button/airlock_interior{
 	master_tag = "telecomms_airlcok_con";
-	pixel_y = 20
+	pixel_y = 20;
+	name = "server room access button"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4

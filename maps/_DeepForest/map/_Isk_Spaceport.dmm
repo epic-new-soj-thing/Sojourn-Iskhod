@@ -154,6 +154,19 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/iskhod/spaceport/landing)
+"cE" = (
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/obj/structure/railing/grey,
+/obj/machinery/airlock_sensor/shuttle_exterior{
+	id_tag = "lvl2_ext_sens";
+	tag = "lvl2_ext_sens";
+	master_tag = "lvl2_lock";
+	pixel_y = 25
+	},
+/turf/space,
+/area/iskhod/spaceport/landing)
 "cF" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -208,6 +221,18 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/airlock_sensor/airlock_interior{
+	dir = 4;
+	id_tag = "lvl2_lock_sens";
+	master_tag = "lvl2_lock";
+	tag = "lvl2_lock_sens";
+	pixel_x = -25
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/shops)
+"dr" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops)
 "dv" = (
@@ -292,6 +317,15 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/spaceport/fuel_depot)
+"eA" = (
+/obj/machinery/light/small,
+/obj/machinery/access_button/airlock_interior{
+	dir = 1;
+	master_tag = "lvl2_lock";
+	pixel_y = -25
+	},
+/turf/simulated/floor/asteroid/grass,
+/area/iskhod/spaceport/shops)
 "eF" = (
 /obj/machinery/vending/cola,
 /turf/simulated/floor/industrial/green_large_slates,
@@ -362,6 +396,13 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
+/area/iskhod/spaceport/solars)
+"fu" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/machinery/atmospherics/pipe/tank/air{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/solars)
 "fv" = (
 /obj/structure/table/rack,
@@ -623,8 +664,13 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 1
 	},
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/machinery/door/airlock/external{
+	tag = "lvl2_int";
+	id_tag = "lvl2_int";
+	frequency = 1379;
+	locked = 1
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops)
 "kT" = (
@@ -745,9 +791,14 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/maintenance)
 "nv" = (
-/obj/structure/sign/warning/internals_required/small2,
-/turf/simulated/wall,
-/area/iskhod/spaceport/shops)
+/obj/machinery/airlock_sensor/shuttle_exterior{
+	id_tag = "lvl1_ext_sens";
+	tag = "lvl1_ext_sens";
+	master_tag = "lvl1_lock";
+	pixel_y = 25
+	},
+/turf/space,
+/area/space)
 "nH" = (
 /obj/machinery/atmospherics/pipe/zpipe/down{
 	dir = 8
@@ -843,9 +894,14 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/spaceport/shops/bar)
 "po" = (
-/obj/machinery/embedded_controller/radio/airlock/access_controller,
-/turf/simulated/wall,
-/area/iskhod/spaceport/shops)
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/solars)
 "pN" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -886,12 +942,17 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 1
 	},
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/external{
+	tag = "lvl2_int";
+	id_tag = "lvl2_int";
+	frequency = 1379;
+	locked = 1
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops)
@@ -983,6 +1044,14 @@
 /obj/structure/curtain/open/shower,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/spaceport/shops)
+"rY" = (
+/obj/machinery/access_button/airlock_interior{
+	dir = 1;
+	master_tag = "lvl1_lock";
+	pixel_y = -25
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/iskhod/spaceport/solars)
 "sn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 6
@@ -1245,6 +1314,10 @@
 /obj/machinery/vending/kink,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/clothes_store)
+"wy" = (
+/obj/effect/shuttle_landmark/surface_transport_spaceport,
+/turf/simulated/floor/reinforced,
+/area/iskhod/spaceport/landing)
 "wz" = (
 /turf/simulated/wall,
 /area/iskhod/spaceport/shops/military_surplus)
@@ -1356,12 +1429,17 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate,
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/effect/floor_decal/industrial/warningred,
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/external{
+	id_tag = "lvl2_ext";
+	tag = "lvl2_ext";
+	frequency = 1379;
+	locked = 1
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops)
@@ -1449,8 +1527,26 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/spaceport/fuel_depot)
 "Ak" = (
-/obj/structure/sign/warning/internals_required/small2,
-/turf/simulated/wall,
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	dir = 4;
+	pixel_x = -25;
+	tag = "lvl1_lock";
+	tag_interior_door = "lvl1_int";
+	tag_exterior_door = "lvl1_ext";
+	tag_purge = 1;
+	tag_exterior_sensor = "lvl1_ext_sens";
+	tag_interior_sensor = "lvl1_int_sens";
+	tag_chamber_sensor = "lvl1_lock_sens";
+	tag_airpump = "lvl1_pump_int";
+	id_tag = "lvl1_lock"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/solars)
 "Am" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
@@ -1491,6 +1587,16 @@
 /obj/machinery/vending/cigarette,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/spaceport/shops/bar)
+"Bd" = (
+/obj/machinery/airlock_sensor/airlock_exterior{
+	id_tag = "lvl1_int_sens";
+	tag = "lvl1_int_sens";
+	master_tag = "lvl1_lock";
+	pixel_y = -25;
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/iskhod/spaceport/solars)
 "Bj" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable{
@@ -1509,12 +1615,22 @@
 "BI" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4;
+	frequency = 1379;
+	id_tag = "lvl2_pump_int";
+	tag = "lvl2_pump_int"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops)
 "BO" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
 	dir = 4
+	},
+/obj/machinery/access_button/airlock_exterior{
+	pixel_y = 25;
+	master_tag = "lvl2_lock"
 	},
 /turf/space,
 /area/iskhod/spaceport/landing)
@@ -1631,6 +1747,13 @@
 /area/iskhod/spaceport/landing)
 "Dn" = (
 /obj/machinery/light/small,
+/obj/machinery/airlock_sensor/airlock_exterior{
+	id_tag = "lvl2_int_sens";
+	tag = "lvl2_int_sens";
+	master_tag = "lvl2_lock";
+	pixel_y = -25;
+	dir = 1
+	},
 /turf/simulated/floor/asteroid/grass,
 /area/iskhod/spaceport/shops)
 "Dq" = (
@@ -1651,6 +1774,13 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/spaceport/shops)
+"DK" = (
+/obj/machinery/access_button/airlock_exterior{
+	pixel_y = 25;
+	master_tag = "lvl1_lock"
+	},
+/turf/space,
+/area/space)
 "En" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -1715,6 +1845,11 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/iskhod/spaceport/fuel_depot)
+"Fa" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/structure/closet/emcloset,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/shops)
 "Fg" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/catwalk,
@@ -1786,11 +1921,14 @@
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 1
 	},
-/obj/machinery/door/airlock/external,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/external{
+	frequency = 1379;
+	id_tag = "lvl1_int"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/solars)
@@ -1856,6 +1994,21 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
+"Hj" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/effect/floor_decal/industrial/warning/fulltile,
+/obj/effect/floor_decal/industrial/warningred,
+/obj/machinery/door/airlock/external{
+	frequency = 1379;
+	id_tag = "lvl1_ext"
+	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/solars)
 "Hl" = (
 /obj/machinery/atmospherics/pipe/tank/plasma{
 	dir = 8;
@@ -1881,6 +2034,22 @@
 	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating/under,
+/area/iskhod/spaceport/solars)
+"HF" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/airlock_sensor/airlock_interior{
+	dir = 4;
+	id_tag = "lvl1_lock_sens";
+	master_tag = "lvl1_lock";
+	tag = "lvl1_lock_sens";
+	pixel_x = -25
+	},
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/solars)
 "HP" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
@@ -1920,13 +2089,6 @@
 	},
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/spaceport/shops/bar)
-"IZ" = (
-/obj/effect/floor_decal/industrial/danger{
-	dir = 1
-	},
-/obj/effect/shuttle_landmark/skipjack_spaceport,
-/turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
 "Jp" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 9
@@ -1981,6 +2143,12 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 4;
+	frequency = 1379;
+	id_tag = "lvl1_pump_int";
+	tag = "lvl1_pump_int"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/solars)
 "JI" = (
@@ -2025,6 +2193,29 @@
 /obj/structure/table/marble,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
+"Km" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	dir = 4;
+	pixel_x = -25;
+	tag = "lvl2_lock";
+	tag_interior_door = "lvl2_int";
+	tag_exterior_door = "lvl2_ext";
+	tag_purge = 1;
+	tag_chamber_sensor = "lvl2_lock_sens";
+	tag_exterior_sensor = "lvl2_ext_sens";
+	tag_interior_sensor = "lvl2_int_sens";
+	tag_airpump = "lvl2_pump_int";
+	id_tag = "lvl2_lock"
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/shops)
 "Kn" = (
 /obj/structure/table/marble,
 /obj/structure/sign/neon/barsign{
@@ -2187,8 +2378,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/clothes_store)
 "Nc" = (
-/obj/machinery/embedded_controller/radio/airlock/access_controller,
-/turf/simulated/wall,
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/structure/closet/emcloset,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/solars)
 "Nd" = (
 /obj/machinery/light/small{
@@ -2211,7 +2403,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
 "Nt" = (
-/obj/machinery/porta_turret/prepper,
+/obj/machinery/porta_turret/gate,
 /turf/simulated/floor/hull,
 /area/iskhod/spaceport/solars)
 "Nx" = (
@@ -2410,8 +2602,13 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate,
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/effect/floor_decal/industrial/warningred,
-/obj/machinery/door/airlock/external,
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/machinery/door/airlock/external{
+	id_tag = "lvl2_ext";
+	tag = "lvl2_ext";
+	frequency = 1379;
+	locked = 1
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops)
 "Rs" = (
@@ -2693,8 +2890,11 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/spaceport/solars)
 "WE" = (
-/obj/structure/sign/warning/internals_required,
-/turf/simulated/wall,
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/obj/machinery/atmospherics/pipe/tank/air{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops)
 "WI" = (
 /turf/simulated/wall,
@@ -2840,11 +3040,14 @@
 /obj/effect/floor_decal/industrial_plant/steel_grate,
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /obj/effect/floor_decal/industrial/warningred,
-/obj/machinery/door/airlock/external,
 /obj/structure/cable{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/external{
+	frequency = 1379;
+	id_tag = "lvl1_ext"
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/solars)
@@ -7822,12 +8025,12 @@ kW
 Sq
 wz
 fm
-bo
-Ak
-Nc
+rY
 It
-Nc
-GL
+It
+It
+It
+DK
 GL
 Du
 GL
@@ -7926,9 +8129,9 @@ wz
 jj
 OT
 FP
-JH
-JH
-YJ
+Ak
+HF
+Hj
 dA
 dA
 dA
@@ -8029,7 +8232,7 @@ Gu
 OT
 FP
 JH
-JH
+po
 YJ
 dA
 dA
@@ -8128,12 +8331,12 @@ TP
 TP
 wz
 fm
-bo
+Bd
+It
+fu
 Nc
 It
-It
-It
-GL
+nv
 GL
 Du
 GL
@@ -8231,10 +8434,10 @@ wz
 wz
 fm
 bo
-Ry
-GL
-GL
-GL
+It
+It
+It
+It
 GL
 GL
 Du
@@ -18023,11 +18226,11 @@ Ly
 gE
 gE
 gE
-Dn
-nv
-po
+eA
 BT
-po
+BT
+BT
+BT
 BO
 bh
 bh
@@ -18127,7 +18330,7 @@ rD
 rD
 rD
 qr
-dl
+Km
 dl
 yk
 Fr
@@ -18230,7 +18433,7 @@ hC
 hC
 kS
 BI
-BI
+dr
 Rp
 Fg
 Fg
@@ -18330,11 +18533,11 @@ gE
 gE
 cO
 Dn
-po
+BT
 WE
+Fa
 BT
-BT
-tG
+cE
 bh
 bh
 bh
@@ -18432,10 +18635,10 @@ fR
 gE
 gE
 gE
-AK
-GL
-GL
-GL
+BT
+BT
+BT
+BT
 mM
 vX
 Pf
@@ -21118,7 +21321,7 @@ GL
 mM
 XA
 XA
-IZ
+tt
 GA
 GA
 GA
@@ -21126,7 +21329,7 @@ GA
 GA
 GA
 GA
-GA
+wy
 GA
 GA
 GA

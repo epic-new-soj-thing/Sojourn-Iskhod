@@ -84,10 +84,10 @@
 	spawn_nothing_percentage = 60
 
 /obj/random/mob/excelsior
-	name = "random excelsior" //about a 50/50 chance to have a corpse, or an excel agent
+	name = "random excelsior" //about a 25/75 chance to have a corpse, or an excel agent
 	icon_state = "hostilemob-brown"
 	alpha = 128
-	mobs = list(/obj/landmark/corpse/excelsior = 10,
+	mobs = list(/obj/landmark/corpse/excelsior = 5,
 		/mob/living/carbon/superior/human/excelsior = 2,
 		/mob/living/carbon/superior/human/excelsior/excel_ppsh = 2,
 		/mob/living/carbon/superior/human/excelsior/excel_ak = 2,
@@ -98,7 +98,7 @@
 		)
 
 /obj/random/mob/excelsior/item_to_spawn()
-	return pickweight()
+	return pickweight(mobs)
 
 /obj/random/mob/excelsior/low_chance
 	name = "low chance random excelsior"

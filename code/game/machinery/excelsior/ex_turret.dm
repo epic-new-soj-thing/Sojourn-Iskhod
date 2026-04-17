@@ -23,6 +23,16 @@
 
 /obj/machinery/porta_turret/excelsior/preloaded
 	ammo = 160
+	use_power = NO_POWER_USE
+
+/obj/machinery/porta_turret/excelsior/preloaded/has_power_source_nearby()
+	return TRUE
+
+/obj/machinery/porta_turret/excelsior/preloaded/powered(chan = 1)
+	return TRUE
+
+/obj/machinery/porta_turret/excelsior/preloaded/use_power(amount, chan = 1, autocalled)
+	return TRUE
 
 /obj/machinery/porta_turret/excelsior/proc/has_power_source_nearby()
 	for (var/a in excelsior_teleporters)

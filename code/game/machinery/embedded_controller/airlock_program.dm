@@ -124,14 +124,18 @@
 		else
 			switch(signal.data["command"])
 				if("cycle_exterior")
-					receive_user_command("cycle_ext")
+					if(state == target_state)
+						begin_cycle_out()
 				if("cycle_interior")
-					receive_user_command("cycle_int")
+					if(state == target_state)
+						begin_cycle_in()
 				if("cycle")
 					if(memory["interior_status"]["state"] == "open")
-						receive_user_command("cycle_ext")
+						if(state == target_state)
+							begin_cycle_out()
 					else
-						receive_user_command("cycle_int")
+						if(state == target_state)
+							begin_cycle_in()
 
 
 /datum/computer/file/embedded_program/airlock/receive_user_command(command)
