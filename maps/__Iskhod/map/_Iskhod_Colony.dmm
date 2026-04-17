@@ -149,6 +149,15 @@
 /obj/effect/floor_decal/industrial/hatch/red,
 /turf/simulated/floor/tiled/white/orangecorner,
 /area/iskhod/maintenance/undergroundfloor2south)
+"abx" = (
+/mob/living/simple/hostile/samak,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/outside/inside_colony/west)
 "abJ" = (
 /obj/machinery/optable/altar,
 /obj/effect/decal/cleanable/dirt,
@@ -10442,9 +10451,6 @@
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 5
 	},
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 8
-	},
 /obj/structure/undies_wardrobe,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/changing_room/pool)
@@ -12489,17 +12495,9 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/storage/tech)
 "dbV" = (
-/obj/effect/floor_decal/floordetail/edgedrain{
-	dir = 8
-	},
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 1
-	},
-/obj/effect/floor_decal/spline/wood{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/crew_quarters/pool)
+/obj/structure/railing,
+/turf/simulated/wall/rock/snow,
+/area/iskhod/pros/shop)
 "dch" = (
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/abandoned/recreation)
@@ -18230,17 +18228,9 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/techstorage)
 "eza" = (
-/obj/effect/floor_decal/floordetail/edgedrain{
-	dir = 4
-	},
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 4
-	},
-/obj/effect/floor_decal/spline/wood{
-	dir = 8
-	},
-/turf/simulated/floor/industrial/white_large_slates,
-/area/iskhod/crew_quarters/pool)
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/iskhod/pros/shop)
 "eze" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -19129,7 +19119,7 @@
 	dir = 8
 	},
 /turf/simulated/open,
-/area/iskhod/pros/shuttle)
+/area/iskhod/pros/shop)
 "eJZ" = (
 /obj/machinery/portable_atmospherics/canister/hydrogen/engine_setup,
 /turf/simulated/floor/tiled/dark/panels,
@@ -24399,9 +24389,6 @@
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 4
 	},
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 2
-	},
 /obj/effect/floor_decal/spline/wood{
 	dir = 8
 	},
@@ -25234,8 +25221,14 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
 "gmb" = (
-/turf/simulated/floor/rock/dark,
-/area/colony)
+/mob/living/simple/hostile/samak,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/outside/inside_colony/east)
 "gmz" = (
 /obj/structure/boulder{
 	pixel_x = -1
@@ -29977,9 +29970,6 @@
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 8
 	},
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 8
-	},
 /obj/effect/floor_decal/spline/wood{
 	dir = 4
 	},
@@ -31205,6 +31195,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/atmos)
+"hPb" = (
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/open,
+/area/iskhod/pros/shop)
 "hPf" = (
 /obj/structure/window/basic/iskhod{
 	dir = 8
@@ -36455,9 +36452,6 @@
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 9
 	},
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 2
-	},
 /obj/structure/closet/secure_closet/personal,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/changing_room/pool)
@@ -41185,6 +41179,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section2)
+"kkv" = (
+/obj/machinery/atmospherics/unary/sink_gas,
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/engine_room)
 "kkB" = (
 /obj/structure/bed/chair/office/light{
 	dir = 1
@@ -49315,6 +49313,9 @@
 /obj/item/storage/fancy/cigar,
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/crew_quarters/barbackroom)
+"mng" = (
+/turf/simulated/open,
+/area/iskhod/pros/shop)
 "mno" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -53983,6 +53984,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
 "nuD" = (
+/obj/machinery/atmospherics/pipe/simple/sink_heat,
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_room)
 "nuO" = (
@@ -70610,7 +70612,7 @@
 	dir = 8
 	},
 /turf/simulated/open,
-/area/iskhod/pros/shuttle)
+/area/iskhod/pros/shop)
 "rGo" = (
 /obj/machinery/genetics/cloner,
 /obj/structure/disposalpipe/trunk{
@@ -71156,6 +71158,10 @@
 	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/medical/patient_wing)
+"rOL" = (
+/mob/living/simple/hostile/samak,
+/turf/simulated/floor/rock/dark,
+/area/iskhod/outside/inside_colony/east)
 "rOO" = (
 /obj/random/structures/low_chance,
 /obj/random/scrap/sparse_weighted/low_chance,
@@ -81183,6 +81189,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section1)
+"uoq" = (
+/obj/structure/railing,
+/turf/simulated/open,
+/area/iskhod/pros/shop)
 "uoQ" = (
 /obj/structure/bed{
 	dir = 4
@@ -84381,9 +84391,6 @@
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 10
 	},
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 4
-	},
 /obj/structure/closet/athletic_mixed,
 /obj/item/clothing/under/bathrobe,
 /turf/simulated/floor/industrial/white_large_slates,
@@ -84868,9 +84875,6 @@
 	},
 /obj/effect/floor_decal/floordetail/edgedrain{
 	dir = 6
-	},
-/obj/effect/floor_decal/corner_techfloor_grid{
-	dir = 1
 	},
 /obj/structure/closet/athletic_mixed,
 /obj/item/clothing/under/bathrobe,
@@ -110713,7 +110717,7 @@ tVH
 xKk
 mxh
 mhT
-dbV
+hyE
 aLW
 gar
 lyT
@@ -111319,7 +111323,7 @@ sml
 uvm
 hdW
 mhT
-eza
+gcQ
 fej
 hxy
 iQs
@@ -119864,7 +119868,7 @@ hJx
 hJx
 sST
 sST
-sST
+dGJ
 lPJ
 lPJ
 ckV
@@ -120065,7 +120069,7 @@ hJx
 hJx
 hJx
 ybV
-nuD
+kkv
 vLR
 odz
 koB
@@ -120268,7 +120272,7 @@ hJx
 hJx
 sST
 sST
-dGJ
+sST
 bAs
 fJN
 rJn
@@ -179834,7 +179838,7 @@ qOA
 qOA
 qOA
 qOA
-qOA
+abx
 qOA
 qOA
 uJZ
@@ -187533,7 +187537,7 @@ qOA
 qOA
 qOA
 qOA
-qOA
+abx
 qOA
 qOA
 qOA
@@ -192598,7 +192602,7 @@ cqi
 cqi
 qwj
 qwj
-qwj
+rOL
 qwj
 qwj
 qwj
@@ -196241,7 +196245,7 @@ cqi
 cqi
 qwj
 qwj
-qwj
+rOL
 qwj
 cqi
 cqi
@@ -200483,7 +200487,7 @@ cqi
 qwj
 qwj
 qwj
-qwj
+rOL
 qwj
 qwj
 qwj
@@ -201954,7 +201958,7 @@ tsj
 lrp
 whi
 jzM
-lrp
+dLk
 dLk
 ycV
 ycV
@@ -202075,7 +202079,7 @@ fep
 fep
 fep
 fep
-fep
+gmb
 fep
 fep
 cqi
@@ -202261,61 +202265,61 @@ fep
 fep
 fep
 fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-fep
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-qwj
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-cqi
-qwj
-qwj
-qwj
-qwj
-qwj
 gmb
-gmb
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+fep
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+qwj
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+cqi
+qwj
+qwj
+qwj
+qwj
+qwj
+qwj
+qwj
 cqi
 jDL
 "}
@@ -202516,8 +202520,8 @@ qwj
 qwj
 qwj
 qwj
-gmb
-gmb
+qwj
+qwj
 cqi
 jDL
 "}
@@ -202712,7 +202716,7 @@ cqi
 qwj
 qwj
 qwj
-qwj
+rOL
 qwj
 qwj
 qwj
@@ -203113,8 +203117,8 @@ cqi
 cqi
 cqi
 cqi
-vJJ
-vJJ
+qwj
+qwj
 qwj
 qwj
 cqi
@@ -207113,7 +207117,7 @@ fep
 fep
 fep
 fep
-fep
+gmb
 fep
 fep
 fep
@@ -211363,7 +211367,7 @@ fep
 fep
 fep
 fep
-fep
+gmb
 fep
 fep
 fep
@@ -214966,7 +214970,7 @@ cqi
 cqi
 fep
 fep
-fep
+gmb
 fep
 fep
 fep
@@ -237698,9 +237702,9 @@ cIh
 cIh
 cIh
 cIh
-fct
-fct
-fct
+aFe
+aFe
+aFe
 cIh
 cIh
 cIh
@@ -237900,9 +237904,9 @@ cIh
 cIh
 cIh
 cIh
-fct
-fct
-fct
+aFe
+aFe
+aFe
 cIh
 cIh
 cIh
@@ -238102,9 +238106,9 @@ cIh
 cIh
 cIh
 cIh
-mfU
-mfU
-mfU
+mng
+mng
+mng
 cIh
 cIh
 cIh
@@ -238304,9 +238308,9 @@ cIh
 cIh
 cIh
 cIh
-mfU
-mfU
-mfU
+mng
+mng
+mng
 cIh
 cIh
 cIh
@@ -238506,9 +238510,9 @@ cIh
 cIh
 cIh
 cIh
-jFl
+uoq
 eJX
-aAK
+hPb
 cIh
 cIh
 cIh
@@ -238708,9 +238712,9 @@ cIh
 cIh
 cIh
 cIh
-jFl
+uoq
 rGn
-aAK
+hPb
 cIh
 cIh
 cIh
@@ -238910,9 +238914,9 @@ cIh
 cIh
 cIh
 cIh
-fct
-sch
-fct
+aFe
+eza
+aFe
 cIh
 cIh
 cIh
@@ -239112,9 +239116,9 @@ cIh
 cIh
 cIh
 cIh
-jFl
-sch
-aAK
+uoq
+eza
+hPb
 cIh
 cIh
 cIh
@@ -239314,9 +239318,9 @@ cIh
 cIh
 cIh
 cIh
-jFl
-sch
-aAK
+uoq
+eza
+hPb
 cIh
 cIh
 cIh
@@ -239516,9 +239520,9 @@ cIh
 cIh
 cIh
 cIh
-jFl
-sch
-aAK
+uoq
+eza
+hPb
 cIh
 cIh
 cIh
@@ -239718,9 +239722,9 @@ cIh
 cIh
 cIh
 cIh
-jFl
-sch
-aAK
+uoq
+eza
+hPb
 cIh
 cIh
 cIh
@@ -239920,9 +239924,9 @@ cIh
 cIh
 cIh
 cIh
-fct
-sch
-fct
+aFe
+eza
+aFe
 cIh
 cIh
 cIh
@@ -240122,9 +240126,9 @@ cIh
 cIh
 cIh
 cIh
-jFl
-sch
-aAK
+uoq
+eza
+hPb
 cIh
 cIh
 cIh
@@ -240324,9 +240328,9 @@ cIh
 cIh
 cIh
 cIh
-jFl
-sch
-aAK
+uoq
+eza
+hPb
 cIh
 cIh
 cIh
@@ -240526,9 +240530,9 @@ cIh
 cqi
 cqi
 cqi
-rdY
-sch
-aAK
+dbV
+eza
+hPb
 cIh
 cIh
 cIh
@@ -240728,9 +240732,9 @@ cqi
 cqi
 cqi
 cqi
-rdY
-sch
-aAK
+dbV
+eza
+hPb
 cIh
 cIh
 cIh
@@ -240930,9 +240934,9 @@ cqi
 cqi
 cqi
 cqi
-fct
-sch
-fct
+aFe
+eza
+aFe
 cIh
 cIh
 cIh
@@ -241132,9 +241136,9 @@ cqi
 cqi
 cqi
 cqi
-rdY
-sch
-aAK
+dbV
+eza
+hPb
 cIh
 cIh
 cIh
@@ -241334,9 +241338,9 @@ cqi
 cqi
 cqi
 cqi
-rdY
-sch
-aAK
+dbV
+eza
+hPb
 cIh
 cIh
 cIh
@@ -241536,9 +241540,9 @@ cqi
 cqi
 cqi
 cqi
-rdY
-sch
-aAK
+dbV
+eza
+hPb
 cIh
 cIh
 cIh
@@ -241738,9 +241742,9 @@ cqi
 cqi
 cqi
 cqi
-rdY
-sch
-aAK
+dbV
+eza
+hPb
 cIh
 cIh
 cIh
@@ -242154,7 +242158,7 @@ wRD
 wRD
 aFe
 aFe
-aFe
+mng
 cIh
 cIh
 cIh
