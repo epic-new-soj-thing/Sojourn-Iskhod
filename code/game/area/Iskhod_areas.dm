@@ -100,6 +100,11 @@
 /area/iskhod/spaceport
 	name = "Spaceport"
 	icon_state = "supply"
+	luminosity = 1
+	dynamic_lighting = 0
+	requires_power = 0
+	flags = AREA_FLAG_EXTERNAL
+	vessel = null
 
 /area/iskhod/spaceport/landing/skipjack
 	name = "Skipjack Landing Zone"
