@@ -64,9 +64,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/clothes_store)
 "bh" = (
-/obj/structure/catwalk,
+/obj/structure/invislight,
 /turf/simulated/floor/plating/under,
-/area/iskhod/spaceport/landing)
+/area/iskhod/spaceport/fuel_depot)
 "bo" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/spaceport/solars)
@@ -106,6 +106,10 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
+"bx" = (
+/mob/living/carbon/superior/xenomorph/spitter,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/spaceport/shops/military_surplus)
 "bz" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 5;
@@ -121,6 +125,9 @@
 /area/iskhod/spaceport/shops)
 "bJ" = (
 /obj/machinery/vending/style,
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/clothes_store)
 "bU" = (
@@ -153,7 +160,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "cE" = (
 /obj/structure/railing/grey{
 	dir = 8
@@ -259,14 +266,17 @@
 	},
 /turf/simulated/floor/plating/under,
 /area/space)
+"dQ" = (
+/mob/living/carbon/superior/xenomorph,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/shops/military_surplus)
 "dX" = (
 /obj/structure/sign/warning/armory/small,
 /turf/simulated/wall,
 /area/iskhod/spaceport/shops/military_surplus)
 "ef" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
@@ -365,6 +375,7 @@
 	d2 = 4;
 	icon_state = "2-4"
 	},
+/mob/living/carbon/superior/xenomorph,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
 "eY" = (
@@ -372,6 +383,15 @@
 /obj/structure/flora/small/trailrockb5,
 /turf/simulated/floor/asteroid/grass,
 /area/iskhod/spaceport/shops)
+"fb" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/mob/living/carbon/superior/xenomorph,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/spaceport/shops/military_surplus)
 "fh" = (
 /obj/structure/railing/grey{
 	dir = 4
@@ -390,6 +410,10 @@
 	icon_state = "4-8"
 	},
 /turf/simulated/floor/tiled/techmaint,
+/area/iskhod/spaceport/solars)
+"fu" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate,
+/turf/simulated/wall,
 /area/iskhod/spaceport/solars)
 "fv" = (
 /obj/structure/table/rack,
@@ -465,6 +489,7 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
+/mob/living/carbon/superior/xenomorph/spitter,
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/spaceport/solars)
 "gX" = (
@@ -535,6 +560,10 @@
 /obj/item/clothing/accessory/necklace,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/clothes_store)
+"hY" = (
+/mob/living/carbon/superior/xenomorph/warrior/defiler,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/maintenance)
 "ia" = (
 /obj/structure/table/marble,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -558,6 +587,10 @@
 	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/spaceport/shops/bar)
+"iD" = (
+/mob/living/carbon/superior/xenomorph/warrior,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/spaceport/shops/military_surplus)
 "iP" = (
 /obj/structure/table/marble,
 /obj/item/storage/bag/plastic,
@@ -603,6 +636,7 @@
 /obj/item/clothing/accessory/duster/cyberpunklong,
 /obj/item/clothing/accessory/duster/donte,
 /obj/item/clothing/accessory/duster/gauntlet,
+/obj/structure/invislight,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/spaceport/shops/clothes_store)
 "jZ" = (
@@ -614,7 +648,7 @@
 "ke" = (
 /obj/structure/sign/warning/docking_area,
 /turf/simulated/wall,
-/area/iskhod/spaceport/landing)
+/area/space)
 "kl" = (
 /obj/structure/table/rack,
 /obj/random/knife,
@@ -734,6 +768,12 @@
 /obj/machinery/light,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/spaceport/shops/bar)
+"mM" = (
+/obj/structure/railing/grey{
+	dir = 8
+	},
+/turf/space,
+/area/space)
 "mR" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -742,7 +782,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "mT" = (
 /obj/structure/sign/neon/bar{
 	pixel_x = 32
@@ -790,6 +830,7 @@
 /obj/item/clothing/accessory/bracelet/watch/leather,
 /obj/item/clothing/accessory/bracelet/watch/leather,
 /obj/machinery/door/blast/shutters/glass,
+/obj/structure/invislight,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/spaceport/shops/clothes_store)
 "nK" = (
@@ -798,7 +839,7 @@
 	},
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "nL" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -810,6 +851,13 @@
 "nU" = (
 /turf/simulated/floor/plating/under,
 /area/space)
+"nZ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/structure/invislight,
+/turf/simulated/floor/plating/under,
+/area/iskhod/spaceport/fuel_depot)
 "of" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -851,6 +899,13 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/maintenance)
+"oA" = (
+/obj/structure/toilet{
+	pixel_y = 10
+	},
+/mob/living/carbon/superior/xenomorph/spitter,
+/turf/simulated/floor/industrial/blue_slates,
+/area/iskhod/spaceport/shops)
 "oD" = (
 /obj/structure/table/rack,
 /obj/random/pouch,
@@ -879,9 +934,8 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/solars)
 "pN" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/spaceport/shops/bar)
@@ -932,6 +986,15 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops)
+"qv" = (
+/obj/structure/railing/grey{
+	dir = 1
+	},
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/turf/space,
+/area/space)
 "qz" = (
 /obj/structure/windoor_assembly{
 	dir = 4
@@ -959,6 +1022,7 @@
 /obj/item/clothing/accessory/bracelet/watch/black,
 /obj/item/clothing/accessory/bracelet/watch/black,
 /obj/machinery/door/blast/shutters/glass,
+/obj/structure/invislight,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/spaceport/shops/clothes_store)
 "rk" = (
@@ -975,7 +1039,7 @@
 	tag = "icon-danger (EAST)"
 	},
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "rA" = (
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/maintenance)
@@ -1012,6 +1076,7 @@
 	dir = 4
 	},
 /obj/structure/curtain/open/shower,
+/mob/living/carbon/superior/xenomorph/warrior/shrike/screecher,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/spaceport/shops)
 "rY" = (
@@ -1022,12 +1087,41 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/spaceport/solars)
+"sb" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/invislight,
+/turf/simulated/floor/plating/under,
+/area/iskhod/spaceport/fuel_depot)
 "sn" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 6
 	},
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/spaceport/shops)
+"su" = (
+/obj/structure/table/rack,
+/obj/machinery/door/blast/shutters/glass,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket,
+/obj/item/ammo_casing/rocket/golok,
+/obj/item/ammo_casing/rocket/golok,
+/obj/item/ammo_casing/rocket/heat,
+/obj/item/ammo_casing/rocket/heat,
+/obj/item/ammo_casing/rocket/shrapnel,
+/obj/item/ammo_casing/rocket/shrapnel,
+/obj/item/weldpack/canister/flamethrower{
+	pixel_x = 5
+	},
+/obj/random/oddity_guns,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/shops/military_surplus)
 "sy" = (
 /obj/machinery/door/airlock/maintenance_interior,
 /obj/machinery/door/firedoor,
@@ -1060,6 +1154,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 10
 	},
+/mob/living/carbon/superior/xenomorph/defender,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
 "td" = (
@@ -1071,6 +1166,10 @@
 "tj" = (
 /turf/simulated/wall,
 /area/iskhod/spaceport/fuel_depot)
+"tk" = (
+/mob/living/carbon/superior/xenomorph/spitter,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/maintenance)
 "tn" = (
 /obj/structure/bed/chair/comfy/blue{
 	dir = 1
@@ -1082,7 +1181,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "tu" = (
 /obj/structure/railing/grey{
 	dir = 4
@@ -1115,6 +1214,10 @@
 /turf/space,
 /area/space)
 "tO" = (
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/shops/clothes_store)
+"tS" = (
+/obj/machinery/light,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/clothes_store)
 "ud" = (
@@ -1175,6 +1278,10 @@
 /obj/structure/sign/warning/caution,
 /turf/simulated/wall,
 /area/iskhod/spaceport/shops/military_surplus)
+"vi" = (
+/mob/living/carbon/superior/xenomorph,
+/turf/simulated/floor/industrial/blue_slates,
+/area/iskhod/spaceport/shops)
 "vu" = (
 /obj/machinery/atmospherics/portables_connector{
 	dir = 1
@@ -1193,11 +1300,9 @@
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/spaceport/shops)
 "vX" = (
-/obj/structure/railing/grey{
-	dir = 8
-	},
-/turf/space,
-/area/space)
+/mob/living/carbon/superior/xenomorph/warrior,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/maintenance)
 "vZ" = (
 /obj/structure/table/marble,
 /obj/machinery/cash_register{
@@ -1281,7 +1386,7 @@
 "wy" = (
 /obj/effect/shuttle_landmark/surface_transport_spaceport,
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "wz" = (
 /turf/simulated/wall,
 /area/iskhod/spaceport/shops/military_surplus)
@@ -1338,7 +1443,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "xA" = (
 /obj/structure/table/rack,
 /obj/machinery/door/blast/shutters/glass,
@@ -1388,7 +1493,7 @@
 	},
 /obj/effect/shuttle_landmark/vasiliy_spaceport,
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "yk" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate,
 /obj/effect/floor_decal/industrial/warning/fulltile,
@@ -1408,11 +1513,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops)
 "yn" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/green_large_slates,
-/area/iskhod/spaceport/shops/military_surplus)
+/mob/living/carbon/superior/xenomorph/warrior/hivelord,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/maintenance)
 "yv" = (
 /obj/structure/railing/grey{
 	dir = 1
@@ -1454,6 +1557,7 @@
 	pixel_y = -28
 	},
 /obj/structure/cable,
+/obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/iskhod/spaceport/fuel_depot)
 "zx" = (
@@ -1576,6 +1680,10 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
+"BI" = (
+/mob/living/carbon/superior/xenomorph/defender,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/maintenance)
 "BO" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -1609,7 +1717,7 @@
 /area/iskhod/spaceport/shops/military_surplus)
 "BZ" = (
 /turf/simulated/wall,
-/area/iskhod/spaceport/landing)
+/area/space)
 "Cd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/structure/cable{
@@ -1697,7 +1805,7 @@
 	tag = "icon-danger (EAST)"
 	},
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "Dn" = (
 /obj/machinery/light,
 /obj/machinery/airlock_sensor/airlock_exterior{
@@ -1727,6 +1835,16 @@
 /obj/machinery/light,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/spaceport/shops)
+"DI" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/curtain/black,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/shops/clothes_store)
 "DK" = (
 /obj/machinery/access_button/airlock_exterior{
 	pixel_y = 25;
@@ -1753,11 +1871,15 @@
 "Eq" = (
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "Es" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow{
 	dir = 10
 	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/maintenance)
+"Ev" = (
+/mob/living/carbon/superior/xenomorph/runner,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/maintenance)
 "Ez" = (
@@ -1793,12 +1915,13 @@
 	dir = 8
 	},
 /obj/structure/catwalk,
+/obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/iskhod/spaceport/fuel_depot)
 "Fa" = (
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/space)
+/mob/living/carbon/superior/xenomorph/spitter/boiler,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/shops/military_surplus)
 "Fg" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/structure/catwalk,
@@ -1913,7 +2036,7 @@
 /area/iskhod/spaceport/solars)
 "GA" = (
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "GI" = (
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/spaceport/shops/bar)
@@ -2079,6 +2202,17 @@
 	},
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
+"JF" = (
+/mob/living/carbon/superior/xenomorph,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/maintenance)
+"JH" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/mob/living/carbon/superior/xenomorph/runner,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/maintenance)
 "JI" = (
 /obj/machinery/light,
 /turf/simulated/floor/industrial/green_large_slates,
@@ -2089,6 +2223,7 @@
 /obj/item/clothing/accessory/duster/crimson,
 /obj/item/clothing/accessory/duster/bloodred,
 /obj/item/clothing/accessory/duster/brown,
+/obj/structure/invislight,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/spaceport/shops/clothes_store)
 "JX" = (
@@ -2195,7 +2330,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "Lk" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2228,7 +2363,7 @@
 	},
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "Ly" = (
 /obj/structure/flora/ausbushes/fernybush,
 /turf/simulated/floor/asteroid/grass,
@@ -2306,9 +2441,15 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/clothes_store)
 "Nc" = (
-/obj/effect/floor_decal/industrial_plant/steel_grate,
-/turf/simulated/wall,
-/area/iskhod/spaceport/solars)
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/mob/living/carbon/superior/xenomorph/warrior/shrike/screecher,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/spaceport/shops/military_surplus)
 "Nd" = (
 /obj/machinery/light{
 	dir = 1
@@ -2354,9 +2495,8 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/clothes_store)
 "NM" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/simulated/floor/industrial/blue_slates,
 /area/iskhod/spaceport/shops)
@@ -2415,7 +2555,7 @@
 	tag = "icon-danger (WEST)"
 	},
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "PR" = (
 /obj/structure/cable{
 	d1 = 4;
@@ -2482,11 +2622,12 @@
 /obj/effect/shuttle_landmark/rocinante_spaceport,
 /obj/effect/floor_decal/industrial/danger,
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "Qw" = (
 /obj/structure/table/rack,
 /obj/machinery/door/blast/shutters/glass,
-/obj/random/oddity_guns,
+/obj/random/dungeon_gun_mods,
+/obj/random/dungeon_gun_mods,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
 "QA" = (
@@ -2664,7 +2805,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/reinforced,
-/area/iskhod/spaceport/landing)
+/area/space)
 "TP" = (
 /obj/structure/table/rack,
 /obj/machinery/door/blast/shutters/glass,
@@ -2751,6 +2892,7 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/iskhod/spaceport/fuel_depot)
 "UV" = (
@@ -2775,14 +2917,10 @@
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/spaceport/shops)
 "Vs" = (
-/obj/structure/railing/grey{
-	dir = 1
-	},
-/obj/structure/railing/grey{
-	dir = 4
-	},
-/turf/space,
-/area/space)
+/obj/machinery/portable_atmospherics/canister,
+/obj/structure/invislight,
+/turf/simulated/floor/plating/under,
+/area/iskhod/spaceport/fuel_depot)
 "VE" = (
 /obj/structure/cable{
 	d1 = 1;
@@ -2799,6 +2937,9 @@
 /obj/item/clothing/under/jersey,
 /obj/item/clothing/under/leisure/white,
 /obj/item/clothing/under/dismas,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/clothes_store)
 "VH" = (
@@ -2881,13 +3022,18 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
 "XA" = (
-/turf/simulated/floor/airless,
-/area/iskhod/spaceport/landing)
+/obj/structure/catwalk,
+/turf/simulated/floor/plating/under,
+/area/space)
 "XB" = (
 /obj/machinery/atmospherics/pipe/zpipe/down{
 	dir = 4
 	},
 /turf/simulated/open,
+/area/iskhod/spaceport/shops/military_surplus)
+"XF" = (
+/mob/living/carbon/superior/xenomorph,
+/turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/spaceport/shops/military_surplus)
 "XH" = (
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
@@ -2946,6 +3092,7 @@
 /obj/structure/table/rack/shelf,
 /obj/item/clothing/accessory/cape/blackedge,
 /obj/item/clothing/accessory/cape/fluffy,
+/obj/structure/invislight,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/spaceport/shops/clothes_store)
 "YD" = (
@@ -2989,6 +3136,9 @@
 /obj/item/clothing/head/headdress,
 /obj/item/clothing/head/sombrero,
 /obj/item/clothing/head/ushanka,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/clothes_store)
 "Zj" = (
@@ -2996,6 +3146,7 @@
 /obj/item/clothing/accessory/bracelet/watch,
 /obj/item/clothing/accessory/bracelet/watch,
 /obj/machinery/door/blast/shutters/glass,
+/obj/structure/invislight,
 /turf/simulated/floor/wood/wild1,
 /area/iskhod/spaceport/shops/clothes_store)
 "ZL" = (
@@ -6608,7 +6759,7 @@ rA
 rA
 rA
 rA
-rA
+Ev
 rA
 rA
 Qa
@@ -6707,7 +6858,7 @@ rA
 rA
 rA
 rA
-rA
+yn
 rA
 rA
 rA
@@ -6805,6 +6956,7 @@ Qa
 rA
 rA
 rA
+JF
 rA
 rA
 rA
@@ -6812,8 +6964,7 @@ rA
 rA
 rA
 rA
-rA
-rA
+JF
 rA
 rA
 Qa
@@ -7012,7 +7163,7 @@ rA
 rA
 rA
 rA
-rA
+Ev
 rA
 rA
 rA
@@ -7110,12 +7261,12 @@ GL
 Qa
 rA
 rA
+hY
 rA
 rA
 rA
 rA
-rA
-rA
+JF
 rA
 rA
 rA
@@ -7213,6 +7364,7 @@ Qa
 rA
 rA
 rA
+JF
 rA
 rA
 rA
@@ -7220,8 +7372,7 @@ rA
 rA
 rA
 rA
-rA
-rA
+tk
 rA
 rA
 Qa
@@ -7320,7 +7471,7 @@ rA
 rA
 kR
 rA
-rA
+BI
 rA
 rA
 rA
@@ -7727,7 +7878,7 @@ ZL
 ZL
 ZL
 yQ
-UV
+fb
 UV
 UV
 UV
@@ -7818,7 +7969,7 @@ wz
 RE
 MQ
 ZL
-ZL
+XF
 JC
 JI
 wz
@@ -8027,21 +8178,21 @@ sR
 rI
 GY
 rI
-rI
+Nc
 rI
 rI
 rI
 rI
 wi
 zA
-ZL
+iD
 iP
 er
 er
 er
 wz
 er
-er
+Fa
 er
 wz
 jj
@@ -8139,7 +8290,7 @@ WX
 ZL
 Kj
 er
-er
+dQ
 er
 Qq
 er
@@ -8238,7 +8389,7 @@ KO
 WX
 PR
 WX
-ZL
+bx
 Kj
 er
 er
@@ -8246,13 +8397,13 @@ hP
 wz
 xA
 TP
-TP
+su
 wz
 fm
 Bd
 It
-Nc
-Nc
+fu
+fu
 It
 nv
 GL
@@ -8430,13 +8581,13 @@ wz
 rM
 MQ
 ZL
-ZL
+iD
 WX
 ZL
 wz
 ZL
 ZL
-ZL
+XF
 ZL
 ZL
 WX
@@ -8735,7 +8886,7 @@ GL
 GL
 wz
 wz
-yn
+ef
 ET
 JY
 wz
@@ -9254,10 +9405,10 @@ rA
 kR
 rA
 rA
-rA
+vX
 Ol
 rA
-Ol
+JH
 rA
 rA
 rA
@@ -16342,27 +16493,27 @@ GL
 GL
 BZ
 BZ
-GL
-GL
-GL
-GL
-GL
-GL
-GL
-Ft
-bh
-bh
-bh
-bh
-Mu
-GL
-GL
-GL
-GL
-GL
-GL
-GL
-GL
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+KP
+XA
+XA
+XA
+XA
+yv
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+mM
 BZ
 BZ
 GL
@@ -16452,10 +16603,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -16554,10 +16705,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -16656,10 +16807,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -16758,10 +16909,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -16860,10 +17011,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -16962,10 +17113,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -17003,7 +17154,7 @@ GL
 GL
 GL
 Dq
-uq
+DI
 tO
 Rc
 Sg
@@ -17016,7 +17167,7 @@ Sg
 Sg
 ia
 tO
-tO
+tS
 Dq
 GL
 GL
@@ -17038,7 +17189,7 @@ GL
 GL
 GL
 tj
-lf
+Vs
 lf
 et
 zc
@@ -17064,10 +17215,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -17158,28 +17309,28 @@ GL
 GL
 BZ
 BZ
-GL
-GL
-GL
-GL
-GL
-GL
-GL
-Ft
-bh
-bh
-bh
-bh
-Mu
-GL
-GL
-GL
-GL
-GL
-GL
-GL
-GL
-GL
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+TT
+XA
+XA
+XA
+XA
+qv
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
 BZ
 BZ
 GL
@@ -17220,7 +17371,7 @@ Sg
 Sg
 An
 tO
-tO
+tS
 Dq
 GL
 GL
@@ -17259,30 +17410,30 @@ GL
 GL
 GL
 BZ
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
 BZ
 GL
 GL
@@ -17344,10 +17495,10 @@ GL
 GL
 GL
 Ft
-hU
+bh
 YD
 wq
-hU
+bh
 Mu
 GL
 GL
@@ -17361,30 +17512,30 @@ GL
 GL
 GL
 GL
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
 GL
 GL
 GL
@@ -17463,8 +17614,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 xx
 PQ
 PQ
@@ -17485,8 +17636,8 @@ PQ
 PQ
 PQ
 Lu
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -17565,8 +17716,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 tt
 GA
 GA
@@ -17587,8 +17738,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -17652,7 +17803,7 @@ GL
 GL
 Ft
 HP
-mq
+sb
 Mu
 GL
 GL
@@ -17667,8 +17818,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 tt
 GA
 GA
@@ -17689,8 +17840,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -17769,8 +17920,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 tt
 GA
 GA
@@ -17791,8 +17942,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -17815,7 +17966,7 @@ wz
 tu
 er
 er
-er
+dQ
 aC
 wz
 cO
@@ -17871,8 +18022,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 tt
 GA
 GA
@@ -17893,8 +18044,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -17957,7 +18108,7 @@ GL
 GL
 GL
 Ft
-HP
+nZ
 mq
 Mu
 GL
@@ -17973,8 +18124,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 tt
 GA
 GA
@@ -17995,8 +18146,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -18027,7 +18178,7 @@ UX
 cM
 DE
 BT
-SE
+oA
 NM
 aj
 Sk
@@ -18075,8 +18226,8 @@ wr
 wr
 wr
 wr
-bh
-bh
+XA
+XA
 tt
 GA
 GA
@@ -18097,8 +18248,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -18150,35 +18301,35 @@ BT
 BT
 BT
 BO
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
 Ah
 Xg
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-bh
-bh
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
 tt
 GA
 GA
@@ -18199,8 +18350,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -18235,7 +18386,7 @@ SE
 NM
 aj
 Sk
-Sk
+vi
 Sk
 BT
 br
@@ -18265,22 +18416,22 @@ Fr
 Fr
 UR
 CL
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-bh
-bh
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
 yi
 GA
 GA
@@ -18301,8 +18452,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -18367,22 +18518,22 @@ Fg
 Fg
 EV
 rk
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-bh
-bh
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
 tt
 GA
 GA
@@ -18403,8 +18554,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -18456,35 +18607,35 @@ WE
 WE
 BT
 cE
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
 Ah
 Ah
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-Fa
-bh
-bh
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
 tt
 GA
 GA
@@ -18505,8 +18656,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -18558,35 +18709,35 @@ GL
 GL
 GL
 GL
-vX
+mM
 Pf
-vX
-vX
-vX
-vX
-vX
-vX
-vX
-vX
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+mM
 tG
 HP
 HP
 ah
-vX
-vX
-vX
-vX
-vX
-vX
-vX
-vX
-vX
-vX
-vX
-vX
-vX
-bh
-bh
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+XA
+XA
 tt
 GA
 GA
@@ -18607,8 +18758,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -18671,7 +18822,7 @@ GL
 GL
 GL
 Ft
-HP
+nZ
 HP
 Mu
 GL
@@ -18687,8 +18838,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 tt
 GA
 GA
@@ -18709,8 +18860,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -18733,7 +18884,7 @@ wz
 sP
 er
 Ny
-er
+dQ
 aC
 wz
 fR
@@ -18789,8 +18940,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 tt
 GA
 GA
@@ -18811,8 +18962,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -18891,8 +19042,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 tt
 GA
 GA
@@ -18913,8 +19064,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -18978,7 +19129,7 @@ GL
 GL
 Ft
 HP
-HP
+nZ
 Mu
 GL
 GL
@@ -18993,8 +19144,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 tt
 GA
 GA
@@ -19015,8 +19166,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -19095,8 +19246,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 tt
 GA
 GA
@@ -19117,8 +19268,8 @@ GA
 GA
 GA
 Eq
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -19183,7 +19334,7 @@ GL
 TT
 Ko
 Ko
-Vs
+qv
 GL
 GL
 GL
@@ -19197,8 +19348,8 @@ GL
 GL
 GL
 GL
-bh
-bh
+XA
+XA
 mR
 cA
 cA
@@ -19219,8 +19370,8 @@ cA
 cA
 cA
 nK
-bh
-bh
+XA
+XA
 GL
 GL
 GL
@@ -19282,10 +19433,10 @@ GL
 GL
 GL
 Ft
-hU
+bh
 fw
 fw
-hU
+bh
 Mu
 GL
 GL
@@ -19299,30 +19450,30 @@ GL
 GL
 GL
 GL
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
 GL
 GL
 GL
@@ -19401,30 +19552,30 @@ GL
 GL
 GL
 BZ
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
+XA
 BZ
 GL
 GL
@@ -19504,28 +19655,28 @@ GL
 GL
 BZ
 BZ
-GL
-GL
-GL
-GL
-GL
-GL
-GL
-Ft
-bh
-bh
-bh
-bh
-Mu
-GL
-GL
-GL
-GL
-GL
-GL
-GL
-GL
-GL
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+KP
+XA
+XA
+XA
+XA
+yv
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+mM
+mM
 BZ
 BZ
 GL
@@ -19588,10 +19739,10 @@ GL
 GL
 GL
 tj
-hU
+bh
 lf
 lf
-hU
+bh
 tj
 GL
 GL
@@ -19614,10 +19765,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -19691,8 +19842,8 @@ GL
 GL
 tj
 tj
-vX
-vX
+mM
+mM
 tj
 tj
 GL
@@ -19716,10 +19867,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -19818,10 +19969,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -19920,10 +20071,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -20022,10 +20173,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -20124,10 +20275,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -20226,10 +20377,10 @@ GL
 GL
 GL
 Ft
-bh
-bh
-bh
-bh
+XA
+XA
+XA
+XA
 Mu
 GL
 GL
@@ -20320,27 +20471,27 @@ GL
 GL
 BZ
 ke
-GL
-GL
-GL
-GL
-GL
-GL
-GL
-Ft
-bh
-bh
-bh
-bh
-Mu
-GL
-GL
-GL
-GL
-GL
-GL
-GL
-GL
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+TT
+XA
+XA
+XA
+XA
+qv
+wr
+wr
+wr
+wr
+wr
+wr
+wr
+wr
 ke
 BZ
 GL
