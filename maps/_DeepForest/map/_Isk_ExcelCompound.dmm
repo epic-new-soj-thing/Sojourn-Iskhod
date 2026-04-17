@@ -69,8 +69,8 @@
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "aH" = (
 /obj/item/stamp,
-/obj/structure/table/steel,
 /obj/item/oddity/common/old_newspaper,
+/obj/structure/table/marble,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "aI" = (
@@ -503,9 +503,9 @@
 /turf/simulated/open,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "gV" = (
-/obj/structure/low_wall,
 /obj/machinery/door/blast/regular/open,
 /obj/item/clothing/accessory/passcard/passport_sol,
+/obj/structure/table/marble,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "gY" = (
@@ -927,8 +927,8 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
 "nE" = (
-/obj/structure/low_wall,
 /obj/machinery/door/blast/regular/open,
+/obj/structure/table/marble,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "nG" = (
@@ -1433,7 +1433,7 @@
 /area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "tY" = (
 /obj/item/stamp,
-/obj/structure/table/steel,
+/obj/structure/table/marble,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "ua" = (
@@ -1510,6 +1510,10 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/warehouse)
+"vq" = (
+/obj/machinery/complant_teleporter,
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
 "vr" = (
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
@@ -2998,9 +3002,9 @@
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
 "Ru" = (
-/obj/structure/low_wall,
 /obj/machinery/door/blast/regular/open,
 /obj/item/oddity/common/old_id,
+/obj/structure/table/marble,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Rx" = (
@@ -3373,11 +3377,6 @@
 /obj/item/reagent_containers/snacks/beetsoup,
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/dungeon/outside/excel_compound/cafeteria)
-"WA" = (
-/obj/item/construct/conveyor,
-/obj/machinery/door/airlock/hatch,
-/turf/simulated/floor/industrial/navy_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "WB" = (
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled/dark/cargo,
@@ -14571,7 +14570,7 @@ XR
 gs
 gs
 gs
-gs
+vq
 gs
 gs
 gs
@@ -60635,7 +60634,7 @@ EK
 Ja
 Ma
 Eo
-WA
+fC
 IS
 fC
 Eo
