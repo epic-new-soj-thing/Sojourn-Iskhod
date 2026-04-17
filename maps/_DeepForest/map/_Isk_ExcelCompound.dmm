@@ -693,6 +693,10 @@
 "kr" = (
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/garage)
+"ks" = (
+/obj/item/mine/excelsior,
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
 "kt" = (
 /obj/effect/floor_decal/industrial/road/straight1,
 /mob/living/simple/hostile/viscerator,
@@ -1344,6 +1348,10 @@
 /obj/effect/floor_decal/industrial/road/straight4,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/garage)
+"sR" = (
+/obj/machinery/porta_turret/excelsior/preloaded,
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/garage)
 "sS" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /obj/structure/barricade,
@@ -1734,6 +1742,10 @@
 "zu" = (
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
+"zC" = (
+/obj/structure/barricade,
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
 "zH" = (
 /obj/structure/barricade,
 /obj/machinery/door/airlock/multi_tile/metal/mait{
@@ -12023,7 +12035,7 @@ gs
 gs
 gs
 gs
-gs
+zC
 gs
 gs
 gs
@@ -12034,7 +12046,7 @@ nO
 Me
 gs
 gs
-gs
+zC
 gs
 gs
 gs
@@ -12175,12 +12187,12 @@ gs
 gs
 gs
 gs
+zC
 gs
 gs
 gs
-gs
-gs
-gs
+ks
+zC
 cr
 Fa
 Me
@@ -12190,7 +12202,7 @@ gs
 gs
 gs
 ef
-gs
+zC
 gs
 gs
 gs
@@ -12332,6 +12344,7 @@ gs
 gs
 gs
 gs
+zC
 gs
 gs
 gs
@@ -12341,8 +12354,7 @@ gs
 gs
 gs
 gs
-gs
-gs
+zC
 gs
 gs
 gs
@@ -14599,7 +14611,7 @@ DV
 DV
 XR
 gs
-gs
+ks
 gs
 XR
 DV
@@ -43422,7 +43434,7 @@ kD
 kr
 oZ
 dy
-mN
+sR
 mN
 mN
 mN
@@ -45709,7 +45721,7 @@ mN
 AO
 bC
 AO
-AO
+uv
 GN
 GN
 GN
