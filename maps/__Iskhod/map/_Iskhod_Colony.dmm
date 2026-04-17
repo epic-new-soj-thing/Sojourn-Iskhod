@@ -12486,9 +12486,9 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/storage/tech)
 "dbV" = (
-/obj/machinery/atmospherics/pipe/simple/sink_heat,
+/obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
-/area/iskhod/engineering/engine_room)
+/area/iskhod/pros/shop)
 "dch" = (
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/abandoned/recreation)
@@ -12823,8 +12823,11 @@
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
 "dhL" = (
-/obj/structure/railing,
-/turf/simulated/wall/rock/snow,
+/obj/structure/railing{
+	dir = 1;
+	tag = "icon-railing0 (NORTH)"
+	},
+/turf/simulated/open,
 /area/iskhod/pros/shop)
 "dhM" = (
 /obj/machinery/alarm{
@@ -14986,13 +14989,6 @@
 /area/iskhod/maintenance/undergroundfloor2south)
 "dHf" = (
 /obj/machinery/recharge_station,
-/obj/machinery/alarm{
-	desc = "This one has no access lock to allow for the vents to be turned on and off when needed.";
-	dir = 4;
-	name = "no-access needed alarm";
-	pixel_x = -32;
-	req_one_access = list()
-	},
 /turf/simulated/floor/tiled/steel,
 /area/iskhod/pros/shuttle_landing_zone)
 "dHi" = (
@@ -18218,10 +18214,7 @@
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/techstorage)
 "eza" = (
-/obj/structure/railing{
-	dir = 1;
-	tag = "icon-railing0 (NORTH)"
-	},
+/obj/structure/railing,
 /turf/simulated/open,
 /area/iskhod/pros/shop)
 "eze" = (
@@ -25215,12 +25208,7 @@
 /area/iskhod/security/sechall)
 "gmb" = (
 /mob/living/simple/hostile/samak,
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472;
-	temperature = 240
-	},
+/turf/simulated/floor/rock/dark,
 /area/iskhod/outside/inside_colony/east)
 "gmz" = (
 /obj/structure/boulder{
@@ -30376,9 +30364,14 @@
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom)
 "hDv" = (
-/obj/structure/catwalk,
-/turf/simulated/floor/plating/under,
-/area/iskhod/pros/shop)
+/mob/living/simple/hostile/samak,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/outside/inside_colony/west)
 "hDz" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -30844,9 +30837,8 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section1)
 "hIW" = (
-/obj/structure/railing,
-/turf/simulated/open,
-/area/iskhod/pros/shop)
+/turf/simulated/floor/reinforced,
+/area/iskhod/pros/shuttle_landing_zone)
 "hJa" = (
 /obj/structure/railing,
 /obj/effect/decal/cleanable/dirt,
@@ -47386,6 +47378,10 @@
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
+"lPF" = (
+/obj/machinery/atmospherics/unary/sink_gas,
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/engine_room)
 "lPJ" = (
 /obj/structure/railing{
 	dir = 8;
@@ -53965,7 +53961,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
 "nuD" = (
-/obj/machinery/atmospherics/unary/sink_gas,
+/obj/machinery/atmospherics/pipe/simple/sink_heat,
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_room)
 "nuO" = (
@@ -61025,8 +61021,9 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/atmos/storage)
 "piD" = (
-/turf/simulated/floor/reinforced,
-/area/iskhod/pros/shuttle_landing_zone)
+/obj/structure/railing,
+/turf/simulated/wall/rock/snow,
+/area/iskhod/pros/shop)
 "piF" = (
 /obj/effect/floor_decal/industrial_plant/border_corner{
 	dir = 8
@@ -62950,15 +62947,6 @@
 /obj/item/book/manual/wiki/laws,
 /turf/simulated/floor/carpet,
 /area/iskhod/security/interview)
-"pHs" = (
-/mob/living/simple/hostile/samak,
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472;
-	temperature = 240
-	},
-/area/iskhod/outside/inside_colony/west)
 "pHy" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red,
 /obj/machinery/light{
@@ -68350,7 +68338,7 @@
 	id_tag = "roci_int_sens"
 	},
 /obj/machinery/access_button/airlock_interior{
-	master_tag = "vasily";
+	master_tag = "rocinante";
 	frequency = 1380;
 	dir = 4;
 	pixel_x = -25;
@@ -91852,9 +91840,8 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/security/maintpost)
 "xcL" = (
-/mob/living/simple/hostile/samak,
-/turf/simulated/floor/rock/dark,
-/area/iskhod/outside/inside_colony/east)
+/turf/simulated/open,
+/area/iskhod/pros/shop)
 "xcN" = (
 /obj/structure/table/standard,
 /obj/random/tool_upgrade/rare/always_spawn,
@@ -91976,8 +91963,14 @@
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/medical/surgeryobs)
 "xed" = (
-/turf/simulated/open,
-/area/iskhod/pros/shop)
+/mob/living/simple/hostile/samak,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/outside/inside_colony/east)
 "xeg" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 8
@@ -118835,7 +118828,7 @@ hJx
 hJx
 hJx
 nuO
-dbV
+nuD
 jSW
 qBC
 qLU
@@ -120047,7 +120040,7 @@ hJx
 hJx
 hJx
 ybV
-nuD
+lPF
 vLR
 odz
 koB
@@ -179816,7 +179809,7 @@ qOA
 qOA
 qOA
 qOA
-pHs
+hDv
 qOA
 qOA
 uJZ
@@ -187515,7 +187508,7 @@ qOA
 qOA
 qOA
 qOA
-pHs
+hDv
 qOA
 qOA
 qOA
@@ -192580,7 +192573,7 @@ cqi
 cqi
 qwj
 qwj
-xcL
+gmb
 qwj
 qwj
 qwj
@@ -196223,7 +196216,7 @@ cqi
 cqi
 qwj
 qwj
-xcL
+gmb
 qwj
 cqi
 cqi
@@ -200465,7 +200458,7 @@ cqi
 qwj
 qwj
 qwj
-xcL
+gmb
 qwj
 qwj
 qwj
@@ -202057,7 +202050,7 @@ fep
 fep
 fep
 fep
-gmb
+xed
 fep
 fep
 cqi
@@ -202243,7 +202236,7 @@ fep
 fep
 fep
 fep
-gmb
+xed
 fep
 fep
 fep
@@ -202694,7 +202687,7 @@ cqi
 qwj
 qwj
 qwj
-xcL
+gmb
 qwj
 qwj
 qwj
@@ -207095,7 +207088,7 @@ fep
 fep
 fep
 fep
-gmb
+xed
 fep
 fep
 fep
@@ -211345,7 +211338,7 @@ fep
 fep
 fep
 fep
-gmb
+xed
 fep
 fep
 fep
@@ -214948,7 +214941,7 @@ cqi
 cqi
 fep
 fep
-gmb
+xed
 fep
 fep
 fep
@@ -235921,8 +235914,8 @@ sZr
 kOH
 yga
 jpv
-piD
-piD
+hIW
+hIW
 rHA
 jON
 jON
@@ -236124,7 +236117,7 @@ iLd
 fpD
 bcY
 kyb
-piD
+hIW
 rHA
 jON
 jON
@@ -236326,7 +236319,7 @@ tEl
 iLE
 rIV
 vlu
-piD
+hIW
 rHA
 jON
 jON
@@ -237740,7 +237733,7 @@ kdH
 oNb
 uab
 gsW
-piD
+hIW
 rHA
 jON
 dzD
@@ -237942,7 +237935,7 @@ srE
 tez
 khD
 dmC
-piD
+hIW
 rHA
 jON
 dzD
@@ -238084,9 +238077,9 @@ cIh
 cIh
 cIh
 cIh
-xed
-xed
-xed
+xcL
+xcL
+xcL
 cIh
 cIh
 cIh
@@ -238135,7 +238128,7 @@ ige
 mUQ
 oJD
 vIP
-piD
+hIW
 sGr
 hYw
 rjZ
@@ -238143,8 +238136,8 @@ rGA
 olL
 tbr
 ylH
-piD
-piD
+hIW
+hIW
 rHA
 jON
 dzD
@@ -238286,9 +238279,9 @@ cIh
 cIh
 cIh
 cIh
-xed
-xed
-xed
+xcL
+xcL
+xcL
 cIh
 cIh
 cIh
@@ -238488,9 +238481,9 @@ cIh
 cIh
 cIh
 cIh
-hIW
-eJX
 eza
+eJX
+dhL
 cIh
 cIh
 cIh
@@ -238690,9 +238683,9 @@ cIh
 cIh
 cIh
 cIh
-hIW
-rGn
 eza
+rGn
+dhL
 cIh
 cIh
 cIh
@@ -238893,7 +238886,7 @@ cIh
 cIh
 cIh
 aFe
-hDv
+dbV
 aFe
 cIh
 cIh
@@ -239094,9 +239087,9 @@ cIh
 cIh
 cIh
 cIh
-hIW
-hDv
 eza
+dbV
+dhL
 cIh
 cIh
 cIh
@@ -239296,9 +239289,9 @@ cIh
 cIh
 cIh
 cIh
-hIW
-hDv
 eza
+dbV
+dhL
 cIh
 cIh
 cIh
@@ -239498,9 +239491,9 @@ cIh
 cIh
 cIh
 cIh
-hIW
-hDv
 eza
+dbV
+dhL
 cIh
 cIh
 cIh
@@ -239700,9 +239693,9 @@ cIh
 cIh
 cIh
 cIh
-hIW
-hDv
 eza
+dbV
+dhL
 cIh
 cIh
 cIh
@@ -239903,7 +239896,7 @@ cIh
 cIh
 cIh
 aFe
-hDv
+dbV
 aFe
 cIh
 cIh
@@ -240104,9 +240097,9 @@ cIh
 cIh
 cIh
 cIh
-hIW
-hDv
 eza
+dbV
+dhL
 cIh
 cIh
 cIh
@@ -240306,9 +240299,9 @@ cIh
 cIh
 cIh
 cIh
-hIW
-hDv
 eza
+dbV
+dhL
 cIh
 cIh
 cIh
@@ -240508,9 +240501,9 @@ cIh
 cqi
 cqi
 cqi
+piD
+dbV
 dhL
-hDv
-eza
 cIh
 cIh
 cIh
@@ -240710,9 +240703,9 @@ cqi
 cqi
 cqi
 cqi
+piD
+dbV
 dhL
-hDv
-eza
 cIh
 cIh
 cIh
@@ -240913,7 +240906,7 @@ cqi
 cqi
 cqi
 aFe
-hDv
+dbV
 aFe
 cIh
 cIh
@@ -241114,9 +241107,9 @@ cqi
 cqi
 cqi
 cqi
+piD
+dbV
 dhL
-hDv
-eza
 cIh
 cIh
 cIh
@@ -241316,9 +241309,9 @@ cqi
 cqi
 cqi
 cqi
+piD
+dbV
 dhL
-hDv
-eza
 cIh
 cIh
 cIh
@@ -241518,9 +241511,9 @@ cqi
 cqi
 cqi
 cqi
+piD
+dbV
 dhL
-hDv
-eza
 cIh
 cIh
 cIh
@@ -241720,9 +241713,9 @@ cqi
 cqi
 cqi
 cqi
+piD
+dbV
 dhL
-hDv
-eza
 cIh
 cIh
 cIh
@@ -242136,7 +242129,7 @@ wRD
 wRD
 aFe
 aFe
-xed
+xcL
 cIh
 cIh
 cIh
@@ -246820,16 +246813,16 @@ cIh
 bKL
 dzD
 tIP
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
 vES
 eZE
 pUJ
@@ -246839,7 +246832,7 @@ rHl
 rCY
 ofo
 ppz
-piD
+hIW
 lQz
 dzD
 tpw
@@ -247022,15 +247015,15 @@ cIh
 bKL
 dzD
 tIP
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
 goB
 kDU
 biv
@@ -247041,7 +247034,7 @@ htP
 xUb
 ylB
 pKF
-piD
+hIW
 lQz
 dzD
 tpw
@@ -247224,15 +247217,15 @@ cIh
 bKL
 dzD
 tIP
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
 lbf
 qxA
 qru
@@ -247243,7 +247236,7 @@ evD
 aej
 gAY
 erN
-piD
+hIW
 lQz
 dzD
 tpw
@@ -247426,10 +247419,10 @@ cIh
 bKL
 dzD
 tIP
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
 xCR
 aYz
 xED
@@ -247445,7 +247438,7 @@ fqZ
 uff
 sHX
 iBH
-piD
+hIW
 lQz
 dzD
 tpw
@@ -247628,10 +247621,10 @@ cIh
 kNH
 dzD
 tIP
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
 sYe
 jKz
 qBs
@@ -247647,7 +247640,7 @@ eca
 obN
 abe
 qmR
-piD
+hIW
 lQz
 dzD
 kNH
@@ -247830,7 +247823,7 @@ cIh
 kNH
 dzD
 tIP
-piD
+hIW
 qYg
 ctg
 fCk
@@ -247849,7 +247842,7 @@ way
 nZd
 jkN
 rPd
-piD
+hIW
 lQz
 dzD
 kNH
@@ -248840,7 +248833,7 @@ cIh
 kNH
 jON
 tIP
-piD
+hIW
 otk
 fPR
 tqN
@@ -248859,7 +248852,7 @@ azW
 wXH
 bUs
 hTp
-piD
+hIW
 lQz
 jON
 kNH
@@ -249042,10 +249035,10 @@ cIh
 kNH
 jON
 tIP
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
 cBM
 aaE
 jot
@@ -249061,7 +249054,7 @@ nby
 heh
 kmv
 bjD
-piD
+hIW
 lQz
 jON
 kNH
@@ -249244,10 +249237,10 @@ cIh
 bKL
 jON
 tIP
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
 baR
 piw
 cOC
@@ -249263,7 +249256,7 @@ oTg
 ouH
 eQi
 jDS
-piD
+hIW
 lQz
 jON
 tpw
@@ -249446,12 +249439,12 @@ cIh
 bKL
 jON
 tIP
-piD
-piD
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
 xzG
 xqk
 fnR
@@ -249465,7 +249458,7 @@ nQK
 aIn
 jkS
 jxZ
-piD
+hIW
 lQz
 jON
 tpw
@@ -249648,14 +249641,14 @@ cIh
 bKL
 jON
 tIP
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
 wtl
 wUN
 oWW
@@ -249667,7 +249660,7 @@ jCw
 cvS
 rHW
 ccK
-piD
+hIW
 lQz
 jON
 tpw
@@ -249850,16 +249843,16 @@ cIh
 bKL
 jON
 tIP
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
 gnr
 qZO
 eEP
@@ -249869,7 +249862,7 @@ cho
 wab
 xLO
 hhQ
-piD
+hIW
 lQz
 jON
 tpw
@@ -250052,26 +250045,26 @@ cIh
 kNH
 jON
 tIP
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
 xNk
 xNk
 xNk
-piD
-piD
-piD
-piD
-piD
-piD
-piD
-piD
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
+hIW
 lQz
 jON
 kNH
