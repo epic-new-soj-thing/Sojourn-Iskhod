@@ -471,12 +471,6 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
-"gw" = (
-/obj/machinery/porta_turret/excelsior/preloaded{
-	desc = s"A fully automated anti infantry platform. Fires 7.5mm rounds."
-	},
-/turf/simulated/floor/rock/manmade/road,
-/area/iskhod/dungeon/outside/excel_compound/garage)
 "gx" = (
 /obj/machinery/door/airlock/lift,
 /turf/simulated/floor/industrial/white_large_slates,
@@ -1516,12 +1510,6 @@
 /obj/structure/closet/crate,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/warehouse)
-"vq" = (
-/obj/machinery/porta_turret/excelsior/preloaded{
-	desc = s"A fully automated anti infantry platform. Fires 7.5mm rounds."
-	},
-/turf/simulated/floor/rock/manmade/road,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "vr" = (
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
@@ -42378,7 +42366,7 @@ bC
 AO
 AO
 AO
-vq
+uv
 GN
 GN
 GN
@@ -42827,7 +42815,7 @@ dy
 dy
 dy
 dy
-gw
+mN
 mN
 mN
 mN
