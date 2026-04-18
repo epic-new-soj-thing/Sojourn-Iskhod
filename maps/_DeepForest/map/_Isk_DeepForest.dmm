@@ -71,6 +71,7 @@
 /turf/simulated/wall/r_wall,
 /area/iskhod/outside/forest)
 "dh" = (
+/obj/structure/multiz/stairs/enter/bottom,
 /obj/structure/multiz/stairs/active/bottom,
 /turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/dungeon/outside/caverns)
@@ -230,7 +231,12 @@
 /obj/random/junk/low_chance,
 /turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/dungeon/outside/caverns)
+"iV" = (
+/obj/structure/multiz/stairs/enter,
+/turf/unsimulated/mineral/cold,
+/area/iskhod/dungeon/outside/caverns)
 "jj" = (
+/obj/structure/multiz/stairs/enter/bottom,
 /obj/structure/multiz/stairs/active/bottom,
 /turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/outside/forest)
@@ -387,6 +393,9 @@
 /turf/simulated/floor/tiled/steel/panels,
 /area/iskhod/dungeon/outside/caverns)
 "oG" = (
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 1
+	},
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 1
 	},
@@ -416,6 +425,9 @@
 /turf/simulated/mineral/frostyrock,
 /area/iskhod/outside/forest)
 "pL" = (
+/obj/structure/multiz/stairs/enter{
+	dir = 1
+	},
 /obj/structure/multiz/stairs/active{
 	dir = 1
 	},
@@ -588,6 +600,9 @@
 /turf/simulated/floor/asteroid/shale,
 /area/iskhod/dungeon/outside/caverns)
 "yu" = (
+/obj/structure/multiz/stairs/enter/bottom{
+	dir = 4
+	},
 /obj/structure/multiz/stairs/active/bottom{
 	dir = 4
 	},
@@ -696,6 +711,7 @@
 /turf/simulated/mineral/frostyrock,
 /area/iskhod/outside/forest)
 "Di" = (
+/obj/structure/multiz/stairs/enter/bottom,
 /obj/structure/multiz/stairs/active/bottom,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0"
@@ -862,6 +878,7 @@
 /turf/simulated/floor/asteroid/shale,
 /area/iskhod/dungeon/outside/trashcave)
 "Kx" = (
+/obj/structure/multiz/stairs/enter,
 /obj/structure/multiz/stairs/active,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/dungeon/outside/caverns)
@@ -941,6 +958,7 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/outside/forest)
 "NF" = (
+/obj/structure/multiz/stairs/enter,
 /obj/structure/multiz/stairs/active,
 /turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/dungeon/outside/caverns)
@@ -972,6 +990,9 @@
 /turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/outside/forest)
 "OF" = (
+/obj/structure/multiz/stairs/enter{
+	dir = 4
+	},
 /obj/structure/multiz/stairs/active{
 	dir = 4
 	},
@@ -1026,6 +1047,7 @@
 /turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/dungeon/outside/caverns)
 "SQ" = (
+/obj/structure/multiz/stairs/enter,
 /obj/structure/multiz/stairs/active,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0"
@@ -1052,6 +1074,9 @@
 /turf/simulated/mineral/frostyrock,
 /area/iskhod/outside/forest)
 "TZ" = (
+/obj/structure/multiz/stairs/enter{
+	dir = 1
+	},
 /obj/structure/multiz/stairs/active{
 	dir = 1
 	},
@@ -397503,7 +397528,7 @@ jW
 jW
 AN
 AN
-AN
+iV
 AN
 AN
 iw
