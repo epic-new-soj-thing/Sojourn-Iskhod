@@ -9121,10 +9121,6 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/toilet/public)
-"cin" = (
-/obj/effect/step_trigger/A_colony_to_forest_1,
-/turf/simulated/floor/rock/dark,
-/area/iskhod/outside/inside_colony/east)
 "cir" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
@@ -26636,6 +26632,10 @@
 "gDF" = (
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/outside/inside_colony/west)
+"gDM" = (
+/obj/effect/step_trigger/A_colony_to_forest_1,
+/turf/simulated/floor/rock/dark,
+/area/iskhod/outside/inside_colony/east)
 "gDR" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -40896,10 +40896,6 @@
 	},
 /turf/simulated/floor/carpet/gaycarpet,
 /area/iskhod/crew_quarters/cafeteria)
-"kgh" = (
-/obj/effect/step_trigger/A_colony_to_forest_2,
-/turf/simulated/floor/rock/dark,
-/area/iskhod/outside/inside_colony/east)
 "kgn" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
@@ -69102,6 +69098,7 @@
 "rkq" = (
 /obj/structure/catwalk,
 /obj/structure/closet/crate/trashcart,
+/obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section1)
 "rkz" = (
@@ -71721,6 +71718,7 @@
 "rVL" = (
 /obj/structure/catwalk,
 /obj/structure/closet/crate/internals,
+/obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section1)
 "rVM" = (
@@ -84190,6 +84188,10 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster/quarters)
+"vdg" = (
+/obj/effect/step_trigger/A_colony_to_forest_2,
+/turf/simulated/floor/rock/dark,
+/area/iskhod/outside/inside_colony/east)
 "vdB" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/security/evidencestorage)
@@ -202376,7 +202378,7 @@ qwj
 qwj
 qwj
 qwj
-cin
+gDM
 cqi
 jDL
 "}
@@ -202578,7 +202580,7 @@ qwj
 qwj
 qwj
 qwj
-kgh
+vdg
 cqi
 jDL
 "}
