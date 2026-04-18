@@ -156,22 +156,22 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "A_forest_to_colony_1"
 	id_target = "A_colony_to_forest_1"
 
-/obj/effect/step_trigger/B_colony_to_forest_1
+/obj/effect/step_trigger/A_colony_to_forest_2
 	id = "B_colony_to_forest_1"
 	id_target = "B_forest_to_colony_1"
 
-/obj/effect/step_trigger/B_forest_to_colony_1
+/obj/effect/step_trigger/A_forest_to_colony_2
 	id = "B_forest_to_colony_1"
 	id_target = "B_colony_to_forest_1"
 
 
 
 //Compound <-> Forest.
-/obj/effect/step_trigger/A_compound_to_forest_2
+/obj/effect/step_trigger/B_compound_to_forest_1
 	id = "A_compound_to_forest_2"
 	id_target = "A_forest_to_compound_2"
 
-/obj/effect/step_trigger/A_forest_to_compound_2
+/obj/effect/step_trigger/B_forest_to_compound_1
 	id = "A_forest_to_compound_2"
 	id_target = "A_compound_to_forest_2"
 
