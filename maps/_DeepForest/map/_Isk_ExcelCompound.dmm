@@ -367,7 +367,9 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
 "ef" = (
-/mob/living/simple/hostile/viscerator,
+/mob/living/simple/hostile/viscerator{
+	faction = "excelsior"
+	},
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
 "el" = (
@@ -572,6 +574,13 @@
 /mob/living/carbon/superior/human/excelsior/excel_ak,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"hi" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5;
+	tag = "icon-intact (NORTHEAST)"
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "hy" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/item/tool_upgrade/augment/ai_tool_excelsior,
@@ -599,6 +608,12 @@
 /mob/living/carbon/superior/human/excelsior/excel_hammer_shield,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
+"hZ" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ic" = (
 /obj/structure/table/rack,
 /obj/structure/bedsheetbin,
@@ -775,7 +790,9 @@
 /area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "kt" = (
 /obj/effect/floor_decal/industrial/road/straight1,
-/mob/living/simple/hostile/viscerator,
+/mob/living/simple/hostile/viscerator{
+	faction = "excelsior"
+	},
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "kD" = (
@@ -1103,6 +1120,10 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
+"oB" = (
+/obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "oC" = (
 /obj/structure/bed/psych{
 	desc = "It can be a bit noisy, but still serves well.";
@@ -1129,6 +1150,12 @@
 /mob/living/carbon/superior/human/excelsior/excel_drozd,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"oL" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "oM" = (
 /obj/random/firstaid,
 /obj/random/firstaid,
@@ -1137,6 +1164,12 @@
 /obj/random/rations,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"oN" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 6
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "oV" = (
 /obj/structure/multiz/stairs/enter/bottom,
 /turf/simulated/floor/rock/manmade/road,
@@ -1242,6 +1275,14 @@
 /obj/random/toolbox,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"qu" = (
+/obj/machinery/atmospherics/pipe/tank/plasma{
+	dir = 4;
+	description_antag = "Will bldddddind people if they do not wear face-covering gear";
+	start_pressure = 15000
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "qw" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/random/tool_upgrade/rare/low_chance,
@@ -1333,6 +1374,10 @@
 /mob/living/carbon/superior/human/excelsior/excel_ak,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/cafeteria)
+"rK" = (
+/obj/machinery/portable_atmospherics/canister/plasma,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "rM" = (
 /obj/item/mine/excelsior,
 /turf/simulated/floor/snow/smooth{
@@ -1559,6 +1604,15 @@
 	temperature = 278.15
 	},
 /area/iskhod/dungeon/outside/excel_compound/cafeteria)
+"tW" = (
+/obj/machinery/porta_turret/excelsior/preloaded,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "tY" = (
 /obj/item/stamp,
 /obj/structure/table/marble,
@@ -1860,6 +1914,12 @@
 /obj/machinery/excelsior_autodoc,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"yP" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "yQ" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/storage/cargovest,
@@ -1930,6 +1990,11 @@
 /obj/structure/invislight,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
+"zW" = (
+/obj/structure/table/rack,
+/obj/item/stack/material/steel/random,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ae" = (
 /obj/machinery/porta_turret/excelsior/preloaded,
 /turf/simulated/floor/rock/manmade/road,
@@ -2000,7 +2065,9 @@
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
 "AY" = (
-/mob/living/simple/hostile/viscerator,
+/mob/living/simple/hostile/viscerator{
+	faction = "excelsior"
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
 "AZ" = (
@@ -2026,7 +2093,9 @@
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
 "Bj" = (
-/mob/living/simple/hostile/viscerator,
+/mob/living/simple/hostile/viscerator{
+	faction = "excelsior"
+	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
@@ -2184,6 +2253,13 @@
 /obj/item/storage/pill_bottle/happy,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"Do" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 4;
+	tag = "icon-map (EAST)"
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ds" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/item/mine/excelsior,
@@ -2195,6 +2271,10 @@
 /obj/machinery/optable,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"DB" = (
+/obj/machinery/porta_turret/excelsior/preloaded,
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
 "DE" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/airlock{
@@ -2202,6 +2282,12 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
+"DG" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "DN" = (
 /obj/structure/closet/crate/excelsior,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -2489,6 +2575,7 @@
 	},
 /obj/effect/decal/cleanable/blood/splatter,
 /obj/effect/decal/cleanable/vomit,
+/obj/structure/invislight,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
 "GY" = (
@@ -2530,6 +2617,11 @@
 /obj/structure/closet/crate/secure/loot,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/warehouse)
+"Hs" = (
+/obj/structure/table/rack,
+/obj/item/tool/wrench,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ht" = (
 /mob/living/carbon/superior/human/excelsior/excel_vintorez,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -2587,6 +2679,7 @@
 	},
 /obj/effect/decal/cleanable/vomit,
 /mob/living/carbon/superior/human/excelsior/excel_drozd,
+/obj/structure/invislight,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
 "If" = (
@@ -2660,6 +2753,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/asteroid/grass,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"Jn" = (
+/obj/machinery/porta_turret/excelsior/preloaded,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Jq" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -2682,6 +2779,12 @@
 /obj/structure/sign/warningnew/flammables,
 /turf/simulated/wall/iron,
 /area/iskhod/dungeon/outside/excel_compound/garage)
+"JJ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "JL" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/effect/floor_decal/industrial/box/white,
@@ -2735,6 +2838,14 @@
 /obj/effect/shuttle_landmark/rocinante_excel_compound,
 /turf/simulated/floor/reinforced,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"Ks" = (
+/obj/machinery/atmospherics/pipe/tank/plasma{
+	dir = 8;
+	description_antag = "Will bldddddind people if they do not wear face-covering gear";
+	start_pressure = 15000
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Kv" = (
 /obj/machinery/door/airlock/highsecurity{
 	locked = 1
@@ -2753,7 +2864,9 @@
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "KL" = (
-/mob/living/simple/hostile/viscerator,
+/mob/living/simple/hostile/viscerator{
+	faction = "excelsior"
+	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
 	oxygen = 21.8366;
@@ -2948,7 +3061,9 @@
 /area/iskhod/dungeon/outside/excel_compound/garage)
 "MT" = (
 /obj/effect/floor_decal/industrial/road/straight3,
-/mob/living/simple/hostile/viscerator,
+/mob/living/simple/hostile/viscerator{
+	faction = "excelsior"
+	},
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "MX" = (
@@ -3001,6 +3116,12 @@
 /area/iskhod/dungeon/outside/excel_compound/garage)
 "NE" = (
 /obj/effect/decal/cleanable/blood,
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
+"NG" = (
+/mob/living/carbon/superior/human/excelsior/excel_ak{
+	faction = s
+	},
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
 "NI" = (
@@ -3140,7 +3261,9 @@
 /turf/simulated/floor/industrial/fancy_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
 "Pk" = (
-/mob/living/simple/hostile/viscerator,
+/mob/living/simple/hostile/viscerator{
+	faction = "excelsior"
+	},
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Pl" = (
@@ -3337,6 +3460,12 @@
 /obj/item/tray,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"Sl" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 9
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Sm" = (
 /obj/machinery/excelsior_boombox,
 /turf/simulated/floor/rock/manmade/road,
@@ -3364,6 +3493,10 @@
 /area/iskhod/dungeon/outside/excel_compound/bunker)
 "SH" = (
 /obj/machinery/body_scanconsole,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
+"SI" = (
+/obj/structure/scrap/food,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
 "SK" = (
@@ -3582,6 +3715,10 @@
 "UG" = (
 /turf/simulated/floor/asteroid/grass,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"UT" = (
+/obj/structure/scrap/food/large,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
 "UY" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/barricade,
@@ -3789,6 +3926,7 @@
 /obj/structure/toilet{
 	pixel_y = 10
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
 "YG" = (
@@ -3872,6 +4010,10 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/iskhod/dungeon/outside/excel_compound/warehouse)
+"ZU" = (
+/obj/structure/dispenser/plasma,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ZW" = (
 /obj/structure/table/steel,
 /obj/item/stamp,
@@ -12497,7 +12639,7 @@ gs
 gs
 gs
 gs
-hS
+NG
 NO
 gs
 gs
@@ -12663,7 +12805,7 @@ gs
 gs
 gs
 gs
-gs
+DB
 gs
 NO
 gs
@@ -20434,7 +20576,7 @@ XR
 DV
 DV
 DV
-DV
+SI
 XR
 IP
 IP
@@ -20585,8 +20727,8 @@ Mo
 XR
 DV
 DV
-DV
-DV
+SI
+SI
 XR
 IP
 IP
@@ -20737,8 +20879,8 @@ Sa
 XR
 DV
 DV
-DV
-DV
+SI
+SI
 XR
 IP
 IP
@@ -20888,9 +21030,9 @@ yG
 HX
 XR
 DV
-DV
-DV
-DV
+SI
+SI
+UT
 XR
 IP
 IP
@@ -36058,7 +36200,7 @@ AO
 AO
 AO
 AO
-GN
+tW
 GN
 GN
 KZ
@@ -41795,7 +41937,7 @@ GN
 GN
 GN
 GN
-GN
+gn
 GN
 GN
 GN
@@ -65923,7 +66065,7 @@ NQ
 NQ
 NQ
 NQ
-NQ
+BO
 NQ
 NQ
 NQ
@@ -66986,15 +67128,15 @@ NQ
 NQ
 AA
 Ja
+qu
+qu
+qu
+qu
 Ja
 Ja
-Ja
-Ja
-Ja
-Ja
-Ja
-Ja
-Ja
+rK
+rK
+rK
 AA
 NQ
 If
@@ -67138,10 +67280,10 @@ NQ
 NQ
 AA
 Ja
-Ja
-Ja
-Ja
-Ja
+JJ
+Do
+oB
+Sl
 Ja
 Ja
 Ja
@@ -67292,13 +67434,13 @@ AA
 Ja
 Ja
 Ja
+DG
 Ja
 Ja
 Ja
 Ja
 Ja
-Ja
-Ja
+ZU
 AA
 NQ
 FD
@@ -67444,13 +67586,13 @@ AA
 Ja
 Ja
 Ja
+oL
 Ja
 Ja
 Ja
 Ja
 Ja
-Ja
-Ja
+ZU
 Bx
 NQ
 NQ
@@ -67594,12 +67736,12 @@ NQ
 NQ
 AA
 Ja
-Ja
-Ja
-Ja
-Ja
-Ja
-Ja
+TB
+DX
+DX
+DX
+DX
+qd
 Ja
 Ja
 Ja
@@ -67746,12 +67888,12 @@ NQ
 NQ
 AA
 Ja
-Ja
-Ja
-Ja
-Ja
-Ja
-Ja
+If
+AO
+AO
+AO
+AO
+mf
 Ja
 Ja
 Ja
@@ -67898,15 +68040,15 @@ NQ
 NQ
 AA
 Ja
+If
+AO
+AO
+AO
+AO
+mf
 Ja
 Ja
-Ja
-Ja
-Ja
-Ja
-Ja
-Ja
-Ja
+zW
 AA
 NQ
 NQ
@@ -67914,7 +68056,7 @@ NQ
 NQ
 NQ
 NQ
-NQ
+Jn
 AO
 AO
 AO
@@ -68050,15 +68192,15 @@ NQ
 NQ
 AA
 Ja
+If
+AO
+AO
+AO
+AO
+mf
 Ja
 Ja
-Ja
-Ja
-Ja
-Ja
-Ja
-Ja
-Ja
+Hs
 AA
 NQ
 NQ
@@ -68202,12 +68344,12 @@ NQ
 NQ
 AA
 Ja
-Ja
-Ja
-Ja
-Ja
-Ja
-Ja
+FD
+Ob
+Ob
+Ob
+Ob
+zd
 Ja
 Ja
 Ja
@@ -68356,7 +68498,7 @@ AA
 Ja
 Ja
 Ja
-Ja
+yP
 Ja
 Ja
 Ja
@@ -68508,7 +68650,7 @@ AA
 Ja
 Ja
 Ja
-Ja
+DG
 Ja
 Ja
 Ja
@@ -68658,10 +68800,10 @@ NQ
 NQ
 AA
 Ja
-Ja
-Ja
-Ja
-Ja
+oN
+hZ
+oB
+hi
 Ja
 Ja
 Ja
@@ -68810,10 +68952,10 @@ NQ
 NQ
 AA
 Ja
-Ja
-Ja
-Ja
-Ja
+Ks
+Ks
+Ks
+Ks
 Ja
 Ja
 Ja
@@ -69263,7 +69405,7 @@ qJ
 BW
 NQ
 NQ
-NQ
+BO
 NQ
 NQ
 NQ
