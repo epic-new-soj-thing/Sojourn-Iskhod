@@ -24,6 +24,8 @@
 /obj/structure/sign/atmos/atmos_n2{
 	pixel_y = 30
 	},
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/obj/effect/floor_decal/spline/fancy/three_quarters,
 /turf/simulated/floor/reinforced/nitrogen,
 /area/iskhod/engineering/atmos)
 "aaD" = (
@@ -5709,6 +5711,7 @@
 /area/iskhod/maintenance/undergroundfloor2south)
 "bru" = (
 /obj/machinery/camera/network/engineering,
+/obj/structure/sign/atmos/atmos_plasma,
 /turf/simulated/floor/reinforced/plasma,
 /area/iskhod/engineering/atmos)
 "brz" = (
@@ -12453,7 +12456,8 @@
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/security/detectives_office)
 "dbm" = (
-/obj/structure/sign/atmos/atmos_plasma,
+/obj/machinery/portable_atmospherics/canister/plasma,
+/obj/effect/floor_decal/spline/fancy/three_quarters,
 /turf/simulated/floor/reinforced/plasma,
 /area/iskhod/engineering/atmos)
 "dbq" = (
@@ -24072,7 +24076,8 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/medbreak)
 "fWw" = (
-/obj/structure/sign/atmos/atmos_co2,
+/obj/machinery/portable_atmospherics/canister/carbon_dioxide,
+/obj/effect/floor_decal/spline/fancy/three_quarters,
 /turf/simulated/floor/reinforced/carbon_dioxide,
 /area/iskhod/engineering/atmos)
 "fWL" = (
@@ -32803,7 +32808,11 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor2south)
 "ikB" = (
-/obj/structure/sign/atmos/atmos_air,
+/obj/structure/sign/atmos/atmos_n2{
+	pixel_y = 30
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/effect/floor_decal/spline/fancy/three_quarters,
 /turf/simulated/floor/reinforced/airmix,
 /area/iskhod/engineering/atmos)
 "ikH" = (
@@ -43636,6 +43645,8 @@
 /obj/structure/sign/atmos/atmos_o2{
 	pixel_y = 32
 	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/floor_decal/spline/fancy/three_quarters,
 /turf/simulated/floor/reinforced/oxygen,
 /area/iskhod/engineering/atmos)
 "kQL" = (
@@ -52812,7 +52823,10 @@
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/storage/tech)
 "niq" = (
-/obj/structure/sign/atmos/atmos_n2o,
+/obj/machinery/portable_atmospherics/canister/sleeping_agent/roomfiller{
+	valve_open = 1
+	},
+/obj/effect/floor_decal/spline/fancy/three_quarters,
 /turf/simulated/floor/reinforced/n20,
 /area/iskhod/engineering/atmos)
 "nir" = (
@@ -66746,6 +66760,7 @@
 /area/iskhod/security/warden)
 "qHP" = (
 /obj/machinery/camera/network/engineering,
+/obj/structure/sign/atmos/atmos_co2,
 /turf/simulated/floor/reinforced/carbon_dioxide,
 /area/iskhod/engineering/atmos)
 "qHU" = (
@@ -85521,6 +85536,7 @@
 /area/iskhod/engineering/techstorage)
 "vwN" = (
 /obj/machinery/camera/network/engineering,
+/obj/structure/sign/atmos/atmos_n2o,
 /turf/simulated/floor/reinforced/n20,
 /area/iskhod/engineering/atmos)
 "vwS" = (
