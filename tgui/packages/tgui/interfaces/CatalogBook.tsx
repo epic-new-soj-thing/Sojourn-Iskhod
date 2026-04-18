@@ -6,7 +6,6 @@ import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import {
   Box,
-  Button,
   ColorBox,
   Input,
   LabeledList,

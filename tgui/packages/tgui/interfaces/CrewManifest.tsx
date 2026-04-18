@@ -34,7 +34,17 @@ export const CrewManifestContent = (props) => {
 
   let { manifest } = data;
 
-  if (!manifest || manifest.length === 0) {
+  const normalizedManifest =
+    manifest?.filter(Boolean).map((crew) => ({
+      name: crew?.name || 'Unknown',
+      rank: crew?.rank || 'Unassigned',
+      departments: Array.isArray(crew?.departments)
+        ? crew.departments.filter(Boolean)
+        : [],
+      status: crew?.status || 'Unknown',
+    })) || [];
+
+  if (normalizedManifest.length === 0) {
     return (
       <Section title="No Crew Found">
         There doesn&apos;t seem to be anyone here.
@@ -42,25 +52,29 @@ export const CrewManifestContent = (props) => {
     );
   }
 
-  const departments = uniq(manifest.flatMap((crew) => crew.departments)).sort(
+  const departments = uniq(
+    normalizedManifest.flatMap((crew) => crew.departments),
+  ).sort(
     (a, b) =>
       Object.keys(departmentData).indexOf(a) -
       Object.keys(departmentData).indexOf(b),
   );
 
-  const unassociated = manifest.filter((crew) => crew.departments.length === 0);
+  const unassociated = normalizedManifest.filter(
+    (crew) => crew.departments.length === 0,
+  );
 
   return (
     <>
       {departments.map((dept) => {
-        let filtered_crew = manifest.filter(
+        let filtered_crew = normalizedManifest.filter(
           (crew) => crew.departments.indexOf(dept) !== -1,
         );
 
         return (
           <Section
             className={'CrewManifest--' + dept}
-            title={departmentData[dept].name}
+            title={departmentData[dept]?.name || `Dept: ${dept}`}
             key={dept}
           >
             <Table>
