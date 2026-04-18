@@ -89,6 +89,12 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
+"aO" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking/grill,
+/obj/item/reagent_containers/cooking/container/grill_grate,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "aP" = (
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
@@ -135,6 +141,15 @@
 /obj/item/storage/pill_bottle/zoom,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"by" = (
+/obj/machinery/porta_turret/excelsior/preloaded,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "bz" = (
 /obj/structure/flora/stump,
 /turf/simulated/floor/snow/smooth{
@@ -196,6 +211,10 @@
 /obj/structure/invislight,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/warehouse)
+"ce" = (
+/obj/structure/scrap/food,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
 "cg" = (
 /obj/effect/decal/cleanable/vomit,
 /turf/simulated/floor/industrial/white_large_slates,
@@ -234,6 +253,13 @@
 /obj/structure/railing,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"cv" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking/container/pan{
+	pixel_y = 4
+	},
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "cA" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -292,6 +318,10 @@
 	dir = 1
 	},
 /turf/simulated/open,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"du" = (
+/obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
+/turf/simulated/floor/reinforced,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "dv" = (
 /mob/living/carbon/superior/human/excelsior/excel_hammer_shield/batton,
@@ -475,6 +505,10 @@
 /obj/structure/invislight,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/cafeteria)
+"ft" = (
+/obj/machinery/reagentgrinder/industrial,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "fC" = (
 /obj/item/construct/conveyor,
 /turf/simulated/floor/industrial/navy_slates,
@@ -510,6 +544,11 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"gr" = (
+/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/machinery/floodlight,
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
 "gs" = (
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
@@ -574,12 +613,10 @@
 /mob/living/carbon/superior/human/excelsior/excel_ak,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"hi" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 5;
-	tag = "icon-intact (NORTHEAST)"
-	},
-/turf/simulated/floor/reinforced,
+"hu" = (
+/obj/structure/table/rack,
+/obj/item/tool/wrench,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "hy" = (
 /obj/effect/floor_decal/industrial/outline,
@@ -597,6 +634,11 @@
 /obj/effect/floor_decal/industrial/road/straight1,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/warehouse)
+"hO" = (
+/obj/structure/table/rack,
+/obj/item/stack/material/steel/random,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "hR" = (
 /turf/simulated/wall/iron,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
@@ -608,12 +650,6 @@
 /mob/living/carbon/superior/human/excelsior/excel_hammer_shield,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
-"hZ" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	dir = 8
-	},
-/turf/simulated/floor/reinforced,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ic" = (
 /obj/structure/table/rack,
 /obj/structure/bedsheetbin,
@@ -651,6 +687,10 @@
 "ix" = (
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/warehouse)
+"iE" = (
+/obj/machinery/floodlight,
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
 "iI" = (
 /obj/item/mine/excelsior,
 /turf/simulated/floor/tiled/white{
@@ -683,6 +723,10 @@
 /obj/random/lathe_disk/advanced/excelsior,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
+"jc" = (
+/obj/structure/closet/chefcloset,
+/turf/simulated/floor/industrial/cafe_large,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "je" = (
 /obj/structure/railing{
 	dir = 4
@@ -842,6 +886,12 @@
 /obj/machinery/beehive,
 /turf/simulated/floor/asteroid/grass,
 /area/iskhod/dungeon/outside/excel_compound/cafeteria)
+"lk" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 6
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "lx" = (
 /obj/effect/decal/cleanable/liquid_fuel,
 /obj/item/tool_upgrade/broken_plasma_injector,
@@ -869,6 +919,12 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/wall/iron,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"lT" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "lU" = (
 /obj/structure/railing{
 	dir = 4
@@ -910,6 +966,11 @@
 "mn" = (
 /obj/item/tray,
 /obj/structure/table/marble,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
+"mp" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking/stove,
 /turf/simulated/floor/industrial/ceramic,
 /area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "mr" = (
@@ -1002,6 +1063,12 @@
 	},
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"ni" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking/stove,
+/obj/item/reagent_containers/cooking/container/pot,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "nn" = (
 /obj/machinery/door/airlock/lift,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -1120,9 +1187,9 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
-"oB" = (
-/obj/machinery/atmospherics/pipe/manifold4w/visible/yellow,
-/turf/simulated/floor/reinforced,
+"ow" = (
+/obj/structure/dispenser/plasma,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "oC" = (
 /obj/structure/bed/psych{
@@ -1150,12 +1217,6 @@
 /mob/living/carbon/superior/human/excelsior/excel_drozd,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
-"oL" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4
-	},
-/turf/simulated/floor/reinforced,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "oM" = (
 /obj/random/firstaid,
 /obj/random/firstaid,
@@ -1164,12 +1225,6 @@
 /obj/random/rations,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
-"oN" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 6
-	},
-/turf/simulated/floor/reinforced,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "oV" = (
 /obj/structure/multiz/stairs/enter/bottom,
 /turf/simulated/floor/rock/manmade/road,
@@ -1210,6 +1265,10 @@
 "pt" = (
 /mob/living/carbon/superior/human/excelsior,
 /turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"pv" = (
+/obj/machinery/portable_atmospherics/canister/plasma,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "px" = (
 /obj/structure/closet/toolcloset,
@@ -1275,14 +1334,6 @@
 /obj/random/toolbox,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
-"qu" = (
-/obj/machinery/atmospherics/pipe/tank/plasma{
-	dir = 4;
-	description_antag = "Will bldddddind people if they do not wear face-covering gear";
-	start_pressure = 15000
-	},
-/turf/simulated/floor/reinforced,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "qw" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/random/tool_upgrade/rare/low_chance,
@@ -1317,6 +1368,13 @@
 /obj/structure/multiz/stairs/active/bottom,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"qQ" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 5;
+	tag = "icon-intact (NORTHEAST)"
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "qX" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/random/pouch/low_chance,
@@ -1374,10 +1432,6 @@
 /mob/living/carbon/superior/human/excelsior/excel_ak,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/cafeteria)
-"rK" = (
-/obj/machinery/portable_atmospherics/canister/plasma,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "rM" = (
 /obj/item/mine/excelsior,
 /turf/simulated/floor/snow/smooth{
@@ -1417,6 +1471,10 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"rX" = (
+/obj/machinery/cooking/oven,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "rY" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/barricade,
@@ -1530,6 +1588,11 @@
 /obj/structure/multiz/ladder,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"sY" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking/container/pot,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "tb" = (
 /obj/structure/target_stake,
 /turf/simulated/floor/asteroid/dirt/flood,
@@ -1604,15 +1667,6 @@
 	temperature = 278.15
 	},
 /area/iskhod/dungeon/outside/excel_compound/cafeteria)
-"tW" = (
-/obj/machinery/porta_turret/excelsior/preloaded,
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472;
-	temperature = 240
-	},
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "tY" = (
 /obj/item/stamp,
 /obj/structure/table/marble,
@@ -1666,10 +1720,22 @@
 /obj/structure/table/gamblingtable,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"uB" = (
+/obj/structure/table/marble,
+/obj/structure/invislight,
+/obj/item/reagent_containers/condiment/enzyme,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "uF" = (
 /mob/living/carbon/superior/human/excelsior,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
+"uI" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "uM" = (
 /obj/structure/table/bench/steel,
 /turf/simulated/floor/industrial/navy_large_slates,
@@ -1679,6 +1745,14 @@
 /obj/item/device/scanner/price,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/warehouse)
+"uR" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking/stove,
+/obj/item/reagent_containers/cooking/container/pan{
+	pixel_y = 4
+	},
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "uT" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
@@ -1881,6 +1955,12 @@
 /mob/living/carbon/superior/human/excelsior/excel_hammer_shield/batton,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"ya" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 8
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "yd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
@@ -1888,6 +1968,11 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating/under,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"ye" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/condiment/cookingoil,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "yj" = (
 /obj/structure/closet/secure_closet/rare_loot,
 /turf/simulated/floor/industrial/white_large_slates,
@@ -1914,12 +1999,6 @@
 /obj/machinery/excelsior_autodoc,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
-"yP" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8
-	},
-/turf/simulated/floor/reinforced,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "yQ" = (
 /obj/structure/table/rack,
 /obj/item/clothing/suit/storage/cargovest,
@@ -1990,11 +2069,6 @@
 /obj/structure/invislight,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
-"zW" = (
-/obj/structure/table/rack,
-/obj/item/stack/material/steel/random,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ae" = (
 /obj/machinery/porta_turret/excelsior/preloaded,
 /turf/simulated/floor/rock/manmade/road,
@@ -2092,6 +2166,10 @@
 /obj/random/lathe_disk/advanced/excelsior/safe,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
+"Bg" = (
+/obj/machinery/porta_turret/excelsior/preloaded,
+/turf/simulated/floor/tiled/dark/cargo,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Bj" = (
 /mob/living/simple/hostile/viscerator{
 	faction = "excelsior"
@@ -2237,8 +2315,13 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/warehouse)
 "CJ" = (
-/turf/simulated/wall/rock/snow,
-/area/iskhod/dungeon/outside/excel_compound/bunker)
+/obj/machinery/atmospherics/pipe/tank/plasma{
+	dir = 4;
+	description_antag = "Will bldddddind people if they do not wear face-covering gear";
+	start_pressure = 15000
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "CO" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/structure/closet/crate,
@@ -2253,13 +2336,6 @@
 /obj/item/storage/pill_bottle/happy,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
-"Do" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	dir = 4;
-	tag = "icon-map (EAST)"
-	},
-/turf/simulated/floor/reinforced,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ds" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/item/mine/excelsior,
@@ -2271,10 +2347,6 @@
 /obj/machinery/optable,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
-"DB" = (
-/obj/machinery/porta_turret/excelsior/preloaded,
-/turf/simulated/floor/rock/manmade/road,
-/area/iskhod/dungeon/outside/excel_compound/bunker)
 "DE" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/machinery/door/airlock{
@@ -2282,12 +2354,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
-"DG" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 4
-	},
-/turf/simulated/floor/reinforced,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "DN" = (
 /obj/structure/closet/crate/excelsior,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -2557,6 +2623,13 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"GL" = (
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 4;
+	tag = "icon-map (EAST)"
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "GN" = (
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0";
@@ -2617,11 +2690,6 @@
 /obj/structure/closet/crate/secure/loot,
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/dungeon/outside/excel_compound/warehouse)
-"Hs" = (
-/obj/structure/table/rack,
-/obj/item/tool/wrench,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Ht" = (
 /mob/living/carbon/superior/human/excelsior/excel_vintorez,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -2749,14 +2817,14 @@
 "Ja" = (
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"Jd" = (
+/obj/machinery/chem_master/condimaster,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "Jl" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/asteroid/grass,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
-"Jn" = (
-/obj/machinery/porta_turret/excelsior/preloaded,
-/turf/simulated/floor/tiled/dark/cargo,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Jq" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/effect/decal/cleanable/liquid_fuel,
@@ -2779,12 +2847,6 @@
 /obj/structure/sign/warningnew/flammables,
 /turf/simulated/wall/iron,
 /area/iskhod/dungeon/outside/excel_compound/garage)
-"JJ" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 10
-	},
-/turf/simulated/floor/reinforced,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "JL" = (
 /obj/effect/floor_decal/industrial/outline,
 /obj/effect/floor_decal/industrial/box/white,
@@ -2820,6 +2882,26 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"JZ" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking/bunson{
+	pixel_y = 3
+	},
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
+"Kb" = (
+/obj/structure/table/marble,
+/obj/machinery/cooking/grill,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
+"Kc" = (
+/obj/machinery/atmospherics/pipe/tank/plasma{
+	dir = 8;
+	description_antag = "Will bldddddind people if they do not wear face-covering gear";
+	start_pressure = 15000
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Kh" = (
 /obj/structure/table/rack/shelf,
 /obj/item/mech_ammo_box/cannon,
@@ -2836,14 +2918,6 @@
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Kn" = (
 /obj/effect/shuttle_landmark/rocinante_excel_compound,
-/turf/simulated/floor/reinforced,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
-"Ks" = (
-/obj/machinery/atmospherics/pipe/tank/plasma{
-	dir = 8;
-	description_antag = "Will bldddddind people if they do not wear face-covering gear";
-	start_pressure = 15000
-	},
 /turf/simulated/floor/reinforced,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "Kv" = (
@@ -2999,6 +3073,10 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"Md" = (
+/obj/machinery/porta_turret/excelsior/preloaded,
+/turf/simulated/floor/rock/manmade/road,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
 "Me" = (
 /obj/structure/railing{
 	dir = 1
@@ -3038,6 +3116,11 @@
 	temperature = 240
 	},
 /area/iskhod/dungeon/outside/excel_compound/exterior)
+"MB" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/cooking/container/grill_grate,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "MD" = (
 /obj/effect/floor_decal/industrial/road/straight2,
 /turf/simulated/floor/rock/manmade/road,
@@ -3118,12 +3201,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
-"NG" = (
-/mob/living/carbon/superior/human/excelsior/excel_ak{
-	faction = s
-	},
-/turf/simulated/floor/rock/manmade/road,
-/area/iskhod/dungeon/outside/excel_compound/bunker)
 "NI" = (
 /obj/structure/scrap/vehicle/large,
 /turf/simulated/floor/rock/manmade/road,
@@ -3142,6 +3219,12 @@
 /obj/structure/table/steel,
 /obj/item/ammo_magazine/ammobox/c12x64_small,
 /turf/simulated/floor/asteroid/dirt/flood,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"NS" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
 "NU" = (
 /obj/structure/table/steel,
@@ -3189,7 +3272,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/barracks)
 "Op" = (
-/obj/structure/bed/roller,
+/obj/machinery/floodlight,
 /turf/simulated/floor/plating/under,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
 "Os" = (
@@ -3260,6 +3343,10 @@
 /obj/item/soap/hunters,
 /turf/simulated/floor/industrial/fancy_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"Pg" = (
+/obj/structure/scrap/food/large,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/dungeon/outside/excel_compound/bunker)
 "Pk" = (
 /mob/living/simple/hostile/viscerator{
 	faction = "excelsior"
@@ -3272,6 +3359,20 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"Pn" = (
+/obj/machinery/atmospherics/pipe/tank/plasma{
+	dir = 4;
+	description_antag = "sWill bldddddind people if they do not wear face-covering gear";
+	start_pressure = 15000
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
+"Pp" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Pq" = (
 /obj/structure/scrap/food,
 /obj/structure/invislight,
@@ -3460,12 +3561,6 @@
 /obj/item/tray,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/exterior)
-"Sl" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 9
-	},
-/turf/simulated/floor/reinforced,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "Sm" = (
 /obj/machinery/excelsior_boombox,
 /turf/simulated/floor/rock/manmade/road,
@@ -3493,10 +3588,6 @@
 /area/iskhod/dungeon/outside/excel_compound/bunker)
 "SH" = (
 /obj/machinery/body_scanconsole,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/bunker)
-"SI" = (
-/obj/structure/scrap/food,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
 "SK" = (
@@ -3715,10 +3806,6 @@
 "UG" = (
 /turf/simulated/floor/asteroid/grass,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
-"UT" = (
-/obj/structure/scrap/food/large,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/bunker)
 "UY" = (
 /obj/machinery/door/airlock/hatch,
 /obj/structure/barricade,
@@ -3774,6 +3861,12 @@
 /obj/structure/table/rack,
 /turf/simulated/floor/rock/manmade/road,
 /area/iskhod/dungeon/outside/excel_compound/garage)
+"Vz" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 9
+	},
+/turf/simulated/floor/reinforced,
+/area/iskhod/dungeon/outside/excel_compound/exterior)
 "VD" = (
 /obj/structure/railing{
 	dir = 4
@@ -3918,6 +4011,10 @@
 "Yc" = (
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/dungeon/outside/excel_compound/bunker)
+"Ye" = (
+/obj/machinery/vending/dinnerware,
+/turf/simulated/floor/industrial/ceramic,
+/area/iskhod/dungeon/outside/excel_compound/cafeteria)
 "Yx" = (
 /mob/living/carbon/superior/human/excelsior/excel_drozd,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -4010,10 +4107,6 @@
 /obj/random/traps/low_chance,
 /turf/simulated/floor/tiled/dark/brown_platform,
 /area/iskhod/dungeon/outside/excel_compound/warehouse)
-"ZU" = (
-/obj/structure/dispenser/plasma,
-/turf/simulated/floor/industrial/black_large_slates,
-/area/iskhod/dungeon/outside/excel_compound/exterior)
 "ZW" = (
 /obj/structure/table/steel,
 /obj/item/stamp,
@@ -9464,11 +9557,11 @@ XR
 XR
 XR
 XR
-XR
-XR
-XR
-XR
-XR
+IP
+IP
+IP
+IP
+IP
 IP
 IP
 IP
@@ -9616,11 +9709,11 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-gs
-XR
+IP
+IP
+IP
+IP
+IP
 IP
 IP
 IP
@@ -9770,9 +9863,9 @@ gs
 gs
 gs
 gs
-gs
-gs
-XR
+IP
+IP
+IP
 IP
 IP
 IP
@@ -9921,10 +10014,10 @@ gs
 gs
 gs
 gs
-gs
-gs
-gs
-XR
+IP
+IP
+IP
+IP
 IP
 IP
 IP
@@ -10073,10 +10166,10 @@ XR
 XR
 XR
 XR
-gs
-gs
-gs
-XR
+IP
+IP
+IP
+IP
 IP
 IP
 IP
@@ -10226,9 +10319,9 @@ DV
 DV
 XR
 gs
-gs
-gs
-XR
+IP
+IP
+IP
 IP
 IP
 IP
@@ -10379,8 +10472,8 @@ DV
 XR
 gs
 gs
-gs
-XR
+IP
+IP
 IP
 IP
 IP
@@ -10531,8 +10624,8 @@ DV
 XR
 gs
 gs
-gs
-XR
+IP
+IP
 IP
 IP
 IP
@@ -12639,7 +12732,7 @@ gs
 gs
 gs
 gs
-NG
+gs
 NO
 gs
 gs
@@ -12805,7 +12898,7 @@ gs
 gs
 gs
 gs
-DB
+Md
 gs
 NO
 gs
@@ -13102,7 +13195,7 @@ DV
 DV
 ZX
 XR
-gs
+iE
 gs
 gs
 XR
@@ -13361,7 +13454,7 @@ DV
 XR
 DV
 zQ
-zQ
+gr
 zQ
 DV
 zQ
@@ -17978,7 +18071,7 @@ DV
 DV
 XR
 gs
-CJ
+IP
 gs
 XR
 IP
@@ -20576,7 +20669,7 @@ XR
 DV
 DV
 DV
-SI
+ce
 XR
 IP
 IP
@@ -20727,8 +20820,8 @@ Mo
 XR
 DV
 DV
-SI
-SI
+ce
+ce
 XR
 IP
 IP
@@ -20879,8 +20972,8 @@ Sa
 XR
 DV
 DV
-SI
-SI
+ce
+ce
 XR
 IP
 IP
@@ -21030,9 +21123,9 @@ yG
 HX
 XR
 DV
-SI
-SI
-UT
+ce
+ce
+Pg
 XR
 IP
 IP
@@ -36200,7 +36293,7 @@ AO
 AO
 AO
 AO
-tW
+by
 GN
 GN
 KZ
@@ -43064,9 +43157,9 @@ xs
 xs
 Hy
 xs
-xs
+Ye
 NM
-NM
+jc
 ij
 AO
 AO
@@ -43218,7 +43311,7 @@ NM
 NM
 NM
 NM
-NM
+jc
 ij
 AO
 AO
@@ -43370,7 +43463,7 @@ NM
 kq
 NM
 NM
-NM
+jc
 ij
 AO
 AO
@@ -43522,7 +43615,7 @@ Hl
 NM
 NM
 NM
-NM
+jc
 ij
 AO
 AO
@@ -43668,9 +43761,9 @@ xo
 rb
 xo
 Hl
-xs
-xs
-xs
+sY
+ye
+cv
 xs
 gN
 NM
@@ -44276,11 +44369,11 @@ xo
 mn
 xo
 NM
-xs
-xs
-xs
-xs
-xs
+ni
+uR
+mp
+uR
+mp
 NM
 Hl
 ij
@@ -44884,11 +44977,11 @@ xo
 oc
 xo
 NM
-xs
-xs
-xs
-xs
-xs
+JZ
+cv
+ft
+ye
+MB
 NM
 Pq
 ij
@@ -45493,9 +45586,9 @@ ij
 NM
 Hl
 xs
-xs
-xs
-xs
+aO
+aO
+Kb
 xs
 NM
 Hl
@@ -45954,7 +46047,7 @@ NM
 NM
 NM
 NM
-xs
+Jd
 ij
 La
 La
@@ -46251,12 +46344,12 @@ ms
 tQ
 ij
 gN
-tH
-xs
-xs
-xs
-xs
-xs
+uB
+rX
+rX
+rX
+rX
+rX
 xs
 tH
 ij
@@ -67128,15 +67221,15 @@ NQ
 NQ
 AA
 Ja
-qu
-qu
-qu
-qu
+CJ
+CJ
+Pn
+CJ
 Ja
 Ja
-rK
-rK
-rK
+pv
+pv
+pv
 AA
 NQ
 If
@@ -67280,10 +67373,10 @@ NQ
 NQ
 AA
 Ja
-JJ
-Do
-oB
-Sl
+lT
+GL
+du
+Vz
 Ja
 Ja
 Ja
@@ -67434,13 +67527,13 @@ AA
 Ja
 Ja
 Ja
-DG
+NS
 Ja
 Ja
 Ja
 Ja
 Ja
-ZU
+ow
 AA
 NQ
 FD
@@ -67586,13 +67679,13 @@ AA
 Ja
 Ja
 Ja
-oL
+Pp
 Ja
 Ja
 Ja
 Ja
 Ja
-ZU
+ow
 Bx
 NQ
 NQ
@@ -68048,7 +68141,7 @@ AO
 mf
 Ja
 Ja
-zW
+hO
 AA
 NQ
 NQ
@@ -68056,7 +68149,7 @@ NQ
 NQ
 NQ
 NQ
-Jn
+Bg
 AO
 AO
 AO
@@ -68200,7 +68293,7 @@ AO
 mf
 Ja
 Ja
-Hs
+hu
 AA
 NQ
 NQ
@@ -68498,7 +68591,7 @@ AA
 Ja
 Ja
 Ja
-yP
+uI
 Ja
 Ja
 Ja
@@ -68650,7 +68743,7 @@ AA
 Ja
 Ja
 Ja
-DG
+NS
 Ja
 Ja
 Ja
@@ -68800,10 +68893,10 @@ NQ
 NQ
 AA
 Ja
-oN
-hZ
-oB
-hi
+lk
+ya
+du
+qQ
 Ja
 Ja
 Ja
@@ -68952,10 +69045,10 @@ NQ
 NQ
 AA
 Ja
-Ks
-Ks
-Ks
-Ks
+Kc
+Kc
+Kc
+Kc
 Ja
 Ja
 Ja
