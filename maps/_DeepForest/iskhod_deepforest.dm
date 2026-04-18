@@ -17,7 +17,7 @@
 	is_accessable_level = FALSE
 	is_sealed = TRUE
 	generate_asteroid = TRUE
-	height = 2
+	height = 5
 	digsites = "TECHNICAL"
 
 /obj/map_data/excel_compound
