@@ -33,6 +33,7 @@
 	implant_organ_type = "cultured tumor"
 	restricted_jobs = list(
 		/datum/job/doctor,
+		/datum/job/chemist,
 		/datum/job/paramedic,
 		/datum/job/medstudent,
 		/datum/job/facility_director,
