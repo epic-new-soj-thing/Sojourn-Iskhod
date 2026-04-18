@@ -4624,7 +4624,7 @@
 	icon_state = "escpodwall12";
 	tag = "icon-escpodwall12"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "bep" = (
 /obj/structure/bed/chair{
 	dir = 4
@@ -4986,7 +4986,7 @@
 	dir = 9
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "bjP" = (
 /obj/effect/floor_decal/corner_techfloor_grid{
 	dir = 1
@@ -8051,7 +8051,7 @@
 	icon_state = "escpodwall22";
 	tag = "icon-escpodwall22"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "bWd" = (
 /obj/structure/bed/chair/shuttle{
 	dir = 8
@@ -8923,7 +8923,7 @@
 	},
 /obj/item/roller,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "cfM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -10797,7 +10797,7 @@
 	dir = 4;
 	icon_state = "escpodwall14"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "cFR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -12086,7 +12086,7 @@
 	icon_state = "escpodwall3";
 	tag = "icon-escpodwall3"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "cXC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/rubble,
@@ -12621,7 +12621,7 @@
 /area/iskhod/engineering/engine_room)
 "ddp" = (
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "ddq" = (
 /obj/machinery/door/window/iskhod{
 	dir = 8
@@ -15503,6 +15503,10 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/medical/biostorage)
+"dNT" = (
+/obj/machinery/light/small,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section3)
 "dNX" = (
 /obj/structure/closet{
 	name = "Evidence Closet"
@@ -16596,7 +16600,7 @@
 	icon_state = "escpodwall6";
 	opacity = 0
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "eef" = (
 /obj/structure/toilet{
 	dir = 1
@@ -17054,7 +17058,7 @@
 /area/iskhod/medical/chemstor)
 "ekj" = (
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "ekk" = (
 /obj/machinery/door/airlock/hatch{
 	req_one_access = list(24,10);
@@ -19584,7 +19588,7 @@
 	tag = "icon-escpodwall28"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "eQn" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk{
@@ -21394,7 +21398,7 @@
 	tag = "icon-escpodwall10"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "fpc" = (
 /obj/structure/railing{
 	dir = 8;
@@ -22547,7 +22551,7 @@
 	icon_state = "escpodwall8";
 	tag = "icon-escpodwall8"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "fBZ" = (
 /obj/structure/table/woodentable,
 /turf/simulated/floor/industrial/ornate,
@@ -24065,7 +24069,7 @@
 	icon_state = "escpodwall23";
 	opacity = 0
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "fVN" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/black_large_slates,
@@ -26632,10 +26636,6 @@
 "gDF" = (
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/outside/inside_colony/west)
-"gDM" = (
-/obj/effect/step_trigger/A_colony_to_forest_1,
-/turf/simulated/floor/rock/dark,
-/area/iskhod/outside/inside_colony/east)
 "gDR" = (
 /obj/structure/cable/cyan{
 	d1 = 4;
@@ -26685,7 +26685,7 @@
 	icon_state = "escpodwall16";
 	tag = "icon-escpodwall16"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "gEB" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -27241,7 +27241,7 @@
 /obj/structure/table/steel_reinforced,
 /obj/item/storage/firstaid/regular,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "gMg" = (
 /turf/simulated/wall/r_wall,
 /area/iskhod/security/maintpost)
@@ -28740,7 +28740,7 @@
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/stand_clear/red,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "hgH" = (
 /obj/structure/cable/cyan{
 	d1 = 1;
@@ -31083,7 +31083,7 @@
 	dir = 5
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "hNA" = (
 /turf/simulated/wall/r_wall,
 /area/iskhod/engineering/engine_airlock)
@@ -33696,7 +33696,7 @@
 /area/turbolift/ElevatorTwo/midlevelOne)
 "iww" = (
 /turf/simulated/shuttle/wall/escpod,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "iwE" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -33758,6 +33758,9 @@
 	name = "North APC";
 	pixel_y = 28
 	},
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/surface/section3)
 "ixe" = (
@@ -33766,6 +33769,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood,
 /area/iskhod/medical/medbreak)
+"ixi" = (
+/obj/effect/floor_decal/industrial/warningdust/fulltile,
+/obj/machinery/light/small,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/hallway/surface/section3)
 "ixk" = (
 /obj/structure/table/reinforced,
 /obj/item/paper_bin{
@@ -34434,7 +34442,7 @@
 	specialfunctions = 4
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "iFe" = (
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2south)
@@ -35528,6 +35536,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
+"iRN" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/surface/section3)
 "iRO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/landmark/join/start/salvager,
@@ -39565,7 +39579,7 @@
 "jOJ" = (
 /obj/machinery/bodyscanner,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "jOL" = (
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 8
@@ -40954,7 +40968,7 @@
 "kha" = (
 /obj/machinery/body_scanconsole,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "khb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
@@ -46755,7 +46769,7 @@
 	dir = 6
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "lEK" = (
 /obj/machinery/disposal,
 /obj/structure/disposalpipe/trunk,
@@ -47037,7 +47051,7 @@
 "lJn" = (
 /obj/item/device/radio/beacon/bacon,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "lJo" = (
 /obj/structure/fireaxecabinet{
 	pixel_y = -30
@@ -52290,7 +52304,7 @@
 "nbm" = (
 /obj/effect/shuttle_landmark/surface_transport,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "nby" = (
 /obj/machinery/portable_atmospherics/powered/scrubber,
 /turf/simulated/shuttle/floor/science{
@@ -53135,7 +53149,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "nlP" = (
 /obj/structure/lattice,
 /obj/machinery/light{
@@ -55562,6 +55576,10 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/ward)
+"nOl" = (
+/obj/effect/step_trigger/A_colony_to_forest_1,
+/turf/simulated/floor/rock/dark,
+/area/iskhod/outside/inside_colony/east)
 "nOy" = (
 /obj/structure/table/woodentable,
 /obj/item/device/lighting/toggleable/lamp/green{
@@ -56021,7 +56039,7 @@
 "nUi" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark/techfloor,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "nUl" = (
 /obj/structure/salvageable/machine,
 /turf/simulated/floor/bluegrid{
@@ -57486,7 +57504,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "ooW" = (
 /obj/structure/railing{
 	dir = 1;
@@ -59362,7 +59380,7 @@
 	tag = "icon-escpodwall18"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "oOC" = (
 /obj/structure/closet/crate/trashcart{
 	old_lock_odds = -20
@@ -60524,7 +60542,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "pbw" = (
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/misc2)
@@ -62143,7 +62161,7 @@
 	icon_state = "escpodwall20";
 	tag = "icon-escpodwall20"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "pvT" = (
 /obj/structure/railing/grey{
 	dir = 1
@@ -63093,7 +63111,7 @@
 "pIp" = (
 /obj/effect/floor_decal/industrial/warningred,
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "pIv" = (
 /obj/effect/window_lwall_spawn/smartspawn,
 /obj/structure/cable{
@@ -63581,7 +63599,7 @@
 	icon_state = "escpodwall2";
 	tag = "icon-escpodwall2"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "pPY" = (
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/white/cyancorner,
@@ -64064,7 +64082,7 @@
 	icon_state = "escpodwall5";
 	opacity = 0
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "pVF" = (
 /obj/random/scrap/sparse_weighted,
 /turf/simulated/floor/industrial/navy_large_slates,
@@ -64805,7 +64823,7 @@
 	icon_state = "escpodwall17";
 	tag = "icon-escpodwall17"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "qfc" = (
 /obj/effect/floor_decal/industrial/road/warning4{
 	pixel_y = 11
@@ -65785,6 +65803,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/pool)
+"qsK" = (
+/obj/effect/step_trigger/A_colony_to_forest_2,
+/turf/simulated/floor/rock/dark,
+/area/iskhod/outside/inside_colony/east)
 "qsS" = (
 /obj/machinery/atmospherics/binary/passive_gate{
 	dir = 1
@@ -66711,7 +66733,7 @@
 	icon_state = "escpodwall11";
 	tag = "icon-escpodwall11"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "qGe" = (
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/industrial/grey_slates_long,
@@ -66725,7 +66747,7 @@
 	icon_state = "escpodwall4";
 	tag = "icon-escpodwall4"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "qGE" = (
 /obj/machinery/door/airlock/multi_tile/metal{
 	frequency = 1380;
@@ -68812,6 +68834,9 @@
 "rgK" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/effect/floor_decal/industrial/botright/yellow,
+/obj/machinery/light/small{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/hallway/surface/section3)
 "rgL" = (
@@ -73179,7 +73204,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "slW" = (
 /turf/simulated/wall/iskhod_blue,
 /area/iskhod/absolutism/vectorrooms)
@@ -74088,6 +74113,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/abandoned/barber)
+"szq" = (
+/obj/effect/floor_decal/industrial/warningdust/fulltile,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/hallway/surface/section3)
 "szt" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -75083,7 +75115,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "sOF" = (
 /obj/random/closet_tech,
 /turf/simulated/floor/industrial/concrete_bricks,
@@ -77714,7 +77746,7 @@
 	icon_state = "escpodwall29";
 	tag = "icon-escpodwall29"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "tvk" = (
 /obj/effect/decal/cleanable/rubble,
 /obj/structure/table/steel,
@@ -79251,7 +79283,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "tOu" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/cargo,
@@ -79533,7 +79565,7 @@
 	tag = "icon-escpodwall27"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "tSZ" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/yellow{
@@ -80707,7 +80739,7 @@
 "uhs" = (
 /obj/machinery/sleeper,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "uhM" = (
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/warden)
@@ -80746,7 +80778,7 @@
 	icon_state = "escpodwall19";
 	tag = "icon-escpodwall19"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "uii" = (
 /obj/structure/bed/chair/office/light{
 	dir = 2
@@ -80877,7 +80909,7 @@
 	tag = "icon-escpodwall13"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "ujO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -84188,10 +84220,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster/quarters)
-"vdg" = (
-/obj/effect/step_trigger/A_colony_to_forest_2,
-/turf/simulated/floor/rock/dark,
-/area/iskhod/outside/inside_colony/east)
 "vdB" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/security/evidencestorage)
@@ -84849,7 +84877,7 @@
 	icon_state = "escpodwall26";
 	tag = "icon-escpodwall26"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "vmy" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -85386,7 +85414,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "vuH" = (
 /obj/structure/table/reinforced,
 /obj/item/book/manual/xenobio_recipies,
@@ -86757,7 +86785,7 @@
 	tag = "icon-escpodwall9"
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "vLr" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -87470,7 +87498,7 @@
 	icon_state = "escpodwall21";
 	tag = "icon-escpodwall21"
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "vVg" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -90934,7 +90962,7 @@
 	icon_state = "escpodwall24";
 	opacity = 0
 	},
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "wOF" = (
 /obj/structure/flora/tree/snow/four,
 /turf/simulated/floor/snow/smooth{
@@ -91319,7 +91347,7 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "wUd" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -91602,7 +91630,7 @@
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "wXW" = (
 /obj/structure/table/bench/standard,
 /obj/effect/decal/cleanable/dirt,
@@ -94735,7 +94763,7 @@
 "xPg" = (
 /obj/structure/bed/chair/shuttle,
 /turf/simulated/floor/tiled/dark/gray_perforated,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "xPr" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -96417,7 +96445,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/tiled/dark/cargo,
-/area/shuttle/surface_transport_lz)
+/area/iskhod/pros/shuttle_landing_zone)
 "yku" = (
 /obj/structure/table/bench/standard,
 /obj/effect/decal/cleanable/dirt,
@@ -202378,7 +202406,7 @@ qwj
 qwj
 qwj
 qwj
-gDM
+nOl
 cqi
 jDL
 "}
@@ -202580,7 +202608,7 @@ qwj
 qwj
 qwj
 qwj
-vdg
+qsK
 cqi
 jDL
 "}
@@ -202647,11 +202675,11 @@ dZg
 ixd
 moQ
 rhN
-wIr
+iRN
 nRJ
+szq
 uHW
-uHW
-uHW
+ixi
 nRJ
 ycV
 ycV
@@ -203253,7 +203281,7 @@ dZg
 guQ
 wIr
 wIr
-wIr
+dNT
 nRJ
 bcl
 rgK
