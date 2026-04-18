@@ -71,7 +71,6 @@
 /turf/simulated/wall/r_wall,
 /area/iskhod/outside/forest)
 "dh" = (
-/obj/structure/multiz/stairs/enter/bottom,
 /obj/structure/multiz/stairs/active/bottom,
 /turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/dungeon/outside/caverns)
@@ -396,9 +395,6 @@
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 1
 	},
-/obj/structure/multiz/stairs/active/bottom{
-	dir = 1
-	},
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0"
 	},
@@ -426,9 +422,6 @@
 /area/iskhod/outside/forest)
 "pL" = (
 /obj/structure/multiz/stairs/enter{
-	dir = 1
-	},
-/obj/structure/multiz/stairs/active{
 	dir = 1
 	},
 /turf/simulated/floor/asteroid/shale,
@@ -599,6 +592,14 @@
 /obj/random/junk,
 /turf/simulated/floor/asteroid/shale,
 /area/iskhod/dungeon/outside/caverns)
+"ym" = (
+/obj/structure/multiz/stairs/active/bottom{
+	dir = 1
+	},
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0"
+	},
+/area/iskhod/outside/forest)
 "yu" = (
 /obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
@@ -712,10 +713,15 @@
 /area/iskhod/outside/forest)
 "Di" = (
 /obj/structure/multiz/stairs/enter/bottom,
-/obj/structure/multiz/stairs/active/bottom,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0"
 	},
+/area/iskhod/outside/forest)
+"Dk" = (
+/obj/structure/multiz/stairs/active{
+	dir = 4
+	},
+/turf/simulated/open,
 /area/iskhod/outside/forest)
 "Dy" = (
 /obj/effect/overlay/water{
@@ -768,6 +774,10 @@
 /obj/structure/grille,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/dungeon/outside/caverns)
+"Fx" = (
+/obj/structure/multiz/stairs/enter/bottom,
+/turf/simulated/floor/industrial/navy_slates_fixed,
+/area/iskhod/outside/forest)
 "Fz" = (
 /obj/effect/floor_decal/industrial/road/straight1,
 /obj/effect/step_trigger/surface_to_forest_1_B,
@@ -780,6 +790,12 @@
 /obj/structure/bed/chair/office,
 /turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/dungeon/outside/caverns)
+"FI" = (
+/obj/structure/multiz/stairs/enter{
+	dir = 4
+	},
+/turf/simulated/open,
+/area/iskhod/outside/forest)
 "FO" = (
 /obj/structure/salvageable/deepmaints_cryopod,
 /turf/simulated/floor/industrial/navy_slates_fixed,
@@ -819,6 +835,16 @@
 	dir = 4
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/dungeon/outside/caverns)
+"Ho" = (
+/obj/structure/multiz/stairs/active{
+	dir = 1
+	},
+/turf/simulated/open,
+/area/iskhod/dungeon/outside/caverns)
+"Hw" = (
+/obj/structure/multiz/stairs/enter,
+/turf/simulated/open,
 /area/iskhod/dungeon/outside/caverns)
 "HL" = (
 /obj/structure/lattice,
@@ -873,14 +899,17 @@
 /obj/effect/window_lwall_spawn/reinforced,
 /turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/dungeon/outside/caverns)
+"Ke" = (
+/obj/structure/multiz/stairs/active,
+/turf/simulated/open,
+/area/iskhod/outside/forest)
 "Ks" = (
 /obj/random/junk/low_chance,
 /turf/simulated/floor/asteroid/shale,
 /area/iskhod/dungeon/outside/trashcave)
 "Kx" = (
-/obj/structure/multiz/stairs/enter,
-/obj/structure/multiz/stairs/active,
-/turf/simulated/floor/rock/dark,
+/obj/structure/multiz/stairs/enter/bottom,
+/turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/dungeon/outside/caverns)
 "KA" = (
 /obj/random/mob/roaches,
@@ -958,9 +987,8 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/outside/forest)
 "NF" = (
-/obj/structure/multiz/stairs/enter,
 /obj/structure/multiz/stairs/active,
-/turf/simulated/floor/industrial/navy_slates_fixed,
+/turf/simulated/open,
 /area/iskhod/dungeon/outside/caverns)
 "NJ" = (
 /obj/structure/sign/warning/secure_area,
@@ -990,13 +1018,10 @@
 /turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/outside/forest)
 "OF" = (
-/obj/structure/multiz/stairs/enter{
+/obj/structure/multiz/stairs/enter/bottom{
 	dir = 4
 	},
-/obj/structure/multiz/stairs/active{
-	dir = 4
-	},
-/turf/simulated/floor/asteroid/shale,
+/turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/outside/forest)
 "Ps" = (
 /turf/simulated/floor/snow/smooth{
@@ -1017,6 +1042,12 @@
 "QK" = (
 /obj/random/mob/excelsior,
 /turf/simulated/floor/industrial/navy_slates_fixed,
+/area/iskhod/outside/forest)
+"Rm" = (
+/obj/structure/multiz/stairs/active{
+	dir = 1
+	},
+/turf/simulated/open,
 /area/iskhod/outside/forest)
 "Rr" = (
 /obj/item/device/synthesized_instrument/guitar,
@@ -1048,7 +1079,6 @@
 /area/iskhod/dungeon/outside/caverns)
 "SQ" = (
 /obj/structure/multiz/stairs/enter,
-/obj/structure/multiz/stairs/active,
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0"
 	},
@@ -1075,9 +1105,6 @@
 /area/iskhod/outside/forest)
 "TZ" = (
 /obj/structure/multiz/stairs/enter{
-	dir = 1
-	},
-/obj/structure/multiz/stairs/active{
 	dir = 1
 	},
 /turf/simulated/floor/snow/smooth{
@@ -1114,6 +1141,12 @@
 /obj/random/junkfood,
 /turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/dungeon/outside/caverns)
+"Vr" = (
+/obj/structure/multiz/stairs/active/bottom,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0"
+	},
+/area/iskhod/outside/forest)
 "VE" = (
 /turf/simulated/floor/asteroid/shale,
 /area/iskhod/dungeon/outside/trashcave)
@@ -217266,7 +217299,7 @@ AF
 AF
 qB
 jj
-Ob
+Fx
 Ob
 qB
 AF
@@ -217568,7 +217601,7 @@ AF
 AF
 qB
 jj
-Ob
+Fx
 Ob
 qB
 AF
@@ -222529,9 +222562,9 @@ AF
 AF
 AF
 qB
-Ob
-Ob
-Ob
+OF
+OF
+OF
 qB
 lz
 Ob
@@ -307865,9 +307898,9 @@ vm
 vm
 vm
 vm
+vm
+Hw
 NF
-BV
-BV
 MY
 AN
 AN
@@ -308167,9 +308200,9 @@ vm
 vm
 vm
 vm
+vm
+Hw
 NF
-BV
-BV
 MY
 AN
 AN
@@ -310853,7 +310886,7 @@ Ps
 Ps
 Ps
 oG
-AN
+ym
 AN
 AN
 AN
@@ -310878,7 +310911,7 @@ rx
 MY
 MY
 dh
-vm
+Kx
 vm
 Wc
 MY
@@ -311155,7 +311188,7 @@ Ps
 Ps
 Ps
 oG
-AN
+ym
 AN
 AN
 AN
@@ -311180,7 +311213,7 @@ TV
 MY
 MY
 dh
-vm
+Kx
 vm
 Xi
 MY
@@ -312526,9 +312559,9 @@ DA
 DA
 DA
 DA
-OF
-OF
-OF
+Ub
+Ub
+Ub
 DA
 DA
 DA
@@ -312828,9 +312861,9 @@ DA
 DA
 DA
 DA
-jW
-jW
-jW
+FI
+FI
+FI
 DA
 DA
 DA
@@ -313130,9 +313163,9 @@ DA
 DA
 DA
 DA
-DA
-DA
-DA
+Dk
+Dk
+Dk
 DA
 DA
 DA
@@ -345886,6 +345919,7 @@ Ps
 Ps
 Ps
 oG
+ym
 AN
 AN
 AN
@@ -345895,8 +345929,7 @@ AN
 AN
 AN
 AN
-AN
-AN
+Vr
 Di
 Ps
 Ps
@@ -346188,6 +346221,7 @@ Ps
 Ps
 Ps
 oG
+ym
 AN
 AN
 AN
@@ -346197,8 +346231,7 @@ AN
 AN
 AN
 AN
-AN
-AN
+Vr
 Di
 Ps
 Ps
@@ -401453,7 +401486,7 @@ jW
 jW
 jW
 jW
-jW
+Ho
 pL
 by
 vm
@@ -401477,9 +401510,9 @@ vm
 iN
 uQ
 gc
-Kx
-BV
-BV
+gc
+Hw
+NF
 MY
 AN
 AN
@@ -401755,7 +401788,7 @@ jW
 jW
 jW
 jW
-jW
+Ho
 pL
 by
 vm
@@ -401779,9 +401812,9 @@ vm
 vm
 hl
 gc
-Kx
-BV
-BV
+gc
+Hw
+NF
 iw
 AN
 AN
@@ -436486,7 +436519,7 @@ jW
 jW
 jW
 jW
-jW
+Rm
 TZ
 Ps
 AN
@@ -436498,7 +436531,7 @@ jL
 Ps
 Ps
 SQ
-jW
+Ke
 jW
 jW
 jW
@@ -436788,7 +436821,7 @@ jW
 jW
 jW
 jW
-jW
+Rm
 TZ
 Ps
 AN
@@ -436800,7 +436833,7 @@ jL
 Ps
 Ps
 SQ
-jW
+Ke
 jW
 jW
 jW
