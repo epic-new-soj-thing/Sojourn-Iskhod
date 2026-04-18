@@ -145,41 +145,47 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 //Map teleporters, don't fuck with'em. These are basically dynamic versions of the bump teleporters for map functions so the coordinates are not hard coded. -Kaz
 //You should always make news ones of these when connecting maps in normal ways such as through stairs or cave entrances, its safer than hard coded map stuff.
 
-//Underground to stairs.
-/obj/effect/step_trigger/underground_to_transition_1_A
-	id = "underground_to_transition_1_A"
-	id_target = "underground_to_transition_2_A"
 
-/obj/effect/step_trigger/underground_to_transition_2_A
-	id = "underground_to_transition_2_A"
-	id_target = "underground_to_transition_1_A"
 
-/obj/effect/step_trigger/underground_to_transition_1_B
-	id = "underground_to_transition_1_B"
-	id_target = "underground_to_transition_2_B"
+//Colony <-> Forest.
+/obj/effect/step_trigger/A_colony_to_forest_1
+	id = "A_colony_to_forest_1"
+	id_target = "A_forest_to_colony_1"
 
-/obj/effect/step_trigger/underground_to_transition_2_B
-	id = "underground_to_transition_2_B"
-	id_target = "underground_to_transition_1_B"
+/obj/effect/step_trigger/A_forest_to_colony_1
+	id = "A_forest_to_colony_1"
+	id_target = "A_colony_to_forest_1"
 
-//Surface to stairs.
-/obj/effect/step_trigger/surface_to_transition_1_A
-	id = "surface_to_transition_1_A"
-	id_target = "surface_to_transition_2_A"
+/obj/effect/step_trigger/A_colony_to_forest_2
+	id = "B_colony_to_forest_1"
+	id_target = "B_forest_to_colony_1"
 
-/obj/effect/step_trigger/surface_to_transition_2_A
-	id = "surface_to_transition_2_A"
-	id_target = "surface_to_transition_1_A"
+/obj/effect/step_trigger/A_forest_to_colony_2
+	id = "B_forest_to_colony_1"
+	id_target = "B_colony_to_forest_1"
 
-/obj/effect/step_trigger/surface_to_transition_1_B
-	id = "surface_to_transition_1_B"
-	id_target = "surface_to_transition_2_B"
 
-/obj/effect/step_trigger/surface_to_transition_2_B
-	id = "surface_to_transition_2_B"
-	id_target = "surface_to_transition_1_B"
 
-//Surface to forest
+//Compound <-> Forest.
+/obj/effect/step_trigger/B_compound_to_forest_1
+	id = "A_compound_to_forest_2"
+	id_target = "A_forest_to_compound_2"
+
+/obj/effect/step_trigger/B_forest_to_compound_1
+	id = "A_forest_to_compound_2"
+	id_target = "A_compound_to_forest_2"
+
+/obj/effect/step_trigger/B_compound_to_forest_2
+	id = "B_compound_to_forest_2"
+	id_target = "B_forest_to_compound_2"
+
+/obj/effect/step_trigger/B_forest_to_compound_2
+	id = "B_forest_to_compound_2"
+	id_target = "B_compound_to_forest_2"
+
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/surface_to_forest_1_A
 	id = "surface_to_forest_1_A"
 	id_target = "surface_to_forest_2_A"
@@ -196,7 +202,9 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "surface_to_forest_2_B"
 	id_target = "surface_to_forest_1_B"
 
-//HuT to Gulag
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/hut_to_gulag_1_A
 	id = "hut_to_gulag_1_A"
 	id_target = "hut_to_gulag_2_A"
@@ -213,7 +221,9 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "hut_to_gulag_2_B"
 	id_target = "hut_to_gulag_1_B"
 
-//Vault Bunker
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/vault_bunker_1A
 	id = "vault_bunker_1A"
 	id_target = "vault_bunker_2A"
@@ -278,7 +288,9 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "vault_bunker_2H"
 	id_target = "vault_bunker_1H"
 
-//Monster cave to more beast caves
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/monster_to_beast_1_A
 	id = "monster_to_beast_1_A"
 	id_target = "monster_to_beast_2_A"
@@ -295,7 +307,9 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "monster_to_beast_2_B"
 	id_target = "monster_to_beast_1_B"
 
-//Greyson base to field offices
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/gbase_to_gfoffices_1_A
 	id = "gbase_to_gfoffices_1_A"
 	id_target = "gbase_to_gfoffices_2_A"
@@ -304,7 +318,9 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "gbase_to_gfoffices_2_A"
 	id_target = "gbase_to_gfoffices_1_A"
 
-//Prepper base to vault bunker
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/prepper_to_vbunker_1_A
 	id = "prepper_to_vbunker_1_A"
 	id_target = "prepper_to_vbunker_2_A"
@@ -337,7 +353,9 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "prepper_to_vbunker_8_A"
 	id_target = "prepper_to_vbunker_7_A"
 
-//Surface to lower colony disposal transition teleporters.
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/disposal_transition_1_A
 	id = "disposal_transition_1_A"
 	id_target = "disposal_transition_2_A"
@@ -354,7 +372,9 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "disposal_transition_2_B"
 	id_target = "disposal_transition_1_B"
 
-//Ironhead compound to abandoned fortress
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/ironcompound_to_abandonedfortress_1_A
 	id = "ironcompound_to_abandonedfortress_1_A"
 	id_target = "ironcompound_to_abandonedfortress_2_A"
@@ -363,7 +383,9 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "ironcompound_to_abandonedfortress_2_A"
 	id_target = "ironcompound_to_abandonedfortress_1_A"
 
-//Swamp caves to river forest (redirected from deep forest to river forest)
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/swampcaves_to_riverforest_1_A
 	id = "swampcaves_to_riverforest_1_A"
 	id_target = "swampcaves_to_riverforest_2_A"
@@ -380,7 +402,9 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "swampcaves_to_riverforest_2_B"
 	id_target = "swampcaves_to_riverforest_1_B"
 
-//River forest to hunting lodge
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/riverforest_to_huntinglodge_1_A
 	id = "riverforest_to_huntinglodge_1_A"
 	id_target = "riverforest_to_huntinglodge_2_A"
@@ -397,7 +421,9 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id = "riverforest_to_huntinglodge_2_B"
 	id_target = "riverforest_to_huntinglodge_1_B"
 
-//Crash ship
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/riverforest_to_crash_1_A
 	id = "riverforest_to_crash_1_A"
 	id_target = "riverforest_to_crash_2_A"
@@ -413,7 +439,10 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 /obj/effect/step_trigger/riverforest_to_crash_2_B
 	id = "riverforest_to_crash_2_B"
 	id_target = "riverforest_to_crash_1_B"
-//Colony to crash
+
+
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/colony_to_crash_1_A
 	id = "colony_to_crash_1_A"
 	id_target = "colony_to_crash_2_A"
@@ -431,6 +460,8 @@ var/list/obj/effect/step_trigger/STEP_TELEPORTERS = list()
 	id_target = "colony_to_crash_1_B"
 
 
+
+//UNUSED <-> UNUSED
 /obj/effect/step_trigger/temple_to_bigtemple_1_B
 	id = "temple_to_bigtemple_1_B"
 	id_target = "temple_to_bigtemple_2_B"
