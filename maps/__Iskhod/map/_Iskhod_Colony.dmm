@@ -4631,6 +4631,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet,
 /area/iskhod/pros/foreman)
+"bey" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/engineering/atmos)
 "bez" = (
 /obj/structure/cable/yellow{
 	d2 = 2;
@@ -22856,10 +22863,8 @@
 /turf/simulated/shuttle/floor/mining,
 /area/iskhod/pros/shuttle_landing_zone)
 "fGr" = (
-/obj/machinery/atmospherics/pipe/simple/visible/red{
-	dir = 5
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/manifold/visible/red,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/atmos)
 "fGs" = (
@@ -32856,6 +32861,13 @@
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security)
+"ild" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/portables_connector{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/engineering/atmos)
 "ile" = (
 /turf/simulated/shuttle/wall/mining{
 	icon_state = "13,15"
@@ -57987,10 +57999,10 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/outside/inside_colony/west)
 "ouA" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/atmos)
 "ouC" = (
@@ -92887,6 +92899,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/office)
+"xoP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/binary/pump/high_power{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/engineering/atmos)
 "xoT" = (
 /obj/structure/closet/secure_closet/freezer/kitchen{
 	name = "fridge"
@@ -110057,11 +110076,11 @@ bsp
 vGH
 xbz
 oKd
-hSP
+bey
 vDl
 pPw
 oKd
-hSP
+bey
 pbF
 xbz
 oKd
@@ -110661,7 +110680,7 @@ cKA
 mRo
 paa
 eNv
-hSP
+ild
 pkb
 gxY
 kOk
@@ -110863,7 +110882,7 @@ qTV
 uQe
 paa
 boG
-hSP
+xoP
 xbz
 hXy
 hXy
