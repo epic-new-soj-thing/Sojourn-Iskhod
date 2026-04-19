@@ -64,7 +64,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 /datum/job/cargo_tech
 	title = "Technician"
 	flag = CARGOTECH
-	department = DEPARTMENT_SERVICE
+	department = DEPARTMENT_SUPPLY
 	department_flag = FL
 	faction = MAP_FACTION
 	total_positions = 4
@@ -120,7 +120,7 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 /datum/job/mining
 	title = "Miner"
 	flag = MINER
-	department = DEPARTMENT_SERVICE
+	department = DEPARTMENT_SUPPLY
 	department_flag = FL
 	faction = MAP_FACTION
 	total_positions = 4
