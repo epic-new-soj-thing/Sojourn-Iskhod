@@ -259,6 +259,19 @@
 		if("whisper")
 			whisper_say(message, speaking, alt_name)
 			return 1
+		if("special")
+			var/obj/item/device/radio/headset/H
+			if(l_ear && istype(l_ear, /obj/item/device/radio/headset))
+				H = l_ear
+			else if(r_ear && istype(r_ear, /obj/item/device/radio/headset))
+				H = r_ear
+			else if(head && istype(head, /obj/item/device/radio/headset))
+				H = head
+
+			if(H)
+				H.talk_into(src, message, message_mode, verb, speaking, speech_volume)
+				// :+ is radio-only and should not produce normal local speech.
+				return TRUE
 		else
 			if(message_mode)
 				if(l_ear && istype(l_ear, /obj/item/device/radio))
