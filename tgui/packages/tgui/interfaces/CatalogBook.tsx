@@ -2,6 +2,7 @@
  * CatalogBook – standalone book UI. Does not import from Catalog.
  * Table of contents (clickable) + Return to main; right column = cream page, no borders, all text black, in-content links disabled.
  */
+import type { CSSProperties, ReactNode } from 'react';
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import {
@@ -51,7 +52,7 @@ type Data = {
   selected_entry: Record<string, unknown> | null;
 };
 
-const BOOK_PAGE_STYLE = {
+const BOOK_PAGE_STYLE: CSSProperties = {
   backgroundColor: '#faf6ef',
   color: '#000',
   fontFamily: 'Georgia, "Times New Roman", serif',
@@ -65,7 +66,7 @@ const BOOK_PAGE_STYLE = {
   overflowY: 'auto' as const,
 };
 
-const TOC_ENTRY_STYLE = {
+const TOC_ENTRY_STYLE: CSSProperties = {
   display: 'block',
   color: '#1a3a5c',
   fontFamily: 'Georgia, "Times New Roman", serif',
@@ -79,10 +80,13 @@ const TOC_ENTRY_STYLE = {
   textDecoration: 'none',
 };
 
+const hasValue = (value: unknown) =>
+  value !== null && value !== undefined && value !== '';
+
 export const CatalogBook = (props) => {
   return (
-    <Window width={960} height={720} className="CatalogBook--paper">
-      <Window.Content className="CatalogBook--paper" backgroundColor="#e8dfd0">
+    <Window width={960} height={720}>
+      <Window.Content backgroundColor="#e8dfd0">
         <CatalogBookContent />
       </Window.Content>
     </Window>
@@ -106,11 +110,8 @@ const CatalogBookContent = (props) => {
           overflowY: 'auto',
         }}
       >
-        <Box
-          as="span"
-          role="button"
-          tabIndex={0}
-          mb={0.5}
+        <button
+          type="button"
           style={{
             ...TOC_ENTRY_STYLE,
             marginBottom: '0.5rem',
@@ -128,7 +129,7 @@ const CatalogBookContent = (props) => {
           }}
         >
           Return to main
-        </Box>
+        </button>
         <Box style={{ color: '#000', marginBottom: '0.5rem', fontSize: '0.85rem' }}>
           Contents
         </Box>
@@ -154,46 +155,48 @@ const CatalogBookContent = (props) => {
             {catalog_search ? 'No such heading in this volume.' : 'This volume is empty.'}
           </Box>
         ) : (
-          <VirtualList style={{ border: 'none', background: 'none' }}>
-            {groupEntriesBySection(entries).map(({ section, entries: sectionEntries }) => (
-              <Box key={section} style={{ marginBottom: '0.75rem' }}>
-                <Box
-                  style={{
-                    color: '#000',
-                    fontSize: '0.8rem',
-                    fontWeight: 'bold',
-                    marginBottom: '0.25rem',
-                    borderBottom: '1px solid #c4b8a8',
-                    paddingBottom: '0.15rem',
-                  }}
-                >
-                  {section}
-                </Box>
-                {sectionEntries.map((entry: Entry) => (
-                  <Box key={entry.id} style={{ marginBottom: '0.1rem' }}>
-                    <span
-                      role="button"
-                      tabIndex={0}
-                      style={{
-                        ...TOC_ENTRY_STYLE,
-                        fontWeight: selected_entry?.id === entry.id ? 'bold' : 'normal',
-                        textDecoration: selected_entry?.id === entry.id ? 'underline' : 'none',
-                      }}
-                      onClick={() => act('state_machine_enter_entry', { entry: entry.id })}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                          e.preventDefault();
-                          act('state_machine_enter_entry', { entry: entry.id });
-                        }
-                      }}
-                    >
-                      {entry.name}
-                    </span>
+          <Box style={{ border: 'none', background: 'none' }}>
+            <VirtualList>
+              {groupEntriesBySection(entries).map(({ section, entries: sectionEntries }) => (
+                <Box key={section} style={{ marginBottom: '0.75rem' }}>
+                  <Box
+                    style={{
+                      color: '#000',
+                      fontSize: '0.8rem',
+                      fontWeight: 'bold',
+                      marginBottom: '0.25rem',
+                      borderBottom: '1px solid #c4b8a8',
+                      paddingBottom: '0.15rem',
+                    }}
+                  >
+                    {section}
                   </Box>
-                ))}
-              </Box>
-            ))}
-          </VirtualList>
+                  {sectionEntries.map((entry: Entry) => (
+                    <Box key={entry.id} style={{ marginBottom: '0.1rem' }}>
+                      <span
+                        role="button"
+                        tabIndex={0}
+                        style={{
+                          ...TOC_ENTRY_STYLE,
+                          fontWeight: selected_entry?.id === entry.id ? 'bold' : 'normal',
+                          textDecoration: selected_entry?.id === entry.id ? 'underline' : 'none',
+                        }}
+                        onClick={() => act('state_machine_enter_entry', { entry: entry.id })}
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            act('state_machine_enter_entry', { entry: entry.id });
+                          }
+                        }}
+                      >
+                        {entry.name}
+                      </span>
+                    </Box>
+                  ))}
+                </Box>
+              ))}
+            </VirtualList>
+          </Box>
         )}
       </Stack.Item>
 
@@ -213,10 +216,12 @@ const CatalogBookContent = (props) => {
           </Box>
         ) : front_page_content ? (
           <Box style={BOOK_PAGE_STYLE} className="CatalogBook-PageContent CatalogBook-FrontPage">
+            {/* eslint-disable react/no-danger */}
             <div
               dangerouslySetInnerHTML={{ __html: front_page_content }}
               style={{ fontFamily: 'Georgia, "Times New Roman", serif', fontSize: '0.95rem', color: '#000' }}
             />
+            {/* eslint-enable react/no-danger */}
           </Box>
         ) : (
           <Box
@@ -281,7 +286,7 @@ const BookCookingEntry = (props: { entry: Record<string, unknown> }) => {
             <LabeledList.Item label="Byproduct Units Produced">{Number(e.byproduct_count ?? 0)}</LabeledList.Item>
           </>
         )}
-        {e.recipe_guide && (
+        {hasValue(e.recipe_guide) && (
           <LabeledList.Item label="Recipe">
             <Box className="CatalogBook-entryBox" p={1}>
               {/* eslint-disable react/no-danger */}
@@ -305,9 +310,9 @@ const BookDrinksEntry = (props: { entry: Record<string, unknown> }) => {
       <Box fontSize={1.5} bold mt={1}>Specifications</Box>
       <LabeledList>
         <LabeledList.Item label="Type">{String(e.thing_nature ?? '')}</LabeledList.Item>
-        {e.strength && <LabeledList.Item label="Alcohol Strength">{String(e.strength)}</LabeledList.Item>}
-        {e.temperature && <LabeledList.Item label="Served">{String(e.temperature)}</LabeledList.Item>}
-        {e.nutrition && <LabeledList.Item label="Nourishment">{String(e.nutrition)}</LabeledList.Item>}
+        {hasValue(e.strength) && <LabeledList.Item label="Alcohol Strength">{String(e.strength)}</LabeledList.Item>}
+        {hasValue(e.temperature) && <LabeledList.Item label="Served">{String(e.temperature)}</LabeledList.Item>}
+        {hasValue(e.nutrition) && <LabeledList.Item label="Nourishment">{String(e.nutrition)}</LabeledList.Item>}
         {(recipe_data?.length ?? 0) > 0 && (
           <LabeledList.Item label="Recipe">
             {(recipe_data ?? []).map((data, index) => (
@@ -339,27 +344,27 @@ const BookReagentsEntry = (props: { entry: Record<string, unknown> }) => {
       {!e.scannable && <Box>Impossible to scan.</Box>}
       <Box fontSize={1.5} bold mt={1}>Specifications</Box>
       <LabeledList>
-        {e.reagent_type && <LabeledList.Item label="Type">{String(e.reagent_type)}</LabeledList.Item>}
-        {e.reagent_state && <LabeledList.Item label="Phase">{String(e.reagent_state)} at STP</LabeledList.Item>}
-        {e.color && (
+        {hasValue(e.reagent_type) && <LabeledList.Item label="Type">{String(e.reagent_type)}</LabeledList.Item>}
+        {hasValue(e.reagent_state) && <LabeledList.Item label="Phase">{String(e.reagent_state)} at STP</LabeledList.Item>}
+        {hasValue(e.color) && (
           <LabeledList.Item label="Color">
             <ColorBox color={String(e.color)} width={3} />
           </LabeledList.Item>
         )}
-        {e.metabolism_blood && (
+        {hasValue(e.metabolism_blood) && (
           <LabeledList.Item label="Metabolism">
             <Box>{Number(e.metabolism_blood)}u/s in blood</Box>
-            {e.metabolism_stomach ? (
+            {hasValue(e.metabolism_stomach) ? (
               <Box>{Number(e.metabolism_stomach)}u/s in stomach</Box>
             ) : (
               <Box>{Number(e.metabolism_blood) / 2}u/s in stomach</Box>
             )}
           </LabeledList.Item>
         )}
-        <LabeledList.Item label="NSA">{nsa != null ? nsa : 0} units</LabeledList.Item>
-        {e.addiction_threshold && <LabeledList.Item label="Addiction Threshold">{Number(e.addiction_threshold)}u</LabeledList.Item>}
-        {e.addiction_chance && <LabeledList.Item label="Addiction Chance">{String(e.addiction_chance)}</LabeledList.Item>}
-        {e.overdose && <LabeledList.Item label="Overdose At">{Number(e.overdose)}u</LabeledList.Item>}
+        <LabeledList.Item label="NSA">{nsa !== null && nsa !== undefined ? nsa : 0} units</LabeledList.Item>
+        {hasValue(e.addiction_threshold) && <LabeledList.Item label="Addiction Threshold">{Number(e.addiction_threshold)}u</LabeledList.Item>}
+        {hasValue(e.addiction_chance) && <LabeledList.Item label="Addiction Chance">{String(e.addiction_chance)}</LabeledList.Item>}
+        {hasValue(e.overdose) && <LabeledList.Item label="Overdose At">{Number(e.overdose)}u</LabeledList.Item>}
         {(heating?.types?.length ?? 0) > 0 && (
           <LabeledList.Item label={`Decomposition Above ${e.heating_point}K`}>
             <Box className="CatalogBook-entryBox" p={1}>
@@ -419,12 +424,12 @@ const RecipeDisplay = (props: { recipe_data: Record<string, unknown> }) => {
   const byproducts = d.byproducts as Array<{ reagent: string }> | null | undefined;
   const minT = d.minimum_temperature as number | null | undefined;
   const maxT = d.maximum_temperature as number | null | undefined;
-  let temperature = null;
-  if (minT != null && maxT != null) {
+  let temperature: ReactNode = null;
+  if (minT !== null && minT !== undefined && maxT !== null && maxT !== undefined) {
     temperature = <Box>At temperatures between {minT}K and {maxT}K</Box>;
-  } else if (minT != null) {
+  } else if (minT !== null && minT !== undefined) {
     temperature = <Box>At temperatures above {minT}K</Box>;
-  } else if (maxT != null) {
+  } else if (maxT !== null && maxT !== undefined) {
     temperature = <Box>At temperatures below {maxT}K</Box>;
   }
   return (
@@ -442,7 +447,7 @@ const RecipeDisplay = (props: { recipe_data: Record<string, unknown> }) => {
         <Box key={v.reagent}>Additional Creation of {v.reagent}</Box>
       ))}
       {temperature}
-      {d.required_object && <Box>Should take place inside of {String(d.required_object)}</Box>}
+      {hasValue(d.required_object) && <Box>Should take place inside of {String(d.required_object)}</Box>}
       <Box>Results in {String(d.result_amount ?? '')} of substance</Box>
     </Box>
   );

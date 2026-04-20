@@ -69,7 +69,12 @@ function mergeChangelogData(parsed: ChangelogData[]): ChangelogData {
     const hasAuthor = 'author' in doc && 'changes' in doc && Array.isArray((doc as { changes: unknown }).changes);
     if (hasAuthor) {
       const pr = doc as { author: string; changes: unknown[]; date?: string };
-      const dateKey = pr.date != null ? (typeof pr.date === 'string' ? pr.date : (pr.date as Date).toISOString().slice(0, 10)) : '';
+      const dateKey =
+        pr.date !== null && pr.date !== undefined
+          ? typeof pr.date === 'string'
+            ? pr.date
+            : (pr.date as Date).toISOString().slice(0, 10)
+          : '';
       if (!dateKey) continue;
       if (!merged[dateKey]) merged[dateKey] = {};
       merged[dateKey][pr.author] = pr.changes;
@@ -284,9 +289,12 @@ export const Changelog = () => {
             changes: ({ [type: string]: string } | string)[];
             date?: string | Date;
           };
-          const dateVal = prData.date != null ? prData.date : null;
+          const dateVal =
+            prData.date !== null && prData.date !== undefined
+              ? prData.date
+              : null;
           const title =
-            dateVal != null
+            dateVal !== null && dateVal !== undefined
               ? dateformat(
                   typeof dateVal === 'string' ? dateVal : dateVal.toISOString().slice(0, 10),
                   'd mmmm yyyy',
@@ -330,7 +338,7 @@ export const Changelog = () => {
                             />
                           </Table.Cell>
                           <Table.Cell className="Changelog__Cell">
-                            {message != null ? String(message) : ''}
+                            {message !== null && message !== undefined ? String(message) : ''}
                           </Table.Cell>
                         </Table.Row>
                       );

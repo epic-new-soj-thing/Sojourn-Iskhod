@@ -23,7 +23,7 @@ type Reagent = {
 type Beaker = {
   currentVolume: number;
   maxVolume: number;
-  contents: Reagent[];
+  contents?: Reagent[];
 };
 
 type Data = {
@@ -52,7 +52,9 @@ export const MassSpec = (props) => {
   } = data;
 
   const centerValue = (lowerRange + upperRange) / 2;
-  const beaker1HasContents = beaker1?.contents?.length > 0;
+  const beaker1Contents = beaker1?.contents ?? [];
+  const beaker2Contents = beaker2?.contents ?? [];
+  const beaker1HasContents = beaker1Contents.length > 0;
 
   return (
     <Window width={600} height={550}>
@@ -94,7 +96,7 @@ export const MassSpec = (props) => {
               <Button
                 icon="plus"
                 onClick={() => act('insert1')}
-                style={{ opacity: hasBeakerInHand ? 1 : 0.5 }}
+                style={{ opacity: hasBeakerInHand ? '1' : '0.5' }}
                 tooltip={!hasBeakerInHand && 'You need to hold a container in your hand'}
                 tooltipPosition="bottom-start"
               >
@@ -106,7 +108,7 @@ export const MassSpec = (props) => {
           {beaker1HasContents && (
             <Box color="label">Eta of selection: {round(eta, 0)} seconds</Box>
           )}
-          {beaker1?.contents?.length > 0 ? (
+          {beaker1Contents.length > 0 ? (
             <Table>
               <Table.Row header>
                 <Table.Cell>Reagent</Table.Cell>
@@ -115,7 +117,7 @@ export const MassSpec = (props) => {
                 <Table.Cell>Purity</Table.Cell>
                 <Table.Cell>Status</Table.Cell>
               </Table.Row>
-              {beaker1.contents.map((reagent, i) => {
+              {beaker1Contents.map((reagent, i) => {
                 const selected =
                   reagent.mass >= lowerRange && reagent.mass <= upperRange;
                 return (
@@ -147,21 +149,21 @@ export const MassSpec = (props) => {
             minValue={0}
             maxValue={centerValue}
             stepPixelSize={2}
-            onChange={(e, value) => act('leftSlider', { value })}
+            onChange={(e, value) => act('leftSlider', { value: String(value) })}
           />
           <Slider
             value={upperRange}
             minValue={centerValue}
             maxValue={graphUpperRange}
             stepPixelSize={2}
-            onChange={(e, value) => act('rightSlider', { value })}
+            onChange={(e, value) => act('rightSlider', { value: String(value) })}
           />
           <Slider
             value={centerValue}
             minValue={0}
             maxValue={graphUpperRange}
             stepPixelSize={2}
-            onChange={(e, value) => act('centerSlider', { value })}
+            onChange={(e, value) => act('centerSlider', { value: String(value) })}
           />
         </Section>
 
@@ -176,7 +178,7 @@ export const MassSpec = (props) => {
               <Button
                 icon="plus"
                 onClick={() => act('insert2')}
-                style={{ opacity: hasBeakerInHand ? 1 : 0.5 }}
+                style={{ opacity: hasBeakerInHand ? '1' : '0.5' }}
                 tooltip={!hasBeakerInHand && 'You need to hold a container in your hand'}
                 tooltipPosition="bottom-start"
               >
@@ -185,7 +187,7 @@ export const MassSpec = (props) => {
             )
           }
         >
-          {beaker2?.contents?.length > 0 ? (
+          {beaker2Contents.length > 0 ? (
             <Table>
               <Table.Row header>
                 <Table.Cell>Reagent</Table.Cell>
@@ -194,7 +196,7 @@ export const MassSpec = (props) => {
                 <Table.Cell>Purity</Table.Cell>
                 <Table.Cell>Status</Table.Cell>
               </Table.Row>
-              {beaker2.contents.map((reagent, i) => (
+              {beaker2Contents.map((reagent, i) => (
                 <Table.Row key={i}>
                   <Table.Cell>{reagent.name}</Table.Cell>
                   <Table.Cell>{reagent.mass}</Table.Cell>
