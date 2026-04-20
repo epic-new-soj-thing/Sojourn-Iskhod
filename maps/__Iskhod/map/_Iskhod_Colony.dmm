@@ -18482,6 +18482,15 @@
 	},
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/medical/ward)
+"eCu" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "eCv" = (
 /obj/structure/flora/tree/snow/five,
 /turf/simulated/floor/snow/smooth{
@@ -20167,6 +20176,10 @@
 /obj/random/cluster/spiders,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/outside/scave)
+"eYW" = (
+/obj/effect/window_lwall_spawn/smartspawn,
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/engine_room)
 "eZm" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning,
 /turf/simulated/floor/reinforced,
@@ -24765,11 +24778,8 @@
 	},
 /area/iskhod/hallway/main/stairwell)
 "giz" = (
-/obj/machinery/atmospherics/unary/outlet_injector{
-	dir = 4;
-	frequency = 1441;
-	id = "air_in";
-	use_power = 1
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 4
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/iskhod/engineering/engine_room)
@@ -67343,6 +67353,9 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/quartermaster/office)
+"qST" = (
+/turf/simulated/wall/r_wall,
+/area/iskhod/maintenance/undergroundfloor2south)
 "qSY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/device/radio/intercom{
@@ -67666,6 +67679,10 @@
 	},
 /turf/simulated/floor/industrial/ornate,
 /area/iskhod/absolutism/office)
+"qVN" = (
+/obj/structure/sign/warning/hazard_hotloop,
+/turf/simulated/wall/r_wall,
+/area/iskhod/engineering/engine_room)
 "qVP" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
@@ -72074,8 +72091,9 @@
 /turf/simulated/floor/carpet,
 /area/iskhod/security/breakroom)
 "sbU" = (
-/obj/machinery/atmospherics/pipe/simple/visible/yellow{
-	dir = 10
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
+	dir = 4;
+	tag = "icon-map (EAST)"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -81175,6 +81193,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/steel/danger,
 /area/iskhod/command/panic_room)
+"usm" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "ust" = (
 /obj/random/medical_lowcost/low_chance,
 /obj/random/medical_lowcost,
@@ -149731,9 +149757,9 @@ iFe
 iFe
 nKb
 nKb
-nKb
+qST
 vrR
-vrR
+qVN
 jsY
 sMC
 fJN
@@ -149933,15 +149959,15 @@ iFe
 iFe
 nKb
 nKb
-nKb
-vrR
-vrR
-jsY
-sMC
-cQJ
-cQJ
-cQJ
-daL
+qST
+nuD
+eYW
+usm
+dog
+unw
+unw
+unw
+eCu
 sbU
 unw
 dog
@@ -150135,9 +150161,9 @@ iFe
 iFe
 nKb
 nKb
-nKb
+qST
 vrR
-vrR
+qVN
 jsY
 cQJ
 cQJ
