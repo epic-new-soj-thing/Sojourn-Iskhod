@@ -493,7 +493,7 @@
 /obj/machinery/chemical_dispenser/industrial
 	name = "IndustryChem 4000"
 	desc = "A heavy-duty chemical dispenser for industrial and maintenance use. Optimized for solvents, acids, and workshop reagents."
-	icon = 'icons/obj/machines/chemistry.dmi'
+	icon = 'icons/obj/chemical.dmi'
 	icon_state = "industrial_dispenser"
 	ui_title = "IndustryChem 4000"
 	circuit = /obj/item/circuitboard/chemical_dispenser/industrial
