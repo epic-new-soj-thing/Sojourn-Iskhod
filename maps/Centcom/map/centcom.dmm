@@ -6364,12 +6364,6 @@
 /obj/effect/floor_decal/border/carpet/green,
 /turf/simulated/floor/carpet/turcarpet,
 /area/centcom/agentoffice)
-"ws" = (
-/obj/effect/mob_spawn/human/solfed_survivor{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/centcom/evac)
 "wx" = (
 /obj/structure/table/marble,
 /obj/item/reagent_containers/snacks/dough,
@@ -6791,12 +6785,6 @@
 	},
 /turf/simulated/floor/carpet/bcarpet,
 /area/centcom/evac)
-"BF" = (
-/obj/effect/mob_spawn/human/prospector_ert{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/centcom/evac)
 "BJ" = (
 /obj/effect/step_trigger/thrower{
 	affect_ghosts = 1;
@@ -6940,12 +6928,6 @@
 "Ct" = (
 /obj/machinery/vending/tool,
 /turf/simulated/floor/tiled/dark/golden,
-/area/centcom/evac)
-"Cu" = (
-/obj/effect/mob_spawn/human/high_council_agent/special{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/cyancorner,
 /area/centcom/evac)
 "Cz" = (
 /obj/structure/filingcabinet,
@@ -7250,12 +7232,6 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/centcom/evac)
-"FB" = (
-/obj/effect/mob_spawn/human/exl_civ{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/cyancorner,
-/area/centcom/evac)
 "FD" = (
 /obj/machinery/light/floor,
 /turf/simulated/floor/tiled/dark/cargo,
@@ -7320,12 +7296,6 @@
 /obj/machinery/light,
 /turf/simulated/floor/tiled/dark,
 /area/centcom/raider_base)
-"GA" = (
-/obj/effect/mob_spawn/human/si_medical_ert{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/cyancorner,
-/area/centcom/evac)
 "GE" = (
 /obj/machinery/light,
 /turf/simulated/floor/tiled/cafe,
@@ -7852,9 +7822,6 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/effect/mob_spawn/human/church_ert{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/centcom/evac)
 "KC" = (
@@ -7938,9 +7905,6 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/mob_spawn/human/solfed_survivor{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/centcom/evac)
 "Ls" = (
@@ -7977,12 +7941,6 @@
 /obj/item/organ/internal/bone/head,
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/agentoffice)
-"LI" = (
-/obj/effect/mob_spawn/human/exl_civ/armored{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/cyancorner,
-/area/centcom/evac)
 "LL" = (
 /obj/machinery/light{
 	dir = 8
@@ -8144,12 +8102,6 @@
 	},
 /obj/structure/table/woodentable,
 /turf/simulated/floor/tiled/dark/golden,
-/area/centcom/evac)
-"Nz" = (
-/obj/effect/mob_spawn/human/kriosan_trooper{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel/gray_platform,
 /area/centcom/evac)
 "NB" = (
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
@@ -8421,12 +8373,6 @@
 	},
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/centcom/evac)
-"Pm" = (
-/obj/effect/mob_spawn/human/si_ert{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/cyancorner,
-/area/centcom/evac)
 "Pn" = (
 /obj/structure/table/glass,
 /obj/item/storage/firstaid/surgery/si,
@@ -8517,12 +8463,6 @@
 /obj/effect/floor_decal/industrial/hatch,
 /turf/simulated/floor/wood/wild3,
 /area/centcom/merc_base)
-"PP" = (
-/obj/effect/mob_spawn/human/marqua_scout{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/cyancorner,
-/area/centcom/evac)
 "PQ" = (
 /obj/machinery/vending/weapon_machine,
 /turf/simulated/floor/tiled/dark/golden,
@@ -8913,9 +8853,6 @@
 /obj/machinery/newscaster{
 	pixel_y = 29
 	},
-/obj/effect/mob_spawn/human/high_council_agent/special{
-	dir = 4
-	},
 /turf/simulated/floor/tiled/dark/cyancorner,
 /area/centcom/evac)
 "Tz" = (
@@ -9067,12 +9004,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
-"UQ" = (
-/obj/effect/mob_spawn/human/marqua_scout{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/cyancorner,
-/area/centcom/evac)
 "Vf" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/vault/bolted,
@@ -9153,25 +9084,10 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
-"VX" = (
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/effect/mob_spawn/human/engineering_ert{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/centcom/evac)
 "VZ" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
-/area/centcom/evac)
-"Wf" = (
-/obj/effect/mob_spawn/human/lonestar_ert{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/gray_platform,
 /area/centcom/evac)
 "Wg" = (
 /obj/structure/table/reinforced,
@@ -9414,9 +9330,6 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
 "YD" = (
-/obj/effect/mob_spawn/human/solfed_survivor_auxilliary{
-	dir = 8
-	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/centcom/evac)
 "YH" = (
@@ -9442,12 +9355,6 @@
 /obj/structure/catwalk,
 /turf/space,
 /area/space)
-"YO" = (
-/obj/effect/mob_spawn/human/marshal_ert{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/centcom/evac)
 "YP" = (
 /obj/structure/table/rack/shelf,
 /obj/effect/floor_decal/industrial/danger,
@@ -9486,15 +9393,6 @@
 	},
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/agentoffice)
-"Zn" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/mob_spawn/human/solfed_survivor_medic{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/centcom/evac)
 "Zq" = (
 /obj/effect/floor_decal/industrial/road/warning2,
 /turf/simulated/floor/tiled/dark/gray_perforated,
@@ -24424,10 +24322,10 @@ aD
 aD
 dn
 ho
-VX
-Wf
-YO
-BF
+Kw
+YD
+YD
+YD
 Kw
 ho
 ho
@@ -24828,10 +24726,10 @@ aD
 aD
 dn
 ho
-Cu
-LI
-Pm
-PP
+Py
+Py
+Py
+Py
 Py
 Py
 Ao
@@ -25031,9 +24929,9 @@ aD
 dn
 ho
 Tv
-FB
-GA
-UQ
+Py
+Py
+Py
 Py
 Py
 Py
@@ -25435,10 +25333,10 @@ aD
 dn
 ho
 Lo
-ws
-Nz
 YD
-Zn
+YD
+YD
+Lo
 ho
 ho
 FM

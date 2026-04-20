@@ -81,6 +81,10 @@ proc/produce_radiation(var/Source, var/Power, var/Range)
 	if(!Source || !Power || !Range)
 		return
 
+	for(var/obj/machinery/power/rad_collector/C in GLOB.rad_collectors)
+		if(get_dist(C, Source) <= Range)
+			C.receive_pulse(Power)
+
 	for(var/mob/living/M in range(Range, Source))
 		if(isInSight(Source, M))
 			M.apply_effect(((Power / 10) * ( 1 / (Range**2) )), IRRADIATE) //inverse square lawed, adjust the Power/10 to tweak this value

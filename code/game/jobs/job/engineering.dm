@@ -67,7 +67,7 @@
 
 
 /datum/job/technomancer
-	title = "Engineer"
+	title = "Guild Engineer"
 	flag = ADEPT
 	department = DEPARTMENT_ENGINEERING
 	department_flag = ENGINEERING
@@ -120,12 +120,12 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 	perks = list(PERK_INSPIRATION, PERK_HANDYMAN)
 
 /obj/landmark/join/start/technomancer
-	name = "Engineer"
+	name = "Guild Engineer"
 	icon_state = "player-orange"
 	join_tag = /datum/job/technomancer
 
 /datum/job/apprentice
-	title = "Apprentice"
+	title = "Guild Apprentice"
 	flag = APPRENTICE
 	department = DEPARTMENT_ENGINEERING
 	department_flag = ENGINEERING
@@ -175,7 +175,7 @@ Do not let outsiders, even Command Staff, interfere with the duties of the Guild
 
 
 /obj/landmark/join/start/apprentice
-	name = "Apprentice"
+	name = "Guild Apprentice"
 	icon_state = "player-orange-lower"
 	join_tag = /datum/job/apprentice
 

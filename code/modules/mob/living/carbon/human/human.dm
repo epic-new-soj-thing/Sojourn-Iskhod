@@ -287,20 +287,20 @@
 //Trust me I'm an engineer
 //I think we'll put this shit right here
 var/list/rank_prefix = list(\
-	"Facility Director" = "Facility Director",\
+	"Facility Director" = "Director",\
 	"Steward" = "Steward",\
 	"Captain" = "Captain",\
-	"Operations Manager" = "Operations Manager",\
-	"Chief Engineer" = "Chief Engineer",\
-	"Medical Overseer" = "Medical Overseer",\
-	"Research Overseer" = "Research Overseer",\
+	"Operations Manager" = "Manager",\
+	"Chief Engineer" = "Chief",\
+	"Medical Overseer" = "Overseer",\
+	"Research Overseer" = "Overseer",\
 	"Penitent" = "Penitent",\
 	"Mouth" = "Mouth",\
 	"Foreman" = "Foreman",\
 	"Lieutenant" = "Lieutenant",\
 	"Detective" = "Detective",\
 	"Ranger" = "Ranger",\
-	"Junior Ranger" = "Junior Ranger",\
+	"Junior Ranger" = "Ranger",\
 	)
 
 /mob/living/carbon/human/proc/rank_prefix_name(name)

@@ -62,16 +62,16 @@ Counsel the council on directing the colony towards profitable opportunities."
 	join_tag = /datum/job/merchant
 
 /datum/job/cargo_tech
-	title = "Technician"
+	title = "Cargo Technician"
 	flag = CARGOTECH
-	department = DEPARTMENT_SERVICE
+	department = DEPARTMENT_SUPPLY
 	department_flag = FL
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Operations Manager"
 	difficulty = "Easy."
-	alt_titles = list("Cargo Specialist", "Frontier Logistics Sales Technician", "Frontier Logistics Retail Assistant")
+	alt_titles = list("Cargo Specialist", "Sales Technician", "Retail Assistant")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_DUMB
 	department_account_access = TRUE
@@ -113,21 +113,21 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	Always seek other forms of profit, but do so while keeping the company in a good light."
 
 /obj/landmark/join/start/cargo_tech
-	name = "Technician"
+	name = "Cargo Technician"
 	icon_state = "player-beige"
 	join_tag = /datum/job/cargo_tech
 
 /datum/job/mining
-	title = "Miner"
+	title = "Mining Technician"
 	flag = MINER
-	department = DEPARTMENT_SERVICE
+	department = DEPARTMENT_SUPPLY
 	department_flag = FL
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
 	supervisors = "the Operations Manager"
 	difficulty = "Easy."
-	alt_titles = list("Frontier Logistics Drill Technician", "Junior Frontier Logistics Miner", "Frontier Logistics Excavation Specialist")
+	alt_titles = list("Frontier Logistics", "Drill Technician", "Junior Mining Technician", "Excavation Specialist")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_HAZARD //The miners union is stubborn
 	hud_icon = "miner"
@@ -166,6 +166,6 @@ The deep tunnels are far less dangerous than the wilderness, but pack well - dis
 							 /datum/computer_file/program/reports)
 
 /obj/landmark/join/start/mining
-	name = "Miner"
+	name = "Mining Technician"
 	icon_state = "player-beige"
 	join_tag = /datum/job/mining
