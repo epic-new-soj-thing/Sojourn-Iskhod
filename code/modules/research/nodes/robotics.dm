@@ -302,6 +302,7 @@
 							/datum/design/research/item/mmi_radio,
 							/datum/design/research/item/intellicard,
 							/datum/design/research/item/paicard,
+							/datum/design/research/item/posibrain, //Trilby moment
 							/datum/design/research/circuit/robocontrol
 							)
 
@@ -320,7 +321,8 @@
 
 	unlocks_designs = list(
 							/datum/design/research/circuit/aicore,
-							/datum/design/research/circuit/aiupload
+							/datum/design/research/circuit/aiupload,
+							/datum/design/research/item/borismodule
 							)
 
 /datum/technology/artificial_intelligence_laws

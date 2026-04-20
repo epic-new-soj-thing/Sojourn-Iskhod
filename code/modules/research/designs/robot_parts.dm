@@ -162,3 +162,15 @@
 	name = "Satchel of holding equipment upgrade"
 	desc = "Allows for the construction of lethal upgrades for sec-based bots."
 	build_path = /obj/item/borg/upgrade/satchel_of_holding_for_borgs
+
+//I'd shove these elsewhere, but it's probably good to keep them together incase it needs adjustment/disabling
+
+/datum/design/research/item/posibrain
+	name = "Positronic Brain"
+	desc = "Produces a single-use positronic intelligence holder. When activated, it will attempt to generate a personality; and if successful, permanently engraves it into the storage medium."
+	build_path = /obj/item/device/mmi/digital/posibrain
+
+/datum/design/research/item/borismodule
+	name = "ISHAEK Remote Control Chip"
+	desc = "Allows for remote AI control when inserted into an empty shell. Experimental."
+	build_path = /obj/item/borg/upgrade/boris

@@ -235,6 +235,41 @@
 
 		qdel(src)
 
+	if(istype(W, /obj/item/borg/upgrade/boris))
+		var/obj/item/borg/upgrade/boris/M = W
+		if(!is_ready(user))
+			to_chat(user, SPAN_WARNING("The Remote Link must go in after everything else!"))
+			return
+		if(!istype(loc,/turf))
+			to_chat(user, SPAN_WARNING("You can't put \the [W] in, the frame has to be standing on the ground to be perfectly precise."))
+			return
+		var/mob/living/silicon/robot/O = new (get_turf(loc), unfinished = 1)
+		if(!O)	return
+
+		user.unEquip(M)
+
+		O.invisibility = 0
+		O.custom_name = created_name
+		O.updatename("Default")
+
+		var/obj/item/robot_parts/chest/chest = parts["chest"]
+		O.cell = chest.cell
+		O.cell.forceMove(O)
+		//Should fix cybros run time erroring when blown up. It got deleted before, along with the frame.
+		W.forceMove(O)
+
+		// Since we "magically" installed a cell, we also have to update the correct component.
+		if(O.cell)
+			var/datum/robot_component/cell_component = O.components["power cell"]
+			cell_component.wrapped = O.cell
+			cell_component.installed = 1
+
+		callHook("borgify", list(O))
+
+		qdel(src)
+		O.stat = 2 //FORCE STAT = 2 to allow the AI to take control of the shell
+
+
 	if (istype(W, /obj/item/pen))
 		var/t = sanitizeSafe(input(user, "Enter new robot name", src.name, src.created_name), MAX_NAME_LEN)
 		if (!t)
