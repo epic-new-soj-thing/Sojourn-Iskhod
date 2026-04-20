@@ -418,6 +418,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	var/list/data = list()
 	data["screen"] = screen
 	data["sync"] = sync
+	data["can_research"] = can_research
 	data["has_disk"] = !!disk
 	if(disk)
 		data["disk_size"] = disk.max_capacity
@@ -431,7 +432,6 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		data["has_dest_analyzer"] = !!linked_destroy
 		data["has_protolathe"] = !!linked_lathe
 		data["has_circuit_imprinter"] = !!linked_imprinter
-		data["can_research"] = can_research
 
 		var/list/tech_tree_list = list()
 		for(var/tree in files.researched_tech)

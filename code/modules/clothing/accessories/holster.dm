@@ -189,6 +189,19 @@ Sword holsters
 	sound_out = 'sound/effects/sheathout.ogg'
 	sheath_arts = TRUE
 
+/obj/item/clothing/accessory/holster/saber/attack_hand(mob/user as mob)
+	if(has_suit)
+		if(holstered)
+			unholster(user)
+		return
+
+	if(loc == user)
+		if(holstered)
+			unholster(user)
+		return
+
+	..(user)
+
 /obj/item/clothing/accessory/holster/saber/facility_director
 	name = "Facility Director's scabbard"
 	desc = "A brown leather scabbard with golden lining, made for the Facility Director's ceremonial saber."
