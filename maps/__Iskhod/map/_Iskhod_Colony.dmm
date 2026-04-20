@@ -10368,7 +10368,7 @@
 /turf/simulated/floor/reinforced,
 /area/iskhod/pros/shuttle_landing_zone)
 "czk" = (
-/obj/machinery/autolathe,
+/obj/machinery/autolathe/rnd,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
 "czu" = (
@@ -28991,6 +28991,11 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/ai/control)
+"hnj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/chemical_dispenser/industrial,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/rnd/lab)
 "hnp" = (
 /obj/structure/closet/crate,
 /obj/item/am_shielding_container,
@@ -32702,6 +32707,10 @@
 /obj/item/reagent_containers/drinks/mug/moebius/bio/overseer,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
+"ijA" = (
+/obj/machinery/chem_master,
+/turf/simulated/floor/tiled/dark/violetcorener,
+/area/iskhod/rnd/lab)
 "ikc" = (
 /obj/structure/medical_stand,
 /obj/effect/floor_decal/industrial/hatch,
@@ -42471,6 +42480,9 @@
 	dir = 8
 	},
 /obj/machinery/disposal,
+/obj/machinery/requests_console/preset/department/engineering{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/foyer)
 "kCv" = (
@@ -68025,6 +68037,7 @@
 /area/iskhod/rnd/rbreakroom)
 "rab" = (
 /obj/machinery/autolathe/rnd/imprinter,
+/obj/item/reagent_containers/glass/beaker/silicon,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/lab)
 "raf" = (
@@ -124479,8 +124492,8 @@ kiC
 jfN
 wBk
 roC
-kxf
-uHc
+hnj
+ijA
 uHc
 bgX
 wqR
