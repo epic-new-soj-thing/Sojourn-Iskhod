@@ -19,7 +19,6 @@ GLOBAL_DATUM_INIT(maps_data, /datum/maps_data, new)
 
 /proc/isContactLevel(var/level)
 	return level in GLOB.maps_data.contact_levels
-	return level in GLOB.maps_data.contact_levels
 
 /proc/isOnContactLevel(var/atom/A)
 	var/turf/T = get_turf(A)

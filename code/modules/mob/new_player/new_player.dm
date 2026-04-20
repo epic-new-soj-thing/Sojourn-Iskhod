@@ -540,7 +540,7 @@ GLOBAL_VAR_CONST(TGUI_LATEJOIN_EVAC_NONE, "None")
 	new_character.dna.ready_dna(new_character)
 	new_character.dna.b_type = client.prefs.b_type
 	// Mycus, Folken and Aulvae always use blood type X
-	if(new_character.species && new_character.species.name in list("Mycus", "Folken", "Aulvae"))
+	if(new_character.species && (new_character.species.name in list("Mycus", "Folken", "Aulvae")))
 		new_character.dna.b_type = "X"
 		new_character.b_type = "X"
 	new_character.sync_organ_dna()

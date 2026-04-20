@@ -376,9 +376,9 @@ GLOBAL_VAR_INIT(demonomicon_spawned_this_round, FALSE)
 /hook/roundstart/proc/distribute_archive_demonomicon()
 	spawn(10)
 		if(GLOB.demonomicon_spawned_this_round)
-			return TRUE
+			return
 		if(!prob(3))
-			return TRUE
+			return
 		var/list/archive_shelves = list()
 		for(var/obj/structure/bookcase/archive/A in world)
 			archive_shelves += A
