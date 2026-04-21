@@ -38,6 +38,8 @@
 		is_on = FALSE
 
 /obj/machinery/power/ex_bluespace_repairer/attack_hand(mob/user as mob)
+	if(!can_use_excelsior_machinery(user, src))
+		return
 	if(is_on)
 		to_chat(user, SPAN_NOTICE("Aliner scanner is current on and working."))
 	else

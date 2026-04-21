@@ -34,6 +34,9 @@
 	if(panel_open)
 		return
 
+	if(!can_use_excelsior_machinery(user, src))
+		return
+
 	var/accepted = FALSE
 
 	if(istype(I, /obj/item/implant) || istype(I, /obj/item/robot_parts))
