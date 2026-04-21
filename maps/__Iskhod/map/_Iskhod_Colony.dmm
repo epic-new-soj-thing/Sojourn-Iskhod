@@ -4300,7 +4300,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
 "baJ" = (
-/obj/machinery/atmospherics/binary/pump{
+/obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 4;
 	name = "COLD TO LOOP"
 	},
@@ -4728,7 +4728,7 @@
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/quartermaster/supplydock)
 "bfJ" = (
-/obj/machinery/atmospherics/binary/pump{
+/obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 8;
 	name = "LOOP TO COLD"
 	},
@@ -12602,12 +12602,12 @@
 /turf/simulated/floor/tiled/dark/cargo,
 /area/iskhod/security/maingate)
 "dcV" = (
+/obj/structure/catwalk,
 /obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 4;
-	icon_state = "1-4"
+	d2 = 8;
+	icon_state = "0-8"
 	},
-/turf/simulated/floor/reinforced/airless,
+/turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_room)
 "dcW" = (
 /obj/random/mob/roaches/low_chance,
@@ -13603,7 +13603,7 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/security/armory)
 "dqF" = (
-/obj/machinery/atmospherics/binary/pump{
+/obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -21149,6 +21149,16 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 4;
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_room)
@@ -29063,11 +29073,6 @@
 	},
 /obj/structure/cable/yellow{
 	d1 = 2;
-	d2 = 8;
-	icon_state = "2-8"
-	},
-/obj/structure/cable/yellow{
-	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
 	},
@@ -29943,7 +29948,7 @@
 /area/iskhod/absolutism/chapel)
 "hwU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/binary/pump{
+/obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -52818,7 +52823,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/sechall)
 "ngi" = (
-/obj/machinery/atmospherics/binary/pump{
+/obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 8
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -59004,11 +59009,11 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/pros/shuttle)
 "oHY" = (
-/obj/machinery/atmospherics/binary/pump{
+/obj/effect/floor_decal/industrial/box,
+/obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 1;
 	name = "HOT TO LOOP"
 	},
-/obj/effect/floor_decal/industrial/box,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "oHZ" = (
@@ -59769,12 +59774,12 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/secrecroom)
 "oSf" = (
-/obj/effect/floor_decal/industrial/box,
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4;
-	name = "LOOP TO COLD"
+/obj/structure/catwalk,
+/obj/structure/cable/yellow{
+	d2 = 4;
+	icon_state = "0-4"
 	},
-/turf/simulated/floor/tiled/dark/orangecorner,
+/turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_room)
 "oSj" = (
 /obj/effect/floor_decal/floordetail/edgedrain{
@@ -84959,7 +84964,7 @@
 /area/iskhod/maintenance/undergroundfloor2north)
 "vnr" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/binary/pump{
+/obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 4
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
@@ -93174,14 +93179,6 @@
 	},
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/engineering/techstorage)
-"xtp" = (
-/obj/effect/floor_decal/industrial/box,
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8;
-	name = "COLD TO LOOP"
-	},
-/turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_room)
 "xtr" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/hidden/black,
@@ -149330,10 +149327,10 @@ dqF
 cQJ
 hXA
 sMC
-xtp
-oSf
-sMC
-sMC
+bvk
+iJj
+myo
+xwE
 mxk
 tvZ
 iXk
@@ -149533,7 +149530,7 @@ mgp
 xTK
 sMC
 bvk
-iJj
+ikJ
 myo
 xwE
 lDb
@@ -149734,10 +149731,10 @@ cQJ
 mgp
 sMC
 sMC
-bvk
-ikJ
-myo
-xwE
+iDE
+iDE
+cQJ
+cQJ
 sMC
 mxk
 rsz
@@ -149936,10 +149933,10 @@ lbk
 cQJ
 sMC
 cQJ
-iDE
-iDE
-cQJ
-cQJ
+sMC
+sMC
+sMC
+sMC
 sMC
 bfJ
 sdU
@@ -150749,7 +150746,7 @@ iHq
 iHq
 rYs
 nPz
-gHX
+oSf
 gHX
 gHX
 vrR
@@ -150945,8 +150942,8 @@ pAr
 pAr
 pAr
 nPz
-dyi
-dcV
+huT
+huT
 iRi
 hGP
 fha
@@ -151153,7 +151150,7 @@ bGj
 bGj
 hWs
 nPz
-gHX
+dcV
 sRE
 gHX
 vrR
