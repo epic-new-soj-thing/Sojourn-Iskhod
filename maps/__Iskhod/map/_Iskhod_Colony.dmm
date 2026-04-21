@@ -59780,11 +59780,11 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/secrecroom)
 "oSf" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 8;
-	name = "COLD TO LOOP"
-	},
 /obj/effect/floor_decal/industrial/box,
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4;
+	name = "LOOP TO COLD"
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "oSj" = (
@@ -93200,6 +93200,14 @@
 	},
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/engineering/techstorage)
+"xtp" = (
+/obj/effect/floor_decal/industrial/box,
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8;
+	name = "COLD TO LOOP"
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "xtr" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/hidden/black,
@@ -149150,7 +149158,7 @@ pnD
 rOE
 pHE
 kUY
-kUY
+pHE
 pnD
 rOE
 rOE
@@ -149352,7 +149360,7 @@ dqF
 cQJ
 hXA
 sMC
-sMC
+xtp
 oSf
 sMC
 sMC
@@ -149554,7 +149562,7 @@ lDO
 mgp
 xTK
 sMC
-oaM
+bvk
 iJj
 myo
 xwE
