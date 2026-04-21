@@ -49,6 +49,9 @@
 	if(default_part_replacement(I, user))
 		return
 
+	if(!can_use_excelsior_machinery(user, src))
+		return
+
 	if(panel_open)
 		return
 
@@ -89,6 +92,8 @@
 /obj/machinery/autolathe_disk_cloner/attack_hand(mob/user as mob)
 	if(..())
 		return TRUE
+	if(!can_use_excelsior_machinery(user, src))
+		return TRUE
 
 	user.set_machine(src)
 	nano_ui_interact(user)
@@ -127,6 +132,8 @@
 
 /obj/machinery/autolathe_disk_cloner/Topic(href, href_list)
 	if(..())
+		return 1
+	if(!can_use_excelsior_machinery(usr, src))
 		return 1
 
 	usr.set_machine(src)

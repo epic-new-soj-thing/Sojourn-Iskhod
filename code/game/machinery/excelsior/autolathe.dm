@@ -21,10 +21,19 @@
 		icon_state = "[initial(icon_state)]_off"
 
 /obj/machinery/autolathe/excelsior/attack_hand(mob/user)
+	if(!can_use_excelsior_machinery(user, src))
+		return TRUE
 	..()
 	log_and_message_admins(" - Exc Autolathe being used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 
 /obj/machinery/autolathe/excelsior/attackby(obj/item/I, mob/user)
+	if(!is_excelsior(user))
+		if(default_deconstruction(I, user))
+			return
+		if(default_part_replacement(I, user))
+			return
+		can_use_excelsior_machinery(user, src)
+		return
 	..()
 	log_and_message_admins(" - Exc Autolathe being used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
 
@@ -44,6 +53,8 @@
 	var/update_time = 0 // Made so callbacks can't be spamed
 
 /obj/machinery/excelsior_boombox/attack_hand(mob/user)
+	if(!can_use_excelsior_machinery(user, src))
+		return
 	..()
 	toggle_active()
 	update_icon()

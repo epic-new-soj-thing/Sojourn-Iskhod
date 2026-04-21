@@ -341,6 +341,13 @@ Proc for attack log creation, because really why not
 
 	return FALSE
 
+/proc/can_use_excelsior_machinery(var/mob/user, var/atom/machinery)
+	if(!istype(user) || is_excelsior(user))
+		return TRUE
+
+	to_chat(user, SPAN_WARNING("You need an Excelsior implant to operate [machinery]."))
+	return FALSE
+
 /proc/mob_hearers(var/atom/movable/heard_atom, var/range = world.view)
 	. = list()
 

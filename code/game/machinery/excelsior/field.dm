@@ -34,6 +34,8 @@
 
 	if(usr.incapacitated())
 		return
+	if(!can_use_excelsior_machinery(usr, src))
+		return
 
 	stunmode = !stunmode
 
