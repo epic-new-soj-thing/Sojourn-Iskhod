@@ -248,9 +248,33 @@
 				var/access_type = text2num(href_list["access_target"])
 				var/access_allowed = text2num(href_list["allowed"])
 				if(access_type in get_access_ids(ACCESS_TYPE_STATION|ACCESS_TYPE_CENTCOM))
+					var/region_type = get_access_region_by_id(access_type)
+					var/list/region_access = GLOB.maps_data.access_modify_region[region_type]
+
+					// Backward compatibility for maps that still use string region keys.
+					if(!region_access)
+						switch(region_type)
+							if(ACCESS_REGION_SECURITY)
+								region_access = GLOB.maps_data.access_modify_region["ACCESS_REGION_SECURITY"]
+							if(ACCESS_REGION_MEDBAY)
+								region_access = GLOB.maps_data.access_modify_region["ACCESS_REGION_MEDBAY"]
+							if(ACCESS_REGION_RESEARCH)
+								region_access = GLOB.maps_data.access_modify_region["ACCESS_REGION_RESEARCH"]
+							if(ACCESS_REGION_ENGINEERING)
+								region_access = GLOB.maps_data.access_modify_region["ACCESS_REGION_ENGINEERING"]
+							if(ACCESS_REGION_COMMAND)
+								region_access = GLOB.maps_data.access_modify_region["ACCESS_REGION_COMMAND"]
+							if(ACCESS_REGION_GENERAL)
+								region_access = GLOB.maps_data.access_modify_region["ACCESS_REGION_GENERAL"]
+							if(ACCESS_REGION_SUPPLY)
+								region_access = GLOB.maps_data.access_modify_region["ACCESS_REGION_SUPPLY"]
+							if(ACCESS_REGION_CHURCH)
+								region_access = GLOB.maps_data.access_modify_region["ACCESS_REGION_CHURCH"]
+							if(ACCESS_REGION_PROSPECTOR)
+								region_access = GLOB.maps_data.access_modify_region["ACCESS_REGION_PROSPECTOR"]
+
 					for(var/access in user_id_card.access)
-						var/region_type = get_access_region_by_id(access_type)
-						if(access in GLOB.maps_data.access_modify_region[region_type])
+						if(access in region_access)
 							id_card.access -= access_type
 							if(!access_allowed)
 								id_card.access += access_type

@@ -46699,6 +46699,12 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster/quarters)
+"lFn" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "lFo" = (
 /obj/structure/cable/green{
 	d1 = 4;
@@ -49524,7 +49530,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "mrg" = (
@@ -70590,10 +70596,10 @@
 /area/iskhod/recreation)
 "rGT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /obj/machinery/atmospherics/pipe/simple/visible/red{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "rGV" = (
@@ -72145,10 +72151,7 @@
 /turf/simulated/floor/carpet,
 /area/iskhod/security/breakroom)
 "sbU" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	dir = 4;
-	tag = "icon-map (EAST)"
-	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "sbV" = (
@@ -83534,13 +83537,8 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/engineering)
 "uWV" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
-	},
-/turf/simulated/floor/tiled/dark/orangecorner,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
 "uWW" = (
 /obj/structure/boulder,
@@ -86823,6 +86821,11 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster/quarters)
+"vOR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "vOV" = (
 /obj/machinery/light{
 	brightness_power = 1;
@@ -93219,6 +93222,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/iskhod/quartermaster/supplydock)
+"xwf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 10
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "xwh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -93427,8 +93437,9 @@
 /turf/simulated/floor/wood/wild4,
 /area/iskhod/crew_quarters/pool)
 "xzx" = (
-/obj/effect/window_lwall_spawn/smartspawn,
-/turf/simulated/floor/plating/under,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/visible/yellow,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
 "xzz" = (
 /obj/structure/table/bench/standard,
@@ -94424,6 +94435,16 @@
 "xML" = (
 /obj/effect/floor_decal/industrial/warningdust,
 /turf/simulated/floor/tiled/white/techfloor_grid,
+/area/iskhod/engineering/engine_room)
+"xMP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/black,
+/turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "xMQ" = (
 /obj/machinery/holoposter{
@@ -149822,17 +149843,17 @@ fJN
 fJN
 pXN
 pxI
-ays
-mgp
-cQJ
-jsY
-sMC
+xwf
+lFn
+unw
+hWR
+dog
+vnr
 uWV
-fJN
-pXN
-pXN
-sMC
-hJw
+xzx
+xzx
+dog
+kkd
 sMC
 lfV
 pnD
@@ -150017,21 +150038,21 @@ nKb
 nKb
 hmv
 nuD
-xzx
-hWR
-dog
-unw
-unw
-unw
+vLR
+rGT
+sbU
+vOR
+vOR
+sbU
 mre
 sbU
-unw
-dog
+vOR
+sbU
 rGT
-dog
-vnr
-unw
-unw
+sbU
+xMP
+vOR
+sbU
 twO
 dog
 egd
