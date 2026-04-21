@@ -34857,8 +34857,19 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/unary/vent_scrubber{
-	dir = 8
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 8;
+	external_pressure_bound = 0;
+	external_pressure_bound_default = 0;
+	frequency = 1442;
+	icon_state = "map_vent_in";
+	id_tag = "SM_out";
+	internal_pressure_bound = 2000;
+	internal_pressure_bound_default = 2000;
+	pressure_checks = 2;
+	pressure_checks_default = 2;
+	pump_direction = 0;
+	use_power = 1
 	},
 /turf/simulated/floor/reinforced/airless,
 /area/iskhod/engineering/engine_room)
@@ -39900,8 +39911,11 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/patient_wing)
 "jRn" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 4
+	},
 /turf/unsimulated/mineral/cold,
-/area/iskhod/engineering/engine_room)
+/area/colony)
 "jRD" = (
 /obj/effect/floor_decal/industrial/warningdust/fulltile,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -49661,8 +49675,8 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "mqf" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
-/turf/simulated/floor/reinforced/airless,
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
+/turf/simulated/wall/r_wall,
 /area/colony)
 "mqi" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -59395,6 +59409,10 @@
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
+"oNW" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction,
+/turf/space,
+/area/colony)
 "oNY" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/brown_platform,
@@ -84447,6 +84465,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2east)
+"vge" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
+/turf/simulated/wall/r_wall,
+/area/iskhod/engineering/engine_room)
 "vgg" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
@@ -90424,9 +90446,11 @@
 	name = "\improper Command - Facility Director's Office"
 	})
 "wGE" = (
-/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction,
-/turf/simulated/floor/reinforced/airless,
-/area/iskhod/engineering/engine_room)
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	layer = 2.6
+	},
+/turf/simulated/wall/r_wall,
+/area/colony)
 "wGK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -106728,12 +106752,12 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+hKm
+hKm
+hKm
+hKm
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -106930,12 +106954,12 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+hKm
+hKm
+hKm
+hKm
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -107136,8 +107160,8 @@ hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -107338,8 +107362,8 @@ hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -107540,8 +107564,8 @@ hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -107742,8 +107766,8 @@ hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -107944,8 +107968,8 @@ hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -108146,8 +108170,8 @@ hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -108348,8 +108372,8 @@ hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -108550,8 +108574,8 @@ hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -108752,8 +108776,8 @@ hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -108954,8 +108978,8 @@ hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -109150,14 +109174,14 @@ hVF
 hVF
 hVF
 hVF
-hVF
-jDL
-hKm
-hKm
-hKm
-hKm
 jDL
 jDL
+hKm
+hKm
+hKm
+hKm
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -109352,14 +109376,14 @@ hVF
 hVF
 hVF
 hVF
-hVF
-jDL
-hKm
-hKm
-hKm
-hKm
 jDL
 jDL
+hKm
+hKm
+hKm
+hKm
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -109554,14 +109578,14 @@ hVF
 hVF
 hVF
 hVF
-hVF
 jDL
 hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -109756,14 +109780,14 @@ lCt
 hVF
 hVF
 hVF
-hVF
 jDL
 hKm
 hKm
 hKm
 hKm
-jDL
-jDL
+hKm
+hKm
+hKm
 jDL
 rKl
 jDL
@@ -109958,7 +109982,7 @@ lCt
 lCt
 hVF
 hVF
-hVF
+jDL
 jDL
 jDL
 jDL
@@ -146933,7 +146957,7 @@ jDL
 jDL
 jDL
 jDL
-jDL
+jRn
 rKl
 jDL
 "}
@@ -147129,12 +147153,12 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+ezj
+uHM
+ezj
+uHM
+ezj
+uHM
 jDL
 rKl
 jDL
@@ -147331,12 +147355,12 @@ jDL
 jDL
 jDL
 jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+huF
+huF
+huF
+huF
+huF
+huF
 jDL
 rKl
 jDL
@@ -147533,12 +147557,12 @@ jDL
 jDL
 jDL
 jDL
-ezj
-uHM
-ezj
-uHM
-jDL
-jDL
+huF
+huF
+huF
+huF
+huF
+huF
 jDL
 rKl
 jDL
@@ -147739,8 +147763,8 @@ huF
 huF
 huF
 huF
-jDL
-jDL
+huF
+huF
 jDL
 rKl
 jDL
@@ -147941,8 +147965,8 @@ huF
 huF
 huF
 huF
-jDL
-jDL
+huF
+huF
 jDL
 rKl
 jDL
@@ -148143,8 +148167,8 @@ huF
 huF
 huF
 huF
-jDL
-jDL
+huF
+huF
 jDL
 rKl
 jDL
@@ -148345,8 +148369,8 @@ huF
 huF
 huF
 huF
-jDL
-jDL
+huF
+huF
 jDL
 rKl
 jDL
@@ -148547,8 +148571,8 @@ huF
 huF
 huF
 huF
-jDL
-jDL
+huF
+huF
 jDL
 rKl
 jDL
@@ -148749,8 +148773,8 @@ huF
 huF
 huF
 huF
-jDL
-jDL
+huF
+huF
 jDL
 rKl
 jDL
@@ -148951,8 +148975,8 @@ huF
 huF
 huF
 huF
-jDL
-jDL
+huF
+huF
 jDL
 rKl
 jDL
@@ -149153,8 +149177,8 @@ huF
 huF
 huF
 huF
-jDL
-jDL
+huF
+huF
 jDL
 rKl
 jDL
@@ -149355,8 +149379,8 @@ huF
 huF
 huF
 huF
-jDL
-jDL
+huF
+huF
 jDL
 rKl
 jDL
@@ -149557,8 +149581,8 @@ huF
 huF
 huF
 huF
-jDL
-jDL
+huF
+huF
 jDL
 rKl
 jDL
@@ -149740,7 +149764,7 @@ mxk
 rsz
 vrR
 vrR
-jRn
+jDL
 jDL
 jDL
 jDL
@@ -149759,8 +149783,8 @@ huF
 huF
 huF
 huF
-jDL
-jDL
+huF
+huF
 jDL
 rKl
 jDL
@@ -149941,28 +149965,28 @@ sMC
 bfJ
 sdU
 wni
-wGq
+wni
 wGE
-mqf
-mqf
-mqf
-mqf
-mqf
-mqf
-mqf
-mqf
-mqf
-mqf
-mqf
-mqf
-mqf
-mqf
+wGE
+wGE
+wGE
+wGE
+wGE
+wGE
+wGE
+wGE
+wGE
+wGE
+wGE
+wGE
+wGE
+oNW
+xEg
+fVe
 xEg
 fVe
 xEg
 huF
-jDL
-jDL
 jDL
 rKl
 jDL
@@ -150143,8 +150167,7 @@ sMC
 lDb
 rOE
 byh
-eEI
-wGE
+vge
 mqf
 mqf
 mqf
@@ -150159,12 +150182,13 @@ mqf
 mqf
 mqf
 mqf
+oNW
+cCg
+cCg
 cCg
 cCg
 cCg
 xEg
-jDL
-jDL
 jDL
 rKl
 jDL
@@ -150346,7 +150370,7 @@ dWD
 tWc
 vrR
 vrR
-jRn
+jDL
 jDL
 jDL
 jDL
@@ -150548,7 +150572,7 @@ vrR
 gIo
 vrR
 vrR
-jRn
+jDL
 jDL
 jDL
 jDL
@@ -150750,7 +150774,7 @@ oSf
 gHX
 gHX
 vrR
-jRn
+jDL
 jDL
 jDL
 jDL
@@ -150952,7 +150976,7 @@ fkx
 duX
 gHX
 vrR
-jRn
+jDL
 jDL
 jDL
 jDL
@@ -151154,7 +151178,7 @@ dcV
 sRE
 gHX
 vrR
-jRn
+jDL
 jDL
 jDL
 jDL
@@ -151356,7 +151380,7 @@ vrR
 ebF
 vrR
 vrR
-jRn
+jDL
 jDL
 jDL
 jDL
@@ -151558,7 +151582,7 @@ aVP
 bqs
 vrR
 vrR
-jRn
+jDL
 jDL
 jDL
 nKb
@@ -151760,7 +151784,7 @@ sMC
 kEW
 vrR
 vrR
-jRn
+jDL
 nKb
 nKb
 nKb
@@ -151962,7 +151986,7 @@ rti
 iyR
 vrR
 vrR
-jRn
+jDL
 nKb
 nKb
 nKb
