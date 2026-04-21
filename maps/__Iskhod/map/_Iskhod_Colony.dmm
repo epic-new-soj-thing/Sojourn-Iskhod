@@ -3928,6 +3928,10 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 8
 	},
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "aWc" = (
@@ -4179,6 +4183,10 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#0892d0"
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "aYX" = (
@@ -6478,6 +6486,14 @@
 /obj/effect/floor_decal/corner_techfloor_grid/diagonal,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/security/brig)
+"bBy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "bBC" = (
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_y = 32
@@ -16078,6 +16094,10 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "dWH" = (
@@ -23601,7 +23621,9 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/outside/scave)
 "fPE" = (
-/obj/machinery/light/small,
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "fPR" = (
@@ -24346,6 +24368,16 @@
 	},
 /turf/simulated/floor/rock/manmade/asphalt,
 /area/iskhod/outside/inside_colony)
+"gbu" = (
+/obj/machinery/atmospherics/pipe/simple/visible/yellow{
+	dir = 4;
+	layer = 2.5
+	},
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "gbC" = (
 /turf/simulated/floor/plating/under,
 /area/iskhod/outside/inside_colony)
@@ -32909,6 +32941,11 @@
 /obj/structure/bed/chair,
 /turf/simulated/floor/tiled,
 /area/iskhod/command/hallway)
+"ikJ" = (
+/obj/machinery/atmospherics/pipe/manifold4w/visible/blue,
+/obj/structure/invislight,
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "ikP" = (
 /obj/effect/floor_decal/corner/red{
 	dir = 5
@@ -33407,6 +33444,10 @@
 "irc" = (
 /obj/item/device/radio/intercom{
 	pixel_y = 25
+	},
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#0892d0"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -35599,6 +35640,7 @@
 "iRi" = (
 /obj/effect/floor_decal/industrial/warning/full,
 /obj/machinery/power/supermatter,
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced/airless,
 /area/iskhod/engineering/engine_room)
 "iRB" = (
@@ -39770,10 +39812,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -42823,6 +42861,17 @@
 	},
 /turf/simulated/shuttle/floor/mining,
 /area/iskhod/pros/shuttle_landing_zone)
+"kEW" = (
+/obj/structure/cable/yellow{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "kFc" = (
 /obj/structure/window/reinforced/iskhod{
 	dir = 4
@@ -47508,6 +47557,7 @@
 "lPB" = (
 /obj/machinery/power/emitter,
 /obj/structure/cable/yellow,
+/obj/structure/invislight,
 /turf/simulated/floor/reinforced,
 /area/iskhod/engineering/engine_room)
 "lPJ" = (
@@ -51955,6 +52005,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster)
+"mVY" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "mWf" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/grey,
@@ -61593,6 +61649,9 @@
 /obj/machinery/camera/network/engine{
 	dir = 4
 	},
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "poL" = (
@@ -62356,6 +62415,11 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+/obj/machinery/light{
+	dir = 8;
+	icon_state = "tube1";
+	pixel_y = 0
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "pxS" = (
@@ -62796,6 +62860,13 @@
 	},
 /turf/simulated/floor/industrial/blue_slates,
 /area/iskhod/security/interview)
+"pDN" = (
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "pDP" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -69010,6 +69081,7 @@
 	d2 = 2;
 	icon_state = "0-2"
 	},
+/obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_room)
 "rit" = (
@@ -80788,11 +80860,6 @@
 /turf/simulated/floor/tiled/dark/gray_perforated,
 /area/iskhod/pros/shuttle_landing_zone)
 "uil" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
-	},
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -81814,6 +81881,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
+	},
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#0892d0"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -87470,6 +87541,7 @@
 	dir = 4
 	},
 /obj/structure/cable/yellow,
+/obj/structure/invislight,
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_room)
 "vVv" = (
@@ -91472,6 +91544,18 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/medical/medbreak)
+"wWy" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 8;
+	name = "ADD HOT";
+	layer = 2.5
+	},
+/obj/machinery/light{
+	dir = 4;
+	icon_state = "tube1"
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "wWI" = (
 /obj/item/spider_shadow_trap,
 /turf/simulated/floor/rock/dark,
@@ -93450,10 +93534,12 @@
 /turf/simulated/open,
 /area/iskhod/hallway/main/stairwell)
 "xwv" = (
-/obj/machinery/light/small,
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	dir = 10;
 	layer = 2.6
+	},
+/obj/machinery/light{
+	light_color = "#b9e8ea"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -93638,6 +93724,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/engine{
 	dir = 9
+	},
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#0892d0"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -149667,7 +149757,7 @@ mgp
 sMC
 sMC
 bvk
-iJj
+ikJ
 myo
 xwE
 sMC
@@ -150863,7 +150953,7 @@ nKb
 nKb
 vrR
 vrR
-cQJ
+bBy
 sMC
 qdb
 sMC
@@ -151068,7 +151158,7 @@ vrR
 msF
 sMC
 sMC
-sMC
+mVY
 sMC
 xMP
 daL
@@ -151271,7 +151361,7 @@ vrR
 epc
 vrR
 vrR
-sMC
+cgw
 hSS
 tPP
 wmQ
@@ -151692,7 +151782,7 @@ sMC
 sMC
 sMC
 sMC
-daL
+kEW
 vrR
 vrR
 vrR
@@ -152289,11 +152379,11 @@ sMC
 cQJ
 oCd
 sMC
-sMC
+pDN
 ipA
 sMC
 dog
-dog
+wWy
 egd
 sMC
 twO
@@ -152483,7 +152573,7 @@ vrR
 uQR
 vrR
 vrR
-sMC
+cgw
 sMC
 xwf
 sMC
@@ -153297,7 +153387,7 @@ uil
 aYV
 rJA
 weB
-xMP
+gbu
 vrR
 qaP
 gPF
