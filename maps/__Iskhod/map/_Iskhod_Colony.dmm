@@ -4300,9 +4300,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
 "baJ" = (
-/obj/machinery/atmospherics/pipe/simple/visible/cyan{
-	dir = 9;
-	layer = 2.6
+/obj/machinery/atmospherics/binary/pump{
+	dir = 4;
+	name = "COLD TO LOOP"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -4727,6 +4727,13 @@
 	},
 /turf/simulated/floor/industrial/blue_slates_long,
 /area/iskhod/quartermaster/supplydock)
+"bfJ" = (
+/obj/machinery/atmospherics/binary/pump{
+	dir = 8;
+	name = "LOOP TO COLD"
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "bfQ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -6279,6 +6286,7 @@
 /area/iskhod/recreation/fight_club)
 "byh" = (
 /obj/structure/sign/warning/hazard_coldloop,
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
 /turf/simulated/wall/r_wall,
 /area/iskhod/engineering/engine_room)
 "byi" = (
@@ -10569,13 +10577,9 @@
 /turf/simulated/floor/wood,
 /area/iskhod/command/cbo)
 "cCg" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 1;
-	name = "LOOP TO COLD"
-	},
-/obj/effect/floor_decal/industrial/box,
-/turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_room)
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/turf/space,
+/area/colony)
 "cCx" = (
 /obj/random/structures,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -29721,6 +29725,10 @@
 	},
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
+"huF" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/turf/simulated/floor/reinforced/airless,
+/area/iskhod/engineering/engine_room)
 "huJ" = (
 /turf/simulated/wall/iskhod_red,
 /area/iskhod/hallway/surface/section2)
@@ -31031,6 +31039,9 @@
 /obj/structure/closet/random_milsupply,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/maintenance/undergroundfloor2west)
+"hKm" = (
+/turf/space,
+/area/colony)
 "hKo" = (
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment,
@@ -49626,6 +49637,10 @@
 /obj/structure/closet/jcloset,
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/dungeon/outside/abandoned_outpost)
+"mqf" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging,
+/turf/simulated/floor/reinforced/airless,
+/area/colony)
 "mqi" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
@@ -69792,6 +69807,16 @@
 /obj/structure/medical_stand/anesthetic,
 /turf/simulated/floor/tiled/white/orangecorner,
 /area/iskhod/maintenance/undergroundfloor2south)
+"rsz" = (
+/obj/machinery/camera/network/engine{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 8;
+	layer = 2.6
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "rsB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -72507,6 +72532,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/secrecroom)
+"sdU" = (
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	dir = 10;
+	layer = 2.6
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "sec" = (
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
@@ -82664,6 +82699,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/wood/wild4,
 /area/iskhod/crew_quarters/pool)
+"uHM" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 5
+	},
+/turf/space,
+/area/colony)
 "uHQ" = (
 /obj/random/dungeon_gun_mods/low_chance,
 /turf/simulated/floor/asteroid/dirt/flood,
@@ -88710,6 +88751,12 @@
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/techstorage)
+"wni" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	layer = 2.6
+	},
+/turf/simulated/wall/r_wall,
+/area/iskhod/engineering/engine_room)
 "wnj" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/techfloor,
@@ -90353,6 +90400,10 @@
 /area/iskhod/command/captain{
 	name = "\improper Command - Facility Director's Office"
 	})
+"wGE" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging/junction,
+/turf/simulated/floor/reinforced/airless,
+/area/iskhod/engineering/engine_room)
 "wGK" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4;
@@ -93890,6 +93941,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/abandoned/barber)
+"xEg" = (
+/obj/machinery/atmospherics/pipe/simple/heat_exchanging{
+	dir = 9
+	},
+/turf/space,
+/area/colony)
 "xEm" = (
 /obj/structure/cable/cyan{
 	d1 = 2;
@@ -109482,8 +109539,8 @@ hVF
 hVF
 hVF
 jDL
-jDL
-jDL
+hKm
+hKm
 jDL
 jDL
 jDL
@@ -109684,8 +109741,8 @@ hVF
 hVF
 hVF
 jDL
-jDL
-jDL
+hKm
+hKm
 jDL
 jDL
 jDL
@@ -149460,7 +149517,7 @@ iJj
 myo
 xwE
 lDb
-cCg
+ddm
 baJ
 vrR
 vrR
@@ -149662,8 +149719,8 @@ ikJ
 myo
 xwE
 sMC
-sMC
-iVb
+mxk
+rsz
 vrR
 vrR
 jRn
@@ -149864,27 +149921,27 @@ iDE
 cQJ
 cQJ
 sMC
-sMC
-fPE
-vrR
-vrR
-jRn
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+bfJ
+sdU
+wni
+wGE
+huF
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+cCg
+uHM
 jDL
 jDL
 jDL
@@ -150066,27 +150123,27 @@ cQJ
 sMC
 cQJ
 sMC
-sMC
-sMC
+lDb
+rOE
 byh
-vrR
-jRn
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
-jDL
+wGE
+huF
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+mqf
+cCg
+xEg
 jDL
 jDL
 jDL
