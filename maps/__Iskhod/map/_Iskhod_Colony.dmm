@@ -23709,7 +23709,7 @@
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
 "fRl" = (
-/turf/simulated/wall/iskhod_green,
+/turf/simulated/wall/r_wall,
 /area/iskhod/security/armoryshop)
 "fRo" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -35885,7 +35885,7 @@
 /area/iskhod/crew_quarters/arcade)
 "iUl" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
-/turf/simulated/wall/iskhod_green,
+/turf/simulated/wall/r_wall,
 /area/iskhod/security/armoryshop)
 "iUp" = (
 /obj/machinery/atmospherics/unary/freezer{
@@ -43555,6 +43555,10 @@
 	},
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/iskhod/crew_quarters/hydroponics)
+"kNC" = (
+/obj/structure/boulder,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor1west)
 "kNH" = (
 /obj/structure/low_wall,
 /turf/simulated/open,
@@ -51538,11 +51542,8 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/maintenance/undergroundfloor2east)
 "mPJ" = (
-/obj/item/modular_computer/console/preset/medical/monitor{
-	dir = 8;
-	pixel_x = 5
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/modular_computer/console/preset/medical/monitor,
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
 "mPV" = (
@@ -75048,7 +75049,7 @@
 /area/iskhod/service/freezer)
 "sNF" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/wall/iskhod_green,
+/turf/simulated/wall/r_wall,
 /area/iskhod/security/armory)
 "sNS" = (
 /turf/simulated/floor/tiled/dark/golden,
@@ -80618,7 +80619,7 @@
 	name = "\improper Command - Facility Director's Quarters"
 	})
 "ugo" = (
-/turf/simulated/wall/iskhod_green,
+/turf/simulated/wall/r_wall,
 /area/iskhod/security/armory)
 "ugp" = (
 /obj/item/device/radio/intercom{
@@ -82163,6 +82164,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2central)
+"uAQ" = (
+/turf/simulated/wall/r_wall,
+/area/iskhod/maintenance/undergroundfloor1west)
 "uAR" = (
 /obj/machinery/camera/network/medbay{
 	dir = 4
@@ -92280,12 +92284,11 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section2)
 "xgN" = (
-/obj/item/modular_computer/console/preset/medical/monitor{
-	dir = 8;
-	pixel_x = 5
-	},
 /obj/effect/floor_decal/corner/paleblue/full{
 	dir = 4
+	},
+/obj/item/modular_computer/console/preset/medical/monitor{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/reception)
@@ -92606,6 +92609,9 @@
 /obj/item/reagent_containers/glass/bottle/petrel,
 /turf/simulated/floor/plating/under,
 /area/iskhod/dungeon/outside/abandoned_outpost)
+"xml" = (
+/turf/simulated/wall/r_wall,
+/area/iskhod/security/warden)
 "xmn" = (
 /obj/structure/boulder{
 	pixel_x = -1
@@ -104217,8 +104223,8 @@ sNF
 sNF
 sNF
 ugo
-iKR
-iKR
+xml
+xml
 bDx
 uGt
 iVp
@@ -104420,7 +104426,7 @@ kdB
 mrK
 ugo
 ugo
-fAE
+iVp
 swN
 uGt
 iVp
@@ -104622,7 +104628,7 @@ cZW
 ihm
 ugo
 ugo
-fAE
+iVp
 swN
 uGt
 iVp
@@ -104824,7 +104830,7 @@ wYN
 lwj
 ugo
 ugo
-fAE
+iVp
 swN
 gey
 iVp
@@ -105026,7 +105032,7 @@ wYN
 jaJ
 ugo
 ugo
-fAE
+iVp
 bDx
 gey
 iVp
@@ -105228,7 +105234,7 @@ bfQ
 qjq
 ugo
 ugo
-fAE
+kNC
 bDx
 gey
 iVp
@@ -105430,7 +105436,7 @@ ugo
 ugo
 ugo
 ugo
-fAE
+kNC
 bDx
 uGt
 iVp
@@ -105631,8 +105637,8 @@ scI
 oks
 aBo
 ugo
-fAE
-fAE
+uAQ
+kNC
 bDx
 uGt
 iVp
@@ -105833,8 +105839,8 @@ uKF
 wIH
 put
 ugo
-fAE
-fAE
+uAQ
+kNC
 swN
 cAJ
 iVp
@@ -106035,8 +106041,8 @@ uKF
 dqx
 xsE
 ugo
-fAE
-fAE
+uAQ
+kNC
 swN
 cAJ
 iVp
@@ -106237,8 +106243,8 @@ awj
 dqx
 iLq
 ugo
-fAE
-fAE
+uAQ
+iVp
 swN
 cAJ
 tNR
@@ -106439,8 +106445,8 @@ uKF
 dqx
 mXW
 ugo
-fAE
-fAE
+uAQ
+iVp
 rlF
 cAJ
 cAJ
@@ -106641,8 +106647,8 @@ hyl
 dqx
 qTv
 ugo
-fAE
-fAE
+uAQ
+iVp
 rlF
 rUN
 bDx
