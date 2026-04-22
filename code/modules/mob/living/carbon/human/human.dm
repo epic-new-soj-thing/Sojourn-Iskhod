@@ -287,26 +287,35 @@
 //Trust me I'm an engineer
 //I think we'll put this shit right here
 var/list/rank_prefix = list(\
-	"Facility Director" = "Director",\
+	"Facility Director" = "Facility Director",\
 	"Steward" = "Steward",\
-	"Captain" = "Captain",\
-	"Operations Manager" = "Manager",\
-	"Chief Engineer" = "Chief",\
-	"Medical Overseer" = "Overseer",\
-	"Research Overseer" = "Overseer",\
+	"Captain" = "Ranger Captain",\
+	"Operations Manager" = "Surface Manager",\
+	"Chief Engineer" = "Chief Engineer",\
+	"Medical Overseer" = "Medical Overseer",\
+	"Research Overseer" = "Research Overseer",\
 	"Penitent" = "Penitent",\
 	"Mouth" = "Mouth",\
 	"Foreman" = "Foreman",\
 	"Lieutenant" = "Lieutenant",\
 	"Detective" = "Detective",\
 	"Ranger" = "Ranger",\
-	"Junior Ranger" = "Ranger",\
+	"Junior Ranger" = "Junior Ranger",\
 	)
 
 /mob/living/carbon/human/proc/rank_prefix_name(name)
 	var/prefix = get_id_rank()
 	if(prefix)
-		return "[prefix] [name]"
+		if(!name || !length(name))
+			return prefix
+		var/list/name_parts = splittext(name, " ")
+		if(name_parts.len <= 1)
+			return prefix
+		name_parts.Cut(1, 2)
+		var/rest_of_name = trim(jointext(name_parts, " "))
+		if(!length(rest_of_name))
+			return prefix
+		return "[prefix] [rest_of_name]"
 	return name
 
 
