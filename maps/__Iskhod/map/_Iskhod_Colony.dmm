@@ -63449,6 +63449,17 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/fixed/hydrotile,
 /area/turret_protected/ai_upload)
+"pHQ" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
+	},
+/turf/simulated/wall/r_wall,
+/area/iskhod/engineering/engine_room)
 "pHU" = (
 /obj/random/ammo/low_chance,
 /obj/random/lowkeyrandom,
@@ -78390,6 +78401,17 @@
 /obj/machinery/light/small,
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/command/bridge)
+"txG" = (
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 8;
+	pixel_x = -15
+	},
+/obj/machinery/rotating_alarm/supermatter{
+	dir = 4;
+	pixel_x = 15
+	},
+/turf/simulated/wall/r_wall,
+/area/iskhod/engineering/engine_room)
 "txH" = (
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
@@ -151771,7 +151793,7 @@ vrR
 vrR
 vrR
 epc
-vrR
+txG
 vrR
 cgw
 hSS
@@ -152983,7 +153005,7 @@ vrR
 vrR
 vrR
 uQR
-vrR
+pHQ
 vrR
 cgw
 sMC
