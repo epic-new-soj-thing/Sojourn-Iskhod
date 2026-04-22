@@ -32,6 +32,18 @@
 /obj/structure/cable,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/spaceport/shops/clothes_store)
+"ao" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/mob/living/carbon/superior/xenomorph,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/shops/military_surplus)
 "as" = (
 /obj/effect/floor_decal/industrial/warningred{
 	dir = 1
@@ -835,6 +847,10 @@
 	},
 /turf/space,
 /area/space)
+"mN" = (
+/mob/living/carbon/superior/xenomorph/spitter,
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/spaceport/shops/military_surplus)
 "mR" = (
 /obj/effect/floor_decal/industrial/danger{
 	dir = 4
@@ -18470,7 +18486,7 @@ er
 er
 er
 er
-bU
+ao
 hP
 Il
 UX
@@ -18569,7 +18585,7 @@ GL
 GL
 wz
 er
-er
+mN
 er
 er
 wX
