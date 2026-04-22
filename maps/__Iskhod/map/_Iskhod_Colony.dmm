@@ -33071,29 +33071,6 @@
 /obj/item/reagent_containers/drinks/mug/moebius/bio/overseer,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
-"ijA" = (
-/obj/structure/janitorialcart,
-/obj/structure/mopbucket{
-	pixel_x = -5
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/turf/simulated/floor/tiled/dark/panels,
-/area/iskhod/engineering)
 "ikc" = (
 /obj/structure/medical_stand,
 /obj/effect/floor_decal/industrial/hatch,
@@ -36951,7 +36928,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/engineering/foyer)
 "jeu" = (
-/obj/machinery/portable_atmospherics/canister/plasma,
+/obj/machinery/portable_atmospherics/canister/plasma{
+	start_pressure = 15000
+	},
 /turf/simulated/floor/tiled/dark/panels,
 /area/iskhod/engineering/atmos)
 "jex" = (
@@ -79827,6 +79806,16 @@
 /obj/item/toy/plushie/corgi/robo,
 /turf/simulated/floor/carpet/purcarpet,
 /area/iskhod/rnd/rbreakroom)
+"tQy" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1;
+	name = "ADD COLD"
+	},
+/obj/machinery/portable_atmospherics/canister/plasma{
+	start_pressure = 15000
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "tQz" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -81837,6 +81826,29 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor1east)
+"usL" = (
+/obj/structure/janitorialcart,
+/obj/structure/mopbucket{
+	pixel_x = -5
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/turf/simulated/floor/tiled/dark/panels,
+/area/iskhod/engineering)
 "usR" = (
 /obj/structure/multiz/stairs/active{
 	dir = 4
@@ -90893,7 +90905,9 @@
 /turf/simulated/floor/industrial/navy_large_slates_fixed,
 /area/iskhod/crew_quarters/sleep/cryo2)
 "wHv" = (
-/obj/machinery/portable_atmospherics/canister/plasma,
+/obj/machinery/portable_atmospherics/canister/plasma{
+	start_pressure = 15000
+	},
 /obj/machinery/light{
 	brightness_power = 1
 	},
@@ -91950,6 +91964,9 @@
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
+	},
+/obj/machinery/portable_atmospherics/canister/plasma{
+	start_pressure = 15000
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -116217,7 +116234,7 @@ eGh
 kTq
 rMc
 mNm
-ijA
+usL
 wuf
 tnd
 pGe
@@ -149962,7 +149979,7 @@ sMC
 bvk
 ikJ
 myo
-xwE
+tQy
 lDb
 ddm
 baJ
