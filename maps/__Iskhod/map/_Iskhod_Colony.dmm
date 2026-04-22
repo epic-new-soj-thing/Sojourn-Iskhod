@@ -2763,15 +2763,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
-"aHZ" = (
-/obj/machinery/newscaster{
-	dir = 8;
-	pixel_x = -30;
-	pixel_y = 0
-	},
-/obj/structure/reagent_dispensers/watertank/huge,
-/turf/simulated/floor/tiled/dark/panels,
-/area/iskhod/engineering)
 "aIc" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -11582,6 +11573,13 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom)
+"cPF" = (
+/obj/machinery/door/airlock/maintenance_engineering{
+	name = "Engineering Maintenance";
+	req_one_access = list(10,19)
+	},
+/turf/simulated/floor/plating/under,
+/area/iskhod/hallway/main/f1section4)
 "cPI" = (
 /obj/machinery/hologram/holopad,
 /obj/structure/bed/chair/custom/wood{
@@ -14410,6 +14408,13 @@
 /obj/structure/window/basic/iskhod,
 /turf/simulated/floor/tiled/white/techfloor_grid,
 /area/iskhod/service/showers/public)
+"dyq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/engineering/engine_room)
 "dyH" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /turf/simulated/floor/wood/wild3,
@@ -15031,9 +15036,12 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/telecommonitor)
 "dGN" = (
-/obj/random/cluster/roaches_hoard,
-/turf/simulated/floor/asteroid/dirt/flood,
-/area/iskhod/maintenance/guild)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/floor{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/engineering/engine_room)
 "dGV" = (
 /obj/structure/table/reinforced,
 /obj/item/device/lighting/toggleable/lamp,
@@ -15267,17 +15275,9 @@
 	},
 /turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
-"dKh" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/floor{
-	dir = 4
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/iskhod/engineering/engine_room)
 "dKl" = (
-/obj/structure/invislight,
-/turf/open/pool,
-/area/iskhod/crew_quarters/pool)
+/turf/simulated/mineral/planet,
+/area/iskhod/absolutism/chapel)
 "dKq" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
 	dir = 1
@@ -21801,6 +21801,13 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/patient_wing)
+"frP" = (
+/obj/machinery/light{
+	brightness_power = 1;
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/engineering/engine_room)
 "frU" = (
 /obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -26931,23 +26938,10 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/maintenance/undergroundfloor2east)
 "gGz" = (
-/obj/structure/closet/crate,
-/obj/item/am_shielding_container,
-/obj/item/am_shielding_container,
-/obj/item/am_shielding_container,
-/obj/item/am_shielding_container,
-/obj/item/am_shielding_container,
-/obj/item/am_shielding_container,
-/obj/item/am_shielding_container,
-/obj/item/am_shielding_container,
-/obj/item/am_shielding_container,
-/obj/effect/floor_decal/industrial/box/red,
-/obj/machinery/light{
-	brightness_power = 1;
-	dir = 8
-	},
-/turf/simulated/floor/reinforced,
-/area/iskhod/engineering/engine_room)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/small,
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/security/range)
 "gGI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -27988,13 +27982,6 @@
 /obj/effect/spider/spiderling/near_grown,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor1west)
-"gUN" = (
-/obj/structure/catwalk,
-/obj/machinery/light{
-	brightness_power = 1
-	},
-/turf/simulated/floor/plating/under,
-/area/iskhod/engineering/waste)
 "gVb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -43616,13 +43603,6 @@
 	icon_state = "6,10"
 	},
 /area/iskhod/pros/shuttle_landing_zone)
-"kMW" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/floor{
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/iskhod/engineering/engine_room)
 "kMZ" = (
 /obj/structure/table/rack/shelf,
 /obj/random/circuitboard,
@@ -46724,6 +46704,13 @@
 	},
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
+"lCx" = (
+/obj/structure/catwalk,
+/obj/machinery/light{
+	brightness_power = 1
+	},
+/turf/simulated/floor/plating/under,
+/area/iskhod/engineering/waste)
 "lCz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -48982,6 +48969,12 @@
 	},
 /turf/simulated/floor/industrial/fixed,
 /area/iskhod/crew_quarters/librarybackroom)
+"mfZ" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/navy_large_slates,
+/area/iskhod/security/range)
 "mgd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -51516,8 +51509,9 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/maintenance/undergroundfloor2east)
 "mOh" = (
-/turf/simulated/mineral/planet,
-/area/iskhod/absolutism/chapel)
+/obj/structure/invislight,
+/turf/open/pool,
+/area/iskhod/crew_quarters/pool)
 "mOk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -57097,6 +57091,15 @@
 	},
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/misc_lab)
+"ohK" = (
+/obj/machinery/newscaster{
+	dir = 8;
+	pixel_x = -30;
+	pixel_y = 0
+	},
+/obj/structure/reagent_dispensers/watertank/huge,
+/turf/simulated/floor/tiled/dark/panels,
+/area/iskhod/engineering)
 "ohS" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
@@ -68331,9 +68334,14 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section1)
 "rai" = (
-/obj/structure/catwalk,
-/obj/random/cluster/roaches_hoard,
-/turf/simulated/floor/plating/under,
+/obj/structure/sign/warningnew/biohazard{
+	icon_state = "bio-danger";
+	pixel_y = -32
+	},
+/obj/structure/boulder{
+	pixel_x = -1
+	},
+/turf/simulated/floor/asteroid/dirt/flood,
 /area/iskhod/maintenance/guild)
 "raj" = (
 /obj/item/modular_computer/console/preset/command/access{
@@ -75323,10 +75331,9 @@
 /turf/simulated/floor/industrial/sierra,
 /area/iskhod/maintenance/undergroundfloor1east)
 "sPu" = (
-/obj/structure/scrap/poor,
-/obj/random/cluster/roaches_hoard,
-/turf/simulated/floor/asteroid/dirt/flood,
-/area/iskhod/maintenance/guild)
+/obj/machinery/light/floor,
+/turf/simulated/floor/tiled/dark/techfloor,
+/area/iskhod/engineering/engine_room)
 "sPE" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 1
@@ -77133,11 +77140,22 @@
 /turf/simulated/floor/rock/dark,
 /area/iskhod/hallway/main/f1section3)
 "tnd" = (
+/obj/structure/closet/crate,
+/obj/item/am_shielding_container,
+/obj/item/am_shielding_container,
+/obj/item/am_shielding_container,
+/obj/item/am_shielding_container,
+/obj/item/am_shielding_container,
+/obj/item/am_shielding_container,
+/obj/item/am_shielding_container,
+/obj/item/am_shielding_container,
+/obj/item/am_shielding_container,
+/obj/effect/floor_decal/industrial/box/red,
 /obj/machinery/light{
 	brightness_power = 1;
 	dir = 8
 	},
-/turf/simulated/floor/tiled/dark/techfloor,
+/turf/simulated/floor/reinforced,
 /area/iskhod/engineering/engine_room)
 "tni" = (
 /obj/structure/table/glass,
@@ -77604,12 +77622,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/holodeck/control)
-"tsM" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/iskhod/security/range)
 "tsO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/green{
@@ -80745,11 +80757,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
-"ugt" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/light/small,
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/iskhod/security/range)
 "ugx" = (
 /obj/structure/railing/grey,
 /obj/structure/railing/grey{
@@ -87875,10 +87882,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/office)
-"vYf" = (
-/obj/machinery/light/floor,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/iskhod/engineering/engine_room)
 "vYj" = (
 /obj/structure/table/reinforced,
 /obj/machinery/recharger/industrial,
@@ -110384,7 +110387,7 @@ ufy
 ufy
 ufy
 ufy
-dKl
+mOh
 ufy
 ufy
 ufy
@@ -111394,7 +111397,7 @@ omC
 okp
 ufy
 ufy
-dKl
+mOh
 mQW
 ufy
 ufy
@@ -112202,7 +112205,7 @@ ufy
 ufy
 ufy
 ufy
-dKl
+mOh
 jAb
 ufy
 ufy
@@ -112359,9 +112362,9 @@ tKh
 cIL
 ull
 bPV
-mOh
-mOh
-mOh
+dKl
+dKl
+dKl
 qOR
 aXg
 tfO
@@ -112561,9 +112564,9 @@ hHs
 gaq
 ull
 esA
-mOh
-mOh
-mOh
+dKl
+dKl
+dKl
 qOR
 qOR
 fNZ
@@ -114495,7 +114498,7 @@ qOZ
 bnp
 eEH
 ulV
-sPu
+ulV
 ulV
 ulV
 myI
@@ -115297,11 +115300,11 @@ ewG
 jEc
 waY
 sOF
-hVF
+rai
 lCt
 lvl
 jJi
-dGN
+dfi
 myI
 rOO
 wZz
@@ -115480,7 +115483,7 @@ thU
 iLA
 lZB
 wuf
-aHZ
+ohK
 wIQ
 pJQ
 mKe
@@ -115495,7 +115498,7 @@ oUO
 bEa
 knw
 ncf
-gUN
+lCx
 jEc
 egO
 dfi
@@ -115508,7 +115511,7 @@ myI
 wZz
 wZz
 gzb
-sPu
+ulV
 jJi
 lrG
 lCt
@@ -115701,7 +115704,7 @@ ewG
 jEc
 waY
 dfi
-hVF
+rai
 lCt
 kJi
 jJi
@@ -116115,7 +116118,7 @@ jJi
 jJi
 jJi
 jJi
-rai
+jJi
 lrG
 lCt
 hVF
@@ -116707,7 +116710,7 @@ ewG
 bEa
 knw
 ncf
-gUN
+lCx
 jEc
 waY
 waY
@@ -117063,7 +117066,7 @@ aMb
 yeh
 bHI
 bHI
-bHI
+cPF
 bHI
 bHI
 bHI
@@ -117917,7 +117920,7 @@ sST
 jEc
 tGx
 hnp
-gGz
+tnd
 hnp
 hnp
 sST
@@ -118112,7 +118115,7 @@ xSw
 fJN
 gHN
 jNv
-tnd
+frP
 vrd
 hxT
 sjR
@@ -118722,7 +118725,7 @@ pXN
 pXN
 pXN
 pXN
-dKh
+dGN
 pXN
 vWA
 vWA
@@ -118922,7 +118925,7 @@ vln
 oTz
 pXN
 cCx
-vYf
+sPu
 pAr
 wPC
 wPC
@@ -120538,7 +120541,7 @@ fJN
 rJn
 pXN
 fJN
-vYf
+sPu
 wPC
 wPC
 wPC
@@ -120742,7 +120745,7 @@ vWA
 pXN
 pXN
 pXN
-kMW
+dyq
 pXN
 pXN
 pXN
@@ -142870,13 +142873,13 @@ aUb
 pFA
 nYs
 rPg
-tsM
+mfZ
 tac
 elz
 qcg
 vcH
 vFc
-ugt
+gGz
 rPg
 rxq
 mfd
