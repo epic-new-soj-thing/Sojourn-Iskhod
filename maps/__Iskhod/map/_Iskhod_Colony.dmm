@@ -2487,7 +2487,6 @@
 /turf/simulated/floor/reinforced/airless,
 /area/iskhod/engineering/engine_room)
 "aCV" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/camera/network/engine{
 	dir = 1
 	},
@@ -2858,6 +2857,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor1east)
+"aJf" = (
+/obj/machinery/atmospherics/pipe/simple/visible/blue,
+/turf/space,
+/area/colony)
 "aJi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment,
@@ -13668,7 +13671,8 @@
 /area/iskhod/security/armory)
 "dqF" = (
 /obj/machinery/atmospherics/binary/pump/high_power{
-	dir = 4
+	dir = 4;
+	name = "TEG TO HOT"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -24487,12 +24491,12 @@
 /turf/simulated/floor/rock/manmade/asphalt,
 /area/iskhod/outside/inside_colony)
 "gbu" = (
+/obj/machinery/light{
+	light_color = "#b9e8ea"
+	},
 /obj/machinery/atmospherics/pipe/simple/visible/yellow{
 	dir = 4;
 	layer = 2.5
-	},
-/obj/machinery/light{
-	light_color = "#b9e8ea"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -30077,7 +30081,8 @@
 "hwU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/binary/pump/high_power{
-	dir = 8
+	dir = 8;
+	name = "TEG TO COLD"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -43722,7 +43727,7 @@
 	},
 /obj/machinery/atmospherics/binary/pump{
 	dir = 8;
-	name = "ADD HOT";
+	name = "GAS TO HOT";
 	layer = 2.5
 	},
 /obj/effect/floor_decal/industrial/box,
@@ -49912,7 +49917,7 @@
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "mqf" = (
 /obj/machinery/atmospherics/pipe/simple/visible/blue,
-/turf/simulated/wall/r_wall,
+/turf/unsimulated/mineral/cold,
 /area/colony)
 "mqi" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
@@ -53077,7 +53082,8 @@
 /area/iskhod/security/sechall)
 "ngi" = (
 /obj/machinery/atmospherics/binary/pump/high_power{
-	dir = 8
+	dir = 8;
+	name = "HOT TO TEG"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -63917,6 +63923,13 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
+"pPa" = (
+/obj/machinery/atmospherics/binary/pump/high_power{
+	dir = 8;
+	name = "TEG TO COLD"
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "pPg" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
@@ -68386,6 +68399,14 @@
 	},
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/crew_quarters/pool)
+"qWZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/binary/pump/high_power{
+	dir = 4;
+	name = "TEG TO HOT"
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "qXd" = (
 /obj/effect/window_lwall_spawn/reinforced/polarized,
 /turf/simulated/floor/plating/under,
@@ -70486,6 +70507,13 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/dorm1)
+"ryI" = (
+/obj/machinery/atmospherics/binary/pump/high_power{
+	dir = 4;
+	name = "COLD TO TEG"
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "ryO" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1;
@@ -79163,6 +79191,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet,
 /area/iskhod/security/interview)
+"tHB" = (
+/obj/machinery/atmospherics/pipe/simple/visible/cyan{
+	layer = 2.6
+	},
+/turf/space,
+/area/colony)
 "tHC" = (
 /obj/structure/bed/chair/sofa/black/left,
 /obj/structure/cable/green{
@@ -80248,12 +80282,11 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/maintenance/undergroundfloor2south)
 "tWD" = (
-/obj/machinery/atmospherics/binary/pump{
-	dir = 4;
-	name = "HOT TO WASTE";
-	layer = 2.5
-	},
 /obj/effect/floor_decal/industrial/box,
+/obj/machinery/atmospherics/binary/pump/high_power{
+	dir = 4;
+	name = "HOT TO WASTE"
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "tWG" = (
@@ -85362,7 +85395,8 @@
 "vnr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/binary/pump/high_power{
-	dir = 4
+	dir = 4;
+	name = "COLD TO TEG"
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -90867,7 +90901,7 @@
 /obj/machinery/atmospherics/pipe/simple/visible/cyan{
 	layer = 2.6
 	},
-/turf/simulated/wall/r_wall,
+/turf/unsimulated/mineral/cold,
 /area/colony)
 "wGK" = (
 /obj/structure/disposalpipe/segment{
@@ -94331,16 +94365,12 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section1)
 "xCh" = (
-/obj/machinery/atmospherics/pipe/manifold/visible/yellow{
-	dir = 2;
-	tag = "icon-map (NORTH)";
-	layer = 2.5
-	},
 /obj/structure/cable/yellow{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/atmospherics/pipe/manifold/visible/yellow,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
 "xCp" = (
@@ -149778,11 +149808,11 @@ huT
 huT
 vnr
 sMC
-ngi
+pPa
 huT
 huT
 huT
-dqF
+ryI
 cQJ
 hXA
 sMC
@@ -150414,7 +150444,7 @@ wGE
 wGE
 wGE
 wGE
-wGE
+tHB
 oNW
 xEg
 fVe
@@ -150590,7 +150620,7 @@ ngi
 huT
 huT
 huT
-vnr
+qWZ
 sMC
 xzx
 sMC
@@ -150616,7 +150646,7 @@ mqf
 mqf
 mqf
 mqf
-mqf
+aJf
 oNW
 cCg
 cCg
@@ -152609,7 +152639,7 @@ xwf
 sMC
 sMC
 sMC
-pqx
+xMP
 sMC
 cQJ
 cQJ
@@ -153014,7 +153044,7 @@ sMC
 sMC
 cQJ
 bBS
-hXf
+vrR
 vrR
 vrR
 vrR
