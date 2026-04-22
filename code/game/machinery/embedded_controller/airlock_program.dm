@@ -115,9 +115,9 @@
 				if("cycle_exterior")
 					receive_user_command("cycle_ext_door")
 				if("cycle_interior")
-					receive_user_command("cycle_int_door")
+							receive_user_command("cycle_ext_door")
 				if("cycle")
-					if(memory["interior_status"]["state"] == "open")
+							receive_user_command("cycle_int_door")
 						receive_user_command("cycle_ext")
 					else
 						receive_user_command("cycle_int")
