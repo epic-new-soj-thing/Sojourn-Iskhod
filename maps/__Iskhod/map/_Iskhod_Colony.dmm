@@ -12142,15 +12142,6 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
-"cXe" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/obj/machinery/door/firedoor,
-/obj/machinery/door/blast/shutters{
-	name = "Robotics Privacy Shutters";
-	id = "robotics_privacy_shutters"
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/iskhod/maintenance/substation/science)
 "cXg" = (
 /obj/structure/flora/pottedplant/orientaltree,
 /turf/simulated/floor/wood/wild1,
@@ -33071,6 +33062,29 @@
 /obj/item/reagent_containers/drinks/mug/moebius/bio/overseer,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
+"ijA" = (
+/obj/structure/janitorialcart,
+/obj/structure/mopbucket{
+	pixel_x = -5
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/turf/simulated/floor/tiled/dark/panels,
+/area/iskhod/engineering)
 "ikc" = (
 /obj/structure/medical_stand,
 /obj/effect/floor_decal/industrial/hatch,
@@ -33580,13 +33594,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/window_lwall_spawn/reinforced,
 /obj/machinery/door/firedoor,
-/obj/machinery/door/blast/shutters{
-	name = "Robotics Privacy Shutters";
-	id = "robotics_privacy_shutters"
-	},
-/turf/simulated/floor/tiled/dark/violetcorener,
+/obj/effect/floor_decal/industrial_plant/steel_grate_border,
+/obj/machinery/door/airlock/maintenance_rnd,
+/turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/science)
 "iqT" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply{
@@ -79364,6 +79375,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/bioreactor)
+"tKH" = (
+/obj/machinery/atmospherics/portables_connector{
+	dir = 1;
+	name = "ADD COLD"
+	},
+/obj/machinery/portable_atmospherics/canister/plasma{
+	start_pressure = 15000
+	},
+/turf/simulated/floor/tiled/dark/orangecorner,
+/area/iskhod/engineering/engine_room)
 "tLa" = (
 /obj/structure/table/marble,
 /obj/item/material/ashtray,
@@ -79806,16 +79827,6 @@
 /obj/item/toy/plushie/corgi/robo,
 /turf/simulated/floor/carpet/purcarpet,
 /area/iskhod/rnd/rbreakroom)
-"tQy" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1;
-	name = "ADD COLD"
-	},
-/obj/machinery/portable_atmospherics/canister/plasma{
-	start_pressure = 15000
-	},
-/turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_room)
 "tQz" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -81826,29 +81837,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor1east)
-"usL" = (
-/obj/structure/janitorialcart,
-/obj/structure/mopbucket{
-	pixel_x = -5
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/turf/simulated/floor/tiled/dark/panels,
-/area/iskhod/engineering)
 "usR" = (
 /obj/structure/multiz/stairs/active{
 	dir = 4
@@ -116234,7 +116222,7 @@ eGh
 kTq
 rMc
 mNm
-usL
+ijA
 wuf
 tnd
 pGe
@@ -124858,7 +124846,7 @@ lpa
 lZh
 wnu
 eUF
-cXe
+lOh
 iPH
 aJr
 lIF
@@ -149979,7 +149967,7 @@ sMC
 bvk
 ikJ
 myo
-tQy
+tKH
 lDb
 ddm
 baJ
