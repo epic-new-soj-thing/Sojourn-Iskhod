@@ -2462,7 +2462,7 @@
 	},
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/random/flora/jungle_tree,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/iskhod/absolutism/chapel)
 "aCP" = (
@@ -16509,7 +16509,7 @@
 	name = "Engineering Maintenance";
 	req_one_access = list(10,19)
 	},
-/turf/simulated/floor/plating/under,
+/turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/maintenance/substation/cargo)
 "eaT" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -23630,7 +23630,7 @@
 /obj/structure/window/basic/iskhod{
 	dir = 8
 	},
-/obj/random/flora/jungle_tree,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/iskhod/absolutism/chapel)
 "fOa" = (
@@ -30844,6 +30844,7 @@
 	},
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ppflowers,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/iskhod/absolutism/chapel)
 "hFH" = (
@@ -33070,6 +33071,29 @@
 /obj/item/reagent_containers/drinks/mug/moebius/bio/overseer,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
+"ijA" = (
+/obj/structure/janitorialcart,
+/obj/structure/mopbucket{
+	pixel_x = -5
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/turf/simulated/floor/tiled/dark/panels,
+/area/iskhod/engineering)
 "ikc" = (
 /obj/structure/medical_stand,
 /obj/effect/floor_decal/industrial/hatch,
@@ -49391,7 +49415,7 @@
 /obj/structure/window/basic/iskhod{
 	dir = 4
 	},
-/obj/random/flora/jungle_tree,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/iskhod/absolutism/chapel)
 "miG" = (
@@ -62546,7 +62570,7 @@
 	},
 /obj/structure/flora/small/grassa2,
 /obj/structure/flora/ausbushes/ppflowers,
-/obj/random/flora/jungle_tree,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/iskhod/absolutism/chapel)
 "pwH" = (
@@ -64503,6 +64527,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial_plant,
+/obj/structure/invislight,
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/crew_quarters/bar)
 "pXk" = (
@@ -81812,29 +81837,6 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor1east)
-"usL" = (
-/obj/structure/janitorialcart,
-/obj/structure/mopbucket{
-	pixel_x = -5
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/turf/simulated/floor/tiled/dark/panels,
-/area/iskhod/engineering)
 "usR" = (
 /obj/structure/multiz/stairs/active{
 	dir = 4
@@ -85885,6 +85887,7 @@
 	},
 /obj/structure/flora/ausbushes/ywflowers,
 /obj/structure/flora/ausbushes/ppflowers,
+/obj/random/flora/small_jungle_tree,
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/iskhod/absolutism/chapel)
 "vvm" = (
@@ -116214,7 +116217,7 @@ eGh
 kTq
 rMc
 mNm
-usL
+ijA
 wuf
 tnd
 pGe
