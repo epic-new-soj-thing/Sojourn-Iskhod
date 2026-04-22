@@ -8985,6 +8985,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
 "cfx" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /turf/simulated/shuttle/floor/science{
 	icon_state = "6,11"
 	},
@@ -92239,6 +92240,7 @@
 	tag = "vas_door_ext"
 	},
 /obj/machinery/door/firedoor/multi_tile,
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /turf/simulated/shuttle/floor/science{
 	icon_state = "5,11"
 	},
