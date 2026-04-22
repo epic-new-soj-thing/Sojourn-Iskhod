@@ -33070,10 +33070,6 @@
 /obj/item/reagent_containers/drinks/mug/moebius/bio/overseer,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/bridge)
-"ijA" = (
-/obj/machinery/chem_master,
-/turf/simulated/floor/tiled/dark/violetcorener,
-/area/iskhod/rnd/lab)
 "ikc" = (
 /obj/structure/medical_stand,
 /obj/effect/floor_decal/industrial/hatch,
@@ -79806,29 +79802,6 @@
 /obj/item/toy/plushie/corgi/robo,
 /turf/simulated/floor/carpet/purcarpet,
 /area/iskhod/rnd/rbreakroom)
-"tQy" = (
-/obj/structure/janitorialcart,
-/obj/structure/mopbucket{
-	pixel_x = -5
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/obj/item/caution{
-	pixel_x = 8;
-	pixel_y = -2
-	},
-/turf/simulated/floor/tiled/dark/panels,
-/area/iskhod/engineering)
 "tQz" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -81839,6 +81812,29 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor1east)
+"usL" = (
+/obj/structure/janitorialcart,
+/obj/structure/mopbucket{
+	pixel_x = -5
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/item/caution{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/turf/simulated/floor/tiled/dark/panels,
+/area/iskhod/engineering)
 "usR" = (
 /obj/structure/multiz/stairs/active{
 	dir = 4
@@ -116218,7 +116214,7 @@ eGh
 kTq
 rMc
 mNm
-tQy
+usL
 wuf
 tnd
 pGe
@@ -125228,7 +125224,7 @@ jfN
 wBk
 roC
 hnj
-ijA
+uHc
 uHc
 bgX
 wqR
