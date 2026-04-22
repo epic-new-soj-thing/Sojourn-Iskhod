@@ -3023,14 +3023,9 @@
 /turf/simulated/floor/tiled/white/cyancorner,
 /area/iskhod/medical/patient_wing)
 "aKM" = (
-/obj/structure/boulder,
-/obj/structure/boulder{
-	pixel_x = -1
-	},
-/obj/effect/decal/cleanable/rubble,
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/rock/dark,
-/area/iskhod/maintenance/undergroundfloor2east)
+/mob/living/carbon/superior/human/excelsior/excel_ppsh,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/maintenance/undergroundfloor2south)
 "aKQ" = (
 /obj/structure/table/rack/shelf,
 /obj/item/stock_parts/manipulator/excelsior,
@@ -3269,6 +3264,7 @@
 /area/iskhod/hallway/side/f2section2)
 "aNX" = (
 /obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior/human/excelsior/excel_ppsh,
 /turf/simulated/floor/tiled/white/orangecorner,
 /area/iskhod/maintenance/undergroundfloor2south)
 "aNY" = (
@@ -9516,6 +9512,10 @@
 /obj/machinery/vending/dinnerware,
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
+"cnt" = (
+/mob/living/carbon/superior/human/excelsior/excel_vintorez,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/maintenance/undergroundfloor2south)
 "cnz" = (
 /obj/item/tool/knife/butch,
 /obj/structure/table/reinforced,
@@ -20923,6 +20923,7 @@
 "feX" = (
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/effect/decal/cleanable/blood/gibs/limb,
+/mob/living/carbon/superior/human/excelsior/excel_ak,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2south)
 "ffo" = (
@@ -24390,6 +24391,11 @@
 /obj/effect/floor_decal/industrial_plant,
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/rnd/robotics)
+"gam" = (
+/obj/effect/decal/cleanable/rubble,
+/mob/living/carbon/superior/human/excelsior/excel_ppsh,
+/turf/simulated/floor/tiled/white/brown_platform,
+/area/iskhod/maintenance/undergroundfloor2south)
 "gaq" = (
 /obj/structure/sign/department/ass{
 	pixel_y = 30
@@ -29888,6 +29894,11 @@
 	},
 /turf/simulated/floor/industrial/cafe_large,
 /area/iskhod/dungeon/outside/abandoned_outpost)
+"hvf" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior/human/excelsior/excel_drozd,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/maintenance/undergroundfloor2south)
 "hvi" = (
 /obj/machinery/door/airlock/hatch{
 	id_tag = "CR1";
@@ -49869,6 +49880,8 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/item/implant/excelsior,
+/obj/item/implanter/excelsior,
 /turf/simulated/floor/tiled/white/brown_platform,
 /area/iskhod/maintenance/undergroundfloor2south)
 "mpQ" = (
@@ -84171,6 +84184,7 @@
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/effect/decal/cleanable/blood,
 /obj/item/ammo_casing/pistol_35/spent,
+/mob/living/carbon/superior/human/excelsior/excel_hammer_shield,
 /turf/simulated/floor/industrial/green_large_slates,
 /area/iskhod/maintenance/undergroundfloor2south)
 "uXB" = (
@@ -84876,6 +84890,11 @@
 /obj/item/clothing/under/bathrobe,
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/changing_room/pool)
+"vgO" = (
+/obj/effect/decal/cleanable/rubble,
+/mob/living/carbon/superior/human/excelsior/excel_ak,
+/turf/simulated/floor/rock/dark,
+/area/iskhod/maintenance/undergroundfloor2south)
 "vgS" = (
 /obj/effect/floor_decal/industrial/warning,
 /turf/simulated/floor/tiled/white/danger,
@@ -85927,6 +85946,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
+"vvZ" = (
+/obj/effect/decal/cleanable/dirt,
+/mob/living/carbon/superior/human/excelsior/excel_vintorez,
+/turf/simulated/floor/industrial/green_large_slates,
+/area/iskhod/maintenance/undergroundfloor2south)
 "vwb" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/effect/floor_decal/corner/paleblue/border,
@@ -160418,7 +160442,7 @@ nKb
 nKb
 nKb
 nKb
-jBs
+iFe
 nKb
 nKb
 nKb
@@ -160620,7 +160644,7 @@ nKb
 nKb
 nKb
 nKb
-kTa
+fDC
 nKb
 nKb
 nKb
@@ -163059,7 +163083,7 @@ mxj
 pWs
 bqm
 xxr
-iXp
+vgO
 iXp
 ikr
 mxj
@@ -163465,13 +163489,13 @@ bqm
 bqm
 bqm
 sbK
-sbK
+hvf
 bqm
 bqm
 pWs
 frw
 dCe
-bqm
+aKM
 bqm
 aaq
 frw
@@ -164072,13 +164096,13 @@ bqm
 bqm
 wEj
 sbK
-bqm
+aKM
 pWs
 pWs
 frw
 sbK
 sbK
-sbK
+vvZ
 bqm
 frw
 nKb
@@ -164271,7 +164295,7 @@ iXp
 iXp
 xxr
 bqm
-sbK
+vvZ
 sbK
 bqm
 pWs
@@ -165288,7 +165312,7 @@ sbK
 umh
 rXb
 oNY
-liA
+gam
 liA
 ikr
 frw
@@ -165483,7 +165507,7 @@ nKb
 frw
 wVw
 bqm
-bqm
+cnt
 sbK
 sbK
 bqm
@@ -167457,7 +167481,7 @@ bdT
 wfW
 wCV
 vfW
-aKM
+ctV
 nJh
 apz
 sMA
