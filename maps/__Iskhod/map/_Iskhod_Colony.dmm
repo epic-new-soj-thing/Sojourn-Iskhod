@@ -3268,14 +3268,8 @@
 /turf/simulated/floor/tiled/white/orangecorner,
 /area/iskhod/maintenance/undergroundfloor2south)
 "aNY" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 2;
-	icon_state = "1-2"
-	},
-/obj/machinery/light{
-	dir = 4;
-	icon_state = "tube1"
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_monitoring)
@@ -8508,6 +8502,17 @@
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/enginehallway)
+"bZU" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2south)
 "bZW" = (
 /obj/machinery/flasher{
 	id = "AI";
@@ -12015,9 +12020,12 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section4)
 "cVi" = (
-/obj/machinery/atmospherics/unary/vent_pump,
-/turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/obj/machinery/power/apc/inactive{
+	pixel_x = -28
+	},
+/obj/structure/cable/green,
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2south)
 "cVB" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/decal/cleanable/dirt,
@@ -23021,6 +23029,9 @@
 	dir = 1;
 	pixel_y = -25
 	},
+/obj/machinery/atmospherics/unary/vent_scrubber{
+	dir = 1
+	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_monitoring)
 "fGA" = (
@@ -28911,15 +28922,8 @@
 /turf/simulated/floor/greengrid/airless,
 /area/iskhod/command/tcommsat/chamber)
 "hgv" = (
-/obj/machinery/light/small{
-	dir = 8
-	},
-/obj/machinery/power/apc/inactive{
-	pixel_x = -28
-	},
-/obj/structure/cable/green,
-/turf/simulated/floor/industrial/concrete_bricks,
-/area/iskhod/maintenance/undergroundfloor2south)
+/turf/simulated/floor/industrial/navy_slates,
+/area/iskhod/engineering/engine_monitoring)
 "hgD" = (
 /obj/effect/floor_decal/industrial/warningred,
 /obj/effect/floor_decal/industrial/stand_clear/red,
@@ -50254,15 +50258,10 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/pros/shuttle_landing_zone)
 "mtX" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 9
-	},
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/industrial_plant,
-/obj/structure/cable/yellow{
-	d1 = 4;
-	d2 = 8;
-	icon_state = "4-8"
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_monitoring)
@@ -51978,13 +51977,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
 /obj/structure/cable/yellow{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_monitoring)
@@ -56676,23 +56675,12 @@
 /turf/simulated/floor/rock/manmade/asphalt,
 /area/iskhod/outside/inside_colony)
 "nYF" = (
-/obj/machinery/power/apc{
-	dir = 1;
-	name = "North APC";
-	pixel_y = 28
-	},
-/obj/structure/cable/yellow{
-	d2 = 2;
-	icon_state = "0-2"
-	},
-/obj/effect/decal/cleanable/cobweb2,
-/turf/simulated/floor/tiled/dark/orangecorner,
+/turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/engineering/engine_monitoring)
 "nYM" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border{
 	dir = 1
 	},
-/obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -56703,10 +56691,6 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
-	},
-/obj/machinery/door/airlock/glass_engineering{
-	name = "Engineering";
-	req_access = list(10)
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_monitoring)
@@ -78304,6 +78288,15 @@
 	},
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/maintenance/substation/misc2)
+"tww" = (
+/obj/effect/floor_decal/industrial_plant/steel_grate_border{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/multi_tile{
+	dir = 2
+	},
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/engineering/engine_monitoring)
 "twA" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/extinguisher_cabinet{
@@ -80273,12 +80266,7 @@
 /turf/simulated/floor/tiled/dark/monofloor,
 /area/junk_tractor_beam)
 "tXp" = (
-/obj/structure/cable/yellow{
-	d1 = 1;
-	d2 = 8;
-	icon_state = "1-8"
-	},
-/turf/simulated/floor/tiled/dark/orangecorner,
+/turf/simulated/floor/plating/under,
 /area/iskhod/engineering/engine_monitoring)
 "tXu" = (
 /obj/structure/ore_box,
@@ -82706,9 +82694,16 @@
 	},
 /area/iskhod/pros/shuttle_landing_zone)
 "uDu" = (
-/obj/machinery/camera/network/engineering,
-/turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_monitoring)
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/industrial/concrete_bricks,
+/area/iskhod/maintenance/undergroundfloor2south)
 "uDA" = (
 /obj/item/modular_computer/console/preset/security/records{
 	dir = 4;
@@ -88801,8 +88796,9 @@
 /turf/simulated/floor/tiled/dark/violetcorener,
 /area/iskhod/maintenance/undergroundfloor2east)
 "wit" = (
-/obj/machinery/atmospherics/unary/vent_scrubber,
-/turf/simulated/floor/tiled/dark/orangecorner,
+/turf/simulated/shuttle/floor/mining{
+	icon_state = "9,23"
+	},
 /area/iskhod/engineering/engine_monitoring)
 "wiA" = (
 /obj/structure/window/reinforced/iskhod{
@@ -155788,7 +155784,7 @@ dVV
 kCi
 kCi
 kCi
-fbz
+uDu
 iFe
 axX
 kSC
@@ -155998,7 +155994,7 @@ iDD
 nDd
 xGB
 ppi
-pXJ
+kEw
 bXK
 sGd
 sGd
@@ -156604,7 +156600,7 @@ nDd
 nDd
 dBg
 vaj
-pXJ
+hZJ
 aZe
 sGd
 sGd
@@ -156806,7 +156802,7 @@ xwp
 que
 oEL
 tHG
-kEw
+pXJ
 aZe
 sGd
 sGd
@@ -157008,7 +157004,7 @@ sEG
 vjw
 mxC
 cQs
-hZJ
+pXJ
 bXK
 sGd
 sGd
@@ -157210,7 +157206,7 @@ axX
 axX
 axX
 nYM
-axX
+tww
 axX
 sGd
 sGd
@@ -157404,13 +157400,13 @@ pAy
 tnk
 tnk
 kCi
-xSJ
-hgv
-nKb
-nKb
+fbz
 axX
-pXJ
-pXJ
+tXp
+tXp
+tXp
+tXp
+tXp
 oSn
 pXJ
 axX
@@ -157606,12 +157602,12 @@ pAy
 tnk
 tnk
 kCi
-iFe
-iFe
-nKb
-nKb
+fbz
 axX
-pXJ
+tXp
+hgv
+hgv
+nYF
 wit
 mSj
 fGs
@@ -157808,15 +157804,15 @@ iId
 kCi
 kCi
 kCi
-iFe
-iFe
-nKb
-nKb
+bZU
 axX
-uDu
-cVi
+tXp
+hgv
+hgv
+nYF
+wit
 mtX
-pXJ
+aNY
 axX
 nKb
 nKb
@@ -158010,14 +158006,14 @@ iId
 nKb
 nKb
 nKb
-iFe
-iFe
-nKb
-nKb
+fbz
 axX
-nYF
-aNY
 tXp
+hgv
+hgv
+nYF
+wit
+pXJ
 pXJ
 axX
 nKb
@@ -158212,13 +158208,13 @@ nKb
 nKb
 nKb
 nKb
-iFe
-iFe
-nKb
-nKb
+fbz
 axX
-axX
-axX
+tXp
+tXp
+tXp
+tXp
+tXp
 pXJ
 pXJ
 axX
@@ -158414,14 +158410,14 @@ nKb
 nKb
 nKb
 nKb
-iFe
-iFe
-nKb
-nKb
-nKb
-nKb
+fbz
 axX
-vjw
+axX
+axX
+axX
+axX
+axX
+pXJ
 koi
 oQe
 iFe
@@ -158616,8 +158612,8 @@ nKb
 nKb
 nKb
 nKb
-iFe
-iFe
+xSJ
+cVi
 nKb
 nKb
 nKb
