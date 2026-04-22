@@ -16,6 +16,7 @@
 							/datum/design/research/item/medical/autopsy_scanner,
 							/datum/design/research/item/beaker/smoll,
 							/datum/design/research/item/beaker/big,
+							/datum/design/research/item/medical/micropipetter,
 							/datum/design/research/item/implant/pad,
 							/datum/design/research/item/implant/track
 						)
@@ -53,7 +54,8 @@
 
 	unlocks_designs = list(	/datum/design/research/circuit/med_data,
 							/datum/design/research/circuit/operating,
-							/datum/design/research/item/medical/roller_bed
+							/datum/design/research/item/medical/roller_bed,
+							/datum/design/research/item/medical/hypospray
 						)
 /*
 /datum/technology/virology
@@ -180,6 +182,7 @@
 	unlocks_designs = list(	/datum/design/research/item/medical/mass_spectrometer,
 							/datum/design/research/item/medical/reagent_scanner,
 							/datum/design/research/item/medical/defibs,
+							/datum/design/research/item/medical/jumper_kit,
 							/datum/design/research/item/scalpel_laser,
 							/datum/design/research/item/clothing/health,
 							/datum/design/research/item/bonegel,
@@ -298,7 +301,7 @@
 
 /datum/technology/top_biotech
 	name = "Augmentations' Biotech"
-	desc = "Body augmentations in the way of Soteria-brand prosthesis and implantable omnitools."
+	desc = "Body augmentations in the way of Vesalius-Andra-brand prosthesis and implantable omnitools."
 	tech_type = RESEARCH_BIOTECH
 
 	x = 0.7

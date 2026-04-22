@@ -58,7 +58,7 @@
 	price_tag = 40
 
 /obj/item/tool/sword/katana/nano
-	name = "\improper Soteria \"Muramasa\" katana"
+	name = "\improper Vesalius-Andra \"Muramasa\" katana"
 	desc = "After an extensive binge of ancient animated recordings, a scientist decided to upgrade a recovered katana."
 	icon_state = "eutactic_katana"
 	item_state = "eutactic_katana"
@@ -98,7 +98,7 @@
 
 /obj/item/tool/sword/katana/firebrand //Firebrand. Sprited and Implemented by Sieghardt
 	name = "Artificer Firebrand"
-	desc = "Originally the fever dream of an brave guild master looking for a better way to deal with roaches, the Firebrand ended up as a hellish implement of war. While turned off, this is a blunted hunk of metal. When turned on the Firebrand becomes a bringer of fiery doom to anyone unlucky enough to be its path."
+	desc = "Originally the fever dream of an brave chief engineer looking for a better way to deal with roaches, the Firebrand ended up as a hellish implement of war. While turned off, this is a blunted hunk of metal. When turned on the Firebrand becomes a bringer of fiery doom to anyone unlucky enough to be its path."
 	icon_state = "firebrand"
 	item_state = "firebrand"
 	toggleable = TRUE
@@ -191,6 +191,12 @@
 	armor_divisor = ARMOR_PEN_SHALLOW
 	price_tag = 350
 
+/obj/item/tool/sword/saber/militiacommander/facility_director
+	name = "Facility Director's ceremonial saber"
+	desc = "A masterfully forged saber carried by the Facility Director as a symbol of office. Primarily for ceremonial use, though it can serve in combat if need be."
+	force = WEAPON_FORCE_BRUTAL
+	degradation = 0
+
 /obj/item/tool/sword/saber/militiasergeant
 	name = "Sergeant's Saber"
 	desc = "An Saber made for the Senior Enlisted of Blackshield, Usually used for Ceremonial usage but can also be used in combat, Preferably used by a maniac who likes to charge into battle without helmet or armor."
@@ -248,9 +254,28 @@
 
 					user.visible_message("[user] drives [src.name] into [M.name]'s body, deconstructing it!", "You drive the [src.name] into [M.name], extracting research data")
 					msg_admin_attack("[user] deconned [M.name] - ([user.ckey]) with \a [src] (<A HREF='?_src_=holder;adminplayerobservecoodjump=1;X=[M.x];Y=[M.y];Z=[M.z]'>JMP</a>)")
+
+					var/turf/T = get_turf(M)
+					for(var/obj/item/I in M.contents)
+						if(!(I.flags & ABSTRACT))
+							I.forceMove(T)
+
+					if(LAZYLEN(M.embedded))
+						for(var/obj/item/I in M.embedded)
+							I.forceMove(T)
+						M.embedded.Cut()
+
+					if(ishuman(M))
+						var/mob/living/carbon/human/H = M
+						for(var/obj/item/organ/external/Ex in H.organs)
+							if(LAZYLEN(Ex.embedded))
+								for(var/obj/item/I in Ex.embedded)
+									I.forceMove(T)
+								Ex.embedded.Cut()
+
 					M.dust()
 					add_points(points_to_award)
-					add_overlay(image('icons/obj/cwj_cooking/scan.dmi', icon_state="scan_person", layer=ABOVE_WINDOW_LAYER))
+					add_overlay(image('icons/obj/cooking/scan.dmi', icon_state="scan_person", layer=ABOVE_WINDOW_LAYER))
 					addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 11)
 					return
 
@@ -346,24 +371,6 @@
 		slot_back_str = 'icons/inventory/back/mob.dmi')
 	item_state_slots = list(
 		slot_back_str = "renderslayer"
-		)
-
-/obj/item/tool/knife/ritual/blade
-	name = "awakened blade"
-	desc = "The last stage of ascension a ritual knife, its latent powers fully awoken by the crayons' magic. \
-			Suspiciously glowing runes are drawn on its surface that glow at random intervals."
-	icon_state = "crayon_blade"
-	matter = list(MATERIAL_PLASTEEL = 15, MATERIAL_STEEL = 2, MATERIAL_DIAMOND = 1)
-	force = WEAPON_FORCE_ROBUST + 4 // 30 damage
-	armor_divisor = ARMOR_PEN_MASSIVE // More balanced than psi weapons with psi mania perk.
-	w_class = ITEM_SIZE_BULKY
-	max_upgrades = 2
-	slot_flags = SLOT_BELT|SLOT_BACK
-	hitsound = 'sound/weapons/renderslash.ogg' // Snowflake
-	item_icons = list(
-		slot_back_str = 'icons/inventory/back/mob.dmi')
-	item_state_slots = list(
-		slot_back_str = "crayon_blade"
 		)
 
 /obj/item/tool/sword/machete

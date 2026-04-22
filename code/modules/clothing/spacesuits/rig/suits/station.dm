@@ -403,7 +403,7 @@ Technomancer RIG
 /obj/item/rig/recovery_suit
 	name = "recovery team suit control module"
 	suit_type = "Recovery Team hardsuit"
-	desc = "An upgraded hardsuit designed by the Soteria for their Recovery Team division. While not as heavily armored as a proper hardsuit, the inbuilt medical systems make it highly prized. \
+	desc = "An upgraded hardsuit designed by the Vesalius-Andra for their Recovery Team division. While not as heavily armored as a proper hardsuit, the inbuilt medical systems make it highly prized. \
 	It is best suited for surviving and combating wild life, but has reasonably decent kevlar plating and impact pads to absorb bullets and energy blasts."
 	icon_state = "response_team"
 	armor_list = list(
@@ -448,8 +448,8 @@ Technomancer RIG
 /obj/item/rig/cmo
 	name = "SI 'Retainer' control module"
 	suit_type = "SI 'Retainer' hardsuit"
-	desc = "An upgraded and updated Soteria 'Reclaimer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
-	for Soteria's resident overworked Chief Biolab Overseer.  Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
+	desc = "An upgraded and updated Vesalius-Andra 'Reclaimer' RIGsuit made for field surgery in dangerous locations, this suit has undergone a series of upgrades to improve its utility \
+	for Vesalius-Andra's resident overworked Chief Biolab Overseer.  Improved servos are paired with neural-mnemonic sensors allowing the user unmatched speed and dexterity- one can easily forget that they are even wearing the suit."
 	icon_state = "cmo_rig"
 	armor_list = list(
 		melee = 0,
@@ -512,11 +512,11 @@ Technomancer RIG
 		/obj/item/rig_module/grenade_launcher,
 		/obj/item/rig_module/mounted/taser
 		)
-/obj/item/rig/hazard/steward
-	name = "stewards hardsuit control module"
-	desc = "A modification of the traditional combat rig built for equal parts utility and defense. Marked with a seal of two Armstrong rifles crossing each other in a X at the base of the neck."
+/obj/item/rig/hazard/facility_director
+	name = "facility director's hardsuit control module"
+	desc = "A modification of the traditional combat rig built for equal parts utility and defense. Marked with the colony authority seal of the Facility Director."
 	icon_state = "security_rig"
-	suit_type = "stewards hardsuit"
+	suit_type = "facility director's hardsuit"
 	armor_list = list(
 		melee = 10,
 		bullet = 10,
@@ -532,7 +532,7 @@ Technomancer RIG
 
 	helm_type = /obj/item/clothing/head/helmet/space/rig/hazard
 	max_upgrades = 1
-	req_access = list(access_hop)
+	req_access = list(access_captain)
 	req_one_access = null
 
 

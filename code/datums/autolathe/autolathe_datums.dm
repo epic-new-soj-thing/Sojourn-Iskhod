@@ -142,11 +142,7 @@
 		"category" = category, "adjust_materials" = adjust_materials,
 		"ignore_object_materials" = ignore_object_materials
 	)
-
-	if(build_path)
-		// We use a separate field for the base64 image to avoid conflict with TGUI's icon class
-		// TGUI uses 'icon' which is populated by the design_icons spritesheet
-		nano_ui_data["img_tag"] = icon2base64tgui(build_path)
+	// 'icon' is set by design_icons spritesheet (set_design_nano_data) for both TGUI and R&D console
 
 	if(length(materials))
 		var/list/RS = list()

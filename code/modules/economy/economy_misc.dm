@@ -94,6 +94,12 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 
 	station_account = department_accounts[DEPARTMENT_COMMAND]
 
+	for(var/obj/item/device/eftpos/medical/M in world)
+		M.initialize_linked_account()
+
+	for(var/obj/item/device/eftpos/medical/roboticist/R in world)
+		R.initialize_linked_account()
+
 	for(var/obj/machinery/vending/V in GLOB.machines)
 		if(V.vendor_department)
 			V.earnings_account = department_accounts[V.vendor_department]
@@ -108,6 +114,7 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 
 	var/datum/money_account/department_account = new()
 	department_account.account_name = "[department.name] Account"
+	department_account.owner_name = department.name
 	department_account.account_number = rand(111111, 999999)
 	department.account_number = department_account.account_number
 	department_account.wage = (department.budget_base + department.budget_personnel)
@@ -117,11 +124,11 @@ var/global/datum/computer_file/data/email_account/service/payroll/payroll_mailer
 	department_account.wage = department.get_total_budget()
 
 	department_account.department_id = department.id
-	if(department.id in DEPARTMENT_LSS)
+	if(department.id in DEPARTMENT_SERVICE)
 		department_account.can_make_accounts = TRUE
 
 	//create an entry in the account transaction log for when it was created
-	var/datum/transaction/T = new(department.account_initial_balance, department_account.owner_name, "Account creation", "Lonestar Shipping Solutions Terminal #277")
+	var/datum/transaction/T = new(department.account_initial_balance, department_account.owner_name, "Account creation", "Frontier Logistics Terminal #277")
 	T.date = "2 April, 2649"
 	T.time = "11:24"
 

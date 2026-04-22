@@ -339,18 +339,17 @@
 	lose_text = "Speed is king."
 	icon_state = "tank_resiliance"
 
-
 ///////////////////////////////////////
 //////// JOB ODDITYS PERKS ////////////
 ///////////////////////////////////////
 
 /datum/perk/nt_oddity
-	gain_text = "The Absolute chose you to expand its will."
+	gain_text = "The precepts have chosen you to care for the other and maintain the life of the world."
 	copy_protected = TRUE //For obvious reasons.
 
 /datum/perk/nt_oddity/holy_light
 	name = "Holy Light"
-	desc = "You have been blessed by the grace of the Absolute. You now provide a weak healing aura, healing both brute and burn damage to any cruciform bearers nearby as well as yourself."
+	desc = "You have been blessed by the grace of the sect. You now provide a weak healing aura, healing both brute and burn damage to any cruciform bearers nearby as well as yourself."
 	icon_state = "third_eye"  //https://game-icons.net/1x1/lorc/third-eye.html
 	var/healing_power = 0.1
 	var/cooldown = 1 SECONDS // Just to make sure that perk don't go berserk.

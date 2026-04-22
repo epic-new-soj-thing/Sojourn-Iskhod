@@ -30,7 +30,8 @@
 	to lose this opportunity. Find a way to get out of this mess and back to where you rightfully belong - your [pick("house", "apartment", "spaceship", "station")]. There should be a teleporter somewhere, if it's still intact."
 
 /obj/effect/mob_spawn/human/scavenger
-	name = "storage sleeper"
+	name = "Scavenger Sleeper"
+	name = "Scavenger Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in armor."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -44,7 +45,8 @@
 	title = "Prospector Comission Scavenger"
 
 /obj/effect/mob_spawn/human/exl_civ
-	name = "storage sleeper"
+	name = "Excelsior Sleeper"
+	name = "Excelsior Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in excelsior equipment."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -82,7 +84,8 @@
 	)
 
 /obj/effect/mob_spawn/human/void_wolf
-	name = "storage sleeper"
+	name = "Void Wolf Sleeper"
+	name = "Void Wolf Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in void wolf equipment."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -106,7 +109,8 @@
 //colony 'ert' spawners.
 
 /obj/effect/mob_spawn/human/si_medical_ert
-	name = "deployment sleeper"
+	name = "Medical ERT Sleeper"
+	name = "Medical ERT Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in SI medical equipment."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -115,8 +119,12 @@
 	ghost_role_perks = list(PERK_MEDICAL_EXPERT, PERK_ADVANCED_MEDICAL, PERK_SI_SCI, PERK_CHEMIST, PERK_SURE_STEP, PERK_TRUE_NAME)
 	short_desc = "You are a Medical Emergency Personnel."
 	flavour_text = "Something has happend to the upper colony to warrant your deployment, you are a doctor first, save as many lives as possable with your healing gear not gun."
-	assignedrole = "Medical Emergency Personnel"
-	title = "Medical Emergency Personnel"
+	assignedrole = "VA Medical Ethics Agent"
+	title = "VA Medical Ethics Agent"
+	ert_linked = TRUE
+	assignedrole = "VA Medical Ethics Agent"
+	title = "VA Medical Ethics Agent"
+	ert_linked = TRUE
 	stat_modifiers = list(
 		STAT_ROB = 5,
 		STAT_TGH = 5,
@@ -127,17 +135,22 @@
 	)
 
 /obj/effect/mob_spawn/human/marshal_ert
-	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Colonial Marshal"
+	name = "Ranger ERT Sleeper"
+	name = "Ranger ERT Sleeper"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Iskhod Colonial Ranger"
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/marshal_ert
 	ghost_role_perks = list(PERK_ASS_OF_CONCRETE, PERK_SMARTLINK, PERK_CODESPEAK, PERK_CHEM_CONTRABAND, PERK_TRUE_NAME)
-	short_desc = "You are a Marshal agent."
-	flavour_text = "Something has happend to the upper colony to warrant your deployment. Uphold the word of law and ensure peace is upkept in Nadezhda."
-	assignedrole = "Marshal Agent"
-	title = "Marshal Agent"
+	short_desc = "You are a Ranger agent."
+	flavour_text = "Something has happend to the upper colony to warrant your deployment. Uphold the word of law and ensure peace is upkept in Iskhod."
+	assignedrole = "Ranger Oversight Officer"
+	title = "Ranger Oversight Officer"
+	ert_linked = TRUE
+	assignedrole = "Ranger Oversight Officer"
+	title = "Ranger Oversight Officer"
+	ert_linked = TRUE
 	stat_modifiers = list(
 		STAT_ROB = 50,
 		STAT_TGH = 45,
@@ -148,8 +161,9 @@
 	)
 
 /obj/effect/mob_spawn/human/blackshield_ert
-	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Nadezhda Blackshield Specialist"
+	name = "Blackshield ERT Sleeper"
+	name = "Blackshield ERT Sleeper"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Iskhod Blackshield Specialist"
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
@@ -159,6 +173,8 @@
 	flavour_text = "Something has happend to the upper colony to warrant your deployment. Assess the situation and resolve it swiftly."
 	assignedrole = "Blackshield Specialist"
 	title = "Blackshield Specialist"
+	ert_linked = TRUE
+	ert_linked = TRUE
 	stat_modifiers = list(
 		STAT_ROB = 35,
 		STAT_TGH = 50,
@@ -169,7 +185,8 @@
 	)
 
 /obj/effect/mob_spawn/human/engineering_ert
-	name = "deployment sleeper"
+	name = "Engineering ERT Sleeper"
+	name = "Engineering ERT Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be covered in advanced Guild equipment."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -178,8 +195,12 @@
 	ghost_role_perks = list(PERK_INSPIRATION, PERK_HANDYMAN, PERK_SURE_STEP, PERK_TRUE_NAME)
 	short_desc = "You are Engineering Emergency Personnel."
 	flavour_text = "Something has happend to the upper colony to warrant your deployment, you are a engineer first, repair the problem, law breakers are not in your juristiction."
-	assignedrole = "Guild Emergency Personnel"
-	title = "Guild Emergency Personnel"
+	assignedrole = "Artificer Guild Safety Inspector"
+	title = "Artificer Guild Safety Inspector"
+	ert_linked = TRUE
+	assignedrole = "Artificer Guild Safety Inspector"
+	title = "Artificer Guild Safety Inspector"
+	ert_linked = TRUE
 	stat_modifiers = list(
 		STAT_ROB = 35,
 		STAT_TGH = 35,
@@ -190,17 +211,20 @@
 	)
 
 /obj/effect/mob_spawn/human/lonestar_ert
-	name = "deployment sleeper"
-	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Lonestar IA Agent."
+	name = "Logistics ERT Sleeper"
+	name = "Logistics ERT Sleeper"
+	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Frontier Logistics IA Agent."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/lss_ert
 	ghost_role_perks = list(PERK_NO_OBFUSCATION, PERK_MARKET_PROF, PERK_TRUE_NAME)
 	short_desc = "You are an Internal Affairs Agent."
-	flavour_text = "Lonestar's surface operations have run into some troubles, and your job is to handle them. Speak to those involved, make decisions, keep the profits flowing."
-	assignedrole = "Lonestar Internal Affairs Agent"
-	title = "Lonestar Internal Affairs Agent"
+	flavour_text = "Frontier Logistics's surface operations have run into some troubles, and your job is to handle them. Speak to those involved, make decisions, keep the profits flowing."
+	assignedrole = "Frontier Logistics Internal Affairs Agent"
+	title = "Frontier Logistics Internal Affairs Agent"
+	ert_linked = TRUE
+	ert_linked = TRUE
 	stat_modifiers = list(
 		STAT_ROB = 45,
 		STAT_TGH = 45,
@@ -211,7 +235,8 @@
 	)
 
 /obj/effect/mob_spawn/human/church_ert
-	name = "deployment sleeper"
+	name = "Church ERT Sleeper"
+	name = "Church ERT Sleeper"
 	desc = "An sleeper, with an unconscious body inside. The occupant seems to be an Inquisitor."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -221,10 +246,11 @@
 	short_desc = "You are an Inquisitor."
 	flavour_text = "A member of the clergy on duty, most likely the Prime, has done something that requires investigation and possibly disciplinary action. \
 	Your job is to uphold the doctrine of the Church, and you are empowered to Reduce or Separate even a Prime. \
-	You are not a cop, but you may assist the Marshals in tracking down a renegade clergy member if necessary."
-	assignedrole = "Church Inquisitor"
-	title = "Church Inquisitor"
-	stat_modifiers = list( //Literally just Marshal agent stats, I'm lazy
+	You are not a cop, but you may assist the Rangers in tracking down a renegade clergy member if necessary."
+	assignedrole = "Absolutist Inquisitor"
+	title = "Absolutist Inquisitor"
+	ert_linked = TRUE
+	stat_modifiers = list( //Literally just Ranger agent stats, I'm lazy
 		STAT_ROB = 50,
 		STAT_TGH = 45,
 		STAT_BIO = 10,
@@ -241,18 +267,23 @@
 	C.make_inquisitor()
 
 /obj/effect/mob_spawn/human/si_ert
-	name = "deployment sleeper"
+	name = "Research ERT Sleeper"
+	name = "Research ERT Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a member of the SI Ethics committee."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
 	icon_state = "sleeper_1"
 	outfit = /decl/hierarchy/outfit/si_ert
 	ghost_role_perks = list(PERK_SURGICAL_MASTER, PERK_ROBOTICS_EXPERT, PERK_SI_SCI, PERK_CHEMIST, PERK_TRUE_NAME)
-	short_desc = "You are a member of the Soteria Ethics Committee."
-	flavour_text = "An accusation has been made against the Soteria Research Institute that besmirches our good name and committment to progress and the betterment of science. \
-	Identify the source of the issue and recommend resolutions if a member of Soteria is found to not acted in the best interests of the institutes mission."
-	assignedrole = "SRI Ethics Committee investigator"
-	title = "SRI Ethics Committee investigator"
+	short_desc = "You are a member of the Vesalius-Andra Ethics Committee."
+	flavour_text = "An accusation has been made against the Vesalius-Andra Research Institute that besmirches our good name and committment to progress and the betterment of science. \
+	Identify the source of the issue and recommend resolutions if a member of Vesalius-Andra is found to not acted in the best interests of the institutes mission."
+	assignedrole = "VA Research Ethics Committee Agent"
+	title = "VA Research Ethics Committee Agent"
+	ert_linked = TRUE
+	assignedrole = "VA Research Ethics Committee Agent"
+	title = "VA Research Ethics Committee Agent"
+	ert_linked = TRUE
 	stat_modifiers = list(
 		STAT_ROB = 20,
 		STAT_TGH = 15,
@@ -262,8 +293,63 @@
 		STAT_COG = 75
 	)
 
+/obj/effect/mob_spawn/human/high_council_agent
+	name = "High Council Agent Sleeper"
+	desc = "A specialized sleeper for High Council Agents."
+	mob_name = "a High Council Agent"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = null
+	short_desc = "You are a High Council Agent."
+	flavour_text = "The High Council has deployed you to oversee operations and ensure the interests of the Council are upheld. You are empowered with high-level access and authority."
+	assignedrole = "High Council Agent"
+	title = "High Council Agent"
+	stat_modifiers = list(
+		STAT_ROB = 30,
+		STAT_TGH = 30,
+		STAT_BIO = 30,
+		STAT_MEC = 30,
+		STAT_VIG = 30,
+		STAT_COG = 60
+	)
+
+/obj/effect/mob_spawn/human/high_council_agent/special
+	name = "High Council Special Agent Sleeper"
+	outfit = null
+	mob_name = "a High Council Special Agent"
+	assignedrole = "High Council Special Agent"
+	title = "High Council Special Agent"
+
+/obj/effect/mob_spawn/human/high_council_agent
+	name = "High Council Agent Sleeper"
+	desc = "A specialized sleeper for High Council Agents."
+	mob_name = "a High Council Agent"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = null
+	short_desc = "You are a High Council Agent."
+	flavour_text = "The High Council has deployed you to oversee operations and ensure the interests of the Council are upheld. You are empowered with high-level access and authority."
+	assignedrole = "High Council Agent"
+	title = "High Council Agent"
+	stat_modifiers = list(
+		STAT_ROB = 30,
+		STAT_TGH = 30,
+		STAT_BIO = 30,
+		STAT_MEC = 30,
+		STAT_VIG = 30,
+		STAT_COG = 60
+	)
+
+/obj/effect/mob_spawn/human/high_council_agent/special
+	name = "High Council Special Agent Sleeper"
+	outfit = null
+	mob_name = "a High Council Special Agent"
+	assignedrole = "High Council Special Agent"
+	title = "High Council Special Agent"
+
 /obj/effect/mob_spawn/human/prospector_ert
-	name = "deployment sleeper"
+	name = "Prospector ERT Sleeper"
+	name = "Prospector ERT Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Prospector."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -275,6 +361,8 @@
 	or mission."
 	assignedrole = "Prospector Underboss"
 	title = "Prospector Underboss"
+	ert_linked = TRUE
+	ert_linked = TRUE
 	stat_modifiers = list(
 		STAT_ROB = 45,
 		STAT_TGH = 45,
@@ -285,7 +373,8 @@
 	)
 
 /obj/effect/mob_spawn/human/kriosan_trooper
-	name = "deployment sleeper"
+	name = "Kriosan Trooper Sleeper"
+	name = "Kriosan Trooper Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be a Kriosan trooper."
 	mob_name = "a scavenger"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -309,7 +398,8 @@
 
 
 /obj/effect/mob_spawn/human/solfed_survivor //very OP. Fluff wise, this is some kinda recon/vanguard. Lightly armed and armored by the standards of SolFed but still dangerous via their special gear.
-	name = "deployment sleeper"
+	name = "Solfed Survivor Sleeper"
+	name = "Solfed Survivor Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be some kind of soldier."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -332,7 +422,8 @@
 	)
 
 /obj/effect/mob_spawn/human/solfed_survivor_medic
-	name = "deployment sleeper"
+	name = "Solfed Medic Sleeper"
+	name = "Solfed Medic Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be some kind of soldier."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -355,7 +446,8 @@
 	)
 
 /obj/effect/mob_spawn/human/solfed_survivor_auxilliary //Bit less OP. No fucked up suit, no crazy stuff. Just some normal high end gear.
-	name = "deployment sleeper"
+	name = "Solarian Auxilliary Sleeper"
+	name = "Solarian Auxilliary Sleeper"
 	desc = "A sleeper, with an unconscious body inside. The occupant seems to be some kind of soldier."
 	mob_name = "a human"
 	icon = 'icons/obj/Cryogenic2.dmi'
@@ -376,4 +468,86 @@
 		STAT_MEC = 5,
 		STAT_VIG = 35,
 		STAT_COG = 20
+	)
+
+/obj/effect/mob_spawn/human/marqua_scout
+	name = "Mar'Quaian Scout Officer Sleeper"
+	desc = "A specialized sleeper containing a Mar'Quaian Scout Officer, presumably from a vessel exploring the reach of the Iskhod."
+	mob_name = "a Mar'Quaian Scout Officer"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/marqua_scout_officer
+	mob_species = /datum/species/marqua
+	short_desc = "You are a Mar'Quaian Scout Officer."
+	flavour_text = "Your scouting craft was damaged and you were recovered by the Iskhod. You have been placed in cryosleep until you could be safely awakened. Now that you are awake, your mission is to observe these humans and report back... if you can find a way."
+	assignedrole = "Mar'Quaian Scout Officer"
+	title = "Mar'Quaian Scout Officer"
+	stat_modifiers = list(
+		STAT_ROB = 30,
+		STAT_TGH = 30,
+		STAT_BIO = 30,
+		STAT_MEC = 30,
+		STAT_VIG = 30,
+		STAT_COG = 60
+	)
+
+/obj/effect/mob_spawn/human/marqua
+	name = "Mar'Quaian Sleeper"
+	desc = "A sleeper containing a Mar'Quaian individual."
+	mob_name = "a Mar'Quaian"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	mob_species = /datum/species/marqua
+	short_desc = "You are a Mar'Quaian."
+	flavour_text = "You have been awakened on a human planet. Your goals are your own, but remember the pride of your people."
+	assignedrole = "Mar'Quaian"
+	title = "Mar'Quaian"
+	stat_modifiers = list(
+		STAT_ROB = 25,
+		STAT_TGH = 25,
+		STAT_BIO = 25,
+		STAT_MEC = 25,
+		STAT_VIG = 25,
+		STAT_COG = 25
+	)
+
+/obj/effect/mob_spawn/human/marqua_scout
+	name = "Mar'Quaian Scout Officer Sleeper"
+	desc = "A specialized sleeper containing a Mar'Quaian Scout Officer, presumably from a vessel exploring the reach of the Iskhod."
+	mob_name = "a Mar'Quaian Scout Officer"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	outfit = /decl/hierarchy/outfit/marqua_scout_officer
+	mob_species = /datum/species/marqua
+	short_desc = "You are a Mar'Quaian Scout Officer."
+	flavour_text = "Your scouting craft was damaged and you were recovered by the Iskhod. You have been placed in cryosleep until you could be safely awakened. Now that you are awake, your mission is to observe these humans and report back... if you can find a way."
+	assignedrole = "Mar'Quaian Scout Officer"
+	title = "Mar'Quaian Scout Officer"
+	stat_modifiers = list(
+		STAT_ROB = 30,
+		STAT_TGH = 30,
+		STAT_BIO = 30,
+		STAT_MEC = 30,
+		STAT_VIG = 30,
+		STAT_COG = 60
+	)
+
+/obj/effect/mob_spawn/human/marqua
+	name = "Mar'Quaian Sleeper"
+	desc = "A sleeper containing a Mar'Quaian individual."
+	mob_name = "a Mar'Quaian"
+	icon = 'icons/obj/Cryogenic2.dmi'
+	icon_state = "sleeper_1"
+	mob_species = /datum/species/marqua
+	short_desc = "You are a Mar'Quaian."
+	flavour_text = "You have been awakened on a human planet. Your goals are your own, but remember the pride of your people."
+	assignedrole = "Mar'Quaian"
+	title = "Mar'Quaian"
+	stat_modifiers = list(
+		STAT_ROB = 25,
+		STAT_TGH = 25,
+		STAT_BIO = 25,
+		STAT_MEC = 25,
+		STAT_VIG = 25,
+		STAT_COG = 25
 	)

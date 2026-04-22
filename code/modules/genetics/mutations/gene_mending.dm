@@ -6,6 +6,7 @@
 	desc = "Simply helps stability."
 	gain_text = "Nothing seems to change."
 	instability = -10
+	gene_research_value = 2000
 
 //Macro: MUTATION_GENE_MENDING_H
 /datum/genetics/mutation/gene_mending_h
@@ -14,6 +15,7 @@
 	desc = "Simply helps stability at the cost of users health."
 	gain_text = "Nothing seems to change?"
 	instability = -10
+	gene_research_value = 2000
 
 /datum/genetics/mutation/gene_mending_h/onPlayerImplant()
 	..()

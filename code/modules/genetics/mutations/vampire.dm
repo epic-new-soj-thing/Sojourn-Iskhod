@@ -6,6 +6,7 @@
 	var/mutation = VAMPIRE
 	gain_text = "Your skin quickly loses colour, and your tastes become rather regal rich."
 	instability = -10 //It stables your genes!
+	gene_research_value = 2500
 	var/old_skin
 	var/new_skin = "#FFFFFF"
 	var/old_faction

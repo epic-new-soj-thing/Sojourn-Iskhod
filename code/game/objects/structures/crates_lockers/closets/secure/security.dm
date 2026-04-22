@@ -1,5 +1,5 @@
 /obj/structure/closet/secure_closet/reinforced/captains
-	name = "premier's locker"
+	name = "facility director's locker"
 	req_access = list(access_captain)
 	icon_state = "cap"
 
@@ -10,20 +10,19 @@
 	new /obj/item/storage/backpack/captain(src)
 	new /obj/item/storage/backpack/satchel/captain(src)
 	new /obj/item/clothing/under/rank/captain(src)
-	new /obj/item/clothing/accessory/halfcape/premier(src)
+	new /obj/item/clothing/accessory/halfcape/facility_director(src)
 	new /obj/item/clothing/suit/armor/vest(src)
-	new /obj/item/clothing/head/helmet(src)
 	new /obj/item/clothing/shoes/color/brown(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/device/radio/headset/heads/captain(src)
 	new /obj/item/clothing/gloves/captain(src)
 	new /obj/item/device/flash(src)
-	new /obj/item/gun/projectile/basilisk(src)
-	new /obj/item/ammo_magazine/kurz_50/rubber(src)
-	new /obj/item/ammo_magazine/kurz_50/rubber(src)
-	new /obj/item/ammo_magazine/kurz_50/rubber(src)
-	new /obj/item/ammo_magazine/kurz_50/rubber(src)
+	new /obj/item/gun/energy/captain(src)
 	new /obj/item/storage/pouch/baton_holster/telebaton(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/captain(src)
+	new /obj/item/clothing/head/ushanka/security(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
+	new /obj/item/clothing/accessory/holster/saber/facility_director/occupied(src)
 
 /obj/structure/closet/secure_closet/reinforced/hop
 	name = "Steward's locker"
@@ -38,7 +37,8 @@
 	new /obj/item/clothing/under/rank/first_officer(src)
 	new /obj/item/clothing/head/rank/first_officer(src)
 	new /obj/item/clothing/suit/armor/vest(src)
-	new /obj/item/clothing/head/helmet(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/device/radio/headset/heads/hop(src)
 	new /obj/item/gun/projectile/colt/ten(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
@@ -46,10 +46,12 @@
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
 	new /obj/item/ammo_magazine/magnum_40/rubber(src)
 	new /obj/item/device/flash(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/ranger(src)
+	new /obj/item/clothing/head/ushanka/security(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
 
 /obj/structure/closet/secure_closet/reinforced/hos
-	name = "warrant officer's locker"
+	name = "captain's locker"
 	req_access = list(access_hos)
 	icon_state = "hos"
 
@@ -58,7 +60,9 @@
 		return
 	populated_contents = TRUE
 	new /obj/item/device/t_scanner/advanced(src)
-	new /obj/item/clothing/head/rank/commander(src)
+	new /obj/item/clothing/head/rank/ranger/peaked/command(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/suit/armor/hos(src)
 	new /obj/item/clothing/suit/armor/platecarrier/hos(src)
@@ -66,6 +70,8 @@
 	new /obj/item/clothing/accessory/halfcape/wo(src)
 	new /obj/item/clothing/glasses/sechud(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/ranger(src)
+	new /obj/item/clothing/head/ushanka/security(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
 	new /obj/item/storage/pouch/baton_holster/telebaton(src)
 	new /obj/item/storage/box/trackimp(src)
@@ -76,6 +82,10 @@
 	new /obj/item/taperoll/police(src)
 	new /obj/item/gunbox/warrantofficer(src) // Primary on their locker, secondary on their hardcase.
 	new /obj/item/clothing/gloves/stungloves(src)
+	new /obj/item/storage/box/captainuniform(src)
+	new /obj/item/tool/baton(src)
+	new /obj/item/clothing/head/rank/blackshield/peaked/command(src)
+	new /obj/item/clothing/suit/storage/armor/militia_overcoat(src)
 	new /obj/item/device/taperecorder(src)
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
@@ -86,7 +96,7 @@
 	new /obj/item/device/radio/headset/heads/hos(src)
 
 /obj/structure/closet/secure_closet/warden
-	name = "supply specialist's locker"
+	name = "lieutenant's locker"
 	req_access = list(access_armory)
 	icon_state = "warden"
 
@@ -99,6 +109,14 @@
 	new /obj/item/device/holowarrant(src)
 	new /obj/item/clothing/under/rank/warden(src)
 	new /obj/item/clothing/head/rank/warden/beret(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/ranger(src)
+	new /obj/item/clothing/head/ushanka/security(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat(src)
+	new /obj/item/storage/box/lieutenantuniform(src)
+	new /obj/item/tool/baton(src)
+	new /obj/item/clothing/head/rank/blackshield/peaked/command(src)
+	new /obj/item/clothing/suit/storage/armor/militia_overcoat(src)
 	new /obj/item/pc_part/drive/disk/design/exotic_ammo(src)
 	new /obj/item/pc_part/drive/disk/design/security/marshal_ammo(src)
 	new /obj/item/pc_part/drive/disk/design/gun_frames/marshal/surplus(src)
@@ -126,7 +144,7 @@
 	new /obj/item/voucher/marshal/armor(src)
 
 /obj/structure/closet/secure_closet/personal/security
-	name = "marshal officer's locker"
+	name = "ranger's locker"
 	req_access = list(access_hos)
 	access_occupy = list(access_brig)
 	icon_state = "sec"
@@ -144,6 +162,11 @@
 	new /obj/item/voucher/marshal/secondary(src)
 	new /obj/item/voucher/marshal/armor(src)
 	new /obj/item/storage/backpack/satchel/ironhammer(src)
+	new /obj/item/clothing/head/rank/ironhammer(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/ranger(src)
+	new /obj/item/clothing/head/ushanka/security(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/storage/belt/security(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
@@ -158,9 +181,11 @@
 	new /obj/item/clipboard(src)
 	new /obj/item/device/camera(src)
 	new /obj/item/device/t_scanner/advanced(src)
+	new /obj/item/storage/box/rangeruniform(src)
+	new /obj/item/tool/baton(src)
 
 /obj/structure/closet/secure_closet/personal/detective
-	name = "ranger's locker"
+	name = "detective's locker"
 	req_access = list(access_hos)
 	access_occupy = list(access_forensics_lockers) //So we can claim
 	icon_state = "cabinetdetective"
@@ -173,8 +198,13 @@
 	new /obj/item/clothing/mask/gas/ihs(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/head/rank/inspector(src)
+	new /obj/item/clothing/head/rank/ironhammer(src)
+	new /obj/item/clothing/suit/storage/rank/insp_trench(src)
 	new /obj/item/gun_upgrade/trigger/dnalock(src)
 	new /obj/item/clothing/shoes/reinforced(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/security/ranger(src)
+	new /obj/item/clothing/head/ushanka/security(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/storage/box/evidence(src)
 	new /obj/item/device/radio/headset/headset_sec(src)
 	new /obj/item/storage/belt/security(src)
@@ -191,6 +221,8 @@
 	new /obj/item/voucher/marshal/rangerprimary(src)
 	new /obj/item/voucher/marshal/rangersecondary(src)
 	new /obj/item/voucher/marshal/armor(src)
+	new /obj/item/storage/box/rangeruniform(src)
+	new /obj/item/tool/baton(src)
 
 /obj/structure/closet/secure_closet/injection
 	name = "lethal injections locker"
@@ -293,3 +325,4 @@
 		return
 	populated_contents = TRUE
 	new /obj/item/storage/box/syndie_kit/antimateriel_rifle(src)
+

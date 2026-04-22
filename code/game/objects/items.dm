@@ -182,6 +182,9 @@
 		var/mob/m = loc
 		m.u_equip(src)
 		remove_hud_actions(m)
+		if(istype(m, /mob/living/carbon/human))
+			var/mob/living/carbon/human/H = m
+			H.regenerate_icons()
 		loc = null
 	if(hud_actions)
 		for(var/action in hud_actions)
@@ -493,12 +496,16 @@
 	if(was_bloodied && !fluorescent)
 		fluorescent = 1
 		blood_color = COLOR_LUMINOL
-		blood_overlay.color = COLOR_LUMINOL
+		if(!blood_overlay)
+			generate_blood_overlay()
+		if(blood_overlay)
+			blood_overlay.color = COLOR_LUMINOL
 	//	update_icon()
 
 /obj/item/add_blood(mob/living/carbon/human/M as mob)
 	if(!..())
 		return 0
+	blood_visually_cleaned = FALSE
 
 	if(istype(src, /obj/item/melee/energy))
 		return

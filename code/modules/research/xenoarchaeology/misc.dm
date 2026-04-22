@@ -50,6 +50,8 @@
 	New()
 		..()
 		new /obj/item/book/manual/excavation(src)
+		new /obj/item/book/manual/suspension(src)
+		new /obj/item/book/manual/radiocarbon_spectroscopy(src)
 		new /obj/item/book/manual/mass_spectrometry(src)
 		new /obj/item/book/manual/materials_chemistry_analysis(src)
 		new /obj/item/book/manual/anomaly_testing(src)
@@ -73,6 +75,7 @@
 		new /obj/item/clothing/glasses/powered/science(src)
 		new /obj/item/device/radio/headset/headset_sci(src)
 		new /obj/item/storage/belt/archaeology(src)
+		new /obj/item/device/science_tool(src)
 		new /obj/item/tool/pickaxe/excavation(src)
 		new /obj/item/storage/backpack/duffelbag(src)
 		new /obj/item/gun/projectile/boltgun/flare_gun(src)
@@ -103,6 +106,7 @@
 		new /obj/item/hand_labeler(src)
 		new /obj/item/taperoll/research(src)
 		new /obj/item/book/manual/excavation(src)
+		new /obj/item/book/manual/suspension(src)
 		return
 
 //---- Isolation room air alarms

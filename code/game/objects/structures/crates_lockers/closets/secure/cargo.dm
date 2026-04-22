@@ -10,6 +10,8 @@
 	populated_contents = TRUE
 	new /obj/item/clothing/under/rank/cargotech(src)
 	new /obj/item/clothing/shoes/color/black(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/cargo(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/gloves/thick(src)
 	new /obj/item/clothing/head/soft(src)
@@ -91,7 +93,9 @@
 		new /obj/item/storage/backpack/military(src)
 	else
 		new /obj/item/storage/backpack/holding(src)
-	new /obj/item/clothing/under/rank/cargotech(src)
+	new /obj/item/clothing/under/rank/cargoclerk(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/cargo(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/headset_cargo(src)
 	new /obj/item/clothing/gloves/thick(src)
@@ -142,6 +146,8 @@
 
 	new /obj/item/device/radio/headset/headset_pro(src)
 	new /obj/item/clothing/accessory/cape/prospie(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/cargo/miner(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 
 	switch(bag_cache)
 		if("INDUSTRIAL")
@@ -340,6 +346,10 @@
 		new /obj/item/device/lighting/glowstick/flare(src)
 		new /obj/item/device/lighting/glowstick/flare(src)
 	new /obj/item/device/radio/off(src)
+	if(prob(50))
+		new /obj/item/storage/belt/utility/full(src)
+	else
+		new /obj/item/storage/belt/utility/handmade/full(src)
 
 	//Nades
 	if(prob(25))
@@ -377,6 +387,9 @@
 
 	new /obj/item/device/radio/headset/headset_pro(src)
 	new /obj/item/clothing/accessory/cape/prospie(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/cargo/miner(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+
 
 	switch(bag_cache)
 		if("INDUSTRIAL")
@@ -602,7 +615,10 @@
 
 	new /obj/item/device/radio/headset/heads/foreman(src)
 	new /obj/item/clothing/accessory/cape/prospie(src)
+
 	new /obj/item/clothing/accessory/halfcape/foreman(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/cargo/miner(src)
+	new /obj/item/clothing/shoes/jackboots(src)
 	switch(bag_cache)
 		if("INDUSTRIAL")
 			if(prob(80))
@@ -742,7 +758,7 @@
 	new /obj/item/storage/belt/utility/full(src)
 
 /obj/structure/closet/secure_closet/personal/artist
-	name = "lonestar artist's locker"
+	name = "frontier logistics artist's locker"
 	req_access = list(access_theatre)
 	access_occupy = list(access_cargo)
 	icon_state = "cargo"
@@ -762,6 +778,40 @@
 	new /obj/item/circuitboard/artist_bench(src)
 	new /obj/item/storage/pouch/grow_a_gun(src)
 	new /obj/item/toy/badtothebone(src) // They should be able to use this just as much.
+
+/obj/structure/closet/secure_closet/personal/librarian
+	name = "archivist's locker"
+	req_access = list(access_library)
+	access_occupy = list(access_library)
+	icon_state = "cabinet"
+	icon_lock = "cabinet"
+
+/obj/structure/closet/secure_closet/personal/librarian/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
+	new /obj/item/barcodescanner(src)
+	new /obj/item/storage/box/pen_protector(src)
+	new /obj/item/device/camera(src)
+	new /obj/item/device/camera_film(src)
+	new /obj/item/device/camera_film(src)
+	new /obj/item/device/taperecorder(src)
+	new /obj/item/pen(src)
+	new /obj/item/pen/blue(src)
+	new /obj/item/pen/red(src)
+	new /obj/item/folder(src)
+	new /obj/item/folder(src)
+	new /obj/item/folder(src)
+	new /obj/item/stamp(src)
+	new /obj/item/clothing/accessory/badge/press(src)
+	new /obj/item/device/radio/headset/headset_service(src)
+	new /obj/item/modular_computer/pda(src)
+	new /obj/item/clothing/under/rank/librarian(src)
+	// Occult ritual supplies
+	new /obj/item/reagent_containers/blood/nanoblood(src)
+	new /obj/item/storage/fancy/candle_box(src)
+	new /obj/item/storage/fancy/candle_box(src)
+	new /obj/item/tool/knife/ritual(src)
 
 /obj/structure/closet/wardrobe/color/pink/artist
 

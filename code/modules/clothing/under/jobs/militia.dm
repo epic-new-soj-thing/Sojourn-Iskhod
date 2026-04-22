@@ -95,8 +95,8 @@
 /obj/item/clothing/under/rank/fatigues/navy
 	name = "navy utility uniform"
 	desc = "A navy utility uniform, bearing the old marks of patches long since removed."
-	icon_state = "navyutility"
-	item_state = "navyutility"
+	icon_state = "navyutility_1"
+	item_state = "navyutility_1"
 
 /obj/item/clothing/under/rank/fatigues/navy/toggle_style()
 	set name = "Adjust Style"
@@ -108,8 +108,8 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Navy Utility Uniform"] = "navyutility"
-	options["Navy Utility Uniform Alt"] = "navyutility_alt"
+	options["Navy Utility Uniform"] = "navyutility_1"
+	options["Navy Utility Uniform Alt"] = "navyutility_alt_1"
 	options["Navy Utility Medical"] = "navyutility_med"
 	options["Navy Utility Pants"] = "navyutility_pants"
 	options["Dark Utility Pants"] = "blackutility_pants"
@@ -201,25 +201,25 @@
 
 /obj/item/clothing/under/rank/fatigues/kav //My beautiful baby boi Kavrick, thank u for the sprites.
 	name = "grey Blackshield fatigues"
-	desc = "A robust, grey utility suit bearing the markings of the Nadezhda Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
+	desc = "A robust, grey utility suit bearing the markings of the Iskhod Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
 	icon_state = "bsgrey"
 	item_state = "bsgrey"
 
 /obj/item/clothing/under/rank/fatigues/kav/green
 	name = "green Blackshield fatigues"
-	desc = "A robust, olive green grey utility suit bearing the markings of the Nadezhda Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
+	desc = "A robust, olive green grey utility suit bearing the markings of the Iskhod Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
 	icon_state = "bsgreen"
 	item_state = "bsgreen"
 
 /obj/item/clothing/under/rank/fatigues/kav/tan
 	name = "tan Blackshield fatigues"
-	desc = "A robust, tan utility suit bearing the markings of the Nadezhda Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
+	desc = "A robust, tan utility suit bearing the markings of the Iskhod Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
 	icon_state = "bstan"
 	item_state = "bstan"
 
 /obj/item/clothing/under/rank/fatigues/kav/jungle
 	name = "jungle Blackshield fatigues"
-	desc = "A robust, jungle green utility suit bearing the markings of the Nadezhda Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
+	desc = "A robust, jungle green utility suit bearing the markings of the Iskhod Blackshield Militia. Comes with EZ roll sleeves, roll-down shirt, optional corpsman patch and skirt! "
 	icon_state = "bsjungle"
 	item_state = "bsjungle"
 
@@ -302,16 +302,16 @@
 	item_state = "trooper_service"
 
 /obj/item/clothing/suit/rank/trooper/service
-	name = "blackshield service jacket"
-	desc = "A modern dark blue service jacket to wear with the service uniform. Fit for a trooper, even one on the frontier."
-	icon_state = "trooper_service"
-	item_state = "trooper_service"
+	name = "ranger service jacket"
+	desc = "A modern dark blue service jacket to wear with the service uniform. Fit for a ranger, even one on the frontier."
+	icon_state = "blueservice"
+	item_state = "blueservice"
 
 /obj/item/clothing/suit/rank/trooper/dress
-	name = "blackshield dress jacket"
-	desc = "A modern dark blue dress jacket to wear with the service uniform for ceremonnial or offical occasions. Fit for a trooper, even one on the frontier."
-	icon_state = "trooper_dress"
-	item_state = "trooper_dress"
+	name = "ranger dress jacket"
+	desc = "A modern white dress jacket to wear with the service uniform for ceremonnial or offical occasions. Fit for a ranger, even one on the frontier."
+	icon_state = "whitedress"
+	item_state = "whitedress"
 
 /obj/item/clothing/under/rank/corpsman
 	name = "Medical Corpsman uniform"
@@ -431,23 +431,23 @@
 	armor_list = list(melee = 1, bullet = 1, energy = 1, bomb = 0, bio = 0, rad = 0)
 	siemens_coefficient = 0.9
 
-/obj/item/clothing/under/rank/armorer/service
-	name = "Blackshield NCO service uniform"
-	desc = "A modern uniform with silver trimmings on dark blue pants with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
-	icon_state = "sergeant_service"
-	item_state = "sergeant_service"
-
 /obj/item/clothing/suit/rank/armorer/service
-	name = "Blackshield NCO service jacket"
+	name = "ranger lieutenant service jacket"
 	desc = "A modern dark blue service jacket with silver trimmings to wear with the service uniform. Fit for an enlisted leader, even one on the frontier."
-	icon_state = "sergeant_service"
-	item_state = "sergeant_service"
+	icon_state = "blueservice_snco"
+	item_state = "blueservice_snco"
+
+/obj/item/clothing/under/rank/armorer/service
+	name = "ranger lieutenant service uniform"
+	desc = "A modern uniform with silver trimmings on dark blue pants with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
+	icon_state = "whiteservice_off"
+	item_state = "whiteservice_off"
 
 /obj/item/clothing/suit/rank/armorer/dress
-	name = "Blackshield NCO dress jacket"
+	name = "ranger lieutenant dress jacket"
 	desc = "A modern dark blue dress jacket with silver trimmings to wear with the service uniform for ceremonnial and official occasions. Fit for an enlisted leader, even one on the frontier."
-	icon_state = "sergeant_dress"
-	item_state = "sergeant_dress"
+	icon_state = "whitedress_snco"
+	item_state = "whitedress_snco"
 
 
 /*
@@ -488,10 +488,10 @@
 		return 1
 
 /obj/item/clothing/suit/rank/commander_service
-	name = "blackshield command service jacket"
+	name = "ranger's captain's jacket"
 	desc = "A modern dark blue uniform jacket with gold trimmings to go with the dress uniform for ceremonnial or official occasions. Fit for a field officer, even one on the frontier."
-	icon_state = "commander_service"
-	item_state = "commander_service"
+	icon_state = "blueservice_comm"
+	item_state = "blueservice_comm"
 
 /obj/item/clothing/under/rank/commander_service/verb/toggle_style()
 	set name = "Adjust Style"
@@ -503,8 +503,8 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Commander's Service Uniform"] = "commander_service"
-	options["Commander's Service Dress Uniform"] = "commander_dress"
+	options["Commander's Service Uniform"] = "blueservice_comm"
+	options["Commander's Service Dress Uniform"] = "whitedress_off"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -521,22 +521,22 @@
 		return 1
 
 /obj/item/clothing/under/rank/brigservice
-	name = "blackshield general's service uniform"
+	name = "ranger general's service uniform"
 	desc = "A modern uniform with red trimmings on dark blue pants with a white button up shirt. There are straps on the shoulders for adding shoulderboards."
 	icon_state = "brigadier_service"
 	item_state = "brigadier_service"
 
 /obj/item/clothing/suit/rank/brigservice
-	name = "blackshield general's service jacket"
+	name = "ranger general's service jacket"
 	desc = "A modern dark blue service jacket with red trimmings to wear with the service uniform. Fit for a general, even one on the frontier."
-	icon_state = "brigadier_service"
-	item_state = "brigadier_service"
+	icon_state = "blueservice_flag"
+	item_state = "blueservice_flag"
 
 /obj/item/clothing/suit/rank/brigdress
-	name = "blackshield general's dress jacket"
+	name = "ranger general's dress jacket"
 	desc = "A modern dark blue uniform jacket with red trimmings to wear with the dress uniform for ceremonnial or official occasions. Fit for a general, even one on the frontier."
-	icon_state = "brigadier_dress"
-	item_state = "brigadier_dress"
+	icon_state = "whitedress_flag"
+	item_state = "whitedress_flag"
 
 //Solfed alternatives.
 /obj/item/clothing/under/rank/fatigues/camo/solfed

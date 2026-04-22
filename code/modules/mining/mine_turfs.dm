@@ -182,9 +182,9 @@
 		if(QUALITY_EXCAVATION)
 			var/excavation_amount = input("How deep are you going to dig?", "Excavation depth", 0)
 			if(excavation_amount)
-				to_chat(user, SPAN_NOTICE("You start exacavating [src]."))
+				to_chat(user, SPAN_NOTICE("You start excavating [src]."))
 				if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_COG))
-					to_chat(user, SPAN_NOTICE("You finish exacavating [src]."))
+					to_chat(user, SPAN_NOTICE("You finish excavating [src]."))
 					if(finds && finds.len)
 						var/datum/find/F = finds[1]
 						if(round(excavation_level + excavation_amount) == F.excavation_required)
@@ -452,7 +452,7 @@
 /turf/simulated/mineral/random
 	name = "Mineral deposit"
 	var/mineralSpawnChanceList = list(ORE_URANIUM = 5, ORE_PLATINUM = 5, ORE_IRON = 35, ORE_CARBON = 35, ORE_DIAMOND = 1, ORE_GOLD = 5, ORE_SILVER = 5, ORE_PLASMA = 10, ORE_HYDROGEN = 1)
-	var/mineralChance = 100 //10 //means 10% chance of this plot changing to a mineral deposit
+	var/mineralChance = 2 //10 //means 10% chance of this plot changing to a mineral deposit
 
 /turf/simulated/mineral/random/New()
 	if (prob(mineralChance) && !mineral)
@@ -464,12 +464,49 @@
 
 	. = ..()
 
+/turf/simulated/mineral/random/Initialize()
+	// called when map loads; New may not run again
+	..()
+	if (prob(mineralChance) && !mineral)
+		var/mineral_name = pickweight(mineralSpawnChanceList)
+		mineral_name = lowertext(mineral_name)
+		if (mineral_name && (mineral_name in ore_data))
+			mineral = ore_data[mineral_name]
+			UpdateMineral()
+
 /turf/simulated/mineral/proc/check_radial_dig()
 	return TRUE
 
 /turf/simulated/mineral/random/high_chance
-	mineralChance = 100 //25
-	mineralSpawnChanceList = list(ORE_URANIUM = 10, ORE_PLATINUM = 10, ORE_IRON = 20, ORE_CARBON = 20, ORE_DIAMOND = 2, ORE_GOLD = 10, ORE_SILVER = 10, ORE_PLASMA = 20, ORE_HYDROGEN = 1)
+	mineralChance = 10 //25
+	mineralSpawnChanceList = list(ORE_URANIUM = 10, ORE_PLATINUM = 10, ORE_IRON = 20, ORE_CARBON = 20, ORE_DIAMOND = 2, ORE_GOLD = 10, ORE_SILVER = 10, ORE_PLASMA = 20, ORE_HYDROGEN = 5)
+
+/turf/simulated/mineral/random/high_chance/New()
+	if (prob(mineralChance) && !mineral)
+		var/mineral_name = pickweight(mineralSpawnChanceList) //temp mineral name
+		mineral_name = lowertext(mineral_name)
+		if (mineral_name && (mineral_name in ore_data))
+			mineral = ore_data[mineral_name]
+			UpdateMineral()
+
+	. = ..()
+
+/turf/simulated/mineral/random/high_chance/Initialize()
+	// ensure high_chance tiles spawn correctly on map load
+	..()
+	if (prob(mineralChance) && !mineral)
+		var/mineral_name = pickweight(mineralSpawnChanceList)
+		mineral_name = lowertext(mineral_name)
+		if (mineral_name && (mineral_name in ore_data))
+			mineral = ore_data[mineral_name]
+			UpdateMineral()
+/******************* Glacier and Cold Rock *****************************/
+/turf/simulated/mineral/glacierice
+	mined_turf = /turf/simulated/floor/icewater
+	icon_state = "glacier"
+
+/turf/simulated/mineral/frostyrock
+	icon_state = "rock-frosty"
 
 /********************** Planet **************************/
 

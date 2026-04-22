@@ -71,7 +71,8 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 			if(G.emped == 1 || !pos)
 				t += "<BR>[tracked_gpstag]: ERROR"
 			else
-				t += "<BR>[tracked_gpstag]: [format_text(gps_area.name)] ([get_coordinates()])"
+				var/coord_text = "[pos.x].[rand(0,9)]:[pos.y].[rand(0,9)]:[pos.z].[rand(0,9)]"
+				t += "<BR>[tracked_gpstag]: [format_text(gps_area.name)] ([coord_text])"
 
 	var/datum/browser/popup = new(user, "GPS", name, 360, min(gps_window_height, 800))
 	popup.set_content(t)
@@ -122,11 +123,16 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 
 /obj/item/storage/bag/fossils
 	name = "Fossil Satchel"
-	desc = "Transports delicate fossils in suspension so they don't break during transit."
+	desc = "Transports delicate fossils, dig finds, core samples and evidence bags in suspension so they don't break during transit."
 	icon = 'icons/obj/mining.dmi'
 	icon_state = "satchel"
 	slot_flags = SLOT_BELT | SLOT_POCKET
 	w_class = ITEM_SIZE_NORMAL
 	max_storage_space = 100
 	max_w_class = ITEM_SIZE_NORMAL
-	can_hold = list(/obj/item/fossil)
+	can_hold = list(
+		/obj/item/fossil,
+		/obj/item/archaeological_find,
+		/obj/item/rocksliver,
+		/obj/item/evidencebag
+	)

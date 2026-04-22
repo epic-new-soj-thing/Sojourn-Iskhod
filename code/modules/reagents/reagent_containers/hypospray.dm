@@ -4,7 +4,7 @@
 
 /obj/item/reagent_containers/hypospray
 	name = "hypospray"
-	desc = "The Soteria medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
+	desc = "The Vesalius-Andra medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "hypospray"
 	icon_state = "hypospray"
@@ -19,6 +19,7 @@
 	preloaded_reagents = list("tricordrazine" = 40)
 	var/injtime = 0 //A simple delay in injecting
 	var/time = 8 //Standard inject time (seconds)
+	var/injection_sound = 'sound/weapons/hypo_clean.ogg'
 
 
 /obj/item/reagent_containers/hypospray/New()
@@ -49,6 +50,8 @@
 		return TRUE
 	if(!reagents?.total_volume)
 		to_chat(user, SPAN_WARNING("[src] is empty."))
+		playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+		playsound(src.loc, 'sound/machines/buzz-two.ogg', 10, 1)
 		return FALSE
 
 	// find a living mob inside the bag's contents
@@ -67,6 +70,9 @@
 
 /obj/item/reagent_containers/hypospray/proc/inject_mob(mob/living/M, mob/user)
 	if(!M || !reagents?.total_volume)
+		if(!reagents?.total_volume)
+			playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+			playsound(src.loc, 'sound/machines/buzz-two.ogg', 20, 1)
 		return FALSE
 
 	// Determine injection duration and validate the target can be injected.
@@ -123,7 +129,7 @@
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 		user.do_attack_animation(M)
 		if(injtime)
-			user.visible_message(SPAN_WARNING("[user] begins injecting [M]!"), SPAN_WARNING("You begin injecting [M]!"))
+			user.visible_message(SPAN_WARNING("[user] is trying to inject [M] with [src]!"), SPAN_WARNING("You are trying to inject [M] with [src]!"))
 			if(!do_mob(user, M, injtime))
 				return FALSE
 
@@ -131,8 +137,14 @@
 	var/contained = reagents.log_list()
 	var/trans = reagents.trans_to_mob(M, amount_per_transfer_from_this, CHEM_BLOOD)
 	admin_inject_log(user, M, src, contained, trans)
+	if(trans)
+		if(M != user)
+			user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]!"))
+			to_chat(M, SPAN_NOTICE("You feel a tiny prick!"))
+		else
+			user.visible_message(SPAN_WARNING("[user] injects \himself with [src]!"), SPAN_WARNING("You inject yourself with [src]."), range = 3)
 	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in the [src]."))
-	playsound(src.loc, 'sound/machines/click.ogg', 25)
+	playsound(src.loc, injection_sound, 25, 1)
 	return TRUE
 
 
@@ -143,6 +155,8 @@
 /obj/item/reagent_containers/hypospray/attack(mob/living/M as mob, mob/user as mob)
 	if(!reagents.total_volume)
 		to_chat(user, SPAN_WARNING("[src] is empty."))
+		playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+		playsound(src.loc, 'sound/machines/buzz-two.ogg', 20, 1)
 		return
 	if (!istype(M))
 		return
@@ -185,6 +199,7 @@
 					var/trans = reagents.remove_any(amount_per_transfer_from_this)
 					user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))
 					to_chat(user, SPAN_NOTICE("[trans] units injected, [reagents.total_volume] units remaining in \the [src]."))
+					playsound(src.loc, injection_sound, 25, 1)
 				return
 			else
 				if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
@@ -192,6 +207,7 @@
 						var/trans = reagents.remove_any(amount_per_transfer_from_this)
 						user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))
 						to_chat(user, SPAN_NOTICE("[trans] units injected, [reagents.total_volume] units remaining in \the [src]."))
+						playsound(src.loc, injection_sound, 25, 1)
 						return TRUE
 					else
 						H.can_inject(user, TRUE)
@@ -203,16 +219,21 @@
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 		user.do_attack_animation(M)
 		if(injtime)
-			user.visible_message(SPAN_WARNING("[user] begins injecting [M]!"), SPAN_WARNING("You begins injecting [M]!"))
-			if(do_mob(user, M, injtime))
-				user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))
-			else
+			user.visible_message(SPAN_WARNING("[user] is trying to inject [M] with [src]!"), SPAN_WARNING("You are trying to inject [M] with [src]!"))
+			if(!do_mob(user, M, injtime))
 				return
 	// handling actual injection
 	// on this stage we are sure that everything is alright
 	var/contained = reagents.log_list()
 	var/trans = reagents.trans_to_mob(M, amount_per_transfer_from_this, CHEM_BLOOD)
 	admin_inject_log(user, M, src, contained, trans)
+	if(trans)
+		if(M != user)
+			user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]!"))
+			to_chat(M, SPAN_NOTICE("You feel a tiny prick!"))
+		else
+			user.visible_message(SPAN_WARNING("[user] injects \himself with [src]!"), SPAN_WARNING("You inject yourself with [src]."), range = 3)
+		playsound(src.loc, injection_sound, 25, 1)
 	to_chat(user, SPAN_NOTICE("[trans] units injected. [reagents.total_volume] units remaining in \the [src]."))
 	return
 
@@ -235,6 +256,8 @@
 	if(ismob(target) || target.is_injectable())
 		if(!reagents.total_volume)
 			to_chat(user, SPAN_NOTICE("The [src] is empty."))
+			playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+			playsound(src.loc, 'sound/machines/buzz-two.ogg', 20, 1)
 			return
 		// If it's a mob, use the existing inject_mob which handles checks/logging
 		if(ismob(target))
@@ -243,6 +266,7 @@
 		var/trans = reagents.trans_to(target, amount_per_transfer_from_this)
 		user.visible_message(SPAN_WARNING("[user] injects [target] with [src]!"), SPAN_WARNING("You inject [target] with [src]."))
 		to_chat(user, SPAN_NOTICE("You inject [trans] units into [target]."))
+		playsound(src.loc, injection_sound, 25, 1)
 		return
 
 
@@ -259,8 +283,8 @@
 
 
 /obj/item/reagent_containers/hypospray/vial
-	name = "SI medical hypospray"
-	desc = "The Soteria medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients for convenience and efficiency. Uses a replaceable 30u vial and can inject through armour."
+	name = "VA medical hypospray"
+	desc = "A VA branded Vesalius-Andra medical hypospray: a sterile, air-needle autoinjector for rapid administration of drugs to patients for convenience and efficiency. Uses a replaceable 30u vial and can inject through armour."
 	item_state = "hypo"
 	icon_state = "hypo"
 	possible_transfer_amounts = list(1,2,5,10,15,20,30)
@@ -269,14 +293,30 @@
 	time = 5
 	bypass_suit = TRUE
 	var/single_use = FALSE
+	var/vial_swap_time = 1 SECOND
 	slot_flags = SLOT_BELT|SLOT_HOLSTER
 	var/obj/item/reagent_containers/glass/beaker/vial/loaded_vial
 
+/obj/item/reagent_containers/hypospray/vial/AltClick(mob/user)
+	if(!possible_transfer_amounts)
+		return ..()
+	if(user.incapacitated())
+		to_chat(user, SPAN_WARNING("You can't do that right now!"))
+		return
+	if(!in_range(src, user))
+		return
+	var/N = input(user, "Amount per transfer from this:","[src]", amount_per_transfer_from_this) as null|anything in possible_transfer_amounts
+	if(N)
+		amount_per_transfer_from_this = N
+		to_chat(user, SPAN_NOTICE("Transfer amount set to [N] units."))
+		playsound(src.loc, 'sound/machines/click.ogg', 25, 1)
 
 /obj/item/reagent_containers/hypospray/vial/attack(mob/living/M as mob, mob/user as mob)
 	// Simple wrapper for vial variant: forward to inject_mob which handles transfer/logging.
 	if(!reagents.total_volume)
 		to_chat(user, SPAN_WARNING("[src] is empty."))
+		playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
+		playsound(src.loc, 'sound/machines/buzz-two.ogg', 20, 1)
 		return
 	return inject_mob(M, user)
 
@@ -300,8 +340,7 @@
 	loaded_vial = new /obj/item/reagent_containers/glass/beaker/vial(src)
 	volume = loaded_vial.volume
 	reagents.maximum_volume = loaded_vial.reagents.maximum_volume
-	// adopt the vial's transfer amount so each injection uses the expected quantity
-	amount_per_transfer_from_this = loaded_vial.amount_per_transfer_from_this
+	// Keep default 5u injection amount; do not adopt from vial so the counter is not reset on vial swap
 
 	// Ensure the icon reflects the newly-loaded vial
 	update_icon()
@@ -358,7 +397,10 @@
 				W = A
 				break
 		// If we didn't find a vial or the action was interrupted, abort.
-		if(!W || !do_after(user, 1 SECOND, src) || !(W in user))
+		if(!W)
+			return TRUE
+		playsound(src.loc, 'sound/machines/click.ogg', 25, 1)
+		if(!do_after(user, vial_swap_time, src) || !(W in user))
 			return TRUE
 		// Try to unequip the vial from the user into the hypospray. Some edge cases
 		// (slot inaccessible, custom mob logic) may make unEquip fail; attempt a safe
@@ -387,13 +429,11 @@
 			W.update_icon()
 		loaded_vial = W
 		reagents.maximum_volume = loaded_vial.reagents.maximum_volume
-		// adopt the vial's volume and transfer amount so each injection uses the expected quantity
+		// adopt the vial's volume only; do not reset injection amount when inserting a vial
 		volume = loaded_vial.volume
-		amount_per_transfer_from_this = loaded_vial.amount_per_transfer_from_this
 		loaded_vial.reagents.trans_to_holder(reagents, volume)
 		user.visible_message(SPAN_NOTICE("[user] has loaded [W] into \the [src]."),SPAN_NOTICE("[usermessage]"))
 		update_icon()
-		playsound(src.loc, 'sound/weapons/empty.ogg', 50, 1)
 		return TRUE
 	return FALSE
 
@@ -431,9 +471,11 @@
 		return TRUE
 
 /obj/item/reagent_containers/hypospray/vial/combat
-	// Combat variant of the vial hypospray: different icons for loaded/empty
-	name = "SI combat hypospray"
-	desc = "The Soteria combat hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients while under hostile fire. Uses a replaceable 30u vial and can inject through armour, in addition to being much faster than other models."
+	// Combat variant of the vial hypospray: different icons for loaded/empty, faster vial swap
+	vial_swap_time = 0.8 SECONDS
+	injection_sound = 'sound/weapons/hypo_combat.ogg'
+	name = "VA combat hypospray"
+	desc = "A VA branded Vesalius-Andra combat hypospray: a sterile, air-needle autoinjector for rapid administration of drugs to patients while under hostile fire. Uses a replaceable 30u vial and can inject through armour, in addition to being much faster than other models."
 	icon_state = "combat_hypo"
 	item_state = "combat_hypo"
 	time = 0 // faster inject time for combat variant (seconds)
@@ -444,6 +486,20 @@
 		icon_state = "combat_hypo"
 	else
 		icon_state = "combat_hypo_empty"
+
+/obj/item/reagent_containers/hypospray/vial/combat/cbo
+	// CBO-issue combat hypospray: same stats as combat, but uses normal hypo icon and clean sound
+	injection_sound = 'sound/weapons/hypo_clean.ogg'
+	name = "VA combat hypospray"
+	desc = "A VA branded Vesalius-Andra combat hypospray: a sterile, air-needle autoinjector for rapid administration of drugs to patients while under hostile fire. Uses a replaceable 30u vial and can inject through armour, in addition to being much faster than other models."
+	icon_state = "hypo"
+	item_state = "hypo"
+
+/obj/item/reagent_containers/hypospray/vial/combat/cbo/update_icon()
+	if(loaded_vial)
+		icon_state = "hypo"
+	else
+		icon_state = "hypo_empty"
 
 /obj/item/reagent_containers/hypospray/autoinjector
 	name = "autoinjector (inaprovaline)"
@@ -464,7 +520,7 @@
 
 /obj/item/reagent_containers/hypospray/autoinjector/sugar
 	name = "autoinjector (Emergency Glucose)"
-	desc = "A Soteria proprietary injector. Meant for even the most dull-minded individuals, these are marked with a stylized symbol of a Cortical Borer. For emergencies, rogue borers, and-or diabetic shock."
+	desc = "A Vesalius-Andra proprietary injector. Meant for even the most dull-minded individuals, these are marked with a stylized symbol of a Cortical Borer. For emergencies, rogue borers, and-or diabetic shock."
 	preloaded_reagents = list("sugar" = 5)
 	can_be_refilled = FALSE
 	injtime = 5
@@ -641,7 +697,7 @@
 
 /obj/item/reagent_containers/hypospray/autoinjector/large //bigger storage, not refillable. great for medical to sell, I suppose?
 	name = "advanced autoinjector" //placeholder
-	desc = "A larger, more robust autoinjector whos design prevents refilling, but allows for much more storage. A proprietary Soteria design."
+	desc = "A larger, more robust autoinjector whos design prevents refilling, but allows for much more storage. A proprietary Vesalius-Andra design."
 	icon_state = "supeyrette" //fancy animated sprite courtesy of Guidesu.
 	item_state = "supeyrette"
 	amount_per_transfer_from_this = 10
@@ -673,7 +729,7 @@
 
 /obj/item/reagent_containers/hypospray/autoinjector/large/blood
 	name = "adv-bleed repair advanced autoinjector"
-	preloaded_reagents = list("nanoblood" = 2, "sanguinum" = 5, "quickclot" = 3)
+	preloaded_reagents = list("nanofluid" = 2, "sanguinum" = 5, "quickclot" = 3)
 
 /obj/item/reagent_containers/hypospray/autoinjector/large/antirad
 	name = "adv-antirad advanced autoinjector"

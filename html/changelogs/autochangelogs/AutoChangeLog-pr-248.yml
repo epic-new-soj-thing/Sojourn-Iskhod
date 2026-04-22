@@ -1,0 +1,13 @@
+author: AMcilraith
+changes:
+  - balance: Reduced drone spawn delay from 10 minutes to 5 minutes.
+  - balance: Adjusted cryopod spawn bonus from 20 minutes to 15 minutes for 
+      reduced respawn time.
+  - fix: Improved logging of debug messages for admins to enhance filter 
+      capabilities.
+  - tweak: Updated admin logs to avoid entries for non-human occupants in 
+      storage.
+  - tweak: Enhanced cryopod functionality to check for injured human bodies 
+      before reducing respawn time.
+date: '2025-09-25'
+delete-after: false

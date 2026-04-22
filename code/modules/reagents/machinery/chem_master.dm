@@ -1,12 +1,14 @@
-
 /obj/machinery/chem_master
-	name = "ChemMaster 3000"
+	name = "ChemMaster 4500"
 	density = TRUE
 	anchored = TRUE
 	layer = BELOW_OBJ_LAYER
 	circuit = /obj/item/circuitboard/chemmaster
 	icon = 'icons/obj/chemical.dmi'
-	icon_state = "mixer0"
+	icon_state = "chemmaster"
+	var/base_icon_state = "chemmaster"
+	/// Icon state prefix for overlay sprites; defaults to base_icon_state if unset (e.g. condimaster can use "chemmaster" overlays)
+	var/overlay_icon_state = null
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 20
 	var/obj/item/reagent_containers/glass/beaker = null
@@ -22,6 +24,43 @@
 	var/max_pill_count = 24 //max of pills that can be made in a bottle
 	var/max_pill_vol = 60 //max vol pills can have
 	reagent_flags = OPENCONTAINER
+	/// TRUE while creating pills/bottles/syrettes; drives overlay_screen_active
+	var/is_printing = FALSE
+
+/obj/machinery/chem_master/proc/update_chem_master_icon()
+	cut_overlays()
+	var/overlay_base = overlay_icon_state || base_icon_state
+	// Beaker slot
+	if(beaker)
+		add_overlay(mutable_appearance(icon, "[overlay_base]_overlay_container"))
+	// Broken and panel
+	if(stat & BROKEN)
+		add_overlay(mutable_appearance(icon, "[overlay_base]_overlay_broken"))
+	if(panel_open)
+		add_overlay(mutable_appearance(icon, "[overlay_base]_overlay_panel"))
+	// Extruder (idle or active when printing)
+	add_overlay(mutable_appearance(icon, is_printing ? "[overlay_base]_overlay_extruder_active" : "[overlay_base]_overlay_extruder"))
+	// Screen and glow when closed and operational
+	if(!panel_open && !inoperable())
+		var/screen_overlay = "[overlay_base]_overlay_screen"
+		if(is_printing)
+			screen_overlay += "_active"
+		else if(reagents?.total_volume > 0)
+			screen_overlay += "_main"
+		add_overlay(mutable_appearance(icon, screen_overlay))
+		set_light(1, 1, "#fffb00")
+	else
+		set_light(0)
+
+/obj/machinery/chem_master/Initialize(mapload)
+	. = ..()
+	update_chem_master_icon()
+
+/obj/machinery/chem_master/power_change()
+	. = ..()
+	if(inoperable())
+		is_printing = FALSE
+	update_chem_master_icon()
 
 /obj/machinery/chem_master/RefreshParts()
 	if(!reagents)
@@ -30,6 +69,7 @@
 	for(var/obj/item/reagent_containers/glass/G in component_parts)
 		reagents.maximum_volume += G.volume
 		G.reagents.trans_to_holder(reagents, G.volume)
+	update_chem_master_icon()
 
 /obj/machinery/chem_master/on_deconstruction()
 	for(var/obj/item/reagent_containers/glass/G in component_parts)
@@ -56,7 +96,7 @@
 			beaker = I
 			to_chat(user, SPAN_NOTICE("You add [I] to [src]."))
 			SStgui.update_uis(src)
-			icon_state = "mixer1"
+			update_chem_master_icon()
 			return
 	. = ..()
 
@@ -75,6 +115,7 @@
 
 /obj/machinery/chem_master/attackby(obj/item/B, mob/user)
 	if(default_deconstruction(B, user))
+		update_chem_master_icon()
 		return
 
 	if(default_part_replacement(B, user))
@@ -93,7 +134,7 @@
 		if(user.unEquip(B, src))
 			beaker = B
 			to_chat(user, "You add the beaker to the machine!")
-			icon_state = "mixer1"
+			update_chem_master_icon()
 		SStgui.update_uis(src)
 		return
 
@@ -190,7 +231,7 @@
 				beaker.forceMove(loc)
 				beaker = null
 				reagents.clear_reagents()
-				icon_state = "mixer0"
+				update_chem_master_icon()
 			. = TRUE
 		if("toggle_mode")
 			mode = !mode
@@ -205,6 +246,7 @@
 				amount = tgui_input_number(usr, "Select the amount to transfer.", "Transfer Amount", amount)
 			var/target = params["target"]
 			transfer(id, amount, target)
+			update_chem_master_icon()
 			. = TRUE
 		if("print")
 			var/type = params["type"]
@@ -320,6 +362,8 @@
 		PB.matter = list()
 		PB.icon_state = "[pill_bottle_sprite]"
 
+	is_printing = TRUE
+	update_chem_master_icon()
 	while(reagents.total_volume)
 		var/obj/item/reagent_containers/pill/P = new/obj/item/reagent_containers/pill(loc)
 		if(!name)
@@ -331,12 +375,16 @@
 		reagents.trans_to_obj(P, amount_per_pill)
 		if(PB)
 			P.forceMove(PB)
+	is_printing = FALSE
+	update_chem_master_icon()
 
 /obj/machinery/chem_master/proc/create_bottle()
 	if(!condi)
 		var/name = tgui_input_text(usr, "Name:", "Name your bottle!", reagents.get_master_reagent_name(), max_length = MAX_NAME_LEN)
 		if(!name)
 			return
+		is_printing = TRUE
+		update_chem_master_icon()
 		var/obj/item/reagent_containers/glass/bottle/P = new /obj/item/reagent_containers/glass/bottle(loc)
 		P.name = "[name] bottle"
 		P.pixel_x = rand(-7, 7) //random position
@@ -352,14 +400,22 @@
 		if(P.name != " bottle")		// it can be named "bottle" if you create a bottle with no reagents in buffer (it doesn't work without a space in the name, trust me)
 			P.force_label = TRUE	// if this isn't the case we force a label on the sprite
 		P.toggle_lid()
+		is_printing = FALSE
+		update_chem_master_icon()
 	else
+		is_printing = TRUE
+		update_chem_master_icon()
 		var/obj/item/reagent_containers/condiment/P = new/obj/item/reagent_containers/condiment(loc)
 		reagents.trans_to_obj(P, 50)
+		is_printing = FALSE
+		update_chem_master_icon()
 
 /obj/machinery/chem_master/proc/create_syrette()
 	var/name = tgui_input_text(usr, "Name:", "Name your syrette!", reagents.get_master_reagent_name(), max_length = MAX_NAME_LEN)
 	if(!name)
 		return
+	is_printing = TRUE
+	update_chem_master_icon()
 	var/obj/item/reagent_containers/hypospray/autoinjector/chemmaters/P = new /obj/item/reagent_containers/hypospray/autoinjector/chemmaters(loc)
 	P.name = "[name] syrette"
 	P.pixel_x = rand(-7, 7) //random position
@@ -370,11 +426,15 @@
 	P.baseline_sprite = syrettesprite
 	reagents.trans_to_obj(P,5)
 	P.update_icon()
+	is_printing = FALSE
+	update_chem_master_icon()
 
 /obj/machinery/chem_master/proc/create_supeyrette()
 	var/name = tgui_input_text(usr, "Name:", "Name your advanced syrette!", reagents.get_master_reagent_name(), max_length = MAX_NAME_LEN)
 	if(!name)
 		return
+	is_printing = TRUE
+	update_chem_master_icon()
 	var/obj/item/reagent_containers/hypospray/autoinjector/large/chemmaters/P = new /obj/item/reagent_containers/hypospray/autoinjector/large/chemmaters(loc)
 	P.name = "[name] advanced syrette"
 	P.pixel_x = rand(-7, 7) //random position
@@ -382,22 +442,41 @@
 	P.matter = list()
 	reagents.trans_to_obj(P,10)
 	P.update_icon()
+	is_printing = FALSE
+	update_chem_master_icon()
 
 /obj/machinery/chem_master/proc/change_sprite(type, sprite)
 	switch(type)
 		if("pill")
 			pillsprite = sprite
+			return TRUE
 		if("bottle")
 			bottlesprite = sprite
+			return TRUE
 		if("syrette")
 			syrettesprite = sprite
+			return TRUE
 		if("pill_bottle")
 			pill_bottle_sprite = sprite
-		else
-			return FALSE
-	return TRUE
+			return TRUE
+	return FALSE
 
 /obj/machinery/chem_master/condimaster
 	name = "CondiMaster 3000"
+	icon_state = "condimaster"
+	base_icon_state = "condimaster"
+	overlay_icon_state = "chemmaster"
 	condi = TRUE
 	simple_machinery = TRUE
+
+/obj/machinery/chem_master/medical
+	name = "MediMaster 6000"
+
+/obj/machinery/chem_master/medical/Initialize()
+	. = ..()
+	for(var/obj/item/reagent_containers/glass/beaker/B in component_parts)
+		component_parts -= B
+		qdel(B)
+	component_parts += new /obj/item/reagent_containers/glass/beaker/large(src)
+	component_parts += new /obj/item/reagent_containers/glass/beaker/large(src)
+	RefreshParts()

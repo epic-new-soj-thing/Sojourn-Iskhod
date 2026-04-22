@@ -21,6 +21,7 @@
 	item_flags = COVER_PREVENT_MANIPULATION
 	siemens_coefficient = 0.9
 	price_tag = 50
+	transfer_fibers = FALSE
 
 /obj/item/clothing/suit/bio_suit
 	name = "bio suit"
@@ -32,6 +33,7 @@
 	permeability_coefficient = 0.01
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	item_flags = COVER_PREVENT_MANIPULATION
+	transfer_fibers = FALSE
 	slowdown = 0.4
 	armor_list = list(
 		melee = 0,

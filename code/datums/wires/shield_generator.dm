@@ -8,9 +8,19 @@
 	)
 
 var/const/SHIELDGEN_WIRE_POWER = 1			// Cut to disable power input into the generator. Pulse does nothing. Mend to restore.
+var/const/SHIELDGEN_WIRE_SPARE = 2
 var/const/SHIELDGEN_WIRE_CONTROL = 4		// Cut to lock most shield controls. Mend to unlock them. Pulse does nothing.
 var/const/SHIELDGEN_WIRE_AICONTROL = 8		// Cut to disable AI control. Mend to restore.
 var/const/SHIELDGEN_WIRE_NOTHING = 16		// A blank wire that doesn't have any specific function
+
+/datum/wires/shield_generator
+	descriptions = list(
+		new /datum/wire_description(SHIELDGEN_WIRE_POWER, "Main power"),
+		new /datum/wire_description(SHIELDGEN_WIRE_SPARE, "Spare"),
+		new /datum/wire_description(SHIELDGEN_WIRE_CONTROL, "Physical access"),
+		new /datum/wire_description(SHIELDGEN_WIRE_AICONTROL, "Remote access"),
+		new /datum/wire_description(SHIELDGEN_WIRE_NOTHING, "Spare")
+	)
 
 /datum/wires/shield_generator/CanUse()
 	var/obj/machinery/power/shield_generator/S = holder

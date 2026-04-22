@@ -245,7 +245,7 @@
 /datum/reagent/drug/psi_juice
 	name = "Cerebrix"
 	id = "psi_juice"
-	description = "A rare chemical originally developed by the Soteria, this quasi-stimulant enhances the mind of a psion and restores their psi essence. However its highly addictive and highly \
+	description = "A rare chemical originally developed by the Vesalius-Andra, this quasi-stimulant enhances the mind of a psion and restores their psi essence. However its highly addictive and highly \
 	dangerous if overdosed. Useless to non-psions. Has a secondary effect when drank that causes the user to enhance their cognitive abilities."
 	taste_description = "ascension"
 	color = "#E700E7"
@@ -476,29 +476,24 @@
 				var/obj/item/organ/internal/N = H.random_organ_by_process(OP_BONE)
 				create_overdose_wound(N, M, /datum/component/internal_wound/organic/permanent, "mutagenic growth")
 
-/datum/reagent/drug/nanoblood
-	name = "Nanoblood"
-	id = "nanoblood"
-	description =  "A highly dangerous and highly advanced Erythropoiesis-stimulant. Typically reserved for high-end paramedic services or military hospitals - any instance where the \
-	low LD-50 and difficulty of synthesis can be considered acceptable in the face of its rapid effectiveness even in low doses. Must be stored at temperatures not significantly higher\
-	than the human body."
+/datum/reagent/drug/nanofluid
+	name = "Nanofluid"
+	id = "nanofluid"
+	description =  "A highly advanced universal Erythropoiesis-stimulant. Functions as universal blood substitute at a 2:1 ratio (1 unit nanofluid restores as much as 2 units of blood). \
+	Typically reserved for high-end paramedic services or military hospitals. Must be stored at temperatures not significantly higher than the human body."
 	taste_description = "copper and batteries"
 	reagent_state = LIQUID
 	metabolism = REM
-	overdose = REAGENTS_OVERDOSE/10
-	color = "#492626"
+	overdose = 0
+	color = "#B0B8C4"
 
-/datum/reagent/drug/nanoblood/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	M.add_chemical_effect(CE_BLOODRESTORE, 4.5 * effect_multiplier)
-
-/datum/reagent/drug/nanoblood/overdose(var/mob/living/carbon/M, var/alien)
-	M.add_side_effect("Headache", 11) //hypertension
-	M.add_chemical_effect(CE_PULSE, 2)
-	M.adjustCloneLoss(6) //rapidly growing cancer, it was nice knowing you friend.
+/datum/reagent/drug/nanofluid/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	// 2:1 blood to nanofluid ratio - 1 unit nanofluid = 2 units blood restoration
+	M.add_chemical_effect(CE_BLOODRESTORE, 2 * effect_multiplier)
 
 
 /datum/reagent/drug/nanobad
-	name = "Ruined Nanoblood"
+	name = "Ruined Nanofluid"
 	id = "nanobad"
 	taste_description = "rotting copper"
 	reagent_state = LIQUID
@@ -506,7 +501,7 @@
 	overdose = REAGENTS_OVERDOSE/10
 	color = "#8a0303"
 	description = "A highly dangerous and highly advanced Erythropoiesis-stimulant that has been improperly stored. Generally identifiable by an off-color, if it has not been kept in incorrect\
-	 conditions for too long it will likely still work albeit notably less potently, though side effects are highly likely."
+	 conditions for too long it will likely still work albeit notably less potently, though side effects are highly likely. Ruined nanofluid."
 
 /datum/reagent/drug/nanobad/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_BLOODRESTORE, 3 * effect_multiplier)

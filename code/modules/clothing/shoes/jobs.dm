@@ -73,7 +73,7 @@
 	siemens_coefficient = 0.5
 
 /obj/item/clothing/shoes/reinforced/medical
-	name = "soteria reinforced shoes"
+	name = "vesalius-andra reinforced shoes"
 	desc = "Slightly reinforced shoes for soteria medical personnel."
 	icon_state = "medshoes"
 	item_state = "medshoes"
@@ -117,7 +117,7 @@
 
 /obj/item/clothing/shoes/hermes_shoes
 	name = "Hermes Boots"
-	desc = "Boots used by the faithful to spread the word of the Absolute more effectively by having hidden small wheels under the heel. Sadly not all that good at protecting your feet as other more robust boots."
+	desc = "Boots used by the faithful to spread the Word more effectively by having hidden small wheels under the heel. Sadly not all that good at protecting your feet as other more robust boots."
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	matter = list(MATERIAL_BIOMATTER = 10, MATERIAL_PLASTIC = 2, MATERIAL_SILVER = 2, MATERIAL_GOLD = 2)
 	icon_state = "hermes"

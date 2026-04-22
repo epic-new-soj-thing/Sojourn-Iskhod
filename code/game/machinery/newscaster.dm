@@ -366,32 +366,38 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 		return 1
 
 	// Messages were selected newest-first; insert them so channels end up in chronological order
+	// Use numeric-index list (1=id, 2=channel_id, 3=author, 4=body, 5=message_type, 6=time_stamp, 7=is_admin_message) to avoid bad index on associative access
 	var/list/msg_buffer = list()
 	while(q2.NextRow())
-		var/msgrec = list(
-			"id" = text2num(q2.item[1]),
-			"channel_id" = text2num(q2.item[2]),
-			"author" = q2.item[3],
-			"body" = q2.item[4],
-			"message_type" = q2.item[5],
-			"time_stamp" = q2.item[6],
-			"is_admin_message" = q2.item[7]
+		if(length(q2.item) < 7)
+			continue
+		msg_buffer += list(
+			text2num(q2.item[1]),
+			text2num(q2.item[2]),
+			q2.item[3],
+			q2.item[4],
+			q2.item[5],
+			q2.item[6],
+			q2.item[7]
 		)
-		msg_buffer += msgrec
 	q2.Close()
 
 	for(var/I = msg_buffer.len; I >= 1; I--)
-		var/m = msg_buffer[I]
-		var/datum/feed_channel/FC = channel_by_id["[m["channel_id"]]"]
+		var/list/m = msg_buffer[I]
+		if(!islist(m) || length(m) < 7)
+			continue
+		var/ch_id = m[2]
+		var/msg_id = m[1]
+		var/datum/feed_channel/FC = channel_by_id["[ch_id]"]
 		if(!FC)
-			log_debug("Newscaster: message [m["id"]] references unknown/missing channel ID [m["channel_id"]]; skipping")
+			log_debug("Newscaster: message [msg_id] references unknown/missing channel ID [ch_id]; skipping")
 			continue
 		var/datum/feed_message/newMsg = new /datum/feed_message
 		// Normalize DB-loaded fields: some DB rows may have surrounding single quotes
 		// due to earlier sanitizeSQL behavior. Strip them if present.
-		var/loaded_author = m["author"]
-		var/loaded_body = m["body"]
-		var/loaded_type = m["message_type"]
+		var/loaded_author = m[3]
+		var/loaded_body = m[4]
+		var/loaded_type = m[5]
 		if(loaded_author && dd_hasprefix(loaded_author, "'") && dd_hassuffix(loaded_author, "'"))
 			loaded_author = copytext(loaded_author, 2, -1)
 		if(loaded_body && dd_hasprefix(loaded_body, "'") && dd_hassuffix(loaded_body, "'"))
@@ -401,10 +407,10 @@ var/datum/feed_network/news_network = new /datum/feed_network     //The global n
 
 		newMsg.author = loaded_author
 		newMsg.body = loaded_body
-		newMsg.time_stamp = m["time_stamp"]
-		newMsg.is_admin_message = text2num(m["is_admin_message"])
+		newMsg.time_stamp = m[6]
+		newMsg.is_admin_message = text2num(m[7])
 		// store DB id for later persistence actions
-		newMsg.db_id = m["id"]
+		newMsg.db_id = m[1]
 		if(loaded_type)
 			newMsg.message_type = loaded_type
 

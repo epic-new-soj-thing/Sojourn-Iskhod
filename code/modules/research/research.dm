@@ -100,6 +100,64 @@ Procs:
 
 	return TRUE
 
+/// Ordered queue of nodes "Research All" would unlock (same logic as cost); covert tree included if shown.
+/// Returns list(total_cost, count, list_of_nodes).
+/datum/research/proc/get_research_all_plan()
+	var/list/simulated_levels = list()
+	for(var/tree in researched_tech)
+		var/datum/tech/T = tree
+		simulated_levels[T.type] = T.level
+
+	var/list/to_unlock = list()
+	var/added_any = TRUE
+	while(added_any)
+		added_any = FALSE
+		for(var/datum/technology/tech_node in SSresearch.all_tech_nodes)
+			if(IsResearched(tech_node))
+				continue
+			var/datum/tech/mytree = locate(tech_node.tech_type) in researched_tech
+			if(!mytree || !mytree.shown)
+				continue
+			if(tech_node in to_unlock)
+				continue
+
+			var/levels_ok = TRUE
+			for(var/req_tree in tech_node.required_tech_levels)
+				var/req_level = tech_node.required_tech_levels[req_tree]
+				var/sim_level = simulated_levels[req_tree] || 0
+				if(sim_level < req_level)
+					levels_ok = FALSE
+					break
+			if(!levels_ok)
+				continue
+
+			var/techs_ok = TRUE
+			for(var/req_tech in tech_node.required_technologies)
+				var/datum/technology/other = locate(req_tech) in SSresearch.all_tech_nodes
+				if(!other)
+					techs_ok = FALSE
+					break
+				if(!IsResearched(other) && !(other in to_unlock))
+					techs_ok = FALSE
+					break
+			if(!techs_ok)
+				continue
+
+			to_unlock += tech_node
+			simulated_levels[tech_node.tech_type] = (simulated_levels[tech_node.tech_type] || 0) + 1
+			added_any = TRUE
+			break
+
+	var/total_cost = 0
+	for(var/datum/technology/T in to_unlock)
+		total_cost += T.cost
+	return list(total_cost, to_unlock.len, to_unlock)
+
+/// Returns list(total_cost, count) for all nodes that would be unlocked by "Research All", including covert tree if shown.
+/datum/research/proc/get_research_all_cost()
+	var/list/plan = get_research_all_plan()
+	return list(plan[1], plan[2])
+
 /datum/research/proc/download_from(datum/research/O)
 	for(var/t in O.researched_tech)
 		var/datum/tech/tree = t
@@ -113,6 +171,11 @@ Procs:
 			var/datum/technology/T = tech
 			if(UnlockTechology(T, force = TRUE))
 				. = TRUE // we actually updated something
+
+	// Copy known designs (e.g. starting_designs like basic robot arms) that aren't from tech unlocks
+	for(var/datum/design/D in O.known_designs)
+		AddDesign2Known(D)
+
 	known_research_file_ids |= O.known_research_file_ids
 	experiments.merge_with(O.experiments)
 
@@ -271,7 +334,7 @@ Procs:
 	item_tech_req = TECH_ILLEGAL // research any contractor item and this tech will show up
 
 /datum/tech/psi
-	name = "Soteria Psionic Research"
+	name = "Vesalius-Andra Psionic Research"
 	shortname = "Psionic Tech"
 	desc = "Research into the unknown that is Psionics"
 	rare = 2

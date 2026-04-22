@@ -15,7 +15,7 @@
  *		Handcuff, mousetrap, and pillbottle boxes,
  *		Snap-pops and matchboxes,
  *		Replacement light boxes,
- *		Blackshield uniform boxes.
+ *		Ranger uniform boxes.
  *
  *		For syndicate call-ins see uplink_kits.dm
  */
@@ -168,6 +168,21 @@
 /obj/item/storage/box/bottles/populate_contents()
 	for(var/i in 1 to 7)
 		new /obj/item/reagent_containers/glass/bottle(src)
+
+/obj/item/storage/box/pen_protector
+	name = "pen protector"
+	desc = "A sturdy sleeve for keeping pens safe and to hand. Favoured by archivists and clerks."
+	icon_state = "box"
+	item_state = "box"
+	illustration = "writing"
+	storage_slots = 6
+	can_hold = list(/obj/item/pen)
+	max_w_class = ITEM_SIZE_TINY
+
+/obj/item/storage/box/pen_protector/populate_contents()
+	new /obj/item/pen(src)
+	new /obj/item/pen/blue(src)
+	new /obj/item/pen/red(src)
 
 /obj/item/storage/box/bodybags
 	name = "body bags"
@@ -677,7 +692,7 @@
 	return
 
 /obj/item/storage/box/autoinjectors
-	name = "box of emergency sugar injectors"
+	name = "box of emergency inaprovaline injectors"
 	desc = "Contains auto-injectors meant for usage in an uncontrolled borer infection."
 	illustration = "syringe"
 
@@ -744,52 +759,51 @@ Boxes with clothing on them, unable to put them back if taken out because...
 ...well, boxes can't normally fit clothes on them!
 */
 
-/obj/item/storage/box/trooperuniform
-	name = "Trooper/Corpsman Service and Dress Kit"
-	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
+/obj/item/storage/box/rangeruniform
+	name = "Ranger/Detective Service and Dress Kit"
+	desc = "Box that contained a bluespace sealed Ranger Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
 	icon_state = "box"
 
 	New()
 		..()
-		new /obj/item/clothing/under/rank/trooper/service(src)
-		new /obj/item/clothing/suit/rank/trooper/service(src)
-		new /obj/item/clothing/suit/rank/trooper/dress(src)
-		new /obj/item/clothing/head/rank/trooperdress(src)
-		new /obj/item/clothing/accessory/tie/navy(src)
-		new /obj/item/clothing/shoes/laceup(src)
-		new /obj/item/clothing/accessory/armband/militia(src)
-		new /obj/item/clothing/accessory/armband/corpsman(src)
-
-/obj/item/storage/box/sergeantuniform
-	name = "Sergeant Service and Dress Kit"
-	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
-	icon_state = "box"
-
-	New()
-		..()
-		new /obj/item/clothing/under/rank/armorer/service(src)
-		new /obj/item/clothing/suit/rank/armorer/service(src)
-		new /obj/item/clothing/suit/rank/armorer/dress(src)
-		new /obj/item/clothing/head/rank/trooperdress(src)
+		new /obj/item/clothing/under/rank/ranger/service(src)
+		new /obj/item/clothing/suit/rank/ranger/service(src)
+		new /obj/item/clothing/suit/rank/ranger/dress(src)
+		new /obj/item/clothing/head/rank/ranger/beret/service(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
 
-/obj/item/storage/box/commanderuniform
-	name = "Commander Service and Dress Kit"
-	desc = "Box that contained a bluespace sealed Blackshield Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
+/obj/item/storage/box/lieutenantuniform
+	name = "Lieutenant Service and Dress Kit"
+	desc = "Box that contained a bluespace sealed Ranger Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
 	icon_state = "box"
 
 	New()
 		..()
-		new /obj/item/clothing/under/rank/commander_service(src)
-		new /obj/item/clothing/suit/rank/commander_service(src)
-		new /obj/item/clothing/head/rank/commanderdress(src)
+		new /obj/item/clothing/under/rank/ranger/service/officer(src)
+		new /obj/item/clothing/suit/rank/ranger/service/officer(src)
+		new /obj/item/clothing/suit/rank/ranger/dress/officer(src)
+		new /obj/item/clothing/head/rank/ranger/beret/service/officer(src)
+		new /obj/item/clothing/accessory/tie/navy(src)
+		new /obj/item/clothing/shoes/laceup(src)
+
+/obj/item/storage/box/captainuniform
+	name = "Captain Service and Dress Kit"
+	desc = "Box that contained a bluespace sealed Ranger Service Uniform and Dress Uniform. Once items are removed, they won't fit again."
+	icon_state = "box"
+
+	New()
+		..()
+		new /obj/item/clothing/under/rank/ranger/service/command(src)
+		new /obj/item/clothing/suit/rank/ranger/service/command(src)
+		new /obj/item/clothing/suit/rank/ranger/dress/command(src)
+		new /obj/item/clothing/head/rank/ranger/beret/service/command(src)
 		new /obj/item/clothing/accessory/tie/navy(src)
 		new /obj/item/clothing/shoes/laceup(src)
 
 /obj/item/storage/box/blankranks
 	name = "Box of Blank Ranks"
-	desc = "A box full of solid red, ''blank'' Blackshield ranks, for distribution to volunteers and cadets."
+	desc = "A box full of solid red, ''blank'' Iskhod Ranger ranks, for distribution to volunteers and cadets."
 	icon_state = "box"
 
 	New()
@@ -818,7 +832,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 // Guild boxes, exclusively used to mass craft guild parts.
 /obj/item/storage/box/guild_manip
 	name = "box of forged manipulators"
-	desc = "A box containing four forged manipulators, the best that Nadezhda can produce."
+	desc = "A box containing four forged manipulators, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -828,7 +842,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_bin
 	name = "box of cast matter bins"
-	desc = "A box containing four cast matter bins, the best that Nadezhda can produce."
+	desc = "A box containing four cast matter bins, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -838,7 +852,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_laser
 	name = "box of perfected micro-lasers"
-	desc = "A box containing four perfected micro-lasers, the best that Nadezhda can produce."
+	desc = "A box containing four perfected micro-lasers, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -848,7 +862,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_scanner
 	name = "box of perfected scanning modules"
-	desc = "A box containing four perfected scanning modules, the best that Nadezhda can produce."
+	desc = "A box containing four perfected scanning modules, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -858,7 +872,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/guild_capacitor
 	name = "box of ultra capacitors"
-	desc = "A box containing four ultra capacitors, the best that Nadezhda can produce."
+	desc = "A box containing four ultra capacitors, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "guild"
 
@@ -868,7 +882,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/greyson_manip
 	name = "box of femto manipulators"
-	desc = "A box containing four guild-enhanced greyson manipulators, the best that Nadezhda can produce."
+	desc = "A box containing four guild-enhanced greyson manipulators, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "writing"
 
@@ -878,7 +892,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/greyson_bin
 	name = "box of ultra-capacity matter bins"
-	desc = "A box containing four guild-enhanced greyson matter bins, the best that Nadezhda can produce."
+	desc = "A box containing four guild-enhanced greyson matter bins, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "writing"
 
@@ -888,7 +902,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/greyson_laser
 	name = "box of micro-lensed micro-lasers"
-	desc = "A box containing four guild-enhanced greyson micro-lasers, the best that Nadezhda can produce."
+	desc = "A box containing four guild-enhanced greyson micro-lasers, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "writing"
 
@@ -898,7 +912,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/greyson_scanner
 	name = "box of multi-phasic scanning modules"
-	desc = "A box containing four guild-enhanced greyson scanning modules, the best that Nadezhda can produce."
+	desc = "A box containing four guild-enhanced greyson scanning modules, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "writing"
 
@@ -908,7 +922,7 @@ Boxes with clothing on them, unable to put them back if taken out because...
 
 /obj/item/storage/box/greyson_capacitor
 	name = "box of hyper capacitors"
-	desc = "A box containing four guild-enhanced greyson capacitors, the best that Nadezhda can produce."
+	desc = "A box containing four guild-enhanced greyson capacitors, the best that Iskhod can produce."
 	icon_state = "box_of_doom"
 	illustration = "writing"
 

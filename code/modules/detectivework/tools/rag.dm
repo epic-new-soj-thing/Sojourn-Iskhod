@@ -102,7 +102,15 @@
 		update_name()
 		if(do_after(user,30, progress = 0))
 			user.visible_message("\The [user] finishes wiping off the [A]!")
-			A.clean_blood()
+			// Preserve was_bloodied so luminol still works; only remove visible blood.
+			if(isturf(A))
+				var/turf/T = A
+				T.clean_blood_preserve_was()
+				for(var/obj/effect/O in T)
+					if(istype(O, /obj/effect/decal/cleanable) || (istype(O, /obj/effect/overlay) && !istype(O, /obj/effect/overlay/water)))
+						qdel(O)
+			else
+				A.clean_blood_preserve_was()
 
 /obj/item/reagent_containers/glass/rag/attack(atom/target as obj|turf|area, mob/user as mob , flag)
 	if(isliving(target))

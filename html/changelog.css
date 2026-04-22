@@ -1,0 +1,180 @@
+/* Changelog – tgui-style theme (Iskhod Outpost) */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 12px;
+  font-family: Verdana, Geneva, sans-serif;
+  color: #fff;
+  background-color: #252525;
+  background-image: linear-gradient(to bottom, #2a2a2a, #202020);
+  min-height: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0.5rem;
+}
+
+a:link, a:visited {
+  color: #2185d0;
+}
+a:hover, a:active {
+  color: #4972a1;
+}
+
+/* Window / main container */
+.changelog-window {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+/* Section – tgui Section style */
+.changelog-section {
+  position: relative;
+  margin-bottom: 0.5em;
+  background-color: #191919;
+  background-color: rgba(0, 0, 0, 0.33);
+  box-sizing: border-box;
+}
+
+.changelog-section:last-child {
+  margin-bottom: 0;
+}
+
+.changelog-section__title {
+  position: relative;
+  padding: 0.5em;
+  border-bottom: 0.1666666667em solid #4972a1;
+}
+
+.changelog-section__title-text {
+  font-size: 1.1666666667em;
+  font-weight: 700;
+  color: #fff;
+}
+
+.changelog-section__content {
+  padding: 0.66em 0.5em;
+}
+
+/* Header block */
+.changelog-header {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.changelog-header__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5em;
+  color: #fff;
+}
+
+.changelog-header__links {
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+}
+
+.changelog-header__meta {
+  font-size: 0.9166666667em;
+  color: #8b9bb0;
+}
+
+/* Changelog entries */
+.changelog-entries {
+  margin-top: 1em;
+}
+
+.changelog-entries .date {
+  font-size: 1.333rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 1em 0 0.25em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.changelog-entries .date:first-child {
+  margin-top: 0;
+}
+
+.changelog-entries .author {
+  font-size: 1rem;
+  color: #8b9bb0;
+  margin: 0.5em 0 0.25em;
+}
+
+.changelog-entries .changes {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1em;
+}
+
+.changelog-entries .changes li {
+  padding: 0.2em 0;
+  padding-left: 1.25em;
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.changelog-entries .changes li::before {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+/* Change type colors (tgui-style) */
+.changelog-entries .add::before { content: "ADD: "; color: #25ca4c; }
+.changelog-entries .tweak::before { content: "TWEAK: "; color: #fbda21; }
+.changelog-entries .fix::before { content: "FIX: "; color: #2e93de; }
+.changelog-entries .del::before { content: "DEL: "; color: #df3e3e; }
+.changelog-entries .balance::before { content: "BALANCE: "; color: #f37f33; }
+.changelog-entries .soundadd::before { content: "SOUND: "; color: #00d6cc; }
+.changelog-entries .imageadd::before { content: "IMAGE: "; color: #ad45d0; }
+.changelog-entries .admin::before { content: "ADMIN: "; color: #7349cf; }
+.changelog-entries .server::before { content: "SERVER: "; color: #848484; }
+.changelog-entries .spellcheck::before { content: "SPELL: "; color: #b3b3b3; }
+.changelog-entries .rscadd::before { content: "RSC: "; color: #25ca4c; }
+.changelog-entries .code_imp::before { content: "CODE: "; color: #8b9bb0; }
+
+/* Footer */
+.changelog-footer {
+  margin-top: 1.5em;
+  padding: 0.5em;
+  background-color: rgba(0, 0, 0, 0.33);
+  font-size: 0.9166666667em;
+  color: #8b9bb0;
+}
+
+.changelog-footer .lic {
+  margin-top: 1em;
+  font-size: 0.9166666667em;
+  color: #848484;
+}
+
+/* Legacy table.top compatibility – make it tgui-like */
+table.top {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto 1em;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.33);
+}
+
+table.top td {
+  padding: 0.66em 0.5em;
+  color: #fff;
+  border: none;
+}
+
+/* Remove old font/center wrappers when used with new classes */
+.changelog-window font {
+  color: inherit;
+}

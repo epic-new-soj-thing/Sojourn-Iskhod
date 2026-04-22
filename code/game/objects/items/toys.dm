@@ -581,31 +581,31 @@
 
 /obj/item/toy/figure/character/moebius/cmo
 	name = "biolab overseer action figure"
-	desc = "The health of the crew is in their hands. Soteria 1/8."
+	desc = "The health of the crew is in their hands. Vesalius-Andra 1/8."
 	icon_state = "cmo"
 	toysay = "Suit sensors on, people!"
 
 /obj/item/toy/figure/character/moebius/rd
 	name = "research overseer action figure"
-	desc = "All research requests go through them. Soteria 2/8."
+	desc = "All research requests go through them. Vesalius-Andra 2/8."
 	icon_state = "rd"
 	toysay = "One day, I'll get a rubber ducky on my office..."
 
 /obj/item/toy/figure/character/moebius/md
 	name = "medical doctor action figure"
-	desc = "They'll do their best to uphold the oath. Soteria 3/8."
+	desc = "They'll do their best to uphold the oath. Vesalius-Andra 3/8."
 	icon_state = "md"
 	toysay = "You got the cash for treatment, right...?"
 
 /obj/item/toy/figure/character/moebius/psychologist
 	name = "psychologist action figure"
-	desc = "Diseases of the mind are just as deadly. Soteria 4/8."
+	desc = "Diseases of the mind are just as deadly. Vesalius-Andra 4/8."
 	icon_state = "psychologist"
 	toysay = "Just come and have a seat."
 
 /obj/item/toy/figure/character/moebius/paramedic
 	name = "lifeline technician action figure"
-	desc = "They'll go anywhere to save a life. Soteria 5/8."
+	desc = "They'll go anywhere to save a life. Vesalius-Andra 5/8."
 	icon_state = "paramedic"
 	toysay = "Your sensors are off, where are you?!"
 
@@ -617,26 +617,26 @@
 
 /obj/item/toy/figure/character/moebius/scientist
 	name = "scientist action figure"
-	desc = "Their experiments sometimes go wacky. Soteria 7/8."
+	desc = "Their experiments sometimes go wacky. Vesalius-Andra 7/8."
 	icon_state = "scientist"
 	toysay = "I swear that is just a new mutant tobacco strain I discovered, Officer..."
 
 /obj/item/toy/figure/character/moebius/roboticist
 	name = "roboticist action figure"
-	desc = "The master of machine life. Soteria 8/9."
+	desc = "The master of machine life. Vesalius-Andra 8/9."
 	icon_state = "roboticist"
 	toysay = "Alright, who wants to buy a Durand?"
 
 /obj/item/toy/figure/character/moebius/borg
 	name = "cyborg action figure"
-	desc = "A mechanical servant made by man. Soteria 9/9."
+	desc = "A mechanical servant made by man. Vesalius-Andra 9/9."
 	icon_state = "borg"
 	toysay = "I live again!"
 
 /*Command*/
 
 /obj/item/toy/figure/character/command/captain
-	name = "premier action figure"
+	name = "Facility Director action figure"
 	desc = "The man who thinks he is in charge around here. Command 1/4."
 	icon_state = "captain"
 	toysay = "Polish my sabre, peasants."
@@ -663,33 +663,33 @@
 
 /obj/item/toy/figure/character/guild/qm
 	name = "SOM action figure"
-	desc = "The money-minded manager of all cargo affairs. Lonestar 1/3."
+	desc = "The money-minded manager of all cargo affairs. Frontier Logistics 1/3."
 	icon_state = "qm"
 	toysay = "Charge for every drink and meal! Charge them even for breathing!"
 
 /obj/item/toy/figure/character/guild/cargotech
 	name = "technician action figure"
-	desc = "Noone is more experienced at moving crates. Lonestar 2/3."
+	desc = "Noone is more experienced at moving crates. Frontier Logistics 2/3."
 	icon_state = "cargotech"
 	toysay = "My back hurts."
 
 /obj/item/toy/figure/character/guild/miner
 	name = "miner action figure"
-	desc = "Will they find minerals, treasure, or monsters? Lonestar 3/3."
+	desc = "Will they find minerals, treasure, or monsters? Frontier Logistics 3/3."
 	icon_state = "miner"
 	toysay = "Yeah, yeah, 'I'm here' too- wait, who said that...?"
 
 /*Engineer*/
 
 /obj/item/toy/figure/character/technomancer/ce
-	name = "guild master figure"
+	name = "chief engineer figure"
 	desc = "The overseer of all construction and repair. Artificer 1/2."
 	icon_state = "ce"
 	toysay = "Respect the Cube."
 
 /obj/item/toy/figure/character/technomancer/engineer
-	name = "guild adept action figure"
-	desc = "There's little an Adept can't fix. Artificer 2/2."
+	name = "engineer action figure"
+	desc = "There's little an Engineer can't fix. Artificer 2/2."
 	icon_state = "engineer"
 	toysay = "How do I fix a stalling turbine?"
 
@@ -697,25 +697,25 @@
 
 /obj/item/toy/figure/character/ironhammer/hos
 	name = "warrant officer action figure"
-	desc = "The most formidable force on the station. Marshal 1/4."
+	desc = "The most formidable force on the station. Ranger 1/4."
 	icon_state = "hos"
 	toysay = "I'll be hugging my fax machine on my office if anyone needs me..."
 
 /obj/item/toy/figure/character/ironhammer/secofficer
 	name = "marshal officer action figure"
-	desc = "They don't make the law, but they enforce it. Marshal 2/4."
+	desc = "They don't make the law, but they enforce it. Ranger 2/4."
 	icon_state = "secofficer"
 	toysay = "Where's your gun case?"
 
 /obj/item/toy/figure/character/ironhammer/warden
 	name = "supply specialist figure"
-	desc = "Always keep plenty of ammo. Marshal 3/4."
+	desc = "Always keep plenty of ammo. Ranger 3/4."
 	icon_state = "warden"
 	toysay = "A-armory s-shop is o-op-pen."
 
 /obj/item/toy/figure/character/ironhammer/detective
 	name = "ranger action figure"
-	desc = "Some crimes can't be solved by force alone. Marshal 4/4."
+	desc = "Some crimes can't be solved by force alone. Ranger 4/4."
 	icon_state = "detective"
 	toysay = "Hmm, insulated glove fibers..."
 
@@ -734,7 +734,7 @@
 
 /obj/item/toy/figure/character/bobblehead/acolyte
 	name = "acolyte figurine"
-	desc = "Church of the Absolute \"New Faith Life\" brand figurine of a vector, hooded both physically and spiritually from that which would lead them astray."
+	desc = "A pre-Exodus \"New Faith Life\" figurine of a disciple, hooded both physically and spiritually from that which would lead them astray. Members of the Order of the Word keep such relics as reminders of the path they walked away from."
 	icon_state = "acolyte"
 	toysay = "\"Brotherhood.\""
 
@@ -754,7 +754,7 @@
 
 /obj/item/toy/figure/character/bobblehead/vagabond
 	name = "colonist figurine"
-	desc = "A Lonestar \"Space Life\" brand figurine showcasing the form of a random colonist, wearing one of the colony uniforms and an orange bandana. \
+	desc = "A Frontier Logistics \"Space Life\" brand figurine showcasing the form of a random colonist, wearing one of the colony uniforms and an orange bandana. \
 	Must of been custom-made to commemorate the colonies many colonists."
 	icon_state = "vagabond"
 	toysay = "\"What do you mean get a job?\""
@@ -785,7 +785,7 @@
 
 /obj/item/toy/figure/character/bobblehead/shitcurity
 	name = "shitcurity officer figurine"
-	desc = "A Lonestar \"Space Life\" brand figurine of a classic redshirt security employed in most space stations. Their belly distends out into an obvious beer gut, revealing no form of manufacturer bias what-so-ever."
+	desc = "A Frontier Logistics \"Space Life\" brand figurine of a classic redshirt security employed in most space stations. Their belly distends out into an obvious beer gut, revealing no form of manufacturer bias what-so-ever."
 	toysay = "\"I joined the force just to kill people.\""
 	icon_state = "shitcurity"
 

@@ -1,5 +1,6 @@
 #define REPORTS_VIEW      1
 #define REPORTS_DOWNLOAD  2
+#define REPORTS_PRINT_TEMPLATES 3
 
 /datum/computer_file/program/reports
 	filename = "repview"
@@ -18,6 +19,7 @@
 	var/datum/computer_file/report/selected_report     //A report being viewed/edited. This is a temporary copy.
 	var/datum/computer_file/report/saved_report        //The computer file open.
 	var/prog_state = REPORTS_VIEW
+	var/print_template_category = 0                    // Selected category for Print Blank Form (1-based)
 
 /datum/nano_module/program/reports/nano_ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = NANOUI_FOCUS, state = GLOB.default_state)
 	var/list/data = host.initial_data()
@@ -36,6 +38,13 @@
 				M["uid"] = report.uid
 				L += list(M)
 			data["reports"] = L
+		if(REPORTS_PRINT_TEMPLATES)
+			init_req_console_paperwork()
+			data["paperwork_categories"] = req_console_paperwork_categories
+			data["print_template_category"] = print_template_category
+			data["paperwork_forms"] = (print_template_category >= 1 && print_template_category <= length(req_console_paperwork_categories)) ? req_console_paperwork_categories[print_template_category]["forms"] : list()
+			data["paperwork_category_name"] = (print_template_category >= 1 && print_template_category <= length(req_console_paperwork_categories)) ? req_console_paperwork_categories[print_template_category]["name"] : ""
+			data["printer"] = program.computer.printer
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -57,6 +66,10 @@
 			program.requires_ntnet_feature = NTNET_SOFTWAREDOWNLOAD
 			program.requires_ntnet = 1
 			prog_state = REPORTS_DOWNLOAD
+		if(REPORTS_PRINT_TEMPLATES)
+			program.requires_ntnet_feature = null
+			program.requires_ntnet = 0
+			prog_state = REPORTS_PRINT_TEMPLATES
 
 /datum/nano_module/program/reports/proc/close_report()
 	QDEL_NULL(selected_report)
@@ -188,6 +201,26 @@
 	if(href_list["home"])
 		switch_state(REPORTS_VIEW)
 		return 1
+	if(href_list["print_blank_form"])
+		switch_state(REPORTS_PRINT_TEMPLATES)
+		return 1
+	if(href_list["set_print_template_category"])
+		print_template_category = text2num(href_list["set_print_template_category"])
+		return 1
+	if(href_list["print_blank_form_cat"] != null && href_list["print_blank_form_form"] != null)
+		if(!program.computer || !program.computer.printer)
+			to_chat(user, "Hardware error: No printer found.")
+			return 1
+		init_req_console_paperwork()
+		var/list/entry = get_paperwork_form_by_category(text2num(href_list["print_blank_form_cat"]), text2num(href_list["print_blank_form_form"]))
+		if(entry)
+			var/content = req_console_paperwork_to_pencode(entry["content"])
+			if(program.computer.printer.print_text(content, entry["name"]))
+				to_chat(user, "Printed: [entry["name"]].")
+			else
+				to_chat(user, "Hardware error: Printer was unable to print. It may be out of paper.")
+		return 1
 
 #undef REPORTS_VIEW
 #undef REPORTS_DOWNLOAD
+#undef REPORTS_PRINT_TEMPLATES

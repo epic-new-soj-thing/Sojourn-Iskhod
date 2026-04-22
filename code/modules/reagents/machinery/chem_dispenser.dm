@@ -6,16 +6,18 @@
 //To do, make matter bins, do something
 
 /obj/machinery/chemical_dispenser
-	name = "chem dispenser"
+	name = "ChemDispenser 3000"
+	desc = "A general-purpose chemical synthesizer. Dispenses base reagents into beakers; upgrade the manipulators to unlock more advanced chemicals."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "dispenser"
+	var/base_icon_state = "dispenser"
 	density = TRUE
 	anchored = TRUE
 	use_power = NO_POWER_USE // Handles power use in Process()
 	layer = BELOW_OBJ_LAYER
 	circuit = /obj/item/circuitboard/chemical_dispenser
 	var/fancy_hack = FALSE
-	var/ui_title = "Chem Dispenser 5000"
+	var/ui_title = "ChemDispenser 3000"
 	var/obj/item/cell/medium/cell
 	var/amount = 30
 	var/cell_charger_additon = 0 //This is not a TRUE/FALSE
@@ -39,6 +41,25 @@
 
 	var/list/hacked_reagents = list("mindbreaker", "cleaner") //USEFUL stuff
 	var/obj/item/reagent_containers/beaker = null
+	/// TRUE when the cell is charging (recharging reagents); used for active icon state
+	var/is_recharging = FALSE
+	/// Multiplier applied to the base recharge amount.
+	var/recharge_rate_multiplier = 1
+	/// Flat bonus applied after the multiplier.
+	var/recharge_flat_bonus = 0
+
+/obj/machinery/chemical_dispenser/update_icon()
+	cut_overlays()
+	if(stat & (BROKEN|NOPOWER))
+		icon_state = "[base_icon_state]_nopower"
+	else if(is_recharging)
+		icon_state = "[base_icon_state]_working"
+	else
+		icon_state = base_icon_state
+	if(panel_open)
+		add_overlay(mutable_appearance(icon, "[base_icon_state]_overlay_panel"))
+	if(beaker)
+		add_overlay(image(icon, "disp_beaker"))
 
 /obj/machinery/chemical_dispenser/RefreshParts()
 	cell = locate() in component_parts
@@ -73,12 +94,18 @@
 /obj/machinery/chemical_dispenser/proc/recharge()
 	if(stat & (BROKEN|NOPOWER)) return
 	//Calculates the charge rate. 800 battery starts at 48 which is high. So we pull that back a bit.
-	var/addenergy = cell.give(clamp((cell.maxcharge*cell.max_chargerate) / 2 + (cell_charger_additon*20 / 2),0,cell.maxcharge))
+	var/base_recharge = (cell.maxcharge*cell.max_chargerate) / 2 + (cell_charger_additon*20 / 2)
+	var/total_recharge = base_recharge * recharge_rate_multiplier + recharge_flat_bonus
+	var/addenergy = cell.give(clamp(total_recharge,0,cell.maxcharge))
 	if(addenergy)
 		use_power(addenergy / CELLRATE)
 		SStgui.update_uis(src)
 
 /obj/machinery/chemical_dispenser/Process()
+	var/was_recharging = is_recharging
+	is_recharging = cell && cell.percent() < 100 && !(stat & (BROKEN|NOPOWER))
+	if(was_recharging != is_recharging)
+		update_icon()
 	if(cell && cell.percent() < 100)
 		recharge()
 
@@ -103,8 +130,6 @@
 		hackedcheck = FALSE
 		return
 
-
-
 /obj/machinery/chemical_dispenser/Initialize()
 	. = ..()
 	dispensable_reagents = sortList(dispensable_reagents)
@@ -112,6 +137,8 @@
 		hackedcheck = !hackedcheck // Not sure what this var do, but better safe than sorry
 		dispensable_reagents += hacked_reagents // Add the hacked chems
 		SStgui.update_uis(src)
+	is_recharging = cell && cell.percent() < 100 && !(stat & (BROKEN|NOPOWER))
+	update_icon()
 
 /obj/machinery/chemical_dispenser/ex_act(severity)
 	switch(severity)
@@ -126,7 +153,7 @@
 /obj/machinery/chemical_dispenser/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "ChemDispenser", name)
+		ui = new(user, src, "ChemDispenser", ui_title)
 		ui.open()
 
 /obj/machinery/chemical_dispenser/ui_data(mob/user)
@@ -231,10 +258,12 @@
 
 			if(QUALITY_SCREW_DRIVING)
 				default_deconstruction(I, user)
+				update_icon()
 				return
 
 			if(QUALITY_PRYING)
 				default_deconstruction(I, user)
+				update_icon()
 				return
 
 			if(ABORT_CHECK)
@@ -283,13 +312,22 @@
 		return
 	ui_interact(user)
 
+// Compact desktop unit; new minidispenser with its own sprites and active state when recharging
+/obj/machinery/chemical_dispenser/mini
+	name = "MiniDispenser 1500"
+	desc = "A compact chemical synthesizer for small-scale reagent dispensing. Shows an active state while recharging."
+	icon_state = "minidispenser"
+	base_icon_state = "minidispenser"
+	ui_title = "Mini ChemDispenser"
+	circuit = /obj/item/circuitboard/chemical_dispenser/mini
+
 /obj/machinery/chemical_dispenser/soda
 	icon_state = "soda_dispenser"
-	name = "soda fountain"
+	base_icon_state = "soda_dispenser"
+	name = "SodaSpray 2000"
 	desc = "A drink fabricating machine, capable of producing many sugary drinks with just one touch."
 	layer = OBJ_LAYER
-	ui_title = "Soda Dispens-o-matic"
-	var/icon_on = "soda_dispenser"
+	ui_title = "SodaSpray 2000"
 	fancy_hack = FALSE
 	accept_beaker = FALSE
 	density = FALSE
@@ -330,19 +368,19 @@
 /obj/machinery/chemical_dispenser/soda/update_icon()
 	cut_overlays()
 	if(stat & (BROKEN|NOPOWER))
-		icon_state = icon_on+"_off"
+		icon_state = "[base_icon_state]_nopower"
 	else
-		icon_state = icon_on
-
-	if(beaker)
-		add_overlay(image(icon, icon_on+"_loaded"))
+		icon_state = base_icon_state
+	if(panel_open)
+		add_overlay(mutable_appearance(icon, "[base_icon_state]_overlay_panel"))
 
 /obj/machinery/chemical_dispenser/coffee_master
 	icon_state = "coffee_master"
-	name = "coffee master"
+	base_icon_state = "coffee_master"
+	name = "CoffeeMax 2000"
 	desc = "The only thing that can get some workers though the day."
 	layer = OBJ_LAYER
-	ui_title = "Coffee Master 3000"
+	ui_title = "CoffeeMax 2000"
 	fancy_hack = FALSE
 	accept_beaker = FALSE
 	density = FALSE
@@ -356,6 +394,15 @@
 	level4 = list("kahlua")
 	circuit = /obj/item/circuitboard/chemical_dispenser/coffee_master
 
+/obj/machinery/chemical_dispenser/coffee_master/update_icon()
+	cut_overlays()
+	if(stat & (BROKEN|NOPOWER))
+		icon_state = "[base_icon_state]_nopower"
+	else
+		icon_state = base_icon_state
+	if(panel_open)
+		add_overlay(mutable_appearance(icon, "[base_icon_state]_overlay_panel"))
+
 /obj/machinery/chemical_dispenser/coffee_master/ui_data(mob/user)
 	var/list/data = ..()
 
@@ -365,9 +412,10 @@
 
 /obj/machinery/chemical_dispenser/beer
 	icon_state = "booze_dispenser"
-	name = "booze dispenser"
+	base_icon_state = "booze_dispenser"
+	name = "BoozePortal 2500"
 	layer = OBJ_LAYER
-	ui_title = "Booze Portal 9001"
+	ui_title = "BoozePortal 2500"
 	fancy_hack = FALSE
 	accept_beaker = FALSE
 	density = FALSE
@@ -386,6 +434,15 @@
 
 	hacked_reagents = list("goldschlager","patron","berryjuice")
 	circuit = /obj/item/circuitboard/chemical_dispenser/beer
+
+/obj/machinery/chemical_dispenser/beer/update_icon()
+	cut_overlays()
+	if(stat & (BROKEN|NOPOWER))
+		icon_state = "[base_icon_state]_nopower"
+	else
+		icon_state = base_icon_state
+	if(panel_open)
+		add_overlay(mutable_appearance(icon, "[base_icon_state]_overlay_panel"))
 
 /obj/machinery/chemical_dispenser/beer/ui_data(mob/user)
 	var/list/data = ..()
@@ -409,9 +466,9 @@
 		return
 
 /obj/machinery/chemical_dispenser/meds_admin_debug
-	name = "mysterious chemical dispenser"
+	name = "SuperSynthesizer 9000"
 	desc = "A mysterious chemical dispenser that can produce all sorts of highly advanced medicines at the press of a button."
-	ui_title = "Cheat Synthesizer 1337"
+	ui_title = "SuperSynthesizer 9000"
 //Admin dispender gets nuffen
 	level1 = list(null)
 	level2 = list(null)
@@ -434,10 +491,11 @@
 	)
 
 /obj/machinery/chemical_dispenser/industrial
-	name = "industrial chem dispenser"
-	icon = 'icons/obj/machines/chemistry.dmi'
+	name = "IndustryChem 4000"
+	desc = "A heavy-duty chemical dispenser for industrial and maintenance use. Optimized for solvents, acids, and workshop reagents."
+	icon = 'icons/obj/chemical.dmi'
 	icon_state = "industrial_dispenser"
-	ui_title = "Industrial Dispenser 4835"
+	ui_title = "IndustryChem 4000"
 	circuit = /obj/item/circuitboard/chemical_dispenser/industrial
 	level0 = list(
 		"acetone","aluminum","ammonia",
@@ -456,53 +514,15 @@
 
 // Medical dispenser: a modification of the default chemical dispenser
 // Inherit the base lists and only override what's necessary.
+
 /obj/machinery/chemical_dispenser/medical
-	name = "chem dispenser"
+	name = "MediChem 3500"
+	desc = "A medical-grade chemical dispenser preloaded with pharmaceutical reagents. Used for mixing medicines and treatment compounds."
+	ui_title = "MediChem 3500"
 	fancy_hack = TRUE // start with extra chems unlocked
+	recharge_rate_multiplier = 2
+	recharge_flat_bonus = 50
 	accept_beaker = TRUE
 	anchored = TRUE
 	density = TRUE
 	simple_machinery = FALSE
-
-	// Provide Tier-3 components by default so the dispenser behaves as a high-end unit
-	// Keep the list empty at compile-time; instantiate parts at runtime in Initialize().
-	component_parts = list()
-
-	// Instantiate high-tier components at runtime to avoid using `new` at top-level (compile-time error).
-	Initialize()
-		// Call parent Initialize() so the dispenser's base initialization runs.
-		..()
-
-		// If parts were placed by the map as default components, replace them with tier-3 parts.
-		// Detection heuristic: treat existing parts as "default" if every component is a stock_part or a cell.
-		if(component_parts && length(component_parts))
-			var/all_default = TRUE
-			for(var/obj/item/I in component_parts)
-				if(!I) continue
-				if(!(istype(I, /obj/item/stock_parts) || istype(I, /obj/item/cell)))
-					all_default = FALSE
-					break
-
-			if(all_default)
-				// Remove the map-spawned/default parts to avoid duplicates
-				for(var/obj/item/I2 in component_parts)
-					if(I2)
-						qdel(I2)
-
-				component_parts = list()
-				component_parts += new /obj/item/cell/large/moebius/omega(null)
-				component_parts += new /obj/item/stock_parts/capacitor/super(null)
-				component_parts += new /obj/item/stock_parts/matter_bin/super(null)
-				component_parts += new /obj/item/stock_parts/manipulator/pico(null)
-
-		// If there were no parts at all, pre-fill with tier-3 components (same as replacement behavior).
-		else
-			component_parts = list()
-			component_parts += new /obj/item/cell/large/moebius/omega(null)
-			component_parts += new /obj/item/stock_parts/capacitor/super(null)
-			component_parts += new /obj/item/stock_parts/matter_bin/super(null)
-			component_parts += new /obj/item/stock_parts/manipulator/pico(null)
-
-		// Recalculate ratings and ensure UI/icon reflect parts
-		RefreshParts()
-

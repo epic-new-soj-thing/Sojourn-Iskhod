@@ -333,7 +333,7 @@
 	else if(status & (ORGAN_MUTATED|ORGAN_DEAD))
 		. += 3
 	// malfunctioning only happens intermittently so treat it as a broken limb when it procs
-	if(is_malfunctioning())
+	else if(is_malfunctioning() && !BP_IS_ROBOTIC(src))
 		if(prob(10))
 			owner.visible_message("\The [owner]'s [name] [pick("twitches", "shudders")] and sparks!")
 			var/datum/effect/effect/system/spark_spread/spark_system = new ()

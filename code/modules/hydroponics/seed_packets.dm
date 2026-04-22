@@ -89,6 +89,15 @@ var/global/list/plant_seed_sprites = list()
 /obj/item/seeds/grapeseed
 	seed_type = "grapes"
 
+/obj/item/seeds/qerrbalakseed
+	seed_type = "qerrbalak"
+
+/obj/item/seeds/qokkloaseed
+	seed_type = "qokkloa"
+
+/obj/item/seeds/aghrasshseed
+	seed_type = "aghrassh"
+
 /obj/item/seeds/greengrapeseed
 	seed_type = "greengrapes"
 

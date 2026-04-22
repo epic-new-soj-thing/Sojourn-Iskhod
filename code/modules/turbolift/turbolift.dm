@@ -150,27 +150,47 @@
 
 	var/area/turbolift/destination = locate(next_floor.area_ref)
 
-
 	if(!istype(origin) || !istype(destination) || (origin == destination))
 		return 0
 
-	for(var/turf/T in destination)
-		for(var/I in T)
-			if(istype(I, /mob/living))
-				var/mob/living/L = I
-				L.gib()
-			else if(istype(I,/obj))
-				qdel(I)
+	// Shuttle-style physical movement: translate the car's turfs to the next stop position.
+	if(current_stop.anchor_turf && next_floor.anchor_turf)
+		// Build the translation map: shift origin area turfs to destination position.
+		var/list/translation = get_turf_translation(current_stop.anchor_turf, next_floor.anchor_turf, origin.contents)
 
+		// Clear any non-lift mobs/objects from destination turfs before moving.
+		for(var/turf/src_turf in translation)
+			var/turf/dst_turf = translation[src_turf]
+			if(!dst_turf) continue
+			for(var/I in dst_turf)
+				if(istype(I, /mob/living))
+					var/mob/living/L = I
+					var/moved = FALSE
+					for(var/dir_try in list(NORTH, SOUTH, EAST, WEST))
+						var/turf/adj = get_step(dst_turf, dir_try)
+						if(adj && !adj.density)
+							L.forceMove(adj)
+							moved = TRUE
+							break
+					if(!moved)
+						L.gib()
+				else if(istype(I, /obj))
+					if(istype(I, /obj/machinery/door/airlock/lift) || istype(I, /obj/structure/lift))
+						continue
+					qdel(I)
 
+		translate_turfs(translation, null, origin.base_turf)
 
-	origin.move_contents_to(destination)
-
+		// Update the area reference for the stop to reflect new turf positions.
+		current_stop = next_floor
+	else
+		// Fallback: old area-swap method if anchors aren't set.
+		origin.move_contents_to(destination)
+		current_stop = next_floor
 
 	if((locate(/obj/machinery/power) in destination) || (locate(/obj/structure/cable) in destination))
 		SSmachines.makepowernets()
 
-	current_stop = next_floor
 	control_panel_interior.visible_message("The elevator [moving_upwards ? "rises" : "descends"] smoothly.")
 
 	return (next_floor.delay_time || move_delay || 30)

@@ -63,6 +63,15 @@ SUBSYSTEM_DEF(research)
 		initialize_design_file(file)
 	design_files_to_init = list()
 
+	// Queue all batched spritesheet assets for background generation so UIs get icons fast.
+	// design_icons must be queued after all_designs is populated (here). Others are independent.
+	load_asset_datum(/datum/asset/spritesheet_batched/design_icons)
+	load_asset_datum(/datum/asset/spritesheet_batched/chem_master)
+	load_asset_datum(/datum/asset/spritesheet_batched/materials)
+	load_asset_datum(/datum/asset/spritesheet_batched/ores)
+	load_asset_datum(/datum/asset/spritesheet_batched/tool_upgrades)
+	load_asset_datum(/datum/asset/spritesheet_batched/perks)
+
 	return ..()
 
 

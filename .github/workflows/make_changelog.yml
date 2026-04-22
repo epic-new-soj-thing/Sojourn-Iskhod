@@ -5,9 +5,14 @@ on:
     branches:
       - master
       - changelog-fixes
+      - testmerge
 
-  workflow_dispatch:  # <-- allows manual triggering
+  workflow_dispatch:
     inputs:
+      branch:
+        description: "Branch to run changelog for (e.g. master or testmerge)"
+        required: true
+        default: "master"
       reason:
         description: "Why are you manually generating the changelog?"
         required: false
@@ -23,6 +28,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.branch || github.ref }}
+          token: ${{ secrets.BOT_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -32,12 +40,21 @@ jobs:
       - name: Install dependencies
         run: pip install -r tools/changelog/requirements.txt
 
-      - name: Run generate_cl.py
+      - name: Generate changelog yml from all merged PRs
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-          GIT_EMAIL: "${{ secrets.BOT_EMAIL }}"
-          GIT_NAME: "${{ secrets.BOT_NAME }}"
-        run: python tools/changelog/generate_cl.py
-        
-      - name: Run changelog generator
-        run: python tools/changelog/ss13_genchangelog.py html/changelog.html html/changelogs
+        run: |
+          BASE="${{ github.event_name == 'workflow_dispatch' && inputs.branch || github.ref_name }}"
+          echo "Generating changelog for branch: $BASE"
+          python tools/changelog/generate_cl.py --all --base master
+
+      - name: Compile HTML changelog (merge yml into cache, then build from html/changelogs/.all_changelog.yml)
+        run: python tools/changelog/ss13_genchangelog.py html/changelog.html html/changelogs/autochangelogs
+
+      - name: Commit and push changelog
+        run: |
+          git config user.name "${{ secrets.BOT_NAME }}"
+          git config user.email "${{ secrets.BOT_EMAIL }}"
+          git add html/changelog.html html/changelogs/
+          git diff --staged --quiet || git commit -m "Automatic changelog compile [ci skip]"
+          git push

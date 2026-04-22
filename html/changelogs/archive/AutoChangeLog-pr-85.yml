@@ -1,0 +1,14 @@
+author: r4d6
+changes:
+  - add: Slime-people can now clean blood and gain nutrition while moving 
+      around.
+  - fix: Fixed the issue where slime-people could receive damage from walking on
+      certain objects.
+  - tweak: Adjusted the nutritional cost for slime-people's limb regeneration to
+      300.
+  - tweak: Slime-people's toxin metabolism now heals them instead of harming 
+      them, and vice versa for anti-toxins.
+  - balance: Slime-people's regeneration effects have been improved for a better
+      gameplay experience.
+date: '2025-05-22'
+delete-after: false

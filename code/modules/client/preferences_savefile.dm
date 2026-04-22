@@ -27,13 +27,13 @@
 	if(!check_cooldown())
 		if(istype(client))
 			to_chat(client, SPAN_WARNING("You're attempting to save your preferences a little too fast. Wait half a second, then try again."))
-			log_and_message_admins("[key_name(usr)] has saved their preferences really fast and was stopped.")
+			log_and_message_admins("[key_name(client)] has saved their preferences really fast and was stopped.")
 		return 0
 	var/savefile/S = new /savefile(path)
 	if(!S)					return 0
 	S.cd = "/"
 	if(announce)
-		log_and_message_admins("[key_name(usr)] has saved their preferences.")
+		log_and_message_admins("[key_name(client)] has saved their preferences.")
 
 	S["version"] << SAVEFILE_VERSION_MAX
 	player_setup.save_preferences(S)
@@ -45,7 +45,7 @@
 	if(!check_cooldown())
 		if(istype(client))
 			to_chat(client, SPAN_WARNING("You're attempting to load your character a little too fast. Wait half a second, then try again."))
-			log_and_message_admins("[key_name(usr)] has loaded a character too fast and was stopped.")
+			log_and_message_admins("[key_name(client)] has loaded a character too fast and was stopped.")
 		return 0
 
 	if(!fexists(path))		return 0
@@ -71,7 +71,7 @@
 		S.cd = GLOB.maps_data.character_load_path(S, default_slot)
 
 	loaded_character = S
-	log_and_message_admins("[key_name(usr)] has loaded a character.")
+	log_and_message_admins("[key_name(client)] has loaded a character.")
 	categoriesChanged = "All"	//Forces the character editor to refresh everything, preventing characters from getting their body markings (visually) mixed up
 
 	return 1
@@ -81,7 +81,7 @@
 	if(!check_cooldown())
 		if(istype(client))
 			to_chat(client, SPAN_WARNING("You're attempting to save your character a little too fast. Wait half a second, then try again."))
-			log_and_message_admins("[key_name(usr)] has saved a character really fast and was stopped.")
+			log_and_message_admins("[key_name(client)] has saved a character really fast and was stopped.")
 		return 0
 	var/savefile/S = new /savefile(path)
 	if(!S)					return 0
@@ -90,7 +90,7 @@
 	S["version"] << SAVEFILE_VERSION_MAX
 	player_setup.save_character(S)
 	loaded_character = S
-	log_and_message_admins("[key_name(usr)] has saved a character.")
+	log_and_message_admins("[key_name(client)] has saved a character.")
 	return S
 
 /datum/preferences/proc/sanitize_preferences()

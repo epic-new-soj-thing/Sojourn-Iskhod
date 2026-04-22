@@ -71,7 +71,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/rest_timer_active = FALSE
 	var/rest_timer_time
 
-	var/list/valid_inspirations = list(/obj/item/oddity)
+	var/list/valid_inspirations = list(/obj/item/oddity, /obj/item/book/manual/demonomicon)
 	var/list/desires = list()
 	var/positive_prob = 20
 	var/positive_prob_multiplier = 1
@@ -413,24 +413,24 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	changeLevel(-SANITY_DAMAGE_PSY(amount, owner.stats.getStat(STAT_VIG)))
 
 /datum/sanity/proc/onSeeDeath(mob/M)
-	var/mob/living/carbon/human/H
-	if(ishuman(H))
-		var/penalty = -SANITY_DAMAGE_DEATH(owner.stats.getStat(STAT_VIG))
-		if(owner.stats.getPerk(PERK_NIHILIST))
-			var/effect_prob = rand(1, 100)
-			switch(effect_prob)
-				if(1 to 25)
-					M.stats.addTempStat(STAT_COG, 5, INFINITY, "Fate Nihilist")
-				if(25 to 50)
-					M.stats.removeTempStat(STAT_COG, "Fate Nihilist")
-				if(50 to 75)
-					penalty *= -1
-				if(75 to 100)
-					penalty *= 0
-		if(M.stats.getPerk(PERK_TERRIBLE_FATE) && prob(100-owner.stats.getStat(STAT_VIG)))
-			setLevel(0)
-		else
-			changeLevel(penalty*death_view_multiplier)
+	// Only human (carbon/human) death counts as external cause for breakdowns; simple mobs, roaches, etc. do not.
+	var/external_cause = istype(M, /mob/living/carbon/human)
+	var/penalty = -SANITY_DAMAGE_DEATH(owner.stats.getStat(STAT_VIG))
+	if(owner.stats.getPerk(PERK_NIHILIST))
+		var/effect_prob = rand(1, 100)
+		switch(effect_prob)
+			if(1 to 25)
+				M.stats.addTempStat(STAT_COG, 5, INFINITY, "Fate Nihilist")
+			if(25 to 50)
+				M.stats.removeTempStat(STAT_COG, "Fate Nihilist")
+			if(50 to 75)
+				penalty *= -1
+			if(75 to 100)
+				penalty *= 0
+	if(M.stats.getPerk(PERK_TERRIBLE_FATE) && prob(100-owner.stats.getStat(STAT_VIG)))
+		setLevel(0, external_cause)
+	else
+		changeLevel(penalty*death_view_multiplier, external_cause)
 
 /datum/sanity/proc/onShock(amount)
 	changeLevel(-SANITY_DAMAGE_SHOCK(amount, owner.stats.getStat(STAT_VIG)))
@@ -451,7 +451,8 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 		add_rest(INSIGHT_DESIRE_DRUGS, 4 * multiplier)
 
 /datum/sanity/proc/onToxin(datum/reagent/toxin/R, multiplier)
-	changeLevel(-R.sanityloss * multiplier)
+	// Toxins (e.g. roach guts, mundane poison) are not external cause; only positive/common breakdowns.
+	changeLevel(-R.sanityloss * multiplier, FALSE)
 
 /datum/sanity/proc/onReagent(datum/reagent/E, multiplier)
 	var/sanity_gain = E.sanity_gain_ingest
@@ -515,38 +516,40 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	say_time = world.time + SANITY_COOLDOWN_SAY
 	changeLevel(SANITY_GAIN_SAY)
 
-/datum/sanity/proc/changeLevel(amount)
+/datum/sanity/proc/changeLevel(amount, external_cause = FALSE, grant_insight = TRUE)
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
 		return
 	if(sanity_invulnerability && amount < 0)
 		return
-	updateLevel(level + amount)
+	updateLevel(level + amount, external_cause, grant_insight)
 
-/datum/sanity/proc/setLevel(amount)
+/datum/sanity/proc/setLevel(amount, external_cause = FALSE, grant_insight = TRUE)
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
 		return
 	if(sanity_invulnerability)
 		restoreLevel(amount)
 		return
-	updateLevel(amount)
+	updateLevel(amount, external_cause, grant_insight)
 
 /datum/sanity/proc/restoreLevel(amount)
 	if(level <= amount)
 		return
 	updateLevel(amount)
 
-/datum/sanity/proc/updateLevel(new_level)
+/datum/sanity/proc/updateLevel(new_level, external_cause = FALSE, grant_insight = TRUE)
 	if(owner.species.reagent_tag == IS_SYNTHETIC)
 		return
 	new_level = CLAMP(new_level, 0, max_level)
-	level_change += abs(new_level - level)
+	if(grant_insight)
+		level_change += abs(new_level - level)
 	level = new_level
+	// External cause (death, blood magic, tomes, toxin): all breakdown types. Otherwise: only positive or common.
 	if(level == 0 && world.time >= breakdown_time)
-		breakdown()
+		breakdown(FALSE, external_cause)
 	var/obj/screen/sanity/hud = owner.HUDneed["sanity"]
 	hud?.update_icon()
 
-/datum/sanity/proc/breakdown(var/positive_breakdown = FALSE)
+/datum/sanity/proc/breakdown(var/positive_breakdown = FALSE, var/external_cause = FALSE)
 	breakdown_time = world.time + SANITY_COOLDOWN_BREAKDOWN
 
 	if(owner.stats.getPerk(PERK_NJOY))
@@ -559,7 +562,7 @@ GLOBAL_VAR_INIT(GLOBAL_INSIGHT_MOD, 1)
 	var/list/possible_results
 	if((prob(positive_prob) && positive_prob_multiplier > 0 || positive_breakdown))
 		possible_results = subtypesof(/datum/breakdown/positive)
-	else if(prob(negative_prob))
+	else if(external_cause && prob(negative_prob))
 		possible_results = subtypesof(/datum/breakdown/negative)
 	else
 		possible_results = subtypesof(/datum/breakdown/common)

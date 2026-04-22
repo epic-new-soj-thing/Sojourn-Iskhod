@@ -8,7 +8,7 @@
 	volume = 100
 	price_tag = 150 //Mostly just to have a price for the beacon, but I guess you could sell them if you were REALLY desperate?
 
-	blue_ink_tk_blocker = TRUE //Removes bugs with teleportion
+	tk_blocker = TRUE //Removes bugs with teleportion
 
 	var/mechanical = 1         // Set to 0 to stop it from drawing the alert lights.
 	var/base_name = "tray"
@@ -686,7 +686,7 @@
 	return
 
 /obj/machinery/portable_atmospherics/hydroponics/attack_tk(mob/user as mob)
-	if(blue_ink_tk_blocker)
+	if(tk_blocker)
 		to_chat(usr, SPAN_WARNING("\blue Your psionic power has been inhibited by a force."))
 		return
 

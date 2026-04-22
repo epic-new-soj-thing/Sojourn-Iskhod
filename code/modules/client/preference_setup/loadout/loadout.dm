@@ -100,11 +100,12 @@ var/list/gear_datums = list()
 				if(!(gear_name in gear_datums))
 					gears -= gear_name
 
+			var/list/allowed_gear_names = valid_gear_choices()
 			var/total_cost = 0
 			for(var/gear_name in gears)
 				if(!gear_datums[gear_name])
 					gears -= gear_name
-				else if(!(gear_name in valid_gear_choices()))
+				else if(!(gear_name in allowed_gear_names))
 					gears -= gear_name
 				else
 					var/datum/gear/G = gear_datums[gear_name]
@@ -179,8 +180,9 @@ var/list/gear_datums = list()
 			var/datum/job/J = SSjob.GetJob(job_title)
 			if(J)
 				dd_insertObjectList(jobs, J)
+	var/list/allowed_gear_names = valid_gear_choices()
 	for(var/gear_name in LC.gear)
-		if(!(gear_name in valid_gear_choices()))
+		if(!(gear_name in allowed_gear_names))
 			continue
 		var/list/entry = list()
 		var/datum/gear/G = LC.gear[gear_name]

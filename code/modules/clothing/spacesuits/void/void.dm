@@ -104,8 +104,13 @@
 			to_chat(M, "The valve on your suit's installed tank safely engages.")
 			tank.canremove = 0
 
+	H.regenerate_icons()
 
-/obj/item/clothing/suit/space/void/dropped()
+
+/obj/item/clothing/suit/space/void/dropped(mob/user)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.regenerate_icons()
 	..()
 	retract()
 

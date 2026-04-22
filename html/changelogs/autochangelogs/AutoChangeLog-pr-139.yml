@@ -1,0 +1,6 @@
+author: AMcilraith
+changes:
+  - fix: Improved escaping of HTML content in faxes to prevent shell 
+      interpretation issues.
+date: '2025-07-31'
+delete-after: false

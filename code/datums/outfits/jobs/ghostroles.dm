@@ -26,7 +26,7 @@
 	id_type = /obj/item/card/id
 
 /decl/hierarchy/outfit/si_medical_ert
-	name = "Medical Emergency Personnel"
+	name = "VA Medical Ethics Agent"
 	l_ear  =/obj/item/device/radio/headset/heads/cmo
 	head = /obj/item/clothing/head/helmet/faceshield/paramedic
 	uniform = /obj/item/clothing/under/rank/moebius_biolab_officer
@@ -52,7 +52,7 @@
 	id_type =  /obj/item/card/id/syndicate/ert/aa/medical_ert
 
 /decl/hierarchy/outfit/marshal_ert
-	name = "Marshal Agent"
+	name = "Ranger Oversight Officer"
 	l_ear  =/obj/item/device/radio/headset/heads/hos/bowman
 	uniform = /obj/item/clothing/under/rank/ih_commander
 	suit = /obj/item/clothing/suit/armor/vest/ironhammer/full
@@ -89,7 +89,7 @@
 	id_type =  /obj/item/card/id/syndicate/ert/aa/blackshield_ert
 
 /decl/hierarchy/outfit/engi_ert
-	name = "Guild Emergency Personnel"
+	name = "Artificer Guild Saftey Inspector"
 	l_ear = /obj/item/device/radio/headset/heads/ce
 	head = /obj/item/clothing/head/firefighter/guild_emergency
 	mask = /obj/item/clothing/mask/gas/artificer
@@ -116,7 +116,7 @@
 	id_type =  /obj/item/card/id/syndicate/ert/aa/guild_ert
 
 /decl/hierarchy/outfit/lss_ert
-	name = "Internal Affairs Agent"
+	name = "Frontier Logistics Internal Affairs Agent"
 	l_ear = /obj/item/device/radio/headset/heads/merchant
 	uniform = /obj/item/clothing/under/suit_jacket/executive
 	r_pocket = /obj/item/device/t_scanner/advanced
@@ -134,7 +134,7 @@
 	id_type =  /obj/item/card/id/syndicate/ert/aa/auditor_ert
 
 /decl/hierarchy/outfit/church_ert
-	name = "Inquisitor"
+	name = "Absolutist Inquisitor"
 	l_ear = /obj/item/device/radio/headset/heads/preacher
 	id_slot = slot_wear_id
 	id_type = /obj/item/card/id/syndicate/ert/aa/church_ert
@@ -153,7 +153,7 @@
 	)
 
 /decl/hierarchy/outfit/si_ert
-	name = "Ethics Committee investigator"
+	name = "VA Research Ethics Committee Agent"
 	l_ear = /obj/item/device/radio/headset/heads/rd
 	mask = /obj/item/clothing/mask/gas
 	uniform = /obj/item/clothing/under/suit_jacket/executive //we're basically an SI IAA
@@ -172,7 +172,7 @@
 	id_type =  /obj/item/card/id/syndicate/ert/aa/research_ert
 
 /decl/hierarchy/outfit/prospector_ert //criminy
-	name = "Underboss"
+	name = "Prospector Underboss"
 	l_ear  =/obj/item/device/radio/headset/heads/foreman
 	uniform = /obj/item/clothing/under/top/crewtopplain
 	suit = /obj/item/clothing/suit/storage/vest/merc

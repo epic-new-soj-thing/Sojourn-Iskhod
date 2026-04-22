@@ -1,46 +1,58 @@
+// Used by oddity spawns on the map and by trash piles that summon oddities (e.g. scrap science/poor, pack/rare). Demonomicon only enters the pool when !GLOB.demonomicon_spawned_this_round; post_spawn sets that global when we spawn one so at most one appears per round from library + these sources.
 /obj/random/common_oddities
 	name = "random common odities"
 	icon_state = "techloot-grey"
 	spawn_nothing_percentage = 20
+	has_postspawn = TRUE
 
 /obj/random/common_oddities/item_to_spawn()
-	return pickweight(list(
-				/obj/item/oddity/common/blueprint = 3,
-				/obj/item/oddity/common/coin = 3,
-				/obj/item/oddity/common/photo_landscape = 2,
-				/obj/item/oddity/common/photo_coridor = 2,
-				/obj/item/oddity/common/photo_eyes = 1,
-				/obj/item/oddity/common/old_newspaper = 3,
-				/obj/item/oddity/common/paper_crumpled = 2,
-				/obj/item/oddity/common/paper_omega = 1,
-				/obj/item/oddity/common/book_eyes = 1,
-				/obj/item/oddity/common/book_omega/closed = 2,
-				/obj/item/oddity/common/book_bible = 3,
-				/obj/item/oddity/common/old_money = 3,
-				/obj/item/oddity/common/healthscanner = 2,
-				/obj/item/oddity/common/old_pda = 3,
-				/obj/item/oddity/common/teddy = 2,
-				/obj/item/oddity/common/tattoo = 2,
-				/obj/item/oddity/common/old_knife = 2,
-				/obj/item/oddity/common/old_id = 1,
-				/obj/item/oddity/common/old_radio = 1,
-				/obj/item/oddity/common/paper_bundle = 2,
-				/obj/item/oddity/common/towel = 3,
-				/obj/item/oddity/common/photo_crime = 1,
-				/obj/item/oddity/common/book_log = 1,
-				/obj/item/oddity/common/instructional_bio = 1,
-				/obj/item/oddity/common/instructional_cog_python = 1,
-				/obj/item/oddity/common/broken_glass = 0.5,
-				/obj/item/oddity/common/broken_key = 0.5,
-				/obj/item/oddity/common/rusted_sword = 0.1,
-				/obj/item/oddity/common/book_unholy/closed = 0.5,
-				/obj/item/oddity/common/device = 2,
-				/obj/item/oddity/common/lighter = 3,
-				/obj/item/oddity/common/mirror = 3,
-				/obj/item/oddity/common/disk = 2,
-				/obj/item/oddity/common/redbrick = 2,
-				/obj/item/oddity/rare/eldritch_tie = 0.01 //SO RARE
-				))
+	var/list/weighted = list(
+		/obj/item/oddity/common/blueprint = 3,
+		/obj/item/oddity/common/coin = 3,
+		/obj/item/oddity/common/photo_landscape = 2,
+		/obj/item/oddity/common/photo_coridor = 2,
+		/obj/item/oddity/common/photo_eyes = 1,
+		/obj/item/oddity/common/old_newspaper = 3,
+		/obj/item/oddity/common/paper_crumpled = 2,
+		/obj/item/oddity/common/paper_omega = 1,
+		/obj/item/oddity/common/book_eyes = 1,
+		/obj/item/oddity/common/book_omega/closed = 2,
+		/obj/item/oddity/common/book_bible = 3,
+		/obj/item/oddity/common/old_money = 3,
+		/obj/item/oddity/common/healthscanner = 2,
+		/obj/item/oddity/common/old_pda = 3,
+		/obj/item/oddity/common/teddy = 2,
+		/obj/item/oddity/common/tattoo = 2,
+		/obj/item/oddity/common/old_knife = 2,
+		/obj/item/oddity/common/old_id = 1,
+		/obj/item/oddity/common/old_radio = 1,
+		/obj/item/oddity/common/paper_bundle = 2,
+		/obj/item/oddity/common/towel = 3,
+		/obj/item/oddity/common/photo_crime = 1,
+		/obj/item/oddity/common/book_log = 1,
+		/obj/item/oddity/common/instructional_bio = 1,
+		/obj/item/oddity/common/instructional_cog_python = 1,
+		/obj/item/oddity/common/broken_glass = 0.5,
+		/obj/item/oddity/common/broken_key = 0.5,
+		/obj/item/oddity/common/rusted_sword = 0.1,
+		/obj/item/oddity/common/book_unholy/closed = 0.5,
+		/obj/item/oddity/common/device = 2,
+		/obj/item/oddity/common/lighter = 3,
+		/obj/item/oddity/common/mirror = 3,
+		/obj/item/oddity/common/disk = 2,
+		/obj/item/oddity/common/redbrick = 2,
+		/obj/item/oddity/rare/eldritch_tie = 0.01, //SO RARE
+		/obj/random/tome = 0.3, // Blood magic tome; defined in blood_magic/tomes.dm
+	)
+	if(!GLOB.demonomicon_spawned_this_round)
+		weighted[/obj/item/book/manual/demonomicon] = 0.03
+	return pickweight(weighted)
+
+/obj/random/common_oddities/post_spawn(var/list/spawns)
+	for(var/atom/A in spawns)
+		if(istype(A, /obj/item/book/manual/demonomicon))
+			GLOB.demonomicon_spawned_this_round = TRUE
+			break
 
 /obj/random/common_oddities/always_spawn
 	name = "random always spawn common odities"
@@ -182,7 +194,7 @@
 				/obj/item/device/radio/headset/uplink = 1))
 
 /obj/random/lonestar_oddities
-	name = "lonestar curios"
+	name = "frontier logistics curios"
 	icon_state = "techloot-grey"
 	spawn_nothing_percentage = 0
 

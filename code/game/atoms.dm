@@ -9,6 +9,8 @@
 	var/fingerprintslast
 	var/list/blood_DNA
 	var/was_bloodied
+	/// If TRUE, visible blood overlay was cleaned but was_bloodied/DNA preserved for forensics (luminol still shows).
+	var/blood_visually_cleaned = FALSE
 	var/blood_color
 	var/last_bumped = 0
 	var/pass_flags = 0
@@ -191,6 +193,8 @@
 	if(was_bloodied && !fluorescent)
 		fluorescent = 1
 		blood_color = COLOR_LUMINOL
+		update_icon()
+		update_icon()
 	return
 
 /atom/proc/assume_air(datum/gas_mixture/giver)
@@ -575,9 +579,12 @@ its easier to just keep the beam vertical.
 		//Deal with gloves the pass finger/palm prints.
 		if(!ignoregloves)
 			if(H.gloves != src)
-				if(prob(75) && istype(H.gloves, /obj/item/clothing/gloves/latex))
+				var/obj/item/clothing/gloves/G = H.gloves
+				if(istype(G) && G.clipped)
+					// Clipped gloves transfer prints!
+				else if(prob(75) && istype(G, /obj/item/clothing/gloves/latex))
 					return FALSE
-				else if(H.gloves && !istype(H.gloves, /obj/item/clothing/gloves/latex))
+				else if(G && !istype(G, /obj/item/clothing/gloves/latex))
 					return FALSE
 
 		//More adminstuffz
@@ -661,28 +668,40 @@ its easier to just keep the beam vertical.
 	if(A.fingerprints && fingerprints)
 		A.fingerprints |= fingerprints.Copy()            //detective
 	if(A.fingerprintshidden && fingerprintshidden)
-		A.fingerprintshidden |= fingerprintshidden.Copy()    //admin	A.fingerprintslast = fingerprintslast
+		A.fingerprintshidden |= fingerprintshidden.Copy()    //admin
+	A.fingerprintslast = fingerprintslast
 
 
 //returns 1 if made bloody, returns 0 otherwise
-/atom/proc/add_blood(mob/living/carbon/human/M)
+/atom/proc/add_blood(mob/living/L)
 
 	if(flags & NOBLOODY)
 		return FALSE
 
-	if(!blood_DNA || !istype(blood_DNA, /list))	//if our list of DNA doesn't exist yet (or isn't a list) initialise it.
+	if(!blood_DNA || !istype(blood_DNA, /list))
 		blood_DNA = list()
 
 	was_bloodied = TRUE
-	if(istype(M))
-		if (!istype(M.dna, /datum/dna))
-			M.dna = new /datum/dna(null)
-			M.dna.real_name = M.real_name
-		M.check_dna()
-		if (M.species)
-			blood_color = M.species.blood_color
-			if(!blood_color)
-				return FALSE
+
+	if(isliving(L))
+		if(iscarbon(L))
+			var/mob/living/carbon/C = L
+			if(!istype(C.dna, /datum/dna))
+				C.dna = new /datum/dna(null)
+				C.dna.real_name = C.real_name
+			if(C.dna.unique_enzymes)
+				blood_DNA[C.dna.unique_enzymes] = C.dna.b_type
+			if(istype(C, /mob/living/carbon/human))
+				var/mob/living/carbon/human/H = C
+				if(H.species)
+					blood_color = H.species.blood_color
+		else
+			// For non-carbons, track by name as a fallback
+			blood_DNA[L.name] = "UNKNOWN"
+
+	if(!blood_color)
+		blood_color = COLOR_BLOOD_HUMAN
+
 	return TRUE
 
 /atom/proc/add_vomit_floor(mob/living/carbon/M, var/toxvomit = FALSE)
@@ -694,33 +713,36 @@ its easier to just keep the beam vertical.
 			this.icon_state = "vomittox_[pick(1, 4)]"
 
 /atom/proc/clean_blood()
-	if(!simulated)
-		return
-	was_bloodied = null
+	was_bloodied = FALSE
+	blood_visually_cleaned = FALSE
 	fluorescent = 0
 	if(istype(blood_DNA, /list))
 		blood_DNA = null
-		return TRUE
+	return TRUE
 
 
 // Like clean_blood but preserves the was_bloodied flag and the blood_DNA list.
 // Removes visible overlays/fluorescent state, and returns TRUE if any visible
 // blood overlays/decals were removed (so callers can update inventories/UI).
-/atom/proc/clean_blood_preserve_was()
-	if(!simulated)
-		was_bloodied = FALSE
-	// Turn off luminol/fluorescent state but do not touch was_bloodied or blood_DNA
+// If clean_dna is TRUE, forensic DNA traces are also removed.
+/atom/proc/clean_blood_preserve_was(var/clean_dna = FALSE)
+	. = FALSE
+	// Turn off luminol/fluorescent state but do not touch was_bloodied
 	if(fluorescent)
 		fluorescent = 0
-		was_bloodied = TRUE
-	// If this atom has an item-style blood overlay image, remove it
+		. = TRUE
+	if(clean_dna && istype(blood_DNA, /list))
+		blood_DNA = null
+		. = TRUE
+	// If this atom has an item-style blood overlay image, remove it (look clean but keep was_bloodied)
 	if(istype(src, /obj/item))
 		var/obj/item/I = src
 		if(I.blood_overlay)
 			I.cut_overlay(I.blood_overlay)
 			I.blood_overlay = null
-			was_bloodied = TRUE
-	return
+			. = TRUE
+		I.blood_visually_cleaned = TRUE
+	return .
 
 /atom/proc/get_global_map_pos()
 	if(!islist(global_map) || isemptylist(global_map)) return

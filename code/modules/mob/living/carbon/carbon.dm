@@ -7,6 +7,38 @@
 	reagents = bloodstr
 	..()
 
+	if(!dna)
+		dna = new /datum/dna(null)
+	if(dna && !dna.unique_enzymes)
+		dna.unique_enzymes = md5(real_name)
+
+	if(species)
+		dna.species = species.name
+		blood_color = species.blood_color
+		make_blood()
+
+/mob/living/carbon/proc/pulse()
+	if(stat == DEAD)
+		return PULSE_NONE
+	return pulse
+
+/mob/living/carbon/proc/get_pulse(var/method)
+	var/temp = 0
+	switch(pulse())
+		if(PULSE_NONE)
+			return "0"
+		if(PULSE_SLOW)
+			temp = rand(40, 60)
+		if(PULSE_NORM)
+			temp = rand(60, 90)
+		if(PULSE_FAST)
+			temp = rand(90, 120)
+		if(PULSE_2FAST)
+			temp = rand(120, 160)
+		if(PULSE_THREADY)
+			return method ? ">250" : "extremely weak and fast, patient's artery feels like a thread"
+	return "[method ? temp : temp + rand(-10, 10)]"
+
 /mob/living/carbon/Destroy()
 	bloodstr?.parent = null //these exist due to a GC failure linked to these vars
 	bloodstr?.my_atom = null //while they should be cleared by the qdels, they evidently aren't

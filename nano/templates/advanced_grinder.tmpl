@@ -1,3 +1,13 @@
+<div class="block">
+	<div class="item">
+		<div class="itemLabel">Object input side:</div>
+		<div class="itemContent">
+			{{:helper.link('North', 'eject', {'setside_input' : 'NORTH'}, data.input_side == "North" ? 'selected' : null, 'statusValue')}}
+			{{:helper.link('South', 'eject', {'setside_input' : 'SOUTH'}, data.input_side == "South" ? 'selected' : null, 'statusValue')}}
+		</div>
+	</div>
+</div>
+
 <div class="item">
 	<div class="itemLabelWide">
 		Processing chamber

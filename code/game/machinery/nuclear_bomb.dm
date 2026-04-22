@@ -361,6 +361,8 @@ var/bomb_set
 				to_chat(usr, SPAN_WARNING("Final countdown has begun - abort is no longer possible. Random explosions will begin shortly."))
 			else if(!timing)
 				to_chat(usr, SPAN_WARNING("No nuclear sequence is currently active."))
+			else if(wires.IsIndexCut(NUCLEARBOMB_WIRE_LOCKOUT))
+				to_chat(usr, SPAN_WARNING("Abort circuit is locked out. The abort lockout wire may have been cut."))
 			else
 				// Abort the sequence
 				if(abort_nuclear_sequence())
@@ -410,12 +412,15 @@ var/bomb_set
 				safety = !safety
 
 				if(safety && !old_safety && timing)
-					// Safety was re-engaged during active countdown - abort sequence
-					to_chat(usr, SPAN_NOTICE("Safety re-engaged. Nuclear sequence automatically aborted."))
-					if(abort_nuclear_sequence())
-						log_and_message_admins("aborted a nuclear bomb sequence by re-engaging safety")
+					// Safety was re-engaged during active countdown - abort sequence (unless lockout wire is cut)
+					if(wires.IsIndexCut(NUCLEARBOMB_WIRE_LOCKOUT))
+						to_chat(usr, SPAN_WARNING("Abort circuit is locked out. Re-engaging safety did not stop the sequence."))
 					else
-						secure_device()
+						to_chat(usr, SPAN_NOTICE("Safety re-engaged. Nuclear sequence automatically aborted."))
+						if(abort_nuclear_sequence())
+							log_and_message_admins("aborted a nuclear bomb sequence by re-engaging safety")
+						else
+							secure_device()
 				else if(safety)
 					secure_device()
 			if (href_list["anchor"])
@@ -571,7 +576,7 @@ var/bomb_set
 
 	// Set all areas to red alert
 	for(var/area/A in GLOB.map_areas)
-		if(istype(A, /area/nadezhda/hallway))
+		if(istype(A, /area/iskhod/hallway))
 			A.readyalert()
 
 /obj/machinery/nuclearbomb/proc/start_nuclear_sequence()
@@ -607,7 +612,7 @@ var/bomb_set
 		S.lock = 0  // Unlocked during abort window
 
 	// Use priority announcement system for nuclear activation
-	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. The Nadezhda Colony self-destruct sequence has been activated. T-Minus ten minutes to detonation. T-Minus ten minutes. The option to override automatic detonation expires in T-Minus five minutes. For your own safety, please evacuate this colony. This is not a drill.", "Emergency Announcement")
+	priority_announcement.Announce("ATTENTION. EMERGENCY. All personnel. The Iskhod Outpost self-destruct sequence has been activated. T-Minus ten minutes to detonation. T-Minus ten minutes. The option to override automatic detonation expires in T-Minus five minutes. For your own safety, please evacuate this colony. This is not a drill.", "Emergency Announcement")
 	world << sound('sound/effects/siren.ogg', volume = 75)
 
 	// Start the repeating alarm loop immediately
@@ -759,6 +764,7 @@ if(!N.lighthack)
 /obj/item/storage/secure/briefcase/nukedisk/Initialize()
 	. = ..()
 	new /obj/item/disk/nuclear(src)
+	new /obj/item/pinpointer/nukeop(src)
 	new /obj/item/folder/envelope/nuke_instructions(src)
 
 /obj/item/folder/envelope/nuke_instructions
@@ -778,7 +784,7 @@ if(!N.lighthack)
 		3) Request the nuclear disk from the High Council via secure fax channels.<br>\
 		4) Proceed to the self-destruct chamber once approval and the authentication disk has been received.<br>\
 		5) Authenticate with two Department Heads' approval using the secure terminals on either side of the room to retrieve the authorization code.<br>\
-		6) Remove all nuclear cylinders from their slots in the storage compartment after unlocking it with a premier-level ID.<br>\
+		6) Remove all nuclear cylinders from their slots in the storage compartment after unlocking it with a facility director-level ID.<br>\
 		7) Insert the nuclear cylinders into their slots and arm them by lowering the locking mechanism.<br>\
 		8) Insert the nuclear authentication disk into the self-destruct terminal.<br>\
 		9) Enter the authentication code into the self-destruct terminal.<br>\
@@ -871,3 +877,4 @@ if(!N.lighthack)
 			update_icon()
 		SSnano.update_uis(src)
 		return
+

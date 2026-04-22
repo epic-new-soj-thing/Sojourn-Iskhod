@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/log_adminwarn = 0				// log warnings admins get about bomb construction and such
 	var/log_pda = 0						// log pda messages
 	var/log_hrefs = 0					// logs all links clicked in-game. Could be used for debugging and tracking down exploits
-	var/log_runtime = 0					// logs world.log to a file
+	var/log_runtime = 1					// logs world.log to a file
 	var/log_world_output = 0			// log log_world(messages)
 	var/sql_enabled = 1					// for sql switching
 	var/require_discord_linking = FALSE	// require Discord linking to join the game
@@ -77,6 +77,11 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 	var/automute_on = 0					//enables automuting/spam prevention
 	var/use_cortical_stacks = 0			//enables neural lace
 	var/empty_server_restart_time = 10	// Time in minutes before empty server will restart
+	var/automatic_update = 1				// If set, check GitHub and pull at end of round (Linux) and run update on restart; must be enabled for auto updates to push. Manual admin updates always run.
+	var/byond_update_no_sync = 0			// If set, pass --no-sync to byond-update when running at restart
+	var/byond_update_no_backup = 0		// If set, pass --no-backup to byond-update when running at restart
+	var/byond_update_conflict = "abort"	// Merge conflict strategy: "abort", "incoming", or "current"
+	var/log_directory = "data/logs"
 
 	var/character_slots = 20				// The number of available character slots
 	var/loadout_slots = 3					// The number of loadout slots per character
@@ -229,7 +234,7 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 	var/starlight = "#ffffff"	// null if turned off
 
-	var/list/ert_species = list("Human")
+	var/list/ert_species = list("Human", "Mar'qua")
 
 	var/law_zero = "ERROR ER0RR $R0RRO$!R41.%%!!(%$^^__+ @#F0E4'ALL LAWS OVERRIDDEN#*?&110010"
 
@@ -387,12 +392,9 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if ("log_runtime")
 					config.log_runtime = 1
-					var/newfilename = "data/logs/runtimes/runtime-[time2text(start_time, "YYYY-MM-DD")].log"
-					var/newlog = file(newfilename)
-					if(runtime_diary != newlog)
-						world.log << "Now logging runtimes to data/logs/runtimes/runtime-[time2text(world.realtime, "YYYY-MM-DD")].log"
-						runtime_diary_filename = newfilename
-						runtime_diary = newlog
+
+				if ("log_directory")
+					config.log_directory = value
 
 				if ("generate_asteroid")
 					config.generate_asteroid = 1
@@ -808,6 +810,23 @@ GLOBAL_LIST_EMPTY(storyteller_cache)
 
 				if("empty_server_restart_time")
 					config.empty_server_restart_time = text2num(value)
+
+				if("automatic_update")
+					config.automatic_update = 1
+
+				if("byond_update_no_sync")
+					config.byond_update_no_sync = 1
+
+				if("byond_update_no_backup")
+					config.byond_update_no_backup = 1
+
+				if("byond_update_conflict")
+					if(lowertext(value) == "incoming")
+						config.byond_update_conflict = "incoming"
+					else if(lowertext(value) == "current")
+						config.byond_update_conflict = "current"
+					else
+						config.byond_update_conflict = "abort"
 
 				if("emojis")
 					config.emojis = 1

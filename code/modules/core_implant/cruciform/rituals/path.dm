@@ -357,7 +357,7 @@
 	name = "Resolution"
 	phrase = "Dominus virtutem populo suo dabit; Dominus benedicet populo suo in pace." //"The Lord gives strength to his people; the Lord blesses his people with peace."
 	desc = "A short litany that removes all pain and minorly heals the speaker. It is much stronger than the relief litany, but requires more power and has a five minute recharge time between uses."
-	power = 90 //Powerful combat litany, should use everything a non-Prime monomial has
+	power = 90 //Powerful combat litany, should use everything a non-Penitent monomial has
 	cooldown = TRUE
 	cooldown_time = 15 MINUTES
 	cooldown_category = "monopain"
@@ -621,7 +621,7 @@
 					if(howfar <= closerange)
 						simplesclose += 1
 
-	if(locate(/obj/structure/wire_splicing || /obj/item/mine || /obj/item/mine_old || /obj/item/spider_shadow_trap || /obj/item/beartrap || /obj/item/emp_mine || /obj/effect/decal/cleanable/crayon/trap) in view(closerange, H))
+	if(locate(/obj/structure/wire_splicing || /obj/item/mine || /obj/item/mine_old || /obj/item/spider_shadow_trap || /obj/item/beartrap || /obj/item/emp_mine || /obj/effect/decal/cleanable/blood_rune/trap) in view(closerange, H))
 		traps = TRUE
 		was_triggered = TRUE
 
@@ -689,7 +689,7 @@
 	cooldown_category = "zoom_litany"
 
 /datum/ritual/cruciform/divisor/zoom_litany/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C,list/targets)
-	to_chat(user, "<span class='info'>You feel yourself speeding up, the Absolute speeding you on your way!</span>")
+	to_chat(user, "<span class='info'>You feel yourself speeding up, the precepts speeding you on your way!</span>")
 	user.added_movedelay -= 0.5
 	set_personal_cooldown(user)
 	addtimer(CALLBACK(src, PROC_REF(discard_effect), user), src.effect_time)
@@ -758,7 +758,7 @@
 /datum/ritual/cruciform/factorial/self_repair
 	name = "Litany of the Iron Soul"
 	desc = "Use the energy in your cruciform to repair all mechanical parts on the bearer, be they synthetic limbs or organs. The energy required to do so will knock you down for a few seconds, and lessen your combat capabilities for five minutes."
-	phrase = "Absolutas sustentat me." //"The Absolute sustains me."
+	phrase = "Absolutas sustentat me." //"The precepts sustain me."
 	cooldown = TRUE
 	cooldown_time = 10 MINUTES
 	cooldown_category = "repair"
@@ -897,7 +897,7 @@
 
 /datum/ritual/cruciform/factorial/mod_litany
 	name = "Hymn of the Engineer"
-	phrase = "Per fidem in Absoluto assequi possumus instrumenta servitii." //"Through faith in the Absolute we can obtain the means of service."
+	phrase = "Per fidem in Absoluto assequi possumus instrumenta servitii." //"Through faith we can obtain the means of service."
 	desc = "Requests unique mods or cruciform upgrades from the lower levels. To avoid exhausting supplies, this litany may only be used once every hour. One must still have another perform the rites of installation to upgrade one's cruciform."
 	power = 25 //Mainly restricted by its cooldown
 	cooldown = TRUE
@@ -964,13 +964,13 @@
 /datum/ritual/cruciform/factorial/nodrop_magnet
 	name = "Hand of Magnetism"
 	phrase = "Ager attractivus operis mei ad se alligavit." //"Field of attraction bound my work to self."
-	desc = "Harness the Physics of the Absolute. Items sanctified by the Church you are holding are no longer droppable. \
+	desc = "Harness the Physics of the Precepts. Items sanctified by the sect that you are holding are no longer droppable. \
 	Only works with church-based items. \
 	If used on an item that already can't be dropped, it will become droppable. \
 	Does not work with firearms or cells."//To op to have a no drop on command gun sadly
 	power = 15
 	cooldown = FALSE
-	success_message = "The item that you are holding feels impossible to escape the Physics of the Absolute."
+	success_message = "The item that you are holding feels impossible to escape the Physics of the Precepts."
 
 /datum/ritual/cruciform/factorial/nodrop_magnet/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/cruciform/C)
 	var/obj/item/O = user.get_active_hand()

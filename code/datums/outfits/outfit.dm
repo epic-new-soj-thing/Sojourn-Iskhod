@@ -17,6 +17,7 @@ var/list/outfits_decls_by_type_
 		return
 	outfits_decls_ = list()
 	outfits_decls_by_type_ = list()
+	outfits_decls_root_ = 1  // Prevent recursion when creating root outfit
 	outfits_decls_root_ = new/decl/hierarchy/outfit()
 
 /decl/hierarchy/outfit
@@ -59,6 +60,8 @@ var/list/outfits_decls_by_type_
 
 	if(is_hidden_category())
 		return
+	if(!outfits_decls_root_)
+		init_outfit_decls()
 	outfits_decls_by_type_[type] = src
 	dd_insertObjectList(outfits_decls_, src)
 

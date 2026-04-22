@@ -1,8 +1,8 @@
 GLOBAL_LIST_INIT(department_command, list(DEPARTMENT_COMMAND))
-GLOBAL_LIST_INIT(department_security, list(DEPARTMENT_SECURITY, DEPARTMENT_BLACKSHIELD))
+GLOBAL_LIST_INIT(department_security, list(DEPARTMENT_SECURITY, DEPARTMENT_SECURITY))
 GLOBAL_LIST_INIT(department_moebius, list(DEPARTMENT_SCIENCE, DEPARTMENT_MEDICAL))
 GLOBAL_LIST_INIT(department_engineering, list(DEPARTMENT_ENGINEERING))
-GLOBAL_LIST_INIT(department_guild, list(DEPARTMENT_LSS))
+GLOBAL_LIST_INIT(department_guild, list(DEPARTMENT_SERVICE))
 GLOBAL_LIST_INIT(department_church, list(DEPARTMENT_CHURCH))
 GLOBAL_LIST_INIT(department_lodge, list(DEPARTMENT_LODGE))
 
@@ -15,7 +15,7 @@ var/const/CIVILIAN          =(1<<5)
 var/const/COMMAND           =(1<<6)
 var/const/MISC              =(1<<7)
 var/const/SERVICE           =(1<<8)
-var/const/LSS	            =(1<<9)
+var/const/FL	            =(1<<9)
 var/const/CHURCH           	=(1<<10)
 var/const/PROSPECTORS		=(1<<11)
 var/const/INDEPENDENT		=(1<<12)
@@ -71,11 +71,13 @@ var/const/SALVAGER			=(1<<11)
 var/const/PROSPECTOR		=(1<<12)
 var/const/VISITOR			=(1<<13)
 var/const/FENCE				=(1<<14)
-
+var/const/JOURNALIST			=(1<<15)
+var/const/LIBRARIAN			=(1<<16)
 
 
 var/const/CHAPLAIN			=(1<<0)
 var/const/ACOLYTE			=(1<<1)
+var/const/MOUTH				=(1<<2)
 
 var/const/OUTSIDER			=(1<<0)
 
@@ -98,7 +100,11 @@ var/list/medical_positions = list(JOBS_MEDICAL)
 var/list/science_positions = list(JOBS_SCIENCE)
 
 //BS12 EDIT
-var/list/cargo_positions = list(JOBS_LSS)
+var/list/cargo_positions = list(JOBS_SUPPLY)
+
+
+var/list/service_positions = list(JOBS_SERVICE)
+
 
 
 var/list/prospector_positions = list(JOBS_PROSPECTOR)
@@ -113,13 +119,20 @@ var/list/civilian_positions = list(JOBS_CIVILIAN)
 var/list/security_positions = list(JOBS_SECURITY)
 
 
-var/list/blackshield_positions = list(JOBS_BLACKSHIELD)
+var/list/blackshield_positions = list(JOBS_SECURITY)
 
 
 var/list/nonhuman_positions = list(JOBS_NONHUMAN)
 
 
+var/list/independent_positions = list(JOBS_INDEPENDENT)
+
+
 var/list/offcolony_positions = list(JOBS_INDEPENDENT)
+
+
+var/list/department_outsider = list("Outsider")
+
 
 
 var/list/lodge_positions = list(JOBS_LODGE)

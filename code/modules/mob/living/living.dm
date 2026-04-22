@@ -562,9 +562,9 @@ default behaviour is:
 										if(istype(location, /turf/simulated))
 											if(ishuman(M))
 												var/mob/living/carbon/human/H = M
-												var/blood_volume = round(H.vessel.get_reagent_amount("blood"))
+												var/blood_volume = round(H.vessel.get_reagent_amount(H.species.blood_reagent))
 												if(blood_volume > 0)
-													H.vessel.remove_reagent("blood", 0.5)
+													H.vessel.remove_reagent(H.species.blood_reagent, 0.5)
 													location.add_blood(M)
 
 						step_glide(pulling, get_dir(pulling.loc, T), glide_size)
@@ -855,7 +855,6 @@ default behaviour is:
 
 /mob/living/New()
 	..()
-
 	//Some mobs may need to create their stats datum farther up
 	if (!stats)
 		stats = new /datum/stat_holder(src)

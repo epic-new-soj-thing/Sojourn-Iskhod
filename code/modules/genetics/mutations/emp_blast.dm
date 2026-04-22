@@ -5,6 +5,7 @@
 	desc = "Adds a gland in the person's body that allows for strong electromagnetic discharges."
 	gain_text = "You feel an energy roiling inside of you..."
 	instability = 30
+	gene_research_value = 3000
 	var/cooldown = 3 MINUTES
 	var/last_used
 

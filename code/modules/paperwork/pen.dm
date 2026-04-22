@@ -25,7 +25,7 @@
 	var/colour = "black"	//what colour the ink is!
 
 /obj/item/pen/blue
-	desc = "It's a normal Soteria pen."
+	desc = "It's a normal Vesalius-Andra pen."
 	icon_state = "pen_blue"
 	colour = "blue"
 
@@ -35,7 +35,7 @@
 	colour = "red"
 
 /obj/item/pen/green
-	desc = "It's a normal Soteria pen."
+	desc = "It's a normal Vesalius-Andra pen."
 	icon_state = "pen_green"
 	colour = "green"
 
@@ -182,27 +182,4 @@
 		to_chat(usr, "<span class='info'>You select the [lowertext(selected_type)] ink container.</span>")
 
 
-/*
- * Crayons
- */
-
-/obj/item/pen/crayon
-	name = "crayon"
-	desc = "A colourful crayon. Please refrain from eating it or putting it in your nose."
-	icon = 'icons/obj/crayons.dmi'
-	icon_state = "crayonred"
-	w_class = ITEM_SIZE_TINY
-	attack_verb = list("attacked", "coloured")
-	colour = "#FF0000" //RGB
-	var/shade_color = "#220000" //RGB
-	var/uses = 30 //0 for unlimited uses
-	var/instant = 0
-	var/color_name = "red" //for updateIcon purposes
-	var/grindable = TRUE //normal crayons are grindable, rainbow and mime aren't
-
-/obj/item/pen/crayon/New()
-	name = "[color_name] crayon"
-	if(grindable)
-		create_reagents(20)
-		reagents.add_reagent("crayon_dust_[color_name]", 20)
-	..()
+// Crayons (base + subtypes + logic) are in code/game/objects/items/crayons.dm

@@ -1,0 +1,94 @@
+# Changelog for PR #321: New Map Major Testmerge
+# https://github.com/epic-new-soj-thing/Sojourn-Iskhod/pull/321
+#
+# PR description:
+#   Brings master up to date with the new Iskhod Colony and all associated map, gameplay,
+#   and tooling from map-2. Adds the Iskhod Colony map (renamed from Nadezhda/Outpost),
+#   Deep Tunnels, Excel Compound, mines, space port, and Deep Forest POIs; species-specific
+#   blood and full species organ sets (Cindarite, Marqua, Opifex, Chtmant); Iskhod Rangers
+#   job hierarchy; rotating supermatter alarm; economy/EFTPOS/medical receipt; changelog
+#   generation tools; and BYOND update admin verbs for server ops.
+#
+# Authors: addi-4th, MsRandylicious, Yeen, MicroMinty, Bamzahalam, Glitchy, MushyP
+
+author: addi-4th, MsRandylicious, Yeen, MicroMinty, Bamzahalam, Glitchy, MushyP
+date: '2026-03-02'
+delete-after: false
+
+changes:
+  # ---- MAPS & LAYOUT ----
+  - add: New Iskhod Colony map (_Iskhod_Colony.dmm); colony renamed to Iskhod Outpost; vessel set to Iskhod Outpost for area logic.
+  - add: Iskhod Deep Tunnels map (_Iskhod_Deep_Tunnels.dmm) and map_data; Nadezhda Deep Tunnels variant.
+  - add: Excel Compound map (Isk_ExcelCompound.dmm); Isk mines (isk_mines.dmm); Isk space port (isk_spaceport.dmm).
+  - add: Deep Forest integration; Greyson Field Office, River Forest, Prepper Bunker, Beast Cave, River To Colony; Isk_Forset and iskhod_deepforest.dm.
+  - add: Turbolifts and elevators (Nadezhda ElevOne, ElevTwo, mining elevator) across colony and to mines; turbolift areas and stops.
+  - add: Holodeck and cryogenics on colony; disposals and telesci additions; snow and outdoor tiles; compound and winter map variants.
+  - add: CentCom map and shuttle/space updates; Junk Tractor Beam map and junk_field submaps; winter Nadezhda solar area retained.
+  - add: Iskhod area tree (security, AI, service, cargo, engineering, pit, shuttle, maintenance sub-areas, dungeon/outside, outside forest/meadow/lakeside/kepler, command, crew, medical, R&D, prospectors).
+  - add: Mining and outpost areas (Frontier Logistics naming; mining_main, dorms, medbay, refinery; Excelsior Fortress in outpost).
+  - maptweak: Nadezhda colony maps moved to __Iskhod/unused (Surface, Underground, Transition, labercamp, Omni_STU).
+
+  # ---- JOBS & DEPARTMENTS ----
+  - add: Iskhod Rangers department (security); Captain as head of Iskhod Rangers; Lieutenant, Detective, Ranger, Junior Ranger, Corpsman roles.
+  - add: Ranger role with alt titles Ranger Patrolman and Ranger Enforcer; Junior Ranger (Ranger Assistant); Corpsman as Ranger medical specialist (blackshield/medspec outfit).
+  - add: Iskhod Council (command); Facility Director and Steward as colony command; vessel/colony Iskhod Outpost in job and area context.
+  - add: Iskhod Contractors (civilian); Artificer's Guild, Frontier Logistics, Church of the Absolute, Vesalius-Andra Medical/Research, Prospectors, Greyson Positronic departments.
+  - add: Job descriptions and duties updated for colony (Facility Director and Iskhod Council; colony payroll; Rangers or Shield show visitors the gate).
+  - add: Visitor role (off-colony guest); Assistant as no official colony position; AI and Silicon Colony-Bound department.
+  - add: Ranger uniforms and loadout; Ranger service uniform sprites; security outfit hierarchy with Blackshield patches (Captain, Lieutenant, Ranger, Junior Ranger).
+  - add: Marqua scout officer outfit (bodysuit, space suit, helmet, breath mask, marqua weapons/cells/tools); Vesalius-Andra, Artificer, Ivaris, Frontier Logistics job outfit names.
+  - tweak: Major job and role changes; spawnable roles and loadout tweaks; security, medical, civilian, science outfit updates; Marqua outfit additions.
+  - tweak: Corpsman disabled/removed where applicable; outsider spawn and ID fixes; crew manifest and TGUI department updates.
+
+  # ---- ECONOMY & EFTPOS ----
+  - add: Economy subsystem payday for Iskhod colony crew hourly; department accounts (Iskhod Council, Iskhod Rangers, Blackshield, etc.) with initial balances and wages.
+  - add: Medical EFTPOS with insurance-aware billing; treatment categories (Facility Usage, Medical Supplies, Standard Care including Defibrillation, Advanced, Prosthesis, Robotic/Implants); print_medical_receipt.
+  - add: Roboticist variant of medical EFTPOS with Maintenance Receipt; cash register department variants (command, medical, engineering, science, security, cargo, civilian).
+  - tweak: Economy eftpos locking, medical economy, and receipt handling; debt emails to department heads; insurance_limit and work_coverage per department.
+
+  # ---- GAMEPLAY: BLOOD, ORGANS, DEFIB ----
+  - add: Species-specific blood per species (vessel, blood_reagent, blood_color); aquatic_blood, opifex_blood, chtmant_blood, reptile_blood, plant_blood, synthetic, slimatic_fluid.
+  - add: New organ system with Cindarite, Marqua, Opifex, and Chtmant organ sprites and organ bay assets; species_organs.dm (amphibian, reptilian, vox, insectoid organs).
+  - add: Auto-resuscitator (defib_kit), compact and combat defib variants; advanced defib (works on synthetics); jumper cable kit and advanced jumper cables for synths.
+  - add: Defibrillation in medical EFTPOS billing (75 credits); revival sickness tiers by unit type; DEFIB_TIME_LIMIT and TIME_LOSS handling.
+  - tweak: Hunger system and hunger factor for humans; food and cold interaction.
+  - fix: Organ rejection and mycus-related behaviour; xenoflora fixes; defibrillator behaviour and missing sprites (anomaly containers, toxins APC).
+
+  # ---- GAMEPLAY: PROSPECTOR, XENOARCH, SCIENCE ----
+  - tweak: Prospector and xenoarchaeology behaviour; Foreman, Salvager, Pro, Fence roles; colony prospector areas (pros/prep, foreman, shuttle).
+  - tweak: GPS and xenobot fixes; science point yields and calculation; xenoarch adjustments; R&D areas (xenobiology, xenoflora, anomaly isolation).
+
+  # ---- EVENTS ----
+  - add: Prison break event targeting Iskhod brig/prison/virology/xenobiology areas; colony subnet imprisonment/containment announcement.
+  - add: Grid check uses colony powernet and contact_levels; rad storm excludes Iskhod maintenance, cryo, security disposal, RND anomaly isolations.
+  - tweak: Migration (carp, vox, ameridian) and supply pod spawn in Iskhod outside/forest and outside/meadow; rogue drones in Iskhod outside/forest.
+  - tweak: Electrical storm and APC damage in Iskhod maintenance; wallrot and evacuation/nuke checks for Iskhod hallway; events refer to colony in announcements.
+
+  # ---- ATMOSPHERICS & POWER ----
+  - add: Rotating industrial alarm (/obj/machinery/rotating_alarm, spinning_light); supermatter delam handling; new SM and matter alarm sounds.
+  - add: Vent pump and scrubber behaviour improvements; atmos and map gas fixes; GAS_SCRUBBER_LAYER and atmospherics helpers.
+  - fix: Atmos, airless tiles, and initial gas across colony; APC and power across colony, mining outpost, research outpost, toxins, and HVAC.
+  - fix: Wiring and power draw fixes; elevator and turbolift behaviour.
+
+  # ---- UI, TGUI, HUD ----
+  - tweak: Crew manifest and Discord manifest; ID card TGUI and department colours; CrewManifest styling.
+  - tweak: TGUI, minimap, and skin updates; restart and update notification behaviour; HUD and statpanel updates; new player and late-join flow.
+
+  # ---- CONTENT & ASSETS ----
+  - add: News articles and flavour text; Official Ranger communique, kros_news, zoo_revamp_news_cluster, and other news_article datums.
+  - soundadd: Supermatter alarm sound.
+  - soundadd: Matter alarm sound.
+  - imageadd: Ranger service uniform and Ranger-related sprites.
+  - imageadd: Organ bay and Cindarite/Marqua organ sprites.
+  - imageadd: Ladon and marqua pistol sprites; decals and flooring updates.
+  - imageadd: Engine and xenoarch sprite adjustments.
+
+  # ---- TOOLS & INFRA ----
+  - add: Changelog generation from PRs; GitHub Actions and local tools (generate_cl.py, describe_pr_changes.py, sync_pr_changelogs.py, generate_cl_from_history.py).
+  - add: BYOND update admin verbs (byond_update_main, byond_update_testmerge, byond_update_sync); tools/byond_update.py for check_and_pull and run_update (main/testmerge/sync).
+  - add: Config options automatic_update, byond_update_no_sync, byond_update_no_backup, byond_update_conflict (abort/incoming/current); ticker round-end pull and update-on-restart notification.
+  - code_imp: Changelog generator (merged PRs only, base-branch filter, verbose option) and describe-PR tool; ss13_genchangelog.py for HTML changelog from YAML.
+  - code_imp: Various code cleanups and config updates; .dme and map include updates for Iskhod, Deep Tunnels, Deep Forest, CentCom, Junk Tractor Beam.
+
+  # ---- FIXES ----
+  - fix: Numerous mapping errors and runtime fixes.

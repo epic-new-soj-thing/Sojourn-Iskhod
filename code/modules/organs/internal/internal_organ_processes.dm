@@ -132,6 +132,9 @@
 
 /mob/living/carbon/human/proc/handle_heart_blood()
 	var/heart_efficiency = get_organ_efficiency(OP_HEART)
+	// Stopped heart (e.g. potassium chloride, CE_NOPULSE) = no circulation = rapid oxyloss. FAKEDEATH (zombie powder) is excluded so they don't die.
+	if(chem_effects[CE_NOPULSE])
+		heart_efficiency = 0
 	var/blood_oxygenation = 0.4 * chem_effects[CE_OXYGENATED]
 	var/blood_volume = get_blood_volume() // Percentage.
 

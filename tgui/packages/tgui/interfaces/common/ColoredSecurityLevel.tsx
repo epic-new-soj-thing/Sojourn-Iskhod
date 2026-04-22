@@ -4,14 +4,25 @@ import { Box } from 'tgui/components';
 
 export enum SecurityLevelEnum {
   GREEN = 'code green',
+  VIOLET = 'code violet',
+  ORANGE = 'code orange',
   BLUE = 'code blue',
   RED = 'code red',
   DELTA = 'code delta',
 }
 
-export const SecurityLevelData = {
+export const SecurityLevelData: Record<
+  string,
+  { color: string }
+> = {
   [SecurityLevelEnum.GREEN]: {
     color: '#23e870',
+  },
+  [SecurityLevelEnum.VIOLET]: {
+    color: '#b787f0',
+  },
+  [SecurityLevelEnum.ORANGE]: {
+    color: '#f0a030',
   },
   [SecurityLevelEnum.BLUE]: {
     color: '#45b6ea',
@@ -22,7 +33,7 @@ export const SecurityLevelData = {
 };
 
 export type ColoredSecurityLevelProps = {
-  security_level: SecurityLevelEnum;
+  security_level: string;
 };
 
 export const ColoredSecurityLevel = (props: ColoredSecurityLevelProps) => {
@@ -35,8 +46,8 @@ export const ColoredSecurityLevel = (props: ColoredSecurityLevelProps) => {
   const data = SecurityLevelData[security_level];
 
   return (
-    <Box inline color={data.color}>
-      {toTitleCase(security_level)}
+    <Box inline color={data?.color ?? '#fff'}>
+      {data ? toTitleCase(security_level) : security_level}
     </Box>
   );
 };

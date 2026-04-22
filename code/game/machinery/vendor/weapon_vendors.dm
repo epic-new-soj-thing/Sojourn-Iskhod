@@ -1,5 +1,5 @@
 /obj/machinery/vending/weapon_machine
-	name = "Marshal Portable Armory"
+	name = "Ranger Portable Armory"
 	desc = "A self-defense equipment vending machine. When you need to be tacticool."
 	product_slogans = "The best defense is good offense!;Buy for your whole family today!;Nobody can outsmart bullet!;Stupidity can be cured! By LEAD.;Remember, 'Stand your Ground' is applicable in a court of law!;Guns kill people, It's never your fault!;It's dangerous to go unarmed, take this!;Buy more ammo, you never know when you'll need it!" // Yes, It's a Zelda reference, fight me - Papalus
 	product_ads = "Stunning!;Take justice in your own hands!;LEADership!;Guns don't kill people, YOU do!;His fault for being in sights!;Serve them a cold plate of justice!;Justice in lead form!;Smell the gunpowder!;Better now than never!"
@@ -230,7 +230,7 @@
 	auto_price = FALSE
 
 /obj/machinery/vending/theomat
-	name = "Church of Absolute Theo-Mat"
+	name = "Order of the Word Theo-Mat"
 	desc = "A church dispensary for disciples and new converts."
 	product_slogans = "Find peace through faith.;Help humanity ascend, join your brethren today!;Come and seek a new life!;Safety in brotherhood!"
 	product_ads = "Praise!;Pray!;Only for the faithful!;Ascend!;Seek a new life!;Better living through technology!"

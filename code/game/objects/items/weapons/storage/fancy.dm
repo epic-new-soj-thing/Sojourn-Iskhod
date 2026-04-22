@@ -124,7 +124,7 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 
 /obj/item/storage/fancy/crayons
 	name = "box of crayons"
-	desc = "A box of crayons for all your rune drawing needs."
+	desc = "A box of crayons for all your drawing needs."
 	icon = 'icons/obj/crayons.dmi'
 	icon_state = "crayonbox"
 	w_class = ITEM_SIZE_SMALL
@@ -208,7 +208,7 @@ obj/item/storage/fancy/dogtreats/populate_contents()
 // 26.02.25 CFW - Crude fix to enable holding 21 cigarette
 	if(contents.len > 6)
 		icon_state = "[initial(icon_state)][6]"
-	else	
+	else
 		icon_state = "[initial(icon_state)][contents.len]"
 	return
 

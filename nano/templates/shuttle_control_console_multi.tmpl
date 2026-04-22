@@ -53,6 +53,16 @@
 	</div>
 {{/if}}
 <div class="item" style="padding-top: 10px">
+	<div class="item">
+		<div class="itemLabel">
+			{{if data.time_to_land}}Time to land:{{else}}Transit time:{{/if}}
+		</div>
+		<div class="itemContent">
+			<span class="average">{{if data.time_to_land}}{{:data.time_to_land}}{{else}}{{:data.transit_time}}{{/if}}</span>
+		</div>
+	</div>
+</div>
+<div class="item" style="padding-top: 10px">
 	<div class="itemLabel">
 	    Current Destination:
 	</div>

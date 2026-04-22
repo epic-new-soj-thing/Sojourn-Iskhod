@@ -1,0 +1,11 @@
+author: AMcilraith
+changes:
+  - tweak: Turrets can now filter out neutral faction members, affecting 
+      targeting behavior.
+  - add: Added filter settings for turrets to ignore neutral faction mobs by 
+      default.
+  - fix: Players are no longer targeted by turrets if they belong to the neutral
+      faction when filtering is enabled.
+  - add: New access permissions for paramedics in the medical job role.
+date: '2025-10-01'
+delete-after: false

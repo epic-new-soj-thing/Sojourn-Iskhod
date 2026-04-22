@@ -11,8 +11,8 @@
 	license = -1
 
 /obj/item/pc_part/drive/disk/design/nt/basic_utility
-	disk_name = "Church of the Absolute Bioprinter Utilities Factory"
-	desc = "This disk is sole property of the church, the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the Absolute."
+	disk_name = "Order of the Word Bioprinter Utilities Factory"
+	desc = "This disk is sole property of the Order of the Word; the files within are encrypted and should not be used, taken, or tested by anyone not affiliated with the sect."
 	icon_state = "neotheology_testament_u"
 	license = -1
 	designs = list(
@@ -60,8 +60,8 @@
 	)
 
 /obj/item/pc_part/drive/disk/design/nt/basic_utility/public
-	disk_name = "Church of the Absolute Bioprinter Products and Utilities"
-	desc = "This disk is made by the Church and distributed at a nominal cost to anyone who wishes to use a bioprinter for basic needs."
+	disk_name = "Order of the Word Bioprinter Products and Utilities"
+	desc = "This disk is made by the Order of the Word and distributed at a nominal cost to anyone who wishes to use a bioprinter for basic needs."
 	license = 20
 	designs = list(
 		// Products
@@ -81,7 +81,7 @@
 		// Church Clothes
 		/datum/design/bioprinter/belt/utility/neotheology,
 		/datum/design/bioprinter/belt/security/neotheology,
-		/datum/design/bioprinter/nt_clothes/church_uniform, // No vector uniform, but yes this uniform
+		/datum/design/bioprinter/nt_clothes/church_uniform, // No hand uniform, but yes this uniform
 		/datum/design/bioprinter/nt_clothes/sports_jacket,
 		/datum/design/bioprinter/sling,
 		/datum/design/bioprinter/botanic_leather,
@@ -224,7 +224,7 @@
 
 /obj/item/pc_part/drive/disk/design/nt/new_guns
 	disk_name = "Absolute Armory of the New Testament"
-	desc = "A disk containing designs for highly advanced energy weapons from the Testament, the Absolutes arms division. New testament designs were made in Nadezhda and are more experimental than the Old Testament designs."
+	desc = "A disk containing designs for highly advanced energy weapons from the Testament, the Absolutes arms division. New testament designs were made in Iskhod and are more experimental than the Old Testament designs."
 
 	license = 12 // Same as OT, Church can get it free
 	designs = list(
@@ -242,7 +242,7 @@
 
 /obj/item/pc_part/drive/disk/design/nt/new_guns/plus
 	disk_name = "Absolute Armory of the New Testament Plus"
-	desc = "A disk containing designs for highly advanced energy weapons from the Testament, the Absolutes arms division. New testament designs were made in Nadezhda and are more experimental than the Old Testament designs. Obtained through praying at the Will of the Protector."
+	desc = "A disk containing designs for highly advanced energy weapons from the Testament, the Absolutes arms division. New testament designs were made in Iskhod and are more experimental than the Old Testament designs. Obtained through praying at the Will of the Protector."
 
 	license = 18
 

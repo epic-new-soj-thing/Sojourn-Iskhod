@@ -15,6 +15,7 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 	var/gpstag = "COM0"
 	var/emped = 0
 	var/turf/locked_location
+	var/datum/browser/gps_browser
 
 /obj/item/device/gps/Initialize()
 	. = ..()
@@ -25,6 +26,9 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 	add_overlay(image(icon, "working"))
 
 /obj/item/device/gps/Destroy()
+	if(gps_browser?.user)
+		GLOB.moved_event.unregister(gps_browser.user, src)
+	gps_browser = null
 	GLOB.GPS_list -= src
 	var/list/typelist = GLOB.gps_by_type["[type]"]
 	LAZYREMOVE(typelist, src)
@@ -41,35 +45,60 @@ GLOBAL_LIST_EMPTY(gps_by_type)
 	cut_overlays()
 	add_overlay(image(icon, "working"))
 
-/obj/item/device/gps/attack_self(mob/user)
+/proc/_gps_format_line(tag, area_name, x, y, z)
+	return "<BR>[tag]: [format_text(area_name)] ([x], [y], [z])"
 
-	var/obj/item/device/gps/t = ""
-	var/gps_window_height = 110 + GLOB.GPS_list.len * 20 // Variable window height, depending on how many GPS units there are to show
+/obj/item/device/gps/proc/get_gps_html()
+	var/html = ""
 	if(emped)
-		t += "ERROR"
+		html += "ERROR"
 	else
-		t += "<BR><A href='?src=\ref[src];tag=1'>Set Tag</A> "
-		t += "<BR>Tag: [gpstag]"
+		html += "<BR><A href='?src=\ref[src];tag=1'>Set Tag</A> "
+		html += "<BR>Tag: [gpstag]"
 		if(locked_location && locked_location.loc)
-			t += "<BR>Bluespace coordinates saved: [locked_location.loc]"
-			gps_window_height += 20
+			html += "<BR>Bluespace coordinates saved: [locked_location.loc]"
 
 		for(var/obj/item/device/gps/G in GLOB.GPS_list)
 			var/turf/pos = get_turf(G)
 			var/area/gps_area = get_area(G)
 			var/tracked_gpstag = G.gpstag
 			if(G.emped == 1 || !pos)
-				t += "<BR>[tracked_gpstag]: ERROR"
+				html += "<BR>[tracked_gpstag]: ERROR"
 			else
-				t += "<BR>[tracked_gpstag]: [format_text(gps_area.name)] ([pos.x], [pos.y], [pos.z])"
+				html += _gps_format_line(tracked_gpstag, gps_area.name, pos.x, pos.y, pos.z)
+	return html
 
-	var/datum/browser/popup = new(user, "GPS", name, 360, min(gps_window_height, 800))
-	popup.set_content(t)
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
-	popup.open()
+/obj/item/device/gps/proc/on_holder_moved(atom/movable/mover, atom/old_loc, atom/new_loc)
+	if(!gps_browser || !gps_browser.user || gps_browser.user != mover)
+		return
+	gps_browser.set_content(get_gps_html())
+	gps_browser.update()
+
+/obj/item/device/gps/attack_self(mob/user)
+
+	if(gps_browser?.user)
+		GLOB.moved_event.unregister(gps_browser.user, src)
+
+	var/gps_window_height = 110 + GLOB.GPS_list.len * 20 // Variable window height, depending on how many GPS units there are to show
+	if(locked_location && locked_location.loc)
+		gps_window_height += 20
+
+	var/html = get_gps_html()
+	var/window_id = "gps_\ref[src]"
+	gps_browser = new(user, window_id, name, 360, min(gps_window_height, 800), src)
+	gps_browser.set_content(html)
+	gps_browser.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
+	gps_browser.open()
+
+	GLOB.moved_event.register(user, src, PROC_REF(on_holder_moved))
 
 /obj/item/device/gps/Topic(href, href_list)
 	..()
+	if(href_list["close"])
+		if(gps_browser?.user)
+			GLOB.moved_event.unregister(gps_browser.user, src)
+		gps_browser = null
+		return
 	if(href_list["tag"] )
 		var/a = input("Please enter desired tag.", name, gpstag) as text
 		a = uppertext(copytext(sanitize(a), 1, 5))

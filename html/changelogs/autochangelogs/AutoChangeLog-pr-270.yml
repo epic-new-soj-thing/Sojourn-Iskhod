@@ -1,0 +1,11 @@
+author: AMcilraith
+changes:
+  - add: 'Added new security alert levels: Violet and Orange for medical and engineering
+      emergencies.'
+  - add: Introduced new sound alerts for security level changes.
+  - tweak: Updated descriptions for existing security alert levels to provide 
+      clearer instructions for personnel.
+  - fix: Ensured announcements are made when switching between security alert 
+      levels.
+date: '2025-10-11'
+delete-after: false

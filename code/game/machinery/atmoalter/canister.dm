@@ -435,7 +435,7 @@ update_flag
 
 /obj/machinery/portable_atmospherics/canister/oxygen/prechilled/New()
 	..()
-	src.air_contents.temperature = 80
+	src.air_contents.temperature = 30
 	src.update_icon()
 	return 1
 

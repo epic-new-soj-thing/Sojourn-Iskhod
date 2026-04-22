@@ -7,7 +7,7 @@
 	plane = PLANE_SPACE
 	layer = SPACE_LAYER
 
-	temperature = T20C
+	blocks_air = FALSE
 	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
 	is_hole = TRUE
 //	heat_capacity = 700000 No.

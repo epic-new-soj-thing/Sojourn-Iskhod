@@ -232,6 +232,9 @@ var/global/excelsior_last_draft = 0
 	if(processing_order)
 		return 0
 
+	if(!can_use_excelsior_machinery(usr, src))
+		return 0
+
 	if(href_list["order"])
 		var/ordered_item = href_list["order"]
 		if (materials_list.Find(ordered_item))
@@ -298,6 +301,12 @@ var/global/excelsior_last_draft = 0
 
 /obj/machinery/complant_teleporter/attackby(obj/item/I, mob/user)
 	log_and_message_admins(" - Exc Teleporter being used at \the [jumplink(src)] X:[src.x] Y:[src.y] Z:[src.z] User:[user]") //So we can go to it
+	if(default_deconstruction(I, user))
+		return
+	if(default_part_replacement(I, user))
+		return
+	if(!can_use_excelsior_machinery(user, src))
+		return
 	for(var/datum/antag_contract/excel/appropriate/M in GLOB.excel_antag_contracts)
 		if(M.completed)
 			continue
@@ -309,6 +318,8 @@ var/global/excelsior_last_draft = 0
 
 /obj/machinery/complant_teleporter/attack_hand(mob/user)
 	if(stat & BROKEN)
+		return
+	if(!can_use_excelsior_machinery(user, src))
 		return
 	current_user = user
 	nano_ui_interact(user)
@@ -324,6 +335,9 @@ var/global/excelsior_last_draft = 0
 /obj/machinery/complant_teleporter/proc/try_put_inside(var/mob/living/affecting, var/mob/living/user) //Based on crypods
 
 	if(!ismob(affecting) || !Adjacent(affecting) || !Adjacent(user))
+		return
+
+	if(!can_use_excelsior_machinery(user, src))
 		return
 
 	visible_message("[user] starts stuffing [affecting] into \the [src].")
@@ -363,6 +377,8 @@ var/global/excelsior_last_draft = 0
 	qdel(affecting)
 
 /obj/machinery/complant_teleporter/proc/request_reinforcements(var/mob/living/user)
+	if(!can_use_excelsior_machinery(user, src))
+		return 0
 
 	if(excelsior_energy < reinforcements_cost)
 		to_chat(user, SPAN_WARNING("Not enough energy."))

@@ -6,7 +6,6 @@
  *		Barcode Scanner
  */
 
-
 /*
  * Bookcase
  */
@@ -195,35 +194,490 @@
 
 /obj/structure/bookcase/manuals/medical
 	name = "Medical Manuals bookcase"
-
 	New()
 		..()
 		new /obj/item/book/manual/medical_cloning(src)
+		new /obj/item/book/manual/medical_diagnostics_manual(src)
 		new /obj/item/book/manual/wiki/medical_guide(src)
-		new /obj/item/book/manual/wiki/medical_guide(src)
-		new /obj/item/book/manual/wiki/medical_guide(src)
+		new /obj/item/book/manual/catalog_book/chemistry(src)
+		new /obj/item/book/manual/wiki/surgery_guide(src)
+		new /obj/item/book/manual/wiki/infections_guide(src)
+		new /obj/item/book/manual/infections_guide(src)
+		new /obj/item/book/manual/wiki/cytology_textbook(src)
+		new /obj/item/book/manual/wiki/xenogenetics_guide(src)
 		update_icon()
 
 
 /obj/structure/bookcase/manuals/engineering
 	name = "Engineering Manuals bookcase"
-
 	New()
 		..()
 		new /obj/item/book/manual/wiki/engineering_construction(src)
 		new /obj/item/book/manual/wiki/engineering_hacking(src)
 		new /obj/item/book/manual/wiki/engineering_atmos(src)
+		new /obj/item/book/manual/wiki/electronic_primer(src)
 		new /obj/item/book/manual/evaguide(src)
+		new /obj/item/book/manual/atmospipes(src)
+		new /obj/item/book/manual/engineering_guide(src)
+		new /obj/item/book/manual/engineering_singularity_safety(src)
+		new /obj/item/book/manual/supermatter_engine(src)
+		new /obj/item/book/manual/engineering_particle_accelerator(src)
+		new /obj/item/book/manual/engineering_antimatter_engine(src)
+		new /obj/item/book/manual/ripley_build_and_repair(src)
 		new /obj/item/book/manualshield_generator_guide(src)
 		update_icon()
 
 /obj/structure/bookcase/manuals/research_and_development
 	name = "R&D Manuals bookcase"
-
 	New()
 		..()
 		new /obj/item/book/manual/research_and_development(src)
+		new /obj/item/book/manual/wiki/science_toxins(src)
+		new /obj/item/book/manual/wiki/science_research(src)
+		new /obj/item/book/manual/wiki/science_robotics(src)
+		new /obj/item/book/manual/robotics_cyborgs(src)
+		new /obj/item/book/manual/robotics_catalogue(src)
+		new /obj/item/book/manual/xenobio_recipies(src)
 		update_icon()
+
+/obj/structure/bookcase/manuals/security
+	name = "Security and Laws bookcase"
+	desc = "A bookcase stocked with law and security procedure manuals."
+	New()
+		..()
+		new /obj/item/book/manual/security_space_law(src)
+		new /obj/item/book/manual/wiki/laws(src)
+		new /obj/item/book/manual/wiki/security_ironparagraphs(src)
+		new /obj/item/book/manual/wiki/cqc_manual(src)
+		new /obj/item/book/manual/wiki/stealth_manual(src)
+		new /obj/item/book/manual/detective(src)
+		update_icon()
+
+/obj/structure/bookcase/manuals/kitchen
+	name = "Kitchen and Bar Manuals bookcase"
+	desc = "A bookcase stocked with cooking and drink recipe catalogs."
+	New()
+		..()
+		new /obj/item/book/manual/catalog_book/cooking(src)
+		new /obj/item/book/manual/catalog_book/cooking(src)
+		new /obj/item/book/manual/catalog_book/drinks(src)
+		new /obj/item/book/manual/catalog_book/drinks(src)
+		update_icon()
+
+/obj/structure/bookcase/manuals/fiction
+	name = "Fiction bookcase"
+	New()
+		..()
+		update_icon()
+
+/obj/structure/bookcase/manuals/nonfiction
+	name = "Non-Fiction bookcase"
+	New()
+		..()
+		update_icon()
+
+/// At roundstart: fill all fiction and nonfiction bookcases with one copy of each book from their category, grouped by type so each shelf gets a contiguous section of types.
+/hook/roundstart/proc/distribute_library_books()
+	// Run after a short delay so the map and all book types are fully available
+	spawn(5)
+		distribute_library_books_impl()
+	// Retry later in case the first run was too early (e.g. empty shelves or types)
+	spawn(15)
+		distribute_library_books_impl()
+	// Final sync for check-in computer inventory (after manual and archive fiction/nonfiction)
+	spawn(20)
+		sync_library_comp_inventory_from_bookcases()
+	// Retry distribution for late-loaded archive fiction/nonfiction shelves (e.g. dynamic submaps)
+	spawn(45)
+		distribute_library_books_impl()
+	// Delayed sync so archive shelves that populate from DB (reference, technical, etc.) are included in general inventory
+	spawn(45)
+		sync_library_comp_inventory_from_bookcases()
+	return TRUE
+
+/// Creates one manual book on a shelf and updates the shelf icon. Used to avoid no-effect warnings on bare new/assign in callers.
+/proc/create_library_manual_on_shelf(book_type, atom/shelf)
+	var/obj/item/book/created = new book_type(shelf)
+	if(created.loc)
+		created.loc.update_icon()
+
+/// Implementation: populate fiction/nonfiction manual bookcases and archive shelves, then sync computer inventory.
+/proc/distribute_library_books_impl()
+	var/list/fiction_shelves = list()
+	var/list/nonfiction_shelves = list()
+	for(var/obj/structure/bookcase/manuals/fiction/F in world)
+		fiction_shelves.Add(F)
+	for(var/obj/structure/bookcase/manuals/nonfiction/N in world)
+		nonfiction_shelves.Add(N)
+	if(fiction_shelves.len)
+		var/list/fiction_types = sortList(subtypesof(/obj/item/book/manual/fiction))
+		if(fiction_types.len)
+			var/fiction_types_per_shelf = max(1, round(fiction_types.len / fiction_shelves.len))
+			for(var/i = 1; i <= fiction_types.len; i++)
+				var/shelf_index_f = min(1 + round((i - 1) / fiction_types_per_shelf - 0.49), fiction_shelves.len)
+				create_library_manual_on_shelf(fiction_types[i], fiction_shelves[shelf_index_f])
+		for(var/obj/structure/bookcase/B in fiction_shelves)
+			B.update_icon()
+	if(nonfiction_shelves.len)
+		var/list/nonfiction_types = sortList(subtypesof(/obj/item/book/manual/nonfiction))
+		if(nonfiction_types.len)
+			var/nonfiction_types_per_shelf = max(1, round(nonfiction_types.len / nonfiction_shelves.len))
+			for(var/i = 1; i <= nonfiction_types.len; i++)
+				var/shelf_index_n = min(1 + round((i - 1) / nonfiction_types_per_shelf - 0.49), nonfiction_shelves.len)
+				create_library_manual_on_shelf(nonfiction_types[i], nonfiction_shelves[shelf_index_n])
+		for(var/obj/structure/bookcase/B in nonfiction_shelves)
+			B.update_icon()
+	// Distribute archive fiction/nonfiction manuals across all archive shelves of the same type
+	var/list/archive_fiction_shelves = list()
+	var/list/archive_nonfiction_shelves = list()
+	for(var/obj/structure/bookcase/archive/fiction/AF in world)
+		archive_fiction_shelves.Add(AF)
+	for(var/obj/structure/bookcase/archive/nonfiction/AN in world)
+		archive_nonfiction_shelves.Add(AN)
+	if(archive_fiction_shelves.len)
+		var/list/arch_fiction_types = sortList(subtypesof(/obj/item/book/manual/fiction))
+		if(arch_fiction_types.len)
+			var/arch_fiction_per_shelf = max(1, round(arch_fiction_types.len / archive_fiction_shelves.len))
+			for(var/i = 1; i <= arch_fiction_types.len; i++)
+				var/shelf_idx = min(1 + round((i - 1) / arch_fiction_per_shelf - 0.49), archive_fiction_shelves.len)
+				create_library_manual_on_shelf(arch_fiction_types[i], archive_fiction_shelves[shelf_idx])
+		for(var/obj/structure/bookcase/B in archive_fiction_shelves)
+			B.update_icon()
+	if(archive_nonfiction_shelves.len)
+		var/list/arch_nonfiction_types = sortList(subtypesof(/obj/item/book/manual/nonfiction))
+		if(arch_nonfiction_types.len)
+			var/arch_nonfiction_per_shelf = max(1, round(arch_nonfiction_types.len / archive_nonfiction_shelves.len))
+			for(var/i = 1; i <= arch_nonfiction_types.len; i++)
+				var/shelf_idx = min(1 + round((i - 1) / arch_nonfiction_per_shelf - 0.49), archive_nonfiction_shelves.len)
+				create_library_manual_on_shelf(arch_nonfiction_types[i], archive_nonfiction_shelves[shelf_idx])
+		for(var/obj/structure/bookcase/B in archive_nonfiction_shelves)
+			B.update_icon()
+	sync_library_comp_inventory_from_bookcases()
+
+/// Syncs each library check-in computer's in-memory inventory list with all books in bookcases (same area type, or same Z if no match). Only touches comp.inventory (no SQL). Ensures manual books and other on-shelf books appear in Registered Inventory.
+/proc/sync_library_comp_inventory_from_bookcases()
+	for(var/obj/machinery/librarycomp/comp in world)
+		var/area/comp_area = get_area(comp)
+		var/turf/T_comp = get_turf(comp)
+		var/comp_z = T_comp ? T_comp.z : null
+		for(var/obj/structure/bookcase/bookcase in world)
+			var/area/bookcase_area = get_area(bookcase)
+			var/same_area = comp_area && bookcase_area && (bookcase_area.type == comp_area.type)
+			var/turf/T_bc = get_turf(bookcase)
+			var/same_z = comp_z && T_bc && (T_bc.z == comp_z)
+			if(!same_area && !same_z)
+				continue
+			for(var/obj/item/book/b in bookcase.contents)
+				if(!(b in comp.inventory))
+					comp.inventory.Add(b)
+
+/// Populate this bookcase with books from the archive DB by category. Only archive (non-departmental) shelves get DB books.
+/obj/structure/bookcase/proc/populate_from_archive_by_category(archive_category, limit = 10)
+	if(!istype(src, /obj/structure/bookcase/archive))
+		update_icon()
+		return
+	log_debug("Library archive: populate_by_category category=[archive_category] limit=[limit] for [src.type]")
+	if(!establish_db_connection())
+		log_debug("Library archive: DB connection failed (establish_db_connection returned 0)")
+		update_icon()
+		return
+	if(!dbcon || !dbcon.IsConnected())
+		log_debug("Library archive: dbcon not connected. ErrorMsg: [dbcon ? dbcon.ErrorMsg() : "no dbcon"]")
+		update_icon()
+		return
+	log_debug("Library archive: DB connected, querying books category=[archive_category]")
+	var/sqlcat = sanitizeSQL(archive_category)
+	var/DBQuery/id_query = dbcon.NewQuery("SELECT id FROM books WHERE category='[sqlcat]' ORDER BY title LIMIT [limit]")
+	if(!id_query.Execute())
+		log_debug("Library archive: id_query Execute() failed. ErrorMsg: [id_query.ErrorMsg()]")
+		update_icon()
+		return
+	var/list/ids = list()
+	while(id_query.NextRow())
+		ids += id_query.item[1]
+	log_debug("Library archive: category=[archive_category] returned [ids.len] book id(s)")
+	for(var/id in ids)
+		var/DBQuery/row_query = dbcon.NewQuery("SELECT author, title, content FROM books WHERE id=[id] LIMIT 1")
+		if(!row_query.Execute())
+			log_debug("Library archive: row_query failed for id=[id]. ErrorMsg: [row_query.ErrorMsg()]")
+			continue
+		if(row_query.NextRow())
+			var/author = row_query.item[1]
+			var/title = row_query.item[2]
+			var/content = row_query.item[3]
+			var/obj/item/book/B = new(src)
+			B.name = title
+			B.title = title
+			B.author = author
+			B.dat = content
+			B.icon_state = "book[rand(1,7)]"
+	update_icon()
+
+/proc/cmp_shelf_pair_asc(list/a, list/b)
+	return sorttext(a[1], b[1])
+
+/// Returns a list of printable manual book entries for the library UI. Each entry is list("name" = display name, "path" = type path as string). Excludes demonomicon.
+/proc/get_printable_manuals()
+	var/static/list/printable_manual_entries
+	if(!printable_manual_entries)
+		var/list/pairs = list()
+		for(var/book_type in subtypesof(/obj/item/book/manual))
+			if(book_type == /obj/item/book/manual/demonomicon)
+				continue
+			var/obj/item/book/manual/temp = new book_type(null)
+			var/display_name = temp.name || temp.title || "[book_type]"
+			var/shelf_cat = temp.shelf_category || "Other"
+			pairs += list(list(shelf_cat, display_name, book_type))
+			qdel(temp)
+		sortTim(pairs, GLOBAL_PROC_REF(cmp_shelf_pair_asc))
+		printable_manual_entries = list()
+		for(var/pair in pairs)
+			printable_manual_entries += list(list("name" = pair[2], "path" = "[pair[3]]"))
+	return printable_manual_entries
+
+/obj/structure/bookcase/archive
+	name = "Archive bookcase"
+	desc = "A wooden shelving unit that is periodically stocked with a random assortment of all books from the external archive."
+
+	New()
+		..()
+		// Only the generic archive gets a mixed set of manuals; category subtypes get manuals by shelf in their own New()
+		if(type == /obj/structure/bookcase/archive)
+			populate_with_manuals(6)
+			spawn(15)
+				populate_from_archive()
+
+/// Add a random selection of in-game manual books (excluding demonomicon). Sorted by shelf_category. Used by the generic archive only.
+/obj/structure/bookcase/archive/proc/populate_with_manuals(limit = 6)
+	var/static/list/manual_types
+	if(!manual_types)
+		var/list/pairs = list()
+		for(var/book_type in subtypesof(/obj/item/book/manual))
+			if(book_type == /obj/item/book/manual/demonomicon || book_type == /obj/item/book/manual/wiki)
+				continue
+			var/obj/item/book/manual/temp = new book_type(null)
+			pairs += list(list(temp.shelf_category, book_type))
+			qdel(temp)
+		sortTim(pairs, GLOBAL_PROC_REF(cmp_shelf_pair_asc))
+		manual_types = list()
+		for(var/pair in pairs)
+			manual_types += pair[2]
+	if(!manual_types.len)
+		return
+	var/added = 0
+	for(var/book_type in manual_types)
+		if(added >= limit)
+			break
+		new book_type(src)
+		added++
+	update_icon()
+
+/// Add in-game manuals that match the given shelf_category (e.g. "technical", "reference"). Used by category-specific archive bookcases so SQL books and manuals go to the correct shelf. Limit <= 0 means add all manuals in that category.
+/obj/structure/bookcase/archive/proc/populate_with_manuals_by_shelf(shelf_category, limit = 6)
+	var/static/list/manual_types_by_shelf
+	if(!manual_types_by_shelf)
+		manual_types_by_shelf = list()
+		for(var/book_type in subtypesof(/obj/item/book/manual))
+			if(book_type == /obj/item/book/manual/demonomicon || book_type == /obj/item/book/manual/wiki)
+				continue
+			var/obj/item/book/manual/temp = new book_type(null)
+			var/shelf = temp.shelf_category
+			qdel(temp)
+			if(!manual_types_by_shelf[shelf])
+				manual_types_by_shelf[shelf] = list()
+			manual_types_by_shelf[shelf] += book_type
+	var/list/types = manual_types_by_shelf[shelf_category]
+	if(!types || !types.len)
+		update_icon()
+		return
+	var/list/pairs = list()
+	for(var/book_type in types)
+		var/obj/item/book/manual/temp = new book_type(null)
+		pairs += list(list(temp.shelf_category, book_type))
+		qdel(temp)
+	sortTim(pairs, GLOBAL_PROC_REF(cmp_shelf_pair_asc))
+	var/added = 0
+	for(var/pair in pairs)
+		var/book_type = pair[2]
+		if(limit > 0 && added >= limit)
+			break
+		new book_type(src)
+		added++
+	update_icon()
+
+/// Random assortment of ALL books in the archive (no category filter).
+/obj/structure/bookcase/archive/proc/populate_from_archive()
+	log_debug("Library archive: populate_from_archive (all books) for [src.type]")
+	if(!establish_db_connection())
+		log_debug("Library archive: DB connection failed (establish_db_connection returned 0)")
+		update_icon()
+		return
+	if(!dbcon || !dbcon.IsConnected())
+		log_debug("Library archive: dbcon not connected. ErrorMsg: [dbcon ? dbcon.ErrorMsg() : "no dbcon"]")
+		update_icon()
+		return
+	log_debug("Library archive: DB connected, querying all books ORDER BY category, title LIMIT 25")
+	var/DBQuery/id_query = dbcon.NewQuery("SELECT id FROM books ORDER BY category, title LIMIT 25")
+	if(!id_query.Execute())
+		log_debug("Library archive: id_query Execute() failed. ErrorMsg: [id_query.ErrorMsg()]")
+		update_icon()
+		return
+	var/list/ids = list()
+	while(id_query.NextRow())
+		ids += id_query.item[1]
+	log_debug("Library archive: all-books query returned [ids.len] book id(s)")
+	for(var/id in ids)
+		var/DBQuery/row_query = dbcon.NewQuery("SELECT author, title, content FROM books WHERE id=[id] LIMIT 1")
+		if(!row_query.Execute())
+			log_debug("Library archive: row_query failed for id=[id]. ErrorMsg: [row_query.ErrorMsg()]")
+			continue
+		if(row_query.NextRow())
+			var/author = row_query.item[1]
+			var/title = row_query.item[2]
+			var/content = row_query.item[3]
+			var/obj/item/book/B = new(src)
+			B.name = title
+			B.title = title
+			B.author = author
+			B.dat = content
+			B.icon_state = "book[rand(1,7)]"
+	update_icon()
+
+// Category-specific archive bookcases: in-game manuals by shelf_category, then SQL/archive DB books by matching category. DB category must match (Reference, Technical, Fiction, etc.) so SQL books spawn on the correct shelf.
+/obj/structure/bookcase/archive/reference
+	name = "Reference archive bookcase"
+	desc = "A wooden shelving unit stocked with reference books from the external archive."
+	New()
+		..()
+		populate_with_manuals_by_shelf("Reference", 6)
+		spawn(15)
+			populate_from_archive_by_category("Reference", 10)
+
+/obj/structure/bookcase/archive/adult
+	name = "Adult archive bookcase"
+	desc = "A wooden shelving unit stocked with adult books from the external archive."
+	New()
+		..()
+		populate_with_manuals_by_shelf("Adult", 6)
+		spawn(15)
+			populate_from_archive_by_category("Adult", 10)
+
+/obj/structure/bookcase/archive/other
+	name = "Other archive bookcase"
+	desc = "A wooden shelving unit stocked with miscellaneous books from the external archive."
+	New()
+		..()
+		populate_with_manuals_by_shelf("Other", 6)
+		spawn(15)
+			populate_from_archive_by_category("Other", 10)
+
+/obj/structure/bookcase/archive/technical
+	name = "Technical archive bookcase"
+	desc = "A wooden shelving unit stocked with technical manuals from the external archive."
+	New()
+		..()
+		populate_with_manuals_by_shelf("Technical", 6)
+		spawn(15)
+			populate_from_archive_by_category("Technical", 10)
+
+/obj/structure/bookcase/archive/religion
+	name = "Religion archive bookcase"
+	desc = "A wooden shelving unit stocked with religious texts from the external archive."
+	New()
+		..()
+		populate_with_manuals_by_shelf("Religion", 6)
+		spawn(15)
+			populate_from_archive_by_category("Religion", 10)
+
+/obj/structure/bookcase/archive/fiction
+	name = "Fiction archive bookcase"
+	desc = "A wooden shelving unit stocked with fiction from the external archive."
+	New()
+		..()
+		populate_with_manuals_by_shelf("Fiction", 6)
+		spawn(15)
+			populate_from_archive_by_category("Fiction", 10)
+
+/obj/structure/bookcase/archive/nonfiction
+	name = "Non-Fiction archive bookcase"
+	desc = "A wooden shelving unit stocked with non-fiction from the external archive."
+	New()
+		..()
+		populate_with_manuals_by_shelf("Non-Fiction", 6)
+		spawn(15)
+			populate_from_archive_by_category("Non-Fiction", 10)
+
+// Bookcase pre-stocked with omega/oddity books and one Demonomicon. Does not use the archive DB.
+/obj/structure/bookcase/oddity_demonomicon
+	name = "blood magic oddities bookcase"
+	desc = "A wooden shelving unit stocked with oddity books and a single Demonomicon."
+	allowed_book_items = list(
+		/obj/item/oddity/common/book_eyes,
+		/obj/item/oddity/common/book_omega,
+		/obj/item/oddity/common/book_bible,
+		/obj/item/oddity/common/book_log,
+		/obj/item/oddity/common/book_unholy,
+		/obj/item/oddity/common/paper_omega,
+		/obj/item/book/manual/demonomicon
+	)
+
+/obj/structure/bookcase/oddity_demonomicon/New()
+	..()
+	new /obj/item/book/manual/demonomicon(src)
+	var/list/oddity_books = list(
+		/obj/item/oddity/common/book_omega/closed,
+		/obj/item/oddity/common/book_omega/opened,
+		/obj/item/oddity/common/book_unholy/closed,
+		/obj/item/oddity/common/book_unholy/opened,
+		/obj/item/oddity/common/book_eyes,
+		/obj/item/oddity/common/book_bible,
+		/obj/item/oddity/common/book_log,
+		/obj/item/oddity/common/paper_omega,
+		/obj/item/book/manual/demonomicon
+	)
+	for(var/i in 1 to 8)
+		var/picked_type = pick(oddity_books)
+		new picked_type(src)
+	update_icon()
+
+// Bookcase pre-stocked only with blood magic tomes (Cinder Codex, Ember's Veil, etc.).
+/obj/structure/bookcase/tomes
+	name = "blood magic tomes bookcase"
+	desc = "A wooden shelving unit that holds only blood magic tomes."
+	allowed_book_items = list(/obj/item/book/tome)
+
+/obj/structure/bookcase/tomes/New()
+	..()
+	for(var/tome_type in subtypesof(/obj/item/book/tome))
+		new tome_type(src)
+	update_icon()
+
+// Bookcase pre-stocked only with blood magic scrolls; all spawn filled (inscribed with a spell). Sealed scrolls included.
+/obj/structure/bookcase/scrolls
+	name = "blood magic scrolls bookcase"
+	desc = "A wooden shelving unit that holds only blood magic scrolls—blank, inscribed, and sealed."
+	allowed_book_items = list(/obj/item/scroll, /obj/item/scroll/sealed)
+
+/obj/structure/bookcase/scrolls/New()
+	..()
+	var/static/list/scroll_spells = list(
+		"Mist.", "Shimmer.", "Smoke.", "Oil.", "Floor Seal.", "Light.",
+		"Gaia.", "Eta.", "Reveal.", "Entangle.", "Joke.", "Charger."
+	)
+	// Blank (empty) scrolls
+	for(var/i in 1 to 5)
+		new /obj/item/scroll(src)
+	// Filled scrolls (inscribed with a spell)
+	for(var/i in 1 to 8)
+		var/obj/item/scroll/S = new /obj/item/scroll(src)
+		S.message = pick(scroll_spells)
+		S.name = "inscribed scroll"
+		S.desc = "A scroll covered in various glyphs and runes."
+	// Sealed scrolls (filled and sealed with wax)
+	for(var/i in 1 to 6)
+		var/obj/item/scroll/sealed/SE = new /obj/item/scroll/sealed(src)
+		SE.message = pick(scroll_spells)
+	update_icon()
 
 
 /obj/structure/bookcase/guncase
@@ -262,7 +716,7 @@
 /obj/item/book
 	name = "book"
 	icon = 'icons/obj/library.dmi'
-	icon_state ="book"
+	icon_state = "book"
 	throw_speed = 1
 	throw_range = 5
 	w_class = ITEM_SIZE_NORMAL		 //upped to three because books are, y'know, pretty big. (and you could hide them inside eachother recursively forever)
@@ -294,6 +748,10 @@
 	if(src.dat)
 		user << browse(HTML_SKELETON_TITLE("Penned by [author]",dat), "window=book[window_size != null ? ";size=[window_size]" : ""]")
 		user.visible_message("[user] opens a book titled \"[src.title]\" and begins reading intently.")
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			if(H.sanity && H.stats.getPerk(PERK_WELL_READ))
+				H.sanity.changeLevel(3)
 		onclose(user, "book")
 	else
 		to_chat(user, "This book is completely blank!")

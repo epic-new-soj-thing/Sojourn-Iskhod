@@ -421,7 +421,7 @@
 
 /obj/item/reagent_containers/glass/replenishing/chalice
 	name = "Holy Chalice"
-	desc = "One of the church's most sacred relics, discovered by Augustine on a pilgrimage at the height of the Church's power. It fills eternally with the Church's healing sacremental wine. The wine in this cup is said to be the presence of the Absolute itself; it is only to be drunk in the most holy of ceremonies or the most dire of emergencies. To do otherwise is dire blasphemy."
+	desc = "One of the sect's most sacred relics, said to date from before the fall of Nadezhda. It fills eternally with healing sacramental wine. The wine in this cup is held to embody the precepts—care for the other, maintain the life of the world. It is only to be drunk in the most holy of ceremonies or the most dire of emergencies. To do otherwise is a grave breach of the sect's ways."
 	icon_state = "holy_chalice"
 	price_tag = 8000
 

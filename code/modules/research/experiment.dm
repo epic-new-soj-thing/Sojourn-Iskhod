@@ -1,6 +1,6 @@
 // Contains everything related to earning research points
 #define AUTOPSY_WEAPON_PAMT rand(5,10) * 200 // 1000-2000 points for random weapon
-#define ARTIFACT_PAMT rand(5,10) * 1000 // 5000-10000 points for random artifact
+#define ARTIFACT_PAMT rand(80,120) * 1000 // 80000-120000 points for anomaly/artifact scan (xenoarch is difficult)
 
 GLOBAL_LIST_EMPTY(explosion_watcher_list)
 
@@ -53,35 +53,35 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	)
 	// Points for each symptom level, from 1 to 5
 	var/static/list/level_to_points = list(200,500,1000,2500,10000)
-	// Points for special slime cores
+	// Points for special slime cores - buffed by evolution level (higher tier = much more reward)
 	var/static/list/core_points = list(
 		//Level 0 - Gray
-		/obj/item/slime_extract/grey = 3000,
+		/obj/item/slime_extract/grey = 5000,
 		//Level 1
-		/obj/item/slime_extract/metal = 4500,
-		/obj/item/slime_extract/purple = 4500,
-		/obj/item/slime_extract/orange = 4500,
-		/obj/item/slime_extract/blue = 4500,
+		/obj/item/slime_extract/metal = 8000,
+		/obj/item/slime_extract/purple = 8000,
+		/obj/item/slime_extract/orange = 8000,
+		/obj/item/slime_extract/blue = 8000,
 		//Level 2
-		/obj/item/slime_extract/yellow = 5750,
-		/obj/item/slime_extract/red = 5750,
-		/obj/item/slime_extract/darkpurple = 5750,
-		/obj/item/slime_extract/silver = 5750,
-		/obj/item/slime_extract/gold = 5750,
-		/obj/item/slime_extract/darkblue = 5750,
-		/obj/item/slime_extract/pink = 5750,
-		/obj/item/slime_extract/green = 5750,
+		/obj/item/slime_extract/yellow = 13000,
+		/obj/item/slime_extract/red = 13000,
+		/obj/item/slime_extract/darkpurple = 13000,
+		/obj/item/slime_extract/silver = 13000,
+		/obj/item/slime_extract/gold = 13000,
+		/obj/item/slime_extract/darkblue = 13000,
+		/obj/item/slime_extract/pink = 13000,
+		/obj/item/slime_extract/green = 13000,
 		//Level 3
-		/obj/item/slime_extract/black = 7500,
-		/obj/item/slime_extract/lightpink = 7500,
-		/obj/item/slime_extract/oil = 7500,
-		/obj/item/slime_extract/adamantine = 7500,
+		/obj/item/slime_extract/black = 20000,
+		/obj/item/slime_extract/lightpink = 20000,
+		/obj/item/slime_extract/oil = 20000,
+		/obj/item/slime_extract/adamantine = 20000,
 		//Fancy/Rare
-		/obj/item/slime_extract/pyrite = 10000,
-		/obj/item/slime_extract/cerulean = 10000,
-		/obj/item/slime_extract/sepia = 10000,
-		/obj/item/slime_extract/bluespace = 15000,
-		/obj/item/slime_extract/rainbow = 25000 //Lots of work for basiclly 1/4th of what RnD can do with a bit of metal
+		/obj/item/slime_extract/pyrite = 28000,
+		/obj/item/slime_extract/cerulean = 28000,
+		/obj/item/slime_extract/sepia = 28000,
+		/obj/item/slime_extract/bluespace = 38000,
+		/obj/item/slime_extract/rainbow = 55000 //Lots of work for basically 1/4th of what RnD can do with a bit of metal
 	)
 
 /*
@@ -113,6 +113,10 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 
 	if(!ignoreRepeat && !has_new_tech) // We are deconstucting the same items, cut the reward really hard
 		item_tech_points = min(item_tech_points, 400)
+
+	// Xenoarch finds are difficult to obtain; give a large bonus when deconstructing them
+	if(istype(I, /obj/item/archaeological_find))
+		item_tech_points += rand(6000, 12000)
 
 	return round(item_tech_points)
 
@@ -164,7 +168,7 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 		if(core in saved_slimecores)
 			continue
 
-		var/reward = 1000
+		var/reward = 2000 // Unknown/core not in list - base reward
 		if(core in core_points)
 			reward = core_points[core]
 		points += reward
@@ -175,48 +179,49 @@ GLOBAL_LIST_EMPTY(explosion_watcher_list)
 	for(var/plantname in I.scanned_fruitnames)
 		if (plantname in saved_fruitnames)
 			continue
-		var/given = rand (200,1000)
+		var/given = rand (1200, 2800) // Buffed xenobotany: unique plant names
 		saved_fruitnames+=plantname
 		points += given
 
 	for(var/chemname in I.scanned_fruitchems)
 		if (chemname in saved_fruitchems)
 			continue
-		var/given = rand (750,2250)
+		var/given = rand (2200, 4800) // Buffed xenobotany: unique chem data
 		saved_fruitchems += chemname
 		points += given
 	for(var/traitname in I.scanned_fruittraits)
 		if (traitname in saved_fruittraits)
 			continue
-		var/given = rand (1500,2500)
+		var/given = rand (3500, 6000) // Buffed xenobotany: unique trait data
 		saved_fruittraits += traitname
 		points += given
 
-		////////////////////////////////////////// ROCK DATA
+		////////////////////////////////////////// ROCK DATA (age sets reward: By 20-50k, My 10-30k; exotic adds 5-10k on top)
 
 
 	for(var/odd_matter in I.scanned_odd_matter)
 		if(odd_matter in saved_odd_matter)
 			continue
-
-		var/given = rand (3000,3500) //Really odd data!
+		// exotic content: at most 5-10k added on top of age-based reward
+		var/given = rand(5000, 10000)
 		if(odd_matter in odd_matter)
 			points = given
-
 		points += given
 		saved_odd_matter += odd_matter
 
 	for(var/really_old in I.scanned_really_old)
 		if (really_old in saved_really_old)
 			continue
-		var/given = rand (4000,5000) //Really odd data
-		saved_odd_matter += really_old
+		// age in billions of years -> 20-50k (1 By = 27.5k, 4+ By = 50k)
+		var/given = min(50000, 20000 + really_old * 7500)
+		saved_really_old += really_old
 		points += given
 
 	for(var/rock_aged in I.scanned_rock_aged)
 		if (rock_aged in saved_rock_aged)
 			continue
-		var/given = rand (2000,3000) //Old rocks
+		// age in millions of years -> 10-30k (0 My = 10k, 1000 My = 30k)
+		var/given = min(30000, 10000 + rock_aged * 20)
 		saved_rock_aged += rock_aged
 		points += given
 

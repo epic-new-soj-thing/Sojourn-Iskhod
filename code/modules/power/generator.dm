@@ -9,8 +9,9 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 100 //Watts, I hope.  Just enough to do the computer and display things.
 
-	var/max_power = 500000
-	var/thermal_efficiency = 0.65
+	var/max_power = 2000000
+	var/thermal_efficiency = 0.8
+	var/thermal_power_gain = 3
 
 	var/obj/machinery/atmospherics/binary/circulator/circ1
 	var/obj/machinery/atmospherics/binary/circulator/circ2
@@ -104,7 +105,7 @@
 		if(delta_temperature > 0 && air1_heat_capacity > 0 && air2_heat_capacity > 0)
 			var/energy_transfer = delta_temperature*air2_heat_capacity*air1_heat_capacity/(air2_heat_capacity+air1_heat_capacity)
 			var/heat = energy_transfer*(1-thermal_efficiency)
-			last_thermal_gen = energy_transfer*thermal_efficiency
+			last_thermal_gen = energy_transfer*thermal_efficiency*thermal_power_gain
 
 			if(air2.temperature > air1.temperature)
 				air2.temperature = air2.temperature - energy_transfer/air2_heat_capacity

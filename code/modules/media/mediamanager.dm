@@ -56,19 +56,80 @@
 	// Set on Login
 	var/datum/media_manager/media = null
 
-/client/verb/change_volume()
-	set name = "Set Volume"
+/client/verb/adjust_volume()
+	set name = "Adjust Volume"
 	set category = "OOC"
-	set desc = "Set jukebox volume"
-	set_new_volume(usr)
+	set desc = "Adjust master, music, jukebox, or instrument volume"
+	adjust_volume_verb(usr)
 
-/client/proc/set_new_volume(var/mob/user)
-	if(!QDELETED(src.media) || !istype(src.media))
-		to_chat(user, "<span class='warning'>You have no media datum to change, if you're not in the lobby tell an admin.</span>")
+/client/proc/adjust_volume_verb(var/mob/user, var/category_key)
+	if(!user?.client?.prefs)
+		to_chat(user, "<span class='warning'>You have no preferences to change.</span>")
 		return
-	var/value = input("Choose your Jukebox volume.", "Jukebox volume", media.volume)
-	value = round(max(0, min(100, value)))
-	media.update_volume(value)
+	var/list/choices = list(
+		"Master (all sounds)" = "master",
+		"Music (lobby & admin midi)" = "music",
+		"Jukebox" = "jukebox",
+		"Instruments" = "instruments"
+	)
+	var/key = category_key
+	if(!key || !(key in choices))
+		var/choice = input(user, "Which volume do you want to change?", "Adjust Volume") as null|anything in choices
+		if(!choice)
+			return
+		key = choices[choice]
+	var/datum/preferences/P = user.client.prefs
+	var/current_val
+	var/title
+	var/desc_msg
+	switch(key)
+		if("master")
+			current_val = P.master_volume
+			title = "Master Volume"
+			desc_msg = "Set master volume (0-100%). Affects all other categories."
+		if("music")
+			current_val = P.music_volume
+			title = "Music Volume"
+			desc_msg = "Set music volume - lobby and admin midi (0-100%)."
+		if("jukebox")
+			current_val = P.media_volume
+			title = "Jukebox Volume"
+			desc_msg = "Choose jukebox and area volume (0-100%)."
+		if("instruments")
+			current_val = P.instrument_volume
+			title = "Instruments Volume"
+			desc_msg = "Set synthesized instruments volume (0-100%)."
+	var/value = input(user, desc_msg, title, current_val) as null|num
+	if(value == null)
+		return
+	value = CLAMP(round(value), 0, 100)
+	switch(key)
+		if("master")
+			P.master_volume = value
+			if(isnewplayer(user) && GLOB.lobbyScreen)
+				GLOB.lobbyScreen.stop_music(user.client)
+				if(user.get_preference_value(/datum/client_preference/play_lobby_music) == GLOB.PREF_YES)
+					GLOB.lobbyScreen.play_music(user.client)
+		if("music")
+			P.music_volume = value
+			if(isnewplayer(user) && GLOB.lobbyScreen)
+				GLOB.lobbyScreen.stop_music(user.client)
+				if(user.get_preference_value(/datum/client_preference/play_lobby_music) == GLOB.PREF_YES)
+					GLOB.lobbyScreen.play_music(user.client)
+		if("jukebox")
+			P.media_volume = value
+			// Preference is static (saved to prefs); no media datum required. Apply to media if present.
+			if(user.client && !QDELETED(user.client.media) && istype(user.client.media))
+				user.client.media.update_volume(P.media_volume / 100)
+		if("instruments")
+			P.instrument_volume = value
+	P.save_preferences(0)
+	var/choice_label = key
+	for(var/L in choices)
+		if(choices[L] == key)
+			choice_label = L
+			break
+	to_chat(user, "<span class='notice'>[choice_label] volume set to [value]%.</span>")
 
 //
 // ### Media procs on mobs ###
@@ -111,9 +172,9 @@
 /datum/media_manager
 	var/url = ""				// URL of currently playing media
 	var/start_time = 0			// world.time when it started playing *in the source* (Not when started playing for us)
-	var/source_volume = 1		// Volume as set by source. Actual volume = "volume * source_volume"
+	var/source_volume = 1		// Volume as set by source (0-1)
 	var/rate = 1				// Playback speed.  For Fun(tm)
-	var/volume = 50				// Client's volume modifier. Actual volume = "volume * source_volume"
+	var/volume = 0.5			// Client's preference (0-1)
 	var/client/owner			// Client this is actually running in
 	var/forced=0				// If true, current url overrides area media sources
 	var/playerstyle				// Choice of which player plugin to use
@@ -128,7 +189,7 @@
 	if(!owner.prefs)
 		return
 	if(isnum(owner.prefs.media_volume))
-		volume = owner.prefs.media_volume
+		volume = owner.prefs.media_volume / 100
 	switch(owner.prefs.media_player)
 		if(0)
 			playerstyle = PLAYER_VLC_HTML
@@ -146,8 +207,10 @@
 		return
 	if(owner.get_preference_value(/datum/client_preference/play_jukebox) == GLOB.PREF_NO && url != "")
 		return // Don't send anything other than a cancel to people with SOUND_STREAMING pref disabled
-	MP_DEBUG("<span class='good'>Sending update to mediapanel ([url], [(world.time - start_time) / 10], [volume * source_volume])...</span>")
-	owner << output(list2params(list(url, (world.time - start_time) / 10, volume * source_volume)), "[WINDOW_ID]:SetMusic")
+	var/master_mult = isnum(owner.prefs.master_volume) ? owner.prefs.master_volume / 100 : 1
+	var/final_volume = volume * source_volume * master_mult
+	MP_DEBUG("<span class='good'>Sending update to mediapanel ([url], [(world.time - start_time) / 10], [final_volume])...</span>")
+	owner << output(list2params(list(url, (world.time - start_time) / 10, final_volume)), "[WINDOW_ID]:SetMusic")
 
 /datum/media_manager/proc/push_music(var/targetURL, var/targetStartTime, var/targetVolume)
 	if (url != targetURL || abs(targetStartTime - start_time) > 1 || abs(targetVolume - source_volume) > 0.1 /* 10% */)

@@ -21,7 +21,7 @@
 
 //Guild Technician
 /obj/item/clothing/suit/storage/rank/cargo_jacket
-	name = "lonestar jacket"
+	name = "Frontier Logistics jacket"
 	desc = "Stylish jacket lined with pockets, padded for an inch of extra protection from harm."
 	icon_state = "cargo_jacket"
 	item_state = "cargo_jacket"
@@ -37,8 +37,8 @@
 	)
 
 /obj/item/clothing/suit/storage/rank/cargoclerk_jacket
-	name = "lonestar office jacket"
-	desc = "Stylish jacket lined for lonestar office workers, padded for an inch of extra protection from harm."
+	name = "Frontier Logistics winter coat"
+	desc = "A heavy jacket made from animal furs, synthetic fibers, and some very thick leather. It smells of dried meat and engine grease. This one has a Frontier Logistics patch on the shoulder."
 	icon_state = "cargoclerk_jacket"
 	item_state = "cargo_jacket"
 	blood_overlay_type = "coat"
@@ -53,8 +53,8 @@
 	)
 
 /obj/item/clothing/suit/storage/cargovest
-	name = "lonestar hazard vest"
-	desc = "A Lonestar hazard vest in grey and orange to be used in work zones."
+	name = "frontier logistics hazard vest"
+	desc = "A Frontier Logistics hazard vest in grey and orange to be used in work zones."
 	icon_state = "cargovest"
 	item_state = "hazard"
 	blood_overlay_type = "armor"
@@ -130,8 +130,8 @@
 
 //Civillian
 /obj/item/clothing/suit/storage/toggle/club
-	name = "surface operations manager's jacket"
-	desc = "A well tailored and rich jacket for the Surface Operations Manager."
+	name = "quartermaster's jacket"
+	desc = "A well tailored and rich jacket for the Quartermaster."
 	icon_state = "cm_coat"
 	item_state = "cm_coat"
 	icon_open = "cm_coat_open"
@@ -200,8 +200,8 @@
 	item_state_slots = list(slot_r_hand_str = "labcoat", slot_l_hand_str = "labcoat")
 
 /obj/item/clothing/suit/storage/chaplain/coat
-	name = "preacher coat"
-	desc = "The Prime's vestments come in many different forms, all of them regal and richly adorned."
+	name = "Penitent's coat"
+	desc = "The Penitent's vestments come in many different forms, all of them regal and richly adorned."
 	icon_state = "church_coat"
 	item_state = "church_coat"
 
@@ -215,12 +215,42 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Primes coat"] = "church_coat"
-	options["Primes vestments"] = "nt_minister"//credit to Près de l'oiseau on Eris for all of these!
-	options["Primes dark vestmentts"] = "nt_minister_dark"
-	options["Primes robes"] = "nt_robe_down"
-	options["Primes mantled robes"] = "nt_robe"
-	options["Primes habit"] = "nt_habit"
+	options["Penitent's coat"] = "church_coat"
+	options["Penitent's vestments"] = "nt_minister"//credit to Près de l'oiseau on Eris for all of these!
+	options["Penitent's dark vestments"] = "nt_minister_dark"
+	options["Penitent's robes"] = "nt_robe_down"
+	options["Penitent's mantled robes"] = "nt_robe"
+	options["Penitent's habit"] = "nt_habit"
+	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
+
+	if(src && choice && !M.incapacitated() && Adjacent(M))
+		icon_state = options[choice]
+		to_chat(M, "You adjusted your attire's style into [choice] mode.")
+		update_icon()
+		update_wear_icon()
+		usr.update_action_buttons()
+		return 1
+
+/obj/item/clothing/suit/storage/chaplain/mouth
+	name = "Mouth's coat"
+	desc = "Vestments for the chief giver of the Word—sober and dignified, suited to leading the flock in the precepts."
+	icon_state = "nt_minister"
+	item_state = "nt_minister"
+
+/obj/item/clothing/suit/storage/chaplain/mouth/verb/toggle_style()
+	set name = "Adjust Style"
+	set category = "Object"
+	set src in usr
+
+	if(!isliving(loc))
+		return
+
+	var/mob/M = usr
+	var/list/options = list()
+	options["Mouth's vestments"] = "nt_minister"
+	options["Mouth's dark vestments"] = "nt_minister_dark"
+	options["Mouth's robes"] = "nt_robe_down"
+	options["Mouth's habit"] = "nt_habit"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
@@ -252,7 +282,7 @@
 //Detective
 /obj/item/clothing/suit/storage/rank/insp_trench
 	name = "ranger's armored trenchcoat"
-	desc = "Brown, armored trenchcoat. Designed and created by the Marshals. The coat is impact resistant - perfect for your next act of autodefenestration!"
+	desc = "Brown, armored trenchcoat. Designed and created by the Rangers. The coat is impact resistant - perfect for your next act of autodefenestration!"
 	icon_state = "rangercoat"
 	item_state = "rangercoat"
 	blood_overlay_type = "coat"

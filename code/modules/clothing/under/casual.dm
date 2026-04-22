@@ -74,8 +74,8 @@
 /obj/item/clothing/under/overalls/utilitynavy
 	name = "navy utility jumpsuit"
 	desc = "A rugged navy jumpsuit designed for maintenance work."
-	icon_state = "navyutility"
-	item_state = "navyutility"
+	icon_state = "navyutility_1"
+	item_state = "navyutility_1"
 
 /obj/item/clothing/under/overalls
 	name = "tan utility jumpsuit"
@@ -358,15 +358,15 @@
 	desc = "A stylish and practical grey turtleneck matched with a pair of combat cargopants. Well beloved by the Xanoranth syndicate who are more than happy to sell them to their many friends and allies."
 	icon_state = "syndsuit"
 
-//Role:premier-turtlenecks
+//Role:facility director-turtlenecks
 
-/obj/item/clothing/under/turtleneck/premier
-	name = "premier turtleneck"
+/obj/item/clothing/under/turtleneck/facility_director
+	name = "Facility Director turtleneck"
 	desc = "A green turtleneck complete with black pants and golden buckle."
 	icon_state = "tn_premier"
 	item_state = "tn_premier"
 
-/obj/item/clothing/under/turtleneck/premier/verb/toggle_style()
+/obj/item/clothing/under/turtleneck/facility_director/verb/toggle_style()
 	set name = "Adjust Style"
 	set category = "Object"
 	set src in usr
@@ -376,9 +376,9 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Premier Default"] = "tn_premier"
-	options["Premier Drab"] = "tn_premierdrab"
-	options["Premier Skirt"] = "tn_premierskirt"
+	options["Facility Director Default"] = "tn_premier"
+	options["Facility Director Drab"] = "tn_premierdrab"
+	options["Facility Director Skirt"] = "tn_premierskirt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -390,7 +390,7 @@
 		usr.update_action_buttons()
 		return 1
 
-//Role:premier-turtlenecks end
+//Role:facility director-turtlenecks end
 
 /obj/item/clothing/under/dismas
 	name = "highwayman clothes"
@@ -531,3 +531,4 @@
 	desc = "A white and gold evening gown, produced and often worn by Abolutists"
 	icon_state = "eveningdress_nt"
 	item_state = "eveningdress_nt"
+

@@ -598,6 +598,16 @@ ADMIN_VERB_ADD(/client/proc/cmd_admin_add_freeform_ai_law, R_FUN, FALSE)
 	if(show_log == "Yes")
 		command_announcement.Announce("Ion storm detected in Colony vicinity. Please check all AI-controlled equipment for errors.", "Anomaly Alert", new_sound = 'sound/AI/ionstorm.ogg')
 
+ADMIN_VERB_ADD(/client/proc/cmd_admin_authorize_ert, R_ADMIN, FALSE)
+/client/proc/cmd_admin_authorize_ert()
+	set category = "Admin.Events"
+	set name = "Authorize ERT"
+	if(!holder)
+		to_chat(src, "Only administrators may use this command.")
+		return
+	GLOB.ert_authorized = !GLOB.ert_authorized
+	log_and_message_admins("has [GLOB.ert_authorized ? "authorized" : "revoked authorization for"] Emergency Response Teams.", usr)
+	to_chat(world, span_boldnotice("Emergency Response Team authorization has been [GLOB.ert_authorized ? "granted" : "revoked"] by Central Command."))
 
 ADMIN_VERB_ADD(/client/proc/cmd_admin_rejuvenate, R_ADMIN|R_MOD, FALSE)
 /client/proc/cmd_admin_rejuvenate(mob/living/M as mob in SSmobs.mob_list)

@@ -35,7 +35,7 @@
 	new /obj/item/device/scanner/health(src)
 
 /obj/item/storage/firstaid/regular/si
-	name = "soteria branded first-aid kit"
+	name = "vesalius-andra branded first-aid kit"
 	desc = "A soteria-branded emergency medical kit for those serious boo-boos. Contains more advanced and more expensive gauze and salves."
 	icon_state = "purplefirstaid"
 	item_state = "firstaid-purplefirstaid"
@@ -257,7 +257,7 @@
 	icon = 'icons/obj/storage/deferred.dmi'
 	icon_state = "combat_surgery_kit"
 	item_state = "combat_surgery_kit"
-	storage_slots = 11 // Enough for the tools it holds, 1 more slot than standard surgical kits, but less than Soteria made ones.
+	storage_slots = 11 // Enough for the tools it holds, 1 more slot than standard surgical kits, but less than Vesalius-Andra made ones.
 	max_w_class = ITEM_SIZE_NORMAL
 	matter = list(MATERIAL_PLASTIC = 12) // More slots
 	can_hold = list(
@@ -290,7 +290,7 @@
 	new /obj/item/stack/medical/bruise_pack/advanced(src)
 
 /obj/item/storage/firstaid/surgery/si
-	name = "soteria advanced surgery kit"
+	name = "vesalius-andra advanced surgery kit"
 	desc = "Contains tools for surgery. Has precise foam fitting for safe transport of highly advanced tools."
 	icon_state = "surgery_box_SI"
 	item_state = "combat_surgery_kit"
@@ -420,7 +420,7 @@
 
 /obj/item/storage/firstaid/soteria
 	name = "triage kit"
-	desc = "A specialized triage kit, outfitted for Soteria personnel only. Contains everything a Doctor would ever need in a case of emergency, in a pinch."
+	desc = "A specialized triage kit, outfitted for Vesalius-Andra personnel only. Contains everything a Doctor would ever need in a case of emergency, in a pinch."
 	icon_state = "triagekit"
 	item_state = "triagekit"
 	storage_slots = 10
@@ -456,7 +456,7 @@
 
 /obj/item/storage/firstaid/soteria/large
 	name = "reinforced triage kit"
-	desc = "A reinforced, specialized triage kit outfitted for Soteria personnel only. This one is larger in capacity thanks to Soteria ingenuity, and should help Paramedics carry everything they need for any emergency."
+	desc = "A reinforced, specialized triage kit outfitted for Vesalius-Andra personnel only. This one is larger in capacity thanks to Vesalius-Andra ingenuity, and should help Paramedics carry everything they need for any emergency."
 	icon_state = "rtk"
 	item_state = "rtk"
 	storage_slots = 12
@@ -493,7 +493,7 @@
 
 /obj/item/storage/firstaid/blackshield
 	name = "corpsman's bulk-treatment kit"
-	desc = "A compact version of Soteria creation, this high-capacity CBT Kit allows a Corpsman to carry all the necessary tools for battlefield triage." //Yes, it's exactly what you're thinking.
+	desc = "A compact version of Vesalius-Andra creation, this high-capacity CBT Kit allows a Corpsman to carry all the necessary tools for battlefield triage." //Yes, it's exactly what you're thinking.
 	icon_state = "cbtk"
 	item_state = "cbtk"
 	storage_slots = 14 //Having to perform medicine in non-ideal situations, it's apt that they are able to carry more equipment around.

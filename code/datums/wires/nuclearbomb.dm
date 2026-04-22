@@ -10,6 +10,21 @@
 var/const/NUCLEARBOMB_WIRE_LIGHT		= 1
 var/const/NUCLEARBOMB_WIRE_TIMING		= 2
 var/const/NUCLEARBOMB_WIRE_SAFETY		= 4
+var/const/NUCLEARBOMB_WIRE_LOCKOUT		= 8	// When cut, prevents aborting the sequence
+var/const/NUCLEARBOMB_WIRE_SPARE2		= 16
+var/const/NUCLEARBOMB_WIRE_SPARE3		= 32
+var/const/NUCLEARBOMB_WIRE_SPARE4		= 64
+
+/datum/wires/nuclearbomb
+	descriptions = list(
+		new /datum/wire_description(NUCLEARBOMB_WIRE_LIGHT, "Light"),
+		new /datum/wire_description(NUCLEARBOMB_WIRE_TIMING, "Timer"),
+		new /datum/wire_description(NUCLEARBOMB_WIRE_SAFETY, "Safety"),
+		new /datum/wire_description(NUCLEARBOMB_WIRE_LOCKOUT, "Abort Lockout"),
+		new /datum/wire_description(NUCLEARBOMB_WIRE_SPARE2, "Spare"),
+		new /datum/wire_description(NUCLEARBOMB_WIRE_SPARE3, "Spare"),
+		new /datum/wire_description(NUCLEARBOMB_WIRE_SPARE4, "Spare")
+	)
 
 /datum/wires/nuclearbomb/CanUse(var/mob/living/L)
 	var/obj/machinery/nuclearbomb/N = holder
@@ -21,6 +36,7 @@ var/const/NUCLEARBOMB_WIRE_SAFETY		= 4
 	. += "The device is [N.timing ? "shaking!" : "still."]"
 	. += "The device is is [N.safety ? "quiet" : "whirring"]."
 	. += "The lights are [N.lighthack ? "static" : "functional"]."
+	. += "The abort lockout indicator is [IsIndexCut(NUCLEARBOMB_WIRE_LOCKOUT) ? "off." : "on."]"
 
 /datum/wires/nuclearbomb/UpdatePulsed(var/index)
 	var/obj/machinery/nuclearbomb/N = holder

@@ -106,20 +106,30 @@
 	path = /obj/item/book/manual/robotics_catalogue
 	cost = 0
 
+/datum/gear/utility/advancedlaptopgolden
+	display_name = "laptop, premium"
+	path = /obj/item/modular_computer/laptop/preset/custom_loadout/advanced/golden
+	cost = 5
+
 /datum/gear/utility/advancedlaptop
 	display_name = "laptop, advanced"
-	path = /obj/item/modular_computer/laptop/preset/custom_loadout/advanced/golden
+	path = /obj/item/modular_computer/laptop/preset/custom_loadout/advanced
 	cost = 4
-
-/datum/gear/utility/normallaptop
-	display_name = "laptop, consumer"
-	path = /obj/item/modular_computer/laptop/preset/custom_loadout/standard/xenoware
-	cost = 2
 
 /datum/gear/utility/cheaplaptop
 	display_name = "laptop, military"
-	path = /obj/item/modular_computer/laptop/preset/custom_loadout/cheap/elbrus4kk
+	path = /obj/item/modular_computer/laptop/preset/custom_loadout/standard/elbrus4kk
 	cost = 3
+
+/datum/gear/utility/normallaptop/xenoware
+	display_name = "laptop, gaming"
+	path = /obj/item/modular_computer/laptop/preset/custom_loadout/standard/xenoware
+	cost = 3
+
+/datum/gear/utility/normallaptop
+	display_name = "laptop, standard"
+	path = /obj/item/modular_computer/laptop/preset/custom_loadout/standard
+	cost = 2
 
 /datum/gear/utility/lighter
 	display_name = "lighter"

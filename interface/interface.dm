@@ -50,14 +50,20 @@
 	set desc = "See what's new"
 	set hidden = TRUE
 
-	if(!GLOB.changelog_tgui)
-		GLOB.changelog_tgui = new /datum/changelog()
-
-	GLOB.changelog_tgui.ui_interact(mob)
-	if(prefs.lastchangelog != changelog_hash)
-		prefs.lastchangelog = changelog_hash
-		prefs.save_preferences()
-		winset(src, "rpane.changelog", "background-color=none;font-style=;")
+	var/mob/M = src.mob || usr
+	if(M && istype(M, /mob))
+		if(!GLOB.changelog_tgui)
+			GLOB.changelog_tgui = new /datum/changelog()
+		GLOB.changelog_tgui.ui_interact(M)
+	else
+		// Fallback when no mob (e.g. lobby): open HTML changelog in browser
+		var/datum/asset/simple/namespaced/changelog_asset = get_asset_datum(/datum/asset/simple/namespaced/changelog_html)
+		changelog_asset.send(src)
+		src << browse(changelog_asset.get_htmlloader("changelog.html"), "window=changelog;size=800x700")
+		if(prefs.lastchangelog != changelog_hash)
+			prefs.lastchangelog = changelog_hash
+			prefs.save_preferences()
+			winset(src, "rpane.changelog", "background-color=none;font-style=;")
 
 /client/verb/hotkeys_help()
 	set name = "Hotkeys Help"

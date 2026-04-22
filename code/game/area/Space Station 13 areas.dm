@@ -51,7 +51,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	var/sound_env = STANDARD_STATION
 	var/turf/base_turf //The base turf type of the area, which can be used to override the z-level's base turf
 
-	var/vessel = "Nadezhda Colony" //The ship or station this area is on. This is so far just for the benefit of shield generators
+	var/vessel = "Iskhod Outpost" //The ship or station this area is on. This is so far just for the benefit of shield generators
 	//Consoles can only control shields on the same vessel as them
 	var/holomap_color // Color of this area on station holomap
 /*Adding a wizard area teleport list because motherfucking lag -- Urist*/
@@ -77,7 +77,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	ambience = list('sound/ambience/ambispace.ogg')
 	vessel = null
 
-area/space/atmosalert()
+/area/space/atmosalert()
 	return
 
 /area/space/fire_alert()
@@ -315,6 +315,7 @@ area/space/atmosalert()
 	name = "\improper Centcom"
 	icon_state = "centcom"
 	requires_power = 0
+	luminosity = 1
 	dynamic_lighting = 0
 	vessel = "centcom"
 

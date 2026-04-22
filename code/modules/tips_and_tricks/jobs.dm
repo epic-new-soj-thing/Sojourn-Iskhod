@@ -4,11 +4,11 @@
     textColor = "#22458d"
 
 /tipsAndTricks/jobs/captain_boss
-    jobs_list = list(/datum/job/premier)
-    tipText = "As a premier, you function as an internal affairs agent, lawyer, and mediator."
+    jobs_list = list(/datum/job/facility_director)
+    tipText = "As a facility director, you function as an internal affairs agent, lawyer, and mediator."
 
 /tipsAndTricks/jobs/ironhammer_theft
-    jobs_list = list(/datum/job/smc, /datum/job/swo, /datum/job/supsec, /datum/job/inspector, /datum/job/medspec, /datum/job/trooper, /datum/job/officer, /datum/job/serg)
+    jobs_list = list(/datum/job/swo, /datum/job/swo, /datum/job/supsec, /datum/job/inspector, /datum/job/officer, /datum/job/officer, /datum/job/supsec)
     tipText = "As a member of security, you have broad access to chase criminals. This does not mean you can take anything you have access to. Taking things from other departments is theft!"
 
 /tipsAndTricks/jobs/plants_are_dieing_gardener
@@ -21,7 +21,7 @@
 
 /tipsAndTricks/jobs/guild_resale_profit
     jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
-    tipText = "As Lonestar, you should be buying up valuable things from scavengers and reselling them for a profit. Buy anything of value that's brought to you."
+    tipText = "As Frontier Logistics, you should be buying up valuable things from scavengers and reselling them for a profit. Buy anything of value that's brought to you."
 
 /tipsAndTricks/jobs/guild_price_scanner
     jobs_list = list(/datum/job/merchant, /datum/job/cargo_tech, /datum/job/mining)
@@ -69,35 +69,35 @@
 
 /tipsAndTricks/jobs/sell_things_you_hoarding_goblins
     jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
-    tipText = "Selling things to other departments is part of your job. Blackshield and Marshals like weapons and ammo, Soteria will always love getting materials and Research disks. The Guild (specially a Guild Master) would appreciate Curios, cable coils and materials."
+    tipText = "Selling things to other departments is part of your job. Rangers like weapons and ammo, Vesalius-Andra will always love getting materials and Research disks. The Guild (specially a Chief Engineer) would appreciate Curios, cable coils and materials."
 
 /tipsAndTricks/jobs/your_perks_are_op
     jobs_list = list(/datum/job/foreman, /datum/job/salvager, /datum/job/pro)
     tipText = "You have a perk that lets you tell at a glance what an anomaly on an oddity does, you can market this for a profit!"
 
 /tipsAndTricks/jobs/captain_leader
-    jobs_list = list(/datum/job/premier)
+    jobs_list = list(/datum/job/facility_director)
     tipText = "A wise man's advice is always listened to, because a wise man will never give bad advice."
 
 /tipsAndTricks/jobs/captain_free_access
-    jobs_list = list(/datum/job/premier)
+    jobs_list = list(/datum/job/facility_director)
     tipText = "You didn't pick this role for the ID, did you?"
 
 /tipsAndTricks/jobs/captain_value_your_ship
-    jobs_list = list(/datum/job/premier)
+    jobs_list = list(/datum/job/facility_director)
     tipText = "When two departments come into conflict, don't hesitate to smooth things over."
 
 /tipsAndTricks/jobs/captain_is_overseer
-    jobs_list = list(/datum/job/premier)
+    jobs_list = list(/datum/job/facility_director)
     tipText = "You have a vital out-of-character role; you are the quest-giver. If players lacks direction and the colony is getting restless or bored, give them something productive to do."
 
 /tipsAndTricks/jobs/is_captain_right
-    jobs_list = list(/datum/job/premier)
+    jobs_list = list(/datum/job/facility_director)
     tipText = "Listen to your fellow Council members. Their input is invaluable, specially in situations regarding their area of expertise."
 
 /tipsAndTricks/jobs/engies_tribe
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "Since ancient times, the Guild had trained the best Engineers in the galaxy. That is why you are called Master."
+    tipText = "Since ancient times, the Guild had trained the best Engineers in the galaxy. That is why you are called Chief Engineer."
 
 /tipsAndTricks/jobs/unlimitedpower
 	jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
@@ -124,7 +124,7 @@
 
 //	tipsAndTricks/jobs/engies_suppermatter_three
 //	jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-//	tipText = "Woe betide the guild master who allows the crystal to delaminate, the number of such crystals dwindle. Any who cause such disgrace should go up with the engine rather than live with the shame."
+//	tipText = "Woe betide the Chief Engineer who allows the crystal to delaminate, the number of such crystals dwindle. Any who cause such disgrace should go up with the engine rather than live with the shame."
 
 /tipsAndTricks/jobs/engies_lifekeeper
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
@@ -136,7 +136,7 @@
 
 /tipsAndTricks/jobs/engies_firespacesuit
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
-    tipText = "No Adept lives long without learning that firesuits are not space-proof suits, and not all void suits are fireproof."
+    tipText = "No Engineer lives long without learning that firesuits are not space-proof suits, and not all void suits are fireproof."
 
 /tipsAndTricks/jobs/theBlackBox
     jobs_list = list(/datum/job/chief_engineer, /datum/job/technomancer)
@@ -155,23 +155,23 @@
     tipText = "NanoForge makes compressed matter, this can fuel RCDs and RCD crossbows, but also is worth quite a lot of credits and makes great fuel in the Bullet Fabricator."
 
 /tipsAndTricks/jobs/tric
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "Inaprovaline and Dylovene can be mixed together to produce Tricordazine - a mild regenerative compound that can treat brute/burns/toxin damage and even suffocation. Be careful though, more than thirty units will cause a deadly overdose!"
 
 /tipsAndTricks/jobs/reagent_scanner_pda
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "There is a reagent scanner integrated in your PDA."
 
 /tipsAndTricks/jobs/medical_scanner_pda
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "Your PDA has an integrated medical scanner."
 
 /tipsAndTricks/jobs/cryo_bag_scanning
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "Medical scanners work through body bags, allowing you to scan people currently inside them. This includes stasis bags as well."
 
 /tipsAndTricks/jobs/detox_chem_clering
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "Dylovene, when injected, will clear toxic chemicals like pararein, blattedin, and general toxins. When consumed orally, it will not purge these poisons but will still treat toxin accumulation damage."
 
 /tipsAndTricks/jobs/gas_scanner_pda
@@ -179,51 +179,51 @@
     tipText = "Inside of your PDA is an installed gas scanner."
 
 /tipsAndTricks/jobs/carbonPills
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "Carbon can be ingested to treat cases of poisoning and accidental overdose. 1u of carbon will remove 1u of anything in the stomach. This will not, however, purge chemicals in the bloodstream, nor will injecting carbon have the same effect."
 
 /tipsAndTricks/jobs/inaprov
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "Inaprovaline stabilize a patient in many ways and a go to chemical for critical patients."
 
 /tipsAndTricks/jobs/spooder
-	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
 	tipText = "Cht'mant are unaffected by Tricordazine, Kelotane, Dexalin, and Peridaxon, while Bicaridine is half as effective on them. Every other chem that isn't these will heal them normally."
 
 /tipsAndTricks/jobs/spooder2
-	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
 	tipText = "For Cht'mant, chemicals obtained from different roach meats will heal them like normal healing chems do to everyone else. Blattedin acts as Tricordazine, Diplopterum as Dexalin, Starkellin as Bicaridine, Seligitilin as Kelotane, Gewaltine as Dylovene and Fuhrerole as Peridaxon. Remember these overdose at 16 units and can be lethal!"
 
 /tipsAndTricks/jobs/spooder3
-	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
 	tipText = "You can grind roach meat on your industrial grinder for useful chemicals. Blattedin and Diplopterum can be obtained from almost every roach, while you can get Seligitillin from Seuche roaches, Gewaltine from Jagers, Starkellin from Panzers, and Fuhrerole from Fuhrers."
 
 /tipsAndTricks/jobs/birb
-	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
 	tipText = "Opifex breathe Nitrogen and are poisoned by Oxygen. By no means you should ever try and remove their special masks, not even for anesthesics. If you must perform surgery on one, administer either strong enough painkillers via injection or pills, or soporifics to avoid them suffering through the procedure."
 
 /tipsAndTricks/jobs/overdose
-	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+	jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
 	tipText = "Overdosing will cause adverse (and even lethal) effects to the patient until every single unit of the overdosing chemical is purged from their body. To treat overdose, first purge the overdosing chemical via Dyalisis or Stomach Pump on a Sleeper, or utilize 1u of Haloperidol for blood and Carbon pills for stomach. Only when it's all gone, treat the damage caused by it."
 
 /tipsAndTricks/jobs/lid_draw
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "You can draw reagents from bottles with a syringe, even through a closed lid."
 
 /tipsAndTricks/jobs/crewMonitorHelp
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "You can use the crew monitoring program on computers to locate injured colonists. It can be downloaded on tablets or laptops for a portable solution. Medical storage always has one tablet for this purpose at the start of every shift."
 
 /tipsAndTricks/jobs/odysseus_boons
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "The Odysseus medical mecha is a reliable and fast transport vehicle used best by paramedics or doctors acting as paramedics. The syringe gun module can scan and produce chemicals to deliver on the fly (provided you load it with syringes) and the sleeper module allows you to transport and dose patients inside with basic chems for stabilization on the way to Medbay."
 
 /tipsAndTricks/jobs/thermite
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "Thermite is a great way to take down walls."
 
 /tipsAndTricks/jobs/grenades
-    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team, /datum/job/psychiatrist)
+    jobs_list = list(/datum/job/cmo, /datum/job/doctor, /datum/job/paramedic, /datum/job/psychiatrist)
     tipText = "You can make grenades for various purposes, from harmful (like explosion or EMPs) to helpful (like cleaning and weed killing)."
 
 /tipsAndTricks/jobs/cyborgsDontBreathe
@@ -251,7 +251,7 @@
     tipText = "As an AI you can remotely control drone shells."
 
 /tipsAndTricks/jobs/pda_paper_scanner
-    jobs_list = list(/datum/job/premier, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/smc, /datum/job/pg, /datum/job/rd)
+    jobs_list = list(/datum/job/facility_director, /datum/job/cmo, /datum/job/chief_engineer, /datum/job/swo, /datum/job/pg, /datum/job/rd)
     tipText = "Your PDA has an integrated paper scanner and printer."
 
 /tipsAndTricks/jobs/aiCanBeMoved
@@ -267,8 +267,8 @@
     tipText = "You can enhance the human body by installing prosthetics and modifications."
 
 /tipsAndTricks/jobs/chem_app
-    jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist, /datum/job/cmo, /datum/job/doctor, /datum/job/recovery_team)
-    tipText = "There is a program in your PDA called SIRC (Soteria Internal Reagent Catalogue) that can help you with chemistry."
+    jobs_list = list(/datum/job/rd, /datum/job/scientist, /datum/job/roboticist, /datum/job/cmo, /datum/job/doctor, /datum/job/paramedic)
+    tipText = "There is a program in your PDA called SIRC (Vesalius-Andra Internal Reagent Catalogue) that can help you with chemistry."
 
 /tipsAndTricks/jobs/drink_app
     jobs_list = list(/datum/job/clubworker, /datum/job/clubmanager)
@@ -315,27 +315,27 @@
     tipText = "The Phazon is a combat mech. It has the highest base movespeed, good armor, and can phase through anything thanks to stable bluespace technology."
 
 /tipsAndTricks/jobs/wall_obelisk
-    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    jobs_list = list(/datum/job/penitent, /datum/job/mouth, /datum/job/hand)
     tipText = "Around some parts of the colony their are wall obelisks; they run on biomatter, so it might be wise to check them and refill them from time to time."
 
 /tipsAndTricks/jobs/church_wine_anti_toxin
-    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    jobs_list = list(/datum/job/penitent, /datum/job/mouth, /datum/job/hand)
     tipText = "The Absolutism Cahors Wine can be drank to help combat toxin damage or injected to be a mild painkiller."
 
 /tipsAndTricks/jobs/best_dagger_ever
-    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    jobs_list = list(/datum/job/penitent, /datum/job/mouth, /datum/job/hand)
     tipText = "The absolutism ritual knife can be thrown, this is useful for embedding the knife into someone's back. If thrown into someone that is also a follower of Absolutism, it is less likely to embed."
 
 /tipsAndTricks/jobs/skyfall_timer
-    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    jobs_list = list(/datum/job/penitent, /datum/job/mouth, /datum/job/hand)
     tipText = "Scrap Beacon has a thirty minute delay before it can be used again."
 
 /tipsAndTricks/jobs/plants_n_meat
-    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    jobs_list = list(/datum/job/penitent, /datum/job/mouth, /datum/job/hand)
     tipText = "If you're ever in need of biomatter, you can always buy or trade for plants and meat with Hunters or Gardener."
 
 /tipsAndTricks/jobs/cleaning_carbine
-    jobs_list = list(/datum/job/chaplain, /datum/job/acolyte)
+    jobs_list = list(/datum/job/penitent, /datum/job/mouth, /datum/job/hand)
     tipText = "The cleansing carbine as the name suggests fires cleaning pellets that when hit something will make a small bit of slippery foam that cleans. This can be used both defensively as lasting slip to get away from bigger foes and to normally clean the station if there's no janitor around."
 
 /*
@@ -359,4 +359,5 @@
     jobs_list = list(/datum/job/off_colony_hunt_master, /datum/job/off_colony_hunter)
     tipText = "The cerberus hounds are far sighted and loyal animals who won't ever attack you, they make great hunting allies by acting as distractions against larger enemies and emitting growls when they spot enemies you haven't."
 */
+
 

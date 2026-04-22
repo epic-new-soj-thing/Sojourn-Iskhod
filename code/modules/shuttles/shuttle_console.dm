@@ -20,6 +20,25 @@
 
 	nano_ui_interact(user)
 
+/obj/machinery/computer/shuttle_control/proc/format_transit_time(var/seconds)
+	if(seconds <= 0)
+		return "—"
+	if(seconds >= 60)
+		var/mins = round(seconds / 60)
+		return "[mins] min"
+	return "[seconds] sec"
+
+/obj/machinery/computer/shuttle_control/proc/format_time_remaining(var/seconds)
+	if(seconds <= 0)
+		return "0 sec"
+	if(seconds >= 60)
+		var/mins = round(seconds / 60)
+		var/secs = round(seconds - (mins * 60))
+		if(secs > 0)
+			return "[mins] min [secs] sec"
+		return "[mins] min"
+	return "[round(seconds)] sec"
+
 /obj/machinery/computer/shuttle_control/proc/get_ui_data(var/datum/shuttle/autodock/shuttle)
 	var/shuttle_state
 	switch(shuttle.moving_status)
@@ -42,9 +61,17 @@
 		if(WAIT_FINISH)
 			shuttle_status = "Arriving at destination now."
 
+	var/transit_time = shuttle.landmark_transition ? format_transit_time(shuttle.move_time) : "—"
+	var/time_to_land = null
+	if(shuttle.moving_status == SHUTTLE_INTRANSIT && shuttle.arrive_time)
+		var/seconds_remaining = max(0, (shuttle.arrive_time - world.time) / 10)
+		time_to_land = format_time_remaining(seconds_remaining)
+
 	return list(
 		"shuttle_status" = shuttle_status,
 		"shuttle_state" = shuttle_state,
+		"transit_time" = transit_time,
+		"time_to_land" = time_to_land,
 		"has_docking" = shuttle.active_docking_controller ? 1 : 0,
 		"docking_status" = shuttle.active_docking_controller ? shuttle.active_docking_controller.get_docking_status() : null,
 		"docking_override" = shuttle.active_docking_controller? shuttle.active_docking_controller.override_enabled : null,

@@ -99,8 +99,8 @@
 // put actual, filled noticeboards here. These are for adding actual notices via code. Be careful! Anything written here will likely be taken as law by those that read them
 
 /obj/structure/noticeboard/marshal
-	name = "Marshal bulletin board"
-	desc = "A board containing vital notices and official memos for Marshal Officers."
+	name = "Ranger bulletin board"
+	desc = "A board containing vital notices and official memos for Ranger Officers."
 	icon_state = "nboard03"
 	notices = 3
 
@@ -123,7 +123,7 @@
 
 	P = new()
 	P.name = "Memo; Daily Routine"
-	P.info = "<hr><hr><b><center>Daily Routine check list</b><br><small>Marshal E.R.T. Officer Moore</small></center><hr> <ul><li>Record checks <small>{Every hour or when needed. Keeping our eyes on the past and those around us is key to stopping any issues that may fall on the colony. As the old saying goes 'The devil hides in the details'.}</small> \
+	P.info = "<hr><hr><b><center>Daily Routine check list</b><br><small>Ranger E.R.T. Officer Moore</small></center><hr> <ul><li>Record checks <small>{Every hour or when needed. Keeping our eyes on the past and those around us is key to stopping any issues that may fall on the colony. As the old saying goes 'The devil hides in the details'.}</small> \
 <li> Clearing hallway maintenance tunnels and any potential dangers <small>{The main point is to avoid any local vermin from wandering into the hallways and to reduce any potential injuries. Take it slow if you must and bring back up when needed. You're the last line of defence for the colony when others fail or are too weak to defend themselves. Stay alive and stay smart}</small><li> Scocial presence and patrols \
 <small>{Our job is not to sit around and hide in our box, get out there and keep the public trust with a simple 'Hello' and asking about their day. We're what they look to for support when times get tough. Keep your eyes open for possible infractions and always represent the marshals with the safety of the colony in mind}</small> <li> Study and training\
 <small>{It's not a shameful thing to look back on your knowledge for help, some days we all need a hand. Being able to keep an active mind like steel and the ability to accurately divine the law will be a well  used skill. Much like our local church they teach us to keep body spirit and mind in balance, so to must we learn to improve on these with mental drills, situational training with our team, and rest when we need it.}</small></ul> <hr><hr>"
@@ -140,7 +140,7 @@
 
 	P = new()
 	P.name = "Memo:Smart Engagement"
-	P.info = "<h3>Dear Colleagues of the Marshal and Blackshield Departments,</h1><br>\
+	P.info = "<h3>Dear Colleagues of the Ranger and Blackshield Departments,</h1><br>\
 				<small>I would like to remind you of and re-emphasize the golden rule of extended combat (the three REs):<ol>\
 				<li> REtreat</li>\
 				<li>REgroup</li>\
@@ -155,7 +155,7 @@
 
 	P = new()
 	P.name = "Wanted:Jack Terran"
-	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+	P.info = "<center><b><h1>Iskhod Colonial Security</h1></b> \
 				<h2>Latest wanted issues</h2>\
 				</center>\
 				<hr>\
@@ -192,7 +192,7 @@
 
 	P = new()
 	P.name = "Memo:Smart Engagement"
-	P.info = "<h3>Dear Colleagues of the Marshal and Blackshield Departments,</h1><br>\
+	P.info = "<h3>Dear Colleagues of the Ranger and Blackshield Departments,</h1><br>\
 				<small>I would like to remind you of and re-emphasize the golden rule of extended combat (the three REs):<ol>\
 				<li> REtreat</li>\
 				<li>REgroup</li>\
@@ -207,7 +207,7 @@
 
 	P = new()
 	P.name = "Wanted:Jack Terran"
-	P.info = "<center><b><h1>Nadezhda Colonial Security</h1></b> \
+	P.info = "<center><b><h1>Iskhod Colonial Security</h1></b> \
 				<h2>Latest wanted issues</h2>\
 				</center>\
 				<hr>\
@@ -222,14 +222,14 @@
 
 /obj/structure/noticeboard/medical
 	name = "Medical bulletin board"
-	desc = "A board containing vital notices and official memos for Soteria Medical"
+	desc = "A board containing vital notices and official memos for Vesalius-Andra Medical"
 	icon_state = "nboard01"
 	notices = 1
 
 /obj/structure/noticeboard/medical/New()
 	var/obj/item/paper/P = new()
 	P.name = "Preparation Log"
-	P.info = "<center><h2><b>Soteria Institute - Medical Department</b></h2><br>\
+	P.info = "<center><h2><b>VA Biomechanics - Medical Department</b></h2><br>\
 	<i>Preparation log</i><br>\
 	<small>DATE: [time2text(world.realtime, "DD/MM/YYYY")] | SI-MED-051-A</small><br>\
 	<small><i>Working Copy 3</i></small></center><hr>\
@@ -254,7 +254,7 @@
 
 /obj/structure/noticeboard/research
 	name = "Research bulletin board"
-	desc = "A board containing vital notices and official memos for the Soteria research"
+	desc = "A board containing vital notices and official memos for the Vesalius-Andra research"
 	icon_state = "nboard00"
 	notices = 1
 
@@ -290,7 +290,7 @@
 
 /obj/structure/noticeboard/prospectors/New()
 	var/obj/item/paper/P = new()
-	P.name = "Memo RE: LSS Bulk Selling"
+	P.name = "Memo RE: FL Bulk Selling"
 	P.info = "<ul><h3><u>How to deal with Cargo with many sellable items!</u></h3><hr>\
 	<li>Step 0: Get the loot \
 	<li>Step 1: Sort the loot into crates or lockers you <b>WANT</b> to bulk sell.Do <b>NOT</b> store sellables inside pouches, bags or toolboxes. Export beacons do NOT like nested items. \
@@ -305,14 +305,14 @@
 	update_icon()
 
 /obj/structure/noticeboard/lonestar_service
-	name = "Lonestar Shipping bulletin board"
-	desc = "A board containing vital notices and official memos for Lonestar-Service Employees"
+	name = "Frontier Logistics Shipping bulletin board"
+	desc = "A board containing vital notices and official memos for Frontier Logistics-Service Employees"
 	icon_state = "nboard00"
 	notices = 0
 
 /obj/structure/noticeboard/lonestar_supply
-	name = "Lonestar Shipping bulletin board"
-	desc = "A board containing vital notices and official memos for Lonestar-Supply Employees"
+	name = "Frontier Logistics Shipping bulletin board"
+	desc = "A board containing vital notices and official memos for Frontier Logistics-Supply Employees"
 	icon_state = "nboard00"
 	notices = 3
 

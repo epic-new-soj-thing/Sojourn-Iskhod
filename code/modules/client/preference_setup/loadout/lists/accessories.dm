@@ -130,20 +130,19 @@
 	flags = GEAR_HAS_COLOR_SELECTION
 
 /datum/gear/accessory/blackshieldpatch
-	display_name = "blackshield patch selection"
-	description = "A selection of Blackshield patches."
+	display_name = "ranger patch selection"
+	description = "A selection of Iskhod Ranger patches."
 	path = /obj/item/clothing/accessory/patches
 
 /datum/gear/accessory/blackshieldpatch/New()
 	..()
 	var/patches = list(
-		"blackshield patch"				=	/obj/item/clothing/accessory/patches/blackshield,
-		"blackshield blank patch"		=	/obj/item/clothing/accessory/patches/blackshield_blank,
-		"blackshield volunteer patch"	=	/obj/item/clothing/accessory/patches/blackshield_volunteer,
-		"blackshield trooper patch"		=	/obj/item/clothing/accessory/patches/blackshield_trooper,
-		"blackshield corpsman patch"	=	/obj/item/clothing/accessory/patches/blackshield_corpsman,
-		"blackshield sergeant patch"	=	/obj/item/clothing/accessory/patches/blackshield_sergeant,
-		"blackshield commander patch"	=	/obj/item/clothing/accessory/patches/blackshield_commander,
+		"general ranger patch"		= /obj/item/clothing/accessory/patches/blackshield,
+		"junior ranger patch"		= /obj/item/clothing/accessory/patches/blackshield_volunteer,
+		"ranger patch"				= /obj/item/clothing/accessory/patches/blackshield_trooper,
+		"detective patch"			= /obj/item/clothing/accessory/patches/blackshield_corpsman,
+		"lieutenant patch"			= /obj/item/clothing/accessory/patches/blackshield_sergeant,
+		"captain patch"				= /obj/item/clothing/accessory/patches/blackshield_commander,
 	)
 	gear_tweaks += new /datum/gear_tweak/path(patches)
 

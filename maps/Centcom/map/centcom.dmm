@@ -213,7 +213,6 @@
 "aP" = (
 /obj/structure/table/woodentable,
 /obj/item/device/camera_film,
-/obj/item/pack_card_carp,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "aQ" = (
@@ -5388,7 +5387,7 @@
 /area/centcom/evac)
 "oK" = (
 /obj/structure/table/marble,
-/obj/machinery/cooking_with_jane/stove,
+/obj/machinery/cooking/stove,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oL" = (
@@ -5398,48 +5397,48 @@
 /area/centcom/evac)
 "oM" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cwj/container/pot,
+/obj/item/reagent_containers/cooking/container/pot,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oN" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cwj/container/oven,
+/obj/item/reagent_containers/cooking/container/oven,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oO" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cwj/container/deep_basket,
+/obj/item/reagent_containers/cooking/container/deep_basket,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oP" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cwj/container/air_basket,
+/obj/item/reagent_containers/cooking/container/air_basket,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oQ" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cwj/container/board,
+/obj/item/reagent_containers/cooking/container/board,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oR" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cwj/container/bowl,
+/obj/item/reagent_containers/cooking/container/bowl,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oS" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cwj/container/grill_grate,
+/obj/item/reagent_containers/cooking/container/grill_grate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oT" = (
 /obj/structure/table/marble,
-/obj/item/stack/material/wood/full,
-/obj/item/spatula,
+/obj/machinery/cooking/bunson,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oU" = (
 /obj/structure/table/marble,
-/obj/machinery/cooking_with_jane/grill,
+/obj/machinery/cooking/grill,
+/obj/item/spatula,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "oV" = (
@@ -5641,7 +5640,7 @@
 /area/centcom/evac)
 "qc" = (
 /obj/machinery/door/airlock/centcom{
-	name = "LSS Internal Affairs"
+	name = "FL Internal Affairs"
 	},
 /turf/simulated/floor/wood,
 /area/centcom/evac)
@@ -5739,6 +5738,11 @@
 "rh" = (
 /obj/structure/bed/chair/office/light,
 /turf/simulated/floor/tiled/dark/gray_perforated,
+/area/centcom/evac)
+"rm" = (
+/obj/structure/bookcase/scrolls,
+/obj/item/storage/pouch/scroll,
+/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "rp" = (
 /obj/machinery/computer/teleporter,
@@ -6051,6 +6055,17 @@
 	},
 /turf/space/transit/north/shuttlespace_ns5,
 /area/space)
+"tJ" = (
+/obj/structure/table/standard,
+/obj/machinery/computer/cryopod{
+	pixel_y = -32
+	},
+/obj/item/storage/deferred/rations,
+/obj/structure/mirror/antag{
+	pixel_x = -28
+	},
+/turf/simulated/floor/tiled/steel/gray_platform,
+/area/centcom/evac)
 "tL" = (
 /obj/machinery/vending/marshal_kit,
 /turf/simulated/floor/tiled/dark/gray_platform,
@@ -6228,8 +6243,13 @@
 "vm" = (
 /obj/structure/table/woodentable,
 /obj/item/clothing/glasses/binoclard_lenses/dark,
-/obj/item/device/camera/crayon_mage,
+/obj/item/device/camera/blood_scribe,
 /turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
+"vp" = (
+/obj/structure/table/marble,
+/obj/item/reagent_containers/snacks/dollop,
+/turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "vB" = (
 /obj/structure/railing,
@@ -6374,13 +6394,12 @@
 /area/centcom/evac)
 "wY" = (
 /obj/structure/table/woodentable,
-/obj/item/oddity/common/book_omega/closed,
+/obj/item/soap/bluespase,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "xg" = (
-/obj/structure/table/marble,
 /obj/item/seeds/tomatoseed,
-/obj/item/reagent_containers/snacks/dollop,
+/obj/machinery/cooking/deepfrier,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "xl" = (
@@ -6514,7 +6533,7 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
 "yC" = (
-/obj/machinery/cooking_with_jane/oven,
+/obj/machinery/cooking/oven,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "yL" = (
@@ -6826,7 +6845,7 @@
 /area/centcom/evac)
 "BW" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cwj/container/plate,
+/obj/item/reagent_containers/cooking/container/plate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "BX" = (
@@ -6839,6 +6858,10 @@
 /obj/machinery/door/airlock/hatch,
 /turf/simulated/floor/carpet/blucarpet,
 /area/centcom/raider_base)
+"Cb" = (
+/obj/effect/shuttle_landmark/escape_pod/transit,
+/turf/space,
+/area/space)
 "Ce" = (
 /obj/structure/table/rack/shelf,
 /obj/effect/floor_decal/industrial/outline/yellow,
@@ -7233,7 +7256,7 @@
 "FZ" = (
 /obj/structure/table/marble,
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cwj/container/plate,
+/obj/item/reagent_containers/cooking/container/plate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Ga" = (
@@ -7609,7 +7632,10 @@
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
 "IF" = (
-/obj/item/storage/pouch/scroll,
+/obj/structure/curtain/open/shower/security,
+/obj/machinery/door/unpowered/simple/wood{
+	name = "blood magic study"
+	},
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "II" = (
@@ -7676,6 +7702,13 @@
 "Jc" = (
 /obj/structure/sign/warning/nosmoking/small,
 /turf/simulated/wall/r_wall,
+/area/centcom/evac)
+"Ji" = (
+/obj/structure/bookcase/tomes{
+	name = "blood magic tomes bookcase"
+	},
+/obj/item/storage/pouch/tome,
+/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Jm" = (
 /obj/machinery/door/airlock/centcom{
@@ -7786,7 +7819,6 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/centcom/raider_base)
 "Kw" = (
-/obj/machinery/cryopod,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -7870,10 +7902,6 @@
 /turf/simulated/floor/wood/wild3,
 /area/centcom/merc_base)
 "Lo" = (
-/obj/machinery/cryopod{
-	dir = 4;
-	tag = "icon-cryopod_0 (EAST)"
-	},
 /obj/machinery/light{
 	dir = 4
 	},
@@ -7926,12 +7954,21 @@
 /turf/simulated/floor/wood/wild3,
 /area/centcom/evac)
 "LO" = (
-/obj/effect/decal/cleanable/crayon,
-/turf/simulated/floor/wood/wild1,
+/obj/structure/table/marble,
+/obj/item/stack/material/wood/full,
+/obj/item/stack/material/wood/full,
+/obj/item/stack/material/wood/full,
+/turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "LW" = (
 /obj/structure/bed/chair/wood{
 	dir = 1
+	},
+/turf/simulated/floor/wood/wild1,
+/area/centcom/evac)
+"LY" = (
+/obj/structure/bookcase/oddity_demonomicon{
+	name = "blood magic oddities bookcase"
 	},
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
@@ -7942,7 +7979,7 @@
 /area/centcom/evac)
 "Mb" = (
 /obj/structure/table/marble,
-/obj/item/reagent_containers/cwj/container/pan,
+/obj/item/reagent_containers/cooking/container/pan,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Mc" = (
@@ -8033,12 +8070,15 @@
 /area/centcom/merc_base)
 "Ne" = (
 /obj/structure/table/woodentable,
-/obj/item/storage/fancy/crayons,
-/obj/item/soap/bluespase,
+/obj/item/pack_card_carp,
+/obj/item/pack_card_carp,
+/obj/item/pack_card_carp,
+/obj/item/pack_card_carp,
+/obj/item/pack_card_carp,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Nf" = (
-/obj/structure/sink/basin/crayon,
+/obj/structure/sink/basin/blood,
 /turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Nn" = (
@@ -8413,6 +8453,9 @@
 	pixel_y = -32
 	},
 /obj/item/storage/deferred/rations,
+/obj/structure/mirror/antag{
+	pixel_x = 28
+	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/centcom/evac)
 "PO" = (
@@ -8703,11 +8746,6 @@
 "Sl" = (
 /obj/machinery/vending/security,
 /turf/simulated/floor/tiled/dark/golden,
-/area/centcom/evac)
-"Sv" = (
-/obj/structure/bookcase,
-/obj/item/scroll,
-/turf/simulated/floor/wood/wild1,
 /area/centcom/evac)
 "Sx" = (
 /obj/machinery/light/small,
@@ -9051,10 +9089,6 @@
 /obj/effect/floor_decal/industrial/warning/fulltile,
 /turf/simulated/floor/tiled/dark/techfloor_grid,
 /area/centcom/evac)
-"Wf" = (
-/obj/machinery/cryopod,
-/turf/simulated/floor/tiled/steel/gray_platform,
-/area/centcom/evac)
 "Wg" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/pouch/ammo,
@@ -9231,7 +9265,7 @@
 "Yf" = (
 /obj/structure/table/marble,
 /obj/item/reagent_containers/snacks/sandwich,
-/obj/item/reagent_containers/cwj/container/grill_grate,
+/obj/item/reagent_containers/cooking/container/grill_grate,
 /turf/simulated/floor/tiled/cafe,
 /area/centcom/evac)
 "Yk" = (
@@ -9296,10 +9330,6 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/centcom/evac)
 "YD" = (
-/obj/machinery/cryopod{
-	dir = 4;
-	tag = "icon-cryopod_0 (EAST)"
-	},
 /turf/simulated/floor/tiled/steel/gray_platform,
 /area/centcom/evac)
 "YH" = (
@@ -16199,13 +16229,13 @@ qH
 qH
 KR
 ho
+MH
+MH
+MH
+MH
+MH
+MH
 IF
-MH
-MH
-MH
-MH
-Nf
-ho
 cN
 hy
 Ks
@@ -16401,12 +16431,12 @@ qH
 qH
 KR
 ho
+MH
 JN
 JN
+JN
 MH
-MH
-MH
-Sv
+rm
 ho
 cN
 hy
@@ -16603,12 +16633,12 @@ qH
 qH
 KR
 ho
+Nf
 JN
-LO
 MH
+JN
 MH
-MH
-Sv
+LY
 ho
 cN
 hy
@@ -16805,12 +16835,12 @@ qH
 qH
 KR
 ho
+MH
 JN
 JN
+JN
 MH
-MH
-MH
-Sv
+Ji
 ho
 dj
 hy
@@ -24293,9 +24323,9 @@ aD
 dn
 ho
 Kw
-Wf
-Wf
-Wf
+YD
+YD
+YD
 Kw
 ho
 ho
@@ -24499,7 +24529,7 @@ Hh
 Hh
 Hh
 Hh
-PN
+tJ
 ho
 oT
 FM
@@ -24909,8 +24939,8 @@ FM
 FM
 Yf
 wx
-UC
-UC
+vp
+LO
 ho
 hY
 aD
@@ -26581,7 +26611,7 @@ qH
 pO
 qH
 qH
-qH
+Cb
 qH
 qH
 pO
@@ -49238,7 +49268,7 @@ qH
 (198,1,1) = {"
 qH
 qH
-qH
+qI
 qH
 qH
 qH

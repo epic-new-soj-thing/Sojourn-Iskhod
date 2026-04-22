@@ -769,8 +769,8 @@ mob/living/carbon/human/proc/get_wings_image()
 		var/image/standing = image(icon = under_icon, icon_state = under_state)
 		standing.color = w_uniform.color
 
-		//apply blood overlay
-		if(w_uniform.blood_DNA)
+		//apply blood overlay (hide if visually cleaned; still show under luminol)
+		if((w_uniform.blood_DNA && !w_uniform.blood_visually_cleaned) || (w_uniform.was_bloodied && w_uniform.fluorescent))
 			var/image/bloodsies	= image(icon = form.blood_mask, icon_state = "uniformblood")
 			bloodsies.color		= w_uniform.blood_color
 			standing.add_overlay(bloodsies)
@@ -833,7 +833,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		else
 			standing = image(icon = form.get_mob_icon("gloves"), icon_state = t_state)
 
-		if(gloves.blood_DNA)
+		if((gloves.blood_DNA && !gloves.blood_visually_cleaned) || (gloves.was_bloodied && gloves.fluorescent))
 			var/image/bloodsies	= image("icon" = form.blood_mask, "icon_state" = "bloodyhands")
 			bloodsies.color = gloves.blood_color
 			standing.add_overlay(bloodsies)
@@ -933,7 +933,7 @@ mob/living/carbon/human/proc/get_wings_image()
 		else
 			standing = image(icon = form.get_mob_icon("shoes"), icon_state = shoes.icon_state)
 
-		if(shoes.blood_DNA)
+		if((shoes.blood_DNA && !shoes.blood_visually_cleaned) || (shoes.was_bloodied && shoes.fluorescent))
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "shoeblood")
 			bloodsies.color = shoes.blood_color
 			standing.add_overlay(bloodsies)
@@ -1010,7 +1010,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			//Create the image
 			standing = image(icon = t_icon, icon_state = t_state)
 
-		if(head.blood_DNA)
+		if((head.blood_DNA && !head.blood_visually_cleaned) || (head.was_bloodied && head.fluorescent))
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "helmetblood")
 			bloodsies.color = head.blood_color
 			standing.add_overlay(bloodsies)
@@ -1113,7 +1113,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			drop_l_hand()
 			drop_r_hand()
 
-		if(wear_suit.blood_DNA)
+		if((wear_suit.blood_DNA && !wear_suit.blood_visually_cleaned) || (wear_suit.was_bloodied && wear_suit.fluorescent))
 			var/obj/item/clothing/suit/S = wear_suit
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "[S.blood_overlay_type]blood")
 			bloodsies.color = S.blood_color
@@ -1160,7 +1160,7 @@ mob/living/carbon/human/proc/get_wings_image()
 			standing = image(icon = form.get_mob_icon("mask"), icon_state = wear_mask.icon_state)
 		standing.color = wear_mask.color
 
-		if( !istype(wear_mask, /obj/item/clothing/mask/smokable/cigarette) && wear_mask.blood_DNA )
+		if( !istype(wear_mask, /obj/item/clothing/mask/smokable/cigarette) && ((wear_mask.blood_DNA && !wear_mask.blood_visually_cleaned) || (wear_mask.was_bloodied && wear_mask.fluorescent)) )
 			var/image/bloodsies = image("icon" = form.blood_mask, "icon_state" = "maskblood")
 			bloodsies.color = wear_mask.blood_color
 			standing.add_overlay(bloodsies)

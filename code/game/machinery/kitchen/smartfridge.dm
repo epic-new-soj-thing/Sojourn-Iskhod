@@ -87,7 +87,8 @@
 /obj/machinery/smartfridge/secure/medbay
 	name = "\improper medicine SmartFridge"
 	desc = "A refrigerated storage unit for storing medicine and chemicals."
-	req_one_access = list(access_moebius,access_chemistry)
+	req_one_access = list(access_medical_equip,access_chemistry)
+	is_secure = 1
 
 /obj/machinery/smartfridge/secure/medbay/accept_check(var/obj/item/O as obj)
 	if(istype(O,/obj/item/reagent_containers/glass/))
@@ -100,7 +101,7 @@
 
 /obj/machinery/smartfridge/chemistry
 	name = "\improper chemical SmartFridge"
-	desc = "A refrigerated storage unit for medicine and chemical storage."
+	desc = "A refrigerated storage unit for medicine and chemical storage. Requires medical equipment access."
 
 /obj/machinery/smartfridge/chemistry/accept_check(var/obj/item/O as obj)
 	if(istype(O,/obj/item/storage/pill_bottle) || istype(O,/obj/item/reagent_containers))

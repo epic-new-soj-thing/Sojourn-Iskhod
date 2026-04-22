@@ -5,12 +5,15 @@
 	var/tag_exterior_door
 	var/tag_interior_door
 	var/tag_airpump
+	var/tag_airpump_ext // Secondary pump for exterior cycling
+	var/tag_scrubber    // Dedicated scrubber for fast cycling
 	var/tag_chamber_sensor
 	var/tag_exterior_sensor
 	var/tag_interior_sensor
 	var/tag_airlock_mech_sensor
 	var/tag_shuttle_mech_sensor
 	var/tag_secure = 0
+	var/tag_purge = 0
 
 /obj/machinery/embedded_controller/radio/airlock/New()
 	. = ..()
@@ -71,6 +74,8 @@
 		"exterior_status" = program.memory["exterior_status"],
 		"interior_status" = program.memory["interior_status"],
 		"processing" = program.memory["processing"],
+		"purge" = program.memory["purge"],
+		"secure" = program.memory["secure"]
 	)
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
@@ -90,7 +95,7 @@
 
 	var/clean = 0
 	switch(href_list["command"])
-		if("cycle_ext", "cycle_int", "force_ext", "force_int", "abort")
+		if("cycle_ext", "cycle_int", "force_ext", "force_int", "abort", "purge", "secure")
 			clean = TRUE
 
 	if(clean)

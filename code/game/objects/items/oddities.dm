@@ -121,7 +121,7 @@
 
 /obj/item/oddity/common/old_newspaper
 	name = "odd newspaper clipping" //Old old news papers are a good joke
-	desc = "It contains a report on some old and strange phenomenon. Maybe it's lies, maybe it's corporate experiments gone wrong. The date listed on it is impossible, yet it bears the stamp of the Nadezhda."
+	desc = "It contains a report on some old and strange phenomenon. Maybe it's lies, maybe it's corporate experiments gone wrong. The date listed on it is impossible, yet it bears the stamp of the Iskhod."
 	icon_state = "old_newspaper"
 	prob_perk = 10 //Grounded in rality and able to be discarded as yellow journalism
 	oddity_stats = list(
@@ -153,7 +153,7 @@
 
 /obj/item/oddity/common/paper_omega
 	name = "collection of obscure reports"
-	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. The logo is faded, making it hard to tell if this was Greyson, Soteria, or an independent group."
+	desc = "Even the authors seem to be rather skeptical about their findings. The reports are not connected to each other, but their results are similar. The logo is faded, making it hard to tell if this was Greyson, Vesalius-Andra, or an independent group."
 	icon_state = "reports1"
 	prob_perk = 45 //The skeptical mind of the inker helps keep it grounded but it shows something unable to be shaken out of the mind
 	oddity_stats = list(
@@ -175,33 +175,6 @@
 		STAT_ROB = 7,
 		STAT_TGH = 7,
 		STAT_VIG = 7
-	)
-
-/obj/item/oddity/common/book_omega // Dummy parent for crayon magic purposes
-	oddity_stats = list(
-		STAT_BIO = 5,
-		STAT_ROB = 5,
-		STAT_VIG = 5
-	)
-
-/obj/item/oddity/common/book_omega/closed
-	name = "occult book"
-	desc = "Most of the stories in this book seem to be the ramblings of an insane cultist, but at least the stories are interesting. \
-			Some of the phrases are written in a language that makes sense at times, but becomes intelligible to you a second after. Something about candles around a magic circle on the floor...\
-			While this sounds like utter nonsense to you, you have a dreadful feeling that using this book in the runes described would have some sinister effect..."
-	icon_state = "book_eyes" // This sprite fits better an occult book, swapped with the observer one.
-	prob_perk = 15 //old wrighting with the madmans ink allows the mind to go a bit more wild then just a single paper
-
-/obj/item/oddity/common/book_omega/opened
-	name = "open occult book"
-	icon_state = "book_eyes_open"
-	item_state = "book_eyes_open" // Yes, it HAS spooky on-hand sprites!
-	desc = "The book floats open in your hands, infinite forbidden knowledge and non-euclidean geometry contained within at your disposal. \
-			The anomaly has been strengthened in its odd nature by forces unknown, but is still perfectly functional for your rituals..."
-	oddity_stats = list(
-		STAT_BIO = 9,
-		STAT_ROB = 9,
-		STAT_VIG = 9
 	)
 
 /obj/item/oddity/common/broken_key
@@ -239,7 +212,7 @@
 
 /obj/item/oddity/common/instructional_bio
 	name = "first-aid book"
-	desc = "Instructional manual for Soteria personnel giving basic knowledge of CPR and how to deal with Unruly patients"
+	desc = "Instructional manual for Vesalius-Andra personnel giving basic knowledge of CPR and how to deal with Unruly patients"
 	icon_state = "instructional_bio"
 	prob_perk = 5 //Grounded and talked about, instructional manual for Lifeline techs
 	oddity_stats = list(
@@ -465,31 +438,6 @@
 		STAT_COG = 6
 	)
 
-/obj/item/oddity/common/book_unholy // Parent so that we can benefit from rituals
-
-/obj/item/oddity/common/book_unholy/closed
-	name = "unholy book"
-	desc = "The writings inside describe some strange rituals wrote in crayons. Some pages have been torn out or smudged to illegibility, \
-			but what little you can make out tells you that \"...to be able to see beyond the veil, the caster will need to be half blind...\". \
-			While this may look like utter nonsense to you, the dreadful feeling that using this book in the runes described would have some sinister effect..."
-	icon_state = "book_skull"
-	prob_perk = 80 //Cult around this gives it great power
-	oddity_stats = list(
-		STAT_COG = 3,
-		STAT_MEC = 7
-	)
-
-/obj/item/oddity/common/book_unholy/opened
-	name = "awakened unholy book"
-	desc = "The book floats open in your hands, infinite forbidden knowledge and non-euclidean geometry contained within at your disposal. \
-			The anomaly has been strengthened in its odd nature by forces unknown, but is still perfectly functional for your rituals..."
-	icon_state = "book_skull_open"
-	item_state = "book_skull_open"
-	oddity_stats = list(
-		STAT_COG = 6,
-		STAT_MEC = 9
-	)
-
 /obj/item/oddity/common/photo_crime
 	name = "crime scene photo"
 	desc = "It is unclear whether this is a victim of suicide or murder. His face is frozen in a look of agony and terror, and you shudder to think at what his last moments might have been."
@@ -531,7 +479,7 @@
 
 /obj/item/oddity/rare/drawing_of_sun
 	name = "Drawing of a Unknown Sun"
-	desc = "A drawing of a type of sun no one has ever seen before done in crayon."
+	desc = "A drawing of a type of sun no one has ever seen before, stained with blood."
 	icon_state = "crayon_sun"
 	min_stats = 3
 	oddity_stats = list(
@@ -651,7 +599,7 @@
 	perk = PERK_BLACKBOX_INSIGHT
 
 /obj/item/oddity/bath
-	name = "Lonestar Smelling Salts"
+	name = "Frontier Logistics Smelling Salts"
 	desc = "A bottle of water that smells a lot of pork and cocaine. This will kick you back into your seat but don't expect your brain to like it much."
 	icon_state = "cursed_hog"
 	random_stats = FALSE
@@ -691,7 +639,7 @@
 
 /obj/item/oddity/nt/seal
 	name = "Cartographer's Seal"
-	desc = "A badge carrying the seal of the cartographer of the Church of the Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight, as many of these seals are thought to be lost. Merely holding one is said to inspire divine right. The church would be immensely interested in this."
+	desc = "A pre-Exodus badge carrying the seal of the cartographer of the Church of the Absolute, said to be marked with a tithe of blood as proof of its sacred nature. An extremely rare sight after the fall of Nadezhda; many such seals were lost in the schism. The Order of the Word would treat it as a precious relic of the old faith."
 	icon_state = "nt_seal"
 	oddity_stats = list(
 		STAT_TGH = 12,
@@ -703,7 +651,7 @@
 
 /obj/item/oddity/nt/pyramid
 	name = "Pyramid"
-	desc = "A small sandstone pyramid, covered in bizzare engravings. The Cartographer of the Church of the Absolute has declared relics like this holy beyond any doubt, though none know exactly why."
+	desc = "A small sandstone pyramid, covered in bizarre engravings. Before the Exodus, the Cartographer of the Church of the Absolute declared relics like this holy beyond any doubt. The Order of the Word still treats such finds with reverence, though none know exactly why they were deemed sacred."
 	icon_state = "pyramid"
 	oddity_stats = list(
 		STAT_TGH = 16
@@ -725,7 +673,7 @@
 
 /obj/item/oddity/si_bluespace_scanner
 	name = "Bluespace Tuning Device"
-	desc = "An anomalous, experimental tool produced by the Soteria Institute to get accurate readings of local and global Bluespace entropy." // It's a lie that it stabilizes Bluespace.
+	desc = "An anomalous, experimental tool produced by the VA Biomechanics to get accurate readings of local and global Bluespace entropy." // It's a lie that it stabilizes Bluespace.
 	icon_state = "si_scan"
 	item_state = "si_scan"
 	matter = list(MATERIAL_PLASTIC = 15, MATERIAL_STEEL = 10, MATERIAL_PLASMAGLASS = 2, MATERIAL_GOLD = 10, MATERIAL_SILVER = 10, MATERIAL_PLASMA = 5, MATERIAL_DIAMOND = 1)
@@ -746,9 +694,9 @@
 // Considering the vast amount of references in code, a Zefram being a unit of measurement for Bluespace Entropy fits, while not being directly a Cochrane. - Seb
 
 /obj/item/oddity/code_book
-	name = "Marshal Code Handbook"
-	desc = "A heavy book with details and translations of the Marshal codes."
-	icon_state = "instructional_rob" // Fits better with a supposed Marshal's logo up front. - Seb
+	name = "Ranger Code Handbook"
+	desc = "A heavy book with details and translations of the Ranger codes."
+	icon_state = "instructional_rob" // Fits better with a supposed Ranger's logo up front. - Seb
 	oddity_stats = list(
 		STAT_VIG = 6
 	)
@@ -765,8 +713,8 @@
 	price_tag = 3200 //So we have a reason for stealing it
 	perk = PERK_CHEMIST
 
-//Lonestar
-//Oddities that are only orderable through Lonestar cargo
+//Frontier Logistics
+//Oddities that are only orderable through Frontier Logistics cargo
 
 /obj/item/oddity/ls
 	prob_perk = 0
@@ -876,7 +824,7 @@
 		STAT_ROB = 2
 	)
 
-//Lonestar Clothing Oddities
+//Frontier Logistics Clothing Oddities
 //for oddities that double as clothes
 
 /obj/item/oddity/ls/silk_cloak
@@ -891,7 +839,7 @@
 		STAT_COG = 2
 	)
 
-//Lonestar Weapon Oddities
+//Frontier Logistics Weapon Oddities
 //oddities that double as weapons
 
 /obj/item/oddity/ls/kriosan_sword
@@ -914,7 +862,7 @@
 		STAT_ROB = 7
 	)
 
-//Lonestar Misc Oddities
+//Frontier Logistics Misc Oddities
 //Primarily for gimmicks that aren't weapon or clothing related
 
 /obj/item/oddity/ls/newton_odd
@@ -1012,7 +960,7 @@
 		to_chat(user,("<span class='info'> The [src] clicks! Neat.</span>"))
 		inert = TRUE
 
-//Lonestar Special
+//Frontier Logistics Special
 //For unique oddities that don't fit into other categories
 
 /obj/item/oddity/rare/openedpuzzlebox

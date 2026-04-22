@@ -18,6 +18,19 @@
 	if(N)
 		amount_per_transfer_from_this = N
 
+/obj/item/reagent_containers/AltClick(mob/user)
+	if(!possible_transfer_amounts)
+		return ..()
+	if(user.incapacitated())
+		to_chat(user, SPAN_WARNING("You can't do that right now!"))
+		return
+	if(!in_range(src, user))
+		return
+	var/N = input(user, "Amount per transfer from this:","[src]", amount_per_transfer_from_this) as null|anything in possible_transfer_amounts
+	if(N)
+		amount_per_transfer_from_this = N
+		to_chat(user, SPAN_NOTICE("Transfer amount set to [N] units."))
+
 /obj/item/reagent_containers/Initialize()
 	cut_overlays()
 	create_reagents(volume)
@@ -176,7 +189,7 @@
 			return FALSE
 
 	if(!is_drainable())
-		#ifdef CWJ_DEBUG
+		#ifdef COOKING_DEBUG
 		log_debug("reagent_containers/standard_pour_into()- Container not drainable!")
 		#endif
 

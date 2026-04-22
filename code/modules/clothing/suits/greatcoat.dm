@@ -1,6 +1,6 @@
 
 /obj/item/clothing/suit/greatcoat/cap
-	name = "premier's greatcoat"
+	name = "facility director's greatcoat"
 	desc = "A green greatcoat. Makes you feel like the leader you are supposed to be."
 	icon_state = "cap_coat"  //Sprites from Eris
 	item_state = "cap_coat"
@@ -22,9 +22,9 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Premier Greatcoat"] = "cap_coat"
-	options["Premier old Greatcoat"] = "cap_coat-old"
-	options["Premiers old Cloaked Greatcoat"] = "cap_coat_cloak-old"
+	options["Facility Director Greatcoat"] = "cap_coat"
+	options["Facility Director old Greatcoat"] = "cap_coat-old"
+	options["Facility Director's old Cloaked Greatcoat"] = "cap_coat_cloak-old"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
@@ -241,3 +241,4 @@
 	min_cold_protection_temperature = T0C - 20
 	siemens_coefficient = 0.7
 	stiffness = LIGHT_STIFFNESS
+

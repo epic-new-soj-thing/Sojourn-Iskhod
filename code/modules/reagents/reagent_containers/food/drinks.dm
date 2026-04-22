@@ -358,8 +358,8 @@
 	center_of_mass = "x=16;y=7"
 
 /obj/item/reagent_containers/drinks/flask
-	name = "premier's flask"
-	desc = "A metal flask belonging to the Premier."
+	name = "facility director's flask"
+	desc = "A metal flask belonging to the Facility Director."
 	icon_state = "flask"
 	volume = 60
 	center_of_mass = list("x"=17, "y"=7)
@@ -375,8 +375,8 @@
 	icon_state = "lithiumflask"
 
 /obj/item/reagent_containers/drinks/flask/detflask
-	name = "ranger's flask"
-	desc = "A metal flask with a leather band and golden badge belonging to the Ranger."
+	name = "detective's flask"
+	desc = "A metal flask with a leather band and golden badge belonging to the Detective."
 	icon_state = "detflask"
 	volume = 60
 	center_of_mass = list("x"=17, "y"=8)
@@ -461,18 +461,28 @@
 	icon_state = "britmug"
 
 /obj/item/reagent_containers/drinks/mug/moebius
-	name = "\improper soteria mug"
-	desc = "A mug with a Soteria Institute logo on it. Not even your morning coffee is safe from corporate advertising."
+	name = "Vesalius-Andra mug"
+	desc = "A mug with a Vesalius-Andra Biomechanics logo on it. Not even your morning coffee is safe from corporate advertising."
 	icon_state = "mug_moebius"
 
 /obj/item/reagent_containers/drinks/mug/moebius/sci
-	name = "\improper soteria research mug"
-	desc = "A mug with a Soteria Institute research department logo on it. Not even your morning coffee is safe from corporate advertising."
+	name = "Vesalius-Andra research mug"
+	desc = "A mug with a Vesalius-Andra Biomechanics research department logo on it. Not even your morning coffee is safe from corporate advertising."
+	icon_state = "mug_moebius_sci"
+
+/obj/item/reagent_containers/drinks/mug/moebius/sci/overseer
+	name = "Vesalius-Andra research overseer mug"
+	desc = "A mug with a Vesalius-Andra Biomechanics research department logo on it. Not even your boss' coffee is safe from corporate advertising."
 	icon_state = "mug_moebius_sci"
 
 /obj/item/reagent_containers/drinks/mug/moebius/bio
-	name = "\improper soteria biolabs mug"
-	desc = "A mug with a Soteria Institute biolabs department logo on it. Not even your morning coffee is safe from corporate advertising."
+	name = "Vesalius-Andra biolabs mug"
+	desc = "A mug with a Vesalius-Andra Biomechanics biolabs department logo on it. Not even your morning coffee is safe from corporate advertising."
+	icon_state = "mug_moebius_bio"
+
+/obj/item/reagent_containers/drinks/mug/moebius/bio/overseer
+	name = "Vesalius-Andra biolabs overseer mug"
+	desc = "A mug with a Vesalius-Andra Biomechanics biolabs department logo on it. Not even your boss' coffee is safe from corporate advertising."
 	icon_state = "mug_moebius_bio"
 
 /obj/item/reagent_containers/drinks/mug/gold
@@ -501,29 +511,14 @@
 	icon_state = "mug_serb"
 
 /obj/item/reagent_containers/drinks/mug/ironhammer
-	name = "Blackshield mug"
-	desc = "A mug with an Blackshield sign on it."
+	name = "Ranger mug"
+	desc = "A mug with an Iskhod Rangers logo on it."
 	icon_state = "mug_hammer"
 
 /obj/item/reagent_containers/drinks/mug/league
 	name = "Technomancer mug"
 	desc = "A mug with a Technomancer League logo on it."
 	icon_state = "mug_league"
-
-/obj/item/reagent_containers/drinks/mug/moe
-	name = "\improper soteria mug"
-	desc = "A white mug with Soteria Institute logo on it."
-	icon_state = "mug_moe"
-
-/obj/item/reagent_containers/drinks/mug/moe/sci
-	name = "\improper soteria research mug"
-	desc = "A white mug with Soteria Institute research department logo on it."
-	icon_state = "mug_moe_sci"
-
-/obj/item/reagent_containers/drinks/mug/moe/bio
-	name = "\improper soteria biolabs mug"
-	desc = "A white mug with Soteria Institute biolabs department logo on it."
-	icon_state = "mug_moe_bio"
 
 /obj/item/reagent_containers/drinks/mug/aster
 	name = "Aster mug"
@@ -570,3 +565,4 @@
 	desc = "A tall plastic cup of hot green tea."
 	icon_state = "greentea_v"
 	preloaded_reagents = list("greentea" = 30)
+

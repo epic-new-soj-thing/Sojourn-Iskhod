@@ -343,7 +343,7 @@
 
 /obj/item/shield_projector/rectangle/church_personal
 	name = "rosaria personal shield"
-	description_info = "A personal shield designed by the church to rival the Soteria shields, though it is weaker than most soteria shields it none the less provides extra protection, \
+	description_info = "A personal shield designed by the church to rival the Vesalius-Andra shields, though it is weaker than most soteria shields it none the less provides extra protection, \
 	this allows projectiles to leave from inside but blocks projectiles from outside. Everything else can pass through the shield freely, including other people and thrown objects. \
 	The shield also cannot block certain effects which \
 	take place over an area, such as flashbangs or explosions."
@@ -351,7 +351,7 @@
 	high_color = "#EADB83"
 	shield_health = 300
 	max_shield_health = 300
-	size_x = 2 //but the Prime? We protect are own!
+	size_x = 2 //but the Penitent? We protect our own!
 	size_y = 2
 
 /obj/item/shield_projector/rectangle/borg_personal

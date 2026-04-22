@@ -48,7 +48,7 @@
 		//5% for a different higher power to step in blocking the defailing of the playground. Killing it for the round.
 		//This comes at a cost of sending a playtime rune being sent somewere.
 		if(prob(5) && GLOB.deepmaints_data_bool["holy_water_despawning"])
-			var/obj/effect/decal/cleanable/crayon/trap/rebound_joy = new /obj/effect/decal/cleanable/crayon/trap(src.loc)
+			var/obj/effect/decal/cleanable/blood_rune/trap/rebound_joy = new /obj/effect/decal/cleanable/blood_rune/trap(src.loc)
 			rebound_joy.caprice_spell()
 		else
 			addtimer(CALLBACK(src, TYPE_PROC_REF(/turf, psionic_respawn), src, respawn_mob_type), rand(15 MINUTES,20 MINUTES))

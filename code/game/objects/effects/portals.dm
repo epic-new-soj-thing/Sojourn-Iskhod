@@ -19,10 +19,10 @@
 
 	var/DespawnAnimationState
 	var/DespawnAnimationTime
-	var/blue_ink_tk_blocker = TRUE //Stops remotely tping with tk
+	var/tk_blocker = TRUE //Stops remotely tping with tk
 
 /obj/effect/portal/attack_tk(mob/user)
-	if(blue_ink_tk_blocker)
+	if(tk_blocker)
 		to_chat(usr, SPAN_WARNING("\blue Your psionic power has been inhibited by a force."))
 		return
 	else

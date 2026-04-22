@@ -1,0 +1,12 @@
+author: AMcilraith
+changes:
+  - fix: Resolved issues with SQL database persistence for news channels and 
+      messages.
+  - fix: Improved handling of database connection errors in the newscaster 
+      system.
+  - tweak: Excluded certain channels from being persisted to the database based 
+      on defined criteria.
+  - fix: Ensured that the news channels table is created if it does not exist 
+      when establishing the connection.
+date: '2025-12-10'
+delete-after: false

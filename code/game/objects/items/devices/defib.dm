@@ -192,7 +192,8 @@
 
 /obj/item/device/defib_kit/compact/combat
 	name = "combat auto-resuscitator"
-	desc = "A belt-equipped blood-red auto-resuscitator that can be rapidly deployed. Does not have the restrictions or safeties of conventional auto-resuscitators and can revive through space suits."
+	icon_state = "defibcompact_adv"
+	desc = "A belt-equipped blood-red and blue belted auto-resuscitator that can be rapidly deployed. Does not have the restrictions or safeties of conventional auto-resuscitators and can revive through space suits."
 	paddle_type = /obj/item/shockpaddles/linked/combat
 
 	oxygain = 40
@@ -203,7 +204,7 @@
 
 /obj/item/device/defib_kit/compact/combat/adv
 	name = "advanced auto-resuscitator"
-	desc = "A belt-equipped SI branded auto-resuscitator that can be rapidly deployed. Does not have the restrictions or safeties of conventional auto-resuscitators and can revive through space suits."
+	desc = "A belt-equipped VA branded auto-resuscitator that can be rapidly deployed. Does not have the restrictions or safeties of conventional auto-resuscitators and can revive through space suits."
 	paddle_type = /obj/item/shockpaddles/linked/combat/advanced
 	icon_state = "advdefibcompact"
 
@@ -225,6 +226,7 @@
 	desc = "A pair of ploymore-gripped paddles with flat metals surfaces that are used to deliver powerful controled electric shocks."
 	si_only = TRUE
 	advanced_pads = TRUE
+	works_on_synthetics = TRUE // SI defib works on both organics and synths
 
 //paddles
 
@@ -247,6 +249,7 @@
 	var/chargecost = 500 //units of charge per zap	//With the default APC level cell, this allows 4 shocks
 	var/burn_damage_amt = 5
 	var/use_on_synthetic = 0 //If 1, this is only useful on FBPs, if 0, this is only useful on fleshies
+	var/works_on_synthetics = FALSE //If TRUE, can be used on both organics and synths (e.g. SI advanced defib)
 
 	var/advanced_pads = FALSE
 	var/si_only = FALSE
@@ -307,9 +310,10 @@
 
 //Checks for various conditions to see if the mob is revivable
 /obj/item/shockpaddles/proc/can_defib(mob/living/carbon/human/H) //This is checked before doing the defib operation
-	if((H.species.flags & NO_SCAN))
+	// Jumper and SI defib can target synths/FBPs (they have NO_SCAN)
+	if((H.species.flags & NO_SCAN) && !use_on_synthetic && !works_on_synthetics)
 		return "buzzes: \"Unrecogized physiology. Operation aborted.\""
-	else if(H.isSynthetic() && !use_on_synthetic)
+	else if(H.isSynthetic() && !use_on_synthetic && !works_on_synthetics)
 		return "buzzes: \"Synthetic Body. Operation aborted.\""
 	else if(!H.isSynthetic() && use_on_synthetic)
 		return "buzzes: \"Organic Body. Operation aborted.\""
@@ -340,7 +344,8 @@
 	else if(H.health + H.getOxyLoss() <= HEALTH_THRESHOLD_DEAD || (HUSK in H.mutations) || can_defib(H))
 		return "buzzes: \"Resuscitation failed - Severe bodily damage makes recovery of patient impossible via auto-resuscitator. Begin medical intervention before further attempts.\""
 
-	var/bad_vital_organ = check_vital_organs(H)
+	// Skip vital organ check for synths when using jumper cables - they're meant to be revivable in a bad state
+	var/bad_vital_organ = (H.isSynthetic() && use_on_synthetic) ? null : check_vital_organs(H)
 	if(bad_vital_organ)
 		return bad_vital_organ
 
@@ -383,7 +388,7 @@
 	if(!heart)
 		return TRUE
 
-	var/blood_volume = round((H.vessel.get_reagent_amount("blood")/H.species.blood_volume)*100)
+	var/blood_volume = round((H.vessel.get_reagent_amount(H.species.blood_reagent)/H.species.blood_volume)*100)
 	if(!heart || heart.is_broken())
 		blood_volume *= 0.3
 	else if(heart.is_bruised())
@@ -835,10 +840,40 @@
 /obj/item/device/defib_kit/jumper_kit/loaded
 	cell_type = /obj/item/cell/large
 
+/obj/item/device/defib_kit/compact/jumper_advanced
+	name = "advanced jumper cable kit"
+	desc = "A VA branded jumper cable kit that can be rapidly deployed. Does not have the restrictions or safeties of conventional jumper kits and can revive synths through space suits."
+	icon_state = "jumperunit_adv"
+	item_state = "jumperunit_adv"
+	suitable_cell = /obj/item/cell/large
+	paddle_type = /obj/item/shockpaddles/linked/jumper/advanced
+	oxygain = 40
+
+/obj/item/device/defib_kit/compact/jumper_advanced/loaded
+	cell_type = /obj/item/cell/large/moebius/high
+
 /obj/item/shockpaddles/linked/jumper
 	name = "jumper cables"
 	icon_state = "jumperpaddles"
 	item_state = "jumperpaddles"
+	use_on_synthetic = 1
+
+/obj/item/shockpaddles/linked/jumper/update_icon()
+	icon_state = "jumperpaddles[wielded]"
+	item_state = "jumperpaddles[wielded]"
+	if(cooldown)
+		icon_state = "jumperpaddles[wielded]_cooldown"
+
+/obj/item/shockpaddles/linked/jumper/advanced
+	name = "advanced jumper cables"
+	desc = "A pair of polymere-gripped jumper cables with flat metal surfaces used to deliver powerful controlled shocks to synthetic lifeforms."
+	icon_state = "jumperpaddles"
+	item_state = "jumperpaddles"
+	combat = 1
+	safety = 0
+	chargetime = (1 SECONDS)
+	si_only = TRUE
+	advanced_pads = TRUE
 	use_on_synthetic = 1
 
 /obj/item/shockpaddles/robot/jumper

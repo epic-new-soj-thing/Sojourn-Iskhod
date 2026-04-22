@@ -848,6 +848,110 @@
 	glass_name = "pineapple juice"
 	glass_desc = "A tart, yet tropical juice."
 
+// Mar'qua drinks (from Baystation12)
+
+/datum/reagent/drink/thoom
+	name = "Th'oom Juice"
+	id = "thoom"
+	description = "A traditional Mar'qua drink. Strangely sweet and savory."
+	taste_description = "sweet and savory"
+	taste_tag = list(TASTE_SWEET, TASTE_UMAMI)
+	color = "#4a9a3c"
+	nutrition = 1
+
+	glass_unique_appearance = TRUE
+	glass_name = "th'oom juice"
+	glass_desc = "A traditional Mar'qua drink. Strangely sweet and savory."
+
+/datum/reagent/drink/qokkloa
+	name = "Qokk'loa"
+	id = "qokkloa"
+	description = "A traditional Mar'qua drink from qokk'loa moss. Earthy and slightly sweet. Toxic to non-Mar'qua; a mild psychedelic for Mar'qua."
+	taste_description = "earthy and slightly sweet"
+	taste_tag = list(TASTE_SWEET)
+	color = "#5a7a6a"
+	nutrition = 1
+
+	glass_unique_appearance = TRUE
+	glass_name = "qokk'loa"
+	glass_desc = "Earthy, slightly sweet Qokk'loa."
+
+/datum/reagent/drink/qokkloa/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(!ishuman(M))
+		M.add_chemical_effect(CE_TOXIN, 0.5 * effect_multiplier)
+		return
+	var/mob/living/carbon/human/H = M
+	if(H.species?.reagent_tag == IS_MARQUA)
+		M.adjust_hallucination(12 * effect_multiplier, 15 * effect_multiplier)
+		M.druggy = max(M.druggy, 12 * effect_multiplier)
+	else
+		M.add_chemical_effect(CE_TOXIN, 2 * effect_multiplier)
+
+/datum/reagent/ethanol/qokkhrona
+	name = "Qokk'Hrona"
+	id = "qokkhrona"
+	description = "Qokk'loa and wine. A lightly alcoholic Mar'qua cocktail (about a third the strength of wine). Toxic to non-Mar'qua; a mild psychedelic for Mar'qua."
+	taste_description = "earthy sweetness and wine"
+	taste_tag = list(TASTE_SWEET, TASTE_STRONG)
+	color = "#6a5a5a"
+	strength = 5 // One third of wine (15)
+
+	glass_unique_appearance = TRUE
+	glass_name = "Qokk'Hrona"
+	glass_desc = "Qokk'loa and wine. Earthy and smooth."
+
+/datum/reagent/ethanol/qokkhrona/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(!ishuman(M))
+		M.add_chemical_effect(CE_TOXIN, 0.4 * effect_multiplier)
+		return
+	var/mob/living/carbon/human/H = M
+	if(H.species?.reagent_tag == IS_MARQUA)
+		M.adjust_hallucination(10 * effect_multiplier, 12 * effect_multiplier)
+		M.druggy = max(M.druggy, 10 * effect_multiplier)
+	else
+		M.add_chemical_effect(CE_TOXIN, 1 * effect_multiplier)
+
+/datum/reagent/drink/hrukhzaextract
+	name = "Hrukhza Extract"
+	id = "hrukhzaextract"
+	description = "A concentrated Mar'qua extract. Bitter and herbal, used as a base for tonics and blends."
+	taste_description = "bitter and herbal"
+	taste_tag = list(TASTE_BITTER)
+	color = "#6b5a3d"
+	nutrition = 0.5
+
+	glass_unique_appearance = TRUE
+	glass_name = "hrukhza extract"
+	glass_desc = "Concentrated Mar'qua extract. Best diluted."
+
+/datum/reagent/drink/hrukhza_tonic
+	name = "Hrukhza Tonic"
+	id = "hrukhza_tonic"
+	description = "Hrukhza extract mixed with soda water. Refreshing and mildly bitter."
+	taste_description = "bittersweet and fizzy"
+	taste_tag = list(TASTE_BITTER, TASTE_BUBBLY)
+	color = "#7a8a5a"
+	adj_temp = -5
+
+	glass_unique_appearance = TRUE
+	glass_name = "hrukhza tonic"
+	glass_desc = "Hrukhza extract and soda. Refreshing."
+
+/datum/reagent/drink/hrukhza_blend
+	name = "Hrukhza Blend"
+	id = "hrukhza_blend"
+	description = "Hrukhza extract diluted with th'oom juice. A mild Mar'qua blend."
+	taste_description = "herbal and faintly sweet"
+	taste_tag = list(TASTE_SWEET, TASTE_UMAMI)
+	color = "#5a7a4a"
+	nutrition = 0.5
+
+	glass_unique_appearance = TRUE
+	glass_name = "hrukhza blend"
+	glass_desc = "Hrukhza and th'oom. Mild and soothing."
+
 // Everything else
 
 /datum/reagent/drink/milk
@@ -1154,7 +1258,7 @@
 	taste_tag = list(TASTE_REFRESHING, TASTE_BITTER)
 	color = "#664300d3" // rgb: 102, 67, 0
 
-	glass_icon_state = "freddo_spr" // Lonestar Shipping Solutions logo and all!
+	glass_icon_state = "freddo_spr" // Frontier Logistics logo and all!
 	glass_name = "freddo espresso"
 	glass_desc = "Espresso with ice cubes poured over ice."
 	glass_center_of_mass = list("x"=15, "y"=9)
@@ -3109,7 +3213,7 @@
 	glass_center_of_mass = list("x"=16, "y"=12)
 	price_per_unit = 0.25
 
-/datum/reagent/ethanol/schnapps // Inside the hacked vendor, only exist since Lonestar sells to Kriosan Space and this is a highly requested drink there
+/datum/reagent/ethanol/schnapps // Inside the hacked vendor, only exist since Frontier Logistics sells to Kriosan Space and this is a highly requested drink there
 	name = "Jaeger Schnapps"
 	id = "schnapps"
 	description = "A crystal clear glass that stings your senses with sub-par berries and acrid spirits. Finally, some real schnapps."
@@ -3576,8 +3680,8 @@
 	description = "Don't make eye contact, a favorite of the Mar qua."
 	taste_description = "fresh mint and inspiration"
 	taste_tag = list(TASTE_REFRESHING)
-	color = "#E0CE8A" // rgb(88, 81, 54)
-	strength = 30
+	color = "#E0CE8A"
+	strength = 8
 
 	glass_unique_appearance = TRUE
 	glass_icon_state = "Marquadrink"
@@ -3664,7 +3768,7 @@
 /datum/reagent/ethanol/witch_brew
 	name = "Witches Brew"
 	id = "witch_brew"
-	description = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Soteria Research and Brewing Department to help psionics reach ballmer peak."
+	description = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Vesalius-Andra Research and Brewing Department to help psionics reach ballmer peak."
 	taste_description = "wool of bat and eye of newt"
 	taste_tag = list(TASTE_BUBBLY)
 	color = "#E0CE8A" // rgb(88, 81, 54)
@@ -3673,7 +3777,7 @@
 	glass_unique_appearance = TRUE
 	glass_icon_state = "witch_brew"
 	glass_name = "Witches Brew"
-	glass_desc = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Soteria Research and Brewing Department to help psionics reach ballmer peak."
+	glass_desc = "A long sit-mixed tonic that also happens to be ethanol based. The drink was made in the Vesalius-Andra Research and Brewing Department to help psionics reach ballmer peak."
 	price_per_unit = 2
 
 /datum/reagent/ethanol/witch_brew/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)

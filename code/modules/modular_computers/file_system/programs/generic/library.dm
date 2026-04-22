@@ -16,6 +16,7 @@ The answer was five and a half years -ZeroBits
 	size = 6
 	requires_ntnet = 1
 	available_on_ntnet = 1
+	required_access = access_library
 
 	nanomodule_path = /datum/nano_module/library
 
@@ -25,9 +26,18 @@ The answer was five and a half years -ZeroBits
 	var/current_book
 	var/obj/machinery/libraryscanner/scanner
 	var/sort_by = "id"
+	var/upload_category = "Fiction"
 
 /datum/nano_module/library/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS, var/datum/nano_topic_state/state = GLOB.default_state)
 	var/list/data = host.initial_data()
+
+	// Librarian (staff) mode: allow upload, scanner, print. Otherwise view-only.
+	var/can_manage = FALSE
+	if(istype(user, /mob) && user.GetAccess())
+		var/list/A = user.GetAccess()
+		if(A && (access_library in A))
+			can_manage = TRUE
+	data["librarian_mode"] = can_manage
 
 	if(error_message)
 		data["error"] = error_message
@@ -36,21 +46,34 @@ The answer was five and a half years -ZeroBits
 	else
 		var/list/all_entries[0]
 		establish_db_connection()
-		if(!dbcon.IsConnected())
+		if(!dbcon || !dbcon.IsConnected())
 			error_message = "Unable to contact External Archive. Please contact your system administrator for assistance."
 		else
-			var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, category FROM library ORDER BY "+sanitizeSQL(sort_by))
-			query.Execute()
-
-			while(query.NextRow())
-				all_entries.Add(list(list(
-				"id" = query.item[1],
-				"author" = query.item[2],
-				"title" = query.item[3],
-				"category" = query.item[4]
-			)))
+			var/order_col = (sort_by in list("id", "author", "title", "category")) ? sort_by : "id"
+			var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, category FROM books ORDER BY [order_col]")
+			if(!query.Execute())
+				error_message = "Archive query failed. The books table may be missing or the database schema may differ. Check server logs."
+				if(dbcon && dbcon.ErrorMsg())
+					log_debug("Library archive query failed: [dbcon.ErrorMsg()]")
+			else
+				while(query.NextRow())
+					all_entries.Add(list(list(
+					"id" = query.item[1],
+					"author" = query.item[2],
+					"title" = query.item[3],
+					"category" = query.item[4]
+				)))
 		data["book_list"] = all_entries
-		data["scanner"] = istype(scanner)
+		data["scanner"] = can_manage && istype(scanner)
+		data["upload_category"] = upload_category
+
+		// Printable in-game manuals (default books like engineering guides, medical manuals, etc.)
+		var/list/manual_entries = get_printable_manuals()
+		var/list/printable_manuals = list()
+		for(var/i in 1 to manual_entries.len)
+			var/list/entry = manual_entries[i]
+			printable_manuals.Add(list(list("name" = entry["name"], "index" = i)))
+		data["printable_manuals"] = printable_manuals
 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
@@ -74,12 +97,18 @@ The answer was five and a half years -ZeroBits
 	if(href_list["connectscanner"])
 		if(!nano_host())
 			return 1
+		if(!(istype(usr) && usr.GetAccess() && (access_library in usr.GetAccess())))
+			error_message = "Access denied. Librarian access required."
+			return 1
 		for(var/d in GLOB.cardinal)
 			var/obj/machinery/libraryscanner/scn = locate(/obj/machinery/libraryscanner, get_step(nano_host(), d))
 			if(scn && scn.anchored)
 				scanner = scn
 				return 1
 	if(href_list["uploadbook"])
+		if(!(istype(usr) && usr.GetAccess() && (access_library in usr.GetAccess())))
+			error_message = "Access denied. Librarian access required to upload."
+			return 1
 		if(!scanner || !scanner.anchored)
 			scanner = null
 			error_message = "Hardware Error: No scanner detected. Unable to access cache."
@@ -92,45 +121,24 @@ The answer was five and a half years -ZeroBits
 
 		if(B.unique)
 			error_message = "Interface Error: Cached book is copy-protected."
-			return 1
+		else
+			B.SetName(input(usr, "Enter Book Title", "Title", B.name) as text|null)
+			B.author = input(usr, "Enter Author Name", "Author", B.author) as text|null
 
-		B.SetName(input(usr, "Enter Book Title", "Title", B.name) as text|null)
-		B.author = input(usr, "Enter Author Name", "Author", B.author) as text|null
-
-		if(!B.author)
-			B.author = "Anonymous"
-		else if(lowertext(B.author) == "edgar allen poe" || lowertext(B.author) == "edgar allan poe")
-			error_message = "User Error: Upload something original."
-			return 1
-
-		if(!B.title)
-			B.title = "Untitled"
-
-		var/choice = input(usr, "Upload [B.name] by [B.author] to the External Archive?") in list("Yes", "No")
-		if(choice == "Yes")
-			establish_db_connection()
-			if(!dbcon.IsConnected())
-				error_message = "Network Error: Connection to the Archive has been severed."
+			if(!B.author)
+				B.author = "Anonymous"
+			else if(lowertext(B.author) == "edgar allen poe" || lowertext(B.author) == "edgar allan poe")
+				error_message = "User Error: Upload something original."
 				return 1
 
-			var/upload_category = input(usr, "Upload to which category?") in list("Fiction", "Non-Fiction", "Reference", "Religion")
+			if(!B.title)
+				B.title = "Untitled"
 
-			var/sqltitle = sanitizeSQL(B.name)
-			var/sqlauthor = sanitizeSQL(B.author)
-			var/sqlcontent = sanitizeSQL(B.dat)
-			var/sqlcategory = sanitizeSQL(upload_category)
-			var/DBQuery/query = dbcon.NewQuery("INSERT INTO library (author, title, content, category) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]')")
-			if(!query.Execute())
-				to_chat(usr, query.ErrorMsg())
-				error_message = "Network Error: Unable to upload to the Archive. Contact your system Administrator for assistance."
-				return 1
+			if(scanner.try_auto_upload_to_archive(B, upload_category))
+				error_message = "Upload successful. The book has been added to the archive."
 			else
-				log_and_message_admins("has uploaded the book titled [B.name], [length(B.dat)] signs")
-				log_game("[usr.name]/[usr.key] has uploaded the book titled [B.name], [length(B.dat)] signs")
-				alert("Upload Complete.")
-			return 1
-
-		return 0
+				error_message = "Upload failed. The book may already exist in the archive (same title and author), or the database connection failed."
+		return 1
 
 	if(href_list["printbook"])
 		if(!current_book)
@@ -150,14 +158,54 @@ The answer was five and a half years -ZeroBits
 				B.dat = current_book["content"]
 				B.icon_state = "book[rand(1,7)]"
 				B.desc = current_book["author"]+", "+current_book["title"]+", "+"USBN "+current_book["id"]
+				var/obj/machinery/librarycomp/comp = get_library_comp_in_area(get_area(nano_host()))
+				if(comp && !(B in comp.inventory))
+					comp.inventory += B
 				bndr.visible_message("\The [bndr] whirs as it prints and binds a new book.")
 				return 1
 
 		//Regular printing
 		print_text("<i>Author: [current_book["author"]]<br>USBN: [current_book["id"]]</i><br><h3>[current_book["title"]]</h3><br>[current_book["content"]]", usr)
 		return 1
+
+	if(href_list["printmanual"])
+		var/idx = text2num(href_list["printmanual"])
+		var/list/manual_entries = get_printable_manuals()
+		if(!idx || idx < 1 || idx > manual_entries.len)
+			error_message = "Software Error: Invalid manual selection."
+			return 1
+		var/list/entry = manual_entries[idx]
+		var/path_str = entry["path"]
+		var/book_type = text2path(path_str)
+		if(!ispath(book_type, /obj/item/book/manual) || book_type == /obj/item/book/manual/demonomicon)
+			error_message = "Software Error: Cannot print that manual."
+			return 1
+		if(!nano_host())
+			return 1
+		for(var/d in GLOB.cardinal)
+			var/obj/machinery/bookbinder/bndr = locate(/obj/machinery/bookbinder, get_step(nano_host(), d))
+			if(bndr && bndr.anchored)
+				var/obj/item/book/manual/M = new book_type(bndr.loc)
+				var/obj/machinery/librarycomp/comp = get_library_comp_in_area(get_area(nano_host()))
+				if(comp && !(M in comp.inventory))
+					comp.inventory += M
+				bndr.visible_message("\The [bndr] whirs as it prints and binds a new book.")
+				return 1
+		// No binder adjacent; spawn at computer
+		var/obj/item/book/manual/M = new book_type(get_turf(nano_host()))
+		var/obj/machinery/librarycomp/comp = get_library_comp_in_area(get_area(nano_host()))
+		if(comp && !(M in comp.inventory))
+			comp.inventory += M
+		error_message = "Printed (no binder nearby; book dropped at terminal)."
+		return 1
 	if(href_list["sortby"])
 		sort_by = href_list["sortby"]
+		return 1
+	if(href_list["setuploadcategory"])
+		if(istype(usr, /mob) && usr.GetAccess() && (access_library in usr.GetAccess()))
+			var/newcat = input(usr, "Choose category for uploads:", "Archive category", upload_category) in list("Fiction", "Non-Fiction", "Adult", "Reference", "Religion", "Technical", "Other")
+			if(newcat)
+				upload_category = newcat
 		return 1
 	if(href_list["reseterror"])
 		if(error_message)
@@ -173,19 +221,21 @@ The answer was five and a half years -ZeroBits
 
 	var/sqlid = sanitizeSQL(id)
 	establish_db_connection()
-	if(!dbcon.IsConnected())
+	if(!dbcon || !dbcon.IsConnected())
 		error_message = "Network Error: Connection to the Archive has been severed."
 		return 1
 
-	var/DBQuery/query = dbcon.NewQuery("SELECT * FROM library WHERE id=[sqlid]")
-	query.Execute()
+	var/DBQuery/query = dbcon.NewQuery("SELECT id, author, title, content FROM books WHERE id=[sqlid] LIMIT 1")
+	if(!query.Execute())
+		error_message = "Failed to fetch book from archive."
+		return 1
 
-	while(query.NextRow())
+	if(query.NextRow())
 		current_book = list(
 			"id" = query.item[1],
-			"author" = query.item[2],
-			"title" = query.item[3],
-			"content" = query.item[4]
+			"author" = query.item[2] || "Unknown",
+			"title" = query.item[3] || "Untitled",
+			"content" = query.item[4] || ""
 			)
-		break
+		error_message = ""
 	return 1

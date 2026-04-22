@@ -222,9 +222,12 @@
 
 	var/has_auth = has_authorization()
 
+	var/transit_time = shuttle.landmark_transition ? format_transit_time(shuttle.move_time) : "—"
+
 	data = list(
 		"shuttle_status" = shuttle_status,
 		"shuttle_state" = shuttle_state,
+		"transit_time" = transit_time,
 		"has_docking" = shuttle.active_docking_controller? 1 : 0,
 		"docking_status" = shuttle.active_docking_controller? shuttle.active_docking_controller.get_docking_status() : null,
 		"docking_override" = shuttle.active_docking_controller? shuttle.active_docking_controller.override_enabled : null,

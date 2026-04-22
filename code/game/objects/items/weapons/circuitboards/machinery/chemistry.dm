@@ -32,6 +32,19 @@
 		/obj/item/cell/medium = 1
 	)
 
+/obj/item/circuitboard/chemical_dispenser/mini
+	build_name = "Mini Chemical Dispenser"
+	build_path = /obj/machinery/chemical_dispenser/mini
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 4, TECH_BIO = 4)
+	req_components = list(
+		/obj/item/stock_parts/matter_bin = 1,
+		/obj/item/stock_parts/capacitor = 1,
+		/obj/item/stock_parts/manipulator = 1,
+		/obj/item/stock_parts/console_screen = 1,
+		/obj/item/cell/small = 1
+	)
+
 /obj/item/circuitboard/chemical_dispenser/soda
 	build_name = "Soft Drink Chemical Dispenser"
 	build_path = /obj/machinery/chemical_dispenser/soda
@@ -91,4 +104,15 @@
 	origin_tech = list(TECH_BIO = 3)
 	req_components = list(
 		/obj/item/stock_parts/capacitor = 1,
+	)
+
+/obj/item/circuitboard/chem_mass_spec
+	build_name = "High-performance liquid chromatography machine"
+	build_path = /obj/machinery/chem_mass_spec
+	board_type = "machine"
+	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)
+	req_components = list(
+		/obj/item/stack/cable_coil = 2,
+		/obj/item/stock_parts/micro_laser = 1,
+		/obj/item/reagent_containers/glass/beaker = 1
 	)

@@ -445,7 +445,10 @@ const CatalogEntry = (props) => {
 
   // We do not use catalog_key here because linked navigation can introduce things from outside of our catalog
   // that we should always display correctly.
-  if (selected_entry.id.startsWith('/datum/cooking_with_jane/recipe')) {
+  if (
+    selected_entry.id.startsWith('/datum/cooking/recipe') ||
+    selected_entry.id.startsWith('/datum/cooking_with_jane/recipe')
+  ) {
     entryView = (
       <CatalogEntryCooking
         selected_entry={selected_entry as CatalogEntryCookingData}

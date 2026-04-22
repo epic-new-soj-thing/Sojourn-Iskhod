@@ -6,7 +6,7 @@
 
 /obj/item/coreimplant_upgrade/cruciform/priest
 	name = "Devout Ascension Kit"
-	desc = "The first stage of restoring a disciple to his proper status. Requires a ritual from a prime or vector to complete."
+	desc = "The first stage of restoring a disciple to his proper status. Requires a ritual from a Penitent or Hand to complete."
 	implant_type = /obj/item/implant/core_implant/cruciform
 
 /obj/item/coreimplant_upgrade/cruciform/priest/set_up()

@@ -49,7 +49,7 @@
 	gloves = /obj/item/clothing/gloves/thick/brown
 	shoes = /obj/item/clothing/shoes/workboots
 	l_ear = /obj/item/tool/knife/shiv // Let's see if this frees up backpack content space.
-	id_type = FALSE
+	id_type = /obj/item/card/id/outsider
 	pda_type = FALSE
 	backpack_contents = list(/obj/item/storage/hcases/ammo/scrap/outsider = 1)
 

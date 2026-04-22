@@ -1,0 +1,11 @@
+author: r4d6
+changes:
+  - fix: Fixed Ameridian crystal growth mechanics to improve shard production.
+  - fix: Resolved issues causing Ameridian golems to mistakenly not respawn when
+      they die.
+  - fix: Improved cleanup of blood and ingestion related variables during mob 
+      destruction to prevent memory leaks.
+  - fix: Optimized Ameridian golem loot mechanics to ensure loot is correctly 
+      maintained when damage is taken.
+date: '2025-06-01'
+delete-after: false

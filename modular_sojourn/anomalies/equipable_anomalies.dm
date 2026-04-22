@@ -48,7 +48,7 @@
 
 			H.vessel = new/datum/reagents(H.species.blood_volume)
 			H.vessel.my_atom = src
-			H.vessel.add_reagent("blood",blood_difference)
+			H.vessel.add_reagent(H.species.blood_reagent, blood_difference)
 			H.vessel.maximum_volume  += blood_difference
 
 /obj/item/stalker_hand_anomaly/camo_shard

@@ -4,6 +4,7 @@
 		{{:helper.link('Save Report', null, {'save' : 1, 'save_as' : 0}, (data.report_data && !data.view_only) ? null : 'disabled')}}
 		{{:helper.link('Save Copy', null, {'save' : 1, 'save_as' : 1}, (data.report_data && !data.view_only) ? null : 'disabled')}}		
 		{{:helper.link('New Report', null, {'download' : 1, 'warning' : (data.report_data && !data.view_only) ? 1 : 0}, null)}}
+		{{:helper.link('Print Blank Form', null, {'print_blank_form' : 1}, data.printer ? null : 'disabled')}}
 	</div>
 	<center><h2>Report Editor</h2></center>
 	{{if data.report_data}}
@@ -71,4 +72,22 @@
 	{{empty}}
 		There are no reports available for downloading.
 	{{/for}}
+{{else data.prog_state == 3}} <!--REPORT_PRINT_TEMPLATES-->
+	{{:helper.link('Back', null, {'home' : 1}, null)}}
+	<center><h2>Print Blank Form</h2></center>
+	{{if !data.print_template_category}}
+		<div class='item'>Select a category. Forms print with writable areas for pen fill-in.</div>
+		{{for data.paperwork_categories :cat:catIdx}}
+			<div class='item'>
+				{{:helper.link(cat.name, 'folder', { 'set_print_template_category' : catIdx+1 })}}
+			</div>
+		{{/for}}
+	{{else}}
+		<div class='item'><b>{{:data.paperwork_category_name}}</b> {{:helper.link('(change category)', null, { 'set_print_template_category' : 0 })}}</div>
+		{{for data.paperwork_forms}}
+			<div class='item'>
+				{{:helper.link(value.name, 'document', { 'print_blank_form_cat' : value.cat_index, 'print_blank_form_form' : value.form_index })}}
+			</div>
+		{{/for}}
+	{{/if}}
 {{/if}}

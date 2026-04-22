@@ -44,11 +44,14 @@
 
 	if(fuel_max_pressure == 0) fuel_max_pressure = 1
 
+	var/transit_time = shuttle.landmark_transition ? format_transit_time(shuttle.move_time) : "—"
+
 	data = list(
 		"destination_name" = shuttle.get_destination_name(),
 		"can_pick" = shuttle.moving_status == SHUTTLE_IDLE,
 		"shuttle_status" = shuttle_status,
 		"shuttle_state" = shuttle_state,
+		"transit_time" = transit_time,
 		"has_docking" = docking_controller? 1 : 0,
 		"docking_status" = docking_controller? docking_controller.get_docking_status() : null,
 		"docking_override" = docking_controller? docking_controller.override_enabled : null,

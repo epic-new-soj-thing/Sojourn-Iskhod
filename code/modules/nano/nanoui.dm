@@ -29,6 +29,8 @@ nanoui is used to open and update nano browser uis
 	var/window_options = "focus=0;can_close=1;can_minimize=1;can_maximize=0;can_resize=1;titlebar=1;" // window option is set using window_id
 	// the list of stylesheets to apply to this ui
 	var/list/stylesheets = list()
+	// full URLs for stylesheets (e.g. design_icons spritesheet CSS) - must be added before open()
+	var/list/stylesheet_urls = list()
 	// the list of javascript scripts to use for this ui
 	var/list/scripts = list()
 	// a list of templates which can be used with this ui
@@ -258,6 +260,13 @@ nanoui is used to open and update nano browser uis
 	stylesheets.Add(file)
 
  /**
+  * Add a stylesheet by full URL (e.g. spritesheet CSS from asset cache).
+  * Must be added before the UI has been opened.
+  */
+/datum/nanoui/proc/add_stylesheet_url(url)
+	stylesheet_urls.Add(url)
+
+ /**
   * Add a JavsScript script to this UI
   * These must be added before the UI has been opened, adding after that will have no effect
   *
@@ -376,6 +385,8 @@ nanoui is used to open and update nano browser uis
 
 	for (var/filename in stylesheets)
 		head_content += "<link rel='stylesheet' type='text/css' href='[filename]'> "
+	for (var/url in stylesheet_urls)
+		head_content += "<link rel='stylesheet' type='text/css' href='[url]'> "
 
 	var/template_data_json = "{}" // An empty JSON object
 	if (templates.len > 0)

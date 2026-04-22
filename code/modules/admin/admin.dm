@@ -391,7 +391,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 			dat+="<B>[src.admincaster_feed_channel.channel_name]: </B><FONT SIZE=1>\[created by: <FONT COLOR='maroon'>[src.admincaster_feed_channel.author]</FONT>\]</FONT><HR>"
 			if(src.admincaster_feed_channel.censored)
 				dat+={"
-					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the Nadezhda colony, and marked with a [company_name] D-Notice.<BR>
+					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the Iskhod colony, and marked with a [company_name] D-Notice.<BR>
 					No further feed story additions are allowed while the D-Notice is in effect.<BR><BR>
 				"}
 			else
@@ -458,7 +458,7 @@ ADMIN_VERB_ADD(/datum/admins/proc/access_news_network, R_ADMIN, FALSE)
 			"}
 			if(src.admincaster_feed_channel.censored)
 				dat+={"
-					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the Nadezhda colony, and marked with a [company_name] D-Notice.<BR>
+					<FONT COLOR='red'><B>ATTENTION: </B></FONT>This channel has been deemed as threatening to the welfare of the Iskhod colony, and marked with a [company_name] D-Notice.<BR>
 					No further feed story additions are allowed while the D-Notice is in effect.<BR><BR>
 				"}
 			else
@@ -609,12 +609,14 @@ ADMIN_VERB_ADD(/datum/admins/proc/restart, R_SERVER, FALSE)
 	if(confirm == "Cancel")
 		return
 	if(confirm == "Yes")
+		var/run_update = (alert("Run server update before restart? (Linux: runs byond_update script)", "Restart", "Yes", "No - restart only") == "Yes")
 		to_chat(world, "<span class='danger'>Restarting world!</span> <span class='notice'>Initiated by [usr.client.holder.fakekey ? "Admin" : usr.key]!</span>")
-		log_admin("[key_name(usr)] initiated a reboot.")
-
-
+		log_admin("[key_name(usr)] initiated a reboot[run_update ? " (with update)" : " (no update)"].\n")
 		sleep(50)
-		world.Reboot()
+		if(run_update)
+			RunPendingUpdateAndReboot()
+		else
+			world.Reboot()
 
 
 ADMIN_VERB_ADD(/datum/admins/proc/announce, R_ADMIN, FALSE)
@@ -811,6 +813,25 @@ ADMIN_VERB_ADD(/datum/admins/proc/resume, R_SERVER, FALSE)
 	to_chat(world, "<b>The game will start soon.</b>")
 	log_admin("[key_name(usr)] removed the delay.")
 
+ADMIN_VERB_ADD(/datum/admins/proc/end_round, R_SERVER, FALSE)
+/datum/admins/proc/end_round()
+	set category = "Server"
+	set desc="End the round now without a vote (normal round end, no immediate restart)"
+	set name="End Round"
+
+	if(!check_rights(R_SERVER))
+		return
+	if(SSticker.current_state != GAME_STATE_PLAYING)
+		to_chat(usr, "<span class='warning'>The round is not in progress.</span>")
+		return
+	if(SSticker.scheduled_restart && SSticker.scheduled_restart < world.time)
+		to_chat(usr, "<span class='warning'>The round is already ending.</span>")
+		return
+	SSticker.scheduled_restart = world.time
+	log_admin("[key_name(usr)] has manually ended the round.")
+	message_admins("\blue [key_name(usr)] has manually ended the round.", 1)
+	to_chat(world, SPAN_NOTICE("<b>An admin has ended the round.</b>"))
+
 ADMIN_VERB_ADD(/datum/admins/proc/adjump, R_SERVER, FALSE)
 /datum/admins/proc/adjump()
 	set category = "Server"
@@ -841,14 +862,14 @@ ADMIN_VERB_ADD(/datum/admins/proc/adrev, R_SERVER, FALSE)
 ADMIN_VERB_ADD(/datum/admins/proc/immreboot, R_SERVER, FALSE)
 /datum/admins/proc/immreboot()
 	set category = "Server"
-	set desc="Reboots the server post haste"
+	set desc="Reboots the server immediately with no update"
 	set name="Immediate Reboot"
 	if(!usr.client.holder)
 		return
-	if( alert("Reboot server?",,"Yes","No") == "No")
+	if(alert("Reboot server immediately? (No update will run.)", "Immediate Reboot", "Yes", "No") == "No")
 		return
 	to_chat(world, "\red <b>Rebooting world!</b> \blue Initiated by [usr.client.holder.fakekey ? "Admin" : usr.key]!")
-	log_admin("[key_name(usr)] initiated an immediate reboot.")
+	log_admin("[key_name(usr)] initiated an immediate reboot (no update).\n")
 	world.Reboot()
 
 

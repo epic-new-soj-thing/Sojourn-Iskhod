@@ -44,6 +44,7 @@
 #define PERK_OVERBREATH /datum/perk/oddity/overbreath
 #define PERK_RESILIENCE /datum/perk/oddity/resilience
 #define PERK_TANK_RESILIENCE /datum/perk/oddity/tank_resilience
+#define PERK_DEMONOMICON /datum/perk/oddity/demonomicon
 
 //roundstart perks (job / backgrounds)
 #define PERK_NOBLE /datum/perk/noble
@@ -99,6 +100,7 @@
 #define PERK_PROSPECTOR_CONDITIONING /datum/perk/job/prospector_conditioning
 #define PERK_BLACKSHIELD_CONDITIONING /datum/perk/job/blackshield_conditioning
 #define PERK_BARTENDER /datum/perk/bartender
+#define PERK_WELL_READ /datum/perk/job/well_read
 #define PERK_NO_OBFUSCATION /datum/perk/no_obfuscation //isekai perk?
 #define PERK_BLOOD_LUST /datum/perk/blood_lust
 #define PERK_NATURAL_STYLE /datum/perk/natural_style
@@ -194,6 +196,7 @@
 // Crayon Mage Perks
 #define PERK_ALCHEMY /datum/perk/alchemist
 #define PERK_SCRIBE /datum/perk/scribe
+#define PERK_TOME_BINDER /datum/perk/tome_binder
 #define PERK_REVEAL /datum/perk/cooldown/reveal
 
 // Imprinter Perks

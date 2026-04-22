@@ -7,7 +7,9 @@
 	thermal_conductivity = 0
 	plane = -2
 	original_plane = -2
-	layer = SPACE_LAYER
+	layer = TURF_LAYER
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/holofloor/attackby(obj/item/W as obj, mob/user as mob)
 	return

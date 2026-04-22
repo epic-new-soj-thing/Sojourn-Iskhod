@@ -367,6 +367,11 @@
 	nitrogen = 0
 	plasma = ATMOSTANK_PLASMA
 
+/turf/simulated/floor/reinforced/hydrogen
+	oxygen = 0
+	nitrogen = 0
+	hydrogen = ATMOSTANK_HYDROGEN
+
 /turf/simulated/floor/reinforced/carbon_dioxide
 	oxygen = 0
 	nitrogen = 0
@@ -565,6 +570,8 @@
 	icon = 'icons/turf/flooring/grass.dmi'
 	icon_state = "grass0"
 	initial_flooring = /decl/flooring/grass
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/asteroid/grass/virgoforest
 	icon_state = "grass-light"
@@ -704,7 +711,7 @@
 	name = "snow"
 	icon = 'icons/turf/flooring/snows.dmi'
 	icon_state = "snow0"
-	temperature = 253.15
+	temperature = 240
 	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
 	nitrogen = MOLES_N2STANDARD *1.14
 	initial_flooring = /decl/flooring/snow
@@ -713,7 +720,7 @@
 	name = "snow"
 	icon = 'icons/turf/flooring/snow.dmi'
 	icon_state = "snow"
-	temperature = 233.15
+	temperature = 240
 	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
 	nitrogen = MOLES_N2STANDARD *1.14
 	initial_flooring = /decl/flooring/snow/smooth
@@ -722,7 +729,7 @@
 	name = "icewater"
 	icon = 'icons/turf/flooring/icewater.dmi'
 	icon_state = "ice_water0"
-	temperature = 253.15
+	temperature = 240
 	oxygen = MOLES_O2STANDARD * 1.14 //the multiplier is to compensate the lower pressure, to keep it breathable
 	nitrogen = MOLES_N2STANDARD *1.14
 	initial_flooring = /decl/flooring/icewater
@@ -734,41 +741,57 @@
 	icon = 'icons/turf/flooring/dirt.dmi'
 	icon_state = "rock"
 	initial_flooring = /decl/flooring/rock
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/rock/alt
 	name = "rocks"
 	icon_state = "rock_alt"
 	initial_flooring = /decl/flooring/rock/alt
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/rock/grey
 	name = "rocks"
 	icon_state = "rock_grey"
 	initial_flooring = /decl/flooring/rock/grey
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/rock/dark
 	name = "rocks"
 	icon_state = "rock_dark"
 	initial_flooring = /decl/flooring/rock/dark
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/rock/old
 	name = "rocks"
 	icon_state = "rock_old"
 	initial_flooring = /decl/flooring/rock/old
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/rock/manmade/ruin1
 	name = "rocks"
 	icon_state = "stone_old"
 	initial_flooring = /decl/flooring/rock/manmade/ruin1
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/rock/manmade/ruin2
 	name = "rocks"
 	icon_state = "stone_old1"
 	initial_flooring = /decl/flooring/rock/manmade/ruin2
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/rock/manmade/ruin3
 	name = "rocks"
 	icon_state = "stone_old2"
 	initial_flooring = /decl/flooring/rock/manmade/ruin3
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/rock/seafloor
 	name = "rocks"
@@ -779,17 +802,22 @@
 	name = "concrete"
 	icon_state = "concrete6"
 	initial_flooring = /decl/flooring/rock/manmade/concrete
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/rock/manmade/asphalt
 	name = "asphalt"
 	icon_state = "asphalt"
 	initial_flooring = /decl/flooring/rock/manmade/asphalt
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 
 /turf/simulated/floor/rock/manmade/road
 	name = "gravel road"
 	icon_state = "road_1"
 	initial_flooring = /decl/flooring/rock/manmade/road
-
+	oxygen = MOLES_O2STANDARD
+	nitrogen = MOLES_N2STANDARD
 /*Shale - ALL SPRITE CREDITS GO TO CM-SS13!*/
 
 /turf/simulated/floor/asteroid/shale

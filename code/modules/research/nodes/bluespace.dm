@@ -26,7 +26,9 @@
 	required_tech_levels = list()
 	cost = 150
 
-	unlocks_designs = list()
+	unlocks_designs = list(	/datum/design/research/item/beacon_locator,
+							/datum/design/research/item/gps,
+							/datum/design/research/item/mechfab/robot/component/radio)
 
 /datum/technology/telecommunications
 	name = "Roots Telecommunications"
@@ -106,8 +108,6 @@
 	cost = 600
 
 	unlocks_designs = list(	/datum/design/research/item/ano_scanner,
-							/datum/design/research/item/beacon_locator,
-							/datum/design/research/item/gps,
 							/datum/design/research/item/omnitranslator_handheld,
 							/datum/design/research/item/omnitranslator_earpiece
 							)

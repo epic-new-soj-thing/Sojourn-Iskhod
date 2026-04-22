@@ -16,6 +16,8 @@
 #define RCS_VIEWMSGS 6	// View messages
 #define RCS_MESSAUTH 7	// Authentication before sending
 #define RCS_ANNOUNCE 8	// Send announcement
+#define RCS_PAPERWORK 9	// Print paperwork - category list
+#define RCS_PAPERWORK_FORM 10	// Print paperwork - form list in category
 
 var/req_console_assistance = list()
 var/req_console_supplies = list()
@@ -50,6 +52,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	var/message = "";
 	var/recipient = ""; //the department which will be receiving the message
 	var/priority = -1 ; //Priority of the message being sent
+	var/paperwork_category = 0	// Selected category index for Print Paperwork (1-based)
 	light_range = 0
 	var/datum/announcement/announcement = new
 
@@ -124,6 +127,12 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	data["msgVerified"] = msgVerified
 	data["announceAuth"] = announceAuth
 
+	init_req_console_paperwork()
+	data["paperwork_categories"] = req_console_paperwork_categories
+	data["paperwork_category"] = paperwork_category
+	data["paperwork_forms"] = (paperwork_category >= 1 && paperwork_category <= length(req_console_paperwork_categories)) ? req_console_paperwork_categories[paperwork_category]["forms"] : list()
+	data["paperwork_category_name"] = (paperwork_category >= 1 && paperwork_category <= length(req_console_paperwork_categories)) ? req_console_paperwork_categories[paperwork_category]["name"] : ""
+
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data, force_open)
 	if (!ui)
 		ui = new(user, src, ui_key, "request_console.tmpl", "[department] Request Console", 520, 410)
@@ -174,6 +183,41 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 			message_log += "<B>Message sent to [recipient]</B><BR>[message]"
 		else
 			audible_message(text("\icon[src] *The Requests Console beeps: 'NOTICE: No server detected!'"),,4)
+
+	// Print paperwork: href_list["printPaperworkCat"] and ["printPaperworkForm"], or legacy "printPaperwork" = "cat:form"
+	if(href_list["printPaperworkCat"] != null && href_list["printPaperworkForm"] != null)
+		init_req_console_paperwork()
+		var/cat_idx = text2num(href_list["printPaperworkCat"])
+		var/form_idx = text2num(href_list["printPaperworkForm"])
+		var/list/entry = get_paperwork_form_by_category(cat_idx, form_idx)
+		if(entry)
+			var/title = entry["name"]
+			var/content = entry["content"]
+			content = req_console_paperwork_to_pencode(content)
+			var/obj/item/paper/P = new /obj/item/paper(get_turf(src), content, title)
+			P.forceMove(get_turf(usr))
+			usr.put_in_hands(P)
+			to_chat(usr, SPAN_NOTICE("The requests console prints out a form: [title]."))
+		screen = RCS_MAINMENU
+	else if(href_list["printPaperwork"])
+		init_req_console_paperwork()
+		var/list/parts = splittext(href_list["printPaperwork"], ":")
+		var/cat_idx = (length(parts) >= 1) ? text2num(parts[1]) : 0
+		var/form_idx = (length(parts) >= 2) ? text2num(parts[2]) : 0
+		var/list/entry = get_paperwork_form_by_category(cat_idx, form_idx)
+		if(entry)
+			var/title = entry["name"]
+			var/content = entry["content"]
+			content = req_console_paperwork_to_pencode(content)
+			var/obj/item/paper/P = new /obj/item/paper(get_turf(src), content, title)
+			P.forceMove(get_turf(usr))
+			usr.put_in_hands(P)
+			to_chat(usr, SPAN_NOTICE("The requests console prints out a form: [title]."))
+		screen = RCS_MAINMENU
+
+	if(href_list["setPaperworkCategory"])
+		paperwork_category = text2num(href_list["setPaperworkCategory"])
+		screen = RCS_PAPERWORK_FORM
 
 	//Handle screen switching
 	if(href_list["setScreen"])
@@ -238,9 +282,8 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 /obj/machinery/requests_console/preset
 	name = ""
 	department = ""
-	departmentType = ""
+	departmentType = 0
 	announcementConsole = 0
-//Todo: presets and mapping for more non-command RCs
 
 /obj/machinery/requests_console/preset/steward
 	name = "Steward Request Console"
@@ -253,14 +296,17 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	announcementConsole = 1 //Heads can make announcements
 	departmentType = RC_ASSIST|RC_INFO
 
+/obj/machinery/requests_console/preset/command/facility_director
+	name = "Facility Director Request Console"
+	department = "Facility Director's Desk"
+
 /obj/machinery/requests_console/preset/command/premier
-	name = "Premier Request Console"
-	department = "Premier's Desk"
+	parent_type = /obj/machinery/requests_console/preset/command/facility_director
 
 /obj/machinery/requests_console/preset/command/ceo
-	name = "SOM Request Console"
-	department = "Surface Operations Manager's Desk"
-	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO //SOM should be able to get supply requests
+	name = "QM Request Console"
+	department = "Quartermaster's Desk"
+	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO //QM should be able to get supply requests
 
 /obj/machinery/requests_console/preset/command/cbo
 	name = "CBO Request Console"
@@ -275,12 +321,12 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	department = "Blackshield Commander's Desk"
 
 /obj/machinery/requests_console/preset/command/wo
-	name = "WO Request Console"
-	department = "Warrant Officer's Desk"
+	name = "Captain Request Console"
+	department = "Ranger Captain's Desk"
 
 /obj/machinery/requests_console/preset/command/prime
-	name = "Prime Request Console"
-	department = "Prime's Desk"
+	name = "Penitent Request Console"
+	department = "Penitent's Desk"
 
 /obj/machinery/requests_console/preset/command/gm
 	name = "GM Request Console"
@@ -289,3 +335,67 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 /obj/machinery/requests_console/preset/command/foreman
 	name = "Foreman Request Console"
 	department = "Foreman's Desk"
+
+// ----- Department request consoles (place one in each department's area) -----
+// departmentType: RC_ASSIST = receive assistance requests, RC_SUPPLY = receive supply requests, RC_INFO = receive relayed info
+
+/obj/machinery/requests_console/preset/department/medical
+	name = "Medical Requests Console"
+	department = "Vesalius-Andra: Medical Division"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/research
+	name = "Research Requests Console"
+	department = "Vesalius-Andra: Research Division"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/rangers
+	name = "Iskhod Rangers Requests Console"
+	department = "Iskhod Rangers"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/blackshield
+	name = "Blackshield Requests Console"
+	department = "Blackshield Division"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/engineering
+	name = "Artificer's Guild Requests Console"
+	department = "Artificer's Guild"
+	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO
+
+/obj/machinery/requests_console/preset/department/cargo
+	name = "Frontier Logistics Requests Console"
+	department = "Frontier Logistics"
+	departmentType = RC_ASSIST|RC_SUPPLY|RC_INFO
+
+/obj/machinery/requests_console/preset/department/church
+	name = "Order of the Word Requests Console"
+	department = "Order of the Word"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/civilian
+	name = "Iskhod Contractors Requests Console"
+	department = "Iskhod Contractors"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/prospector
+	name = "Prospectors Requests Console"
+	department = "Prospectors"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/independent
+	name = "Independent Allied Factions Requests Console"
+	department = "Independent Allied Factions"
+	departmentType = RC_ASSIST|RC_INFO
+
+/obj/machinery/requests_console/preset/department/lodge
+	name = "Lodge Requests Console"
+	department = "Lodge"
+	departmentType = RC_INFO
+
+/obj/machinery/requests_console/preset/department/greyson
+	name = "Greyson Positronic Requests Console"
+	department = "Greyson Positronic"
+	departmentType = RC_INFO
+

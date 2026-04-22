@@ -1,0 +1,19 @@
+author: AMcilraith
+changes:
+  - add: Added 'Universal Gripper' to all Cyborg modules, replacing specialized 
+      grippers.
+  - add: Added 'Mark VI Experimental Armor Plating', craftable by the Artificers
+      Guild.
+  - add: Added 'church sheath' as a loadout option available to all players.
+  - balance: Refactored Borg Armor mechanics to use proper damage resistance 
+      types (Melee, Bullet, Laser, etc.).
+  - balance: Increased HP of all Borg Armor tiers to be more durable.
+  - balance: Renamed 'Mark IV' to 'Heavy Armor Plating' and 'Mark V' to 
+      'Specialized Armor Plating'.
+  - tweak: Pill bottles and IFAKs can now be accessed and opened from inside 
+      containers without depth restrictions.
+  - fix: Fixed Mop Buckets ignoring interactions from mops.
+  - fix: Wall-mounted fire extinguisher cabinets now always spawn with a fire 
+      extinguisher instead of sometimes being empty.
+date: '2026-02-04'
+delete-after: false

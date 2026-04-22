@@ -22,6 +22,9 @@
 	icon = 'icons/obj/statue_large.dmi'
 	icon_state = "statue"
 	health = 5000
+	light_range = 3
+	light_power = 1.5
+	light_color = COLOR_LIGHTING_ORANGE_DARK
 
 /obj/structure/statue/damaged/augustine
 	name = "statue"

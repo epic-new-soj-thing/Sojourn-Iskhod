@@ -347,7 +347,7 @@
 		/obj/item/am_containment,
 		/obj/item/am_shielding_container,
 		/obj/item/clothing/mask/smokable/cigarette,
-		/obj/item/reagent_containers/cwj/container,
+		/obj/item/reagent_containers/cooking/container,
 		/obj/item/spatula,
 		/obj/item/hydro_tray_plant_bag_water,
 		/obj/item/hydro_tray_plant_bag_nutrient,

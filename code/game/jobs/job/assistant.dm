@@ -12,6 +12,8 @@
 	initial_balance = 800
 	wage = WAGE_NONE //Get a job ya lazy bum
 	alt_titles = list("Freelancer","Journalist") //I need pictures of spiderman!
+	hud_icon = "colonist"
+
 
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
@@ -42,3 +44,4 @@ Find a way to make money, stay out of trouble, and survive."
 	name = "Colonist"
 	icon_state = "player-grey"
 	join_tag = /datum/job/assistant
+

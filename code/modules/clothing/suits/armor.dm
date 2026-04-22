@@ -22,6 +22,18 @@
 	qdel(referencecarmor)
 	..()
 
+/obj/item/clothing/suit/armor/equipped(mob/M, slot)
+	..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		H.regenerate_icons()
+
+/obj/item/clothing/suit/armor/dropped(mob/user)
+	..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		H.regenerate_icons()
+
 /*
  * Vests
  */
@@ -49,6 +61,7 @@
 	item_state = "armor_fullbody"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/vest/full/verb/toggle_style()
@@ -245,16 +258,17 @@
 */
 
 /obj/item/clothing/suit/armor/vest/ironhammer
-	name = "marshal armor vest"
-	desc = "An armored vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations."
+	name = "security armor vest"
+	desc = "An armored vest that protects against some damage. This one has been done in security colors. Not designed for serious operations."
 	icon_state = "armor_ironhammer"
 
 /obj/item/clothing/suit/armor/vest/ironhammer/full
-	name = "marshal tactical unit armor"
-	desc = "An armored vest painted in Marshals colors. This one has shoulderpads and kneepads included to protect all parts of the body."
+	name = "security tactical unit armor"
+	desc = "An armored vest painted in Security colors. This one has shoulderpads and kneepads included to protect all parts of the body."
 	icon_state = "armor_ih_fullbody"
 	item_state = "armor_ih_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/vest/ironhammer/full/verb/toggle_style()
@@ -284,8 +298,10 @@
 
 /obj/item/clothing/suit/armor/vest/ironhammer_wintercoat //pieced together thanks to Rebel's Supply spec coat - Dongels
 	name = "security armored coat"
-	desc = "An armored winter coat with vest that protects against some damage. This one has been done in marshal security colors. Not designed for serious operations. You're pretty sure the coat is just thick enough to keep warm, and that's all. Why you would want that on a planet like Amethyn is beyond thought."
+	desc = "An armored winter coat with vest that protects against some damage. This one has been done in security colors. Not designed for serious operations. You're pretty sure the coat is just thick enough to keep warm, and that's all. Why you would want that on a planet like Amethyn is beyond thought."
 	icon_state = "coatsecurity_long"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 ////////////
 
@@ -327,8 +343,8 @@
 		return 1
 
 /obj/item/clothing/suit/armor/vest/acolyte
-	name = "vector armor"
-	desc = "Worn, heavy, steadfast in the name of the Absolute."
+	name = "hand armor"
+	desc = "Worn, heavy, steadfast in the name of the precepts."
 	icon_state = "acolyte"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -345,7 +361,7 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["vector default"] = "acolyte"
+	options["hand default"] = "acolyte"
 	options["tangent plate armor"] = "tangent_plate_armor"
 	options["greater heart armor"] = "greater_heart"
 	options["lemniscate armor"] = "lemniscate_armor"
@@ -353,7 +369,7 @@
 	options["monomial armor"] = "monomial_armor"
 	options["divisor armor"] = "divisor_armor"
 	options["tessellate armor"] = "tessellate_armor"
-	options["vector breastplate"] = "absolute_breast"
+	options["hand breastplate"] = "absolute_breast"
 	options["vinculum dress garbs"] = "vinculum_cassock"
 	options["tessellate plague garbs"] = "tessellate_plague_garbs"
 	options["tessellate dark plague garbs"] = "tessellate_plague_garbs_dark"
@@ -370,7 +386,7 @@
 
 /obj/item/clothing/suit/armor/vest/path //No path ?
 	name = "vinculum cassock"
-	desc = "A heavy Cassock meant for the Vectors that possess no vows. This garb has no armor plating but the sturdy fabric offers more protection than a gambeson. Usually worn for ceremonial purposes, it can save a life in an emergency."
+	desc = "A heavy Cassock meant for Hands who possess no vows. This garb has no armor plating but the sturdy fabric offers more protection than a gambeson. Usually worn for ceremonial purposes, it can save a life in an emergency."
 	icon_state = "vinculum_cassock"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -553,7 +569,7 @@
 
 /obj/item/clothing/suit/armor/vest/custodian
 	name = "custodian armor"
-	desc = "Someone's gotta clean this mess. While this armor is technically church property, Lonestar custodians often use it on loan to protect themselves from the colonies various dangerous pests."
+	desc = "Someone's gotta clean this mess. While this armor is technically church property, Frontier Logistics custodians often use it on loan to protect themselves from the colonies various dangerous pests."
 	icon_state = "custodian"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -584,8 +600,8 @@
 		return 1
 
 /obj/item/clothing/suit/armor/vest/prime
-	name = "prime armor"
-	desc = "The armor of a Prime, adorned with different markings and decorations only fit for the most devout."
+	name = "Penitent armor"
+	desc = "The armor of a Penitent, adorned with different markings and decorations only fit for the most devout."
 	icon_state = "prime"
 	item_flags = THICKMATERIAL | COVER_PREVENT_MANIPULATION
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
@@ -603,11 +619,11 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["prime dark"] = "prime"
-	options["prime royal"] = "prime_alt"
-	options["prime saint"] = "prime_saint"
-	options["prime paladin"] = "prime_paladin"
-	options["prime paladin alt"] = "prime_paladin_alt"
+	options["Penitent dark"] = "prime"
+	options["Penitent royal"] = "prime_alt"
+	options["Penitent saint"] = "prime_saint"
+	options["Penitent paladin"] = "prime_paladin"
+	options["Penitent paladin alt"] = "prime_paladin_alt"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -638,7 +654,7 @@
 						 /obj/item/storage/toolbox)
 	flags_inv = HIDEJUMPSUIT
 
-//Soteria
+//Vesalius-Andra
 /obj/item/clothing/suit/armor/vest/soteriasuit
 	name = "'Mark II' environmental protection suit"
 	desc = "For working in hazardous environments. While its built for most environments, one of those is not space. This suit is a cheap and badly made copy of the Artificer Guilds original design. \
@@ -687,23 +703,25 @@
 	icon_state = "bulletproof_fullbody"
 	item_state = "bulletproof_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.20 // Heavier since it now covers more of the body //actually who thought this was acceptable? .6 on specialized gear is ridiculous.
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer
-	name = "marshal bulletproof suit"
-	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage produced by Seinemetall Defense GmbH."
+	name = "security bulletproof suit"
+	desc = "A bulky vest that excels in protecting the wearer against high-velocity solid projectiles with added shoulderpads and kneepads for extra coverage."
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 	slowdown = 0.2 // Heavier since it now covers more of the body
 	icon_state = "bulletproof_ironhammer"
 	item_state = "bulletproof_ironhammer"
 
 /obj/item/clothing/suit/armor/bulletproof/ironhammer/militia
-	name = "blackshield bulletproof suit"
+	name = "ranger bulletproof suit"
 	desc = "A set of vest, shoulder guards and leg guards that excel at protecting against high-velocity, solid projectiles. \
 			This particular set seems to have been taken straight from the armory of some low-budget P.D.F or Reserve force, repainted in \
-			Blackshield colors and given their I.F.F markings."
+			Ranger colors and given their I.F.F markings."
 	icon_state = "bulletproof_bs"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS
 
@@ -781,8 +799,8 @@
 			return PROJECTILE_CONTINUE // complete projectile permutation
 
 /obj/item/clothing/suit/armor/laserproof/rnd
-	name = "soteria reflective armor vest"
-	desc = "A Soteria branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets but can be modified more."
+	name = "vesalius-andra reflective armor vest"
+	desc = "A Vesalius-Andra branded vest that excels in protecting the wearer against energy projectiles. While it is much better at defending against lasers compared to standard ablative armor it lacks as much protection against melee and bullets but can be modified more."
 	icon_state = "ablative_ironhammer"
 	matter = list(MATERIAL_STEEL = 20, MATERIAL_PLASTIC = 20, MATERIAL_PLATINUM = 15)
 	armor_list = list(
@@ -798,8 +816,8 @@
 	price_tag = 650
 
 /obj/item/clothing/suit/armor/vest/ablative/militia
-	name = "blackshield ablative plate"
-	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Blackshield's colors. \
+	name = "ranger ablative plate"
+	desc = "An outdated set of ablative armor, utilizing advanced materials to absorb rather than reflect energy projeciles and painted in Ranger's colors. \
 			A distinctive set of equipment, the MK-II 'Energy Defense Gear' sold more for its distinctive, and some would say 'flashy' \
 			appearance than its capabilities. Despite its bad reputation as a tax-payer credit sink, it serves as a fairly adequate piece of gear."
 	icon_state = "ablative_bs"
@@ -888,9 +906,9 @@
 	armor_list = list(melee = 8, bullet = 13, energy = 8, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/flakvest/militia
-	name = "blackshield flak vest"
+	name = "ranger flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
-			This one is marked with the distinct IFF stripes of the Blackshield."
+			This one is marked with the distinct IFF stripes of the Ranger."
 	icon_state = "flakvest_mil"
 	item_state = "flakvest_mil"
 
@@ -904,10 +922,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Default Blackshield Combat"] = "flakvest_mil"
-	options["Woodlands Blackshield Combat"] = "flakvest_green_mil"
-	options["Desert Blackshield Combat"] = "flakvest_tan_mil"
-	options["Urban Blackshield Combat"] = "flakvest_white_mil"
+	options["Default Ranger Combat"] = "flakvest_mil"
+	options["Woodlands Ranger Combat"] = "flakvest_green_mil"
+	options["Desert Ranger Combat"] = "flakvest_tan_mil"
+	options["Urban Ranger Combat"] = "flakvest_white_mil"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -921,9 +939,9 @@
 		return 1
 
 /obj/item/clothing/suit/armor/flakvest/militia/full
-	name = "blackshield full flak vest"
+	name = "ranger full flak vest"
 	desc = "An armored, padded vest meant for heavy-duty operations. Heavy and bulky, it protects well against explosives and shrapnel. \
-			This one is marked with the distinct IFF stripes of the Blackshield, and offers additional coverage through shoulderpads and kneepads."
+			This one is marked with the distinct IFF stripes of the Ranger, and offers additional coverage through shoulderpads and kneepads."
 	icon_state = "flakvest_mil_fullbody"
 	item_state = "flakvest_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
@@ -940,10 +958,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Default Blackshield Combat"] = "flakvest_mil_fullbody"
-	options["Woodlands Blackshield Combat"] = "flakvest_green_mil_fullbody"
-	options["Desert Blackshield Combat"] = "flakvest_tan_mil_fullbody"
-	options["Urban Blackshield Combat"] = "flakvest_white_mil_fullbody"
+	options["Default Ranger Combat"] = "flakvest_mil_fullbody"
+	options["Woodlands Ranger Combat"] = "flakvest_green_mil_fullbody"
+	options["Desert Ranger Combat"] = "flakvest_tan_mil_fullbody"
+	options["Urban Ranger Combat"] = "flakvest_white_mil_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1133,7 +1151,7 @@
 
 /obj/item/clothing/suit/storage/vest/ironhammer
 	name = "webbed operator armor"
-	desc = "An armored vest that protects against some damage. This one has been done in Nadezhda Marshal colors and has various pouches and straps attached."
+	desc = "An armored vest that protects against some damage. This one has been done in Iskhod Ranger colors and has various pouches and straps attached."
 	icon_state = "webvest_ironhammer"
 	armor_list = list(
 		melee =8,
@@ -1259,6 +1277,7 @@
 	item_state = "platecarrier_fullbody"
 	blood_overlay_type = "armor"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/full/toggle_style()
@@ -1313,8 +1332,8 @@
 
 //Blackshield armor
 /obj/item/clothing/suit/armor/platecarrier/militia
-	name = "blackshield plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one bears the distinct IFF stripes of the Blackshield."
+	name = "ranger plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, this one bears the distinct IFF stripes of the Ranger."
 	icon_state = "platecarrier_mil"
 	item_state = "platecarrier_mil"
 
@@ -1328,10 +1347,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Default Blackshield Combat"] = "platecarrier_mil"
-	options["Desert Blackshield Combat"] = "platecarrier_tan_mil"
-	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil"
-	options["Urban Blackshield Combat"] = "platecarrier_white_mil"
+	options["Default Ranger Combat"] = "platecarrier_mil"
+	options["Desert Ranger Combat"] = "platecarrier_tan_mil"
+	options["Woodlands Ranger Combat"] = "platecarrier_green_mil"
+	options["Urban Ranger Combat"] = "platecarrier_white_mil"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1346,11 +1365,12 @@
 
 
 /obj/item/clothing/suit/armor/platecarrier/militia/full
-	name = "blackshield full body plate carrier"
-	desc = "An armored vest carrying trauma plates and light ballistic meshes, as well as additional shoulderpads and kneepads, decorated with the IFF stripes of Blackshield."
+	name = "ranger full body plate carrier"
+	desc = "An armored vest carrying trauma plates and light ballistic meshes, as well as additional shoulderpads and kneepads, decorated with the IFF stripes of Ranger."
 	icon_state = "platecarrier_mil_fullbody"
 	item_state = "platecarrier_mil_fullbody"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/militia/full/toggle_style()
@@ -1363,10 +1383,10 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Default Blackshield Combat"] = "platecarrier_mil_fullbody"
-	options["Desert Blackshield Combat"] = "platecarrier_tan_mil_fullbody"
-	options["Woodlands Blackshield Combat"] = "platecarrier_green_mil_fullbody"
-	options["Urban Blackshield Combat"] = "platecarrier_white_mil_fullbody"
+	options["Default Ranger Combat"] = "platecarrier_mil_fullbody"
+	options["Desert Ranger Combat"] = "platecarrier_tan_mil_fullbody"
+	options["Woodlands Ranger Combat"] = "platecarrier_green_mil_fullbody"
+	options["Urban Ranger Combat"] = "platecarrier_white_mil_fullbody"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1419,6 +1439,7 @@
 	item_state = "platecarrier_corpsman_fullbody"
 	armor_list = list(melee = 8, bullet = 11, energy = 5, bomb = 10, bio = 20, rad = 0) // Just in case it doesn't inherit armor qualities
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	stiffness = LIGHT_STIFFNESS
 
 /obj/item/clothing/suit/armor/platecarrier/corpsman/full/toggle_style()
@@ -1490,6 +1511,7 @@
 	item_state = "platecarrier_ih_fullbody"
 //	slowdown = 0.15 //bit surprised this wasn't here, but okay
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 
 
 /obj/item/clothing/suit/armor/platecarrier/hos/full/toggle_style()
@@ -1528,6 +1550,7 @@
 	icon_state = "hos"
 	item_state = "hos"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|ARMS|LEGS
 	armor_list = list(
 		melee = 10,
 		bullet = 10,
@@ -1583,7 +1606,7 @@
 
 /obj/item/clothing/suit/armor/commander/militia
 	name = "commander's armored coat"
-	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Blackshield Commander."
+	desc = "A heavily armored combination of menacing style and cutting-edge body armor wearing the insignia and stripes of the Ranger Commander."
 	icon_state = "commander_mil"
 	item_state = "commander_mil"
 	siemens_coefficient = 0.6
@@ -1598,12 +1621,12 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Default Blackshield Combat"] = "commander_mil"
-	options["Desert Blackshield Combat"] = "commander_tan"
-	options["Woodlands Blackshield Combat"] = "commander_green"
-	options["Urban Blackshield Combat"] = "commander_white"
-	options["Cloaked BlackshieldGreatcoat"] = "mc_coat_cloak"
-	options["Blackshield Greatcoat"] = "mc_coat"
+	options["Default Ranger Combat"] = "commander_mil"
+	options["Desert Ranger Combat"] = "commander_tan"
+	options["Woodlands Ranger Combat"] = "commander_green"
+	options["Urban Ranger Combat"] = "commander_white"
+	options["Cloaked RangerGreatcoat"] = "mc_coat_cloak"
+	options["Ranger Greatcoat"] = "mc_coat"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -1617,15 +1640,15 @@
 		return TRUE
 
 /obj/item/clothing/suit/storage/armor/militia_overcoat // Pockets for your hands on the cold.
-	name = "blackshield armored overcoat"
-	desc = "Blackshield greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
+	name = "ranger armored overcoat"
+	desc = "Ranger greatcoat with kevlar weave and rank epaulettes. Worn in cold environments, guard duty or formal events."
 	armor_list = list(melee =7, bullet = 8, energy = 5, bomb = 10, bio = 0, rad = 0)
 	icon_state = "overcoat_bm"
 	item_state = "overcoat_bm"
 
 /obj/item/clothing/suit/storage/armor/marshal_coat
 	name = "marshal officers greatcoat"
-	desc = "Marshal Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
+	desc = "Ranger Officer greatcoat with armor weave. Part of the formal uniform of the security marshals."
 	armor_list = list(melee = 8, bullet = 7, energy = 5, bomb = 10, bio = 0, rad = 0)
 	icon_state = "marshal_coat"
 	item_state = "marshal_coat"
@@ -1816,6 +1839,8 @@
 		rad = 50
 	)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	cold_protection = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECTION_TEMPERATURE
 	action_button_name = "Toggle Acceleration"
 	var/speed_boost_ready = TRUE
 	var/speed_boost_active = FALSE

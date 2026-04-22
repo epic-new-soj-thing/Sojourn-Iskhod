@@ -597,7 +597,7 @@
 /obj/item/clothing/suit/space/void/assault
 	name = "assault armor"
 	icon_state = "assaultsuit"
-	desc = "A specialty import from the Kriosan Confederacy, usually imported by Lonestar LLC thanks to the companies' long standing trade agreement. It costs a king's ransom, albeit for a good reason \
+	desc = "A specialty import from the Kriosan Confederacy, usually imported by Frontier Logistics LLC thanks to the companies' long standing trade agreement. It costs a king's ransom, albeit for a good reason \
 	given its sturdy craftmenship and reinforced armor layers."
 	item_state = "assaultsuit"
 	armor_list = list(
@@ -615,7 +615,7 @@
 
 //Science
 /obj/item/clothing/head/space/void/medarmor
-	name = "soteria medical helmet"
+	name = "vesalius-andra medical helmet"
 	desc = "A special helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor and even a built in light."
 	item_flags = STOPPRESSUREDAMAGE|THICKMATERIAL|AIRTIGHT|COVER_PREVENT_MANIPULATION
 	icon_state = "armor_medical"
@@ -646,7 +646,7 @@
 	obscuration = 0
 
 /obj/item/clothing/suit/space/void/medarmor
-	name = "soteria medical void armor"
+	name = "vesalius-andra medical void armor"
 	icon_state = "armor_medical"
 	desc = "A suit of all purpose soteria medical void armor. Used for operations where oxygen is a rarity and protection is needed."
 	item_state = "armor_medical"
@@ -685,7 +685,6 @@
 
 			return PROJECTILE_CONTINUE // complete projectile permutation
 
-/* commented out till i can get the 'race restriction' stuff to work - CDB
 /obj/item/clothing/head/helmet/space/void/marqua
 	name = "Mar'Qua voidsuit helmet"
 	desc = "A standard issue helmet of Mar'Qua make, relatively lightly armored compared to other issue gear but made of advanced materials."
@@ -700,8 +699,8 @@
 	)
 
 /obj/item/clothing/head/helmet/space/void/marqua/equipped(mob/living/carbon/M)
-	if(M.species.reagent_tag != IS_MARQUA)
-		to_chat(SPAN_WARNING("[src] won't seem to fit!"))
+	if(istype(M) && M.species && M.species.reagent_tag != IS_MARQUA)
+		to_chat(M, SPAN_WARNING("[src] won't seem to fit!"))
 		return FALSE
 	..()
 
@@ -723,7 +722,7 @@
 
 
 /obj/item/clothing/suit/space/void/marqua/equipped(mob/living/carbon/M)
-	if(M.species.reagent_tag != IS_MARQUA)
-		to_chat(SPAN_WARNING("[src] won't seem to fit!"))
+	if(istype(M) && M.species && M.species.reagent_tag != IS_MARQUA)
+		to_chat(M, SPAN_WARNING("[src] won't seem to fit!"))
 		return FALSE
-	..() */ //super doesn't work lol
+	..()

@@ -9,8 +9,8 @@
 	..()
 	BACKPACK_OVERRIDE_NEOTHEOLOGY
 
-/decl/hierarchy/outfit/job/church/chaplain
-	name = OUTFIT_JOB_NAME("Church - Prime")
+/decl/hierarchy/outfit/job/church/penitent
+	name = OUTFIT_JOB_NAME("Order of the Word - Penitent")
 	l_ear = /obj/item/device/radio/headset/heads/preacher
 	id_type = /obj/item/card/id/chaplain
 	uniform = /obj/item/clothing/under/rank/preacher
@@ -20,8 +20,16 @@
 	gloves = /obj/item/clothing/gloves/thick
 	backpack_contents = list(/obj/item/book/ritual/cruciform/priest = 1, /obj/item/clothing/accessory/cross = 1)
 
-/decl/hierarchy/outfit/job/church/acolyte
-	name = OUTFIT_JOB_NAME("Church - Vector")
+/decl/hierarchy/outfit/job/church/mouth
+	name = OUTFIT_JOB_NAME("Order of the Word - Mouth")
+	uniform = /obj/item/clothing/under/rank/acolyte
+	suit = /obj/item/clothing/suit/storage/chaplain/mouth
+	shoes = /obj/item/clothing/shoes/reinforced
+	gloves = /obj/item/clothing/gloves/thick
+	backpack_contents = list(/obj/item/book/ritual/cruciform/priest = 1)
+
+/decl/hierarchy/outfit/job/church/hand
+	name = OUTFIT_JOB_NAME("Order of the Word - Hand")
 	uniform = /obj/item/clothing/under/rank/acolyte
 	shoes = /obj/item/clothing/shoes/reinforced
 	gloves = /obj/item/clothing/gloves/thick

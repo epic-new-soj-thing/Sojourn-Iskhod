@@ -2,6 +2,10 @@
 	assets = list("padlock.png" = 'icons/ui_icons/common/padlock.png')
 	parents = list("common.css" = 'html/browser/common.css')
 
+/// Sojourn/Iskhod changelog (html/changelog.html) for in-game browser.
+/datum/asset/simple/namespaced/changelog_html
+	assets = list("changelog.html" = file("html/changelog.html"))
+
 /* === ERIS STUFF === */
 /datum/asset/spritesheet_batched/design_icons
 	name = "design_icons"

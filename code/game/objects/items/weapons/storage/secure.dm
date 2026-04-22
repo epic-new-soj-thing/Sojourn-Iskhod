@@ -153,6 +153,8 @@
 	throw_speed = 1
 	throw_range = 4
 	w_class = ITEM_SIZE_BULKY
+	max_w_class = ITEM_SIZE_NORMAL
+	max_storage_space = 20
 
 /obj/item/storage/secure/briefcase/attack_hand(mob/user as mob)
 	if ((src.loc == user) && (src.locked == 1))

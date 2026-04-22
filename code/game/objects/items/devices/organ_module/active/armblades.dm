@@ -91,7 +91,7 @@
 
 /obj/item/organ_module/active/simple/armblade/ritual
 	name = "Embedded Knife"
-	desc = "A ceremonial knife designed to be inserted into an arm, may The Absolute have mercy."
+	desc = "A ceremonial knife designed to be inserted into an arm. The Order of the Word is not sworn to pacifism; may the precepts guide the hand that wields it."
 	verb_name = "Deploy knife"
 	icon_state = "neot-knife"
 	matter = list(MATERIAL_PLASTEEL = 4, MATERIAL_PLASTIC = 1)

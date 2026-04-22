@@ -1,7 +1,7 @@
 /datum/antagonist/inquisitor
 	id = ROLE_INQUISITOR
-	role_text = "Crusader"
-	role_text_plural = "Crusaders"
+	role_text = "Warden"
+	role_text_plural = "Wardens"
 	bantype = ROLE_BANTYPE_INQUISITOR
 	welcome_text = ""
 	antaghud_indicator = "hudcyberchristian"
@@ -64,19 +64,18 @@
 	var/mob/player = owner.current
 
 	if (was_priest)
-		to_chat(player, "<span class='notice'>You've been promoted...</span>")
+		to_chat(player, "<span class='notice'>You've been called to defend...</span>")
 		sleep(30)
 	// Basic intro text.
 	to_chat(player, "<span class='danger'><font size=3>You are a [role_text]!</font></span>")
 
-	to_chat(player, "Crusader is a special protocol within the Church of the Absolute.<br>\
-	You're cruciform has activated its crusader protocol upon detecting the presence of an active hivemind. You are to do \
-	everything in your power to destroy all traces of the hivemind and any infected machines or organics.<br>\
+	to_chat(player, "The Order of the Word has no enforcement wing, but its members are not sworn to pacifism.<br>\
+	Your cruciform has awakened a defensive protocol upon detecting an active hivemind. The bunker and the flock must be protected—\
+	do everything in your power to destroy all traces of the hivemind and any infected machines or organics.<br>\
 	<br>\
-	Any local church staff should aid in goals and other crusaders will announce their presence so you may work together. \
-	Remember that your goal is only to destroy the hivemind, once you've completed your task you should return to your regular \
-	duties but remain vigilant. Under special circumstances your crusader protocol may have activated to deal with a different threat. \
-	Do as befitting of the church and aid the colony in whatever way you can.")
+	Other members of the Order may aid you; Wardens often announce their presence to coordinate. Your goal is to end the hivemind threat; \
+	once the task is done, return to your regular duties but stay vigilant. In rare cases the protocol may activate against a different \
+	existential threat. Act as befits the sect: protect life and the colony.")
 
 	to_chat(player, "You will need a ritual book to utilise your abilities. They can be found or purchased in the chapel.")
 

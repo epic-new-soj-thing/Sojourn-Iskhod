@@ -50,26 +50,26 @@
 	voucher_type = "Armor"
 
 /obj/item/voucher/blackshield/armorcorpsman
-	name = "\improper corpsman armor voucher"
+	name = "\improper Ranger Corpsman armor voucher"
 	desc = "A token to redeem corpsman equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "CorpsmanArmor"
 
-// Marshal
+// Ranger
 /obj/item/voucher/marshal
-	name = "marshal voucher"
+	name = "Ranger voucher"
 	desc = "A token to redeem marshal equipment from a vendor."
 	icon_state = "voucher"
 	var/voucher_type // The type of equipment the voucher redeem
 
 /obj/item/voucher/marshal/primary
-	name = "\improper marshal primary weapon voucher"
+	name = "\improper Ranger primary weapon voucher"
 	desc = "A token to redeem marshal equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "Primary"
 
 /obj/item/voucher/marshal/specprimary
-	name = "\improper Specialist primary weapon voucher"
+	name = "\improper Ranger Lieutenant primary weapon voucher"
 	desc = "A token to redeem marshal equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "SpecPrimary"
@@ -81,25 +81,25 @@
 	voucher_type = "RangerPrimary"
 
 /obj/item/voucher/marshal/secondary
-	name = "\improper marshal secondary weapon voucher"
+	name = "\improper Ranger secondary weapon voucher"
 	desc = "A token to redeem marshal equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "Secondary"
 
 /obj/item/voucher/marshal/rangersecondary
-	name = "Ranger secondary weapon voucher"
+	name = "Ranger Detective secondary weapon voucher"
 	desc = "A token to redeem marshal equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "RangerSecondary"
 
 /obj/item/voucher/marshal/wosecondary
-	name = "Warrant Officer secondary weapon voucher"
+	name = "Ranger Captain secondary weapon voucher"
 	desc = "A token to redeem marshal equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "WOSecondary"
 
 /obj/item/voucher/marshal/armor
-	name = "\improper marshal armor voucher"
+	name = "\improper Ranger armor voucher"
 	desc = "A token to redeem marshal equipment from a vendor."
 	icon_state = "voucher"
 	voucher_type = "Armor"

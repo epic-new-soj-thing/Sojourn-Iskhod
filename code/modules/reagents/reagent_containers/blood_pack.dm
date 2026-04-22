@@ -15,7 +15,7 @@
 
 /obj/item/reagent_containers/blood
 	name = "blood pack"
-	desc = "Contains blood used for transfusion."
+	desc = "An IV drip pack of blood used for transfusion. Ensure species and blood type factors match before transfusing."
 	icon = 'icons/obj/bloodpack.dmi'
 	icon_state = "bloodpack"
 	volume = 200
@@ -24,13 +24,16 @@
 	reagent_flags = OPENCONTAINER
 	filling_states = "25;50;75;100"
 	var/blood_type = null
+	var/blood_reagent = "blood"
+	var/blood_group = "mammalian"
+	var/blood_species = "Mammalian"
 	var/mob/living/carbon/human/attached_patient = null // For direct IV connection without medical stand
 	var/iv_transfer_rate = REM // Current transfer rate for IV
 
 /obj/item/reagent_containers/blood/Initialize()
 	. = ..()
 	if(blood_type)
-		reagents.add_reagent("blood", 200, list("donor"=null,"blood_DNA"=null,"blood_type"=blood_type,"resistances"=null,"trace_chem"=null))
+		reagents.add_reagent(blood_reagent, 200, list("donor"=null,"blood_DNA"=null,"blood_type"=blood_type,"blood_group"=blood_group,"species"=blood_species,"resistances"=null,"trace_chem"=null))
 
 
 /obj/item/reagent_containers/blood/on_reagent_change()
@@ -49,12 +52,34 @@
 	add_overlay(filling)
 
 /obj/item/reagent_containers/blood/proc/update_name()
-	var/list/data = reagents.get_data("blood")
+	var/list/data = null
+	for(var/datum/reagent/organic/blood/B in reagents.reagent_list)
+		data = B.data
+		break
+
 	if(data)
 		blood_type = data["blood_type"]
-		name = "blood pack ([blood_type])"
+		var/spec = data["species"]
+
+		var/base = "blood pack"
+		if(istype(src, /obj/item/reagent_containers/blood/oil)) base = "bag of oil"
+		else if(istype(src, /obj/item/reagent_containers/blood/synthetic)) base = "bag of blood"
+		else if(istype(src, /obj/item/reagent_containers/blood/plant)) base = "sap pack"
+		else if(istype(src, /obj/item/reagent_containers/blood/slime)) base = "fluid pack"
+
+		if(blood_type && spec)
+			name = "[spec] [base] ([blood_type])"
+		else if(blood_type)
+			name = "[base] ([blood_type])"
+		else if(spec)
+			name = "[spec] [base]"
+		else
+			name = base
 	else
-		name = "blood pack"
+		if(blood_type)
+			name = "[initial(name)] ([blood_type])"
+		else
+			name = initial(name)
 
 /obj/item/reagent_containers/blood/examine(mob/user)
 	. = ..()
@@ -331,5 +356,126 @@
 
 /obj/item/reagent_containers/blood/OMinus
 	bloodtypeandpackname("O-")
+
+/obj/item/reagent_containers/blood/aquatic
+	name = "blood pack"
+	blood_reagent = "aquatic_blood"
+	blood_group = "aquatic"
+	blood_species = "Aquatic"
+	blood_type = "O-"
+
+/obj/item/reagent_containers/blood/aquatic/APlus
+	bloodtypeandpackname("A+")
+/obj/item/reagent_containers/blood/aquatic/AMinus
+	bloodtypeandpackname("A-")
+/obj/item/reagent_containers/blood/aquatic/BPlus
+	bloodtypeandpackname("B+")
+/obj/item/reagent_containers/blood/aquatic/BMinus
+	bloodtypeandpackname("B-")
+/obj/item/reagent_containers/blood/aquatic/OPlus
+	bloodtypeandpackname("O+")
+/obj/item/reagent_containers/blood/aquatic/OMinus
+	bloodtypeandpackname("O-")
+
+/obj/item/reagent_containers/blood/opifex
+	name = "blood pack"
+	blood_reagent = "opifex_blood"
+	blood_group = "opifex"
+	blood_species = "Opifex"
+	blood_type = "O-"
+
+/obj/item/reagent_containers/blood/opifex/APlus
+	bloodtypeandpackname("A+")
+/obj/item/reagent_containers/blood/opifex/AMinus
+	bloodtypeandpackname("A-")
+/obj/item/reagent_containers/blood/opifex/BPlus
+	bloodtypeandpackname("B+")
+/obj/item/reagent_containers/blood/opifex/BMinus
+	bloodtypeandpackname("B-")
+/obj/item/reagent_containers/blood/opifex/OPlus
+	bloodtypeandpackname("O+")
+/obj/item/reagent_containers/blood/opifex/OMinus
+	bloodtypeandpackname("O-")
+
+/obj/item/reagent_containers/blood/chtmant
+	name = "blood pack"
+	blood_reagent = "chtmant_blood"
+	blood_group = "chtmant"
+	blood_species = "Cht'mant"
+	blood_type = "O-"
+
+/obj/item/reagent_containers/blood/chtmant/APlus
+	bloodtypeandpackname("A+")
+/obj/item/reagent_containers/blood/chtmant/AMinus
+	bloodtypeandpackname("A-")
+/obj/item/reagent_containers/blood/chtmant/BPlus
+	bloodtypeandpackname("B+")
+/obj/item/reagent_containers/blood/chtmant/BMinus
+	bloodtypeandpackname("B-")
+/obj/item/reagent_containers/blood/chtmant/OPlus
+	bloodtypeandpackname("O+")
+/obj/item/reagent_containers/blood/chtmant/OMinus
+	bloodtypeandpackname("O-")
+
+/obj/item/reagent_containers/blood/reptile
+	name = "blood pack"
+	blood_reagent = "reptile_blood"
+	blood_group = "reptile"
+	blood_species = "Reptile"
+	blood_type = "O-"
+
+/obj/item/reagent_containers/blood/reptile/APlus
+	bloodtypeandpackname("A+")
+/obj/item/reagent_containers/blood/reptile/AMinus
+	bloodtypeandpackname("A-")
+/obj/item/reagent_containers/blood/reptile/BPlus
+	bloodtypeandpackname("B+")
+/obj/item/reagent_containers/blood/reptile/BMinus
+	bloodtypeandpackname("B-")
+/obj/item/reagent_containers/blood/reptile/OPlus
+	bloodtypeandpackname("O+")
+/obj/item/reagent_containers/blood/reptile/OMinus
+	bloodtypeandpackname("O-")
+
+/obj/item/reagent_containers/blood/oil
+	name = "bag of synthetic oil"
+	desc = "An IV drip pack of synthetic oil used to maintain synthetic and robotic circulatory systems. Not compatible with non-synthetic blood types."
+	blood_reagent = "synth_oil"
+	blood_group = "synth"
+	blood_species = "Synthetic"
+	blood_type = "X"
+
+/obj/item/reagent_containers/blood/synthetic
+	name = "bag of synthetic blood"
+	desc = "An IV drip pack of lab-grown synthetic blood for full-body prosthetics and synthetic organisms. Not compatible with non-synthetic blood types."
+	blood_reagent = "synthetic_blood"
+	blood_group = "fbp"
+	blood_species = "Synthetic"
+	blood_type = "X"
+
+/obj/item/reagent_containers/blood/plant
+	name = "sap pack"
+	desc = "An IV drip pack of plant sap and botanical circulatory fluid for plant-based lifeforms. Not compatible with standard organic blood types."
+	blood_reagent = "plant_blood"
+	blood_group = "plant"
+	blood_species = "Plant"
+	blood_type = "X"
+
+/obj/item/reagent_containers/blood/slime
+	name = "aulvatic fluid pack"
+	desc = "An IV drip pack of aulvatic fluid used for Aulvae transfusion. Not compatible with standard organic blood types."
+	blood_reagent = "aulvatic_fluid"
+	blood_group = "slime"
+	blood_species = "Slime"
+	blood_type = "X"
+
+/obj/item/reagent_containers/blood/nanoblood
+	name = "Nanofluid pack"
+	desc = "An IV drip pack of nanofluid. Functions as a universal substitute to replace circulatory fluids at a 2:1 ratio."
+	blood_type = "U"
+
+/obj/item/reagent_containers/blood/nanoblood/Initialize()
+	. = ..()
+	reagents.add_reagent("nanofluid", 200)
 
 /obj/item/reagent_containers/blood/empty

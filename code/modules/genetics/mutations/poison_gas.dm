@@ -6,6 +6,7 @@
 	desc = "Allows the affected to spew gouts of blattedin gas. Warning- this mutation does not grant immunity to said gas."
 	gain_text = "You feel almost like burping..."
 	instability = 30
+	gene_research_value = 2500
 	exclusive_type = MUT_TYPE_MOUTH
 	var/datum/reagents/gas_sac
 	var/call_back_true = FALSE

@@ -21,8 +21,8 @@
 	icon_state = "biblep"*/
 
 /obj/item/book/ritual/cruciform/priest
-	name = "prime ritual book"
-	desc = "Contains holy litany and prayers meant only for the prime."
+	name = "Penitent ritual book"
+	desc = "Contains holy litany and prayers meant only for the Penitent."
 	icon_state = "biblep"
 	excluded_categories = null
 	price_tag = 250

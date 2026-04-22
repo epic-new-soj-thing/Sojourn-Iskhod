@@ -450,7 +450,7 @@
 	required = /obj/item/slime_extract/black
 */
 
-datum/chemical_reaction/slime/spawn2
+/datum/chemical_reaction/slime/spawn2
 	result = null
 	required_reagents = list("mutagen" = 1)
 	result_amount = 1

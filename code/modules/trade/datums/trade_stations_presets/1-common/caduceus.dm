@@ -52,7 +52,9 @@
 			/obj/item/reagent_containers/blood/BPlus,
 			/obj/item/reagent_containers/blood/BMinus,
 			/obj/item/reagent_containers/blood/OPlus,
-			/obj/item/reagent_containers/blood/OMinus
+			/obj/item/reagent_containers/blood/OMinus,
+			/obj/item/reagent_containers/blood/plant,
+			/obj/item/reagent_containers/blood/slime
 		),
 		"Protection" = list(
 			/obj/item/clothing/suit/radiation = good_data("Radiation Suit", list(3, 4), 600),

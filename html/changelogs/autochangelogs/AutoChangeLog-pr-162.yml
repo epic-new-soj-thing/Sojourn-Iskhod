@@ -1,0 +1,13 @@
+author: AMcilraith
+changes:
+  - add: Introduced a nuclear bomb mechanic with multiple stages of warning and 
+      evacuation.
+  - add: Added a repeating alarm sound during the nuclear countdown.
+  - add: Added a one-minute abort warning sound for the nuclear bomb sequence.
+  - tweak: Adjusted the explosion frequency during the final countdown to be 
+      faster.
+  - tweak: Updated evacuation announcements to reflect countdown times during 
+      the nuclear threat.
+  - fix: Corrected sound playback for various nuclear device announcements.
+date: '2025-08-07'
+delete-after: false

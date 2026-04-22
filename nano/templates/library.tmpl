@@ -6,23 +6,23 @@
 	<h2>{{:data.current_book.title}}</h2>
 	<div class="item">
 		<div class="itemLabel">
-			Author: 
+			Author:
 		</div>
 		<div class="itemContent">
 			 {{:data.current_book.author}}
 		</div>
 		<div class="itemLabel">
-			USBN: 
+			USBN:
 		</div>
 		<div class="itemContent">
 			{{:data.current_book.id}}
 		</div>
 		<div class="itemLabel">
-			Commands: 
+			Commands:
 		</div>
 		<div class="itemContent">
 			{{:helper.link("Close", null, {'closebook' : 1})}}
-			{{:helper.link("Print", null, {'printbook' : 1})}}
+			{{:helper.link("Print (adds to library)", null, {'printbook' : 1})}}
 		</div>
 	</div>
 	<div style="background-color: #FFFFFF; padding: 6px;">
@@ -30,12 +30,22 @@
 	</div>
 {{else}}
 	<h2>External Archives</h2>
+	{{if data.librarian_mode}}
 	<div class="item">
 		<div class="itemLabel">
 			Scanner:
 		</div>
 		<div class="itemContent">
 			{{:data.scanner ? 'Connected' : 'Not Connected'}}
+		</div>
+	</div>
+	<div class="item">
+		<div class="itemLabel">
+			Upload category:
+		</div>
+		<div class="itemContent">
+			{{:data.upload_category}}
+			{{:helper.link("(Set)", null, {'setuploadcategory' : 1})}}
 		</div>
 	</div>
 	<div class="item">
@@ -48,6 +58,16 @@
 			{{:helper.link("Connect to Library Scanner", null, {'connectscanner' : 1})}}
 		</div>
 	</div>
+	{{else}}
+	<div class="item">
+		<div class="itemLabel">
+			Commands:
+		</div>
+		<div class="itemContent">
+			{{:helper.link("View By USBN", null, {'viewid' : 1})}}
+		</div>
+	</div>
+	{{/if}}
 	<div class="item">
 		<div class="itemLabel">
 			Sort by:
@@ -68,7 +88,18 @@
 			<td>{{:value.author}}
 			<td>{{:value.category}}
 			<td>{{:value.id}}
-		</div>
+		</tr>
+		{{/for}}
+	</table>
+
+	<h3>Print manual (default books)</h3>
+	<div class="item">Select a manual to print at the book binder. Adds to library inventory when binder is adjacent.</div>
+	<table style="width:100%">
+		<tr><th style="width:25%">Print<th style="width:75%">Manual
+		{{for data.printable_manuals}}
+		<tr><td>{{:helper.link("Print", null, {'printmanual' : value.index})}}
+			<td>{{:value.name}}
+		</tr>
 		{{/for}}
 	</table>
 {{/if}}

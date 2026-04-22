@@ -287,7 +287,7 @@
 
 	if(loc == null)
 		return
-		
+
 	var/datum/gas_mixture/environment = loc?.return_air()
 
 	if(environment)

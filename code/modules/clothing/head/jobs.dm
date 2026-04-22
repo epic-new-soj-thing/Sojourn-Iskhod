@@ -7,14 +7,14 @@
 
 //Cargo Tech
 /obj/item/clothing/head/rank/cargosoft
-	name = "lonestar cap"
-	desc = "A grey cap with the Lonestar logo on it."
+	name = "frontier logistics cap"
+	desc = "A grey cap with the Frontier Logistics logo on it."
 	icon_state = "cargosoft"
 
 //Captain
 
 /obj/item/clothing/head/rank/captain
-	name = "premier's hat"
+	name = "facility director's hat"
 	icon_state = "captain"  //Sprites from Eris
 	desc = "It's good being the king."
 	item_state_slots = list(
@@ -33,9 +33,9 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Premier's Hat"] = "captain"
-	options["Premier's old Hat"] = "captain-old"
-	options["Premier's Cap"] = "capcap"
+	options["Facility Director's Hat"] = "captain"
+	options["Facility Director's old Hat"] = "captain-old"
+	options["Facility Director's Cap"] = "capcap"
 	options["Parade Hat"] = "officercap"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
@@ -65,7 +65,7 @@
 
 /obj/item/clothing/head/preacher
 	name = "preacher hat"
-	desc = "A Prime's headdress that comes in many forms. It also serves to hide their distain for the faithless."
+	desc = "A Penitent's headdress that comes in many forms. It also serves to hide their disdain for the faithless."
 	armor_list = list(melee = 0, bullet = 0, energy = 0, bomb = 0, bio = 100, rad = 0)
 	icon_state = "church_hat"
 
@@ -79,16 +79,16 @@
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["Primes hat"] = "church_hat"
-	options["Primes visor"] = "nt_visor"
-	options["Primes trihat"] = "nt_trihat" //credit to Près de l'oiseau on Eris for all of these!
-	options["Primes visored trihat"] = "nt_trihat_visor"
-	options["Primes mitre"] = "nt_papalhat"
-	options["Primes visored mitre"] = "nt_papalhat_visor"
-	options["Primes illuminant mitre"] = "nt_papalhat_illuminati"
-	options["Primes visored habit"] = "nt_habithat_visor"
-	options["Primes masked habit"] = "nt_habithat_mask"
-	options["Primes hood"] = "nt_robe_hood"
+	options["Penitent's hat"] = "church_hat"
+	options["Penitent's visor"] = "nt_visor"
+	options["Penitent's trihat"] = "nt_trihat" //credit to Près de l'oiseau on Eris for all of these!
+	options["Penitent's visored trihat"] = "nt_trihat_visor"
+	options["Penitent's mitre"] = "nt_papalhat"
+	options["Penitent's visored mitre"] = "nt_papalhat_visor"
+	options["Penitent's illuminant mitre"] = "nt_papalhat_illuminati"
+	options["Penitent's visored habit"] = "nt_habithat_visor"
+	options["Penitent's masked habit"] = "nt_habithat_mask"
+	options["Penitent's hood"] = "nt_robe_hood"
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
 	if(src && choice && !M.incapacitated() && Adjacent(M))
@@ -203,12 +203,12 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 //Security
 /obj/item/clothing/head/rank/ironhammer
 	name = "marshal beret"
-	desc = "A stylish beret, this one has markings of the Marshals."
+	desc = "A stylish beret, this one has markings of the Rangers."
 	icon_state = "policeberet"
 
 /obj/item/clothing/head/rank/commander
-	name = "warrant officer beret"
-	desc = "A grey warrant officer beret signifying a command position."
+	name = "captain's beret"
+	desc = "A grey beret signifying a command position within the rangers."
 	icon_state = "beret_navy_hos"
 
 /obj/item/clothing/head/rank/commander/verb/toggle_style()
@@ -221,9 +221,9 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 
 	var/mob/M = usr
 	var/list/options = list()
-	options["WO Beret"] = "beret_navy_hos"
-	options["WO Cap"] = "ihc_cap"
-	options["WO Default"] = "hoshat"
+	options["RC Beret"] = "beret_navy_hos"
+	options["RC Cap"] = "ihc_cap"
+	options["RC Default"] = "hoshat"
 
 	var/choice = input(M,"What kind of style do you want?","Adjust Style") as null|anything in options
 
@@ -238,11 +238,106 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 
 /obj/item/clothing/head/rank/warden/beret
 	name = "supply specialist beret"
-	desc = "A red marshal beret signifying a supply specialist position."
+	desc = "A red ranger beret signifying a supply specialist position."
 	icon_state = "beret_navy_warden"
 
 /obj/item/clothing/head/rank/janacap //fucking weaboos.
-	name = "marshal officers cap"
+	name = "ranger officers cap"
+	desc = "A stylish officers cap. Somewhere between a kepi and peaked officer cap, this style is popular amongst enforcement corps in some region of Solarian space."
+	icon_state = "police_cap"
+
+/obj/item/clothing/head/rank/ranger/utility
+	name = "ranger utility cap"
+	desc = "A rugged utility cap worn by Iskhod Rangers during maintenance or field work."
+	icon_state = "fleetutility"
+
+/obj/item/clothing/head/rank/ranger/utility/officer
+	name = "ranger officer's utility cap"
+	icon_state = "fleetutility_com"
+
+/obj/item/clothing/head/rank/ranger/utility/command
+	name = "ranger command utility cap"
+	icon_state = "fleetutility_com"
+
+/obj/item/clothing/head/rank/ranger/utility/flag
+	name = "ranger flag officer utility cap"
+	icon_state = "fleetutility_flag"
+
+/obj/item/clothing/head/rank/ranger/beret/service
+	name = "ranger service beret"
+	desc = "An immaculate navy beret, signified for Iskhod Ranger service duties."
+	icon_state = "beret_navy"
+
+/obj/item/clothing/head/rank/ranger/beret/service/officer
+	name = "ranger officer's service beret"
+	icon_state = "beret_navy_command"
+
+/obj/item/clothing/head/rank/ranger/beret/service/command
+	name = "ranger command service beret"
+	icon_state = "white_beret_fleet"
+
+/obj/item/clothing/head/rank/ranger/beret/service/flag
+	name = "ranger flag officer service beret"
+	icon_state = "beret_whiterim_com"
+
+/obj/item/clothing/head/rank/ranger/peaked
+	name = "ranger peaked cap"
+	desc = "A formal peaked cap for Iskhod Ranger officers."
+	icon_state = "ecdresscap_cdr"
+
+/obj/item/clothing/head/rank/ranger/peaked/officer
+	name = "ranger officer's peaked cap"
+	icon_state = "ecdresscap_cdr"
+
+/obj/item/clothing/head/rank/ranger/peaked/command
+	name = "ranger command peaked cap"
+	icon_state = "ecdresscap_capt"
+
+/obj/item/clothing/head/rank/ranger/peaked/flag
+	name = "ranger flag officer peaked cap"
+	icon_state = "ecdresscap_capt"
+
+/obj/item/clothing/head/rank/blackshield/utility
+	name = "blackshield utility cap"
+	desc = "A rugged utility cap worn by blackshield rangers during maintenance or field work."
+	icon_state = "fleetutility"
+
+/obj/item/clothing/head/rank/blackshield/beret/service
+	name = "blackshield service beret"
+	desc = "An immaculate white beret, signified for blackshield ranger service duties."
+	icon_state = "beret_navy"
+
+/obj/item/clothing/head/rank/blackshield/beret/service/officer
+	name = "blackshield officer's service beret"
+	icon_state = "beret_navy_command"
+
+/obj/item/clothing/head/rank/blackshield/beret/service/command
+	name = "blackshield command service beret"
+	icon_state = "beret_white_fleet"
+
+/obj/item/clothing/head/rank/blackshield/beret/service/flag
+	name = "blackshield flag officer service beret"
+	icon_state = "beret_whiterim_com"
+
+/obj/item/clothing/head/rank/blackshield/peaked
+	name = "blackshield peaked cap"
+	desc = "A formal peaked cap for blackshield ranger officers."
+	icon_state = "ecdresscap_cdr"
+
+/obj/item/clothing/head/rank/blackshield/peaked/officer
+	name = "ranger officer's peaked cap"
+	icon_state = "ecdresscap_cdr"
+
+/obj/item/clothing/head/rank/blackshield/peaked/command
+	name = "ranger command peaked cap"
+	icon_state = "ecdresscap_capt"
+
+/obj/item/clothing/head/rank/blackshield/peaked/flag
+	name = "ranger flag officer peaked cap"
+	icon_state = "ecdresscap_capt"
+
+/obj/item/clothing/head/rank/janacap //fucking weaboos.
+	name = "ranger officers cap"
 	desc = "A stylish officers cap. Somewhere between a kepi and peaked officer cap, this style is popular amongst enforcement corps in some region of Solarian space."
 	icon_state = "police_cap"
 
@@ -504,8 +599,8 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 /obj/item/clothing/head/rank/fatigue/navy
 	name = "navy utility cover"
 	desc = "A navy camo cover, fit for a soldier. The markings of a removed patch linger."
-	icon_state = "navyutility"
-	item_state = "navyutility"
+	icon_state = "navyutility_1"
+	item_state = "navyutility_1"
 
 /obj/item/clothing/head/rank/fatigue/tan
 	name = "tan utility cover"
@@ -534,3 +629,4 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 	armor_list = list(melee = 2, bullet = 0, energy = 2, bomb = 0, bio = 0, rad = 0)
 	icon_state = "greenutility"
 	item_state = "greenutility"
+

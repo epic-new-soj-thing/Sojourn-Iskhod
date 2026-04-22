@@ -110,3 +110,27 @@
 	..()
 	hard_drive.store_file(new/datum/computer_file/program/suit_sensors())
 	hard_drive.store_file(new/datum/computer_file/program/chem_catalog())
+
+// CBO medical tablet: same base as moebius medical preset, upgraded with command-lease-tier parts (no replacements, only upgrades/adds).
+/obj/item/modular_computer/tablet/moebius/preset/cbo/install_default_hardware()
+	..()
+	// Upgrade processor to command-tier (adv/small).
+	processor_unit = new/obj/item/pc_part/processor_unit/adv/small(src)
+	// Upgrade hard drive to command-tier (small/adv).
+	hard_drive = new/obj/item/pc_part/drive/small/adv(src)
+	// Upgrade network card to advanced.
+	network_card = new/obj/item/pc_part/network_card/advanced(src)
+	// Add command-tier extras (printer, card slot); keep existing cell, scanner, gps_sensor, tesla_link.
+	printer = new/obj/item/pc_part/printer(src)
+	card_slot = new/obj/item/pc_part/card_slot(src)
+
+/obj/item/modular_computer/tablet/moebius/preset/cbo/install_default_programs()
+	..()
+	// Add command-lease programs on top of medical (suit_sensors, chem_catalog).
+	hard_drive.store_file(new/datum/computer_file/program/email_client())
+	hard_drive.store_file(new/datum/computer_file/program/chatclient())
+	hard_drive.store_file(new/datum/computer_file/program/wordprocessor())
+	hard_drive.store_file(new/datum/computer_file/program/newsbrowser())
+	hard_drive.store_file(new/datum/computer_file/program/camera_monitor())
+	hard_drive.store_file(new/datum/computer_file/program/records())
+	hard_drive.store_file(new/datum/computer_file/program/tax())

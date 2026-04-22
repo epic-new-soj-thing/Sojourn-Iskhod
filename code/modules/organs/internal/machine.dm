@@ -47,7 +47,7 @@
 		return
 	if(owner.stat == DEAD)	//not a drain anymore
 		return
-	if(!is_usable())
+	if(!is_usable() && is_broken())
 		owner.Paralyse(3)
 		return
 	var/cost = get_servo_cost()
@@ -90,6 +90,9 @@
 
 /obj/item/organ/internal/cell/replaced_mob(mob/living/carbon/human/target)
 	..()
+	// Do not allow reviving FBPs/synths by re-inserting the cell; they must be revived with a jumper cable kit or similar.
+	if(owner.isSynthetic())
+		return
 	// This is very ghetto way of rebooting an IPC. TODO better way.
 	if(owner.stat == DEAD)
 		/* Code stolen from 'modules/mob/living/living.dm' after line 428. We can't directly call the revive() proc, because that heal everything, but we can take some parts of it.

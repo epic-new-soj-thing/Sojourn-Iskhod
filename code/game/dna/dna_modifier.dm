@@ -309,6 +309,9 @@
   */
 /obj/machinery/computer/scan_consolenew/nano_ui_interact(mob/user, ui_key = "main", var/datum/nanoui/ui = null, var/force_open = NANOUI_FOCUS)
 
+	if(!connected)
+		to_chat(user, SPAN_WARNING("No DNA modifier detected. Place the console adjacent to a DNA modifier."))
+		return
 	if(user == connected.occupant || user.stat)
 		return
 

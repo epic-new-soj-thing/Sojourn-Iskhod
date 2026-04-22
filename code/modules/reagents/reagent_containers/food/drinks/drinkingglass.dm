@@ -43,6 +43,21 @@
 	volume = 60
 	morf_glass = FALSE
 
+// Additional drink glasses (from Baystation12-style barware)
+
+/obj/item/reagent_containers/drinks/drinkingglass/coupe
+	name = "coupe glass"
+	desc = "A stemmed cocktail glass, good for mixed drinks."
+	icon_state = "coupe"
+	volume = 20
+	morf_glass = FALSE
+
+/obj/item/reagent_containers/drinks/drinkingglass/highball
+	name = "highball glass"
+	desc = "A tall glass for mixed drinks and long drinks."
+	icon_state = "highball"
+	volume = 45
+	morf_glass = FALSE
 
 /obj/item/reagent_containers/drinks/drinkingglass/update_icon()
 	name = initial(name)

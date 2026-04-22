@@ -1,91 +1,61 @@
 /datum/gear/factionblackshield
-	display_name = "beret, blackshield"
+	display_name = "beret, ranger"
 	path = /obj/item/clothing/head/rank/trooper/beret
-	allowed_roles = list(JOBS_BLACKSHIELD)
+	allowed_roles = list(JOBS_SECURITY)
 	slot = slot_head
-	sort_category = "Faction: Blackshield"
+	sort_category = "Faction: Iskhod Rangers"
 	cost = 0
 
 /datum/gear/factionblackshield/captrooper
-	display_name = "cap, blackshield"
+	display_name = "cap, ranger"
 	path = /obj/item/clothing/head/rank/trooper/cap
 
 /datum/gear/factionblackshield/radiohat // THINK FAST CHUCKLENUTS!
-	display_name = "radio cap, blackshield"
+	display_name = "radio cap, ranger"
 	path = /obj/item/device/radio/headset/radiohat_blackshield
 
 /datum/gear/factionblackshield/gloves
-	display_name = "blackshield combat gloves"
+	display_name = "ranger combat gloves"
 	path = /obj/item/clothing/gloves/thick/swat/blackshield
 	slot = slot_gloves
 
 /datum/gear/factionblackshield/cadet
 	display_name = "uniform, cadet"
 	path = /obj/item/clothing/under/rank/trooper/cadet
-	allowed_roles = list("Corpsman","Blackshield Trooper", "Blackshield Cadet")
+	allowed_roles = list(JOBS_SECURITY)
 	slot = slot_w_uniform
 
 /datum/gear/factionblackshield/gorkasecurity
 	display_name = "gorka jumpsuit, security"
 	path = /obj/item/clothing/under/rank/security/gorka_ih
-	allowed_roles = list("Blackshield Commander","Sergeant","Blackshield Trooper", "Blackshield Cadet")
+	allowed_roles = list(JOBS_SECURITY)
 	slot = slot_w_uniform
 
 /datum/gear/factionblackshield/gorka_pants
 	display_name = "gorka security pants"
 	path = /obj/item/clothing/under/rank/security/gorkapantsih
-	allowed_roles = list("Blackshield Commander","Sergeant","Blackshield Trooper", "Blackshield Cadet")
-	slot = slot_w_uniform
 
-/datum/gear/factionblackshield/gorka_pants
-	display_name = "gorka security med pants"
-	path = /obj/item/clothing/under/rank/medspec/gorkapantsihmed
-	allowed_roles = list("Corpsman")
-	slot = slot_w_uniform
-
-/datum/gear/factionblackshield/gorkasecuritymed
-	display_name = "gorka blue med jumpsuit, security"
-	path = /obj/item/clothing/under/rank/medspec/gorka_ih_med_b
-	allowed_roles = list("Corpsman")
-	slot = slot_w_uniform
-
-/datum/gear/factionblackshield/gorkasecuritygreenmed
-	display_name = "gorka green med jumpsuit, security"
-	path = /obj/item/clothing/under/rank/medspec/gorka_ih_med_g
-	allowed_roles = list("Corpsman")
-	slot = slot_wear_suit
+	allowed_roles = list(JOBS_SECURITY)
 
 /datum/gear/factionblackshield/gorka_ih
 	display_name = "gorka jacket, security"
 	path = /obj/item/clothing/suit/gorka/toggle/gorka_ih
-	allowed_roles = list("Blackshield Commander","Sergeant","Blackshield Trooper", "Blackshield Cadet")
-	slot = slot_wear_suit
-
-/datum/gear/factionblackshield/gorka_ih_med_b
-	display_name = "gorka jacket, security medical blue"
-	path = /obj/item/clothing/suit/gorka/toggle/gorka_ih/ih_med_b
-	allowed_roles = list("Corpsman")
-	slot = slot_wear_suit
-
-/datum/gear/factionblackshield/gorka_ih_med_g
-	display_name = "gorka jacket, security medical green"
-	path = /obj/item/clothing/suit/gorka/toggle/gorka_ih/ih_med_g
-	allowed_roles = list("Corpsman")
+	allowed_roles = list(JOBS_SECURITY)
 	slot = slot_wear_suit
 
 /datum/gear/factionblackshield/bdu
-	display_name = "blackshield battle dress uniform"
+	display_name = "ranger battle dress uniform"
 	path = /obj/item/clothing/under/rank/bdu/trooper
 	slot = slot_w_uniform
 
 /datum/gear/factionblackshield/blackshield
-	display_name = "cloak selection, blackshield"
+	display_name = "cloak selection, ranger"
 	path = /obj/item/clothing/accessory/job/cape/blackshield
 	slot = slot_wear_suit
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/factionblackshield/blackcoat
-	display_name = "longcoat selection, blackshield"
+	display_name = "longcoat selection, ranger"
 	path = /obj/item/clothing/accessory/bscloak
 	flags = GEAR_HAS_TYPE_SELECTION
 
@@ -116,22 +86,57 @@
 	flags = GEAR_HAS_TYPE_SELECTION
 
 /datum/gear/factionblackshield/shoulderboardselection
-	display_name = "shoulderboard selection"
-	description = "A selection of Blackshield shoulderboards."
+	display_name = "ranger shoulderboard selection"
+	description = "A selection of shoulderboards for the Iskhod Rangers."
 	path = /obj/item/clothing/accessory/ranks
+	allowed_roles = list(JOBS_SECURITY)
 
 /datum/gear/factionblackshield/shoulderboardselection/New()
 	..()
-	var/shoulderboards = list(
-		"blank shoulderboards"			=	/obj/item/clothing/accessory/ranks/blank,
-		"trooper shoulderboards"		=	/obj/item/clothing/accessory/ranks/trooper,
-		"corpsman shoulderboards"		=	/obj/item/clothing/accessory/ranks/corpsman,
-		"sergeant shoulderboards"		=	/obj/item/clothing/accessory/ranks/sergeant,
-		"commander shoulderboards"		=	/obj/item/clothing/accessory/ranks/commander,
+	var/ranks = list(
+		"junior ranger shoulderboards"	= /obj/item/clothing/accessory/ranks/volunteer,
+		"ranger shoulderboards"			= /obj/item/clothing/accessory/ranks/trooper,
+		"detective shoulderboards"		= /obj/item/clothing/accessory/ranks/corpsman,
+		"lieutenant shoulderboards"		= /obj/item/clothing/accessory/ranks/sergeant,
+		"captain shoulderboards"		= /obj/item/clothing/accessory/ranks/commander,
 	)
-	gear_tweaks += new /datum/gear_tweak/path(shoulderboards)
+	gear_tweaks += new /datum/gear_tweak/path(ranks)
+
+/datum/gear/factionblackshield/patchselection
+	display_name = "ranger rank patch selection"
+	description = "A selection of ranger rank patches."
+	path = /obj/item/clothing/accessory/patches
+	cost = 0
+	allowed_roles = list(JOBS_SECURITY)
+
+/datum/gear/factionblackshield/patchselection/New()
+	..()
+	var/patches = list(
+		"junior ranger patch"	= /obj/item/clothing/accessory/patches/blackshield_volunteer,
+		"ranger patch"			= /obj/item/clothing/accessory/patches/blackshield_trooper,
+		"detective patch"		= /obj/item/clothing/accessory/patches/blackshield_corpsman,
+		"lieutenant patch"		= /obj/item/clothing/accessory/patches/blackshield_sergeant,
+		"captain patch"			= /obj/item/clothing/accessory/patches/blackshield_commander,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(patches)
+
+/datum/gear/factionblackshield/mantleselection
+	display_name = "ranger mantle selection"
+	description = "A selection of rank mantles for the Iskhod Rangers."
+	path = /obj/item/clothing/accessory/halfcape/
+	cost = 1
+	allowed_roles = list(JOBS_SECURITY)
+
+/datum/gear/factionblackshield/mantleselection/New()
+	..()
+	var/mantles = list(
+		"Ranger mantle"			= /obj/item/clothing/accessory/halfcape/trooper_cape,
+		"Lieutenant mantle"		= /obj/item/clothing/accessory/cape/sergeant_cape,
+		"Captain mantle"		= /obj/item/clothing/accessory/halfcape,
+	)
+	gear_tweaks += new /datum/gear_tweak/path(mantles)
 
 /datum/gear/factionblackshield/blackshieldbackpack
-	display_name = "green blackshield backpack"
+	display_name = "green ranger backpack"
 	path = /obj/item/storage/backpack/militia/green
 	slot = slot_back

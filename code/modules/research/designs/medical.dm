@@ -13,6 +13,12 @@
 	build_path = /obj/item/device/makeshift_centrifuge
 	category = "Medical"
 
+/datum/design/research/item/medical/hypospray
+	name = "Hypospray"
+	desc = "The Vesalius-Andra medical hypospray is a sterile, air-needle autoinjector for rapid administration of drugs to patients."
+	build_path = /obj/item/reagent_containers/hypospray
+	category = "Medical"
+
 /datum/design/research/item/medical/roller_bed
 	name = "Roller Bed"
 	desc = "A foldable roller bed that can be carried around."
@@ -80,6 +86,12 @@
 	desc = "A compact defibrillator built into a belt for ease of carrying. This one has their safety protocols turned off, allowing for stronger, yet controlled shocks that can bypass the interference of hardsuits and body armors."
 	build_path = /obj/item/device/defib_kit/compact/combat
 
+/datum/design/research/item/medical/jumper_kit
+	name = "Jumper Cable Kit"
+	desc = "A device that delivers powerful shocks to detachable jumper cables capable of reviving synthetic and prosthetic chests. Useless on organic patients."
+	build_path = /obj/item/device/defib_kit/jumper_kit/loaded
+	build_type = PROTOLATHE | MECHFAB
+
 //Storage
 
 /datum/design/research/item/medical/cryobag
@@ -119,6 +131,12 @@
 /datum/design/research/item/beaker/big
 	name = "Large glass beaker"
 	build_path = /obj/item/reagent_containers/glass/beaker/large
+
+/datum/design/research/item/medical/micropipetter
+	name = "Micropipetter"
+	desc = "A precision micropipette for small-volume transfers. Holds 1 unit max."
+	build_path = /obj/item/reagent_containers/dropper/micropipetter
+	category = "Medical"
 
 /datum/design/research/item/fire_kit
 	name = "Empty Fire Firstaid Kit"
@@ -192,7 +210,7 @@
 	category = "Medical"
 
 /datum/design/research/item/si_kit
-	name = "Empty Soteria Advanced Kit"
+	name = "Empty Vesalius-Andra Advanced Kit"
 	build_path = /obj/item/storage/firstaid/regular/si/empty
 	category = "Medical"
 
@@ -205,7 +223,7 @@
 	category = "Medical"
 
 /datum/design/research/item/medical/medimplant_sci
-	name = "Soteria Medical Omnitool"
+	name = "Vesalius-Andra Medical Omnitool"
 	desc = "An all-in-one smart medical tool implant based on the legendary Greyson Positronic model."
 	build_path = /obj/item/tool/medmultitool/medimplant/sci
 	materials = list(MATERIAL_STEEL = 5, MATERIAL_GLASS = 2, MATERIAL_PLASTIC = 5, MATERIAL_SILVER = 1)

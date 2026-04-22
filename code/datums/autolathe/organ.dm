@@ -78,3 +78,209 @@
 	name = "Extensive Blood Vessels"
 	materials = list(MATERIAL_BIOMATTER = 30, MATERIAL_PLASTIC = 2)
 	build_path = /obj/item/organ/internal/blood_vessel/extensive
+
+// --- SPECIES ORGANS ---
+
+/datum/design/organ/marqua
+	category = "Mar'Qua"
+	starts_unlocked = TRUE
+
+/datum/design/organ/marqua/heart
+	name = "Amphibian Heart"
+	materials = list(MATERIAL_BIOMATTER = 40)
+	build_path = /obj/item/organ/internal/vital/heart/marqua
+
+/datum/design/organ/marqua/lungs
+	name = "Amphibian Lungs"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/vital/lungs/marqua
+
+/datum/design/organ/marqua/liver
+	name = "Amphibian Liver"
+	materials = list(MATERIAL_BIOMATTER = 40)
+	build_path = /obj/item/organ/internal/liver/marqua
+
+/datum/design/organ/marqua/kidney_left
+	name = "Left Amphibian Kidney"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/kidney/left/marqua
+
+/datum/design/organ/marqua/kidney_right
+	name = "Right Amphibian Kidney"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/kidney/right/marqua
+
+/datum/design/organ/marqua/stomach
+	name = "Amphibian Stomach"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/stomach/marqua
+
+/datum/design/organ/marqua/eyes
+	name = "Amphibian Eyes"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/eyes/marqua
+
+/datum/design/organ/opifex
+	category = "Opifex"
+	starts_unlocked = TRUE
+
+/datum/design/organ/opifex/heart
+	name = "Opifex Heart "
+	materials = list(MATERIAL_BIOMATTER = 40)
+	build_path = /obj/item/organ/internal/vital/heart/opifex
+
+/datum/design/organ/opifex/lungs
+	name = "Nitrogen Sack (Lungs)"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/vital/lungs/opifex
+
+/datum/design/organ/opifex/liver
+	name = "Waste Tract (Liver)"
+	materials = list(MATERIAL_BIOMATTER = 40)
+	build_path = /obj/item/organ/internal/liver/opifex
+
+/datum/design/organ/opifex/kidney_left
+	name = "Left Filtration Bladder (Kidney)"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/kidney/left/opifex
+
+/datum/design/organ/opifex/kidney_right
+	name = "Right Filtration Bladder (Kidney)"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/kidney/right/opifex
+
+/datum/design/organ/opifex/stomach
+	name = "Gizzard (Stomach)"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/stomach/opifex
+
+/datum/design/organ/opifex/eyes
+	name = "Opifex Eyes"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/eyes/opifex
+
+/datum/design/organ/cindarite
+	category = "Cindarite"
+	build_type = ORGAN_GROWER
+	starts_unlocked = TRUE
+
+/datum/design/organ/cindarite/heart
+	name = "Reptilian Heart"
+	materials = list(MATERIAL_BIOMATTER = 40)
+	build_path = /obj/item/organ/internal/vital/heart/cindarite
+
+/datum/design/organ/cindarite/lungs
+	name = "Reptilian Lungs"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/vital/lungs/cindarite
+
+/datum/design/organ/cindarite/liver
+	name = "Reptilian Liver"
+	materials = list(MATERIAL_BIOMATTER = 40)
+	build_path = /obj/item/organ/internal/liver/cindarite
+
+/datum/design/organ/cindarite/kidney_left
+	name = "Left Reptilian Kidney"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/kidney/left/cindarite
+
+/datum/design/organ/cindarite/kidney_right
+	name = "Right Reptilian Kidney"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/kidney/right/cindarite
+
+/datum/design/organ/cindarite/stomach
+	name = "Reptilian Stomach"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/stomach/cindarite
+
+/datum/design/organ/cindarite/eyes
+	name = "Reptilian Eyes"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/eyes/cindarite
+
+/datum/design/organ/chtmant
+	category = "Cht'mant"
+	build_type = ORGAN_GROWER
+
+/datum/design/organ/chtmant/heart
+	name = "Hemolymph Pump (Heart)"
+	materials = list(MATERIAL_BIOMATTER = 40)
+	build_path = /obj/item/organ/internal/vital/heart/chtmant
+
+/datum/design/organ/chtmant/lungs
+	name = "Absorption Respirator (Lungs)"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/vital/lungs/chtmant
+
+/datum/design/organ/chtmant/liver
+	name = "Primary Filters (Liver)"
+	materials = list(MATERIAL_BIOMATTER = 40)
+	build_path = /obj/item/organ/internal/liver/chtmant
+
+/datum/design/organ/chtmant/kidney_left
+	name = "Left Secondary Filter (Kidney)"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/kidney/left/chtmant
+
+/datum/design/organ/chtmant/kidney_right
+	name = "Right Secondary Filter (Kidney)"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/kidney/right/chtmant
+
+/datum/design/organ/chtmant/stomach
+	name = "Digestive Sac (Stomach)"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/stomach/chtmant
+
+/datum/design/organ/chtmant/eyes
+	name = "Compound Ocelli (Eyes)"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/eyes/chtmant
+
+// --- PLANT ORGANS (Folken & Mycus) ---
+
+/datum/design/organ/plant
+	category = "Plant"
+	starts_unlocked = TRUE
+
+/datum/design/organ/plant/heart
+	name = "Plant Heart"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/vital/heart/plant
+
+/datum/design/organ/plant/lungs
+	name = "Plant Lungs"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/vital/lungs/plant
+
+/datum/design/organ/plant/liver
+	name = "Plant Liver"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/liver/plant
+
+/datum/design/organ/plant/kidney_left
+	name = "Left Plant Kidney"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/kidney/left/plant
+
+/datum/design/organ/plant/kidney_right
+	name = "Right Plant Kidney"
+	materials = list(MATERIAL_BIOMATTER = 20)
+	build_path = /obj/item/organ/internal/kidney/right/plant
+
+/datum/design/organ/plant/stomach
+	name = "Plant Stomach"
+	materials = list(MATERIAL_BIOMATTER = 10)
+	build_path = /obj/item/organ/internal/stomach/plant
+
+/datum/design/organ/plant/brain
+	name = "Plant Brain"
+	materials = list(MATERIAL_BIOMATTER = 30)
+	build_path = /obj/item/organ/internal/vital/brain/plant
+
+/datum/design/organ/plant/eyes
+	name = "Plant Eyes"
+	materials = list(MATERIAL_BIOMATTER = 10)
+	build_path = /obj/item/organ/internal/eyes/plant
+

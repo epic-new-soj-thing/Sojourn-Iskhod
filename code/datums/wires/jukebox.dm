@@ -9,6 +9,7 @@
 #define WIRE_STOP 128
 #define WIRE_PREV 256
 #define WIRE_NEXT 512
+#define WIRE_JUKEBOX_DUMMY 1024
 
 /datum/wires/jukebox
 	random = TRUE
@@ -16,7 +17,16 @@
 	wire_count = 11
 	descriptions = list(
 		new /datum/wire_description(WIRE_MAIN_POWER1, "Shock"),
-		new /datum/wire_description(WIRE_POWER, "Power")
+		new /datum/wire_description(WIRE_POWER, "Power"),
+		new /datum/wire_description(WIRE_JUKEBOX_HACK, "Parental bypass"),
+		new /datum/wire_description(WIRE_SPEEDUP, "Speed up"),
+		new /datum/wire_description(WIRE_SPEEDDOWN, "Speed down"),
+		new /datum/wire_description(WIRE_REVERSE, "Reverse"),
+		new /datum/wire_description(WIRE_START, "Start"),
+		new /datum/wire_description(WIRE_STOP, "Stop"),
+		new /datum/wire_description(WIRE_PREV, "Previous track"),
+		new /datum/wire_description(WIRE_NEXT, "Next track"),
+		new /datum/wire_description(WIRE_JUKEBOX_DUMMY, "Shock")
 	)
 
 /datum/wires/jukebox/CanUse(mob/user)

@@ -411,7 +411,7 @@ var/global/ManifestJSON
 			heads[++heads.len] = list("name" = name, "rank" = rank, "active" = isactive)
 			department = 1
 			depthead = 1
-			if(rank=="Premier" && heads.len != 1)
+			if(rank=="Facility Director" && heads.len != 1)
 				heads.Swap(1, heads.len)
 
 		if(real_rank in security_positions)
@@ -485,3 +485,4 @@ var/global/ManifestJSON
 		)
 	ManifestJSON = json_encode(PDA_Manifest)
 	return
+

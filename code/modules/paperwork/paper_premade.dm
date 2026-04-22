@@ -45,8 +45,8 @@
 	info = {"<B>Roles:</B>
 	<BR>\nThe Ranger is basically the investigator and prosecutor.
 	<BR>\nThe Staff Assistant can perform these functions with written authority from the Ranger.
-	<BR>\nThe warrant officer/blackshield commander/premier is ct as the judicial authority.
-	<BR>\nThe Marshal Officers (or if none present blackshield troopers) are responsible for executing warrants, security during trial, and prisoner transport.
+	<BR>\nThe warrant officer/blackshield commander/governoris ct as the judicial authority.
+	<BR>\nThe Ranger Officers (or if none present blackshield troopers) are responsible for executing warrants, security during trial, and prisoner transport.
 	<BR>\n
 	<BR>\n<B>Investigative Phase:</B>
 	<BR>\nAfter the crime has been committed the Ranger's job is to gather evidence and try to ascertain not only who did it but what happened. He must take special care to catalogue everything and don't leave anything out. Write out all the evidence on paper. Make sure you take an appropriate number of fingerprints. If he must ask someone questions he has permission to confront them. If the person refuses he can ask a judicial authority to write a subpoena for questioning. If again he fails to respond then that person is to be jailed as insubordinate and obstructing justice. Said person will be released after he cooperates.
@@ -273,12 +273,12 @@
 
 /obj/item/paper/laber_camp_notice
 	name = "Mining Rights and Conservation"
-	info = {"From Artificer Guild and Soteria Xenoarch Division:
+	info = {"From Artificer Guild and Vesalius-Andra Xenoarch Division:
 	<BR>\n\tArtificer Guild:
-	<BR>\n\t\tDue to LSS mining operations and Soteria Toxin testing the labor camp might have rock falls refilling the area from time to time.
+	<BR>\n\t\tDue to FL mining operations and Vesalius-Andra Toxin testing the labor camp might have rock falls refilling the area from time to time.
 	<BR>\n\t\tWith this issue ever present, we are unable to add any power networking down into the camp.
 	<BR>\n
-	<BR>\n\tSoteria Xenoarch Division:
+	<BR>\n\tVesalius-Andra Xenoarch Division:
 	<BR>\n\t\tXenoarch may ask to use the local camp for digging out artifacts .
 	<BR>\n\t\tDeep rock scans have shown that from time to time the labor camp may have hidden weapons and tools inside the rock walls.
 	<BR>\n

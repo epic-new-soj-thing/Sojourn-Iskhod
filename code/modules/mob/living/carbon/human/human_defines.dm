@@ -79,6 +79,8 @@
 	var/mob/remoteview_target = null
 	var/remoteviewer = FALSE //for Glassification breakdown
 	var/hand_blood_color
+	/// Writes in blood remaining from the current palm cut; only cutting your palm (e.g. ritual knife) grants this and the write verbs. 0 = cannot write in blood.
+	var/blood_writes_remaining = 0
 
 	var/gunshot_residue
 	var/holding_back // Are you trying not to hurt your opponent?

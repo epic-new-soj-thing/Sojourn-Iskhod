@@ -37,6 +37,9 @@
 	return
 
 /datum/ritual/proc/activate(mob/living/carbon/human/H, obj/item/implant/core_implant/C, var/list/targets, var/force = FALSE)
+	if(istype(C, /obj/item/implant/core_implant/cruciform) && is_in_mystic_soulstone_field(H))
+		to_chat(H, SPAN_DANGER("The air is heavy and cold; your cruciform will not answer."))
+		return
 	if(!pre_check(H,C,targets))
 		return
 	if(!force && !check_success(C))

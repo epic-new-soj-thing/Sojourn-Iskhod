@@ -205,6 +205,36 @@ abbr {
     background: #cacc00;
 }
 
+/* Library kiosk: style raw <a> links from DM content as buttons instead of blue links */
+.libraryKioskContent a,
+.libraryKioskContent a:link,
+.libraryKioskContent a:visited,
+.libraryKioskContent a:active {
+    display: inline-block;
+    min-width: 15px;
+    height: auto;
+    min-height: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    background: #40628a;
+    border: 1px solid #161616;
+    padding: 4px 8px;
+    margin: 0 6px 6px 0;
+    cursor: default;
+    white-space: nowrap;
+    float: none;
+}
+
+.libraryKioskContent a:hover {
+    background: #405a8c;
+}
+
+.libraryKioskContent table a {
+    margin: 0 2px 2px 0;
+}
+
 .highlight {
     color: #8BA5C4;
 }

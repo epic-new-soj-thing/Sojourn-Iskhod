@@ -1,10 +1,10 @@
 /* This file contains any gun frames wanted printable on a disk.
 
 Normally, gun frames should be RARE to find on a disk unless they are deemed 'low-end', the reason why is these are far cheaper than the gun itself commonly and at less license usage.
-This is mostly used for Marshal gun crafting to make it so they can make guns but have to find the parts to put into them themselves.
+This is mostly used for Ranger gun crafting to make it so they can make guns but have to find the parts to put into them themselves.
 */
 
-// Marshals section
+// Rangers section
 /datum/design/autolathe/gun_frame/judiciary
 	name = ".35 judiciary pistol - frame"
 	build_path = /obj/item/part/gun/frame/judiciary
@@ -49,7 +49,7 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	name = "7.5mm AK47 frame"
 	build_path = /obj/item/part/gun/frame/ak47
 
-//Marshal Surplus
+//Ranger Surplus
 
 /datum/design/autolathe/gun_frame/glock
 	name = ".35 sky - frame"
@@ -89,7 +89,7 @@ This is mostly used for Marshal gun crafting to make it so they can make guns bu
 	name = ".408 omni - frame"
 	build_path = /obj/item/part/gun/frame/omni
 
-// Retail section - low-end guns for LSS to order gun-frame disks for. Allows more guns per-disk at a cheaper overall price, realistically.
+// Retail section - low-end guns for FL to order gun-frame disks for. Allows more guns per-disk at a cheaper overall price, realistically.
 /datum/design/autolathe/gun_frame/colt
 	name = "Colt M1911 - frame"
 	build_path = /obj/item/part/gun/frame/colt

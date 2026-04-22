@@ -82,6 +82,59 @@
 	heating_point = 523
 	heating_products = list("toxin")
 
+/datum/reagent/toxin/amatoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.species?.reagent_tag == IS_MARQUA)
+			// Powerful psychedelic for Marqua instead of toxin
+			M.hallucination(80 * effect_multiplier, 75 * effect_multiplier)
+			M.druggy = max(M.druggy, 40 * effect_multiplier)
+			M.make_jittery(5 * effect_multiplier)
+			if(prob(8))
+				M.emote(pick("twitch", "giggle", "laugh"))
+			return
+	..()
+	// Liver damage for species amatoxin hurts (blood: mild)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+		if(L && !BP_IS_ROBOTIC(L))
+			L.take_damage(2 * effect_multiplier, TOX)
+
+/datum/reagent/toxin/amatoxin/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.species?.reagent_tag == IS_MARQUA)
+			M.hallucination(100 * effect_multiplier, 80 * effect_multiplier)
+			M.druggy = max(M.druggy, 50 * effect_multiplier)
+			M.make_jittery(8 * effect_multiplier)
+			if(prob(12))
+				M.emote(pick("twitch", "giggle", "laugh"))
+			return
+	..()
+	// Liver damage for species amatoxin hurts (ingestion hits liver harder)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+		if(L && !BP_IS_ROBOTIC(L))
+			L.take_damage(4 * effect_multiplier, TOX)
+
+/datum/reagent/toxin/amatoxin/overdose(mob/living/carbon/M, alien)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.species?.reagent_tag == IS_MARQUA)
+			// Intensified trip at overdose, but liver still takes damage
+			var/obj/item/organ/internal/liver/L = H.random_organ_by_process(OP_LIVER)
+			if(L && !BP_IS_ROBOTIC(L))
+				L.take_damage(4, TOX)
+			M.hallucination(150, 100)
+			M.druggy = max(M.druggy, 80)
+			M.make_jittery(15)
+			if(prob(20))
+				M.emote(pick("twitch", "giggle", "laugh", "smile"))
+			return
+	..()
+
 /datum/reagent/toxin/carpotoxin
 	name = "Carpotoxin"
 	id = "carpotoxin"
@@ -241,46 +294,48 @@
 /datum/reagent/toxin/potassium_chloride
 	name = "Potassium Chloride"
 	id = "potassium_chloride"
-	description = "A delicious salt that arrests the heart if injected there."
+	description = "A salt used in lethal injection. Stops the heart; even small doses are deadly when in the bloodstream."
 	taste_description = "salt"
 	reagent_state = SOLID
 	color = "#FFFFFF"
-	strength = 0
-	overdose = REAGENTS_OVERDOSE
+	strength = 2
+	overdose = 5
 	nerve_system_accumulations = 45
+
+/datum/reagent/toxin/potassium_chloride/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	..()
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.stat != DEAD)
+			M.add_chemical_effect(CE_NOPULSE, 1)
+			H.Weaken(3)
 
 /datum/reagent/toxin/potassium_chloride/overdose(mob/living/carbon/M, alien)
 	..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		if(H.stat != 1)
-			if(H.losebreath >= 10)
-				H.losebreath = max(10, H.losebreath - 10)
-			H.adjustOxyLoss(2)
-			H.Weaken(10)
-		M.add_chemical_effect(CE_NOPULSE, 1)
+		if(H.stat != DEAD)
+			M.add_chemical_effect(CE_NOPULSE, 1)
+			H.adjustOxyLoss(8)
+			H.Weaken(8)
 
 
 /datum/reagent/toxin/potassium_chlorophoride
 	name = "Potassium Chlorophoride"
 	id = "potassium_chlorophoride"
-	description = "A specific chemical based on Potassium Chloride to arrest the heart for surgery."
+	description = "A specific chemical based on Potassium Chloride to arrest the heart for surgery. Stops the heart without causing oxygen deprivation."
 	taste_description = "salt"
 	reagent_state = SOLID
 	color = "#FFFFFF"
-	strength = 1
+	strength = 0
 	overdose = 20
 	nerve_system_accumulations = 85
 
 /datum/reagent/toxin/potassium_chlorophoride/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
-	..()
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(H.stat != 1)
-			if(H.losebreath >= 10)
-				H.losebreath = max(10, M.losebreath-10)
-			H.adjustOxyLoss(2)
-			H.Weaken(10)
+			H.Weaken(5)
 		M.add_chemical_effect(CE_NOPULSE, 1)
 
 /datum/reagent/toxin/zombiepowder

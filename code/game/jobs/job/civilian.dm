@@ -1,18 +1,72 @@
-/datum/job/clubmanager
-	title = "Bartender"
-	flag = CLUBMANAGER
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+/*/datum/job/hop
+	title = "Hospitality Manager"
+	flag = HOSP
+	department = DEPARTMENT_SERVICE
+	head_position = TRUE
+	department_flag = SERVICE | COMMAND
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Surface Operations Manager"
+	supervisors = "the Facility Director and the Iskhod Council"
+	difficulty = "Medium."
+	selection_color = "#dddddd"
+	req_admin_notify = 1
+	playtimerequired = 1200
+	wage = WAGE_COMMAND
+
+	access = list(
+		access_hydroponics, access_bar, access_kitchen, access_janitor, access_theatre, access_library,
+		access_RC_announce, access_keycard_auth, access_heads, access_sec_doors, access_heads_vault, access_hosp
+	)
+
+	outfit_type = /decl/hierarchy/outfit/job/service/hop
+	health_modifier = 5
+
+	stat_modifiers = list(
+		STAT_ROB = 5,
+		STAT_TGH = 10,
+		STAT_VIG = 10,
+		STAT_COG = 20
+	)
+
+	perks = list(PERK_MARKET_PROF, /datum/perk/bartender, PERK_SOMELLIER)
+
+	software_on_spawn = list(/datum/computer_file/program/comm,
+							 /datum/computer_file/program/camera_monitor,
+							 /datum/computer_file/program/reports,
+							 /datum/computer_file/program/wordprocessor)
+
+	description = "The Hospitality Manager is the head of Ivaris Hospitality Services, ensuring the comfort and entertainment of the colony.<br>\
+	You oversee the bar, kitchen, hydroponics, and all entertainment services.<br>\
+	Ensure your staff are profitable and keeping the crew happy.<br>\
+	You also serve as a member of the Iskhod Council, representing the civilian and service sectors."
+
+	duties = "Manage the Independent Recreation staff.<br>\
+	Ensure the colony is fed and entertained.<br>\
+	Advise the Council on civilian matters."
+
+/obj/landmark/join/start/hop
+	name = "Hospitality Manager"
+	icon_state = "player-grey-officer"
+	join_tag = /datum/job/hop
+*/
+/datum/job/clubmanager
+	title = "Bartender"
+	flag = CLUBMANAGER
+	department = DEPARTMENT_SERVICE
+	department_flag = SERVICE
+	faction = MAP_FACTION
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Facility Command"
 	difficulty = "Easy."
 	alt_titles = list("Barkeep","Barista","Mixologist")
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 3000
-	wage = WAGE_LABOUR_DUMB // Makes his own money via tips and selling drinks
+	wage = WAGE_LABOUR_DUMB
+	hud_icon = "bartender"
+ // Makes his own money via tips and selling drinks
 	health_modifier = -10
 	stat_modifiers = list(
 		STAT_ROB = 15,
@@ -23,7 +77,7 @@
 	perks = list(PERK_MARKET_PROF, /datum/perk/bartender)
 
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
-	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment.<br>\
+	description = "The Bartender runs the colony bar, providing colonists with drinks and entertainment as an independent contractor.<br>\
 	Working with the Chef and Gardener, you make the big decisions. Run your business well - perhaps seek to maximise profits.<br>\
 	Although tips are a good source of income, your wider business acumen will truly decide your prosperity here."
 
@@ -39,19 +93,21 @@
 /datum/job/clubworker
 	title = "Chef"
 	flag = CLUBWORKER
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_SERVICE
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Surface Operations Manager"
+	supervisors = "Facility Command"
 	difficulty = "Easy."
 	alt_titles = list("Culinary Artist","Cook", "Line Chef")
 	selection_color = "#dddddd"
 	health_modifier = -10
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	initial_balance = 750
-	wage = WAGE_LABOUR_DUMB //They should get paid by making food.
+	wage = WAGE_LABOUR_DUMB
+	hud_icon = "chef"
+ //They should get paid by making food.
 	stat_modifiers = list(
 		STAT_ROB = 10,
 		STAT_TGH = 10,
@@ -78,19 +134,21 @@
 /datum/job/hydro
 	title = "Gardener"
 	flag = BOTANIST
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_SERVICE
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Surface Operations Manager"
+	supervisors = "Facility Command"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	alt_titles = list("Hydroponicist")
 	health_modifier = -10
 	also_known_languages = list(LANGUAGE_CYRILLIC = 15, LANGUAGE_JIVE = 80)
 	access = list(access_hydroponics, access_bar, access_kitchen)
-	wage = WAGE_LABOUR_DUMB //The gardener can make money selling his fruits to the church or to the chef and bartender.
+	wage = WAGE_LABOUR_DUMB
+	hud_icon = "gardener"
+ //The gardener can make money selling his fruits to the church or to the chef and bartender.
 
 	outfit_type = /decl/hierarchy/outfit/job/service/gardener
 	stat_modifiers = list(
@@ -101,7 +159,7 @@
 
 	perks = list(PERK_MARKET_PROF, /datum/perk/greenthumb, /datum/perk/bartender)
 
-	description = "The Gardener toils in hydroponics - utilising seeds, tools and fertilisers to grow bountiful crops.<br>\
+	description = "The Gardener toils in Independent Recreation hydroponics - utilising seeds, tools and fertilisers to grow bountiful crops.<br>\
 	More talented gardeners may dip into ranching. Your paddocks contain a few chickens and a cow. More exotic animals can be acquired as cargo imports.<br>\
 	You are the go-to expert for flora destruction - use shovels and hatchets, or seek more advanced equipment like flamethrowers and chainsaws.<br>\
 	Remember that your goods come with a cost and more exotic crops can command a higher price."
@@ -116,31 +174,28 @@
 	icon_state = "player-black"
 	join_tag = /datum/job/hydro
 
+/*
 /datum/job/artist
 	title = "Artist"
 	flag = ARTIST
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_SERVICE
+	department_flag = SERVICE
 	faction = MAP_FACTION
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the Surface Operations Manager"
+	supervisors = "Facility Command"
 	difficulty = "Easy."
 	selection_color = "#dddddd"
 	access = list(access_theatre)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/artist
 	wage = WAGE_LABOUR_DUMB	//Barely a retaining fee. Actor can busk for credits to keep themselves fed
-	alt_titles = list("Artist","Clown","Entertainer","Mime")
+	alt_titles = list("Clown","Entertainer","Mime")
 	stat_modifiers = list(
 		STAT_TGH = 20, //basically a punching bag, he can't robust anyone or shoot guns anyway
 		STAT_MEC = 10  //They often deal with tool mods guns and other things that need these
 	)
 
-	//You need insperation to do your job.
-	disallow_species = list(FORM_FBP, FORM_UNBRANDED, FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
-
-
-	perks = list(PERK_MARKET_PROF, PERK_ARTIST, /datum/perk/stalker)
+	perks = list(PERK_MARKET_PROF, PERK_ARTIST)
 	software_on_spawn = list(///datum/computer_file/program/supply,
 							 ///datum/computer_file/program/deck_management,
 							 /datum/computer_file/program/scanner,
@@ -149,7 +204,7 @@
 
 	description = "The Artist serves as a versatile performance artist here to entertain the colony.<br>\
 	You may find your colleagues distracted by boring duties or senseless bickering, so work hard to bring them some real culture.<br>\
-	The SOM pays you a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations.<br>\
+	You are paid a terrible retaining fee, so use your wits to sustain yourself - perhaps ask your audience for donations.<br>\
 	In addition you do not gain desires like other members of the colony, instead you spend your insight at your workbench to create expensive works of art worth selling."
 
 	duties = "Provide (family-friendly) entertainment to the crew with your varied talents.<br>\
@@ -160,45 +215,45 @@
 	name = "Artist"
 	icon_state = "player-grey"
 	join_tag = /datum/job/artist
+*/
 
-/datum/job/janitor
-	title = "Janitor"
-	flag = JANITOR
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+/datum/job/librarian
+	title = "Archivist"
+	flag = LIBRARIAN
+	department = DEPARTMENT_SERVICE
+	department_flag = SERVICE
 	faction = MAP_FACTION
-	total_positions = 2
-	spawn_positions = 2
-	supervisors = "the Surface Operations Manager"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Facility Command"
 	difficulty = "Easy."
+	alt_titles = list("Librarian", "Journalist", "Reporter", "Cameraman", "Photographer")
 	selection_color = "#dddddd"
-	alt_titles = list("Custodian","Sanitation Technician")
-	access = list(access_janitor, access_maint_tunnels, access_morgue, access_hydroponics, access_bar, access_kitchen)
-	wage = WAGE_PROFESSIONAL
-	health_modifier = 5
-	outfit_type = /decl/hierarchy/outfit/job/service/janitor
-
-	perks = list(PERK_MARKET_PROF, /datum/perk/job/jingle_jangle, /datum/perk/neat) //Union has revoked their chemistry privileges
-
+	access = list(access_library, access_theatre)
+	outfit_type = /decl/hierarchy/outfit/job/service/librarian
+	wage = WAGE_LABOUR_DUMB
+	hud_icon = "writer"
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_BIO = 10,
-		STAT_VIG = 20,
-		STAT_TGH = 20,
+		STAT_TGH = 5,
+		STAT_COG = 15,
+		STAT_VIG = 10
 	)
 
-	software_on_spawn = list(/datum/computer_file/program/camera_monitor)
-	description = "The lowly Janitor, well paid but rarely respected, nevertheless provides a valuable service.<br>\
-	You will trundle around the colony, armed with your trusty janicart full of cleaning supplies, disposing of trash and pests.<br>\
-	Some minor maintenance also falls within your duties. Fix lights, correct broken vendors, replace floor tiles - ease the guild burden.<br>\
-	Although your status is miserable, your knowledge of maintenance may lead you to some valuable salvage for some extra cash."
+	perks = list(PERK_MARKET_PROF, PERK_WELL_READ)
+	software_on_spawn = list(/datum/computer_file/program/wordprocessor,
+							 /datum/computer_file/program/reports,
+							 /datum/computer_file/program/camera_monitor)
 
-	duties = "Clean blood, dirt, rubble and messes. Don't clean up crime scenes!<br>\
-		Conduct minor repairs and maintenance when guild adepts aren't available.<br>\
-		Restock Newscasters to at least 15 prints.<br>\
-		Deploy traps on burrows and do your best to handle the ongoing roach and spider problem."
+	description = "The Archivist maintains the colony library and archive and documents colony life as the press.<br>\
+	You run the library scanner and check-in computer, upload and catalogue books, and help visitors find titles.<br>\
+	You also report the news: interviews, investigations, and photography. Your loyalty is to the collection and to the truth."
 
-/obj/landmark/join/start/janitor
-	name = "Janitor"
-	icon_state = "player-black"
-	join_tag = /datum/job/janitor
+	duties = "Maintain the library and archive; upload and catalogue books via the scanner.<br>\
+		Help visitors find books and order titles from the archive.<br>\
+		Document events and news; interview key figures and write reports."
+
+/obj/landmark/join/start/librarian
+	name = "Archivist"
+	icon_state = "player-grey"
+	join_tag = /datum/job/librarian
+

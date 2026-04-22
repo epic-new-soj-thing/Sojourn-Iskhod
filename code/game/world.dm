@@ -17,6 +17,7 @@ var/global/datum/global_init/init = new ()
 /datum/global_init/New()
 	generate_gameid()
 	load_configuration()
+	world.SetupLogs()
 	makeDatumRefLists()
 
 	initialize_chemical_reagents()
@@ -82,17 +83,30 @@ var/game_id
  */
 /world/New()
 	//logs
-	var/date_string = time2text(world.realtime, "YYYY/MM-Month/DD-Day")
-	href_logfile = file("data/logs/[date_string] hrefs.htm")
-	diary = file("data/logs/[date_string].log")
+	// SetupLogs() is now called in global_init/New() to be ready for config loading
+	start_time = world.realtime
+	href_logfile = file("[GLOB.log_directory]/[game_id]-hrefs.htm")
+	href_logfile_filename = "[GLOB.log_directory]/[game_id]-hrefs.htm"
+	diary = file("[GLOB.log_directory]/[game_id].log")
+	diary_filename = "[GLOB.log_directory]/[game_id].log"
 	diary << "[log_end]\n[log_end]\nStarting up. (ID: [game_id]) [time2text(world.timeofday, "hh:mm.ss")][log_end]\n---------------------[log_end]"
-	GLOB.tgui_log = file("data/logs/[date_string] tgui.log") // TODO: rustg logs
+	GLOB.tgui_log = file("[GLOB.log_directory]/[game_id]-tgui.log") // TODO: rustg logs
 
 	// TODO: globalize me
-	var/latest_changelog = file("html/changelogs/archive/" + time2text(world.timeofday, "YYYY-MM") + ".yml")
-	changelog_hash = fexists(latest_changelog) ? md5(latest_changelog) : 0 //for dtelling if the changelog has changed recently
+	// Sojourn/Iskhod: use latest autochangelog for "unread" detection (in-game changelog shows autochangelog YAML files)
+	var/list/autochangelog_files = flist("html/changelogs/autochangelogs/")
+	var/latest_changelog
+	if(length(autochangelog_files))
+		sortList(autochangelog_files)
+		latest_changelog = file("html/changelogs/autochangelogs/" + autochangelog_files[length(autochangelog_files)])
+	changelog_hash = (latest_changelog && fexists(latest_changelog)) ? md5(latest_changelog) : 0
 
-	world_qdel_log = file("data/logs/[date_string] qdel.log")	// GC Shutdown log
+	world_qdel_log = file("[GLOB.log_directory]/[game_id]-qdel.log")	// GC Shutdown log
+
+	if(config.log_runtime)
+		runtime_diary_filename = "[GLOB.log_directory]/[game_id]-runtime.log"
+		runtime_diary = file(runtime_diary_filename)
+		world.log << "Now logging runtimes to [runtime_diary_filename]"
 
 	if(byond_version < RECOMMENDED_VERSION)
 		log_world("Your server's byond version does not meet the recommended requirements for this server. Please update BYOND")
@@ -154,17 +168,18 @@ var/game_id
 
 /world/proc/SetupLogs()
 	var/override_dir = params[OVERRIDE_LOG_DIRECTORY_PARAMETER]
+	var/base_dir = config ? config.log_directory : "data/logs"
 	if(!override_dir)
 		var/realtime = world.realtime
 		var/texttime = time2text(realtime, "YYYY/MM/DD")
-		GLOB.log_directory = "data/logs/[texttime]/round-"
+		GLOB.log_directory = "[base_dir]/[texttime]/"
 		if(game_id)
 			GLOB.log_directory += "[game_id]"
 		else
 			var/timestamp = replacetext(time_stamp(), ":", ".")
 			GLOB.log_directory += "[timestamp]"
 	else
-		GLOB.log_directory = "data/logs/[override_dir]"
+		GLOB.log_directory = "[base_dir]/[override_dir]"
 
 var/world_topic_spam_protect_ip = "0.0.0.0"
 var/world_topic_spam_protect_time = world.timeofday
@@ -327,7 +342,7 @@ var/world_topic_spam_protect_time = world.timeofday
 	s += ")"
 	s += "18+ M/HRP, Frequent Events, Evolving Storyline, RuneChat enabled."
 	s += "<br>"
-	s += "Map: Nadezhda Colony"
+	s += "Map: Iskhod Colony"
 	s += "<br>"
 	s += "Storyteller"
 
@@ -378,6 +393,9 @@ var/failed_old_db_connections = 0
 /hook/startup/proc/connectDB()
 	if(!setup_database_connection())
 		log_debug("Your server failed to establish a connection with the feedback database.")
+		if(config && config.sql_enabled)
+			config.sql_enabled = 0
+			log_debug("SQL functions disabled for this run due to database connection failure.")
 	else
 		log_debug("Feedback database connection established.")
 		if(news_network)
@@ -412,11 +430,18 @@ var/failed_old_db_connections = 0
 //This proc ensures that the connection to the feedback database (global variable dbcon) is established
 /proc/establish_db_connection()
 	if(failed_db_connections > FAILED_DB_CONNECTION_CUTOFF)
+		if(config && config.sql_enabled)
+			config.sql_enabled = 0
+			log_debug("SQL functions disabled: database connection failed repeatedly.")
 		return 0
 
 	// Ensure dbcon exists before calling methods on it to avoid runtime errors
 	if(!dbcon || !dbcon.IsConnected())
-		return setup_database_connection()
+		. = setup_database_connection()
+		if(!. && config && config.sql_enabled && failed_db_connections >= FAILED_DB_CONNECTION_CUTOFF)
+			config.sql_enabled = 0
+			log_debug("SQL functions disabled: database connection failed repeatedly.")
+		return .
 	return 1
 
 /world/proc/incrementMaxZ()

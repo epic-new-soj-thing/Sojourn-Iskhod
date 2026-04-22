@@ -3,7 +3,7 @@
 
 /obj/item/tool/knife
 	name = "kitchen knife"
-	desc = "A general purpose Chef's Knife made by the Lonestar Shipping Solutions, LLC. Guaranteed to stay sharp for years to come."
+	desc = "A general purpose Chef's Knife made by the Frontier Logistics, LLC. Guaranteed to stay sharp for years to come."
 	icon = 'icons/obj/kitchen.dmi'
 	icon_state = "knife"
 	flags = CONDUCT
@@ -103,32 +103,6 @@
 	backstab_damage = 8
 	armor_divisor = ARMOR_PEN_EXTREME //Should be countered be embedding
 	embed_mult = 1.5 //This is designed for embedding
-
-/obj/item/tool/knife/ritual
-	name = "ritual knife"
-	desc = "The unearthly energies that once powered this blade are now dormant."
-	icon = 'icons/obj/wizard.dmi'
-	icon_state = "render"
-	force = WEAPON_FORCE_PAINFUL
-	armor_divisor = ARMOR_PEN_MODERATE
-	max_upgrades = 3
-	backstab_damage = 14
-	price_tag = 7
-
-/obj/item/tool/knife/ritual/sickle
-	name = "bloodletter"
-	desc = "A ritual knife, its latent unearthly energies partly awoken by forces unknown. \
-			The curved blade cuts deep into flesh, drawing blood for rituals with ease."
-	icon_state = "render_awakened"
-	hitsound = 'sound/weapons/renderslash.ogg'
-	force = WEAPON_FORCE_DANGEROUS
-	armor_divisor = ARMOR_PEN_DEEP
-	max_upgrades = 2
-	hitsound = 'sound/weapons/renderslash.ogg'
-	backstab_damage = 8 // Not so much for stabbing as it is for cutting.
-	tool_qualities = list(QUALITY_CUTTING = 20, QUALITY_WIRE_CUTTING = 10)
-	attack_verb = list("slashed", "sliced", "ripped", "diced", "cut")
-	embed_mult = 1.5 // Careful not to lose it!
 
 /obj/item/tool/knife/butch
 	name = "butcher's cleaver"
@@ -235,7 +209,7 @@
 	backstab_damage = 9
 
 /obj/item/tool/knife/dagger/bluespace
-	name = "\improper Soteria \"Displacement Dagger\""
+	name = "\improper Vesalius-Andra \"Displacement Dagger\""
 	desc = "A teleportation matrix attached to a dagger, for sending things you stab it into very far away."
 	icon_state = "bluespace_dagger"
 	item_state = "bluespace_dagger"

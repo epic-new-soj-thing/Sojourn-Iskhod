@@ -56,6 +56,10 @@
 		sync_organ_dna()
 
 	make_blood()
+	// apply species-specific blood colour right away
+	if(species)
+		blood_color = species.blood_color
+		hand_blood_color = blood_color
 
 	sanity = new(src)
 
@@ -283,32 +287,35 @@
 //Trust me I'm an engineer
 //I think we'll put this shit right here
 var/list/rank_prefix = list(\
-	"Warrant Officer" = "Warrant Officer",\
-	"Supply Specialist" = "Specialist",\
-	"Ranger" = "Ranger",\
-	"Marshal Officer" = "Officer",\
-	"Blackshield Commander" = "Commander",\
-	"Sergeant" = "Sergeant",\
-	"Corpsman" = "Corpsman",\
-	"Blackshield Trooper" = "Trooper",\
-	"Premier" = "Premier",\
+	"Facility Director" = "Facility Director",\
 	"Steward" = "Steward",\
-	"Guild Master" = "Master",\
-	"Chief Biolab Overseer" = "Overseer",\
-	"Chief Research Overseer" = "Overseer",\
-	"Surface Operations Manager" = "Manager",\
-	"Prime" = "Prime",\
+	"Captain" = "Ranger Captain",\
+	"Operations Manager" = "Surface Manager",\
+	"Chief Engineer" = "Chief Engineer",\
+	"Medical Overseer" = "Medical Overseer",\
+	"Research Overseer" = "Research Overseer",\
+	"Penitent" = "Penitent",\
+	"Mouth" = "Mouth",\
 	"Foreman" = "Foreman",\
-	"Lodge Hunt Master" = "Huntmaster",\
+	"Lieutenant" = "Lieutenant",\
+	"Detective" = "Detective",\
+	"Ranger" = "Ranger",\
+	"Junior Ranger" = "Junior Ranger",\
 	)
 
 /mob/living/carbon/human/proc/rank_prefix_name(name)
-	if(get_id_rank())
-		if(findtext(name, " "))
-			name = copytext(name, findtext(name, " "))
-		else
-			name = " [name]"
-		name = get_id_rank() + name
+	var/prefix = get_id_rank()
+	if(prefix)
+		if(!name || !length(name))
+			return prefix
+		var/list/name_parts = splittext(name, " ")
+		if(name_parts.len <= 1)
+			return prefix
+		name_parts.Cut(1, 2)
+		var/rest_of_name = trim(jointext(name_parts, " "))
+		if(!length(rest_of_name))
+			return prefix
+		return "[prefix] [rest_of_name]"
 	return name
 
 
@@ -902,7 +909,7 @@ var/list/rank_prefix = list(\
 /mob/living/carbon/human/revive()
 
 	if(species && !(species.flags & NO_BLOOD))
-		vessel.add_reagent("blood",species.blood_volume-vessel.total_volume)
+		vessel.add_reagent(species.blood_reagent, species.blood_volume - vessel.total_volume)
 		fixblood()
 
 	if(!client || !key) //Don't boot out anyone already in the mob.
@@ -918,16 +925,12 @@ var/list/rank_prefix = list(\
 
 	..()
 
-/mob/living/carbon/human/add_blood(mob/living/carbon/human/M)
+/mob/living/carbon/human/add_blood(mob/living/L)
 	if(!..())
 		return 0
-	//if this blood isn't already in the list, add it
-	if(istype(M))
-		if(!blood_DNA[M.dna.unique_enzymes])
-			blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
 	hand_blood_color = blood_color
 	src.update_inv_gloves()	//handles bloody hands over-lays and updating
-	add_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+	// Writing in blood requires cutting your palm; getting hands wet with blood does not grant the write verbs.
 	return 1 //we applied blood to the item
 
 /mob/living/carbon/human/proc/get_full_print()
@@ -937,15 +940,49 @@ var/list/rank_prefix = list(\
 		return md5(chem_effects[CE_DYNAMICFINGERS])
 	return md5(dna.uni_identity)
 
+/mob/living/carbon/human/clean_blood_preserve_was(var/clean_feet)
+	. = ..()
+
+	if(gloves)
+		if(gloves.clean_blood_preserve_was())
+			update_inv_gloves()
+			. = TRUE
+	else
+		if(bloody_hands || blood_writes_remaining)
+			bloody_hands = 0
+			blood_writes_remaining = 0
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
+			update_inv_gloves()
+			. = TRUE
+
+	gunshot_residue = null
+
+	if(clean_feet)
+		if(shoes)
+			if(shoes.clean_blood_preserve_was())
+				update_inv_shoes()
+				. = TRUE
+		else
+			if(feet_blood_color)
+				feet_blood_color = null
+				update_inv_shoes()
+				. = TRUE
+
+	return .
+
 /mob/living/carbon/human/clean_blood(var/clean_feet)
-	.=..()
+	. = ..()
 
 	if(gloves)
 		if(gloves.clean_blood())
 			update_inv_gloves()
 	else
-		if(bloody_hands)
+		if(bloody_hands || blood_writes_remaining)
 			bloody_hands = 0
+			blood_writes_remaining = 0
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
 			update_inv_gloves()
 
 	gunshot_residue = null
@@ -1080,43 +1117,65 @@ var/list/rank_prefix = list(\
 		to_chat(usr, SPAN_WARNING("You failed to check the pulse. Try again."))
 
 /mob/living/carbon/human/proc/set_species(var/new_species, var/default_color, var/rebuild_organs = TRUE)
-	if(!dna)
-		if(!new_species)
-			new_species = "Human"
-	else
-		if(!new_species)
+	if(!new_species)
+		if(dna)
 			new_species = dna.species
 		else
-			dna.species = new_species
+			new_species = SPECIES_HUMAN
 
-	// No more invisible screaming wheelchairs because of set_species() typos.
 	if(!all_species[new_species])
 		new_species = SPECIES_HUMAN
 
-	if(species)
+	if(species && species.name == new_species && !rebuild_organs)
+		return
 
-		if(species.name && species.name == new_species)
-			return
-		if(species.language)
-			remove_language(species.language)
-		if(species.default_language)
-			remove_language(species.default_language)
-		// Clear out their species abilities.
-		species.remove_inherent_verbs(src)
-		holder_type = null
-
+	var/datum/species/old_species = species
 	species = all_species[new_species]
+
+	if(dna)
+		dna.species = new_species
+
+	// Mycus, Folken and Aulvae use blood type X
+	if(species.name in list("Mycus", "Folken", "Aulvae"))
+		b_type = "X"
+		if(dna)
+			dna.b_type = "X"
+
+	if(species.blood_color)
+		blood_color = species.blood_color
+		hand_blood_color = blood_color
+
+	if(old_species)
+		if(old_species.language)
+			remove_language(old_species.language)
+		if(old_species.default_language)
+			remove_language(old_species.default_language)
+		old_species.remove_inherent_verbs(src)
+
+	holder_type = species.holder_type
 
 	set_form(species.default_form, default_color)
 
 	if(species.language)
 		add_language(species.language)
-
 	if(species.default_language)
 		add_language(species.default_language)
 
-	if(species.holder_type)
-		holder_type = species.holder_type
+	species.add_inherent_verbs(src)
+
+	// migrate vessel contents if our blood reagent changed
+	if(vessel && old_species && old_species.blood_reagent && species.blood_reagent && old_species.blood_reagent != species.blood_reagent)
+		var/vol = vessel.get_reagent_amount(old_species.blood_reagent)
+		if(vol)
+			// remove old reagent and re-add under new type preserving data
+			vessel.remove_reagent(old_species.blood_reagent, vol)
+			vessel.add_reagent(species.blood_reagent, vol, get_blood_data())
+			vessel.update_total()
+
+	// if we somehow had no vessel (e.g. non-human->human conversion), create one now
+	if(!vessel)
+		make_blood()
+
 
 	icon_state = lowertext(species.name)
 
@@ -1136,12 +1195,15 @@ var/list/rank_prefix = list(\
 		if(QDELETED(src))	// Needed because mannequins will continue this proc and runtime after being qdel'd
 			return
 		regenerate_icons()
+		// ensure blood colour matches species after any change
+		blood_color = species.blood_color
+		hand_blood_color = blood_color
 		if(!QDELETED(src))
 			if(vessel.total_volume < species.blood_volume)
 				vessel.maximum_volume = species.blood_volume
-				vessel.add_reagent("blood", species.blood_volume - vessel.total_volume)
+				vessel.add_reagent(species.blood_reagent, species.blood_volume - vessel.total_volume)
 			else if(vessel.total_volume > species.blood_volume)
-				vessel.remove_reagent("blood", vessel.total_volume - species.blood_volume)
+				vessel.remove_reagent(species.blood_reagent, vessel.total_volume - species.blood_volume)
 				vessel.maximum_volume = species.blood_volume
 			fixblood()
 
@@ -1211,25 +1273,33 @@ var/list/rank_prefix = list(\
 			return
 
 		var/datum/body_modification/BM
+		var/static/list/limb_creation_order = list(BP_CHEST, BP_GROIN, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 
-		for(var/tag in species.has_limbs)
-			BM = Pref.get_modification(tag)
-			var/datum/organ_description/OD = species.has_limbs[tag]
-			//var/datum/body_modification/PBM = Pref.get_modification(OD.parent_organ_base)
-			//if(PBM && (PBM.nature == MODIFICATION_SILICON || PBM.nature == MODIFICATION_REMOVED))
-			//	BM = PBM
-			if(BM.is_allowed(tag, Pref, src))
-				BM.create_organ(src, OD, Pref.modifications_colors[tag])
+		for(var/limb_tag in limb_creation_order)
+			if(!(limb_tag in species.has_limbs))
+				continue
+			var/datum/organ_description/OD = species.has_limbs[limb_tag]
+			var/datum/body_modification/PBM = Pref.get_modification(OD.parent_organ_base)
+
+			if(PBM && (PBM.nature == MODIFICATION_SILICON || PBM.nature == MODIFICATION_REMOVED))
+				BM = PBM
+			else
+				BM = Pref.get_modification(limb_tag)
+
+			if(!BM || !(limb_tag in BM.body_parts))
+				OD.create_organ(src)
+			else if(BM.is_allowed(limb_tag, Pref, src))
+				BM.create_organ(src, OD, Pref.modifications_colors[limb_tag])
 			else
 				OD.create_organ(src)
 
 		for(var/tag in species.has_process)
 			BM = Pref.get_modification(tag)
-			if(BM.is_allowed(tag, Pref, src))
-				BM.create_organ(src, species.has_process[tag], Pref.modifications_colors[tag])
-			else
+			if(!BM || !BM.is_allowed(tag, Pref, src))
 				var/organ_type = species.has_process[tag]
 				new organ_type(src)
+			else
+				BM.create_organ(src, species.has_process[tag], Pref.modifications_colors[tag])
 
 		var/datum/category_item/setup_option/core_implant/I = Pref.get_option("Core implant")
 		if(I)
@@ -1257,8 +1327,11 @@ var/list/rank_prefix = list(\
 
 	else
 		var/organ_type
+		var/static/list/limb_creation_order = list(BP_CHEST, BP_GROIN, BP_HEAD, BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG)
 
-		for(var/limb_tag in species.has_limbs)
+		for(var/limb_tag in limb_creation_order)
+			if(!(limb_tag in species.has_limbs))
+				continue
 			var/datum/organ_description/OD = species.has_limbs[limb_tag]
 			var/obj/item/I = organs_by_name[limb_tag]
 			if(I && I.type == OD.default_type)
@@ -1284,6 +1357,16 @@ var/list/rank_prefix = list(\
 					C.install_default_modules_by_path(mind.assigned_job)
 					C.security_clearance = mind.assigned_job.security_clearance
 
+	for(var/limb_tag in species.has_limbs)
+		var/obj/item/organ/external/E = organs_by_name[limb_tag]
+		if(!E)
+			log_debug("rebuild_organs: [src] ([src.ckey]) missing limb [limb_tag] after rebuild.")
+			continue
+		if(limb_tag != BP_CHEST && E.parent_organ_base)
+			var/obj/item/organ/external/parent_organ = get_organ(E.parent_organ_base)
+			if(!parent_organ || parent_organ.owner != src)
+				log_debug("rebuild_organs: [src] ([src.ckey]) limb [limb_tag] has invalid parent [E.parent_organ_base] after rebuild.")
+
 	for(var/obj/item/organ/internal/carrion/C in organs_to_readd)
 		C.replaced(get_organ(C.parent_organ_base))
 
@@ -1303,8 +1386,10 @@ var/list/rank_prefix = list(\
 	if (usr != src)
 		return 0 //something is terribly wrong
 
-	if (!bloody_hands)
+	if (!blood_writes_remaining)
 		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
+		return
 
 	if (src.gloves)
 		to_chat(src, SPAN_WARNING("Your [src.gloves] are getting in the way."))
@@ -1329,23 +1414,77 @@ var/list/rank_prefix = list(\
 		to_chat(src, SPAN_WARNING("There is no space to write on!"))
 		return
 
-	var/max_length = bloody_hands * 30 //tweeter style
-
-	var/message = sanitize(input("Write a message. It cannot be longer than [max_length] characters.","Blood writing", ""))
+	// One write per cut, max 30 characters per write; 5 writes per palm cut.
+	var/max_length = 30
+	var/message = sanitize(input("Write a message. It cannot be longer than [max_length] characters. ([blood_writes_remaining] writes left this cut).","Blood writing", ""))
 
 	if (message)
-		var/used_blood_amount = round(length(message) / 30, 1)
-		bloody_hands = max(0, bloody_hands - used_blood_amount) //use up some blood
-
 		if (length(message) > max_length)
-			message += "-"
-			to_chat(src, SPAN_WARNING("You ran out of blood to write with!"))
+			message = copytext(message, 1, max_length + 1)
+			to_chat(src, SPAN_WARNING("You only have enough blood for [max_length] characters this write."))
+		blood_writes_remaining--
+		bloody_hands = max(0, bloody_hands - 1)
+		update_inv_gloves(1)
 
 		var/obj/effect/decal/cleanable/blood/writing/W = new(T)
 		W.basecolor = (hand_blood_color) ? hand_blood_color : "#A10808"
 		W.update_icon()
 		W.message = message
 		W.add_fingerprint(src)
+		if (!blood_writes_remaining)
+			bloody_hands = 0
+			update_inv_gloves(1)
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+			remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
+
+/mob/living/carbon/human/proc/bloody_write_paper()
+	set category = "IC"
+	set name = "Write in blood on paper"
+	set desc = "Use blood on your hands to inscribe a spell name or message on a sheet of paper you are holding."
+
+	if (src.stat)
+		return
+	if (usr != src)
+		return
+	if (!blood_writes_remaining)
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
+		return
+	if (src.gloves)
+		to_chat(src, SPAN_WARNING("Your [src.gloves] are getting in the way."))
+		return
+	var/obj/item/paper/P = null
+	if (istype(get_active_hand(), /obj/item/paper))
+		P = get_active_hand()
+	else if (istype(get_inactive_hand(), /obj/item/paper))
+		P = get_inactive_hand()
+	if (!P)
+		to_chat(src, SPAN_WARNING("Hold a sheet of paper in your hand to inscribe it in blood."))
+		return
+	if (P.crumpled)
+		to_chat(src, SPAN_WARNING("\The [P] is too crumpled to write on."))
+		return
+	// One write per cut, max 30 characters per write; 5 writes per palm cut.
+	var/max_length = 30
+	var/message = sanitize(input(src, "Inscribe a message (e.g. a spell name like Babel. or Mist.). Max [max_length] characters. ([blood_writes_remaining] writes left this cut).", "Write in blood on paper", "") as text, max_length)
+	if (!message)
+		return
+	if (length(message) > max_length)
+		message = copytext(message, 1, max_length + 1)
+	blood_writes_remaining--
+	bloody_hands = max(0, bloody_hands - 1)
+	update_inv_gloves(1)
+	P.blood_pen = TRUE
+	var/blood_html = "<font color=\"[hand_blood_color ? hand_blood_color : "#A10808"]\">[html_encode(message)]</font>"
+	P.info = (P.info ? P.info + "<BR>" : "") + blood_html
+	P.updateinfolinks()
+	P.update_icon()
+	to_chat(src, SPAN_NOTICE("You inscribe [message] on the paper in blood."))
+	if (!blood_writes_remaining)
+		bloody_hands = 0
+		update_inv_gloves(1)
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_doodle)
+		remove_verb(src, /mob/living/carbon/human/proc/bloody_write_paper)
 
 /mob/living/carbon/human/can_inject(var/mob/user, var/error_msg, var/target_zone)
 	. = 1
@@ -1470,29 +1609,11 @@ var/list/rank_prefix = list(\
 	return
 
 //generates realistic-ish pulse output based on preset levels
-/mob/living/carbon/human/proc/get_pulse(var/method)	//method 0 is for hands, 1 is for machines, more accurate
-	var/temp = 0
-	switch(pulse())
-		if(PULSE_NONE)
-			return "0"
-		if(PULSE_SLOW)
-			temp = rand(40, 60)
-		if(PULSE_NORM)
-			temp = rand(60, 90)
-		if(PULSE_FAST)
-			temp = rand(90, 120)
-		if(PULSE_2FAST)
-			temp = rand(120, 160)
-		if(PULSE_THREADY)
-			return method ? ">250" : "extremely weak and fast, patient's artery feels like a thread"
-	return "[method ? temp : temp + rand(-10, 10)]"
-//			output for machines^	^^^^^^^output for people^^^^^^^^^
 
-/mob/living/carbon/human/proc/pulse()
+/mob/living/carbon/human/pulse()
 	if(stat == DEAD || !(organ_list_by_process(OP_HEART).len))
 		return PULSE_NONE
-	else
-		return pulse
+	return ..()
 
 /mob/living/carbon/human/verb/lookup()
 	set name = "Look up"

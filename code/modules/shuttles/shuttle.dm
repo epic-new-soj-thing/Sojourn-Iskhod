@@ -133,7 +133,23 @@
 	var/list/translation = list()
 	for(var/area/A in shuttle_area)
 		testing("Moving [A]")
-		translation += get_turf_translation(get_turf(current_location), get_turf(destination), A.contents)
+		var/list/part = get_turf_translation(get_turf(current_location), get_turf(destination), A.contents)
+		translation += part
+		// Debug: report partial translation stats
+		var/total = part.len
+		var/nulls = 0
+		for(var/source in part)
+			if(!part[source])
+				nulls++
+		if(total || nulls)
+			log_debug("Shuttle attempt_move partial translation: shuttle=[src], area=[A], total=[total], null_targets=[nulls]")
+	// Debug: report overall translation stats
+	var/total_entries = translation.len
+	var/null_targets = 0
+	for(var/source in translation)
+		if(!translation[source])
+			null_targets++
+	log_debug("Shuttle attempt_move: shuttle=[src], destination=[destination], total_translation=[total_entries], null_targets=[null_targets]")
 	shuttle_moved(destination, translation)
 	return TRUE
 

@@ -56,7 +56,7 @@
 
 /datum/perk/timeismoney
 	name = "Hyperzine Injections"
-	desc = "A standard issue injector hidden away that is designed for Surface Operations Managers that contains a small on-demand injection of Hyperzine. The injector itself is unable to be seen by prying scanners and comes in both \
+	desc = "A standard issue injector hidden away that is designed for Quartermasters that contains a small on-demand injection of Hyperzine. The injector itself is unable to be seen by prying scanners and comes in both \
 	metal and organic material designs to aid in remaining hidden. While useful, the chemical storage takes time to recharge after use."
 	icon_state = "adrenalineburst_tim"
 	active = FALSE
@@ -175,54 +175,6 @@
 		H.metabolism_effects.nsa_mult -= 0.25
 		H.metabolism_effects.calculate_nsa()
 	..()
-
-/datum/perk/alchemist
-	name = "Alchemy"
-	desc = "Whether from fun study or natural talent in the field of brewing random things together you know how to gather basic chemical compounds. \
-			Your NSA also has been slightly improved due to self experimentation. You can also see all reagents in beakers."
-	perk_shared_ability = PERK_SHARED_SEE_REAGENTS
-
-/datum/perk/alchemist/assign(mob/living/L)
-	..()
-	if(ishuman(holder))
-		var/mob/living/carbon/human/H = holder
-		H.metabolism_effects.nsa_mult += 0.05
-		H.metabolism_effects.calculate_nsa()
-
-/datum/perk/alchemist/remove()
-	if(ishuman(holder))
-		var/mob/living/carbon/human/H = holder
-		H.metabolism_effects.nsa_mult -= 0.05
-		H.metabolism_effects.calculate_nsa()
-	..()
-
-/datum/perk/scribe
-	name = "Scribe"
-	desc = "Your ability to turn experiences into words knows no bounds. Paper at this point is hardly able to hold the power of your writing."
-	copy_protected = TRUE
-
-/datum/perk/scribe/assign(mob/living/L)
-	..()
-	if(holder)
-		holder.sdisabilities|=BLIND
-
-/datum/perk/scribe/remove()
-	if(holder)
-		holder.sdisabilities&=BLIND
-	..()
-
-/datum/perk/cooldown/reveal //perk to give thermal vision. Meant to only last a few moments before ending and removing itself.
-	name = "Peak-A-Boo"
-	perk_lifetime = 3 SECONDS
-	gain_text = "The scroll's smoke fills your eyes. Whats moving in the walls?"
-	lose_text = "Your eyes sting but you don't see the pain anymore."
-	copy_protected = TRUE
-
-/datum/perk/cooldown/reveal/assign(mob/living/L)
-	..()
-	if(holder)
-		//give thermal vision
-		holder.sight |= SEE_MOBS
 
 /datum/perk/bartender
 	name = "Bar Menu"
@@ -343,7 +295,7 @@
 
 /datum/perk/rezsickness
 	name = "Mild Revival Sickness"
-	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. As you were revived by Soteria, you can recover a lot quicker."
+	desc = "You've recently died and have been brought back to life, the experience leaving you weakened and thus unfit for fighting for a while. As you were revived by Vesalius-Andra, you can recover a lot quicker."
 	icon_state = "revivalsickness"
 
 /datum/perk/rezsickness/mild/assign(mob/living/L)
@@ -641,6 +593,13 @@
 /datum/perk/job/butcher/remove()
 	..()
 
+/datum/perk/job/well_read
+	name = "Well-Read"
+	desc = "Years among the stacks have made reading second nature. Opening and reading a book soothes your mind; you gain a small amount of sanity whenever you read a book."
+	icon_state = "book" // use a book icon if it exists; otherwise 'missing_perk_icon' or pick an existing one
+	gain_text = "You feel at home among the written word."
+	lose_text = "The words seem a little less welcoming."
+
 /datum/perk/job/master_herbalist
 	name = "Naturalist"
 	desc = "The secrets of natural remedies have been unlocked by the lodge after special training from folken tribes, given their alliance. This has granted you the ability to make better \
@@ -683,7 +642,7 @@
 
 /datum/perk/codespeak
 	name = "Codespeak"
-	desc = "You know Marshal codes."
+	desc = "You know Ranger codes."
 	icon_state = "codespeak" // https://game-icons.net/1x1/delapouite/police-officer-head.html
 	copy_protected = TRUE //Borers already grant omni language translation.
 	var/list/codespeak_procs = list(

@@ -1799,4 +1799,69 @@
 	set_trait(TRAIT_WATER_CONSUMPTION, 6)
 	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
 
+// Mar'qua plants (from Baystation12-inspired lore)
+
+/datum/seed/qerrbalak
+	name = "qerrbalak"
+	seed_name = "th'oom"
+	display_name = "th'oom vine"
+	chems = list("nutriment" = list(1,10), "thoom" = list(10,10))
+	kitchen_tag = "qerrbalak"
+	companions = list("tomato", "berry", "grape")
+
+/datum/seed/qerrbalak/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT, 1)
+	set_trait(TRAIT_JUICY, 1)
+	set_trait(TRAIT_MATURATION, 6)
+	set_trait(TRAIT_PRODUCTION, 5)
+	set_trait(TRAIT_YIELD, 4)
+	set_trait(TRAIT_POTENCY, 15)
+	set_trait(TRAIT_PRODUCT_ICON, "berry")
+	set_trait(TRAIT_PRODUCT_COLOR, "#4a9a3c")
+	set_trait(TRAIT_PLANT_ICON, "bush2")
+	set_trait(TRAIT_IDEAL_HEAT, 300)
+	set_trait(TRAIT_IDEAL_LIGHT, 6)
+	set_trait(TRAIT_WATER_CONSUMPTION, 5)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+/datum/seed/qokkloa
+	name = "qokkloa"
+	seed_name = "qokk'loa moss"
+	display_name = "qokk'loa moss"
+	chems = list("nutriment" = list(1,10), "qokkloa" = list(10,10))
+	kitchen_tag = "qokkloa"
+
+/datum/seed/qokkloa/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT, 1)
+	set_trait(TRAIT_MATURATION, 3)
+	set_trait(TRAIT_PRODUCTION, 5)
+	set_trait(TRAIT_YIELD, 4)
+	set_trait(TRAIT_POTENCY, 10)
+	set_trait(TRAIT_PRODUCT_ICON, "alien3")
+	set_trait(TRAIT_PLANT_ICON, "tree5")
+	set_trait(TRAIT_PRODUCT_COLOR, "#8c4637")
+	set_trait(TRAIT_PLANT_COLOR, "#37808c")
+	set_trait(TRAIT_IDEAL_HEAT, 283)
+	set_trait(TRAIT_NUTRIENT_CONSUMPTION, 0.15)
+
+/datum/seed/aghrassh
+	name = "aghrassh"
+	seed_name = "aghrassh"
+	display_name = "aghrassh tree"
+	chems = list("nutriment" = list(1,10), "hrukhzaextract" = list(10,10))
+	kitchen_tag = "aghrassh"
+
+/datum/seed/aghrassh/New()
+	..()
+	set_trait(TRAIT_HARVEST_REPEAT, 1)
+	set_trait(TRAIT_MATURATION, 6)
+	set_trait(TRAIT_PRODUCTION, 6)
+	set_trait(TRAIT_YIELD, 4)
+	set_trait(TRAIT_POTENCY, 15)
+	set_trait(TRAIT_PRODUCT_ICON, "treefruit")
+	set_trait(TRAIT_PLANT_ICON, "tree")
+	set_trait(TRAIT_PRODUCT_COLOR, "#866523")
+
 /////////////////

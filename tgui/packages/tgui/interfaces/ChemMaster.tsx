@@ -117,6 +117,25 @@ const SpriteMenu = (props: {
       break;
   }
 
+  if (!sprites?.length) {
+    return (
+      <Section
+        title="Select Sprite"
+        buttons={
+          <Button
+            color="bad"
+            icon="window-close"
+            onClick={() => setSpriteMenu(null)}
+          >
+            Close
+          </Button>
+        }
+      >
+        <Box color="bad">No sprites available.</Box>
+      </Section>
+    );
+  }
+
   return (
     <Section
       title="Select Sprite"

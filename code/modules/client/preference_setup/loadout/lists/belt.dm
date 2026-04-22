@@ -29,23 +29,21 @@
 /datum/gear/belt/nt_belt
 	display_name = "Absolutism utility belt"
 	path = /obj/item/storage/belt/utility/neotheology
-	allowed_roles = list("Prime","Vector")
 	cost = 2
 
 /datum/gear/belt/nt_belt_tactical
 	display_name = "Absolutism tactical belt"
 	path = /obj/item/storage/belt/security/neotheology
-	allowed_roles = list("Prime","Vector")
+	allowed_roles = list(JOBS_CHURCH)
 	cost = 3
 
-
-/datum/gear/belt/medbelt
+/datum/gear/belt/medical_belt
 	display_name = "Medical belt Selection"
 	path = /obj/item/storage/belt/medical
-	allowed_roles = list("Soteria Doctor","Soteria Biolab Officer","Soteria Lifeline Technician")
+	allowed_roles = list(JOBS_MEDICAL)
 	cost = 1
 
-/datum/gear/belt/medbelt/New()
+/datum/gear/belt/medical_belt/New()
 	..()
 	var/belts = list(
 		"Medical Belt"				=	/obj/item/storage/belt/medical,

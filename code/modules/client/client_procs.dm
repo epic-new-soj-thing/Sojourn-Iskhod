@@ -365,8 +365,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 
 	send_resources()
 
-	if(prefs.lastchangelog != changelog_hash) //bolds the changelog button on the interface so we know there are updates.
-		to_chat(src, span_info("You have unread updates in the changelog."))
+	if(prefs.lastchangelog != changelog_hash) // Highlight the changelog button so players know there are updates.
+		to_chat(src, span_notice("You have unread updates in the changelog. Click the Changelog button to see what's new."))
+		winset(src, "rpane.changelog", "background-color=#3e6189;font-style=bold")
 		if(config.aggressive_changelog)
 			changelog()
 
@@ -400,21 +401,22 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		admins -= src
 	QDEL_NULL(tooltips)
 	QDEL_NULL(loot_panel)
-	if(dbcon.IsConnected() && src.id && src.id > 0)
-		var/DBQuery/query = dbcon.NewQuery("UPDATE `players` SET `last_seen` = Now() WHERE `id` = '[src.id]'")
+	var/num_id = text2num("[src.id]")
+	if(dbcon.IsConnected() && num_id && num_id > 0)
+		var/DBQuery/query = dbcon.NewQuery("UPDATE `players` SET `last_seen` = Now() WHERE `id` = '[num_id]'")
 		if(!query.Execute())
 			// Check if it's a connection error and attempt to reconnect once
 			if(findtext(query.ErrorMsg(), "MySQL server has gone away") || findtext(query.ErrorMsg(), "Lost connection"))
 				log_debug("Player update DB: Connection lost, attempting to reconnect...")
 				if(establish_db_connection())
-					var/DBQuery/retry_query = dbcon.NewQuery("UPDATE `players` SET `last_seen` = Now() WHERE `id` = '[src.id]'")
+					var/DBQuery/retry_query = dbcon.NewQuery("UPDATE `players` SET `last_seen` = Now() WHERE `id` = '[num_id]'")
 					if(!retry_query.Execute())
 						log_world("Failed to update players table for user with id [src.id] (retry). Error message: [retry_query.ErrorMsg()].")
 				else
 					log_debug("Failed to reconnect to database for player update (id [src.id])")
 			else
 				log_debug("Failed to update players table for user with id [src.id]. Error message: [query.ErrorMsg()].")
-	else if(!src.id || src.id <= 0)
+	else if(!num_id || num_id <= 0)
 		log_world("Skipping player update for [ckey] - invalid player ID ([src.id])")
 	Master.UpdateTickRate()
 	..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening

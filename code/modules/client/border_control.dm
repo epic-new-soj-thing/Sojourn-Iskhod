@@ -36,7 +36,7 @@ proc/BC_IsDiscordLinked(var/key)
 	if (config.require_discord_linking == FALSE)
 		return 1
 
-	if(!dbcon)
+	if(!dbcon || !dbcon.IsConnected())
 		// DB is unavailable; warn admins but allow connection so players
 		// are not prevented from joining due to an infrastructure issue.
 		log_and_message_admins("Discord link check skipped for [key]: DB unavailable. Allowing connection by default.")
@@ -60,8 +60,8 @@ proc/BC_IsKeyWhitelisted(var/key)
 
 	// If SQL is enabled, always check the database directly so border control
 	// reflects the latest whitelist state on every connection attempt.
-	// Attempt DB check when SQL is enabled and a db connection object exists.
-	if(dbcon)
+	// Attempt DB check only when we have a live connection to avoid runtime errors.
+	if(dbcon && dbcon.IsConnected())
 		var/whitelist_query = "SELECT 1 FROM whitelist WHERE ckey = '[key]' AND active = 1 LIMIT 1"
 		log_debug("Border Control: Checking whitelist for [key]: [whitelist_query]")
 		var/DBQuery/q = dbcon.NewQuery(whitelist_query)
@@ -106,7 +106,7 @@ proc/BC_WhitelistKey(var/key, var/added_by = "server")
 
 	if(key)
 		// If SQL is enabled, try to insert/update the whitelist row there first
-		if(config.sql_enabled && dbcon)
+		if(config.sql_enabled && dbcon && dbcon.IsConnected())
 			var/insert_query = "INSERT INTO whitelist (ckey, active, added_by, added_at) VALUES ('[key]', 1, '[sql_sanitize_text(added_by)]', NOW()) ON DUPLICATE KEY UPDATE active = 1, added_by = '[sql_sanitize_text(added_by)]', added_at = NOW()"
 			log_debug("Border Control: Adding [key] to whitelist: [insert_query]")
 			var/DBQuery/ins = dbcon.NewQuery(insert_query)
@@ -166,7 +166,7 @@ ADMIN_VERB_ADD(/client/proc/BC_RemoveKeyVerb, R_ADMIN, FALSE)
 		return 1
 	else
 		// If SQL is enabled, mark the whitelist row inactive so DB reflects removal
-		if(config.sql_enabled && dbcon)
+		if(config.sql_enabled && dbcon && dbcon.IsConnected())
 			var/remove_query = "UPDATE whitelist SET active = 0, removed_at = NOW() WHERE ckey = '[key]'"
 			log_debug("Border Control: Removing [key] from whitelist: [remove_query]")
 			var/DBQuery/qdel = dbcon.NewQuery(remove_query)

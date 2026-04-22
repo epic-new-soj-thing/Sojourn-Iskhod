@@ -42,6 +42,15 @@
 	populated_contents = TRUE
 	for(var/i in 1 to 3)
 		new /obj/item/reagent_containers/blood/OMinus(src)
+		new /obj/item/reagent_containers/blood/aquatic/OMinus(src)
+		new /obj/item/reagent_containers/blood/opifex/OMinus(src)
+		new /obj/item/reagent_containers/blood/chtmant/OMinus(src)
+		new /obj/item/reagent_containers/blood/reptile/OMinus(src)
+	for(var/i in 1 to 1)
+		new /obj/item/reagent_containers/blood/oil(src)
+		new /obj/item/reagent_containers/blood/synthetic(src)
+		new /obj/item/reagent_containers/blood/plant(src)
+		new /obj/item/reagent_containers/blood/slime(src)
 
 /obj/structure/closet/secure_closet/freezer/fridge
 	name = "refrigerator"
@@ -58,6 +67,8 @@
 	for(var/i in 1 to 2)
 		new /obj/item/storage/fancy/egg_box(src)
 		new /obj/item/reagent_containers/condiment/cookingoil(src)
+	new /obj/item/reagent_containers/drinks/bottle/thoom(src)
+	new /obj/item/reagent_containers/drinks/bottle/hrukhzaextract(src)
 
 /obj/structure/closet/secure_closet/freezer/money
 	name = "freezer"

@@ -180,17 +180,24 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		if(tech_tree && tech_tree.shown)
 			selected_tech_tree = tech_tree
 			selected_technology = null
-	if(href_list["research_all"]) // Research everything feasible
-		var/can_continue = TRUE
-		var/max_iterations = 50 // Fail-safe to prevent infinite loops, though unlikely
-		while(can_continue && max_iterations > 0)
-			can_continue = FALSE
-			max_iterations--
-			for(var/t in SSresearch.all_tech_nodes)
-				var/datum/technology/tech_node = t
-				if(!files.IsResearched(tech_node) && files.CanResearch(tech_node))
-					files.UnlockTechology(tech_node)
-					can_continue = TRUE
+	if(href_list["research_all"]) // Research everything feasible (all nodes including covert if shown)
+		var/list/plan = files.get_research_all_plan()
+		var/total_cost = plan[1]
+		var/count = plan[2]
+		var/list/queue = plan[3]
+		if(count > 0 && files.research_points < total_cost)
+			to_chat(usr, SPAN_WARNING("Not enough research points. Need [total_cost] to unlock all [count] nodes (you have [files.research_points])."))
+		else if(count > 0)
+			var/unlocked = 0
+			for(var/datum/technology/tech_node in queue)
+				if(files.UnlockTechology(tech_node))
+					unlocked++
+			if(unlocked < count)
+				to_chat(usr, SPAN_WARNING("Research incomplete: unlocked [unlocked] of [count] planned nodes (requirements or points changed mid-action)."))
+			else
+				to_chat(usr, SPAN_NOTICE("Unlocked all available research ([count] nodes)."))
+		else
+			to_chat(usr, SPAN_NOTICE("No further nodes available to research."))
 		SSnano.update_uis(src)
 
 	if(href_list["select_technology"]) // User selected a technology node.
@@ -411,6 +418,7 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	var/list/data = list()
 	data["screen"] = screen
 	data["sync"] = sync
+	data["can_research"] = can_research
 	data["has_disk"] = !!disk
 	if(disk)
 		data["disk_size"] = disk.max_capacity
@@ -424,7 +432,6 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		data["has_dest_analyzer"] = !!linked_destroy
 		data["has_protolathe"] = !!linked_lathe
 		data["has_circuit_imprinter"] = !!linked_imprinter
-		data["can_research"] = can_research
 
 		var/list/tech_tree_list = list()
 		for(var/tree in files.researched_tech)
@@ -627,6 +634,10 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 		data["lines"] = line_list
 		data["selected_tech_tree"] = "\ref[selected_tech_tree]"
 		data["research_points"] = files.research_points
+		var/list/research_all_data = files.get_research_all_cost()
+		data["research_all_total_cost"] = research_all_data[1]
+		data["research_all_count"] = research_all_data[2]
+		data["research_all_affordable"] = (files.research_points >= research_all_data[1])
 
 		data["selected_technology_id"] = ""
 		if(selected_technology)
@@ -688,6 +699,12 @@ won't update every console in existence) but it's more of a hassle to do. Also, 
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, data)
 	if (!ui)
 		ui = new(user, src, ui_key, "rdconsole.tmpl", "R&D Console", 1000, 700)
+
+		// Use same design_icons spritesheet as autolathe for consistent fast icon loading
+		if(user?.client)
+			var/datum/asset/spritesheet_batched/design_icons/sheet = get_asset_datum(/datum/asset/spritesheet_batched/design_icons)
+			sheet.send(user.client)
+			ui.add_stylesheet_url(sheet.css_filename())
 
 		ui.set_initial_data(data)
 		ui.open()

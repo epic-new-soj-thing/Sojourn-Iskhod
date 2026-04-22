@@ -1,13 +1,13 @@
 import dateformat from 'dateformat';
 import yaml from 'js-yaml';
-import { Component, Fragment } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { resolveAsset } from 'tgui/assets';
 import { useBackend } from 'tgui/backend';
+import { Dropdown } from 'tgui/components';
 import { Window } from 'tgui/layouts';
 import {
   Box,
   Button,
-  Dropdown,
   Icon,
   Section,
   Stack,
@@ -41,99 +41,147 @@ const icons = {
   wip: { icon: 'hammer', color: 'orange' },
 };
 
-type ChangelogState = {
-  data:
+type ChangelogData =
   | string
   | {
-    [date: string]: {
-      [author: string]: string[];
+      [date: string]: {
+        [author: string]: string[];
+      };
+    }
+  | {
+      author: string;
+      changes: ({ [type: string]: string } | string)[];
+      date?: string | Date;
+      'delete-after'?: boolean;
     };
-  };
-  selectedDate: any;
-  selectedIndex: any;
-};
 
 type Data = {
   dates: string[];
+  month_prs?: Record<string, string[]>;
 };
 
-export class Changelog extends Component<{}, ChangelogState> {
-  dateChoices: any[];
+const MAX_LOAD_ATTEMPTS = 6;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: 'Loading changelog data...',
-      selectedDate: '',
-      selectedIndex: 0,
-    };
-    this.dateChoices = [];
-  }
-
-  setData(data) {
-    this.setState({ data });
-  }
-
-  setSelectedDate(selectedDate) {
-    this.setState({ selectedDate });
-  }
-
-  setSelectedIndex(selectedIndex) {
-    this.setState({ selectedIndex });
-  }
-
-  getData = (date, attemptNumber = 1) => {
-    const { act } = useBackend();
-    const self = this;
-    const maxAttempts = 6;
-
-    if (attemptNumber > maxAttempts) {
-      return this.setData(
-        'Failed to load data after ' + maxAttempts + ' attempts',
-      );
+function mergeChangelogData(parsed: ChangelogData[]): ChangelogData {
+  const merged: Record<string, Record<string, unknown[]>> = {};
+  for (const doc of parsed) {
+    if (typeof doc !== 'object' || doc === null || Array.isArray(doc)) continue;
+    const hasAuthor = 'author' in doc && 'changes' in doc && Array.isArray((doc as { changes: unknown }).changes);
+    if (hasAuthor) {
+      const pr = doc as { author: string; changes: unknown[]; date?: string };
+      const dateKey =
+        pr.date !== null && pr.date !== undefined
+          ? typeof pr.date === 'string'
+            ? pr.date
+            : (pr.date as Date).toISOString().slice(0, 10)
+          : '';
+      if (!dateKey) continue;
+      if (!merged[dateKey]) merged[dateKey] = {};
+      merged[dateKey][pr.author] = pr.changes;
+      continue;
     }
-
-    act('get_month', { date });
-
-    fetch(resolveAsset(date + '.yml')).then(async (changelogData) => {
-      const result = await changelogData.text();
-      const errorRegex = /^Cannot find/;
-
-      if (errorRegex.test(result)) {
-        const timeout = 50 + attemptNumber * 50;
-
-        self.setData('Loading changelog data' + '.'.repeat(attemptNumber + 3));
-        setTimeout(() => {
-          self.getData(date, attemptNumber + 1);
-        }, timeout);
-      } else {
-        self.setData(yaml.load(result, { schema: yaml.CORE_SCHEMA }));
+    for (const [date, authors] of Object.entries(doc)) {
+      if (date === 'author' || date === 'changes' || date === 'delete-after') continue;
+      if (typeof authors !== 'object' || authors === null || Array.isArray(authors)) continue;
+      if (!merged[date]) merged[date] = {};
+      for (const [name, authorChanges] of Object.entries(authors)) {
+        merged[date][name] = Array.isArray(authorChanges) ? authorChanges : [];
       }
-    });
+    }
+  }
+  return merged as ChangelogData;
+}
+
+export const Changelog = () => {
+  const { act, data: backendData } = useBackend<Data>();
+  const rawDates = backendData?.dates ?? [];
+  const monthPrs = backendData?.month_prs ?? null;
+
+  // Sort newest first: by year descending, then month descending (2026-12, 2026-11, ..., 2025-01)
+  const dates = useMemo(
+    () => [...rawDates].sort((a, b) => (a > b ? -1 : a < b ? 1 : 0)),
+    [rawDates],
+  );
+
+  const [data, setData] = useState<ChangelogData>('Loading changelog data...');
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const initialLoadDone = useRef(false);
+
+  const dateChoices = useMemo(
+    () =>
+      dates.map((date) =>
+        date.startsWith('AutoChangeLog-pr-')
+          ? 'PR #' + date.replace('AutoChangeLog-pr-', '')
+          : date,
+      ),
+    [dates],
+  );
+  const selectedDate = dateChoices[selectedIndex] ?? '';
+
+  const getData = useCallback(
+    (date: string, attemptNumber = 1) => {
+      if (attemptNumber > MAX_LOAD_ATTEMPTS) {
+        setData(
+          'Failed to load data after ' + MAX_LOAD_ATTEMPTS + ' attempts',
+        );
+        return;
+      }
+
+      const keysToLoad = monthPrs && monthPrs[date]?.length ? monthPrs[date] : [date];
+      keysToLoad.forEach((key) => act('get_month', { date: key }));
+
+      const attempt = () => {
+        const fetchOne = (key: string) =>
+          fetch(resolveAsset(key + '.yml')).then((r) => r.text());
+        Promise.all(keysToLoad.map(fetchOne))
+          .then((texts) => {
+            const errorRegex = /^Cannot find/;
+            const failed = texts.some((t) => errorRegex.test(t));
+            if (failed) {
+              setData('Loading changelog data' + '.'.repeat(attemptNumber + 3));
+              setTimeout(() => getData(date, attemptNumber + 1), 50 + attemptNumber * 50);
+              return;
+            }
+            const parsed = texts.map((t) => yaml.load(t, { schema: yaml.CORE_SCHEMA }) as ChangelogData);
+            const merged = keysToLoad.length > 1 ? mergeChangelogData(parsed) : parsed[0];
+            setData(merged);
+          })
+          .catch(() => {
+            if (attemptNumber < MAX_LOAD_ATTEMPTS) {
+              setData('Loading changelog data' + '.'.repeat(attemptNumber + 3));
+              setTimeout(() => getData(date, attemptNumber + 1), 100 + attemptNumber * 50);
+            } else {
+              setData('Failed to load data after ' + MAX_LOAD_ATTEMPTS + ' attempts');
+            }
+          });
+      };
+      setTimeout(attempt, 100);
+    },
+    [act, monthPrs],
+  );
+
+  // Load first month only once when dates first become available (don't reset when backend updates after act())
+  useEffect(() => {
+    if (dates.length > 0) {
+      if (!initialLoadDone.current) {
+        initialLoadDone.current = true;
+        setSelectedIndex(0);
+        getData(dates[0]);
+      }
+    } else if (backendData !== undefined) {
+      setData('No changelog entries found.');
+    }
+  }, [dates, getData, backendData]);
+
+  const scrollToBottom = () => {
+    window.scrollTo(
+      0,
+      document.body.scrollHeight ?? document.documentElement.scrollHeight,
+    );
   };
 
-  componentDidMount() {
-    const {
-      data: { dates = [] },
-    } = useBackend<Data>();
-
-    if (dates) {
-      dates.forEach((date) =>
-        this.dateChoices.push(dateformat(date, 'mmmm yyyy', true)),
-      );
-      this.setSelectedDate(this.dateChoices[0]);
-      this.getData(dates[0]);
-    }
-  }
-
-  render() {
-    const { data, selectedDate, selectedIndex } = this.state;
-    const {
-      data: { dates },
-    } = useBackend<Data>();
-    const { dateChoices } = this;
-
-    const dateDropdown = dateChoices.length > 0 && (
+  const dateDropdown =
+    dateChoices.length > 0 && (
       <Stack mb={1}>
         <Stack.Item>
           <Button
@@ -142,16 +190,10 @@ export class Changelog extends Component<{}, ChangelogState> {
             icon={'chevron-left'}
             onClick={() => {
               const index = selectedIndex - 1;
-
-              this.setData('Loading changelog data...');
-              this.setSelectedIndex(index);
-              this.setSelectedDate(dateChoices[index]);
-              window.scrollTo(
-                0,
-                document.body.scrollHeight ||
-                document.documentElement.scrollHeight,
-              );
-              return this.getData(dates[index]);
+              setData('Loading changelog data...');
+              setSelectedIndex(index);
+              scrollToBottom();
+              getData(dates[index]);
             }}
           />
         </Stack.Item>
@@ -161,16 +203,10 @@ export class Changelog extends Component<{}, ChangelogState> {
             options={dateChoices}
             onSelected={(value) => {
               const index = dateChoices.indexOf(value);
-
-              this.setData('Loading changelog data...');
-              this.setSelectedIndex(index);
-              this.setSelectedDate(value);
-              window.scrollTo(
-                0,
-                document.body.scrollHeight ||
-                document.documentElement.scrollHeight,
-              );
-              return this.getData(dates[index]);
+              setData('Loading changelog data...');
+              setSelectedIndex(index);
+              scrollToBottom();
+              getData(dates[index]);
             }}
             selected={selectedDate}
             width="150px"
@@ -183,195 +219,212 @@ export class Changelog extends Component<{}, ChangelogState> {
             icon={'chevron-right'}
             onClick={() => {
               const index = selectedIndex + 1;
-
-              this.setData('Loading changelog data...');
-              this.setSelectedIndex(index);
-              this.setSelectedDate(dateChoices[index]);
-              window.scrollTo(
-                0,
-                document.body.scrollHeight ||
-                document.documentElement.scrollHeight,
-              );
-              return this.getData(dates[index]);
+              setData('Loading changelog data...');
+              setSelectedIndex(index);
+              scrollToBottom();
+              getData(dates[index]);
             }}
           />
         </Stack.Item>
       </Stack>
     );
 
-    const header = (
-      <Section>
-        <h1>Traditional Games Space Station 13</h1>
-        <p>
-          <b>Thanks to: </b>
-          Baystation 12, /vg/station, NTstation, CDK Station devs,
-          FacepunchStation, GoonStation devs, the original Space Station 13
-          developers, Invisty for the title image and the countless others who
-          have contributed to the game, issue tracker or wiki over the years.
-        </p>
-        <p>
-          {'Current organization members can be found '}
-          <a href="https://github.com/orgs/tgstation/people">here</a>
-          {', recent GitHub contributors can be found '}
-          <a href="https://github.com/tgstation/tgstation/pulse/monthly">
-            here
-          </a>
-          .
-        </p>
-        <p>
-          {'You can also join our discord '}
-          <a href="https://tgstation13.org/phpBB/viewforum.php?f=60">here</a>.
-        </p>
-        {dateDropdown}
-      </Section>
-    );
+  const header = (
+    <Section>
+      <h1>Iskhod Outpost</h1>
+      <p>
+        <b>Thanks to: </b>
+        CEV Eris, Baystation 12, /vg/station, NTstation, CDK Station devs,
+        FacepunchStation, GoonStation devs, the original Space Station 13
+        developers, and the countless others who have contributed to the game,
+        issue tracker or wiki over the years.
+      </p>
+      <p>
+        {'Source and issue tracker: '}
+        <a href="https://github.com/epic-new-soj-thing/Sojourn-Iskhod/">
+          Sojourn-Iskhod on GitHub
+        </a>
+        {'. Based on '}
+        <a href="https://github.com/epic-new-soj-thing/Sojourn-Iskhod/">
+          CEV Eris
+        </a>
+        {'. Code under AGPLv3. Content under CC BY-SA 3.0.'}
+      </p>
+      {dateDropdown}
+    </Section>
+  );
 
-    const footer = (
-      <Section>
-        {dateDropdown}
-        <h3>GoonStation 13 Development Team</h3>
-        <p>
-          <b>Coders: </b>
-          Stuntwaffle, Showtime, Pantaloons, Nannek, Keelin, Exadv1, hobnob,
-          Justicefries, 0staf, sniperchance, AngriestIBM, BrianOBlivion
-        </p>
-        <p>
-          <b>Spriters: </b>
-          Supernorn, Haruhi, Stuntwaffle, Pantaloons, Rho, SynthOrange, I Said
-          No
-        </p>
-        <p>
-          Traditional Games Space Station 13 is thankful to the GoonStation 13
-          Development Team for its work on the game up to the
-          {' r4407 release. The changelog for changes up to r4407 can be seen '}
-          <a href="https://wiki.ss13.co/Pre-2016_Changelog#April_2010">here</a>.
-        </p>
-        <p>
-          {'Except where otherwise noted, Goon Station 13 is licensed under a '}
-          <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">
-            Creative Commons Attribution-Noncommercial-Share Alike 3.0 License
-          </a>
-          {'. Rights are currently extended to '}
-          <a href="http://forums.somethingawful.com/">SomethingAwful Goons</a>
-          {' only.'}
-        </p>
-        <h3>Traditional Games Space Station 13 License</h3>
-        <p>
-          {'All code after '}
-          <a
-            href={
-              'https://github.com/tgstation/tgstation/commit/' +
-              '333c566b88108de218d882840e61928a9b759d8f'
-            }
-          >
-            commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at
-            4:38 PM PST
-          </a>
-          {' is licensed under '}
-          <a href="https://www.gnu.org/licenses/agpl-3.0.html">GNU AGPL v3</a>
-          {'. All code before that commit is licensed under '}
-          <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL v3</a>
-          {', including tools unless their readme specifies otherwise. See '}
-          <a href="https://github.com/tgstation/tgstation/blob/master/LICENSE">
-            LICENSE
-          </a>
-          {' and '}
-          <a href="https://github.com/tgstation/tgstation/blob/master/GPLv3.txt">
-            GPLv3.txt
-          </a>
-          {' for more details.'}
-        </p>
-        <p>
-          The TGS DMAPI API is licensed as a subproject under the MIT license.
-          {' See the footer of '}
-          <a
-            href={
-              'https://github.com/tgstation/tgstation/blob/master' +
-              '/code/__DEFINES/tgs.dm'
-            }
-          >
-            code/__DEFINES/tgs.dm
-          </a>
-          {' and '}
-          <a
-            href={
-              'https://github.com/tgstation/tgstation/blob/master' +
-              '/code/modules/tgs/LICENSE'
-            }
-          >
-            code/modules/tgs/LICENSE
-          </a>
-          {' for the MIT license.'}
-        </p>
-        <p>
-          {'All assets including icons and sound are under a '}
-          <a href="https://creativecommons.org/licenses/by-sa/3.0/">
-            Creative Commons 3.0 BY-SA license
-          </a>
-          {' unless otherwise indicated.'}
-        </p>
-      </Section>
-    );
+  const footer = (
+    <Section>
+      {dateDropdown}
+      <p>
+        {'Except where otherwise noted, code is under '}
+        <a href="https://www.gnu.org/licenses/agpl-3.0.html">GNU AGPL v3</a>
+        {'. Content under '}
+        <a href="https://creativecommons.org/licenses/by-sa/3.0/">
+          Creative Commons 3.0 BY-SA
+        </a>
+        {' where applicable.'}
+      </p>
+    </Section>
+  );
 
-    const changes =
-      typeof data === 'object' &&
-      Object.keys(data).length > 0 &&
-      Object.entries(data)
-        .reverse()
-        .map(([date, authors]) => (
-          <Section key={date} title={dateformat(date, 'd mmmm yyyy', true)}>
-            <Box ml={3}>
-              {Object.entries(authors).map(([name, changes]) => (
-                <Fragment key={name}>
-                  <h4>{name} changed:</h4>
-                  <Box ml={3}>
-                    <Table>
-                      {changes.map((change) => {
-                        const changeType = Object.keys(change)[0];
-                        return (
-                          <Table.Row key={changeType + change[changeType]}>
-                            <Table.Cell
-                              className={classes([
-                                'Changelog__Cell',
-                                'Changelog__Cell--Icon',
-                              ])}
-                            >
-                              <Icon
-                                color={
-                                  icons[changeType]
-                                    ? icons[changeType].color
-                                    : icons['unknown'].color
-                                }
-                                name={
-                                  icons[changeType]
-                                    ? icons[changeType].icon
-                                    : icons['unknown'].icon
-                                }
-                              />
-                            </Table.Cell>
-                            <Table.Cell className="Changelog__Cell">
-                              {change[changeType]}
-                            </Table.Cell>
-                          </Table.Row>
-                        );
-                      })}
-                    </Table>
-                  </Box>
-                </Fragment>
-              ))}
-            </Box>
-          </Section>
-        ));
+  const isAutoChangelog =
+    typeof data === 'object' &&
+    data !== null &&
+    !Array.isArray(data) &&
+    'author' in data &&
+    'changes' in data &&
+    Array.isArray((data as { changes: unknown }).changes);
 
-    return (
-      <Window title="Changelog" width={675} height={650}>
-        <Window.Content scrollable>
-          {header}
-          {changes}
-          {typeof data === 'string' && <p>{data}</p>}
-          {footer}
-        </Window.Content>
-      </Window>
-    );
-  }
-}
+  const changes =
+    typeof data === 'object' &&
+    data !== null &&
+    !Array.isArray(data) &&
+    Object.keys(data).length > 0 &&
+    (isAutoChangelog
+      ? (() => {
+          const prData = data as {
+            author: string;
+            changes: ({ [type: string]: string } | string)[];
+            date?: string | Date;
+          };
+          const dateVal =
+            prData.date !== null && prData.date !== undefined
+              ? prData.date
+              : null;
+          const title =
+            dateVal !== null && dateVal !== undefined
+              ? dateformat(
+                  typeof dateVal === 'string' ? dateVal : dateVal.toISOString().slice(0, 10),
+                  'd mmmm yyyy',
+                  true,
+                )
+              : selectedDate;
+          const normalizedChanges = (prData.changes ?? []).map((change) =>
+            typeof change === 'object' && change !== null && !Array.isArray(change)
+              ? change
+              : { unknown: String(change) },
+          );
+          return (
+            <Section key={selectedDate} title={title}>
+              <Box ml={3}>
+                <h4>{prData.author} changed:</h4>
+                <Box ml={3}>
+                  <Table>
+                    {normalizedChanges.map((change, i) => {
+                      const changeType = Object.keys(change)[0];
+                      if (!changeType) return null;
+                      const message = change[changeType];
+                      return (
+                        <Table.Row key={i}>
+                          <Table.Cell
+                            className={classes([
+                              'Changelog__Cell',
+                              'Changelog__Cell--Icon',
+                            ])}
+                          >
+                            <Icon
+                              color={
+                                icons[changeType]
+                                  ? icons[changeType].color
+                                  : icons['unknown'].color
+                              }
+                              name={
+                                icons[changeType]
+                                  ? icons[changeType].icon
+                                  : icons['unknown'].icon
+                              }
+                            />
+                          </Table.Cell>
+                          <Table.Cell className="Changelog__Cell">
+                            {message !== null && message !== undefined ? String(message) : ''}
+                          </Table.Cell>
+                        </Table.Row>
+                      );
+                    })}
+                  </Table>
+                </Box>
+              </Box>
+            </Section>
+          );
+        })()
+      : (() => {
+          const parseDate = (s: string) => {
+            const part = s.slice(0, 10).split('-').map(Number);
+            return [part[0] ?? 0, part[1] ?? 0, part[2] ?? 0] as [number, number, number];
+          };
+          const entries = Object.entries(data)
+            .filter(([k]) => k !== 'author' && k !== 'changes' && k !== 'delete-after')
+            .sort(([a], [b]) => {
+              const [ya, ma, da] = parseDate(a);
+              const [yb, mb, db] = parseDate(b);
+              if (ya !== yb) return ya - yb;
+              if (ma !== mb) return ma - mb;
+              return da - db;
+            })
+            .reverse();
+          return entries.map(([date, authors]) =>
+            typeof authors === 'object' && authors !== null && !Array.isArray(authors) ? (
+              <Section
+                key={date}
+                title={dateformat(date.length >= 10 ? date.slice(0, 10) : date, 'd mmmm yyyy', true)}
+              >
+                <Box ml={3}>
+                  {Object.entries(authors).map(([name, authorChanges]) => (
+                    <Fragment key={name}>
+                      <h4>{name} changed:</h4>
+                      <Box ml={3}>
+                        <Table>
+                          {(Array.isArray(authorChanges) ? authorChanges : []).map(
+                            (change, i) => {
+                              const changeType = Object.keys(change)[0];
+                              return (
+                                <Table.Row key={i}>
+                                  <Table.Cell
+                                    className={classes([
+                                      'Changelog__Cell',
+                                      'Changelog__Cell--Icon',
+                                    ])}
+                                  >
+                                    <Icon
+                                      color={
+                                        icons[changeType]
+                                          ? icons[changeType].color
+                                          : icons['unknown'].color
+                                      }
+                                      name={
+                                        icons[changeType]
+                                          ? icons[changeType].icon
+                                          : icons['unknown'].icon
+                                      }
+                                    />
+                                  </Table.Cell>
+                                  <Table.Cell className="Changelog__Cell">
+                                    {change[changeType]}
+                                  </Table.Cell>
+                                </Table.Row>
+                              );
+                            },
+                          )}
+                        </Table>
+                      </Box>
+                    </Fragment>
+                  ))}
+                </Box>
+              </Section>
+            ) : null,
+          );
+        })());
+
+  return (
+    <Window title="Changelog" width={675} height={650}>
+      <Window.Content scrollable>
+        {header}
+        {changes}
+        {typeof data === 'string' && <p>{data}</p>}
+        {footer}
+      </Window.Content>
+    </Window>
+  );
+};

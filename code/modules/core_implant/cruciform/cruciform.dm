@@ -197,7 +197,7 @@ var/list/disciples = list()
 	remove_modules(CRUCIFORM_PRIME)
 	update_rituals()
 
-/obj/item/implant/core_implant/cruciform/proc/make_vector()
+/obj/item/implant/core_implant/cruciform/proc/make_hand()
 	add_module(new CRUCIFORM_CLERGY)
 
 /obj/item/implant/core_implant/cruciform/proc/make_prime()
@@ -212,9 +212,9 @@ var/list/disciples = list()
 
 /obj/item/implant/core_implant/cruciform/proc/remove_crusader()
 	remove_modules(CRUCIFORM_CRUSADER)
-	if(!wearer.stats.getPerk(PERK_CHANNELING)) //If we weren't a roundstart vector, reset us to Scalar status. If the clergy want to re-ordain or give access, they can
+	if(!wearer.stats.getPerk(PERK_CHANNELING)) //If we weren't a roundstart Hand, reset us to Scalar status. If the clergy want to re-ordain or give access, they can
 		remove_modules(CRUCIFORM_CLERGY)
-		security_clearance = CLEARANCE_NONE //Vectors will still keep their Prime access, but I can't think of an easy way to check it and it's not a huge deal
+		security_clearance = CLEARANCE_NONE //Hands will still keep their Penitent access, but I can't think of an easy way to check it and it's not a huge deal
 	update_rituals()
 
 /obj/item/implant/core_implant/cruciform/proc/make_inquisitor()

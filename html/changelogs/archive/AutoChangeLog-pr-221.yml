@@ -1,0 +1,10 @@
+author: AMcilraith
+changes:
+  - fix: Fixed empty state for various first aid kits, preventing confusion when
+      opening them.
+  - fix: Corrected overlay count for medical kits in Greyson Smart Kit to 
+      prevent visual errors.
+  - fix: Adjusted item creation logic in medical kits to ensure consistency and 
+      proper item distribution.
+date: '2025-09-10'
+delete-after: false

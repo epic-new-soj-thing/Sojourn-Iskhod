@@ -57,6 +57,10 @@
 	update_icon()
 	price_tag = 0
 
+/obj/item/reagent_containers/syringe/CtrlClick(mob/user, params)
+	attack_self(user)
+	return TRUE
+
 /obj/item/reagent_containers/syringe/attack_hand()
 	..()
 	update_icon()
@@ -90,13 +94,10 @@
 				return
 
 			else if(ismob(target))//Blood!
-				if(reagents.has_reagent("blood"))
+				if(reagents.get_reagent_by_type(/datum/reagent/organic/blood))
 					to_chat(user, SPAN_NOTICE("There is already a blood sample in this syringe."))
 					return
 				if(iscarbon(target))
-					if(isslime(target))
-						to_chat(user, SPAN_WARNING("You are unable to locate any blood."))
-						return
 					var/amount = reagents.get_free_space()
 					var/mob/living/carbon/T = target
 					if(!T.dna)
@@ -107,24 +108,20 @@
 						return
 
 					var/datum/reagent/B
-					if(ishuman(T))
+					B = T.take_blood(src, amount)
+					if(!B && ishuman(T))
 						var/mob/living/carbon/human/H = T
-						if(H.species && H.species.flags & NO_BLOOD)
-							H.reagents.trans_to_obj(src, amount)
-						else
-							B = T.take_blood(src, amount)
-					else
-						B = T.take_blood(src,amount)
+						H.reagents.trans_to_obj(src, amount)
 
 					if (B)
-						reagents.reagent_list += B
-						reagents.update_total()
+						reagents.add_reagent(B.id, B.volume, B.data)
+						qdel(B)
 						on_reagent_change()
 						reagents.handle_reactions()
-					to_chat(user, SPAN_NOTICE("You take a blood sample from [target]."))
-					price_tag = 0
-					for(var/mob/O in viewers(4, user))
-						O.show_message(SPAN_NOTICE("[user] takes a blood sample from [target]."), 1)
+						to_chat(user, SPAN_NOTICE("You take a blood sample from [target]."))
+						price_tag = 0
+						for(var/mob/O in viewers(4, user))
+							O.show_message(SPAN_NOTICE("[user] takes a blood sample from [target]."), 1)
 
 			else //if not mob
 				if(!target.reagents.total_volume)

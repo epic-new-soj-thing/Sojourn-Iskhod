@@ -1,0 +1,12 @@
+author: AMcilraith
+changes:
+  - add: Introduced the 'Lost Tongue' perk allowing certain species to regain 
+      knowledge of their native language.
+  - del: Removed the ability for Crinos to be selected as a known language 
+      option for backgrounds.
+  - tweak: Adjusted language options available for certain perks, including 
+      removing Crinos.
+  - fix: Corrected the language limitations for characters with the 'Lost 
+      Tongue' background to only include specific languages.
+date: '2025-06-12'
+delete-after: false

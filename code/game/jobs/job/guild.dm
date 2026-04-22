@@ -1,22 +1,24 @@
 //Cargo
 /datum/job/merchant
-	title = "Surface Operations Manager"
+	title = "Operations Manager"
 	flag = MERCHANT
-	department = DEPARTMENT_LSS
+	department = DEPARTMENT_SUPPLY
 	head_position = TRUE
 	aster_guild_member = TRUE
-	department_flag = LSS | COMMAND
+	department_flag = FL | COMMAND
 	faction = MAP_FACTION
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the Nadezhda Council"
+	supervisors = "the Facility Director and the Iskhod Council"
 	difficulty = "Medium."
 	selection_color = "#b3a68c"
 	wage = WAGE_COMMAND	//SOM now gets paid the money moola muh [redacted] -Kaz
+	hud_icon = "manager"
+
 	access = list(
 		access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_merchant, access_mining,
 		access_heads, access_mining_station, access_RC_announce, access_keycard_auth, access_sec_doors,
-		access_eva, access_external_airlocks, access_hydroponics, access_bar, access_kitchen, access_theatre, access_heads_vault
+		access_eva, access_external_airlocks, access_hydroponics, access_bar, access_kitchen, access_theatre, access_heads_vault,
 	)
 	disallow_species = list(FORM_SOTSYNTH, FORM_AGSYNTH, FORM_BSSYNTH, FORM_CHURCHSYNTH, FORM_NASHEF)
 
@@ -31,9 +33,9 @@
 		STAT_MEC = 15,
 		STAT_VIG = 10
 	)
-	description = "The Surface Operations Manager coordinates the affairs of the local branch of Lonestar Shipping Solutions.<br>\
+	description = "The Operations Manager coordinates the affairs of the local branch of Frontier Logistics.<br>\
 Your main objective, naturally, is to make as much money as you can. Purchase and acquire goods and sell them on for a profit.<br>\
-Your Cargo Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilize them well.<br>\
+Your Technicians will handle most of the grunt work and your Miners will acquire minerals. They are capable - utilize them well.<br>\
 The vendors found throughout the colony are also operated by your organization. They make you money - ensure they are functional and well-stocked.<br>\
 There is a market for contraband and more unscrupulous services. Venturing into this area may prove profitable, but not without a risk.<br>\
 You do not receive a salary, but can fund yourself from the company account. Strike a balance between the needs of yourself and the wider company."
@@ -55,24 +57,26 @@ Counsel the council on directing the colony towards profitable opportunities."
 	perks = list(PERK_TIMEISMONEY, PERK_MARKET_PROF, PERK_BARTENDER, PERK_CHEM_CONTRABAND)
 
 /obj/landmark/join/start/merchant
-	name = "Surface Operations Manager"
+	name = "Operations Manager"
 	icon_state = "player-beige-officer"
 	join_tag = /datum/job/merchant
 
 /datum/job/cargo_tech
 	title = "Cargo Technician"
 	flag = CARGOTECH
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_SUPPLY
+	department_flag = FL
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Surface Operations Manager"
+	supervisors = "the Operations Manager"
 	difficulty = "Easy."
-	alt_titles = list("Cargo Specialist", "Lonestar Sales Technician", "Lonestar Retail Assistant")
+	alt_titles = list("Cargo Specialist", "Sales Technician", "Retail Assistant")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_DUMB
 	department_account_access = TRUE
+	hud_icon = "cargo"
+
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
 
 	disallow_species = list(FORM_BSSYNTH)
@@ -98,7 +102,7 @@ Counsel the council on directing the colony towards profitable opportunities."
 							 /datum/computer_file/program/reports)
 
 
-	description = "The Cargo Technician forms the backbone of Lonestar Shipping Solutions, equal parts scavenger, loader and salesman.<br>\
+	description = "The Technician forms the backbone of Frontier Logistics, equal parts scavenger, loader and salesman.<br>\
 Your main duty is to keep the local company branch operational and profitable. Deliver goods, take payments and orders and buy from scavengers.<br>\
 In quieter times use your initiative. Visit departments to ask if there's anything they need and try to sell them unusual items.<br>\
 Busted lights? Broken vendors? Offer your services for a small fee. You may also find profit in the maintenance tunnels.<br>\
@@ -114,27 +118,29 @@ Avoid the deeper tunnels unless otherwise instructed, however - this domain is h
 	join_tag = /datum/job/cargo_tech
 
 /datum/job/mining
-	title = "Lonestar Miner"
+	title = "Mining Technician"
 	flag = MINER
-	department = DEPARTMENT_LSS
-	department_flag = LSS
+	department = DEPARTMENT_SUPPLY
+	department_flag = FL
 	faction = MAP_FACTION
 	total_positions = 4
 	spawn_positions = 4
-	supervisors = "the Surface Operations Manager"
+	supervisors = "the Operations Manager"
 	difficulty = "Easy."
-	alt_titles = list("Lonestar Drill Technician", "Junior Lonestar Miner", "Lonestar Excavation Specialist")
+	alt_titles = list("Frontier Logistics", "Drill Technician", "Junior Mining Technician", "Excavation Specialist")
 	selection_color = "#c3b9a6"
 	wage = WAGE_LABOUR_HAZARD //The miners union is stubborn
+	hud_icon = "miner"
 	health_modifier = 5
+
 
 	disallow_species = list(FORM_BSSYNTH, FORM_CHURCHSYNTH)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/mining
 
-	description = "The Miner is a professional resource procurer, acquiring valuable minerals for Lonestar Shipping Solutions.<br>\
+	description = "The Miner is a professional resource procurer, acquiring valuable minerals for Frontier Logistics.<br>\
 Your primary responsibility is to descend into the deep tunnels and dig up as much ore as you can.<br>\
 Accessed by elevator, the area contains an outpost with all the facilities to process said ore and deliver refined materials ready for use.<br>\
-Whatever you dig up will go to the cargo department and from there on it is the responsibility of others within Lonestar to sell it.<br>\
+Whatever you dig up will go to the cargo department and from there on it is the responsibility of others within Frontier Logistics to sell it.<br>\
 The deep tunnels are far less dangerous than the wilderness, but pack well - disappearances are not unheard of."
 
 	duties = "Dig up ores and minerals to be processed into usable material.<br>\
@@ -160,6 +166,6 @@ The deep tunnels are far less dangerous than the wilderness, but pack well - dis
 							 /datum/computer_file/program/reports)
 
 /obj/landmark/join/start/mining
-	name = "Lonestar Miner"
+	name = "Mining Technician"
 	icon_state = "player-beige"
 	join_tag = /datum/job/mining

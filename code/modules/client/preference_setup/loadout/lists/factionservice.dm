@@ -14,8 +14,8 @@
 	sort_category = "Faction: Service"
 
 /datum/gear/factionservice/winterbootsbotany
-	display_name = "winter boots, botany"
-	path = /obj/item/clothing/shoes/winter/botany
+	display_name = "jackboots"
+	path = /obj/item/clothing/shoes/jackboots
 	allowed_roles = list("Gardener")
 	slot = slot_shoes
 	sort_category = "Faction: Service"

@@ -559,6 +559,7 @@
 /obj/structure/window/basic/iskhod
 	icon_state = "window_n"
 	basestate = "window_n"
+	layer = ABOVE_MOB_LAYER
 
 /obj/structure/window/plasmabasic
 	name = "plasma window"
@@ -597,6 +598,7 @@
 /obj/structure/window/reinforced/iskhod
 	icon_state = "rwindow_n"
 	basestate = "rwindow_n"
+	layer = ABOVE_MOB_LAYER
 
 /obj/structure/window/New(Loc, constructed=0)
 	..()
@@ -646,6 +648,7 @@
 	icon_state = "twindow_n"
 	basestate = "twindow_n"
 	opacity = 1
+	layer = ABOVE_MOB_LAYER
 
 /obj/structure/window/reinforced/tinted/frosted
 	name = "frosted window"
@@ -656,6 +659,7 @@
 /obj/structure/window/reinforced/tinted/frosted/iskhod
 	icon_state = "fwindow_n"
 	basestate = "fwindow_n"
+	layer = ABOVE_MOB_LAYER
 
 /obj/structure/window/shuttle
 	name = "shuttle window"
@@ -677,6 +681,7 @@
 
 /obj/structure/window/reinforced/polarized/iskhod
 	icon_state = "twindow_n"
+	layer = ABOVE_MOB_LAYER
 
 /obj/structure/window/reinforced/polarized/full
 	dir = SOUTH|EAST

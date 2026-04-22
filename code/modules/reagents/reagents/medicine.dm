@@ -588,6 +588,34 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
 		M.Stun(5)
 
+/datum/reagent/medicine/vecuronium_bromide
+	name = "Vecuronium Bromide"
+	id = "vecuronium_bromide"
+	description = "A neuromuscular blocking agent (paralytic). Fully incapacitates the target—they remain conscious and can only speak in a whisper, but cannot move. Used when a patient refuses general anaesthesia but must stay still for surgery. Pair with pain relief (e.g. Oxycodone). Overdose can cause dangerous respiratory depression."
+	taste_description = "metallic bitterness"
+	reagent_state = LIQUID
+	color = "#e46cd4"
+	metabolism = REM * 2
+	overdose = REAGENTS_OVERDOSE * 0.5
+	scannable = TRUE
+	nerve_system_accumulations = 20
+
+/datum/reagent/medicine/vecuronium_bromide/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
+	var/effective_dose = dose
+	if(issmall(M))
+		effective_dose *= 2
+	// Full paralysis: cannot move, remain conscious
+	if(effective_dose >= 0.5)
+		M.paralysis = max(M.paralysis, 6)
+	// Reduce speech to a whisper (default CE_SPEECH_VOLUME is 2; 1 = whisper)
+	M.add_chemical_effect(CE_SPEECH_VOLUME, 1)
+
+/datum/reagent/medicine/vecuronium_bromide/overdose(mob/living/carbon/M, alien)
+	..()
+	M.paralysis = max(M.paralysis, 8)
+	M.add_chemical_effect(CE_OXYGENATED, -0.5) // Respiratory depression
+	M.adjustOxyLoss(1)
+
 /* Church related chemicals */
 /datum/reagent/medicine/nepenthe  //Monomial super-painkiller
 	name = "Nepenthe"
@@ -734,10 +762,12 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/alkysine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		var/obj/item/organ/internal/vital/brain/B = H.internal_organs_by_efficiency[BP_BRAIN]
-		if(!BP_IS_ROBOTIC(B) && prob(75))
+		var/obj/item/organ/internal/vital/brain/B = H.random_organ_by_process(BP_BRAIN)
+		if(B && !BP_IS_ROBOTIC(B) && prob(75))
 			M.add_chemical_effect(CE_PAINKILLER, 10)
-			M.add_chemical_effect(CE_BRAINHEAL, 1)
+			var/list/current_wounds = B.GetComponents(/datum/component/internal_wound)
+			if(LAZYLEN(current_wounds))
+				M.add_chemical_effect(CE_BRAINHEAL, 1)
 			// Direct brain damage healing - alkysine repairs neural tissue
 			M.adjustBrainLoss(-1.5 * effect_multiplier) // Heals 1.5 brain damage per tick
 
@@ -900,7 +930,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 /datum/reagent/medicine/positive_ling
 	name = "Positive Paragenetic Marker"
 	id = "positiveling"
-	description = "The result of heating up Negative Paragenetic Marker in the prescence of Carrion blood. If you manage to obtain this, report the person to Marshals immediately (and discretely)."
+	description = "The result of heating up Negative Paragenetic Marker in the prescence of Carrion blood. If you manage to obtain this, report the person to Rangers immediately (and discretely)."
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#910000"
@@ -973,6 +1003,19 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	nerve_system_accumulations = -5
 
 /datum/reagent/medicine/spaceacillin/affect_blood(var/mob/living/carbon/M, var/alien, var/effect_multiplier)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		if(H.species && H.species.name == "Mycus")
+			// Antibiotics are lethal to fungal biology - deal toxin damage to internal organs
+			var/damage = 4 * effect_multiplier
+			var/list/obj/item/organ/internal/victims = list()
+			for(var/obj/item/organ/internal/I in H.internal_organs)
+				if(!BP_IS_ROBOTIC(I))
+					victims += I
+			if(victims.len)
+				var/obj/item/organ/internal/target = pick(victims)
+				target.take_damage(damage, TOX)
+			return
 	M.add_chemical_effect(CE_ANTIBIOTIC, 5)
 	M.add_chemical_effect(CE_ANTITOX, 1)
 
@@ -1138,7 +1181,7 @@ We don't use this but we might find use for it. Porting it since it was updated 
 	nerve_system_accumulations = -5
 
 /datum/reagent/medicine/quickclot/affect_blood(mob/living/carbon/M, alien, effect_multiplier, var/removed = REM)
-	M.add_chemical_effect(CE_BLOODCLOT, 0.25)
+	M.add_chemical_effect(CE_BLOODCLOT, 0.70)	// Stops bleeding quickly - reduces blood loss to 30% of normal
 
 /datum/reagent/medicine/quickclot/overdose(mob/living/carbon/M, alien, effect_multiplier)
 	M.add_chemical_effect(CE_BLOODCLOT, 0.75)

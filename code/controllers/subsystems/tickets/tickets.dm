@@ -238,7 +238,7 @@ SUBSYSTEM_DEF(tickets)
 		"Happens Again" = "Thanks, let us know if it continues to happen.",
 		"Github Discord Issue Report" = "To report a bug, please go to our Github page. Then go to 'Issues'. Then 'New Issue'. Then fill out the report form. If the report would reveal current-round information, file it after the round ends. If you prefer, you can also report it in the issue reports channel of our Discord.",
 		"Clear Cache" = "To fix a blank screen, go to the 'Special Verbs' tab and press 'Reload UI Resources'. If that fails, clear your BYOND cache (instructions provided with 'Reload UI Resources'). If that still fails, please adminhelp again, stating you have already done the following." ,
-		"IC Issue" = "This is an In Character (IC) issue and will not be handled by admins. You could speak to a Marshal Officer, a departmental head or any other relevant authority currently around the colony.",
+		"IC Issue" = "This is an In Character (IC) issue and will not be handled by admins. You could speak to a Ranger Officer, a departmental head or any other relevant authority currently around the colony.",
 		"Reject" = "Reject",
 		"Man Up" = "Man Up",
 		"Skill Issue" = "Skill Issue",

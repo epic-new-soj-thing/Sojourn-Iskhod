@@ -19,6 +19,7 @@
 	circuit = /obj/item/circuitboard/cryopodcontrol
 	density = 0
 	interact_offline = 1
+	browser_window_id = "cryopod_console"
 	var/mode = null
 
 	//Used for logging people entering cryosleep and important items they are carrying.

@@ -95,7 +95,7 @@
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/headset_mar
 
-/obj/item/device/radio/headset/headset_sec/bowman		//Wearing a Marshal bowman aids against flashbangs. Same stats otherwise.
+/obj/item/device/radio/headset/headset_sec/bowman		//Wearing a Ranger bowman aids against flashbangs. Same stats otherwise.
 	name = "marshal bowman headset"
 	desc = "This headset is a premium quality headset made for only true operators! Ignore.. the ten credit price tag and the rattling noise it makes when you shake it. This has a small symbol denoting its built-in backup transmitter"
 	icon_state = "sec_headset_bowman"
@@ -187,7 +187,7 @@
 	desc = "Made specifically for the roboticists who cannot decide between departments."
 	icon_state = "rob_headset"
 	item_state = "headset"
-	ks2type = /obj/item/device/encryptionkey/headset_sci
+	ks2type = /obj/item/device/encryptionkey/headset_rob
 
 /obj/item/device/radio/headset/headset_med
 	name = "medical radio headset"
@@ -195,6 +195,10 @@
 	icon_state = "med_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_moebius
+
+/obj/item/device/radio/headset/headset_para
+	name = "paramedic radio headset"
+	ks2type = /obj/item/device/encryptionkey/headset_para
 
 /obj/item/device/radio/headset/headset_sci
 	name = "science radio headset"
@@ -211,7 +215,7 @@
 	ks2type = /obj/item/device/encryptionkey/headset_com
 
 /obj/item/device/radio/headset/heads/captain
-	name = "premier's headset"
+	name = "facility director's headset"
 	desc = "The headset of the arbiter and man with less power than he pretends he has."
 	icon_state = "com_headset"
 	item_state = "headset"
@@ -252,7 +256,7 @@
 	adhoc_fallback = TRUE
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
-/obj/item/device/radio/headset/heads/hos/bowman		//Wearing a Marshal bowman aids against flashbangs. Same stats otherwise.
+/obj/item/device/radio/headset/heads/hos/bowman		//Wearing a Ranger bowman aids against flashbangs. Same stats otherwise.
 	name = "warrant officer bowman headset"
 	desc = "The headset of the men who lock away your worthless lives, in a comfortable bowman style.\nThis has a small symbol denoting its built-in backup transmitter."
 	ear_protection = EAR_PROTECTION_MODERATE
@@ -276,7 +280,7 @@
 	ks2type = /obj/item/device/encryptionkey/heads/hos
 
 /obj/item/device/radio/headset/heads/ce
-	name = "guild master's headset"
+	name = "chief engineer's headset"
 	desc = "The headset of the guy who is in charge of morons"
 	icon_state = "com_headset"
 	item_state = "headset"
@@ -304,7 +308,7 @@
 	ks2type = /obj/item/device/encryptionkey/heads/merchant
 
 /obj/item/device/radio/headset/heads/preacher
-	name = "prime's headset"
+	name = "Penitent's headset"
 	desc = "The headset of the man who leads you to god and into the arms of a cult."
 	icon_state = "nt_com_headset"
 	item_state = "headset"
@@ -323,6 +327,10 @@
 	icon_state = "srv_headset"
 	item_state = "headset"
 	ks2type = /obj/item/device/encryptionkey/headset_service
+
+/obj/item/device/radio/headset/headset_service/alt
+	name = "service radio headset"
+	icon_state = "srv_headset"
 
 /obj/item/device/radio/headset/headset_pro
 	name = "prospector radio headset"
@@ -486,3 +494,4 @@
 			radio_text += ", "
 
 	radio_desc = radio_text
+

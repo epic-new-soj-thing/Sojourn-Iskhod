@@ -70,18 +70,23 @@ SUBSYSTEM_DEF(economy)
 		if(R)
 			nepotism = R.get_nepotismMod()
 
+		var/datum/department/ED = GLOB.all_departments[A.employer]
 		var/amount_to_pay = A.debt + (A.wage * nepotism)
+		if(ED)
+			amount_to_pay -= ED.insurance_premium
 
 		if(amount_to_pay <= 0)
 			continue
 
-		var/datum/department/ED = GLOB.all_departments[A.employer]
+		if(!ED)
+			continue
+
 		var/datum/money_account/EA = department_accounts[ED.id]
 
 
 
 		if(amount_to_pay <= EA.money)
-			transfer_funds(EA, A, "Payroll Funding", "Nadezhda colony payroll system", amount_to_pay)
+			transfer_funds(EA, A, "Payroll Funding", "Iskhod colony payroll system", amount_to_pay)
 			paid_internal += amount_to_pay
 			ED.total_debt -= A.debt
 			A.debt = 0
@@ -104,7 +109,7 @@ SUBSYSTEM_DEF(economy)
 					payroll_failure_mail(R, A, D.total_debt)
 
 	total_paid = paid_internal + paid_external
-	command_announcement.Announce("Hourly colonist wages have been paid, please check your email for details. In total the crew of Nadezhda colony have earned [total_paid] credits, including [paid_external] credits from external sources.\n Please contact your Department Heads in case of errors or missing payments.", "Dispensation", new_sound = 'sound/misc/notice2.ogg')
+	command_announcement.Announce("Hourly colonist wages have been paid, please check your email for details. In total the crew of Iskhod colony have earned [total_paid] credits, including [paid_external] credits from external sources.\n Please contact your Department Heads in case of errors or missing payments.", "Dispensation", new_sound = 'sound/misc/notice2.ogg')
 
 
 //Sent to a head of staff when their department account fails to pay out wages

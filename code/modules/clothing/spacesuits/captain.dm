@@ -15,7 +15,7 @@
 	siemens_coefficient = 0.7
 
 /obj/item/clothing/suit/space/captain
-	name = "Premier's armor"
+	name = "Facility Director's armor"
 	desc = "A bulky, heavy-duty piece of exclusive armor."
 	icon_state = "caparmor"
 	item_state = "capspacesuit"
@@ -37,14 +37,17 @@
 	item_state = "skrell_helmet_white"
 	desc = "A well padded helmet, fitted with a heads up display on its visor, keeping its occupant well aware of the surroundings with a small built in light."
 	armor_list = list(
-		melee = 10,
-		bullet = 7,
-		energy = 10,
+		melee = 15,
+		bullet = 15,
+		energy = 15,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)
 	siemens_coefficient = 0.7
+	stiffness = null
+	slowdown = null
+
 	price_tag = 2000
 
 /obj/item/clothing/suit/space/marqua
@@ -53,12 +56,15 @@
 	icon_state = "skrell_suit_white"
 	item_state = "skrell_suit_white"
 	armor_list = list(
-		melee = 10,
-		bullet = 7,
-		energy = 12,
+		melee = 15,
+		bullet = 15,
+		energy = 15,
 		bomb = 50,
 		bio = 100,
-		rad = 50
+		rad = 100
 	)
 	siemens_coefficient = 0.7
-	stiffness = MEDIUM_STIFFNESS
+	stiffness = null
+	slowdown = null
+
+	price_tag = 10000

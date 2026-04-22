@@ -24,6 +24,9 @@
 	var/max_age = 90
 
 	var/blood_color = "#A10808"                          // Red.
+	var/blood_reagent = "blood"
+	var/blood_group = "mammalian"
+                          // Reagent used for blood.
 	var/flesh_color = "#FFC896"                          // Pink.
 	var/gibbed_anim = "gibbed-h"
 
@@ -316,6 +319,9 @@
 		H.see_in_dark = (H.sight == SEE_TURFS|SEE_MOBS|SEE_OBJS) ? darksight : min(darksight + H.equipment_darkness_modifier, darksight)
 		H.see_in_dark += H.equipment_darkness_modifier
 		H.see_in_dark += H.additional_darksight //Done like this for sake of easier to read
+
+		if(CE_DARKSIGHT in H.chem_effects)
+			H.see_in_dark = max(H.see_in_dark, 8)
 
 		if(H.see_in_dark <= 0)
 			H.see_in_dark = 1

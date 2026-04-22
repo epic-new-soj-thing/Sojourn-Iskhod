@@ -37,7 +37,7 @@
 /var/const/access_moebius = 5
 /datum/access/moebius
 	id = access_moebius
-	desc = "Soteria General"
+	desc = "Vesalius-Andra General"
 	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_morgue = 6
@@ -127,7 +127,7 @@
 /var/const/access_captain = 20
 /datum/access/captain
 	id = access_captain
-	desc = "Premier"
+	desc = "Facility Director"
 	region = ACCESS_REGION_COMMAND
 
 /var/const/access_all_personal_lockers = 21
@@ -187,7 +187,7 @@
 /var/const/access_rd = 30
 /datum/access/rd
 	id = access_rd
-	desc = "Soteria Research Overseer"
+	desc = "Vesalius-Andra Research Overseer"
 	region = ACCESS_REGION_RESEARCH
 
 /var/const/access_cargo = 31
@@ -247,13 +247,13 @@
 /var/const/access_cmo = 40
 /datum/access/cmo
 	id = access_cmo
-	desc = "Soteria Biolab Overseer"
+	desc = "Vesalius-Andra Medical Overseer"
 	region = ACCESS_REGION_COMMAND
 
 /var/const/access_merchant = 41
 /datum/access/merchant
 	id = access_merchant
-	desc = "Surface Operations Manager"
+	desc = "Operations Manager"
 	region = ACCESS_REGION_SUPPLY
 
 /var/const/access_network = 42
@@ -268,7 +268,13 @@
 	desc = "Theatre"
 	region = ACCESS_REGION_GENERAL
 
-// /var/const/free_access_id = 44
+/var/const/access_library = 44
+/datum/access/library
+	id = access_library
+	desc = "Library"
+	region = ACCESS_REGION_GENERAL
+
+// /var/const/free_access_id = 47
 
 /var/const/access_surgery = 45
 /datum/access/surgery
@@ -326,7 +332,7 @@
 /var/const/access_ce = 56
 /datum/access/ce
 	id = access_ce
-	desc = "Guild Master"
+	desc = "Chief Engineer"
 	region = ACCESS_REGION_ENGINEERING
 
 /var/const/access_hop = 57
@@ -413,13 +419,13 @@
 /var/const/access_nt_disciple = 70
 /datum/access/nt_disciple
 	id = access_nt_disciple
-	desc = "Absolutism Vector"
+	desc = "Order of the Word Hand"
 	region = ACCESS_REGION_CHURCH
 
 /var/const/access_nt_acolyte = 71
 /datum/access/nt_acolyte
 	id = access_nt_acolyte
-	desc = "Absolutism Vector"
+	desc = "Order of the Word Hand"
 	region = ACCESS_REGION_CHURCH
 
 /var/const/access_nt_custodian = 72
@@ -437,13 +443,13 @@
 /var/const/access_nt_preacher = 74
 /datum/access/nt_preacher
 	id = access_nt_preacher
-	desc = "Absolutism Prime"
+	desc = "Order of the Word Penitent"
 	region = ACCESS_REGION_CHURCH
 
 /var/const/access_nt_inquisitor = 75
 /datum/access/nt_inquisitor
 	id = access_nt_inquisitor
-	desc = "Absolutism Crusader"
+	desc = "Order of the Word Warden"
 	region = ACCESS_REGION_CHURCH
 
 // /var/const/free_access_id = 76
@@ -576,3 +582,9 @@
 /datum/access/crate_cash
 	id = access_crate_cash
 	access_type = ACCESS_TYPE_NONE
+
+/var/const/access_hosp = 201
+/datum/access/hosp
+	id = access_hosp
+	desc = "Steward"
+	region = ACCESS_REGION_COMMAND

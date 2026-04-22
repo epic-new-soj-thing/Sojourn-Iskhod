@@ -1,0 +1,10 @@
+author: AMcilraith
+changes:
+  - add: Introduced Discord verification for server administrator convenience.
+  - del: Removed the previous file-based whitelist system in favor of a 
+      database-based system.
+  - fix: Resolved issues related to loading the whitelist from the database.
+  - tweak: Improved logging for whitelist loading processes and database 
+      connections.
+date: '2025-09-27'
+delete-after: false
