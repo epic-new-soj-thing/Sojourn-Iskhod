@@ -111,22 +111,46 @@
 		return 1
 
 /obj/item/clothing/under/scrubs
+	name = "scrubs"
+	desc = "A loose-fitting garment designed to provide minor protection against biohazards."
+	icon_state = "scrubs"
+	item_state = "scrubs"
+
+/obj/item/clothing/under/scrubs/blue
 	name = "blue scrubs"
-	desc = "A sterile blue uniform designed to protect against contamination."
-	icon_state = "scrubsblue"
-	item_state = "b_suit"
+	color = "#4891e1"
 
 /obj/item/clothing/under/scrubs/green
 	name = "green scrubs"
-	desc = "A sterile green uniform designed to protect against contamination."
-	icon_state = "scrubsgreen"
-	item_state = "scrubsgreen"
+	color = "#255a3e"
 
 /obj/item/clothing/under/scrubs/purple
 	name = "purple scrubs"
-	desc = "A sterile purple uniform designed to protect against contamination."
-	icon_state = "scrubspurple"
-	item_state = "p_suit"
+	color = "#7a1b3f"
+
+/obj/item/clothing/under/scrubs/black
+	name = "black scrubs"
+	color = "#242424"
+
+/obj/item/clothing/under/scrubs/navyblue
+	name = "navy blue scrubs"
+	color = "#1f3a69"
+
+/obj/item/clothing/under/scrubs/lilac
+	name = "lilac scrubs"
+	color = "#c8a2c8"
+
+/obj/item/clothing/under/scrubs/teal
+	name = "teal scrubs"
+	color = "#008080"
+
+/obj/item/clothing/under/scrubs/heliodor
+	name = "heliodor scrubs"
+	color = "#aad539"
+
+/obj/item/clothing/under/scrubs/lavender
+	name = "lavender scrubs"
+	color = "#bebbee"
 
 /obj/item/clothing/under/rank/psych
 	desc = "A calming turquoise turtleneck combined with dark blue slacks."

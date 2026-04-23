@@ -399,20 +399,46 @@ obj/item/clothing/head/beret/syndicate/verb/toggle_style()
 
 //Medical
 /obj/item/clothing/head/surgery
-	name = "blue surgical cap"
-	desc = "A sterile blue surgical cap for medical operations."
-	icon_state = "surgcap_blue"
+	name = "surgical cap"
+	desc = "A cap surgeons wear during operations. Keeps their hair from tickling your internal organs."
+	icon_state = "surgcap"
 	flags_inv = BLOCKHEADHAIR|HIDEEARS
 
 /obj/item/clothing/head/surgery/purple
 	name = "purple surgical cap"
-	desc = "A sterile purple surgical cap for medical operations."
-	icon_state = "surgcap_purple"
+	color = "#7a1b3f"
+
+/obj/item/clothing/head/surgery/blue
+	name = "blue surgical cap"
+	color = "#4891e1"
 
 /obj/item/clothing/head/surgery/green
 	name = "green surgical cap"
-	desc = "A sterile green surgical cap for medical operations."
-	icon_state = "surgcap_green"
+	color = "#255a3e"
+
+/obj/item/clothing/head/surgery/black
+	name = "black surgical cap"
+	color = "#242424"
+
+/obj/item/clothing/head/surgery/navyblue
+	name = "navy blue surgical cap"
+	color = "#1f3a69"
+
+/obj/item/clothing/head/surgery/lilac
+	name = "lilac surgical cap"
+	color = "#c8a2c8"
+
+/obj/item/clothing/head/surgery/teal
+	name = "teal surgical cap"
+	color = "#008080"
+
+/obj/item/clothing/head/surgery/heliodor
+	name = "heliodor surgical cap"
+	color = "#aad539"
+
+/obj/item/clothing/head/surgery/lavender
+	name = "lavender surgical cap"
+	color = "#bebbee"
 
 /obj/item/clothing/head/rank/trooper/beret //blackshield hats
 	name = "blackshield beret"
