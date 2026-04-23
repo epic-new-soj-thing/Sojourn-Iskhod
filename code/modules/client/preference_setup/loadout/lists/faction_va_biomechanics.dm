@@ -110,18 +110,17 @@
 /datum/gear/factionsoteria/scrubs
 	display_name = "scrubs selection"
 	path = /obj/item/clothing/under/scrubs
-	flags = GEAR_HAS_TYPE_SELECTION
-	allowed_roles = list("Psychiatrist","Paramedic","Doctor","Medical Overseer", "Resident")
+	flags = GEAR_HAS_COLOR_SELECTION
+	allowed_roles = list(JOBS_MEDICAL)
 	slot = slot_w_uniform
 	sort_category = "Faction: Vesalius-Andra"
 
 /datum/gear/factionsoteria/surgical
 	display_name = "surgical cap selection"
-	path = /obj/item/clothing/head/surgery/
-	allowed_roles = list("Psychiatrist","Paramedic","Doctor","Medical Overseer", "Resident")
-	cost = 1
+	path = /obj/item/clothing/head/surgery
+	allowed_roles = list(JOBS_MEDICAL)
 	slot = slot_head
-	flags = GEAR_HAS_TYPE_SELECTION
+	flags = GEAR_HAS_COLOR_SELECTION
 	sort_category = "Faction: Vesalius-Andra"
 
 /datum/gear/factionsoteria/snowsuitmedical

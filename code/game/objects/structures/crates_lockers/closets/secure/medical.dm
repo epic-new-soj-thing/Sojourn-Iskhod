@@ -92,30 +92,43 @@
 		new /obj/item/storage/backpack/medical(src)
 	else
 		new /obj/item/storage/backpack/satchel/medical(src)
-	switch(pick("blue", "green", "purple"))
-		if ("blue")
-			new /obj/item/clothing/under/scrubs(src)
-			new /obj/item/clothing/head/surgery(src)
-		if ("green")
-			new /obj/item/clothing/under/scrubs/green(src)
-			new /obj/item/clothing/head/surgery/green(src)
-		if ("purple")
-			new /obj/item/clothing/under/scrubs/purple(src)
-			new /obj/item/clothing/head/surgery/purple(src)
-	switch(pick("blue", "green", "purple"))
-		if ("blue")
-			new /obj/item/clothing/under/scrubs(src)
-			new /obj/item/clothing/head/surgery(src)
-	switch(pick("blue", "green", "purple"))
-		if ("blue")
-			new /obj/item/clothing/under/scrubs(src)
-			new /obj/item/clothing/head/surgery(src)
-		if ("green")
-			new /obj/item/clothing/under/scrubs/green(src)
-			new /obj/item/clothing/head/surgery/green(src)
-		if ("purple")
-			new /obj/item/clothing/under/scrubs/purple(src)
-			new /obj/item/clothing/head/surgery/purple(src)
+	new /obj/item/clothing/under/scrubs/green(src)
+	new /obj/item/clothing/head/surgery/green(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
+	new /obj/item/clothing/shoes/jackboots(src)
+	new /obj/item/reagent_containers/syringe/inaprovaline(src)
+	new /obj/item/clothing/under/rank/medical(src)
+	new /obj/item/clothing/gloves/latex/nitrile(src)
+	new /obj/item/clothing/shoes/reinforced/medical(src)
+	new /obj/item/clothing/head/soft/medical(src)
+	new /obj/item/clothing/suit/storage/toggle/labcoat(src)
+	new /obj/item/clothing/shoes/color(src)
+	new /obj/item/device/radio/headset/headset_med(src)
+	new /obj/item/taperoll/medical(src)
+	new /obj/item/storage/belt/medical/emt(src)
+	new /obj/item/storage/belt/medical/(src)
+	new /obj/item/clothing/suit/storage/surgical_apron(src)
+	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/clothing/accessory/stethoscope(src)
+	new /obj/item/bodybag/cryobag(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/quickclot(src)
+
+/obj/structure/closet/secure_closet/personal/surgeon
+	name = "Vesalius-Andra Surgeon's locker"
+	req_access = list(access_cmo)
+	access_occupy = list(access_medical_equip)
+	icon_state = "med"
+
+/obj/structure/closet/secure_closet/personal/doctor/populate_contents()
+	if(populated_contents)
+		return
+	populated_contents = TRUE
+	if(prob(50))
+		new /obj/item/storage/backpack/medical(src)
+	else
+		new /obj/item/storage/backpack/satchel/medical(src)
+	new /obj/item/clothing/under/scrubs/blue(src)
+	new /obj/item/clothing/head/surgery/blue(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/reagent_containers/syringe/inaprovaline(src)
@@ -136,7 +149,7 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector/quickclot(src)
 
 /obj/structure/closet/secure_closet/personal/paramedic
-	name = "Vesalius-Andra Field Doctor's locker"
+	name = "Vesalius-Andra Nurse's locker"
 	req_access = list(access_cmo)
 	access_occupy = list(access_medical_equip)
 	icon_state = "med"
@@ -150,16 +163,8 @@
 		new /obj/item/storage/backpack/medical(src)
 	else
 		new /obj/item/storage/backpack/satchel/medical(src)
-	switch(pick("blue", "green", "purple"))
-		if ("blue")
-			new /obj/item/clothing/under/scrubs(src)
-			new /obj/item/clothing/head/surgery(src)
-		if ("green")
-			new /obj/item/clothing/under/scrubs/green(src)
-			new /obj/item/clothing/head/surgery/green(src)
-		if ("purple")
-			new /obj/item/clothing/under/scrubs/purple(src)
-			new /obj/item/clothing/head/surgery/purple(src)
+	new /obj/item/clothing/under/scrubs/purple(src)
+	new /obj/item/clothing/head/surgery/purple(src)
 	new /obj/item/clothing/shoes/reinforced/medical(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
 	new /obj/item/clothing/shoes/jackboots(src)
@@ -224,7 +229,7 @@
 	new /obj/item/clothing/suit/storage/toggle/labcoat/medspec(src)
 
 /obj/structure/closet/secure_closet/reinforced/CMO
-	name = "vesalius-andra biolab overseer's locker"
+	name = "vesalius-andra medical overseer's locker"
 	req_access = list(access_cmo)
 	icon_state = "cmo"
 
@@ -242,16 +247,8 @@
 	new /obj/item/clothing/mask/gas(src)
 	new /obj/item/tank/oxygen(src)
 	new /obj/item/clothing/shoes/color(src)
-	switch(pick("blue", "green", "purple"))
-		if ("blue")
-			new /obj/item/clothing/under/scrubs(src)
-			new /obj/item/clothing/head/surgery(src)
-		if ("green")
-			new /obj/item/clothing/under/scrubs/green(src)
-			new /obj/item/clothing/head/surgery/green(src)
-		if ("purple")
-			new /obj/item/clothing/under/scrubs/purple(src)
-			new /obj/item/clothing/head/surgery/purple(src)
+	new /obj/item/clothing/under/scrubs/navyblue(src)
+	new /obj/item/clothing/head/surgery/navyblue(src)
 	new /obj/item/clothing/under/rank/moebius_biolab_officer(src)
 	new /obj/item/clothing/suit/storage/toggle/labcoat/cmo(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/medical(src)
@@ -259,12 +256,10 @@
 	new /obj/item/clothing/gloves/latex(src)
 	new /obj/item/clothing/accessory/halfcape/cbo(src)
 	new /obj/item/clothing/accessory/job/cape/mbo(src) // Both versions of capes for consistency - Seb
-	new /obj/item/rig/cmo(src)
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/clothing/shoes/color/brown(src)
 	new /obj/item/device/radio/headset/heads/cmo(src)
 	new /obj/item/device/flash(src)
-	new /obj/item/reagent_containers/hypospray/vial(src)
 	new /obj/item/storage/lockbox/vials(src)
 	new /obj/item/storage/fancy/vials(src)
 	new /obj/item/storage/firstaid/ifak(src)
