@@ -146,15 +146,15 @@ var/last_staff_request_time = 0
             to_chat(usr, span_warning("You must wait before sending another staff request."))
             return
         var/list/dept_options = list(
-            "Low Council",
-            "Artificer's Guild",
-            "Church",
+            "Iskhod Council",
+            "Artificer Guild",
+            "Order of the Word",
             "Prospectors",
-            "Security Roles",
-            "SI Medical",
-            "SI Research",
-            "FL Cargo",
-            "FL Service"
+            "Iskhod Rangers",
+            "Vesalius-Andra Medical",
+            "Vesalius-Andra Research",
+            "Frontier Logistics",
+            "Independent Contractors"
         )
         var/selected_dept = input(usr, "Select department to request staff from:", "Automated Staff Request") as null|anything in dept_options
         if(selected_dept)
@@ -169,21 +169,21 @@ var/last_staff_request_time = 0
     // Send the ping to the Discord relay (AphroditeBot.py expects TCP or webhook, here we use send2irc)
     var/ping_id = null
     switch(role_to_ping)
-        if("Low Council")
+        if("Iskhod Council")
             ping_id = "lowcouncil"
-        if("Artificer's Guild")
+        if("Artificer Guild")
             ping_id = "guild"
-        if("Security Roles")
+        if("Iskhod Rangers")
             ping_id = "security"
-        if("SI Medical")
+        if("Vesalius-Andra Medical")
             ping_id = "medical"
-        if("SI Research")
+        if("Vesalius-Andra Research")
             ping_id = "science"
-        if("FL Cargo")
+        if("Frontier Logistics")
             ping_id = "cargo"
-        if("FL Service")
+        if("Independent Contractors")
             ping_id = "service"
-        if("Church")
+        if("Order of the Word")
             ping_id = "church"
         if("Prospectors")
             ping_id = "prospectors"
