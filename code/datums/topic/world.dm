@@ -151,6 +151,19 @@
 				positions["misc"] = list()
 			positions["misc"][name] = rank
 
+	// Synthetics don't have crew records, add them manually
+	for(var/mob/living/silicon/ai/ai in SSmobs.mob_list)
+		if(!positions["bot"])
+			positions["bot"] = list()
+		positions["bot"][ai.name] = "Artificial Intelligence"
+
+	for(var/mob/living/silicon/robot/robot in SSmobs.mob_list)
+		if(robot.module && robot.module.hide_on_manifest)
+			continue
+		if(!positions["bot"])
+			positions["bot"] = list()
+		positions["bot"][robot.name] = "[robot.modtype] [robot.braintype]"
+
 	for(var/k in positions)
 		positions[k] = list2params(positions[k]) // converts positions["heads"] = list("Bob"="Captain", "Bill"="CMO") into positions["heads"] = "Bob=Captain&Bill=CMO"
 

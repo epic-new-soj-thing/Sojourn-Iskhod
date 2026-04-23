@@ -244,12 +244,17 @@
 
 				callHook("reassign_employee", list(id_card))
 		if("access")
-			if(!isnull(href_list["allowed"]) && computer && can_run(user, 1))
+			if(!isnull(href_list["allowed"]) && computer && can_run(user, 1) && id_card)
 				var/access_type = text2num(href_list["access_target"])
 				var/access_allowed = text2num(href_list["allowed"])
 				if(access_type in get_access_ids(ACCESS_TYPE_STATION|ACCESS_TYPE_CENTCOM))
 					var/region_type = get_access_region_by_id(access_type)
-					var/list/region_access = GLOB.maps_data.access_modify_region[region_type]
+					var/list/region_access = null
+
+					if(GLOB.maps_data && GLOB.maps_data.access_modify_region)
+						region_access = GLOB.maps_data.access_modify_region[region_type]
+						if(!region_access)
+							region_access = GLOB.maps_data.access_modify_region["[region_type]"]
 
 					// Backward compatibility for maps that still use string region keys.
 					if(!region_access)
@@ -272,6 +277,10 @@
 								region_access = GLOB.maps_data.access_modify_region["ACCESS_REGION_CHURCH"]
 							if(ACCESS_REGION_PROSPECTOR)
 								region_access = GLOB.maps_data.access_modify_region["ACCESS_REGION_PROSPECTOR"]
+
+					// If map config lacks this region mapping, fall back to standard ID-change access.
+					if(!region_access)
+						region_access = list(access_change_ids)
 
 					for(var/access in user_id_card.access)
 						if(access in region_access)
