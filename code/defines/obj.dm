@@ -3,7 +3,7 @@
 	icon_state = "signpost"
 	anchored = 1
 	density = 1
-
+/* Farson: Why the fuck does this do this???? no.
 	attackby(obj/item/W as obj, mob/user as mob)
 		return attack_hand(user)
 
@@ -15,6 +15,7 @@
 				user.forceMove(pick_spawn_location())
 			if("No")
 				return
+*/
 /* LETHALGHOSDT: WTF is this? Layer was set to 99
 /obj/effect/mark
 	var/mark = ""
