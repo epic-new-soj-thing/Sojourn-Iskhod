@@ -381,11 +381,6 @@
 /mob/living/simple/hostile/nightmare,
 /turf/simulated/floor/wood/wild4,
 /area/iskhod/outside/forest)
-"jj" = (
-/obj/structure/multiz/stairs/enter/bottom,
-/obj/structure/multiz/stairs/active/bottom,
-/turf/simulated/floor/industrial/navy_slates_fixed,
-/area/iskhod/outside/forest)
 "js" = (
 /obj/structure/sign/warning/lethal_turrets,
 /turf/simulated/mineral/frostyrock,
@@ -929,15 +924,6 @@
 /turf/simulated/floor/snow/smooth{
 	icon_state = "snow0"
 	},
-/area/iskhod/outside/forest)
-"yu" = (
-/obj/structure/multiz/stairs/enter/bottom{
-	dir = 4
-	},
-/obj/structure/multiz/stairs/active/bottom{
-	dir = 4
-	},
-/turf/simulated/floor/industrial/navy_slates_fixed,
 /area/iskhod/outside/forest)
 "yy" = (
 /obj/structure/grille,
@@ -217996,7 +217982,7 @@ AF
 AF
 AF
 qB
-jj
+Nz
 Fx
 Ob
 qB
@@ -218298,7 +218284,7 @@ AF
 AF
 AF
 qB
-jj
+Nz
 Fx
 Ob
 qB
@@ -222958,9 +222944,9 @@ AF
 AF
 AF
 qB
-yu
-yu
-yu
+To
+To
+To
 qB
 Ad
 Ob
