@@ -143,7 +143,7 @@
 	origin_tech = list(TECH_COMBAT = 5, TECH_MATERIAL = 3)
 	init_recoil = HANDGUN_RECOIL(2)
 	// Accepts both utility and grenade calibers
-	caliber = list(CAL_UTILITY, CAL_GRENADE, CAL_MINIROCKET, CAL_SHOTGUN)
+	caliber = list(CAL_UTILITY, CAL_GRENADE, CAL_MINIROCKET, CAL_SHOTGUN, CAL_FLARE)
 	load_method = SINGLE_CASING
 	handle_casings = HOLD_CASINGS
 	gun_tags = list(GUN_PROJECTILE, GUN_INTERNAL_MAG)
@@ -364,7 +364,7 @@
 	slot_flags = SLOT_BACK|SLOT_BELT
 	force = WEAPON_FORCE_PAINFUL
 	matter = list(MATERIAL_PLASTEEL = 25, MATERIAL_STEEL = 10)
-	caliber = list(CAL_UTILITY, CAL_GRENADE, CAL_SHOTGUN)
+	caliber = list(CAL_UTILITY, CAL_GRENADE, CAL_SHOTGUN, CAL_FLARE)
 	load_method = SINGLE_CASING
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 2)
 	handle_casings = HOLD_CASINGS

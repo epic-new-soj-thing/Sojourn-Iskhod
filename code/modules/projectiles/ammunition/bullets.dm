@@ -404,7 +404,7 @@
 /obj/item/ammo_casing/flare
 	name = "flare shell"
 	desc = "A chemical flare shell designed to produce a distress signal or illuminate an area."
-	caliber = CAL_GRENADE
+	caliber = CAL_FLARE
 	icon_state = "f-shell"
 	projectile_type = /obj/item/projectile/bullet/flare
 	matter = list(MATERIAL_PLASTIC = 1)
