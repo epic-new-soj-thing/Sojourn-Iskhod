@@ -491,8 +491,10 @@
 	busy = FALSE
 
 //	amount_of_reagents -= 40
+	var/needs_soap_warning = FALSE
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
+		needs_soap_warning = H.gloves ? H.gloves.was_bloodied : (H.bloody_hands || H.blood_writes_remaining || H.was_bloodied)
 		// Latex and nitrile gloves are washed completely clean of forensic traces.
 		if(H.gloves && istype(H.gloves, /obj/item/clothing/gloves/latex))
 			H.clean_blood()
@@ -506,6 +508,8 @@
 		SPAN_NOTICE("[user] washes their hands using [src]."),
 		SPAN_NOTICE("You wash your hands using [src].")
 	)
+	if(needs_soap_warning)
+		to_chat(user, SPAN_WARNING("The blood doesn't come off completely with water alone. You'll need soap to wash it off properly."))
 
 /obj/structure/sink/attackby(obj/item/O as obj, mob/living/user as mob)
 	if(busy)
