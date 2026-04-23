@@ -586,5 +586,5 @@
 /var/const/access_hosp = 201
 /datum/access/hosp
 	id = access_hosp
-	desc = "Steward"
+	desc = "Hospitality Manager"
 	region = ACCESS_REGION_COMMAND
