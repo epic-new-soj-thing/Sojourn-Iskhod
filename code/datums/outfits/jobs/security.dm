@@ -32,7 +32,7 @@
 	name = OUTFIT_JOB_NAME("Iskhod Rangers - Lieutenant")
 	uniform = /obj/item/clothing/under/rank/ranger
 	suit = /obj/item/clothing/suit/armor/vest/ironhammer
-	glasses = /obj/item/clothing/glasses/hud/security
+	glasses = /obj/item/clothing/glasses/sechud/tactical
 	l_pocket = /obj/item/device/flash
 	gloves = /obj/item/clothing/gloves/stungloves
 	backpack_contents = list(

@@ -337,7 +337,14 @@
 		var/start = findtext(text, ">") + 1
 		var/end = findtext(text, "</font>")
 		var/inner = (start > 1 && end) ? copytext(text, start, end) : text
-		text = "<font face=\"[signfont]\"><i>[inner]</i></font>"
+		var/ink_color = "black"
+		var/color_start = findtext(text, " color=")
+		if(color_start)
+			color_start += 7
+			var/color_end = findtext(text, ">", color_start)
+			if(color_end)
+				ink_color = copytext(text, color_start, color_end)
+		text = "<font face=\"[signfont]\" color='[ink_color]'><i>[inner]</i></font>"
 	if (links)
 		var/before = copytext(info_links, 1, textindex)
 		var/after = copytext(info_links, textindex)
@@ -392,10 +399,10 @@
 		t = replacetext(t, "\[logo\]", "")
 
 	if (iscrayon)
-		t = "<font face=\"[crayonfont]\" color=[P ? P.colour : "black"]><b>[t]</b></font>"
+		t = "<font face=\"[crayonfont]\" color='[P ? P.colour : "black"]'><b>[t]</b></font>"
 		crayon_pen = TRUE
 	else
-		t = "<font face=\"[deffont]\" color=[P ? P.colour : "black"]>[t]</font>"
+		t = "<font face=\"[deffont]\" color='[P ? P.colour : "black"]'>[t]</font>"
 
 	t = pencode2html(t)
 
