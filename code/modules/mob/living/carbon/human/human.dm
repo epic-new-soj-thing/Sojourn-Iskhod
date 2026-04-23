@@ -1116,6 +1116,131 @@ var/list/rank_prefix = list(\
 	else
 		to_chat(usr, SPAN_WARNING("You failed to check the pulse. Try again."))
 
+/mob/living/carbon/human/proc/get_settable_dislocations()
+	var/list/dislocated_limbs = list()
+
+	for(var/limb_tag in list(BP_L_ARM, BP_R_ARM, BP_L_LEG, BP_R_LEG))
+		var/obj/item/organ/external/limb = get_organ(limb_tag)
+		if(!limb || limb.is_stump())
+			continue
+
+		var/obj/item/organ/internal/bone = limb.get_bone()
+		if(!bone)
+			continue
+
+		var/datum/component/internal_wound/organic/bone_blunt/dislocation/dislocation_wound = bone.GetComponent(/datum/component/internal_wound/organic/bone_blunt/dislocation)
+		if(dislocation_wound)
+			dislocated_limbs += limb
+
+	return dislocated_limbs
+
+/mob/living/carbon/human/verb/set_dislocated_limb()
+	set category = "Object"
+	set name = "Reset dislocated limb"
+	set desc = "Force a dislocated arm or leg back into place."
+	set src in view(1)
+
+	if(usr != src)
+		to_chat(usr, SPAN_WARNING("You can only do this to yourself."))
+		return
+
+	if(stat || restrained())
+		return
+
+	var/list/dislocated_limbs = get_settable_dislocations()
+	if(!LAZYLEN(dislocated_limbs))
+		to_chat(src, SPAN_NOTICE("You don't have any dislocated arms or legs to reset."))
+		return
+
+	var/obj/item/organ/external/target_limb
+	if(LAZYLEN(dislocated_limbs) == 1)
+		target_limb = dislocated_limbs[1]
+	else
+		var/list/choices = list()
+		for(var/obj/item/organ/external/limb in dislocated_limbs)
+			choices["[capitalize(limb.name)] ([limb.joint])"] = limb
+
+		var/selection = input(src, "Which dislocation do you try to reset?", "Reset Dislocation") as null|anything in choices
+		if(!selection)
+			return
+		target_limb = choices[selection]
+
+	if(!target_limb || !Adjacent(src))
+		return
+
+	visible_message(
+		SPAN_WARNING("[src] braces [target_limb.name] and starts forcing the [target_limb.joint] back into place!"),
+		SPAN_WARNING("You brace your [target_limb.name] and start forcing the [target_limb.joint] back into place...")
+	)
+
+	if(!do_after(src, 25, target_limb))
+		to_chat(src, SPAN_WARNING("You lose your grip before you can reset it."))
+		return
+
+	var/obj/item/organ/internal/bone = target_limb.get_bone()
+	if(!bone)
+		to_chat(src, SPAN_WARNING("You can't find the right leverage now."))
+		return
+
+	var/datum/component/internal_wound/organic/bone_blunt/dislocation/dislocation_wound = bone.GetComponent(/datum/component/internal_wound/organic/bone_blunt/dislocation)
+	if(!dislocation_wound)
+		to_chat(src, SPAN_NOTICE("It already seems to be in place."))
+		return
+
+	var/dislocation_state = dislocation_wound.severity
+	bone.remove_wound(dislocation_wound)
+	playsound(loc, 'sound/weapons/jointORbonebreak.ogg', 50, 1, -1)
+	shock_stage += max(10, dislocation_state * 8)
+	if(!((species.flags & NO_PAIN) || (PAIN_LESS in mutations)))
+		emote("scream")
+
+	if(dislocation_state <= 1)
+		custom_pain("A blinding bolt of pain tears through your [target_limb.joint]!", 1)
+		adjustHalLoss(18)
+		Weaken(1)
+		visible_message(
+			SPAN_NOTICE("[src] resets [src]'s [target_limb.joint] with a sharp pop."),
+			SPAN_DANGER("You reset your [target_limb.joint] with a sharp pop. The pain is excruciating, but you avoid further damage.")
+		)
+		return
+
+	custom_pain("Unbearable agony explodes through your [target_limb.name]!", 1)
+	adjustHalLoss(32)
+	Weaken(2)
+	var/bio_stat = stats?.getStat(STAT_BIO) || 0
+	var/fracture_chance = clamp(30 + (dislocation_state * 4) - round(bio_stat * 0.7), 10, 85)
+	var/hemorrhage_chance = clamp(20 + (dislocation_state * 3) - round(bio_stat * 0.5), 5, 75)
+
+	var/fracture_triggered = FALSE
+	var/hemorrhage_triggered = FALSE
+
+	if(prob(fracture_chance))
+		bone.add_wound(/datum/component/internal_wound/organic/bone_fracture)
+		fracture_triggered = TRUE
+
+	if(prob(hemorrhage_chance))
+		var/list/bleed_targets = target_limb.internal_organs.Copy()
+		bleed_targets -= bone
+		var/obj/item/organ/internal/bleed_target
+		if(LAZYLEN(bleed_targets))
+			bleed_target = pick(bleed_targets)
+		else
+			bleed_target = bone
+
+		bleed_target?.add_wound(/datum/component/internal_wound/organic/blunt/hemorrhage)
+		hemorrhage_triggered = TRUE
+
+	if(fracture_triggered || hemorrhage_triggered)
+		visible_message(
+			SPAN_DANGER("[src] yanks [src]'s [target_limb.joint] back into place with a sickening crack."),
+			SPAN_DANGER("You wrench your [target_limb.joint] back into place, but something tears inside.")
+		)
+	else
+		visible_message(
+			SPAN_NOTICE("[src] forces [src]'s [target_limb.joint] back into place."),
+			SPAN_NOTICE("You force your [target_limb.joint] back into place. It is agonizing, but nothing else seems to worsen.")
+		)
+
 /mob/living/carbon/human/proc/set_species(var/new_species, var/default_color, var/rebuild_organs = TRUE)
 	if(!new_species)
 		if(dna)
