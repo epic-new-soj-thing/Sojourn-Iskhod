@@ -118,9 +118,9 @@
 					receive_user_command("cycle_int_door")
 				if("cycle")
 					if(memory["interior_status"]["state"] == "open")
-						receive_user_command("cycle_ext")
+						receive_user_command("cycle_ext_door")
 					else
-						receive_user_command("cycle_int")
+						receive_user_command("cycle_int_door")
 		else
 			switch(signal.data["command"])
 				if("cycle_exterior")

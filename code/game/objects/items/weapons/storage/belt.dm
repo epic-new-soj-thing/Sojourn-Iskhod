@@ -113,6 +113,7 @@
 		// Lighting and electrical systems
 		/obj/item/device/lightreplacer,
 		/obj/item/rcd,
+		/obj/item/rpd,
 		/obj/item/device/lighting/toggleable/flashlight,
 		/obj/item/stack/cable_coil,
 		/obj/item/device/t_scanner,
