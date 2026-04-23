@@ -19,8 +19,8 @@
 	new /obj/item/device/flash(src)
 	new /obj/item/gun/energy/captain(src)
 	new /obj/item/storage/pouch/baton_holster/telebaton(src)
-	new /obj/item/clothing/suit/hooded/wintercoat/security/captain(src)
-	new /obj/item/clothing/head/ushanka/security(src)
+	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
+	new /obj/item/clothing/head/ushanka(src)
 	new /obj/item/storage/pouch/pistol_holster(src)
 	new /obj/item/clothing/accessory/holster/saber/facility_director/occupied(src)
 
@@ -38,6 +38,7 @@
 	new /obj/item/clothing/head/rank/first_officer(src)
 	new /obj/item/clothing/suit/armor/vest(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/captain(src)
+	new /obj/item/clothing/head/ushanka(src)
 	new /obj/item/clothing/shoes/jackboots(src)
 	new /obj/item/device/radio/headset/heads/hop(src)
 	new /obj/item/gun/projectile/colt/ten(src)

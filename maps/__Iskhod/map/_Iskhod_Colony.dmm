@@ -37881,6 +37881,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/accessory/holster/saber/militiasergeant/occupied,
 /turf/simulated/floor/carpet,
 /area/iskhod/security/inspectors_office)
 "joI" = (
@@ -67421,7 +67422,7 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section1)
 "qJx" = (
-/obj/structure/closet/secure_closet/warden,
+/obj/structure/closet/crate/secure/weapon/amr,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/security/armoryshop)
 "qJz" = (
@@ -69939,10 +69940,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/cbo/quarters)
-"rph" = (
-/obj/structure/closet/crate/secure/weapon/amr,
-/turf/simulated/floor/industrial/grey_slates_long,
-/area/iskhod/security/armoryshop)
 "rpj" = (
 /obj/structure/disposalpipe/junction{
 	dir = 8
@@ -76530,7 +76527,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/range)
 "tah" = (
-/obj/structure/closet/secure_closet/armorer,
+/obj/structure/closet/secure_closet/warden,
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/security/inspectors_office)
 "tat" = (
@@ -108195,7 +108192,7 @@ fHV
 oKW
 lzk
 fRl
-rph
+cll
 pEc
 dgS
 uHv
