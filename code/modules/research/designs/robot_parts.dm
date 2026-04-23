@@ -170,7 +170,12 @@
 	desc = "Produces a single-use positronic intelligence holder. When activated, it will attempt to generate a personality; and if successful, permanently engraves it into the storage medium."
 	build_path = /obj/item/device/mmi/digital/posibrain
 
-/datum/design/research/item/borismodule
+/datum/design/research/item/robot_upgrade/borismodule
 	name = "ISHAEK Remote Control Chip"
 	desc = "Allows for remote AI control when inserted into an empty shell. Experimental."
 	build_path = /obj/item/borg/upgrade/boris
+
+/datum/design/research/item/robot_upgrade/customgun
+	name = "CWMF-04 'Jaeger' Frame"
+	desc = "A reinforced mounting frame with electronic firing pin inserts, a mag-well replacement, and heavy-duty power systems. Meant to add additional, custom weaponry to Synthetics"
+	build_path = /obj/item/borg/upgrade/customgun

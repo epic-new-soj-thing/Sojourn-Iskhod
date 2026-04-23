@@ -47,6 +47,12 @@
 		return 0
 	return ..()
 
+//ISHKOD MODULAR EDIT: Fixes VERY specific edge cases of weapons with a cover being entirely unreloadable if you had only one hand.
+/obj/item/gun/projectile/automatic/lmg/verb/toggle_cover_onehand(mob/user)
+	set name = "Toggle Weapon Cover"
+	set category = "Object"
+	toggle_cover()
+
 /obj/item/gun/projectile/automatic/lmg/proc/toggle_cover(mob/user)
 	cover_open = !cover_open
 	to_chat(user, SPAN_NOTICE("You [cover_open ? "open" : "close"] \the [src]'s cover."))
