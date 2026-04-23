@@ -322,7 +322,7 @@
 	unlocks_designs = list(
 							/datum/design/research/circuit/aicore,
 							/datum/design/research/circuit/aiupload,
-							/datum/design/research/item/borismodule
+							/datum/design/research/item/robot_upgrade/borismodule
 							)
 
 /datum/technology/artificial_intelligence_laws
