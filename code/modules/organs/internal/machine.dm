@@ -90,8 +90,7 @@
 
 /obj/item/organ/internal/cell/replaced_mob(mob/living/carbon/human/target)
 	..()
-	// Do not allow reviving FBPs/synths by re-inserting the cell; they must be revived with a jumper cable kit or similar.
-	if(owner.isSynthetic())
+	if(!owner || !owner.isSynthetic())
 		return
 	// This is very ghetto way of rebooting an IPC. TODO better way.
 	if(owner.stat == DEAD)
@@ -136,6 +135,15 @@
 		BITSET(owner.hud_updateflag, HEALTH_HUD)
 		BITSET(owner.hud_updateflag, STATUS_HUD)
 		BITSET(owner.hud_updateflag, LIFE_HUD)
+
+		if(owner.stats)
+			if(owner.stats.getPerk(PERK_REZ_SICKNESS_MILD))
+				owner.stats.removePerk(PERK_REZ_SICKNESS_MILD)
+			if(owner.stats.getPerk(PERK_REZ_SICKNESS))
+				owner.stats.removePerk(PERK_REZ_SICKNESS)
+			if(owner.stats.getPerk(PERK_REZ_SICKNESS_SEVERE))
+				owner.stats.removePerk(PERK_REZ_SICKNESS_SEVERE)
+			owner.stats.addPerk(PERK_REZ_SICKNESS_FATAL)
 
 		owner.visible_message(SPAN_DANGER("\The [owner] twitches visibly!"))
 
