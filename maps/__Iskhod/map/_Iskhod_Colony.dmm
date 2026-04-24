@@ -3004,7 +3004,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/effect/floor_decal/industrial_plant,
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/workshop)
@@ -3822,11 +3821,13 @@
 "aUj" = (
 /obj/item/storage/briefcase/inflatable,
 /obj/structure/closet/radiation,
-/obj/machinery/light/small,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -27
+	},
+/obj/machinery/light{
+	brightness_power = 1
 	},
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/engine_airlock)
@@ -5612,10 +5613,6 @@
 	},
 /turf/simulated/floor/industrial/checker_large,
 /area/iskhod/crew_quarters/kitchen)
-"bpW" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark,
-/area/iskhod/engineering/waste)
 "bqe" = (
 /obj/structure/table/rack/shelf,
 /obj/item/storage/briefcase/crimekit,
@@ -11139,7 +11136,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_smes)
 "cIB" = (
 /obj/effect/floor_decal/spline/wood{
@@ -13871,7 +13868,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_smes)
 "drQ" = (
 /obj/machinery/door/unpowered/simple/wood,
@@ -15956,7 +15953,7 @@
 	brightness_power = 1;
 	dir = 8
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "dTr" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
@@ -16965,6 +16962,9 @@
 /obj/item/device/radio/intercom{
 	dir = 8;
 	pixel_x = 25
+	},
+/obj/machinery/portable_atmospherics/canister/plasma{
+	start_pressure = 15000
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -19067,9 +19067,6 @@
 /turf/simulated/floor/wood,
 /area/iskhod/medical/medbreak)
 "eGS" = (
-/obj/structure/window/basic/iskhod{
-	dir = 8
-	},
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#0892d0"
@@ -20255,7 +20252,7 @@
 /area/iskhod/hallway/surface/section4)
 "eWw" = (
 /obj/structure/reagent_dispensers/watertank/huge,
-/turf/simulated/floor/tiled/dark/panels,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "eWP" = (
 /obj/structure/bed/chair/office/dark{
@@ -21214,7 +21211,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/waste)
 "fjN" = (
 /obj/structure/disposalpipe/segment,
@@ -26030,7 +26027,8 @@
 	dir = 9;
 	pixel_y = 0
 	},
-/turf/simulated/floor/tiled/dark,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/waste)
 "gtK" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -27724,7 +27722,7 @@
 /obj/structure/reagent_dispensers/sterilizine{
 	pixel_y = -30
 	},
-/turf/simulated/floor/tiled/dark/panels,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "gOO" = (
 /turf/simulated/wall/iskhod_blue,
@@ -29148,7 +29146,7 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/nt/custodian,
-/turf/simulated/floor/tiled/dark/panels,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "hjx" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -31886,7 +31884,7 @@
 /obj/structure/closet/wall_mounted/firecloset{
 	pixel_x = -32
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/engine_smes)
 "hTm" = (
 /obj/structure/disposalpipe/segment,
@@ -33156,7 +33154,7 @@
 	pixel_x = 8;
 	pixel_y = -2
 	},
-/turf/simulated/floor/tiled/dark/panels,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "ikc" = (
 /obj/structure/medical_stand,
@@ -33704,8 +33702,7 @@
 	pixel_y = 25
 	},
 /obj/machinery/light{
-	dir = 1;
-	light_color = "#0892d0"
+	dir = 1
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -33797,7 +33794,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/waste)
 "isL" = (
 /obj/structure/table/reinforced,
@@ -36818,12 +36815,12 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section1)
 "jbJ" = (
-/obj/structure/window/basic/iskhod{
-	dir = 8
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/canister/plasma{
+	start_pressure = 15000
 	},
-/obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering)
+/area/iskhod/engineering/engine_room)
 "jbO" = (
 /obj/structure/railing/grey{
 	dir = 4
@@ -36988,7 +36985,7 @@
 /area/iskhod/command/cbo)
 "jea" = (
 /obj/structure/closet/jcloset,
-/turf/simulated/floor/tiled/dark/panels,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "jee" = (
 /turf/simulated/wall/iskhod_green,
@@ -39342,7 +39339,7 @@
 	d2 = 8;
 	icon_state = "0-8"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_smes)
 "jGC" = (
 /obj/item/newspaper,
@@ -42033,10 +42030,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/stairwell)
-"koB" = (
-/obj/machinery/atmospherics/valve,
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/iskhod/engineering/engine_room)
 "koH" = (
 /obj/structure/catwalk,
 /obj/structure/catwalk,
@@ -44586,6 +44579,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/atmos)
 "kUO" = (
@@ -48748,7 +48742,7 @@
 /obj/structure/mopbucket{
 	pixel_x = -5
 	},
-/turf/simulated/floor/tiled/dark/panels,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "lZE" = (
 /obj/structure/disposalpipe/segment{
@@ -53356,9 +53350,6 @@
 /turf/simulated/floor/industrial/white_large_slates,
 /area/iskhod/service/showers/public)
 "njp" = (
-/obj/structure/window/basic/iskhod{
-	dir = 4
-	},
 /obj/random/furniture/pottedplant,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering)
@@ -57111,10 +57102,10 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/medical/psych)
 "odz" = (
-/obj/machinery/atmospherics/pipe/simple/visible/black,
 /obj/effect/floor_decal/industrial/warning{
 	dir = 1
 	},
+/obj/machinery/atmospherics/valve,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
 "oei" = (
@@ -57313,6 +57304,7 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/atmos/storage)
 "ohy" = (
@@ -58453,7 +58445,7 @@
 	brightness_power = 1;
 	dir = 8
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/waste)
 "ovb" = (
 /turf/simulated/shuttle/floor/science{
@@ -58493,7 +58485,7 @@
 /obj/item/stack/material/plastic{
 	amount = 120
 	},
-/turf/simulated/floor/tiled/dark/orangecorner,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/workshop)
 "ovy" = (
 /obj/structure/closet/secure_closet/personal/robo,
@@ -64859,7 +64851,7 @@
 /obj/random/tool/low_chance,
 /obj/random/material/low_chance,
 /obj/item/oddity/blackbox_nanoforge,
-/turf/simulated/floor/tiled/dark/orangecorner,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/workshop)
 "qaj" = (
 /obj/effect/decal/cleanable/dirt,
@@ -65738,7 +65730,7 @@
 	d2 = 4;
 	icon_state = "0-4"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_smes)
 "qmj" = (
 /obj/structure/bed/chair/office/dark{
@@ -66169,7 +66161,7 @@
 /obj/structure/reagent_dispensers/cleaner{
 	pixel_y = -30
 	},
-/turf/simulated/floor/tiled/dark/panels,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "qrW" = (
 /obj/structure/boulder,
@@ -66799,12 +66791,9 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/crew_quarters/sleep/cryo2)
 "qBC" = (
-/obj/machinery/atmospherics/pipe/simple/visible/blue,
-/obj/effect/floor_decal/industrial/warning{
-	dir = 1
-	},
-/turf/simulated/floor/tiled/dark/techfloor,
-/area/iskhod/engineering/engine_room)
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/engineering/atmos)
 "qBG" = (
 /turf/simulated/floor/asteroid/grass/jungle,
 /area/iskhod/crew_quarters/hydroponics)
@@ -67597,7 +67586,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/valve,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/engine_room)
 "qLV" = (
@@ -71563,7 +71551,7 @@
 /obj/structure/reagent_dispensers/ammonia{
 	pixel_y = -30
 	},
-/turf/simulated/floor/tiled/dark/panels,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "rNi" = (
 /obj/random/cluster/roaches_hoard,
@@ -76279,7 +76267,7 @@
 /area/iskhod/abandoned/strip_club)
 "sWF" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/waste)
 "sWN" = (
 /obj/structure/disposalpipe/segment,
@@ -77498,7 +77486,7 @@
 /obj/item/storage/bag/trash/big{
 	pixel_x = -7
 	},
-/turf/simulated/floor/tiled/dark/panels,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "tni" = (
 /obj/structure/table/glass,
@@ -79470,15 +79458,10 @@
 /turf/simulated/floor/tiled/dark/golden,
 /area/iskhod/absolutism/bioreactor)
 "tKH" = (
-/obj/machinery/atmospherics/portables_connector{
-	dir = 1;
-	name = "ADD COLD"
-	},
-/obj/machinery/portable_atmospherics/canister/plasma{
-	start_pressure = 15000
-	},
-/turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering/engine_room)
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/dark,
+/area/iskhod/engineering/atmos)
 "tLa" = (
 /obj/structure/table/marble,
 /obj/item/material/ashtray,
@@ -82946,7 +82929,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/waste)
 "uFl" = (
 /obj/structure/table/reinforced,
@@ -83987,16 +83970,6 @@
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/medical/chemstor)
-"uSU" = (
-/obj/structure/window/basic/iskhod{
-	dir = 4
-	},
-/obj/machinery/light{
-	brightness_power = 1;
-	dir = 8
-	},
-/turf/simulated/floor/tiled/dark/orangecorner,
-/area/iskhod/engineering)
 "uSZ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable/cyan{
@@ -84020,7 +83993,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/waste)
 "uTP" = (
 /obj/machinery/ai_slipper{
@@ -85388,7 +85361,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/waste)
 "vmx" = (
 /turf/simulated/shuttle/wall/escpod{
@@ -90171,10 +90144,8 @@
 	d2 = 4;
 	icon_state = "1-4"
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/effect/floor_decal/industrial_plant,
 /obj/machinery/hologram/holopad,
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -90545,7 +90516,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/floor/tiled/dark,
+/turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/engineering/waste)
 "wCQ" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/yellow{
@@ -92048,9 +92019,6 @@
 /obj/machinery/light{
 	dir = 4;
 	icon_state = "tube1"
-	},
-/obj/machinery/portable_atmospherics/canister/plasma{
-	start_pressure = 15000
 	},
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/engine_room)
@@ -94742,12 +94710,20 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2central)
 "xIf" = (
-/obj/machinery/power/smes/buildable{
-	RCon_tag = "Atmospherics"
-	},
 /obj/structure/cable/cyan{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/machinery/power/smes/buildable{
+	RCon_tag = "Atmospherics";
+	charge = 5e+006;
+	cur_coils = 4;
+	input_attempt = 1;
+	input_level = 5e+006;
+	input_level_max = 5e+006;
+	output_attempt = 1;
+	output_level = 5e+006;
+	output_level_max = 5e+006
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/atmos)
@@ -96223,7 +96199,7 @@
 	dir = 8
 	},
 /obj/machinery/suit_storage_unit/nt/custodian,
-/turf/simulated/floor/tiled/dark/panels,
+/turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering)
 "xZm" = (
 /obj/machinery/atmospherics/pipe/simple/visible/red{
@@ -111452,7 +111428,7 @@ uQe
 paa
 boG
 xoP
-xbz
+qBC
 hXy
 hXy
 xbz
@@ -111469,7 +111445,7 @@ xbz
 kXF
 hXy
 dLm
-hSP
+tKH
 wlC
 fsT
 oXK
@@ -114698,7 +114674,7 @@ hwV
 lwI
 mgO
 njp
-uSU
+cyo
 dqo
 rKW
 hdt
@@ -115101,7 +115077,7 @@ dxA
 vRO
 eci
 mgO
-jbJ
+njp
 eGS
 iLL
 rKW
@@ -116727,7 +116703,7 @@ uAx
 rKW
 oQS
 pGe
-bpW
+sWF
 uEY
 ewG
 tRj
@@ -119546,10 +119522,10 @@ hJx
 hJx
 hJx
 hJx
-nuO
-hIW
+ybV
+nuD
 jSW
-qBC
+odz
 qLU
 dgO
 pXN
@@ -120758,11 +120734,11 @@ hJx
 hJx
 hJx
 hJx
-ybV
-nuD
+nuO
+hIW
 vLR
 odz
-koB
+fJN
 rJn
 pXN
 pXN
@@ -150057,7 +150033,7 @@ sMC
 bvk
 ikJ
 myo
-tKH
+xwE
 lDb
 ddm
 baJ
@@ -150259,7 +150235,7 @@ sMC
 iDE
 iDE
 cQJ
-cQJ
+jbJ
 sMC
 mxk
 rsz
