@@ -1721,6 +1721,10 @@
 /area/iskhod/rnd/robotics)
 "avL" = (
 /obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	id = "AICore";
+	name = "AI core maintenance hatch"
+	},
 /turf/simulated/floor/tiled/white/techfloor,
 /area/iskhod/ai/core)
 "avN" = (
@@ -39466,8 +39470,8 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
 "jGv" = (
-/turf/simulated/mineral/planet,
-/area/turret_protected/ai)
+/turf/unsimulated/mineral/cold,
+/area/iskhod/maintenance/undergroundfloor2east)
 "jGA" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_alt,
 /obj/structure/cable/cyan{
@@ -52670,6 +52674,9 @@
 /obj/structure/railing,
 /turf/simulated/floor/reinforced,
 /area/iskhod/engineering/engine_room)
+"mXP" = (
+/turf/unsimulated/mineral/transition,
+/area/colony)
 "mXW" = (
 /obj/structure/table/rack,
 /obj/effect/floor_decal/industrial/outline/red,
@@ -56186,7 +56193,7 @@
 /area/iskhod/medical/ward)
 "nOl" = (
 /obj/effect/step_trigger/A_colony_to_forest_1,
-/turf/unsimulated/mineral/transition,
+/turf/space,
 /area/iskhod/outside/inside_colony/east)
 "nOy" = (
 /obj/structure/table/woodentable,
@@ -66479,7 +66486,7 @@
 /area/iskhod/crew_quarters/pool)
 "qsK" = (
 /obj/effect/step_trigger/A_colony_to_forest_2,
-/turf/unsimulated/mineral/transition,
+/turf/space,
 /area/iskhod/outside/inside_colony/east)
 "qsS" = (
 /obj/machinery/atmospherics/binary/passive_gate{
@@ -78001,6 +78008,12 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/ai/control)
+"tpv" = (
+/obj/structure/sign/warning/nosmoking/small{
+	pixel_y = 32
+	},
+/turf/simulated/wall/r_wall,
+/area/turret_protected/ai)
 "tpw" = (
 /obj/structure/railing{
 	dir = 1;
@@ -85019,6 +85032,10 @@
 	},
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster/quarters)
+"vdr" = (
+/obj/machinery/porta_turret,
+/turf/simulated/floor/greengrid,
+/area/iskhod/ai/core)
 "vdB" = (
 /turf/simulated/wall/iskhod_green,
 /area/iskhod/security/evidencestorage)
@@ -95472,6 +95489,10 @@
 /area/iskhod/medical/medbay/uppercor)
 "xMy" = (
 /obj/effect/window_lwall_spawn/reinforced,
+/obj/machinery/door/blast/regular{
+	id = "AICore";
+	name = "AI core maintenance hatch"
+	},
 /turf/simulated/floor/greengrid,
 /area/turret_protected/ai)
 "xMC" = (
@@ -168691,7 +168712,7 @@ evF
 evF
 evF
 evF
-jGv
+wzI
 wzI
 wzI
 wzI
@@ -168699,7 +168720,7 @@ aqj
 wzI
 wzI
 wzI
-evF
+gkK
 evF
 evF
 evF
@@ -168892,7 +168913,7 @@ evF
 evF
 evF
 evF
-evF
+gkK
 wzI
 wzI
 ilS
@@ -168902,7 +168923,7 @@ kMs
 kVA
 wzI
 wzI
-evF
+gkK
 evF
 evF
 jEF
@@ -169094,7 +169115,7 @@ evF
 evF
 evF
 evF
-evF
+gkK
 wzI
 prG
 ukq
@@ -169104,7 +169125,7 @@ qfl
 ukq
 edx
 wzI
-evF
+gkK
 evF
 evF
 jEF
@@ -169296,8 +169317,8 @@ evF
 evF
 evF
 evF
-evF
-wzI
+gkK
+tpv
 cSu
 xmM
 xmM
@@ -169306,7 +169327,7 @@ qRw
 tCw
 lYp
 wzI
-evF
+gkK
 evF
 evF
 jEF
@@ -169498,7 +169519,7 @@ evF
 evF
 evF
 evF
-evF
+gkK
 wzI
 wMJ
 xmM
@@ -169508,7 +169529,7 @@ lIR
 oyz
 tOF
 wzI
-evF
+gkK
 evF
 evF
 jEF
@@ -169700,7 +169721,7 @@ evF
 evF
 evF
 evF
-evF
+gkK
 wzI
 uEv
 xmM
@@ -169710,7 +169731,7 @@ bZW
 lsH
 qdc
 wzI
-evF
+gkK
 evF
 evF
 jEF
@@ -169902,7 +169923,7 @@ evF
 evF
 evF
 evF
-evF
+jGv
 wzI
 prG
 ilS
@@ -169912,7 +169933,7 @@ lIR
 ilS
 edx
 wzI
-evF
+jGv
 evF
 evF
 jEF
@@ -170104,7 +170125,7 @@ evF
 evF
 evF
 evF
-evF
+jGv
 wzI
 wzI
 xMy
@@ -170114,7 +170135,7 @@ lIR
 xMy
 wzI
 wzI
-evF
+jGv
 evF
 evF
 evF
@@ -170306,8 +170327,8 @@ evF
 evF
 evF
 evF
-evF
-evF
+jGv
+jGv
 wzI
 pfo
 lIR
@@ -170315,8 +170336,8 @@ skE
 lIR
 pfo
 wzI
-evF
-evF
+jGv
+jGv
 evF
 evF
 evF
@@ -170509,15 +170530,15 @@ evF
 evF
 evF
 evF
-evF
-gkK
+jGv
+jGv
 lIR
 lIR
+vdr
 lIR
 lIR
-lIR
-gkK
-evF
+jGv
+jGv
 evF
 evF
 evF
@@ -170712,13 +170733,13 @@ evF
 evF
 evF
 evF
-evF
-evF
+jGv
+jGv
 lIR
 lIR
 lIR
-evF
-evF
+jGv
+jGv
 evF
 evF
 evF
@@ -170915,11 +170936,11 @@ evF
 evF
 evF
 evF
-evF
-evF
-evF
-evF
-evF
+jGv
+jGv
+jGv
+jGv
+jGv
 evF
 evF
 evF
@@ -203341,7 +203362,7 @@ qwj
 qwj
 qwj
 nOl
-cqi
+mXP
 cqi
 "}
 (125,1,3) = {"
@@ -203543,7 +203564,7 @@ qwj
 qwj
 qwj
 qsK
-cqi
+mXP
 cqi
 "}
 (126,1,3) = {"
