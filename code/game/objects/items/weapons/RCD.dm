@@ -115,7 +115,7 @@
 				build_delay = 40 /construction_speed
 				build_cost =  3
 				build_type =  "wall"
-				build_turf =  /turf/simulated/wall
+				build_turf =  /turf/simulated/wall/iskhod
 
 		if(2)
 			if(gotBlocked)

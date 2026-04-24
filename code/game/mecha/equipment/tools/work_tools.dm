@@ -231,7 +231,7 @@
 				if(do_after_cooldown(target))
 					if(disabled)
 						return
-					F.ChangeTurf(/turf/simulated/wall)
+					F.ChangeTurf(/turf/simulated/wall/iskhod)
 					playsound(target, 'sound/items/Deconstruct.ogg', 50, 1)
 					chassis.spark_system.start()
 					chassis.use_power(energy_drain * 2)
