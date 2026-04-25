@@ -9031,13 +9031,7 @@
 /area/iskhod/rnd/scient)
 "ceB" = (
 /obj/structure/grille/broken,
-/obj/structure/barricade,
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472;
-	temperature = 240
-	},
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "ceO" = (
 /obj/effect/decal/cleanable/rubble,
@@ -54460,7 +54454,8 @@
 	},
 /obj/machinery/door/airlock/multi_tile/glass{
 	id_tag = "north_gate";
-	name = "North Gate Airlock"
+	name = "North Gate Airlock";
+	req_one_access = list(19,63)
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/iskhod/security/maingate)
@@ -61128,16 +61123,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section2)
-"paL" = (
-/obj/structure/grille,
-/obj/structure/barricade,
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472;
-	temperature = 240
-	},
-/area/iskhod/dungeon/outside/abandoned_outpost)
 "paN" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -66400,7 +66385,8 @@
 	},
 /obj/machinery/door/airlock/multi_tile/glass{
 	id_tag = "south_gate";
-	name = "South Gate Airlock"
+	name = "South Gate Airlock";
+	req_one_access = list(19,63)
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/iskhod/security/maingate)
@@ -209944,7 +209930,7 @@ ycV
 ycV
 ycV
 ycV
-paL
+qzn
 akj
 bbK
 hrv
