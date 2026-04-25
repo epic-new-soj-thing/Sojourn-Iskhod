@@ -47,6 +47,7 @@ var/const/CHARACTER_PREFERENCE_INPUT_TITLE = "Character Preference"
 	name = "Matchmaking"
 	sort_order = 6
 	category_item_type = /datum/category_item/player_setup_item/relations
+	/// THIS WAS NOT USED, COMMENTED OUT TO REMOVE UNNECCESSARY SETUP FEATURE. REMOVING THIS ALONE BREAKS THE GAME LOL.
 
 /datum/category_group/player_setup_category/loadout_preferences
 	name = "Loadout"

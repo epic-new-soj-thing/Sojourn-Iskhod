@@ -30721,7 +30721,6 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/light/small,
 /obj/structure/sign/security/preproom{
 	pixel_y = -30
 	},
@@ -41926,12 +41925,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/iskhod/maintenance/substation/medical)
-"klW" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/simulated/floor/industrial/navy_large_slates,
-/area/iskhod/security/sechall)
 "klX" = (
 /obj/structure/closet/coffin,
 /obj/effect/floor_decal/industrial/box/white,
@@ -51880,6 +51873,7 @@
 /obj/item/tank/emergency_oxygen/double,
 /obj/item/tank/emergency_nitgen,
 /obj/item/tank/emergency_nitgen,
+/obj/machinery/light/small,
 /turf/simulated/floor/wood,
 /area/iskhod/security/locker)
 "mLG" = (
@@ -56193,7 +56187,7 @@
 /area/iskhod/medical/ward)
 "nOl" = (
 /obj/effect/step_trigger/A_colony_to_forest_1,
-/turf/space,
+/turf/simulated/floor/rock/dark,
 /area/iskhod/outside/inside_colony/east)
 "nOy" = (
 /obj/structure/table/woodentable,
@@ -66486,7 +66480,7 @@
 /area/iskhod/crew_quarters/pool)
 "qsK" = (
 /obj/effect/step_trigger/A_colony_to_forest_2,
-/turf/space,
+/turf/simulated/floor/rock/dark,
 /area/iskhod/outside/inside_colony/east)
 "qsS" = (
 /obj/machinery/atmospherics/binary/passive_gate{
@@ -85450,10 +85444,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/glass_security{
-	id_tag = "BrigFoyer";
-	layer = 2.8;
-	name = "Security Obs";
-	req_access = list(19,63)
+	name = "Security Post";
+	req_access = list(63)
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/main)
@@ -87328,10 +87320,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/glass_security{
-	id_tag = "BrigFoyer";
-	layer = 2.8;
-	name = "Security Obs";
-	req_access = list(19,63)
+	name = "Security Post";
+	req_access = list(63)
 	},
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/main)
@@ -144471,7 +144461,7 @@ lMa
 tgF
 tgF
 rPg
-klW
+eMy
 akM
 ojK
 iJe
@@ -145683,7 +145673,7 @@ lLy
 bsE
 gMM
 dhx
-klW
+eMy
 bCc
 ojK
 pOQ
