@@ -26,16 +26,6 @@
 	icon_door = "chemical"
 	req_access = list(access_chemistry)
 
-/obj/structure/closet/secure_closet/chemicals/allowed(mob/M)
-	// Chemistry access only; medical staff except nurses and paramedics (SLTs) may also access
-	if(!istype(M))
-		return FALSE
-	var/list/accesses = M.GetAccess()
-	if(access_cmo in accesses)
-		return TRUE
-	if((access_chemistry in accesses) && (access_surgery in accesses) && !(access_paramedic in accesses))
-		return TRUE
-	return FALSE
 
 /obj/structure/closet/secure_closet/chemicals/populate_contents()
 	if(populated_contents)
