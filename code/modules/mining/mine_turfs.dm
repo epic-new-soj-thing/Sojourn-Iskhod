@@ -17,6 +17,13 @@
 	opacity = 1
 	layer = BELOW_MOB_LAYER
 
+/turf/unsimulated/mineral/cold/Initialize()
+	. = ..()
+	// Ensure cold rock remains airtight even if a map instance var override drifted.
+	blocks_air = AIR_BLOCKED
+	density = TRUE
+	opacity = TRUE
+
 /turf/unsimulated/mineral/transition
 	name = "path elsewhere"
 	desc = "Looks like this leads to a whole new area."
