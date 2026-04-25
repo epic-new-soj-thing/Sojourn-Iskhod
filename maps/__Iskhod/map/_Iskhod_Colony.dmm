@@ -4,6 +4,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/hand_tele,
 /obj/item/stamp/captain,
+/obj/item/stamp/clown,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain{
 	name = "\improper Command - Facility Director's Office"
@@ -1979,6 +1980,12 @@
 /obj/machinery/camera/network/colony_underground,
 /turf/simulated/open,
 /area/iskhod/pit/level2)
+"ayd" = (
+/obj/structure/table/woodentable,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stamp/pr,
+/turf/simulated/floor/carpet/bcarpet,
+/area/iskhod/command/Priest)
 "aye" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/mineral/planet,
@@ -38033,6 +38040,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/accessory/holster/saber/militiasergeant/occupied,
+/obj/item/stamp/warden,
 /turf/simulated/floor/carpet,
 /area/iskhod/security/inspectors_office)
 "joI" = (
@@ -42116,6 +42124,7 @@
 	dir = 4
 	},
 /obj/item/paper/monitorkey,
+/obj/item/stamp/rd,
 /turf/simulated/floor/carpet/purcarpet,
 /area/iskhod/command/cro)
 "koi" = (
@@ -59392,6 +59401,7 @@
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/tablet/lease/preset/command,
 /obj/item/paper/monitorkey,
+/obj/item/stamp/ce,
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster)
 "oFn" = (
@@ -73927,6 +73937,7 @@
 /area/iskhod/hallway/side/f2section2)
 "smT" = (
 /obj/structure/table/steel,
+/obj/item/stamp/fr,
 /turf/simulated/floor/carpet,
 /area/iskhod/pros/foreman)
 "smU" = (
@@ -89764,6 +89775,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/modular_computer/tablet/lease/preset/command,
+/obj/item/stamp/hos,
 /turf/simulated/floor/carpet,
 /area/iskhod/command/swo)
 "woY" = (
@@ -165097,7 +165109,7 @@ fMC
 knn
 vLH
 pNH
-pNH
+ayd
 uYF
 slW
 ybq
