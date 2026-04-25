@@ -27,11 +27,13 @@
 	req_access = list(access_chemistry)
 
 /obj/structure/closet/secure_closet/chemicals/allowed(mob/M)
-	// Chemistry access only; medical staff except nurses and paramedics (SLTs) may also access
+	// Chemistry access only; psychiatrists and surgery-capable medical staff except paramedics may also access
 	if(!istype(M))
 		return FALSE
 	var/list/accesses = M.GetAccess()
 	if(access_cmo in accesses)
+		return TRUE
+	if(access_psychiatrist in accesses)
 		return TRUE
 	if((access_chemistry in accesses) && (access_surgery in accesses) && !(access_paramedic in accesses))
 		return TRUE
