@@ -4,6 +4,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/hand_tele,
 /obj/item/stamp/captain,
+/obj/item/stamp/clown,
 /turf/simulated/floor/carpet/turcarpet,
 /area/iskhod/command/captain{
 	name = "\improper Command - Facility Director's Office"
@@ -1979,6 +1980,12 @@
 /obj/machinery/camera/network/colony_underground,
 /turf/simulated/open,
 /area/iskhod/pit/level2)
+"ayd" = (
+/obj/structure/table/woodentable,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stamp/pr,
+/turf/simulated/floor/carpet/bcarpet,
+/area/iskhod/command/Priest)
 "aye" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/mineral/planet,
@@ -9024,13 +9031,7 @@
 /area/iskhod/rnd/scient)
 "ceB" = (
 /obj/structure/grille/broken,
-/obj/structure/barricade,
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472;
-	temperature = 240
-	},
+/turf/simulated/wall/rock/snow,
 /area/iskhod/dungeon/outside/abandoned_outpost)
 "ceO" = (
 /obj/effect/decal/cleanable/rubble,
@@ -38033,6 +38034,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/clothing/accessory/holster/saber/militiasergeant/occupied,
+/obj/item/stamp/warden,
 /turf/simulated/floor/carpet,
 /area/iskhod/security/inspectors_office)
 "joI" = (
@@ -42116,6 +42118,7 @@
 	dir = 4
 	},
 /obj/item/paper/monitorkey,
+/obj/item/stamp/rd,
 /turf/simulated/floor/carpet/purcarpet,
 /area/iskhod/command/cro)
 "koi" = (
@@ -46504,7 +46507,7 @@
 	name = "Armory";
 	req_one_access = list(19,63)
 	},
-/turf/simulated/wall/r_wall/iskhod_green,
+/turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/armory)
 "lrT" = (
 /obj/machinery/genetics/cloner,
@@ -54451,7 +54454,8 @@
 	},
 /obj/machinery/door/airlock/multi_tile/glass{
 	id_tag = "north_gate";
-	name = "North Gate Airlock"
+	name = "North Gate Airlock";
+	req_one_access = list(19,63)
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/iskhod/security/maingate)
@@ -59392,6 +59396,7 @@
 /obj/structure/table/reinforced,
 /obj/item/modular_computer/tablet/lease/preset/command,
 /obj/item/paper/monitorkey,
+/obj/item/stamp/ce,
 /turf/simulated/floor/wood,
 /area/iskhod/command/gmaster)
 "oFn" = (
@@ -61118,16 +61123,6 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/side/f2section2)
-"paL" = (
-/obj/structure/grille,
-/obj/structure/barricade,
-/turf/simulated/floor/snow/smooth{
-	icon_state = "snow0";
-	oxygen = 21.8366;
-	nitrogen = 82.1472;
-	temperature = 240
-	},
-/area/iskhod/dungeon/outside/abandoned_outpost)
 "paN" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -66390,7 +66385,8 @@
 	},
 /obj/machinery/door/airlock/multi_tile/glass{
 	id_tag = "south_gate";
-	name = "South Gate Airlock"
+	name = "South Gate Airlock";
+	req_one_access = list(19,63)
 	},
 /turf/simulated/floor/tiled/dark/brown_perforated,
 /area/iskhod/security/maingate)
@@ -72774,7 +72770,7 @@
 "rZJ" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
 /obj/structure/disposalpipe/segment,
-/turf/simulated/wall/r_wall/iskhod_green,
+/turf/simulated/floor/industrial/navy_large_slates,
 /area/iskhod/security/armory)
 "rZK" = (
 /obj/effect/window_lwall_spawn/reinforced,
@@ -73927,6 +73923,7 @@
 /area/iskhod/hallway/side/f2section2)
 "smT" = (
 /obj/structure/table/steel,
+/obj/item/stamp/fr,
 /turf/simulated/floor/carpet,
 /area/iskhod/pros/foreman)
 "smU" = (
@@ -89764,6 +89761,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/item/modular_computer/tablet/lease/preset/command,
+/obj/item/stamp/hos,
 /turf/simulated/floor/carpet,
 /area/iskhod/command/swo)
 "woY" = (
@@ -165097,7 +165095,7 @@ fMC
 knn
 vLH
 pNH
-pNH
+ayd
 uYF
 slW
 ybq
@@ -209932,7 +209930,7 @@ ycV
 ycV
 ycV
 ycV
-paL
+qzn
 akj
 bbK
 hrv
