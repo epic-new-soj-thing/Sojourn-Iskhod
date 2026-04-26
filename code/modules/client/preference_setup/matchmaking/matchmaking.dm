@@ -1,7 +1,7 @@
 var/global/datum/matchmaker/matchmaker = new()
 
 /hook/roundstart/proc/matchmaking()
-	matchmaker.do_matchmaking()
+	// Matchmaking disabled.
 	return TRUE
 
 /datum/matchmaker
@@ -15,6 +15,7 @@ var/global/datum/matchmaker/matchmaker = new()
 		relation_types[initial(R.name)] = T
 
 /datum/matchmaker/proc/do_matchmaking()
+	return
 	var/list/to_warn = list()
 	for(var/datum/relation/R in relations)
 		if(!R.other)
@@ -150,6 +151,9 @@ var/global/datum/matchmaker/matchmaker = new()
 	set name = "See Relationship Info"
 	set desc = "See what connections between people you know of."
 	set category = "IC"
+
+	to_chat(src, "<span class='notice'>Matchmaking is currently disabled.</span>")
+	return
 
 	var/list/relations = matchmaker.get_relationships(mind)
 	var/list/dat = list()
