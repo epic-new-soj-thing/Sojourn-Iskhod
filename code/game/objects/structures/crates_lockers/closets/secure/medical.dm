@@ -24,6 +24,7 @@
 	desc = "Pre-loaded reagents and laboratory supplies. Used in the chemistry lab for making medicines and chemical compounds."
 	icon_state = "med"
 	icon_door = "chemical"
+	storage_capacity = 60
 	req_access = list(access_chemistry)
 
 
@@ -312,6 +313,7 @@
 	desc = "Pre-loaded reagents and laboratory supplies. Used in the chemistry lab for making medicines and chemical compounds."
 	icon_state = "med"
 	icon_door = "chemical"
+	storage_capacity = 60
 	req_access = list(access_chemistry)
 
 
