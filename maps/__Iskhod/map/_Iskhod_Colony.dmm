@@ -55807,6 +55807,16 @@
 /obj/effect/decal/cleanable/rubble,
 /turf/simulated/floor/rock/dark,
 /area/colony)
+"nJu" = (
+/obj/structure/barricade,
+/obj/structure/grille,
+/turf/simulated/floor/snow/smooth{
+	icon_state = "snow0";
+	oxygen = 21.8366;
+	nitrogen = 82.1472;
+	temperature = 240
+	},
+/area/iskhod/dungeon/outside/abandoned_outpost)
 "nJG" = (
 /obj/structure/multiz/stairs/active{
 	dir = 1
@@ -209920,7 +209930,7 @@ ycV
 ycV
 ycV
 ycV
-qzn
+nJu
 akj
 bbK
 hrv
