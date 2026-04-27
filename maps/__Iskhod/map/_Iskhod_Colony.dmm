@@ -17621,10 +17621,14 @@
 /turf/simulated/floor/carpet/sblucarpet,
 /area/iskhod/medical/medbreak)
 "elX" = (
-/obj/machinery/power/port_gen/pacman/anchored,
 /obj/structure/cable/yellow{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/machinery/petrel_maker,
+/obj/effect/floor_decal/spline/fancy/three_quarters,
+/obj/item/contraband/poster/placed/popculture/gilld_chese{
+	pixel_y = 32
 	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering)
@@ -33129,6 +33133,7 @@
 /obj/machinery/camera/network/engineering{
 	dir = 1
 	},
+/obj/machinery/recharger,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "idv" = (
@@ -60577,7 +60582,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/recharger,
 /turf/simulated/floor/tiled/dark/orangecorner,
 /area/iskhod/engineering/breakroom)
 "oOb" = (
