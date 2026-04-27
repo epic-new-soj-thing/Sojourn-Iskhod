@@ -3512,7 +3512,6 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/landmark/join/start/technomancer,
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
 "aQR" = (
@@ -17093,6 +17092,9 @@
 /obj/effect/decal/cleanable/fruit_smudge,
 /obj/item/clothing/under/gorkapants,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/flour{
+	name = "questionable spillage"
+	},
 /turf/simulated/floor/wood/wild2,
 /area/iskhod/maintenance/undergroundfloor2south)
 "eft" = (
@@ -21355,6 +21357,7 @@
 	icon_state = "2-8"
 	},
 /obj/effect/decal/cleanable/dirt,
+/obj/landmark/join/start/technomancer,
 /turf/simulated/floor/tiled/white/danger,
 /area/iskhod/engineering/engine_room)
 "fha" = (
@@ -32705,6 +32708,27 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/engineering/atmos)
+"hXz" = (
+/obj/structure/window/basic/iskhod{
+	dir = 8
+	},
+/obj/item/soap,
+/obj/structure/curtain/open/shower/engineering,
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 5
+	},
+/obj/machinery/shower{
+	pixel_y = 16
+	},
+/obj/machinery/door/window/iskhod{
+	dir = 2;
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/iskhod/engineering/breakroom)
 "hXA" = (
 /obj/machinery/atmospherics/binary/pump/high_power{
 	dir = 4;
@@ -73924,6 +73948,13 @@
 /area/iskhod/command/captain/quarters{
 	name = "\improper Command - Facility Director's Quarters"
 	})
+"sfe" = (
+/obj/structure/toilet{
+	dir = 1
+	},
+/obj/landmark/join/start/technomancer,
+/turf/simulated/floor/industrial/white_large_slates,
+/area/iskhod/engineering/breakroom)
 "sfk" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -84396,6 +84427,30 @@
 	},
 /turf/simulated/floor/reinforced,
 /area/iskhod/pros/shop)
+"uJK" = (
+/obj/structure/window/basic/iskhod{
+	dir = 4
+	},
+/obj/item/soap,
+/obj/structure/curtain/open/shower/engineering,
+/obj/effect/floor_decal/corner_techfloor_grid{
+	dir = 5
+	},
+/obj/machinery/shower{
+	pixel_y = 16
+	},
+/obj/machinery/door/window/iskhod{
+	dir = 2;
+	name = "Shower door";
+	closed_layer = 4.1;
+	layer = 4.1;
+	open_layer = 4.1
+	},
+/obj/effect/decal/cleanable/flour{
+	name = "questionable spillage"
+	},
+/turf/simulated/floor/tiled/white/techfloor_grid,
+/area/iskhod/engineering/breakroom)
 "uJN" = (
 /obj/machinery/atmospherics/unary/vent_pump{
 	dir = 1
@@ -115025,7 +115080,7 @@ iTJ
 qYQ
 eHb
 mgO
-eAG
+hXz
 bMh
 qum
 mgO
@@ -115227,7 +115282,7 @@ paa
 ahh
 eHb
 mgO
-eAG
+uJK
 eJi
 sWv
 bLj
@@ -115445,7 +115500,7 @@ jah
 hnX
 pio
 isi
-axf
+sfe
 mgO
 rWH
 paa
