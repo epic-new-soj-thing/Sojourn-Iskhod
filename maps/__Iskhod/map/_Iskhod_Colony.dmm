@@ -2693,6 +2693,10 @@
 /area/iskhod/security/detectives_office)
 "aFQ" = (
 /obj/machinery/light,
+/obj/machinery/atm{
+	dir = 1;
+	pixel_y = -32
+	},
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
 "aFS" = (
@@ -6353,11 +6357,8 @@
 /turf/simulated/floor/plating/under,
 /area/iskhod/hallway/surface/section2)
 "byg" = (
-/obj/machinery/door/airlock/medical{
-	name = "Psychiatrist";
-	req_access = list(64)
-	},
-/turf/simulated/wall/r_wall/iskhod_blue,
+/obj/machinery/slotmachine,
+/turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
 "byh" = (
 /obj/structure/sign/warning/hazard_coldloop,
@@ -29731,6 +29732,9 @@
 /area/iskhod/pros/shop)
 "hmD" = (
 /obj/machinery/camera/network/colony_underground,
+/obj/machinery/atm{
+	pixel_y = 32
+	},
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
 "hnb" = (
@@ -34276,7 +34280,6 @@
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor2south)
 "itC" = (
-/obj/machinery/slotmachine,
 /obj/machinery/light{
 	dir = 1
 	},
@@ -43523,8 +43526,8 @@
 /turf/simulated/floor/tiled/dark/gray_platform,
 /area/iskhod/absolutism/bioreactor)
 "kBJ" = (
-/obj/structure/closet/boxinggloves,
 /obj/effect/decal/cleanable/cobweb2,
+/obj/machinery/slotmachine,
 /turf/simulated/floor/industrial,
 /area/iskhod/recreation/fight_club)
 "kBW" = (
@@ -89407,10 +89410,6 @@
 "vZa" = (
 /turf/simulated/open,
 /area/iskhod/outside/scave)
-"vZb" = (
-/obj/machinery/slotmachine,
-/turf/simulated/floor/wood/wild3,
-/area/iskhod/crew_quarters/cafeteria)
 "vZi" = (
 /obj/random/closet/low_chance,
 /obj/effect/floor_decal/industrial/outline/blue,
@@ -115440,7 +115439,7 @@ bHa
 bHa
 bHa
 itC
-ahW
+bzA
 bzA
 kSG
 fNB
@@ -115641,8 +115640,8 @@ xwk
 ylc
 mEh
 bHa
-vZb
-ahW
+bzA
+bzA
 lWu
 ssR
 wyj
@@ -155858,7 +155857,7 @@ bRr
 oVb
 fTy
 kBJ
-wid
+byg
 lnv
 lnq
 caZ
@@ -156058,7 +156057,7 @@ oVb
 oVb
 oVb
 oVb
-byg
+fTy
 fTy
 fTy
 fTy
