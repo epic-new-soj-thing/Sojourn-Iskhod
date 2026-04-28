@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ac" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/outpostmedical)
 "ad" = (
 /obj/machinery/space_heater,
@@ -283,7 +283,7 @@
 /turf/simulated/floor/asteroid/dirt/mud,
 /area/iskhod/rnd/mixing)
 "cd" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/outpoststorage)
 "co" = (
 /obj/machinery/mining/brace,
@@ -423,7 +423,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/eris/rnd/xenobiology/xenoflora)
 "dH" = (
 /obj/structure/multiz/stairs/enter/bottom,
@@ -636,12 +636,12 @@
 /turf/simulated/floor/tiled/dark/danger,
 /area/iskhod/command/teleporter)
 "fy" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/anomalisolfour{
 	name = "Radiocarbon Spectroscopy Lab"
 	})
 "fA" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/mine/atmos)
 "fE" = (
 /obj/effect/floor_decal/industrial_plant/steel_grate_warning{
@@ -745,7 +745,7 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/eris/rnd/xenobiology/xenoflora)
 "gj" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/eris/rnd/xenobiology/xenoflora)
 "gl" = (
 /obj/machinery/atmospherics/binary/pump/on{
@@ -763,7 +763,7 @@
 /turf/simulated/floor/industrial/navy_large_slates,
 /area/turbolift/Research/underground)
 "gE" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/mine/prep)
 "gH" = (
 /obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
@@ -891,6 +891,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
 "hI" = (
@@ -947,7 +952,7 @@
 	},
 /area/iskhod/rnd/mixing)
 "ii" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/command/teleporter)
 "io" = (
 /obj/machinery/door/firedoor,
@@ -1170,7 +1175,7 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
 "jA" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/outpostgeneral)
 "jB" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -1680,7 +1685,7 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/eris/rnd/xenobiology/xenoflora)
 "ns" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/anomalisoltwo{
 	name = "Anomalous Energy Harvesting Lab"
 	})
@@ -1779,7 +1784,7 @@
 /area/iskhod/rnd/outpostmachineroom)
 "oe" = (
 /obj/machinery/atmospherics/pipe/simple/visible/black,
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/mixing)
 "oq" = (
 /obj/structure/window/reinforced/iskhod{
@@ -2505,7 +2510,7 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/anomal)
 "sI" = (
 /obj/structure/low_wall,
@@ -2520,7 +2525,7 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/outpostmachineroom)
 "sR" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/outpostmachineroom)
 "sZ" = (
 /obj/machinery/vending/plasmaresearch,
@@ -2544,11 +2549,6 @@
 /obj/machinery/portable_atmospherics/canister,
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/storage)
-"ti" = (
-/obj/effect/window_lwall_spawn/reinforced,
-/obj/machinery/door/firedoor,
-/turf/simulated/floor/reinforced,
-/area/iskhod/rnd/mixing)
 "tn" = (
 /obj/effect/floor_decal/industrial_plant,
 /obj/effect/floor_decal/industrial/road/curvebig4,
@@ -3505,7 +3505,7 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/mixing)
 "Ab" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/anomal)
 "Af" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -3604,7 +3604,7 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
 "AU" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/storage)
 "AX" = (
 /obj/effect/floor_decal/industrial_plant/border_corner{
@@ -4033,7 +4033,7 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/eris/rnd/xenobiology/xenoflora)
 "Eb" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/anomalisolone{
 	name = "Anomaly Analysis Lab"
 	})
@@ -5191,7 +5191,7 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/iskhod/rnd/outpostgeneral)
 "Nl" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/misc_lab)
 "Nn" = (
 /obj/machinery/atmospherics/omni/filter{
@@ -5256,7 +5256,7 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/storage)
 "NM" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/mixing)
 "NY" = (
 /obj/machinery/constructable_frame/machine_frame,
@@ -5388,7 +5388,7 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
 "OK" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/iskhod/rnd/anomalisolthree{
 	name = "Psionics Harvesting Lab"
 	})
@@ -5557,7 +5557,7 @@
 /turf/simulated/floor/industrial/grey_slates_long,
 /area/mine/atmos)
 "PT" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/mine/lockers)
 "Qc" = (
 /obj/structure/cable{
@@ -5996,7 +5996,7 @@
 /turf/simulated/floor/tiled/white/violetcorener,
 /area/eris/rnd/xenobiology/xenoflora)
 "SI" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/mine/power)
 "SJ" = (
 /obj/machinery/botany/extractor,
@@ -6100,7 +6100,7 @@
 /turf/simulated/floor/industrial/navy_slates,
 /area/mine/prep)
 "TE" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/mine/unexplored)
 "TO" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -6355,7 +6355,7 @@
 /turf/simulated/floor/tiled/white/cargo,
 /area/iskhod/rnd/storage)
 "VP" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/mine/medical)
 "VT" = (
 /obj/machinery/suit_storage_unit/mining,
@@ -6464,11 +6464,11 @@
 /turf/simulated/floor/tiled/white,
 /area/iskhod/rnd/anomal)
 "WH" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/mine/hallway)
 "WJ" = (
 /obj/machinery/door/firedoor,
-/obj/effect/window_lwall_spawn/reinforced,
+/obj/effect/window_lwall_spawn/plasma/reinforced,
 /turf/simulated/floor/reinforced,
 /area/iskhod/rnd/mixing)
 "WL" = (
@@ -6876,7 +6876,7 @@
 /turf/unsimulated/mineral/cold,
 /area/mine/unexplored)
 "Zr" = (
-/turf/simulated/wall/iskhod,
+/turf/simulated/wall/r_wall/iskhod,
 /area/mine/processing)
 "Zu" = (
 /obj/machinery/door/firedoor,
@@ -24458,8 +24458,8 @@ iC
 iC
 iC
 NM
-ti
-ti
+WJ
+WJ
 NM
 NM
 Fz
