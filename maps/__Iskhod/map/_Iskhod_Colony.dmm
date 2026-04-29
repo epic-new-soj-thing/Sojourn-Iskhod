@@ -1499,6 +1499,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/industrial/navy_slates,
 /area/iskhod/security/prison)
+"auv" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/unsimulated/wall/jungle,
+/area/iskhod/maintenance/undergroundfloor2south)
 "auB" = (
 /obj/machinery/recharge_station/robotics,
 /turf/simulated/floor/tiled/dark/violetcorener,
@@ -3338,6 +3342,12 @@
 /obj/landmark/join/late/cryo/elevator,
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/crew_quarters/sleep/cryo2)
+"aSr" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/rock/dark,
+/area/iskhod/hallway/main/f1section1)
 "aSu" = (
 /obj/machinery/atmospherics/pipe/simple/visible{
 	dir = 4
@@ -11786,10 +11796,6 @@
 /turf/simulated/floor/reinforced,
 /area/iskhod/pros/shuttle)
 "ddH" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
-	},
 /obj/random/structures/low_chance,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/hallway/main/f1section1)
@@ -16372,6 +16378,10 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/iskhod/command/gmaster)
+"epj" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/unsimulated/wall/jungle,
+/area/iskhod/maintenance/undergroundfloor2south)
 "epw" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 10
@@ -20494,9 +20504,10 @@
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/crew_quarters/locker)
 "fwj" = (
-/obj/effect/window_lwall_spawn,
-/turf/simulated/floor/plating/under,
-/area/iskhod/medical/chemstor)
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/unsimulated/wall/jungle,
+/area/iskhod/maintenance/undergroundfloor2south)
 "fwm" = (
 /obj/machinery/door/firedoor,
 /obj/structure/table/steel_reinforced,
@@ -26586,6 +26597,13 @@
 "hcy" = (
 /turf/simulated/wall/r_wall/iskhod_green,
 /area/iskhod/maintenance/substation/science)
+"hcz" = (
+/obj/machinery/light{
+	brightness_power = 1;
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/iskhod/medical/medbay/uppercor)
 "hcC" = (
 /obj/machinery/alarm{
 	dir = 4;
@@ -31639,12 +31657,9 @@
 /turf/simulated/floor/tiled/steel/techfloor,
 /area/iskhod/maintenance/undergroundfloor2south)
 "ivL" = (
-/obj/machinery/light/small{
-	dir = 4;
-	pixel_y = 0
-	},
-/turf/simulated/floor/rock/dark,
-/area/iskhod/hallway/main/f1section1)
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/unsimulated/wall/jungle,
+/area/iskhod/maintenance/undergroundfloor2south)
 "ivP" = (
 /obj/machinery/vending/hydroseeds{
 	slogan_delay = 700
@@ -33067,10 +33082,6 @@
 	dir = 8;
 	pixel_x = -30;
 	pixel_y = 0
-	},
-/obj/machinery/light{
-	brightness_power = 1;
-	dir = 8
 	},
 /turf/simulated/floor/plating/under,
 /area/iskhod/engineering/waste)
@@ -36016,8 +36027,9 @@
 /obj/item/tank/jetpack/oxygen,
 /obj/item/clothing/mask/breath,
 /obj/item/clothing/shoes/magboots,
-/obj/item/rig/techno,
 /obj/item/rig_module/vision/meson,
+/obj/item/rig/techno/equipped,
+/obj/item/rig/techno/equipped,
 /turf/simulated/floor/tiled/dark/techfloor,
 /area/iskhod/engineering/techstorage)
 "jBo" = (
@@ -46373,6 +46385,11 @@
 	},
 /turf/simulated/floor/carpet/gaycarpet,
 /area/iskhod/crew_quarters/arcade)
+"mqC" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass/colonial2,
+/area/iskhod/maintenance/undergroundfloor2south)
 "mqN" = (
 /obj/machinery/atmospherics/unary/vent_pump,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -49528,6 +49545,16 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/crew_quarters/pool)
+"nkz" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/industrial/black_large_slates,
+/area/iskhod/hallway/main/f1section1)
 "nkE" = (
 /obj/machinery/door/firedoor,
 /obj/effect/floor_decal/industrial_plant/steel_grate_border,
@@ -59599,6 +59626,11 @@
 /obj/machinery/door/airlock/maintenance_common,
 /turf/simulated/floor/industrial/concrete_bricks,
 /area/iskhod/maintenance/undergroundfloor1south)
+"pTZ" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/unsimulated/wall/jungle,
+/area/iskhod/maintenance/undergroundfloor2south)
 "pUJ" = (
 /obj/structure/shuttle_part/science{
 	icon_state = "1,6"
@@ -71643,6 +71675,12 @@
 	},
 /turf/simulated/floor/industrial/black_large_slates,
 /area/iskhod/hallway/main/f1section3)
+"tmk" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white/cyancorner,
+/area/iskhod/medical/medbay/uppercor)
 "tms" = (
 /obj/effect/damagedfloor/rust,
 /obj/effect/floor_decal/rust,
@@ -73192,6 +73230,12 @@
 /obj/landmark/join/start/roboticist,
 /turf/simulated/floor/carpet/purcarpet,
 /area/iskhod/rnd/rbreakroom)
+"tEf" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/unsimulated/wall/jungle,
+/area/iskhod/maintenance/undergroundfloor2south)
 "tEk" = (
 /obj/machinery/atmospherics/binary/pump{
 	dir = 4;
@@ -73719,6 +73763,10 @@
 /obj/random/scrap/dense_weighted,
 /turf/simulated/floor/rock/dark,
 /area/iskhod/maintenance/undergroundfloor1east)
+"tMf" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/simulated/floor/asteroid/grass/colonial2,
+/area/iskhod/maintenance/undergroundfloor2south)
 "tMg" = (
 /obj/machinery/slotmachine,
 /obj/structure/cable/green{
@@ -86598,9 +86646,6 @@
 "xtP" = (
 /obj/machinery/atmospherics/unary/vent_scrubber{
 	dir = 8
-	},
-/obj/machinery/light{
-	dir = 4
 	},
 /obj/structure/filingcabinet/medical,
 /turf/simulated/floor/tiled/white/cyancorner,
@@ -106247,7 +106292,7 @@ mlh
 mlh
 orF
 lFz
-sHy
+nkz
 aUz
 aUz
 itP
@@ -106637,11 +106682,11 @@ rMF
 bPV
 bPV
 bPV
-kbe
+aSr
 ddH
 kbe
 kbe
-ivL
+kbe
 kbe
 kbe
 kbe
@@ -107751,9 +107796,9 @@ gEN
 jEc
 iMR
 ewG
-ewG
-ewG
 xMs
+ewG
+ewG
 jEc
 waY
 waY
@@ -110577,11 +110622,11 @@ kpv
 nji
 fOP
 jEc
+ewG
+ewG
 vzF
 ewG
 ewG
-ewG
-vzF
 jEc
 hVF
 hVF
@@ -149057,8 +149102,8 @@ oXA
 gab
 mPf
 mPf
-fwj
-fwj
+mPf
+mPf
 mPf
 mPf
 uxd
@@ -149258,7 +149303,7 @@ bVj
 iki
 dKT
 aLB
-xtE
+hcz
 sRO
 fSk
 acX
@@ -149663,7 +149708,7 @@ dqK
 dKT
 sSl
 wUn
-xtE
+tmk
 sPR
 xtP
 dKT
@@ -149967,13 +150012,13 @@ klq
 vBu
 nKb
 hSW
-nKb
-nKb
-nKb
-nKb
-nKb
-nKb
-fDC
+hSW
+hSW
+hSW
+hSW
+hSW
+hSW
+hSW
 fDC
 fDC
 fDC
@@ -150169,7 +150214,7 @@ dXu
 vBu
 nKb
 hSW
-nKb
+hSW
 nKb
 nKb
 nKb
@@ -150371,7 +150416,7 @@ vBu
 vBu
 nKb
 hSW
-nKb
+hSW
 nKb
 nKb
 nKb
@@ -150573,7 +150618,7 @@ nKb
 nKb
 nKb
 hSW
-nKb
+hSW
 nKb
 nKb
 nKb
@@ -150775,7 +150820,7 @@ nKb
 nKb
 nKb
 hSW
-nKb
+hSW
 nKb
 nKb
 nKb
@@ -150977,7 +151022,7 @@ nKb
 nKb
 nKb
 hSW
-nKb
+hSW
 kCi
 kCi
 kCi
@@ -151179,7 +151224,7 @@ nKb
 nKb
 nKb
 hSW
-nKb
+hSW
 kCi
 urM
 rCS
@@ -151381,7 +151426,7 @@ nKb
 nKb
 nKb
 hSW
-nKb
+hSW
 kCi
 toY
 qxi
@@ -151582,8 +151627,8 @@ iFe
 iFe
 iFe
 iFe
+fDC
 hSW
-nKb
 kCi
 fgQ
 vov
@@ -152379,12 +152424,12 @@ nKb
 frw
 frw
 frw
-lwE
-lwE
-lwE
-lwE
-lwE
-lwE
+epj
+ivL
+fwj
+fwj
+auv
+epj
 frw
 frw
 frw
@@ -152579,17 +152624,17 @@ iFe
 nKb
 frw
 frw
-lwE
-lwE
+ivL
+epj
 fCe
 xYW
-scq
+tMf
 kPH
 dTG
-lwE
-lwE
-lwE
-lwE
+epj
+fwj
+ivL
+epj
 frw
 nKb
 nKb
@@ -152780,8 +152825,8 @@ iFe
 egk
 nKb
 frw
-lwE
-lwE
+epj
+fwj
 jrP
 jrP
 iUC
@@ -152791,7 +152836,7 @@ scq
 oCT
 scq
 xYW
-lwE
+ivL
 frw
 nKb
 nKb
@@ -152982,7 +153027,7 @@ egk
 nKb
 nKb
 frw
-lwE
+pTZ
 ewO
 iUC
 iUC
@@ -152993,7 +153038,7 @@ jrP
 scq
 uiM
 ejN
-lwE
+fwj
 frw
 nKb
 nKb
@@ -153184,7 +153229,7 @@ nKb
 nKb
 nKb
 frw
-lwE
+tEf
 oVc
 jFj
 jFj
@@ -153195,7 +153240,7 @@ vKw
 uLr
 pPm
 nxt
-lwE
+fwj
 frw
 nKb
 nKb
@@ -153386,7 +153431,7 @@ nKb
 nKb
 nKb
 frw
-lwE
+fwj
 bBX
 tnk
 tnk
@@ -153397,7 +153442,7 @@ kQO
 tAs
 fyv
 nxt
-lwE
+fwj
 frw
 nKb
 nKb
@@ -153588,7 +153633,7 @@ hSW
 hSW
 nKb
 frw
-lwE
+fwj
 gwP
 ovk
 ovk
@@ -153599,7 +153644,7 @@ vKw
 uLr
 fyv
 cTv
-lwE
+fwj
 frw
 nKb
 nKb
@@ -153790,7 +153835,7 @@ kRB
 hSW
 nKb
 frw
-lwE
+fwj
 fLs
 iUC
 iUC
@@ -153801,7 +153846,7 @@ jrP
 scq
 tvL
 eeN
-lwE
+fwj
 frw
 nKb
 nKb
@@ -153992,14 +154037,14 @@ cbX
 gdV
 hSW
 frw
-lwE
-lwE
+epj
+epj
 jrP
 jrP
 iUC
 scq
 xYW
-kPH
+mqC
 ijR
 xYW
 kPH
@@ -154195,17 +154240,17 @@ qix
 hSW
 frw
 frw
-lwE
-lwE
+fwj
+fwj
 fCe
 scq
 dTG
 kPH
 scq
-lwE
-lwE
-lwE
-lwE
+epj
+pTZ
+fwj
+fwj
 frw
 nKb
 nKb
@@ -154399,12 +154444,12 @@ nKb
 frw
 frw
 frw
-lwE
-lwE
-lwE
-lwE
-lwE
-lwE
+epj
+ivL
+fwj
+fwj
+fwj
+epj
 frw
 frw
 frw
