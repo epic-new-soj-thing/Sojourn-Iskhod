@@ -4090,7 +4090,6 @@
 /obj/machinery/button/remote/airlock{
 	name = "South Gate Control";
 	req_access = list(63);
-	specialfunctions = 4;
 	pixel_x = 6;
 	pixel_y = -6;
 	id = "south_gate"
@@ -15783,7 +15782,7 @@
 /obj/machinery/door/airlock/multi_tile/glass{
 	dir = 2;
 	name = "Medical Lobby";
-	req_one_access = s;
+	req_one_access = list(5,19,45,63, 64);
 	id_tag = "medbay_door"
 	},
 /turf/simulated/floor/tiled/dark/techfloor,
