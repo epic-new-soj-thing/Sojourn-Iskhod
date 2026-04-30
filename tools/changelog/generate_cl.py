@@ -16,11 +16,11 @@ This script depends on the tags.yml file located in the same directory.
 
 Expected environmental variables (single-commit mode):
 ------------------------------------------------------
-GITHUB_REPOSITORY, BOT_TOKEN, GITHUB_SHA; optional: GIT_NAME, GIT_EMAIL
+GITHUB_REPOSITORY, GITHUB_TOKEN, GITHUB_SHA; optional: GIT_NAME, GIT_EMAIL
 
 Expected environmental variables (--all mode):
 ----------------------------------------------
-GITHUB_REPOSITORY (or pass repo as owner/name), BOT_TOKEN
+GITHUB_REPOSITORY (or pass repo as owner/name), GITHUB_TOKEN
 """
 import argparse
 import os
@@ -210,9 +210,9 @@ def main():
     parser.add_argument("-v", "--verbose", action="store_true", help="With --all, print every PR considered.")
     args = parser.parse_args()
 
-    token = os.getenv("BOT_TOKEN")
+    token = os.getenv("GITHUB_TOKEN")
     if not token or not isinstance(token, str):
-        print("Error: BOT_TOKEN environment variable is not set.", file=sys.stderr)
+        print("Error: GITHUB_TOKEN environment variable is not set.", file=sys.stderr)
         sys.exit(1)
 
     # --all and --pr always use the canonical repo

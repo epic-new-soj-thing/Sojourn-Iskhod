@@ -10,9 +10,9 @@ import requests
 from github import Github, Auth
 
 # Configuration
-GITHUB_TOKEN = os.getenv("BOT_TOKEN")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 if not GITHUB_TOKEN:
-    print("Error: BOT_TOKEN environment variable not set")
+    print("Error: GITHUB_TOKEN environment variable not set")
     exit(1)
 
 REPO_NAME = "epic-new-soj-thing/Sojourn-Iskhod"  # owner/repo

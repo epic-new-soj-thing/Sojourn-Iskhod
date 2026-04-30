@@ -4,12 +4,12 @@ Iterate through each merged PR, check for :cl: block, and add changelog yml.
 Then regenerate the HTML changelog.
 
 Usage:
-  Set BOT_TOKEN and optionally GITHUB_REPOSITORY, then:
+  Set GITHUB_TOKEN and optionally GITHUB_REPOSITORY, then:
     python tools/changelog/sync_pr_changelogs.py
     python tools/changelog/sync_pr_changelogs.py --no-html   # only write ymls, skip HTML
     python tools/changelog/sync_pr_changelogs.py --limit 20 # process at most 20 merged PRs
 
-Requires: BOT_TOKEN (and GITHUB_REPOSITORY for non-default repo).
+Requires: GITHUB_TOKEN (and GITHUB_REPOSITORY for non-default repo).
 """
 import os
 import subprocess
@@ -21,8 +21,8 @@ REPO_ROOT = SCRIPT_DIR.parent.parent
 
 
 def main():
-    if not os.getenv("BOT_TOKEN"):
-        print("Error: Set BOT_TOKEN environment variable.", file=sys.stderr)
+    if not os.getenv("GITHUB_TOKEN"):
+        print("Error: Set GITHUB_TOKEN environment variable.", file=sys.stderr)
         sys.exit(1)
 
     # Build args for generate_cl.py --all

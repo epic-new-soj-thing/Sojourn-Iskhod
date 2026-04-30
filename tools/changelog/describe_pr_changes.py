@@ -4,7 +4,7 @@ Iterate merged PRs in epic-new-soj-thing/Sojourn-Iskhod, fetch each PR's file ch
 generate changelog yml from :cl: blocks (same as generate_cl), and optionally use AI to describe changes.
 
 Usage:
-  Set BOT_TOKEN, then:
+  Set GITHUB_TOKEN, then:
     python tools/changelog/describe_pr_changes.py              # list files, write reports, generate yml + HTML
     python tools/changelog/describe_pr_changes.py --no-yml    # skip yml generation and HTML compile
     python tools/changelog/describe_pr_changes.py --describe   # also run AI descriptions (needs OPENAI_API_KEY)
@@ -230,9 +230,9 @@ def main():
     parser.add_argument("-v", "--verbose", action="store_true", help="Print more detail.")
     args = parser.parse_args()
 
-    token = os.getenv("BOT_TOKEN")
+    token = os.getenv("GITHUB_TOKEN")
     if not token or not isinstance(token, str):
-        print("Error: BOT_TOKEN environment variable is not set.", file=sys.stderr)
+        print("Error: GITHUB_TOKEN environment variable is not set.", file=sys.stderr)
         sys.exit(1)
 
     owner, repo = CANONICAL_REPO.split("/", 1)

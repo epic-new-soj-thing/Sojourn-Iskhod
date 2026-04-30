@@ -6,31 +6,25 @@ on:
       - master
       - changelog-fixes
       - testmerge
-
   workflow_dispatch:
     inputs:
       branch:
-        description: "Branch to run changelog for (e.g. master or testmerge)"
+        description: "Branch to run changelog for"
         required: true
         default: "master"
-      reason:
-        description: "Why are you manually generating the changelog?"
-        required: false
-        default: "Manual trigger"
 
 jobs:
   generate-changelog:
     runs-on: ubuntu-latest
-
-    environment:
-      name: BOT_TOKEN
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event_name == 'workflow_dispatch' && inputs.branch || github.ref }}
-          token: ${{ secrets.BOT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -40,21 +34,22 @@ jobs:
       - name: Install dependencies
         run: pip install -r tools/changelog/requirements.txt
 
-      - name: Generate changelog yml from all merged PRs
+      - name: Generate changelog yml
         env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BASE="${{ github.event_name == 'workflow_dispatch' && inputs.branch || github.ref_name }}"
-          echo "Generating changelog for branch: $BASE"
           python tools/changelog/generate_cl.py --all --base master
 
-      - name: Compile HTML changelog (merge yml into cache, then build from html/changelogs/.all_changelog.yml)
+      - name: Compile HTML changelog
         run: python tools/changelog/ss13_genchangelog.py html/changelog.html html/changelogs/autochangelogs
 
-      - name: Commit and push changelog
+      - name: Commit and push
         run: |
-          git config user.name "${{ secrets.BOT_NAME || 'github-actions[bot]' }}"
-          git config user.email "${{ secrets.BOT_EMAIL || 'github-actions[bot]@users.noreply.github.com' }}"
+          # Hardcoding these ensures your personal name is never used
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add html/changelog.html html/changelogs/
           git diff --staged --quiet || git commit -m "Automatic changelog compile [ci skip]"
           git push
