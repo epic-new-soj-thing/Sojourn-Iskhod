@@ -20,10 +20,11 @@
 	new /obj/item/reagent_containers/hypospray/autoinjector/quickclot(src)
 
 /obj/structure/closet/secure_closet/chemicals
-	name = "chemical storage closet"
-	desc = "Pre-loaded reagents and basic glassware. Mainly the same chemical supplies as the medicine closet."
+	name = "chemistry storage closet"
+	desc = "Pre-loaded reagents and laboratory supplies. Used in the chemistry lab for making medicines and chemical compounds."
 	icon_state = "med"
 	icon_door = "chemical"
+	storage_capacity = 60
 	req_access = list(access_chemistry)
 
 
@@ -31,21 +32,46 @@
 	if(populated_contents)
 		return
 	populated_contents = TRUE
-	// Preloaded reagent bottles
+	// 1. Empty reagent containers
+	new /obj/item/reagent_containers/glass/beaker(src)
+	new /obj/item/reagent_containers/glass/beaker(src)
+	new /obj/item/reagent_containers/glass/beaker/large(src)
+	new /obj/item/reagent_containers/glass/beaker/large(src)
+	new /obj/item/reagent_containers/glass/beaker/large(src)
+	new /obj/item/reagent_containers/glass/beaker/large(src)
+	// 2. Droppers and pipetting
+	new /obj/item/reagent_containers/dropper(src)
+	new /obj/item/reagent_containers/dropper(src)
+	new /obj/item/reagent_containers/dropper/industrial(src)
+	new /obj/item/reagent_containers/dropper/industrial(src)
+	new /obj/item/reagent_containers/dropper/micropipetter(src)
+	// 3. Storage
+	new /obj/item/storage/box/beakers(src)
+	new /obj/item/storage/box/pillbottles(src)
+	new /obj/item/storage/box/pillbottles(src)
+	new /obj/item/storage/lockbox/vials(src)
+	new /obj/item/storage/fancy/vials(src)
+	new /obj/item/storage/fancy/vials(src)
+	new /obj/item/storage/pouch/tubular/vial(src)
+	new /obj/item/storage/hcases/med(src)
+	new /obj/item/storage/bag/chemistry(src)
+	new /obj/item/storage/bag/chemistry(src)
+	// 4. Clothing
+	new /obj/item/clothing/glasses/powered/science(src)
+	new /obj/item/clothing/glasses/powered/science(src)
+	new /obj/item/clothing/suit/storage/toggle/labcoat/chemist(src)
+	new /obj/item/clothing/suit/storage/toggle/labcoat/chemist(src)
+	// 5. Scanners
+	new /obj/item/device/scanner/mass_spectrometer/adv(src)
+	new /obj/item/device/scanner/reagent/adv(src)
+	// 6. Reagents
 	new /obj/item/reagent_containers/glass/bottle/plasma(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
 	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
-	new /obj/item/reagent_containers/glass/bottle/tricord(src)
-	new /obj/item/reagent_containers/glass/bottle/tricord(src)
 	new /obj/item/reagent_containers/glass/bottle/mutagen(src)
-	new /obj/item/reagent_containers/glass/bottle/ethanol(src)
-	new /obj/item/reagent_containers/glass/bottle/ethanol(src)
-	new /obj/item/reagent_containers/glass/bottle/ammonia(src)
-	new /obj/item/reagent_containers/glass/bottle/ammonia(src)
 	new /obj/item/reagent_containers/glass/bottle/sugar(src)
-	new /obj/item/reagent_containers/glass/bottle/acetone(src)
 	new /obj/item/reagent_containers/glass/bottle/diethylamine(src)
 	new /obj/item/reagent_containers/glass/bottle/stoxin(src)
 	new /obj/item/reagent_containers/glass/bottle/toxin(src)
@@ -284,10 +310,12 @@
 
 /obj/structure/closet/secure_closet/chemistrystorage
 	name = "chemistry storage closet"
-	desc = "General purpose chemistry equipment."
+	desc = "Pre-loaded reagents and laboratory supplies. Used in the chemistry lab for making medicines and chemical compounds."
 	icon_state = "med"
 	icon_door = "chemical"
+	storage_capacity = 60
 	req_access = list(access_chemistry)
+
 
 /obj/structure/closet/secure_closet/chemistrystorage/populate_contents()
 	if(populated_contents)
@@ -300,8 +328,6 @@
 	new /obj/item/reagent_containers/glass/beaker/large(src)
 	new /obj/item/reagent_containers/glass/beaker/large(src)
 	new /obj/item/reagent_containers/glass/beaker/large(src)
-	new /obj/item/reagent_containers/glass/plastic_jug(src)
-	new /obj/item/reagent_containers/glass/plastic_jug(src)
 	// 2. Droppers and pipetting
 	new /obj/item/reagent_containers/dropper(src)
 	new /obj/item/reagent_containers/dropper(src)
@@ -309,6 +335,7 @@
 	new /obj/item/reagent_containers/dropper/industrial(src)
 	new /obj/item/reagent_containers/dropper/micropipetter(src)
 	// 3. Storage
+	new /obj/item/storage/box/beakers(src)
 	new /obj/item/storage/box/pillbottles(src)
 	new /obj/item/storage/box/pillbottles(src)
 	new /obj/item/storage/lockbox/vials(src)
@@ -326,3 +353,14 @@
 	// 5. Scanners
 	new /obj/item/device/scanner/mass_spectrometer/adv(src)
 	new /obj/item/device/scanner/reagent/adv(src)
+	// 6. Reagents
+	new /obj/item/reagent_containers/glass/bottle/plasma(src)
+	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
+	new /obj/item/reagent_containers/glass/bottle/inaprovaline(src)
+	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
+	new /obj/item/reagent_containers/glass/bottle/antitoxin(src)
+	new /obj/item/reagent_containers/glass/bottle/mutagen(src)
+	new /obj/item/reagent_containers/glass/bottle/sugar(src)
+	new /obj/item/reagent_containers/glass/bottle/diethylamine(src)
+	new /obj/item/reagent_containers/glass/bottle/stoxin(src)
+	new /obj/item/reagent_containers/glass/bottle/toxin(src)

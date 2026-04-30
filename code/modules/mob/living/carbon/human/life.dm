@@ -562,6 +562,10 @@
 	if(!environment)
 		return
 
+	// Stasis bags are intended to halt further environmental harm, including heat/cold limb loss.
+	if(in_stasis)
+		return
+
 	//Stuff like the xenomorph's plasma regen happens here.
 	species.handle_environment_special(src)
 

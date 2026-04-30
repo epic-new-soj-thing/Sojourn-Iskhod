@@ -97,7 +97,8 @@
 
 	// Blood loss or liver damage make you lose nutriments
 	var/blood_volume = get_blood_volume()
-	if(blood_volume * effective_blood_volume < total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER || (liver_efficiency < BRUISED_2_EFFICIENCY))
+	var/liver_damaged = liver && (liver.damage >= liver.min_bruised_damage)
+	if(blood_volume * effective_blood_volume < total_blood_req + BLOOD_VOLUME_SAFE_MODIFIER || liver_damaged)
 		if(nutrition >= 300)
 			adjustNutrition(-10)
 		else if(nutrition >= 200)
