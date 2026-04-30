@@ -25,7 +25,7 @@ jobs:
         with:
           ref: ${{ github.event_name == 'workflow_dispatch' && inputs.branch || github.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          submodules: recursive
+          submodules: false
           set-safe-directory: true
 
       - name: Set up Python
