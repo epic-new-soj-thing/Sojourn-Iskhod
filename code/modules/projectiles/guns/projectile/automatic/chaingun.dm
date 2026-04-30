@@ -53,6 +53,12 @@
 		return 0
 	return ..()
 
+//ISHKOD MODULAR EDIT - Fixes Specific Edge Cases of being unable to open covers of specific weapons if you only had one hand!
+/obj/item/gun/projectile/automatic/chaingun/verb/toggle_cover_onehand(mob/user)
+	set name = "Toggle Weapon Cover"
+	set category = "Object"
+	toggle_cover()
+
 /obj/item/gun/projectile/automatic/chaingun/proc/toggle_cover(mob/user)
 	cover_open = !cover_open
 	to_chat(user, SPAN_NOTICE("You [cover_open ? "open" : "close"] [src]'s mechanism."))

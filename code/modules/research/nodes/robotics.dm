@@ -322,7 +322,7 @@
 	unlocks_designs = list(
 							/datum/design/research/circuit/aicore,
 							/datum/design/research/circuit/aiupload,
-							/datum/design/research/item/borismodule
+							/datum/design/research/item/robot_upgrade/borismodule
 							)
 
 /datum/technology/artificial_intelligence_laws
@@ -368,7 +368,7 @@
 
 	required_technologies = list(/datum/technology/cyborg_robo)
 	required_tech_levels = list()
-	cost = 1500
+	cost = 2500
 
 	unlocks_designs = list(
 						/datum/design/research/item/mechfab/robot/component/jetpack,
@@ -381,6 +381,7 @@
 						/datum/design/research/item/mechfab/robot/component/armor/mkiii,
 						/datum/design/research/item/mechfab/robot/component/armor/mkiv,
 						/datum/design/research/item/mechfab/robot/component/armor/mkv,
+						/datum/design/research/item/robot_upgrade/customgun,
 						/datum/design/research/circuit/repair_station
 						)
 
