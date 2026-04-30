@@ -19,10 +19,9 @@ jobs:
 
     steps:
       - name: Check for conflicts
-        uses: mschilde/auto-label-merge-conflicts@v1
+        uses: mschilde/auto-label-merge-conflicts@master
         with:
           CONFLICT_LABEL_NAME: 'Merge Conflict'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WAIT_MS: 10000
-          # Some versions of this action require specific detection logic
           MAX_RETRIES: 5
