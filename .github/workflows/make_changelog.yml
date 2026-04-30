@@ -21,10 +21,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Upgraded to v4
         with:
           ref: ${{ github.event_name == 'workflow_dispatch' && inputs.branch || github.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: recursive
+          set-safe-directory: true
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -46,7 +48,6 @@ jobs:
 
       - name: Commit and push
         run: |
-          # Hardcoding these ensures your personal name is never used
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
