@@ -16,6 +16,8 @@ var/global/datum/matchmaker/matchmaker = new()
 
 /datum/matchmaker/proc/do_matchmaking()
 	return
+	//Disables matchmaking features by server oversight request.
+	/*
 	var/list/to_warn = list()
 	for(var/datum/relation/R in relations)
 		if(!R.other)
@@ -24,6 +26,7 @@ var/global/datum/matchmaker/matchmaker = new()
 			to_warn |= R.holder.current
 	for(var/mob/M in to_warn)
 		to_chat(M,"<span class='warning'>You have new connections. Use \"<a href='byond://?src=\ref[M];show_relations=1'>See Relationship Info</a>\" to view and finalize them.</span>")
+	*/
 
 /datum/matchmaker/proc/get_relationships(datum/mind/M, finalized_only)
 	. = list()
@@ -151,10 +154,10 @@ var/global/datum/matchmaker/matchmaker = new()
 	set name = "See Relationship Info"
 	set desc = "See what connections between people you know of."
 	set category = "IC"
-
+	//Disables matchmaking features by server oversight request.
 	to_chat(src, "<span class='notice'>Matchmaking is currently disabled.</span>")
 	return
-
+	/*
 	var/list/relations = matchmaker.get_relationships(mind)
 	var/list/dat = list()
 	var/editable = 0
@@ -185,6 +188,7 @@ var/global/datum/matchmaker/matchmaker = new()
 		popup.set_window_options("focus=0;can_close=0;can_minimize=1;can_maximize=0;can_resize=1;titlebar=1;")
 	popup.set_content(jointext(dat,null))
 	popup.open()
+	*/
 
 /mob/living/proc/see_relationship_info_with(var/mob/living/other)
 	if(!other.mind)
