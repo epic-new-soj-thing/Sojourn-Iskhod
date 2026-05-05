@@ -5,15 +5,15 @@
 
 A downstream branch of the Sojourn-13 codebase.
 
-THIS REPO HAS BEEN RESTORED AND ARCHIVED AS IT IS NO LONGER THE ACTIVE BRANCH OF ISKHOD-OUTPOST-13 AND IS NOW ONLY FOR COMMIT REVISION.
+THIS REPO HAS BEEN RESTORED AND ARCHIVED AS IT IS NO LONGER THE ACTIVE BRANCH OF ISKHOD-OUTPOST-13 AND IS NOW ONLY FOR COMMIT REVISION.<br/>
 See https://github.com/epic-new-soj-thing/Iskhod-Outpost-13 for the latest repo.
 
 ## CONTRIBUTING
 
 Please contact us on the server Discord. 
 
-Project owner/Host - MsRandylicious<br/> (new Repo)
-Maintainer - MushyP<br/> (new Repo)
+Project owner/Host - MsRandylicious (new Repo)<br/>
+Maintainer - MushyP (new Repo)<br/>
 
 ## CREDITS
 
