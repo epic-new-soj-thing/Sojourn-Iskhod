@@ -1,16 +1,19 @@
 ![](placeholder)
-# Sojourn-Iskhod
+# Sojourn-Iskhod - ARCHIVED
 [![discord](https://discordapp.com/api/guilds/255035529085583360/widget.png)](https://discord.gg/e9dGKqJQTz)
 
 
 A downstream branch of the Sojourn-13 codebase.
 
+THIS REPO HAS BEEN RESTORED AND ARCHIVED AS IT IS NO LONGER THE ACTIVE BRANCH OF ISKHOD-OUTPOST-13 AND IS NOW ONLY FOR COMMIT REVISION.
+See https://github.com/epic-new-soj-thing/Iskhod-Outpost-13 for the latest repo.
+
 ## CONTRIBUTING
 
 Please contact us on the server Discord. 
 
-Project owner - MsRandylicious<br/>
-Host - Drfarson<br/>
+Project owner/Host - MsRandylicious<br/> (new Repo)
+Maintainer - MushyP<br/> (new Repo)
 
 ## CREDITS
 
